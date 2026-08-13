@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "project": "Open Logic Project",
+  "original_or_source_title": "The Open Logic Text",
+  "family_mode": "EVOLVING_CORPUS",
+  "declared_object_scope": "The complete Iranian Persian edition of The Open Logic Text as maintained by the Open Logic Project; this exact release is a source-ordered 10/722 checkpoint.",
+  "repository": "https://github.com/OpenLogicProject/OpenLogic.git",
+  "source_commit_url": "https://github.com/OpenLogicProject/OpenLogic/commit/9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "tree": "f67757bb9305b173634082ab4cefd5601a707a34",
+  "commit_date": "2026-07-12T10:36:14-06:00",
+  "source_date_epoch": 1783874174,
+  "license": "CC BY 4.0 unless a component is separately noted",
+  "canonical_git_blob_license_bytes": 17068,
+  "canonical_git_blob_license_sha256": "BB5E0179A1E9BDB55634A4303784CF73C297A1DCEE27B92CD546BF398075531C",
+  "windows_crlf_materialization_license_sha256": "1094A30E124027CB4CFF48D932F1A8673D1386682A475A0EDC811F2162241FEC",
+  "closure_units": 722,
+  "release_unit_range": {
+    "first": "OLP-0001",
+    "last": "OLP-0010",
+    "count": 10
+  },
+  "outside_checkpoint_unit_range": {
+    "first": "OLP-0011",
+    "last": "OLP-0722",
+    "count": 712
+  },
+  "coverage_and_topology": "The snapshot contains the project introduction and opening structure plus the Sets chapter's six scheduled content units. It does not contain untranslated English fallback units.",
+  "component_coverage_ledger": "evidence/COMPONENT_COVERAGE.tsv",
+  "component_source_hash_policy": "Each included source unit records both the canonical LF Git-blob SHA-256 at the pinned commit and the CRLF checkout-materialization SHA-256 used by the accepted closure manifest.",
+  "authority_hierarchy": [
+    "Exact Git commit and tree",
+    "Per-unit source SHA-256 in evidence/COMPONENT_COVERAGE.tsv",
+    "Accepted Persian target SHA-256 in evidence/COMPONENT_COVERAGE.tsv"
+  ],
+  "source_worktree_caveat": "The local read-only cache had an unrelated working LICENSE.md edit at release time. Packaging authority is the exact LF Git blob bytes, not the working copy; the separately recorded CRLF materialization hash identifies checkout conversion of the committed text.",
+  "excluded_scope": [
+    "OLP-0011 through OLP-0722 are outside this exact checkpoint.",
+    "No complete-corpus claim.",
+    "No untranslated English reader fallback."
+  ]
+}

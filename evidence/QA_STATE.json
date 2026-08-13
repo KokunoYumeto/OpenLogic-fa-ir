@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "release": "OLP-0010-20260813",
+  "language": "fa-IR",
+  "source_units": 10,
+  "closure_units": 722,
+  "outside_checkpoint_units": 712,
+  "accepted_translation_branch": "codex/openlogic-fa-ir",
+  "accepted_translation_content_commit": "f9494a5123d7c2802859b700067af1d519f4bf26",
+  "source_hash_check": "PASS_10_OF_10_CANONICAL_GIT_BLOBS_AND_ACCEPTED_CRLF_MATERIALIZATIONS",
+  "target_hash_check": "PASS_10_OF_10",
+  "formal_static_replay": "PASS_10_OF_10",
+  "semantic_ai_replay": "PASS_10_OF_10",
+  "independent_release_replay": "PASS",
+  "build": {
+    "engine": "LuaHBTeX 1.25.7 / MiKTeX 26.5",
+    "deterministic_source_date_epoch": 1783874174,
+    "serial_passes": 6,
+    "cumulative_driver_path": "locale/fa-IR/open-logic-through-olp0010-fa-IR.tex",
+    "cumulative_driver_bytes": 6103,
+    "cumulative_driver_sha256": "0A74FF0126F958B888BB7C928F8954D3249D5E368353E4FE840AF8F970533A89",
+    "pages": 13,
+    "bytes": 257248,
+    "pdf_sha256": "6CF8F82A0C05775C9C4852C3C8D3D09D1B5E08DAEB6E6942E75C3487F0C2229D",
+    "fatal_or_missing_glyphs": 0
+  },
+  "publication_build_replay": {
+    "status": "PASS",
+    "workbench_pdf_sha256": "5A27399381186EBC41A2E8CE163A915695FC8BE895B8E6E5BB3297C841475330",
+    "publication_pdf_sha256": "6CF8F82A0C05775C9C4852C3C8D3D09D1B5E08DAEB6E6942E75C3487F0C2229D",
+    "page_render_parity": "EXACT_ALL_13_AT_180_DPI",
+    "poppler_layout_sha256": "14D2BC499F0D5150E1E77A15B470DF60AD6066E443B82FACB347333A8111DCF2",
+    "difference_class": "PDF_TRAILER_ID_ONLY_FROM_BUILD_PATH"
+  },
+  "visual_qa": "PASS_ALL_13_PAGES_AFTER_VISIBLE_COUNTER_ORDER_CORRECTION",
+  "links": {
+    "status": "PASS",
+    "invalid_internal_destinations": 0,
+    "internal_goto_annotations": 14,
+    "external_uri_annotations": 6
+  },
+  "pdf_lang": "fa-IR",
+  "tagged_pdf": false,
+  "accessibility_certified": false,
+  "text_extraction": {
+    "accepted_target_file_zwnj_count": 389,
+    "poppler_zwnj_count": 0,
+    "pypdf_zwnj_count": 0,
+    "replacement_characters": 0,
+    "presentation_forms": 0,
+    "caveat": "PDF extraction drops source ZWNJs, is not NFC, may reorder RTL runs and visible counter components, and incompletely maps legacy Type 1 mathematical operators. Editable TeX and visual PDF inspection are authoritative."
+  },
+  "counter_state": {
+    "visual_order": "PASS_AFTER_CORRECTION_AND_CLEAN_REBUILD",
+    "extraction_order_authoritative": false
+  },
+  "human_native_review": "none",
+  "complete_corpus_claim": false,
+  "release_closed": true,
+  "closure_reason": "Accepted 10-unit checkpoint closed by exact source and target hashes, direct and independent model/agent semantic and structural replay, deterministic build, link audit, extraction audit, complete-page rendering and visual inspection, with unresolved limits disclosed."
+}

@@ -1,0 +1,175 @@
+% Part: sets-functions-relations
+% Chapter: sets
+% Section: unions-and-intersections
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[fa-IR]{sfr}{set}{uni}
+\olsection{اجتماع‌ها و اشتراک‌ها}
+
+\begin{explain}
+در \olref[sfr][set][bas]{sec}، تعریف مجموعه‌ها به روش تجرید، یعنی
+تعریف‌هایی به‌صورت $\Setabs{x}{\phi(x)}$، را معرفی کردیم. در این روش
+ویژگی~$\phi$ را به کار می‌بریم و این ویژگی می‌تواند به مجموعه‌هایی که
+پیش‌تر تعریف کرده‌ایم اشاره کند. بنابراین، برای نمونه، اگر $A$ و~$B$
+مجموعه باشند، مجموعهٔ $\Setabs{x}{x \in A \lor x \in B}$ از همهٔ
+اشیایی تشکیل شده است که در شمار !!{element}s $A$ یا~$B$ هستند؛ یعنی
+مجموعه‌ای است که !!{element}s $A$ و~$B$ را با هم گرد می‌آورد.
+می‌توان این وضعیت را مانند \olref{fig:union} مجسم کرد؛ در آنجا ناحیهٔ
+برجسته، !!{element}s دو مجموعهٔ $A$ و~$B$ را در کنار هم نشان می‌دهد.
+
+\begin{figure}
+  \olasset{assets/diagrams/union.tikz}
+  \caption{اجتماع $A \cup B$ دو مجموعه، مجموعهٔ !!{element}s
+   $A$ همراه با اعضای~$B$ است.}
+  \ollabel{fig:union}
+\end{figure}
+
+این عمل روی مجموعه‌ها---یعنی باهم‌ترکیب‌کردن آنها---بسیار سودمند و
+پرکاربرد است؛ ازاین‌رو نام و نمادی صوری به آن می‌دهیم.
+\end{explain}
+
+\begin{defn}[اجتماع]
+\emph{اجتماع} دو مجموعهٔ $A$ و $B$ که آن را $A \cup B$ می‌نویسیم،
+مجموعهٔ همهٔ اشیایی است که در شمار !!{element}s $A$ یا $B$ یا هر دو هستند.
+\[
+A \cup B = \Setabs{x}{x \in A \lor x \in B}
+\]
+\end{defn}
+
+\begin{ex}
+ازآنجاکه تعداد تکرار !!{element}s اهمیتی ندارد، اجتماع دو مجموعه که
+!!a{element} مشترک دارند، آن !!{element} را تنها یک بار در بر می‌گیرد؛
+برای نمونه، $\{ a, b, c\} \cup \{ a, 0, 1\} = \{a, b, c, 0, 1\}$.
+
+اجتماع یک مجموعه با یکی از زیرمجموعه‌هایش همان مجموعهٔ بزرگ‌تر است:
+$\{a, b, c \} \cup \{a \} = \{a, b, c\}$.
+
+اجتماع یک مجموعه با مجموعهٔ تهی همان مجموعه است: $\{a,
+b, c \} \cup \emptyset = \{a, b, c \}$.
+\end{ex}
+
+\begin{prob}
+ثابت کنید اگر $A \subseteq B$، آنگاه $A \cup B = B$.
+\end{prob}
+
+\begin{explain}
+می‌توانیم عملی ``دوگان'' با اجتماع را نیز در نظر بگیریم. این عمل
+مجموعهٔ همهٔ !!{element}s را تشکیل می‌دهد که هم در شمار !!{element}s~$A$
+و هم در شمار !!{element}s~$B$ هستند. این عمل \emph{اشتراک} نام دارد و می‌توان
+آن را مانند \olref{fig:intersection} نمایش داد.
+\begin{figure}
+  \olasset{assets/diagrams/intersection.tikz}
+  \caption{اشتراک $A \cap B$ دو مجموعه، مجموعهٔ
+    !!{element}s مشترک آنهاست.}
+  \ollabel{fig:intersection}
+\end{figure}
+\end{explain}
+
+\begin{defn}[اشتراک]
+\emph{اشتراک} دو مجموعهٔ $A$ و $B$ که آن را $A \cap B$ می‌نویسیم،
+مجموعهٔ همهٔ اشیایی است که در شمار !!{element}s هر دو مجموعهٔ $A$ و~$B$ هستند.
+\[
+A \cap B = \Setabs{x}{x \in A \land x \in B}
+\]
+دو مجموعه را \emph{جدا از هم} می‌نامیم هرگاه اشتراکشان تهی باشد؛ یعنی
+هیچ !!{element}s مشترکی نداشته باشند.
+\end{defn}
+
+\begin{ex}
+اگر دو مجموعه هیچ !!{element}s مشترکی نداشته باشند، اشتراکشان تهی است:
+$\{ a, b, c\} \cap \{ 0, 1\} = \emptyset$.
+
+اگر دو مجموعه !!{element}s مشترک داشته باشند، اشتراکشان مجموعهٔ همهٔ
+آن اعضاست: $\{a, b, c \} \cap \{a, b, d \} = \{a, b\}$.
+
+اشتراک یک مجموعه با یکی از زیرمجموعه‌هایش همان مجموعهٔ کوچک‌تر است:
+$\{a, b, c\} \cap \{a, b\} = \{a, b\}$.
+
+اشتراک هر مجموعه با مجموعهٔ تهی، تهی است: $\{a, b, c \}
+\cap \emptyset = \emptyset$.
+\end{ex}
+
+\begin{prob}
+به‌دقت ثابت کنید اگر $A \subseteq B$، آنگاه $A \cap B = A$.
+\end{prob}
+
+\begin{explain}
+می‌توانیم اجتماع یا اشتراک بیش از دو مجموعه را نیز تشکیل دهیم. راهی
+ظریف برای بررسی حالت کلی چنین است: فرض کنید همهٔ مجموعه‌هایی را که
+می‌خواهید اجتماع (یا اشتراک) آنها را تشکیل دهید، در یک مجموعه گرد
+آورید. سپس می‌توانیم اجتماع همهٔ مجموعه‌های نخستین را مجموعهٔ همهٔ
+اشیایی تعریف کنیم که دست‌کم به یک !!{element} از آن مجموعه تعلق دارند،
+و اشتراک را مجموعهٔ همهٔ اشیایی که به هر !!{element} آن مجموعه تعلق دارند.
+\end{explain}
+
+\begin{defn}
+اگر $A$ مجموعه‌ای از مجموعه‌ها باشد، آنگاه $\bigcup A$ مجموعهٔ همهٔ
+اشیایی است که در شمار !!{element}sِ !!{element}s~$A$ هستند:
+\begin{align*}
+\bigcup A & = \Setabs{x}{x \text{ متعلق به !!a{element}ی از } A},
+\text{ یعنی}\\
+& = \Setabs{x}{\text{یک } B \in A
+  \text{ وجود دارد به‌طوری‌که } x \in B}
+\end{align*}
+\end{defn}
+
+\begin{defn}
+اگر $A$ مجموعه‌ای از مجموعه‌ها باشد، آنگاه $\bigcap A$ مجموعهٔ اشیایی
+است که همهٔ اعضای~$A$ در آنها مشترک‌اند:
+\begin{align*}
+\bigcap A & = \Setabs{x}{x \text{ متعلق به هر !!{element} از } A},
+\text{ یعنی}\\
+ & = \Setabs{x}{\text{برای هر } B \in A, x \in B}
+\end{align*}
+\end{defn}
+
+\begin{ex}
+فرض کنید $A = \{ \{ a, b \}, \{ a, d, e \}, \{ a, d \} \}$.
+آنگاه $\bigcup A = \{ a, b, d, e \}$ و $\bigcap A = \{ a \}$.
+\end{ex}
+\begin{prob}
+	نشان دهید اگر $A$ یک مجموعه و $A \in B$ باشد، آنگاه $A \subseteq \bigcup B$.
+\end{prob}
+
+می‌توان همین کار را برای دنباله‌ای از مجموعه‌ها مانند $A_1$، $A_2$، \dots
+نیز انجام داد:
+\begin{align*}
+\bigcup_i A_i & = \Setabs{x}{x \text{ متعلق به یکی از مجموعه‌های } A_i}\\
+\bigcap_i A_i & = \Setabs{x}{x \text{ متعلق به همهٔ مجموعه‌های } A_i}.
+\end{align*}
+
+هنگامی که یک \emph{مجموعهٔ اندیس} مانند $I$ داریم و مجموعه‌های مورد
+نظر را با $A_i$ نشان می‌دهیم، به‌گونه‌ای که برای هر $i \in I$ یک
+مجموعه در نظر گرفته شده است، می‌توانیم از صورت‌های اختصاری زیر نیز
+استفاده کنیم:
+\begin{align*}
+	\bigcup_{i \in I} A_i & = \bigcup \Setabs{A_i }{i \in I}\\
+	\bigcap_{i \in I} A_i & = \bigcap\Setabs{A_i}{i \in I}
+\end{align*}
+
+سرانجام، ممکن است بخواهیم مجموعهٔ همهٔ !!{element}s~$A$ را در نظر
+بگیریم که در~$B$ نیستند. می‌توان آن را مانند \olref{difference} نمایش داد.
+
+\begin{figure}
+  \olasset{assets/diagrams/difference.tikz}
+  \caption{تفاضل $A \setminus B$ دو مجموعه، مجموعهٔ
+    !!{element}s~$A$ است که !!{element}s~$B$ نیستند.}
+  \ollabel{difference}
+\end{figure}
+
+\begin{defn}[تفاضل]
+\emph{تفاضل مجموعه‌ای}~$A \setminus B$ مجموعهٔ همهٔ !!{element}s
+$A$ است که در شمار !!{element}s~$B$ نیستند؛ یعنی
+\[
+A\setminus B = \Setabs{x}{x\in A \text{ و } x \notin B}.
+\]
+\end{defn}
+
+\begin{prob}
+	ثابت کنید اگر $A \subsetneq B$، آنگاه $B \setminus A \neq \emptyset$.
+\end{prob}
+
+\end{document}

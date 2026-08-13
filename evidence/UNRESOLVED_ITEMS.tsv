@@ -1,0 +1,8 @@
+item_id	class	status	detail
+SCOPE-712	coverage	OPEN	OLP-0011 through OLP-0722 remain outside this exact checkpoint; no complete-corpus claim is made.
+PDF-TAGGING	accessibility	OPEN	The PDF has /Lang=fa-IR but no StructTreeRoot or tagged reading order; no PDF/UA or accessibility-certification claim is made.
+ZWNJ-EXTRACTION	accessibility	OPEN	The ten accepted Persian TeX files contain 389 ZWNJs; Poppler and pypdf extraction each return zero. Editable TeX is authoritative for half-spaces.
+MATH-TOUNICODE	accessibility	OPEN	Embedded legacy Type 1 mathematical fonts do not provide complete Unicode extraction; visible negated-membership operators may serialize as slash plus membership.
+RTL-COUNTERS	extraction	OPEN_METADATA	Chapter-relative counters were corrected and passed visual QA, but RTL text extraction may reorder their components; extracted counter strings are not authoritative for visual order.
+HUMAN-REVIEW	review	OPEN_METADATA	No Persian-speaking human/native review, community certification, or upstream endorsement is claimed; independent model/agent replay closed the declared gates.
+GLOBAL-HUB	metadata	OPEN	No genuine global Open Logic multilingual collection concept DOI exists at this checkpoint; no IsPartOf relation is invented.

@@ -1,0 +1,61 @@
+% !TeX program = lualatex
+% راه‌انداز مستقل OLP-0001 برای فارسی ایران؛ از همین پوشه اجرا شود.
+\documentclass[openany]{memoir}
+
+\newcommand*{\olpath}{../..}
+\newcommand*{\ollangid}{fa-IR}
+
+\usepackage{iftex}
+\ifLuaTeX\else
+  \PackageError{about-fa-ir}{این راه‌انداز به LuaLaTeX نیاز دارد}
+    {فرمان lualatex about-fa-ir.tex را در locale/fa-IR اجرا کنید.}
+\fi
+
+\usepackage{fontspec}
+\usepackage[
+  english,
+  bidi=basic,
+  layout=sectioning counters lists contents footnotes captions tabular
+]{babel}
+\babelprovide[import=fa,main,onchar=ids fonts]{persian}
+
+% قلم‌های لاتینِ همراه توزیع‌های متعارف تک.
+\babelfont{rm}[Ligatures=TeX]{TeX Gyre Pagella}
+\babelfont{sf}[Ligatures=TeX]{TeX Gyre Heros}
+\babelfont{tt}{Latin Modern Mono}
+
+% قلم دقیق و مجوزش در کنترل مشترک این برنامه پین شده‌اند.
+\babelfont[persian]{rm}[
+  Path=../../../00_control/fonts/scheherazade-2.100/,
+  UprightFont=Scheherazade-Regular.ttf,
+  BoldFont=Scheherazade-Bold.ttf,
+  AutoFakeSlant=0.15,
+  Renderer=HarfBuzz,
+  Scale=1.08
+]{Scheherazade-Regular.ttf}
+\babelfont[persian]{sf}[
+  Path=../../../00_control/fonts/scheherazade-2.100/,
+  UprightFont=Scheherazade-Regular.ttf,
+  BoldFont=Scheherazade-Bold.ttf,
+  AutoFakeSlant=0.15,
+  Renderer=HarfBuzz,
+  Scale=1.08
+]{Scheherazade-Regular.ttf}
+
+% فقط شناسهٔ محلی را پیش از OLP تعریف کرده‌ایم. نام زبان را عمداً
+% به cleveref نمی‌دهیم، زیرا آن بسته گزینهٔ persian ندارد؛ نام‌های
+% ارجاع فارسی در فایل بومی‌سازی به‌صراحت تعریف شده‌اند.
+\input{\olpath/sty/open-logic.sty}
+\input{\olpath/locale/\ollangid/open-logic-locale.sty}
+
+\hypersetup{
+  unicode=true,
+  pdftitle={دربارهٔ پروژهٔ منطق باز},
+  pdfauthor={پروژهٔ منطق باز}
+}
+\pagestyle{plain}
+
+\begin{document}
+\selectlanguage{persian}
+\input{content/open-logic-about.tex}
+\end{document}

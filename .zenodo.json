@@ -1,0 +1,39 @@
+{
+  "creators": [
+    {"name": "Open Logic Project"}
+  ],
+  "contributors": [
+    {"name": "OpenAI 5.6 Sol, Ultra mode", "type": "Other"}
+  ],
+  "title": "متن منطق باز — ویرایش تجمیعی فارسی ایران / The Open Logic Text — Iranian Persian Cumulative Edition (OLP-0010, 10/722)",
+  "version": "OLP-0010-20260813",
+  "publication_date": "2026-08-13",
+  "access_right": "open",
+  "description": "<p><strong>خوانشگر / Reader:</strong> <a href=\"https://github.com/KokunoYumeto/OpenLogic-fa-ir/blob/main/reader/00_OPENLOGIC_fa-IR_CUMULATIVE_LINKED_READER_OLP-0010.pdf\">خوانشگر تجمیعی فارسی ایران را باز کنید</a>.</p><p>این انتشار مستقل فارسی ایران فقط واحدهای OLP-0001 تا OLP-0010 را در بر می‌گیرد: ۱۰ واحد از ۷۲۲ واحد محتوایی منجمد. این یک ایست بازرسی تجمیعی و جزئی است و ادعای ترجمهٔ کامل پیکره را ندارد. دامنهٔ حاضر شامل معرفی پروژه، ساختار آغازین، و فصل «مجموعه‌ها» با شش واحد محتوایی آن است؛ ۷۱۲ واحد OLP-0011 تا OLP-0722 بیرون از این نسخه‌اند. مرجع منبع، تعهد 9620cc73f9c8e0ad003c514a5d3748f29611c4c0 و درخت f67757bb9305b173634082ab4cefd5601a707a34 پروژهٔ منطق باز است.</p><p>Exact source and target hashes pass 10/10; direct and independent model/agent checks pass; and the deterministic 13-page reader was built, link-audited, extracted, rendered, and inspected. Visible chapter-relative counters were corrected before the frozen build, but RTL extraction can reorder counter components. The accepted TeX files preserve 389 ZWNJs while the audited PDF extractors return zero. The PDF is untagged, is not accessibility certified, and has no Persian-speaking human or native-community review claim. Editable TeX is authoritative for text extraction.</p><p>DataCite intent: this Iranian Persian concept DOI IsTranslationOf the frozen Open Logic source. Zenodo does not currently expose that relation value, so it is preserved in evidence/DATACITE_RELATIONS.json. No genuine global Open Logic multilingual collection DOI exists at this checkpoint, so no IsPartOf relation is invented.</p>",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/OpenLogicProject/OpenLogic/commit/9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+      "relation": "isDerivedFrom",
+      "resource_type": "software"
+    },
+    {
+      "identifier": "https://github.com/KokunoYumeto/OpenLogic-fa-ir",
+      "relation": "isSupplementTo",
+      "resource_type": "software"
+    }
+  ],
+  "keywords": [
+    "Open Logic Project",
+    "پروژهٔ منطق باز",
+    "Iranian Persian",
+    "فارسی ایران",
+    "Persian",
+    "translation",
+    "mathematical logic",
+    "open textbook"
+  ],
+  "license": "cc-by-4.0",
+  "upload_type": "publication",
+  "publication_type": "book",
+  "language": "fas"
+}

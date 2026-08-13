@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If you use this Iranian Persian cumulative checkpoint, cite the exact Zenodo version DOI in preferred-citation."
+title: "Source and build repository for the Open Logic Project Iranian Persian cumulative edition"
+type: software
+authors:
+  - name: "Open Logic Project"
+repository-code: "https://github.com/KokunoYumeto/OpenLogic-fa-ir"
+version: "OLP-0010-20260813"
+date-released: "2026-08-13"
+license: CC-BY-4.0
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.21921853"
+    description: "Exact immutable OLP-0010 checkpoint"
+  - type: doi
+    value: "10.5281/zenodo.21921852"
+    description: "Stable Iranian Persian edition concept"
+preferred-citation:
+  type: book
+  title: "متن منطق باز — ویرایش تجمیعی فارسی ایران / The Open Logic Text — Iranian Persian Cumulative Edition (OLP-0010, 10/722)"
+  authors:
+    - name: "Open Logic Project"
+  translators:
+    - name: "OpenAI 5.6 Sol, Ultra mode"
+  languages:
+    - fas
+  doi: "10.5281/zenodo.21921853"
+  version: "OLP-0010-20260813"
+  date-released: "2026-08-13"
+  edition: "Iranian Persian cumulative checkpoint through OLP-0010"
+  year: 2026
+  pages: 13
+  license: CC-BY-4.0
+  url: "https://doi.org/10.5281/zenodo.21921853"
+  abstract: "Independent Iranian Persian cumulative translation checkpoint containing OLP-0001 through OLP-0010: 10 of 722 frozen Open Logic content units. This is not a complete-corpus, native-review, or accessibility-certification claim."

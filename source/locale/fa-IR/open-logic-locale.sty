@@ -1,0 +1,102 @@
+% بومی‌سازی فارسی ایران برای پروژهٔ منطق باز
+
+% نام‌های نمایشی؛ کلیدهای داخلی پروژه بدون تغییر مانده‌اند.
+
+\setlocalecaption{persian}{photocredits}{اعتبار عکس‌ها}
+\setlocalecaption{persian}{history}{ملاحظات تاریخی}
+\setlocalecaption{persian}{reading}{برای مطالعهٔ بیشتر}
+\setlocalecaption{persian}{appendix}{پیوست}
+\setlocalecaption{persian}{appendices}{پیوست‌ها}
+
+\setlocalecaption{persian}{theorem}{قضیه}
+\setlocalecaption{persian}{example}{مثال}
+\setlocalecaption{persian}{definition}{تعریف}
+\setlocalecaption{persian}{lemma}{لم}
+\setlocalecaption{persian}{proposition}{گزاره}
+\setlocalecaption{persian}{corollary}{نتیجه}
+\setlocalecaption{persian}{problem}{مسئله}
+\setlocalecaption{persian}{problems}{مسئله‌ها}
+\setlocalecaption{persian}{remark}{ملاحظه}
+\setlocalecaption{persian}{axiom}{اصل موضوع}
+\setlocalecaption{persian}{note}{یادداشت}
+\setlocalecaption{persian}{case}{حالت}
+\setlocalecaption{persian}{convention}{قرارداد}
+
+\setlocalecaption{persian}{OLP}{پروژهٔ منطق باز}
+\setlocalecaption{persian}{OLT}{متن منطق باز}
+\setlocalecaption{persian}{OLTlink}{https://github.com/OpenLogicProject/OpenLogic}
+\setlocalecaption{persian}{license}{مجوز کریتیو کامنز ـ ارجاع ۴٫۰ بین‌المللی}
+\setlocalecaption{persian}{instigator}{آغازگر}
+\setlocalecaption{persian}{editorialboard}{هیئت تحریریه}
+\setlocalecaption{persian}{contributors}{مشارکت‌کنندگان}
+
+% نام‌هایی که cleveref هنگام ارجاع می‌افزاید.
+\addto\extraspersian{%
+\crefname{section}{بخش}{بخش‌ها}%
+\Crefname{section}{بخش}{بخش‌ها}%
+\Crefname{page}{صفحه}{صفحه‌ها}%
+\Crefname{thm}{قضیه}{قضیه‌ها}%
+\Crefname{ex}{مثال}{مثال‌ها}%
+\Crefname{defn}{تعریف}{تعریف‌ها}%
+\Crefname{lem}{لم}{لم‌ها}%
+\Crefname{prop}{گزاره}{گزاره‌ها}%
+\Crefname{prob}{مسئله}{مسئله‌ها}%
+\Crefname{rem}{ملاحظه}{ملاحظات}%
+\Crefname{cor}{نتیجه}{نتیجه‌ها}%
+\Crefname{axiom}{اصل موضوع}{اصل‌های موضوع}%
+\Crefname{note}{یادداشت}{یادداشت‌ها}%
+\Crefname{case}{حالت}{حالت‌ها}%
+\Crefname{conv}{قرارداد}{قراردادها}%
+\Crefname{figure}{شکل}{شکل‌ها}%
+\Crefname{table}{جدول}{جدول‌ها}%
+}
+
+% متن‌های ثابت مجوز و شناسنامه.
+% متن رسمی مجوز: https://creativecommons.org/licenses/by/4.0/
+
+\renewcommand*{\ollicensetext}[3]
+  {\textit{#1}،
+  اثر #2،
+  با #3 منتشر شده است.}
+\renewcommand*{\olshortlicensetext}[1]
+  {\textit{\href{\OLTlinkname}{\olFaLTR{\jobname}}}
+  \ifgitinfo\space
+  اثر #1 /
+  \href{http://creativecommons.org/licenses/by/4.0/}{\olFaLTR{CC--BY}}.}
+\renewcommand*{\oluselicensetext}
+  {این اثر بر پایهٔ
+  \textit{\href{\OLTlinkname}{\OLTname}}
+  از
+  \href{http://openlogicproject.org/}{\OLPname}
+  تهیه شده است؛ اثر یادشده با
+  \href{http://creativecommons.org/licenses/by/4.0/}{\licensename}
+  به‌کار رفته است.}
+\renewcommand*{\olshortuselicensetext}[2]
+  {\textit{#1}، اثر #2، بر پایهٔ
+  \href{http://openlogicproject.org/}{\olFaLTR{OLP}} /
+  \href{http://creativecommons.org/licenses/by/4.0/}{\olFaLTR{CC--BY}}.}
+
+\renewcommand*{\olremixedby}
+  {بازترکیب‌شده به‌دست \OLPauthor}
+\renewcommand*{\olacknowledgements}
+  {پروژهٔ منطق باز مایل است از حمایت سخاوتمندانهٔ
+  \href{https://taylorinstitute.ucalgary.ca/}{مؤسسهٔ تیلور برای
+  آموزش و یادگیری} در دانشگاه کلگری و نیز برنامهٔ منابع آموزشی باز
+  آلبرتا (\olFaLTR{ABOER})، که با سرمایه‌گذاری دولت آلبرتا امکان‌پذیر
+  شده است، قدردانی کند.}
+\renewcommand*{\olillustrations}
+  {تصویرهای روی جلد را
+  \href{http://mattleadbeater.com}{متیو لیدبیتر} تهیه کرده است و این
+  تصویرها با
+  \href{https://creativecommons.org/licenses/by-nc/4.0/}{مجوز
+  کریتیو کامنز ـ ارجاع ـ غیرتجاری ۴٫۰ بین‌المللی}
+  به‌کار رفته‌اند.}
+\renewcommand*{\olcolophon}
+  {این اثر با قلم‌های \olFaLTR{Baskervald X} و
+  \olFaLTR{Nimbus Sans} و به‌کمک \LaTeX{} حروف‌چینی شده است.}
+\renewcommand*{\olbookrevision}
+  {این نسخه از \emph{\OLPbooktitle} بازبینی
+  \olFaLTR{\gitAbbrevHash{} (\gitAuthorDate)} است؛ محتوای آن بر پایهٔ
+  بازبینی \olFaLTR{\OLPrevision} از \emph{\OLTname} تولید شده است.
+  دریافت رایگان از:\\[.5ex]
+  \url{\OLPsourcelink}}

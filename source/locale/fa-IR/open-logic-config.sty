@@ -1,0 +1,13 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesFile{open-logic-config.sty}[2026/08/13 Persian (Iran) locale configuration]
+
+% نویسه‌های لاتینِ ضعیف از نظر جهت، مانند نشانی‌ها و شناسه‌ها، باید
+% در متن راست‌به‌چپ به‌صورت یک پارهٔ چپ‌به‌راست حروف‌چینی شوند.
+\providecommand*{\olFaLTR}[1]{%
+  \foreignlanguage{english}{\babelsublr{#1}}}
+
+% فارسی حرف تعریف نامعین ندارد؛ ازاین‌رو صورت‌های !!{element} و
+% !!a{element} هر دو بدون حرف تعریف حروف‌چینی می‌شوند.
+\settexttoken{element}{عضو}{اعضا}
+\definetoken{a}{element}{}
+\definetoken{A}{element}{}

@@ -1,0 +1,40 @@
+{
+  "schema_version": "DataCite-4.7-intent",
+  "family_mode": "EVOLVING_CORPUS",
+  "resource_scope": "The complete Iranian Persian edition of The Open Logic Text as maintained by the Open Logic Project",
+  "snapshot_coverage": "OLP-0001 through OLP-0010 inclusive; 10 of 722 frozen units",
+  "language": "fa-IR",
+  "language_concept_doi": "10.5281/zenodo.21921852",
+  "exact_version_doi": "10.5281/zenodo.21921853",
+  "original_or_source_identifier": "https://github.com/OpenLogicProject/OpenLogic/commit/9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "global_collection_concept_doi": null,
+  "relations": [
+    {"from": "language_concept", "relationType": "IsTranslationOf", "to": "original_or_source"},
+    {"from": "exact_version", "relationType": "IsVersionOf", "to": "language_concept"}
+  ],
+  "pending_relations": [
+    {
+      "from": "language_concept",
+      "relationType": "IsPartOf",
+      "to": "global_collection",
+      "reason": "No genuine global Open Logic multilingual collection concept DOI exists at this checkpoint."
+    }
+  ],
+  "reciprocals": [
+    {
+      "from": "original_or_source",
+      "relationType": "HasTranslation",
+      "to": "language_concept",
+      "status": "intent; upstream metadata is not controlled here"
+    },
+    {"from": "language_concept", "relationType": "HasVersion", "to": "exact_version"}
+  ],
+  "component_source_mapping": "evidence/COMPONENT_COVERAGE.tsv",
+  "component_dois_required": false,
+  "complete_corpus_claim": false,
+  "zenodo_compatibility_2026_08_13": {
+    "translation_relation_values_exposed": false,
+    "translator_contributor_role_exposed": false,
+    "translation_relations_preserved_in_description_and_evidence": true
+  }
+}
