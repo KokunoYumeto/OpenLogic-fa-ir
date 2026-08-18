@@ -1,35 +1,46 @@
 cff-version: 1.2.0
-message: "If you use this Iranian Persian cumulative checkpoint, cite the exact Zenodo version DOI in preferred-citation."
-title: "Source and build repository for the Open Logic Project Iranian Persian cumulative edition"
+message: "لطفاً DOI دقیق نسخهٔ فارسی ایران OLP-0722 را که در ادامه آمده است استناد کنید. / Please cite the exact Iranian Persian OLP-0722 version DOI below."
+title: "مخزن منبع و ساخت نسخهٔ کامل فارسی ایران از متن منطق باز / Source and build repository for the complete Iranian Persian edition of The Open Logic Text"
 type: software
 authors:
   - name: "Open Logic Project"
+abstract: >
+  نسخهٔ مستقل و کامل فارسی ایران برای منبع تثبیت‌شده: خوانشگر پیونددارِ
+  اصلی با 642 واحد در 839 صفحه و ضمیمهٔ فنی مستقل با 80 واحد دیگر در
+  127 صفحه. مشارکت‌کننده با نقش «سایر»: AI typesetting & translation.
+  English descriptor: independent complete Iranian Persian translation
+  closure; untagged PDFs, incomplete mathematical/ZWNJ/RTL extraction, and
+  no human/native review or accessibility certification.
 repository-code: "https://github.com/KokunoYumeto/OpenLogic-fa-ir"
-version: "OLP-0010-20260813"
-date-released: "2026-08-13"
-license: CC-BY-4.0
+version: "OLP-0722-20260818"
+date-released: "2026-08-18"
+doi: "10.5281/zenodo.21987687"
 identifiers:
   - type: doi
-    value: "10.5281/zenodo.21921853"
-    description: "Exact immutable OLP-0010 checkpoint"
+    value: "10.5281/zenodo.21987687"
+    description: "DOI دقیق و تغییرناپذیر نسخهٔ OLP-0722 / Exact immutable OLP-0722 version"
   - type: doi
     value: "10.5281/zenodo.21921852"
-    description: "Stable Iranian Persian edition concept"
+    description: "DOI مفهومی پایدار نسخهٔ فارسی ایران / Stable Iranian Persian edition concept"
+license: CC-BY-4.0
 preferred-citation:
   type: book
-  title: "متن منطق باز — ویرایش تجمیعی فارسی ایران / The Open Logic Text — Iranian Persian Cumulative Edition (OLP-0010, 10/722)"
+  title: "متن منطق باز — نسخهٔ کامل فارسی ایران برای منبع تثبیت‌شده / The Open Logic Text — Complete Iranian Persian Edition of the Frozen Source (OLP-0722)"
   authors:
     - name: "Open Logic Project"
-  translators:
-    - name: "OpenAI 5.6 Sol, Ultra mode"
   languages:
     - fas
-  doi: "10.5281/zenodo.21921853"
-  version: "OLP-0010-20260813"
-  date-released: "2026-08-13"
-  edition: "Iranian Persian cumulative checkpoint through OLP-0010"
-  year: 2026
-  pages: 13
+  doi: "10.5281/zenodo.21987687"
   license: CC-BY-4.0
-  url: "https://doi.org/10.5281/zenodo.21921853"
-  abstract: "Independent Iranian Persian cumulative translation checkpoint containing OLP-0001 through OLP-0010: 10 of 722 frozen Open Logic content units. This is not a complete-corpus, native-review, or accessibility-certification claim."
+  version: "OLP-0722-20260818"
+  date-released: "2026-08-18"
+  edition: "بسته‌شدن کامل: خوانشگر اصلی 642 واحدی و ضمیمهٔ فنی 80 واحدی / Complete closure: 642-unit canonical reader plus 80-unit technical supplement"
+  year: 2026
+  url: "https://doi.org/10.5281/zenodo.21987687"
+  abstract: >
+    ترجمهٔ مستقل و کامل فارسی ایران برای همهٔ 722 واحد بسته‌شدن. دو PDF
+    برچسب‌گذاری ساختاری ندارند؛ استخراج ریاضیات، نیم‌فاصله و ترتیب راست‌به‌چپ
+    کاملاً مرجع نیست؛ و هیچ بازبینی انسانی/بومی فارسی یا گواهی دسترس‌پذیری
+    ادعا نمی‌شود. English descriptor: complete independent Iranian Persian
+    edition of the frozen source; editable TeX is authoritative for extraction
+    limitations.

@@ -1,74 +1,70 @@
-# متن منطق باز — ویرایش تجمیعی فارسی ایران
+# متن منطق باز — نسخهٔ کامل فارسی ایران برای منبع تثبیت‌شده
 
-[خوانشگر فارسی ایران در ایست OLP-0010 (۱۰ واحد از ۷۲۲ واحد)](reader/00_OPENLOGIC_fa-IR_CUMULATIVE_LINKED_READER_OLP-0010.pdf)
+این نسخهٔ مستقل و کامل فارسی ایران از متن پروژهٔ منطق باز در انتشار
+`OLP-0722-20260818` است. بسته‌شدن ترجمه همهٔ 722 واحد محتوایی
+منبع تثبیت‌شده را پوشش می‌دهد.
 
-- DOI مفهومی پایدار این ویرایش: [10.5281/zenodo.21921852](https://doi.org/10.5281/zenodo.21921852)
-- DOI دقیق و تغییرناپذیر این نسخه: [10.5281/zenodo.21921853](https://doi.org/10.5281/zenodo.21921853)
-- هویت انتشار: پیکرهٔ درحال‌گسترش ترجمهٔ فارسی ایران از پروژهٔ منطق باز
-- دامنهٔ دقیق این ایست: `OLP-0001` تا `OLP-0010`، یعنی ۱۰/۷۲۲ واحد محتوایی منجمد
-- بیرون از این ایست: `OLP-0011` تا `OLP-0722`، یعنی ۷۱۲ واحد
-- زبان: فارسی ایران (`fa-IR`؛ شناسهٔ ISO مورد استفاده در Zenodo و CFF: `fas`)
-- مخزن انتشار: [KokunoYumeto/OpenLogic-fa-ir](https://github.com/KokunoYumeto/OpenLogic-fa-ir)
-- نسخه: `OLP-0010-20260813`
+## هویت انتشار
 
-مرجع منبع، تعهد رسمی پروژهٔ منطق باز
-`9620cc73f9c8e0ad003c514a5d3748f29611c4c0` با درخت Git
-`f67757bb9305b173634082ab4cefd5601a707a34` است. این ایست معرفی پروژه،
-ساختار آغازین، و فصل «مجموعه‌ها» را با شش واحد محتوایی آن در بر می‌گیرد.
-این عبارت فقط کامل‌بودن فصلِ داخل دامنهٔ ده‌واحدی را بیان می‌کند؛ انتشار
-حاضر ترجمهٔ کامل پیکره نیست.
+- DOI مفهومی پایدار فارسی ایران: [10.5281/zenodo.21921852](https://doi.org/10.5281/zenodo.21921852)
+- DOI دقیق این نسخه: [10.5281/zenodo.21987687](https://doi.org/10.5281/zenodo.21987687)
+- انتشار GitHub: [fa-ir-olp-0722-20260818](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/tag/fa-ir-olp-0722-20260818)
+- نسخه: `OLP-0722-20260818`
+- زبان: فارسی معیار دانشگاهی ایران (`fa-IR`؛ کد Zenodo: `fas`)
+- تنها نویسنده و پدیدآور در فرادادهٔ استناد: `Open Logic Project`
+- تنها مشارکت‌کننده: `AI typesetting & translation` با نقش Zenodo «Other»، بدون شناسه یا وابستگی سازمانی
+- مرجع منبع: تعهد `9620cc73f9c8e0ad003c514a5d3748f29611c4c0`
+- درخت منبع: `f67757bb9305b173634082ab4cefd5601a707a34`
+- مجوز: CC BY 4.0، مگر آنکه یک مؤلفه به‌صراحت خلاف آن را اعلام کند
 
-## اثر و شواهد
+## دامنهٔ بسته‌شدن
 
-- خوانشگر منجمد ۱۳ صفحه و ۲۵۷٬۲۴۸ بایت دارد؛ SHA-256 آن
-  `6CF8F82A0C05775C9C4852C3C8D3D09D1B5E08DAEB6E6942E75C3487F0C2229D` است.
-- بازسازی مستقل از درخت انتشار، همان ۱۳ تصویر صفحه و همان متن Poppler
-  را به‌صورت بایت‌به‌بایت بازتولید کرد. تفاوت هش با شاهد کارگاه فقط از
-  شناسهٔ تریلر PDF وابسته به مسیر ساخت ناشی می‌شود؛ محتوای دیداری، فراداده،
-  پیوندها و متن استخراج‌شده یکسان‌اند.
-- `evidence/COMPONENT_COVERAGE.tsv` هر ده واحد پذیرفته‌شده را به مسیر،
-  هش blob رسمی LF، هش صورت‌بندی CRLF پذیرفته‌شده، و هش ترجمه پیوند می‌دهد.
-- `evidence/SOURCE_AUTHORITY.json` تعهد، درخت، مجوز، و قاعدهٔ دامنه را
-  منجمد می‌کند.
-- `evidence/QA_STATE.json` ساخت، بازپخش، پیوندها، بازرسی تصویری، و حدود
-  ادعا را ثبت می‌کند.
-- `evidence/UNRESOLVED_ITEMS.tsv` ۷۱۲ واحد بیرون از ایست و محدودیت‌های
-  استخراج و دسترس‌پذیری را صریح نگه می‌دارد.
-- `evidence/DATACITE_RELATIONS.json` گراف رابطهٔ موردنظر DataCite را ثبت
-  می‌کند.
+- خوانشگر پیونددارِ اصلی: 642 واحد در مسیر کتاب، در 839 صفحه.
+- ضمیمهٔ فنی و مستقل بسته‌شدن: 80 واحد نگه‌داشته‌شده بیرون از مسیر خوانشگر، در 127 صفحه.
+- حساب کامل: 642 + 80 = 722 واحد.
 
-ده فایل TeX پذیرفته‌شده در مجموع ۳۸۹ نویسهٔ نیم‌فاصله (ZWNJ) دارند، اما
-هر دو استخراج‌گر حسابرسی‌شدهٔ PDF تعداد صفر برگردانده‌اند. شمارنده‌های
-وابسته به فصل پیش از ساخت منجمد از نظر دیداری اصلاح و صفحه‌به‌صفحه
-بازبینی شدند؛ با این حال استخراج متن راست‌به‌چپ می‌تواند ترتیب اجزای
-شمارنده را جابه‌جا کند. بنابراین TeX و PDF دیداری، نه متن استخراج‌شده،
-مرجع این دو ویژگی‌اند.
+ضمیمه به‌عنوان شاهد فنیِ بسته‌شدن ترجمه و ساخت منتشر می‌شود، اما بخشی از
+ترتیب اصلی خوانش کتاب نیست و ساختار خوانشگر را تغییر نمی‌دهد.
 
-این PDF برچسب‌گذاری ساختاری ندارد و گواهی PDF/UA یا ادعای دسترس‌پذیری
-ندارد. ترجمه با بازپخش معنایی، ساختاری، ساخت و دیداری مستقلِ مدل/عامل
-بسته شده است؛ هیچ بازبینی انسانیِ فارسی‌زبان، تأیید جامعهٔ زبانی، یا
-تأیید رسمی پروژهٔ منطق باز ادعا نمی‌شود.
+## دارایی‌های انتشار
 
-تا این ایست، DOI واقعی برای یک مجموعهٔ جهانی چندزبانهٔ پروژهٔ منطق باز
-وجود ندارد؛ ازاین‌رو رابطهٔ `IsPartOf` ساخته نشده است. رابطهٔ
-`IsTranslationOf` با منبع منجمد در شواهد DataCite حفظ شده است.
+| شماره | دارایی | کارکرد |
+|---:|---|---|
+| 00 | `00_OPENLOGIC_fa-IR_COMPLETE_LINKED_READER_OLP-0722.pdf` | خوانشگر کامل و پیونددار فارسی ایران |
+| 01 | `01_OPENLOGIC_fa-IR_CLOSURE_SUPPLEMENT_80_UNITS_OLP-0722.pdf` | ضمیمهٔ فنی 80 واحد نگه‌داشته‌شده |
+| 02 | `02_OPENLOGIC_fa-IR_EDITABLE_SOURCES_OLP-0722.zip` | منابع TeX قابل ویرایش و ورودی‌های دقیق ساخت |
+| 03 | `03_OPENLOGIC_fa-IR_EVIDENCE_AND_PROVENANCE_OLP-0722.zip` | شواهد منبع، ساخت، نمایش، استخراج و منشأ |
+| 04 | `04_OPENLOGIC_fa-IR_SHA256_MANIFEST_OLP-0722.txt` | هش‌های SHA-256 دارایی‌های 00 تا 03 |
 
-## English identification
+هیچ نسخه‌ای در یک پوشهٔ ساختِ کاری، دارایی منتشرشده نیست. بایت‌ها و هش‌های
+نهایی فقط پس از موفقیت ساخت نهایی و بازسازی مستقل در بیانیهٔ SHA-256
+ثبت می‌شوند.
 
-This is the independently maintained Iranian Persian (`fa-IR`) evolving
-edition of *The Open Logic Text*, produced from the Open Logic Project source.
-Version `OLP-0010-20260813` contains exactly
-OLP-0001 through OLP-0010—10 of the 722 frozen content units (10/722). OLP-0011 through
-OLP-0722 are outside this checkpoint. It makes no complete-corpus,
-Persian-speaking human/native-review, community-approval, or accessibility
-claim.
+## ساخت بازتولیدپذیر
 
-The source is Open Logic commit
-`9620cc73f9c8e0ad003c514a5d3748f29611c4c0`, tree
-`f67757bb9305b173634082ab4cefd5601a707a34`, under CC BY 4.0 unless a
-component says otherwise. This independent translation does not imply
-endorsement by the Open Logic Project.
+`build/BUILD.ps1` ابتدا خوانشگر کامل را با LuaLaTeX و BibTeX می‌سازد،
+سپس ضمیمه را دو بار با حل ارجاع‌ها از AUX خوانشگر می‌سازد. برنامه
+`SOURCE_DATE_EPOCH` و منطقهٔ زمانی را تثبیت می‌کند، شمار صفحه‌ها را
+می‌سنجد، می‌تواند هش‌های مورد انتظار را بررسی کند، و فقط با کلید صریح
+`-StageReleaseAssets` دو PDF نهایی را در سطح انتشار قرار می‌دهد.
 
-The ten accepted Persian TeX files preserve 389 ZWNJs; the audited PDF
-extractors preserve none. Visible counter order passed after correction, but
-extracted RTL counter-component order is not authoritative.
+نیازمندی‌های محیط و گام‌های دقیق در `build/BUILD_REQUIREMENTS.md` آمده‌اند.
+
+## محدودیت‌های اعلام‌شده
+
+- دو PDF برچسب‌گذاری ساختاری ندارند و گواهی PDF/UA یا تأیید دسترس‌پذیری ندارند.
+- استخراج Unicode ریاضیات، نیم‌فاصله‌ها و ترتیب برخی مؤلفه‌های راست‌به‌چپ کاملاً مرجع نیست؛ فایل‌های TeX قابل ویرایش مرجع متنی‌اند.
+- هیچ بازبینی انسانی یا بومیِ فارسی‌زبان یا تأیید جامعهٔ زبانی ادعا نمی‌شود.
+- این نسخهٔ مستقل به معنای تأیید پروژهٔ منطق باز نیست.
+- رابطهٔ موردنظر با منبع، اشتقاق/ترجمه از تعهد تثبیت‌شده است؛ برای مجموعهٔ جهانیِ ناموجود رابطهٔ `IsPartOf` ساخته نمی‌شود.
+
+## English descriptor
+
+This is the independently maintained complete Iranian Persian edition of
+*The Open Logic Text* for the frozen Open Logic source release. Version
+`OLP-0722-20260818` closes all 722 translation units as a 642-unit, 839-page
+canonical linked reader plus a separate 80-unit, 127-page technical closure
+supplement. The PDFs are untagged; mathematical, ZWNJ, and RTL extraction is
+not fully authoritative; editable TeX is authoritative. No Persian-speaking
+human/native review, community approval, accessibility certification, or
+Open Logic Project endorsement is claimed.
