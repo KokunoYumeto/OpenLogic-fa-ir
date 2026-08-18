@@ -1,0 +1,87 @@
+% Part: normal-modal-logic
+% Chapter: syntax-and-semantics
+% Section: entailment
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{syn}{ent}
+
+\olsection{استلزام}
+
+\begin{explain}
+  با تعریف صدق در یک جهان، می‌توانیم رابطه‌ای استلزامی میان !!{formula}
+  تعریف کنیم. !!^a{formula}~$!B$ مستلزم~$!A$ است اگر و تنها اگر هرگاه
+  $!B$ صادق باشد، $!A$ نیز صادق باشد. در اینجا «هرگاه» هم به معنای
+  «هر مدلی را که در نظر بگیریم» است و هم «هر جهانی از آن مدل را که در
+  نظر بگیریم».
+\end{explain}
+
+\begin{defn}
+  اگر~$\Gamma$ مجموعه‌ای از !!{formula} و~$!A$ !!a{formula} باشد، آنگاه
+  $\Gamma$ \emph{مستلزمِ}~$!A$ است، به نماد~$\Gamma \Entails !A$، اگر
+  و تنها اگر برای هر مدل~$\mModel{M} = \tuple{W, R, V}$ و جهان
+  $w \in W$، هرگاه برای هر~$!B \in \Gamma$ رابطهٔ~$\mSat{M}{!B}[w]$
+  برقرار باشد، $\mSat{M}{!A}[w]$ نیز برقرار باشد. اگر~$\Gamma$ تنها
+  شامل یک !!{formula}~$!B$ باشد، $!B \Entails !A$ می‌نویسیم.
+\end{defn}
+
+\begin{ex}
+  برای نشان‌دادن اینکه !!a{formula} مستلزم فرمولی دیگر است، باید با
+  استفاده از تعریف~$\mSat{M}{}[w]$ دربارهٔ همهٔ مدل‌ها استدلال کنیم.
+  برای نمونه، برای نشان‌دادن
+  $p \lif \Diamond p \Entails \Box\lnot p \lif \lnot p$ می‌توان چنین
+  استدلال کرد: مدل~$\mModel{M} = \tuple{W, R,V}$ و~$w \in W$ را در نظر
+  بگیرید و فرض کنید~$\mSat{M}{p \lif \Diamond p}[w]$. باید نشان دهیم
+  $\mSat{M}{\Box\lnot p \lif \lnot p}[w]$. خلاف آن را فرض کنید. آنگاه
+  $\mSat{M}{\Box\lnot p}[w]$ و~$\mSat/{M}{\lnot p}[w]$. چون
+  $\mSat/{M}{\lnot p}[w]$، داریم~$\mSat{M}{p}[w]$. بنا بر فرض،
+  $\mSat{M}{p \lif \Diamond p}[w]$، پس~$\mSat{M}{\Diamond p}[w]$.
+  بنا بر تعریف~$\mSat{M}{\Diamond p}[w]$، $w'$ای با~$Rww'$ وجود دارد
+  چنان‌که~$\mSat{M}{p}[w']$. چون~$\mSat{M}{\Box \lnot p}[w]$ نیز
+  برقرار است، $\mSat{M}{\lnot p}[w']$، که تناقض است.
+
+  برای نشان‌دادن اینکه !!a{formula}~$!B$ مستلزم فرمول دیگری چون~$!A$
+  نیست، باید مثال نقضی بدهیم؛ یعنی مدلی~$\mModel{M} = \tuple{W, R,V}$
+  که در جهانی~$w \in W$ از آن، $\mSat{M}{!B}[w]$ اما
+  $\mSat/{M}{!A}[w]$. نشان می‌دهیم
+  $p \lif \Diamond p \Entails/ \Box p \lif p$. مدلِ
+  \olref{fig:counterex} را در نظر بگیرید. داریم
+  $\mSat{M}{\Diamond p}[w_1]$ و ازاین‌رو
+  $\mSat{M}{p \lif \Diamond p}[w_1]$. بااین‌حال، چون
+  $\mSat{M}{\Box p}[w_1]$ اما~$\mSat/{M}{p}[w_1]$، داریم
+  $\mSat/{M}{\Box p \lif p}[w_1]$.
+  \begin{figure}
+  \begin{center}
+    \begin{tikzpicture}[modal]
+      \node[world] (w1) [label=right:\mFalse{p}]{$w_1$}; 
+      \node[world] (w2) [label=right:\mTrue{p}, above left=of w1]{$w_2$}; 
+      \node[world] (w3) [label=right:\mTrue{p}, above right=of w1] {$w_3$};
+      \draw[->] (w1) to (w2);
+      \draw[->] (w1) to (w3);
+    \end{tikzpicture}
+  \end{center}
+  \caption{مثال نقض برای~$p \lif \Diamond p
+  \Entails \Box p \lif p$.}
+  \ollabel{fig:counterex}
+  \end{figure}
+  
+  اغلب مثال‌های نقض بسیار ساده کافی‌اند. مدل
+  $\mModel{M'} = \tuple{W', R', V'}$ با~$W' = \{w\}$،
+  $R' = \emptyset$ و~$V'(p) = \emptyset$ نیز یک مثال نقض است. چون
+  $\mSat/{M'}{p}[w]$، داریم~$\mSat{M'}{p \lif \Diamond p}[w]$. ازآنجا
+  که هیچ جهانی از~$w$ دسترس‌پذیر نیست، $\mSat{M'}{\Box p}[w]$؛ پس
+  $\mSat/{M'}{\Box p \lif p}[w]$.
+\end{ex}
+
+\begin{prob}
+  نشان دهید~$\Box (!A \land !B) \Entails \Box !A$.
+\end{prob}
+
+\begin{prob}
+  نشان دهید~$\Box (p \lif q) \Entails/ p \lif \Box q$ و
+  $p \lif \Box q \Entails/\Box (p \lif q)$.
+\end{prob}
+
+\end{document}

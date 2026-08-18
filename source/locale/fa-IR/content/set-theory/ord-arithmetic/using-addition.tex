@@ -1,0 +1,133 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{ord-arithmetic}{using-addition}
+\olsection{کاربردِ جمع ترتیبی}
+
+با استفاده از جمع اعداد ترتیبی، می‌توانیم رتبهٔ مجموعه‌های گوناگون
+را به معنای \olref[spine][rank]{defnsetrank} به‌صراحت محاسبه کنیم:
+
+\begin{lem}\ollabel{rankcomputation}
+اگر $\setrank{A} = \alpha$ و $\setrank{B} = \beta$، آن‌گاه:
+\begin{enumerate}
+	\item\ollabel{exrankpow} $\setrank{\Pow{A}} = \alpha\ordplus 1$
+	\item\ollabel{exrankpair} $\setrank{\{A, B\}} = \max(\alpha,
+	\beta) \ordplus 1$
+	\item\ollabel{exrankcup} $\setrank{A \cup B} = \max(\alpha,
+	\beta)$
+	\item\ollabel{exranktuple} $\setrank{\tuple{A,B}} = \max(\alpha,
+	\beta) \ordplus  2$
+	\item\ollabel{exranktimes} $\setrank{A \times B} \leq \max(\alpha,
+	\beta) \ordplus  2$
+	\item\ollabel{exrankunion} اگر $\alpha$ تهی یا حدی باشد،
+	$\setrank{\bigcup A} = \alpha$؛ و اگر
+	$\alpha = \gamma\ordplus 1$، آن‌گاه
+	$\setrank{\bigcup A} = \gamma$
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+در سراسر اثبات بارها
+\olref[spine][rank]{ranksupstrict} را به کار می‌بریم.
+
+\emph{\olref{exrankpow}.} اگر $x \subseteq A$، آن‌گاه
+$\setrank{x} \leq \setrank{A}$. پس
+$\setrank{\Pow{A}} \leq \alpha \ordplus 1$. از آنجا که به‌ویژه
+$A \in \Pow{A}$، داریم
+$\setrank{\Pow{A}} = \alpha \ordplus 1$.
+
+\emph{\olref{exrankpair}.} بنا بر
+\olref[spine][rank]{ranksupstrict}.
+
+\emph{\olref{exrankcup}.} بنا بر
+\olref[spine][rank]{ranksupstrict}.
+
+\emph{\olref{exranktuple}.} با دو بار استفاده از
+\olref{exrankpair}.
+
+\emph{\olref{exranktimes}.} توجه کنید که
+$A \times B \subseteq \Pow{\Pow{A \cup B}}$؛ سپس
+\olref{exrankpow} را دو بار و \olref{exrankcup} را یک بار به کار
+ببرید.
+
+\emph{\olref{exrankunion}.} اگر $\alpha = \gamma\ordplus 1$، عضوی
+مانند $c \in A$ هست که $\setrank{c} = \gamma$، و هیچ
+!!{element} از $A$ رتبهٔ بالاتری ندارد؛ پس
+$\setrank{\bigcup A} = \gamma$. اگر $\alpha$ عدد ترتیبیِ حدی باشد،
+$A$ دارای !!{element}هایی با رتبه‌های دلخواه نزدیک به $\alpha$
+(اما اکیداً کوچک‌تر از آن) است؛ پس $\bigcup A$ نیز دارای
+!!{element}هایی با رتبه‌های دلخواه نزدیک به $\alpha$ (اما اکیداً
+کوچک‌تر از آن) است، و بنابراین
+$\setrank{\bigcup A} = \alpha$.
+\end{proof}
+\noindent
+این‌که چرا \olref{exranktimes} یک \emph{نامساوی} دارد، به‌عنوان
+تمرین واگذار می‌شود.
+
+\begin{prob}
+مجموعه‌های $A$ و $B$ای بیابید که
+$\setrank{A \times B} =
+\max(\setrank{A}, \setrank{B})$. مجموعه‌های $A$ و $B$ای بیابید که
+$\setrank{A \times B} =
+\max(\setrank{A}, \setrank{B}) \ordplus 2$. آیا رتبه‌های دیگری نیز
+ممکن‌اند؟
+\end{prob}
+
+اکنون همچنین می‌توانیم نشان دهیم چند معنای معقول برای «متناهی» یا
+«نامتناهی» خواندن یک عدد ترتیبی با یکدیگر منطبق‌اند:
+
+\begin{lem}\ollabel{ordinfinitycharacter}
+برای هر عدد ترتیبیِ $\alpha$، گزاره‌های زیر هم‌ارزند:
+\begin{enumerate}
+	\item\ollabel{ord:notinomega} $\alpha\notin \omega$؛ یعنی
+	$\alpha$ عدد طبیعی نیست؛
+	\item\ollabel{ord:omegaplus} $\omega \leq \alpha$؛
+	\item\ollabel{ord:oneplus} $1 \ordplus \alpha = \alpha$؛
+	%\alpha \approx \alpha \ordplus 1$
+	\item\ollabel{ord:plusone} $\alpha \approx \alpha\ordplus 1$؛
+	یعنی $\alpha$ و $\alpha\ordplus 1$ هم‌شمارند؛
+	\item\ollabel{ord:infinite} $\alpha$ نامتناهیِ ددکیندی است.
+	\end{enumerate}
+\end{lem}
+\noindent
+پس پنج شیوهٔ اثباتاً هم‌ارز برای فهم متناهی یا نامتناهی‌بودن یک عدد
+ترتیبی داریم.
+
+\begin{proof}
+\emph{\olref{ord:notinomega} $\Rightarrow$ \olref{ord:omegaplus}.}
+بنا بر سه‌شقی.
+
+\emph{\olref{ord:omegaplus} $\Rightarrow$ \olref{ord:oneplus}.}
+$\alpha \geq \omega$ را ثابت کنید. بنا بر استقرای ترامتناهی، کوچک‌ترین
+عدد ترتیبیِ $\gamma$ (شاید $0$) وجود دارد به‌طوری‌که برای یک عدد
+ترتیبیِ حدیِ $\beta$ داشته باشیم
+$\alpha = \beta \ordplus \gamma$. اکنون:
+\[
+	1 \ordplus \alpha =
+	1 \ordplus (\beta \ordplus \gamma) =
+	(1 \ordplus \beta) \ordplus \gamma =
+	\supstrict_{\delta < \beta} (1 \ordplus  \delta) \ordplus  \gamma =
+	\beta \ordplus  \gamma =
+	\alpha.
+\]
+\emph{\olref{ord:oneplus} $\Rightarrow$ \olref{ord:plusone}.}
+آشکارا !!a{bijection} مانند
+$f \colon (\alpha \disjointsum 1) \to (1 \disjointsum \alpha)$ وجود
+دارد. اگر $1 \ordplus \alpha = \alpha$، یکریختی مانند
+$g \colon (1 \disjointsum \alpha) \to \alpha$ وجود دارد. اکنون
+$\comp{f}{g}$ را در نظر بگیرید.
+
+\emph{\olref{ord:plusone} $\Rightarrow$ \olref{ord:infinite}.}
+اگر $\alpha \approx \alpha \ordplus 1$، !!a{bijection} مانند
+$f \colon (\alpha \disjointsum 1) \to \alpha$ وجود دارد. برای هر
+$\gamma < \alpha$ تعریف کنید
+$g(\gamma) = f(\gamma, 0)$؛ این !!{injection} گواه نامتناهیِ
+ددکیندی‌بودن $\alpha$ است، زیرا
+$f(0,1) \in \alpha \setminus \ran{g}$.
+
+\emph{\olref{ord:infinite} $\Rightarrow$ \olref{ord:notinomega}.}
+این همان \olref[z][infinity-again]{naturalnumbersarentinfinite} است.
+\end{proof}
+
+\end{document}

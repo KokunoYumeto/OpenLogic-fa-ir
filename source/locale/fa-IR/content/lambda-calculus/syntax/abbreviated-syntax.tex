@@ -1,0 +1,43 @@
+% Part: lambda-calculus
+% Chapter: syntax
+% Section: abbreviated-syntax
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{syn}{abb}
+\olsection{نحو اختصاری}
+
+نوشتن ترم‌هایی که در~\olref[trm]{defn:term} تعریف شده‌اند گاهی
+دست‌وپاگیر است، پس معرفی نحوی موجزتر سودمند است. البته باید مراقب باشیم
+که ترم‌ها در نمادگذاری موجز نیز خوانش یکتا داشته باشند. یکی از نسخه‌های
+پرکاربرد که \emph{ترم‌های اختصاری} نامیده می‌شود چنین است.
+
+\begin{enumerate}
+\item وقتی پرانتزها حذف شوند، کاربرد از چپ به راست انجام می‌شود. برای
+  مثال، اگر~$M$، $N$، $P$ و~$Q$ ترم باشند، $MNPQ$ اختصار
+  $(((MN)P)Q)$ است.
+\item باز هم وقتی پرانتزها حذف شوند، انتزاع لامبدایی گسترده‌ترین دامنهٔ
+  ممکن را می‌گیرد. برای مثال، $\lambd[x][MNP]$ به‌صورت
+  $(\lambd[x][MNP])$ خوانده می‌شود.
+\item می‌توان از یک لامبدا برای انتزاع چند متغیر استفاده کرد. برای مثال،
+  $\lambd[xyz][M]$ اختصار
+  $\lambd[x][\lambd[y][\lambd[z][M]]]$ است.
+\end{enumerate}
+
+برای مثال،
+\[
+\lambd[xy][xxyx \lambd[z][xz]]
+\]
+اختصار عبارت زیر است:
+\[
+(\lambd[x][(\lambd[y][((((xx)y)x)(\lambd[z][(xz)]))])]).
+\]
+
+\begin{prob}
+ترم اختصاری~$\lambd[g][(\lambd[x][g (x x)])
+  \lambd[x][g (x x)]]$ را بسط دهید.
+\end{prob}
+
+\end{document}

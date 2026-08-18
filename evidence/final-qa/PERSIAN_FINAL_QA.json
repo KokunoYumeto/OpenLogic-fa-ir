@@ -1,0 +1,127 @@
+{
+  "caveats": [
+    "Both PDFs are untagged and are not certified as PDF/UA or accessible.",
+    "Legacy mathematics font ToUnicode coverage is incomplete.",
+    "Mathematics, ZWNJ, combining-mark, and bidirectional text extraction is not fully authoritative; editable TeX is authoritative.",
+    "No Persian-speaking human/native review, community approval, or Open Logic Project endorsement is claimed."
+  ],
+  "closure": {
+    "closure_supplement_units": 80,
+    "final_fls_generated_inputs_excluded_from_sources": 8,
+    "final_fls_local_union": 754,
+    "final_fls_manifest_targets_reached": 722,
+    "final_fls_non_generated_dependencies": 24,
+    "manifest_bytes": 892608,
+    "manifest_rows": 722,
+    "manifest_sha256": "0CCA3735E506581BE93C87542FA1F8236281834B71831C9D767C4B43E5361952",
+    "primary_linked_reader_units": 642,
+    "total_units": 722
+  },
+  "closure_supplement": {
+    "broken_named_destinations": 0,
+    "broken_outlines": 0,
+    "bytes": 1242576,
+    "fonts_embedded": 28,
+    "fonts_total": 28,
+    "link_annotations": 137,
+    "log_bytes": 131841,
+    "log_gate_counts": {
+      "duplicate_labels": 0,
+      "fatal_errors": 0,
+      "missing_glyphs": 0,
+      "rerun": 0,
+      "tex_errors": 0,
+      "undefined_citations": 0,
+      "undefined_references": 0
+    },
+    "log_sha256": "578D33F807F00D850CD9D5249DB7B8A74693586E304D63F89FCB525D3194245A",
+    "named_destinations": 768,
+    "nonempty_pages": 127,
+    "nul_characters": 0,
+    "outlines": 67,
+    "pages": 127,
+    "replacement_characters": 0,
+    "sha256": "C0CE780B142117E140E3565874EB23B8A379074AAB61A7A35BA34617FCC78758",
+    "stream_extraction_bytes": 519294,
+    "stream_extraction_characters": 285033,
+    "unresolved_links": 0
+  },
+  "complete_reader": {
+    "broken_named_destinations": 0,
+    "broken_outlines": 0,
+    "bytes": 7909665,
+    "fonts_embedded": 45,
+    "fonts_total": 45,
+    "link_annotations": 2992,
+    "log_bytes": 263707,
+    "log_gate_counts": {
+      "duplicate_labels": 0,
+      "fatal_errors": 0,
+      "missing_glyphs": 0,
+      "rerun": 0,
+      "tex_errors": 0,
+      "undefined_citations": 0,
+      "undefined_references": 0
+    },
+    "log_sha256": "C05D78A68DFF40BF9FE8C669ED9C43E6126748E2CCBAA783765111FB0F7A7B66",
+    "named_destinations": 8787,
+    "nonempty_pages": 839,
+    "nul_characters": 0,
+    "outlines": 755,
+    "pages": 839,
+    "replacement_characters": 0,
+    "sha256": "FB717BF206ECCFC62EF050A625984BBA5725664E311361184E471627AE1CEAF3",
+    "stream_extraction_bytes": 3534632,
+    "stream_extraction_characters": 1991484,
+    "unresolved_links": 0
+  },
+  "doi": {
+    "concept": "10.5281/zenodo.21921852",
+    "version": "10.5281/zenodo.21987687"
+  },
+  "language": "fa-IR",
+  "metadata": {
+    "sole_contributor": {
+      "name": "AI typesetting & translation",
+      "type": "Other"
+    },
+    "sole_creator_author": "Open Logic Project"
+  },
+  "release": "OLP-0722-20260818",
+  "schema_version": 1,
+  "stable_state": {
+    "complete_aux": {
+      "bytes": 1255597,
+      "sha256": "44C7E0A2E45E526EE213946AC45031385C2DE42EBCC51CEE80F0279F42D8A170"
+    },
+    "complete_out": {
+      "bytes": 143813,
+      "sha256": "B1A98F62699F6D813FD4BDF2E9D4478BDC2DC699A74BBC6F41DBDBFA7F604FA0"
+    },
+    "complete_thm": {
+      "bytes": 204981,
+      "sha256": "314492448247646BA98D4003A4946195543DC0BC01DEB011CFF85C0BED0E0762"
+    },
+    "complete_toc": {
+      "bytes": 112590,
+      "sha256": "5C96D40FAD4FDAC49AC3C707ECE43447014836E4EF0DC9B12D32CB57A02E7A2E"
+    },
+    "supplement_aux": {
+      "bytes": 104010,
+      "sha256": "21E20BEB2E8DBD62341484252C6CDA943BA030E0C0AF7968073F5E50AF5B1385"
+    },
+    "supplement_out": {
+      "bytes": 12674,
+      "sha256": "23F1A0739BF85783794894884588030C024CD01AF1175A13CEE3FA5438278F5F"
+    },
+    "supplement_thm": {
+      "bytes": 14855,
+      "sha256": "3E8976951411624256582DD840F6E26B35169111F480678A32CE7780EE1A705"
+    },
+    "supplement_toc": null
+  },
+  "visual_qa": {
+    "scope": "Cover, table of contents, RTL prose with mathematics, prooftree or table, complemented notation, representative supplement pages, and final pages.",
+    "status": "PASS"
+  }
+}

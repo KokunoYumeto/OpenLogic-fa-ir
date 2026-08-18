@@ -1,0 +1,236 @@
+% Part: model-theory
+% Chapter: basics
+% Section: partial-iso
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mod}{bas}{pis}
+\section{همریختی‌های جزئی}
+
+\begin{defn}
+  به ازای دو !!{structure}s~$\Struct{M}$ و~$\Struct{N}$، یک
+  \emph{همریختی جزئی} از~$\Struct{M}$ به~$\Struct{N}$ تابع جزئی
+  متناهی~$p$ای است که آرگومان‌هایی در~$\Domain M$ می‌گیرد و مقادیری در
+  $\Domain N$ بازمی‌گرداند و شرایط همریختی
+  \olref[iso]{defn:isomorphism} را روی دامنهٔ خود برآورده می‌کند:
+  \begin{enumerate}
+  \item $p$ !!{injective} است؛
+  \item برای هر !!{constant}~$c$: اگر $p(\Assign{c}{M})$ تعریف شده
+    باشد، آنگاه $p(\Assign{c}{M}) = \Assign{c}{N}$؛
+  \item برای هر !!{predicate}~$n$موضعی $P$: اگر
+    $a_1$، \dots،~$a_n$ در دامنهٔ~$p$ باشند، آنگاه
+    $\langle a_1, \dots, a_n\rangle \in \Assign P M$ هرگاه و تنها
+    هرگاه $\langle p(a_1), \dots, p(a_n) \rangle
+    \in \Assign P N$؛
+  \item برای هر !!{function}~$n$موضعی $f$: اگر
+    $a_1$، \dots،~$a_n$ در دامنهٔ~$p$ باشند، آنگاه
+    $p(\Assign f M (a_1, \dots,a_n))
+    = \Assign f N (p(a_1), \dots, p(a_n))$.
+  \end{enumerate}
+  متناهی‌بودن~$p$ به این معناست که $\dom{p}$ متناهی است.
+\end{defn}
+
+توجه کنید که تابع تهی~$\emptyset$ همواره همریختی‌ای جزئی میان هر دو
+!!{structure}s است.
+
+\begin{defn}\ollabel{defn:partialisom}
+  دو !!{structure}s~$\Struct{M}$ و~$\Struct{N}$ را
+  \emph{جزئاً همریخت} می‌نامیم، و می‌نویسیم
+  $\Struct{M} \iso[p] \Struct{N}$، هرگاه و تنها هرگاه مجموعه‌ای ناتهی
+  $I$ از همریختی‌های جزئی میان~$\Struct{M}$ و~$\Struct{N}$ وجود داشته
+  باشد که خاصیت \emph{پس‌وپیش} زیر را برآورده کند:
+  \begin{enumerate}
+  \item (\emph{پیش}) برای هر $p \in I$ و $a \in \Domain M$،
+    $q \in I$ای وجود دارد که $p \subseteq q$ و $a$ در دامنهٔ~$q$ است؛
+  \item (\emph{پس}) برای هر $p \in I$ و $b \in \Domain N$،
+    $q \in I$ای وجود دارد که $p \subseteq q$ و $b$ در برد~$q$ است.
+  \end{enumerate}
+\end{defn}
+
+\begin{thm}\ollabel{thm:p-isom1}
+  اگر $\Struct{M} \iso[p] \Struct{N}$ و $\Struct{M}$ و~$\Struct{N}$
+  !!{enumerable} باشند، آنگاه $\Struct{M} \iso \Struct{N}$.
+\end{thm}
+
+\begin{proof}
+  چون $\Struct{M}$ و~$\Struct{N}$ !!{enumerable} هستند، بگذارید
+  $\Domain{M} = \{a_0, a_1, \ldots \}$ و
+  $\Domain{N} = \{b_0, b_1, \ldots \}$. با آغاز از یک
+  $p_0 \in I$ دلخواه، دنبالهٔ صعودی همریختی‌های جزئی
+  $p_0 \subseteq p_1 \subseteq p_2 \subseteq \cdots$ را چنین تعریف
+  می‌کنیم:
+  \begin{enumerate}
+  \item اگر $n+1$ فرد باشد، یعنی $n = 2r$، با استفاده از خاصیت پیش
+    $p_{n+1} \in I$ای بیابید که $p_n \subseteq p_{n+1}$ و $a_r$ در
+    دامنهٔ~$p_{n+1}$ باشد؛
+  \item اگر $n+1$ زوج باشد، یعنی $n = 2r+1$، با استفاده از خاصیت پس
+    $p_{n+1} \in I$ای بیابید که $p_n \subseteq p_{n+1}$ و $b_r$ در
+    برد~$p_{n+1}$ باشد.
+  \end{enumerate}
+اگر اکنون قرار دهیم
+\[
+p = \bigcup_{n\ge 0} p_n,
+\]
+آنگاه $p$ همریختی‌ای میان~$\Struct{M}$ و~$\Struct{N}$ است.
+\end{proof}
+
+\begin{prob}
+  با جزئیات نشان دهید $p$ که در \olref[mod][bas][pis]{thm:p-isom1}
+  تعریف شد در واقع یک همریختی است.
+\end{prob}
+
+\begin{thm}\ollabel{thm:p-isom2}
+  فرض کنید $\Struct{M}$ و~$\Struct{N}$ !!{structure}s یک
+  !!{language} صرفاً رابطه‌ای باشند (!!a{language} که تنها شامل
+  !!{predicate}s است و هیچ !!{function}s یا ثابتی ندارد). در این صورت،
+  اگر $\Struct{M} \iso[p] \Struct{N}$، آنگاه
+  $\Struct{M} \elemequiv \Struct{N}$ نیز.
+\end{thm}
+
+\begin{proof}
+  با استقرا بر !!{formula}s نشان می‌دهیم اگر $a_1$، \dots،~$a_n$ و
+  $b_1$، \dots،~$b_n$ چنان باشند که همریختی جزئی~$p$ای وجود داشته
+  باشد که هر $a_i$ را به~$b_i$ بنگارد، و $s_1(x_i) =a_i$ و
+  $s_2(x_i) =b_i$ (برای $i =1$، \dots،~$n$)، آنگاه
+  $\Sat{M}{!A}[s_1]$ هرگاه و تنها هرگاه $\Sat{N}{!A}[s_2]$. حالت
+  $n=0$ نتیجه می‌دهد $\Struct{M} \elemequiv \Struct{N}$.
+\end{proof}
+
+\begin{rem}
+اگر !!{function}s حاضر باشند، نتیجهٔ پیشین همچنان صادق است، اما باید
+همریختی القاشده به‌وسیلهٔ~$p$ را میان زیر!!{structure}~$\Struct{M}$ که
+به‌وسیلهٔ $a_1$، \dots،~$a_n$ تولید شده و زیر!!{structure}~$\Struct{N}$
+که به‌وسیلهٔ $b_1$، \dots،~$b_n$ تولید شده است در نظر گرفت.
+\end{rem}
+
+نتیجهٔ پیشین را می‌توان با برقراری پیوندی میان شمار کمیت‌گذارهای
+تودرتو در !!a{formula} و شمار دفعاتی که همریختی‌های جزئی مربوط را
+می‌توان گسترش داد، به مراحلی «تجزیه کرد».
+
+\begin{defn}
+  برای هر !!{formula}~$!A$، \emph{مرتبهٔ کمیت‌گذار}~$!A$، با نماد
+  $\QuantRank{!A} \in \Nat$، به‌طور بازگشتی به‌صورت بیشترین شمار
+  کمیت‌گذارهای تودرتو در~$!A$ تعریف می‌شود. دو
+  !!{structure}s~$\Struct{M}$ و~$\Struct{N}$ را \emph{$n$-هم‌ارز}
+  می‌نامیم، و می‌نویسیم $\Struct{M} \elemequiv[n] \Struct{N}$، اگر
+  دربارهٔ همهٔ جمله‌هایی که مرتبهٔ کمیت‌گذارشان کمتر یا مساوی~$n$ است
+  توافق داشته باشند.
+\end{defn}
+
+\begin{prop}\ollabel{prop:qr-finite}
+  بگذارید $\Lang{L}$ یک !!{language} متناهی و صرفاً رابطه‌ای باشد؛
+  یعنی !!{language}ی که شامل شمار متناهی !!{predicate}s و
+  !!{constant}s و فاقد !!{function}s است. آنگاه برای هر $n \in \Nat$
+  و هر فهرست متناهیِ ثابت از متغیرها، تنها شمار متناهی !!{formula}s
+  مرتبهٔ اول در !!{language}~$\Lang{L}$ وجود دارد که همهٔ متغیرهای
+  آزادشان در آن فهرست‌اند و مرتبهٔ کمیت‌گذارشان از~$n$ بیشتر نیست، تا
+  حد هم‌ارزی منطقی.
+\end{prop}
+
+\begin{proof}
+  با استقرا بر~$n$.
+\end{proof}
+
+\begin{defn}
+  به ازای !!a{structure}~$\Struct{M}$، بگذارید
+  $\Domain M^{<\omega}$ مجموعهٔ همهٔ دنباله‌های متناهی روی~$\Domain{M}$
+  باشد. $\mathbf{a}$، $\mathbf{b}$، $\mathbf{c}$، \ldots را برای
+  دامنه‌گرفتن روی دنباله‌های متناهی به کار می‌بریم. اگر
+  $\mathbf{a} \in \Domain{M}^{<\omega}$ و $a \in \Domain{M}$، آنگاه
+  $\mathbf{a}a$ \emph{الحاق}~$\mathbf{a}$ و~$a$ را بازمی‌نماید.
+\end{defn}
+
+\begin{defn}
+  به ازای !!{structure}s~$\Struct{M}$ و~$\Struct{N}$، رابطه‌های
+  $I_n \subseteq \Domain M^{<\omega} \times \Domain N^{<\omega}$ را
+  میان دنباله‌های هم‌طول، با بازگشت بر~$n$ چنین تعریف می‌کنیم:
+   \begin{enumerate}
+   \item $I_0(\mathbf{a},\mathbf{b})$ هرگاه و تنها هرگاه
+     $\mathbf{a}$ و~$\mathbf{b}$ همان !!{formula}s اتمی را به‌ترتیب در
+     $\Struct{M}$ و~$\Struct{N}$ برآورده کنند؛ یعنی اگر طول دو دنباله
+     $k$، و $s_1(x_i) = a_i$ و $s_2(x_i) = b_i$، و $!A$ اتمی باشد و
+     همهٔ !!{variable}s آن در میان $x_1$، \dots،~$x_k$ باشند، آنگاه
+     $\Sat{M}{!A}[s_1]$ هرگاه و تنها هرگاه~$\Sat{N}{!A}[s_2]$.
+   \item $I_{n+1} (\mathbf{a},\mathbf{b})$ هرگاه و تنها هرگاه برای هر
+     $a\in \Domain M$، $b\in \Domain N$ای وجود داشته باشد که
+     $I_n (\mathbf{a}a,\mathbf{b}b)$، و برعکس.
+   \end{enumerate}
+\end{defn}
+
+
+\begin{defn}
+  می‌نویسیم $\Struct{M} \approx_n \Struct{N}$ اگر
+  $I_n(\emptyseq,\emptyseq)$ برای~$\Struct{M}$ و~$\Struct{N}$ برقرار
+  باشد (که در آن $\emptyseq$ دنبالهٔ تهی است).
+\end{defn}
+
+\begin{thm}\ollabel{thm:b-n-f}
+  بگذارید $\Lang{L}$ یک !!{language} صرفاً رابطه‌ای باشد و
+  $\mathbf a$ و~$\mathbf b$ دنباله‌هایی هم‌طول~$k$ باشند. آنگاه
+  $I_n (\mathbf{a},\mathbf{b})$ نتیجه می‌دهد که برای هر $!A$ که همهٔ
+  متغیرهای آزادش در میان $x_1$، \dots،~$x_k$ باشند و
+  $\QuantRank{!A} \le n$، داریم $\Sat{M}{!A}[\mathbf{a}]$ هرگاه و تنها
+  هرگاه $\Sat{N}{!A}[\mathbf{b}]$ (که باز منظور از ارضای~$!A$ به‌وسیلهٔ
+  $\mathbf{a}$، ارضای آن به‌وسیلهٔ هر گمارش~$s$ است که
+  $s(x_i) = a_i$). افزون بر این، اگر $\Lang{L}$ متناهی باشد، عکس نیز
+  برقرار است.
+\end{thm}
+
+\begin{proof}
+  اثبات اینکه $I_n(\mathbf{a},\mathbf{b})$ نتیجه می‌دهد
+  $\mathbf{a}$ و~$\mathbf{b}$ همان !!{formula}s با مرتبهٔ کمیت‌گذار
+  حداکثر~$n$ و متغیرهای آزاد در میان $x_1$، \dots،~$x_k$ را برآورده
+  می‌کنند، با استقرایی آسان بر~$!A$ انجام می‌شود. برای عکس، با استفاده
+  از \olref{prop:qr-finite} بر~$n$ استقرا می‌کنیم؛ این گزاره تضمین
+  می‌کند که برای هر $n$ و هر فهرست متناهیِ ثابت از متغیرهای آزاد، تنها
+  شمار متناهی !!{formula}s ناهم‌ارز با مرتبهٔ کمیت‌گذار حداکثر~$n$
+  وجود دارد.
+
+  برای $n=0$، فرض اینکه $\mathbf{a}$ و~$\mathbf{b}$ همان
+  !!{formula}s بی‌کمیت‌گذار را برآورده می‌کنند نتیجه می‌دهد که همان
+  فرمول‌های اتمی را برآورده می‌کنند، پس
+  $I_0(\mathbf{a},\mathbf{b})$.
+
+  در حالت $n+1$، فرض کنید $\mathbf{a}$ و~$\mathbf{b}$ همان
+  !!{formula}s با مرتبهٔ کمیت‌گذار حداکثر $n+1$ و متغیرهای آزاد در
+  میان $x_1$، \dots،~$x_k$ را برآورده می‌کنند. برای نشان‌دادن
+  $I_{n+1}(\mathbf{a},\mathbf{b})$ کافی است نشان دهیم برای هر
+  $a \in \Domain M$، $b \in \Domain N$ای وجود دارد که
+  $I_n(\mathbf{a}a,\mathbf{b}b)$؛ و بنا بر فرض استقرا، کافی است نشان
+  دهیم برای هر $a \in \Domain M$، $b \in \Domain N$ای وجود دارد که
+  $\mathbf{a}a$ و~$\mathbf{b}b$ همان !!{formula}s با مرتبهٔ کمیت‌گذار
+  حداکثر~$n$ و متغیرهای آزاد در میان $x,x_1,\dots,x_k$ را برآورده
+  می‌کنند.
+
+  به ازای $a \in \Domain M$، بگذارید $!T^a_n$ مجموعه‌ای شامل یک
+  نماینده از هر ردهٔ هم‌ارزی منطقیِ !!{formula}s
+  $!B(x,\mathbf{y})$ با مرتبهٔ حداکثر~$n$ باشد که
+  $\mathbf{a}a$ در~$\Struct{M}$ برآورده می‌کند. بنا بر
+  \olref{prop:qr-finite} این مجموعه متناهی است، پس می‌توانیم !!{formula}
+  حاصل از عطف اعضای آن را نیز با~$!T^a_n(x,\mathbf y)$ نشان دهیم. از
+  این نتیجه می‌شود که
+  $\mathbf{a}$ فرمول $\lexists[x][!T^a_n(x,\mathbf{y})]$ را برآورده
+  می‌کند، و این فرمول مرتبهٔ کمیت‌گذار حداکثر $n+1$ دارد. بنا بر فرض،
+  $\mathbf{b}$ همان !!{formula} را در~$\Struct{N}$ برآورده می‌کند؛ پس
+  $b \in \Domain N$ای وجود دارد که $\mathbf{b}b$، $!T^a_n$ را
+  برآورده می‌کند. به‌ویژه، $\mathbf{b}b$ همان !!{formula}s با مرتبهٔ
+  کمیت‌گذار حداکثر~$n$ را که $\mathbf{a}a$ برآورده می‌کند، برآورده
+  می‌کند؛ و با در نظر گرفتن نقیض هر فرمولی که برآورده نمی‌شود، عکس این
+  جهت نیز به دست می‌آید. به‌طور مشابه نشان می‌دهیم برای هر
+  $b \in \Domain N$، $a\in \Domain M$ای وجود دارد که
+  $\mathbf{a}a$ و~$\mathbf{b}b$ همان !!{formula}s با مرتبهٔ
+  کمیت‌گذار حداکثر~$n$ را برآورده می‌کنند، و برهان کامل می‌شود.
+\end{proof}
+
+\begin{cor}\ollabel{cor:b-n-f}
+  اگر $\Struct{M}$ و~$\Struct{N}$ !!{structure}s صرفاً رابطه‌ای در یک
+  !!{language} متناهی باشند، آنگاه
+  $\Struct{M} \approx_n\Struct{N}$ هرگاه و تنها هرگاه
+  $\Struct{M} \elemequiv[n] \Struct{N}$. به‌ویژه
+  $\Struct{M} \elemequiv \Struct{N}$ هرگاه و تنها هرگاه برای هر $n$،
+  $\Struct{M} \approx_n \Struct{N}$.
+\end{cor}
+
+\end{document}

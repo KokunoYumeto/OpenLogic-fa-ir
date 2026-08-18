@@ -1,0 +1,128 @@
+% Part: first-order-logic
+% Chapter: syntax-and-semantics
+% Section: substitution
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{syn}{sub}
+
+\olsection{جانشینی}
+
+\begin{defn}[جانشینی در یک ترم]
+$\Subst{s}{t}{x}$، یعنی نتیجهٔ \emph{جانشین‌کردنِ} $t$ به‌جای
+هر رخداد~$x$ در $s$، را به‌صورت بازگشتی تعریف می‌کنیم:
+\begin{enumerate}
+\item \indcase{s}{c}{$\Subst{\indfrm}{t}{x}$ همان $s$ است.}
+
+\item \indcase{s}{y}{$\Subst{\indfrm}{t}{x}$ نیز همان~$s$ است،
+  مشروط بر اینکه $y$ متغیر باشد و $y \not\ident x$.}
+
+\item \indcase{s}{x}{$\Subst{\indfrm}{t}{x}$ برابر با~$t$ است.}
+
+\item\indcase{s}{\Atom{f}{t_1, \dots, t_n}}{$\Subst{\indfrmp}{t}{x}$ برابر است با
+  $\Atom{f}{\Subst{t_1}{t}{x}, \dots, \Subst{t_n}{t}{x}}$.}
+\end{enumerate}
+\end{defn}
+
+\begin{defn}
+ترم~$t$ برای $x$ در $!A$ \emph{!!{free for}} است اگر هیچ‌یک از
+رخدادهای آزادِ~$x$ در $!A$ در دامنهٔ سوری قرار نگرفته باشند که
+متغیری در~$t$ را مقید می‌کند.
+\end{defn}
+
+\begin{ex} ~
+\begin{enumerate}
+\item $\Obj v_8$ برای $\Obj v_1$ در $\lexists[\Obj
+  v_3]\Atom{\Obj A^2_4}{\Obj v_3,\Obj v_1}$ آزاد است.
+
+\item $\Obj f^2_1(\Obj v_1, \Obj v_2)$ برای $\Obj
+  v_0$ در $\lforall[\Obj v_2]\Atom{\Obj A^2_4}{\Obj v_0,\Obj v_2}$
+  \emph{آزاد نیست}.
+\end{enumerate}
+\end{ex}
+
+\begin{defn}[جانشینی در !!a{formula}]
+اگر $!A$ یک !!a{formula}، $x$ یک !!a{variable} و $t$ ترمی
+!!{free for}~$x$ در~$!A$ باشد، آنگاه $\Subst{!A}{t}{x}$ نتیجهٔ
+جانشین‌کردنِ $t$ به‌جای همهٔ رخدادهای آزادِ~$x$ در~$!A$ است.
+\begin{enumerate}
+\tagitem{prvFalse}{\indcase{!A}{\lfalse}{$\Subst{\indfrm}{t}{x}$ برابر با
+    $\lfalse$ است.}}{}
+
+\tagitem{prvTrue}{\indcase{!A}{\ltrue}{$\Subst{\indfrm}{t}{x}$ برابر با
+    $\ltrue$ است.}}{}
+
+\item \indcase{!A}{\Atom{P}{t_1,\dots,
+    t_n}}{$\Subst{\indfrm}{t}{x}$ برابر است با $\Atom{P}{\Subst{t_1}{t}{x},
+    \dots, \Subst{t_n}{t}{x}}$.}
+
+\item \indcase{!A}{\eq[t_1][t_2]}{$\Subst{\indfrmp}{t}{x}$ برابر است با
+  $\Subst{t_1}{t}{x} = \Subst{t_2}{t}{x}$.}
+
+\tagitem{prvNot}{\indcase{!A}{\lnot !B}{$\Subst{\indfrmp}{t}{x}$ برابر است با
+    $\lnot \Subst{!B}{t}{x}$.}}{}
+
+\tagitem{prvAnd}{\indcase{!A}{(!B \land
+    !C)}{$\Subst{\indfrmp}{t}{x}$ برابر است با $(\Subst{!B}{t}{x} \land
+    \Subst{!C}{t}{x})$.}}{}
+
+\tagitem{prvOr}{\indcase{!A}{(!B \lor
+    !C)}{$\Subst{\indfrmp}{t}{x}$ برابر است با $(\Subst{!B}{t}{x} \lor
+    \Subst{!C}{t}{x})$.}}{}
+
+\tagitem{prvIf}{\indcase{!A}{(!B \lif
+    !C)}{$\Subst{\indfrmp}{t}{x}$ برابر است با $(\Subst{!B}{t}{x} \lif
+    \Subst{!C}{t}{x})$.}}{}
+
+\tagitem{prvIff}{\indcase{!A}{(!B \liff
+    !C)}{$\Subst{\indfrmp}{t}{x}$ برابر است با $(\Subst{!B}{t}{x} \liff
+    \Subst{!C}{t}{x})$.}}{}
+
+\tagitem{prvAll}{
+\indcase{!A}{\lforall[y][!B]}{$\Subst{\indfrmp}{t}{x}$
+    برابر است با $\lforall[y][\Subst{!B}{t}{x}]$، مشروط بر اینکه $y$
+    متغیری غیر از $x$ باشد؛ در غیر این صورت $\Subst{\indfrmp}{t}{x}$
+    همان $\indfrm$ است.}}{}
+
+\tagitem{prvEx}{
+\indcase{!A}{\lexists[y][!B]}{$\Subst{\indfrmp}{t}{x}$
+    برابر است با $\lexists[y][\Subst{!B}{t}{x}]$، مشروط بر اینکه $y$
+    متغیری غیر از $x$ باشد؛ در غیر این صورت $\Subst{\indfrmp}{t}{x}$
+    همان $\indfrm$ است.}}{}
+\end{enumerate}
+\end{defn}
+
+\begin{explain}
+توجه کنید که جانشینی ممکن است تهی باشد: اگر $x$ اصلاً در $!A$
+رخ ندهد، آنگاه $\Subst{!A}{t}{x}$ همان~$!A$ است.
+
+قیدِ اینکه $t$ باید برای~$x$ در~$!A$ !!{free for} باشد، برای
+کنارگذاشتن مواردی مانند مورد زیر ضروری است. اگر
+$!A \ident \lexists[y][x < y]$ و $t \ident y$ باشد، آنگاه
+$\Subst{!A}{t}{x}$ برابر با $\lexists[y][y < y]$ خواهد بود. در این
+مورد، متغیر آزاد $y$ هنگام جانشینی به‌وسیلهٔ سور $\lexists[y]$
+«گرفتار» می‌شود و این مطلوب نیست. برای مثال، می‌خواهیم هرگاه
+$\lforall[x][!B]$ برقرار باشد، $\Subst{!B}{t}{x}$ نیز برقرار باشد.
+اما $\lforall[x][\lexists[y][x < y]]$ را در نظر بگیرید (در اینجا
+$!B$ همان $\lexists[y][x < y]$ است). این جمله‌ای است که، برای نمونه،
+دربارهٔ اعداد طبیعی صادق است: به‌ازای هر عدد~$x$ عدد~$y$ای وجود دارد
+که از آن بزرگ‌تر است. اگر $y$ را به‌عنوان جانشینی ممکن برای~$x$
+مجاز می‌دانستیم، به $\Subst{!B}{y}{x} \ident \lexists[y][y < y]$
+می‌رسیدیم که کاذب است. با این شرط که هیچ‌یک از متغیرهای آزاد در~$t$
+در نهایت به‌وسیلهٔ سوری در~$!A$ مقید نشوند، از این امر جلوگیری می‌کنیم.
+\end{explain}
+
+برای پرهیز از نمادگذاری دست‌وپاگیر، اغلب قرارداد زیر را به کار می‌بریم:
+اگر $!A$ یک !!a{formula} باشد که ممکن است !!{variable}~$x$ در آن
+آزاد رخ دهد، برای نشان‌دادن این امر آن را به‌صورت~$!A(x)$ نیز می‌نویسیم.
+هنگامی که روشن باشد کدام $!A$ و~$x$ را در نظر داریم و $t$ ترمی باشد
+(که فرض می‌شود برای $x$ در $!A(x)$ آزاد است)، آنگاه $!A(t)$ را
+به‌اختصار به‌جای $\Subst{!A}{t}{x}$ می‌نویسیم. برای مثال، ممکن است
+بگوییم: «$!A(t)$ را نمونه‌ای از~$\lforall[x][!A(x)]$ می‌نامیم.»
+منظور ما از این عبارت این است که اگر $!A$ هر !!{formula} دلخواه،
+$x$ یک !!a{variable} و $t$ ترمی آزاد برای~$x$ در~$!A$ باشد، آنگاه
+$\Subst{!A}{t}{x}$ نمونه‌ای از~$\lforall[x][!A]$ است.
+
+\end{document}

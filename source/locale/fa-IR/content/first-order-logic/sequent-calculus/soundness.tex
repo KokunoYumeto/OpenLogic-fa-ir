@@ -1,0 +1,388 @@
+% Part: first-order-logic
+% Chapter: sequent-calculus
+% Section: soundness.tex
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{seq}{sou}}
+      {\olfileid{pl}{seq}{sou}}
+
+\olsection{صحت}
+
+\begin{explain}
+دستگاه !!^a{derivation}، مانند حساب دنباله‌ای، \emph{صحیح} است اگر
+نتواند چیزهایی را که در واقع برقرار نیستند !!{derive} کند. بنابراین،
+صحت نوعی خاصیت ایمنی تضمین‌شده برای دستگاه‌های !!{derivation} است.
+بسته به اینکه کدام خاصیت برهان‌نظری محل بحث باشد، برای نمونه می‌خواهیم
+بدانیم که
+\begin{enumerate}
+\item هر $!A$~!!{derivable}، \iftag{FOL}{معتبر}{همان‌گو} است؛
+\item اگر !!a{sentence} از چند جملهٔ دیگر !!{derivable} باشد، پیامد
+  آن‌ها نیز هست؛
+\item اگر مجموعه‌ای از !!{sentence}s ناسازگار باشد، ارضاناپذیر است.
+\end{enumerate}
+این‌ها خواص مهم دستگاه !!a{derivation} هستند. اگر هر یک از آن‌ها
+برقرار نباشد، دستگاه !!{derivation} معیوب است---زیرا بیش از اندازه
+!!{derive} می‌کند. ازاین‌رو، اثبات صحت دستگاه !!{derivation} اهمیتی
+اساسی دارد.
+
+از آنجا که همهٔ این خواص برهان‌نظری بر حسب !!{derivability} دنباله‌های
+معینی در حساب دنباله‌ای تعریف می‌شوند، اثبات بندهای (1)--(3) بالا مستلزم
+اثبات مطلبی دربارهٔ خواص معنایی دنباله‌های !!{derivable} است. نخست تعریف
+می‌کنیم \emph{معتبر} بودن یک دنباله به چه معناست و سپس نشان می‌دهیم هر دنبالهٔ
+!!{derivable} معتبر است. آنگاه بندهای (1)--(3) به‌عنوان نتایج فرعی این
+نتیجه به دست می‌آیند.
+\end{explain}
+
+\begin{defn}
+برای \iftag{FOL}{!!^a{structure}~$\Struct
+  M$}{!!^a{valuation}~$\pAssign{v}$}، \emph{ارضای} دنبالهٔ
+$\Gamma \Sequent \Delta$ برقرار است هرگاه و تنها هرگاه یا
+$\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!A}$ برای یک $!A \in \Gamma$، یا
+$\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$ برای یک $!A \in \Delta$.
+
+یک دنباله \emph{معتبر} است هرگاه و تنها هرگاه هر
+\iftag{FOL}{!!{structure}~$\Struct
+  M$}{!!{valuation}~$\pAssign{v}$} آن را ارضا کند.
+\end{defn}
+
+\begin{thm}[صحت]
+\ollabel{thm:sequent-soundness} اگر $\Log{LK}$ دنبالهٔ $\Theta
+\Sequent \Xi$ را !!{derive}s کند، آنگاه $\Theta \Sequent \Xi$ معتبر است.
+\end{thm}
+
+\begin{proof}
+فرض کنید $\pi$ یک !!a{derivation} از $\Theta \Sequent \Xi$ باشد. با
+استقرا بر تعداد استنتاج‌ها، یعنی $n$، در~$\pi$ پیش می‌رویم.
+
+اگر تعداد استنتاج‌ها~$0$ باشد، $\pi$ فقط از یک دنبالهٔ آغازین تشکیل
+می‌شود. هر دنبالهٔ آغازین $!A \Sequent !A$ آشکارا معتبر است، زیرا برای هر
+\iftag{FOL}{$\Struct M$}{$\pAssign{v}$}، یا
+$\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!A}$ یا
+$\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$.
+
+اگر تعداد استنتاج‌ها بزرگ‌تر از~0 باشد، برحسب نوع پایین‌ترین استنتاج
+حالت‌ها را از هم متمایز می‌کنیم. بنا بر فرض استقرا، می‌توانیم فرض کنیم
+که مقدمات آن استنتاج معتبرند، زیرا تعداد استنتاج‌ها در !!{derivation} هر
+مقدمه از~$n$ کمتر است.
+
+نخست استنتاج‌های ممکن با تنها یک مقدمه را بررسی می‌کنیم.
+\begin{enumerate}
+\item آخرین استنتاج یک تضعیف است. در این صورت $\Theta \Sequent \Xi$
+  یا $!A, \Gamma \Sequent \Delta$ است (اگر آخرین استنتاج
+  \LeftR{\Weakening} باشد) یا $\Gamma \Sequent \Delta, !A$ (اگر
+  \RightR{\Weakening} باشد)، و !!{derivation} به یکی از صورت‌های زیر
+  پایان می‌یابد:
+  \begin{prooftree}
+    \AxiomC{}
+    \Deduce$\Gamma \fCenter \Delta$
+    \RightLabel{\LeftR{\Weakening}}
+    \UnaryInf$!A, \Gamma \fCenter \Delta$
+    \DisplayProof\qquad\bottomAlignProof
+    \AxiomC{}
+    \Deduce$\Gamma \fCenter \Delta$
+    \RightLabel{\RightR{\Weakening}}
+    \UnaryInf$\Gamma \fCenter \Delta, !A$
+  \end{prooftree}
+  بنا بر فرض استقرا، $\Gamma \Sequent \Delta$ معتبر است؛ یعنی برای هر
+  \iftag{FOL}{!!{structure}~$\Struct{M}$}{!!{valuation}~$\pAssign{v}$}،
+  یا یک $!C \in \Gamma$ هست به‌طوری‌که
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$، یا یک $!C \in
+  \Delta$ هست به‌طوری‌که $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!C}$.
+
+  اگر $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$ برای یک $!C \in \Gamma$،
+  آنگاه $!C \in \Theta$ نیز، زیرا $\Theta = !A, \Gamma$، و پس
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$ برای یک $!C \in \Theta$.
+  به همین ترتیب، اگر $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!C}$ برای یک $!C \in
+  \Delta$، چون $!C \in \Xi$، داریم $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!C}$
+  برای یک $!C \in \Xi$. در نتیجه، $\Theta \Sequent \Xi$ معتبر است.
+\item آخرین استنتاج \LeftR{\lnot} است: در این صورت، مقدمهٔ آخرین
+  استنتاج $\Gamma \Sequent \Delta, !A$ و نتیجهٔ آن
+  $\lnot !A, \Gamma \Sequent \Delta$ است؛ یعنی !!{derivation} به صورت
+  زیر پایان می‌یابد:
+  \begin{prooftree}
+    \AxiomC{}
+    \Deduce$\Gamma \fCenter \Delta, !A$
+    \RightLabel{\LeftR{\lnot}}
+    \UnaryInf$\lnot !A, \Gamma \fCenter \Delta$
+  \end{prooftree}
+  و $\Theta = \lnot !A, \Gamma$، در حالی که $\Xi = \Delta$.
+
+  فرض استقرا می‌گوید $\Gamma \Sequent \Delta, !A$ معتبر است؛ یعنی برای
+  هر \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$}، یا (الف) برای یک
+  $!C \in \Gamma$، $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$؛ یا (ب) برای
+  یک $!C \in \Delta$، $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!C}$؛ یا (ج)
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$. می‌خواهیم نشان دهیم $\Theta
+  \Sequent \Xi$ نیز معتبر است. فرض کنید
+  \iftag{FOL}{$\Struct{M}$ یک !!a{structure} باشد}{$\pAssign{v}$ یک
+    !!a{valuation} باشد}. اگر (الف) برقرار باشد، $!C \in \Gamma$ی هست که
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$، اما $!C \in \Theta$ نیز هست.
+  اگر (ب) برقرار باشد، $!C \in \Delta$ی هست به‌طوری‌که
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!C}$، اما $!C \in \Xi$ نیز هست.
+  سرانجام، اگر $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$، آنگاه
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{\lnot !A}$. چون $\lnot !A \in
+  \Theta$، یک $!C \in \Theta$ هست به‌طوری‌که
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$. در نتیجه، $\Theta
+  \Sequent \Xi$ معتبر است.
+\item آخرین استنتاج \RightR{\lnot} است: تمرین.
+\item آخرین استنتاج \LeftR{\land} است: دو صورت وجود دارد؛ $!A
+  \land !B$ را می‌توان در سمت چپ از $!A$ یا از $!B$ در سمت چپ مقدمه
+  استنتاج کرد. در حالت نخست، $\pi$ به صورت زیر پایان می‌یابد:
+  \begin{prooftree}
+    \AxiomC{}
+    \Deduce$!A, \Gamma \fCenter \Delta$
+    \RightLabel{\LeftR{\land}}
+    \UnaryInf$!A \land !B, \Gamma \fCenter \Delta$
+  \end{prooftree}
+  و $\Theta = !A \land !B, \Gamma$، در حالی که $\Xi = \Delta$. یک
+  \iftag{FOL}{!!a{structure}~$\Struct
+    M$}{!!a{valuation}~$\pAssign{v}$} را در نظر بگیرید. چون بنا بر فرض
+  استقرا $!A, \Gamma \Sequent \Delta$ معتبر است، یا (الف)
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!A}$؛ یا (ب)
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$ برای یک $!C \in \Gamma$؛ یا
+  (ج)~$\iftag{FOL}{\Sat{M}}{\pSat{v}}{!C}$ برای یک $!C \in \Delta$.
+  در حالت (الف)، $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!A \land !B}$؛ پس
+  یک $!C \in \Theta$ (یعنی $!A \land !B$) هست به‌طوری‌که
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$. در حالت (ب)، یک $!C
+  \in \Gamma$ هست به‌طوری‌که $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$، و
+  $!C \in \Theta$ نیز. در حالت (ج)، یک $!C \in \Delta$ هست
+  به‌طوری‌که $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!C}$، و $!C \in \Xi$ نیز،
+  زیرا $\Xi = \Delta$. پس در هر حالت،
+  \iftag{FOL}{$\Struct M$}{$\pAssign{v}$} دنبالهٔ $!A \land !B,
+  \Gamma \Sequent \Delta$ را ارضا می‌کند. چون
+  \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} دلخواه بود،
+  $!A \land !B, \Gamma \Sequent \Delta$ معتبر است. حالت استنتاج
+  $!A \land !B$ از $!B$ نیز به همین صورت و با جایگزینی $!A$ با $!B$
+  بررسی می‌شود.
+\item آخرین استنتاج \RightR{\lor} است: دو صورت وجود دارد؛ $!A
+  \lor !B$ را می‌توان در سمت راست از $!A$ یا از $!B$ در سمت راست مقدمه
+  استنتاج کرد. در حالت نخست، $\pi$ به صورت زیر پایان می‌یابد:
+  \begin{prooftree}
+    \AxiomC{}
+    \Deduce$\Gamma \fCenter \Delta, !A$
+    \RightLabel{\RightR{\lor}}
+    \UnaryInf$\Gamma \fCenter \Delta, !A \lor !B$
+  \end{prooftree}
+  اکنون $\Theta = \Gamma$ و $\Xi = \Delta, !A \lor !B$. یک
+  \iftag{FOL}{!!a{structure}~$\Struct{M}$}{!!a{valuation}~$\pAssign{v}$}
+  را در نظر بگیرید. چون $\Gamma \Sequent \Delta, !A$ معتبر است، یا
+  (الف) $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$؛ یا (ب)
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$ برای یک $!C \in \Gamma$؛ یا
+  (ج)~$\iftag{FOL}{\Sat{M}}{\pSat{v}}{!C}$ برای یک $!C \in \Delta$.
+  در حالت (الف)، $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A \lor !B}$. در حالت
+  (ب)، یک $!C \in \Gamma$ هست به‌طوری‌که
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$. در حالت (ج)، یک
+  $!C \in \Delta$ هست به‌طوری‌که $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!C}$.
+  پس در هر حالت، \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} دنبالهٔ
+  $\Gamma \Sequent \Delta, !A \lor !B$، یعنی $\Theta \Sequent \Xi$، را
+  ارضا می‌کند. چون \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} دلخواه بود،
+  $\Theta \Sequent \Xi$ معتبر است. حالت استنتاج $!A \lor !B$ از $!B$
+  نیز به همین صورت و با جایگزینی $!A$ با $!B$ بررسی می‌شود.
+\item آخرین استنتاج \RightR{\lif} است: در این صورت $\pi$ به صورت زیر
+  پایان می‌یابد:
+  \begin{prooftree}
+    \AxiomC{}
+    \Deduce$!A, \Gamma \fCenter \Delta, !B$
+    \RightLabel{\RightR{\lif}}
+    \UnaryInf$\Gamma \fCenter \Delta, !A \lif !B$
+  \end{prooftree}
+  باز هم فرض استقرا می‌گوید مقدمه معتبر است؛ می‌خواهیم نشان دهیم نتیجه
+  نیز معتبر است. فرض کنید \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$}
+  دلخواه باشد. چون $!A, \Gamma \Sequent \Delta, !B$ معتبر است، دست‌کم
+  یکی از حالت‌های زیر برقرار است: (الف)
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!A}$؛ (ب)
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!B}$؛ (ج)
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$ برای یک~$~!C \in \Gamma$؛ یا
+  (د) $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!C}$ برای یک $!C \in \Delta$.
+  در حالت‌های (الف) و (ب)، $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A \lif !B}$
+  و پس یک $!C \in \Delta, !A \lif !B$ هست به‌طوری‌که
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!C}$. در حالت (ج)، برای یک $!C \in
+  \Gamma$، $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$. در حالت (د)، برای
+  یک $!C \in \Delta$، $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!C}$. در هر
+  حالت، \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} دنبالهٔ $\Gamma
+  \Sequent \Delta, !A \lif !B$ را ارضا می‌کند. چون
+  \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} دلخواه بود، $\Gamma
+  \Sequent \Delta, !A \lif !B$ معتبر است. \iftag{FOL}{%
+\item آخرین استنتاج \LeftR{\lforall} است: در این صورت !!a{formula}~$!A(x)$
+  و ترم بستهٔ~$t$ای هست به‌طوری‌که $\pi$ به صورت زیر پایان می‌یابد:
+  \begin{prooftree}
+    \AxiomC{}
+    \Deduce$!A(t), \Gamma \fCenter \Delta$
+    \RightLabel{\LeftR{\lforall}}
+    \UnaryInf$\lforall[x][!A(x)], \Gamma \fCenter \Delta$
+  \end{prooftree}
+  می‌خواهیم نشان دهیم نتیجهٔ $\lforall[x][!A(x)], \Gamma
+  \Sequent \Delta$ معتبر است. یک !!a{structure}~$\Struct M$ را در نظر
+  بگیرید. چون مقدمهٔ $!A(t), \Gamma \Sequent \Delta$ معتبر است، یا
+  (الف) $\Sat/{M}{!A(t)}$؛ یا (ب) $\Sat/{M}{!C}$ برای یک
+  $!C \in \Gamma$؛ یا (ج)~$\Sat{M}{!C}$ برای یک $!C \in \Delta$.
+  در حالت (الف)، بنا بر \olref[syn][sem]{prop:quant-terms}، اگر
+  $\Sat{M}{\lforall[x][!A(x)]}$، آنگاه $\Sat{M}{!A(t)}$. چون
+  $\Sat/{M}{!A(t)}$، داریم $\Sat/{M}{\lforall[x][!A(x)]}$. در حالت‌های
+  (ب) و (ج)، $\Struct{M}$ نیز دنبالهٔ $\lforall[x][!A(x)], \Gamma
+  \Sequent \Delta$ را ارضا می‌کند. چون $\Struct M$ دلخواه بود،
+  $\lforall[x][!A(x)], \Gamma \Sequent \Delta$ معتبر است.
+\item آخرین استنتاج \RightR{\lexists} است: تمرین.
+\item آخرین استنتاج \RightR{\lforall} است: در این صورت !!a{formula}~$!A(x)$
+  و !!a{constant}~$a$ای هست به‌طوری‌که $\pi$ به صورت زیر پایان می‌یابد:
+  \begin{prooftree}
+    \AxiomC{}
+    \Deduce$\Gamma \fCenter \Delta, !A(a)$
+    \RightLabel{\RightR{\lforall}}
+    \UnaryInf$\Gamma \fCenter \Delta, \lforall[x][!A(x)]$
+  \end{prooftree}
+  که در آن شرط متغیر ویژه برقرار است؛ یعنی $a$ در $!A(x)$، $\Gamma$ یا
+  $\Delta$ رخ نمی‌دهد. بنا بر فرض استقرا، مقدمهٔ آخرین استنتاج معتبر
+  است. باید نشان دهیم نتیجه نیز معتبر است؛ یعنی برای هر
+  !!{structure}~$\Struct M$، یا (الف) $\Sat{M}{\lforall[x][!A(x)]}$؛
+  یا (ب) $\Sat/{M}{!C}$ برای یک $!C \in \Gamma$؛ یا
+  (ج)~$\Sat{M}{!C}$ برای یک $!C \in \Delta$.
+
+  فرض کنید $\Struct{M}$ یک !!{structure} دلخواه باشد. اگر (ب) یا (ج)
+  برقرار باشد، کار تمام است؛ پس فرض کنید هیچ‌یک برقرار نیست: برای هر
+  $!C \in \Gamma$، $\Sat{M}{!C}$، و برای هر $!C \in \Delta$،
+  $\Sat/{M}{!C}$. باید نشان دهیم (الف) برقرار است؛ یعنی
+  $\Sat{M}{\lforall[x][!A(x)]}$. بنا بر
+  \olref[syn][ass]{prop:sat-quant}، کافی است نشان دهیم
+  $\Sat{M}{!A(x)}[s]$ برای همهٔ انتساب‌های متغیری~$s$. پس $s$ را انتساب متغیری
+  دلخواه بگیرید. ساختار~$\Struct{M'}$ را در نظر بگیرید که درست مانند
+  $\Struct{M}$ است جز آنکه $\Assign{a}{M'} = s(x)$. بنا بر
+  \olref[syn][ext]{cor:extensionality-sent}، برای هر $!C \in \Gamma$،
+  $\Sat{M'}{!C}$، زیرا $a$ در~$\Gamma$ رخ نمی‌دهد؛ و برای هر
+  $!C \in \Delta$، $\Sat/{M'}{!C}$. اما مقدمه معتبر است، پس
+  $\Sat{M'}{!A(a)}$. بنا بر \olref[syn][ass]{prop:sentence-sat-true}،
+  $\Sat{M'}{!A(a)}[s]$، زیرا $!A(a)$ یک جمله است. اکنون
+  $\varAssign{s}{s}{x}$ با $s(x) = \Value{a}{M'}[s]$، زیرا
+  $\Struct{M'}$ را درست به همین صورت تعریف کرده‌ایم. پس
+  \olref[syn][ext]{prop:ext-formulas} اعمال می‌شود و
+  $\Sat{M'}{!A(x)}[s]$ را به دست می‌آوریم. چون $a$ در~$!A(x)$ رخ
+  نمی‌دهد، بنا بر \olref[syn][ext]{prop:extensionality}،
+  $\Sat{M}{!A(x)}[s]$. چون $s$ دلخواه بود، اثبات اینکه
+  $\Sat{M}{!A(x)}[s]$ برای همهٔ انتساب‌های متغیری برقرار است کامل شد.
+\item آخرین استنتاج \LeftR{\lexists} است: تمرین.
+}{}
+\end{enumerate}
+اکنون استنتاج‌های ممکن با دو مقدمه را بررسی می‌کنیم.
+\begin{enumerate}
+\item آخرین استنتاج یک برش است: در این صورت $\pi$ به صورت زیر پایان
+  می‌یابد:
+  \begin{prooftree}
+    \AxiomC{}
+    \Deduce$\Gamma \fCenter \Delta, !A$
+    \AxiomC{}
+    \Deduce$!A, \Pi \fCenter \Lambda$
+    \RightLabel{\Cut}
+    \BinaryInf$\Gamma, \Pi \fCenter \Delta, \Lambda$
+  \end{prooftree}
+  فرض کنید \iftag{FOL}{$\Struct{M}$ یک !!a{structure} باشد}{$\pAssign{v}$
+    یک !!a{valuation} باشد}. بنا بر فرض استقرا، مقدمات معتبرند، پس
+  \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} هر دو مقدمه را ارضا می‌کند.
+  دو حالت را متمایز می‌کنیم: (الف)
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!A}$ و (ب)
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$. در حالت (الف)، برای آنکه
+  \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} مقدمهٔ سمت چپ را ارضا کند،
+  باید $\Gamma \Sequent \Delta$ را ارضا کند. اما در این صورت نتیجه را
+  نیز ارضا می‌کند. در حالت (ب)، برای آنکه
+  \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} مقدمهٔ سمت راست را ارضا کند،
+  باید $\Pi \Sequent \Lambda$ را ارضا کند. باز هم
+  \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} نتیجه را ارضا می‌کند.
+\item آخرین استنتاج \RightR{\land} است. در این صورت $\pi$ به صورت زیر
+  پایان می‌یابد:
+  \begin{prooftree}
+    \AxiomC{}
+    \Deduce$\Gamma \fCenter \Delta, !A$
+    \AxiomC{}
+    \Deduce$\Gamma \fCenter \Delta, !B$
+    \RightLabel{\RightR{\land}}
+    \BinaryInf$\Gamma \fCenter \Delta, !A \land !B$
+  \end{prooftree}
+  یک \iftag{FOL}{!!a{structure}~$\Struct
+    M$}{!!a{valuation}~$\pAssign{v}$} را در نظر بگیرید. اگر
+  \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} دنبالهٔ $\Gamma \Sequent
+  \Delta$ را ارضا کند، کار تمام است. پس فرض کنید آن را ارضا نمی‌کند.
+  چون $\Gamma \fCenter \Delta, !A$ بنا بر فرض استقرا معتبر است،
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$. به همین ترتیب، چون $\Gamma
+  \Sequent \Delta, !B$ معتبر است، $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!B}$.
+  اما آنگاه $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A \land !B}$.
+\item آخرین استنتاج \LeftR{\lor} است: تمرین.
+\item آخرین استنتاج \LeftR{\lif} است. در این صورت $\pi$ به صورت زیر
+  پایان می‌یابد:
+  \begin{prooftree}
+    \AxiomC{}
+    \Deduce$\Gamma \fCenter \Delta, !A$
+    \AxiomC{}
+    \Deduce$!B, \Pi \fCenter \Lambda$
+    \RightLabel{\LeftR{\lif}}
+    \BinaryInf$!A \lif !B, \Gamma, \Pi \fCenter \Delta, \Lambda$
+  \end{prooftree}
+  باز یک \iftag{FOL}{!!a{structure}~$\Struct{M}$}{!!a{valuation}~$\pAssign{v}$}
+  را در نظر بگیرید و فرض کنید
+  \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} دنبالهٔ $\Gamma, \Pi
+  \Sequent \Delta, \Lambda$ را ارضا نمی‌کند. باید نشان دهیم
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!A \lif !B}$. اگر
+  \iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} دنبالهٔ $\Gamma, \Pi
+  \Sequent \Delta, \Lambda$ را ارضا نکند، نه $\Gamma \Sequent
+  \Delta$ و نه $\Pi \Sequent \Lambda$ را ارضا می‌کند. چون $\Gamma
+  \Sequent \Delta, !A$ معتبر است، داریم
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$. چون $!B, \Pi \Sequent
+  \Lambda$ معتبر است، داریم $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!B}$.
+  اما آنگاه $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!A \lif !B}$، و این
+  همان چیزی است که می‌خواستیم نشان دهیم.
+\end{enumerate}
+\end{proof}
+
+\tagprob{FOL}
+\begin{prob}
+اثبات \olref[fol][seq][sou]{thm:sequent-soundness} را کامل کنید.
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+اثبات \olref[pl][seq][sou]{thm:sequent-soundness} را کامل کنید.
+\end{prob}
+\tagendprob
+
+\begin{cor}
+\ollabel{cor:weak-soundness}
+اگر $\Proves !A$، آنگاه $!A$ \iftag{FOL}{معتبر}{همان‌گو} است.
+\end{cor}
+
+\begin{cor}
+\ollabel{cor:entailment-soundness}
+اگر $\Gamma \Proves !A$، آنگاه $\Gamma \Entails !A$.
+\end{cor}
+
+\begin{proof}
+اگر $\Gamma \Proves !A$، آنگاه برای یک زیرمجموعهٔ متناهی
+$\Gamma_0 \subseteq \Gamma$، !!a{derivation} از $\Gamma_0 \Sequent !A$
+وجود دارد. بنا بر \olref{thm:sequent-soundness}، هر
+\iftag{FOL}{!!{structure}~$\Struct{M}$}{!!{valuation}~$\pAssign{v}$}
+یا یک $!B \in \Gamma_0$ را کاذب می‌سازد یا $!A$ را صادق می‌سازد. پس
+اگر $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$، آنگاه
+$\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$ نیز.
+\end{proof}
+
+\begin{cor}
+\ollabel{cor:consistency-soundness}
+اگر $\Gamma$ ارضاپذیر باشد، آنگاه سازگار است.
+\end{cor}
+
+\begin{proof}
+عکس نقیض را ثابت می‌کنیم. فرض کنید $\Gamma$ سازگار نباشد. در این صورت
+یک $\Gamma_0 \subseteq \Gamma$ متناهی و یک !!a{derivation} از
+$\Gamma_0 \Sequent \quad$ وجود دارد. بنا بر
+\olref{thm:sequent-soundness}، $\Gamma_0 \Sequent \quad$ معتبر است. به
+عبارت دیگر، برای هر
+\iftag{FOL}{!!{structure}~$\Struct{M}$}{!!{valuation}~$\pAssign{v}$}،
+یک $!C \in \Gamma_0$ هست به‌طوری‌که
+$\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$؛ و چون $\Gamma_0
+\subseteq \Gamma$، آن $!C$ در~$\Gamma$ نیز هست. پس هیچ
+\iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$}ای ~$\Gamma$ را ارضا نمی‌کند و
+$\Gamma$ ارضاپذیر نیست.
+\end{proof}
+
+\end{document}

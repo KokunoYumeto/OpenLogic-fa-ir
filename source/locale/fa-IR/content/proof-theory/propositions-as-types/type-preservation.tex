@@ -1,0 +1,112 @@
+% part: intuitionistic-logic
+% chapter: propositions-as-types
+% section: type-preservation
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{pty}{tpr}
+
+\olsection{حفظ نوع}
+
+تبدیل‌های کاهشی و جایگشتیِ بررسی‌شده را می‌توان مستقیماً برای
+دستگاه‌های~\Log{tN2i} و~\Log{tN3i} نیز تعریف کرد. دستگاه~\Log{tN3i}
+نوع ترم~$\lambd$ایِ~$N$ را نسبت به بافت~$\Gamma$، !!{formula}~$!A$
+تعریف می‌کند هرگاه~$\Gamma \Sequent N : !A$ در~\Log{tN3i}
+!!a{proof} داشته باشد. این واقعیت که قواعد کاهش بتای یک‌گامی برای
+ترم‌های~$\lambd$ دقیقاً بازتاب تبدیل‌های کاهشی و جایگشتیِ~!!{proof}s
+هستند پیامد مهمی دارد: نوع ترم~$\lambd$ نسبت به بافت~$\Gamma$ پس از
+یک گام کاهش بتا ثابت می‌ماند. این ویژگی را \emph{حفظ نوع} می‌نامند.
+
+\begin{prop}
+اگر~$N$ نسبت به~$\Gamma$ نوع~$!A$ داشته باشد و~$N \redone N'$،
+آنگاه~$N'$ نیز نسبت به~$\Gamma$ نوع~$!A$ دارد.
+\end{prop}
+
+\begin{proof}
+  با استقرا بر~$N$ و ارتفاع~!!{proof}s~$\delta$ از
+  $\Gamma \Sequent N : !A$ به‌آسانی مطلب زیر را ثابت می‌کنیم: اگر~$M$
+  زیرترمی از~$N$ باشد، آنگاه~$\delta$ شامل زیر-!!{proof}ی چون
+  ~$\delta_1$ است که به~$\Gamma' \Sequent M : !B$ پایان می‌یابد. اگر
+  ~‌$M$ ردکس باشد، تبدیلی بر~$\delta_1$ اعمال می‌شود. با اعمال کاهش
+  بر~$\delta_1$، !!a{proof}~$\delta_1'$ از
+  $\Gamma' \Sequent M' : !B$ به دست می‌آوریم. با وارسی تبدیل‌های
+  ~\Log{tN3i} می‌بینیم~$M'$ حاصل کاهش~$M$ است. جایگزین‌کردن
+  ~$\delta_1$ در~$\delta$ با~$\delta_1'$، !!a{proof}~$\delta'$ از
+  $\Gamma \Sequent N' : !A$ می‌دهد، که در آن~$N'$ از جایگزین‌کردن
+  زیرترم~$M$ در~$N$ با~$M'$ حاصل شده است.
+
+  برای نمونه، تبدیل کاهشیِ~\Intro{\land} و سپس~\Elim{\land} را در نظر
+  بگیرید:
+  \[
+  \bottomAlignProof
+  \AxiomC{}
+  \Deduce$\Gamma \fCenter N_1 : !B_1$
+  \AxiomC{}
+  \Deduce$\Gamma \fCenter N_2 : !B_2$
+  \RightLabel{\Intro{\land}}
+  \BinaryInf$\Gamma \fCenter \pair{N_1}{N_2} : !B_1 \land !B_2$
+  \RightLabel{\Elim{\land}[i]}
+  \UnaryInf$\Gamma \fCenter \proj{i}{\pair{N_1}{N_2}} : !B_i$
+  \DisplayProof
+  \quad\redone\quad
+  \bottomAlignProof
+  \AxiomC{}
+  \Deduce$\Gamma \fCenter N_i : !B_i$
+  \DisplayProof
+  \]
+  می‌بینیم ترم برهانِ~!!{proof} سمت راست، یعنی~$\delta_1'$، همان~$N_i$
+  است. این دقیقاً حاصل اعمال یک گام کاهش بتا بر ترم برهان
+  ~$\proj{i}{\pair{N_1}{N_2}}$ متعلق به~!!{proof} سمت چپ، یعنی
+  ~$\delta_1$، است.
+
+  یا استنتاج~\Intro{\lif} و سپس~\Elim{\lif} و تبدیل کاهشیِ اعمال‌شده بر
+  آن را در نظر بگیرید:
+  \begin{multline*}
+  \bottomAlignProof
+  \AxiomC{$\delta_2$}
+  \Deduce$x: !B_1, \Gamma \fCenter N : !B_2$
+  \RightLabel{\Intro{\lif}}
+  \UnaryInf$\Gamma \fCenter \lambd[\typeof{x}{!B_1}][N] : !B_1 \lif !B_2$
+  \AxiomC{}
+  \RightLabel{$\delta_3$}
+  \Deduce$\Gamma \fCenter M : !B_1$
+  \RightLabel{\Elim{\lif}}
+  \BinaryInf$\Gamma \fCenter (\lambd[\typeof{x}{!B_1}][N] M) : !B_2$
+  \DisplayProof
+  \quad\redone\\
+  \bottomAlignProof
+  \AxiomC{}
+  \RightLabel{$\delta_3$}
+  \Deduce$\Gamma \fCenter M : !B_1$
+  \RightLabel{$\Subst{\delta_2}{\delta_3}{x:!B_1}$}
+  \Deduce$\Gamma \fCenter \Subst{N}{M}{x} : !B_2$
+  \DisplayProof
+  \end{multline*}
+  باز هم ترم برهانِ~!!{proof} سمت راست دقیقاً حاصل کاهش بتای یک‌گامیِ
+  ترم برهانِ~!!{proof} سمت چپ است. البته باید با دقت و با استقرا بر
+  ارتفاع~$\delta_2$ بررسی کرد که جایگزین‌کردن همهٔ اصول به‌شکل
+  $\Gamma' \Sequent x:!B_1$ در~$\delta_2$ با~!!{proof}~$\delta_3$ از
+  $\Gamma \Sequent M:!B_1$، واقعاً !!a{proof}
+  $\Subst{\delta_2}{\delta_3}{x:!B_1}$ از
+  $\Gamma \Sequent \Subst{N}{M}{x} : !B_2$ به دست می‌دهد.
+\end{proof}
+
+تناظر نزدیک میان~!!{proof}s و ترم‌های~$\lambd$ پیامد دیگری نیز دارد.
+خاصیت \emph{پیشرفت} را باید برای ترم‌های \emph{بسته و درست‌نوع‌دار}
+بیان کرد: چنین ترمی یا یک مقدار، یعنی صورت متعارف مناسب نوعش، است یا
+در یک گام کاهش بتا به ترم دیگری می‌رسد. صورت‌های متعارف بسته برای نوع
+تابعی، عطفی و فصلی به‌ترتیب لامبدا، جفت و تزریق‌اند؛ برای~$\lfalse$
+صورت متعارف بسته‌ای وجود ندارد. این ادعا با استقرا بر اشتقاق نوع‌دهی و
+لم صورت‌های متعارف اثبات می‌شود. اگر ترم بستهٔ~$N$ مقدار نباشد، وارسی
+آخرین قاعدهٔ نوع‌دهی یک ردکس~$M$ در آن آشکار می‌کند؛ زیر-!!{proof}
+متناظر در برهان~\Log{tN3i} را می‌توان تبدیل کرد. اگر
+$N \redone N'$ با جایگزین‌کردن~$M$ با حاصل کاهش آن به دست آید، نتیجه
+!!a{proof} از~$\Gamma \Sequent N' : !A$ است.
+
+پیشرفت همراه با حفظ نوع تضمین می‌کند کاهش بتای ترم‌های بسته و
+درست‌نوع‌دار «گیر نمی‌کند»: اگر ترم مقدار نباشد، به ترم درست‌نوع‌دار
+دیگری با همان نوع کاهش می‌یابد.
+
+\end{document}

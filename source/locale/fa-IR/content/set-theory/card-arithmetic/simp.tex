@@ -1,0 +1,149 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+\olfileid{sth}{card-arithmetic}{simp}
+
+\olsection{ساده‌سازی جمع و ضرب}
+
+چنان‌که معلوم می‌شود، جمع و ضرب ترامتناهیِ کاردینالی
+\emph{بسیار} ساده است. این امر از آن‌جا ناشی می‌شود که کاردینال‌ها
+(برخی) اعداد ترتیبی‌اند، و ازاین‌رو خوش‌ترتیب‌اند و می‌توان آن‌ها را
+به شیوه‌ای معین دست‌کاری کرد. بااین‌حال، نشان‌دادن این مطلب
+\emph{چندان} آسان نیست. برای آغاز به تعریفی ظریف نیاز داریم:
+
+\begin{defn}
+یک \emph{ترتیب کانونی}، یعنی $\canonord$، را بر زوج‌های اعداد ترتیبی
+چنین تعریف می‌کنیم: $\tuple{\alpha_1, \alpha_2} \canonord
+\tuple{\beta_1, \beta_2}$ اگر و تنها اگر یکی از شرط‌های زیر برقرار باشد:
+\begin{enumerate}
+	\item $\max(\alpha_1, \alpha_2) < \max(\beta_1, \beta_2)$؛ یا
+	\item $\max(\alpha_1, \alpha_2) = \max(\beta_1, \beta_2)$ و
+	$\alpha_1 < \beta_1$؛ یا
+	\item $\max(\alpha_1, \alpha_2) = \max(\beta_1, \beta_2)$ و
+	$\alpha_1 = \beta_1$ و $\alpha_2 < \beta_2$.
+\end{enumerate}
+\end{defn}
+
+\begin{lem}
+برای هر عدد ترتیبی $\alpha$، $\tuple{\alpha \times \alpha, \canonord}$
+یک خوش‌ترتیب است.
+\end{lem}
+
+\begin{proof}
+آشکارا $\canonord$ بر $\alpha \times \alpha$ تام است. فرض کنید نه
+$\tuple{\alpha_1, \alpha_2}$ در ترتیب $\canonord$ از
+$\tuple{\beta_1, \beta_2}$ کوچک‌تر باشد و نه دومی از اولی. در این صورت
+$\max(\alpha_1, \alpha_2) = \max(\beta_1, \beta_2)$ و
+$\alpha_1 = \beta_1$ و $\alpha_2 = \beta_2$؛ پس
+$\tuple{\alpha_1, \alpha_2} = \tuple{\beta_1, \beta_2}$.
+
+برای نشان‌دادن خوش‌ترتیبی، بگذارید $X \subseteq \alpha\times\alpha$
+ناتهی باشد. چون $\alpha$ عددی ترتیبی است، عددی چون $\delta$ کوچک‌ترین
+عضوِ $\Setabs{\max(\gamma_1, \gamma_2)}{\tuple{\gamma_1,
+\gamma_2} \in X}$ است. اکنون از
+$\Setabs{\tuple{\gamma_1,\gamma_2} \in X}{\max(\gamma_1, \gamma_2) =
+\delta}$ همهٔ زوج‌ها جز آن‌هایی را که مؤلفهٔ نخستِ کمینه دارند کنار
+بگذارید؛ در میان زوج‌های باقی‌مانده، زوجی که مؤلفهٔ دومِ کمینه دارد،
+عضوِ $\canonord$-کمینهٔ $X$ است.
+\end{proof}
+\noindent
+اکنون ملاحظه‌ای بسیار کوچک و ساده:
+
+\begin{prop}\ollabel{simplecardproduct}
+اگر $\cardeq{\alpha}{\beta}$، آنگاه
+$\cardeq{\alpha \times \alpha}{\beta \times \beta}$.
+\end{prop}
+
+\begin{proof}
+کافی است $f \colon \alpha \to \beta$ نگاشت
+$\tuple{\gamma_1, \gamma_2} \mapsto
+\tuple{f(\gamma_1), f(\gamma_2)}$ را القا کند.
+\end{proof}
+\noindent
+اکنون همهٔ این مطالب را در اثبات لمی اساسی به کار می‌گیریم:
+\begin{lem}\ollabel{alphatimesalpha}
+برای هر عدد ترتیبی نامتناهی $\alpha$،
+$\cardeq{\alpha}{\alpha \times \alpha}$.
+\end{lem}
+
+\begin{proof}
+برای برهان خلف، بگذارید $\alpha$ کوچک‌ترین عدد ترتیبی نامتناهی باشد که
+این حکم برای آن نادرست است. از
+\olref[sfr][siz][zigzag]{natsquaredenumerable} داریم
+$\cardeq{\omega}{\omega\times\omega}$، پس $\omega \in \alpha$.
+افزون‌براین، $\alpha$ یک کاردینال است. وگرنه، برای برهان خلف،
+$\card{\alpha} \in \alpha$؛ در نتیجه، بنا بر فرض،
+$\cardeq{\card{\alpha}}{\card{\alpha} \times \card{\alpha}}$، و بنا بر
+تعریف $\cardeq{\card{\alpha}}{\alpha}$؛ پس با استفاده از
+\olref{simplecardproduct} خواهیم داشت
+$\cardeq{\alpha}{\alpha\times\alpha}$.
+
+اکنون برای هر $\tuple{\gamma_1, \gamma_2} \in \alpha \times \alpha$،
+قطعهٔ زیر را در نظر بگیرید:
+\begin{align*}
+	\text{Seg}(\gamma_1, \gamma_2) &= \Setabs{\tuple{\delta_1, \delta_2} \in \alpha \times \alpha}{\tuple{\delta_1, \delta_2} \canonord \tuple{\gamma_1, \gamma_2}}
+\end{align*}
+اگر $\gamma = \max(\gamma_1, \gamma_2)$، آنگاه
+$\tuple{\gamma_1, \gamma_2} \canonord \tuple{\gamma+1, \gamma + 1}$.
+اگر $\gamma$ متناهی باشد، این قطعه متناهی است و بنابراین کاردینالیتهٔ
+آن از کاردینال نامتناهی $\alpha$ کوچک‌تر است. اگر $\gamma$ نامتناهی
+باشد، داریم:
+\begin{align*}
+	\text{Seg}(\gamma_1, \gamma_2) &
+	\precsim ((\gamma \ordplus 1)\ordtimes (\gamma \ordplus 1))\\
+	&\approx (\gamma \ordtimes \gamma)
+	\text{، بنا بر \olref[ord-arithmetic][using-addition]{ordinfinitycharacter} و
+	\olref{simplecardproduct}}\\
+	&\approx \gamma \text{، بنا بر فرض استقرا}\\
+	& \prec \alpha\text{، زیرا $\alpha$ یک کاردینال است.}
+\end{align*}
+پس $\ordtype{\alpha\times \alpha, \canonord} \leq \alpha$ و در نتیجه
+$\cardle{\alpha \times \alpha}{\alpha}$. از سوی دیگر، البته
+$\cardle{\alpha}{\alpha \times \alpha}$؛ بنابراین نتیجه از قضیهٔ
+شرودر--برنشتاین به دست می‌آید.
+\end{proof}
+
+سرانجام به نتیجهٔ ساده‌کنندهٔ خود می‌رسیم:
+
+\begin{thm}\ollabel{cardplustimesmax}
+اگر $\cardfont{a}, \cardfont{b}$ کاردینال‌هایی نامتناهی باشند، آنگاه:
+\[
+	\cardfont{a}
+\cardtimes \cardfont{b} = \cardfont{a} \cardplus \cardfont{b} =
+\text{max}(\cardfont{a}, \cardfont{b}).
+\]
+\end{thm}
+
+\begin{proof}
+بدون کاستن از کلیت، فرض کنید
+$\cardfont{a} = \max(\cardfont{a}, \cardfont{b})$. آنگاه با به‌کارگیری
+\olref{alphatimesalpha}،
+$\cardfont{a}\cardtimes\cardfont{a} = \cardfont{a} \leq \cardfont{a}
+\cardplus \cardfont{b} \leq \cardfont{a} \cardplus \cardfont{a} \leq
+\cardfont{a} \cardtimes \cardfont{a}$.
+\end{proof}\noindent
+به همین ترتیب، اگر $\cardfont{a}$ نامتناهی باشد، اجتماعِ
+$\cardfont{a}$ مجموعه که هر یک اندازه‌ای $\leq\cardfont{a}$ دارند،
+اندازه‌ای $\leq\cardfont{a}$ دارد:
+
+\begin{prop}\ollabel{kappaunionkappasize}
+بگذارید $\cardfont{a}$ کاردینالی نامتناهی باشد. برای هر عدد ترتیبی
+$\beta \in \cardfont{a}$، بگذارید $X_\beta$ مجموعه‌ای باشد که
+$\card{X_\beta} \leq \cardfont{a}$. آنگاه
+$\card{\bigcup_{\beta \in \cardfont{a}} X_\beta} \leq \cardfont{a}$.
+\end{prop}
+
+\begin{proof}
+برای هر $\beta \in \cardfont{a}$، یک !!a{injection} $f_\beta \colon
+X_\beta \to \cardfont{a}$ برگزینید.\footnote{این نگاشت‌ها چگونه
+«برگزیده» می‌شوند؟ بنگرید به \olref[sth][choice][countablechoice]{sec}.}
+یک !!a{injection} $g \colon
+\bigcup_{\beta \in \cardfont{a}} X_\beta \to \cardfont{a} \times
+\cardfont{a}$ را با $g(v) = \tuple{\beta, f_\beta(v)}$ تعریف کنید، که
+در آن $v \in X_\beta$ و برای هیچ $\gamma \in \beta$ نداریم
+$v \in X_\gamma$. اکنون بنا بر \olref{cardplustimesmax}،
+$\bigcup_{\beta \in \cardfont{a}} X_\beta \preceq
+\cardfont{a} \times \cardfont{a} \approx \cardfont{a}$.
+\end{proof}
+
+\end{document}

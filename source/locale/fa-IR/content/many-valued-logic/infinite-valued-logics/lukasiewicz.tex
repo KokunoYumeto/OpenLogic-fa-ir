@@ -1,0 +1,108 @@
+% Part: many-valued-logic
+% Chapter: infinite-valued-logics
+% Section: lukasiewicz
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mvl}{inf}{luk}
+
+\olsection{منطق \L ukasiewicz}
+
+\begin{editorial}
+  این بخش پیش‌نویسی بسیار کوتاه دربارهٔ منطق بی‌نهایت‌ارزشی
+  \L ukasiewicz است.
+\end{editorial}
+
+\begin{defn}\ollabel{def:lukasiewicz} منطق بی‌نهایت‌ارزشی
+\L ukasiewicz، یعنی~$\LogLuk[\infty]$، با ماتریس زیر تعریف می‌شود:
+\begin{enumerate}
+  \item زبان گزاره‌ای استاندارد~$\Lang L_0$ با~$\lnot$، $\land$،
+  $\lor$ و~$\lif$.
+  \item مجموعهٔ ارزش‌های صدق~$V_\infty$.
+  \item $1$ تنها ارزش ممتاز است؛ یعنی~$V^+ = \{1\}$.
+  \item توابع صدق با توابع زیر داده می‌شوند:
+  \begin{align*}
+    \tf{\lnot}[\LogLuk](x) & = 1 - x\\
+    \tf{\land}[\LogLuk](x,y) & = \min(x,y)\\
+    \tf{\lor}[\LogLuk](x,y) & = \max(x,y)\\
+    \tf{\lif}[\LogLuk](x,y) & = \min(1,1-(x-y)) = \begin{cases}
+      1 & \text{اگر } x \le y\\
+      1-(x-y) & \text{در غیر این صورت.}
+    \end{cases}
+    \end{align*}
+\end{enumerate}
+منطق~$m$ارزشی \L ukasiewicz نیز به همین شیوه تعریف می‌شود، جز اینکه
+$V = V_m$.
+\end{defn}
+
+\begin{prop}
+  منطق~$\LogLuk[3]$ که با~\olref[thr][luk]{def:lukasiewicz} تعریف شده،
+  همان~$\LogLuk[3]$ تعریف‌شده با~\olref{def:lukasiewicz} است.
+\end{prop}
+
+\begin{proof}
+  این امر با مقایسهٔ جدول‌های صدق رابط‌ها در
+  \olref[thr][luk]{def:lukasiewicz} با جدول‌های صدقی که معادلات
+  \olref{def:lukasiewicz} تعیین می‌کنند روشن می‌شود:
+  \begin{center}
+    \begin{tabular}{c|c} 
+      $\tf{\lnot}$ & \\ 
+      \hline  
+      $1$ & $0$ \\ 
+      $1/2$ & $1/2$ \\
+      $0$ & $1$ 
+    \end{tabular}
+    \quad
+    \begin{tabular}{c|ccc} 
+      $\tf{\land}[\LogLuk[3]]$ & $1$ & $1/2$ & $0$ \\ 
+      \hline 
+      $1$ & $1$ & $1/2$ & $0$ \\ 
+      $1/2$ & $1/2$ & $1/2$ & $0$\\ 
+      $0$ & $0$ & $0$ & $0$ 
+    \end{tabular}
+    \\[2ex]
+    \begin{tabular}{c|ccc} 
+      $\tf{\lor}[\LogLuk[3]]$ & $1$ & $1/2$ & $0$ \\ 
+      \hline 
+      $1$ & $1$ & $1$ & $1$ \\ 
+      $1/2$ & $1$ & $1/2$ & $1/2$ \\
+      $0$ & $1$ & $1/2$ & $0$ 
+    \end{tabular}
+    \quad
+    \begin{tabular}{c|ccc} 
+      $\tf{\lif}[\LogLuk[3]]$ & $1$ & $1/2$ & $0$ \\ 
+      \hline 
+      $1$ & $1$ & $1/2$ & $0$ \\ 
+      $1/2$ & $1$ & $1$ & $1/2$  \\ 
+      $0$ & $1$ & $1$ & $1$ 
+    \end{tabular}
+  \end{center} 
+\end{proof}
+
+\begin{prop}\ollabel{prop:luk-infty-m}
+  اگر~$\Gamma \Entails[\LogLuk[\infty]] !B$، آنگاه برای همهٔ
+  $m \ge 2$، $\Gamma \Entails[\LogLuk[m]] !B$.
+\end{prop}
+
+\begin{proof}
+  تمرین.
+\end{proof}
+
+\begin{prob}
+  \olref[mvl][inf][luk]{prop:luk-infty-m} را ثابت کنید.
+\end{prob}
+
+در واقع، عکس این گزاره نیز برقرار است.
+
+منطق بی‌نهایت‌ارزشی \L ukasiewicz رایج‌ترین منطق فازی است. در ادبیات
+منطق فازی، رابط شرطی را اغلب به‌صورت~$\lnot !A \lor !B$ تعریف می‌کنند.
+حاصل یک منطق قوی کلینیِ بی‌نهایت‌ارزشی خواهد بود.
+
+\begin{prob}
+  نشان دهید~$(p \lif q) \lor (q \lif p)$ همان‌گویی
+  $\LogLuk[\infty]$ است.
+\end{prob}
+
+\end{document}

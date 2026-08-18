@@ -1,0 +1,132 @@
+% Part: first-order-logic
+% Chapter: axiomatic-deduction
+% Section: deduction-theorem
+
+% verification of properties of provability needed for maximally
+% consistent sets in the completeness chapter.
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{axd}{ded}}
+      {\olfileid{pl}{axd}{ded}}
+
+\olsection{قضیهٔ استنتاج}
+
+همان‌گونه که دیده‌ایم، ارائهٔ !!{derivation}s در یک دستگاه اصل‌موضوعی
+دشوار است و یافتن !!{derivation}s نیز ممکن است دشوار باشد. به‌جای آنکه
+فهرست‌های بلند !!{formula}s را عملاً بنویسیم، معمولاً آسان‌تر است با
+استفاده از چند نتیجهٔ ساده استدلال کنیم که چنین !!{derivation}sای وجود
+دارند. پیش‌تر سه نتیجه از این دست را اثبات کرده‌ایم:
+\olref[ptn]{prop:reflexivity} می‌گوید هرگاه بدانیم $!A \in \Gamma$،
+همواره می‌توانیم حکم کنیم $\Gamma \Proves !A$.
+\olref[ptn]{prop:monotonicity} می‌گوید اگر $\Gamma \Proves !A$، آنگاه
+همچنین $\Gamma \cup \{!B\} \Proves !A$. و
+\olref[ptn]{prop:transitivity} نتیجه می‌دهد که اگر
+$\Gamma \Proves !A$ و $!A \Proves !B$، آنگاه $\Gamma \Proves !B$.
+اینک نتیجهٔ سادهٔ دیگری، یعنی نسخه‌ای «فرا» از وضع مقدم، را می‌آوریم:
+
+\begin{prop}
+  \ollabel{prop:mp} اگر $\Gamma \Proves !A$ و
+  $\Gamma \Proves !A \lif !B$، آنگاه $\Gamma \Proves !B$.
+\end{prop}
+
+\begin{proof}
+  داریم $\{!A, !A \lif !B\} \Proves !B$:
+  \begin{derivation}
+    1. & $!A$ & \Hyp\\
+    2. & $!A \lif !B$ & \Hyp\\
+    3. & $!B$ & 1, 2, MP
+  \end{derivation}
+  بنا بر \olref[ptn]{prop:transitivity}، $\Gamma \Proves !B$.
+\end{proof}
+
+مهم‌ترین نتیجه‌ای که در این زمینه به کار خواهیم برد قضیهٔ استنتاج است:
+
+\begin{thm}[قضیهٔ استنتاج]
+\ollabel{thm:deduction-thm} $\Gamma \cup \{!A\} \Proves !B$ هرگاه و
+تنها هرگاه $\Gamma \Proves !A \lif !B$.
+\end{thm}
+
+\begin{proof}
+جهت «اگر» بی‌درنگ به دست می‌آید. اگر $\Gamma \Proves !A \lif !B$،
+آنگاه بنا بر \olref[ptn]{prop:monotonicity} همچنین
+$\Gamma \cup \{!A\} \Proves !A \lif !B$. نیز بنا بر
+\olref[ptn]{prop:reflexivity}، $\Gamma \cup \{!A\} \Proves !A$. پس
+بنا بر \olref{prop:mp}، $\Gamma \cup \{!A\} \Proves !B$.
+
+برای جهت «تنها اگر»، بر طول !!{derivation}~$!B$ از
+$\Gamma \cup \{!A\}$ استقرا می‌کنیم.
+
+برای پایهٔ استقرا، ادعا را برای هر !!{derivation} به طول~$1$ اثبات
+می‌کنیم. !!^a{derivation} به طول~$1$ برای~$!B$ از
+$\Gamma \cup \{!A\}$ تنها از خود $!B$ تشکیل می‌شود؛ و اگر درست باشد،
+$!B \in \Gamma \cup \{!A\}$ یا یک اصل موضوع است. اگر
+  $!B \in \Gamma$ باشد یا یک اصل موضوع باشد، آنگاه
+$\Gamma \Proves !B$. همچنین بنا بر \olref[prp]{ax:lif1}،
+$\Gamma \Proves !B \lif (!A \lif !B)$، و \olref{prop:mp} نتیجه می‌دهد
+$\Gamma \Proves !A \lif !B$. اگر $!B \in \{ !A\}$، آنگاه
+$\Gamma \Proves !A \lif !B$، زیرا آخرین !!{formula}~$!A \lif !B$
+همان $!A \lif !A$ است، و این را در \olref[pro]{ex:identity}~
+!!{derive} کرده‌ایم.
+
+برای گام استقرا، فرض کنید !!a{derivation} برای~$!B$ از
+$\Gamma \cup \{!A\}$ با گام~$!B$ پایان یابد که با وضع مقدم توجیه شده
+است. (اگر با وضع مقدم توجیه نشده باشد، $!B \in \Gamma$، یا
+$!B \ident !A$، یا $!B$ یک اصل موضوع است، و همان استدلال پایهٔ استقرا
+به کار می‌آید.) در این صورت برخی گام‌های پیشین !!{derivation}، برای
+یک !!{formula}~$!C$، عبارت‌اند از $!C \lif !B$ و $!C$؛ یعنی
+$\Gamma \cup \{!A\} \Proves !C \lif !B$ و
+$\Gamma \cup \{!A\} \Proves !C$، و !!{derivation}s متناظر کوتاه‌ترند،
+پس فرض استقرا بر آن‌ها اعمال می‌شود. بنابراین هر دو حکم زیر را داریم:
+\begin{align*}
+  & \Gamma \Proves !A \lif (!C \lif !B); \\
+  & \Gamma \Proves !A \lif !C.
+\end{align*}
+اما همچنین
+\[
+\Gamma \Proves (!A \lif (!C \lif !B)) \lif
+((!A\lif !C)  \lif (!A \lif !B)),
+\]
+بنا بر \olref[prp]{ax:lif2}، و دو بار کاربرد \olref{prop:mp} حکم مطلوبِ
+$\Gamma \Proves !A \lif !B$ را به دست می‌دهد.
+\end{proof}
+
+توجه کنید \olref[prp]{ax:lif1} و \olref[prp]{ax:lif2} دقیقاً چنان
+انتخاب شده‌اند که قضیهٔ استنتاج برقرار باشد.
+
+احکام زیر چند واقعیت سودمند دربارهٔ !!{derivability} هستند که به‌عنوان
+تمرین واگذار می‌کنیم.
+
+\begin{prop}
+  \ollabel{prop:derivfacts}
+\begin{enumerate}
+\item $\Proves (!A \lif !B) \lif ((!B \lif !C)
+  \lif (!A \lif !C))$؛ \ollabel{derivfacts:a}
+\item اگر $\Gamma \cup \{ \lnot !A\}
+  \Proves \lnot !B$، آنگاه $\Gamma \cup \{ !B\} \Proves
+  !A$ (عکس نقیض)؛ \ollabel{derivfacts:b}
+\item $\{ !A, \lnot!A\} \Proves
+    !B$ (از محال هر چیز نتیجه می‌شود، انفجار)؛ \ollabel{derivfacts:c}
+\item $\{ \lnot\lnot!A\} \Proves
+  !A$ (حذف نقیض مضاعف)؛\ollabel{derivfacts:d}
+\item اگر $\Gamma \Proves \lnot\lnot!A$، آنگاه $\Gamma \Proves
+  !A$؛\ollabel{derivfacts:e}
+\end{enumerate}
+\end{prop}
+
+\tagprob{FOL}
+\begin{prob}
+  \olref[fol][axd][ded]{prop:derivfacts} را اثبات کنید.
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+  \olref[pl][axd][ded]{prop:derivfacts} را اثبات کنید.
+\end{prob}
+\tagendprob
+
+\end{document}

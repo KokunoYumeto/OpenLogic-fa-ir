@@ -1,0 +1,157 @@
+% Part: lambda-calculus
+% Chapter: lambda-definability
+% Section: primitive-recursive-functions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{ldf}{prf}
+\olsection{توابع بازگشتی اولیه \usetoken{S}{lambda definable} هستند} 
+
+به یاد آورید که توابع بازگشتی اولیه توابعی هستند که بتوان آن‌ها را از
+توابع پایهٔ~$\Zero$، $\Succ$ و~$\Proj{n}{i}$ با ترکیب و بازگشت اولیه
+تعریف کرد.
+
+\begin{lem}
+  \ollabel{lem:basic}
+  توابع بازگشتی اولیهٔ پایه~$\Zero$، $\Succ$ و تصویرها~$\Proj{n}{i}$
+  !!{lambda definable} هستند.
+\end{lem}
+
+\begin{proof}
+ترم‌های زیر آن‌ها را~!!{lambda define}:
+\begin{align*}
+  \fn{Zero} & \ident \lambd[a][\lambd[fx][x]]\\
+  \fn{Succ} & \ident \lambd[a][\lambd[fx][f (a f x)]] \\
+  \fn{Proj}^n_i & \ident \lambd[x_0\dots x_{n-1}][x_i]
+\end{align*}
+\end{proof}
+
+\begin{lem}
+  \ollabel{lem:comp} فرض کنید تابع~$k$موضعی~$f$ و توابع~$n$موضعی
+  $g_0, \dots, g_{k-1}$، به‌ترتیب با ترم‌های~$F$، $G_0$، \dots،
+  $G_{k-1}$ !!{lambda definable} باشند، و~$h$ با ترکیب آن‌ها تعریف شده
+  باشد. آنگاه~$h$ به‌وسیلهٔ~$H$ !!{lambda definable} است.
+\end{lem}
+
+\begin{proof}
+  ترم زیر تابع~$h$ را~!!{lambda define}:
+  \[
+  H \ident \lambd[x_0 \dots x_{n-1}][F\, (G_0 x_0 \dots
+    x_{n-1}) \dots (G_{k-1} x_0 \dots x_{n-1})]
+  \]
+  وارسی این واقعیت را به‌عنوان تمرین واگذار می‌کنیم.
+\end{proof}
+
+\begin{prob}
+  برهان~\olref[lam][ldf][prf]{lem:comp} را با نشان‌دادن رابطهٔ زیر
+  کامل کنید:
+  $H\num{n_0}\dots\num{n_{n-1}} \red \num{h(n_0, \dots,
+    n_{n-1})}$.
+\end{prob}
+
+توجه کنید که~\olref{lem:comp} مستلزم بازگشتی اولیه بودن~$f$ و~$g_0$،
+\dots،~$g_{k-1}$ نبود؛ فقط لازم بود این توابع تام و
+!!{lambda definable} باشند.
+
+\begin{lem}\ollabel{lem:prim}
+  فرض کنید~$f$ تابعی~$n$موضعی و~$g$ تابعی~$(n+2)$موضعی باشد، آن‌ها
+  به‌ترتیب با ترم‌های~$F$ و~$G$ !!{lambda definable} باشند، و تابع~$h$
+  با بازگشت اولیه از~$f$ و~$g$ تعریف شده باشد. آنگاه~$h$ نیز
+  !!{lambda definable} است.
+\end{lem}
+
+\begin{proof}
+  به یاد آورید که~$h$ چنین تعریف می‌شود:
+  \begin{align*}
+    h(x_1, \dots, x_n, 0) &= f(x_1, \dots, x_n)\\
+    h(x_1, \dots, x_n, y+1) & = g(x_1, \dots, x_n, y,
+      h(x_1, \dots, x_n, y)).
+  \end{align*}
+  به‌طور غیرصوری، تعریف بازگشتی اولیه، به‌روزرسانی حالت را که~$g$ تعیین
+  می‌کند~$y$ بار تکرار می‌کند و از~$f(x_1, \dots, x_n)$ آغاز می‌شود.
+  این امر یادآور تعریف عددنماهای چرچ است که آن‌ها نیز به‌صورت تکرارگر
+  تعریف می‌شوند.
+
+  برای سادگی، تعریف و برهان را در حالت~$n=1$ می‌آوریم: یک پارامتر~$x$
+  به‌علاوهٔ متغیر بازگشت~$y$. تابع~$h$ با ترم زیر
+  !!{lambda defined} است:
+  \begin{align*}
+    H \ident & \lambd[x][\lambd[y][\fn{Snd} (y
+        D \tuple{\num{0}, F x})]]
+    \intertext{که در آن}
+    D \ident & \lambd[p][\tuple{\fn{Succ} (\fn{Fst}\, p), (G x
+          (\fn{Fst}\, p) (\fn{Snd}\, p))}]
+  \end{align*}
+  حالت تکرار را به‌صورت زوجی نگه می‌داریم که مؤلفهٔ نخست آن مقدار کنونی
+  $y$ و مؤلفهٔ دوم مقدار متناظر~$h$ است. در هر گام تکرار، با
+  به‌روزرسانیِ تعیین‌شده به‌وسیلهٔ~$g$، زوجی از مقدار تازهٔ~$y$ و مقدار
+  تازهٔ~$h$ می‌سازیم؛ پس از پایان تکرار، مؤلفهٔ دوم زوج را بازمی‌گردانیم
+  که مقدار نهایی~$h$ است. اکنون ثابت می‌کنیم که این ترم واقعاً بازگشت
+  اولیه را نمایش می‌دهد.
+
+  می‌خواهیم ثابت کنیم برای هر~$n$ و~$m$،
+  $H\,\num{n}\,\num{m} \red \num{h(n,m)}$. برای این کار نخست نشان
+  می‌دهیم اگر~$D_n \ident \Subst{D}{\num{n}}{x}$، آنگاه
+  $D_n^m \tuple{\num{0}, F\, \num{n}} \red
+  \tuple{\num{m}, \num{h(n, m)}}$. با استقرا بر~$m$ پیش می‌رویم.
+
+  اگر~$m=0$، باید نشان دهیم
+  $D_n^0 \tuple{\num{0}, F\, \num{n}} \red
+  \tuple{\num{0}, \num{h(n, 0)}}$. اما
+  $D_n^0 \tuple{\num{0}, F\, \num{n}}$ همان
+  $\tuple{\num{0}, F\, \num{n}}$ است. چون~$F$، تابع~$f$ را
+  !!{lambda define}s، این ترم به~$\tuple{\num{0}, \num{f(n)}}$ کاهش
+  می‌یابد؛ و چون~$f(n) = h(n, 0)$، این همان
+  $\tuple{\num{0}, \num{h(n,0)}}$ است.
+
+  اکنون فرض کنید~$D_n^m \tuple{\num{0}, F\, \num{n}} \red
+  \tuple{\num{m}, \num{h(n, m)}}$. می‌خواهیم نشان دهیم
+  $D_n^{m+1} \tuple{\num{0}, F\, \num{n}} \red
+  \tuple{\num{m+1}, \num{h(n, m+1)}}$.
+  \begin{align*}
+    D_n^{m+1} \tuple{\num{0}, F\, \num{n}}
+    & \ident D_n(D_n^{m} \tuple{\num{0}, F\, \num{n}})\\
+    & \red D_n\,\tuple{\num{m}, \num{h(n, m)}} \text{\qquad (بنا بر فرض استقرا)}\\
+    & \ident (\lambd[p][
+      \tuple{
+        \fn{Succ} (\fn{Fst}\, p), (G \, \num{n} (\fn{Fst}\, p) (\fn{Snd}\, p))
+    }]) \tuple{\num{m}, \num{h(n,m)}}\\
+    & \redone
+    \tuple{\fn{Succ} (\fn{Fst}\, \tuple{\num{m}, \num{h(n,m)}}),\\
+      & \qquad (G \, \num{n} (\fn{Fst}\, \tuple{\num{m}, \num{h(n,m)}}) (\fn{Snd}\, \tuple{\num{m}, \num{h(n,m)}}))}\\
+    & \red 
+    \tuple{\fn{Succ}\, \num{m}, (G \, \num{n} \,\num{m} \, \num{h(n,m)})}\\
+    & \red \tuple{\num{m+1}, \num{g(n, m, h(n, m))}}
+  \end{align*}
+  چون~$g(n, m, h(n, m)) = h(n, m+1)$، کار تمام است.
+
+  سرانجام، عبارت زیر را در نظر بگیرید:
+  \begin{align*}
+    H\,\num n\,\num m &\ident \lambd[x][\lambd[y][\fn{Snd} (y
+        (\lambd[p].\tuple{\fn{Succ} (\fn{Fst}\, p), (G\, x\,
+          (\fn{Fst}\, p)\, (\fn{Snd}\, p))}) \tuple{\num{0}, F x})]]\\
+    & \qquad\,\num n\, \num m\\
+    & \red \fn{Snd} (\num m \,
+    \underbrace{(\lambd[p].\tuple{\fn{Succ} (\fn{Fst}\, p), (G \,\num n\,
+      (\fn{Fst}\, p) (\fn{Snd}\, p))})}_{D_n} \tuple{\num{0}, F \num n})\\
+    & \ident \fn{Snd} (\num m \, D_n\, \tuple{\num{0}, F \num n})\\
+    & \red \fn{Snd} \,(D_n^m  \tuple{\num{0}, F \num n})\\
+    & \red \fn{Snd} \,\tuple{\num{m}, \num{h(n, m)}} \\
+    & \red \num{h(n,m)}. 
+  \end{align*}  
+\end{proof}
+
+
+\begin{prop}
+  هر تابع بازگشتی اولیه~!!{lambda definable} است.
+\end{prop}
+
+\begin{proof}
+  بنا بر~\olref{lem:basic}، همهٔ توابع پایه~!!{lambda definable} هستند؛
+  و بنا بر~\olref{lem:comp} و~\olref{lem:prim}، توابع
+  !!{lambda definable} تحت ترکیب و بازگشت اولیه بسته‌اند.
+\end{proof}
+
+\end{document}

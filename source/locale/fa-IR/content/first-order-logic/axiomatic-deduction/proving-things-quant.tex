@@ -1,0 +1,36 @@
+% Part: first-order-logic
+% Chapter: axiomatic-deduction
+% Section: proving-things-quant
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{axd}{prq}
+
+\olsection{\usetoken{P}{derivation} با سورها}
+
+\begin{ex}
+بیایید !!a{derivation} برای $(\lforall[x][!A(x)] \land
+\lforall[y][!B(y)]) \lif \lforall[x][(!A(x) \land !B(x))]$ ارائه کنیم.
+
+نخست توجه کنید که
+\begin{align*}
+  (\lforall[x][!A(x)] \land \lforall[y][!B(y)]) & \lif \lforall[x][!A(x)]\\
+  \intertext{نمونه‌ای از \olref[prp]{ax:land1} است، و}
+  \lforall[x][!A(x)] & \lif !A(a) \\
+  \intertext{نمونه‌ای از \olref[qua]{ax:q1}. پس بنا بر \olref[pro]{prop:chain} می‌دانیم}
+  (\lforall[x][!A(x)] \land \lforall[y][!B(y)]) & \lif !A(a) \\
+  \intertext{!!{derivable} است. همچنین، چون}
+  (\lforall[x][!A(x)] \land \lforall[y][!B(y)]) & \lif \lforall[y][!B(y)] \qquad\text{و}\\
+    \lforall[y][!B(y)] & \lif !B(a)\\
+    \intertext{به‌ترتیب نمونه‌هایی از \olref[prp]{ax:land2} و \olref[qua]{ax:q1} هستند،}
+    (\lforall[x][!A(x)] \land \lforall[y][!B(y)]) & \lif !B(a)\\
+    \intertext{بنا بر \olref[pro]{prop:chain} اشتقاق‌پذیر است. با استفاده از نمونهٔ مناسبی از \olref[prp]{ax:land3} و دو بار کاربرد~\MP، می‌بینیم}
+    (\lforall[x][!A(x)] \land \lforall[y][!B(y)]) & \lif (!A(a) \land !B(a))\\
+    \intertext{اشتقاق‌پذیر است. اکنون می‌توانیم \QR{} را اعمال کنیم تا به دست آوریم}
+(\lforall[x][!A(x)] \land \lforall[y][!B(y)]) & \lif \lforall[x][(!A(x) \land !B(x))].
+\end{align*}
+\end{ex}
+
+\end{document}

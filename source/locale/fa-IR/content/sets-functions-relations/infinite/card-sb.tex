@@ -1,0 +1,104 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[fa-IR]{sfr}{infinite}{card-sb}
+
+\olsection{ضمیمه: اثبات شرودر–برنشتاین}
+
+پیش از آنکه نظریهٔ طبیعی مجموعه‌ها را ترک کنیم، باید یک برهان طبیعیِ نهایی
+(اما ظریف!) را بررسی کنیم. این، برهانِ قضیهٔ شرودر–برنشتاین
+(\olref[sfr][siz][sb]{thm:schroder-bernstein}) است: اگر
+$\cardle{A}{B}$ و $\cardle{B}{A}$، آنگاه $\cardeq{A}{B}$؛ یعنی، با داشتن
+!!{injection}s $f \colon A \to B$ و $g \colon B \to A$، !!a{bijection}
+$h \colon A \to B$ وجود دارد.
+
+در این فصل، از مفهوم \emph{بستارها} نزد ددکیند پیروی کردیم. در واقع،
+ددکیند با استفاده از این مفهوم برهانی دل‌انگیز برای شرودر–برنشتاین عرضه
+کرد و ما آن را اینجا ارائه خواهیم کرد. برهان حاضر از نزدیک از
+\citet[صص.~157--8]{Potter2004} پیروی می‌کند؛ اگر شرحی اندکی متفاوت اما در
+اساس مشابه می‌خواهید، به آن بنگرید. اندکی جست‌وجو در وب نیز شما را متقاعد خواهد کرد که این
+قضیه---همچون گنگ‌بودنِ $\sqrt{2}$---از آن قضیه‌هایی است که برهان‌های جالب
+و متفاوتِ \emph{بسیاری} برایشان وجود دارد.
+
+با استفاده از نمادگذاری‌ای مشابه آنچه در \olref[sfr][infinite][dedekind]{Closure} آمده است،
+قرار دهید
+\[
+\Closureofunder{f}{B} = \bigcap \Setabs{X}{B \subseteq X
+\text{ و $X$ تحت $f$ بسته است}}
+\]
+برای هر مجموعهٔ $B$ و تابع~$f$. با این تعریف، $\Closureofunder{f}{B}$
+کوچک‌ترین مجموعهٔ بسته تحت $f$ است
+که~$B$ را دربرمی‌گیرد، بدین معنا که:
+
+\begin{lem}\ollabel{Closureprops}
+	برای هر تابع $f$ و هر $B$:
+	\begin{enumerate}
+		\item\ollabel{Closurehaselem} $B \subseteq \Closureofunder{f}{B}$؛ و
+		\item\ollabel{Closureclosed} $\Closureofunder{f}{B}$ تحت $f$ بسته است؛ و
+		\item\ollabel{Closuresmallest} اگر $X$ تحت $f$ بسته باشد و $B
+		\subseteq X$، آنگاه $\Closureofunder{f}{B} \subseteq X$.
+	\end{enumerate}
+\end{lem}
+
+\begin{proof}
+دقیقاً همانند \olref[sfr][infinite][dedekind]{closureproperties}.
+\end{proof}
+
+برای رسیدن به شرودر–برنشتاین به یک واقعیت دیگر نیاز داریم:
+
+\begin{prop}\ollabel{sbhelper}
+اگر $A \subseteq B \subseteq C$ و $A \approx C$، آنگاه $\cardeq{\cardeq{A}{B}}{C}$.
+\end{prop}
+
+\begin{proof}
+با داشتن !!a{bijection} $f \colon C \to A$، بگذارید $F =
+\Closureofunder{f}{C \setminus B}$، و تابعی چون $g$ با دامنهٔ $C$ به‌صورت
+زیر تعریف کنید:
+\[
+	g(x) =
+	\begin{cases}
+			f(x) &\text{اگر $x \in F$}\\
+			x & \text{در غیر این صورت}
+		\end{cases}
+\]
+نشان خواهیم داد که $g$ یک !!a{bijection} به‌صورت $C \to B$ است؛ از این امر
+نتیجه خواهد شد که $\comp{f^{-1}}{g} \colon A \to B$ یک !!a{bijection}
+است، و برهان کامل خواهد شد.
+
+نخست ادعا می‌کنیم اگر $x \in F$ اما $y\notin F$، آنگاه $g(x) \neq
+g(y)$. برای برهان خلف، خلاف آن را فرض کنید؛ در این صورت $y = g(y) = g(x) =
+f(x)$. چون $x \in F$ و بنا بر \olref{Closureprops}، $F$ تحت $f$ بسته
+است، داریم $y = f(x) \in F$، که تناقض است.
+
+اکنون فرض کنید $g(x) = g(y)$. پس، بنا بر آنچه در بالا آمد، $x \in F$ اگر
+و تنها اگر $y \in F$. اگر $x, y \in F$، آنگاه $f(x) = g (x) = g(y) = f(y)$؛
+پس $x = y$، زیرا $f$ یک !!a{bijection} است. اگر $x, y \notin F$، آنگاه
+$x = g(x) = g(y) = y$. بنابراین $g$ یک !!a{injection} است.
+
+تنها مانده است نشان دهیم $\ran{g} = B$. پس $x \in B \subseteq C$ را ثابت
+بگیرید. اگر $x \notin F$، آنگاه $g(x) = x$. اگر $x \in F$، آنگاه
+$x = f(y)$ برای یک $y \in F$؛ زیرا در غیر این صورت $F \setminus \{x\}$
+تحت $f$ بسته می‌بود و $C\setminus B$ را دربرمی‌گرفت، که بنا بر
+\olref{Closureprops} ناممکن است؛ اکنون $g(y) = f(y) = x$.
+\end{proof}
+
+سرانجام، این هم برهان نتیجهٔ اصلی. به یاد آورید که برای تابع $h$ و مجموعهٔ
+$D$، تعریف می‌کنیم $\funimage{h}{D} = \Setabs{h(x)}{x
+\in D}$.
+
+\begin{proof}[برهان شرودر–برنشتاین] فرض کنید $f \colon A \to B$
+و $g \colon B \to A$، !!{injection}s باشند. چون $\funimage{f}{A}
+\subseteq B$، داریم $\funimage{g}{\funimage{f}{A}} \subseteq
+g[B] \subseteq A$. همچنین، $\comp{f}{g} \colon A \to
+\funimage{g}{\funimage{f}{A}}$ یک !!{injection} است، زیرا $g$ و
+$f$ هر دو چنین‌اند؛ و در واقع $\comp{f}{g}$ یک !!a{bijection} است، صرفاً
+به سبب نحوه‌ای که هم‌دامنهٔ آن را تعریف کردیم. پس
+$\cardeq{\funimage{g}{\funimage{f}{A}}}{A}$، و ازاین‌رو بنا بر
+\olref{sbhelper}، یک !!a{bijection} چون $h \colon A \to
+\funimage{g}{B}$ وجود دارد. افزون بر این، $g^{-1}$ یک !!a{bijection}
+$\funimage{g}{B} \to B$ است. بنابراین $\comp{h}{g^{-1}} \colon A \to B$
+یک !!a{bijection} است.
+\end{proof}
+
+\end{document}

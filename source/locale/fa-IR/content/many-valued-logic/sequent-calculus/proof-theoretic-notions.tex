@@ -1,0 +1,169 @@
+% Part: many-valued-logics
+% Chapter: sequent-calculus
+% Section: proof-theoretic-notions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mvl}{seq}{prf}
+
+\olsection{مفاهیم نظریه‌اثباتی}
+
+\begin{explain}
+همان‌گونه که چند مفهوم معناشناختی مهم، یعنی اعتبار، پیامد و ارضاپذیری،
+را تعریف کرده‌ایم، اکنون \emph{مفاهیم نظریه‌اثباتی} متناظر را تعریف
+می‌کنیم. این مفاهیم با توسل به ارضای !!{sentence}ها در !!{structure}ها
+تعریف نمی‌شوند، بلکه با توسل به !!{derivability} یا
+!!{nonderivability} دنباله‌های معین تعریف می‌شوند. کشف مهمی بود که این
+مفاهیم بر هم منطبق‌اند. انطباق آن‌ها محتوای \emph{قضیه‌های صحت و
+تمامیت} است.
+\end{explain}
+
+\begin{defn}[قضیه‌ها]
+!!^a{sentence}~$!A$ یک \emph{قضیه} است اگر !!a{derivation} در
+~$\Log{LK}$ از دنبالهٔ $\quad \Sequent !A$ وجود داشته باشد. اگر $!A$
+قضیه باشد $\Proves !A$، و اگر نباشد $\Proves/ !A$ می‌نویسیم.
+\end{defn}
+
+\begin{defn}[!!^{derivability}]
+!!^a{sentence}~$!A$، \emph{!!{derivable} از} مجموعهٔ $\Gamma$ از
+!!{sentence}هاست، یعنی $\Gamma \Proves !A$، اگر و تنها
+اگر زیرمجموعهٔ متناهی~$\Gamma_0 \subseteq \Gamma$ و دنباله‌ای
+$\Gamma_0'$ از !!{sentence}های~$\Gamma_0$ وجود داشته باشند به‌طوری‌که
+$\Log{LK}$، $\Gamma_0' \Sequent !A$ را !!{derive} کند. اگر $!A$ از
+$\Gamma$ !!{derivable} نباشد، $\Gamma \Proves/ !A$ می‌نویسیم.
+\end{defn}
+
+به سبب قواعد انقباض، تضعیف و جابه‌جایی، ترتیب و تعداد !!{sentence}ها در
+~$\Gamma_0'$ اهمیتی ندارد: اگر دنبالهٔ
+$\Gamma_0' \Sequent !A$ !!{derivable} باشد، آنگاه برای هر
+$\Gamma_0''$ که همان !!{sentence}های~$\Gamma_0'$ را در بر دارد،
+$\Gamma_0'' \Sequent !A$ نیز چنین است. برای نمونه، اگر
+$\Gamma_0 = \{!B, !C\}$، آنگاه هر دو
+$\Gamma_0' = \tuple{!B, !B, !C}$ و
+$\Gamma_0'' = \tuple{!C, !C, !B}$ دنباله‌هایی‌اند که فقط
+!!{sentence}های~$\Gamma_0$ را در بر دارند. اگر دنباله‌ای که یکی را در
+بردارد !!{derivable} باشد، دیگری نیز چنین است؛ برای نمونه:
+\begin{prooftree}
+  \AxiomC{}
+  \Deduce$!B, !B, !C \fCenter !A$
+  \RightLabel{\LeftR{\Contraction}}
+  \UnaryInf$!B, !C \fCenter !A$
+  \RightLabel{\LeftR{\Exchange}}
+  \UnaryInf$!C, !B \fCenter !A$
+  \RightLabel{\LeftR{\Weakening}}
+  \UnaryInf$!C, !C, !B \fCenter !A$
+\end{prooftree}
+از این پس می‌گوییم اگر $\Gamma_0$ مجموعه‌ای متناهی از !!{sentence}ها
+باشد، $\Gamma_0 \Sequent !A$ هر دنباله‌ای است که مقدم آن دنباله‌ای از
+!!{sentence}های~$\Gamma_0$ باشد؛ و در صورت نیاز، انقباض‌ها،
+جابه‌جایی‌ها و تضعیف‌ها را به‌طور ضمنی منظور می‌کنیم.
+
+\begin{defn}[سازگاری]
+مجموعهٔ $\Gamma$ از جمله‌ها \emph{ناسازگار} است اگر و تنها اگر
+زیرمجموعهٔ متناهی~$\Gamma_0 \subseteq \Gamma$ای وجود داشته باشد
+به‌طوری‌که $\Log{LK}$، $\Gamma_0 \Sequent \quad$ را !!{derive} کند.
+اگر $\Gamma$ ناسازگار نباشد، یعنی اگر برای هر
+$\Gamma_0 \subseteq \Gamma$ متناهی، $\Log{LK}$،
+$\Gamma_0 \Sequent \quad$ را !!{derive} نکند، می‌گوییم
+\emph{سازگار} است.
+\end{defn}
+
+\begin{prop}[بازتابی‌بودن]
+\ollabel{prop:reflexivity}
+اگر $!A \in \Gamma$، آنگاه $\Gamma \Proves !A$.
+\end{prop}
+
+\begin{proof}
+دنبالهٔ آغازی $!A \Sequent !A$، !!{derivable} است و
+$\{!A\} \subseteq \Gamma$.
+\end{proof}
+
+\begin{prop}[یکنوایی]
+\ollabel{prop:monotonicity}
+اگر $\Gamma \subseteq \Delta$ و $\Gamma \Proves !A$، آنگاه
+$\Delta \Proves !A$.
+\end{prop}
+
+\begin{proof}
+فرض کنید $\Gamma \Proves !A$؛ یعنی زیرمجموعهٔ متناهی
+$\Gamma_0 \subseteq \Gamma$ای وجود دارد که
+$\Gamma_0 \Sequent !A$، !!{derivable} است. چون
+$\Gamma \subseteq \Delta$، $\Gamma_0$ زیرمجموعهٔ متناهی~$\Delta$ نیز
+هست. پس !!{derivation} از $\Gamma_0 \Sequent !A$ همچنین نشان می‌دهد
+$\Delta \Proves !A$.
+\end{proof}
+
+\begin{prop}[تعدی]
+\ollabel{prop:transitivity}
+اگر $\Gamma \Proves !A$ و $\{!A\} \cup \Delta \Proves !B$، آنگاه
+$\Gamma \cup \Delta \Proves !B$.
+\end{prop}
+
+\begin{proof}
+اگر $\Gamma \Proves !A$، آنگاه زیرمجموعهٔ متناهی
+$\Gamma_0 \subseteq \Gamma$ و !!a{derivation}~$\pi_0$ از
+$\Gamma_0 \Sequent !A$ وجود دارند. اگر
+$\{!A\} \cup \Delta \Proves !B$، آنگاه برای زیرمجموعهٔ متناهی
+$\Delta_0 \subseteq \Delta$، !!a{derivation}~$\pi_1$ از
+$!A, \Delta_0 \Sequent !B$ وجود دارد. !!{derivation} زیر را در نظر
+بگیرید:
+\begin{prooftree}
+  \AxiomC{}
+  \RightLabel{$\pi_0$}
+  \Deduce$\Gamma_0 \fCenter !A$
+  \AxiomC{}
+  \RightLabel{$\pi_1$}
+  \Deduce$!A, \Delta_0 \fCenter !B$
+  \RightLabel{\Cut}
+  \BinaryInf$\Gamma_0, \Delta_0 \fCenter !B$
+\end{prooftree}
+چون $\Gamma_0 \cup \Delta_0 \subseteq \Gamma \cup \Delta$، این نشان
+می‌دهد $\Gamma \cup \Delta \Proves !B$.
+\end{proof}
+
+توجه کنید این امر به‌ویژه یعنی اگر $\Gamma \Proves !A$ و
+$!A \Proves !B$، آنگاه $\Gamma \Proves !B$. همچنین نتیجه می‌شود اگر
+$!A_1,\dots,!A_n \Proves !B$ و برای هر~$i$،
+$\Gamma \Proves !A_i$، آنگاه $\Gamma \Proves !B$.
+
+\begin{prop}
+\ollabel{prop:incons}
+$\Gamma$ ناسازگار است اگر و تنها اگر برای هر جملهٔ~$!A$،
+$\Gamma \Proves {!A}$.
+\end{prop}
+
+\begin{proof}
+تمرین.
+\end{proof}
+
+\begin{prob}
+\olref[mvl][seq][prf]{prop:incons} را اثبات کنید.
+\end{prob}
+
+\begin{prop}[فشردگی]
+  \ollabel{prop:proves-compact}
+  \begin{enumerate}
+  \item اگر $\Gamma \Proves !A$، آنگاه زیرمجموعهٔ متناهی
+    $\Gamma_0 \subseteq \Gamma$ای وجود دارد که
+    $\Gamma_0 \Proves !A$.
+  \item اگر هر زیرمجموعهٔ متناهی~$\Gamma$ سازگار باشد، آنگاه
+    $\Gamma$ سازگار است.
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+    \item اگر $\Gamma \Proves !A$، آنگاه زیرمجموعهٔ متناهی
+      $\Gamma_0 \subseteq \Gamma$ای وجود دارد که دنبالهٔ
+      $\Gamma_0 \Sequent !A$ دارای !!a{derivation} است. در نتیجه
+      $\Gamma_0 \Proves !A$.
+    \item اگر $\Gamma$ ناسازگار باشد، زیرمجموعهٔ متناهی
+      ~$\Gamma_0 \subseteq \Gamma$ای وجود دارد که $\Log{LK}$،
+      $\Gamma_0 \Sequent \quad$ را !!{derive} می‌کند. اما آنگاه
+      $\Gamma_0$ زیرمجموعه‌ای متناهی و ناسازگار از~$\Gamma$ است.
+  \end{enumerate}
+\end{proof}
+
+\end{document}

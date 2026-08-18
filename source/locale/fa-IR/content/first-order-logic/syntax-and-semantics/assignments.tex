@@ -1,0 +1,359 @@
+% Part: first-order-logic
+% Chapter: syntax-and-semantics
+% Section: assignments
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{syn}{ass}
+
+\olsection{گمارش‌های متغیر}
+
+\begin{explain}
+گمارش !!{variable}~$s$ برای \emph{هر} متغیر ارزشی فراهم می‌کند---و
+بی‌نهایت متغیر وجود دارد. البته این کار ضروری نیست. فقط از آن رو می‌خواهیم
+گمارش‌های !!{variable} به همهٔ !!{variable}s ارزش نسبت دهند که کار را
+بسیار آسان‌تر می‌کند. ارزش ترم~$t$ و اینکه !!a{formula}~$!A$ در
+!!a{structure} نسبت به~$s$ ارضا می‌شود یا نه، تنها به مقادیری بستگی دارد
+که~$s$ به !!{variable}sی درون~$t$ و !!{variable}sی آزاد~$!A$ نسبت
+می‌دهد. این محتوای دو گزارهٔ بعدی است. برای دقیق‌کردن مفهوم «بستگی‌داشتن»،
+نشان می‌دهیم هر دو گمارش متغیری که دربارهٔ همهٔ متغیرهای~$t$ توافق دارند،
+ارزشی یکسان به دست می‌دهند؛ و اگر دو گمارش متغیر دربارهٔ همهٔ متغیرهای
+آزاد~$!A$ توافق داشته باشند، $!A$ نسبت به یکی ارضا می‌شود اگر و تنها اگر
+نسبت به دیگری ارضا شود.
+\end{explain}
+
+\begin{prop}\ollabel{prop:valindep}
+اگر !!{variable}sی ترم~$t$ در میان $x_1$، \dots،~$x_n$ باشند و برای
+$i = 1$، \dots،~$n$ داشته باشیم $s_1(x_i) = s_2(x_i)$، آنگاه
+$\Value{t}{M}[s_1] = \Value{t}{M}[s_2]$.
+\end{prop}
+
+\begin{proof}
+با استقرا بر پیچیدگی~$t$. در حالت پایه، $t$ می‌تواند !!a{constant} یا یکی
+از متغیرهای~$x_1$، \dots،~$x_n$ باشد. اگر $t = c$، آنگاه
+$\Value{t}{M}[s_1] = \Assign{c}{M} = \Value{t}{M}[s_2]$. اگر
+$t = x_i$، بنا بر فرض گزاره $s_1(x_i) = s_2(x_i)$؛ پس
+$\Value{t}{M}[s_1] = s_1(x_i) = s_2(x_i) = \Value{t}{M}[s_2]$.
+
+برای گام استقرا، فرض کنید $t = \Atom{f}{t_1, \dots, t_k}$ و ادعا برای
+$t_1$، \dots، $t_k$ برقرار باشد. آنگاه
+\begin{align*}
+  \Value{t}{M}[s_1] & = \Value{\Atom{f}{t_1, \dots, t_k}}{M}[s_1] \\
+  & = \Assign{f}{M}(\Value{t_1}{M}[s_1], \dots, \Value{t_k}{M}[s_1]).
+\intertext{برای $j = 1$، \dots،~$k$، !!{variable}sی~$t_j$ در میان
+    $x_1$، \dots،~$x_n$ هستند. بنا بر فرض استقرا،
+    $\Value{t_j}{M}[s_1] = \Value{t_j}{M}[s_2]$. پس}
+\Value{t}{M}[s_1] & = \Value{\Atom{f}{t_1, \dots, t_k}}{M}[s_1] \\
+  & = \Assign{f}{M}(\Value{t_1}{M}[s_1], \dots, \Value{t_k}{M}[s_1]) \\
+  & = \Assign{f}{M}(\Value{t_1}{M}[s_2], \dots, \Value{t_k}{M}[s_2]) \\
+  & = \Value{\Atom{f}{t_1, \dots, t_k}}{M}[s_2] = \Value{t}{M}[s_2].
+\end{align*}
+\end{proof}
+
+\begin{prop}\ollabel{prop:satindep}
+اگر !!{variable}sی آزاد در $!A$ در میان $x_1$، \dots،~$x_n$ باشند و
+برای $i = 1$، \dots،~$n$ داشته باشیم $s_1(x_i) = s_2(x_i)$، آنگاه
+$\Sat{M}{!A}[s_1]$ اگر و تنها اگر $\Sat{M}{!A}[s_2]$.
+\end{prop}
+
+\begin{proof}
+از استقرا بر پیچیدگی $!A$ استفاده می‌کنیم. در حالت پایه، که $!A$ اتمی
+است، $!A$ می‌تواند یکی از صورت‌های زیر باشد:
+\iftag{prvTrue}{$\ltrue$،}{}
+\iftag{prvFalse}{$\lfalse$،}{}
+$\Atom{R}{t_1, \dots, t_k}$ برای محمول $k$جایگاهی $R$ و
+ترم‌های $t_1$، \dots،~$t_k$، یا $\eq[t_1][t_2]$ برای ترم‌های $t_1$
+و~$t_2$. در دو حالت اخیر فقط جهت پیش‌روی !!{biconditional} را نشان
+می‌دهیم، زیرا برهان جهت عکس متقارن است.
+
+\begin{enumerate}
+\tagitem{prvTrue}{%
+  \indcase{!A}{\ltrue}{هم $\Sat{M}{\indfrm}[s_1]$ و هم
+    $\Sat{M}{\indfrm}[s_2]$.}}{}
+
+\tagitem{prvFalse}{%
+  \indcase{!A}{\lfalse}{هم $\Sat/{M}{!A}[s_1]$ و هم
+    $\Sat/{M}{!A}[s_2]$.}}{}
+
+\item
+  \indcase{!A}{\Atom{R}{t_1, \ldots, t_k}}{فرض کنید
+    $\Sat{M}{\indfrm}[s_1]$. آنگاه
+    \[
+    \langle \Value{t_1}{M}[s_1], \ldots, \Value{t_k}{M}[s_1] \rangle
+    \in \Assign{R}{M}.
+    \]
+    برای $i = 1$، \dots،~$k$، بنا بر \olref{prop:valindep} داریم
+    $\Value{t_i}{M}[s_1] = \Value{t_i}{M}[s_2]$. پس همچنین
+    $\langle \Value{t_1}{M}[s_2], \ldots, \Value{t_k}{M}[s_2] \rangle
+    \in \Assign{R}{M}$؛ بنابراین $\Sat{M}{\indfrm}[s_2]$.}
+\item
+  \indcase{!A}{\eq[t_1][t_2]}{فرض کنید $\Sat{M}{\indfrm}[s_1]$.
+    آنگاه $\Value{t_1}{M}[s_1] = \Value{t_2}{M}[s_1]$. پس
+    \begin{align*}
+      \Value{t_1}{M}[s_2] & = \Value{t_1}{M}[s_1]
+      & \text{(بنا بر \olref{prop:valindep})} \\
+      & = \Value{t_2}{M}[s_1]
+      & \text{(زیرا $\Sat{M}{\eq[t_1][t_2]}[s_1]$)}\\
+      &= \Value{t_2}{M}[s_2]
+      & \text{(بنا بر \olref{prop:valindep})،}
+    \end{align*}
+    پس $\Sat{M}{\eq[t_1][t_2]}[s_2]$.}
+\end{enumerate}
+
+اکنون فرض کنید برای همهٔ !!{formula}sی $!B$ که از~$!A$ کم‌پیچیده‌ترند،
+$\Sat{M}{!B}[s_1]$ اگر و تنها اگر $\Sat{M}{!B}[s_2]$. گام استقرا به
+تفکیک حالت‌هایی پیش می‌رود که عملگر اصلی~$!A$ تعیین می‌کند. در هر حالت
+فقط جهت پیش‌روی !!{biconditional} را نشان می‌دهیم؛ برهان جهت عکس متقارن
+است. در همهٔ حالت‌ها جز حالت‌های سور، فرض استقرا را بر
+!!{subformula}sی~$!B$ از~$!A$ اعمال می‌کنیم. متغیرهای آزاد~$!B$ در میان
+متغیرهای آزاد~$!A$ هستند. پس اگر $s_1$ و $s_2$ دربارهٔ متغیرهای آزاد~$!A$
+توافق داشته باشند، دربارهٔ متغیرهای آزاد~$!B$ نیز توافق دارند و فرض استقرا
+بر~$!B$ اعمال می‌شود.
+
+\begin{enumerate}
+\tagitem{defNot}{}{%
+  \iftag{probNot}{%
+    \indcase!{!A}{\lnot !B}{}}{%
+    \indcase{!A}{\lnot !B}{اگر $\Sat{M}{\indfrm}[s_1]$، آنگاه
+      $\Sat/{M}{!B}[s_1]$؛ پس بنا بر فرض استقرا،
+      $\Sat/{M}{!B}[s_2]$، و ازاین‌رو $\Sat{M}{\indfrm}[s_2]$.}}}
+
+\tagitem{defAnd}{}{%
+  \iftag{probAnd}{%
+    \indcase!{!A}{!B \land !C}{}}{%
+    \indcase{!A}{!B \land !C}{اگر $\Sat{M}{\indfrm}[s_1]$، آنگاه
+      $\Sat{M}{!B}[s_1]$ و $\Sat{M}{!C}[s_1]$؛ پس بنا بر فرض استقرا،
+      $\Sat{M}{!B}[s_2]$ و $\Sat{M}{!C}[s_2]$. بنابراین
+      $\Sat{M}{\indfrm}[s_2]$.}}}
+
+\tagitem{defOr}{}{%
+  \iftag{probOr}{%
+    \indcase!{!A}{!B \lor !C}{}}{%
+    \indcase{!A}{!B \lor !C}{اگر $\Sat{M}{\indfrm}[s_1]$، آنگاه
+      $\Sat{M}{!B}[s_1]$ یا $\Sat{M}{!C}[s_1]$. بنا بر فرض استقرا،
+      $\Sat{M}{!B}[s_2]$ یا $\Sat{M}{!C}[s_2]$؛ پس
+      $\Sat{M}{\indfrm}[s_2]$.}}}
+
+\tagitem{defIf}{}{%
+  \iftag{probIf}{%
+    \indcase!{!A}{!B \lif !C}{}}{%
+    \indcase{!A}{!B \lif !C}{اگر $\Sat{M}{\indfrm}[s_1]$، آنگاه
+    $\Sat/{M}{!B}[s_1]$ یا $\Sat{M}{!C}[s_1]$. بنا بر فرض استقرا،
+    $\Sat/{M}{!B}[s_2]$ یا $\Sat{M}{!C}[s_2]$؛ پس
+    $\Sat{M}{\indfrm}[s_2]$.}}}
+
+\tagitem{defIff}{}{%
+  \iftag{probIff}{%
+    \indcase!{!A}{!B \liff !C}{}}{%
+    \indcase{!A}{!B \liff !C}{اگر $\Sat{M}{\indfrm}[s_1]$، آنگاه یا
+      $\Sat{M}{!B}[s_1]$ و $\Sat{M}{!C}[s_1]$، یا
+      $\Sat/{M}{!B}[s_1]$ و $\Sat/{M}{!C}[s_1]$. بنا بر فرض استقرا، یا
+      $\Sat{M}{!B}[s_2]$ و $\Sat{M}{!C}[s_2]$، یا $\Sat/{M}{!B}[s_2]$
+      و $\Sat/{M}{!C}[s_2]$. در هر دو حالت،
+      $\Sat{M}{\indfrm}[s_2]$.}}}
+
+\tagitem{defEx}{}{%
+  \iftag{probEx}{%
+    \indcase!{!A}{\lexists[x][!B]}{}}{%
+    \indcase{!A}{\lexists[x][!B]}{اگر $\Sat{M}{\indfrm}[s_1]$،
+      $m \in \Domain{M}$ای وجود دارد که
+      $\Sat{M}{!B}[\Subst{s_1}{m}{x}]$. بگذارید
+      $s_1' = \Subst{s_1}{m}{x}$ و $s_2' =
+      \Subst{s_2}{m}{x}$. متغیرهای آزاد~$!B$ در میان $x_1$،
+      \dots، $x_n$ و $x$ هستند. داریم $s_1'(x_i) = s_2'(x_i)$، زیرا
+      $s_1'$ و $s_2'$ به‌ترتیب واریانت‌های $x$ از $s_1$ و~$s_2$ هستند
+      و بنا بر فرض $s_1(x_i) = s_2(x_i)$. بنا بر شیوهٔ تعریف $s_1'$
+      و~$s_2'$، داریم $s_1'(x) = s_2'(x) = m$. پس فرض استقرا بر $!B$
+      و $s_1'$، $s_2'$ اعمال می‌شود و $\Sat{M}{!B}[s_2']$. بنابراین چون
+      $s_2' = \Subst{s_2}{m}{x}$، $m \in \Domain{M}$ای وجود دارد که
+      $\Sat{M}{!B}[\Subst{s_2}{m}{x}]$؛ پس
+      $\Sat{M}{\indfrm}[s_2]$.}}}
+
+\tagitem{defAll}{}{%
+  \iftag{probAll}{%
+    \indcase!{!A}{\lforall[x][!B]}{}}{%
+    \indcase{!A}{\lforall[x][!B]}{اگر $\Sat{M}{\indfrm}[s_1]$، آنگاه
+      برای هر $m \in \Domain{M}$، $\Sat{M}{!B}[\Subst{s_1}{m}{x}]$.
+      می‌خواهیم نشان دهیم که برای هر $m \in \Domain{M}$، همچنین
+      $\Sat{M}{!B}[\Subst{s_2}{m}{x}]$. پس $m \in \Domain{M}$ را
+      دلخواه بگیرید و $s_1' = \Subst{s_1}{m}{x}$ و $s_2' =
+      \Subst{s_2}{m}{x}$ را در نظر بگیرید. داریم
+      $\Sat{M}{!B}[s_1']$. متغیرهای آزاد~$!B$ در میان $x_1$، \dots،
+      $x_n$ و $x$ هستند. داریم $s_1'(x_i) = s_2'(x_i)$، زیرا $s_1'$
+      و $s_2'$ به‌ترتیب واریانت‌های $x$ از $s_1$ و~$s_2$ هستند و بنا بر
+      فرض $s_1(x_i) = s_2(x_i)$. بنا بر شیوهٔ تعریف $s_1'$ و~$s_2'$،
+      داریم $s_1'(x) = s_2'(x) = m$. پس فرض استقرا بر~$!B$ و~$s_1'$،
+      $s_2'$ اعمال می‌شود و $\Sat{M}{!B}[s_2']$. این استدلال دربارهٔ هر
+      $m \in \Domain{M}$ برقرار است؛ یعنی برای همهٔ~$m \in
+      \Domain{M}$، $\Sat{M}{!B}[\Subst{s_2}{m}{x}]$، و بنابراین
+      $\Sat{M}{\indfrm}[s_2]$.}}}
+\end{enumerate}
+بنا بر استقرا، هرگاه !!{variable}sی آزاد در $!A$ در میان $x_1$، \dots،
+$x_n$ باشند و برای $i = 1$، \dots،~$n$ داشته باشیم
+$s_1(x_i)=s_2(x_i)$، نتیجه می‌شود $\Sat{M}{!A}[s_1]$ اگر و تنها اگر
+$\Sat{M}{!A}[s_2]$.
+\end{proof}
+
+\begin{probtag}{probNot,probOr,probAnd,probIf,probIff,probEx,probAll}
+برهان \olref[fol][syn][ass]{prop:satindep} را کامل کنید.
+\end{probtag}
+
+\begin{explain}
+!!^{sentence}s هیچ متغیر آزادی ندارند؛ پس هر دو گمارش متغیر دربارهٔ همهٔ
+متغیرهای آزاد (یعنی صفر متغیر) هر جمله، چیزهای یکسانی نسبت می‌دهند. بنابراین
+گزاره‌ای که اکنون اثبات شد می‌گوید ارضاشدن یا نشدن !!a{sentence} در یک
+ساختار نسبت به گمارش متغیر، کاملاً مستقل از گمارش است. این واقعیت را ثبت
+می‌کنیم. همین واقعیت تعریف بعدیِ ارضای !!a{sentence} در !!a{structure}
+(بدون ذکر گمارش متغیر) را موجه می‌سازد.
+\end{explain}
+
+\begin{cor}
+\ollabel{cor:sat-sentence}
+اگر $!A$ یک !!a{sentence} و $s$ گمارش متغیر باشد، آنگاه
+$\Sat{M}{!A}[s]$ اگر و تنها اگر برای هر گمارش متغیر~$s'$،
+$\Sat{M}{!A}[s']$.
+\end{cor}
+
+\begin{proof}
+  بگذارید $s'$ گمارش متغیر دلخواهی باشد. چون $!A$ یک !!a{sentence} است،
+  متغیر آزاد ندارد؛ پس هر گمارش متغیر~$s'$ بدیهی است که دربارهٔ همهٔ
+  متغیرهای آزاد~$!A$ همان چیزهایی را نسبت می‌دهد که~$s$ می‌دهد. بنابراین
+  شرط \olref{prop:satindep} برآورده می‌شود و
+  $\Sat{M}{!A}[s]$ اگر و تنها اگر $\Sat{M}{!A}[s']$.
+\end{proof}
+
+\begin{defn}
+\ollabel{defn:satisfaction}
+اگر $!A$ یک !!a{sentence} باشد، می‌گوییم !!a{structure}~$\Struct M$
+فرمول~$!A$ را \emph{ارضا می‌کند}، $\Sat{M}{!A}$، اگر و تنها اگر برای همهٔ
+گمارش‌های متغیر~$s$، $\Sat{M}{!A}[s]$.
+\end{defn}
+
+اگر $\Sat{M}{!A}$، به‌سادگی می‌گوییم \emph{$!A$ در~$\Struct{M}$ صادق
+است.} مفهوم ارضا به‌طور طبیعی از !!{sentence}s منفرد به مجموعه‌های
+!!{sentence}s گسترش می‌یابد.
+
+\begin{defn}
+\ollabel{defn:sat}
+اگر $\Gamma$ مجموعه‌ای از !!{sentence}s باشد، می‌گوییم
+!!a{structure}~$\Struct M$ مجموعهٔ~$\Gamma$ را \emph{ارضا می‌کند}،
+$\Sat{M}{\Gamma}$، اگر و تنها اگر برای همهٔ $!A \in \Gamma$،
+$\Sat{M}{!A}$.
+\end{defn}
+
+\begin{prop}\ollabel{prop:sentence-sat-true}
+  بگذارید $\Struct{M}$ یک !!a{structure}، $!A$ یک !!a{sentence} و $s$
+  یک گمارش متغیر باشد. $\Sat{M}{!A}$ اگر و تنها اگر
+  $\Sat{M}{!A}[s]$.
+\end{prop}
+
+\begin{proof}
+تمرین.
+\end{proof}
+
+\begin{prob}
+\olref[fol][syn][ass]{prop:sentence-sat-true} را اثبات کنید.
+\end{prob}
+
+\begin{prop}\ollabel{prop:sat-quant}
+  فرض کنید $!A(x)$ تنها $x$ را آزاد در بر دارد و $\Struct M$ یک
+  !!a{structure} است. آنگاه:
+  \begin{tagenumerate}{prvEx,prvAll}
+    \tagitem{prvEx}{$\Sat{M}{\lexists[x][!A(x)]}$ اگر و تنها اگر برای
+      دست‌کم یک گمارش متغیر~$s$، $\Sat{M}{!A(x)}[s]$.}{}
+    \tagitem{prvAll}{$\Sat{M}{\lforall[x][!A(x)]}$ اگر و تنها اگر برای
+  همهٔ گمارش‌های متغیر~$s$، $\Sat{M}{!A(x)}[s]$.}{}
+\end{tagenumerate}
+\end{prop}
+
+\begin{proof}
+تمرین.
+\end{proof}
+
+\begin{prob}
+\olref[fol][syn][ass]{prop:sat-quant} را اثبات کنید.
+\end{prob}
+
+\begin{prob}
+\DeclareRobustCommand{\VDash}{\mathrel{||}\joinrel\Relbar}
+فرض کنید $\Lang L$ زبانی بدون !!{function}s باشد. با داشتن
+!!{structure}~$\Struct M$، !!a{constant} چون $c$ و
+$a \in \Domain M$، $\Struct M[a/c]$ را !!{structure}ی تعریف کنید که
+درست مانند~$\Struct M$ است، جز آنکه $\Assign{c}{M[a/c]} = a$. برای
+!!{sentence}sی~$!A$، $\Struct M \VDash !A$ را چنین تعریف کنید:
+\begin{enumerate}
+\tagitem{prvFalse}{%
+  \indcase{!A}{\lfalse}{نه $\Struct{M} \VDash \indfrm$.}}{}
+
+\tagitem{prvTrue}{%
+  \indcase{!A}{\ltrue}{$\Struct{M} \VDash \indfrm$.}}{}
+
+\item \indcase{!A}{\Atom{R}{d_1, \dots, d_n}}{$\Struct M \VDash \indfrm$
+  اگر و تنها اگر $\langle \Assign{d_1}{M}, \dots, \Assign{d_n}{M} \rangle \in
+  \Assign{R}{M}$.}
+
+\item \indcase{!A}{\eq[d_1][d_2]}{$\Struct M \VDash \indfrm$ اگر و تنها
+  اگر $\Assign{d_1}{M} = \Assign{d_2}{M}$.}
+
+\tagitem{prvNot}{%
+  \indcase{!A}{\lnot !B}{$\Struct{M} \VDash \indfrm$ اگر و تنها اگر
+    نه $\Struct{M} \VDash {!B}$.}}{}
+
+\tagitem{prvAnd}{%
+  \indcase{!A}{(!B \land !C)}{$\Struct{M} \VDash
+    \indfrm$ اگر و تنها اگر $\Struct{M} \VDash!B$ و
+    $\Struct{M} \VDash !C$.}}{}
+
+\tagitem{prvOr}{%
+  \indcase{!A}{(!B \lor !C)}{$\Struct{M} \VDash \indfrm$ اگر و تنها اگر
+    $\Struct{M} \VDash !B$ یا $\Struct{M} \VDash !C$ (یا هر دو).}}{}
+
+\tagitem{prvIf}{%
+  \indcase{!A}{(!B \lif !C)}{$\Struct{M} \VDash \indfrm$ اگر و تنها اگر
+    نه $\Struct {M} \VDash !B$ یا $\Struct M \VDash !C$ (یا هر دو).}}{}
+
+\tagitem{prvIff}{%
+  \indcase{!A}{(!B \liff !C)}{$\Struct{M} \VDash {\indfrm}$ اگر و تنها
+    اگر یا هم $\Struct{M} \VDash {!B}$ و هم
+    $\Struct{M} \VDash {!C}$، یا نه $\Struct{M} \VDash {!B}$ و نه
+    $\Struct{M} \VDash {!C}$.}}{}
+
+\tagitem{prvAll}{%
+  \indcase{!A}{\lforall[x][!B]}{$\Struct{M} \VDash {\indfrm}$ اگر و تنها
+    اگر برای همهٔ $a \in \Domain{M}$،
+    $\Struct{M[a/c]} \VDash \Subst{!B}{c}{x}$، به شرط آنکه $c$ در~$!B$
+    رخ ندهد.}}{}
+
+\tagitem{prvEx}{%
+  \indcase{!A}{\lexists[x][!B]}{$\Struct{M} \VDash
+  {\indfrm}$ اگر و تنها اگر $a \in \Domain M$ای وجود داشته باشد که
+  $\Struct{M[a/c]} \VDash \Subst{!B}{c}{x}$، به شرط آنکه $c$ در~$!B$
+  رخ ندهد.}}{}
+\end{enumerate}
+بگذارید $x_1$، \dots، $x_n$ همهٔ !!{variable}sی آزاد در~$!A$،
+$c_1$، \dots، $c_n$ نمادهای ثابتِ ناموجود در~$!A$،
+$a_1$، \dots، $a_n \in \Domain M$، و $s(x_i) = a_i$ باشند.
+
+نشان دهید $\Sat{M}{!A}[s]$ اگر و تنها اگر
+$\Struct M[a_1/c_1,\dots,a_n/c_n]
+\VDash \Subst{\Subst{!A}{c_1}{x_1}\dots}{c_n}{x_n}$.
+
+(این مسئله نشان می‌دهد می‌توان معناشناسی‌ای برای منطق مرتبهٔ اول ارائه کرد
+که بدون گمارش متغیر کار کند.)
+\end{prob}
+
+\begin{prob}
+فرض کنید $f$ نماد تابعی باشد که در~$!A(x,y)$ نیست. نشان دهید
+!!a{structure}~$\Struct{M}$ای وجود دارد که
+$\Sat{M}{\lforall[x][\lexists[y][!A(x,y)]]}$ اگر و تنها اگر
+~$\Struct M'$ای وجود داشته باشد که
+$\Sat{M'}{\lforall[x][!A(x,f(x))]}$.
+
+(این مسئله حالت خاصی از نتیجه‌ای است که قضیهٔ اسکولم نامیده می‌شود؛
+$\lforall[x][!A(x,f(x))]$ یک \emph{صورت نرمال اسکولم} برای
+$\lforall[x][\lexists[y][!A(x,y)]]$ نامیده می‌شود.)
+\end{prob}
+
+\end{document}

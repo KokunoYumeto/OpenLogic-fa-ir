@@ -1,0 +1,33 @@
+% Part: lambda-calculus
+% Chapter: introduction
+% Section: basic-pr-lambda
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{int}{bas}
+\olsection{توابع بازگشتی اولیهٔ پایه \usetoken{S}{lambda definable} هستند}
+
+\begin{lem}
+توابع~$\Zero$، $\Succ$ و~$\Proj{n}{i}$ !!{lambda definable} هستند.
+\end{lem}
+
+\begin{proof}
+$\Zero$ همان
+$\lambd[x][\lambd[y][y]]$ است.
+
+تابع جانشین~$\Succ$ با
+$\fn{Succ}(u) = \lambd[x][\lambd[y][x(uxy)]]$ تعریف می‌شود. بیندیشید
+که چرا این تعریف کار می‌کند: برای هر عددنمای~$\num{n}$ که به‌صورت یک
+تکرارگر در نظر گرفته شود و هر تابع~$f$، عبارت~$\fn{Succ}(\num{n},f)$
+تابعی است که با ورودی~$y$، تابع~$f$ را~$n$ بار، با آغاز از~$y$، اعمال
+می‌کند و سپس یک بار دیگر آن را اعمال می‌کند.
+
+دربارهٔ افکنش‌ها چیزی برای گفتن نیست:
+$\fn{Proj}^n_i(x_0, \dots, x_{n-1}) = x_i$. به بیان دیگر، بنا بر قراردادهای
+ما، $\fn{Proj}^n_i$ همان ترم لامبدای
+$\lambd[x_0][\dots \lambd[x_{n-1}][x_i]]$ است.
+\end{proof}
+
+\end{document}

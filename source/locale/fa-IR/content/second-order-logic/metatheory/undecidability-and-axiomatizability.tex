@@ -1,0 +1,51 @@
+% Part: second-order-logic
+% Chapter: metatheory
+% Section: undecidability-and-axiomatizability
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sol}{met}{nax}
+
+\olsection{منطق مرتبهٔ دوم اصل‌موضوعی‌پذیر نیست}
+
+
+\begin{thm}
+\ollabel{thm:sol-undecidable}
+منطق مرتبهٔ دوم تصمیم‌ناپذیر است.
+\end{thm}
+
+\begin{proof}
+!!{sentence} مرتبهٔ اولی در منطق مرتبهٔ اول معتبر است اگر و تنها اگر در
+منطق مرتبهٔ دوم معتبر باشد، و منطق مرتبهٔ اول تصمیم‌ناپذیر است.
+\end{proof}
+
+\begin{thm}
+\ollabel{cor:sol-not-axiomatizable}
+هیچ دستگاه !!{derivation} درست و کاملی برای منطق مرتبهٔ دوم وجود ندارد.
+\end{thm}
+
+\begin{proof}
+بگذارید~$!A$ !!a{sentence}ی در زبان حساب باشد. $\Sat{N}{!A}$ اگر و تنها
+اگر~$\Th{PA^2} \Entails !A$. بگذارید~$!P$ عطف نه اصل~$\Th{PA^2}$ باشد.
+$\Th{PA^2} \Entails !A$ اگر و تنها اگر~$\Entails !P \lif !A$، یعنی
+$\Sat{M}{!P \lif !A}$. اکنون !!{sentence}
+$\lforall[z][\lforall[u][\lforall[u'][\lforall[u''][\lforall[L][(!P' \lif !A')]]]]]$ را در نظر
+بگیرید که از جایگزینی~$\Obj{0}$ با~$z$، $\prime$ با متغیر تابعی
+یک‌موضعی~$u$، $+$ و~$\times$ به‌ترتیب با متغیرهای تابعی دو‌موضعی
+$u'$ و~$u''$، و~$<$ با متغیر رابطه‌ای دو‌موضعی~$L$ و سپس کمیت‌گذاری
+کلی به دست می‌آید. این جمله در منطق مرتبهٔ دوم محض معتبر است اگر و تنها
+اگر جملهٔ اصلی معتبر باشد، اگر و تنها اگر~$\Th{PA^2} \Entails !A$، اگر
+و تنها اگر~$\Sat{N}{!A}$. پس اگر دستگاه اثباتی درست و کاملی برای منطق
+مرتبهٔ دوم وجود داشت، می‌توانستیم از آن برای تعریف شمارشی محاسبه‌پذیر
+  چون~$f\colon \Nat \to \Sent[L_A]$ از !!{sentence}s صادق در
+  $\Struct{N}$ استفاده کنیم. این تابع در~$\Th{Q}$ با فرمول مرتبهٔ اولی
+  چون~$!B_f(x, y)$ بازنمایی‌پذیر بود. آنگاه !!{formula}
+$\lexists[x][!B_f(x, y)]$ مجموعهٔ !!{sentence}s مرتبهٔ اول صادق در
+$\Struct{N}$ را تعریف می‌کرد که با قضیهٔ تارسکی در تناقض است.
+\end{proof}
+
+
+
+\end{document}

@@ -1,0 +1,81 @@
+% Part: sets-functions-relations
+% Chapter: infinite
+% Section: dedekind-induction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[fa-IR]{sfr}{infinite}{induction}
+\olsection[استقرای حسابی]{جبرهای ددکیند و استقرای حسابی}
+
+اکنون نکتهٔ اساسی این است که یک جبر ددکیند---در واقع، \emph{هر} جبر
+ددکیند---می‌تواند بدیلی برای اعداد طبیعی باشد. این امر از نتیجهٔ سادهٔ زیر
+ناشی می‌شود:
+
+\begin{thm}[استقرای حسابی]\ollabel{thm:dedinfiniteinduction}
+فرض کنید $N, s, o$ یک جبر ددکیند را تشکیل دهند. آنگاه برای هر مجموعهٔ
+$X$:
+	\begin{center}
+		اگر $o \in X$ و $(\forall {n} \in N \cap X){s}({n}) \in X$، {آنگاه} $N \subseteq X$.
+	\end{center}
+\end{thm}
+
+\begin{proof}
+بنا بر تعریف جبر ددکیند، $N = \closureofunder{s}{o}$. اکنون اگر هم
+${o} \in X$ و هم $(\forall {n} \in N)(n \in X \lif
+{s}({n}) \in X)$، آنگاه $N = \closureofunder{s}{o} \subseteq X$.
+\end{proof}
+
+چون استقرا مشخصهٔ اعداد طبیعی است، نکته چنین است. هر مجموعهٔ نامتناهیِ
+ددکیندی که داده شود، می‌توانیم یک جبر ددکیند تشکیل دهیم و آن جبر را بدیل
+خود برای اعداد طبیعی قرار دهیم.
+
+البته \olref{thm:dedinfiniteinduction} استقرا را با عبارت‌های
+\emph{مجموعه‌شناختی} صورت‌بندی می‌کند. اما به‌آسانی می‌توانیم این اصل را
+با عبارت‌هایی بیان کنیم که شاید آشناتر باشند:
+
+\begin{cor}\ollabel{natinductionschema}
+فرض کنید $N, s, o$ یک جبر ددکیند را تشکیل دهند. آنگاه برای هر فرمول
+$\phi(x)$ که ممکن است پارامتر داشته باشد:
+\begin{center}
+	اگر $\phi(o)$ و $(\forall {n} \in N)(\phi(n)\lif
+	\phi({s}({n})))$، {آنگاه} $(\forall n \in N)\phi(n)$
+\end{center}
+\end{cor}
+
+\begin{proof}
+بگذارید $X = \Setabs{n \in N}{\phi(n)}$، و اکنون از
+\olref{thm:dedinfiniteinduction} استفاده کنید.
+\end{proof}
+
+در این نتیجه از فرمولی سخن گفتیم که «پارامتر دارد». معنای تقریبی این سخن
+آن است که برای هر اشیای $c_1, \ldots, c_k$ می‌توانیم با
+$\phi(x, c_1, \ldots, c_k)$ کار کنیم. به‌بیان دقیق‌تر، می‌توانیم نتیجه را
+بی‌ذکر «پارامترها» چنین بیان کنیم. برای هر فرمول
+$\phi(x, v_1, \ldots, v_k)$ که همهٔ متغیرهای آزادش نمایش داده شده‌اند،
+داریم:
+	\begin{align*}
+			\forall v_1 \ldots \forall v_k((&\phi(o, v_1,\ldots, v_k) \land {}\\
+			&	(\forall x \in N)(\phi(x,v_1, \ldots, v_k) \lif \phi(s(x), v_1,\ldots, v_k))) \lif {}\\
+			&\hspace{3em} (\forall x \in N)\phi(x, v_1,\ldots, v_k))
+	\end{align*}
+آشکار است که سخن‌گفتن از «داشتن پارامتر» می‌تواند خواندن مطالب را بسیار
+آسان‌تر کند. (در \olref[sth][][]{part} این شیوه را بسیار به کار خواهیم
+برد.)
+
+به جبرهای ددکیند بازگردیم: هر جبر ددکیندی که داده شود، می‌توانیم توابع
+معمول حسابیِ جمع، ضرب و توان‌رسانی را نیز تعریف کنیم. اما این کار
+ساده نیست و فن \emph{تعریف بازگشتی} را به کار می‌گیرد. این فنی است که
+بسیار دیرتر و در بافتی بسیار کلی‌تر معرفی و توجیه خواهیم کرد. (علاقه‌مندان
+شاید بخواهند پس از \olref[sth][ord-arithmetic][]{chap} به این مطلب
+بازگردند، یا شاید شرحی جایگزین، مانند \citealt[صص.~95--8]{Potter2004}، را
+بخوانند.) اما هرگاه $N, s, o$ یک جبر ددکیند را تشکیل دهند، در نهایت
+خواهیم توانست مطالب زیر را مقرر کنیم:
+\begin{align*}
+	{a} + {o} &= {a} & & & {a} \times {o} &= {o} & & & {a}^{o} &= s(o)\\
+{a} + {s}({b}) &= {s}({a}+{b}) &&& {a} \times {s}({b}) &= ({a}\times {b}) + {a}  & & & {a}^{{s}({b})} &= {a}^{b} \times {a}
+\end{align*}
+و نشان دهیم که این‌ها چنان رفتار می‌کنند که امید داریم.
+
+\end{document}

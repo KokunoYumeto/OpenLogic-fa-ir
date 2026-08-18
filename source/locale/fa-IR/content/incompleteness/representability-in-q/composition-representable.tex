@@ -1,0 +1,103 @@
+% Part: incompleteness
+% Chapter: representability-in-q
+% Section: composition-representable
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{req}{cmp}
+\olsection{ترکیب در~$\Th{Q}$ بازنمایی‌پذیر است}
+
+فرض کنید $h$ به‌صورت زیر تعریف شده باشد:
+\[
+h(x_0,\dots,x_{l-1}) = f(g_0(x_0,\dots,x_{l-1}), \dots,
+g_{k-1}(x_0,\dots,x_{l-1})).
+\]
+و فرض کنید پیش‌تر !!{formula}sی $!A_f, !A_{g_0}, \dots,
+!A_{g_{k-1}}$ را یافته‌ایم که به‌ترتیب توابع~$f$، $g_0$،
+\dots،~$g_{k-1}$ را بازنمایی می‌کنند. باید !!a{formula}ی چون~$!A_h$
+بیابیم که~$h$ را بازنمایی کند.
+
+با حالتی ساده آغاز کنیم که همهٔ توابع $1$موضعی‌اند؛ یعنی
+$h(x) = f(g(x))$ را در نظر بگیرید. اگر $!A_f(y, z)$ تابع~$f$ و
+$!A_g(x, y)$ تابع~$g$ را بازنمایی کند، به !!a{formula}ی چون~$!A_h(x, z)$
+نیاز داریم که~$h$ را بازنمایی کند. توجه کنید $h(x) = z$ اگر و تنها
+اگر~$y$ای وجود داشته باشد که هم $z = f(y)$ و هم $y = g(x)$. (اگر
+$h(x) = z$، آنگاه $g(x)$ چنین~$y$ای است؛ و اگر چنین~$y$ای وجود داشته
+باشد، چون $y = g(x)$ و $z = f(y)$، داریم $z = f(g(x))$.) این نکته
+نشان می‌دهد $\lexists[y][(!A_g(x, y) \land !A_f(y,
+  z))]$ نامزد مناسبی برای~$!A_h(x, z)$ است. فقط باید بررسی کنیم که
+$\Th{Q}$ !!{formula}sی مربوط را ثابت می‌کند.
+
+\begin{prop}
+\ollabel{prop:rep1}
+اگر $h(n) = m$، آنگاه $\Th{Q} \Proves !A_h(\num{n}, \num{m})$.
+\end{prop}
+
+\begin{proof}
+فرض کنید $h(n) = m$؛ یعنی $f(g(n)) = m$. بگذارید $k = g(n)$. آنگاه
+\begin{align*}
+  \Th{Q} & \Proves !A_g(\num{n}, \num{k})
+  \intertext{زیرا $!A_g$ تابع~$g$ را بازنمایی می‌کند، و}
+  \Th{Q} & \Proves !A_f(\num{k}, \num{m})
+  \intertext{زیرا $!A_f$ تابع~$f$ را بازنمایی می‌کند. پس}
+  \Th{Q} & \Proves !A_g(\num{n}, \num{k}) \land !A_f(\num{k}, \num{m})
+  \intertext{و در نتیجه همچنین}
+  \Th{Q} & \Proves \lexists[y][(!A_g(\num{n}, y) \land !A_f(y, \num{m}))],
+\end{align*}
+یعنی $\Th{Q} \Proves !A_h(\num{n}, \num{m})$.
+\end{proof}
+
+\begin{prop}
+\ollabel{prop:rep2}
+اگر $h(n) = m$، آنگاه $\Th{Q} \Proves \lforall[z][(!A_h(\num{n}, z) \lif
+  z = \num{m})]$.
+\end{prop}
+
+\begin{proof}
+فرض کنید $h(n) = m$؛ یعنی $f(g(n)) = m$. بگذارید $k = g(n)$. آنگاه
+\begin{align*}
+  \Th{Q} & \Proves \lforall[y][(!A_g(\num{n}, y) \lif \eq[y][\num{k}])]
+  \intertext{زیرا $!A_g$ تابع~$g$ را بازنمایی می‌کند، و}
+  \Th{Q} & \Proves \lforall[z][(!A_f(\num{k}, z) \lif \eq[z][\num{m}])]
+  \intertext{زیرا $!A_f$ تابع~$f$ را بازنمایی می‌کند. تنها با اندکی
+    منطق می‌توانیم نشان دهیم که همچنین}
+  \Th{Q} & \Proves \lforall[z][(\lexists[y][(!A_g(\num{n}, y) \land
+      !A_f(y, z))] \lif \eq[z][\num{m}])].
+\end{align*}
+یعنی $\Th{Q} \Proves \lforall[y][(!A_h(\num n, y) \lif \eq[y][\num m])]$.
+\end{proof}
+
+همین ایده در حالت پیچیده‌تری که $f$ و~$g_i$ موضع‌هایی بیش از~$1$
+دارند نیز کار می‌کند.
+
+\begin{prop}
+\ollabel{prop:rep-composition}
+اگر $!A_f(y_0, \dots, y_{k-1}, z)$ تابع $f(y_0, \dots, y_{k-1})$ را
+در~$\Th{Q}$ بازنمایی کند، و $!A_{g_i}(x_0, \dots, x_{l-1}, y)$ تابع
+$g_i(x_0, \dots, x_{l-1})$ را در~$\Th{Q}$ بازنمایی کند، آنگاه
+\begin{multline*}
+  \lexists[y_0\dots][\lexists[y_{k-1}][(!A_{g_0}(x_0,\dots,x_{l-1},y_0) \land
+      \dots \land {}]]\\
+  !A_{g_{k-1}}(x_0,\dots,x_{l-1},y_{k-1}) \land !A_f(y_0,\dots,y_{k-1},z))
+\end{multline*}
+تابع
+\[
+h(x_0, \dots, x_{l-1}) = f(g_0(x_0, \dots, x_{l-1}), \dots, g_{k-1}(x_0,
+\dots, x_{l-1})).
+\]
+را بازنمایی می‌کند.
+\end{prop}
+
+\begin{proof}
+تمرین.
+\end{proof}
+
+\begin{prob}
+با راهنمایی‌گرفتن از اثبات‌های \olref[inc][req][cmp]{prop:rep1} و
+\olref[inc][req][cmp]{prop:rep2}، اثبات
+\olref[inc][req][cmp]{prop:rep-composition} را با جزئیات انجام دهید.
+\end{prob}
+
+\end{document}

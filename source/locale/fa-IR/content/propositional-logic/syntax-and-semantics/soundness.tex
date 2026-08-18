@@ -1,0 +1,33 @@
+% Part: propositional-logic
+% Chapter: propositional-logic 
+% Section: soundness
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pl}{prp}{snd}
+
+\olsection{درستی منطق گزاره‌ای}
+
+\begin{thm}[درستی] 
+\ollabel{thm:soundness} 
+اگر~$\Gamma\Proves!A$، آنگاه
+$\Gamma \Entails !A$. 
+\end{thm}
+
+\begin{proof} 
+بر اشتقاق~$!A$ از~$\Gamma$ استقرا می‌کنیم. اگر~$!A$ یک اصل باشد، آنگاه
+$\Entails !A$ و بنابراین، به طریق اولی، $\Gamma \Entails!A$. همچنین اگر
+$!A \in \Gamma$، آنگاه~$\Gamma \Entails!A$. برای گام استقرا، فرض کنید
+$!A$ با \emph{وضع مقدم} از~$!C$ و~$!C\lif!A$ به دست آمده باشد. فرض‌های
+استقرا به‌صراحت عبارت‌اند از~$\Gamma\Entails !C$ و
+$\Gamma\Entails (!C\lif !A)$. بند سومِ
+\olref[sem]{prop:semanticalfacts} نتیجهٔ مطلوب را می‌دهد. 
+\end{proof}
+
+\begin{cor} 
+اگر~$\Gamma$ ارضاپذیر باشد، سازگار است. ازاین‌رو منطق گزاره‌ای سازگار است. 
+\end{cor}
+
+\end{document}

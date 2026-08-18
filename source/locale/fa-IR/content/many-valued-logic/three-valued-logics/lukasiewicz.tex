@@ -1,0 +1,235 @@
+% Part: many-valued-logic
+% Chapter: three-valued-logics
+% Section: lukasiewicz
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mvl}{thr}{luk}
+
+\olsection{منطق \L ukasiewicz}
+
+یکی از نخستین طرح‌های منتشرشده و پرورده برای یک منطق چندارزشی را
+فیلسوف لهستانی، یان \L ukasiewicz، در سال~۱۹۲۱ ارائه کرد. انگیزهٔ
+\L ukasiewicz مسئلهٔ نبرد دریایی ارسطو بود: به نظر می‌رسد جملهٔ «فردا
+نبردی دریایی رخ خواهد داد» \emph{امروز} نه صادق است و نه کاذب، زیرا
+ارزش صدقش هنوز تعیین نشده است. \L ukasiewicz پیشنهاد کرد ارزش صدق
+سومی را برای چنین جمله‌های «ممکنِ آینده» در نظر بگیریم.
+\begin{quote}
+می‌توانم بی‌هیچ تناقضی فرض کنم که حضور من در ورشو در لحظه‌ای معین از
+سال آینده، مثلاً ظهر ۲۱ دسامبر، در زمان حاضر نه به‌صورت مثبت و نه
+به‌صورت منفی تعیین شده است. بنابراین ممکن، اما نه ضروری، است که در آن
+زمان معین در ورشو حضور داشته باشم. بنا بر این فرض، گزارهٔ «ظهر ۲۱
+دسامبر سال آینده در ورشو خواهم بود» در زمان حاضر نمی‌تواند نه صادق
+باشد و نه کاذب. زیرا اگر اکنون صادق بود، حضور آیندهٔ من در ورشو باید
+ضروری می‌بود، که با فرض تناقض دارد. از سوی دیگر، اگر اکنون کاذب بود،
+حضور آیندهٔ من در ورشو باید ناممکن می‌بود، که آن نیز با فرض تناقض
+دارد. پس گزارهٔ موردنظر در این لحظه نه صادق است و نه کاذب و باید ارزش
+سومی، متفاوت از «۰» یا کذب و «۱» یا صدق، داشته باشد. می‌توانیم این
+ارزش را با «$\frac{1}{2}$» نشان دهیم. این ارزش نمایندهٔ «ممکن» است و
+به‌عنوان ارزش سوم به «صادق» و «کاذب» می‌پیوندد.
+\end{quote}
+برای ارزش صدق سوم \L ukasiewicz از~$\Undef$ استفاده می‌کنیم.
+\footnote{\L ukasiewicz در اینجا «ممکن» را به معنایی به کار می‌برد که
+امروزه رایج نیست: ممکن اما نه ضروری.}
+
+توابع صدق رابط‌های~$\lnot$، $\land$ و~$\lor$ در این تفسیر به‌آسانی
+تعیین می‌شوند: نقیض یک جملهٔ ممکنِ آینده نیز جمله‌ای ممکنِ آینده است؛
+پس~$\tf{\lnot}(\Undef) = \Undef$. اگر یک مؤلفهٔ عطف نامتعین و دیگری
+صادق باشد، عطف نیز نامتعین است؛ زیرا بسته به اینکه مؤلفهٔ ممکنِ آینده
+چه سرانجامی پیدا کند، عطف ممکن است صادق یا کاذب شود. پس
+\[
+    \tf{\land}(\True, \Undef) =
+\tf{\land}(\Undef, \True) =
+\Undef.
+\]
+اما اگر مؤلفهٔ دیگر کاذب باشد، عطف نمی‌تواند صادق شود؛ پس
+\[\tf{\land}(\False, \Undef) =
+\tf{\land}(\Undef, \False) = \False.\]
+دیگر مقادیر (اگر آرگومان‌ها ارزش‌های صدق تعیین‌شده، یعنی~$\True$ یا
+$\False$، باشند) مانند منطق کلاسیک‌اند.
+
+وضع رابط شرطی کمی پیچیده‌تر است. فرض کنید~$q$ گزاره‌ای ممکنِ آینده
+باشد. اگر~$p$ کاذب باشد، $p \lif q$ مستقل از سرانجام~$q$ صادق خواهد
+بود؛ پس باید~$\tf{\lif}(\False, \Undef) = \True$ بگذاریم. و اگر~$p$
+صادق باشد، $q \lif p$ مستقل از سرانجام~$q$ صادق خواهد بود؛ پس
+$\tf{\lif}(\Undef, \True) = \True$. اگر~$p$ صادق باشد، $p \lif q$
+ممکن است سرانجام صادق یا کاذب شود؛ پس
+$\tf{\lif}(\True, \Undef) = \Undef$. به‌همین‌ترتیب، اگر~$p$ کاذب
+باشد، $q \lif p$ ممکن است سرانجام صادق یا کاذب شود؛ پس
+$\tf{\lif}(\Undef, \False) = \Undef$. تنها حالتی باقی می‌ماند که~$p$
+و~$q$ هر دو ممکنِ آینده باشند. بنا بر انگیزهٔ اصلی، در این حالت واقعاً
+باید~$\Undef$ را نسبت دهیم. اما در آن صورت~$!A \lif !A$ یک همان‌گویی
+\emph{نخواهد بود}. \L ukasiewicz از کنارگذاشتن~$!A \lor \lnot !A$ و
+$\lnot(!A \land \lnot !A)$ ابایی نداشت، اما از کنارگذاشتن
+$!A \lif !A$ پرهیز کرد. ازاین‌رو مقرر کرد
+$\tf{\lif}(\Undef, \Undef) = \True$.
+
+\begin{defn}\ollabel{def:lukasiewicz}
+منطق سه‌ارزشی \L ukasiewicz با ماتریس زیر تعریف می‌شود:
+\begin{enumerate}
+  \item زبان گزاره‌ای استاندارد~$\Lang L_0$ با~$\lnot$، $\land$،
+  $\lor$ و~$\lif$.
+  \item مجموعهٔ ارزش‌های صدق~$V = \{\True, \Undef, \False\}$.
+  \item $\True$ تنها ارزش ممتاز است؛ یعنی~$V^+ = \{\True\}$.
+  \item توابع صدق با جدول‌های زیر داده می‌شوند:
+  \begin{center}
+    \begin{tabular}{c|c} 
+      $\tf{\lnot}$ & \\ 
+      \hline  
+      $\True$ & $\False$ \\ 
+      $\Undef$ & $\Undef$ \\
+      $\False$ & $\True$ 
+    \end{tabular}
+    \quad
+    \begin{tabular}{c|ccc} 
+      $\tf{\land}[\LogLuk[3]]$ & $\True$ & $\Undef$ & $\False$ \\ 
+      \hline 
+      $\True$ & $\True$ & $\Undef$ & $\False$ \\ 
+      $\Undef$ & $\Undef$ & $\Undef$ & $\False$\\ 
+      $\False$ & $\False$ & $\False$ & $\False$ 
+    \end{tabular}
+    \\[2ex]
+    \begin{tabular}{c|ccc} 
+      $\tf{\lor}[\LogLuk[3]]$ & $\True$ & $\Undef$ & $\False$ \\ 
+      \hline 
+      $\True$ & $\True$ & $\True$ & $\True$ \\ 
+      $\Undef$ & $\True$ & $\Undef$ & $\Undef$ \\
+      $\False$ & $\True$ & $\Undef$ & $\False$ 
+    \end{tabular}
+    \quad
+    \begin{tabular}{c|ccc} 
+      $\tf{\lif}[\LogLuk[3]]$ & $\True$ & $\Undef$ & $\False$ \\ 
+      \hline 
+      $\True$ & $\True$ & $\Undef$ & $\False$ \\ 
+      $\Undef$ & $\True$ & $\True$ & $\Undef$  \\ 
+      $\False$ & $\True$ & $\True$ & $\True$ 
+    \end{tabular}
+  \end{center} 
+\end{enumerate}
+\end{defn}
+
+به‌آسانی می‌توان دید هر~!!{formula} چون~$!A$ که فقط شامل~$\lnot$،
+$\land$ و~$\lor$ باشد، اگر به همهٔ~!!{propositional variable}هایش
+$\Undef$ نسبت داده شود، ارزش صدق~$\Undef$ می‌گیرد. پس برای نمونه،
+همان‌گویی‌های کلاسیک~$p \lor \lnot p$ و~$\lnot(p \land \lnot p)$ در
+$\LogLuk[3]$ همان‌گویی نیستند، زیرا هرگاه~$\pAssign v(p) = \Undef$،
+$\pValue{v}(!A) = \Undef$.
+
+در~!!{valuation}هایی که~$\pAssign v(p)$ برابر~$\True$ یا~$\False$ است،
+$\pValue v(!A)$ با ارزش صدق کلاسیک آن یکسان خواهد بود.
+
+\begin{prop}
+  اگر برای همهٔ~$p$های موجود در~$!A$،
+  $\pAssign v(p) \in \{\True, \False\}$، آنگاه
+  $\pValue v[\LogLuk[3]](!A) = \pValue v[\LogCL](!A)$.
+\end{prop}
+
+\begin{prob}\label{mvl:thr:luk:prob:luk-iff} فرض کنید در~$\LogLuk[3]$
+  تعریف کنیم
+  $\pValue v(!A \liff !B) = \pValue v((!A \lif !B) \land (!B \lif
+  !A))$. در آن صورت~$\liff$ چه جدول صدقی خواهد داشت؟
+\end{prob}
+
+بسیاری از همان‌گویی‌های کلاسیک در~\LogLuk[3] نیز همان‌گویی‌اند؛ برای
+نمونه~$\lnot p \lif (p \lif q)$. درست مانند منطق کلاسیک، می‌توانیم این
+امر را با جدول صدق وارسی کنیم:
+\begin{center}
+\begin{tabular}{cc|cccccc}
+  $p$ & $q$ & $\lnot$ & $p$ & $\lif$ & $\smash{(}p$ & $\lif$ & $q\smash{)}$ \\ \hline
+  \True & \True & \False & \True & \True & \True & \True & \True \\
+  \True & \Undef & \False & \True & \True & \True & \Undef & \Undef \\
+  \True & \False & \False & \True & \True & \True & \False & \False \\
+  \Undef & \True & \Undef & \Undef & \True & \Undef & \True & \True \\
+  \Undef & \Undef & \Undef & \Undef & \True & \Undef & \True & \Undef \\
+  \Undef & \False & \Undef & \Undef & \True & \Undef & \Undef & \False \\
+  \False & \True & \True & \False & \True & \False & \True & \True \\
+  \False & \Undef & \True & \False & \True & \False & \True & \Undef \\
+  \False & \False & \True & \False & \True & \False & \True & \False \\  
+\end{tabular}
+\end{center}
+
+\begin{prob}
+  نشان دهید عبارت‌های زیر در~\LogLuk[3] همان‌گویی‌اند:
+  \begin{enumerate}
+    \item $p \lif (q \lif p)$
+    \item\label{mvl:thr:luk:prob:luk-taut-2} $\lnot(p \land q) \liff (\lnot p \lor \lnot q)$
+    \item\label{mvl:thr:luk:prob:luk-taut-3} $\lnot(p \lor q) \liff (\lnot p \land \lnot q)$
+  \end{enumerate}
+  (در~\olref[mvl][thr][luk]{prob:luk-taut-2} و
+  \olref[mvl][thr][luk]{prob:luk-taut-3}، عبارت~$!A \liff !B$ را مخفف
+  $(!A \lif !B) \land (!B \lif !A)$ بگیرید، یا به پاسخ خود برای
+  \olref[mvl][thr][luk]{prob:luk-iff} مراجعه کنید.)
+\end{prob}
+
+\begin{prob}
+  نشان دهید همان‌گویی‌های کلاسیک زیر در~\LogLuk[3] همان‌گویی نیستند:
+  \begin{enumerate}
+    \item $(\lnot p \land p) \lif q$
+    \item $((p \lif q) \lif p) \lif p$
+    \item $(p \lif (p \lif q)) \lif (p \lif q)$
+  \end{enumerate}
+\end{prob}
+
+شاید ازاین‌رو گمان شود که هرچند همهٔ همان‌گویی‌های کلاسیک در
+$\LogLuk[3]$ همان‌گویی نیستند، باید دست‌کم در هر~!!{valuation} یکی از
+دو مقدار~$\True$ یا~$\Undef$ را بگیرند. چنین نیست. مثال نقض عبارت زیر
+است:
+\[
+  \lnot(p \lif \lnot p) \lor \lnot(\lnot p \lif p)
+\]
+که اگر~$p$ برابر~$\Undef$ باشد، مقدارش~$\False$ است.
+
+\begin{prob}
+  کدام‌یک از روابط زیر در منطق \L ukasiewicz برقرارند؟ برای هریک جدول
+  صدق بدهید.
+  \begin{enumerate}
+    \item $p, p \lif q \Entails q$
+    \item $\lnot\lnot p \Entails p$
+    \item $p \land q \Entails p$
+    \item $p \Entails p \land p$
+    \item $p \Entails p \lor q$
+  \end{enumerate}
+\end{prob}
+
+\L ukasiewicz امیدوار بود با افزودن رابط یک‌موضعی~$\Diamond !A$ (برای
+«$!A$ ممکن است») و رابط متناظر~$\Box !A$ (برای «$!A$ ضروری است») بر
+پایهٔ دستگاه سه‌ارزشی خود منطقی برای امکان بسازد:
+\begin{center}
+  \begin{tabular}{c|c} 
+    $\tf{\Diamond}$ & \\ 
+    \hline  
+    $\True$ & $\True$ \\ 
+    $\Undef$ & $\True$ \\
+    $\False$ & $\False$ 
+  \end{tabular}
+  \quad
+  \begin{tabular}{c|c} 
+    $\tf{\Box}$ & \\ 
+    \hline  
+    $\True$ & $\True$ \\ 
+    $\Undef$ & $\False$ \\
+    $\False$ & $\False$ 
+  \end{tabular}
+\end{center}
+به بیان دیگر، $p$ ممکن است اگر و تنها اگر از پیش به‌عنوان کاذب تعیین
+نشده باشد؛ و~$p$ ضروری است اگر و تنها اگر از پیش به‌عنوان صادق تعیین
+شده باشد.
+
+\begin{prob}
+  نشان دهید~$\Box p \liff \lnot\Diamond \lnot p$ و
+  $\Diamond p \liff \lnot \Box \lnot p$ در~\LogLuk[3]، پس از افزودن
+  جدول‌های صدق~$\Box$ و~$\Diamond$، همان‌گویی‌اند.
+\end{prob}
+
+بااین‌حال، کاستی‌های این منطق موجهات پیشنهادی زود آشکار شد: رویدادها
+هرگونه که پیش بروند، $p \land \lnot p$ هرگز نمی‌تواند صادق شود. پس حتی
+اگر اکنون تعیین‌نشده و در نتیجه نامتعین باشد، باید ناممکن شمرده شود؛
+یعنی~$\lnot \Diamond(p \land \lnot p)$ باید همان‌گویی باشد. اما اگر
+$\pAssign v(p) = \Undef$، آنگاه
+$\pValue v(\lnot \Diamond(p \land \lnot p)) = \Undef$. هرچند
+\L ukasiewicz درست می‌گفت که دو ارزش صدق برای تمایزهای موجهاتی مانند
+امکان و ضرورت کافی نیست، افزودن ارزش صدق سوم نیز کافی نیست.
+
+\end{document}

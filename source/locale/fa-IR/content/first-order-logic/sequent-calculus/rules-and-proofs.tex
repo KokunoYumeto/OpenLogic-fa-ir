@@ -1,0 +1,73 @@
+% Part: first-order-logic
+% Chapter: sequent-calculus
+% Section: rules-and-proofs
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{seq}{rul}}
+      {\olfileid{pl}{seq}{rul}}
+
+\olsection{قواعد و \usetoken{P}{derivation}}
+
+در ادامه، فرض کنید $\Gamma, \Delta, \Pi, \Lambda$ نمایندهٔ توالی‌های
+متناهیِ !!{sentence}s باشند.
+
+\begin{defn}[دنباله]
+\emph{دنباله} عبارتی است به صورت
+\[
+\Gamma \Sequent \Delta
+\]
+که در آن $\Gamma$ و $\Delta$ توالی‌های متناهی (و چه‌بسا تهی) از
+!!{sentence}sی زبان $\Lang L$ هستند. $\Gamma$ را \emph{مقدم} و
+$\Delta$ را \emph{تالی} می‌نامند.
+\end{defn}
+
+\begin{explain}
+شهود نهفته در پس یک دنباله چنین است: اگر همهٔ !!{sentence}sی مقدم برقرار
+باشند، آنگاه دست‌کم یکی از !!{sentence}sی تالی برقرار است. یعنی اگر
+$\Gamma = \tuple{!A_1, \dots, !A_m}$ و
+$\Delta = \tuple{!B_1, \dots, !B_n}$ باشند، آنگاه
+$\Gamma \Sequent \Delta$ برقرار است اگر و تنها اگر
+\[
+(!A_1 \land \cdots \land !A_m) \lif (!B_1 \lor \cdots \lor
+!B_n)
+\]
+برقرار باشد. دو حالت خاص وجود دارد: حالتی که $\Gamma$ تهی است و حالتی
+که $\Delta$~تهی است. هنگامی که $\Gamma$ تهی است، یعنی $m = 0$،
+$\quad \Sequent \Delta$ برقرار است اگر و تنها اگر
+$!B_1 \lor \dots \lor !B_n$ برقرار باشد. هنگامی که $\Delta$ تهی است،
+یعنی $n = 0$، $\Gamma \Sequent \quad$ برقرار است اگر و تنها اگر
+$\lnot(!A_1 \land \dots \land !A_m)$ برقرار باشد. می‌گوییم یک دنباله
+معتبر است اگر و تنها اگر !!{sentence}‌ی متناظر با آن معتبر باشد.
+\end{explain}
+
+اگر $\Gamma$ توالی‌ای از !!{sentence}s باشد، $\Gamma, !A$ را برای حاصل
+افزودن $!A$ به انتهای راست~$\Gamma$ می‌نویسیم (و $!A, \Gamma$ را برای
+حاصل افزودن $!A$ به انتهای چپ~$\Gamma$). اگر $\Delta$ نیز توالی‌ای از
+!!{sentence}s باشد، آنگاه $\Gamma, \Delta$ الحاق آن دو توالی است.
+
+\begin{defn}[دنبالهٔ آغازین]
+\emph{دنبالهٔ آغازین} دنباله‌ای است
+\iftag{prvFalse,prvTrue}{به یکی از صورت‌های زیر:
+  \begin{enumerate}
+    \item $!A \Sequent !A$
+    \tagitem{prvTrue}{$\quad \Sequent \ltrue$}{}
+    \tagitem{prvFalse}{$\lfalse \Sequent \quad$}{}
+  \end{enumerate}}
+{به صورت $!A \Sequent !A$}، برای هر !!{sentence} $!A$ در زبان.
+\end{defn}
+
+!!^{derivation}s در حساب دنباله‌ای درخت‌های خاصی از دنباله‌ها هستند که
+در آن‌ها بالاترین دنباله‌ها دنباله‌های آغازین‌اند، و اگر دنباله‌ای زیر
+یک یا دو دنبالهٔ دیگر قرار گیرد، باید به‌درستی با یک قاعدهٔ استنتاج از
+آن‌ها به دست آید. قواعد $\Log{LK}$ به دو نوع اصلی تقسیم می‌شوند: قواعد
+\emph{منطقی} و قواعد \emph{ساختاری}. قواعد منطقی به نام !!{main
+  operator} آن !!{sentence}‌ی خوانده می‌شوند که $!A$ و/یا $!B$ را در
+دنبالهٔ پایینی دربر دارد. هر قاعده دو نسخه دارد: یکی برای استنتاج
+دنباله‌ای که !!{sentence}‌ی حاوی !!{operator} در سمت چپ آن است، و دیگری
+برای دنباله‌ای که !!{sentence} در سمت راست آن است.
+
+\end{document}

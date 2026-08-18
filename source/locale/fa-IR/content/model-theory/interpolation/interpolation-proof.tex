@@ -1,0 +1,200 @@
+% Part: model-theory
+% Chapter: interpolation
+% Section: interpolation-proof
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mod}{int}{prf}
+
+\olsection{قضیهٔ درون‌یابی کریگ}
+
+\begin{thm}[قضیهٔ درون‌یابی کریگ]
+\ollabel{thm:interpol}
+اگر $\Entails !A \lif !B$، آنگاه !!a{sentence}~$!C$ وجود دارد چنان‌که
+$\Entails !A \lif !C$ و $\Entails !C \lif !B$، و هر !!{constant}،
+!!{function} و !!{predicate} (جز~$\eq$) در~$!C$ هم در~$!A$ و هم
+در~$!B$ رخ می‌دهد. !!{sentence}~$!C$ \emph{درون‌یابِ}~$!A$ و~$!B$
+نامیده می‌شود.
+\end{thm}
+
+\begin{proof}
+فرض کنید $\Lang{L}_1$ زبان~$!A$ و $\Lang{L}_2$ زبان~$!B$ باشد.
+بگذارید $\Lang{L}_0 = \Lang{L}_1 \cap \Lang{L}_2$. برای هر
+$i \in \{0, 1, 2 \}$، بگذارید $\Lang{L}'_i$ با افزودن بی‌نهایت
+!!{constant}s تازهٔ $\Obj c_0, \Obj c_1, \Obj c_2, \dots$ به
+$\Lang{L}_i$ به دست آید.
+
+اگر $!A$ ارضاناپذیر باشد، $\lexists[x][\eq/[x][x]]$ یک درون‌یاب است.
+اگر $\lnot !B$ ارضاناپذیر باشد (و بنابراین $!B$ معتبر باشد)،
+$\lexists[x][\eq[x][x]]$ یک درون‌یاب است. پس می‌توانیم فرض کنیم
+$!A$ و~$\lnot !B$ هر دو ارضاپذیرند.
+
+برای اثبات عکس نقیض قضیهٔ درون‌یابی، فرض کنید هیچ درون‌یابی برای $!A$
+و~$!B$ وجود ندارد. به بیان دیگر، فرض کنید $\{!A\}$ و~$\{\lnot !B\}$
+در~$\Lang{L}_0$ جدایی‌ناپذیرند.
+
+هدف ما گسترش زوج~$(\{ !A \}, \{\lnot!B\})$ به یک زوج بیشینهٔ
+جدایی‌ناپذیر~$(\Gamma^*, \Delta^*)$ است. بگذارید
+$!A_0$، $!A_1$، $!A_2$، \dots همهٔ !!{sentence}s~$\Lang{L}'_1$، و
+$!B_0$، $!B_1$، $!B_2$، \dots همهٔ !!{sentence}s~$\Lang{L}'_2$ را
+برشمارند. دو دنبالهٔ صعودی از مجموعه‌های !!{sentence}s
+$(\Gamma_n, \Delta_n)$ را برای $n \ge 0$ چنین تعریف می‌کنیم.
+$\Gamma_0 = \{ !A\}$ و $\Delta_0 = \{\lnot !B \}$ را قرار دهید. با
+فرض اینکه $(\Gamma_n, \Delta_n)$ از پیش تعریف شده‌اند،
+$\Gamma_{n+1}$ و~$\Delta_{n+1}$ را چنین تعریف کنید:
+\begin{enumerate}
+\item اگر $\Gamma_n \cup \{!A_n \}$ و~$\Delta_n$ در~$\Lang{L}'_0$
+  جدایی‌ناپذیرند، $\Gamma_{n+1}=\Gamma_n\cup\{!A_n\}$ را قرار دهید.
+  افزون بر این، اگر $!A_n$ !!{formula}ی وجودی
+  $\lexists[x][!S]$ باشد، !!{constant} تازه‌ای~$c$ برگزینید که در
+  $\Gamma_n$، $\Delta_n$، $!A_n$ یا~$!B_n$ رخ نمی‌دهد، و
+  $\Subst{!S}{c}{x}$ را نیز در~$\Gamma_{n+1}$ قرار دهید. در غیر این
+  صورت، $\Gamma_{n+1}=\Gamma_n$ را قرار دهید.
+\item اگر $\Gamma_{n+1}$ و $\Delta_n \cup \{!B_n \}$ در
+  $\Lang{L}'_0$ جدایی‌ناپذیرند،
+  $\Delta_{n+1}=\Delta_n\cup\{!B_n\}$ را قرار دهید. افزون بر این، اگر
+  $!B_n$ !!{formula}ی وجودی $\lexists[x][!S]$ باشد، !!{constant}
+  تازه‌ای~$c$ برگزینید که در $\Gamma_{n+1}$، $\Delta_n$، $!A_n$ یا
+  $!B_n$ رخ نمی‌دهد، و $\Subst{!S}{c}{x}$ را نیز در~$\Delta_{n+1}$
+  قرار دهید. در غیر این صورت، $\Delta_{n+1}=\Delta_n$ را قرار دهید.
+\end{enumerate}
+سرانجام تعریف کنید:
+\begin{align*}
+  \Gamma^* & = \bigcup_{n\ge 0} \Gamma_n, &
+  \Delta^* & = \bigcup_{n\ge 0} \Delta_n.
+\end{align*}
+اکنون با استقرای هم‌زمان بر~$n$ می‌توانیم ثابت کنیم:
+\begin{enumerate}
+\item\ollabel{part-a} $\Gamma_n$ و~$\Delta_n$ در~$\Lang{L}'_0$
+  جدایی‌ناپذیرند؛
+\item\ollabel{part-b} $\Gamma_{n+1}$ و~$\Delta_n$ در~$\Lang{L}'_0$
+    جدایی‌ناپذیرند.
+\end{enumerate}
+پایهٔ \olref{part-a} را \olref[sep]{lem:sep1} به دست می‌دهد. برای بخش
+\olref{part-b} باید سه حالت را از هم متمایز کنیم:
+\begin{enumerate}
+\item اگر $\Gamma_0 \cup \{!A_0 \}$ و~$\Delta_0$ جدایی‌پذیر باشند،
+  آنگاه $\Gamma_1 = \Gamma_0$ و \olref{part-b} همان
+  \olref{part-a} است؛
+\item اگر $\Gamma_1 = \Gamma_0 \cup\{ !A_0\}$، آنگاه بنا بر ساخت،
+  $\Gamma_1$ و~$\Delta_0$ جدایی‌ناپذیرند.
+\item حالت باقی‌مانده آن است که $!A_0$ وجودی باشد، به‌گونه‌ای که
+  $\Gamma_1 = \Gamma_0 \cup \{ \lexists[x][!S], \Subst{!S}{c}{x}
+  \}$. بنا بر ساخت، $\Gamma_0 \cup \{ \lexists[x][!S]\}$ و
+  $\Delta_0$ جدایی‌ناپذیرند؛ پس بنا بر \olref[sep]{lem:sep2}،
+  $\Gamma_0 \cup \{ \lexists[x][!S], \Subst{!S}{c}{x} \}$ و
+  $\Delta_0$ نیز جدایی‌ناپذیرند.
+\end{enumerate}
+این پایهٔ استقرا را برای \olref{part-a} و~\olref{part-b} بالا کامل
+می‌کند. اکنون به گام استقرا می‌پردازیم. برای \olref{part-a}، اگر
+$\Delta_{n+1} = \Delta_n \cup \{ !B_n \}$، آنگاه بنا بر ساخت
+$\Gamma_{n+1}$ و~$\Delta_{n+1}$ جدایی‌ناپذیرند (حتی اگر $!B_n$ وجودی
+باشد، بنا بر \olref[sep]{lem:sep2})؛ و اگر
+$\Delta_{n+1} = \Delta_n$ (زیرا $\Gamma_{n+1}$ و
+$\Delta_n \cup \{!B_n\}$ جدایی‌پذیرند)، فرض استقرا را دربارهٔ
+\olref{part-b} به کار می‌بریم. برای گام استقرا دربارهٔ
+\olref{part-b}، اگر
+$\Gamma_{n+2} = \Gamma_{n+1} \cup \{!A_{n+1} \}$، آنگاه بنا بر ساخت
+$\Gamma_{n+2}$ و~$\Delta_{n+1}$ جدایی‌ناپذیرند (حتی اگر $!A_{n+1}$
+وجودی باشد، بنا بر \olref[sep]{lem:sep2})؛ و اگر
+$\Gamma_{n+2} = \Gamma_{n+1}$، حالت استقرایی \olref{part-a} را که
+همین اکنون ثابت شد به کار می‌بریم. این استقرا بر \olref{part-a}
+و~\olref{part-b} را به پایان می‌رساند.
+
+نتیجه می‌شود $\Gamma^*$ و~$\Delta^*$ جدایی‌ناپذیرند؛ وگرنه بنا بر
+فشردگی $n \ge 0$ای وجود دارد که $\Gamma_n$ و~$\Delta_n$ را جدا
+می‌کند، برخلاف \olref{part-a}. به‌ویژه، $\Gamma^*$ و~$\Delta^*$
+سازگارند: زیرا اگر اولی یا دومی ناسازگار باشد، به‌ترتیب با
+$\lexists[x][\eq/[x][x]]$ یا $\lforall[x][\eq[x][x]]$ از دیگری جدا
+می‌شود.
+
+اکنون نشان می‌دهیم $\Gamma^*$ در~$\Lang{L}'_1$ بیشینه‌سازگار است و
+به همین ترتیب $\Delta^*$ در~$\Lang{L}'_2$. برای اولی، فرض کنید برای
+یک $n \ge 0$، $!A_n \notin \Gamma^*$ و
+$\lnot !A_n \notin \Gamma^*$. اگر $!A_n \notin \Gamma^*$، آنگاه
+$\Gamma_n \cup \{!A_n \}$ از~$\Delta_n$ جدایی‌پذیر است، و ازاین‌رو
+$!C \in \Lang{L}'_0$ای وجود دارد چنان‌که هر دو گزارهٔ زیر برقرارند:
+\begin{align*}
+  \Gamma^* & \Entails !A_n \lif !C, &
+  \Delta^* & \Entails \lnot !C.
+\end{align*}
+به همین ترتیب، اگر $\lnot !A_n \notin \Gamma^*$،
+$!C' \in \Lang{L}'_0$ای وجود دارد چنان‌که هر دو گزارهٔ زیر برقرارند:
+\begin{align*}
+  \Gamma^* & \Entails \lnot !A_n \lif !C', &
+  \Delta^* & \Entails \lnot !C'.
+\end{align*}
+بنا بر منطق گزاره‌ای، $\Gamma^* \Entails !C \lor !C'$ و
+$\Delta^* \Entails \lnot (!C \lor !C')$؛ پس $!C \lor !C'$،
+$\Gamma^*$ و~$\Delta^*$ را جدا می‌کند. استدلالی مشابه ثابت می‌کند
+$\Delta^*$ بیشینه است.
+
+سرانجام، نشان می‌دهیم $\Gamma^* \cap \Delta^*$ در~$\Lang{L}'_0$
+بیشینه‌سازگار است. آشکارا سازگار است، زیرا اشتراک دو مجموعهٔ سازگار
+است. برای نشان‌دادن بیشینگی، $!S \in \Lang{L}'_0$ را بگیرید. اکنون
+$\Gamma^*$ در $\Lang{L}'_1 \supseteq \Lang{L}'_0$ بیشینه است، و به
+همین ترتیب $\Delta^*$ در
+$\Lang{L}'_2 \supseteq \Lang{L}'_0$ بیشینه است. نتیجه می‌شود یا
+$!S \in \Gamma^*$ یا $\lnot !S \in \Gamma^*$؛ و یا
+$!S \in \Delta^*$ یا $\lnot !S \in \Delta^*$. اگر
+$!S \in \Gamma^*$ و $\lnot !S \in \Delta^*$، آنگاه $!S$،
+$\Gamma^*$ و~$\Delta^*$ را جدا می‌کند؛ و اگر
+$\lnot !S \in \Gamma^*$ و $!S \in \Delta^*$، آنگاه $\lnot !S$ آن
+دو را جدا می‌کند. بنابراین یا $!S \in \Gamma^* \cap \Delta^*$ یا
+$\lnot !S \in \Gamma^* \cap \Delta^*$، و
+$\Gamma^* \cap \Delta^*$ بیشینه است.
+
+چون $\Gamma^*$ بیشینه‌سازگار است، مدلی~$\Struct{M}'_1$ دارد که
+!!{domain} آن، $\Domain{M'_1}$، دقیقاً از عناصر~$\Assign{c}{M'_1}$
+تعبیرکنندهٔ !!{constant}s تشکیل می‌شود---درست مانند برهان قضیهٔ
+تمامیت (\olref[fol][com][cth]{thm:completeness}). به همین ترتیب،
+$\Delta^*$ مدلی~$\Struct{M}'_2$ دارد که !!{domain} آن،
+$\Domain{M'_2}$، از تعبیرهای~$\Assign{c}{M'_2}$ برای !!{constant}s
+به دست می‌آید.
+
+بگذارید $\Struct{M_1}$ با حذف تعبیرهای !!{constant}s، !!{function}s و
+!!{predicate}s در $\Lang{L}'_1 \setminus \Lang{L}'_0$ از
+$\Struct{M'_1}$ به دست آید، و برای $\Struct{M_2}$ نیز به همین ترتیب.
+آنگاه نگاشت $h \colon M_1 \to M_2$ که با
+$h(\Assign{c}{M'_1}) = \Assign{c}{M'_2}$ تعریف می‌شود، همریختی‌ای در
+$\Lang{L}'_0$ است، زیرا چنان‌که نشان دادیم
+$\Gamma^* \cap \Delta^*$ در~$\Lang{L}'_0$ بیشینه‌سازگار است. این از
+آن رو نتیجه می‌شود که هر !!{sentence}-$\Lang{L}'_0$ یا هم به
+$\Gamma^*$ و هم به~$\Delta^*$ تعلق دارد، یا به هیچ‌یک: پس
+$\Assign{c}{M'_1} \in \Assign{P}{M'_1}$ هرگاه و تنها هرگاه
+$\Atom{P}{c} \in \Gamma^*$، هرگاه و تنها هرگاه
+$\Atom{P}{c} \in \Delta^*$، هرگاه و تنها هرگاه
+$\Assign{c}{M'_2} \in \Assign{P}{M'_2}$. دیگر شرایط همریختی‌ها را
+نیز می‌توان به همین ترتیب برقرار کرد.
+
+اکنون مدلی~$\Struct{M}$ را برای !!{language}
+$\Lang{L}'_1 \cup \Lang{L}'_2$ چنین تعریف می‌کنیم:
+\begin{enumerate}
+\item !!{domain}~$\Domain{M}$ همان $\Domain{M_2}$، یعنی مجموعهٔ همهٔ
+  عناصر~$\Assign{c}{M'_2}$ است؛
+\item اگر !!a{predicate}~$P$ در
+  $\Lang{L}'_2 \setminus \Lang{L}'_1$ باشد، آنگاه
+  $\Assign{P}{M} = \Assign{P}{M'_2}$؛
+\item اگر محمول~$P$ در $\Lang{L}'_1\setminus \Lang{L}'_2$ باشد، آنگاه
+  $\Assign{P}{M} = h(\Assign{P}{M'_1})$؛ یعنی
+  $\tuple{\Assign{c_1}{M'_2}, \dots, \Assign{c_n}{M'_2}} \in
+  \Assign{P}{M}$ هرگاه و تنها هرگاه
+  $\tuple{\Assign{c_1}{M'_1}, \dots, \Assign{c_n}{M'_1}} \in
+  \Assign{P}{M'_1}$.
+\item اگر !!a{predicate}~$P$ در~$\Lang{L}'_0$ باشد، آنگاه
+  $\Assign{P}{M} = \Assign{P}{M'_2} = h(\Assign{P}{M'_1})$.
+\item !!^{function}s~$\Lang{L}'_1 \cup \Lang{L}'_2$، از جمله
+  !!{constant}s، به‌طور مشابه بررسی می‌شوند.
+\end{enumerate}
+
+سرانجام با استقرا بر !!{formula}s نشان می‌دهیم $\Struct{M}$ دربارهٔ
+همهٔ !!{formula}s~$\Lang{L}'_1$ با~$\Struct{M'_1}$، و دربارهٔ همهٔ
+!!{formula}s~$\Lang{L}'_2$ با~$\Struct{M'_2}$ توافق دارد. به‌ویژه،
+$\Sat{M}{\Gamma^* \cup \Delta^*}$، و ازاین‌رو $\Sat{M}{!A}$ و
+$\Sat{M}{\lnot!B}$؛ پس $\not\Entails !A \lif !B$. این برهان قضیهٔ
+درون‌یابی کریگ را به پایان می‌رساند.
+\end{proof}
+
+\end{document}

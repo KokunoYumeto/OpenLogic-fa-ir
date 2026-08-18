@@ -1,0 +1,99 @@
+% Part: propositional-logic
+% Chapter: syntax-and-semantics
+% Section: semantic-notions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pl}{syn}{sem}
+
+\olsection{مفاهیم معناشناختی}
+
+مفاهیم معناشناختی زیر را تعریف می‌کنیم:
+
+\begin{defn}
+\begin{enumerate}
+\item !!^a{formula}~$!A$ \emph{ارضاپذیر} است هرگاه
+  برای دست‌کم یک~$\pAssign{v}$، رابطهٔ $\pSat{v}{!A}$ برقرار باشد؛ و
+  \emph{ارضاناپذیر} است هرگاه برای هیچ $\pAssign{v}$، رابطهٔ $\pSat{v}{!A}$
+  برقرار نباشد؛
+\item !!^a{formula}~$!A$ یک \emph{همان‌گویی} است هرگاه
+  $\pSat{v}{!A}$ برای همهٔ !!{valuation}s~$\pAssign{v}$ برقرار باشد؛
+\item !!^a{formula}~$!A$ را \emph{ممکن} می‌نامیم هرگاه ارضاپذیر باشد،
+  اما همان‌گویی نباشد؛
+\item اگر $\Gamma$ مجموعه‌ای از !!{formula}s باشد، $\Gamma \Entails !A$
+  («$\Gamma$ مستلزم $!A$ است») اگر و تنها اگر رابطهٔ $\pSat{v}{!A}$ برای
+  هر !!{valuation}~$\pAssign{v}$ که در آن $\pSat{v}{\Gamma}$ برقرار است،
+  برقرار باشد.
+\item اگر $\Gamma$ مجموعه‌ای از !!{formula}s باشد، $\Gamma$
+  \emph{ارضاپذیر} است هرگاه !!a{valuation}~$\pAssign{v}$ وجود داشته باشد
+  که در آن $\pSat{v}{\Gamma}$ برقرار باشد؛ و در غیر این صورت $\Gamma$
+  \emph{ارضاناپذیر} است.
+\end{enumerate}
+\end{defn}
+
+\begin{prob}
+ !!{formula}s در چهار موردِ زیر آمده‌اند. برای هر یک، جداگانه تعیین کنید که
+ (الف)~ارضاپذیر است یا نه، (ب)~همان‌گویی است یا نه، و
+ (ج)~ممکن به‌شمار می‌آید یا نه.
+\begin{enumerate}
+  \item \( ( \Obj p_0 \lif ( \lnot \Obj p_1 \lif \lnot \Obj p_0 ) ) \).
+  \item \( ( ( \Obj p_0 \land \lnot \Obj p_1 ) \lif ( \lnot \Obj p_0 \land \Obj p_2 )) \liff ( ( \Obj p_2 \lif \Obj p_0 ) \lif ( \Obj p_0 \lif \Obj p_1 )) \).
+  \item \( ( \Obj p_0 \liff \Obj p_1 ) \lif ( \Obj p_2 \liff \lnot \Obj p_1 ) \).
+  \item \( (( \Obj p_0 \liff ( \lnot \Obj p_1 \land \Obj p_2 )) \lor ( \Obj p_2 \lif ( \Obj p_0 \liff \Obj p_1 ))) \).
+\end{enumerate}
+\end{prob}
+
+\begin{prop}
+\ollabel{prop:semanticalfacts}
+\begin{enumerate}
+\item $!A$ همان‌گویی است اگر و تنها اگر
+  $\emptyset \Entails !A$؛
+\item اگر $\Gamma \Entails !A$ و $\Gamma \Entails !A \lif !B$، آنگاه
+  $\Gamma \Entails !B$؛
+\item اگر $\Gamma$ ارضاپذیر باشد، هر زیرمجموعهٔ متناهیِ $\Gamma$ نیز
+  ارضاپذیر است؛
+\item \ollabel{def:monotonicity} یکنوایی: اگر $\Gamma \subseteq \Delta$
+  و $\Gamma \Entails !A$، آنگاه $\Delta \Entails !A$ نیز برقرار است؛
+\item \ollabel{def:Cut} تعدی: اگر $\Gamma \Entails !A$ و
+  $\Delta \cup \{ !A\} \Entails !B$، آنگاه $\Gamma \cup \Delta \Entails
+  !B$ برقرار است.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+تمرین.
+\end{proof}
+
+\begin{prob}
+\olref[pl][syn][sem]{prop:semanticalfacts} را ثابت کنید.
+\end{prob}
+
+\begin{prop}\ollabel{prop:entails-unsat}
+  $\Gamma \Entails !A$ اگر و تنها اگر $\Gamma \cup \{\lnot !A\}$
+  ارضاناپذیر باشد.
+\end{prop}
+
+\begin{proof}
+تمرین.
+\end{proof}
+
+\begin{prob}
+\olref[pl][syn][sem]{prop:entails-unsat} را ثابت کنید.
+\end{prob}
+
+\begin{thm}[قضیهٔ استنتاج معنایی]
+  \ollabel{thm:sem-deduction} $\Gamma \Entails !A \lif !B$ اگر و تنها
+  اگر $\Gamma \cup \{!A\} \Entails !B$.
+\end{thm}
+
+\begin{proof}
+تمرین.
+\end{proof}
+
+\begin{prob}
+\olref[pl][syn][sem]{thm:sem-deduction} را ثابت کنید.
+\end{prob}
+
+\end{document}

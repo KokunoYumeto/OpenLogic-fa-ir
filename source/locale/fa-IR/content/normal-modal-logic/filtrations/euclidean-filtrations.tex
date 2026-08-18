@@ -1,0 +1,138 @@
+% Part: normal-modal-logic
+% Chapter: filtrations
+% Section: euclidean-filtrations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{fil}{euc}
+
+\olsection{تصفیه‌های مدل‌های اقلیدسی}
+
+رویکرد~\olref[acc]{sec} در مورد مدل‌های اقلیدسی، یا مدل‌هایی که هم
+سریال و هم اقلیدسی‌اند، کار نمی‌کند. مدل بالای
+\olref{fig:ser-eucl} را در نظر بگیرید که هم اقلیدسی و هم سریال است.
+فرض کنید~$\Gamma = \{p, \Box p \}$. هنگام گرفتن تصفیه‌ای از میان
+$\Gamma$، داریم~$[w_1] = [w_3]$، زیرا~$w_1$ و~$w_3$ تنها جهان‌هایی
+هستند که دربارهٔ~$\Gamma$ هم‌رأی‌اند. هر تصفیه‌ای همچنین پیکانِ به‌ارث‌رسیده
+از~$\mModel{M}$ را خواهد داشت، چنان‌که در~\olref{fig:ser-eucl2}
+نمایانده شده است. آن مدل اقلیدسی نیست. افزون بر این، نمی‌توانیم با افزودن
+پیکان‌هایی به آن مدل، اقلیدسی‌اش کنیم. ناچار می‌شدیم میان~$[w_2]$ و
+$[w_4]$ پیکان‌های دوسویه بیفزاییم، و سپس میان~$[w_2]$ و~$[w_5]$ نیز
+چنین کنیم. اما بناست~$\Box p$ در~$[w_2]$ صادق باشد، حال آنکه~$p$ در
+$[w_5]$ کاذب است.
+
+\begin{figure}[htpb]
+  \centering
+  \begin{tikzpicture}[modal]
+    \node[world] (w1)
+          [label={left: \mFalse{p}},
+            label={below: $\mSat{{}}{\Box p}$}] {$w_1$}; 
+    \node[world] (w2)
+          [label={right: \mTrue{p}},
+            label = {below: $\mSat{{}}{\Box p}$},
+            right=of w1] {$w_2$}; 
+    \draw[->] (w1) to (w2);
+    \draw[reflexive above] (w2) to (w2);
+    \node[world] (w3)
+          [label={left: \mFalse{p}},
+            label={below: $\mSat{{}}{\Box p}$},
+            below=of w1] {$w_3$}; 
+    \node[world] (w4)
+          [label={right:\mTrue{p}},
+            label={below: $\mSat/{{}}{\Box p}$},
+            right=of w3] {$w_4$};
+    \draw[->] (w3) to (w4);
+    \draw[reflexive above] (w4) to (w4);     
+    \node[world] (w5)
+          [label={right: \mFalse{p}},
+            label=below:$\mSat/{{}}{\Box p}$,
+            right=of w4] {$w_5$}; 
+    \draw[->, bend left] (w4) to (w5);
+    \draw[->, bend left] (w5) to (w4);
+    \draw[reflexive above] (w5) to (w5);     
+  \end{tikzpicture}
+  \caption{یک مدل سریال و اقلیدسی.}
+  \ollabel{fig:ser-eucl}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}[modal,every text node part/.style={align=center}]
+    \node[world] (w1)
+          [label={left: \mFalse{p}},
+            label={right:$[w_1]=[w_3]$},
+            label={below: $\mSat{{}}{\Box p}$}] {$[w_1]$}; 
+    \node[world] (w2)
+         [label={right: \mTrue{p}},
+           label = {below: $\mSat{{}}{\Box p}$},
+           right=of w1, yshift=1.5cm] {$[w_2]$}; 
+    \draw[->] (w1) to (w2);
+    \draw[reflexive above] (w2) to (w2);
+    \node[world] (w4)
+         [label={right:\mTrue{p}},
+           label={below: $\mSat/{{}}{\Box p}$},
+           right=of w1,yshift=-1.5cm] {$[w_4]$};
+    \draw[->] (w1) to (w4);
+    \draw[reflexive above] (w4) to (w4);     
+    \node[world] (w5)
+         [label={right: \mFalse{p}},
+             label=below:$\mSat/{{}}{\Box p}$,
+             right=of w4] {$[w_5]$}; 
+    \draw[->, bend left] (w4) to (w5);
+    \draw[->, bend left] (w5) to (w4);
+    \draw[reflexive above] (w5) to (w5);     
+  \end{tikzpicture}
+  \caption{تصفیهٔ مدلِ~\olref{fig:ser-eucl}.}
+  \ollabel{fig:ser-eucl2}
+\end{figure}
+
+به‌ویژه، برای به‌دست‌آوردن یک تصفیهٔ اقلیدسی کافی نیست تصفیه‌هایی از میان
+$\Gamma$های دلخواهِ بسته تحت زیر-!!{formula}ها را در نظر بگیریم. در عوض،
+باید مجموعه‌های~$\Gamma$ای را در نظر بگیریم که \emph{از نظر موجهاتی بسته}
+باشند (بنگرید به~\olref[pre]{defn:modallyclosed}). چنین مجموعه‌هایی از
+جمله‌ها نامتناهی‌اند و ازاین‌رو بی‌درنگ به خاصیت مدل متناهی یا
+تصمیم‌پذیری دستگاه متناظر نمی‌انجامند.
+
+\begin{thm}\ollabel{thm:modal-closed-filt}
+  فرض کنید~$\Gamma$ از نظر موجهاتی بسته،
+  $\mModel{M}=\tuple{W,R,V}$، و
+  $\mModel{M^*} = \tuple{W^*,R^*,V^*}$ درشت‌ترین تصفیهٔ
+  $\mModel{M}$ از خلال~$\Gamma$ باشد.
+  \begin{enumerate}
+  \item اگر~$\mModel{M}$ متعدی باشد، $\mModel{M^*}$ نیز متعدی است.
+  \item اگر~$\mModel{M}$ اقلیدسی باشد، $\mModel{M^*}$ نیز اقلیدسی است.
+  \item اگر~$\mModel{M}$ متقارن باشد، $\mModel{M^*}$ نیز متقارن است.
+  \end{enumerate}
+\end{thm}
+
+\begin{proof}
+\begin{enumerate}
+  \item اگر~$\mModel{M^*}$ درشت‌ترین تصفیه باشد، بنا به تعریف
+    $R^*[u][v]$ اگر و تنها اگر~$C_1(u,v)$. برای تعدی، فرض کنید
+    $C_1(u,v)$ و~$C_1(v,w)$؛ باید~$C_1(u,w)$ را نشان دهیم.
+    \iftag{prvBox}{فرض کنید~$\mSat{M}{\Box !A}[u]$؛ آنگاه چون~\Ax{4}
+      در همهٔ مدل‌های متعدی معتبر است، $\mSat{M}{\Box\Box!A}[u]$؛ و
+      چون بنا بر بستار~$\Box\Box!A \in \Gamma$، به‌کمک~$C_1(u,v)$
+      نیز داریم~$\mSat{M}{\Box!A}[v]$، و به‌کمک~$C_1(v,w)$ نیز
+      $\mSat{M}{!A}[w]$. }{}\iftag{prvDiamond}{فرض کنید
+      $\mSat{M}{!A}[w]$؛ آنگاه بنا بر~$C_1(v,w)$ داریم
+      $\mSat{M}{\Diamond !A}[v]$، زیرا به‌سبب بستار موجهاتی
+      $\Diamond !A \in \Gamma$. به‌کمک~$C_1(u,v)$ به
+      $\mSat{M}{\Diamond\Diamond !A}[u]$ می‌رسیم، زیرا به‌سبب بستار
+      موجهاتی~$\Diamond\Diamond!A \in \Gamma$. از آنجا که
+      \Ax{4_\Diamond} در همهٔ مدل‌های متعدی معتبر است،
+      $\mSat{M}{\Diamond!A}[u]$.}{}
+  \item تمرین. از این واقعیت استفاده کنید که هم~\Ax{5} و هم
+    $\Ax{5_\Diamond}$ در همهٔ مدل‌های اقلیدسی معتبرند.
+  \item تمرین. از این واقعیت استفاده کنید که~\Ax{B} و
+    $\Ax{B_\Diamond}$ در همهٔ مدل‌های متقارن معتبرند.
+\end{enumerate}
+\end{proof}
+
+\begin{prob}
+  برهان~\olref[nml][fil][euc]{thm:modal-closed-filt} را کامل کنید.
+\end{prob}
+
+\end{document}

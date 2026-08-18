@@ -1,0 +1,50 @@
+% Part: first-order-logic
+% Chapter: sequent-calculus
+% Section: soundness-identity
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{seq}{sid}
+
+\olsection{صحت با \usetoken{S}{identity}}
+
+\begin{prop}
+$\Log{LK}$ همراه با دنباله‌های آغازین و قواعد همانی صحیح است.
+\end{prop}
+
+\begin{proof}
+دنباله‌های آغازین به صورت ${} \Sequent \eq[t][t]$ معتبرند، زیرا
+برای هر !!{structure}~$\Struct M$، $\Sat{M}{\eq[t][t]}$. (توجه کنید
+که فرض می‌کنیم ترم $t$ بسته است، یعنی هیچ متغیری ندارد؛ پس انتساب‌های
+متغیر بی‌تأثیرند.)
+
+فرض کنید آخرین استنتاج در !!a{derivation}، $=$ باشد. آنگاه مقدمه
+$\eq[t_1][t_2], \Gamma \Sequent \Delta, !A(t_1)$ و نتیجه
+$\eq[t_1][t_2], \Gamma \Sequent \Delta, !A(t_2)$ است.
+!!a{structure}~$\Struct M$ را در نظر بگیرید. باید نشان دهیم نتیجه
+معتبر است؛ یعنی اگر $\Sat{M}{\eq[t_1][t_2]}$ و
+$\Sat{M}{\Gamma}$، آنگاه یا $\Sat{M}{!C}$ برای یک
+$!C \in \Delta$، یا $\Sat{M}{!A(t_2)}$.
+
+بنا بر فرض استقرا، مقدمه معتبر است. یعنی اگر
+$\Sat{M}{\eq[t_1][t_2]}$ و $\Sat{M}{\Gamma}$، آنگاه یا (الف) برای
+یک $!C \in \Delta$، $\Sat{M}{!C}$، یا (ب)
+$\Sat{M}{!A(t_1)}$. در حالت (الف) کار تمام است. حالت (ب) را در نظر
+بگیرید. فرض کنید $s$ انتساب متغیری باشد که
+$s(x) = \Value{t_1}{M}$. بنا بر
+\olref[syn][ass]{prop:sentence-sat-true}،
+$\Sat{M}{!A(t_1)}[s]$. چون $\varAssign{s}{s}{x}$، بنا بر
+\olref[syn][ext]{prop:ext-formulas}،
+$\Sat{M}{!A(x)}[s]$. از آنجا که
+$\Sat{M}{\eq[t_1][t_2]}$، داریم
+$\Value{t_1}{M} = \Value{t_2}{M}$ و در نتیجه
+$s(x) = \Value{t_2}{M}$. با کاربرد دوبارهٔ
+\olref[syn][ext]{prop:ext-formulas}، همچنین
+$\Sat{M}{!A(t_2)}[s]$. بنا بر
+\olref[syn][ass]{prop:sentence-sat-true}،
+$\Sat{M}{!A(t_2)}$.
+\end{proof}
+
+\end{document}

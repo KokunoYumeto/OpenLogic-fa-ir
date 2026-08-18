@@ -1,0 +1,120 @@
+% Part: proof-theory
+% Chapter: sequent-calculus
+% Section: translations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{seq}{tr}
+
+\olsection{ترجمه میان~\Log{G1c} و\Log{G3c}}
+
+گفتیم که~\Log{G1c} و~\Log{G3c} هر دو برای منطق کلاسیک درست و کامل‌اند؛
+یعنی هر یک همهٔ دنباله‌هایی را اثبات می‌کند که در هر~!!{structure} صادق‌اند
+و فقط همان‌ها را. پس این دو دستگاه دنباله‌های یکسانی را اثبات می‌کنند.
+اکنون می‌توانیم این واقعیت را، بی‌آنکه از راه قضیه‌های درستی و کامل‌بودن
+بگذریم، با ابزارهایی کاملاً نظریه‌برهانی اثبات کنیم. چنین برهانی
+\emph{تبدیل‌هایی} از~!!{proof}s در~\Log{G1c} به~!!{proof}s در
+\Log{G3c} و برعکس فراهم می‌کند.
+
+\begin{prop}
+اگر~$\Log{G1c}\Proves S$، آنگاه~$\Log{G3c}\Proves S$.
+\end{prop}
+
+\begin{proof}
+  نشان می‌دهیم اگر~$\pi$~!!a{proof} در~\Log{G1c} باشد، !!a{proof}ی
+  چون~$\pi'$ برای~$S$ در~\Log{G3c} وجود دارد. بر
+  $n=\pheight{\pi}$ استقرا می‌کنیم.
+
+  اگر~$n=0$ باشد، $\pi$ یک اصل است. اصل~$\lfalse\Sequent\quad$ در
+  \Log{G3c} نیز اصل است (بافت‌های~$\Gamma$ و~$\Delta$ را تهی بگیرید).
+  در~\Log{G1c} اصول~$!A\Sequent !A$ برای~$!A$ دلخواه مجازند؛ در
+  \Log{G3c} تنها اصول همانیِ اتمی اصل‌اند، اما در
+  \olref[ex]{prop:G3c-axioms} ثابت کردیم که هر دنبالهٔ
+  $!A\Sequent !A$ در~\Log{G3c}~!!{provable} است.
+
+  اگر~$n>0$ باشد، $\pi$ به قاعدهٔ~$R$ ختم می‌شود. فرض استقرا وجود
+  !!{proof}s مقدمات آن قاعده را در~\Log{G3c} تضمین می‌کند؛ یعنی
+  زیرـ!!{proof}s بی‌واسطه در~\Log{G3c} ترجمه دارند. اگر~$R$ قاعده‌ای
+  در~\Log{G3c} نیز باشد، آن را بر~!!{proof}s ترجمه‌شدهٔ مقدمات اعمال
+  می‌کنیم. چهار
+  قاعده‌ای که میان دو دستگاه تفاوت دارند چنین شبیه‌سازی می‌شوند: پیش از
+  اعمال قاعدهٔ~\Log{G3c}، با تضعیف مجاز
+  \olref[adm]{prop:weak-G3c-adm} فرمول فعالِ مفقود را در حالت‌های
+  \LeftR{\land} و~\RightR{\lor}، یا رخداد نگه‌داشته‌شدهٔ فرمول اصلی را
+  در حالت‌های~\LeftR{\lforall} و~\RightR{\lexists} می‌افزاییم. اگر~$R$
+  قاعدهٔ تضعیف~\Log{G1c} باشد، همان نتیجهٔ پذیرش تضعیف را به کار می‌بریم؛
+  و اگر قاعدهٔ انقباض باشد، از~\olref[inv]{prop:G3c-cont-adm} استفاده
+  می‌کنیم.
+\end{proof}
+
+\begin{prop}
+اگر~$\Log{G3c}\Proves S$، آنگاه~$\Log{G1c}\Proves S$.
+\end{prop}
+
+\begin{proof}
+  بار دیگر بر~!!{height}~!!a{proof}~$\pi$ از~$S$ استقرا می‌کنیم. هر
+  اصل~\Log{G3c} را می‌توان در~\Log{G1c} با آغاز از یک اصل و سپس چند
+  کاربرد از قواعد~\LeftR{\Weakening} و~\RightR{\Weakening}
+  !!{prove} کرد:
+  \[
+  \Axiom$!C \fCenter !C$
+  \RightLabel{\LeftR{\Weakening}}
+  \Deduce$!C, \Gamma \fCenter !C$
+  \RightLabel{\RightR{\Weakening}}
+  \Deduce$!C, \Gamma \fCenter \Delta, !C$
+  \DisplayProof
+\qquad
+  \Axiom$\lfalse \fCenter$
+  \RightLabel{\LeftR{\Weakening}}
+  \Deduce$\lfalse, \Gamma \fCenter$
+  \RightLabel{\RightR{\Weakening}}
+  \Deduce$\lfalse, \Gamma \fCenter \Delta$
+  \DisplayProof
+  \]
+  اگر~$\pi$ به قاعدهٔ~$R$ ختم شود، فرض استقرا~!!{proof}s مقدمات را در
+  \Log{G1c} به دست می‌دهد و می‌توان همان~$R$ را بر آن~!!{proof}s اعمال
+  کرد.
+  استثناها قواعد~\LeftR{\land}، \RightR{\lor}،
+  \LeftR{\lforall} و~\RightR{\lexists} هستند که در دو دستگاه صورت‌های
+  متفاوتی دارند. دو قاعدهٔ نخستِ~\Log{G3c} در~\Log{G1c} چنین مشتق
+  می‌شوند:
+  \[
+  \Axiom$!A, !B, \Gamma \fCenter \Delta$
+  \RightLabel{\LeftR{\land}}
+  \UnaryInf$!A \land !B, !B, \Gamma \fCenter \Delta$
+  \RightLabel{\LeftR{\land}}
+  \UnaryInf$!A \land !B, !A \land !B, \Gamma \fCenter \Delta$
+  \RightLabel{\LeftR{\Contraction}}
+  \UnaryInf$!A \land !B, \Gamma \fCenter \Delta$
+    \DisplayProof
+\qquad
+  \Axiom$\Gamma \fCenter \Delta, !A, !B$
+  \RightLabel{\RightR{\lor}}
+  \UnaryInf$\Gamma \fCenter \Delta, !A \lor !B, !B$
+  \RightLabel{\RightR{\lor}}
+  \UnaryInf$\Gamma \fCenter \Delta, !A \lor !B, !A \lor !B$
+  \RightLabel{\RightR{\Contraction}}
+  \UnaryInf$\Gamma \fCenter \Delta, !A \lor !B$
+    \DisplayProof
+  \]
+  دو قاعدهٔ سوری نیز چنین مشتق می‌شوند:
+  \[
+  \Axiom$!A(t), \lforall[x][!A(x)], \Gamma \fCenter \Delta$
+  \RightLabel{\LeftR{\lforall}}
+  \UnaryInf$\lforall[x][!A(x)], \lforall[x][!A(x)], \Gamma \fCenter \Delta$
+  \RightLabel{\LeftR{\Contraction}}
+  \UnaryInf$\lforall[x][!A(x)], \Gamma \fCenter \Delta$
+  \DisplayProof
+\qquad
+  \Axiom$\Gamma \fCenter \Delta, \lexists[x][!A(x)], !A(t)$
+  \RightLabel{\RightR{\lexists}}
+  \UnaryInf$\Gamma \fCenter \Delta, \lexists[x][!A(x)], \lexists[x][!A(x)]$
+  \RightLabel{\RightR{\Contraction}}
+  \UnaryInf$\Gamma \fCenter \Delta, \lexists[x][!A(x)]$
+  \DisplayProof
+  \]
+\end{proof}
+
+\end{document}

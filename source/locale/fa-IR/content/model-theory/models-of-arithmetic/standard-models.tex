@@ -1,0 +1,185 @@
+% Part: model-theory
+% Chapter: models-of-arithmetic
+% Section: standard-models
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mod}{mar}{stm}
+\olsection{مدل‌های استاندارد حساب}
+
+زبان حساب~$\Lang{L_A}$ آشکارا برای سخن‌گفتن دربارهٔ اعداد، و به‌ویژه
+اعداد طبیعی، در نظر گرفته شده است. ازاین‌رو مدل استاندارد
+«معین»~$\Struct{N}$ ویژه است: همان مدلی است که می‌خواهیم درباره‌اش
+سخن بگوییم. اما در منطق اغلب تنها به ویژگی‌های ساختاری علاقه‌مندیم و
+هر دو !!{structure}s همریخت این ویژگی‌ها را با هم دارند. بنابراین
+می‌توانیم اندکی آزادانه‌تر عمل کنیم و هر !!{structure} همریخت
+با~$\Struct{N}$ را نیز «استاندارد» بشماریم.
+
+\begin{defn}
+!!{structure} برای~$\Lang{L_A}$
+\emph{استاندارد} است اگر با~$\Struct{N}$ همریخت باشد.
+\end{defn}
+
+\begin{prop}
+\ollabel{prop:standard-domain} اگر !!a{structure}~$\Struct{M}$
+استاندارد باشد، دامنهٔ آن مجموعهٔ مقادیر عددنماهای استاندارد است؛ یعنی
+\[
+\Domain{M} = \Setabs{\Value{\num{n}}{M}}{n \in \Nat}.
+\]
+\end{prop}
+
+\begin{proof}
+آشکار است که هر $\Value{\num{n}}{M} \in \Domain{M}$. تنها باید نشان
+دهیم که هر $x \in \Domain{M}$ برای یک~$n$ با
+$\Value{\num{n}}{M}$ برابر است. چون $\Struct{M}$ استاندارد است،
+با~$\Struct{N}$ همریخت است. فرض کنید
+$g\colon \Nat \to \Domain{M}$ یک همریختی باشد. آنگاه
+$g(n) = g(\Value{\num{n}}{N}) = \Value{\num{n}}{M}$. از سوی دیگر،
+برای هر $x \in \Domain{M}$، عددی $n \in \Nat$ وجود دارد چنان‌که
+$g(n) = x$، زیرا $g$ !!{surjective} است.
+\end{proof}
+
+\begin{explain}
+اگر ساختار~$\Struct{M}$ برای~$\Lang{L_A}$ استاندارد باشد،
+همهٔ عناصر !!{domain} آن را می‌توان با عددنماهای استاندارد
+$\num{0}$، $\num{1}$، $\num{2}$، \dots، یعنی با ترم‌های
+$\Obj{0}$، $\Obj{0}'$، $\Obj{0}''$ و جز آن نامید. البته این بدان معنا
+نیست که !!{element}s دامنهٔ~$\Domain{M}$
+\emph{خودِ} اعدادند؛ تنها یعنی می‌توانیم آن‌ها را همان‌گونه مشخص کنیم
+که اعداد را در~$\Domain{N}$ مشخص می‌کنیم.
+\end{explain}
+
+\begin{prob}
+نشان دهید عکسِ
+\olref[mod][mar][stm]{prop:standard-domain} نادرست است؛ یعنی نمونه‌ای
+از !!a{structure}~$\Struct{M}$ ارائه کنید که
+$\Domain{M} = \Setabs{\Value{\num{n}}{M}}{n \in \Nat}$ باشد اما
+با~$\Struct{N}$ همریخت نباشد.
+\end{prob}
+
+\begin{prop}
+\ollabel{prop:thq-standard}
+اگر $\Sat{M}{\Th{Q}}$ و
+$\Domain{M} = \Setabs{\Value{\num{n}}{M}}{n \in \Nat}$، آنگاه
+$\Struct{M}$ استاندارد است.
+\end{prop}
+
+\begin{proof}
+باید نشان دهیم $\Struct{M}$ با~$\Struct{N}$ همریخت است. تابع
+$g\colon \Nat \to \Domain{M}$ را در نظر بگیرید که با
+$g(n) = \Value{\num{n}}{M}$ تعریف شده است. بنا بر فرض، $g$
+!!{surjective} است. همچنین !!{injective} است: هرگاه $n \neq m$،
+$\Th{Q} \Proves \eq/[\num{n}][\num{m}]$. پس چون
+$\Sat{M}{\Th{Q}}$، هرگاه $n \neq m$،
+$\Sat{M}{\eq/[\num{n}][\num{m}]}$. بنابراین اگر $n \neq m$، آنگاه
+$\Value{\num{n}}{M} \neq \Value{\num{m}}{M}$، یعنی
+$g(n) \neq g(m)$.
+
+همچنین باید وارسی کنیم که $g$ یک همریختی است.
+\begin{enumerate}
+\item چون $\Assign{\Obj{0}}{N} = 0$، داریم
+  $g(\Assign{\Obj{0}}{N}) = g(0)$. بنا بر تعریف~$g$،
+  $g(0) = \Value{\num{0}}{M}$. اما $\num{0}$ همان $\Obj{0}$ است و
+  ارزش ترمی که !!a{constant} است همان چیزی است که !!{structure} به آن
+  !!{constant} نسبت می‌دهد؛ یعنی
+  $\Value{\Obj{0}}{M} = \Assign{\Obj{0}}{M}$. پس، چنان‌که لازم بود،
+  $g(\Assign{\Obj{0}}{N}) = \Assign{\Obj{0}}{M}$.
+\item چون $\prime$ در~$\Struct{N}$ تابع جانشین روی~$\Nat$ است،
+  $g(\Assign{\prime}{N}(n)) = g(n+1)$. سپس بنا بر تعریف~$g$،
+  $g(n+1) = \Value{\num{n+1}}{M}$. اما $\num{n+1}$ همان ترم
+  $\num{n}'$ است، پس
+  $\Value{\num{n+1}}{M} = \Value{\num{n}'}{M}$. بنا بر تعریف تابع
+  ارزش، این عبارت برابر است با
+  $\Assign{\prime}{M}(\Value{\num{n}}{M})$. چون
+  $\Value{\num{n}}{M} = g(n)$، نتیجه می‌گیریم
+  $g(\Assign{\prime}{N}(n)) = \Assign{\prime}{M}(g(n))$.
+\item چون $+$ در~$\Struct{N}$ تابع جمع روی~$\Nat$ است،
+  $g(\Assign{+}{N}(n,m)) = g(n+m)$. سپس بنا بر تعریف~$g$،
+  $g(n+m) = \Value{\num{n+m}}{M}$. اما
+  $\Th{Q} \Proves \num{n+m} = (\num{n} + \num{m})$، پس
+  $\Value{\num{n+m}}{M} = \Value{\num{n}+\num{m}}{M}$. بنا بر
+  تعریف تابع ارزش، این عبارت برابر است با
+  $\Assign{+}{M}(\Value{\num{n}}{M},\Value{\num{m}}{M})$. چون
+  $\Value{\num{n}}{M} = g(n)$ و $\Value{\num{m}}{M} = g(m)$، داریم
+  $g(\Assign{+}{N}(n, m)) = \Assign{+}{M}(g(n), g(m))$.
+\item $g(\Assign{\times}{N}(n, m)) =
+  \Assign{\times}{M}(g(n), g(m))$: تمرین.
+\item $\tuple{n,m} \in \Assign{<}{N}$ هرگاه و تنها هرگاه $n < m$.
+  اگر $n < m$، آنگاه $\Th{Q} \Proves \num{n} < \num{m}$ و نیز
+  $\Sat{M}{\num{n} < \num{m}}$. پس
+  $\tuple{\Value{\num{n}}{M}, \Value{\num{m}}{M}} \in
+  \Assign{<}{M}$؛ یعنی
+  $\tuple{g(n), g(m)} \in \Assign{<}{M}$. اگر $n \not< m$، آنگاه
+  $\Th{Q} \Proves \lnot \num{n} < \num{m}$ و در نتیجه
+  $\Sat/{M}{\num{n} < \num{m}}$. پس، مانند بالا،
+  $\tuple{g(n), g(m)} \notin \Assign{<}{M}$. روی‌هم‌رفته،
+  $\tuple{n,m} \in \Assign{<}{N}$ هرگاه و تنها هرگاه
+  $\tuple{g(n), g(m)} \in \Assign{<}{M}$.
+\end{enumerate}
+\end{proof}
+
+\begin{explain}
+تابع~$g$ آشکارترین راه تعریف نگاشتی از~$\Nat$ به دامنهٔ هر
+!!{structure} دیگر~$\Struct{M}$ برای~$\Lang{L_A}$ است، زیرا هر چنین
+$\Struct{M}$ شامل !!{element}sی است که با $\num{0}$، $\num{1}$،
+$\num{2}$ و جز آن نامیده می‌شوند. پس شگفت نیست که اگر $\Struct{M}$
+دست‌کم برخی گزاره‌های پایه دربارهٔ~$\num{n}$ها را به همان شیوه‌ای صادق
+کند که~$\Struct{N}$ صادق می‌کند و $g$ نیز دوسویی باشد، آنگاه $g$ به
+همریختی بدل شود. در واقع، اگر $\Domain{M}$ هیچ !!{element}sی جز
+آن‌هایی که~$\num{n}$ها نام می‌برند نداشته باشد، این تنها همریختی است.
+\end{explain}
+
+\begin{prop}
+\ollabel{prop:thq-unique-iso} اگر $\Struct{M}$ استاندارد باشد، تابع~$g$
+از اثبات
+\olref{prop:thq-standard} تنها همریختی از~$\Struct{N}$ به~$\Struct{M}$
+است.
+\end{prop}
+
+\begin{proof}
+فرض کنید $h\colon \Nat \to \Domain{M}$ همریختی میان~$\Struct{N}$
+و~$\Struct{M}$ باشد. با استقرا روی~$n$ نشان می‌دهیم $g = h$. اگر
+$n = 0$، بنا بر تعریف~$g$،
+$g(0) = \Assign{\Obj{0}}{M}$. اما چون $h$ همریختی است،
+$h(0) = h(\Assign{\Obj{0}}{N}) = \Assign{\Obj{0}}{M}$؛ پس
+$g(0) = h(0)$.
+
+اکنون حالت $n+1$ را در نظر بگیرید. داریم
+\begin{align*}
+  g(n+1) & = \Value{\num{n+1}}{M} \text{ بنا بر تعریف~$g$}\\
+  & = \Value{\num{n}'}{M} \text{ زیرا $\num{n+1}\ident \num{n}'$}\\
+  & = \Assign{\prime}{M}(\Value{\num{n}}{M})
+    \text{ بنا بر تعریف $\Value{t'}{M}$}\\
+  & = \Assign{\prime}{M}(g(n))  \text{ بنا بر تعریف~$g$}\\
+  & = \Assign{\prime}{M}(h(n)) \text{ بنا بر فرض استقرا}\\
+  & = h(\Assign{\prime}{N}(n)) \text{ چون $h$ همریختی است}\\
+  & = h(n+1).
+\end{align*}
+\end{proof}
+
+\begin{explain}
+برای هر مجموعهٔ !!{denumerable} چون~$M$، میان~$\Nat$ و~$M$
+!!a{bijection} وجود دارد؛ پس هر چنین مجموعهٔ~$M$ می‌تواند !!{domain}
+مدلی استاندارد چون~$\Struct{M}$ باشد. در واقع، همین که شیئی
+$z \in M$ و تابعی مناسب~$s$ را به‌ترتیب به‌عنوان
+$\Assign{\Obj{0}}{M}$ و $\Assign{\prime}{M}$ برگزینید، تعبیرهای
+$+$، $\times$ و~$<$ از پیش تعیین می‌شوند. تنها تابع‌های
+$s\colon M \to M \setminus \{z\}$ که هم !!{injective} و هم
+!!{surjective} باشند، می‌توانند در مدلی استاندارد تعبیر
+$\Assign{\prime}{M}$ باشند. برد~$s$ نمی‌تواند شامل~$z$ باشد، زیرا در
+غیر این صورت $\lforall[x][\eq/[\Obj 0][x']]$ کاذب می‌شد. این
+!!{sentence} در~$\Struct{N}$ صادق است، پس $\Struct{M}$ نیز باید آن را
+صادق کند. تابع~$s$ باید !!{injective} باشد، زیرا تابع جانشین
+$\Assign{\prime}{N}$ در~$\Struct{N}$ چنین است و !!{injective}بودن
+$\Assign{\prime}{N}$ با !!a{sentence} صادق در~$\Struct{N}$ بیان
+می‌شود. همچنین باید روی~$M \setminus \{z\}$ !!{surjective} باشد، زیرا
+در غیر این صورت $x \in M \setminus \{z\}$ای وجود می‌داشت که در
+برد~$s$ نبود؛ یعنی !!{sentence}
+$\lforall[x][(\eq[x][\Obj 0] \lor \lexists[y][\eq[y'][x]])]$ در
+$\Struct{M}$ کاذب می‌شد، حال‌آنکه در~$\Struct{N}$ صادق است.
+\end{explain}
+
+
+\end{document}

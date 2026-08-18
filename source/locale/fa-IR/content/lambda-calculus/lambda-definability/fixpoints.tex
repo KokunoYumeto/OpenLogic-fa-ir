@@ -1,0 +1,174 @@
+% Part: lambda-calculus
+% Chapter: lambda-definability
+% Section: fixpoints
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{ldf}{fp}
+
+\olsection{نقاط ثابت}
+
+فرض کنید بخواهیم تابع فاکتوریل را با بازگشت، به‌صورت ترمی چون
+$\fn{Fac}$ با خاصیت زیر تعریف کنیم:
+\[
+\fn{Fac} \ident \lambd[n][\fn{IsZero}\, n\, \num 1 (\fn{Mult}\, n (\fn{Fac}(\fn{Pred} \, n)))]
+\]
+یعنی فاکتوریل~$n$ اگر~$n = 0$ باشد برابر~$1$، و در غیر این صورت برابر
+$n$ ضرب‌در فاکتوریل~$n-1$ است. البته نمی‌توانیم ترم~$\fn{Fac}$ را به
+این شیوه تعریف کنیم، زیرا خود~$\fn{Fac}$ در طرف راست رخ می‌دهد. چنین
+تعریف‌های بازگشتیِ خودارجاع جزئی از حساب لامبدا نیستند. برای نمونه، در
+تعریف ترم زیر
+\[
+\fn{Mult} \ident \lambd[ab][a (\fn{Add}\, b) \num 0]
+\]
+طرف راست فقط ترم‌هایی را در بر دارد که پیش‌تر تعریف شده‌اند، مانند
+$\fn{Add}$. همواره می‌توانیم~$\fn{Add}$ را با ترم معرف آن جایگزین و
+حاصل را به ترم لامبدای محضی برای~$\fn{Mult}$ تبدیل کنیم. اگر خود
+$\fn{Add}$ ترم‌های تعریف‌شده‌ای را در بر داشته باشد (چنان‌که مثلاً
+$\fn{Add}'$ دارد)، می‌توانیم این فرایند را ادامه دهیم تا سرانجام به یک
+ترم لامبدای محض برسیم.
+
+اما این امر دربارهٔ تعریف‌های بازگشتی مانند تعریف~$\fn{Fac}$ در بالا
+درست نیست. اگر رخداد~$\fn{Fac}$ در طرف راست را با خود تعریف~$\fn{Fac}$
+جایگزین کنیم، به عبارت زیر می‌رسیم:
+\begin{align*}
+  \fn{Fac} & \ident \lambd[n][\fn{IsZero}\, n\, \num{1}] \\
+    & \qquad (\fn{Mult}\, n
+  ((\lambd[n][\fn{IsZero} \, n \, \num 1\, (\fn{Mult}\, n\, (\fn{Fac}
+    (\fn{Pred}\, n)))]) (\fn{Pred}\, n)))
+\end{align*}
+و هنوز~$\fn{Fac}$ را از طرف راست حذف نکرده‌ایم. روشن است که اگر این
+فرایند را تکرار کنیم، تعریف پیوسته بلندتر می‌شود و هرگز ترم لامبدای
+محضی به دست نمی‌آید. پس این شیوهٔ تعریف فاکتوریل، یا به‌طور کلی توابع
+بازگشتی، عملی نیست.
+
+بااین‌حال، تعریف بازگشتی نکته‌ای را به ما می‌گوید: اگر~$f$ ترمی معرف
+تابع فاکتوریل باشد، آنگاه اعمال ترم
+\[
+\fn{Fac}' \ident \lambd[g][\lambd[n][\fn{IsZero} \, n \, \num 1\, (\fn{Mult} \, n\, (g (\fn{Pred} n)))]]
+\]
+بر~$f$، یعنی~$\fn{Fac}'\,f$، نیز تابع فاکتوریل را نمایش می‌دهد. یعنی
+اگر~$\fn{Fac}'$ را تابعی بدانیم که یک تابع را می‌پذیرد و تابعی را
+بازمی‌گرداند، مقدار~$\fn{Fac'}\, f$، مشروط بر اینکه~$f$ فاکتوریل باشد،
+همان~$f$ است. تابع~$f$ با خاصیت~$\fn{Fac}' \, f \equal[\beta] f$ یک
+\emph{نقطهٔ ثابت}~$\fn{Fac}'$ نامیده می‌شود. پس فاکتوریل نقطهٔ ثابت
+$\fn{Fac}'$ است.
+
+در حساب لامبدا ترم‌هایی وجود دارند که نقاط ثابت یک ترم داده‌شده را
+محاسبه می‌کنند؛ سپس می‌توان از این ترم‌ها برای تبدیل ترمی مانند
+$\fn{Fac}'$ به تعریف فاکتوریل استفاده کرد.
+
+\begin{defn}
+  \ollabel{defn:Turing-Y}
+  \emph{ترکیبگر~Y} ترم زیر است:
+  \[
+  Y \ident (\lambd[ux][x(uux)])(\lambd[ux][x(uux)]).
+  \]
+\end{defn}
+
+\begin{thm}
+  برای هر ترم~$g$، ترم~$Y$ خاصیت~$Yg \red g(Yg)$ را دارد. بنابراین
+  $Yg$ همواره نقطهٔ ثابت~$g$ است.
+\end{thm}
+
+\begin{proof}
+  بگذارید~$U$ مخفف~$(\lambd[ux][x(uux)])$ باشد؛ پس~$Y \ident UU$.
+  آنگاه
+  \begin{align*}
+    Y g &\ident (\lambd[ux][x(uux)])U\,g \\
+    &\red (\lambd[x][x(UUx)])g\\
+    & \red g(UUg) \ident g(Yg).
+  \end{align*}
+  چون~$g(Yg)$ و~$Yg$ هر دو به~$g(Yg)$ کاهش می‌یابند،
+  $g(Yg) \equal[\beta] Yg$؛ پس~$Yg$ نقطهٔ ثابت~$g$ است.
+\end{proof}
+
+البته چون~$Yg$ یک سرخ‌عبارت است، کاهش می‌تواند بی‌پایان ادامه یابد:
+\begin{align*}
+  Y g &\red g (Y g) \\
+    &\red g (g (Y g)) \\
+    &\red g(g (g (Y g)))\\
+    &\ldots
+\end{align*}
+پس می‌توان~$Yg$ را حاصل اعمال بی‌نهایت‌بارهٔ~$g$ بر خودش دانست. اگر
+$g$ را یک بار دیگر بر آن اعمال کنیم، به‌اصطلاح، چیزی نمی‌افزاییم؛ اعمال
+$g$ بر~$g$ که خود بی‌نهایت بار بر~$Yg$ اعمال شده، همچنان همان اعمال
+بی‌نهایت‌بارهٔ~$g$ بر~$Yg$ است.
+
+توجه کنید که دنبالهٔ بالا از گام‌های کاهش~$\beta$ که با~$Yg$ آغاز می‌شود
+نامتناهی است. پس اگر~$Yg$ را بر ترمی اعمال کنیم، یعنی~$(Yg)N$ را در
+نظر بگیریم، آن ترم نیز به بی‌نهایت ترم متفاوت، یعنی~$(g(Yg))N$،
+$(g(g(Yg)))N$، \dots، کاهش می‌یابد. بااین‌همه، ممکن است دنبالهٔ
+\emph{دیگری} از گام‌های کاهش در یک صورت نرمال پایان یابد.
+
+برای مثال فاکتوریل را در نظر بگیرید. $\fn{Fac}$ را برابر
+$Y\, \fn{Fac}'$ تعریف کنید (یعنی یک نقطهٔ ثابت~$\fn{Fac'}$). آنگاه:
+\begin{align*}
+  \fn{Fac}\,\num 3
+  &\red Y\, \fn{Fac}' \, \num 3 \\
+  &\red \fn{Fac}' (Y \,\fn{Fac}') \, \num 3 \\
+  &\ident (\lambd[x][\lambd[n][\fn{IsZero} \, n\, \num 1\,
+      (\fn{Mult}\, n\, (x (\fn{Pred}\, n)))]]) \, \fn{Fac} \, \num 3\\
+  & \red \fn{IsZero} \, \num 3\, \num 1\,
+      (\fn{Mult}\, \num 3\, (\fn{Fac} (\fn{Pred}\, \num 3))) \\
+  &\red  \fn{Mult}\, \num 3 \, (\fn{Fac} \, \num 2).
+  \intertext{به‌همین‌ترتیب،}
+  \fn{Fac}\,\num 2
+  &\red  \fn{Mult}\, \num 2 \, (\fn{Fac} \, \num 1) \\
+  \fn{Fac}\,\num 1
+  &\red  \fn{Mult}\, \num 1 \, (\fn{Fac} \, \num 0)
+  \intertext{اما}
+  \fn{Fac}\,\num 0
+  &\red \fn{Fac}' (Y \,\fn{Fac}') \, \num 0 \\
+  &\ident (\lambd[x][\lambd[n][\fn{IsZero} \, n\, \num 1\,
+      (\fn{Mult}\, n\, (x (\fn{Pred}\, n)))]]) \, \fn{Fac} \, \num 0\\
+  & \red \fn{IsZero} \, \num 0\, \num 1\,
+      (\fn{Mult}\, \num 0\, (\fn{Fac} (\fn{Pred}\, \num 0))).\\
+  &\red \num 1.
+  \intertext{پس در مجموع}
+  \fn{Fac}\,\num 3
+  &\red  \fn{Mult}\, \num 3 \,
+  (\fn{Mult} \, \num 2\, (\fn{Mult} \, \num 1\, \num 1)).
+\end{align*}
+
+آنچه برای~$\fn{Fac'}$ برقرار است برای هر تعریف بازگشتی نیز برقرار است.
+فرض کنید معادلهٔ بازگشتی زیر را داریم:
+\begin{align*}
+g\,x_1\dots x_n & \equal[\beta] N
+\intertext{که در آن~$N$ ممکن است~$g$ و~$x_1$، \dots،~$x_n$ را در بر
+داشته باشد. آنگاه همواره ترمی چون
+$G \ident (Y \lambd[g][\lambd[x_1\dots x_n][N]])$ وجود دارد، به‌طوری‌که}
+G\,x_1 \dots x_n & \equal[\beta] \Subst{N}{G}{g}.
+\intertext{زیرا بنا بر قضیهٔ نقطهٔ ثابت،}
+G \ident (Y \lambd[g][\lambd[x_1\dots x_n][N]]) & \red \lambd[g][\lambd[x_1\dots x_n][N]](Y \lambd[g][\lambd[x_1\dots x_n][N]])\\
+& \ident (\lambd[g][\lambd[x_1\dots x_n][N]])\,G
+\intertext{و در نتیجه}
+G\,x_1 \dots x_n 
+& \red (\lambd[g][\lambd[x_1\dots x_n][N]])\,G\,x_1\dots x_n\\
+& \red (\lambd[x_1\dots x_n][\Subst{N}{G}{g}])\,x_1\dots x_n\\
+  & \red \Subst{N}{G}{g}.
+\end{align*}
+
+ترکیبگر~$Y$ در~\olref{defn:Turing-Y} از آلن تورینگ است. آلونزو چرچ
+نسخهٔ دیگری پیشنهاد کرده بود که آن را~$Y_C$ می‌نامیم:
+\[
+Y_C \ident \lambd[g][(\lambd[x][g(xx)])(\lambd[x][g(xx)])].
+\]
+ترکیبگر چرچ اندکی ضعیف‌تر از ترکیبگر تورینگ است: داریم
+$Y_Cg \equal[\beta] g(Y_Cg)$، اما رابطهٔ کاهش پیشروِ
+$Y_Cg \bred g(Y_Cg)$ برقرار نیست؛ پس به‌ویژه کاهش یک‌گامی نیز در این
+جهت نداریم. بگذارید~$V$ ترم
+$\lambd[x][g(xx)]$ باشد؛ پس~$Y_Cg \ident (\lambd[g][VV])g$. آنگاه
+\begin{align*}
+  VV & \ident (\lambd[x][g(xx)])V \red g(VV)
+  \text{ و بنابراین}\\
+  Y_C g & \ident (\lambd[g][VV])g \red VV \red g(VV), \text{ اما همچنین}\\
+  g(Y_C g) & \ident g((\lambd[g][VV])g) \red g(VV).
+\end{align*}
+به بیان دیگر، $Y_Cg$ و~$g(Y_Cg)$ به ترم مشترک~$g(VV)$ کاهش می‌یابند؛
+پس~$Y_Cg \equal[\beta] g(Y_Cg)$. این خاصیت اغلب برای کاربردها کافی
+است.
+
+\end{document}

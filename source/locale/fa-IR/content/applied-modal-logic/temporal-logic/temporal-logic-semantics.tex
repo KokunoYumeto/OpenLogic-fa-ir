@@ -1,0 +1,133 @@
+% Part: applied-modal-logics
+% Chapter: temporal-logic
+% Section: temporal-logic-semantics
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{aml}{tl}{sem}
+
+\olsection{معناشناسی منطق زمانی}
+
+\begin{defn}
+زبان پایهٔ منطق زمانی شامل موارد زیر است:
+\begin{enumerate}
+  \tagitem{prvFalse}{ثابت گزاره‌ای برای !!{falsity}~$\lfalse$.}{}
+  \tagitem{prvTrue}{ثابت گزاره‌ای برای !!{truth}~$\ltrue$.}{}
+  \item یک مجموعهٔ !!{denumerable} از !!{propositional variable}ها:
+    $\Obj p_0$، $\Obj p_1$، $\Obj p_2$، \dots
+  \item رابط‌های گزاره‌ای: \startycommalist
+  \iftag{prvNot}{\ycomma $\lnot$ (نفی)}{}%
+  \iftag{prvAnd}{\ycomma $\land$ (عطف)}{}%
+  \iftag{prvOr}{\ycomma $\lor$ (فصل)}{}%
+  \iftag{prvIf}{\ycomma $\lif$ (!!{conditional})}{}%
+  \iftag{prvIff}{\ycomma $\liff$ (!!{biconditional})}{}.
+  \item عملگرهای گذشتهٔ~$\Ptemp$ و~$\Htemp$.
+  \item عملگرهای آیندهٔ~$\Ftemp$ و~$\Gtemp$.
+\end{enumerate}
+\end{defn}
+
+بعدتر امکان افزودن انواع دیگری از عملگرهای موجهاتی را بررسی خواهیم کرد.
+
+\begin{defn}
+\emph{!!^{formula}های زبان زمانی} با استقرا چنین تعریف می‌شوند:
+\begin{enumerate}
+\tagitem{prvFalse}{$\lfalse$ یک !!{formula} اتمی است.}{}
+
+\tagitem{prvTrue}{$\ltrue$ یک !!{formula} اتمی است.}{}
+
+\item هر متغیر گزاره‌ای~$\Obj p_i$ یک !!{formula} (اتمی) است.
+
+\tagitem{prvNot}{اگر~$!A$ یک !!a{formula} باشد، آنگاه~$\lnot !A$ یک
+  !!a{formula} است.}{}
+
+\tagitem{prvAnd}{اگر~$!A$ و~$!B$، !!{formula} باشند، آنگاه
+  $(!A \land !B)$ یک !!a{formula} است.}{}
+
+\tagitem{prvOr}{اگر~$!A$ و~$!B$، !!{formula} باشند، آنگاه
+  $(!A \lor !B)$ یک !!a{formula} است.}{}
+
+\tagitem{prvIf}{اگر~$!A$ و~$!B$، !!{formula} باشند، آنگاه
+  $(!A \lif !B)$ یک !!a{formula} است.}{}
+
+\tagitem{prvIff}{اگر~$!A$ و~$!B$، !!{formula} باشند، آنگاه
+  $(!A \liff !B)$ یک !!a{formula} است.}{}
+
+\item اگر~$!A$ یک !!a{formula} باشد، آنگاه~$\Ptemp !A$،
+  $\Htemp !A$، $\Ftemp !A$ و~$\Gtemp !A$ همگی !!{formula} هستند.
+
+\tagitem{limitClause}{هیچ چیز دیگری !!a{formula} نیست.}{}
+\end{enumerate}
+\end{defn}
+
+معناشناسی منطق‌های زمانی، همانند دیگر انواع منطق‌های مفهومی، بر حسب
+مدل‌های رابطه‌ای داده می‌شود.
+
+\begin{defn}
+  یک \emph{مدل} برای زبان زمانی سه‌تاییِ
+  $\mModel{M} = \tuple{T, \prec, V}$ است، که در آن:
+  \begin{enumerate}
+  \item $T$ مجموعه‌ای ناتهی است که به‌عنوان نقاط زمانی تفسیر می‌شود.
+  \item $\prec$ رابطه‌ای دودویی روی~$T$ است.
+  \item $V$ تابعی است که به هر !!{propositional variable}~$p$ مجموعه‌ای
+    $V(p)$ از نقاط زمانی تخصیص می‌دهد.
+  \end{enumerate}
+  وقتی~$t \prec t'$ برقرار است، می‌گوییم~$t$ \emph{مقدم بر}~$t'$ است.
+  وقتی~$t \in V(p)$، می‌گوییم~$p$ \emph{در}~$t$ \emph{صادق است}.
+\end{defn}
+
+فعلاً توجه کنید هیچ شرطی بر رابطهٔ تقدم~$\prec$ تحمیل نمی‌کنیم. این
+یعنی در حال حاضر هیچ محدودیتی بر ساختار مدل‌های زمانی ما نیست؛ پس
+می‌توانیم مدل‌هایی داشته باشیم که زمان در آن‌ها خطی، شاخه‌ای، دایره‌ای
+یا دارای هر ساختار دیگری است.
+
+درست مانند منطق موجهات عادی، هر مدل زمانی تعیین می‌کند کدام
+!!{formula}ها در کدام نقاط آن صادق به شمار می‌آیند. برای مفهوم پایهٔ
+معناشناسی رابطه‌ای از همان نمادگذاریِ «مدل~$\mModel{M}$،
+!!{formula}~$!A$ را در نقطهٔ~$t$ صادق می‌کند» استفاده می‌کنیم. این
+رابطه با استقرا تعریف می‌شود و برای همهٔ عملگرهای غیرموجهاتی با حالت
+منطق موجهات عادی یکسان است.
+
+\begin{defn}\ollabel{defn:tmodels}
+  \emph{صدق !!a{formula}~$!A$ در~$t$} در~$\mModel M$، با نماد
+  $\mSat{M}{!A}[t]$، با استقرا چنین تعریف می‌شود:
+  \begin{enumerate}
+  \tagitem{prvFalse}{\indcase{!A}{\lfalse}{هرگز
+    $\mSat{M}{\lfalse}[t]$ نیست.}}{}
+  \tagitem{prvTrue}{\indcase{!A}{\ltrue}{همواره
+    $\mSat{M}{\ltrue}[t]$.}}{}
+  \item $\mSat{M}{p}[t]$ اگر و تنها اگر~$t \in V(p)$.
+  \tagitem{prvNot}{\indcase{!A}{\lnot !B}{$\mSat{M}{\indfrm}[t]$ اگر و
+    تنها اگر~$\mSat/{M}{!B}[t]$.}}{}
+  \tagitem{prvAnd}{\indcase{!A}{(!B \land !C)}{$\mSat{M}{\indfrm}[t]$
+    اگر و تنها اگر~$\mSat{M}{!B}[t]$ و~$\mSat{M}{!C}[t]$.}}{}
+  \tagitem{prvOr}{\indcase{!A}{(!B \lor !C)}{$\mSat{M}{\indfrm}[t]$
+    اگر و تنها اگر~$\mSat{M}{!B}[t]$ یا~$\mSat{M}{!C}[t]$}
+    (یا هر دو).}{}
+  \tagitem{prvIf}{\indcase{!A}{(!B \lif !C)}{$\mSat{M}{\indfrm}[t]$
+    اگر و تنها اگر~$\mSat/{M}{!B}[t]$ یا~$\mSat{M}{!C}[t]$.}}{}
+  \tagitem{prvIff}{\indcase{!A}{(!B \liff !C)}{$\mSat{M}{\indfrm}[t]$
+    اگر و تنها اگر یا هم~$\mSat{M}{!B}[t]$ و هم~$\mSat{M}{!C}[t]$،
+    یا نه~$\mSat{M}{!B}[t]$ و نه~$\mSat{M}{!C}[t]$.}}{}
+  \item\ollabel{defn:sub:mmodels-p}
+    \indcase{!A}{\Ptemp !B}{$\mSat{M}{\indfrm}[t]$ اگر و تنها اگر
+    برای یک~$t' \in T$ با~$t' \prec t$، $\mSat{M}{!B}[t']$.}
+  \item\ollabel{defn:sub:mmodels-h}
+    \indcase{!A}{\Htemp !B}{$\mSat{M}{\indfrm}[t]$ اگر و تنها اگر
+    برای هر~$t' \in T$ با~$t' \prec t$، $\mSat{M}{!B}[t']$.}
+  \item\ollabel{defn:sub:mmodels-f}
+    \indcase{!A}{\Ftemp !B}{$\mSat{M}{\indfrm}[t]$ اگر و تنها اگر
+    برای یک~$t' \in T$ با~$t \prec t'$، $\mSat{M}{!B}[t']$.}
+  \item\ollabel{defn:sub:mmodels-g}
+    \indcase{!A}{\Gtemp !B}{$\mSat{M}{\indfrm}[t]$ اگر و تنها اگر
+    برای هر~$t' \in T$ با~$t \prec t'$، $\mSat{M}{!B}[t']$.}
+  \end{enumerate} 
+\end{defn}
+
+از معناشناسی شاید بتوان دید که عملگرهای~$\Ptemp$ و~$\Htemp$ دوگان
+یکدیگرند، و نیز عملگرهای~$\Ftemp$ و~$\Gtemp$؛ به‌گونه‌ای که می‌توانیم
+$\Htemp !A$ را~$\lnot \Ptemp \lnot !A$ تعریف کنیم و دربارهٔ
+$\Gtemp$ و~$\Ftemp$ نیز به‌همین‌سان.
+
+\end{document}

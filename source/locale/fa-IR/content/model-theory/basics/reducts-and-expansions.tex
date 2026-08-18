@@ -1,0 +1,68 @@
+% Part: first-order-logic
+% Chapter: model-theory
+% Section: reducts-and-expansions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mod}{bas}{red}
+\section{فروکاست‌ها و بسط‌ها}
+
+اغلب مقایسهٔ زبان‌هایی که نمادهای مشترک دارند، و نیز مقایسهٔ
+!!{structure}s این زبان‌ها، سودمند یا ضروری است. رایج‌ترین حالت زمانی
+است که همهٔ نمادهای !!a{language}~$\Lang{L}$ بخشی از !!a{language}
+چون~$\Lang{L'}$ نیز باشند، یعنی $\Lang{L} \subseteq \Lang{L'}$.
+آنگاه همواره می‌توان یک !!{structure}-$\Lang{L}$ چون~$\Struct{M}$ را
+با افزودن تفسیرهایی برای نمادهای افزوده، در حالی که تفسیر نمادهای مشترک
+یکسان می‌ماند، به یک !!{structure}-$\Lang{L'}$ بسط داد. از سوی دیگر،
+می‌توانیم از ساختارِ~$\Lang{L'}$ چون~$\Struct{M'}$ صرفاً با
+«فراموش‌کردن» تفسیر نمادهایی که در~$\Lang{L}$ رخ نمی‌دهند، یک
+ساختاری برای~$\Lang{L}$ به دست آوریم.
+
+\begin{defn}
+\ollabel{defn:reduct}
+فرض کنید $\Lang L \subseteq \Lang L'$، $\Struct M$ یک
+!!{structure}-$\Lang L$ و $\Struct M'$ یک
+!!{structure}-$\Lang L'$ باشد. $\Struct M$
+\emph{فروکاستِ}~$\Struct M'$ به~$\Lang L$، و $\Struct M'$
+\emph{بسطِ}~$\Struct M$ به~$\Lang L'$ است هرگاه و تنها هرگاه
+\begin{enumerate}
+\item $\Domain{M} = \Domain{M'}$
+\item برای هر !!{constant}~$c \in \Lang L$، $\Assign{c}{M} =
+  \Assign{c}{M'}$.
+\item برای هر !!{function}~$f \in \Lang L$، $\Assign{f}{M} =
+  \Assign{f}{M'}$.
+\item برای هر !!{predicate}~$P \in \Lang L$، $\Assign{P}{M} =
+  \Assign{P}{M'}$.
+\end{enumerate}
+\end{defn}
+
+\begin{prop}
+\ollabel{prop:reduct}
+اگر !!{structure}-$\Lang{L}$ چون~$\Struct{M}$ فروکاستِ یک
+!!{structure}-$\Lang{L'}$ چون~$\Struct{M'}$ باشد، آنگاه برای همهٔ
+!!{sentence}s-$\Lang{L}$ چون~$!A$،
+\[
+\Sat{M}{!A} \text{ هرگاه و تنها هرگاه } \Sat{M'}{!A}.
+\]
+\end{prop}
+
+\begin{proof}
+  تمرین.
+\end{proof}
+
+\begin{prob}
+\olref[mod][bas][red]{prop:reduct} را اثبات کنید.
+\end{prob}
+
+\begin{defn}
+فرض کنید یک ساختارِ~$\Lang{L}$ چون~$\Struct{M}$ داریم، و
+$\Lang{L'} = \Lang{L} \cup \{P\}$ بسطِ~$\Lang{L}$ باشد که با افزودن
+یک !!{predicate}~$n$موضعی چون~$P$ به دست آمده است، و
+$R \subseteq \Domain{M}^n$ رابطه‌ای $n$موضعی باشد. در این صورت، برای
+بسط~$\Struct{M'}$ از~$\Struct{M}$ که $\Assign{P}{M'} = R$، می‌نویسیم
+$\Expan{M}{R}$.
+\end{defn}
+
+\end{document}

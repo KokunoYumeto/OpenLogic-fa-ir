@@ -1,0 +1,140 @@
+% Part: lambda-calculus
+% Chapter: lambda-definability
+% Section: arithmetical-functions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{rep}{arf}
+\olsection{توابع حسابیِ \usetoken{S}{lambda definable}}
+
+\begin{prop}
+  \ollabel{prop:succ-ld}
+  تابع جانشین~$\Succ$ !!{lambda definable} است.
+\end{prop}
+
+\begin{proof}
+ترمی که تابع جانشین را~!!{lambda define}s عبارت است از
+\begin{align*}
+  \fn{Succ} & \ident \lambd[a][\lambd[fx][f ({a} f x)]].
+  \intertext{با قراردادهای ما، این عبارت کوتاه‌شدهٔ عبارت زیر است:}
+  \fn{Succ} & \ident \lambd[a][\lambd[f][\lambd[x][(f (({a} f) x))]]].
+  \intertext{$\fn{Succ}$ تابعی است که عدد~$a$ را به‌عنوان آرگومان
+    می‌پذیرد و به تابع دیگری، یعنی~$\lambd[fx][f ({a} f x)]$، ارزیابی
+    می‌شود. آن تابع خود یک عددنمای چرچ نیست. بااین‌حال، اگر آرگومان~$a$
+    یک عددنمای چرچ باشد، تابع به یک عددنمای چرچ کاهش می‌یابد. بنگرید:}
+   (\lambd[a][\lambd[fx][f ({a} f x)]])\,\num{n} & \redone
+   \lambd[fx][f ({\num{n}} f x)].
+   \intertext{ترم درونی~$\num{n}fx$ یک سرخ‌عبارت است، زیرا
+     $\num{n}$ همان~$\lambd[fx][f^nx]$ است. پس
+     $\num{n}fx \red f^nx$ و برای کل ترم داریم:}
+   \fn{Succ}\, \num n & \red \lambd[fx][f(f^n(x))],
+\end{align*}
+یعنی~$\num{n+1}$.
+\end{proof}
+
+\begin{ex}
+  ببینیم با اعمال~$\fn{Succ}$ بر~$\num{0}$، یعنی~$\lambd[fx][x]$، چه
+  رخ می‌دهد. ترم‌ها را به‌طور کامل می‌نویسیم:
+  \begin{align*}
+    \fn{Succ}\, \num{0} & \ident (\lambd[a][\lambd[f][\lambd[x][(f (({a} f) x))]]])(\lambd[f][\lambd[x][x]])\\
+    & \redone \lambd[f][\lambd[x][(f (({(\lambd[f][\lambd[x][x]])} f) x))]] \\
+    & \redone \lambd[f][\lambd[x][(f ({(\lambd[x][x])} x))]] \\
+    & \redone \lambd[f][\lambd[x][(f x)]] \ident \num{1}\\
+  \end{align*}
+\end{ex}
+
+\begin{prob}
+  ترم
+  \begin{align*}
+    \fn{Succ}' & \ident \lambd[{n}][\lambd[fx][{n} f (f x)]]
+  \end{align*}
+  تابع جانشین را~!!{lambda define}s. توضیح دهید چرا.
+\end{prob}
+
+\begin{prop}
+  \ollabel{prop:add-ld}
+  تابع جمع~$\Add$ !!{lambda definable} است.
+\end{prop}
+
+\begin{proof}
+ترم‌های زیر جمع را~!!{lambda define}:
+\begin{align*}
+  \fn{Add} & \ident \lambd[{a}{b}][\lambd[fx][{a} f ({b} f x)]]
+\intertext{یا، به‌صورت بدیل،}
+  \fn{Add}' & \ident \lambd[{a}{b}][{a}\, \fn{Succ} \, {b}].
+\intertext{جمع نخست چنین کار می‌کند: $\fn{Add}$ ابتدا دو عدد~${a}$ و
+  ${b}$ را می‌پذیرد. حاصل تابعی است که~$f$ و~$x$ را می‌پذیرد و
+  $af(bfx)$ را بازمی‌گرداند. اگر~$a$ و~$b$ عددنماهای چرچ~$\num{n}$ و
+  $\num{m}$ باشند، این عبارت به~$f^{n+m}(x)$ کاهش می‌یابد، که با
+  $f^{n}(f^{m}(x))$ یکسان است. یا، با گام‌های آشکار:}
+  (\lambd[{a}{b}][\lambd[fx][{a} f ({b} f x)]])\num n\,\num m & \red
+  \lambd[fx][\num{n}\, f (\num {m}\, f x)] \\
+  & \red \lambd[fx][\num{n}\, f (f^m x)] \\
+  & \red \lambd[fx][f^n (f^m x)] \ident \num {n+m}.
+\intertext{بازنمایی دوم جمع، یعنی~$\fn{Add'}$، به شیوه‌ای دیگر کار
+  می‌کند. اگر آن را بر دو عددنمای چرچ~$\num{n}$ و~$\num{m}$ اعمال
+  کنیم،}
+\fn{Add}' \num n \,\num m
+& \red \num{n}\, \fn{Succ}\, \num{m}.
+\intertext{اما~$\num{n} f x$ همواره به~$f^n(x)$ کاهش می‌یابد. پس}
+  \num{n}\,  \fn{Succ}\, \num{m} & \red \fn{Succ}^n(\num{m}).
+\end{align*}
+و چون~$\fn{Succ}$ تابع جانشین را~!!{lambda define}s و اعمال~$n$بارهٔ
+تابع جانشین بر~$m$ برابر~$n+m$ است، این عبارت نیز به~$\num{n+m}$ کاهش
+می‌یابد.
+\end{proof}
+
+\begin{prop}
+  \ollabel{prop:mult-ld}
+  ضرب به‌وسیلهٔ ترم زیر~!!{lambda definable} است:
+  \[
+  \fn{Mult} \ident \lambd[ab][\lambd[fx][a (b f) x]]
+  \]
+\end{prop}
+
+\begin{proof}
+  برای دیدن چگونگی کار این ترم، فرض کنید~$\fn{Mult}$ را بر عددنماهای
+  چرچ~$\num{n}$ و~$\num{m}$ اعمال کنیم. ترم
+  $\fn{Mult} \, \num{n} \, \num{m}$ به
+  $\lambd[fx][\num{n}(\num{m}\, f)x]$ کاهش می‌یابد. ترم~$\num{m} f$
+  تابعی را تعریف می‌کند که~$f$ را~$m$ بار بر آرگومانش اعمال می‌کند.
+  در نتیجه، $\num{n} (\num{m} f) x$ خود تابع «$f$ را~$m$ بار اعمال
+  کن» را~$n$ بار بر~$x$ اعمال می‌کند. به بیان دیگر، $f$ را~$n\cdot m$
+  بار بر~$x$ اعمال می‌کنیم. اما ترم نرمال حاصل همان عددنمای چرچ
+  $\num{nm}$ است.
+\end{proof}
+
+\begin{editorial}
+در واقع می‌توانیم با کاهش~$\eta$ این ترم را باز هم ساده‌تر کنیم:
+\[
+  \fn{Mult} \ident \lambd[ab][\lambd[f][a (b f)]].
+\]
+
+اما در آن صورت نخست باید کاهش~$\eta$ را توضیح دهیم.
+\end{editorial}
+
+\begin{prob}
+ترم زیر ضرب را~!!{lambda define}:
+\[
+  \fn{Mult}' \ident \lambd[ab][a (\fn{Add}\, b) \num{0}].
+\]
+توضیح دهید چرا این ترم کار می‌کند.
+\end{prob}
+
+تعریف توان‌رسانی به‌صورت یک ترم~$\lambd$ به‌طرز شگفت‌آوری ساده است:
+\[
+  \fn{Exp} \ident \lambd[be][e b].
+\]
+آرگومان نخست~$b$ پایه و آرگومان دوم~$e$ توان است. بنا بر کدگذاری اعداد،
+به‌طور شهودی~$e f$ همان~$f^e$ است. اگر درک این تعریف دشوار باشد،
+توان‌رسانی را می‌توانیم با ضرب تکرارشونده نیز تعریف کنیم:
+\[
+  \fn{Exp}' \ident \lambd[be][e (\fn{Mult}\, b) \num{1}].
+\]
+
+تعریف تابع پیشین و تفریق روی عددنماهای چرچ آن‌قدر که شاید گمان کنیم
+ساده نیست؛ این کار به کدگذاری زوج‌ها نیاز دارد.
+
+\end{document}

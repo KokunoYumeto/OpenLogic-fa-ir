@@ -1,0 +1,93 @@
+% Part: first-order-logic
+% Chapter: tableaux
+% Section: derivations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{tab}{der}}
+      {\olfileid{pl}{tab}{der}}
+
+\olsection{\usetoken{P}{tableau}}
+
+\begin{explain}
+گفته‌ایم فرض چیست و قواعد استنتاج را به دست داده‌ایم. !!^{tableau}s از
+این‌ها به‌طور استقرایی تولید می‌شوند: هر !!{tableau} یا شاخه‌ای یگانه و
+متشکل از یک یا چند فرض است، یا از اعمال یکی از قواعد استنتاج بر شاخه‌ای
+از !!a{tableau} حاصل می‌شود.
+\end{explain}
+
+\begin{defn}[!!^{tableau}]
+!!^a{tableau} برای فرض‌های $\sFmla{S_1}{!A_1}$، \dots،
+$\sFmla{S_n}{!A_n}$ (که هر $S_i$ یا $\True$ است یا~$\False$)، درختی
+متناهی از !!{signed formula}s است که شرایط زیر را برآورده می‌کند:
+\begin{enumerate}
+\item $n$~!!{signed formula}s بالاییِ درخت،
+  $\sFmla{S_i}{!A_i}$ هستند که یکی زیر دیگری قرار می‌گیرند.
+\item هر !!{signed formula} در درخت که یکی از فرض‌ها نیست، از کاربرد
+  درست یک قاعدهٔ استنتاج بر !!a{signed formula} در شاخهٔ بالای آن حاصل
+  می‌شود.
+\end{enumerate}
+شاخه‌ای از !!a{tableau} \emph{بسته} است هرگاه و تنها هرگاه هم
+$\sFmla{\True}{!A}$ و هم~$\sFmla{\False}{!A}$ را دربر داشته باشد؛ وگرنه
+\emph{باز} است. !!^a{tableau} که هر شاخه‌اش بسته باشد، \emph{!!{tableau}
+بسته} (برای مجموعهٔ فرض‌هایش) است. اگر !!a{tableau} بسته نباشد، یعنی اگر
+دست‌کم یک شاخهٔ باز داشته باشد، \emph{باز} است.
+\end{defn}
+
+\begin{ex}
+  هر مجموعهٔ فرض‌ها به‌تنهایی !!a{tableau} است، اما معمولاً بسته نخواهد
+  بود. (بدیهی است که تنها هنگامی بسته است که فرض‌ها از پیش جفتی از
+  !!{signed formula}s، یعنی $\sFmla{\True}{!A}$ و
+  ~$\sFmla{\False}{!A}$، را دربر داشته باشند.)
+
+  از !!a{tableau} (باز یا بسته) می‌توانیم با اعمال یکی از قواعد استنتاج
+  بر !!a{signed formula}~$\sFmla{S}{!A}$ در آن، تابلویی تازه و بزرگ‌تر
+  به دست آوریم. قاعده یک یا چند !!{signed formula}s را به انتهای هر شاخه‌ای
+  می‌افزاید که رخداد~$\sFmla{S}{!A}$ مورد اعمال قاعده را دربر داشته باشد.
+
+  برای نمونه، فرض $\sFmla{\True}{!A \land \lnot
+    !A}$ را در نظر بگیرید. در زیر، !!{tableau} (باز) متشکل فقط از همان
+  فرض آمده است:
+  \begin{center}
+    \begin{tableau}{}
+      [\sFmla{\True}{\formula{A} \land \lnot \formula{A}}, just=\TAss]
+    \end{tableau}{}
+  \end{center}
+  با اعمال قاعدهٔ $\TRule{\True}{\land}$ بر فرض، !!{tableau} تازه‌ای از
+  آن به دست می‌آوریم. آن قاعده اجازه می‌دهد دو سطر تازه، یعنی
+  $\sFmla{\True}{!A}$ و $\sFmla{\True}{\lnot !A}$، را به !!{tableau}
+  بیفزاییم:
+  \begin{center}
+    \begin{tableau}{}
+      [\sFmla{\True}{\formula{A} \land \lnot \formula{A}}, just=\TAss
+        [\sFmla{\True}{\formula{A}}, just={\TRule{\True}{\land}[1]},
+          [\sFmla{\True}{\lnot \formula{A}}, just={\TRule{\True}{\land}[1]}
+          ]
+        ]
+      ]
+    \end{tableau}{}
+  \end{center}
+  هنگام نوشتن !!{tableau}s، قواعد اعمال‌شده را در سمت راست ثبت می‌کنیم
+  (برای نمونه، $\TRule{\True}{\land} 1$ یعنی !!{signed formula} آن سطر از
+  اعمال قاعدهٔ $\TRule{\True}{\land}$ بر !!{signed formula} سطر~$1$ حاصل
+  شده است). این !!{tableau} تازه اکنون !!{signed formula}s دیگری دارد،
+  اما قاعده‌ای را فقط بر یکی از آن‌ها ($\sFmla{\True}{\lnot !A}$) می‌توان
+  اعمال کرد (در این مورد، قاعدهٔ $\TRule{\True}{\lnot}$). حاصل،
+  !!{tableau} بستهٔ زیر است:
+  \begin{center}
+    \begin{tableau}{}
+      [\sFmla{\True}{\formula{A} \land \lnot \formula{A}}, just=\TAss
+        [\sFmla{\True}{\formula{A}}, just={\TRule{\True}{\land}[1]}
+          [\sFmla{\True}{\lnot \formula{A}}, just={\TRule{\True}{\land}[1]}
+            [\sFmla{\False}{\formula{A}}, just={\TRule{\True}{\lnot}[3]}, close]
+          ]
+        ]
+      ]
+    \end{tableau}{}
+  \end{center}
+\end{ex}
+
+\end{document}

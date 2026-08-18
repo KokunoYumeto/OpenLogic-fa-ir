@@ -1,0 +1,57 @@
+% Part: normal-modal-logic
+% Chapter: axioms-systems
+% Section: soundness
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{prf}{snd}
+
+\olsection{صحت}
+
+!!^a{derivation} دستگاه هنگامی صحیح نامیده می‌شود که هرچه بتوان
+!!{derive} کرد معتبر باشد. هنگام بررسی دستگاه‌های موجهاتی، یعنی
+!!{derivation}هایی که در آن‌ها افزون بر~\Ax{K} می‌توان از نمونه‌های
+برخی !!{formula}های~$!A_1$، \dots،~$!A_n$ استفاده کرد، می‌خواهیم هر
+فرمول !!{derivable} در هر مدلی که~$!A_1$، \dots، $!A_n$ در آن صادق‌اند
+صادق باشد.
+
+\begin{thm}[قضیهٔ صحت]\ollabel{thm:soundness}
+  اگر هر نمونهٔ~$!A_1$، \dots، $!A_n$ به‌ترتیب در رده‌های مدل‌های
+  $\mClass{C}_1$، \dots، $\mClass{C}_n$ معتبر باشد، آنگاه
+  $\Log{K}!A_1\dots !A_n \Proves !B$ مستلزم آن است که~$!B$ در ردهٔ
+  مدل‌های~$\mClass{C}_1 \cap \dots \cap \mClass{C}_n$ معتبر باشد.
+\end{thm}
+
+\begin{proof}
+  با استقرا بر طول اثبات‌ها. برای اختصار بگذارید
+  $\mClass{C} = \mClass{C}_1 \cap \dots \cap \mClass{C}_n$.
+  \begin{enumerate}
+  \item پایهٔ استقرا: اگر~$!B$ اثباتی با طول~$1$ داشته باشد، یا نمونهٔ
+    همان‌گویی، یا نمونه‌ای از~\Ax{K}،\iftag{prvDiamond}{ یا~\Dual{}،}{}
+    یا نمونه‌ای از یکی از~$!A_1$، \dots،~$!A_n$ است. در حالت نخست،
+    $!B$ در~$\mClass{C}$ معتبر است، زیرا بنا بر
+    \olref[syn][tau]{prop:valid-taut} نمونه‌های همان‌گویی در \emph{هر}
+    ردهٔ مدل‌ها معتبرند. در حالت دوم نیز، بنا بر
+    \olref[syn][sch]{prop:Kvalid}\iftag{prvDiamond}{ و
+      \olref[syn][sch]{prop:Dual-valid}}{}، چنین است. سرانجام در حالت
+    سوم، چون~$!B$ در~$\mClass{C}_i$ معتبر است و
+    $\mClass{C} \subseteq \mClass{C}_i$، بنا بر
+    \olref[syn][val]{prop:subset-class}، $!B$ در~$\mClass{C}$ نیز معتبر
+    است.
+  \item گام استقرا: فرض کنید~$!B$ اثباتی با طول~$k>1$ داشته باشد. اگر
+    $!B$ نمونهٔ همان‌گویی، نمونه‌ای از~\Ax{K}،
+    \iftag{prvDiamond}{نمونه‌ای از~\Dual{}، یا}{} نمونه‌ای از یکی از
+    $!A_1$، \dots، $!A_n$ باشد، مانند گام پیشین عمل می‌کنیم. پس فرض
+    کنید~$!B$ با~\MP{} از !!{formula}های پیشین~$!C \lif !B$ و~$!C$
+    به دست آمده باشد. آنگاه~$!C \lif !B$ و~$!C$ اثبات‌هایی با طول
+    کمتر از~$k$ دارند و بنا بر فرض استقرا در~$\mClass{C}$ معتبرند. بنا
+    بر~\olref[syn][sch]{prop:soundMP}، $!B$ نیز در~$\mClass{C}$ معتبر
+    است. سرانجام فرض کنید~$!B$ با~\Nec{} از~$!C$ به دست آمده باشد
+    (پس~$!B = \Box!C$). بنا بر فرض استقرا، $!C$ در~$\mClass{C}$ معتبر
+    است و بنا بر~\olref[syn][val]{prop:Nec-rule}، $!B$ نیز معتبر است.
+  \end{enumerate}
+\end{proof}
+
+\end{document}

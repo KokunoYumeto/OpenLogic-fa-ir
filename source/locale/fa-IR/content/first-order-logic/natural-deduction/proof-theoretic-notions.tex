@@ -1,0 +1,163 @@
+% Part: first-order-logic
+% Chapter: natural-deduction
+% Section: proof-theoretic-notions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{ntd}{ptn}}
+      {\olfileid{pl}{ntd}{ptn}}
+
+\olsection{مفاهیم برهان‌نظری}
+
+\begin{editorial}
+این بخش تعریف‌های رابطهٔ اثبات‌پذیری و سازگاری را برای استنتاج طبیعی
+گرد می‌آورد.
+\end{editorial}
+
+\begin{explain}
+همان‌گونه که شماری از مفاهیم مهم معنایی (اعتبار، استلزام، ارضاپذیری) را
+تعریف کرده‌ایم، اکنون \emph{مفاهیم برهان‌نظریِ} متناظر را تعریف می‌کنیم.
+این مفاهیم با توسل به ارضای !!{sentence}s در
+\iftag{FOL}{!!{structure}s}{!!{valuation}s} تعریف نمی‌شوند، بلکه با
+توسل به !!{derivability} یا !!{nonderivability} چند !!{sentence}s از
+جمله‌های دیگر تعریف می‌شوند. اینکه این مفاهیم بر هم منطبق‌اند کشفی مهم
+بود. انطباق آن‌ها مضمون \emph{قضیه‌های صحت} و \emph{تمامیت} است.
+\end{explain}
+
+
+\begin{defn}[قضیه‌ها]
+!!{sentence}~$!A$ یک \emph{قضیه} است اگر در استنتاج طبیعی
+!!a{derivation} از~$!A$ وجود داشته باشد که در آن همهٔ فرض‌ها
+!!{discharged} شده‌اند. $\Proves !A$ می‌نویسیم اگر $!A$ قضیه باشد، و اگر نباشد،
+$\Proves/ !A$ می‌نویسیم.
+\end{defn}
+
+\begin{defn}[!!^{derivability}]
+!!^a{sentence}~$!A$~\emph{!!{derivable}} است از مجموعه‌ای از
+!!{sentence}s، یعنی~$\Gamma$، و $\Gamma \Proves !A$، اگر !!{derivation}ی
+وجود داشته باشد که نتیجه‌اش~$!A$ است و در آن هر فرض یا !!{discharged}
+شده یا عضو~$\Gamma$ است. اگر $!A$ از $\Gamma$ !!{derivable} نباشد،
+$\Gamma \Proves/ !A$ می‌نویسیم.
+\end{defn}
+
+\begin{defn}[سازگاری]
+مجموعهٔ !!{sentence}s، یعنی~$\Gamma$، \emph{ناسازگار} است هرگاه و تنها
+هرگاه $\Gamma \Proves \lfalse$. اگر $\Gamma$ ناسازگار نباشد، یعنی اگر
+$\Gamma \Proves/ \lfalse$، می‌گوییم \emph{سازگار} است.
+\end{defn}
+
+\begin{prop}[بازتابی‌بودن]
+\ollabel{prop:reflexivity}
+اگر $!A \in \Gamma$، آنگاه $\Gamma \Proves !A$.
+\end{prop}
+
+\begin{proof}
+فرض $!A$ به‌تنهایی !!a{derivation} از~$!A$ است که در آن هر فرض
+!!{undischarged} (یعنی $!A$) عضو~$\Gamma$ است.
+\end{proof}
+
+
+\begin{prop}[یکنوایی]
+\ollabel{prop:monotonicity}
+اگر $\Gamma \subseteq \Delta$ و $\Gamma \Proves !A$، آنگاه
+$\Delta \Proves !A$.
+\end{prop}
+
+\begin{proof}
+هر !!{derivation} از $!A$ از $\Gamma$، !!a{derivation} از $!A$
+از~$\Delta$ نیز هست.
+\end{proof}
+
+\begin{prop}[تعدی]
+\ollabel{prop:transitivity}
+اگر $\Gamma \Proves !A$ و $\{!A\} \cup \Delta \Proves
+!B$، آنگاه $\Gamma \cup \Delta \Proves !B$.
+\end{prop}
+
+\begin{proof}
+اگر $\Gamma \Proves !A$، !!a{derivation}~$\delta_0$ از~$!A$ وجود دارد
+که همهٔ فرض‌های !!{undischarged} آن در~$\Gamma$ هستند. اگر
+$\{!A\} \cup \Delta \Proves !B$، آنگاه !!a{derivation}~$\delta_1$ از
+~$!B$ وجود دارد که همهٔ فرض‌های !!{undischarged} آن در
+~$\{!A\} \cup \Delta$ هستند. اکنون عبارت زیر را در نظر بگیرید:
+\begin{prooftree}
+  \AxiomC{$\Delta, \Discharge{!A}{1}$}
+  \RightLabel{$\delta_1$}
+  \DeduceC{$!B$}
+  \DischargeRule{\Intro{\lif}}{1}
+  \UnaryInfC{$!A \lif !B$}
+  \AxiomC{$\Gamma$}
+  \RightLabel{$\delta_0$}
+  \DeduceC{$!A$}
+  \RightLabel{\Elim{\lif}}
+  \BinaryInfC{$!B$}
+\end{prooftree}
+فرض‌های !!{undischarged} اکنون همگی در میان $\Gamma \cup
+\Delta$ هستند، پس این عبارت $\Gamma \cup \Delta \Proves !B$ را نشان
+می‌دهد.
+\end{proof}
+
+اگر $\Gamma = \{!A_1, !A_2, \ldots, !A_k\}$ مجموعه‌ای متناهی باشد،
+می‌توانیم از نمادگذاری ساده‌شدهٔ
+$!A_1,!A_2,\ldots,!A_k \Proves !B$ برای $\Gamma \Proves !B$ استفاده کنیم؛ به‌ویژه،
+$!A \Proves !B$ به این معناست که $\{!A\} \Proves !B$.
+
+توجه کنید که اگر $\Gamma \Proves !A$ و $!A
+\Proves !B$، آنگاه $\Gamma \Proves !B$. همچنین نتیجه می‌شود که اگر
+$!A_1, \dots, !A_n \Proves !B$ و $\Gamma \Proves !A_i$ برای هر~$i$،
+آنگاه $\Gamma \Proves !B$.
+
+\begin{prop}
+\ollabel{prop:incons}
+موارد زیر هم‌ارزند.
+    \begin{enumerate}
+      \item \( \Gamma \) ناسازگار است.
+      \item \( \Gamma \Proves {!A} \) برای هر !!{sentence}~\( {!A} \).
+      \item \( \Gamma \Proves {!A} \) و \( \Gamma \Proves \lnot {!A} \) برای یک !!{sentence}~\( {!A} \).
+    \end{enumerate}
+\end{prop}
+
+\begin{proof}
+تمرین.
+\end{proof}
+
+\tagprob{FOL}
+\begin{prob}
+\olref[fol][ntd][ptn]{prop:incons} را ثابت کنید.
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+\olref[pl][ntd][ptn]{prop:incons} را ثابت کنید.
+\end{prob}
+\tagendprob
+
+\begin{prop}[فشردگی]
+  \ollabel{prop:proves-compact}
+  \begin{enumerate}
+  \item اگر $\Gamma \Proves !A$، آنگاه زیرمجموعه‌ای متناهی
+    $\Gamma_0 \subseteq \Gamma$ وجود دارد به‌طوری‌که
+    $\Gamma_0 \Proves !A$.
+  \item اگر هر زیرمجموعهٔ متناهیِ~$\Gamma$ سازگار باشد، آنگاه
+    $\Gamma$ سازگار است.
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+    \item اگر $\Gamma \Proves !A$، آنگاه !!a{derivation}~$\delta$ از
+      ~$!A$ از~$\Gamma$ وجود دارد. فرض کنید $\Gamma_0$ مجموعهٔ فرض‌های
+      !!{undischarged} در~$\delta$ باشد. چون هر !!{derivation} متناهی
+      است، $\Gamma_0$ فقط می‌تواند شمار متناهی‌ای از !!{sentence}s را
+      دربر داشته باشد. پس $\delta$~!!a{derivation} از~$!A$ از یک
+      $\Gamma_0 \subseteq \Gamma$ متناهی است.
+    \item این بند عکس نقیض (1) در حالت خاص $!A
+      \ident \lfalse$ است.
+  \end{enumerate}
+\end{proof}
+
+\end{document}

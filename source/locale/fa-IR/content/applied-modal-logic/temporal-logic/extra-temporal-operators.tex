@@ -1,0 +1,44 @@
+% Part: applied-modal-logics
+% Chapter: temporal-logic
+% Section: extra-operators
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{aml}{tl}{ext}
+
+\olsection{عملگرهای افزوده برای منطق زمانی}
+
+منطق‌های زمانی افزون بر عملگرهای یک‌موضعیِ گذشته و آینده، گاهی
+عملگرهای دوموضعی~$\Since$ و~$\Until$ را نیز در بر می‌گیرند که به‌ترتیب
+برای نمادسازی «از زمانی که» و «تا زمانی که» در نظر گرفته شده‌اند. این
+یعنی~$\Since$ و~$\Until$ را به زبان منطق زمانی بیفزاییم و بند زیر را
+به تعریف !!{formula} زمانی اضافه کنیم:
+
+\begin{itemize}
+\item[] اگر~$!A$ و~$!B$، !!{formula} باشند، آنگاه~$(\Since !A !B)$ و
+  $(\Until !A !B)$ هر دو !!{formula} هستند.
+\end{itemize}
+
+سپس معناشناسی این عملگرها چنین داده می‌شود:
+
+\begin{defn}\ollabel{defn:since-until}
+  \emph{صدق !!a{formula}~$!A$ در~$t$} در~$\mModel M$:
+  \begin{enumerate}
+  \item\ollabel{defn:sub:mmodels-since} \indcase{!A}{\Since !B
+    !C}{$\mSat{M}{\indfrm}[t]$ اگر و تنها اگر برای یک~$t' \in T$ با
+    $t' \prec t$، $\mSat{M}{!B}[t']$، و برای هر~$s$ با
+    $t' \prec s \prec t$، $\mSat{M}{!C}[s]$.}
+  \item\ollabel{defn:sub:mmodels-until} \indcase{!A}{\Until !B
+    !C}{$\mSat{M}{\indfrm}[t]$ اگر و تنها اگر برای یک~$t' \in T$ با
+    $t \prec t'$، $\mSat{M}{!B}[t']$، و برای هر~$s$ با
+    $t \prec s \prec t'$، $\mSat{M}{!C}[s]$.}
+  \end{enumerate} 
+\end{defn}
+
+خوانش شهودیِ~$\Since !B !C$ این است: «از زمانی که~$!B$ برقرار بود،
+$!C$ برقرار بوده است.» و خوانش شهودیِ~$\Until !B !C$ این است: «تا
+زمانی که~$!B$ برقرار شود، $!C$ برقرار خواهد بود.»
+
+\end{document}

@@ -1,0 +1,139 @@
+% Part: first-order-logic
+% Chapter: axiomatic-deduction
+% Section: proof-theoretic-notions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{axd}{ptn}}
+      {\olfileid{pl}{axd}{ptn}}
+
+\olsection{مفاهیم برهان‌نظری}
+
+\begin{explain}
+همان‌گونه که شماری از مفاهیم مهم معنایی
+(\iftag{FOL}{اعتبار}{همان‌گویی}، استلزام، ارضاپذیری) را تعریف کرده‌ایم،
+اکنون \emph{مفاهیم برهان‌نظری} متناظر را تعریف می‌کنیم. این مفاهیم با
+توسل به ارضای !!{sentence}s در
+\iftag{FOL}{!!{structure}s}{!!{valuation}s} تعریف نمی‌شوند، بلکه با
+توسل به !!{derivability} یا !!{nonderivability} برخی فرمول‌ها تعریف
+می‌شوند. اینکه این مفاهیم بر هم منطبق‌اند کشفی مهم بود. انطباق آن‌ها
+مضمون \emph{قضیه‌های صحت} و \emph{تمامیت} است.
+\end{explain}
+
+\begin{defn}[!!^{derivability}]
+!!^a{formula}~$!A$ از $\Gamma$~\emph{!!{derivable}} است، و
+$\Gamma \Proves !A$ نوشته می‌شود، اگر !!a{derivation} از~$\Gamma$ وجود
+داشته باشد که به~$!A$ پایان یابد.
+\end{defn}
+
+\begin{defn}[قضیه‌ها]
+!!^a{formula}~$!A$ یک \emph{قضیه} است اگر !!a{derivation} برای $!A$ از
+مجموعهٔ تهی وجود داشته باشد. اگر $!A$ قضیه باشد، $\Proves !A$، و اگر
+نباشد، $\Proves/ !A$ می‌نویسیم.
+\end{defn}
+
+\begin{defn}[سازگاری]
+مجموعهٔ $\Gamma$ از !!{formula}s \emph{سازگار} است هرگاه و تنها هرگاه
+$\Gamma\Proves/ \lfalse$؛ و در غیر این صورت \emph{ناسازگار} است.
+\end{defn}
+
+\begin{prop}[بازتابی‌بودن]
+\ollabel{prop:reflexivity}
+اگر $!A \in \Gamma$، آنگاه $\Gamma \Proves !A$.
+\end{prop}
+
+\begin{proof}
+  !!{formula}~$!A$ به‌تنهایی !!a{derivation} برای~$!A$ از~$\Gamma$ است.
+\end{proof}
+
+\begin{prop}[یکنواختی]
+\ollabel{prop:monotonicity}
+اگر $\Gamma \subseteq \Delta$ و $\Gamma \Proves !A$، آنگاه
+$\Delta \Proves !A$.
+\end{prop}
+
+\begin{proof}
+هر !!{derivation} برای $!A$ از $\Gamma$، !!a{derivation} برای $!A$ از
+~$\Delta$ نیز هست.
+\end{proof}
+
+\begin{prop}[تعدی]
+\ollabel{prop:transitivity}
+اگر $\Gamma \Proves !A$ و $\{!A\} \cup \Delta \Proves !B$، آنگاه
+$\Gamma \cup \Delta \Proves !B$.
+\end{prop}
+
+\begin{proof}
+  فرض کنید $\{!A\} \cup \Delta \Proves !B$. آنگاه
+  !!a{derivation}~$!B_1$، \dots، $!B_l = !B$ از~$\{!A\} \cup
+  \Delta$ وجود دارد. برخی گام‌های آن !!{derivation} به‌سبب قاعده‌ای
+  درست‌اند که به سطر پیشین~$!B_i = !A$ ارجاع می‌دهد. بنا بر فرض،
+  !!a{derivation} برای~$!A$ از~$\Gamma$ وجود دارد؛ یعنی
+  !!a{derivation}~$!A_1$، \dots، $!A_k = !A$ که در آن هر $!A_i$ یا
+  اصل موضوع است، یا !!a{element}~$\Gamma$، یا به‌وسیلهٔ قاعدهٔ استنتاج
+  درست است. اکنون دنبالهٔ زیر را در نظر بگیرید:
+  \[
+  !A_1, \dots, !A_k = !A, !B_1, \dots, !B_l = !B.
+  \]
+  این !!{derivation} درستی برای~$!B$ از $\Gamma \cup \Delta$ است، زیرا
+  اکنون هر $!B_i = !A$ با همان قاعده‌ای توجیه می‌شود که
+  ~$!A_k = !A$ را توجیه می‌کند.
+\end{proof}
+
+توجه کنید این حکم به‌ویژه بدان معناست که اگر $\Gamma \Proves !A$ و
+$!A \Proves !B$، آنگاه $\Gamma \Proves !B$. همچنین از آن نتیجه می‌شود
+که اگر $!A_1, \dots, !A_n \Proves !B$ و برای هر~$i$،
+$\Gamma \Proves !A_i$، آنگاه $\Gamma \Proves !B$.
+
+\begin{prop}
+\ollabel{prop:incons}
+$\Gamma$ ناسازگار است هرگاه و تنها هرگاه برای هر~$!A$،
+$\Gamma \Proves !A$.
+\end{prop}
+
+\begin{proof}
+تمرین.
+\end{proof}
+
+\tagprob{FOL}
+\begin{prob}
+\olref[fol][axd][ptn]{prop:incons} را اثبات کنید.
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+\olref[pl][axd][ptn]{prop:incons} را اثبات کنید.
+\end{prob}
+\tagendprob
+
+\begin{prop}[فشردگی]
+\ollabel{prop:proves-compact}
+  \begin{enumerate}
+  \item اگر $\Gamma \Proves !A$، آنگاه زیرمجموعه‌ای متناهی
+    $\Gamma_0 \subseteq \Gamma$ وجود دارد چنان‌که
+    $\Gamma_0 \Proves !A$.
+  \item اگر هر زیرمجموعهٔ متناهی~$\Gamma$ سازگار باشد، آنگاه $\Gamma$
+    سازگار است.
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+    \item اگر $\Gamma \Proves !A$، آنگاه دنبالهٔ متناهی
+      $!A_1$، \dots،~$!A_n$ از !!{formula}s وجود دارد چنان‌که
+      $!A \ident !A_n$ و هر $!A_i$ یا اصل موضوعی منطقی است، یا
+      !!a{element}~$\Gamma$، یا به‌وسیلهٔ یک قاعدهٔ استنتاج از
+      !!{formula}s پیشین به دست می‌آید. $\Gamma_0$ را متشکل از همان
+      $!A_i$هایی بگیرید که در~$\Gamma$ هستند. آنگاه !!{derivation} نیز
+      !!a{derivation} از~$\Gamma_0$ است و بنابراین
+      $\Gamma_0 \Proves !A$.
+    \item این حکم عکس نقیض~(۱) برای حالت خاص
+      $!A \ident \lfalse$ است.
+\end{enumerate}
+\end{proof}
+
+\end{document}

@@ -1,0 +1,145 @@
+% Part: first-order-logic
+% Chapter: syntax-and-semantics
+% Section: formation-sequences
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pl}{syn}{fseq}
+
+\olsection{دنباله‌های ساخت}
+
+تعریف استقراییِ !!{formula}s و فن مکملِ اثبات ویژگی‌های !!{formula}s با
+استقرا، رویکردی ظریف و کارآمد است. بااین‌همه، بررسی رویکردی از پایین به بالا
+و گام‌به‌گام برای ساخت !!{formula}s نیز می‌تواند سودمند باشد؛ در اینجا این
+کار را با استفاده از مفهوم یک \emph{دنبالهٔ ساخت} انجام می‌دهیم.
+
+\begin{defn}[دنباله‌های ساخت برای فرمول‌ها]
+\ollabel{defn:fseq-frm}
+دنبالهٔ متناهیِ $\tuple{!A_0,\dotsc,!A_n}$ از رشته‌های نمادهای
+زبان~$\Lang L_0$ یک \emph{دنبالهٔ ساخت} برای $!A$ است اگر
+$!A \ident !A_n$ و برای هر $i \leq n$، یا $!A_i$ فرمولی اتمی باشد یا
+$j,k < i$ وجود داشته باشند، به‌گونه‌ای که یکی از موارد زیر برقرار باشد:
+\begin{enumerate}
+    \tagitem{prvNot}{$!A_i \ident \lnot !A_j$.}{}%
+    \tagitem{prvAnd}{$!A_i \ident (!A_j \land !A_k)$.}{}%
+    \tagitem{prvOr}{$!A_i \ident (!A_j \lor !A_k)$.}{}%
+    \tagitem{prvIf}{$!A_i \ident (!A_j \lif !A_k)$.}{}%
+    \tagitem{prvIff}{$!A_i \ident (!A_j \liff !A_k)$.}{}%
+\end{enumerate}
+\end{defn}
+
+\begin{ex}
+\[
+\tuple{
+    \Obj p_0,
+    \Obj p_1,
+    (\Obj p_1 \land \Obj p_0),
+    \lnot (\Obj p_1 \land \Obj p_0)
+}
+\]
+یک دنبالهٔ ساخت برای
+$\lnot (\Obj p_1 \land \Obj p_0)$ است؛ دنبالهٔ زیر نیز چنین است:
+\[
+\tuple{
+    \Obj p_0,
+    \Obj p_1,
+    \Obj p_0,
+    (\Obj p_1 \land \Obj p_0),
+    (\Obj p_0 \lif \Obj p_1),
+    \lnot (\Obj p_1 \land \Obj p_0)
+}.
+\]
+%
+چنان‌که از مثال دوم پیداست، دنباله‌های ساخت ممکن است حاوی «اجزای زائد»
+باشند: فرمول‌هایی که تکراری‌اند یا در ساخت نقشی ندارند.
+\end{ex}
+
+\begin{prop}
+\ollabel{prop:formed}
+هر !!{formula}~$!A$ در~$\Frm[L_0]$ دارای یک دنبالهٔ ساخت است.
+\end{prop}
+
+\begin{proof}
+فرض کنید $!A$ اتمی باشد. آنگاه دنبالهٔ~$\tuple{!A}$ یک دنبالهٔ ساخت
+برای~$!A$ است.
+%
+اکنون فرض کنید $!B$ و~$!C$ به‌ترتیب دارای دنباله‌های ساخت
+$\tuple{!B_0,\dotsc,!B_n}$ و $\tuple{!C_0,\dotsc,!C_m}$ باشند.
+%
+\begin{enumerate}
+  \tagitem{prvNot}{اگر $!A \ident \lnot !B$،
+      آنگاه $\tuple{!B_0,\dotsc,!B_n,\lnot !B_n}$
+      یک دنبالهٔ ساخت برای~$!A$ است.}{}
+  \tagitem{prvAnd}{اگر $!A \ident (!B \land !C)$،
+      آنگاه $\tuple{!B_0,\dotsc,!B_n,!C_0,\dotsc,!C_m,(!B_n \land !C_m)}$
+      یک دنبالهٔ ساخت برای~$!A$ است.}{}
+  \tagitem{prvOr}{اگر $!A \ident (!B \lor !C)$،
+      آنگاه $\tuple{!B_0,\dotsc,!B_n,!C_0,\dotsc,!C_m,(!B_n \lor !C_m)}$
+      یک دنبالهٔ ساخت برای~$!A$ است.}{}
+  \tagitem{prvIf}{اگر $!A \ident (!B \lif !C)$،
+      آنگاه $\tuple{!B_0,\dotsc,!B_n,!C_0,\dotsc,!C_m,(!B_n \lif !C_m)}$
+      یک دنبالهٔ ساخت برای~$!A$ است.}{}
+  \tagitem{prvIff}{اگر $!A \ident (!B \liff !C)$،
+      آنگاه $\tuple{!B_0,\dotsc,!B_n,!C_0,\dotsc,!C_m,(!B_n \liff !C_m)}$
+      یک دنبالهٔ ساخت برای~$!A$ است.}{}
+\end{enumerate}
+بنا بر اصل استقرا بر !!{formula}s،
+هر !!{formula} دارای یک دنبالهٔ ساخت است.
+\end{proof}
+
+عکس این گزاره را نیز می‌توانیم اثبات کنیم. این امر مهم است، زیرا نشان می‌دهد
+دو شیوهٔ ما برای تعریف فرمول‌ها هم‌ارزند: نتایج یکسانی به دست می‌دهند. همچنین
+بدین معناست که می‌توانیم قضیه‌های مربوط به فرمول‌ها را با استقرای معمولی بر
+طول دنباله‌های ساخت اثبات کنیم.
+
+\begin{lem}
+\ollabel{lem:fseq-init}
+فرض کنید $\tuple{!A_0,\dotsc,!A_n}$ دنبالهٔ ساختی برای~$!A_n$ باشد و
+$k \leq n$. آنگاه $\tuple{!A_0,\dotsc,!A_k}$ دنبالهٔ ساختی
+برای~$!A_k$ است.
+\end{lem}
+
+\begin{proof}
+تمرین.
+\end{proof}
+
+\begin{thm}
+\ollabel{thm:fseq-frm-equiv}
+$\Frm[L_0]$ مجموعهٔ همهٔ رشته‌های نمادهای زبان~$\Lang L_0$ است که
+دارای دنبالهٔ ساخت‌اند.
+\end{thm}
+
+\begin{proof}
+بگذارید $F$ مجموعهٔ همهٔ رشته‌های نمادهای زبان~$\Lang L_0$ باشد که
+دارای دنبالهٔ ساخت‌اند. در \olref[pl][syn][fseq]{prop:formed} دیدیم که
+$\Frm[L_0] \subseteq F$؛ پس اکنون شمول عکس را اثبات می‌کنیم.
+
+فرض کنید $!A$ دارای دنبالهٔ ساخت $\tuple{!A_0,\dotsc,!A_n}$ باشد.
+اثبات می‌کنیم که $!A \in \Frm[L_0]$؛ این کار را با استقرای قوی
+بر~$n$ انجام می‌دهیم.
+فرض استقرای ما این است که هر رشته از نمادها که دنبالهٔ ساختی با شاخص پایانی
+$m < n$ دارد، در~$\Frm[L_0]$ است. بنا بر تعریف دنبالهٔ ساخت، یا $!A_n$
+اتمی است یا باید $j,k < n$ وجود داشته باشند، به‌گونه‌ای که یکی از موارد زیر
+برقرار باشد:
+\begin{enumerate}
+    \tagitem{prvNot}{$!A_n \ident \lnot !A_j$.}{}%
+    \tagitem{prvAnd}{$!A_n \ident (!A_j \land !A_k)$.}{}%
+    \tagitem{prvOr}{$!A_n \ident (!A_j \lor !A_k)$.}{}%
+    \tagitem{prvIf}{$!A_n \ident (!A_j \lif !A_k)$.}{}%
+    \tagitem{prvIff}{$!A_n \ident (!A_j \liff !A_k)$.}{}%
+\end{enumerate}
+اکنون به تفکیک حالت‌ها استدلال می‌کنیم. اگر $!A_n$ اتمی باشد، آنگاه
+$!A_n \in \Frm[L_0]$. حال فرض کنید $!A \ident
+(!A_j \land !A_k)$. بنا بر \olref[pl][syn][fseq]{lem:fseq-init}،
+$\tuple{!A_0,\dotsc,!A_j}$ و $\tuple{!A_0,\dotsc,!A_k}$ به‌ترتیب
+دنباله‌های ساختی برای $!A_j$ و~$!A_k$ هستند. چون هر یک قطعهٔ آغازینِ
+سره‌ای از دنبالهٔ ساختِ~$!A$ است، شاخص پایانیِ هر دو کوچک‌تر از~$n$ است.
+بنابراین، بنا بر فرض استقرا، $!A_j$ و~$!A_k$ در~$\Frm[L_0]$ هستند و
+ازاین‌رو، بنا بر تعریف !!a{formula}،
+$(!A_j \land !A_k)$ نیز چنین است. حالت‌های دیگر با استدلالی موازی
+به دست می‌آیند.
+\end{proof}
+
+\end{document}

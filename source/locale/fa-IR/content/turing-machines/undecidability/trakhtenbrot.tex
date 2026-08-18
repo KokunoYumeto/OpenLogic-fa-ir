@@ -1,0 +1,262 @@
+% Part: turing-machines
+% Chapter: undecidability
+% Section: trakhtenbrot
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{tur}{und}{tra}
+\olsection{قضیهٔ تراختنبروت}
+
+\begin{explain}
+  در \olref[rep]{sec} برای ماشین تورینگ~$M$ و رشتهٔ ورودی~$w$،
+  !!{sentence}sی $!T(M,w)$ و~$!E(M,w)$ را تعریف کردیم. سپس در
+  \olref[ver]{lem:valid-if-halt} و~\olref[ver]{lem:halt-if-valid}
+  نشان دادیم $!T(M,w)\lif !E(M,w)$ معتبر است اگر و تنها اگر $M$ پس
+  از آغاز با ورودی~$w$ سرانجام متوقف شود. چون مسئلهٔ توقف
+  تصمیم‌ناپذیر است، از این نتیجه می‌شود که اعتبار و ارضاپذیری
+  !!{sentence}sی منطق مرتبه‌اول تصمیم‌ناپذیر است
+  (\cref{tur:und:uns:thm:decision-prob,tur:und:uns:cor:undecidable-sat}).
+
+  اما اعتبار و ارضاپذیری جمله‌ها نسبت به !!{structure}sی دلخواه، متناهی
+  یا نامتناهی، تعریف می‌شود. شاید گمان کنید تصمیم دربارهٔ اینکه یک
+  !!a{sentence} در !!{structure}ی متناهی ارضاپذیر است (یا در همهٔ
+  !!{structure}sی متناهی معتبر است) آسان‌تر باشد. می‌توانیم اثبات
+  حل‌ناپذیری مسئلهٔ تصمیم را سازگار کنیم تا نشان دهد چنین نیست.
+
+  نخست اگر به اثبات \olref[ver]{lem:halt-if-valid} بازگردید، می‌بینید
+  آنجا مدلی چون~$\Struct M$ از~$!T(M,w)$ ساختیم که دقیقاً کاری را
+  توصیف می‌کند که ماشین~$M$ پس از آغاز با ورودی~$w$ انجام می‌دهد.
+  دامنهٔ آن مدل~$\Nat$ و بنابراین نامتناهی بود. اما اگر $M$ واقعاً
+  روی ورودی~$w$ متوقف شود، می‌توانیم مدل متناهی~$\Struct M'$ را به
+  همان شیوه بسازیم. فرض کنید $M$ پس از آغاز با ورودی~$w$ بعد از~$k$
+  گام متوقف شود. دامنهٔ~$\Domain{M'}$ را مجموعهٔ
+  $\{0,\dots,n\}$ بگیرید، که در آن $n$ بزرگ‌ترِ~$k+1$ و طول~$w$ است،
+  و بگذارید
+  \[
+    \Assign{\prime}{M'}(x) =
+    \begin{cases}
+      x + 1 &\text{اگر $x < n$}\\
+      n &\text{در غیر این صورت،}
+    \end{cases}
+  \]
+  و $\tuple{x,y}\in\Assign{<}{M'}$ اگر و تنها اگر $x<y$ یا
+  $x=y=n$. از جهت‌های دیگر $\Struct{M'}$ درست مانند~$\Struct M$
+  تعریف می‌شود. بنا بر تعریف~$\Struct{M'}$ و درست مانند اثبات
+  \olref[ver]{lem:halt-if-valid}، $\Sat{M'}{!T(M,w)}$. و چون فرض کردیم
+  $M$ روی ورودی~$w$ متوقف می‌شود، $\Sat{M'}{!E(M,w)}$. پس
+  $\Struct{M'}$ مدلی متناهی از~$!T(M,w)\land !E(M,w)$ است (توجه کنید
+  که~$\lif$ را با~$\land$ جایگزین کرده‌ایم).
+
+  نیمی از راه اثبات را پیموده‌ایم: نشان داده‌ایم اگر $M$ روی ورودی~$w$
+  متوقف شود، $!T(M,w)\land !E(M,w)$ مدلی متناهی دارد. متأسفانه عکس
+  این سخن برقرار نیست؛ یعنی ماشین‌های تورینگی هستند که روی بعضی
+  ورودی‌های~$w$ متوقف نمی‌شوند، اما $!T(M,w)\land !E(M,w)$ همچنان
+  مدلی متناهی دارد. برای نمونه، ماشین~$M$ را با تنها حالت~$q_0$ و
+  دستور
+  $\delta(q_0,\TMblank)=\tuple{q_0,\TMblank,\TMstay}$ در نظر بگیرید.
+  این ماشین پس از آغاز با ورودی تهی~$w=\emptyseq$ هرگز متوقف نمی‌شود:
+  در حلقه‌ای نامتناهی است اما نوار را تغییر نمی‌دهد و سر را حرکت
+  نمی‌دهد. همهٔ پیکربندی‌ها یکسان‌اند (همان حالت، همان مکان سر و همان
+  محتوای نوار). می‌توانیم !!{structure} متناهی~$\Struct{M''}$ را چنان
+  تعریف کنیم که $!T(M,\emptyseq)\land !E(M,\emptyseq)$ را ارضا کند
+  (تمرین). بااین‌حال می‌توانیم $!T(M,w)$ را به شیوه‌ای مناسب تغییر
+  دهیم تا چنین !!{structure}sیی کنار گذاشته شوند.
+
+  \begin{prob}
+    بگذارید $M$ ماشین تورینگی با تنها حالت~$q_0$ و تنها دستور
+    $\delta(q_0,\TMblank)=\tuple{q_0,\TMblank,\TMstay}$ باشد. بگذارید
+    $\Domain{M''}=\{0,1,2\}$،
+    $\Assign{\prime}{M''}(0)=\Assign{\prime}{M''}(1)=1$ و
+    $\Assign{\prime}{M''}(2)=2$، و
+    $\Assign{<}{M''}=\{\tuple{0,1},\tuple{1,1},\tuple{2,2}\}$.
+    $\Assign{\Obj Q_{q_0}}{M''}$،
+    $\Assign{\Obj S_{\TMblank}}{M''}$ و
+    $\Assign{\Obj S_{\TMendtape}}{M''}$ را چنان تعریف کنید که
+    $!T(M,\emptyseq)$ و~$!E(M,\emptyseq)$ صادق شوند و توضیح دهید چرا
+    صادق‌اند. راهنمایی: توجه کنید
+    $\delta(q_0,\TMendtape)$ تعریف‌نشده است. تضمین کنید که
+    \begin{align*}
+    & \Obj Q_{q_0}(\num{1}, \num{n}) \land \Obj S_{\TMendtape}(\num{0}, \num{n})
+      \land
+      \lforall[x][(\num{0} < x \lif \Obj S_\TMblank(x, \num{n}))] \text{\quad برای هر $n \in \Nat$}\\
+    & \lexists[y][(\Obj Q_{q_0}(\num{0}, y) \land \Obj S_{\TMendtape}(\num{0}, y))]
+    \end{align*}
+    هر دو در~$\Struct{M''}$ صادق باشند.
+  \end{prob}
+\end{explain}
+
+!!{sentence}sیی را در نظر بگیرید که کار ماشین تورینگ~$M$ را روی ورودی
+$w=\sigma_{i_1}\dots\sigma_{i_k}$ توصیف می‌کنند:
+\begin{enumerate}
+\item اصول موضوعه‌ای که اعداد و~$<$ را توصیف می‌کنند (درست مانند
+تعریف~$!T(M,w)$ در \olref[rep]{sec}).
+\item اصول موضوعه‌ای که پیکربندی ورودی را توصیف می‌کنند: درست مانند
+تعریف~$!T(M,w)$.
+\item اصول موضوعه‌ای که گذار از یک پیکربندی به پیکربندی بعدی را توصیف
+  می‌کنند:
+
+در ادامه، $!A(x,y)$ را مانند پیش بگیرید و بگذارید
+\[
+  !B(y) \ident \lforall[x][(x < y \lif \eq/[x][y])].
+\]
+\begin{enumerate}
+\item \ollabel{rep-right} به ازای هر دستور
+  $\delta(q_i,\sigma)=\tuple{q_j,\sigma',\TMright}$، !!{sentence}ٔ زیر:
+\begin{align*}
+& \lforall[x][\lforall[y][(
+   (\Obj Q_{q_i}(x, y) \land \Obj S_{\sigma}(x, y)) \lif {}]] \\
+&\qquad   (\Obj Q_{q_j}(x', y') \land \Obj S_{\sigma'}(x, y') \land
+!A(x, y) \land !B(y')))
+\end{align*}
+\item \ollabel{rep-left} به ازای هر دستور
+  $\delta(q_i,\sigma)=\tuple{q_j,\sigma',\TMleft}$، !!{sentence}ٔ زیر:
+\begin{align*}
+& \lforall[x][\lforall[y][
+    ((\Obj Q_{q_i}(x', y) \land \Obj S_{\sigma}(x', y)) \lif {}]]\\
+& \qquad   (\Obj Q_{q_j}(x, y') \land \Obj S_{\sigma'}(x', y') \land
+!A(x', y) \land !B(y'))) \land {}\\
+& \lforall[y][((\Obj Q_{q_i}(\num{0}, y) \land \Obj S_{\sigma}(\num{0},
+    y)) \lif {}]\\
+& \qquad (\Obj Q_{q_j}(\num{0}, y') \land \Obj S_{\sigma'}(\num{0},
+  y') \land !A(\num{0}, y) \land !B(y')))
+\end{align*}
+\item \ollabel{rep-stay} به ازای هر دستور
+  $\delta(q_i,\sigma)=\tuple{q_j,\sigma',\TMstay}$، !!{sentence}ٔ زیر:
+\begin{align*}
+& \lforall[x][\lforall[y][(
+   (\Obj Q_{q_i}(x, y) \land \Obj S_{\sigma}(x, y)) \lif {}]] \\
+&\qquad (\Obj Q_{q_j}(x, y') \land \Obj S_{\sigma'}(x, y') \land
+!A(x, y) \land !B(y')))
+\end{align*}
+\end{enumerate}
+چنان‌که می‌بینید، !!{sentence}sیی که گذارهای~$M$ را توصیف می‌کنند همان
+!!{sentence}های متناظر در~$!T(M,w)$ هستند، جز آنکه $!B(y')$ را در پایان
+می‌افزاییم. $!B(y')$ تضمین می‌کند عدد~$y'$ مربوط به پیکربندی «بعدی»
+با همهٔ اعداد پیشین~$\Obj 0$، $\Obj 0'$،~\dots تفاوت دارد.
+% \item Sentences that express consistency conditions:
+% \begin{enumerate}
+%   \item\ollabel{rep-con-symb}%
+%   !!^a{sentence} that says that no square can have more than one
+%   symbol on it at any given time:
+%   \[\lforall[x][\lforall[y][(\Obj S_{\sigma}(x, y) \lif \lnot \Obj
+%   S_{\sigma'}(x, y))]],\]
+%   for every pair $\sigma \neq \sigma'$ of tape symbols of~$T$.
+%   \item\ollabel{rep-con-state}%
+%   !!^a{sentence} that says that $M$ cannot be in more than one state
+%   at any given time:
+%   \[\lforall[x][\lforall[y][(\Obj Q_{q}(x, y) \lif
+%   \lforall[z][\lnot \Obj
+%   Q_{q'}(z, y))]],\]
+%   for every pair $q \neq q'$ of states of~$T$.
+%   \item\ollabel{rep-con-tape}%
+%   !!^a{sentence} that says that $M$ cannot be on more than one tape
+%   square at any given time:
+%   \[\lforall[x][\lforall[y][(\Obj Q_{q}(x, y) \lif
+%   \lforall[z][\eq/[z][y]\lif \lnot \Obj
+%   Q_{q'}(z, y))]],\]
+%   for every pair $q$, $q'$ of states of~$T$.
+% \end{enumerate}
+\end{enumerate}
+بگذارید $!T'(M,w)$ عطف همهٔ !!{sentence}sی بالا برای ماشین تورینگ~$M$
+و ورودی~$w$ باشد.
+
+\begin{lem}\ollabel{lem:halts-sat}
+  اگر $M$ پس از آغاز با ورودی~$w$ متوقف شود،
+  $!T'(M,w)\land !E(M,w)$ مدلی متناهی دارد.
+\end{lem}
+
+\begin{proof}
+  بگذارید $\Struct{M'}$ مانند ساختارِ اثبات
+  \olref[ver]{lem:halt-if-valid} باشد، جز اینکه
+  \begin{align*}
+    \Domain{M'} & = \{0, \dots, n\},\\
+    \Assign{\prime}{M'}(x) & =
+    \begin{cases}
+      x + 1 &\text{اگر $x < n$}\\
+      n &\text{در غیر این صورت،}
+    \end{cases} \\
+    \tuple{x,y} \in \Assign{<}{M'} &\text{ اگر و تنها اگر $x < y$ یا $x = y = n$،}
+  \end{align*}
+  که در آن $n=\max(k+1,\len{w})$ و~$k$ کوچک‌ترین عددی است که $M$ پس
+  از آغاز با ورودی~$w$ بعد از~$k$ گام متوقف شده باشد. بررسی اینکه
+  $\Sat{M'}{!T'(M,w)\land !E(M,w)}$ را به‌عنوان تمرین وا می‌گذاریم.
+\end{proof}
+
+\begin{prob}
+  اثبات \olref[tur][und][tra]{lem:halts-sat} را با اثبات
+  $\Sat{M'}{!T'(M,w)\land !E(M,w)}$ کامل کنید.
+\end{prob}
+
+\begin{lem}\ollabel{lem:sat-halts}
+  اگر $!T'(M,w)\land !E(M,w)$ مدلی متناهی داشته باشد، $M$ پس از آغاز
+  با ورودی~$w$ متوقف می‌شود.
+\end{lem}
+
+\begin{proof}
+  عکس نقیض را نشان می‌دهیم. فرض کنید $M$ پس از آغاز روی~$w$ متوقف
+  نشود. اگر $!T'(M,w)\land !E(M,w)$ اصلاً مدلی نداشته باشد، کار تمام
+  است. پس فرض کنید $\Struct M$ مدلی از
+  $!T'(M,w)\land !E(M,w)$ باشد. باید نشان دهیم متناهی نیست.
+
+  درست مانند \olref[ver]{lem:config} می‌توانیم ثابت کنیم اگر $M$ پس
+  از آغاز با ورودی~$w$ پس از~$n$ گام متوقف نشده باشد، آنگاه
+  $!T'(M,w)\Entails !C(M,w,n)\land !B(\num{n})$. چون $M$ پس از آغاز
+  با ورودی~$w$ متوقف نمی‌شود، این رابطه برای هر~$n\in\Nat$ برقرار
+  است. توجه کنید بنا بر \olref[rep]{prop:mlessk}، برای هر~$k<n$،
+  $!T'(M,w)\Entails\num{k}<\num{n}$. همچنین
+  $!B(\num{n})\Entails\num{k}<\num{n}\lif
+  \eq/[\num{k}][\num{n}]$. پس برای هر~$k<n$،
+  $\Sat{M}{\eq/[\num{k}][\num{n}]}$؛ یعنی بی‌نهایت ترم~$\num{k}$
+  باید در~$\Struct M$ مقادیر متفاوتی داشته باشند. این مستلزم آن است
+  که~$\Domain{M}$ نامتناهی باشد، پس $\Struct M$ نمی‌تواند مدلی متناهی
+  از~$!T'(M,w)\land !E(M,w)$ باشد.
+\end{proof}
+
+\begin{prob}
+  اثبات \olref[tur][und][tra]{lem:sat-halts} را با اثبات این مطلب
+  کامل کنید که اگر $M$ پس از آغاز با ورودی~$w$ بعد از~$n$ گام متوقف
+  نشده باشد، آنگاه $!T'(M,w)\Entails !B(\num{n})$.
+\end{prob}
+
+\begin{thm}[قضیهٔ تراختنبروت]
+  \ollabel{thm:trakhtenbrodt}
+  تصمیم دربارهٔ اینکه یک !!{sentence}ٔ دلخواه از منطق مرتبه‌اول مدلی
+  متناهی دارد (یعنی به‌طور متناهی ارضاپذیر است) امکان‌پذیر نیست.
+\end{thm}
+
+\begin{proof}
+  فرض کنید ماشین تورینگی چون~$F$ وجود داشته باشد که مسئلهٔ ارضاپذیری
+  متناهی را تصمیم کند. آنگاه با داشتن هر ماشین تورینگ~$M$ و ورودی
+  $w$، می‌توانستیم جملهٔ~$!T'(M,w)\land !E(M,w)$ را محاسبه کنیم و با
+  $F$ تصمیم بگیریم آیا مدلی متناهی دارد. بنا بر
+  \cref{tur:und:tra:lem:halts-sat,tur:und:tra:lem:sat-halts}، این جمله
+  مدلی متناهی دارد اگر و تنها اگر $M$ پس از آغاز با ورودی~$w$ متوقف
+  شود. پس می‌توانستیم با~$F$ مسئلهٔ توقف را حل کنیم، در حالی که
+  می‌دانیم حل‌ناپذیر است.
+\end{proof}
+
+\begin{cor}\ollabel{cor:fproof-incomp}%
+  هیچ دستگاه !!{derivation}ی نمی‌تواند برای اعتبار \emph{متناهی} هم
+  درست و هم کامل باشد؛ یعنی دستگاه !!a{derivation}ی که
+  $\Proves !B$ اگر و تنها اگر برای هر !!{structure} متناهی~$\Struct M$،
+  $\Sat{M}{!B}$.
+\end{cor}
+
+\begin{proof}
+  تمرین.
+\end{proof}
+
+\begin{prob}
+  \olref[tur][und][tra]{cor:fproof-incomp} را ثابت کنید. توجه کنید
+  $!B$ در هر !!{structure} متناهی ارضا می‌شود اگر و تنها اگر
+  $\lnot !B$ به‌طور متناهی ارضاپذیر نباشد. توضیح دهید چرا ارضاپذیری
+  متناهی در معنای \olref[tur][und][uns]{thm:valid-ce}
+  نیمه‌تصمیم‌پذیر است. از این استفاده کنید تا استدلال کنید اگر دستگاه
+  !!a{derivation}ی برای اعتبار متناهی وجود داشت، ارضاپذیری متناهی
+  تصمیم‌پذیر می‌بود.
+\end{prob}
+
+
+\end{document}

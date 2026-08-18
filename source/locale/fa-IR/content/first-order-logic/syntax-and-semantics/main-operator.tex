@@ -1,0 +1,97 @@
+% Part: first-order-logic
+% Chapter: syntax-and-semantics
+% Section: main-operator
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{syn}{mai}
+
+\olsection{\printtoken{S}{main operator} یک فرمول}
+
+\begin{explain}
+اغلب سودمند است دربارهٔ آخرین عملگری سخن بگوییم که در ساخت
+!!a{formula}~$!A$ به کار رفته است. این عملگر را \emph{عملگر اصلی}
+فرمول~$!A$ می‌نامیم. به بیان شهودی، این عملگر «بیرونی‌ترین» عملگر $!A$ است.
+برای نمونه، عملگر اصلی فرمول $\lnot !A$ نماد $\lnot$، و عملگر اصلی فرمول
+$(!A \lor !B)$ نماد $\lor$ است، و به همین ترتیب.
+\end{explain}
+
+
+\begin{defn}[!!^{main operator}]
+\ollabel{def:main-op}
+\emph{!!{main operator}} !!a{formula}~$!A$ چنین تعریف می‌شود:
+\begin{enumerate}
+\item \indcase*{!A}{!A}{$\indfrm$ هیچ !!{main operator}ی ندارد.}
+
+\tagitem{prvNot}{\indcase{!A}{\lnot !B}{!!{main operator} $\indfrm$
+  نماد~$\lnot$ است.}}{}
+
+\tagitem{prvAnd}{\indcase{!A}{(!B \land !C)}{!!{main operator}
+  $\indfrm$ نماد~$\land$ است.}}{}
+
+\tagitem{prvOr}{\indcase{!A}{(!B \lor !C)}{!!{main operator}
+  $\indfrm$ نماد~$\lor$ است.}}{}
+
+\tagitem{prvIf}{\indcase{!A}{(!B \lif !C)}{!!{main operator}
+  $\indfrm$ نماد~$\lif$ است.}}{}
+
+\tagitem{prvIff}{\indcase{!A}{(!B \liff !C)}{!!{main operator}
+  $\indfrm$ نماد~$\liff$ است.}}{}
+
+\tagitem{prvAll}{\indcase{!A}{\lforall[x][!B]}{!!{main operator}
+  $\indfrm$ نماد~$\lforall$ است.}}{}
+
+\tagitem{prvEx}{\indcase{!A}{\lexists[x][!B]}{!!{main operator}
+  $\indfrm$ نماد~$\lexists$ است.}}{}
+\end{enumerate}
+\end{defn}
+
+در هر حالت، منظورمان همان \emph{رخداد} مشخص و نشان‌داده‌شدهٔ
+!!{main operator} در فرمول است. برای نمونه، چون فرمول
+$((!D \lif !E) \lif (!E \lif !D))$ به صورت $(!B \lif !C)$ است که در آن
+$!B$ برابر $(!D \lif !E)$ و $!C$ برابر $(!E \lif !D)$ است، رخداد دوم
+$\lif$ همان !!{main operator} است.
+
+\begin{explain}
+این تعریف \emph{بازگشتیِ} تابعی است که همهٔ !!{formula}sی نااتمی را به
+رخداد !!{main operator}شان می‌نگارد. به سبب شیوهٔ تعریف استقرایی
+!!{formula}s، هر !!{formula}~$!A$ یکی از حالت‌های
+\olref{def:main-op} را برآورده می‌کند. این امر تضمین می‌کند که برای هر
+!!{formula} نااتمی~$!A$ یک !!a{main operator} وجود دارد. چون هر
+!!{formula} فقط یکی از این شرط‌ها را برآورده می‌کند و چون در هر حالت
+!!{formula}sی کوچک‌تری که $!A$ از آن‌ها ساخته شده به‌طور یکتا تعیین
+می‌شوند، رخداد !!{main operator} فرمول~$!A$ یکتاست؛ پس تابعی تعریف کرده‌ایم.
+\end{explain}
+
+!!{formula}s را، بسته به اینکه !!{main operator} آن‌ها کدام نماد باشد، با
+نام‌های \olref{tab:main-op} می‌خوانیم.\iftag{defNot,defOr,defAnd,defIf,defIff,defTrue,defFalse,defEx,defAll}
+{ بااین‌حال، به یاد داشته باشید که عملگرهای تعریف‌شده رسماً در
+!!{formula}s ظاهر نمی‌شوند. آن‌ها فقط اختصارند، پس رسماً نمی‌توانند عملگر
+اصلی فرمولی باشند. ازاین‌رو در برهان‌های مربوط به همهٔ !!{formula}s لازم
+نیست جداگانه بررسی شوند.}
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{c | c | c}
+!!^{main operator} & نوع !!{formula} & نمونه\\
+\hline
+هیچ‌کدام & (!!{formula}) اتمی &
+\iftag{prvFalse}{$\lfalse$،}{}
+\iftag{prvTrue}{$\ltrue$،}{}
+$\Atom{R}{t_1, \dots, t_n}$،
+$\eq[t_1][t_2]$\\
+$\lnot$ & نفی & $\lnot !A$ \\
+$\land$ & عطف & $(!A \land !B)$ \\
+$\lor$ & فصل & $(!A \lor !B)$ \\
+$\lif$ & !!{conditional} & $(!A \lif !B)$ \\
+$\liff$ & !!{biconditional} & $(!A \liff !B)$ \\
+$\lforall[][]$ & (!!{formula}) کلی & $\lforall[x][!A]$ \\
+$\lexists[][]$ & (!!{formula}) وجودی & $\lexists[x][!A]$
+\end{tabular}
+\caption{عملگر اصلی و نام‌های !!{formula}s}
+\ollabel{tab:main-op}
+\end{table}
+
+\end{document}

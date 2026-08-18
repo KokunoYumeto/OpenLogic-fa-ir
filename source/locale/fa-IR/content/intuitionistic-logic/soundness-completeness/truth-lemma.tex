@@ -1,0 +1,84 @@
+% part: intuitionistic-logic
+% chapter: soundness-completeness
+% section: truth-lemma
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{sc}{tru}
+
+\olsection{لم صدق}
+
+لم زیر ارضا در مدل کانونی را به اینکه کدام !!{formula}ها
+!!{element}های مجموعهٔ اول~$\Delta$ هستند مرتبط می‌کند.
+
+\begin{lem}\ollabel{lem:truth}
+  اگر~$\Delta$ اول باشد، آنگاه~$\mSat{M(\Delta)}{!A}[\sigma]$ اگر و تنها
+  اگر~$\Delta(\sigma) \Proves !A$.
+\end{lem}
+
+\begin{proof}
+  با استقرا بر~$!A$.
+  \begin{enumerate}
+    \item \indcase{!A}{\lfalse}{چون~$\Delta(\sigma)$ اول است، سازگار
+      است، پس~$\Delta(\sigma) \Proves/ \indfrm$. بنا بر تعریف،
+      $\mSat/{M(\Delta)}{\indfrm}[\sigma]$.}
+    \item \indcase{!A}{p}{بنا بر تعریف~$\mSat{{}}{}$،
+      $\mSat{M(\Delta)}{\indfrm}[\sigma]$ اگر و تنها اگر
+      $\sigma \in V(p)$؛ یعنی~$\Delta(\sigma) \Proves \indfrm$.}
+    \item \indcase{!A}{\lnot !B}{این حالت همان حالت شرطی با
+      $!C = \lfalse$ است. اگر~$\Delta(\sigma) \Proves/ \lnot !B$،
+      آنگاه~$\Delta(\sigma) \cup \{!B\} \Proves/ \lfalse$. برای~$n$
+      چنان‌که~$\tuple{!B_n,!C_n}=\tuple{!B,\lfalse}$، جهان~$\sigma.n$
+      امتدادی است که در آن~$\Delta(\sigma.n) \Proves !B$ و
+      $\Delta(\sigma.n) \Proves/ \lfalse$. بنا بر فرض استقرا،
+      $\mSat{M(\Delta)}{!B}[\sigma.n]$؛ پس
+      $\mSat/{M(\Delta)}{\lnot !B}[\sigma]$. برعکس، اگر
+      $\Delta(\sigma) \Proves \lnot !B$ و~$R\sigma\sigma'$، آنگاه
+      $\Delta(\sigma) \subseteq \Delta(\sigma')$؛ بنابراین
+      $\Delta(\sigma') \Proves/ !B$، زیرا~$\Delta(\sigma')$ سازگار
+      است. بنا بر فرض استقرا، $\mSat/{M(\Delta)}{!B}[\sigma']$. پس
+      $\mSat{M(\Delta)}{\lnot !B}[\sigma]$.}
+    \item \indcase{!A}{!B \land
+      !C}{$\mSat{M(\Delta)}{\indfrm}[\sigma]$ اگر و تنها اگر
+      $\mSat{M(\Delta)}{!B}[\sigma]$ و
+      $\mSat{M(\Delta)}{!C}[\sigma]$. بنا بر فرض استقرا،
+      $\mSat{M(\Delta)}{!B}[\sigma]$ اگر و تنها اگر
+      $\Delta(\sigma) \Proves !B$، و برای~$!C$ نیز به همین ترتیب.
+      اما~$\Delta(\sigma) \Proves !B$ و
+      $\Delta(\sigma) \Proves !C$ اگر و تنها اگر
+      $\Delta(\sigma) \Proves \indfrm$.}
+    \item \indcase{!A}{!B \lor
+      !C}{$\mSat{M(\Delta)}{\indfrm}[\sigma]$ اگر و تنها اگر
+      $\mSat{M(\Delta)}{!B}[\sigma]$ یا
+      $\mSat{M(\Delta)}{!C}[\sigma]$. بنا بر فرض استقرا، این شرط اگر
+      و تنها اگر~$\Delta(\sigma) \Proves !B$ یا
+      $\Delta(\sigma) \Proves !C$. باید نشان دهیم این شرط به نوبهٔ خود
+      اگر و تنها اگر~$\Delta(\sigma) \Proves \indfrm$. جهت چپ به راست
+      روشن است. جهت راست به چپ از اول‌بودن~$\Delta(\sigma)$ نتیجه
+      می‌شود.}
+    \item \indcase{!A}{!B \lif !C}{نخست عکس نقیضِ جهت چپ به راست را
+      ثابت می‌کنیم. فرض کنید~$\Delta(\sigma) \Proves/ !B \lif !C$.
+      آنگاه~$\Delta(\sigma) \cup \{!B\} \Proves/ !C$ نیز. چون برای
+      یک~$n$، $\tuple{!B, !C}$ همان~$\tuple{!B_n, !C_n}$ است، داریم
+      $\Delta(\sigma.n) = (\Delta(\sigma) \cup \{!B\})^*$، و
+      $\Delta(\sigma.n) \Proves !B$ اما
+      $\Delta(\sigma.n) \Proves/ !C$. بنا بر فرض استقرا،
+      $\mSat{M(\Delta)}{!B}[\sigma.n]$ و
+      $\mSat/{M(\Delta)}{!C}[\sigma.n]$. چون~$R\sigma(\sigma.n)$، این
+      یعنی~$\mSat/{M(\Delta)}{\indfrm}[\sigma]$.
+
+      اکنون فرض کنید~$\Delta(\sigma) \Proves !B \lif !C$ و
+      $R\sigma\sigma'$. چون~$\Delta(\sigma) \subseteq
+      \Delta(\sigma')$، اگر~$\Delta(\sigma') \Proves !B$، آنگاه
+      $\Delta(\sigma') \Proves !C$. به بیان دیگر، برای هر~$\sigma'$
+      با~$R\sigma\sigma'$، یا~$\Delta(\sigma') \Proves/ !B$ یا
+      $\Delta(\sigma') \Proves !C$. بنا بر فرض استقرا، یعنی هرگاه
+      $R\sigma\sigma'$، یا~$\mSat/{M(\Delta)}{!B}[\sigma']$ یا
+      $\mSat{M(\Delta)}{!C}[\sigma']$؛ یعنی
+      $\mSat{M(\Delta)}{\indfrm}[\sigma]$.}
+  \end{enumerate}
+\end{proof}
+
+\end{document}

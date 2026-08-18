@@ -1,0 +1,131 @@
+% Part: second-order-logic
+% Chapter: metatheory
+% Section: second-order-arithmetic
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sol}{met}{spa}
+
+\olsection{حساب مرتبهٔ دوم}
+
+به یاد آورید که نظریهٔ حساب پئانو، یعنی~$\Th{PA}$، هشت اصل
+$\Th{Q}$ را در بر می‌گیرد:
+\begin{align*}
+& \lforall[x][\eq/[x'][\Obj 0]]\\
+& \lforall[x][\lforall[y][(\eq[x'][y'] \lif \eq[x][y])]]\\
+& \lforall[x][(\eq[x][\Obj 0] \lor \lexists[y][\eq[x][y']])]\\
+& \lforall[x][\eq[(x + \Obj 0)][x]]\\
+& \lforall[x][\lforall[y][\eq[(x + y')][(x + y)']]]\\
+& \lforall[x][\eq[(x \times \Obj 0)][\Obj 0]]\\
+& \lforall[x][\lforall[y][\eq[(x \times y')][((x \times y) + x)]]]\\
+& \lforall[x][\lforall[y][(x < y \liff \lexists[z][\eq[(z' + x)][y]])]]\\
+\intertext{به‌علاوهٔ همهٔ جمله‌های به‌شکل زیر:}
+& (!A(\Obj 0) \land \lforall[x][(!A(x) \lif !A(x'))]) \lif \lforall[x][!A(x)].
+\end{align*}
+مورد اخیر یک «شِما» است، یعنی الگویی که بی‌نهایت !!{sentence}s از زبان
+حساب تولید می‌کند: یکی برای هر !!{formula} چون~$!A(x)$. این شِما را
+\emph{شمای اصل استقرای} (مرتبهٔ اول) می‌نامیم.
+در حساب پئانوی \emph{مرتبهٔ دوم}، یعنی~$\Th{PA^2}$، می‌توان استقرا را
+با یک جملهٔ واحد بیان کرد. $\Th{PA^2}$ از هشت اصل نخست بالا به‌علاوهٔ
+\emph{اصل استقرای} (مرتبهٔ دوم) تشکیل می‌شود:
+\[
+\lforall[X][((X(\Obj 0) \land \lforall[x][(X(x) \lif X(x'))]) \lif \lforall[x][X(x)])].
+\]
+این اصل می‌گوید اگر زیرمجموعه‌ای چون~$X$ از !!{domain}،
+$\Assign{\Obj{0}}{M}$ را در بر گیرد و همراه با هر~$x \in \Domain{M}$،
+$\Assign{\prime}{M}(x)$ را نیز در بر گیرد (یعنی «نسبت به جانشین بسته»
+باشد)، آنگاه همه‌چیز را در !!{domain} در بر می‌گیرد (یعنی
+  $X = \Domain{M})$.
+
+اصل استقرا تضمین می‌کند هر !!{structure}ی که آن را ارضا می‌کند تنها
+!!{element}sی از~$\Domain{M}$ را در بر گیرد که اصول وجودشان را ایجاب
+می‌کنند؛ یعنی ارزش‌های~$\num{n}$ برای~$n \in \Nat$. مدل~$\Th{PA^2}$
+هیچ عدد نااستانداردی ندارد.
+
+\begin{thm}
+\ollabel{thm:sol-pa-standard}
+اگر~$\Sat{M}{\Th{PA^2}}$، آنگاه
+$\Domain{M} = \Setabs{\Value{\num{n}}{M}}{n \in \Nat}$.
+\end{thm}
+
+\begin{proof}
+بگذارید~$N = \Setabs{\Value{\num{n}}{M}}{n \in \Nat}$ و فرض کنید
+$\Sat{M}{\Th{PA^2}}$. آشکار است که برای هر~$n \in \Nat$،
+$\Value{\num{n}}{M} \in \Domain{M}$؛ پس~$N \subseteq \Domain{M}$.
+
+اکنون شمول در جهت دیگر را در نظر بگیرید. تخصیص متغیری چون~$s$ را با
+$s(X) = N$ در نظر بگیرید. بنا بر فرض،
+\begin{align*}
+\Sat{M}{\lforall[X][((X(\Obj 0) \land \lforall[x][(X(x)
+      \lif X(x'))]) \lif \lforall[x][X(x)])]}, & \text{ پس}\\
+\Sat{M}{(X(\Obj 0) \land \lforall[x][(X(x) \lif X(x'))]) \lif
+  \lforall[x][X(x)]}[s]. &
+\end{align*}
+مقدم این شرطی را در نظر بگیرید. $\Value{\Obj{0}}{M} \in N$ و بنابراین
+$\Sat{M}{X(\Obj{0})}[s]$. عطف دوم،
+$\lforall[x][(X(x) \lif X(x'))]$، نیز ارضا می‌شود. زیرا فرض کنید
+  $x \in N$. بنا بر تعریف~$N$، $x = \Value{\num{n}}{M}$ برای عددی
+  چون~$n$. از این نتیجه می‌شود
+$\Assign{\prime}{M}(x) = \Value{\num{n+1}}{M} \in N$. پس
+$\Assign{\prime}{M}(x) \in N$.
+
+داریم~$\Sat{M}{X(\Obj 0) \land \lforall[x][(X(x) \lif X(x'))]}[s]$.
+در نتیجه~$\Sat{M}{\lforall[x][X(x)]}[s]$. اما این بدان معناست که برای
+هر~$x \in \Domain{M}$ داریم~$x \in s(X) = N$. پس
+$\Domain{M} \subseteq N$.
+\end{proof}
+
+\begin{cor}
+\ollabel{cor:sol-pa-categorical}
+هر دو مدل~$\Th{PA^2}$ هم‌ریخت‌اند.
+\end{cor}
+
+\begin{proof}
+بنا بر~\olref{thm:sol-pa-standard}، دامنهٔ هر مدل~$\Th{PA^2}$ با
+$\Value{\num{n}}{M}$ها پر می‌شود. هر چنین مدلی، مدل~$\Th{Q}$ نیز هست.
+بنا بر~\olref[mod][mar][stm]{prop:thq-standard}، هر چنین مدلی استاندارد
+است؛ یعنی با~$\Struct{N}$ هم‌ریخت است.
+\end{proof}
+
+در بالا~$\Th{PA^2}$ را نظریه‌ای تعریف کردیم که هشت اصل حسابی نخست و
+اصل استقرای مرتبهٔ دوم را در بر دارد. در واقع، به‌لطف توان بیانی منطق
+مرتبهٔ دوم، تنها \emph{دو اصل نخست} حسابی به‌همراه استقرا برای حساب
+پئانوی مرتبهٔ دوم کافی‌اند.
+
+\begin{prop}\ollabel{prop:sol-pa-definable}
+بگذارید~$\Th{PA^{2\dagger}}$ نظریهٔ مرتبهٔ دومی باشد که دو اصل حسابی
+نخست (اصول جانشین) و اصل استقرای مرتبهٔ دوم را در بر دارد. آنگاه
+$\le$، $+$ و~$\times$ در~$\Th{PA^{2\dagger}}$ تعریف‌پذیرند.
+\end{prop}
+
+\begin{proof}
+برای نشان‌دادن تعریف‌پذیری~$\le$ باید فرمولی چون~$!A_\le(x, y)$ بیابیم
+که~$\Sat{N}{!A_\le(\num n, \num m)}$ اگر و تنها اگر~$n \le m$. فرمول
+زیر را در نظر بگیرید:
+\[
+!B(x, Y) \ident Y(x) \land \lforall[y][(Y(y) \lif Y(y'))]
+\]
+آشکار است که~$!B(\num n, Y)$ به‌وسیلهٔ مجموعه‌ای چون
+$Y \subseteq \Nat$ ارضا می‌شود اگر و تنها اگر
+$\Setabs{m}{n \le m} \subseteq Y$؛ پس می‌توانیم بگیریم
+$!A_\le(x, y) \ident \lforall[Y][(!B(x, Y) \lif Y(y))]$.
+
+برای دیدن تعریف‌پذیری جمع، ملاحظه کنید که~$k+l=m$ اگر و تنها اگر تابعی
+چون~$u$ وجود داشته باشد که~$u(0)=k$، $u(n')=u(n)'$ برای همهٔ~$n$،
+  و~$m = u(l)$. می‌توانیم این هم‌ارزی را برای تعریف جمع
+در~$\Th{PA^{2\dagger}}$ با فرمول زیر به کار بریم:
+\[
+!A_+(x,y,z) \ident \lexists[u][(u(\Obj 0)=x \land \lforall[w][u(w')=u(w)']
+  \land u(y)=z)]
+\]
+باید روشن باشد که~$\Sat{N}{!A_+(\num k, \num l, \num m)}$ اگر و تنها
+اگر~$k+l=m$.
+\end{proof}
+
+\begin{prob}
+اثبات~\olref[sol][met][spa]{prop:sol-pa-definable} را کامل کنید.
+\end{prob}
+
+\end{document}

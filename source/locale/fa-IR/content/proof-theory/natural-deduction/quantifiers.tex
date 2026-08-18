@@ -1,0 +1,199 @@
+% Part: proof-theory
+% Chapter: natural-deduction
+% Section: quantifiers
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{nat}{qua}
+
+\olsection{\usetoken{P}{proof} منظم و جانشینی}
+
+قواعد سورها به سبب «شرط‌های متغیر ویژه» که بر قواعد
+\Elim{\lexists} و~\Intro{\lforall} اعمال می‌شوند پیچیدگی‌هایی پدید
+می‌آورند. بیشتر این پیچیدگی‌ها را می‌توان با تضمین این امر برطرف کرد
+که !!{constant}~$c$ در این استنتاج‌ها هرگز دوباره به کار نرود. تعریف
+زیر را معرفی کنیم.
+
+\begin{defn}
+یک !!{proof} استنتاج طبیعی~$\delta$ \emph{منظم} است اگر:
+\begin{enumerate}
+  \item هیچ متغیر ویژهٔ~$a$ به‌عنوان متغیر ویژهٔ بیش از یک استنتاج
+  \Elim{\lexists} یا~\Intro{\lforall} به کار نرود؛ و
+  \item اگر $a$ متغیر ویژهٔ یک استنتاج \Elim{\lexists} یا
+  ~\Intro{\lforall} باشد، به‌ترتیب فقط در زیر-!!{proof} بی‌واسطه‌ای
+  که به مقدمهٔ فرعی می‌رسد، یا در زیر-برهان بی‌واسطه‌ای که به مقدمه
+  می‌رسد، ظاهر شود.
+\end{enumerate}
+\end{defn}
+
+\begin{lem}\ollabel{lem:subst-regular}
+اگر $\delta$ منظم باشد و به~$!C$ پایان یابد، $c$ یک !!a{constant}
+باشد که در~$\delta$ به‌عنوان متغیر ویژه به کار نرفته است، و~$t$ ترمی
+باشد که هیچ متغیر ویژهٔ~$\delta$ را در بر ندارد، آنگاه
+$\Subst{\delta}{t}{c}$ که با جایگزینی هر رخداد~$c$ در~$\delta$ با~$t$
+به دست می‌آید، یک !!{proof} منظم است. !!{formula} پایانی
+$\Subst{\delta}{t}{c}$ برابر $\Subst{!C}{t}{c}$ است. اگر $!A^x$ فرض
+باز~$\delta$ باشد، آنگاه $\Subst{!A}{t}{c}^x$ فرض باز
+$\Subst{\delta}{t}{c}$ است.
+\end{lem}
+
+\begin{proof}
+با استقرا بر $\pheight{\delta}$. اگر $\pheight{\delta}=0$، برهان فقط
+از فرض~$!A^x$ تشکیل شده است. آنگاه
+$\Subst{\delta}{t}{c}$ همان~$\Subst{!A}{t}{c}^x$ است.
+
+اگر $\pheight{\delta}>0$، برحسب آخرین استنتاج~$\delta$ حالت‌ها را جدا
+می‌کنیم. حالت‌های مربوط به قواعد رابط‌های گزاره‌ای آسان‌اند و به‌عنوان
+تمرین واگذار می‌شوند. حالت‌هایی را بررسی می‌کنیم که $\delta$ به یک
+استنتاج سوردار پایان می‌یابد.
+  \begin{enumerate}
+    \item اگر آخرین استنتاج $\Intro{\lforall}$ باشد، $\delta$ شکل زیر
+    را دارد:
+    \[
+    \AxiomC{}
+    \RightLabel{$\delta'$}
+    \DeduceC{$!A(a,c)$}
+    \RightLabel{\Intro{\lforall}}
+    \UnaryInfC{$\lforall[x][!A(x,c)]$}
+    \DisplayProof
+    \]
+    بنا بر فرض استقرا، $\Subst{\delta'}{t}{c}$ یک !!{proof} منظم برای
+    $!A(a,t)$ است. چون $a$ متغیر ویژهٔ~$\delta$ است، در~$t$ ظاهر
+    نمی‌شود. بنابراین آخرین استنتاج در $\Subst{\delta}{t}{c}$،
+    \[
+    \AxiomC{}
+    \RightLabel{$\Subst{\delta'}{t}{c}$}
+    \DeduceC{$!A(a,t)$}
+    \RightLabel{\Intro{\lforall}}
+    \UnaryInfC{$\lforall[x][!A(x,t)]$}
+    \DisplayProof
+    \]
+    درست است: چون $t$ شامل~$a$ نیست، نه نتیجه و نه هیچ فرض بازی شامل
+    ~‌$a$ نیست.
+
+    \item اگر آخرین استنتاج $\Elim{\lforall}$ باشد، $\delta$ شکل زیر
+    را دارد:
+    \[
+    \AxiomC{}
+    \RightLabel{$\delta'$}
+    \DeduceC{$\lforall[x][!A(x,c)]$}
+    \RightLabel{\Elim{\lforall}}
+    \UnaryInfC{$!A(s(c),c)$}
+    \DisplayProof
+    \]
+    بنا بر فرض استقرا، $\Subst{\delta'}{t}{c}$ یک !!{proof} منظم برای
+    $\lforall[x][!A(x,t)]$ است. (ترم~$s(c)$ در نتیجه ممکن است شامل~$c$
+    باشد یا نباشد.) آخرین استنتاج در $\Subst{\delta}{t}{c}$،
+    \[
+    \AxiomC{}
+    \RightLabel{$\Subst{\delta'}{t}{c}$}
+    \DeduceC{$\lforall[x][!A(x,t)]$}
+    \RightLabel{\Elim{\lforall}}
+    \UnaryInfC{$!A(s(t),t)$}
+    \DisplayProof
+    \]
+    درست است و
+    $!A(s(t),t)\ident\Subst{!A(s(c),c)}{t}{c}$.
+    حالت \Intro{\lexists} مشابه است.
+
+  \item اگر آخرین استنتاج $\Elim{\lexists}$ باشد، $\delta$ شکل زیر
+    را دارد:
+    \[
+    \AxiomC{}
+    \RightLabel{$\delta_1'$}
+    \DeduceC{$\lexists[x][!A(x,c)]$}
+    \AxiomC{$\Discharge{!A(a,c)}{x}$}
+    \RightLabel{$\delta_2'$}
+    \DeduceC{$!C$}
+    \DischargeRule{\Elim{\lexists}}{x}
+    \BinaryInfC{$!C$}
+    \DisplayProof
+    \]
+    بنا بر فرض استقرا، $\Subst{\delta_1'}{t}{c}$ و
+    $\Subst{\delta_2'}{t}{c}$ !!{proof}های منظمی هستند، به‌ترتیب برای
+    $\lexists[x][!A(x,t)]$ و برای $\Subst{!C}{t}{c}$ از فرض باز
+    ~‌$!A(a,t)^x$. چون $a$ متغیر ویژهٔ~$\delta$ است، در~$t$ ظاهر
+    نمی‌شود. بنابراین آخرین استنتاج در $\Subst{\delta}{t}{c}$ چنین
+    است:
+    \[
+    \AxiomC{}
+    \RightLabel{$\Subst{\delta_1'}{t}{c}$}
+    \DeduceC{$\lexists[x][!A(x,t)]$}
+    \AxiomC{$\Discharge{!A(a,t)}{x}$}
+    \RightLabel{$\Subst{\delta_2'}{t}{c}$}
+    \DeduceC{$\Subst{!C}{t}{c}$}
+    \DischargeRule{\Elim{\lexists}}{x}
+    \BinaryInfC{$\Subst{!C}{t}{c}$}
+    \DisplayProof
+    \]
+    و درست است: داریم
+    $\Subst{!A(x,t)}{a}{x}\ident\Subst{!A(a,c)}{t}{c}$، و $a$ نه در
+    نتیجهٔ $\Subst{!C}{t}{c}$ و نه در هیچ فرض باز، جز فرض
+    مرخص‌شوندهٔ~$!A(a,t)^x$، ظاهر می‌شود.
+  \end{enumerate}
+\end{proof}
+
+\begin{prop}\ollabel{prop:regular}
+اگر $\delta$ !!a{proof}ی در \Log{N1c} یا \Log{N1i} باشد، آنگاه یک
+!!{proof} منظم~$\delta'$ با همان ساختار، و به‌ویژه همان !!{height}،
+وجود دارد که فقط با جایگزینی متغیرهای ویژه با~$\delta$ تفاوت دارد.
+\end{prop}
+
+\begin{proof}
+فقط برای مقاصد این اثبات، یک استنتاج متغیر ویژهٔ~$\delta$ را
+\emph{پاک} بنامید اگر متغیر ویژهٔ آن، متغیر ویژهٔ استنتاج دیگری نباشد
+و جز در زیر-!!{proof} بی‌واسطهٔ همان استنتاج در هیچ جای~$\delta$ ظاهر
+نشود؛ در غیر این صورت آن را \emph{ناپاک} بنامید. بگذارید $n$ شمار
+استنتاج‌های متغیر ویژهٔ ناپاک در~$\delta$ باشد. با استقرا بر~$n$ نشان
+می‌دهیم $\delta$ را می‌توان به !!{proof} منظم مطلوب~$\delta'$ تبدیل
+کرد. اگر $n=0$، همهٔ استنتاج‌های متغیر ویژه در~$\delta$ پاک‌اند؛ پس
+$\delta$ منظم است و چیزی برای اثبات باقی نمی‌ماند. در غیر این صورت،
+یکی از بالاترین استنتاج‌های متغیر ویژه، مثلاً \Intro{\lforall}، را
+برگزینید. زیر-!!{proof}~$\delta_1$ از~$\delta$ که به آن پایان می‌یابد
+شکل زیر را دارد:
+    \[
+    \AxiomC{}
+    \RightLabel{$\delta_2$}
+    \DeduceC{$!A(c)$}
+    \RightLabel{\Intro{\lforall}}
+    \UnaryInfC{$\lforall[x][!A(x)]$}
+    \DisplayProof
+    \]
+چون $c$ متغیر ویژه است، در~$\lforall[x][!A(x)]$ یا در هیچ فرض بازی
+ظاهر نمی‌شود. برهان~$\delta_2$ منظم است، زیرا اصلاً هیچ استنتاج متغیر
+ویژه‌ای ندارد. بگذارید $a$ یک !!a{constant} باشد که در~$\delta$ ظاهر
+نمی‌شود. بنا بر \olref{lem:subst-regular}،
+$\Subst{\delta_2}{a}{c}$ یک برهان منظم برای $!A(a)$ است. بنا بر شرط
+متغیر ویژه، هیچ فرض باز~$\delta_2$ شامل~$c$ نیست؛ پس هیچ فرض باز
+$\Subst{\delta_2}{a}{c}$ شامل~$a$ نیست. بنابراین می‌توانیم
+~\Intro{\lforall} را اعمال کنیم. اگر $\delta_1$ را در~$\delta$ با
+برهان~$\delta_1'$ زیر جایگزین کنیم،
+    \[
+    \AxiomC{}
+    \RightLabel{$\Subst{\delta_2}{a}{c}$}
+    \DeduceC{$!A(a)$}
+    \RightLabel{\Intro{\lforall}}
+    \UnaryInfC{$\lforall[x][!A(x)]$}
+    \DisplayProof
+    \]
+یک استنتاج متغیر ویژهٔ ناپاک را با استنتاجی پاک جایگزین کرده‌ایم، و
+تنها تفاوت، جایگزینی متغیر ویژهٔ~$c$ با~$a$ است. برهان حاصل $n-1$
+استنتاج متغیر ویژهٔ ناپاک دارد و نتیجه از فرض استقرا به دست می‌آید.
+\end{proof}
+
+\begin{prob}
+حالتی از اثبات \olref{prop:regular} را شرح دهید که بالاترین استنتاج
+متغیر ویژه~\Elim{\lexists} است.
+\end{prob}
+
+به گزاره‌ای که همین الآن اثبات شد صریحاً استناد نخواهیم کرد، اما فرض
+می‌کنیم همهٔ !!{proof}های مورد نظر منظم‌اند؛ اگر نباشند، همیشه می‌توان
+با جایگزینی متغیرهای ویژه آن‌ها را منظم کرد.
+
+\Olref{lem:subst-regular} و \olref{prop:regular} برای
+\Log{N2c} و~\Log{N2i} نیز برقرارند. اثبات‌ها را به‌عنوان تمرین
+واگذار می‌کنیم.
+
+\end{document}

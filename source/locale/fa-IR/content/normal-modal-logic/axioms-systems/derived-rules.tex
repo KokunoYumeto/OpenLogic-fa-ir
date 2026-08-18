@@ -1,0 +1,165 @@
+% Part: normal-modal-logic
+% Chapter: axioms-systems
+% Section: derived-rules
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{prf}{der}
+
+\olsection{قواعد مشتق}
+
+یافتن و نوشتن !!{derivation}ها آشکارا دشوار، دست‌وپاگیر و تکراری است.
+برای نمونه، اغلب می‌خواهیم از~$!A \lif !B$ به~$\Box !A \lif \Box !B$
+برویم، یعنی قاعدهٔ~\RK را اعمال کنیم. این کار مستلزم یک کاربرد~\Nec،
+سپس ثبت نمونهٔ مناسب~\Ax{K} و آنگاه کاربرد~\MP است. رفتن از
+$!A \lif !B$ و~$!B \lif !C$ به~$!A \lif !C$ مستلزم ثبت نمونهٔ
+همان‌گویانهٔ (طولانی) زیر است:
+\[
+(!A \lif !B) \lif ((!B \lif !C) \lif (!A \lif !C))
+\]
+و~\MP{} را دو بار به کار می‌برد. اغلب می‌خواهیم یک زیر-!!{formula} را
+با فرمولی جایگزین کنیم که می‌دانیم با آن هم‌ارز است؛ برای نمونه،
+\iftag{prvDiamond}{$\Diamond !A$ را با~$\lnot\Box\lnot !A$}{$\Box !A$
+را با~$\lnot\Diamond\lnot !A$}، یا~$\lnot\lnot !A$ را با~$!A$.
+بنابراین، به‌جای نوشتن !!{derivation} واقعی، مناسب‌تر است صرفاً دلیل
+!!{derivable} بودن گام‌های میانی را ثبت کنیم. برای این منظور، چند واقعیت
+دربارهٔ !!{derivability} را گرد می‌آوریم.
+
+\begin{prop}
+  اگر~$\Log{K} \Proves !A_1$، \dots، $\Log{K} \Proves !A_n$ و~$!B$
+  با منطق گزاره‌ای از~$!A_1$، \dots، $!A_n$ نتیجه شود، آنگاه
+  $\Log{K} \Proves !B$.
+\end{prop}
+
+\begin{proof}
+  اگر~$!B$ با منطق گزاره‌ای از~$!A_1$، \dots،~$!A_n$ نتیجه شود، آنگاه
+  \[
+  !A_1 \lif (!A_2 \lif \cdots (!A_n \lif !B)\dots)
+  \]
+  یک نمونهٔ همان‌گویی است. با اعمال~\MP{} به تعداد~$n$ بار،
+  !!{derivation}ای از~$!B$ به دست می‌آید.
+\end{proof}
+
+کاربرد این گزاره را با~\PL نشان خواهیم داد.
+
+\begin{prop}
+  اگر~$\Log{K} \Proves !A_1 \lif (!A_2 \lif \cdots (!A_{n-1} \lif
+  !A_n)\dots)$، آنگاه~$\Log{K} \Proves \Box !A_1 \lif (\Box !A_2 \lif
+  \cdots (\Box !A_{n-1} \lif \Box !A_n)\dots)$.
+\end{prop}
+
+\begin{proof}
+  با استقرا بر~$n$، درست مانند اثباتِ \olref[nor]{prop:rk}.
+\end{proof}
+
+کاربرد این گزاره را با~\RK نشان خواهیم داد. اکنون نشان می‌دهیم این
+نتایج چگونه اثبات نتایج !!{derivability} را آسان‌تر می‌کنند.
+
+\begin{prop}
+  $\Log{K} \Proves (\Box!A \land \Box!B) \lif \Box (!A \land !B)$
+\end{prop}
+
+\begin{proof}
+  \begin{derivation}
+    1. & $\Log{K} \Proves !A \lif (!B \lif (!A \land !B))$ & \Taut \\
+    2. & $\Log{K} \Proves \Box!A \lif (\Box !B \lif \Box(!A \land !B))$ & \RK, 1\\
+    3. & $\Log{K} \Proves (\Box!A \land \Box!B) \lif \Box(!A \land !B)$ & \PL, 2
+  \end{derivation}
+\end{proof}
+
+\begin{prop}\ollabel{prop:rewriting}
+  اگر~$\Log{K} \Proves !A \liff !B$ و
+  $\Log{K} \Proves \Subst{!C}{!A}{q}$، آنگاه
+  $\Log{K} \Proves \Subst{!C}{!B}{q}$.
+\end{prop}
+
+\begin{proof}
+  تمرین.
+\end{proof}
+
+\begin{prob}
+  \olref[nml][prf][der]{prop:rewriting} را با اثبات این ادعا از راه
+  استقرا بر پیچیدگی~$!C$ ثابت کنید: اگر
+  $\Log{K} \Proves !A \liff !B$، آنگاه
+  $\Log{K} \Proves \Subst{!C}{!A}{q} \liff \Subst{!C}{!B}{q}$.
+\end{prob}
+
+این گزاره به‌ویژه هنگامی سودمند است که بخواهیم~$\Diamond$ را به~$\Box$
+(یا برعکس) تبدیل کنیم، یا نفی‌های مضاعف درون !!a{formula} را حذف کنیم.
+در ادامه، هرگاه !!a{formula}~$!C(!A)$ را به~$!C(!B)$ بازنویسی کنیم،
+کاربردهای~\olref{prop:rewriting} را با «$!B$ به‌جای~$!A$» مشخص خواهیم
+کرد. به بیان دیگر، «$!B$ به‌جای~$!A$» مخفف استدلال زیر است:
+  \begin{derivation}
+    & $\Proves !C(!A)$ \\
+    & $\Proves !A \liff !B$\\
+    & $\Proves !C(!B)$ & بنا بر~\olref{prop:rewriting}
+  \end{derivation}
+برای نمونه:
+
+\begin{prop}
+  $\Log{K} \Proves \lnot\Box p \lif \Diamond \lnot p$
+\end{prop}
+
+\begin{proof}
+  \iftag{prvDiamond}{% Diamond is primitive
+  \begin{derivation}
+    1. & $\Log{K} \Proves \Diamond \lnot p \liff \lnot\Box\lnot\lnot p$ &
+    \Dual\\
+    2. & $\Log{K} \Proves \lnot \Box \lnot\lnot p \lif \Diamond \lnot p$ & \PL, 1\\
+    3. & $\Log{K} \Proves \lnot\Box p \lif \Diamond \lnot p$ & $p$ به‌جای~$\lnot\lnot p$\\
+  \end{derivation}
+  }{% Diamond is defined
+  \begin{derivation}
+    1. & $\Log{K} \Proves \lnot \Box \lnot\lnot p \lif \Diamond \lnot p$ & \Taut\\
+    2. & $\Log{K} \Proves \lnot\Box p \lif \Diamond \lnot p$ & $p$ به‌جای~$\lnot\lnot p$\\
+  \end{derivation}
+  فرمول خط~$1$ نمونه‌ای از~$\lnot q \lif \lnot q$ با جانشینی
+  $\Box\lnot\lnot p$ به‌جای~$q$ است. $\Diamond\lnot p$ و
+  $\lnot\Box\lnot\lnot p$ یکسان‌اند، زیرا~$\Diamond$ به‌صورت
+  $\lnot\Box\lnot$ تعریف شده است.}
+\end{proof}
+
+در !!{derivation} بالا، گام نهایی «$p$ به‌جای~$\lnot\lnot p$» مخفف
+استدلال زیر است:
+  \begin{derivation}
+    & $\Log{K} \Proves \lnot \Box \lnot\lnot p \lif \Diamond \lnot
+    p$\\
+    & $\Log{K} \Proves \lnot\lnot p \liff p$ & \Taut\\
+    & $\Log{K} \Proves \lnot\Box p \lif \Diamond \lnot p$ & بنا بر~\olref{prop:rewriting}
+  \end{derivation}
+نقش‌های~$!C(q)$، $!A$ و~$!B$ در~\olref{prop:rewriting} در اینجا
+به‌ترتیب با~$\lnot \Box q \lif \Diamond \lnot p$، $\lnot\lnot p$ و
+$p$ ایفا می‌شوند.
+
+هرگاه !!a{formula} شامل زیر-!!{formula}~$\lnot\Diamond !A$ باشد،
+می‌توانیم با استفاده از~\olref{prop:rewriting} آن را با~$\Box\lnot !A$
+جایگزین کنیم، زیرا~$\Log{K} \Proves \lnot\Diamond !A \liff
+\Box\lnot !A$. این جانشینی و جانشینی‌های مشابه را صرفاً با
+«$\Box\lnot$ به‌جای~$\lnot\Diamond$» نشان می‌دهیم.
+
+گزارهٔ زیر توجیه می‌کند که می‌توانیم نتایج !!{derivability} را به‌طور
+طرحواره‌ای اثبات کنیم. برای نمونه، گزارهٔ پیشین نه‌فقط
+$\Log{K} \Proves \lnot\Box p \lif \Diamond \lnot p$، بلکه برای~$!A$
+دلخواه، $\Log{K} \Proves \lnot\Box !A \lif \Diamond \lnot !A$ را
+ثابت می‌کند.
+
+\begin{prop}
+  اگر~$!A$ نمونهٔ جانشینی~$!B$ و~$\Log{K} \Proves !B$ باشد، آنگاه
+  $\Log{K} \Proves !A$.
+\end{prop}
+
+\begin{proof}
+  بررسی این امر ملال‌آور اما معمول است که اعمال یک جانشینی بر سراسر
+  !!{derivation}، !!{derivation} درستی به دست می‌دهد (با استقرا بر طول
+  !!{derivation}~$!B$). به‌طور مشخص، نمونه‌های جانشینیِ نمونه‌های
+  همان‌گویی خود نمونهٔ همان‌گویی‌اند؛ نمونه‌های جانشینیِ نمونه‌های
+  \iftag{prvDiamond}{\Dual{} و~}{}\Ax{K} خود نمونه‌هایی از
+  \iftag{prvDiamond}{\Dual{} و~}{}\Ax{K} هستند؛ و وقتی !!{formula}هایی
+  به‌جای !!{propositional variable}ها در مقدمه‌ یا مقدمه‌ها و نتیجه
+  جانشین شوند، کاربردهای~\MP{} و~\Nec{} همچنان درست می‌مانند.
+\end{proof}
+
+
+\end{document}

@@ -1,0 +1,131 @@
+% Part: first-order-logic
+% Chapter: axiomatic-deduction
+% Section: proving-things
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{axd}{pro}}
+      {\olfileid{pl}{axd}{pro}}
+
+\olsection{نمونه‌هایی از \usetoken{P}{derivation}}
+
+
+\begin{ex}
+فرض کنید می‌خواهیم $(\lnot !D \lor !E) \lif (!D \lif !E)$ را اثبات
+کنیم. روشن است که این فرمول نمونهٔ هیچ‌یک از اصول موضوع ما نیست؛ پس باید
+برای !!{derive} کردن آن از قاعدهٔ \MP{} استفاده کنیم. تنها قاعده‌ای که
+اینجا نیاز داریم MP است؛ این قاعده با داشتن $!A$ و $!A \lif !B$ به ما
+اجازه می‌دهد~$!B$ را توجیه کنیم. یک راهبرد آن است که
+\olref[prp]{ax:lor3} را با $!A$ به‌جای $\lnot !D$، $!B$ به‌جای $!E$ و
+$!C$ به‌جای $!D \lif !E$ به کار ببریم؛ یعنی نمونهٔ
+\[
+(\lnot !D \lif (!D \lif !E)) \lif ((!E \lif (!D \lif !E)) \lif ((\lnot
+!D \lor !E) \lif (!D \lif !E))).
+\]
+چرا؟ دو بار کاربرد MP بخش پایانی را به دست می‌دهد، که همان مطلوب ماست.
+به‌آسانی می‌بینیم $\lnot !D \lif (!D \lif !E)$ نمونه‌ای از
+\olref[prp]{ax:lnot2} و $!E \lif (!D \lif !E)$ نمونه‌ای از
+\olref[prp]{ax:lif1} است. پس !!{derivation} ما چنین است:
+\begin{derivation}
+  1. &  $\lnot !D \lif (!D \lif !E)$ & \olref[prp]{ax:lnot2} \\
+  2. & $(\lnot !D \lif (!D \lif !E)) \lif {}$\\
+  &\qquad $((!E \lif (!D \lif !E)) \lif ((\lnot !D \lor !E) \lif (!D \lif !E)))$ & \olref[prp]{ax:lor3}\\
+  3. & $(!E \lif (!D \lif !E)) \lif ((\lnot !D \lor !E) \lif (!D \lif !E))$ & 1, 2, \MP\\
+  4. & $!E \lif (!D \lif !E)$ & \olref[prp]{ax:lif1}\\
+  5. & $(\lnot !D \lor !E) \lif (!D \lif !E)$ & 3, 4, \MP
+\end{derivation}
+\end{ex}
+
+\begin{ex}\ollabel{ex:identity}
+بیایید بکوشیم !!a{derivation} برای $!D \lif !D$ بیابیم. این فرمول
+نمونهٔ یک اصل موضوع نیست؛ پس باید با \MP{} آن را !!{derive} کنیم.
+\olref[prp]{ax:lif1} اصل موضوعی به‌شکل~$!A \lif !B$ است که می‌توانیم
+~\MP را بر آن اعمال کنیم. البته برای سودمندبودن این کار، $!B$ای که
+\MP{} در این حالت به‌عنوان گام درست توجیه می‌کند باید~$!D \lif !D$
+باشد، زیرا می‌خواهیم همین را !!{derive} کنیم. این بدان معناست که $!A$
+نیز باید $!D$ باشد؛ یعنی می‌توانیم نمونهٔ زیر از
+\olref[prp]{ax:lif1} را بررسی کنیم:
+\[
+!D \lif (!D \lif !D)
+\]
+برای اعمال \MP، باید مقدمهٔ دوم متناظر، یعنی~$!A$، را نیز توجیه کنیم.
+اما در مورد ما این مقدمه~$!D$ خواهد بود و نمی‌توانیم~$!D$ را به‌تنهایی
+!!{derive} کنیم. پس به راهبرد دیگری نیاز داریم.
+
+اصل موضوع دیگر که فقط~$\lif$ را دربر دارد
+\olref[prp]{ax:lif2} است، یعنی
+\[
+(!A \lif (!B \lif !C)) \lif ((!A \lif !B) \lif (!A \lif !C))
+\]
+می‌توانیم با دو بار کاربرد \MP{} به آخرین شرطیِ تودرتو برسیم. باز این
+بدان معناست که نمونه‌ای از \olref[prp]{ax:lif2} می‌خواهیم که در آن
+$!A \lif !C$ همان $!D \lif !D$، یعنی !!{formula} مورد نظر ما، باشد.
+پس البته $!A$ و $!C$ هر دو~$!D$ هستند. $!B$ را چگونه برگزینیم تا هم
+$!A \lif (!B \lif !C)$ و هم $!A \lif !B$، یعنی در مورد ما
+$!D \lif (!B \lif !D)$ و $!D \lif !B$، نیز !!{derivable} باشند؟
+عبارت نخست، مستقل از اینکه $!B$ را چه بگیریم، از پیش نمونه‌ای از
+\olref[prp]{ax:lif1} است. و $!D \lif !B$ نیز نمونهٔ دیگری از
+\olref[prp]{ax:lif1} خواهد بود، اگر $!B$ را $(!D \lif !D)$ بگیریم. پس
+!!{derivation} ما چنین است:
+\begin{derivation}
+  1. & $!D \lif ((!D \lif !D) \lif !D)$ & \olref[prp]{ax:lif1}\\
+  2. & $(!D \lif ((!D \lif !D) \lif !D)) \lif {}$\\
+  & \qquad $((!D \lif (!D \lif !D)) \lif (!D \lif !D))$ & \olref[prp]{ax:lif2}\\
+  3. & $(!D \lif (!D \lif !D)) \lif (!D \lif !D)$ & 1, 2, \MP\\
+  4. & $!D \lif (!D \lif !D)$ & \olref[prp]{ax:lif1}\\
+  5. & $!D \lif !D$ & 3, 4, \MP
+\end{derivation}
+\end{ex}
+
+\begin{ex}\ollabel{ex:chain}
+گاهی می‌خواهیم نشان دهیم از چند !!{formula} دیگر در~$\Gamma$،
+!!a{derivation} برای !!a{formula} وجود دارد. برای نمونه، نشان می‌دهیم
+می‌توان $!A \lif !C$ را از $\Gamma = \{!A \lif !B, !B \lif !C\}$
+!!{derive} کرد.
+\begin{derivation}
+  1. & $!A \lif !B$ & \Hyp\\
+  2. & $!B \lif !C$ & \Hyp\\
+  3. & $(!B \lif !C) \lif (!A \lif (!B \lif !C))$ & \olref[prp]{ax:lif1} \\
+  4. & $!A \lif (!B \lif !C)$ & 2, 3, \MP\\
+  5. & $(!A \lif (!B \lif !C)) \lif {}$\\
+  & \qquad $((!A \lif !B) \lif (!A \lif !C))$ & \olref[prp]{ax:lif2}\\
+  6. & $((!A \lif !B) \lif (!A \lif !C))$ & 4, 5, \MP\\
+  7. & $!A \lif !C$ & 1, 6, \MP
+\end{derivation}
+سطرهایی که برچسب «\Hyp» (مخفف «فرض») دارند نشان می‌دهند !!{formula}
+آن سطر !!a{element}~$\Gamma$ است.
+\end{ex}
+
+\begin{prop}
+  \ollabel{prop:chain} اگر $\Gamma \Proves !A \lif !B$ و
+  $\Gamma \Proves !B \lif !C$، آنگاه $\Gamma \Proves !A \lif !C$.
+\end{prop}
+
+\begin{proof}
+  فرض کنید $\Gamma \Proves !A \lif !B$ و $\Gamma \Proves !B \lif
+  !C$. آنگاه !!a{derivation} برای $!A \lif !B$ از~$\Gamma$ و نیز
+  !!a{derivation} برای~$!B \lif !C$ از~$\Gamma$ وجود دارد. این دو را
+  با الحاقشان در یک !!{derivation} واحد ترکیب کنید. اکنون سطرهای ۳--۷
+  !!{derivation} نمونهٔ پیشین را بیفزایید. این !!a{derivation} برای
+  $!A \lif !C$---که آخرین سطر !!{derivation} جدید است---از~$\Gamma$
+  است. توجه کنید اگر ارجاع به شمارهٔ سطر~۱ با ارجاع به آخرین سطر
+  !!{derivation} برای~$!A \lif !B$، و ارجاع به شمارهٔ سطر~۲ با ارجاع به
+  آخرین سطر !!{derivation} برای~$!B \lif !C$ جایگزین شود، توجیه‌های
+  سطرهای ۴ و~۷ همچنان معتبر می‌مانند.
+\end{proof}
+
+\begin{prob}
+با ارائهٔ !!{derivation}s از اصول موضوع نشان دهید احکام زیر برقرارند:
+\begin{enumerate}
+\item $(!A \land !B) \lif (!B \land !A)$
+\item $((!A \land !B) \lif !C) \lif (!A \lif (!B \lif !C))$
+\item $\lnot(!A \lor !B) \lif \lnot !A$.
+\end{enumerate}
+\end{prob}
+
+
+
+\end{document}

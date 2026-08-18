@@ -1,0 +1,112 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{spine}{foundation}
+
+\olsection{بنیاد}
+
+تنها \emph{تقریباً} کار را تمام کرده‌ایم---و هنوز \emph{کاملاً} به پایان
+نرسیده‌ایم---زیرا هیچ چیز در~$\ZFminus$ تضمین نمی‌کند که \emph{هر}
+مجموعه در یک~$V_\alpha$ باشد؛ یعنی هر مجموعه در مرحله‌ای تشکیل شده باشد.
+
+اکنون، به یک معنای نسبتاً سرراستِ ریاضی، برایمان \emph{مهم نیست} که آیا
+مجموعه‌هایی بیرون از سلسله‌مراتب وجود دارند یا نه. (اگر چنین مجموعه‌هایی
+وجود داشته باشند، می‌توانیم صرفاً آن‌ها را نادیده بگیریم.) اما انگیزهٔ
+\emph{مفهوم} مجموعه نزد ما این اندیشه بود که هر مجموعه در مرحله‌ای تشکیل
+می‌شود (\stageshier{} را در~\olref[z][story]{sec} ببینید). پس می‌خواهیم
+امکان وجود مجموعه‌هایی را که بیرون از سلسله‌مراتب قرار می‌گیرند منتفی
+کنیم. در نتیجه باید اصل موضوع تازه‌ای بیفزاییم که تضمین کند هر مجموعه در
+جایی از سلسله‌مراتب رخ می‌دهد.
+
+چون~$V_\alpha$ها مراحل ما هستند، شاید به‌سادگی افزودن عبارت زیر را به‌عنوان
+یک اصل موضوع در نظر بگیریم:
+
+\begin{defish}
+\emph{قاعده‌مندی.} $\forall A \exists \alpha\, A \subseteq V_\alpha$
+\end{defish}
+
+این رویکرد کاملاً معقولی می‌بود. بااین‌حال، به دلایلی که در بخش بعد
+توضیح داده خواهند شد، به‌جای آن اصل موضوع بدیل زیر را اختیار می‌کنیم:
+
+\begin{axiom}[بنیاد]
+$(\forall A \neq \emptyset)(\exists B \in A)A \cap B = \emptyset$.
+\end{axiom}
+
+با قدری کوشش می‌توانیم در~$\ZFminus$ نشان دهیم بنیاد مستلزم قاعده‌مندی
+است:
+\begin{defn}
+برای هر مجموعهٔ~$A$، بگذارید:
+\begin{align*}
+	\text{cl}_0(A) &= A,\\
+	\text{cl}_{n+1}(A) &= \bigcup \text{cl}_n(A),\\
+	\text{trcl}(A) &= \bigcup_{n < \omega} \text{cl}_{n}(A).
+\end{align*}
+$\text{trcl}(A)$ را \emph{بستار متعدیِ}~$A$ می‌نامیم.
+\end{defn}
+\noindent
+نام «بستار متعدی» برازنده است:
+\begin{prop}\ollabel{subsetoftrcl}
+$A\subseteq\trcl{A}$ و~$\trcl{A}$ مجموعه‌ای متعدی است.
+\end{prop}
+
+\begin{proof}
+آشکار است که~$A=\text{cl}_0(A)\subseteq\text{trcl}(A)$. همچنین اگر
+$x\in b\in\trcl{A}$، آنگاه برای یک~$n$ داریم
+$b\in\text{cl}_n(A)$، پس
+$x\in\text{cl}_{n+1}(A)\subseteq\text{trcl}(A)$.
+\end{proof}
+
+\begin{lem}\ollabel{lem:TransitiveWellFounded}
+اگر~$A$ مجموعه‌ای متعدی باشد، یک~$\alpha$ وجود دارد به‌طوری‌که
+$A\subseteq V_\alpha$.
+\end{lem}
+
+\begin{proof}
+با یادآوری تعریف «$\supstrict(X)$» از
+\olref[ordinals][opps]{defsupstrict}، دو مجموعهٔ زیر را تعریف کنید:
+\begin{align*}
+	D  &= \Setabs{x \in A}{\forall \delta\ x \nsubseteq V_\delta}\\
+	\alpha &= \supstrict\Setabs{\delta}{(\exists x \in A)
+	(x \subseteq V_\delta \land (\forall \gamma \in \delta)x \nsubseteq V_\gamma)}
+\end{align*}
+فرض کنید~$D=\emptyset$. پس اگر~$x\in A$، یک~$\delta$ وجود دارد
+به‌طوری‌که~$x\subseteq V_\delta$؛ و بنا بر خوش‌ترتیبی اعداد ترتیبی،
+$(\forall \gamma\in\delta)x\nsubseteq V_\gamma$. در نتیجه
+$\delta\in\alpha$ و بنا بر
+\olref[spine][Valphabasic]{Valphabasicprops}، $x\in V_\alpha$. پس
+$A\subseteq V_\alpha$، چنان‌که می‌خواستیم.
+
+بنابراین کافی است نشان دهیم~$D=\emptyset$. برای برهان خلف خلافش را فرض
+کنید. بنا بر بنیاد، یک~$B\in D\subseteq A$ وجود دارد به‌طوری‌که
+$D\cap B=\emptyset$. اگر~$x\in B$، چون~$A$ متعدی است، $x\in A$؛ و چون
+$x\notin D$، نتیجه می‌شود~$\exists\delta\ x\subseteq V_\delta$. اکنون
+بگذارید
+\[
+	\beta = \supstrict\Setabs{\delta}{(\exists x \in B)(x \subseteq V_\delta \land (\forall \gamma < \delta)x \nsubseteq V_\gamma)}.
+\]
+همانند قبل، $B\subseteq V_\beta$؛ و این با~$B\in D$ تناقض دارد.
+\end{proof}
+
+\begin{thm}\ollabel{zfentailsregularity}
+قاعده‌مندی برقرار است.
+\end{thm}
+
+\begin{proof}
+$A$ را ثابت بگیرید. بنا بر~\olref{subsetoftrcl}،
+$A\subseteq\trcl{A}$ و~$\trcl{A}$ متعدی است. پس بنا بر
+\olref{lem:TransitiveWellFounded} یک~$\alpha$ وجود دارد به‌طوری‌که
+$A\subseteq\trcl{A}\subseteq V_\alpha$.
+\end{proof}
+
+این نتایج نشان می‌دهند~$\ZFminus$ شرطیِ
+$\emph{بنیاد}\Rightarrow\emph{قاعده‌مندی}$ را اثبات می‌کند. در
+\olref[spine][rank]{zfminusregularityfoundation} نشان خواهیم داد
+$\ZFminus$ شرطیِ
+$\emph{قاعده‌مندی}\Rightarrow\emph{بنیاد}$ را نیز اثبات می‌کند.
+بنابراین بنیاد و قاعده‌مندی (نسبت به~$\ZFminus$) \emph{هم‌ارزند}. اما این
+بدین معناست که با فرض~$\ZFminus$ می‌توانیم بنیاد را با هم‌ارزی‌اش با
+قاعده‌مندی توجیه کنیم؛ و قاعده‌مندی را نیز بی‌درنگ بر پایهٔ
+\stageshier{} توجیه می‌کنیم.
+
+\end{document}

@@ -1,0 +1,56 @@
+% Part: first-order-logic
+% Chapter: sequent-calculus
+
+\documentclass[../../../include/open-logic-chapter]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olchapter{fol}{seq}{حساب دنباله‌ای}}
+      {\olchapter{pl}{seq}{حساب دنباله‌ای}}
+
+\begin{editorial}
+  این فصل حساب دنباله‌ای استاندارد گنتسن، ال‌کی، را برای منطق کلاسیک
+  مرتبهٔ اول عرضه می‌کند. فصل به مثال‌ها و تمرین‌های بیشتری نیاز دارد.
+  برای گنجاندن یا کنارگذاشتن مطالب مربوط به حساب دنباله‌ای به‌منزلهٔ یک
+  دستگاه اثبات، از برچسب «prfLK» استفاده کنید.
+\end{editorial}
+
+\olimport{rules-and-proofs}
+
+\olimport{propositional-rules}
+
+\iftag{FOL}{%
+  \olimport{quantifier-rules}
+}{}
+
+\olimport{structural-rules}
+
+\olimport{derivations}
+
+\olimport{proving-things}
+
+\iftag{FOL}{%
+  \olimport{proving-things-quant}
+}{}
+
+\olimport{proof-theoretic-notions}
+
+\olimport{provability-consistency}
+
+\olimport{provability-propositional}
+
+\iftag{FOL}{%
+  \olimport{provability-quantifiers}
+}{}
+
+\olimport{soundness}
+
+\iftag{FOL}{%
+  \olimport{identity}
+  \olimport{soundness-identity}
+}{}
+
+\OLEndChapterHook
+
+\end{document}

@@ -1,0 +1,157 @@
+% Part: incompleteness
+% Chapter: incompleteness-provability
+% Section: lob-thm
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{inp}{lob}
+
+\olsection{قضیهٔ لوب}
+
+جملهٔ گودلیِ نظریهٔ~$\Th{T}$ نقطهٔ ثابتی برای~$\lnot
+\OProv[\Th{T}](y)$ است، یعنی !!a{sentence} چون~$!G$ که
+\[
+\Th{T} \Proves \lnot \OProv[\Th{T}](\gn{!G}) \liff !G.
+\]
+اگر~$\Th{T}$ سازگار باشد، این جمله !!{derivable} نیست؛ زیرا اگر
+$\Th{T} \Proves !G$، آنگاه (الف) بنا بر شرط~(۱) !!{derivability}،
+$\Th{T} \Proves \OProv[\Th{T}](\gn{!G})$، و (ب) از
+$\Th{T} \Proves !G$ همراه با
+$\Th{T} \Proves \lnot \OProv[\Th{T}](\gn{!G}) \liff !G$ به دست
+می‌آید~$\Th{T} \Proves \lnot \OProv[\Th{T}](\gn{!G})$؛ بنابراین
+$\Th{T}$ ناسازگار می‌شد. اکنون طبیعی است دربارهٔ وضعیت نقطهٔ ثابتی
+برای~$\OProv[\Th{T}](y)$ بپرسیم، یعنی !!a{sentence} چون~$!H$ که
+\[
+\Th{T} \Proves \OProv[\Th{T}](\gn{!H}) \liff !H.
+\]
+اگر این جمله !!{derivable} بود، بنا بر شرط~(۱) داشتیم
+$\Th{T} \Proves \OProv[\Th{T}](\gn{!H})$؛ اما همین نتیجه با اعمال
+قیاس استثنایی بر هم‌ارزی بالا نیز به دست می‌آید. پس، دست‌کم نه با همان
+استدلالی که در مورد جملهٔ گودلی به کار رفت، به ناسازگاری~$\Th{T}$
+نمی‌رسیم. البته این نشان نمی‌دهد که~$\Th{T}$ \emph{واقعاً} $!H$ را
+!!{derive} می‌کند.
+
+اگر پرسش را اندکی تعمیم دهیم می‌توانیم در پاسخ به آن پیشرفت کنیم. جهت
+چپ‌به‌راستِ هم‌ارزی نقطهٔ ثابت،
+$\OProv[\Th{T}](\gn{!H}) \lif !H$، نمونه‌ای از شمایی کلی است که
+\emph{اصل بازتاب} نامیده می‌شود:
+$\OProv[\Th{T}](\gn{!A}) \lif !A$. این نام از آن روست که شِما، به یک
+معنا، بیان می‌کند~$\Th{T}$ می‌تواند دربارهٔ آنچه !!{derive} می‌کند
+«بازتاب» داشته باشد؛ اساساً می‌گوید: «اگر~$\Th{T}$ بتواند~$!A$ را
+!!{derive} کند، آنگاه~$!A$ صادق است»، برای هر~$!A$. البته این فقط
+دربارهٔ نظریه‌های درست صادق است و نشان می‌دهد نظریه‌ها عموماً هر نمونهٔ
+آن را !!{derive} نمی‌کنند. پس یک نظریه (که به‌اندازهٔ کافی قوی باشد و
+شرایط !!{derivability} را برآورده کند) کدام نمونه‌ها را می‌تواند
+!!{derive} کند؟ بی‌گمان همهٔ نمونه‌هایی که خود~$!A$ در آن‌ها
+!!{derivable} است. همین و بس، چنان‌که نتیجهٔ بعد نشان می‌دهد.
+
+\begin{thm}\ollabel{thm:lob}
+فرض کنید~$\Th{T}$ نظریه‌ای !!a{axiomatizable} و گسترشی از~$\Th{Q}$ باشد
+و~$\OProv[\Th{T}](y)$ فرمولی باشد که شرایط P1--P3 از~\olref[2in]{sec}
+را برآورده می‌کند. اگر~$!A$ یک جمله باشد و~$\Th{T}$،
+$\OProv[\Th{T}](\gn{!A}) \lif !A$ را !!{derive}s کند، آنگاه در واقع
+$\Th{T}$، $!A$ را !!{derive}s می‌کند.
+\end{thm}
+
+به بیان دیگر، اگر~$\Th{T} \Proves/ !A$، آنگاه
+$\Th{T} \Proves/ \OProv[\Th{T}](\gn{!A}) \lif !A$. این نتیجه به
+قضیهٔ لوب معروف است.
+
+\begin{explain}
+شهود راهنمای اثبات قضیهٔ لوب، اثباتی هوشمندانه برای وجود بابانوئل است.
+(اگر این نتیجه را نمی‌پسندید، می‌توانید هر نتیجهٔ دیگری را که می‌خواهید
+جایگزین کنید.) استدلال چنین است:
+\begin{enumerate}
+\item بگذارید~$X$ جملهٔ «اگر~$X$ صادق باشد، آنگاه بابانوئل وجود دارد»
+  باشد.
+\item فرض کنید~$X$ صادق باشد.
+\item آنگاه آنچه می‌گوید برقرار است؛ یعنی داریم: اگر~$X$ صادق باشد،
+  آنگاه بابانوئل وجود دارد.
+\item چون فرض می‌کنیم~$X$ صادق است، با قیاس استثنایی از (۲) و~(۳)
+  می‌توانیم نتیجه بگیریم بابانوئل وجود دارد.
+\item توانستیم (۴)، یعنی «بابانوئل وجود دارد»، را از فرض~(۲)، یعنی
+  «$X$ صادق است»، به دست آوریم. با اثبات شرطی نشان داده‌ایم: «اگر~$X$
+  صادق باشد، آنگاه بابانوئل وجود دارد.»
+\item اما این دقیقاً همان جملهٔ~$X$ است. پس نشان داده‌ایم~$X$ صادق است.
+\item اما آنگاه بنا بر استدلال (۲)--(۴) بالا، بابانوئل وجود دارد.
+\end{enumerate}
+صوری‌سازی این ایده، با جایگزینی «صادق است» با «!!{derivable} است» و
+«بابانوئل وجود دارد» با~$!A$، اثبات قضیهٔ لوب را به دست می‌دهد. ترفند
+آن است که لم نقطهٔ ثابت را بر !!{formula}~$\OProv[\Th{T}](y) \lif !A$
+اعمال کنیم. نقطهٔ ثابت آن متناظر با جملهٔ~$X$ در طرح پیشین است.
+\end{explain}
+
+\begin{proof}[اثبات \olref{thm:lob}]
+فرض کنید~$!A$ !!a{sentence}ی باشد چنان‌که~$\Th{T}$،
+$\OProv[\Th{T}](\gn{!A}) \lif !A$ را !!{derive}s می‌کند. بگذارید
+$!B(y)$ همان !!{formula}~$\OProv[\Th{T}](y) \lif !A$ باشد و با لم
+نقطهٔ ثابت !!a{sentence} چون~$!D$ بیابید به‌گونه‌ای که~$\Th{T}$،
+$!D \liff !B(\gn{!D})$ را !!{derive}s می‌کند. آنگاه هر یک از عبارت‌های
+زیر در~$\Th{T}$ !!{derivable} است:
+\begin{align}
+  & !D \liff (\OProv[\Th{T}](\gn{!D}) \lif !A) \ollabel{L-1}\\
+  & \qquad \text{$!D$ نقطهٔ ثابتی برای~$!B(y)$ است}\notag \\
+  & !D \lif (\OProv[\Th{T}](\gn{!D}) \lif !A) \ollabel{L-2}\\
+  & \qquad\text{از \olref{L-1}}\notag\\
+  & \OProv[\Th{T}](\gn{!D \lif (\OProv[\Th{T}](\gn{!D}) \lif !A)}) \ollabel{L-3}\\
+  & \qquad \text{از \olref{L-2} بنا بر شرط P1}\notag \\
+  & \OProv[\Th{T}](\gn{!D}) \lif \OProv[\Th{T}](\gn{\OProv[\Th{T}](\gn{!D}) \lif !A})
+  \ollabel{L-4}\\
+  &\qquad \text{از \olref{L-3} با استفاده از شرط P2}\notag \\
+  & \OProv[\Th{T}](\gn{!D}) \lif (\OProv[\Th{T}](\gn{\OProv[\Th{T}](\gn{!D})}) \lif \OProv[\Th{T}](\gn{!A})) \ollabel{L-5}\\
+  &\qquad \text{از \olref{L-4} با استفادهٔ دوباره از P2} \notag\\
+& \OProv[\Th{T}](\gn{!D}) \lif \OProv[\Th{T}](\gn{\OProv[\Th{T}](\gn{!D})}) \ollabel{L-6}\\
+  & \qquad\text{بنا بر شرط P3 از !!{derivability}} \notag\\
+  & \OProv[\Th{T}](\gn{!D}) \lif \OProv[\Th{T}](\gn{!A}) \ollabel{L-7} \\
+  &\qquad\text{از \olref{L-5} و \olref{L-6}}\notag\\
+  & \OProv[\Th{T}](\gn{!A}) \lif !A \ollabel{L-8}\\
+  &\qquad\text{بنا بر فرض قضیه} \notag\\
+  & \OProv[\Th{T}](\gn{!D}) \lif !A \ollabel{L-9}\\
+  &\qquad\text{از \olref{L-7} و \olref{L-8}}\notag\\
+  & (\OProv[\Th{T}](\gn{!D}) \lif !A) \lif !D \ollabel{L-10}\\
+  & \qquad \text{از \olref{L-1}}\notag \\
+  & !D \ollabel{L-11}\\
+  & \qquad\text{از \olref{L-9} و \olref{L-10}}\notag \\
+  & \OProv[\Th{T}](\gn{!D}) \ollabel{L-12}\\
+  & \qquad\text{از \olref{L-11} بنا بر شرط~P1}\notag \\
+  & !A \qquad\qquad\text{از \olref{L-8} و \olref{L-12}}\notag
+\end{align}
+\end{proof}
+
+با داشتن قضیهٔ لوب، اثبات کوتاهی برای قضیهٔ دوم ناتمامیت (برای
+نظریه‌هایی با !!a{derivability} محمولی که شرایط P1--P3 را برآورده
+می‌کند) داریم: اگر~$\Th{T} \Proves
+\OProv[\Th{T}](\gn{\lfalse}) \lif \lfalse$، آنگاه
+$\Th{T} \Proves \lfalse$. اگر~$\Th{T}$ سازگار باشد،
+$\Th{T} \Proves/ \lfalse$. پس
+$\Th{T} \Proves/ \OProv[\Th{T}](\gn{\lfalse}) \lif \lfalse$، یعنی
+$\Th{T} \Proves/ \OCon[\Th{T}]$. همچنین می‌توانیم آن را به کار بریم
+تا نشان دهیم~$!H$، یعنی نقطهٔ ثابت~$\OProv[\Th{T}](x)$، !!{derivable}
+است. زیرا
+\begin{align*}
+  \Th{T} & \Proves \OProv[\Th{T}](\gn{!H}) \liff !H\\
+  \intertext{به‌ویژه}
+    \Th{T} & \Proves \OProv[\Th{T}](\gn{!H}) \lif !H
+\end{align*}
+و بنابراین بنا بر قضیهٔ لوب، $\Th{T} \Proves !H$.
+
+% Going in the other direction, for homework I
+% may ask you to work through a short proof of L"ob's theorem, using
+% the second incompleteness theorem instead of the fixed-point lemma.
+
+\begin{prob}
+فرض کنید~$\Th{T}$ نظریه‌ای به‌طور محاسبه‌پذیر اصل‌بندی‌شده و
+$\OProv[\Th{T}]$ !!a{derivability} محمولی برای~$\Th{T}$ باشد. چهار
+گزارهٔ زیر را در نظر بگیرید:
+\begin{enumerate}
+\item اگر~$T \Proves !A$، آنگاه~$T \Proves \OProv[\Th{T}](\gn{!A})$.
+\item $T \Proves !A \lif \OProv[\Th{T}](\gn{!A})$.
+\item اگر~$T \Proves \OProv[\Th{T}](\gn{!A})$، آنگاه~$T \Proves !A$.
+\item $T \Proves \OProv[\Th{T}](\gn{!A}) \lif !A$
+\end{enumerate}
+هر یک از این گزاره‌ها تحت چه شرایطی صادق است؟
+\end{prob}
+
+\end{document}

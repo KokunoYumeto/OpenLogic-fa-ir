@@ -1,0 +1,287 @@
+% Part: proof-theory
+% Chapter: natural-deduction
+% Section: rules-proofs
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{nat}{rp}
+
+\olsection{قواعد و \usetoken{P}{proof}}
+
+با چند تعریف و تثبیت پاره‌ای اصطلاحات آغاز می‌کنیم.
+
+دو قاعدهٔ \Log{N1c} و~\Log{N1i} را در نظر بگیرید که در آن‌ها $!A
+\lif !B$ ظاهر می‌شود.
+\[
+\bottomAlignProof
+\AxiomC{$\Discharge{!A}{x}$}
+\shortDeduce
+\DeduceC{$!B$}
+\DischargeRule{\Intro{\lif}}{x}
+\UnaryInfC{$!A \lif !B$}
+\DisplayProof
+\qquad
+\bottomAlignProof
+\AxiomC{$!A \lif !B$}
+\AxiomC{$!A$}
+\RightLabel{\Elim{\lif}}
+\BinaryInfC{$!B$}
+\DisplayProof
+\]
+قاعدهٔ \Elim{\lif} به‌اندازهٔ کافی ساده است. !!{formula}های بالای خط
+\emph{مقدمه‌ها} هستند. !!{formula} سمت چپ !!{formula} \emph{اصلی}
+~$!A\lif !B$ است. همهٔ قواعد !!{elimination} یک چنین مقدمه‌ای دارند
+که همیشه در دورترین سمت چپ قرار می‌گیرد و \emph{مقدمهٔ عمدهٔ} استنتاج
+نامیده می‌شود. اگر مقدمه‌های دیگری، مانند همین‌جا، وجود داشته باشند
+\emph{مقدمه‌های فرعی} نام دارند. مقدمه یا مقدمه‌های قواعد
+!!{introduction} نیز مقدمهٔ عمده نامیده می‌شوند. !!{formula} زیر خط
+\emph{نتیجه} است.
+
+قاعدهٔ \Intro{\lif} فقط یک مقدمه دارد و اینجا نتیجه، فرمول اصلی
+~$!A\lif !B$ است. همهٔ قواعد !!{introduction} همین‌گونه‌اند: نتیجه
+فرمول اصلی است و عملگر اصلی آن همان عملگری است که «معرفی» می‌شود.
+
+نماد $\Discharge{!A}{x}$ معنای زیر را دارد. در !!a{proof}، استنتاج
+\Intro{\lif} بر !!a{formula}~$!B$ به‌عنوان مقدمه اعمال می‌شود.
+زیر-!!{proof} منتهی به~$!B$ تعدادی !!{formula} آغازین دارد که
+\emph{فرض} نامیده می‌شوند. !!^a{proof} برای~$!B$ از یک یا چند فرض به
+شکل~$!A$، !!a{proof}ی است که نشان می‌دهد $!A$ مستلزم~$!B$ است. وقتی
+قاعدهٔ \Intro{\lif} را اعمال می‌کنیم، $!A\lif !B$ را نتیجه می‌گیریم
+و نتیجه دیگر به فرض~$!A$ وابسته نیست. برای نشان‌دادن این امر، فرض‌های
+به شکل~$!A$ در !!{proof} شامل استنتاج~\Intro{\lif} را \emph{مرخص} یا
+\emph{بسته} می‌کنیم. قاعده مشخص می‌کند کدام فرض‌ها را می‌توان مرخص
+کرد. در \Intro{\lif} با نتیجهٔ $!A\lif !B$، این‌ها فرض‌های به
+شکل~$!A$ هستند، یعنی فرض‌هایی که با مقدم شرطی یکسان‌اند. گاهی مهم است
+مشخص کنیم کدام فرض‌ها در کدام قاعده مرخص می‌شوند؛ برچسب ترخیص~$x$ این
+کار را انجام می‌دهد. نکتهٔ مهم این است که قواعد مرخص‌کننده مجبور نیستند
+\emph{همهٔ} فرض‌های دارای شکل لازم، یا اصلاً هیچ فرضی، را مرخص کنند.
+برای نمونه، برهان زیر درست است، هرچند نخستین \Intro{\lif} هیچ فرضی را
+مرخص نمی‌کند:
+\[
+\AxiomC{$\Discharge{!A}{y}$}
+\DischargeRule{\Intro{\lif}}{x}
+\UnaryInfC{$!B \lif !A$}
+\DischargeRule{\Intro{\lif}}{y}
+\UnaryInfC{$!A \lif (!B \lif !A)$}
+\DisplayProof
+\]
+هرگاه قاعده‌ای هیچ فرضی را مرخص نکند، برچسب ترخیص را حذف می‌کنیم؛ همان
+کاری که اینجا انجام دادیم.
+
+در !!{proof}
+\[
+\AxiomC{$\Discharge{!A}{x}$}
+\AxiomC{$\Discharge{!A}{y}$}
+\RightLabel{\Intro{\land}}
+\BinaryInfC{$!A \land !A$}
+\RightLabel{\Elim{\land}}
+\UnaryInfC{$!A$}
+\DischargeRule{\Intro{\lif}}{x}
+\UnaryInfC{$!A \lif !A$}
+\DischargeRule{\Intro{\lif}}{y}
+\UnaryInfC{$!A \lif (!A \lif !A)$}
+\DisplayProof
+\]
+نخستین استنتاج \Intro{\lif} فرض چپ~$!A^x$ و دومی فرض راست~$!A^y$ را
+مرخص می‌کند. یعنی همهٔ فرض‌های دارای برچسب~$x$ با \Intro{\lif} دارای
+برچسب~$x$، و همهٔ فرض‌های دارای برچسب~$y$ با قاعدهٔ دارای برچسب~$y$
+مرخص می‌شوند. برای کارکرد درست این شیوه، همهٔ فرض‌های دارای یک برچسب
+باید همان !!{formula} نیز باشند.
+
+قواعد سورها اندکی پیچیده‌ترند. برای نمونه، قواعد $\lexists$ در
+\Log{N1i} چنین‌اند:
+\[
+\bottomAlignProof
+\AxiomC{$!A(t)$}
+\RightLabel{\Intro{\lexists}}
+\UnaryInfC{$\lexists[x][!A(x)]$}
+\DisplayProof
+\qquad
+\bottomAlignProof
+\AxiomC{$\lexists[x][!A(x)]$}
+\AxiomC{$\Discharge{!A(c)}{x}$}
+\shortDeduce
+\DeduceC{$!B$}
+\DischargeRule{\Elim{\lexists}}{x}
+\BinaryInfC{$!B$} \DisplayProof
+\bottomAlignProof
+\]
+در قاعدهٔ \Intro{\lexists}، مقدمه~$!A(t)$ است که در آن $t$ ترمی بسته،
+یعنی ترمی بدون متغیر، است. چنین استنتاجی درست است---یعنی با شِمای قاعدهٔ
+\Intro{\lexists} تطابق دارد---اگر !!{formula}~$!A$، متغیر~$x$ و ترم
+بستهٔ~$t$ای وجود داشته باشند که نتیجه $\lexists[x][!A]$ و مقدمه
+~$\Subst{!A}{t}{x}$ باشد. \Elim{\lexists} اجازه می‌دهد فرض‌های به
+شکل~$!A(c)$ را مرخص کنیم؛ یعنی برای هر استنتاج !!{constant}~$c$ای هست
+و فرض‌های به شکل $\Subst{!A}{c}{x}$ را می‌توان مرخص کرد. همهٔ فرض‌های
+مرخص‌شده در یک استنتاج باید از همان~$c$ استفاده کنند. این ثابت
+\emph{متغیر ویژهٔ} استنتاج \Elim{\lexists} نام دارد. استنتاج فقط وقتی
+درست است که $c$ در هیچ فرض باز دیگری جز~$!A(c)$ مرخص‌شونده، در~$!B$،
+یا در~$!A$ ظاهر نشود. این شرط را \emph{شرط متغیر ویژه} می‌نامند.
+
+!!^{proof}ها در \Log{N1c} و~\Log{N1i} درخت‌های متناهیِ رخدادهای فرمول
+هستند که به‌طور استقرایی از فرض‌ها با استفاده از قواعد استنتاج ساخته
+می‌شوند. هر برگ یک فرض است که ممکن است برچسب ترخیص داشته باشد، و هر
+!!{formula} دیگر از !!{formula}های بی‌واسطهٔ بالای خود به‌وسیلهٔ یکی
+از قواعد استنتاج دستگاه به دست می‌آید. اگر رخدادی از یک !!{formula}
+به‌عنوان فرض در درخت بالای یک استنتاج، با استنتاجی بالای آن مرخص نشده
+باشد، در آن استنتاج \emph{باز} نامیده می‌شود.
+
+\begin{defn}\ollabel{defn:proof}
+\emph{!!^{proof}ها} در \Log{N1c} و~\Log{N1i} درخت‌هایی متناهی از
+!!{formula}ها هستند که به روش زیر به‌طور استقرایی ساخته می‌شوند:
+\begin{enumerate}
+  \item\ollabel{defn:prf:assumption} هر !!{formula} دارای برچسب ترخیص،
+  مانند $x$ یا~$y$، به‌تنهایی !!a{proof} است. در !!a{proof}ی که از یک
+  !!{formula} تشکیل شده است، آن !!{formula} یک فرض باز به شمار می‌آید.
+  \item\ollabel{defn:prf:one-prem} اگر $R$ قاعده‌ای با یک، دو، یا سه
+  مقدمهٔ $!A_1$، $!A_2$، $!A_3$ و نتیجهٔ~$!A$ باشد، و $\delta_1$،
+  $\delta_2$ و~$\delta_3$ به‌ترتیب !!{proof}هایی منتهی به $!A_1$،
+  $!A_2$ و~$!A_3$ باشند، آنگاه به‌ترتیب
+  \[
+  \AxiomC{}
+  \RightLabel{$\delta_1$}
+  \DeduceC{$!A_1$}
+  \RightLabel{$R$}
+  \UnaryInfC{$!A$}
+  \DisplayProof
+\qquad
+  \AxiomC{}
+  \RightLabel{$\delta_1$}
+  \DeduceC{$!A_1$}
+  \AxiomC{}
+  \RightLabel{$\delta_2$}
+  \DeduceC{$!A_2$}
+  \RightLabel{$R$}
+  \BinaryInfC{$!A$}
+  \DisplayProof
+\qquad
+  \AxiomC{}
+  \RightLabel{$\delta_1$}
+  \DeduceC{$!A_1$}
+  \AxiomC{}
+  \RightLabel{$\delta_2$}
+  \DeduceC{$!A_2$}
+  \AxiomC{}
+  \RightLabel{$\delta_3$}
+  \DeduceC{$!A_3$}
+  \RightLabel{$R$}
+  \TrinaryInfC{$!A$}
+  \DisplayProof
+  \]
+  !!a{proof} است، مشروط بر اینکه برچسب‌های فرض در !!{proof}ها سازگار
+  باشند---هیچ دو !!{formula} متفاوتی برچسب ترخیص یکسان نداشته باشند---
+  و استنتاج‌ها کاربردهای درست~$R$ باشند.
+  \item بالاترین رخدادهای !!{formula} در !!{proof} تازه، هنگامی
+  \emph{فرض‌های باز} آن !!{proof} به شمار می‌آیند که فرض‌های باز
+  $\delta_1$، $\delta_2$، یا~$\delta_3$ باشند، جز رخدادهایی که قاعده
+  مرخص می‌کند. اگر قاعده برچسب~$x$ یا $x\,y$ داشته باشد، در
+  \Intro{\lif} و~\Intro{\lnot} همهٔ فرض‌های باز دارای برچسب~$x$ در
+  ~‌$\delta_1$؛ در \Elim{\lexists} همهٔ فرض‌های باز دارای برچسب~$x$
+  در~$\delta_2$؛ و در \Elim{\lor} همهٔ فرض‌های باز دارای برچسب~$x$
+  در~$\delta_2$ و همهٔ فرض‌های باز دارای برچسب~$y$ در~$\delta_3$
+  مرخص می‌شوند.
+\end{enumerate}
+\end{defn}
+
+!!{proof}هایی که در ساخت استقرایی !!a{proof} به کار می‌روند
+\emph{زیر-!!{proof}}های آن نامیده می‌شوند. زیر-!!{proof}های منتهی به
+مقدمات یک استنتاج، \emph{زیر-!!{proof}های بی‌واسطهٔ} آن استنتاج‌اند.
+قواعد \Log{N1c} و~\Log{N1i} در \olref{tab:N1} آمده‌اند.
+
+\subfile{rules-N1}
+
+\begin{defn}
+\emph{!!{height}}~$\pheight{\delta}$ برای !!a{proof}~$\delta$ به روش
+زیر به‌طور استقرایی تعریف می‌شود.
+\begin{enumerate}
+  \item اگر $\delta$ فقط از یک فرض تشکیل شده باشد،
+  $\pheight{\delta}=0$.
+  \item اگر $\delta$ به استنتاجی تک‌مقدمه‌ای با زیر-!!{proof} بی‌واسطهٔ
+  ~‌$\delta_1$ پایان یابد، آنگاه
+  $\pheight{\delta}=\pheight{\delta_1}+1$.
+  \item اگر $\delta$ به استنتاجی دومقدمه‌ای با زیر-!!{proof}های
+  بی‌واسطهٔ~$\delta_1$ و~$\delta_2$ پایان یابد، آنگاه
+  $\pheight{\delta}=\max(\pheight{\delta_1},\pheight{\delta_2})+1$.
+  \item اگر $\delta$ به \Elim{\lor} با زیر-!!{proof}های بی‌واسطهٔ
+  ~‌$\delta_1$، $\delta_2$ و~$\delta_3$ پایان یابد، آنگاه
+  $\pheight{\delta}=
+  \max(\pheight{\delta_1},\pheight{\delta_2},\pheight{\delta_3})+1$.
+\end{enumerate}
+اگر دنبالهٔ~$S$ !!a{proof}ی با ارتفاع $\le n$ داشته باشد، می‌نویسیم
+$\Proves[n] S$.
+\end{defn}
+
+\begin{ex}
+در \Log{N1i}، هر !!{formula} به‌عنوان !!a{proof}ی از خودش در مقام یک
+فرض باز به شمار می‌آید. پس
+\[
+!A \land !B^x
+\]
+یک !!a{proof}~$\delta_1$ با ارتفاع~$0$ است. از~$\delta_1$ می‌توانیم با
+اعمال یکی از دو صورت~\Elim{\land}، دو !!{proof}~$\delta_2$ و
+~$\delta_3$ به دست آوریم:
+\[
+\AxiomC{$!A \land !B^x$}
+\RightLabel{\Elim{\land}[2]}
+\UnaryInfC{$!B$}
+\DisplayProof
+\qquad
+\AxiomC{$!A \land !B^x$}
+\RightLabel{\Elim{\land}[1]}
+\UnaryInfC{$!A$}
+\DisplayProof
+\]
+زیر-!!{proof} بی‌واسطهٔ آخرین استنتاج در هر دو~$\delta_2$ و
+~$\delta_3$ همان~$\delta_1$ است. هر دو !!{proof} رخداد
+$!A\land !B$ را به‌عنوان فرض باز دارند و
+$\pheight{\delta_2}=\pheight{\delta_3}=1$.
+
+قاعدهٔ \Intro{\land} برای توجیه نتیجه‌ای به شکل~$!B\land !A$ به دو
+مقدمهٔ $!B$ و~$!A$ نیاز دارد. بنابراین عبارت زیر !!a{proof}~$\delta_4$
+است:
+\[
+\AxiomC{$!A \land !B^x$}
+\RightLabel{\Elim{\land}[2]}
+\UnaryInfC{$!B$}
+\LeftSubproofLabel{$\delta_2$}
+\AxiomC{$!A \land !B^x$}
+\RightLabel{\Elim{\land}[1]}
+\UnaryInfC{$!A$}
+\RightSubproofLabel{$\delta_3$}
+\RightLabel{\Intro{\land}}
+\BinaryInfC{$!B \land !A$}
+\DisplayProof
+\]
+ارتفاع آن
+$\pheight{\delta_4}=\max(\pheight{\delta_2},
+\pheight{\delta_3})+1=\max(1,1)+1=2$ است. این برهان دو رخداد
+$!A\land !B$ به‌عنوان فرض دارد و هر دو بازند.
+
+سرانجام می‌توانیم \Intro{\lif} را اعمال کنیم و~$\delta_5$ را به دست
+آوریم:
+\[
+\AxiomC{$\Discharge{!A \land !B}{x}$}
+\RightLabel{\Elim{\land}[2]}
+\UnaryInfC{$!B$}
+\LeftSubproofLabel{$\delta_2$}
+\AxiomC{$\Discharge{!A \land !B}{x}$}
+\RightLabel{\Elim{\land}[1]}
+\UnaryInfC{$!A$}
+\RightSubproofLabel{$\delta_3$}
+\RightLabel{\Intro{\land}}
+\BinaryInfC{$!B \land !A$}
+\DischargeRule{\Intro{\lif}}{x}
+\UnaryInfC{$(!A \land !B) \lif (!B \land !A)$}
+\DisplayProof
+\]
+ارتفاع آن $\pheight{\delta_4}+1=3$ است. استنتاج \Intro{\lif} همهٔ
+رخدادهای فرض‌های به شکل~$!A\land !B$ با برچسب~$x$، یعنی هر دو فرض
+باز پیشینِ زیر‌برهان بی‌واسطه، را مرخص می‌کند. چون این‌ها تنها فرض‌های
+~‌$\delta_5$ هستند، هیچ فرض بازی ندارد و از این رو !!a{proof}ی
+\emph{برای} !!{formula} پایانی آن، یعنی
+$(!A\land !B)\lif(!B\land !A)$، است.
+\end{ex}
+
+\end{document}

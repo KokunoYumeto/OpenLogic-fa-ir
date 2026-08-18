@@ -1,0 +1,149 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{spine}{recursion}
+\olsection{قضیه‌های بازگشت ترامتناهی}
+
+نخست باید تأیید کنیم که~\olref[valpha]{defValphas} تعریفی موفق است.
+به‌طور کلی‌تر، باید اثبات کنیم هر کوششی برای ارائهٔ تعریفی با بازگشت
+(ترامتناهی) به نتیجه می‌رسد. هدف این بخش همین است.
+
+\emph{هشدار: این مطالب دشوارند}. بااین‌همه، پیام کلی بسیار ساده است:
+استقرای ترامتناهی همراه با جایگزینی، مشروعیت چندین صورت از بازگشت
+ترامتناهی را تضمین می‌کند.\footnote{یادآوری: همهٔ فرمول‌ها و ترم‌ها
+می‌توانند پارامتر داشته باشند، مگر آنکه خلافش تصریح شود.}
+
+\begin{defn}
+	فرض کنید~$\tau(x)$ یک ترم، $f$ یک تابع و~$\alpha$ یک عدد ترتیبی باشد.
+	می‌گوییم~$f$ یک \emph{تقریبِ $\alpha$ برای~$\tau$} است اگر و تنها اگر
+	هم~$\dom{f}=\alpha$ و هم
+	$(\forall \beta \in \alpha)f(\beta)=\tau(\funrestrictionto{f}{\beta})$.
+\end{defn}
+
+\begin{lem}[بازگشت کراندار]\ollabel{transrecursionfun}
+برای هر ترم~$\tau(x)$ و هر عدد ترتیبی~$\alpha$، تقریبِ $\alpha$ یکتایی
+برای~$\tau$ وجود دارد.
+\end{lem}
+\begin{proof}
+نشان می‌دهیم برای هر~$\gamma\leq\alpha$، یک تقریبِ $\gamma$ یکتا وجود
+دارد.
+
+ابتدا یکتایی را اثبات می‌کنیم. فرض کنید~$g$ و~$h$ به‌ترتیب تقریب‌های
+$\gamma$ و~$\delta$ باشند. استقرای ترامتناهی روی آرگومان‌های آن‌ها نشان
+می‌دهد برای هر~$\beta\in\dom{g}\cap\dom{h}=\gamma\cap\delta=
+\min(\gamma,\delta)$، داریم~$g(\beta)=h(\beta)$. پس تقریب‌های ما، اگر
+وجود داشته باشند، یکتا هستند و در همهٔ مقادیر مشترک توافق دارند.
+
+برای اثبات وجود، اکنون استقرای ترامتناهی ساده‌ای
+(\olref[ordinals][opps]{simpletransrecursion}) روی اعداد ترتیبی
+$\delta\leq\alpha$ به کار می‌بریم.
+
+تابع تهی بدیهی است که یک تقریبِ $\emptyset$ است.
+
+اگر~$g$ یک تقریبِ $\gamma$ باشد، آنگاه
+$g\cup\{\tuple{\gamma,\tau(g)}\}$ یک تقریبِ
+$\ordsucc{\gamma}$ است.
+
+اگر~$\gamma$ عدد ترتیبی حدی باشد و برای هر~$\delta<\gamma$،
+$g_\delta$ تقریبِ $\delta$ باشد، بگذارید
+$g=\bigcup_{\delta\in\gamma}g_\delta$. این یک تابع است، زیرا
+$g_\delta$های گوناگون ما در همهٔ مقادیر مشترک توافق دارند. همچنین اگر
+$\delta\in\gamma$، آنگاه
+$g(\delta)=g_{\ordsucc{\delta}}(\delta)=
+\tau(\funrestrictionto{g_{\ordsucc{\delta}}}{\delta})=
+\tau(\funrestrictionto{g}{\delta})$.
+
+این، اثبات با استقرای ترامتناهی را کامل می‌کند.
+\end{proof}
+
+اگر به خود اجازه دهیم به‌جای یک تابع، یک \emph{ترم} تعریف کنیم، می‌توانیم
+کران~$\alpha$ را از نتیجهٔ پیشین حذف کنیم. در بیان و اثبات نتیجهٔ زیر،
+هرگاه~$\sigma$ یک ترم باشد، می‌گذاریم
+$\funrestrictionto{\sigma}{\alpha}=
+\Setabs{\tuple{\beta,\sigma(\beta)}}{\beta\in\alpha}$.
+
+\begin{thm}[بازگشت عمومی]\ollabel{transrecursionschema}
+برای هر ترم~$\tau(x)$ می‌توانیم ترمی مانند~$\sigma(x)$ را به‌صراحت تعریف
+کنیم، به‌طوری‌که برای هر عدد ترتیبی~$\alpha$،
+$\sigma(\alpha)=\tau(\funrestrictionto{\sigma}{\alpha})$.
+\end{thm}
+
+\begin{proof}
+برای هر~$\alpha$، بنا بر~\olref{transrecursionfun} تقریبِ $\alpha$ یکتایی
+مانند~$f_\alpha$ برای~$\tau$ وجود دارد. $\sigma(\alpha)$ را
+$f_{\ordsucc{\alpha}}(\alpha)$ تعریف کنید. اکنون:
+	\begin{align*}
+		\sigma(\alpha) &=
+		f_{\ordsucc{\alpha}}(\alpha) \\&=
+		\tau(\funrestrictionto{f_{\ordsucc{\alpha}}}{\alpha}) \\&=
+		\tau(\Setabs{\tuple{\beta, f_{\ordsucc{\alpha}}(\beta)}}{\beta \in \alpha}) \\&=
+		\tau(\Setabs{\tuple{\beta, f_{\ordsucc{\beta}}(\beta)}}{\beta \in \alpha})\\&=
+		\tau(\funrestrictionto{\sigma}{\alpha})
+	\end{align*}
+زیرا، همان‌گونه که در~\olref{transrecursionfun} دیدیم، برای همهٔ
+$\beta<\alpha$ داریم
+$f_{\ordsucc{\beta}}(\beta)=f_{\ordsucc{\alpha}}(\beta)$.
+\end{proof}
+\noindent
+توجه کنید که~\olref{transrecursionschema} یک \emph{طرحواره} است. نکتهٔ
+اساسی این است که نمی‌توانیم انتظار داشته باشیم~$\sigma$ یک تابع، یعنی
+نوع معینی از \emph{مجموعه}، را تعریف کند؛ زیرا در آن صورت~$\dom{\sigma}$
+مجموعهٔ همهٔ اعداد ترتیبی می‌بود و این با پارادوکس بورالی--فورتی
+(\olref[ordinals][basic]{buraliforti}) تناقض داشت.
+
+بااین‌حال، هنوز باید نشان دهیم~\olref{transrecursionschema} تعریف ما از
+$V_\alpha$ها را موجه می‌سازد. شاید این امر بی‌درنگ آشکار نباشد، اما با
+آخرین صورت سادهٔ بازگشت ترامتناهی روشن خواهد شد.
+
+\begin{thm}[بازگشت ساده]\ollabel{simplerecursionschema}
+برای هر دو ترم~$\tau(x)$ و~$\theta(x)$ و هر مجموعهٔ~$A$، می‌توانیم ترمی
+مانند~$\sigma(x)$ را به‌صراحت تعریف کنیم به‌طوری‌که:
+\begin{align*}
+	\sigma(\emptyset) &= A\\
+	\sigma(\ordsucc{\alpha}) &= \tau(\sigma(\alpha)) &&
+		\text{برای هر عدد ترتیبی }\alpha\\
+	\sigma(\alpha) &= \theta(\ran{\funrestrictionto{\sigma}{\alpha}})&&
+	\text{اگر }\alpha\text{ عدد ترتیبی حدی باشد}
+\end{align*}
+\end{thm}
+
+\begin{proof}
+ابتدا ترم~$\xi(x)$ را چنین تعریف می‌کنیم:
+%t اگر $x=\emptyset$ باشد یا $x$ تابعی نباشد که دامنه‌اش یک عدد ترتیبی است، $\xi(x)=A$؛
+%در غیر این صورت بگذارید:
+\[
+	\xi(x) =
+	\begin{cases}
+			A &\text{اگر $x=\emptyset$ باشد یا $x$ تابعی نباشد که}\\
+			&\hspace{1em}\text{دامنه‌اش یک عدد ترتیبی است؛ در غیر این صورت:}\\
+			\tau(x(\alpha)) & \text{اگر $\dom{x}=\ordsucc{\alpha}$}\\
+			\theta(\ran{x}) & \text{اگر $\dom{x}$ یک عدد ترتیبی حدی باشد}
+	\end{cases}
+\]
+بنا بر~\olref{transrecursionschema}، ترمی مانند~$\sigma(x)$ وجود دارد
+به‌طوری‌که برای هر عدد ترتیبی~$\alpha$،
+$\sigma(\alpha)=\xi(\funrestrictionto{\sigma}{\alpha})$؛ افزون بر این،
+$\funrestrictionto{\sigma}{\alpha}$ تابعی با دامنهٔ~$\alpha$ است. با
+استقرای ترامتناهی ساده
+(\olref[ordinals][opps]{simpletransrecursion}) نشان می‌دهیم~$\sigma$
+ویژگی‌های لازم را دارد.
+
+نخست، $\sigma(\emptyset)=\xi(\emptyset)=A$.
+
+سپس، $\sigma(\ordsucc{\alpha})=
+\xi(\funrestrictionto{\sigma}{\ordsucc{\alpha}})=
+\tau(\funrestrictionto{\sigma}{\ordsucc{\alpha}}(\alpha))=
+\tau(\sigma(\alpha))$.
+
+سرانجام، اگر~$\alpha$ حدی باشد،
+$\sigma(\alpha)=\xi(\funrestrictionto{\sigma}{\alpha})=
+\theta(\ran{\funrestrictionto{\sigma}{\alpha}})$.
+\end{proof}
+\noindent
+اکنون برای موجه‌ساختن~\olref[valpha]{defValphas} کافی است
+$A=\emptyset$، $\tau(x)=\Pow{x}$ و~$\theta(x)=\bigcup x$ را اختیار
+کنیم. سرانجام تعریف~$V_\alpha$ها موجه شد!{}
+
+
+\end{document}

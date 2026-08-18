@@ -1,0 +1,220 @@
+% Part: first-order-logic
+% Chapter: completeness
+% Section: complete-sets
+
+% Definition of complete consistent sets. Properties of complete sets required
+% for completeness proved are in provability.tex in the
+% chapter on the proof system used.
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{com}{ccs}}
+      {\olfileid{pl}{com}{ccs}}
+
+\olsection{مجموعه‌های کامل و سازگارِ \usetoken{P}{sentence}}
+
+\begin{defn}[مجموعهٔ کامل]
+\ollabel{def:complete-set} مجموعهٔ~$\Gamma$ از !!{sentence}s
+\emph{!!{complete}} است هرگاه و تنها هرگاه برای هر !!{sentence}~$!A$،
+یا $!A \in \Gamma$ یا $\lnot !A \in \Gamma$.
+\end{defn}
+
+\begin{explain}
+مجموعه‌های !!^{complete} جمله‌ها هیچ پرسشی را بی‌پاسخ نمی‌گذارند. برای
+هر !!{sentence}~$!A$، مجموعهٔ~$\Gamma$ «می‌گوید» که $!A$ صادق است یا
+کاذب. اهمیت مجموعه‌های !!{complete} فراتر از اثبات قضیهٔ تمامیت است.
+برای نمونه، هر نظریه‌ای که !!{complete} و اصول‌موضوعه‌پذیر باشد همواره
+تصمیم‌پذیر است.
+\end{explain}
+
+\begin{explain}
+مجموعه‌های سازگارِ !!^{complete} در اثبات تمامیت اهمیت دارند، زیرا
+می‌توانیم تضمین کنیم که هر مجموعهٔ سازگارِ !!{sentence}s، یعنی
+$\Gamma$، در !!a{complete} مجموعهٔ سازگار~$\Gamma^*$ گنجانده می‌شود.
+!!^a{complete} مجموعهٔ سازگار برای هر !!{sentence}~$!A$ یا خود~$!A$ را
+دربر دارد یا نقیض آن~$\lnot !A$ را، اما نه هر دو را. این امر به‌ویژه
+دربارهٔ \iftag{FOL}{!!{sentence}s اتمی}{متغیرهای گزاره‌ای} صادق است؛
+پس از !!a{complete} مجموعهٔ سازگار\iftag{FOL}{ در زبانی که به‌گونه‌ای
+مناسب با !!{constant}s گسترش یافته است}{}، می‌توانیم
+\iftag{FOL}{!!a{structure}}{!!a{valuation}} بسازیم که در آن
+\iftag{FOL}{تعبیر !!{predicate}s}{ارزش صدقِ نسبت‌داده‌شده به متغیرهای
+گزاره‌ای} بر پایهٔ این تعریف می‌شود که کدام
+\iftag{FOL}{!!{sentence}s اتمی}{!!{propositional variable}s}
+در~$\Gamma^*$ هستند. سپس می‌توان نشان داد که این
+\iftag{FOL}{!!{structure}}{!!{valuation}} همهٔ !!{sentence}s
+در~$\Gamma^*$ (و ازاین‌رو همهٔ جمله‌های در~$\Gamma$) را صادق می‌سازد.
+اثبات این امر اخیر مستلزم آن است که $\lnot !A \in \Gamma^*$ هرگاه و
+تنها هرگاه $!A \notin \Gamma^*$، و $(!A \lor !B) \in \Gamma^*$ هرگاه
+و تنها هرگاه $!A \in \Gamma^*$ یا $!B \in \Gamma^*$، و جز این‌ها.
+\end{explain}
+
+در ادامه، غالباً خواص بازتابی‌بودن، یکنواختی و تعدیِ~$\Proves$ را
+تلویحاً به کار خواهیم برد (بنگرید به
+\iftag{FOL}{%
+  \tagrefs{prfSC/{fol:seq:ptn:sec},prfND/{fol:ntd:ptn:sec},prfAX/{fol:axd:ptn:sec},prfTab/{fol:tab:ptn:sec}}}{%
+  \tagrefs{prfSC/{pl:seq:ptn:sec},prfND/{pl:ntd:ptn:sec},prfAX/{pl:axd:ptn:sec},prfTab/{pl:tab:ptn:sec}}}).
+
+\begin{prop}
+\ollabel{prop:ccs}
+فرض کنید $\Gamma$ !!{complete} و سازگار باشد. آنگاه:
+\begin{enumerate}
+\item \ollabel{prop:ccs-prov-in} اگر $\Gamma \Proves !A$، آنگاه
+$!A \in \Gamma$.
+
+\tagitem{prvAnd}{\ollabel{prop:ccs-and} $!A \land !B \in \Gamma$
+  هرگاه و تنها هرگاه هم $!A \in \Gamma$ و هم $!B \in \Gamma$.}{}
+
+\tagitem{prvOr}{\ollabel{prop:ccs-or} $!A \lor !B \in \Gamma$ هرگاه و
+  تنها هرگاه یا $!A \in \Gamma$ یا $!B \in \Gamma$.}{}
+
+\tagitem{prvIf}{\ollabel{prop:ccs-if} $!A \lif !B \in \Gamma$ هرگاه و
+  تنها هرگاه یا $!A \notin \Gamma$ یا $!B \in \Gamma$.}{}
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+در همهٔ موارد زیر فرض می‌کنیم $\Gamma$ !!{complete} و سازگار است.
+\begin{enumerate}
+\item اگر $\Gamma \Proves !A$، آنگاه $!A \in \Gamma$.
+
+فرض کنید $\Gamma \Proves !A$. خلاف آن را فرض کنید، یعنی
+$!A \notin \Gamma$. چون $\Gamma$ !!{complete} است،
+$\lnot !A \in \Gamma$. بنا بر
+\iftag{FOL}{%
+  \tagrefs{prfSC/{fol:seq:prv:prop:explicit-inc},
+    prfND/{fol:ntd:prv:prop:explicit-inc},
+    prfAX/{fol:axd:prv:prop:explicit-inc},
+    prfTab/{fol:tab:prv:prop:explicit-inc}}}{%
+  \tagrefs{prfSC/{pl:seq:prv:prop:explicit-inc},
+    prfND/{pl:ntd:prv:prop:explicit-inc},
+    prfAX/{pl:axd:prv:prop:explicit-inc},
+    prfTab/{pl:tab:prv:prop:explicit-inc}}}،
+$\Gamma$ ناسازگار است. این با فرض سازگاربودن~$\Gamma$ تناقض دارد.
+پس نمی‌تواند $!A \notin \Gamma$ باشد؛ بنابراین $!A \in \Gamma$.
+
+\tagitem{defAnd}{}{%
+\iftag{probAnd}{تمرین.}{%
+$!A \land !B \in \Gamma$ هرگاه و تنها هرگاه هم $!A \in \Gamma$ و هم
+$!B \in \Gamma$:
+
+برای جهت رو به جلو، فرض کنید $!A \land !B \in \Gamma$. آنگاه بنا بر
+\iftag{FOL}{%
+  \tagrefs{prfSC/{fol:seq:ppr:prop:provability-land},
+    prfND/{fol:ntd:ppr:prop:provability-land},
+    prfAX/{fol:axd:ppr:prop:provability-land},
+    prfTab/{fol:tab:ppr:prop:provability-land}}}{%
+  \tagrefs{prfSC/{pl:seq:ppr:prop:provability-land},
+    prfND/{pl:ntd:ppr:prop:provability-land},
+    prfAX/{pl:axd:ppr:prop:provability-land},
+    prfTab/{pl:tab:ppr:prop:provability-land}}}، مورد~(1)،
+$\Gamma \Proves !A$ و $\Gamma \Proves !B$. بنا بر
+\olref{prop:ccs-prov-in}، $!A \in \Gamma$ و $!B \in \Gamma$، چنان‌که
+لازم بود.
+
+برای جهت عکس، بگذارید $!A \in \Gamma$ و $!B \in \Gamma$. بنا بر
+\iftag{FOL}{%
+  \tagrefs{prfSC/{fol:seq:ppr:prop:provability-land},
+    prfND/{fol:ntd:ppr:prop:provability-land},
+    prfAX/{fol:axd:ppr:prop:provability-land},
+    prfTab/{fol:tab:ppr:prop:provability-land}}}{%
+  \tagrefs{prfSC/{pl:seq:ppr:prop:provability-land},
+    prfND/{pl:ntd:ppr:prop:provability-land},
+    prfAX/{pl:axd:ppr:prop:provability-land},
+    prfTab/{pl:tab:ppr:prop:provability-land}}}، مورد~(2)،
+$\Gamma \Proves !A \land !B$. بنا بر \olref{prop:ccs-prov-in}،
+$!A \land !B \in \Gamma$.}}
+
+\tagitem{defOr}{}{%
+\iftag{probOr}{تمرین.}{%
+نخست نشان می‌دهیم اگر $!A \lor !B \in \Gamma$، آنگاه یا
+$!A \in \Gamma$ یا $!B \in \Gamma$. فرض کنید
+$!A \lor !B \in \Gamma$، اما $!A \notin \Gamma$ و
+$!B \notin \Gamma$. چون $\Gamma$ !!{complete} است،
+$\lnot !A \in \Gamma$ و $\lnot !B \in \Gamma$. بنا بر
+\iftag{FOL}{%
+  \tagrefs{prfSC/{fol:seq:ppr:prop:provability-lor},
+    prfND/{fol:ntd:ppr:prop:provability-lor},
+    prfAX/{fol:axd:ppr:prop:provability-lor},
+    prfTab/{fol:tab:ppr:prop:provability-lor}}}{%
+  \tagrefs{prfSC/{pl:seq:ppr:prop:provability-lor},
+    prfND/{pl:ntd:ppr:prop:provability-lor},
+    prfAX/{pl:axd:ppr:prop:provability-lor},
+    prfTab/{pl:tab:ppr:prop:provability-lor}}}،
+مورد~(1)، $\Gamma$ ناسازگار است، که تناقض است. پس یا
+$!A \in \Gamma$ یا $!B \in \Gamma$.
+
+برای جهت عکس، فرض کنید $!A \in \Gamma$ یا $!B \in \Gamma$. بنا بر
+\iftag{FOL}{%
+  \tagrefs{prfSC/{fol:seq:ppr:prop:provability-lor},
+    prfND/{fol:ntd:ppr:prop:provability-lor},
+    prfAX/{fol:axd:ppr:prop:provability-lor},
+    prfTab/{fol:tab:ppr:prop:provability-lor}}}{%
+  \tagrefs{prfSC/{pl:seq:ppr:prop:provability-lor},
+    prfND/{pl:ntd:ppr:prop:provability-lor},
+    prfAX/{pl:axd:ppr:prop:provability-lor},
+    prfTab/{pl:tab:ppr:prop:provability-lor}}}، مورد~(2)،
+$\Gamma \Proves !A \lor !B$. بنا بر \olref{prop:ccs-prov-in}،
+$!A \lor !B \in \Gamma$، چنان‌که لازم بود.}}
+
+\tagitem{defIf}{}{%
+\iftag{probIf}{تمرین.}{%
+برای جهت رو به جلو، فرض کنید $!A \lif !B \in \Gamma$، و خلاف آن را
+فرض کنید، یعنی $!A \in \Gamma$ و $!B \notin \Gamma$. بنا بر این
+فرض‌ها، $!A \lif !B \in \Gamma$ و $!A \in \Gamma$. بنا بر
+\iftag{FOL}{%
+  \tagrefs{prfSC/{fol:seq:ppr:prop:provability-lif},
+    prfND/{fol:ntd:ppr:prop:provability-lif},
+    prfAX/{fol:axd:ppr:prop:provability-lif},
+    prfTab/{fol:tab:ppr:prop:provability-lif}}}{%
+  \tagrefs{prfSC/{pl:seq:ppr:prop:provability-lif},
+    prfND/{pl:ntd:ppr:prop:provability-lif},
+    prfAX/{pl:axd:ppr:prop:provability-lif},
+    prfTab/{pl:tab:ppr:prop:provability-lif}}}، مورد~(1)،
+$\Gamma \Proves !B$. اما آنگاه بنا بر \olref{prop:ccs-prov-in}،
+$!B \in \Gamma$؛ و این با فرض $!B \notin \Gamma$ تناقض دارد.
+
+برای جهت عکس، نخست حالتی را در نظر بگیرید که $!A \notin \Gamma$.
+چون $\Gamma$ !!{complete} است، $\lnot !A \in \Gamma$. بنا بر
+\iftag{FOL}{%
+  \tagrefs{prfSC/{fol:seq:ppr:prop:provability-lif},
+    prfND/{fol:ntd:ppr:prop:provability-lif},
+    prfAX/{fol:axd:ppr:prop:provability-lif},
+    prfTab/{fol:tab:ppr:prop:provability-lif}}}{%
+  \tagrefs{prfSC/{pl:seq:ppr:prop:provability-lif},
+    prfND/{pl:ntd:ppr:prop:provability-lif},
+    prfAX/{pl:axd:ppr:prop:provability-lif},
+    prfTab/{pl:tab:ppr:prop:provability-lif}}}، مورد~(2)،
+$\Gamma \Proves !A \lif !B$. باز بنا بر \olref{prop:ccs-prov-in}،
+به‌دست می‌آوریم که $!A \lif !B \in \Gamma$، چنان‌که لازم بود.
+
+اکنون حالتی را در نظر بگیرید که $!B \in \Gamma$. بنا بر
+\iftag{FOL}{%
+  \tagrefs{prfSC/{fol:seq:ppr:prop:provability-lif},
+    prfND/{fol:ntd:ppr:prop:provability-lif},
+    prfTab/{fol:tab:ppr:prop:provability-lif},
+    prfAX/{fol:axd:ppr:prop:provability-lif}}}{%
+  \tagrefs{prfSC/{pl:seq:ppr:prop:provability-lif},
+    prfND/{pl:ntd:ppr:prop:provability-lif},
+    prfTab/{pl:tab:ppr:prop:provability-lif},
+    prfAX/{pl:axd:ppr:prop:provability-lif}}}،
+بار دیگر مورد~(2)، $\Gamma \Proves !A \lif !B$. بنا بر
+\olref{prop:ccs-prov-in}، $!A \lif !B \in \Gamma$.}}
+\end{enumerate}
+\end{proof}
+
+\tagprob{FOL}
+\begin{prob}
+اثبات \olref[fol][com][ccs]{prop:ccs} را کامل کنید.
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+اثبات \olref[pl][com][ccs]{prop:ccs} را کامل کنید.
+\end{prob}
+\tagendprob
+
+\end{document}

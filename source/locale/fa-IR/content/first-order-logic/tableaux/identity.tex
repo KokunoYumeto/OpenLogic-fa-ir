@@ -1,0 +1,107 @@
+% Part: first-order-logic
+% Chapter: tableaux
+% Section: identity
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{tab}{ide}
+
+\olsection{\usetoken{P}{tableau} با \usetoken{S}{identity}}
+
+!!^{tableau}s دارای !!{identity} به قواعد استنتاج بیشتری نیاز دارند.
+قواعد $\eq$ چنین‌اند ($t$، $t_1$ و $t_2$ ترم‌های بسته‌اند):
+
+\begin{defish}
+\AxiomC{}
+\RightLabel{$\eq$}
+\UnaryInfC{\sFmla{\True}{\eq[t][t]}}
+\DisplayProof
+\hfill
+\AxiomC{\sFmla{\True}{\eq[t_1][t_2]}}
+\noLine
+\UnaryInfC{\sFmla{\True}{!A(t_1)}}
+\RightLabel{$\TRule{\True}{\eq}$}
+\UnaryInfC{\sFmla{\True}{!A(t_2)}}
+\DisplayProof
+\hfill
+\AxiomC{\sFmla{\True}{\eq[t_1][t_2]}}
+\noLine
+\UnaryInfC{\sFmla{\False}{!A(t_1)}}
+\RightLabel{$\TRule{\False}{\eq}$}
+\UnaryInfC{\sFmla{\False}{!A(t_2)}}
+\DisplayProof
+\end{defish}
+توجه کنید که برخلاف همهٔ قواعد دیگر، $\TRule{\True}{\eq}$ و
+$\TRule{\False}{\eq}$ مستلزم آن‌اند که \emph{دو} !!{formula}s علامت‌دار
+از پیش روی شاخه ظاهر شده باشند، یعنی هم
+$\sFmla{\True}{\eq[t_1][t_2]}$ و هم $\sFmla{S}{!A(t_1)}$.
+
+\begin{ex}
+اگر $s$ و $t$ ترم‌های بسته باشند، آنگاه
+$\eq[s][t], !A(s) \Proves !A(t)$:
+\begin{oltableau}
+  [\sFmla{\False}{\formula{A}(t)}, just = \TAss
+    [\sFmla{\True}{\eq[s][t]}, just = \TAss
+      [\sFmla{\True}{\formula{A}(s)}, just = \TAss
+        [\sFmla{\True}{\formula{A}(t)}, just={\TRule{\True}{\eq}[2, 3]}, close]
+      ]
+    ]
+  ]
+\end{oltableau}
+این اصل را شاید با نام اصل جانشینی این‌همان‌ها، یا قانون لایبنیتس،
+بشناسید.
+
+!!^{tableau}s اثبات می‌کنند که $\eq$ متقارن است؛ یعنی
+$\eq[s_1][s_2] \Proves \eq[s_2][s_1]$:
+\begin{oltableau}
+  [\sFmla{\False}{\eq[s_2][s_1]}, just = \TAss
+    [\sFmla{\True}{\eq[s_1][s_2]}, just = \TAss
+      [\sFmla{\True}{\eq[s_1][s_1]}, just = {$\eq$}
+        [\sFmla{\True}{\eq[s_2][s_1]}, just = {\TRule{\True}{\eq}[2, 3]}, close]
+      ]
+    ]
+  ]
+\end{oltableau}
+در اینجا، سطر $2$ نخستین پیش‌شرط
+!!{formula}~$\sFmla{\True}{\eq[s_1][s_2]}$ قاعدهٔ
+$\TRule{\True}{\eq}$ است. سطر~$3$ پیش‌شرط دوم
+به‌شکل $\sFmla{\True}{!A(s_1)}$ است---$!A(x)$ را
+$\eq[x][s_1]$ در نظر بگیرید؛ آنگاه $!A(s_1)$ همان
+$\eq[s_1][s_1]$ و $!A(s_2)$ همان $\eq[s_2][s_1]$ است.
+
+این تابلوها همچنین اثبات می‌کنند که $\eq$ متعدی است؛ یعنی
+$\eq[s_1][s_2], \eq[s_2][s_3] \Proves \eq[s_1][s_3]$:
+\begin{oltableau}
+  [\sFmla{\False}{\eq[s_1][s_3]}, just = \TAss
+    [\sFmla{\True}{\eq[s_1][s_2]}, just = \TAss
+      [\sFmla{\True}{\eq[s_2][s_3]}, just = \TAss
+        [\sFmla{\True}{\eq[s_1][s_3]}, just = {\TRule{\True}{\eq}[3, 2]}, close]
+      ]
+    ]
+  ]
+\end{oltableau}
+در این !!{tableau}، نخستین پیش‌شرط !!{formula} قاعدهٔ
+$\TRule{\True}{\eq}$ سطر~$3$، یعنی
+$\sFmla{\True}{\eq[s_2][s_3]}$ است ($s_2$ نقش~$t_1$ و $s_3$
+نقش~$t_2$ را دارد). پیش‌شرط دوم، به‌شکل
+$\sFmla{\True}{!A(s_2)}$، سطر~$2$ است. در اینجا $!A(x)$ را
+$\eq[s_1][x]$ در نظر بگیرید؛ در این صورت $!A(s_2)$ به
+$\eq[s_1][s_2]$ (یعنی سطر~$2$) و $!A(s_3)$ به
+!!{formula}~$\eq[s_1][s_3]$ در نتیجه بدل می‌شود.
+\end{ex}
+
+\begin{prob}
+برای موارد زیر !!{tableau}s بسته ارائه کنید:
+\begin{enumerate}
+\item $\sFmla{\False}{\lforall[x][\lforall[y][((x = y \land !A(x))
+      \lif !A(y))]]}$
+\item $\sFmla{\False}{\lexists[x][(!A(x) \land
+    \lforall[y][(!A(y) \lif y = x)])]}$,\\
+  $\sFmla{\True}{\lexists[x][!A(x)] \land
+    \lforall[y][\lforall[z][((!A(y) \land !A(z)) \lif y = z)]]}$
+\end{enumerate}
+\end{prob}
+
+\end{document}

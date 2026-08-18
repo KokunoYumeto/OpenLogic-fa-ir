@@ -1,0 +1,44 @@
+% Part: first-order-logic
+% Chapter: model-theory
+% Section: overspill
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mod}{bas}{ove}
+\olsection{سرریز}
+
+\begin{thm}
+\ollabel{overspill} اگر مجموعه‌ای چون~$\Gamma$ از جمله‌ها مدل‌های
+متناهی با اندازهٔ دلخواه بزرگ داشته باشد، آنگاه مدلی نامتناهی دارد.
+\end{thm}
+
+\begin{proof}
+زبان~$\Gamma$ را با افزودن شمارای نامتناهی ثابت تازه
+$c_0$، $c_1$، \dots بسط دهید و مجموعهٔ
+$\Gamma \cup \{c_i \neq c_j : i \neq j\}$ را در نظر بگیرید. اینکه
+$\Gamma$ مدل‌های متناهی با اندازهٔ دلخواه بزرگ دارد بدین معناست که برای
+هر $m >0$، عددی $n\ge m$ وجود دارد چنان‌که $\Gamma$ مدلی با
+کاردینالیتهٔ~$n$ دارد. از این نتیجه می‌شود که
+$\Gamma \cup \{c_i \neq c_j : i \neq j\}$ به‌طور متناهی ارضاپذیر
+است. بنا بر فشردگی، $\Gamma \cup \{c_i \neq c_j : i \neq j\}$ مدلی
+چون~$\Struct M$ دارد که دامنه‌اش باید نامتناهی باشد، زیرا همهٔ نامساوی‌های
+$c_i \neq c_j$ را ارضا می‌کند.
+\end{proof}
+
+\begin{prop}
+\ollabel{inf-not-fo}
+در هیچ زبان مرتبهٔ اولی جمله‌ای چون~$!A$ وجود ندارد که در
+!!a{structure}~$\Struct M$ هرگاه و تنها هرگاه صادق باشد که دامنهٔ
+$\Domain{M}$ آن !!{structure} نامتناهی است.
+\end{prop}
+
+\begin{proof}
+اگر چنین~$!A$ای وجود داشت، نقیض آن~$\lnot !A$ در همه و تنها
+!!{structure}s متناهی صادق می‌بود؛ در نتیجه مدل‌های متناهی با اندازهٔ
+دلخواه بزرگ می‌داشت، اما فاقد مدل نامتناهی می‌بود، که با
+\olref{overspill} در تناقض است.
+\end{proof}
+
+\end{document}

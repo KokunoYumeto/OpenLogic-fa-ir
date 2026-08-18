@@ -1,0 +1,131 @@
+% part: intuitionistic-logic
+% chapter: propositions-as-types
+% section: sequent-natural-deduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{pty}{snd}
+
+\olsection{استنتاج طبیعی دنباله‌ای}
+
+اگر یک !!{derivation} استنتاج طبیعی با~$\Gamma$ به‌عنوان فرض‌های
+!!{undischarged} و~$!A$ به‌عنوان نتیجه وجود داشته باشد، می‌نویسیم
+$\Gamma \Sequent !A$؛ و اگر~$\Gamma$ تهی باشد، می‌نویسیم
+$\Sequent !A$.
+
+برای~$\Gamma \cup \{!A_1, \dots, !A_n\}$ می‌نویسیم
+$\Gamma, !A_1, \dots, !A_n$، و برای~$\Gamma \cup \Delta$ می‌نویسیم
+$\Gamma, \Delta$.
+
+توجه کنید وقتی~$\Gamma \Sequent !A \land !B$ را داریم، یعنی
+!!a{derivation} با~$\Gamma$ به‌عنوان فرض‌های !!{undischarged} و
+$!A \land !B$ به‌عنوان !!{formula} پایانی داریم، با اعمال
+$\Elim{\land}$ در پایین می‌توانیم !!a{derivation} با همان فرض‌های
+!!{undischarged} و~$!A$ به‌عنوان نتیجه به دست آوریم. به بیان دیگر، اگر
+$\Gamma \Sequent !A \land !B$، آنگاه~$\Gamma \Sequent !A$.
+\begin{prooftree}
+  \Axiom$\Gamma \fCenter !A \land !B$
+  \RightLabel{$\Elim{\land}$}
+  \UnaryInf$\Gamma \fCenter !A$
+  \DisplayProof\qquad\bottomAlignProof
+  \Axiom$\Gamma \fCenter !A \land !B$
+  \RightLabel{$\Elim{\land}$}
+  \UnaryInf$\Gamma \fCenter !B$
+\end{prooftree}
+برچسب~$\Elim{\land}$ پیوند این قاعده را با قاعدهٔ هم‌نام آن در استنتاج
+طبیعی یادآوری می‌کند.
+
+به همین ترتیب، فرض کنید~$\Gamma, !A \Sequent !B$؛ یعنی
+!!a{derivation} با فرض‌های !!{undischarged}~$\Gamma, !A$ و
+!!{formula} پایانی~$!B$ داریم. اگر قاعدهٔ~$\Intro{\lif}$ را اعمال کنیم،
+!!a{derivation} با~$\Gamma$ به‌عنوان فرض‌های !!{undischarged} و
+$!A \lif !B$ به‌عنوان !!{formula} پایانی خواهیم داشت؛ یعنی
+$\Gamma \Sequent !A \lif !B$. توجه کنید که این صورت، !!{discharge}
+فرض‌ها را صریح‌تر کرده است.
+\begin{prooftree}
+  \Axiom $\Gamma, !A \fCenter !B$
+  \RightLabel{$\Intro{\lif}$}
+  \UnaryInf $\Gamma \fCenter !A \lif !B$
+\end{prooftree}
+
+از قواعد دیگر نیز به همین شیوه می‌توان نتیجه گرفت؛ صورت کامل آن‌ها چنین
+است:
+\begin{gather*}
+  \Axiom $\Gamma \fCenter !A$
+  \Axiom $\Delta \fCenter !B$
+  \RightLabel{$\Intro{\land}$}
+  \BinaryInf $\Gamma,\Delta \fCenter !A \land !B$
+  \DisplayProof\\
+  \Axiom $\Gamma \fCenter !A \land !B$
+  \RightLabel{$\Elim{\land}_1$}
+  \UnaryInf $\Gamma \fCenter !A$
+  \DisplayProof
+  \qquad
+  \Axiom $\Gamma \fCenter !A \land !B$
+  \RightLabel{$\Elim{\land}_2$}
+  \UnaryInf $\Gamma \fCenter !B$
+  \DisplayProof
+  \\
+  \Axiom $\Gamma \fCenter !A$
+  \RightLabel{$\Intro{\lor}_1$}
+  \UnaryInf $\Gamma \fCenter !A \lor !B$
+  \DisplayProof\qquad
+  \Axiom $\Gamma \fCenter !B$
+  \RightLabel{$\Intro{\lor}_2$}
+  \UnaryInf $\Gamma \fCenter !A \lor !B$
+  \DisplayProof\\
+  \Axiom $\Gamma \fCenter !A \lor !B$
+  \Axiom $\Delta, !A \fCenter !C$
+  \Axiom $\Delta', !B \fCenter !C$
+  \RightLabel{$\Elim{\lor}$}
+  \TrinaryInf $\Gamma, \Delta, \Delta' \fCenter !C$
+  \DisplayProof
+  \\
+  \Axiom $\Gamma, !A \fCenter !B$
+  \RightLabel{$\Intro{\lif}$}
+  \UnaryInf $\Gamma \fCenter !A \lif !B$
+  \DisplayProof
+  \qquad
+  \Axiom $\Delta \fCenter !A \lif !B$
+  \Axiom $\Gamma \fCenter !A$
+  \RightLabel{$\Elim{\lif}$}
+  \BinaryInf $\Gamma, \Delta \fCenter !B$
+  \DisplayProof
+  \\
+  \Axiom $\Gamma \fCenter \lfalse$
+  \RightLabel{$\FalseInt$}
+  \UnaryInf $\Gamma \fCenter !A$
+  \DisplayProof
+\end{gather*}
+
+هر فرض به‌تنهایی !!a{derivation} از~$!A$ بر پایهٔ~$!A$ است؛ یعنی همیشه
+$!A \Sequent !A$ را داریم.
+
+\begin{prooftree}
+  \AxiomC{$ $}
+  \UnaryInfC{$!A \fCenter !A$}
+\end{prooftree}
+
+این قواعد را در کنار هم می‌توان حسابی دربارهٔ وجود
+!!{derivation}s استنتاج طبیعی دانست. همچنین می‌توان آن‌ها را گونه‌ای
+نمادگذاری برای استنتاج طبیعی شمرد که هر گام در آن نه‌فقط !!{formula}
+!!{derive}شده، بلکه فرض‌های !!{undischarged}ی را نیز ثبت می‌کند که آن
+فرمول از آن‌ها !!{derive} شده است.
+
+\begin{prooftree}
+  \Axiom$!A \fCenter !A$
+  \UnaryInf$!A \fCenter !A \lor (!A \lif \lfalse)$
+  \Axiom$!B \fCenter !B$
+  \BinaryInf$!A, !B \fCenter \lfalse$
+  \UnaryInf$!B \fCenter !A \lif \lfalse$
+  \UnaryInf$!B \fCenter !A \lor (!A \lif \lfalse)$
+  \Axiom$!B \fCenter !B$
+  \BinaryInf$!B \fCenter \lfalse$
+  \UnaryInf$\fCenter !B \lif \lfalse$
+\end{prooftree}
+که در آن~$!B$ کوتاه‌شدهٔ~$(!A \lor (!A \lif \lfalse))\lif \lfalse$
+است.
+
+\end{document}

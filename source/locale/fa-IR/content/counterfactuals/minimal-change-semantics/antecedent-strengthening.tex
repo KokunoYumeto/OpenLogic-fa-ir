@@ -1,0 +1,72 @@
+% Part: counterfactuals
+% Chapter: minimal-change-semantics
+% Section: antecedent-strengthening
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cnt}{min}{agg}
+
+\olsection{تقویت مقدم}
+
+«تقویت مقدم» به استنتاج
+$!A \lif !C \Entails (!A \land !B) \lif !C$ اشاره دارد. این استنتاج
+برای شرطی مادی معتبر، اما برای شرطی‌های خلاف واقع نامعتبر است. فرض کنید
+صادق است که اگر این کبریت را می‌کشیدم، روشن می‌شد. (یعنی کبریت یا سطح
+کبریت‌دانی ایرادی ندارد، کبریت را نمی‌شکنم، و مانند آن.) اما صادق نیست
+که اگر این کبریت را در فضای بیرونی می‌کشیدم، روشن می‌شد. پس استنتاج زیر
+نامعتبر است:
+\begin{quote}
+  اگر کبریت کشیده می‌شد، روشن می‌شد.
+
+  بنابراین، اگر کبریت در فضای بیرونی کشیده می‌شد، روشن می‌شد.
+\end{quote}
+
+گزارش لوئیس--استالنیکر از شرطی‌ها این امر را توضیح می‌دهد: نزدیک‌ترین
+جهانی که در آن کبریت را می‌کشم و این کار را در فضای بیرونی انجام می‌دهم،
+از جهان بالفعل بسیار دورتر از نزدیک‌ترین جهانی است که در آن کبریت را
+می‌کشم. پس هرچند کبریت در دومی روشن می‌شود، در اولی روشن نمی‌شود. و
+چنین نیز باید باشد.
+
+\begin{ex}
+  معناشناسی کره‌ای این استنتاج را نامعتبر می‌سازد؛ یعنی
+  $p \cif r \Entails/ (p \land q) \cif r$. مدل
+  $\mModel{M} = \tuple{W, O, V}$ را در نظر بگیرید که در آن
+  $W = \{w, w_1, w_2\}$،
+  $O_w = \{\{w\}, \{w, w_1\}, \{w, w_1, w_2\}\}$،
+  $V(p) = \{w_1, w_2\}$، $V(q) = \{w_2\}$ و~$V(r) = \{w_1\}$.
+  کرهٔ پذیرای~$p$، یعنی~$S = \{w, w_1\}$، وجود دارد و~$p \lif r$ در
+  همهٔ جهان‌های آن صادق است، پس~$\mSat{M}{p \cif r}[w]$. همچنین کرهٔ
+  پذیرای~$(p \land q)$، یعنی~$S' = \{w, w_1, w_2\}$، وجود دارد، اما
+  $\mSat/{M}{(p \land q) \lif r}[w_2]$؛ پس
+  $\mSat/{M}{(p \land q) \cif r}[w]$ (بنگرید به
+  \olref{fig:antecedent-strengthening}).
+
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}[layerwidth=1.5,scale=.6]\tiny
+  \spheresystem{3}
+  \propositionintersect{-10}{3}{30}{5}
+  \begin{scope}
+    \clip plot[smooth,tension=1] coordinates
+          {(0,4.5) (30:.95) (4.5,-3.5)} -- (4.5,4.5) ;
+    \spherefill{2}
+  \end{scope}
+  \draw[proposition] plot[dashed,smooth,tension=1] coordinates
+          {(0,4.5) (30:.95) (4.5,-3.5)} ;
+  \proposition{30}{2}{30}{5}
+  \path (0,0) node[world] {$w$};
+  \spherepos{30}{2}{node[world] {$w_1$}}
+  \spherepos{-10}{3}{node[world] {$w_2$}}
+  \spherepos{-10}{4}{node {$q$}}
+  \spherepos{30}{4}{node {$r$}}
+  \draw (1,4.5) node[below] {$p$};
+\end{tikzpicture}
+\caption{پادمثال برای تقویت مقدم}
+\ollabel{fig:antecedent-strengthening}
+\end{center}
+\end{figure}
+\end{ex}
+
+\end{document}

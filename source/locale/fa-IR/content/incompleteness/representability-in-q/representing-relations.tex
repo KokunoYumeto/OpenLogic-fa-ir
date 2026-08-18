@@ -1,0 +1,68 @@
+% Part: incompleteness
+% Chapter: representability-in-q
+% Section: representing-relations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{req}{rel}
+
+\olsection{بازنمایی روابط}
+
+بگوییم بازنمایی‌پذیربودن یک \emph{رابطه} به چه معناست.
+
+\begin{defn}
+\ollabel{defn:representing-relations} رابطهٔ $R(x_0,\dots,x_k)$ روی
+اعداد طبیعی {\em در~$\Th{Q}$ بازنمایی‌پذیر است} هرگاه فرمولی چون
+$!A_R(x_0,\dots,x_k)$ وجود داشته باشد به‌گونه‌ای که هرگاه
+$R(n_0,\dots,n_k)$ صادق باشد، $\Th{Q}$ فرمول
+$!A_R(\num{n_0},\dots,\num{n_k})$ را ثابت کند، و هرگاه
+$R(n_0,\dots,n_k)$ کاذب باشد، $\Th{Q}$ فرمول
+$\lnot !A_R(\num{n_0}, \dots, \num{n_k})$ را ثابت کند.
+\end{defn}
+
+\begin{thm}
+\ollabel{thm:representing-rels} یک رابطه در~$\Th{Q}$ بازنمایی‌پذیر
+است اگر و تنها اگر محاسبه‌پذیر باشد.
+\end{thm}
+
+\begin{proof}
+برای جهت رفت، فرض کنید $R(x_0,\dots,x_k)$ با فرمول
+$!A_R(x_0,\dots,x_k)$ بازنمایی شود. الگوریتمی برای محاسبهٔ~$R$ چنین
+است: با ورودی‌های $n_0$، \dots،~$n_k$، هم‌زمان در جست‌وجوی اثباتی برای
+$!A_R(\num{n_0}, \dots, \num{n_k})$ و اثباتی برای
+$\lnot !A_R(\num{n_0}, \dots, \num{n_k})$ باشید. بنا بر فرض ما،
+جست‌وجو ناگزیر یکی از این دو را می‌یابد؛ اگر اولی را یافت، پاسخ
+``بله'' و در غیر این صورت پاسخ ``نه'' بدهید.
+
+در جهت دیگر، فرض کنید $R(x_0, \dots, x_k)$ محاسبه‌پذیر باشد. بنا بر
+تعریف، این بدان معناست که تابع $\Char{R}(x_0, \dots, x_k)$
+محاسبه‌پذیر است. بنا بر \olref[int]{thm:representable-iff-comp}،
+$\Char{R}$ با فرمولی، مثلاً $!A_{\Char{R}}(x_0, \dots, x_k,
+y)$، بازنمایی می‌شود. بگذارید $!A_R(x_0, \dots, x_k)$ فرمول
+$!A_{\Char{R}}(x_0, \dots, x_k, \num{1})$ باشد. آنگاه برای هر
+$n_0$، \dots،~$n_k$، اگر $R(n_0, \dots, n_k)$ صادق باشد،
+$\Char{R}(n_0, \dots, n_k) = 1$، که در این حالت $\Th{Q}$ فرمول
+$!A_{\Char{R}}(\num{n_0}, \dots, \num{n_k}, \num{1})$ را ثابت
+می‌کند، و بنابراین $\Th{Q}$ فرمول $!A_R(\num{n_0}, \dots,
+\num{n_k})$ را ثابت می‌کند. از سوی دیگر، اگر
+$R(n_0, \dots, n_k)$ کاذب باشد، آنگاه
+$\Char{R}(n_0, \dots, n_k) = 0$. این بدان معناست که $\Th{Q}$ ثابت
+می‌کند
+\[
+\lforall[y][(!A_{\Char{R}}(\num{n_0}, \dots, \num{n_k}, y) \lif y =
+  \num{0})].
+\]
+چون $\Th{Q}$ فرمول $\eq/[\num{0}][\num{1}]$ را ثابت می‌کند، $\Th{Q}$ فرمول
+$\lnot !A_{\Char{R}}(\num{n_0}, \dots, \num{n_k}, \num{1})$ را نیز
+ثابت می‌کند، و بنابراین $\lnot !A_R(\num{n_0}, \dots,
+\num{n_k})$ را ثابت می‌کند.
+\end{proof}
+
+\begin{prob}
+نشان دهید اگر $R$ در~$\Th{Q}$ بازنمایی‌پذیر باشد، آنگاه~$\Char{R}$
+نیز در آن بازنمایی‌پذیر است.
+\end{prob}
+
+\end{document}

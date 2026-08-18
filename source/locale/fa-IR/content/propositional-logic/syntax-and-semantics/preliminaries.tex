@@ -1,0 +1,117 @@
+% Part: propositional-logic
+% Chapter: propositional-logic
+% Section: preliminaries
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pl}{syn}{pre}
+
+\olsection{مقدمات}
+
+\begin{thm}[\emph{اصل استقرا بر !!{formula}s}]
+  \ollabel{thm:induction}
+  اگر ویژگی‌ای چون~$P$ برای همهٔ !!{formula}sی اتمی برقرار باشد و
+  چنان باشد که
+  \begin{enumerate}
+    \tagitem{prvNot}{برقراری آن برای $\lnot !A$ از برقراری آن برای~$!A$
+      نتیجه شود؛}{}
+    \tagitem{prvAnd}{برقراری آن برای $(!A \land !B)$ از برقراری آن برای $!A$
+      و~$!B$ نتیجه شود؛}{}
+    \tagitem{prvOr}{برقراری آن برای $(!A \lor !B)$ از برقراری آن برای $!A$
+      و~$!B$ نتیجه شود؛}{}
+    \tagitem{prvIf}{برقراری آن برای $(!A \lif !B)$ از برقراری آن برای $!A$
+      و~$!B$ نتیجه شود؛}{}
+    \tagitem{prvIff}{برقراری آن برای $(!A \liff !B)$ از برقراری آن برای $!A$
+      و~$!B$ نتیجه شود؛}{}
+  \end{enumerate}
+  آنگاه $P$ برای همهٔ !!{formula}s برقرار است.
+\end{thm}
+
+\begin{proof}
+  بگذارید $S$ مجموعهٔ همهٔ !!{formula}sی دارای ویژگی~$P$ باشد. آشکارا
+  $S \subseteq \Frm[L_0]$. مجموعهٔ~$S$ همهٔ شرط‌های
+  \olref[fml]{defn:formulas} را برآورده می‌کند: همهٔ !!{formula}sی اتمی را
+  در بر می‌گیرد و تحت !!{operator}s بسته است.  $\Frm[L_0]$ کوچک‌ترین ردهٔ
+  از این دست است، پس $\Frm[L_0] \subseteq S$. بنابراین $\Frm[L_0] = S$، و
+  هر فرمول ویژگی~$P$ را دارد.
+\end{proof}
+
+\begin{prop}\ollabel{prop:balanced}
+   هر !!{formula} در~$\Frm[L_0]$ \emph{متوازن} است، به این معنا که شمار
+   پرانتزهای باز آن با شمار پرانتزهای بسته برابر است.
+\end{prop}
+
+\begin{prob}
+اثبات کنید \olref[pl][syn][pre]{prop:balanced}
+\end{prob}
+
+\begin{prop} \ollabel{prop:noinit}
+هیچ قطعهٔ آغازینِ سره‌ای از !!a{formula}، خود !!a{formula} نیست.
+\end{prop}
+
+\begin{prob}
+  اثبات کنید \olref[pl][syn][pre]{prop:noinit}
+\end{prob}
+
+\begin{prop}[خوانش یکتا]
+هر !!{formula}~$!A$ در $ \Frm[L_0]$ دقیقاً یک تجزیه به یکی از
+صورت‌های زیر دارد:
+\begin{enumerate}
+\tagitem{prvFalse}{$\lfalse$.}{}
+
+\tagitem{prvTrue}{$\ltrue$.}{}
+
+\item $\Obj p_n$ برای یک $\Obj p_n \in  \PVar$.
+
+\tagitem{prvNot}{$\lnot !B$ برای یک !!{formula}~$!B$.}{}
+
+\tagitem{prvAnd}{$(!B \land !C)$ به‌ازای !!{formula}sی $!B$ و~$!C$.}{}
+
+\tagitem{prvOr}{$(!B \lor !C)$ به‌ازای !!{formula}sی $!B$ و~$!C$.}{}
+
+\tagitem{prvIf}{$(!B \lif !C)$ به‌ازای !!{formula}sی $!B$ و~$!C$.}{}
+
+\tagitem{prvIff}{$(!B \liff !C)$ به‌ازای !!{formula}sی $!B$ و~$!C$.}{}
+\end{enumerate}
+افزون بر این، این تجزیه \emph{یکتا} است.
+\end{prop}
+
+\begin{proof}
+با استقرا بر $!A$. برای نمونه، فرض کنید $!A$ دو خوانش متمایز به‌صورت
+$(!B \lif !C)$ و $(!B' \lif !C')$ دارد. در این صورت $!B$ و~$!B'$ باید
+یکسان باشند (وگرنه یکی از آن دو قطعهٔ آغازینِ سره‌ای از دیگری خواهد بود)؛ پس اگر دو
+خوانشِ $!A$ متمایز باشند، علت باید این باشد که $!C$ و~$!C'$ دو خوانش متمایز
+از یک دنبالهٔ واحدِ نمادها هستند، که بنا بر فرض استقرا محال است.
+\end{proof}
+
+
+\begin{defn}[جانشینی یکنواخت]
+اگر $!A$ و~$!B$ از !!{formula}s باشند و $\Obj p_i$ یک !!{propositional
+variable} باشد، آنگاه $\Subst{!A}{!B}{\Obj p_i}$ حاصلِ جایگزین‌کردنِ هر
+رخدادِ $\Obj p_i$ با یک رخدادِ~$!B$ در~$!A$ را نشان می‌دهد؛ به همین ترتیب،
+جانشینی هم‌زمانِ $\Obj p_1$، \dots،~$\Obj p_n$ با !!{formula}sی
+$!B_1$، \dots،~$!B_n$ با
+$\SSubst{!A}{\subst{!B_1}{\Obj p_1},\dots,\subst{!B_n}{\Obj p_n}}$ نشان داده می‌شود.
+\end{defn}
+
+\begin{prob} برای هر یک از پنج مورد زیر، که همگی !!{formula}s هستند، تعیین
+ کنید که آیا آن !!{formula} را می‌توان به‌صورت جانشینیِ \( \Subst{!A}{!B}{\Obj p_i} \)
+ نوشت که در آن \( !A \) عبارت است از (i) \( \Obj p_0 \)؛ (ii) \( ( \lnot \Obj p_0 \land \Obj
+ p_1) \)؛ و (iii) \( ( ( \lnot \Obj p_0 \lif \Obj p_1 ) \land \Obj
+ p_2 ) \). در هر مورد، جانشینی مربوط را مشخص کنید.
+  \begin{enumerate}
+    \item \( \Obj p_1 \)
+    \item \( ( \lnot \Obj p_0 \land \Obj p_0 ) \)
+    \item \( ( ( \Obj p_0 \lor \Obj p_1 ) \land \Obj p_2 )  \)
+    \item \( \lnot ( ( \Obj p_0 \lif \Obj p_1 ) \land \Obj p_2 ) \)
+    \item \( (( \lnot ( \Obj p_0 \lif \Obj p_1 ) \lif ( \Obj p_0 \lor \Obj p_1 )) \land \lnot ( \Obj p_0 \land \Obj p_1 )) \)
+  \end{enumerate}
+\end{prob}
+
+\begin{prob}
+تعریفی از نظر ریاضی دقیق برای $\Subst{!A}{!B}{p}$ با استقرا ارائه کنید.
+\end{prob}
+
+\end{document}

@@ -1,0 +1,104 @@
+% Part: first-order-logic
+% Chapter: syntax-and-semantics
+% Section: subformulas
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{syn}{sbf}
+
+\olsection{\printtoken{P}{subformula}}
+
+\begin{explain}
+اغلب سودمند است دربارهٔ !!{formula}sی سخن بگوییم که !!a{formula} داده‌شده
+را «می‌سازند». آن‌ها را \emph{!!{subformula}s} آن فرمول می‌نامیم. هر
+!!{formula}، !!a{subformula} خودش نیز به شمار می‌آید؛ زیر‌فرمولی از $!A$
+که خود $!A$ نباشد، \emph{!!{subformula} سره} نامیده می‌شود.
+\end{explain}
+
+\begin{defn}[!!^{subformula} بلافصل]
+اگر $!A$ یک !!a{formula} باشد، \emph{!!{subformula}sی بلافصل} $!A$
+به‌صورت استقرایی چنین تعریف می‌شوند:
+\begin{enumerate}
+\item !!{formula}sی اتمی هیچ !!{subformula} بلافصلی ندارند.
+
+\tagitem{prvNot}{\indcase{!A}{\lnot !B}{تنها !!{subformula} بلافصل
+    $\indfrm$، فرمول~$!B$ است.}}{}
+
+\item \indcase{!A}{(!B \ast !C)}{!!{subformula}sی بلافصل $\indfrm$،
+  فرمول‌های $!B$ و $!C$ هستند ($\ast$ هر یک از رابط‌های دوجایگاهی است).}
+
+\tagitem{prvAll}{\indcase{!A}{\lforall[x][!B]}{تنها !!{subformula} بلافصل
+    $\indfrm$، فرمول~$!B$ است.}}{}
+
+\tagitem{prvEx}{\indcase{!A}{\lexists[x][!B]}{تنها !!{subformula} بلافصل
+    $\indfrm$، فرمول~$!B$ است.}}{}
+\end{enumerate}
+\end{defn}
+
+\begin{defn}[!!^{subformula} سره]
+اگر $!A$ یک !!a{formula} باشد، \emph{!!{subformula}sی سرهٔ} $!A$
+به‌صورت بازگشتی چنین تعریف می‌شوند:
+\begin{enumerate}
+\item !!{formula}sی اتمی هیچ !!{subformula} سره‌ای ندارند.
+
+\tagitem{prvNot}{\indcase{!A}{\lnot !B}{!!{subformula}sی سرهٔ
+    $\indfrm$ عبارت‌اند از~$!B$ همراه با همهٔ !!{subformula}sی سرهٔ~$!B$.}}{}
+
+\item \indcase{!A}{(!B \ast !C)}{!!{subformula}sی سرهٔ $\indfrm$
+  عبارت‌اند از $!B$ و $!C$، همراه با همهٔ !!{subformula}sی سرهٔ $!B$
+  و همهٔ زیر‌فرمول‌های سرهٔ~$!C$.}
+
+\tagitem{prvAll}{\indcase{!A}{\lforall[x][!B]}{!!{subformula}sی سرهٔ
+    $\indfrm$ عبارت‌اند از~$!B$ همراه با همهٔ !!{subformula}sی سرهٔ~$!B$.}}{}
+
+\tagitem{prvEx}{\indcase{!A}{\lexists[x][!B]}{!!{subformula}sی سرهٔ
+    $\indfrm$ عبارت‌اند از~$!B$ همراه با همهٔ !!{subformula}sی سرهٔ~$!B$.}}{}
+\end{enumerate}
+\end{defn}
+
+\begin{defn}[!!^{subformula}]
+!!{subformula}sی $!A$ عبارت‌اند از خود $!A$ همراه با همهٔ
+!!{subformula}sی سرهٔ آن.
+\end{defn}
+
+\begin{explain}
+به تفاوت ظریف میان شیوهٔ تعریف !!{subformula}sی بلافصل و
+!!{subformula}sی سره توجه کنید. در حالت نخست، !!{subformula}sی بلافصل
+فرمول~$!A$ را برای هر صورت ممکن~$!A$ مستقیماً تعریف کرده‌ایم. این تعریفی
+صریح و حالت‌به‌حالت است، و حالت‌ها با تعریف استقرایی مجموعهٔ !!{formula}s
+هم‌ساخت‌اند. در حالت دوم نیز از شیوهٔ تعریف مجموعهٔ همهٔ !!{formula}s
+پیروی کرده‌ایم، اما در هر حالت، !!{subformula}sی سرهٔ !!{formula}sی
+کوچک‌تر $!B$ و $!C$ را نیز، افزون بر خود این !!{formula}s، گنجانده‌ایم.
+این امر تعریف را
+\emph{بازگشتی} می‌کند. به‌طور کلی، تعریف تابعی روی مجموعه‌ای با تعریف
+استقرایی (در مورد ما، !!{formula}s) هنگامی بازگشتی است که حالت‌های تعریف
+تابع از خود تابع استفاده کنند. بااین‌همه، برای خوش‌تعریف‌بودن باید مطمئن
+شویم که فقط مقادیر تابع را برای آرگومان‌هایی به کار می‌بریم که «پیش از»
+آرگومان در حال تعریف می‌آیند---در مورد ما، هنگام تعریف «!!{subformula}
+سره» برای $(!B \ast !C)$ فقط از !!{subformula}sی سرهٔ !!{formula}sی
+«پیشین» $!B$ و $!C$ استفاده می‌کنیم.
+\end{explain}
+
+\begin{prop}
+\ollabel{prop:subfrm-trans}
+فرض کنید $!B$ زیر‌فرمول $!A$ و $!C$ زیر‌فرمول $!B$ باشد. آنگاه $!C$
+زیر‌فرمول $!A$ است. به بیان دیگر، رابطهٔ زیر‌فرمول تعدی‌پذیر است.
+\end{prop}
+
+\begin{prob}
+\olref[fol][syn][sbf]{prop:subfrm-trans} را اثبات کنید.
+\end{prob}
+
+\begin{prop}
+\ollabel{prop:count-subfrms}
+فرض کنید $!A$ فرمولی با $n$ رابط و سور باشد. آنگاه $!A$ حداکثر
+$2n+1$ زیر‌فرمول دارد.
+\end{prop}
+
+\begin{prob}
+\olref[fol][syn][sbf]{prop:count-subfrms} را اثبات کنید.
+\end{prob}
+
+\end{document}

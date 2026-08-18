@@ -1,0 +1,155 @@
+% part: intuitionistic-logic
+% chapter: soundness-completeness
+% section: soundness-nd
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{sc}{snd}
+
+\olsection{درستی استنتاج طبیعی}
+
+اکنون درستی استنتاج طبیعی را نسبت به معناشناسی رابطه‌ای ثابت می‌کنیم؛
+یعنی نشان می‌دهیم اگر !!a{formula} از مجموعه‌ای از فرض‌ها
+!!{derivable} باشد، آن مجموعهٔ فرض‌ها !!{formula} را نتیجه می‌دهد.
+
+\begin{thm}[درستی]
+  \ollabel{thm:soundness}
+  اگر~$\Gamma \Proves !A$، آنگاه~$\Gamma \Entails !A$.
+\end{thm}
+
+\begin{proof}
+  ثابت می‌کنیم اگر~$\Gamma \Proves !A$، آنگاه~$\Gamma \Entails !A$.
+  اثبات با استقرا بر !!{derivation}~$!A$ از~$\Gamma$ است.
+  
+  \begin{enumerate}
+  \item اگر !!{derivation} تنها از فرض~$!A$ تشکیل شده باشد،
+    $!A \Proves !A$ داریم و می‌خواهیم نشان دهیم~$!A \Entails !A$.
+    فرض کنید~$\mSat{M}{!A}[w]$. آنگاه به‌وضوح~$\mSat{M}{!A}[w]$.
+
+  \item !!{derivation} با~$\Intro{\land}$ پایان می‌یابد:
+    \iftag{probAnd}{تمرین.}{!!{derivation}های مقدمات، یعنی~$!B$ از
+      فرض‌های !!{undischarged}~$\Gamma$ و~$!C$ از فرض‌های
+      !!{undischarged}~$\Delta$، نشان می‌دهند~$\Gamma \Proves !B$ و
+      $\Delta \Proves !C$. بنا بر فرض استقرا،
+      $\Gamma \Entails !B$ و~$\Delta \Entails !C$. باید نشان دهیم
+      $\Gamma \cup \Delta \Entails !B \land !C$، زیرا فرض‌های
+      !!{undischarged} کل !!{derivation}، $\Gamma$ به‌همراه~$\Delta$
+      هستند. پس فرض کنید~$\mSat{M}{\Gamma \cup \Delta}[w]$. آنگاه
+      $\mSat{M}{\Gamma}[w]$ نیز. چون~$\Gamma \Entails !B$،
+      $\mSat{M}{!B}[w]$. به همین ترتیب~$\mSat{M}{!C}[w]$. پس
+      $\mSat{M}{!B \land !C}[w]$.}
+
+  \item !!{derivation} با~$\Elim{\land}$ پایان می‌یابد:
+    \iftag{probAnd}{تمرین.}{!!{derivation} مقدمهٔ~$!B \land !C$ از
+        فرض‌های !!{undischarged}~$\Gamma$ نشان می‌دهد
+        $\Gamma \Proves !B \land !C$. بنا بر فرض استقرا،
+        $\Gamma \Entails !B \land !C$. باید نشان دهیم
+        $\Gamma \Entails !B$. پس فرض کنید~$\mSat{M}{\Gamma}[w]$.
+        چون~$\Gamma \Entails !B \land !C$،
+        $\mSat{M}{!B \land !C}[w]$. بنابراین~$\mSat{M}{!B}[w]$ نیز.
+        به همین ترتیب، اگر~$\Elim\land$ به~$!C$ پایان یابد، آنگاه
+        $\Gamma \Entails !C$.}
+
+  \item !!{derivation} با~$\Intro{\lor}$ پایان می‌یابد:
+    \iftag{probOr}{تمرین.}{فرض کنید مقدمه~$!B$ باشد و فرض‌های
+      !!{undischarged}~!!{derivation}ای که به~$!B$ پایان می‌یابد
+      $\Gamma$ باشند. آنگاه~$\Gamma \Proves !B$ و بنا بر فرض استقرا،
+      $\Gamma \Entails !B$. باید نشان دهیم
+      $\Gamma \Entails !B \lor !C$. فرض کنید~$\mSat{M}{\Gamma}[w]$.
+      چون~$\Gamma \Entails !B$، $\mSat{M}{!B}[w]$. اما آنگاه
+      $\mSat{M}{!B \lor !C}[w]$ نیز. به همین ترتیب، اگر مقدمه~$!C$
+      باشد، $\Gamma \Entails !C$.}
+    
+  \item !!{derivation} با~$\Elim{\lor}$ پایان می‌یابد:
+    \iftag{probOr}{تمرین.}{!!{derivation}هایی که به مقدمات پایان
+      می‌یابند عبارت‌اند از: $!B \lor !C$ از فرض‌های
+      !!{undischarged}~$\Gamma$، $!D$ از فرض‌های !!{undischarged}
+      $\Delta_1 \cup \{!B\}$، و~$!D$ از فرض‌های !!{undischarged}
+      $\Delta_2 \cup \{!C\}$. پس داریم~$\Gamma \Proves !B \lor !C$،
+      $\Delta_1 \cup \{!B\} \Proves !D$ و
+      $\Delta_2 \cup \{!C\} \Proves !D$. بنا بر فرض استقرا،
+      $\Gamma \Entails !B \lor !C$،
+      $\Delta_1 \cup \{!B\} \Entails !D$ و
+      $\Delta_2 \cup \{!C\} \Entails !D$. باید ثابت کنیم
+      $\Gamma \cup \Delta_1 \cup \Delta_2 \Entails !D$.
+
+    فرض کنید~$\mSat{M}{\Gamma \cup \Delta_1 \cup \Delta_2}[w]$.
+    آنگاه~$\mSat{M}{\Gamma}[w]$؛ و چون
+    $\Gamma \Entails !B \lor !C$، $\mSat{M}{!B \lor !C}[w]$. بنا بر
+    تعریف~$\mSat{M}{}$، یا~$\mSat{M}{!B}[w]$ یا
+    $\mSat{M}{!C}[w]$. پس حالت‌بندی می‌کنیم:
+    (الف)~$\mSat{M}{!B}[w]$. آنگاه
+    $\mSat{M}{\Delta_1 \cup \{!B\}}[w]$. چون
+    $\Delta_1 \cup \{!B\} \Entails !D$، داریم~$\mSat{M}{!D}[w]$.
+    (ب)~$\mSat{M}{!C}[w]$. آنگاه
+    $\mSat{M}{\Delta_2 \cup \{!C\}}[w]$. چون
+    $\Delta_2 \cup \{!C\} \Entails !D$، داریم~$\mSat{M}{!D}[w]$.
+    پس در هر دو حالت، چنان‌که می‌خواستیم، $\mSat{M}{!D}[w]$.}
+
+  \item !!{derivation} با~$\Intro{\lif}$ پایان می‌یابد و نتیجه
+    $!B\lif !C$ است. در این صورت مقدمه~$!C$ است و~!!{derivation}ای که
+    به مقدمه پایان می‌یابد فرض‌های !!{undischarged}
+    $\Gamma \cup \{!B\}$ را دارد. پس~$\Gamma \cup \{!B\} \Proves !C$،
+    و بنا بر فرض استقرا~$\Gamma \cup \{!B\} \Entails !C$. باید نشان
+    دهیم~$\Gamma \Entails !B \lif !C$.
+
+    فرض کنید~$\mSat{M}{\Gamma}[w]$. می‌خواهیم نشان دهیم برای هر~$w'$
+    با~$Rww'$، اگر~$\mSat{M}{!B}[w']$، آنگاه~$\mSat{M}{!C}[w']$.
+    پس فرض کنید~$Rww'$ و~$\mSat{M}{!B}[w']$. بنا بر
+    \olref[sem][rel]{prop:true-monotonic}، $\mSat{M}{\Gamma}[w']$.
+    چون~$\Gamma \cup \{!B\} \Entails !C$، $\mSat{M}{!C}[w']$، که
+    همان مطلوب است.
+
+  \item !!{derivation} با~$\Elim{\lif}$ پایان می‌یابد و نتیجه~$!C$
+    است. مقدمات~$!B \lif !C$ و~$!B$ هستند، با !!{derivation}هایی از
+    فرض‌های !!{undischarged}~$\Gamma$ و~$\Delta$. پس
+    $\Gamma \Proves !B \lif !C$ و~$\Delta \Proves !B$. بنا بر فرض
+    استقرا، $\Gamma \Entails !B \lif !C$ و~$\Delta \Entails !B$.
+    باید نشان دهیم~$\Gamma \cup \Delta \Entails !C$.
+
+    فرض کنید~$\mSat{M}{\Gamma \cup \Delta}[w]$. چون
+    $\mSat{M}{\Gamma}[w]$ و~$\Gamma \Entails !B \lif !C$،
+    $\mSat{M}{!B \lif !C}[w]$. بنا بر تعریف، این یعنی برای هر~$w'$
+    با~$Rww'$، اگر~$\mSat{M}{!B}[w']$، آنگاه~$\mSat{M}{!C}[w']$.
+    چون~$R$ بازتابی است، $w$ یکی از~$w'$هایی است که~$Rww'$؛ یعنی اگر
+    $\mSat{M}{!B}[w]$، آنگاه~$\mSat{M}{!C}[w]$. چون
+    $\mSat{M}{\Delta}[w]$ و~$\Delta \Entails !B$،
+    $\mSat{M}{!B}[w]$. پس، چنان‌که می‌خواستیم، $\mSat{M}{!C}[w]$.
+
+  \item !!{derivation} با~$\FalseInt$ پایان می‌یابد و نتیجه~$!A$ است.
+    مقدمه~$\lfalse$ است و فرض‌های !!{undischarged}~!!{derivation}
+    مقدمه~$\Gamma$ هستند. پس~$\Gamma \Proves \lfalse$. بنا بر فرض
+    استقرا، $\Gamma \Entails \lfalse$. باید نشان دهیم
+    $\Gamma \Entails !A$.
+
+    به روش خلف پیش می‌رویم. اگر~$\Gamma \Entails/ !A$، مدل
+    $\mModel{M}$ و جهان~$w$ای وجود دارند چنان‌که
+    $\mSat{M}{\Gamma}[w]$ و~$\mSat/{M}{!A}[w]$. چون
+    $\Gamma \Entails \lfalse$، $\mSat{M}{\lfalse}[w]$. اما این ناممکن
+    است، زیرا بنا بر تعریف~$\mSat/{M}{\lfalse}[w]$. پس
+    $\Gamma \Entails !A$.
+  \item !!{derivation} با~$\Intro\lnot$ پایان می‌یابد: تمرین.
+  \item !!{derivation} با~$\Elim\lnot$ پایان می‌یابد: تمرین.
+  \end{enumerate}
+\end{proof}
+
+\begin{prob}
+  اثبات~\olref[int][sc][snd]{thm:soundness} را کامل کنید. در حالت‌های
+  $\Intro\lnot$ و~$\Elim\lnot$، از تعریف~$\mSat{M}{\lnot !A}[w]$ در
+  \olref[int][sem][rel]{defn:true-at-w} استفاده کنید؛ یعنی با
+  $\lnot !A$ همچون چیزی که با~$!A \lif \lfalse$ تعریف شده رفتار نکنید.
+\end{prob}
+
+\begin{prob}
+  نشان دهید !!{formula}های زیر در منطق شهودگرایانه !!{derivable}
+  نیستند:
+  \begin{enumerate}
+    \item $(!A \lif !B) \lor (!B \lif !A)$
+    \item $(\lnot\lnot !A \lif !A) \lif (!A \lor \lnot !A)$
+    \item $(!A \lif !B \lor !C) \lif \bigl((!A \lif !B)\lor(!A \lif !C)\bigr)$
+  \end{enumerate}
+\end{prob}
+
+\end{document}

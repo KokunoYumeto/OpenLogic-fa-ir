@@ -1,0 +1,113 @@
+% Part: incompleteness
+% Chapter: representability-in-q
+% Section: representable-comp
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{req}{rpc}
+\olsection{توابع بازنمایی‌پذیر در~$\Th{Q}$ محاسبه‌پذیرند}
+
+ثابت خواهیم کرد هر تابعی که در~$\Th{Q}$ بازنمایی‌پذیر باشد
+محاسبه‌پذیر است. نخست باید لمی دربارهٔ توابع بازنمایی‌پذیر در
+$\Th{Q}$ برقرار کنیم.
+
+\begin{lem}\ollabel{lem:rep-q}
+  اگر $f(x_0,\dots,x_k)$ در~$\Th{Q}$ بازنمایی‌پذیر باشد،
+  !!a{formula}ی چون~$!A(x_0,\dots,x_k,y)$ وجود دارد به‌گونه‌ای که
+  \[
+  \Th{Q} \Proves !A_f(\num{n_0}, \dots, \num{n_k}, \num{m})
+  \quad\text{اگر و تنها اگر}\quad m = f(n_0, \dots, n_k).
+  \]
+\end{lem}
+
+\begin{proof}
+جهت «اگر» همان
+\olref[int]{defn:representable-fn}\olref[int]{defn:rep:a} است. جهت
+«تنها اگر» را چنین می‌بینیم: فرض کنید
+$\Th{Q}\Proves !A_f(\num{n_0},\dots,\num{n_k},\num{m})$، اما
+$m\neq f(n_0,\dots,n_k)$. بگذارید
+$l=f(n_0,\dots,n_k)$. بنا بر
+\olref[int]{defn:representable-fn}\olref[int]{defn:rep:a}،
+$\Th{Q}\Proves !A_f(\num{n_0},\dots,\num{n_k},\num{l})$. بنا بر
+\olref[int]{defn:representable-fn}\olref[int]{defn:rep:b}،
+$\Th{Q}\Proves\lforall[y][(!A_f(\num{n_0},\dots,\num{n_k},y)
+\lif\num{l}=y)]$. با استفاده از منطق و فرض
+$\Th{Q}\Proves !A_f(\num{n_0},\dots,\num{n_k},\num{m})$، نتیجه
+می‌گیریم $\Th{Q}\Proves\eq[\num{l}][\num{m}]$. از سوی دیگر، بنا بر
+\olref[bre]{lem:q-proves-neq}،
+$\Th{Q}\Proves\eq/[\num{l}][\num{m}]$. پس~$\Th{Q}$ ناسازگار است.
+اما این ناممکن است، زیرا مدل استاندارد~$\Th{Q}$ را ارضا می‌کند
+(بنگرید به~\olref[int][def]{def:standard-model})،
+$\Sat{N}{\Th{Q}}$؛ و بنا بر قضیهٔ درستی، نظریه‌های ارضاپذیر همواره
+سازگارند
+(\tagrefs{prfAX/{fol:axd:sou:cor:consistency-soundness},
+prfSC/{fol:seq:sou:cor:consistency-soundness},
+prfND/{fol:ntd:sou:cor:consistency-soundness},
+prfTab/{fol:tab:sou:cor:consistency-soundness}}).
+\end{proof}
+
+\begin{lem}
+هر تابع بازنمایی‌پذیر در~$\Th{Q}$ محاسبه‌پذیر است.
+\end{lem}
+
+\begin{proof}
+نخست شهودِ درستی این ادعا را بیان کنیم. برای محاسبهٔ~$f$ چنین
+می‌کنیم: همهٔ !!{derivation}sی ممکن~$\delta$ در زبان حساب را فهرست
+می‌کنیم؛ این کار را می‌توان به‌طور مکانیکی انجام داد. برای هر یک
+می‌آزماییم آیا !!a{derivation} !!a{formula}ی به صورت
+$!A_f(\num{n_0},\dots,\num{n_k},\num{m})$ است یا نه (یعنی
+!!{formula} بازنمایندهٔ~$f$ در~$\Th{Q}$ از~\olref{lem:rep-q}). اگر چنین
+باشد، بنا بر~\olref{lem:rep-q}، $m=f(n_0,\dots,n_k)$ و مقدار~$f$ را
+یافته‌ایم. جست‌وجو پایان می‌یابد، زیرا
+$\Th{Q}\Proves !A_f(\num{n_0},\dots,\num{n_k},
+\num{f(n_0,\dots,n_k)})$؛ پس سرانجام~$\delta$ای از نوع درست می‌یابیم.
+
+این بیان کاملاً دقیق نیست، زیرا روی !!{derivation}s و !!{formula}s عمل
+می‌کند، نه فقط روی اعداد؛ و هنوز دقیقاً توضیح نداده‌ایم چرا «فهرست‌کردن
+همهٔ !!{derivation}sی ممکن» به‌طور مکانیکی امکان‌پذیر است. اما چنان‌که
+دیدیم، می‌توان ترم‌ها، !!{formula}s و !!{derivation}s را با اعداد گودل
+رمزگذاری کرد. همچنین مدل دقیقی از محاسبه، یعنی توابع بازگشتی عمومی،
+معرفی کرده‌ایم. و دیده‌ایم رابطهٔ~$\Prf[\Th{Q}](d,y)$، که برقرار است
+اگر و تنها اگر $d$ عدد گودل !!a{derivation}ی از !!{formula} دارای عدد
+گودل~$y$ بر پایهٔ اصول موضوعهٔ~$\Th{Q}$ باشد، (به‌طور اولیه)
+بازگشتی است. توابع بازگشتی اولیهٔ دیگری که لازم داریم عبارت‌اند از
+$\fn{num}$ (\olref[art][trm]{prop:num-primrec}) و~$\fn{Subst}$
+(\olref[art][sub]{prop:subst-primrec}). با استفاده از این‌ها می‌توان
+$f$ را با کمینه‌سازی تعریف کرد؛ پس~$f$ بازگشتی است.
+
+نخست تعریف کنید:
+\begin{multline*}
+  A(n_0, \dots, n_k, m) = \\
+  \fn{Subst}(\fn{Subst}(\dots\fn{Subst}(\Gn{!A_f}, \fn{num}(n_0), \Gn{x_0}),\\ \dots),
+  \fn{num}(n_k),  \Gn{x_k}), \fn{num}(m), \Gn{y}).
+\end{multline*}
+این پیچیده به نظر می‌رسد، اما صرفاً تابع زیر است:
+$A(n_0,\dots,n_k,m)=
+\Gn{!A_f(\num{n_0},\dots,\num{n_k},\num{m})}$.
+
+اکنون رابطهٔ~$R(n_0,\dots,n_k,s)$ را در نظر بگیرید که وقتی~$(s)_0$
+عدد گودل !!a{derivation}ی از~$\Th{Q}$ برای
+$!A_f(\num{n_0},\dots,\num{n_k},\num{(s)_1})$ باشد برقرار است:
+\[
+R(n_0, \dots, n_k, s) \quad\text{اگر و تنها اگر}\quad \Prf[\Th{Q}]((s)_0, A(n_0,
+\dots, n_k, (s)_1)).
+\]
+اگر~$s$ای بیابیم که~$R(n_0,\dots,n_k,s)$ درباره‌اش برقرار باشد، زوج
+عددی~$(s)_0$ و~$(s)_1$ را یافته‌ایم به‌گونه‌ای که~$(s)_0$ عدد گودل
+!!a{derivation}ی از~$A_f(\num{n_0},\dots,\num{n_k},(s)_1)$ است. پس
+جست‌وجوی~$s$ مانند جست‌وجوی زوج~$d$ و~$m$ در اثبات غیرصوری است؛ و
+تابع محاسبه‌پذیری که چنین~$s$ای را «جست‌وجو می‌کند» با کمینه‌سازی
+منظم تعریف‌شدنی است. توجه کنید~$R$ منظم است: به ازای هر
+$n_0$،~\dots،~$n_k$، !!a{derivation}ی چون~$\delta$ وجود دارد که گواه
+$\Th{Q}\Proves !A_f(\num{n_0},\dots,\num{n_k},
+\num{f(n_0,\dots,n_k)})$ است؛ پس $R(n_0,\dots,n_k,s)$ برای
+$s=\tuple{\Gn{\delta},f(n_0,\dots,n_k)}$ برقرار است. بنابراین
+می‌توانیم~$f$ را چنین بنویسیم:
+\[
+f(n_0,\dots,n_{k}) = (\umin{s}{R(n_0, \dots, n_k, s)})_1.
+\]
+\end{proof}
+
+\end{document}

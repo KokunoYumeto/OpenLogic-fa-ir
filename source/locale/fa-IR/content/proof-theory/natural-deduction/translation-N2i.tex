@@ -1,0 +1,139 @@
+% Part: proof-theory
+% Chapter: natural-deduction
+% Section: translation-N2i
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{nat}{tni}
+
+\olsection{ترجمه از \Log{N2} به \Log{G2}}
+
+\begin{prop}\ollabel{prop:N2-to-G2}
+اگر $\Log{N2c}\ (\Log{N2i})\Proves\Gamma\Sequent !A$، آنگاه
+$\Log{G2c}\ (\Log{G2i})+\Cut\Proves\Gamma'\Sequent\Delta$، که در آن
+$\Gamma'$ چندمجموعهٔ !!{formula}هایی است که با حذف برچسب‌ها از
+$\Gamma$ حاصل می‌شود؛ و اگر $!A\not\ident\lfalse$،
+$\Delta=\{!A\}$، و اگر $!A\ident\lfalse$، $\Delta=\emptyset$ است.
+\end{prop}
+
+\begin{proof}
+باز بر ارتفاع !!{proof}~$\delta$ برای $\Gamma\Sequent !A$ استقرا
+می‌کنیم. اگر $\delta$ اصل $x:!A\Sequent !A$ باشد، $\pi$ اصل متناظر
+$!A\Sequent !A$، یا در صورت $!A\ident\lfalse$، اصل
+$\lfalse\Sequent\ $ است.
+
+اگر $\delta$ به قاعده‌ای استنتاجی پایان یابد، حالت‌ها را جدا می‌کنیم:
+\begin{enumerate}
+  \item اگر $R$ برابر \Intro{\lif} با فرمول اصلی $!B\lif !C$ باشد و
+  $x:!B$ در بافت مقدمه، اما نه در بافت نتیجه، حضور داشته باشد، آنگاه
+  $\delta$ چنین پایان می‌یابد:
+  \[
+  \AxiomC{}
+  \RightLabel{$\delta_1$}
+  \Deduce$x:!B, \Gamma \fCenter !C$
+  \RightLabel{\Intro{\lif}}
+  \UnaryInf$\Gamma \fCenter !B \lif !C$
+  \DisplayProof
+  \]
+  اگر $!C\not\ident\lfalse$، فرض استقرا !!a{proof}~$\pi_1$ای برای
+  $!B,\Gamma'\Sequent !C$ می‌دهد و با اعمال~\RightR{\lif}، $\pi$ را
+  به دست می‌آوریم. اگر $!C\ident\lfalse$، فرض استقرا !!a{proof}ی برای
+  $!B,\Gamma'\Sequent\ $ می‌دهد؛ نخست با \RightR{\Weakening}
+  ~‌$\lfalse$ را به تالی می‌افزاییم و سپس \RightR{\lif} را اعمال
+  می‌کنیم.
+
+  \item اگر $R$ برابر \Intro{\lif} باشد، اما $x:!B$ در بافت مقدمه
+  حضور نداشته باشد، $\delta$ چنین پایان می‌یابد:
+  \[
+  \AxiomC{}
+  \RightLabel{$\delta_1$}
+  \Deduce$\Gamma \fCenter !C$
+  \RightLabel{\Intro{\lif}}
+  \UnaryInf$\Gamma \fCenter !B \lif !C$
+  \DisplayProof
+  \]
+  فرض استقرا !!{proof}~$\pi_1$ای برای $\Gamma'\Sequent !C$ می‌دهد؛
+  یا اگر $!C\ident\lfalse$ باشد، برای $\Gamma'\Sequent\ $. با
+  \LeftR{\Weakening} فرمول~$!B$ را به مقدم می‌افزاییم؛ در حالت دوم
+  سپس با \RightR{\Weakening}، $\lfalse$ را نیز به تالی می‌افزاییم؛ و
+  سرانجام \RightR{\lif} را اعمال می‌کنیم.
+
+  \item اگر $R$ برابر \Elim{\lif} باشد، $\delta$ چنین پایان می‌یابد:
+  \[
+  \AxiomC{}
+  \RightLabel{$\delta_1$}
+  \Deduce$\Gamma_1 \fCenter !B \lif !A$
+  \AxiomC{}
+  \RightLabel{$\delta_2$}
+  \Deduce$\Gamma_2 \fCenter !B$
+  \RightLabel{\Elim{\lif}}
+  \BinaryInf$\Gamma_1, \Gamma_2 \fCenter !A$
+  \DisplayProof
+  \]
+  که در آن بافت~$\Gamma$ از پیوستن $\Gamma_1$ و~$\Gamma_2$ حاصل
+  می‌شود. فرض استقرا !!{proof}~$\pi_1$ برای
+  $\Gamma_1'\Sequent !B\lif !A$ و~$\pi_2$ برای
+  $\Gamma_2'\Sequent !B$ می‌دهد. اگر $!A$ و~$!B$ هیچ‌کدام
+  $\lfalse$ نباشند، !!a{proof}~$\pi$ را چنین به دست می‌آوریم:
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_1$}
+  \Deduce$\Gamma_1' \fCenter !B \lif !A$
+  \AxiomC{}
+  \RightLabel{$\pi_2$}
+  \Deduce$\Gamma_2' \fCenter !B$
+  \Axiom$!A \fCenter !A$
+  \RightLabel{\LeftR{\lif}}
+  \BinaryInf$!B \lif !A, \Gamma_2' \fCenter !A$
+  \RightLabel{\Cut}
+  \BinaryInf$\Gamma_1', \Gamma_2' \fCenter !A$
+  \DisplayProof
+  \]
+  اگر $!B\ident\lfalse$، فرض استقرا بر~$\delta_2$ !!{proof}ی برای
+  $\Gamma_2'\Sequent\ $ می‌دهد؛ پیش از \LeftR{\lif} با
+  \RightR{\Weakening}، $\lfalse$ را به تالی می‌افزاییم. اگر
+  $!A\ident\lfalse$، مقدمهٔ راست \LeftR{\lif} را اصل
+  $\lfalse\Sequent\ $ می‌گیریم؛ در نتیجه \LeftR{\lif} و سپس \Cut
+  تالی را تهی نگه می‌دارند. اگر هر دو هم‌ارز~$\lfalse$ باشند، هر دو
+  اصلاح را هم‌زمان انجام می‌دهیم.
+
+  چندمجموعهٔ حاصل از پیوستن $\Gamma_1'$ و~$\Gamma_2'$ ممکن است با
+  $\Gamma'$ یکسان نباشد. برای نمونه، اگر هر دو $\Gamma_1$ و
+  ~‌$\Gamma_2$ شامل $x:!C$ باشند، چندمجموعهٔ پیوسته دو نسخه از~$!C$
+  دارد، اما بافت پیوستهٔ برچسب‌دار فقط یک نسخه دارد. این تفاوت را با
+  افزودن استنتاج‌های مناسب \LeftR{\Contraction} برطرف می‌کنیم.
+
+  \item اگر $R$ برابر \FalseCl باشد، $\delta$ چنین پایان می‌یابد:
+  \[
+  \AxiomC{}
+  \RightLabel{$\delta_1$}
+  \Deduce$x: \lnot !A, \Gamma \fCenter \lfalse$
+  \RightLabel{\FalseCl}
+  \UnaryInf$\Gamma \fCenter !A$
+  \DisplayProof
+  \]
+  بنا بر فرض استقرا، !!a{proof}~$\pi_1$ای برای
+  $\lnot !A,\Gamma'\Sequent\ $ وجود دارد. !!{proof}~$\pi$ را چنین
+  می‌گیریم:
+  \[
+  \Axiom$!A \fCenter !A$
+  \RightLabel{\RightR{\lnot}}
+  \UnaryInf$\fCenter !A, \lnot !A$
+  \AxiomC{}
+  \RightLabel{$\pi_1$}
+  \Deduce$\lnot !A, \Gamma' \fCenter $
+  \RightLabel{\Cut}
+  \BinaryInf$\Gamma' \fCenter !A$
+  \DisplayProof
+  \]
+\end{enumerate}
+حالت‌های باقی‌مانده مشابه‌اند و در همه‌جا بافت‌ها را با پیوستن، نه با
+اجتماع مجموعه‌ای، ترکیب می‌کنیم. فقط ترجمهٔ \FalseCl{} به
+!!a{proof}~$\pi$ای با بیش از یک !!{formula} در تالی می‌انجامد. بنابراین
+ترجمهٔ یک !!{proof} در~\Log{N2i}، !!{proof}ی در
+$\Log{G2i}+\Cut$ است.
+\end{proof}
+
+\end{document}

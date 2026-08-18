@@ -1,0 +1,229 @@
+% Part: normal-modal-logic
+% Chapter: tableaux
+% Section: more-soundness
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{tab}{msn}
+      
+\olsection{درستیِ قواعد افزوده}
+
+می‌گوییم قاعده‌ای برای رده‌ای از مدل‌ها درست است اگر هرگاه شاخه‌ای در
+!!a{tableau} در مدلی از آن رده ارضاپذیر باشد، شاخهٔ حاصل از اعمال قاعده
+نیز در مدلی از آن رده ارضاپذیر باشد.
+
+\begin{prop}
+  \ollabel{prop:soundness-T} 
+  \iftag{prvBox}{\Ax{T}$\Box$}{}%
+  \iftag{notprvBox,notprvDiamond}{}{ و }%
+  \iftag{prvDiamond}{\Ax{T}$\Diamond$}{}
+  \iftag{notprvBox,notprvDiamond}{برای مدل‌های بازتابی درست است}{برای
+  مدل‌های بازتابی درست‌اند}.
+\end{prop}
+
+\begin{proof}
+\begin{tagenumerate}{prvBox,prvDiamond}
+\tagitem{prvBox}{شاخه با اعمال~T$\Box$ بر
+  $\sFmla{\True}{\Box !B}[\sigma] \in \Gamma$ گسترش می‌یابد:
+  \iftag{probBox}{تمرین.}{این کار !!{signed formula} تازهٔ
+    $\sFmla{\True}{!B}[\sigma]$ را روی شاخه به دست می‌دهد. فرض کنید
+    $\mSat{M}{\Gamma}[f]$، و به‌ویژه
+    $\mSat{M}{\Box !B}[f(\sigma)]$. چون~$R$ بازتابی است، می‌دانیم
+    $Rf(\sigma)f(\sigma)$. پس~$\mSat{M}{!B}[f(\sigma)]$؛ یعنی
+    $\mModel{M}, f$، $\sFmla{\True}{!B}[\sigma]$ را ارضا می‌کند.}}{}
+\tagitem{prvDiamond}{شاخه با اعمال~T$\Diamond$ بر
+  $\sFmla{\False}{\Diamond !B}[\sigma] \in \Gamma$ گسترش می‌یابد:
+  \iftag{probDiamond}{تمرین.}{این کار !!{signed formula} تازهٔ
+    $\sFmla{\False}{!B}[\sigma]$ را روی شاخه به دست می‌دهد. فرض کنید
+    $\mSat{M}{\Gamma}[f]$، و به‌ویژه
+    $\mSat/{M}{\Diamond !B}[f(\sigma)]$. چون~$R$ بازتابی است، می‌دانیم
+    $Rf(\sigma)f(\sigma)$. پس~$\mSat/{M}{!B}[f(\sigma)]$؛ یعنی
+    $\mModel{M}, f$، $\sFmla{\False}{!B}[\sigma]$ را ارضا می‌کند.}}{}
+\end{tagenumerate}
+\end{proof}
+
+\tagprob{probBox,probDiamond}
+\begin{prob}
+  اثبات \olref[nml][tab][msn]{prop:soundness-T} را کامل کنید.
+\end{prob}
+\tagendprob
+
+\begin{prop}
+  \ollabel{prop:soundness-D} 
+  \iftag{prvBox}{\Ax{D}$\Box$}{}%
+  \iftag{notprvBox,notprvDiamond}{}{ و }%
+  \iftag{prvDiamond}{\Ax{D}$\Diamond$}{}
+  \iftag{notprvBox,notprvDiamond}{برای مدل‌های سریال درست است}{برای
+  مدل‌های سریال درست‌اند}.
+\end{prop}
+
+\begin{proof}
+\begin{tagenumerate}{prvBox,prvDiamond}
+\tagitem{prvBox}{شاخه با اعمال~D$\Box$ بر
+  $\sFmla{\True}{\Box !B}[\sigma] \in \Gamma$ گسترش می‌یابد:
+  \iftag{probBox}{تمرین.}{این کار !!{signed formula} تازهٔ
+    $\sFmla{\True}{\Diamond !B}[\sigma]$ را روی شاخه به دست می‌دهد.
+    فرض کنید~$\mSat{M}{\Gamma}[f]$، و به‌ویژه
+    $\mSat{M}{\Box !B}[f(\sigma)]$. چون~$R$ سریال است، جهان~$w \in
+    W$ای وجود دارد که~$Rf(\sigma)w$. آنگاه~$\mSat{M}{!B}[w]$ و ازاین‌رو
+    $\mSat{M}{\Diamond !B}[f(\sigma)]$. پس~$\mModel{M}, f$،
+    $\sFmla{\True}{\Diamond!B}[\sigma]$ را ارضا می‌کند.}}{}
+\tagitem{prvDiamond}{شاخه با اعمال~D$\Diamond$ بر
+  $\sFmla{\False}{\Diamond !B}[\sigma] \in \Gamma$ گسترش می‌یابد:
+  \iftag{probDiamond}{تمرین.}{این کار !!{signed formula} تازهٔ
+    $\sFmla{\False}{\Box !B}[\sigma]$ را روی شاخه به دست می‌دهد. فرض
+    کنید~$\mSat{M}{\Gamma}[f]$، و به‌ویژه
+    $\mSat/{M}{\Diamond !B}[f(\sigma)]$. چون~$R$ سریال است، جهان
+    $w \in W$ای وجود دارد که~$Rf(\sigma)w$. آنگاه
+    $\mSat/{M}{!B}[w]$ و ازاین‌رو~$\mSat/{M}{\Box !B}[f(\sigma)]$.
+    پس~$\mModel{M}, f$، $\sFmla{\False}{\Box!B}[\sigma]$ را ارضا
+    می‌کند.}}{}
+\end{tagenumerate}
+\end{proof}
+
+\tagprob{probBox,probDiamond}
+\begin{prob}
+  اثبات \olref[nml][tab][msn]{prop:soundness-D} را کامل کنید.
+\end{prob}
+\tagendprob
+
+\begin{prop}
+  \ollabel{prop:soundness-B} 
+  \iftag{prvBox}{\Ax{B}$\Box$}{}%
+  \iftag{notprvBox,notprvDiamond}{}{ و }%
+  \iftag{prvDiamond}{\Ax{B}$\Diamond$}{}
+  \iftag{notprvBox,notprvDiamond}{برای مدل‌های متقارن درست است}{برای
+  مدل‌های متقارن درست‌اند}.
+\end{prop}
+
+\begin{proof}
+\begin{tagenumerate}{prvBox,prvDiamond}
+\tagitem{prvBox}{شاخه با اعمال~B$\Box$ بر
+  $\sFmla{\True}{\Box !B}[\sigma.n] \in \Gamma$ گسترش می‌یابد:
+  \iftag{probBox}{تمرین.}{این کار !!{signed formula} تازهٔ
+    $\sFmla{\True}{!B}[\sigma]$ را روی شاخه به دست می‌دهد. فرض کنید
+    $\mSat{M}{\Gamma}[f]$، و به‌ویژه
+    $\mSat{M}{\Box !B}[f(\sigma.n)]$. چون~$f$ تفسیری از پیشوندهای روی
+    شاخه در~$\mModel{M}$ است، می‌دانیم~$Rf(\sigma)f(\sigma.n)$. چون
+    $R$ متقارن است، $Rf(\sigma.n)f(\sigma)$. از
+    $\mSat{M}{\Box !B}[f(\sigma.n)]$ نتیجه می‌شود
+    $\mSat{M}{!B}[f(\sigma)]$. پس~$\mModel{M}, f$،
+    $\sFmla{\True}{!B}[\sigma]$ را ارضا می‌کند.}}{}
+\tagitem{prvDiamond}{شاخه با اعمال~B$\Diamond$ بر
+  $\sFmla{\False}{\Diamond !B}[\sigma.n] \in \Gamma$ گسترش می‌یابد:
+  \iftag{probDiamond}{تمرین.}{این کار !!{signed formula} تازهٔ
+    $\sFmla{\False}{!B}[\sigma]$ را روی شاخه به دست می‌دهد. فرض کنید
+    $\mSat{M}{\Gamma}[f]$، و به‌ویژه
+    $\mSat/{M}{\Diamond !B}[f(\sigma.n)]$. چون~$f$ تفسیری از
+    پیشوندهای روی شاخه در~$\mModel{M}$ است، می‌دانیم
+    $Rf(\sigma)f(\sigma.n)$. چون~$R$ متقارن است،
+    $Rf(\sigma.n)f(\sigma)$. از
+    $\mSat/{M}{\Diamond !B}[f(\sigma.n)]$ نتیجه می‌شود
+    $\mSat/{M}{!B}[f(\sigma)]$. پس~$\mModel{M}, f$،
+    $\sFmla{\False}{!B}[\sigma]$ را ارضا می‌کند.}}{}
+\end{tagenumerate}
+\end{proof}
+
+\tagprob{probBox,probDiamond}
+\begin{prob}
+  اثبات \olref[nml][tab][msn]{prop:soundness-B} را کامل کنید.
+\end{prob}
+\tagendprob
+
+\begin{prop}
+  \ollabel{prop:soundness-4} 
+  \iftag{prvBox}{\Ax{4}$\Box$}{}%
+  \iftag{notprvBox,notprvDiamond}{}{ و }%
+  \iftag{prvDiamond}{\Ax{4}$\Diamond$}{}
+  \iftag{notprvBox,notprvDiamond}{برای مدل‌های متعدی درست است}{برای
+  مدل‌های متعدی درست‌اند}.
+\end{prop}
+
+\begin{proof}
+\begin{tagenumerate}{prvBox,prvDiamond}
+\tagitem{prvBox}{شاخه با اعمال~4$\Box$ بر
+  $\sFmla{\True}{\Box !B}[\sigma] \in \Gamma$ گسترش می‌یابد:
+  \iftag{probBox}{تمرین.}{این کار !!{signed formula} تازهٔ
+    $\sFmla{\True}{\Box!B}[\sigma.n]$ را روی شاخه به دست می‌دهد. فرض
+    کنید~$\mSat{M}{\Gamma}[f]$، و به‌ویژه
+    $\mSat{M}{\Box !B}[f(\sigma)]$. چون~$f$ تفسیری از پیشوندهای روی
+    شاخه در~$\mModel{M}$ است و~$\sigma.n$ باید استفاده‌شده باشد،
+    می‌دانیم~$Rf(\sigma)f(\sigma.n)$. اکنون بگذارید~$w$ هر جهانی باشد
+    که~$Rf(\sigma.n)w$. چون~$R$ متعدی است، $Rf(\sigma)w$. از
+    $\mSat{M}{\Box !B}[f(\sigma)]$ نتیجه می‌شود~$\mSat{M}{!B}[w]$.
+    پس~$\mSat{M}{\Box !B}[f(\sigma.n)]$ و~$\mModel{M}, f$،
+    $\sFmla{\True}{\Box !B}[\sigma.n]$ را ارضا می‌کند.}}{}
+\tagitem{prvDiamond}{شاخه با اعمال~4$\Diamond$ بر
+  $\sFmla{\False}{\Diamond !B}[\sigma] \in \Gamma$ گسترش می‌یابد:
+  \iftag{probDiamond}{تمرین.}{این کار !!{signed formula} تازهٔ
+    $\sFmla{\False}{\Diamond!B}[\sigma.n]$ را روی شاخه به دست می‌دهد.
+    فرض کنید~$\mSat{M}{\Gamma}[f]$، و به‌ویژه
+    $\mSat/{M}{\Diamond !B}[f(\sigma)]$. چون~$f$ تفسیری از پیشوندهای
+    روی شاخه در~$\mModel{M}$ است و~$\sigma.n$ باید استفاده‌شده باشد،
+    می‌دانیم~$Rf(\sigma)f(\sigma.n)$. اکنون بگذارید~$w$ هر جهانی باشد
+    که~$Rf(\sigma.n)w$. چون~$R$ متعدی است، $Rf(\sigma)w$. از
+    $\mSat/{M}{\Diamond !B}[f(\sigma)]$ نتیجه می‌شود
+    $\mSat/{M}{!B}[w]$. پس~$\mSat/{M}{\Diamond !B}[f(\sigma.n)]$ و
+    $\mModel{M}, f$، $\sFmla{\False}{\Diamond !B}[\sigma.n]$ را ارضا
+    می‌کند.}}{}
+\end{tagenumerate}
+\end{proof}
+
+\tagprob{probBox,probDiamond}
+\begin{prob}
+  اثبات \olref[nml][tab][msn]{prop:soundness-4} را کامل کنید.
+\end{prob}
+\tagendprob
+
+\begin{prop}
+  \ollabel{prop:soundness-4r} 
+  \iftag{prvBox}{\Ax{4r}$\Box$}{}%
+  \iftag{notprvBox,notprvDiamond}{}{ و }%
+  \iftag{prvDiamond}{\Ax{4r}$\Diamond$}{}
+  \iftag{notprvBox,notprvDiamond}{برای مدل‌های اقلیدسی درست است}{برای
+  مدل‌های اقلیدسی درست‌اند}.
+\end{prop}
+
+\begin{proof}
+\begin{tagenumerate}{prvBox,prvDiamond}
+\tagitem{prvBox}{شاخه با اعمال~4r$\Box$ بر
+  $\sFmla{\True}{\Box !B}[\sigma.n] \in \Gamma$ گسترش می‌یابد:
+  \iftag{probBox}{تمرین.}{این کار !!{signed formula} تازهٔ
+    $\sFmla{\True}{\Box!B}[\sigma]$ را روی شاخه به دست می‌دهد. فرض
+    کنید~$\mSat{M}{\Gamma}[f]$، و به‌ویژه
+    $\mSat{M}{\Box !B}[f(\sigma.n)]$. چون~$f$ تفسیری از پیشوندهای روی
+    شاخه در~$\mModel{M}$ است، می‌دانیم~$Rf(\sigma)f(\sigma.n)$. اکنون
+    بگذارید~$w$ هر جهانی باشد که~$Rf(\sigma)w$. چون~$R$ اقلیدسی است،
+    $Rf(\sigma.n)w$. از~$\mSat{M}{\Box !B}[f(\sigma.n)]$ نتیجه می‌شود
+    $\mSat{M}{!B}[w]$. پس~$\mSat{M}{\Box !B}[f(\sigma)]$ و
+    $\mModel{M}, f$، $\sFmla{\True}{\Box !B}[\sigma]$ را ارضا می‌کند.}}{}
+\tagitem{prvDiamond}{شاخه با اعمال~4r$\Diamond$ بر
+  $\sFmla{\False}{\Diamond !B}[\sigma.n] \in \Gamma$ گسترش می‌یابد:
+  \iftag{probDiamond}{تمرین.}{این کار !!{signed formula} تازهٔ
+    $\sFmla{\False}{\Diamond!B}[\sigma]$ را روی شاخه به دست می‌دهد.
+    فرض کنید~$\mSat{M}{\Gamma}[f]$، و به‌ویژه
+    $\mSat/{M}{\Diamond !B}[f(\sigma.n)]$. چون~$f$ تفسیری از پیشوندهای
+    روی شاخه در~$\mModel{M}$ است، می‌دانیم~$Rf(\sigma)f(\sigma.n)$.
+    اکنون بگذارید~$w$ هر جهانی باشد که~$Rf(\sigma)w$. چون~$R$ اقلیدسی
+    است، $Rf(\sigma.n)w$. از
+    $\mSat/{M}{\Diamond !B}[f(\sigma.n)]$ نتیجه می‌شود
+    $\mSat/{M}{!B}[w]$. پس~$\mSat/{M}{\Diamond !B}[f(\sigma)]$ و
+    $\mModel{M}, f$، $\sFmla{\False}{\Diamond !B}[\sigma]$ را ارضا
+    می‌کند.}}{}
+\end{tagenumerate}
+\end{proof}
+
+\tagprob{probBox,probDiamond}
+\begin{prob}
+  اثبات \olref[nml][tab][msn]{prop:soundness-4r} را کامل کنید.
+\end{prob}
+\tagendprob
+
+\begin{cor}
+\ollabel{cor:soundness-logics} دستگاه‌های !!{tableau} داده‌شده در
+\olref[mru]{tab:logics-rules} برای رده‌های متناظرِ مدل‌ها درست‌اند.
+\end{cor}
+
+\end{document}

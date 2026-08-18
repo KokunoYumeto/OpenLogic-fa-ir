@@ -1,0 +1,75 @@
+% Part: model-theory
+% Chapter: models-of-arithmetic
+% Section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mod}{mar}{int}
+\section{مقدمه}
+
+\emph{مدل استاندارد} حساب همان !!{structure}~$\Struct{N}$ با
+$\Domain{N} = \Nat$ است که در آن $\Obj{0}$، $\prime$، $+$، $\times$ و
+$<$ آن‌گونه که انتظار می‌رود تعبیر می‌شوند. یعنی $\Obj{0}$ همان~$0$
+است، $\prime$ تابع جانشین است، $+$ به جمع و $\times$ به ضرب اعداد
+در~$\Nat$ تعبیر می‌شود. به‌طور مشخص،
+\begin{align*}
+  \Assign{\Obj{0}}{N} & = 0\\
+  \Assign{\prime}{N}(n) & = n + 1\\
+  \Assign{+}{N}(n, m) & = n + m\\
+  \Assign{\times}{N}(n, m) & = nm\\
+  \Assign{<}{N} & =
+    \Setabs{\tuple{n,m}}{n,m\in\Nat \text{ و } n<m}
+\end{align*}
+البته برای~$\Lang{L_A}$ ساختارهایی با دامنه‌هایی جز~$\Nat$ نیز
+وجود دارند. برای نمونه، می‌توانیم $\Struct{M}$ را با دامنهٔ
+$\Domain{M} = \{a\}^*$ (دنباله‌های متناهیِ تک‌نماد~$a$، یعنی
+$\emptyset$، $a$، $aa$، $aaa$، \dots) و تعبیرهای زیر در نظر بگیریم:
+\begin{align*}
+  \Assign{\Obj{0}}{M} & = \emptyset\\
+  \Assign{\prime}{M}(s) & = s \concat a\\
+  \Assign{+}{M}(a^n, a^m) & = a^{n + m}\\
+  \Assign{\times}{M}(a^n, a^m) & = a^{nm}\\
+  \Assign{<}{M} & =
+    \Setabs{\tuple{a^n,a^m}}{n,m\in\Nat \text{ و } n<m}
+\end{align*}
+این دو ساختار از این حیث «اساساً یکسان»اند که تنها !!{element}s
+!!{domain}s آن‌ها متفاوت است، نه چگونگی ارتباط !!{element}s
+!!{domain}s آن‌ها با یکدیگر به‌وسیلهٔ توابع تعبیر. می‌گوییم این دو
+!!{structure}s
+\emph{همریخت}اند.
+
+یکی از پیامدهای سادهٔ قضیهٔ فشردگی این است که هر نظریه‌ای که
+در~$\Struct{N}$ صادق باشد، مدل‌هایی نیز دارد که با~$\Struct{N}$
+همریخت نیستند. چنین ساختارهایی را
+\emph{نااستاندارد} می‌نامیم. نکتهٔ جالب دربارهٔ آن‌ها این است که
+!!{element}s یک مدل استاندارد (یعنی $\Struct{N}$ و نیز هر
+!!{structure}s همریخت با آن) همگی با مقادیر عددنماهای استاندارد
+$\num{n}$ پوشش داده می‌شوند؛ یعنی
+\[
+\Domain{N} = \Setabs{\Value{\num{n}}{N}}{n \in \Nat}.
+\]
+اما در مدل‌های نااستاندارد چنین نیست: اگر $\Struct{M}$ نااستاندارد
+باشد، دست‌کم یک $x \in \Domain{M}$ وجود دارد چنان‌که برای همهٔ~$n$،
+$x \neq \Value{\num{n}}{M}$.
+
+این عناصر نااستاندارد بسیار جالب‌اند: آن‌ها «اعداد طبیعی نامتناهی»اند.
+اما وجودشان، از یک جهت، پدیده‌های ناتمامیت را نیز توضیح می‌دهد. برای
+نمونه گزارهٔ سازگاری حساب پئانو، $\OCon[\Th{PA}]$، یعنی
+$\lnot \lexists[x][\OPrf[\Th{PA}](x, \gn{\lfalse})]$ را در نظر
+بگیرید. چون $\Th{PA}$ نه $\OCon[\Th{PA}]$ را ثابت می‌کند و نه
+$\lnot \OCon[\Th{PA}]$ را، هر یک را می‌توان به‌طور سازگار به
+$\Th{PA}$ افزود. چون $\Th{PA}$ سازگار است،
+$\Sat{N}{\OCon[\Th{PA}]}$ و در نتیجه
+$\Sat/{N}{\lnot \OCon[\Th{PA}]}$. پس $\Struct{N}$
+\emph{مدلِ} $\Th{PA} \cup \{\lnot \OCon[\Th{PA}]\}$ نیست و همهٔ
+مدل‌های این نظریه باید نااستاندارد باشند. مدل‌های
+$\Th{PA} \cup \{\lnot \OCon[\Th{PA}]\}$ باید !!{element}ی داشته
+باشند که به‌منزلهٔ شاهد،
+$\lexists[x][\OPrf[\Th{PA}](x, \gn{\lfalse})]$ را صادق کند؛ یعنی
+عدد گودلِ !!a{derivation} از تناقض بر پایهٔ~$\Th{PA}$. چنین
+!!a{element}ی نمی‌تواند استاندارد باشد، زیرا برای هر~$n$،
+$\Th{PA} \Proves \lnot \OPrf[\Th{PA}](\num{n}, \gn{\lfalse})$.
+
+\end{document}

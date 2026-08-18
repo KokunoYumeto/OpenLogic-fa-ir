@@ -1,0 +1,70 @@
+% Part: second-order-logic
+% Chapter: metatheory
+% Section: compactness
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sol}{met}{com}
+
+\olsection{منطق مرتبهٔ دوم فشرده نیست}
+
+\begin{explain}
+مجموعه‌ای از جمله‌ها چون~$\Gamma$ را \emph{به‌طور متناهی ارضاشدنی}
+بنامید هرگاه هر یک از زیرمجموعه‌های متناهی آن ارضاشدنی باشد. منطق مرتبهٔ
+اول این ویژگی را دارد که اگر مجموعه‌ای چون~$\Gamma$ از !!{sentence}s
+به‌طور متناهی ارضاشدنی باشد، ارضاشدنی است. این ویژگی
+\emph{فشردگی} نامیده می‌شود. صورت هم‌ارزی از آن دربارهٔ نتیجهٔ منطقی
+است: اگر~$\Gamma \Entails !A$، آنگاه از پیش~$\Gamma_0 \Entails !A$ برای
+زیرمجموعهٔ متناهی‌ای چون~$\Gamma_0 \subseteq \Gamma$. در این صورت،
+این ویژگی نتیجهٔ بی‌درنگ قضیهٔ تمامیت است: اگر~$\Gamma \Entails !A$،
+بنا بر تمامیت~$\Gamma \Proves !A$. اما !!{derivation} تنها می‌تواند از
+تعداد متناهی‌ای از !!{sentence}s مجموعهٔ~$\Gamma$ استفاده کند.
+
+فشردگی برای منطق مرتبهٔ دوم برقرار نیست. مجموعه‌هایی از !!{sentence}s
+مرتبهٔ دوم وجود دارند که به‌طور متناهی ارضاشدنی‌اند اما ارضاشدنی نیستند،
+و جمله‌ای چون~$!A$ را نتیجه می‌دهند بی‌آنکه زیرمجموعه‌ای متناهی
+از آن‌ها~$!A$ را نتیجه دهد.
+\end{explain}
+
+
+\begin{thm}
+\ollabel{thm:sol-not-compact}
+منطق مرتبهٔ دوم فشرده نیست.
+\end{thm}
+
+\begin{proof}
+به یاد آورید که
+\[
+\fn{Inf} \ident \lexists[u][(\lforall[x][\lforall[y][(\eq[u(x)][u(y)]
+      \lif \eq[x][y])]] \land \lexists[y][\lforall[x][\eq/[y][u(x)]]])]
+\]
+در !!a{structure}ی ارضا می‌شود اگر و تنها اگر دامنهٔ آن نامتناهی باشد.
+بگذارید~$!A^{\ge n}$ جمله‌ای باشد که می‌گوید دامنه دست‌کم~$n$
+!!{element}s دارد؛ برای نمونه:
+\[
+!A^{\ge n} \ident \lexists[x_1][\dots\lexists[x_n][(\eq/[x_1][x_2]
+    \land \eq/[x_1][x_3] \land \dots \land \eq/[x_{n-1}][x_n])]].
+\]
+مجموعهٔ زیر از !!{sentence}s را در نظر بگیرید:
+\[
+\Gamma = \{\lnot \fn{Inf}, !A^{\ge 1}, !A^{\ge 2}, !A^{\ge 3}, \dots\}.
+\]
+این مجموعه به‌طور متناهی ارضاشدنی است، زیرا برای هر زیرمجموعهٔ متناهی
+$\Gamma_0 \subseteq \Gamma$ عددی چون~$k \ge 1$ وجود دارد چنان‌که
+$!A^{\ge k} \in \Gamma$، اما هیچ~$!A^{\ge n} \in \Gamma_0$ برای
+$n>k$. اگر~$\Domain{M}$ دارای~$k$ !!{element}s باشد،
+$\Sat{M}{\Gamma_0}$. اما~$\Gamma$ ارضاشدنی نیست: اگر
+$\Sat{M}{\lnot \fn{Inf}}$، $\Domain{M}$ باید متناهی، مثلاً دارای
+اندازهٔ~$k$، باشد. آنگاه~$\Sat/{M}{!A^{\ge k+1}}$.
+\end{proof}
+
+\begin{prob}
+نمونه‌ای از مجموعه‌ای چون~$\Gamma$ و !!a{sentence}ی چون~$!A$ بدهید که
+$\Gamma \Entails !A$ اما برای هر زیرمجموعهٔ متناهی
+$\Gamma_0 \subseteq \Gamma$، داشته باشیم~$\Gamma_0 \Entails/ !A$.
+\end{prob}
+
+
+\end{document}

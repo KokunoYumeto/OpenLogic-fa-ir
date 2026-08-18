@@ -1,0 +1,106 @@
+% Part: first-order-logic
+% Chapter: natural-deduction
+% Section: derivations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{ntd}{der}}
+      {\olfileid{pl}{ntd}{der}}
+
+\olsection{\usetoken{P}{derivation}}
+
+\begin{explain}
+گفته‌ایم فرض چیست و قواعد استنتاج را نیز به دست داده‌ایم.
+!!^{derivation}s در استنتاج طبیعی به‌طور استقرایی از این‌ها تولید
+می‌شوند: هر !!{derivation} یا به‌تنهایی یک فرض است، یا از یک، دو یا سه
+!!{derivation}s تشکیل می‌شود که استنتاجی درست پس از آن‌ها آمده است.
+\end{explain}
+
+\begin{defn}[!!^{derivation}]
+\Article{derivation} \emph{!!{derivation}} از !!a{sentence}~$!A$ از
+فرض‌های~$\Gamma$، درختی متناهی از !!{sentence}s است که شرایط زیر را
+برآورده می‌کند:
+\begin{enumerate}
+\item بالاترین !!{sentence}s درخت یا عضو $\Gamma$ هستند یا به‌وسیلهٔ
+  استنتاجی در درخت !!{discharged} می‌شوند.
+\item پایین‌ترین !!{sentence} درخت~$!A$ است.
+\item هر !!{sentence} درخت جز جملهٔ~$!A$ در پایین، مقدمهٔ کاربرد درستی
+  از یک قاعدهٔ استنتاج است که نتیجه‌اش بی‌واسطه زیر آن !!{sentence} در
+  درخت قرار دارد.
+\end{enumerate}
+آنگاه می‌گوییم $!A$~\emph{نتیجهٔ} !!{derivation} و $\Gamma$ فرض‌های
+!!{undischarged} آن است.
+
+اگر !!a{derivation} از $!A$ از~$\Gamma$ وجود داشته باشد، می‌گوییم
+$!A$~\emph{!!{derivable}} از~$\Gamma$ است، یا به زبان نمادین:
+$\Gamma \Proves !A$. اگر !!a{derivation} از~$!A$ وجود داشته باشد که در
+آن هر فرض !!{discharged} شده است، می‌نویسیم~$\Proves !A$.
+\end{defn}
+
+\begin{ex}
+هر فرض به‌تنهایی !!a{derivation} است. پس برای مثال، $!A$ به‌تنهایی
+!!a{derivation} است و $!B$ به‌تنهایی نیز چنین است. می‌توانیم با
+اعمال مثلاً قاعدهٔ $\Intro{\land}$ به این‌ها !!{derivation} تازه‌ای
+به دست آوریم:
+\begin{prooftree}
+\AxiomC{$!A$}
+\AxiomC{$!B$}
+\RightLabel{\Intro{\land}}
+\BinaryInfC{$!A \land !B$}
+\end{prooftree}
+قرار است این قواعد کلی باشند: می‌توانیم $!A$ و~$!B$ در آن را با هر
+!!{sentence}sی، برای مثال با $!C$ و~$!D$، جایگزین کنیم. در این صورت
+نتیجه $!C \land !D$ می‌بود و بنابراین
+\begin{prooftree}
+\AxiomC{$!C$}
+\AxiomC{$!D$}
+\RightLabel{\Intro{\land}}
+\BinaryInfC{$!C \land !D$}
+\end{prooftree}
+یک !!{derivation} درست است. البته می‌توانیم فرض‌ها را نیز جابه‌جا کنیم
+تا $!D$ نقش~$!A$ و $!C$ نقش~$!B$ را بازی کند. ازاین‌رو،
+\begin{prooftree}
+\AxiomC{$!D$}
+\AxiomC{$!C$}
+\RightLabel{\Intro{\land}}
+\BinaryInfC{$!D \land !C$}
+\end{prooftree}
+نیز یک !!{derivation} درست است.
+
+اکنون می‌توانیم قاعده‌ای دیگر، مثلاً $\Intro{\lif}$، را اعمال کنیم که
+به ما اجازه می‌دهد یک شرطی را نتیجه بگیریم و هر فرضی را که با مقدم آن
+شرطی یکسان است !!{discharge} کنیم. پس هر دو عبارت زیر !!{derivation}s
+درستی خواهند بود:
+\begin{prooftree}
+\AxiomC{$\Discharge{!C}{1}$}
+\AxiomC{$!D$}
+\RightLabel{\Intro{\land}}
+\BinaryInfC{$!C \land !D$}
+\DischargeRule{\Intro{\lif}}{1}
+\UnaryInfC{$!C \lif (!C \land !D)$}
+\DisplayProof\bottomAlignProof
+\AxiomC{$!C$}
+\AxiomC{$\Discharge{!D}{1}$}
+\RightLabel{\Intro{\land}}
+\BinaryInfC{$!C \land !D$}
+\DischargeRule{\Intro{\lif}}{1}
+\UnaryInfC{$!D \lif (!C \land !D)$}
+\end{prooftree}
+آن‌ها به‌ترتیب نشان می‌دهند که $!D \Proves !C \lif (!C \land !D)$ و
+$!C \Proves !D \lif (!C \land !D)$.
+
+به یاد داشته باشید که رفع فرض‌ها اجازه است نه الزام: ناچار نیستیم فرض‌ها
+را رفع کنیم. به‌ویژه، حتی اگر فرض‌ها در !!{derivation} حاضر نباشند نیز
+می‌توانیم قاعده‌ای را اعمال کنیم. برای نمونه، عبارت زیر مجاز است، هرچند
+هیچ فرض~$!A$ای برای !!{discharged} شدن وجود ندارد:
+\begin{prooftree}
+  \AxiomC{$!B$}
+  \DischargeRule{\Intro{\lif}}{1}
+  \UnaryInfC{$!A \lif !B$}
+\end{prooftree}
+\end{ex}
+
+\end{document}

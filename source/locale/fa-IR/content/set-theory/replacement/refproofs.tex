@@ -1,0 +1,194 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{replacement}{refproofs}
+\olsection{پیوست: نتایج پیرامون جایگزینی}
+
+در این بخش، بازتاب را در $\ZF$ اثبات می‌کنیم. همچنین معنایی را
+اثبات می‌کنیم که در آن بازتاب با جایگزینی هم‌ارز است. سپس پیامد
+جالبی از همهٔ این نتایج دربارهٔ قدرت بازتاب و جایگزینی به دست
+می‌آوریم. \emph{هشدار: این بخش به‌آسانی پیشرفته‌ترین بخش ریاضیِ این
+کتاب درسی است.}
+
+با لمی آغاز می‌کنیم که برای اختصار از شیوهٔ نمادیِ
+\emph{خط‌گذاریِ بالایی} برای دنباله‌های متغیرها یا اشیا بهره می‌گیرد.
+پس «$\overline{a}_k$» صورت کوتاهِ «$a_{k_1}$، \dots،
+$a_{k_n}$» است، که در آن $n$ را بافت تعیین می‌کند.
+
+\begin{lem}\ollabel{lemreflection}
+برای هر $1 \leq i \leq k$، فرض کنید
+$\phi_i(\overline{v}_i, x)$ فرمولی باشد. آن‌گاه برای هر $\alpha$
+مقداری مانند $\beta > \alpha$ وجود دارد به‌طوری‌که برای هر
+$\overline{a}_1, \ldots, \overline{a}_k \in V_\beta$ و هر
+$1 \leq i \leq k$:
+\[
+	\exists x\phi_i(\overline{a}_i, x) \rightarrow (\exists x \in V_\beta) \phi_i(\overline{a}_i, x)
+\]
+\end{lem}
+
+\begin{proof}
+جملهٔ $\mu$ را چنین تعریف می‌کنیم: مقدار
+$\mu(\overline{a}_1, \ldots, \overline{a}_k)$ نخستین مرحلهٔ $V$ است
+که برای $1 \leq i \leq k$ همهٔ شرطی‌های زیر را برآورده می‌کند:
+\[
+\exists x\phi_i(\overline{a}_i, x) \rightarrow (\exists x \in V) \phi_i(\overline{a}_i, x)
+\]
+به‌آسانی می‌توان تأیید کرد که
+$\mu(\overline{a}_1, \ldots, \overline{a}_k)$ برای همهٔ
+$\overline{a}_1, \ldots, \overline{a}_k$ وجود دارد. اکنون با استفاده
+از جایگزینی و قضیهٔ بازگشت، تعریف می‌کنیم:
+\begin{align*}
+	S_0 & = V_{\alpha+1}\\
+	S_{n+1} & = S_n \cup \bigcup
+	\Setabs{\mu(\overline{a}_1, \ldots, \overline{a}_k)}
+	{\overline{a}_1, \ldots, \overline{a}_k \in S_n} \\
+	S &= \bigcup_{m < \omega} S_m.
+\end{align*}
+هر $S_n$، و بنابراین خود $S$، مرحله‌ای پس از $V_\alpha$ است. اکنون
+$\overline{a}_1$، \dots،~$\overline{a}_k \in S$ را ثابت کنید؛ پس
+$n < \omega$ای هست که
+$\overline{a}_1$، \dots، $\overline{a}_k \in S_n$. یکی از
+$1 \leq i \leq k$ها را ثابت کنید و فرض کنید
+$\exists x\phi_i(\overline{a}_i,x)$. در نتیجه، بنا بر ساخت،
+$(\exists x \in \mu(\overline{a}_1,
+\ldots, \overline{a}_k))\phi_i(\overline{a}_i, x)$؛ بنابراین
+$(\exists x \in S_{n+1})\phi_i(\overline{a}_i, x)$ و در پی آن
+$(\exists x \in S)\phi_i(\overline{a}_i, x)$. پس $S$ همان
+$V_\beta$ مطلوب ماست.
+\end{proof}
+\noindent
+اکنون می‌توانیم \olref[sth][replacement][ref]{reflectionschema} را
+کاملاً سرراست اثبات کنیم:
+
+\begin{proof}[اثبات]
+$\alpha$ را ثابت کنید. بدون کاستن از کلیت، می‌توانیم فرض کنیم تنها
+پیوندگرهای $\phi$ عبارت‌اند از $\exists$، $\lnot$ و $\land$ (زیرا
+این‌ها از نظر بیانی کافی‌اند). فرمول‌های
+$\psi_1, \ldots, \psi_k$ را به‌ترتیب پیچیدگی فهرستی از همهٔ
+زیرفرمول‌های $\phi$ بگیرید، به‌گونه‌ای که $\psi_k = \phi$. بنا بر
+\olref{lemreflection}، عددی مانند $\beta > \alpha$ هست که برای هر
+$\overline{a}_i \in V_\beta$ و هر $1 \leq i \leq k$:
+\begin{align}\label{reflectionnicelybehaved}
+	\exists x\psi_i(\overline{a}_i, x) \rightarrow
+	(\exists x \in V_\beta) \psi_i(\overline{a}_i, x)\tag{*}
+\end{align}
+با استقرا بر پیچیدگی $\psi_i$ نشان می‌دهیم که برای هر
+$\overline{a}_i \in V_\beta$،
+$\psi_i(\overline{a}_i) \leftrightarrow
+\psi_i^{V_\beta}(\overline{a}_i)$. اگر $\psi_i$ اتمی باشد، این مطلب
+بدیهی است. این دوشرطی همچنین ثابت می‌کند هرگاه $\psi_i$ نقیض یا
+عطفی از زیرفرمول‌های دارای این ویژگی باشد، خود $\psi_i$ نیز همین
+ویژگی را دارد. پس تنها حالت جالب، سورگذاری است.
+$\overline{a}_i \in V_\beta$ را ثابت کنید؛ آن‌گاه:
+\begin{align*}
+	(\exists x \psi_i(\overline{a}_i, x))^{V_\beta}
+	&\text{ اگر و تنها اگر }
+	(\exists x \in V_\beta)\psi_i^{V_\beta}(\overline{a}_i, x)
+	&&\text{بنا بر تعریف}\\
+	&\text{ اگر و تنها اگر }
+	(\exists x \in V_\beta)\psi_i(\overline{a}_i,  x)
+	&&\text{بنا بر فرض استقرا}\\
+	&\text{ اگر و تنها اگر }
+	\exists x \psi_i(\overline{a}_i, x)
+	&&\text{بنا بر \eqref{reflectionnicelybehaved}}
+\end{align*}
+استقرا کامل شد؛ چون $\psi_k = \phi$، نتیجه به دست می‌آید.
+\end{proof}
+
+بازتاب را در $\ZF$ اثبات کردیم. اثبات ما اساساً از
+\citet{Montague1961} پیروی کرد. اکنون می‌خواهیم در $\Z$ اثبات کنیم
+که بازتاب مستلزم جایگزینی است. اثبات، با یک ساده‌سازی، از
+\citet{Levy1960} پیروی می‌کند.
+
+چون در $\Z$ کار می‌کنیم، نمی‌توانیم بازتاب را دقیقاً به صورتی که
+در بالا آمد بیان کنیم. آخر، بازتاب را با نماد «$V_\alpha$»
+صورت‌بندی کردیم، و این نماد در $\Z$ تعریف‌پذیر نیست (نگاه کنید به
+\olref[sth][spine][zf]{sec}). بنابراین، صورت‌بندیِ ظاهراً
+ضعیف‌تری از بازتاب را چنین عرضه می‌کنیم:
+
+\begin{defish}
+\emph{بازتابِ ضعیف.} برای هر فرمول $\phi$، مجموعه‌ای متعدی مانند
+$S$ هست به‌طوری‌که $0$، $1$ و هر پارامترِ $\phi$ از
+!!{element}های $S$ هستند و
+$(\forall \overline{x} \in S)(\phi \liff \phi^S)$.
+\end{defish}
+
+برای اثبات جایگزینی با این اصل، نخست از بخش اولِ قضیهٔ ۲ در
+\citet[first part of Theorem 2]{Levy1960} پیروی می‌کنیم و نشان
+می‌دهیم که می‌توان دو فرمول را هم‌زمان «بازتاباند»:
+
+\begin{lem}[در $\Z + \text{بازتابِ ضعیف}$.]\ollabel{lem:reflect}
+برای هر دو فرمول $\psi, \chi$، مجموعه‌ای متعدی مانند $S$ هست
+به‌طوری‌که $0$ و $1$ (و هر پارامترِ آن فرمول‌ها) از
+!!{element}های $S$ هستند و
+$(\forall \overline{x} \in S)((\psi \liff \psi^S) \land (\chi
+\liff \chi^S))$.
+\end{lem}
+
+\begin{proof}
+فرمول $\phi$ را برابر با
+$(z = 0 \land \psi) \lor (z = 1 \land \chi)$ بگیرید.
+
+در اینجا از اختصار استفاده کرده‌ایم؛ باید «$z = 0$» را به‌صورت
+«$\forall t\, t \notin z$» و «$z =1$» را به‌صورت
+«$\forall s(s \in z \liff \forall t\, t \notin s)$» باز کنیم. اما
+چون $0, 1 \in S$ و $S$ متعدی است، این فرمول‌ها برای $S$
+\emph{مطلق}اند؛ یعنی چه سورهایشان را به $S$ محدود کنیم و چه نکنیم،
+بر همان شیء صدق می‌کنند.\footnote{به‌طور رسمی‌تر، اگر $\xi$ یکی از
+این دو فرمول باشد، $\xi(z) \liff \xi^S(z)$.}
+
+بنا بر بازتاب ضعیف، مجموعهٔ مناسب $S$ را داریم به‌طوری‌که:
+\begin{align*}
+	(\forall z, \overline{x} \in S)(&\phi \liff \phi^S)\\
+	\text{یعنی }(\forall z, \overline{x} \in S)(&((z = 0 \land \psi) \lor (z = 1 \land \chi)) \liff {}\\
+	&\phantom{(}((z = 0 \land \psi) \lor (z = 1 \land \chi))^S)\\
+	\text{یعنی }(\forall z, \overline{x} \in S)(&((z = 0 \land \psi) \lor (z = 1 \land \chi))\liff {}\\
+	&\phantom{(}((z = 0 \land \psi^S) \lor (z = 1 \land \chi^S)))\\
+	\text{یعنی }(\forall \overline{x} \in S)(&(\psi \liff \psi^S) \land (\chi \liff \chi^S))
+\end{align*}
+ادعای دوم مستلزم ادعای سوم است، زیرا «$z = 0$» و «$z=1$» برای
+$S$ مطلق‌اند؛ ادعای چهارم نیز از $0 \neq 1$ نتیجه می‌شود.
+\end{proof}\noindent
+اکنون تنها با پیروی و ساده‌سازیِ
+\citet[Theorem 6]{Levy1960} می‌توانیم جایگزینی را به دست آوریم:
+
+\begin{thm}[در $\Z$ + بازتاب ضعیف]\label{thm:replacement}
+برای هر فرمول $\phi(v,w)$ و هر $A$، اگر
+$(\forall x \in A)\lexists![y][\phi(x,y)]$، آن‌گاه
+$\Setabs{y}{(\exists x \in A)\phi(x,y)}$ وجود دارد.
+\end{thm}
+
+\begin{proof}
+$A$ای را ثابت کنید که
+$(\forall x \in A)\lexists![y][\phi(x,y)]$، و فرمول‌های زیر را
+تعریف کنید:
+\begin{align*}
+	\psi &\text{ فرمول } (\phi(x, z) \land A = A)\text{ است}\\
+	\chi &\text{ فرمول } \lexists[y][\phi(x, y)]\text{ است}
+\end{align*}
+با استفاده از \olref{lem:reflect}، چون $A$ پارامتری از $\psi$ است،
+مجموعه‌ای متعدی مانند~$S$ هست که
+$0, 1, A \in S$ (همراه با هر پارامتر دیگر) و:
+\[
+	(\forall x,z \in S)((\psi \liff \psi^S) \land (\chi \liff \chi^S))
+\]
+پس به‌ویژه:
+\begin{align*}
+	(\forall  x, z \in S)(&\phi(x, z) \liff \phi^S(x, z))\\
+	(\forall x \in S)(&\exists y\phi(x, y) \liff (\exists y \in S)\phi^S(x, y))
+\end{align*}
+با ترکیب این دو و توجه به اینکه، چون $A \in S$ و $S$ متعدی است،
+$A \subseteq S$:
+\begin{align*}
+	(\forall x \in A)(&\exists y\phi(x, y) \liff (\exists y \in S)\phi(x, y))
+\end{align*}
+اکنون
+$(\forall x \in A)\lexists![y \in S][\phi(x,y)]$، زیرا
+$(\forall x \in A)\lexists![y][\phi(x, y)]$. اینک جداسازی نتیجه
+می‌دهد که
+$\Setabs{y \in S}{(\exists x \in A) \phi(x, y)} = \Setabs{y}{(\exists
+x \in A) \phi(x, y)}$.
+\end{proof}
+
+\end{document}

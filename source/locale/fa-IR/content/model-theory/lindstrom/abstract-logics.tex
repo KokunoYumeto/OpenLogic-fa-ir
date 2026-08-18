@@ -1,0 +1,153 @@
+% Part: model-theory
+% Chapter: lindstrom
+% Section: abstract-logics
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mod}{lin}{alg}
+\olsection{منطق‌های انتزاعی}
+
+\begin{defn}
+یک
+\emph{منطق انتزاعی} زوجی چون~$\tuple{L, \models_L}$ است که در آن
+$L$ تابعی است که به هر !!{language}~$\Lang{L}$ مجموعه‌ای
+$L(\Lang{L})$ از !!{sentence}s نسبت می‌دهد، و $\models_L$ رابطه‌ای
+میان !!{structure}s این !!{language}~$\Lang{L}$ و !!{element}s
+$L(\Lang{L})$ است. به‌طور خاص، $\tuple{F, \models}$ همان منطق معمول
+مرتبهٔ اول است؛ یعنی $F$ تابعی است که به !!{language}~$\Lang{L}$
+مجموعهٔ !!{sentence}s مرتبهٔ اول ساخته‌شده از ثابت‌های~$\Lang{L}$ را
+نسبت می‌دهد و $\models$ رابطهٔ ارضای منطق مرتبهٔ اول است.
+\end{defn}
+
+توجه کنید که هنوز برای یک !!{language} معین، همان مفهوم
+!!{structure} در منطق مرتبهٔ اول را به کار می‌بریم؛ اما از پیش فرض
+نمی‌کنیم که !!{sentence}s به شیوهٔ معمول از نمادهای پایهٔ~$\Lang{L}$
+ساخته شده‌اند یا رابطهٔ~$\models_L$ به همان شیوهٔ منطق مرتبهٔ اول
+به‌طور بازگشتی تعریف شده است. بنابراین، برای نمونه، این تعریف که
+کاملاً عام است مواردی را نیز دربر می‌گیرد که در آن‌ها !!{sentence}s
+در~$\tuple{L,\models_L}$ عطف یا فصل‌هایی با طول نامتناهی، سورهایی جز
+$\lexists$ و~$\lforall$ (برای نمونه، «بی‌نهایت~$x$ وجود دارد چنان‌که
+\dots») یا شاید پیشوندهای سوری با طول نامتناهی دارند. برای تأکید بر
+اینکه «!!{sentence}s» در~$L(\Lang{L})$ لازم نیست !!{sentence}s معمول
+منطق مرتبهٔ اول باشند، در این فصل !!{variable}s
+$!E$، $!F$،~\dots را برای پیمایش آن‌ها به کار می‌بریم و
+$!A$، $!B$،~\dots را به !!{formula}s معمول مرتبهٔ اول اختصاص می‌دهیم.
+
+\begin{defn}
+بگذارید $\Mod(L){!E}$ نشان‌دهندهٔ ردهٔ
+$\Setabs{\Struct{M}}{\Struct{M} \models_L !E}$ باشد. اگر لازم باشد
+!!{language} را آشکار کنیم، $\Mod[L](L){!E}$ می‌نویسیم. دو
+!!{structure}s~$\Struct{M}$ و~$\Struct{N}$ برای~$\Lang{L}$ در
+$\tuple{L, \models_L}$
+\emph{هم‌ارز مقدماتی}اند، و می‌نویسیم
+$\Struct{M} \elemequiv[L] \Struct{N}$، اگر همان !!{sentence}s
+از~$L(\Lang{L})$ در هر دو صادق باشند.
+\end{defn}
+
+\begin{defn}
+منطق انتزاعی~$\tuple{L,\models_L}$ برای !!{language}~$\Lang{L}$
+\emph{نرمال} است اگر ویژگی‌های زیر را برآورده کند:
+\begin{enumerate}
+\item (\emph{یکنواییِ~$L$}) برای !!{language}s
+  $\Lang{L}$ و~$\Lang{L'}$، اگر
+  $\Lang{L} \subseteq \Lang{L'}$، آنگاه
+  $L(\Lang{L}) \subseteq L(\Lang{L'})$.
+\item (\emph{ویژگی بسط}) برای هر $!E \in L(\Lang{L})$، زیرمجموعه‌ای
+  \emph{متناهی} چون~$\Lang{L'}$ از~$\Lang{L}$ وجود دارد چنان‌که
+  رابطهٔ $\Struct{M} \models_L !E$ تنها به تحویل~$\Struct{M}$
+  به~$\Lang{L'}$ وابسته باشد؛ یعنی اگر $\Struct{M}$ و~$\Struct{N}$
+  تحویل یکسانی به~$\Lang{L'}$ داشته باشند، آنگاه
+  $\Struct{M} \models_L !E$ هرگاه و تنها هرگاه
+  $\Struct{N} \models_L !E$.
+\item (\emph{ویژگی همریختی}) اگر $\Struct{M} \models_L !E$ و
+  $\Struct{M} \simeq \Struct{N}$، آنگاه
+  $\Struct{N} \models_L !E$ نیز.
+\item (\emph{ویژگی تغییرنام}) رابطهٔ~$\models_L$ زیر تغییرنام حفظ
+  می‌شود: فرض کنید !!{language}~$\Lang{L}'$ با جایگزین‌کردن هر نماد
+  $P$ از~$\Lang{L}$ با نمادی $P'$ از همان موضعیت و هر ثابت~$c$ با
+  ثابتی متمایز~$c'$ به دست آید. آنگاه برای هر
+  !!{structure}~$\Struct{M}$ و !!{sentence}~$!E$،
+  $\Struct{M} \models_L !E$ هرگاه و تنها هرگاه
+  $\Struct{M}' \models_L !E'$، که در آن $\Struct{M}'$
+  !!{structure} متناظر با~$\Struct{M}$ در~$\Lang{L}'$ است و
+  $!E' \in L(\Lang{L}')$.
+\item (\emph{ویژگی بولی}) منطق انتزاعی~$\tuple{L,\models_L}$ نسبت
+  به رابط‌های بولی بسته است، بدین معنا که برای هر
+  $!E \in L(\Lang{L})$، جمله‌ای چون
+  $!F \in L(\Lang{L})$ وجود دارد چنان‌که
+  $\Struct{M} \models_L !F$ هرگاه و تنها هرگاه
+  $\Struct{M} \not\models_L !E$؛ و برای هر $!E$ و~$!F$، جمله‌ای
+  چون~$!G$ وجود دارد چنان‌که
+  $\Mod(L){!G} = \Mod(L){!E} \cap \Mod(L){!F}$. برای !!{formula}s
+  اتمی و رابط‌های دیگر نیز به همین ترتیب.
+\item (\emph{ویژگی سور}) برای هر ثابت~$c$ در~$\Lang{L}$ و هر
+  $!E \in L(\Lang{L})$، با قرار دادن
+  $\Lang{L'} = \Lang{L} \setminus \{c\}$، جمله‌ای چون
+  $!F \in L(\Lang{L'})$ وجود دارد چنان‌که
+  \[
+  \Mod[L'](L){!F} = \Setabs{\Struct{M}}{\Expan{M}{a} \in
+  \Mod[L](L){!E} \text{ برای یک } a \in \Domain{M}},
+  \]
+  که در آن $\Expan{M}{a}$ بسط~$\Struct{M}$ به~$\Lang{L}$ است که
+  $a$ را به~$c$ نسبت می‌دهد.
+\item (\emph{ویژگی نسبی‌سازی}) فرض کنید !!a{sentence}~$!E \in
+  L(\Lang{L})$ و نماد محمولیِ $(n+1)$موضعی~$R$ و ثابت‌های
+  $c_1$، \dots، $c_n$ در~$\Lang{L}$ نباشند. آنگاه !!a{sentence} چون
+  $!F \in L(\Lang{L} \cup \{R,c_1,\ldots,c_n\})$ وجود دارد که
+  \emph{نسبی‌سازیِ}~$!E$ به~$\Atom{R}{x, c_1, \dots c_n}$ نامیده
+  می‌شود و ویژگی زیر را دارد. برای هر !!{structure}~$\Struct{M}$، هر
+  $X \subseteq \Domain{M}^{n+1}$ و هر
+  $b_1,\ldots,b_n \in \Domain{M}$، بگذارید
+  \[
+  D_{X,\bar b}=
+  \Setabs{a\in \Domain{M}}{\tuple{a,b_1,\ldots,b_n}\in X}.
+  \]
+  هرگاه $D_{X,\bar b}$ ناتهی باشد و تعبیر همهٔ ثابت‌های~$\Lang{L}$
+  در~$\Struct{M}$ را دربر گیرد،
+  \[
+  \Expan{M}{X, b_1, \ldots, b_n} \models_L !F
+  \text{ هرگاه و تنها هرگاه } \Struct{N} \models_L !E,
+  \]
+  که در آن $\Struct{N}$ زیرساختار~$\Struct{M}$ با
+  !!{domain}~$\Domain{N}=D_{X,\bar b}$ است (بنگرید به
+  \olref[bas][sub]{rem:substructure}) و
+  $\Expan{M}{X, b_1, \ldots,b_n}$ بسط~$\Struct{M}$ است که به‌ترتیب
+  $R$، $c_1$، \dots، $c_n$ را با $X$، $b_1$، \dots، $b_n$ تعبیر
+  می‌کند.
+\end{enumerate}
+\end{defn}
+
+\begin{defn}
+دو منطق انتزاعی~$\tuple{L_1, \models_{L_1}}$ و
+$\tuple{L_2, \models_{L_2}}$ را در نظر بگیرید. می‌گوییم دومی
+\emph{دست‌کم به‌اندازهٔ} اولی
+\emph{بیانگر} است، و می‌نویسیم
+$\tuple{L_1, \models_{L_1}} \leq \tuple{L_2, \models_{L_2}}$، اگر
+برای هر !!{language}~$\Lang{L}$ و هر !!{sentence}~$!E \in
+L_1(\Lang{L})$، !!a{sentence} چون
+$!F \in L_2(\Lang{L})$ وجود داشته باشد چنان‌که
+$\Mod[L](L_1){!E} = \Mod[L](L_2){!F}$. منطق‌های
+$\tuple{L_1, \models_{L_1}}$ و $\tuple{L_2, \models_{L_2}}$
+\emph{هم‌ارز}ند اگر هم
+$\tuple{L_1, \models_{L_1}} \leq \tuple{L_2, \models_{L_2}}$ و هم
+$\tuple{L_2, \models_{L_2}} \leq \tuple{L_1, \models_{L_1}}$.
+\end{defn}
+
+\begin{rem}
+  منطق مرتبهٔ اول، یعنی منطق انتزاعی~$\tuple{F, \models}$، نرمال است.
+  در واقع، ویژگی‌های بالا برای منطق مرتبهٔ اول عمدتاً سرراست‌اند. تنها
+  یادآور می‌شویم که ویژگی بسط به اصل گسترش فروکاسته می‌شود و
+  نسبی‌سازیِ !!a{sentence}~$!E$ به
+  $\Atom{R}{x, c_1, \dots, c_n}$ با جایگزین‌کردن هر !!{subformula}
+  چون $\lforall[x][!F]$ با
+  $\lforall[x][(\Atom{R}{x, c_1, \dots, c_n} \lif \ !F)]$ به دست
+  می‌آید. افزون بر این، اگر $\tuple{L, \models_L}$ نرمال باشد، آنگاه
+  $\tuple{F, \models} \leq \tuple{L, \models_{L}}$؛ این را می‌توان
+  با استقرا روی !!{formula}s مرتبهٔ اول نشان داد. بنابراین بی‌کاستن از
+  کلیت می‌توانیم فرض کنیم هر !!{sentence} مرتبهٔ اول به هر منطق نرمال
+  تعلق دارد.
+\end{rem}
+
+\end{document}

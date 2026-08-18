@@ -1,0 +1,95 @@
+% Part: incompleteness
+% Chapter: arithmetization-syntax
+% Section: coding-formulas
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{art}{frm}
+\olsection{رمزگذاری \printtoken{P}{formula}}
+
+پس از آنکه رابطهٔ~$\fn{Term}(x)$ را به‌طور بازگشتی اولیه تعریف کردیم،
+می‌توانیم از آن برای تعریف بازگشتی اولیهٔ رابطهٔ متناظر برای
+!!{formula}s، یعنی~$\fn{Frm}(x)$، استفاده کنیم.
+
+\begin{prop}
+رابطهٔ~$\fn{Atom}(x)$ که برقرار است اگر و تنها اگر $x$ عدد گودل یک
+!!{formula} اتمی باشد، بازگشتی اولیه است.
+\end{prop}
+
+\begin{proof}
+عدد~$x$ عدد گودل یک !!{formula} اتمی است اگر و تنها اگر یکی از شرایط
+زیر برقرار باشد:
+\begin{enumerate}
+\item $n,j<x$ و~$z<x$ای وجود داشته باشند به‌گونه‌ای که
+  $\len{z}=n$، برای هر~$i<n$، $\fn{Term}((z)_i)$، و $x=$
+\[
+\Gn{\Obj P^n_j(} \concat \fn{flatten}(z) \concat \Gn{)}.
+\]
+\item $z_1,z_2<x$ای وجود داشته باشند به‌گونه‌ای که
+  $\fn{Term}(z_1)$، $\fn{Term}(z_2)$ و $x=$
+\[
+\Gn{{\eq}(} \concat z_1 \concat \Gn{,} \concat z_2 \concat{\Gn{)}}.
+\]
+  \tagitem{prvFalse}{$x = \Gn{\lfalse}$.}{}
+  \tagitem{prvTrue}{$x = \Gn{\ltrue}$.}{}
+\end{enumerate}
+\end{proof}
+
+\begin{prop}
+\ollabel{prop:frm-primrec}
+رابطهٔ~$\fn{Frm}(x)$ که برقرار است اگر و تنها اگر $x$ عدد گودل یک
+!!a{formula} باشد، بازگشتی اولیه است.
+\end{prop}
+
+\begin{proof}
+دنبالهٔ نمادهای~$s$ یک !!a{formula} است اگر و تنها اگر دنبالهٔ تشکیلی
+چون~$s_0$،~\dots، $s_{k-1}=s$ از !!{formula}ها وجود داشته باشد که ثبت
+کند $s$ چگونه طبق قواعد تشکیل از !!{formula}sی اتمی ساخته شده است.
+می‌توان چنین دنباله‌ای را بدون تکرار برگزید؛ در این صورت هر~$s_i$
+زیرفرمولی از~$s$ است، تعداد اعضای دنباله حداکثر~$k$ و عدد گودل
+هر عضو حداکثر~$x$ است، که در آن $k=\len{x}$. پس رمز دنبالهٔ تشکیل
+$\tuple{s_0,\dots,s_{k-1}}$ را می‌توان با~$p_{k-1}^{k(x+1)}$
+کراندار کرد. این یک کران بازگشتی اولیه
+برای کمیت‌گذاری بر رمز دنبالهٔ تشکیل به دست می‌دهد.
+\end{proof}
+
+\begin{prob}
+اثباتی تفصیلی از \olref[inc][art][frm]{prop:frm-primrec} در امتداد
+اثبات نخستِ \olref[inc][art][trm]{prop:term-primrec} ارائه کنید.
+\end{prob}
+
+\begin{prop}
+\ollabel{prop:freeocc-primrec}
+رابطهٔ~$\fn{FreeOcc}(x,z,i)$، که برقرار است اگر و تنها اگر نماد
+$i$اُمِ فرمول دارای عدد گودل~$x$ رخدادی آزاد از متغیر دارای عدد
+گودل~$z$ باشد، بازگشتی اولیه است.
+\end{prop}
+
+\begin{proof}
+تمرین.
+\end{proof}
+
+\begin{prob}
+\olref[inc][art][frm]{prop:freeocc-primrec} را ثابت کنید. می‌توانید
+از این واقعیت استفاده کنید که هر زیررشتهٔ یک !!a{formula} که خود
+!!a{formula} باشد، زیر!!{formula} آن است.
+\end{prob}
+
+\begin{prop}
+ویژگی~$\fn{Sent}(x)$ که برقرار است اگر و تنها اگر $x$ عدد گودل یک
+!!a{sentence} باشد، بازگشتی اولیه است.
+\end{prop}
+
+\begin{proof}
+!!{sentence} یک !!a{formula} بدون رخداد آزادِ !!{variable}sست. پس
+$\fn{Sent}(x)$ برقرار است اگر و تنها اگر
+\begin{multline*}
+\bforall{i<\len{x}}{\bforall{z<x}{}}\\
+(\bexists{j<z}{z=\Gn{\Obj v_j}} \lif \lnot\fn{FreeOcc}(x,z,i)).
+\end{multline*}
+\end{proof}
+
+
+\end{document}

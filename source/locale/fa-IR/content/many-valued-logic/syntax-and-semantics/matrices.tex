@@ -1,0 +1,76 @@
+% Part: many-valued-logic
+% Chapter: syntax-and-semantics
+% Section: matrices
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mvl}{syn}{mat}
+
+\olsection{ماتریس‌ها}
+
+یک منطق چندارزشی با زبانش، مجموعهٔ ارزش‌های صدق~$V$، زیرمجموعه‌ای از
+ارزش‌های صدق ممتاز، و توابع صدق رابط‌هایش تعریف می‌شود. این عناصر در
+کنار هم یک \emph{ماتریس} نامیده می‌شوند.
+
+\begin{defn}[ماتریس]
+\ollabel{defn:matrix}
+یک \emph{ماتریس} برای منطق~$\Log L$ از اجزای زیر تشکیل می‌شود:
+\begin{enumerate}
+\item مجموعه‌ای از رابط‌ها که زبان~$\Lang L$ را می‌سازند؛
+\item مجموعهٔ ناتهی~$V \neq \emptyset$ از ارزش‌های صدق؛
+\item مجموعهٔ~$V^+ \subseteq V$ از ارزش‌های صدق ممتاز؛
+\item به‌ازای هر رابط~$n$موضعی~$\star$ در~$\Lang L$، تابع صدقی چون
+$\tf{\star} : V^n \to V$. اگر~$n = 0$، آنگاه~$\tf{\star}$ صرفاً عضوی
+از~$V$ است.
+\end{enumerate}
+\end{defn}
+
+\begin{ex}
+ماتریس منطق کلاسیک~\LogCL{} از اجزای زیر تشکیل می‌شود:
+\begin{enumerate}
+  \item زبان گزاره‌ای استاندارد~$\Lang L_0$ با~$\lfalse$، $\lnot$،
+  $\land$، $\lor$ و~$\lif$.
+  \item مجموعهٔ ارزش‌های صدق~$V = \{\True, \False\}$.
+  \item $\True$ تنها ارزش ممتاز است؛ یعنی~$V^+ = \{\True\}$.
+  \item برای~$\lfalse$، داریم~$\tf{\lfalse} = \False$. دیگر توابع صدق
+  با جدول‌های صدق متعارف داده می‌شوند (نگاه کنید به
+  \olref{fig:tf-CL}).
+\end{enumerate}
+\begin{figure}
+  \begin{center}
+      \begin{tabular}{c|c} 
+        $\tf{\lnot}$ & \\ 
+        \hline  
+        $\True$ & $\False$ \\ 
+        $\False$ & $\True$ 
+      \end{tabular}
+      \quad
+      \begin{tabular}{c|cc} 
+        $\tf{\land}$ & $\True$ & $\False$ \\ 
+        \hline 
+        $\True$ & $\True$ & $\False$ \\ 
+        $\False$ & $\False$ & $\False$ 
+      \end{tabular}
+      \quad
+      \begin{tabular}{c|cc} 
+        $\tf{\lor}$ & $\True$ & $\False$ \\ 
+        \hline 
+        $\True$ & $\True$ & $\True$ \\ 
+        $\False$ & $\True$ & $\False$ 
+      \end{tabular}
+      \quad
+      \begin{tabular}{c|cc} 
+        $\tf{\lif}$ & $\True$ & $\False$ \\ 
+        \hline 
+        $\True$ & $\True$ & $\False$ \\ 
+        $\False$ & $\True$ & $\True$ 
+      \end{tabular}
+    \end{center} 
+    \caption{توابع صدق منطق کلاسیک~$\LogCL$.}
+    \ollabel{fig:tf-CL}
+  \end{figure}
+  \end{ex}
+
+\end{document}

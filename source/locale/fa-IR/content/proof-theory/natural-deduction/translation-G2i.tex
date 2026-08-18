@@ -1,0 +1,230 @@
+% Part: proof-theory
+% Chapter: natural-deduction
+% Section: translation-G2i
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{nat}{tgi}
+
+\olsection{ترجمه از \Log{G2i} به \Log{N2i}}
+
+مقدم‌های دنباله‌ها در \Log{G2i} چندمجموعه‌های~$\Gamma$ از
+!!{formula}ها هستند، حال آنکه مقدم‌های دنباله‌ها در \Log{N2i}
+مجموعه‌های~$\Gamma'$ از فرمول‌های برچسب‌دارند که هر برچسب در آن‌ها فقط
+یک بار ظاهر می‌شود. می‌گوییم مجموعهٔ~$\Gamma'$ از !!{formula}های
+برچسب‌دار با چندمجموعهٔ~$\Gamma$ \emph{متناظر است} اگر برای هر
+!!{formula}~$!A$، شمار !!{element}های~$\Gamma'$ به شکل~$x:!A$ کمتر یا
+مساوی چندگانگی~$!A$، یعنی شمار نسخه‌های~$!A$، در~$\Gamma$ باشد.
+
+\begin{prop}\ollabel{prop:G2i-to-N2i}
+اگر $\Log{G2i}+\Cut\Proves\Gamma\Sequent\Delta$، آنگاه
+$\Log{N2i}\Proves\Gamma'\Sequent !C$، که در آن اگر $\Delta$ تهی باشد
+$!C\ident\lfalse$، و اگر $\Delta=\{!A\}$ باشد $!C\ident !A$ است؛ و
+$\Gamma'$ با~$\Gamma$ متناظر است.
+\end{prop}
+
+\begin{proof}
+  نشان می‌دهیم اگر $\pi$ !!a{proof}ی برای $\Gamma\Sequent\Delta$ در
+  $\Log{G2i}+\Cut$ باشد، $\Gamma'$ای متناظر با~$\Gamma$ و
+  !!a{proof}~$\delta$ای برای~$\Gamma'\Sequent !C$ در~\Log{N2i} وجود
+  دارد. بر $n=\pheight{\pi}$ استقرا می‌کنیم.
+
+  اگر $n=0$، $\pi$ یک اصل است. اگر اصل
+  $\lfalse\Sequent\quad$ باشد، $\delta$ اصل
+  $x:\lfalse\Sequent\lfalse$ است؛ یعنی
+  $\Gamma'=\{x:\lfalse\}$ و $!C\ident\lfalse$. اگر $\pi$ اصلی به شکل
+  $!A\Sequent !A$ باشد، $\delta$ برابر $x:!A\Sequent !A$ است.
+
+  اگر $n>0$، $\pi$ به قاعده‌ای~$R$ پایان می‌یابد. فرض استقرا وجود
+  !!{proof}هایی در~\Log{N2i} را برای دنباله‌های متناظر با مقدمات آن
+  قاعده تضمین می‌کند. با تغییر برچسب‌ها و، در صورت لزوم، تغییر نام
+  متغیرهای ویژه، فرض می‌کنیم برچسب‌های ترخیص در این برهان‌ها دوبه‌دو
+  متمایزند، متغیرهای ویژهٔ نسخه‌های مقدمات نسبت به یکدیگر و نسبت به
+  نتیجه تازه‌اند، و برچسب~$x$ فقط بالای استنتاجی که آن را مرخص می‌کند
+  ظاهر می‌شود، اگر اصلاً مرخص شود. سپس نشان می‌دهیم چگونه می‌توان این
+  !!{proof}ها را برای ساختن برهانی از یک $\Gamma'\Sequent !C$ مناسب
+  ترکیب کرد. حالت‌ها را برحسب~$R$ جدا می‌کنیم.
+
+  \begin{enumerate}
+    \item اگر $R$ برابر \RightR{\Weakening} باشد، $\pi$ چنین پایان
+    می‌یابد:
+    \[
+    \AxiomC{}
+    \RightLabel{$\pi_1$}
+    \Deduce$\Gamma \fCenter$
+    \RightLabel{\RightR{\Weakening}}
+    \UnaryInf$\Gamma \fCenter !A$
+    \DisplayProof
+    \]
+    اعمال فرض استقرا بر~$\pi_1$، !!a{proof}ی برای
+    ~$\Gamma'\Sequent\lfalse$ می‌دهد. با اعمال~$\FalseInt$، !!a{proof}ی
+    برای $\Gamma'\Sequent !A$ به دست می‌آوریم.
+
+    \item اگر $R$ برابر \LeftR{\Weakening} باشد، $\pi$ چنین پایان
+    می‌یابد:
+    \[
+    \AxiomC{}
+    \RightLabel{$\pi_1$}
+    \Deduce$\Gamma \fCenter \Delta$
+    \RightLabel{\LeftR{\Weakening}}
+    \UnaryInf$!A, \Gamma \fCenter \Delta$
+    \DisplayProof
+    \]
+    فرض استقرا بر~$\pi_1$، !!a{proof}ی برای~$\Gamma'\Sequent !C$
+    می‌دهد که همان را~$\delta$ می‌گیریم. توجه کنید اگر $\Gamma'$ با
+    $\Gamma$ متناظر باشد، با~$!A,\Gamma$ نیز متناظر است: شمار
+    $x:!A$ها در~$\Gamma'$ از شمار نسخه‌های~$!A$ در~$\Gamma$ بیشتر
+    نیست و بنابراین از شمار نسخه‌های آن در چندمجموعهٔ~$!A,\Gamma$ نیز
+    بیشتر نیست.
+
+    \item اگر $R$ برابر \LeftR{\Contraction} باشد، $\pi$ چنین پایان
+    می‌یابد:
+    \[
+    \AxiomC{}
+    \RightLabel{$\pi_1$}
+    \Deduce$!A, !A, \Gamma \fCenter \Delta$
+    \RightLabel{\LeftR{\Contraction}}
+    \UnaryInf$!A, \Gamma \fCenter \Delta$
+    \DisplayProof
+    \]
+    فرض استقرا بر~$\pi_1$، !!a{proof}~$\delta_1$ای برای
+    $\Pi,\Gamma'\Sequent !C$ می‌دهد که در آن
+    $\Pi\subseteq\{x:!A,y:!A\}$. اگر
+    $\Pi=\{x:!A,y:!A\}$، پس از تازه‌کردن دیگر برچسب‌ها، همهٔ
+    !!{formula}های برچسب‌دار $y:!A$ در~$\delta_1$ را با~$x:!A$
+    جایگزین می‌کنیم. چون $x$ در بافت دنبالهٔ پایانی~$\delta_1$ ظاهر
+    می‌شود، می‌توان فرض کرد هیچ استنتاجی در~$\delta_1$ !!a{formula}ی
+    به شکل~$x:!B$ را مرخص نمی‌کند؛ یعنی هیچ $x:!B$ در سمت چپ دنباله‌ای
+    از~$\delta_1$ فعال نیست. در نتیجه، حاصل همچنان !!a{proof}ی در
+    ~\Log{N2i} است.
+
+    \item اگر $R$ برابر $\RightR{\lif}$ باشد، $\pi$ چنین پایان می‌یابد:
+    \[
+    \AxiomC{}
+    \RightLabel{$\pi_1$}
+    \Deduce$!A, \Gamma \fCenter !B$
+    \RightLabel{\RightR{\lif}}
+    \UnaryInf$\Gamma \fCenter !A \lif !B$
+    \DisplayProof
+    \]
+    بنا بر فرض استقرا، !!a{proof}~$\delta_1$ای برای
+    $x:!A,\Gamma'\Sequent !B$ یا $\Gamma'\Sequent !B$ وجود دارد که
+    $\Gamma'$ با~$\Gamma$ متناظر است. برچسب~$x$ را در~$\delta_1$ تازه
+    می‌کنیم و~$\delta$ را حاصل اعمال \Intro{\lif} بر~$\delta_1$
+    می‌گیریم؛ در حالت نخست~$x$ مرخص می‌شود و در حالت دوم قاعده هیچ
+    فرضی را مرخص نمی‌کند.
+
+    \item اگر $R$ برابر \LeftR{\lif} باشد، $\pi$ چنین پایان می‌یابد:
+    \[
+    \AxiomC{}
+    \RightLabel{$\pi_1$}
+    \Deduce$\Gamma_1 \fCenter !A$
+    \AxiomC{}
+    \RightLabel{$\pi_2$}
+    \Deduce$!B, \Gamma_2 \fCenter \Delta$
+    \RightLabel{\LeftR{\lif}}
+    \BinaryInf$!A \lif !B, \Gamma_1, \Gamma_2 \fCenter \Delta$
+    \DisplayProof
+    \]
+    فرض استقرا !!{proof}~$\delta_1$ای برای
+    $\Gamma_1'\Sequent !A$ و~$\delta_2$ای برای
+    $x:!B,\Gamma_2'\Sequent !C$ یا $\Gamma_2'\Sequent !C$ می‌دهد. اگر
+    $\delta_2$ شکل دوم را داشته باشد، خود آن می‌تواند~$\delta$ باشد.
+    در غیر این صورت، برچسب‌ها و متغیرهای ویژهٔ~$\delta_1$ و
+    ~‌$\delta_2$ را به‌طور سازگار تازه می‌کنیم تا در گرفتن نسخه‌های
+    برهان هیچ برچسب یا متغیر ویژه‌ای گرفتار نشود و هیچ برچسبی میان دو
+    برهان مشترک نباشد. آنگاه بافتِ پیوستهٔ
+    $\Gamma_1',\Gamma_2'$ با چندمجموعهٔ~$\Gamma_1,\Gamma_2$ متناظر
+    است. چون $x:!B$ در دنبالهٔ پایانی~$\delta_2$ ظاهر می‌شود، در هیچ
+    استنتاج دارای برچسب ترخیص~$x$ در~$\delta_2$ فعال نیست. هر اصل
+    $x:!B\Sequent !B$ در~$\delta_2$ را، با نسخه‌ای تازه و
+    بی‌گرفتاری، با !!{proof}~$\delta_3$ زیر جایگزین می‌کنیم:
+    \[
+    \Axiom$x: !A \lif !B \fCenter !A \lif !B$
+    \AxiomC{}
+    \RightLabel{$\delta_1$}
+    \Deduce$\Gamma_1' \fCenter !A$
+    \RightLabel{\Elim{\lif}}
+    \BinaryInf$x: !A \lif !B, \Gamma_1' \fCenter !B$
+    \DisplayProof
+    \]
+    و هر رخداد $x:!B$ در~$\delta_2$ را با $x:!A\lif !B$ جایگزین
+    می‌کنیم. حاصل
+    $\Subst{\delta_2}{\delta_3}{x:!B}$، !!a{proof}ی برای
+    $x:!A\lif !B,\Gamma_1',\Gamma_2'\Sequent !C$ است.
+
+    \item اگر $R$ برابر \RightR{\land} باشد، $\pi$ چنین پایان می‌یابد:
+    \[
+    \AxiomC{}
+    \RightLabel{$\pi_1$}
+    \Deduce$\Gamma_1 \fCenter !A$
+    \AxiomC{}
+    \RightLabel{$\pi_2$}
+    \Deduce$\Gamma_2 \fCenter !B$
+    \RightLabel{\RightR{\land}}
+    \BinaryInf$\Gamma_1, \Gamma_2 \fCenter !A \land !B$
+    \DisplayProof
+    \]
+    فرض استقرا برهان~$\delta_1$ برای $\Gamma_1'\Sequent !A$ و
+    ~‌$\delta_2$ برای $\Gamma_2'\Sequent !B$ می‌دهد. با تازه‌کردن
+    برچسب‌ها و متغیرهای ویژه در~$\delta_2$ تضمین می‌کنیم هیچ‌یک با
+    ~‌$\delta_1$ مشترک نباشد. آنگاه بافت پیوستهٔ
+    $\Gamma_1',\Gamma_2'$ با~$\Gamma_1,\Gamma_2$ متناظر است. با اعمال
+    $\Intro{\land}$ بر دنباله‌های پایانی $\delta_1$ و~$\delta_2$،
+    !!a{proof}~$\delta$ را به دست می‌آوریم.
+
+    \item اگر $R$ برابر $\LeftR{\land}$ باشد، برای نمونه $\pi$ چنین
+    پایان می‌یابد:
+    \[
+    \AxiomC{}
+    \RightLabel{$\pi_1$}
+    \Deduce$!A, \Gamma \fCenter \Delta$
+    \RightLabel{\LeftR{\land}}
+    \UnaryInf$!A \land !B, \Gamma \fCenter \Delta$
+    \DisplayProof
+    \]
+    بنا بر فرض استقرا، !!a{proof}~$\delta_1$ای برای
+    $x:!A,\Gamma'\Sequent !C$ یا $\Gamma'\Sequent !C$ وجود دارد و
+    $\Gamma'$ با~$\Gamma$ متناظر است. در حالت دوم می‌توانیم
+    $\delta=\delta_1$ بگیریم. در حالت نخست، چون $x:!A$ در دنبالهٔ
+    پایانی ظاهر می‌شود، در هیچ استنتاج دارای برچسب ترخیص~$x$ در
+    ~‌$\delta_1$ فعال نیست. هر اصل $x:!A\Sequent !A$ را با نسخه‌ای
+    تازه و بی‌گرفتاری از !!{proof}~$\delta_2$ زیر جایگزین می‌کنیم:
+    \[
+    \Axiom$x: !A \land !B \fCenter !A \land !B$
+    \RightLabel{\Elim{\land}[1]}
+    \UnaryInf$x: !A \land !B \fCenter !A$
+    \DisplayProof
+    \]
+    و هر رخداد $x:!A$ را با $x:!A\land !B$ جایگزین می‌کنیم؛ یعنی
+    $\Subst{\delta_1}{\delta_2}{x:!A}$ را می‌گیریم. این حاصل
+    !!a{proof}ی برای $x:!A\land !B,\Gamma'\Sequent !C$ است.
+
+    \item اگر $R$ برابر \Cut باشد، $\pi$ چنین پایان می‌یابد:
+    \[
+    \AxiomC{}
+    \RightLabel{$\pi_1$}
+    \Deduce$\Gamma_1 \fCenter !A$
+    \AxiomC{}
+    \RightLabel{$\pi_2$}
+    \Deduce$!A, \Gamma_2 \fCenter \Delta$
+    \RightLabel{\Cut}
+    \BinaryInf$\Gamma_1, \Gamma_2 \fCenter \Delta$
+    \DisplayProof
+    \]
+    فرض استقرا برهان~$\delta_1$ برای $\Gamma_1'\Sequent !A$ و
+    ~‌$\delta_2$ برای $x:!A,\Gamma_2'\Sequent !C$ یا
+    $\Gamma_2'\Sequent !C$ می‌دهد. در حالت دوم، $\delta=\delta_2$
+    می‌گیریم. در غیر این صورت، برچسب‌ها و متغیرهای ویژه را در نسخه‌های
+    ~‌$\delta_1$ و~$\delta_2$ تازه می‌کنیم و هر اصل
+    $x:!A\Sequent !A$ در~$\delta_2$ را به‌گونه‌ای بی‌گرفتاری با نسخه‌ای
+    تازه از~$\delta_1$ جایگزین می‌کنیم. در نتیجه
+    $\delta=\Subst{\delta_2}{\delta_1}{x:!A}$، !!{proof}ی برای
+    $\Gamma_1',\Gamma_2'\Sequent !C$ است.
+  \end{enumerate}
+  حالت‌های باقی‌مانده مشابه‌اند.
+\end{proof}
+
+\end{document}

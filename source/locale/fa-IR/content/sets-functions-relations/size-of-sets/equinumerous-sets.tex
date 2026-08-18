@@ -1,0 +1,114 @@
+% Part:sets-functions-relations
+% Chapter: size-of-sets
+% Section: equinumerous-sets
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[fa-IR]{sfr}{siz}{equ}
+
+\olsection{هم‌توانی}
+
+تصوری شهودی از «اندازه» مجموعه‌ها داریم که برای مجموعه‌های متناهی به‌خوبی
+کار می‌کند. اما مجموعه‌های نامتناهی چه؟ اگر بخواهیم روشی صوری برای
+مقایسهٔ اندازهٔ دو مجموعه، با \emph{هر} اندازه‌ای که داشته باشند، به
+دست دهیم، بهتر
+است کار را با تعریف اینکه چه هنگام دو مجموعه هم‌اندازه‌اند آغاز کنیم.
+فرگه چنین می‌گوید:
+\begin{quote}
+  اگر پیشخدمتی بخواهد مطمئن شود که روی میز دقیقاً به تعداد بشقاب‌ها
+  چاقو چیده است، لازم نیست هیچ‌یک را بشمارد؛ کافی است در سمت راست هر
+  بشقاب یک چاقو بگذارد، به‌گونه‌ای که هر چاقوی روی میز در سمت راست
+  یکی از بشقاب‌ها قرار گیرد. به این ترتیب، بشقاب‌ها و چاقوها به‌طور
+  یکتا با یکدیگر متناظر می‌شوند، آن هم به‌واسطهٔ همان رابطهٔ مکانی.
+  \citep[\S70]{Frege1884}
+\end{quote}
+بینش این قطعه را می‌توان با تعریفی صوری آشکار کرد:
+
+\begin{defn}\ollabel{comparisondef}
+  مجموعهٔ $A$ با $B$ \emph{هم‌توان} است، که آن را با $\cardeq{A}{B}$
+  می‌نویسیم، اگر و تنها اگر !!a{bijection} به‌صورت
+  $f \colon A \to B$ وجود داشته باشد.
+\end{defn}
+
+\begin{prop}\ollabel{equinumerosityisequi}
+هم‌توانی یک رابطهٔ هم‌ارزی است.
+\end{prop}
+
+\begin{proof}
+باید نشان دهیم که هم‌توانی بازتابی، متقارن و تراگذری است. فرض کنید
+$A, B$ و $C$ مجموعه باشند.
+
+\emph{بازتابی‌بودن.} نگاشت همانیِ $\Id{A} \colon A \to A$، که در آن
+$\Id{A} (x) = x$ برای هر $x \in A$، !!a{bijection} است. پس
+$\cardeq{A}{A}$.
+
+\emph{تقارن.} فرض کنید $\cardeq{A}{B}$؛ یعنی !!a{bijection} به‌صورت
+$f\colon A \to B$ وجود دارد. چون $f$ !!{bijective} است، وارون آن
+$f^{-1}$ وجود دارد و آن نیز !!{bijective} است. بنابراین
+$f^{-1}\colon B \to A$ !!a{bijection} است؛ پس $\cardeq{B}{A}$.
+
+\emph{تراگذری.} فرض کنید $\cardeq{A}{B}$ و $\cardeq{B}{C}$؛ یعنی
+!!{bijection}s زیر وجود دارند: $f\colon A \to B$ و $g\colon B \to
+C$. آنگاه ترکیب $\comp{f}{g}\colon A \to C$ !!{bijective}
+است؛ پس $\cardeq{A}{C}$.
+\end{proof}
+
+\begin{prop}
+اگر $\cardeq{A}{B}$، آنگاه $A$ !!{enumerable} است اگر
+و تنها اگر $B$ چنین باشد.
+\end{prop}
+
+\begin{editorial}
+برهان زیر از \olref[enm]{defn:enumerable} استفاده می‌کند، اگر
+\olref[enm]{sec} گنجانده شده باشد، و در غیر این صورت از
+\olref[enm-alt]{defn:enumerable}.
+\end{editorial}
+
+\begin{proof}
+فرض کنید $\cardeq{A}{B}$؛ پس یک !!{bijection} به‌صورت $f \colon A
+\to B$ وجود دارد، و فرض کنید $A$ !!{enumerable} است.
+\oliflabeldef{sfr:siz:enm:defn:enumerable}{
+  آنگاه یا $A = \emptyset$، یا تابعی !!a{surjective} به‌صورت
+  $g\colon \PosInt \to A$ وجود دارد. اگر $A = \emptyset$، آنگاه $B = \emptyset$
+  نیز (زیرا در غیر این صورت !!a{element}~$y \in B$ وجود می‌داشت،
+  اما هیچ عضوی مانند $x \in
+  A$ با $g(x) = y$ وجود نداشت). از سوی دیگر، اگر $g\colon \PosInt \to A$
+  !!{surjective} باشد، آنگاه $\comp{g}{f} \colon \PosInt \to B$
+  !!{surjective} است. برای دیدن این مطلب، $y \in B$ را در نظر بگیرید.
+  چون $f$ !!{surjective} است، عضوی مانند $x \in A$ وجود دارد که $f(x) = y$.
+  چون $g$ !!{surjective} است، عددی مانند $n \in \PosInt$ وجود دارد که $g(n) =
+  x$. بنابراین
+\[
+(\comp{g}{f})(n) = f(g(n)) = f(x) = y
+\]
+و در نتیجه $\comp{g}{f}$ !!{surjective} است. پس $\comp{g}{f}$
+برشماری‌ای از~$B$ است و بنابراین $B$~!!{enumerable} است.}
+{
+  آنگاه یا $A  = \emptyset$، یا یک !!a{bijection}~$g$ وجود دارد که
+  بردش $A$ و دامنه‌اش یا $\Nat$ یا قطعه‌ای آغازین از اعداد طبیعی
+  است. اگر $A = \emptyset$، آنگاه $B =
+  \emptyset$ نیز (زیرا در غیر این صورت عضوی مانند~$y \in B$ وجود می‌داشت، اما
+  هیچ عضوی مانند $x
+  \in A$ نبود که $g(x) = y$). پس فرض کنید !!{bijection}~$g$ را
+  داریم. آنگاه $\comp{g}{f}$ !!a{bijection} است که بردش~$B$ و دامنه‌اش
+  همان دامنهٔ~$g$ است (یعنی یا $\Nat$ یا قطعه‌ای آغازین از آن)؛ پس
+  $B$ !!{enumerable} است.}
+
+اگر $B$ !!{enumerable} باشد، نتیجه می‌گیریم که $A$ !!{enumerable} است؛
+کافی است استدلال را با !!{bijection} $f^{-1}\colon B \to A$ به‌جای~$f$
+تکرار کنیم.
+\end{proof}
+
+\begin{prob}
+نشان دهید اگر $\cardeq{A}{C}$ و $\cardeq{B}{D}$ و $A \cap B =
+C \cap D = \emptyset$، آنگاه $\cardeq{A \cup B}{C \cup D}$.
+\end{prob}
+
+\begin{prob}
+نشان دهید اگر $A$ نامتناهی و !!{enumerable} باشد، آنگاه
+$\cardeq{A}{\Nat}$.
+\end{prob}
+
+\end{document}

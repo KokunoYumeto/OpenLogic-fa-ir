@@ -1,0 +1,67 @@
+% Part: many-valued-logic
+% Chapter: syntax-and-semantics
+% Section: connectives
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mvl}{syn}{con}
+
+\olsection{زبان‌ها و رابط‌ها}
+
+منطق گزاره‌ای کلاسیک و بسیاری منطق‌های دیگر از مجموعه‌ای ثابت از
+\emph{ثابت‌های گزاره‌ای} و \emph{رابط‌ها} استفاده می‌کنند. برای نمونه،
+موارد زیر را نمادهای اولیه می‌گیریم:
+\begin{enumerate}
+\tagitem{prvFalse}{ثابت گزاره‌ای~$\lfalse$ برای~!!{falsity}.}{}
+\tagitem{prvTrue}{ثابت گزاره‌ای~$\ltrue$ برای~!!{truth}.}{}
+\item رابط‌های منطقی:
+  \startycommalist
+  \iftag{prvNot}{\ycomma $\lnot$ (نقیض)}{}%
+  \iftag{prvAnd}{\ycomma $\land$ (عطف)}{}%
+  \iftag{prvOr}{\ycomma $\lor$ (فصل)}{}%
+  \iftag{prvIf}{\ycomma $\lif$ (!!{conditional})}{}%
+  \iftag{prvIff}{\ycomma $\liff$ (!!{biconditional})}{}%
+\end{enumerate}
+\iftag{defNot,defOr,defAnd,defIf,defIff,defTrue,defFalse,defEx,defAll}{%
+افزون بر رابط‌های اولیهٔ بالا، از نمادهایی نیز استفاده می‌کنیم که
+به‌صورت اختصار تعریف شده‌اند، مانند
+\startycommalist
+  \iftag{defNot}{\ycomma $\lnot$ (نقیض)}{}%
+  \iftag{defAnd}{\ycomma $\land$ (عطف)}{}%
+  \iftag{defOr}{\ycomma $\lor$ (فصل)}{}%
+  \iftag{defIf}{\ycomma $\lif$ (!!{conditional})}{}%
+  \iftag{defIff}{\ycomma $\liff$ (!!{biconditional})}{}%
+  \iftag{defFalse}{\ycomma $\lfalse$ (!!{falsity})}{}%
+  \iftag{defTrue}{\ycomma $\ltrue$ (!!{truth})}.}{}
+
+همین رابط‌ها در منطق‌های چندارزشی نیز به کار می‌روند. بااین‌حال، اغلب
+سودمند است که نسخه‌های متفاوتی مثلاً از عطف را در یک منطق بگنجانیم؛
+در آن صورت برای متمایز نگه‌داشتن نسخه‌ها به نمادهای متفاوت نیاز داریم.
+برخی منطق‌های چندارزشی رابط‌هایی نیز دارند که در منطق کلاسیک هیچ همتایی
+ندارند. بنابراین کمی کلی‌تر از معمول عمل می‌کنیم.
+
+\begin{defn}
+  یک \emph{زبان گزاره‌ای} از مجموعهٔ~$\Lang L$ از \emph{رابط‌ها} تشکیل
+  می‌شود. هر رابط~$\star$ یک \emph{تعداد موضع} دارد؛ رابطی با تعداد
+  موضع~$n$ را \emph{$n$موضعی} می‌نامیم. رابط‌های صفرموضعی را
+  \emph{ثابت}، رابط‌های یک‌موضعی را \emph{یکانی} و رابط‌های دوموضعی را
+  \emph{دوتایی} نیز می‌نامیم.
+\end{defn}
+
+\begin{ex}
+  زبان استاندارد منطق گزاره‌ای~$\Lang L_0$ از رابط‌های زیر، با تعداد
+  موضع متناظر، تشکیل می‌شود:
+  $\lfalse$~($0$)،
+  $\lnot$~($1$)،
+  $\land$~($2$)،
+  $\lor$~($2$)،
+  $\lif$~($2$). بیشتر منطق‌هایی که بررسی می‌کنیم از این زبان استفاده
+  خواهند کرد. بعضی منطق‌ها بنا بر سنت و قرارداد برای برخی رابط‌ها
+  نمادهای دیگری به کار می‌برند. برای نمونه، در منطق ضربی معمولاً به‌جای
+  $\land$ از نماد عطف~$\odot$ استفاده می‌شود. گاهی نیز افزودن عملگر
+  تازه‌ای مانند عملگر تعین~$\triangle$ (یک‌موضعی) سودمند است.
+\end{ex}
+
+\end{document}

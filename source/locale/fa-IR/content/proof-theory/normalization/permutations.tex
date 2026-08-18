@@ -1,0 +1,390 @@
+% Part: proof-theory
+% Chapter: normalization
+% Section: permutations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{nor}{per}
+
+\olsection{تبدیل‌های جایگشتی}
+
+برش‌ها در \Log{N1i} قطعه‌هایی هستند که به مقدمهٔ عمدهٔ
+!!a{elimination} پایان می‌یابند. یکی از حالت‌های اثبات نرمال‌سازی، کاهش
+طول برش‌های بیشینه و همراه با آن کاهش طول برشِ !!{proof} است. برشی با
+طول $>1$ ممکن است به صورت‌های گوناگونی پایان یابد، بسته به اینکه آخرین
+رخداد !!{formula}~$!A$ در برش نتیجهٔ \Elim{\lor} یا
+\Elim{\lexists} باشد و بسته به اینکه مقدمهٔ عمدهٔ کدام استنتاج
+!!{elimination} باشد.
+
+برای نمونه، اگر استنتاج‌های درگیر \Elim{\lor} و \Elim{\land} باشند،
+فرمول برش $!A\ident !B\land !C$ است و زیر-!!{proof}~$\delta_1$ای داریم
+که چنین پایان می‌یابد:
+\[
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\DeduceC{$!D \lor !E$}
+\AxiomC{$\Discharge{!D}{x}$}
+\RightLabel{$\delta_3$}
+\DeduceC{$!B \land !C$}
+\AxiomC{$\Discharge{!E}{y}$}
+\RightLabel{$\delta_4$}
+\DeduceC{$!B \land !C$}
+\DischargeRule{\Elim{\lor}}{x\,y}
+\TrinaryInfC{$!B \land !C$}
+\RightLabel{\Elim{\land}[1]}
+\UnaryInfC{$!B$}
+\DisplayProof
+\]
+آخرین رخداد !!{formula}~$!A_n$ در برش، نتیجهٔ \Elim{\lor}، یعنی
+$!B\land !C$ پایینی، است. رخداد یکی‌مانده‌به‌آخر !!{formula}
+~$!A_{n-1}$ یکی از مقدمات فرعی \Elim{\lor} است.
+
+برای کاهش طول این برش می‌توانیم ترتیب استنتاج‌های \Elim{\lor} و
+\Elim{\land} را عوض، یا «جایگشت»، کنیم؛ یعنی زیر‌برهان~$\delta_1$ در
+~‌$\delta$ را با برهان زیر جایگزین کنیم:
+\[
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\DeduceC{$!D \lor !E$}
+\AxiomC{$\Discharge{!D}{x}$}
+\RightLabel{$\delta_3$}
+\DeduceC{$!B \land !C$}
+\RightLabel{\Elim{\land}[1]}
+\UnaryInfC{$!B$}
+\AxiomC{$\Discharge{!E}{y}$}
+\RightLabel{$\delta_4$}
+\DeduceC{$!B \land !C$}
+\RightLabel{\Elim{\land}[1]}
+\UnaryInfC{$!B$}
+\DischargeRule{\Elim{\lor}}{x\,y}
+\TrinaryInfC{$!B$}
+\DisplayProof
+\]
+برش‌هایی که پیش‌تر در مقدمهٔ \Elim{\land} زیر \Elim{\lor} پایان
+می‌یافتند، اکنون در مقدمهٔ یکی از استنتاج‌های \Elim{\land} بالای
+مقدمات فرعی \Elim{\lor} پایان می‌یابند؛ پس طول هر یک یک واحد کاهش
+یافته است.
+
+افزون بر این، هر برشی که سراسر در $\delta_2$، $\delta_3$ یا
+~‌$\delta_4$، یا سراسر بیرون از~$\delta_1$ در~$\delta$ قرار دارد
+بی‌تغییر می‌ماند: همان !!{formula}ها را در بر می‌گیرد و از همان
+استنتاج‌ها می‌گذرد، پس به‌ویژه رتبه و طول آن با برش متناظر در~$\delta$
+یکسان است. بنابراین رتبهٔ برشِ !!{proof} تازه افزایش نیافته و طول برشِ
+!!{proof} تازه از برهان پیشین کمتر است.
+
+\begin{prob}
+پس از یک تبدیل جایگشتی، طول دست‌کم یک برش یک واحد کم می‌شود. اگر
+\Elim{\land} را از میان \Elim{\lor} جایگشت کنیم، در واقع طول دو قطعهٔ
+برشی کاهش می‌یابد؛ پس در این حالت طول برشِ !!{proof} دست‌کم دو واحد
+کم می‌شود. این نتیجه برای هر !!{proof} برقرار است. آیا طول برشِ
+!!a{proof} ممکن است با یک چنین جایگشتی بیش از
+دو واحد کاهش یابد؟ آیا \emph{رتبهٔ} برش می‌تواند کاهش یابد؟
+\end{prob}
+
+فرایند انتقال !!a{elimination} به بالای قاعدهٔ \Elim{\lor} یا
+\Elim{\lexists} را \emph{تبدیل جایگشتی} می‌نامند. الگوهای برخی
+جفت‌قاعده‌ها در \olref{tab:permutation-conversions} آمده‌اند و بقیه به
+عنوان تمرین واگذار می‌شوند.
+
+% \begin{table}
+% \begin{multline*}
+% \shoveleft{\AxiomC{$!D \lor !E$}
+% \AxiomC{$\Discharge{!D}{x}$}
+% \shortDeduce
+% \DeduceC{$!B \land !C$}
+% \AxiomC{$\Discharge{!E}{y}$}
+% \shortDeduce
+% \DeduceC{$!B \land !C$}
+% \DischargeRule{\Elim{\lor}}{x\,y}
+% \TrinaryInfC{$!B \land !C$}
+% \RightLabel{\Elim{\land}[1]}
+% \UnaryInfC{$!B$}
+% \DisplayProof}\\
+% \shoveright{\longrightarrow\ 
+% \AxiomC{$!D \lor !E$}
+% \AxiomC{$\Discharge{!D}{x}$}
+% \shortDeduce
+% \DeduceC{$!B \land !C$}
+% \RightLabel{\Elim{\land}[1]}
+% \UnaryInfC{$!B$}
+% \AxiomC{$\Discharge{!E}{y}$}
+% \shortDeduce
+% \DeduceC{$!B \land !C$}
+% \RightLabel{\Elim{\land}[1]}
+% \UnaryInfC{$!B$}
+% \DischargeRule{\Elim{\lor}}{x\,y}
+% \TrinaryInfC{$!B$}
+% \DisplayProof}
+% \\
+% \shoveleft{\AxiomC{$!D \lor !E$}
+% \AxiomC{$\Discharge{!D}{x}$}
+% \shortDeduce
+% \DeduceC{$!B \lif !C$}
+% \AxiomC{$\Discharge{!E}{y}$}
+% \shortDeduce
+% \DeduceC{$!B \lif !C$}
+% \DischargeRule{\Elim{\lor}}{x\,y}
+% \TrinaryInfC{$!B \lif !C$}
+% \AxiomC{$!B$}
+% \RightLabel{\Elim{\lif}}
+% \BinaryInfC{$!C$}
+% \DisplayProof}\\
+% \shoveright{\longrightarrow\ 
+% \AxiomC{$!D \lor !E$}
+% \AxiomC{$\Discharge{!D}{x}$}
+% \shortDeduce
+% \DeduceC{$!B \lif !C$}
+% \AxiomC{$!B$}
+% \RightLabel{\Elim{\lif}}
+% \BinaryInfC{$!C$}
+% \AxiomC{$\Discharge{!E}{y}$}
+% \shortDeduce
+% \DeduceC{$!B \lif !C$}
+% \AxiomC{$!B$}
+% \RightLabel{\Elim{\lif}}
+% \BinaryInfC{$!C$}
+% \DischargeRule{\Elim{\lor}}{x\,y}
+% \TrinaryInfC{$!C$}
+% \DisplayProof}
+% \\
+% \shoveleft{\AxiomC{$!D \lor !E$}
+% \AxiomC{$\Discharge{!D}{x}$}
+% \shortDeduce
+% \DeduceC{$!B \lif !C$}
+% \AxiomC{$\Discharge{!E}{y}$}
+% \shortDeduce
+% \DeduceC{$!B \lif !C$}
+% \DischargeRule{\Elim{\lor}}{x\,y}
+% \TrinaryInfC{$!B \lif !C$}
+% \AxiomC{$!B$}
+% \RightLabel{\Elim{\lif}}
+% \BinaryInfC{$!C$}
+% \DisplayProof}\\
+% \shoveright{\longrightarrow\ 
+% \AxiomC{$!D \lor !E$}
+% \AxiomC{$\Discharge{!D}{x}$}
+% \shortDeduce
+% \DeduceC{$!B \lif !C$}
+% \AxiomC{$!B$}
+% \RightLabel{\Elim{\lif}}
+% \BinaryInfC{$!C$}
+% \AxiomC{$\Discharge{!E}{y}$}
+% \shortDeduce
+% \DeduceC{$!B \lif !C$}
+% \AxiomC{$!B$}
+% \RightLabel{\Elim{\lif}}
+% \BinaryInfC{$!C$}
+% \DischargeRule{\Elim{\lor}}{x\,y}
+% \TrinaryInfC{$!C$}
+% \DisplayProof}
+% \\
+% \shoveleft{\AxiomC{$!D \lor !E$}
+% \AxiomC{$\Discharge{!D}{x}$}
+% \shortDeduce
+% \DeduceC{$\lforall[x][!B(x)]$}
+% \AxiomC{$\Discharge{!E}{y}$}
+% \shortDeduce
+% \DeduceC{$\lforall[x][!B(x)]$}
+% \DischargeRule{\Elim{\lor}}{x\,y}
+% \TrinaryInfC{$\lforall[x][!B(x)]$}
+% \RightLabel{\Elim{\lforall}}
+% \UnaryInfC{$!B(t)$}
+% \DisplayProof}\\
+% \shoveright{\longrightarrow\ 
+% \AxiomC{$!D \lor !E$}
+% \AxiomC{$\Discharge{!D}{x}$}
+% \shortDeduce
+% \DeduceC{$\lforall[x][!B(x)]$}
+% \RightLabel{\Elim{\lforall}}
+% \UnaryInfC{$!B(t)$}
+% \AxiomC{$\Discharge{!E}{y}$}
+% \shortDeduce
+% \DeduceC{$\lforall[x][!B(x)]$}
+% \RightLabel{\Elim{\lforall}}
+% \UnaryInfC{$!B(t)$}
+% \DischargeRule{\Elim{\lor}}{x\,y}
+% \TrinaryInfC{$!B(t)$}
+% \DisplayProof}
+% \end{multline*}
+% \caption{Some permutation conversions for \Log{N1i}.}
+% \ollabel{tab:permutation-conversions}
+% \end{table}
+
+{\small
+\begin{longtable}{@{}l@{}}
+\AxiomC{$!D \lor !E$}
+\AxiomC{$\Discharge{!D}{x}$}
+\shortDeduce
+\DeduceC{$!B \land !C$}
+\AxiomC{$\Discharge{!E}{y}$}
+\shortDeduce
+\DeduceC{$!B \land !C$}
+\DischargeRule{\Elim{\lor}}{x\,y}
+\TrinaryInfC{$!B \land !C$}
+\RightLabel{\Elim{\land}[1]}
+\UnaryInfC{$!B$}
+\DisplayProof
+$\longrightarrow$\\[6ex]
+\quad\AxiomC{$!D \lor !E$}
+\AxiomC{$\Discharge{!D}{x}$}
+\shortDeduce
+\DeduceC{$!B \land !C$}
+\RightLabel{\Elim{\land}[1]}
+\UnaryInfC{$!B$}
+\AxiomC{$\Discharge{!E}{y}$}
+\shortDeduce
+\DeduceC{$!B \land !C$}
+\RightLabel{\Elim{\land}[1]}
+\UnaryInfC{$!B$}
+\DischargeRule{\Elim{\lor}}{x\,y}
+\TrinaryInfC{$!B$}
+\DisplayProof
+\\[10ex]
+\AxiomC{$!D \lor !E$}
+\AxiomC{$\Discharge{!D}{x}$}
+\shortDeduce
+\DeduceC{$!B \lif !C$}
+\AxiomC{$\Discharge{!E}{y}$}
+\shortDeduce
+\DeduceC{$!B \lif !C$}
+\DischargeRule{\Elim{\lor}}{x\,y}
+\TrinaryInfC{$!B \lif !C$}
+\AxiomC{$!B$}
+\RightLabel{\Elim{\lif}}
+\BinaryInfC{$!C$}
+\DisplayProof
+$\longrightarrow$\\[6ex]
+\AxiomC{$!D \lor !E$}
+\AxiomC{$\Discharge{!D}{x}$}
+\shortDeduce
+\DeduceC{$!B \lif !C$}
+\AxiomC{$!B$}
+\RightLabel{\Elim{\lif}}
+\BinaryInfC{$!C$}
+\AxiomC{$\Discharge{!E}{y}$}
+\shortDeduce
+\DeduceC{$!B \lif !C$}
+\AxiomC{$!B$}
+\RightLabel{\Elim{\lif}}
+\BinaryInfC{$!C$}
+\DischargeRule{\Elim{\lor}}{x\,y}
+\TrinaryInfC{$!C$}
+\DisplayProof
+\\[10ex]
+\AxiomC{$!D \lor !E$}
+\AxiomC{$\Discharge{!D}{x}$}
+\shortDeduce
+\DeduceC{$\lforall[x][!B(x)]$}
+\AxiomC{$\Discharge{!E}{y}$}
+\shortDeduce
+\DeduceC{$\lforall[x][!B(x)]$}
+\DischargeRule{\Elim{\lor}}{x\,y}
+\TrinaryInfC{$\lforall[x][!B(x)]$}
+\RightLabel{\Elim{\lforall}}
+\UnaryInfC{$!B(t)$}
+\DisplayProof
+\quad$\longrightarrow$\\[8ex]
+\quad\AxiomC{$!D \lor !E$}
+\AxiomC{$\Discharge{!D}{x}$}
+\shortDeduce
+\DeduceC{$\lforall[x][!B(x)]$}
+\RightLabel{\Elim{\lforall}}
+\UnaryInfC{$!B(t)$}
+\AxiomC{$\Discharge{!E}{y}$}
+\shortDeduce
+\DeduceC{$\lforall[x][!B(x)]$}
+\RightLabel{\Elim{\lforall}}
+\UnaryInfC{$!B(t)$}
+\DischargeRule{\Elim{\lor}}{x\,y}
+\TrinaryInfC{$!B(t)$}
+\DisplayProof
+\\
+\caption{چند تبدیل جایگشتی برای \Log{N1i}.}
+\ollabel{tab:permutation-conversions}
+\end{longtable}
+}
+
+\begin{prob}
+تبدیل‌های جایگشتی را برای \Elim{\lor} که \Elim{\lor} یا
+\Elim{\lnot} در پی آن می‌آید بنویسید.
+\end{prob}
+
+\begin{prob}
+تبدیل‌های جایگشتی را برای \Elim{\lexists} که \Elim{\lexists} در پی
+آن می‌آید بنویسید. توضیح دهید چرا در حالت دوم هیچ شرط متغیر ویژه‌ای
+نقض نمی‌شود.
+\end{prob}
+
+باید مطمئن شویم که اعمال تبدیل جایگشتی ممکن نیست شرط متغیر ویژه‌ای را
+نقض کند. برهان زیر را در نظر بگیرید:
+\[
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\DeduceC{$!D \lor !E$}
+\AxiomC{$\Discharge{!D}{x}$}
+\RightLabel{$\delta_3$}
+\DeduceC{$\lexists[x][!B(x)]$}
+\AxiomC{$\Discharge{!E}{y}$}
+\RightLabel{$\delta_4$}
+\DeduceC{$\lexists[x][!B(x)]$}
+\DischargeRule{\Elim{\lor}}{x\,y}
+\TrinaryInfC{$\lexists[x][!B(x)]$}
+\AxiomC{$\Discharge{!B(c)}{z}$}
+\RightLabel{$\delta_5$}
+\DeduceC{$!C$}
+\DischargeRule{\Elim{\lexists}}{z}
+\BinaryInfC{$!C$}
+\DisplayProof
+\]
+اگر آن را با برهان زیر جایگزین کنیم، دو نسخهٔ~$\delta_5$ را نخست با
+متغیرهای ویژه و برچسب‌های ترخیص دوبه‌دو تازه تغییر نام می‌دهیم:
+\[
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\DeduceC{$!D \lor !E$}
+\AxiomC{$\Discharge{!D}{x}$}
+\RightLabel{$\delta_3$}
+\DeduceC{$\lexists[x][!B(x)]$}
+\AxiomC{$\Discharge{!B(c_1)}{z_1}$}
+\RightLabel{$\delta_5^{(1)}$}
+\DeduceC{$!C$}
+\DischargeRule{\Elim{\lexists}}{z_1}
+\BinaryInfC{$!C$}
+\AxiomC{$\Discharge{!E}{y}$}
+\RightLabel{$\delta_4$}
+\DeduceC{$\lexists[x][!B(x)]$}
+\AxiomC{$\Discharge{!B(c_2)}{z_2}$}
+\RightLabel{$\delta_5^{(2)}$}
+\DeduceC{$!C$}
+\DischargeRule{\Elim{\lexists}}{z_2}
+\BinaryInfC{$!C$}
+\DischargeRule{\Elim{\lor}}{x\,y}
+\TrinaryInfC{$!C$}
+\DisplayProof
+\]
+ممکن است نگران باشیم که متغیر ویژهٔ~$c_i$، برای نمونه، در~$!D$ ظاهر
+شود. در برهان اصلی، فرض~$!D$ بالای \Elim{\lexists} مرخص می‌شود و در
+فرضی که بالای مقدمهٔ عمدهٔ استنتاج \Elim{\lexists} باز است ظاهر
+نمی‌شود؛ پس شرط متغیر ویژه آنجا برقرار است. در !!{proof} تازه، $!D$ تا
+پس از استنتاج‌های \Elim{\lexists} مرخص نمی‌شود و بدون تغییر نام شرط
+متغیر ویژه ممکن بود نقض شود. اما به یاد آورید که !!{proof}های ما منظم
+و نسخه‌های~$\delta_5$ با متغیرهای ویژهٔ دوبه‌دو تازه‌اند: هر متغیر ویژه
+فقط متعلق به یک استنتاج است و تنها بالای مقدمهٔ فرعی \Elim{\lexists}
+در !!{proof} متناظر ظاهر می‌شود. به‌ویژه، در همین !!{proof} هیچ‌یک از
+$c_1,c_2$ در
+$\delta_3$ یا~$\delta_4$ ظاهر نمی‌شود.
+
+این مثال نکتهٔ دیگری را نیز نشان می‌دهد: !!{proof} تازه دو نسخه از
+~‌$\delta_5$ دارد. اگر $\delta_5$ دارای برشی بیشینه باشد، این تکثیر
+ممکن است طول برش را ثابت نگه دارد یا حتی افزایش دهد. پس باید تبدیل
+جایگشتی را فقط هنگامی اعمال کنیم که بدانیم هیچ برش بیشینه‌ای در
+~‌$\delta_5$ نیست. این امر را با انتخاب همیشگی یک برش بیشینهٔ
+\emph{بالاترین} تضمین می‌کنیم؛ یعنی برشی بیشینه که زیر-!!{proof} آن---
+اینجا~$\delta_1$---هیچ برش بیشینه‌ای ندارد که بالای آخرین استنتاج در
+زیر-!!{proof} پایان یابد. بدین‌ترتیب امکان وجود برش‌های بیشینهٔ دیگر در
+~$\delta_5$، و در واقع در $\delta_2$، $\delta_3$ یا~$\delta_4$، منتفی
+می‌شود.
+
+\end{document}

@@ -1,0 +1,68 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{ordinals}{wo}
+\olsection{خوش‌ترتیب‌ها}
+
+مفهوم بنیادی چنین است:
+
+\begin{defn}
+رابطهٔ~$<$، مجموعهٔ~$A$ را \emph{خوش‌ترتیب می‌کند} اگر و تنها اگر این دو
+شرط را برآورده سازد:
+\begin{enumerate}
+	\item $<$ همبند باشد؛ یعنی برای هر~$a,b \in A$، یا~$a<b$ یا~$a=b$
+	یا~$b<a$؛
+	\item هر زیرمجموعهٔ ناتهی~$A$ دارای یک~!!{element}~$<$-مینیمال باشد؛
+	یعنی اگر~$\emptyset \neq X \subseteq A$، آنگاه
+	$(\exists m \in X)(\forall z \in X)z \nless m$.
+\end{enumerate}
+\end{defn}
+
+به‌آسانی می‌توان دید سه نمونه‌ای که اکنون بررسی کردیم واقعاً رابطه‌های
+خوش‌ترتیب‌کننده بودند.
+
+\begin{prob}
+\Olref[sth][ordinals][idea]{sec} سه ترتیب نمونه روی اعداد طبیعی عرضه کرد.
+بررسی کنید که هریک خوش‌ترتیب است.
+\end{prob}
+
+در ادامه چند مشاهدهٔ مقدماتی ولی بسیار مهم دربارهٔ خوش‌ترتیبی می‌آید.
+
+\begin{prop}\ollabel{wo:strictorder}
+اگر~$<$ مجموعهٔ~$A$ را خوش‌ترتیب کند، آنگاه هر زیرمجموعهٔ ناتهی~$A$ یک
+عضو یکتای~$<$-کمینه دارد، و~$<$ ناخودبازتاب، نامتقارن و متعدی است.
+\end{prop}
+
+\begin{proof}
+اگر~$X$ زیرمجموعه‌ای ناتهی از~$A$ باشد، یک~!!{element}~$<$-مینیمال
+$m$ دارد؛ یعنی~$(\forall z \in X)z \nless m$. چون~$<$ همبند است،
+$(\forall z \in X)m \leq z$. پس~$m$، ~!!{element}~$<$-کمینهٔ~$X$ است.
+
+برای ناخودبازتابی، $a \in A$ را ثابت بگیرید؛ ~!!{element}~$<$-کمینهٔ~$\{a\}$ خود
+$a$ است، پس~$a \nless a$. برای تعدی، اگر~$a<b<c$، از آنجا که
+$\{a,b,c\}$ یک~!!{element}~$<$-کمینه دارد، $a<c$. نامتقارنی از
+ناخودبازتابی و تعدی نتیجه می‌شود.
+\end{proof}
+
+\begin{prop}\ollabel{propwoinduction}
+اگر~$<$ مجموعهٔ~$A$ را خوش‌ترتیب کند، آنگاه برای هر فرمول~$\phi(x)$:
+\[
+	\text{اگر }(\forall a \in A)((\forall b < a)\phi(b) \lif
+		\phi(a))\text{، آنگاه }(\forall a \in A)\phi(a).
+\]
+\end{prop}
+
+\begin{proof}
+عکس نقیض را اثبات می‌کنیم. فرض کنید~$\lnot(\forall a \in A)\phi(a)$؛
+یعنی~$X = \Setabs{x \in A}{\lnot\phi(x)} \neq \emptyset$. آنگاه~$X$
+یک~!!{element}~$<$-مینیمال مانند~$a$ دارد. پس
+$(\forall b<a)\phi(b)$، ولی~$\lnot\phi(a)$.
+\end{proof}\noindent
+این ویژگی اخیر باید اصل استقرای قوی روی اعداد طبیعی را به یادتان آورد؛
+یعنی: اگر~$(\forall n \in \omega)((\forall m<n)\phi(m) \lif \phi(n))$،
+آنگاه~$(\forall n \in \omega)\phi(n)$. و همین ویژگی خوش‌ترتیبی را به
+مفهومی بسیار \emph{استوار} تبدیل می‌کند.\footnote{یادآوری: همهٔ فرمول‌ها
+می‌توانند پارامتر داشته باشند (مگر آنکه خلافش به‌صراحت گفته شود).}
+
+\end{document}

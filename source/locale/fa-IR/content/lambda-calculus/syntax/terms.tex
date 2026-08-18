@@ -1,0 +1,49 @@
+% Part: lambda-calculus
+% Chapter: syntax
+% Section: terms
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{syn}{trm}
+\olsection{ترم‌ها}
+
+ترم‌های حساب لامبدا به‌صورت استقرایی از ذخیره‌ای نامتناهی از متغیرهای
+$\Obj{v_0}$، $\Obj{v_1}$، \dots، نماد~«$\lambd$» و پرانتزها ساخته
+می‌شوند. از~$x$، $y$، $z$، \dots{} برای نامیدن متغیرها و از~$M$، $N$،
+$P$، \dots{} برای نامیدن ترم‌ها استفاده می‌کنیم.
+
+\begin{defn}[ترم‌ها] \ollabel{defn:term}
+مجموعهٔ \emph{ترم‌های} حساب لامبدا به‌صورت استقرایی چنین تعریف می‌شود:
+\begin{enumerate}
+  \item \ollabel{defn:term-var} اگر~$x$ متغیر باشد، $x$ ترم است.
+  \item \ollabel{defn:term-abs} اگر~$x$ متغیر و~$M$ ترم باشد،
+    $(\lambd[x][M])$ ترم است.
+  \item \ollabel{defn:term-app} اگر هر دو~$M$ و~$N$ ترم باشند،
+    $(MN)$ ترم است.
+\end{enumerate}
+\end{defn}
+
+اگر ترم~$(\lambd[x][M])$ مطابق~\olref{defn:term-abs} ساخته شود، می‌گوییم
+حاصل یک \emph{انتزاع} است و~$x$ در~$\lambd[x]$ را \emph{!!{parameter}}
+می‌نامیم. ترم~$(MN)$ که مطابق~\olref{defn:term-app} ساخته شود حاصل یک
+\emph{کاربرد} است.
+
+ترم‌هایی که در بالا تعریف شدند کاملاً پرانتزگذاری شده‌اند. این کار
+می‌تواند بسیار دست‌وپاگیر شود، چنان‌که ترم
+$(\lambd[x][((\lambd[x][x])(\lambd[x][(xx)]))])$ نشان می‌دهد. قراردادهایی
+برای حذف پرانتزهای اضافی معرفی خواهیم کرد. بااین‌حال، تعریف رسمی تعیین
+شیوهٔ ساخت یک ترم مطابق~\olref{defn:term} را آسان می‌کند. برای نمونه،
+آخرین گام ساخت ترم
+$(\lambd[x][((\lambd[x][x])(\lambd[x][(xx)]))])$ باید انتزاعی باشد که
+در آن~!!{parameter}، $x$ است. این ترم با انتزاع از ترم
+$((\lambd[x][x])(\lambd[x][(xx)]))$ به دست می‌آید، که کاربرد دو ترم است.
+هر یک از این دو ترم نیز حاصل یک انتزاع است، و همین‌طور ادامه می‌یابد.
+
+\begin{prob}
+ساخت~$(\lambd[g][(\lambd[x][(g (x x))])
+  (\lambd[x][(g (x x))])])$ را توصیف کنید.
+\end{prob}
+
+\end{document}

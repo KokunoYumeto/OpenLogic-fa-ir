@@ -1,0 +1,220 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{ordinals}{basic}
+\olsection{ویژگی‌های بنیادی اعداد ترتیبی}
+
+دیدیم که نخستین چند عدد ترتیبی همان اعداد طبیعی‌اند. دلیل اصلی پروراندن
+نظریه‌ای دربارهٔ اعداد ترتیبی، گسترش اصل استقرایی است که دربارهٔ اعداد
+طبیعی برقرار است. با دنباله‌ای از نتایج مقدماتی به‌تدریج به این هدف
+خواهیم رسید.
+
+\begin{lem}\ollabel{ordmemberord}
+هر~!!{element} یک عدد ترتیبی، خود عدد ترتیبی است.
+\end{lem}
+
+\begin{proof}
+فرض کنید~$\alpha$ عدد ترتیبی و~$b \in \alpha$ باشد. چون~$\alpha$ متعدی
+است، $b \subseteq \alpha$. پس همان‌گونه که~$\in$، $\alpha$ را خوش‌ترتیب
+می‌کند، $b$ را نیز خوش‌ترتیب می‌کند.
+
+برای دیدن اینکه~$b$ متعدی است، فرض کنید~$x \in c \in b$. چون
+$b \subseteq \alpha$، داریم~$c \in \alpha$. باز چون~$\alpha$ متعدی
+است، $c \subseteq \alpha$ و در نتیجه~$x \in \alpha$. پس
+$x,c,b \in \alpha$. اما~$\in$، $\alpha$ را خوش‌ترتیب می‌کند؛ بنابراین
+بنا بر~\olref[sth][ordinals][wo]{wo:strictorder}، $\in$ رابطه‌ای متعدی
+روی~$\alpha$ است. پس از~$x \in c \in b$ نتیجه می‌شود~$x \in b$. با
+تعمیم، $c \subseteq b$.
+\end{proof}
+
+\begin{cor}\ollabel{ordissetofsmallerord}
+برای هر عدد ترتیبی~$\alpha$،
+$\alpha = \Setabs{\beta \in \alpha}{\beta \text{ یک عدد ترتیبی است}}$.
+\end{cor}
+
+\begin{proof}
+بی‌درنگ از~\olref{ordmemberord} نتیجه می‌شود.
+\end{proof}
+
+مضمون تقریبی دو نتیجهٔ اصلی بعدی، یعنی~\olref{ordinductionschema} و
+\olref{ordtrichotomy}، این است که خود اعداد ترتیبی با عضویت خوش‌ترتیب
+شده‌اند:
+
+\begin{thm}[استقرای ترامتناهی]\ollabel{ordinductionschema}
+برای هر فرمول~$\phi(x)$:
+\[
+	\text{اگر }\exists \alpha \phi(\alpha)\text{، آنگاه }\exists \alpha(\phi(\alpha)
+	\land (\forall \beta \in \alpha) \lnot \phi(\beta))
+\]
+که در آن، سورهای نمایش‌داده‌شده به‌طور ضمنی به اعداد ترتیبی محدودند.
+\end{thm}
+
+\begin{proof}
+%\olref{ordinductionschema1}.
+فرض کنید~$\phi(\alpha)$ برای یک عدد ترتیبی~$\alpha$. اگر
+$(\forall \beta \in \alpha)\lnot\phi(\beta)$، کار تمام است. در غیر این
+صورت، مجموعهٔ
+$X=\Setabs{\beta\in\alpha}{\phi(\beta)}$ ناتهی است. چون~$\in$،
+$\alpha$ را خوش‌ترتیب می‌کند، $X$ یک~!!{element}~$\in$-کمینه مانند
+$\gamma$ دارد. بنا بر~\olref{ordmemberord}، $\gamma$ عدد ترتیبی است؛ و
+چون~$\gamma\in X$، داریم~$\phi(\gamma)$. همچنین کمینگی~$\gamma$ و تعدی
+$\alpha$ نتیجه می‌دهند
+$(\forall\beta\in\gamma)\lnot\phi(\beta)$. پس~$\gamma$ همان عدد ترتیبی
+مطلوب است.
+%	\olref{ordinductionschema2}. فرض کنید یک عدد ترتیبی~$\gamma$ وجود دارد
+%	به‌طوری‌که $\lnot\phi(\gamma)$. آنگاه بنا بر
+%	\olref{ordinductionschema1}، یک عدد ترتیبی~$\in$-مینیمال~$\alpha$
+%	وجود دارد که $\lnot\phi(\alpha)$. پس $(\forall \beta <
+%	\alpha)\phi(\beta)$ و در نتیجه مقدم شرطی کاذب است.
+\end{proof}
+\noindent
+توجه کنید که~\olref{ordinductionschema} را به‌طور هم‌ارز می‌توان به صورت
+طرحوارهٔ زیر بیان کنیم؛ کافی است~$\lnot\phi(\alpha)$ را
+در~\olref{ordinductionschema} قرار دهیم و سپس دستکاری‌های مقدماتی منطقی انجام دهیم:
+\[
+\text{اگر }\forall \alpha((\forall \beta \in \alpha)\phi(\beta) \lif
+\phi(\alpha))\text{، آنگاه }\forall \alpha\phi(\alpha).
+\]
+
+\begin{thm}[سه‌شقی]\ollabel{ordtrichotomy}
+برای هر دو عدد ترتیبی~$\alpha$ و~$\beta$،
+$\alpha \in \beta \lor \alpha = \beta \lor \beta \in \alpha$.
+\end{thm}
+
+\begin{proof}
+اثبات با استقرای دوگانه است؛ یعنی دو بار از~\olref{ordinductionschema}
+استفاده می‌کنیم. می‌گوییم~$x$ با~$y$ \emph{قابل مقایسه} است اگر و تنها
+اگر~$x \in y \lor x=y \lor y \in x$.
+
+برای استقرا، فرض کنید هر عدد ترتیبیِ عضو~$\alpha$ با \emph{هر} عدد
+ترتیبی قابل مقایسه باشد. برای استقرای دوم، فرض کنید~$\alpha$ با هر عدد
+ترتیبیِ عضو~$\beta$ قابل مقایسه باشد. نشان خواهیم داد~$\alpha$ با~$\beta$
+قابل مقایسه است. با استقرا روی~$\beta$ نتیجه خواهد شد که~$\alpha$ با هر
+عدد ترتیبی قابل مقایسه است؛ و سپس با استقرا روی~$\alpha$، \emph{هر} عدد
+ترتیبی با \emph{هر} عدد ترتیبی قابل مقایسه خواهد بود، چنان‌که مطلوب است.
+کافی است فرض کنیم~$\alpha \notin \beta$ و~$\beta \notin \alpha$ و نشان
+دهیم~$\alpha=\beta$.
+
+برای نشان‌دادن~$\alpha \subseteq \beta$، یک~$\gamma \in \alpha$ ثابت
+بگیرید؛ بنا بر~\olref{ordmemberord}، $\gamma$ عدد ترتیبی است. پس بنا بر
+فرض استقرای نخست، $\gamma$ با~$\beta$ قابل مقایسه است. اما اگر
+$\gamma=\beta$ یا~$\beta \in \gamma$، آنگاه~$\beta \in \alpha$ (در صورت
+لزوم با استفاده از تعدی~$\alpha$)، برخلاف فرض ما. پس~$\gamma \in \beta$.
+با تعمیم، $\alpha \subseteq \beta$.
+
+استدلالی کاملاً مشابه با استفاده از فرض استقرای دوم نشان می‌دهد
+$\beta \subseteq \alpha$. پس~$\alpha=\beta$.
+\end{proof}\noindent
+ازاین‌رو گاه به‌جای~$\alpha \in \beta$ می‌نویسیم~$\alpha<\beta$، زیرا
+$\in$ مانند یک رابطهٔ ترتیب رفتار می‌کند. جز آشنایی و این واقعیت که نوشتن
+$\alpha \leq \beta$ از~$\alpha \in \beta \lor \alpha=\beta$ آسان‌تر
+است، دلیل ژرفی برای این کار وجود ندارد.\footnote{می‌توانستیم بنویسیم
+$\alpha \mathrel{\underline{\in}} \beta$، اما این نمادگذاری کاملاً
+نامتعارف بود.}
+
+در ادامه دو پیامد سریع از نتایج اخیر می‌آید که نخستین آن‌ها نمادگذاری تازه
+را به کار می‌گیرد:
+
+\begin{cor}\ollabel{ordordered}
+اگر~$\exists \alpha\phi(\alpha)$، آنگاه
+$\exists \alpha(\phi(\alpha) \land \forall \beta(\phi(\beta) \lif
+\alpha \leq \beta))$. افزون بر این، برای هر اعداد ترتیبی
+$\alpha,\beta,\gamma$، هم~$\alpha \notin \alpha$ و هم
+$\alpha \in \beta \in \gamma \lif \alpha \in \gamma$.
+\end{cor}
+
+\begin{proof}
+درست مانند~\olref[wo]{wo:strictorder}.
+\end{proof}
+
+\begin{prob}
+«استدلال کاملاً مشابه» در اثبات
+\olref[sth][ordinals][basic]{ordtrichotomy} را کامل کنید.
+\end{prob}
+
+\begin{cor}\ollabel{corordtransitiveord}
+$A$ عدد ترتیبی است اگر و تنها اگر مجموعه‌ای متعدی از اعداد ترتیبی باشد.
+\end{cor}
+
+\begin{proof}
+\emph{از چپ به راست.} بنا بر~\olref{ordmemberord}.
+\emph{از راست به چپ.} اگر~$A$ مجموعه‌ای متعدی از اعداد ترتیبی باشد، آنگاه
+بنا بر~\olref{ordinductionschema} و~\olref{ordtrichotomy}، $\in$ مجموعهٔ
+$A$ را خوش‌ترتیب می‌کند.
+\end{proof}
+
+اکنون~\olref{ordinductionschema} و~\olref{ordtrichotomy} را چنین تفسیر
+کردیم که~$\in$ اعداد ترتیبی را خوش‌ترتیب می‌کند. اما بنا بر نتیجهٔ زیر،
+باید دربارهٔ چنین ادعایی \emph{بسیار محتاط} باشیم:
+
+\begin{thm}[پارادوکس بورالی--فورتی]\ollabel{buraliforti}
+هیچ مجموعه‌ای از همهٔ اعداد ترتیبی وجود ندارد.
+\end{thm}
+
+\begin{proof}
+برای برهان خلف، فرض کنید~$O$ مجموعهٔ همهٔ اعداد ترتیبی باشد. اگر
+$\alpha \in \beta \in O$، آنگاه بنا بر~\olref{ordmemberord}، $\alpha$
+عدد ترتیبی است و بنابراین~$\alpha \in O$. پس~$O$ متعدی است و در نتیجه
+بنا بر~\olref{corordtransitiveord}، $O$ یک عدد ترتیبی است. ازاین‌رو
+$O \in O$، برخلاف~\olref{ordordered}.
+\end{proof}
+\noindent
+این نتیجه به نام~\citeauthor{Burali-Forti1897} نام‌گذاری شده است. اما
+کانتور بود که در سال ۱۸۹۹---در نامه‌ای به ددکیند---نخستین بار
+\emph{تناقض} موجود در فرض مجموعه‌ای از همهٔ اعداد ترتیبی را به‌روشنی دید.
+چنان‌که فان هاینورت توضیح می‌دهد:
+\begin{quote}
+  خود بورالی--فورتی تناقض را مؤید این نتیجه می‌دانست که ترتیب طبیعی اعداد
+  ترتیبی صرفاً ترتیبی جزئی است، و این نتیجه را با \emph{برهان خلف} به دست
+  می‌آورد.
+  \citep[p.~105]{Heijenoort1967}
+\end{quote}
+اگر اشتباه بورالی--فورتی را کنار بگذاریم، می‌توانیم مطالب پیشین را چنین
+خلاصه کنیم: اعداد ترتیبی مجموعه‌هایی‌اند که به‌طور منفرد با عضویت
+خوش‌ترتیب شده‌اند و در مجموع نیز با عضویت خوش‌ترتیب‌اند (بی‌آنکه در مجموع
+یک مجموعه را تشکیل دهند).
+
+برای تکمیل بحث، چند ویژگی بنیادی دیگر اعداد ترتیبی را می‌آوریم که از
+\olref{ordinductionschema} و~\olref{ordtrichotomy} نتیجه می‌شوند.
+
+\begin{prop}
+هر دنبالهٔ اکیداً نزولی از اعداد ترتیبی متناهی است.
+\end{prop}
+
+\begin{proof}
+هر دنبالهٔ نامتناهی و اکیداً نزولی از اعداد ترتیبی
+$\alpha_0>\alpha_1>\alpha_2>\ldots$ هیچ عضو~$<$-مینیمالی ندارد، برخلاف
+\olref{ordinductionschema}.
+\end{proof}
+
+\begin{prop}\ollabel{ordinalsaresubsets}
+برای هر دو عدد ترتیبی~$\alpha,\beta$،
+$\alpha \subseteq \beta \lor \beta \subseteq \alpha$.
+\end{prop}
+
+\begin{proof}
+اگر~$\alpha \in \beta$، چون~$\beta$ متعدی است،
+$\alpha \subseteq \beta$. به همین ترتیب، اگر~$\beta \in \alpha$، آنگاه
+$\beta \subseteq \alpha$. و اگر~$\alpha=\beta$، آنگاه هم
+$\alpha \subseteq \beta$ و هم~$\beta \subseteq \alpha$. پس با
+\olref{ordtrichotomy} کار تمام است.
+\end{proof}
+
+\begin{prop}\ollabel{ordisoidentity}
+برای هر دو عدد ترتیبی~$\alpha,\beta$، $\alpha=\beta$ اگر و تنها اگر
+$\ordeq{\alpha}{\beta}$.
+\end{prop}
+
+\begin{proof}
+اعداد ترتیبی خوش‌ترتیب‌اند؛ پس این نتیجه بی‌درنگ از سه‌شقی
+(\olref[basic]{ordtrichotomy}) و~\olref[iso]{wellordnotinitial} به دست
+می‌آید.
+\end{proof}
+
+\begin{prob}\ollabel{probunionordinalsordinal}
+اثبات کنید اگر هر عضو~$X$ یک عدد ترتیبی باشد، آنگاه~$\bigcup X$ یک عدد
+ترتیبی است.
+\end{prob}
+
+\end{document}

@@ -1,0 +1,150 @@
+% Part: first-order-logic
+% Chapter: syntax-and-semantics
+% Section: first-order-languages
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{syn}{fol}
+
+\olsection{زبان‌های مرتبهٔ اول}
+
+
+عبارت‌های منطق مرتبهٔ اول از واژگانی پایه ساخته می‌شوند که
+\emph{!!{variable}s}، \emph{!!{constant}s}،
+\emph{!!{predicate}s} و گاه \emph{!!{function}s} را در بر می‌گیرد.
+از این‌ها، همراه با رابط‌های منطقی، سورها و نشانه‌های سجاوندی‌ای چون
+پرانتز و ویرگول، \emph{ترم‌ها} و \emph{!!{formula}s} ساخته می‌شوند.
+
+\begin{explain}
+به‌طور غیرصوری، !!{predicate}s نام ویژگی‌ها و رابطه‌ها هستند،
+!!{constant}s نام اشیای منفردند و !!{function}s نام نگاشت‌ها. این‌ها، به‌جز
+!!{identity}~$\eq$، \emph{نمادهای غیرمنطقی}اند و در کنار هم زبانی را
+می‌سازند. هر زبان مرتبهٔ اول~$\Lang L$ با نمادهای غیرمنطقی‌اش تعیین می‌شود.
+در کلی‌ترین حالت، $\Lang L$ از هر نوع بی‌نهایت نماد در بر دارد.
+\end{explain}
+
+در حالت کلی، در منطق مرتبهٔ اول از نمادهای زیر استفاده می‌کنیم:
+
+\begin{enumerate}
+\item نمادهای منطقی
+\begin{enumerate}
+\item رابط‌های منطقی:
+  \startycommalist
+  \iftag{prvNot}{\ycomma $\lnot$ (نفی)}{}%
+  \iftag{prvAnd}{\ycomma $\land$ (عطف)}{}%
+  \iftag{prvOr}{\ycomma $\lor$ (فصل)}{}%
+  \iftag{prvIf}{\ycomma $\lif$ (!!{conditional})}{}%
+  \iftag{prvIff}{\ycomma $\liff$ (!!{biconditional})}{}%
+  \iftag{prvAll}{\ycomma $\lforall$ (سور کلی)}{}%
+  \iftag{prvEx}{\ycomma $\lexists$ (سور وجودی)}{}.
+\tagitem{prvFalse}{ثابت گزاره‌ایِ !!{falsity}~$\lfalse$.}{}
+\tagitem{prvTrue}{ثابت گزاره‌ایِ !!{truth}~$\ltrue$.}{}
+\item !!{identity} دوجایگاهی~$\eq$.
+\item مجموعه‌ای !!{denumerable} از !!{variable}s: $\Obj v_0$، $\Obj v_1$، $\Obj
+  v_2$، \dots
+\end{enumerate}
+\item نمادهای غیرمنطقی، که \emph{زبان استاندارد} منطق مرتبهٔ اول را
+تشکیل می‌دهند
+\begin{enumerate}
+\item برای هر $n>0$، مجموعه‌ای !!{denumerable} از !!{predicate}sی
+  $n$جایگاهی: $\Obj A^n_0$، $\Obj A^n_1$، $\Obj A^n_2$، \dots
+\item مجموعه‌ای !!{denumerable} از !!{constant}s: $\Obj c_0$، $\Obj c_1$، $\Obj
+  c_2$، \dots.
+\item برای هر $n>0$، مجموعه‌ای !!{denumerable} از !!{function}sی
+  $n$جایگاهی: $\Obj f^n_0$، $\Obj f^n_1$، $\Obj f^n_2$، \dots
+\end{enumerate}
+\item نشانه‌های سجاوندی: ( و )، و نیز ویرگول.
+\end{enumerate}
+
+بیشتر تعریف‌ها و نتایج خود را برای زبان استاندارد کامل منطق مرتبهٔ اول
+صورت‌بندی خواهیم کرد. بااین‌حال، بسته به کاربرد، ممکن است زبان را تنها به
+چند !!{predicate}، !!{constant} و !!{function} محدود کنیم.
+
+\begin{ex}
+زبان حساب~$\Lang L_A$ یک !!{predicate} دوجایگاهی~$<$، یک
+!!{constant}~$\Obj 0$، یک !!{function} یک‌جایگاهی~$\prime$ و دو
+!!{function} دوجایگاهی~$+$ و~$\times$ دارد.
+\end{ex}
+
+\begin{ex}
+زبان نظریهٔ مجموعه‌ها~$\Lang L_Z$ تنها !!{predicate} دوجایگاهی~$\in$ را
+دارد.
+\end{ex}
+
+\begin{ex}
+زبان ترتیب‌ها~$\Lang L_\le$ تنها !!{predicate} دوجایگاهی~$\le$ را دارد.
+\end{ex}
+
+باز هم این‌ها قراردادند: به‌طور رسمی، صرفاً نام‌های مستعارند؛ برای نمونه،
+$<$، $\in$ و $\le$ نام‌های مستعار $\Obj A^2_0$، $\Obj 0$ نام مستعار
+$\Obj c_0$، $\prime$ نام مستعار $\Obj f^1_0$، $+$ نام مستعار $\Obj f^2_0$
+و $\times$ نام مستعار $\Obj f^2_1$ است.
+
+\iftag{defNot,defOr,defAnd,defIf,defIff,defTrue,defFalse,defEx,defAll}{%
+افزون بر رابط‌ها و
+\iftag{notprvEx,notprvAll}{سور}{سورهای} اولیه‌ای که در بالا معرفی شدند،
+از نمادهای \emph{تعریف‌شدهٔ} زیر نیز استفاده می‌کنیم:
+\startycommalist
+  \iftag{defNot}{\ycomma $\lnot$ (نفی)}{}%
+  \iftag{defAnd}{\ycomma $\land$ (عطف)}{}%
+  \iftag{defOr}{\ycomma $\lor$ (فصل)}{}%
+  \iftag{defIf}{\ycomma $\lif$ (!!{conditional})}{}%
+  \iftag{defIff}{\ycomma $\liff$ (!!{biconditional})}{}%
+  \iftag{defAll}{\ycomma $\lforall$ (سور کلی)}{}%
+  \iftag{defEx}{\ycomma $\lexists$ (سور وجودی)}{}%
+  \iftag{defFalse}{\ycomma !!{falsity}~$\lfalse$}{}%
+  \iftag{defTrue}{\ycomma !!{truth}~$\ltrue$}{}.
+}{}
+
+\begin{tagblock}{defNot,defOr,defAnd,defIf,defIff,defTrue,defFalse,defEx,defAll}
+\begin{explain}
+نماد تعریف‌شده رسماً جزئی از زبان نیست، بلکه به‌عنوان اختصاری غیرصوری
+معرفی می‌شود: چنین نمادی به ما امکان می‌دهد فرمول‌هایی را کوتاه کنیم که
+اگر فقط از نمادهای اولیه استفاده می‌کردیم، بسیار طولانی می‌شدند. این مزیت
+آشکار است؛ اما مزیت بزرگ‌تر آن است که برهان‌ها کوتاه‌تر می‌شوند. اگر نمادی
+اولیه باشد، باید در برهان‌ها جداگانه بررسی شود. بنابراین هرچه شمار نمادهای
+اولیه بیشتر باشد، برهان‌های ما طولانی‌تر خواهند بود.
+\end{explain}
+\end{tagblock}
+
+% Alternate symbols
+
+\begin{intro}
+ممکن است با اصطلاح‌ها و نمادهایی متفاوت از آنچه در بالا به کار بردیم آشنا
+باشید. متون منطق (و مدرسان) معمولاً $\sim$، $\neg$ یا~!\ را برای «نفی» و
+$\wedge$، $\cdot$ یا $\&$ را برای «عطف» به کار می‌برند. نمادهای رایج برای
+«شرطی» یا «استلزام» عبارت‌اند از $\rightarrow$، $\Rightarrow$ و $\supset$.
+\iftag{prvIff,defIff}{نمادهای «دوشرطی»، «استلزام دوسویه» یا «هم‌ارزی
+  (مادی)» عبارت‌اند از $\leftrightarrow$،
+  $\Leftrightarrow$ و $\equiv$.}{}
+\iftag{prvFalse,defFalse}{نماد $\lfalse$ را به نام‌های «کذب»، «فالسوم»،
+  «محال» یا «پایین» نیز می‌خوانند.}{}
+\iftag{prvTrue,defTrue}{نماد $\ltrue$ را به نام‌های «صدق»، «وروم» یا
+  «بالا» نیز می‌خوانند.}{}
+
+بنا بر قرارداد، برای !!{constant}s (که گاه نام نیز خوانده می‌شوند) از حروف
+کوچک آغاز الفبای لاتین (مانند $a$، $b$ و $c$) و برای !!{variable}s از حروف
+کوچک پایان آن (مانند $x$، $y$ و $z$) استفاده می‌شود. سورها با
+!!{variable}s، مانند $x$، ترکیب می‌شوند؛ صورت‌های نگارشی متفاوت برای سور
+کلی عبارت‌اند از $\forall x$، $(\forall x)$، $(x)$، $\Pi x$ و
+$\bigwedge_x$، و برای سور وجودی عبارت‌اند از $\exists x$، $(\exists
+x)$، $(Ex)$، $\Sigma x$ و $\bigvee_x$.
+\end{intro}
+
+\begin{explain}
+می‌توانیم همهٔ عملگرهای گزاره‌ای و هر دو سور را نمادهای اولیهٔ زبان به شمار
+آوریم. یا می‌توانیم مجموعهٔ کوچک‌تری از نمادهای اولیه برگزینیم و دیگر
+!!{operator}s را تعریف‌شده بگیریم. مجموعه‌های «تام از نظر تابع ارزش» از
+عملگرهای بولی شامل $\{ \lnot, \lor \}$، $\{ \lnot, \land \}$ و
+$\{ \lnot, \lif\}$ هستند---هر یک از این‌ها را می‌توان با یکی از دو سور
+ترکیب کرد تا زبانی مرتبهٔ اول و تام از نظر قدرت بیان به دست آید.
+
+ممکن است با دو !!{operator} دیگر نیز آشنا باشید: خط شفر~$|$ (به نام هنری
+شفر) و پیکان پیرس~$\downarrow$، که خنجر کواین نیز نامیده می‌شود. این دو
+عملگر، با خوانش معمول «نَند» و «نُر» (به‌ترتیب)، هر یک به‌تنهایی از نظر
+تابع ارزش تام‌اند.
+\end{explain}
+
+\end{document}

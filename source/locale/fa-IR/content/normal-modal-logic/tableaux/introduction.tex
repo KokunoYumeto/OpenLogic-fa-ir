@@ -1,0 +1,60 @@
+% Part: normal-modal-logic
+% Chapter: tableaux
+% Section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{tab}{int}
+
+\olsection{مقدمه}
+
+!!^{tableau}ها درخت‌هایی خاص (با انشعاب رو به پایین) از !!{signed
+  formula}ها هستند؛ یعنی زوج‌هایی متشکل از یک نشانهٔ ارزش صدق
+($\True$ یا~$\False$) و !!a{sentence}:
+\[
+\sFmla{\True}{!A} \text{ یا } \sFmla{\False}{!A}.
+\]
+!!^a{tableau} با شماری \emph{فرض} آغاز می‌شود. هر !!{signed formula}
+بعدی با اعمال یکی از قواعد استنتاج تولید می‌شود. برخی قواعد استنتاج
+یک یا چند !!{signed formula} را به انتهای درخت می‌افزایند؛ برخی دیگر
+دو انتهای تازه می‌افزایند و دو شاخه پدید می‌آورند. قواعد به
+!!{signed formula}هایی می‌انجامند که !!{formula} آن‌ها از !!{signed
+formula}ای که قاعده بر آن اعمال شده است کم‌پیچیده‌تر است. وقتی شاخه‌ای
+هم~$\sFmla{\True}{!A}$ و هم~$\sFmla{\False}{!A}$ را شامل شود، می‌گوییم
+شاخه \emph{بسته} است. اگر همهٔ شاخه‌های !!a{tableau} بسته باشند، کل
+!!{tableau} بسته است. !!{tableau} بسته، !!a{derivation}ای است که نشان
+می‌دهد مجموعهٔ !!{signed formula}هایی که برای آغاز !!{tableau} به کار
+رفته‌اند ارضاناپذیر است. می‌توان از این امر برای تعریف رابطهٔ
+$\Proves$ استفاده کرد: $\Gamma \Proves !A$ اگر و تنها اگر مجموعهٔ
+متناهی~$\Gamma_0 = \{!B_1, \dots, !B_n\} \subseteq \Gamma$ای وجود
+داشته باشد چنان‌که !!{tableau} بسته‌ای برای فرض‌های زیر وجود داشته باشد:
+\[
+\{\sFmla{\False}{!A}, \sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\}.
+\]
+
+برای منطق‌های موجهاتی، هم باید مفهوم !!{signed formula} را گسترش دهیم
+و هم قواعدی بیفزاییم که
+\iftag{prvBox}{$\Box$\iftag{prvDiamond}{ و~$\Diamond$}{}}{$\Diamond$}
+را پوشش دهند. افزون بر یک نشانه ($\True$ یا~$\False$)، !!{formula}ها
+در !!{tableau}های موجهاتی \emph{پیشوندهایی}~$\sigma$ نیز دارند.
+پیشوندها دنباله‌های ناتهی از اعداد صحیح مثبت‌اند؛ یعنی
+$\sigma \in (\PosInt)^* \setminus \{\emptyseq\}$. هنگام نوشتن چنین
+پیشوندهایی، $\tuple{\ }$ پیرامونشان را حذف می‌کنیم و !!{element}های
+منفرد را به‌جای ویرگول با نقطه از هم جدا می‌کنیم. اگر~$\sigma$ یک
+پیشوند باشد، آنگاه~$\sigma.n$ همان~$\sigma \concat \tuple{n}$ است؛
+برای نمونه، اگر~$\sigma = 1.2.1$، آنگاه~$\sigma.3$ برابر~$1.2.1.3$
+است. پس برای نمونه:
+\[
+\sFmla{\True}{\Box !A \lif !A}[1.2]
+\]
+یک \emph{!!{signed formula} پیشونددار} است (یا به‌اختصار یک
+\emph{!!{formula} پیشونددار}).
+
+به‌طور شهودی، پیشوند نام جهانی در مدلی است که ممکن است !!{formula}های
+روی شاخه‌ای از !!a{tableau} را ارضا کند؛ و اگر~$\sigma$ نام جهانی
+باشد، آنگاه~$\sigma.n$ نام جهانی دسترسی‌پذیر از (جهان موسوم به)
+$\sigma$ است.
+
+\end{document}

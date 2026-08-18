@@ -1,0 +1,93 @@
+% Part: first-order-logic
+% Chapter: axiomatic-deduction
+% Section: rules-and-proofs
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{axd}{rul}}
+      {\olfileid{pl}{axd}{rul}}
+
+\olsection{قواعد و \usetoken{P}{derivation}}
+
+\begin{explain}
+  دستگاه‌های !!{derivation} اصل‌موضوعی شاید ساده‌ترین دستگاه‌های
+  !!{derivation} برای منطق باشند. !!^a{derivation} صرفاً دنباله‌ای از
+  !!{formula}s است. برای آنکه دنباله‌ای !!a{derivation} به شمار آید، هر
+  !!{formula} در آن باید یا نمونه‌ای از یک اصل موضوع باشد، یا به‌وسیلهٔ
+  یک قاعدهٔ استنتاج از یک یا چند !!{formula}s پیشین در دنباله به دست آید.
+  !!^a{derivation} با !!{derive}s، آخرین !!{formula} خود را نتیجه می‌دهد.
+\end{explain}
+
+\begin{defn}[!!^{derivability}]
+اگر $\Gamma$ مجموعه‌ای از !!{formula}s زبان $\Lang L$ باشد، آنگاه
+\emph{!!{derivation} از}~$\Gamma$ دنبالهٔ متناهی
+$!A_1$، \dots،~$!A_n$ از !!{formula}s است که برای هر $i \le n$ یکی از
+شرایط زیر برقرار باشد:
+\begin{enumerate}
+\item $!A_i \in \Gamma$؛ یا
+\item $!A_i$ یک اصل موضوع است؛ یا
+\item $!A_i$ به‌وسیلهٔ یک قاعدهٔ استنتاج از یک $!A_j$ (و $!A_k$) با
+  $j < i$ (و $k < i$) به دست می‌آید.
+\end{enumerate}
+\end{defn}
+
+اینکه چه چیزی !!{derivation} درست به شمار می‌آید، به قواعد استنتاجی که
+مجاز می‌دانیم (و البته به آنچه اصل موضوع می‌گیریم) بستگی دارد. قاعدهٔ
+استنتاج گزاره‌ای شرطی است که می‌گوید گام~$!A_i$ در !!a{derivation} تحت
+چه شرایطی گام استنتاجیِ درستی است.
+
+\begin{defn}[قاعدهٔ استنتاج]
+\emph{قاعدهٔ استنتاج} شرطی کافی برای آنچه گام استنتاجی درست در
+!!a{derivation} از~$\Gamma$ به شمار می‌آید به دست می‌دهد.
+\end{defn}
+
+برای نمونه، چون هر دنبالهٔ تک‌عضوی $!A$ با $!A \in \Gamma$ بدیهتاً
+!!a{derivation} به شمار می‌آید، عبارت زیر می‌تواند قاعدهٔ استنتاج بسیار
+ساده‌ای باشد:
+\begin{quote}
+  اگر $!A \in \Gamma$، آنگاه $!A$ همواره گام استنتاجی درستی در هر
+  !!{derivation} از~$\Gamma$ است.
+\end{quote}
+همچنین، اگر $!A$ یکی از اصول موضوع باشد، آنگاه $!A$ به‌تنهایی
+!!a{derivation} است؛ پس این نیز قاعدهٔ استنتاج است:
+\begin{quote}
+  اگر $!A$ یک اصل موضوع باشد، آنگاه $!A$ گام استنتاجی درستی است.
+\end{quote}
+هنگامی که قاعدهٔ استنتاج به !!{formula}s پیش از گام مورد نظر استناد کند،
+موضوع جالب‌تر می‌شود. قاعدهٔ زیر \emph{وضع مقدم:} نام دارد
+\begin{quote}
+  اگر $!B \lif !A$ و $!B$ بالاتر در !!{derivation} آمده باشند، آنگاه
+  $!A$ گام استنتاجی درستی است.
+\end{quote}
+اگر این تنها قاعدهٔ استنتاج باشد، تعریف بالا از !!{derivation} به این
+معناست: $!A_1$، \dots،~$!A_n$~!!a{derivation} است هرگاه و تنها هرگاه
+برای هر $i \le n$ یکی از شرایط زیر برقرار باشد:
+\begin{enumerate}
+\item $!A_i \in \Gamma$؛ یا
+\item $!A_i$ یک اصل موضوع است؛ یا
+\item برای یک $j < i$، $!A_j$ همان $!B \lif !A_i$ باشد و برای یک
+  $k < i$، $!A_k$ همان~$!B$ باشد.
+\end{enumerate}
+بند آخر می‌گوید $!A_i$ با وضع مقدم از~$!A_j$ ($!B \lif !A_i$) و
+$!A_k$ ($!B$) به دست می‌آید. اگر بتوانیم از $1$ تا~$n$ پیش برویم و هر
+بار !!a{formula}~$!A_i$ بیابیم که یا در~$\Gamma$ است، یا اصل موضوع است،
+یا قاعدهٔ استنتاجی به ما می‌گوید گام استنتاجی درستی است، آنگاه کل دنباله
+!!{derivation} درست به شمار می‌آید.
+
+\begin{defn}[!!^{derivability}]
+!!{formula}~$!A$~\emph{!!{derivable}} از $\Gamma$ است، و
+$\Gamma \Proves !A$ نوشته می‌شود، اگر !!a{derivation} از $\Gamma$ وجود
+داشته باشد که به $!A$ پایان یابد.
+\end{defn}
+
+\begin{defn}[قضیه‌ها]
+!!^a{formula}~$!A$ یک \emph{قضیه} است اگر !!a{derivation} از مجموعهٔ
+تهی برای~$!A$ وجود داشته باشد. $\Proves !A$ می‌نویسیم اگر $!A$ قضیه
+باشد و اگر نباشد، $\Proves/ !A$.
+\end{defn}
+
+
+\end{document}

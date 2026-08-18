@@ -1,0 +1,85 @@
+% Part: proof-theory
+% Chapter: natural-deduction
+% Section: grafting
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{nat}{gra}
+
+\olsection{پیوندزدن \usetoken{P}{proof}}
+
+!!^{proof}ها در \Log{N1c} و~\Log{N1i}، !!{proof}هایی برای
+!!{formula}های~$!A$ از فرض‌های~$!B$ هستند. فرض کنید خود~$!B$
+!!a{proof} داشته باشد. چگونه !!{proof}~$!B$ را با !!{proof}~$!A$ از
+$!B$ ترکیب کنیم تا !!a{proof} برای~$!A$ به دست آید که از فرض~$!B$
+استفاده نکند؟
+
+یک راه این است که با اعمال~\Intro{\lif} فرض~$!B$ را از !!{proof}~$!A$
+حذف کنیم. سپس می‌توانیم !!{proof} حاصل برای~$!B \lif !A$ را با
+!!{proof}~$!B$ ترکیب کنیم و به این برسیم:
+\[
+\AxiomC{$\Discharge{!B}{x}$}
+\DeduceC{$!A$}
+\DischargeRule{\Intro{\lif}}{x}
+\UnaryInfC{$!B \lif !A$}
+\AxiomC{}
+\DeduceC{$!B$}
+\RightLabel{\Elim{\lif}}
+\BinaryInfC{$!A$}
+\DisplayProof
+\]
+این کار سرراست، اما کمی نازیباست: چرا $\lif$ را معرفی کنیم تا بی‌درنگ
+آن را حذف کنیم؟ باید بتوان از این نوع «میان‌بُرِ اضافی» از راه
+$!B \lif !A$ پرهیز کرد. (اینکه همیشه می‌توان از چنین میان‌بُرهایی
+پرهیز کرد، در واقع محتوای قضیهٔ نرمال‌سازی است.)
+
+در \Log{N1c} و~\Log{N1i} در این مورد می‌توانیم به‌آسانی از آن پرهیز
+کنیم: کافی است فرض‌های~$!B^x$ را با کل !!{proof}~$!B$ جایگزین کنیم.
+این «پیوندزدن» !!{proof}ها به فرض‌های برهان‌های دیگر بسیار سودمند است؛
+پس آن را در قالب یک تعریف ثبت می‌کنیم.
+
+\begin{defn}
+اگر $\delta_1$ یک \Log{N1c}-!!{proof} (یا \Log{N1i}-!!{proof}) برای
+~$!A$ از فرض باز~$!B^x$ باشد، و $\delta_2$ یک
+\Log{N1c}-!!{proof} (یا \Log{N1i}-!!{proof}) برای~$!B$ باشد، آنگاه
+$\Subst{\delta_1}{\delta_2}{!B^x}$ حاصل جایگزینی هر رخدادِ مرخص‌نشدهٔ
+~$!B^x$ در~$\delta_1$ با~$\delta_2$ است.
+\end{defn}
+
+به شرط آنکه $\delta_1$ و $\delta_2$ !!{formula}های فرضی متفاوتی با
+برچسب یکسان نداشته باشند و هیچ فرض باز~$\delta_2$ شامل متغیر ویژه‌ای
+از~$\delta_1$ نباشد، حاصل
+$\Subst{\delta_1}{\delta_2}{!B^x}$ یک !!{proof} درست است و فرض‌های باز
+آن، فرض‌های باز~$\delta_1$ همراه با فرض‌های باز~$\delta_2$ هستند.
+هنگام پیوندزدن !!{proof}ها، این شرط‌ها معمولاً برقرارند. شرط نخست هرگاه
+$\delta_1$ و $\delta_2$ زیربرهان‌های !!{proof} بزرگ‌تری باشند برقرار
+است. اگر شرط دوم برقرار نباشد، می‌توان متغیرهای ویژهٔ~$\delta_1$ را
+تغییر نام داد تا برقرار شود.
+
+تعریف متناظری برای \Log{N2c} و~\Log{N2i} برقرار است.
+
+\begin{defn}
+اگر $\delta_1$ یک \Log{N2c}-!!{proof} (یا \Log{N2i}-!!{proof}) برای
+~$x:!B, \Gamma_1 \Sequent !A$، و $\delta_2$ یک
+\Log{N2c}-!!{proof} (یا \Log{N2i}-!!{proof}) برای
+~$\Gamma_2 \Sequent !B$ باشد، آنگاه
+$\Subst{\delta_1}{\delta_2}{x:!B}$ حاصل جایگزینی هر اصل
+$x:!B \Sequent !B$ در~$\delta_1$ با~$\delta_2$ و افزودن~$\Gamma_2$
+به بافت هر دنبالهٔ زیر آن اصل‌هاست.
+\end{defn}
+
+\begin{prop}
+اگر $\delta_1 \Proves x:!B, \Gamma_1 \Sequent !A$ و
+$\delta_2 \Proves \Gamma_2 \Sequent !B$، آنگاه
+$\Subst{\delta_1}{\delta_2}{x:!B}
+ \Proves \Gamma_1, \Gamma_2 \Sequent !A$، مشروط بر اینکه هیچ متغیر
+ویژهٔ~$\delta_1$ در~$\Gamma_2$ ظاهر نشود.
+\end{prop}
+
+\begin{proof}
+با استقرا بر $\pheight{\delta_1}$.
+\end{proof}
+
+\end{document}

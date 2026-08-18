@@ -1,0 +1,155 @@
+% Part: normal-modal-logic
+% Chapter: frame-definability
+% Section: second-order-definability
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{frd}{st}
+
+\olsection{تعریف‌پذیری مرتبهٔ دوم}
+
+هر خاصیت قاب که با فرمول‌های موجهاتی تعریف‌پذیر است، تعریف‌پذیر مرتبهٔ
+اول نیست. بااین‌حال، اگر سورگذاری بر محمول‌های یک‌موضعی را مجاز کنیم
+(یعنی سورگذاری مرتبهٔ دوم یکانی)، همهٔ خواص قابِ تعریف‌پذیر موجهاتی را
+تعریف می‌کنیم. راهکار آن است که از شیوه‌ای نظام‌مند بهره بگیریم که در
+آن شرایط صدق یک !!{formula} موجهاتی در یک جهان با !!{formula}های مرتبهٔ
+اول مرتبط می‌شوند. این همان به‌اصطلاح ترجمهٔ استاندارد فرمول‌های
+موجهاتی به فرمول‌های مرتبهٔ اول در زبانی است که نه‌تنها یک
+!!{predicate} دوموضعی~$Q$ برای رابطهٔ دسترسی، بلکه یک !!{predicate}
+یک‌موضعی~$P_i$ برای !!{propositional variable}های~$\Obj p_i$ رخ‌دهنده
+در~$!A$ نیز دارد.
+
+\begin{defn}
+  \emph{ترجمهٔ استاندارد}~$\ST_x(!A)$ به‌طور استقرایی چنین تعریف می‌شود:
+  \begin{enumerate}
+  \tagitem{prvFalse}{\indcase{!A}{\lfalse}{$\ST_x(\indfrm) = \lfalse$.}}{}
+  \tagitem{prvTrue}{\indcase{!A}{\ltrue}{$\ST_x(\indfrm) = \ltrue$.}}{}
+  \item \indcase{!A}{\Obj p_i}{$\ST_x(\indfrm) = \Atom{P_i}{x}$.}
+  \tagitem{prvNot}{\indcase{!A}{\lnot !B}{$\ST_x(\indfrm) = \lnot \ST_x(!B)$.}}{}
+  \tagitem{prvAnd}{\indcase{!A}{(!B \land !C)}{$\ST_x(\indfrm) = (\ST_x(!B)
+      \land \ST_x(!C))$.}}{}
+  \tagitem{prvOr}{\indcase{!A}{(!B \lor !C)}{$\ST_x(\indfrm) = (\ST_x(!B)
+      \lor \ST_x(!C))$.}}{}
+  \tagitem{prvIf}{\indcase{!A}{(!B \lif !C)}{$\ST_x(\indfrm) = (\ST_x(!B)
+      \lif \ST_x(!C))$.}}{}
+  \tagitem{prvIff}{\indcase{!A}{(!B \liff !C)}{$\ST_x(\indfrm) = (\ST_x(!B)
+      \liff \ST_x(!C))}$.}{}
+  \tagitem{prvBox}{\indcase{!A}{\Box !B}{$\ST_x(\indfrm) =
+      \lforall[y][(\Atom{Q}{x,y} \lif \ST_y(!B))]$.}}{}
+  \tagitem{prvDiamond}{\indcase{!A}{\Diamond !B}{$\ST_x(\indfrm) =
+      \lexists[y][(\Atom{Q}{x,y} \land \ST_y(!B))]$.}}{}
+  \end{enumerate}
+\end{defn}
+
+برای نمونه، $\ST_x(\Box p \lif p)$ برابر است با
+$\lforall[y][(\Atom{Q}{x,y} \lif \Atom{P}{y})] \lif \Atom{P}{x}$.
+هر !!{structure} برای زبان~$\ST_x(!A)$ به یک دامنه، رابطه‌ای دوموضعی
+که به~$Q$ نسبت داده می‌شود، و زیرمجموعه‌هایی از دامنه که به
+!!{predicate}های یک‌موضعی~$P_i$ نسبت داده می‌شوند نیاز دارد. به بیان
+دیگر، مؤلفه‌های چنین !!a{structure} دقیقاً مؤلفه‌های یک مدل برای~$!A$
+هستند: دامنه مجموعهٔ جهان‌هاست، رابطهٔ دوموضعیِ نسبت‌داده‌شده به~$Q$
+رابطهٔ دسترسی است و زیرمجموعه‌های نسبت‌داده‌شده به~$P_i$ همان
+تخصیص‌های~$V(\Obj p_i)$ هستند. جای شگفتی نیست که ارضای~$!A$ در یک مدل
+موجهاتی با ارضای~$\ST_x(!A)$ در !!{structure} متناظر یکسان باشد:
+
+\begin{prop}\ollabel{prop:st}
+  فرض کنید~$\mModel{M} = \tuple{W, R, V}$، و~$\Struct{M'}$
+  !!{structure} مرتبهٔ اولی با~$\Domain{M'} = W$،
+  $\Assign{Q}{M'} = R$ و~$\Assign{P_i}{M'} = V(\Obj p_i)$ باشد، و
+  $s(x) = w$. آنگاه
+  \[
+  \mSat{M}{!A}[w] \text{ اگر و تنها اگر } \Sat{M'}{\ST_x(!A)}[s]
+  \]
+\end{prop}
+
+\begin{proof}
+  با استقرا بر~$!A$.
+\end{proof}
+
+\begin{prop}
+  فرض کنید~$!A$ یک !!{formula} موجهاتی و
+  $\mModel{F} = \tuple{W, R}$ یک قاب باشد. بگذارید~$\Struct{F'}$
+  !!{structure} مرتبهٔ اولی با~$\Domain{F'} = W$ و
+  $\Assign{Q}{F'} = R$ باشد، و~$!A'$ فرمول مرتبهٔ دوم زیر باشد:
+  \[
+  \lforall[X_1][\dots\lforall[X_n][\lforall[x][
+        \SSubst{\ST_x(!A)}{\subst{X_1}{P_1}, \dots,
+          \subst{X_n}{P_n}}]]],
+  \]
+  که در آن~$P_1$، \dots، $P_n$ همهٔ !!{predicate}های یک‌موضعیِ
+  $\ST_x(!A)$ هستند. آنگاه
+  \[
+  \mModel{F} \Entails !A \text{ اگر و تنها اگر } \Sat{F'}{!A'}.
+  \]
+\end{prop}
+
+\begin{proof}
+  $\Sat{F'}{!A'}$ اگر و تنها اگر برای هر بسطِ !!{structure}ای
+  $\mModel{M'}$ با~$\Domain{M'}=W$ و~$\Assign{Q}{M'}=R$ و با
+  $\Assign{P_i}{M'} \subseteq W$ دلخواه برای~$i = 1$، \dots،~$n$، و
+  برای هر~$s$ با~$s(x) \in W$، $\Sat{M'}{\ST_x(!A)}[s]$. بنا بر
+  \olref{prop:st}، این شرط اگر و تنها اگر برای همهٔ مدل‌های~$\mModel{M}$
+  مبتنی بر~$\mModel{F}$ و هر جهان~$w \in W$، $\mSat{M}{!A}[w]$؛ یعنی
+  $\mModel{F} \Entails !A$.
+\end{proof}
+
+\begin{defn}
+  ردهٔ~$\mClass{F}$ از قاب‌ها \emph{تعریف‌پذیر مرتبهٔ دوم} است اگر
+  !!a{sentence}~$!A$ در زبان مرتبهٔ دوم با یک !!{predicate} دوموضعی
+  $Q$ و تنها سورهایی بر متغیرهای مجموعه‌ای یکانی وجود داشته باشد، چنان‌که
+  $\mModel{F} = \tuple{W, R} \in \mClass{F}$ اگر و تنها اگر
+  $\Sat{M}{!A}$ در !!{structure}~$\Struct{M}$ با~$\Domain{M} = W$ و
+  $\Assign{Q}{M} = R$.
+\end{defn}
+
+\begin{cor}
+  اگر رده‌ای از قاب‌ها با !!a{formula}~$!A$ تعریف‌پذیر باشد، ردهٔ متناظر
+  روابط دسترسی با یک جملهٔ مرتبهٔ دوم یکانی تعریف‌پذیر است.
+\end{cor}
+
+\begin{proof}
+  جملهٔ مرتبهٔ دوم یکانی~$!A'$ از اثبات پیشین خاصیت لازم را دارد.
+\end{proof}
+
+به‌عنوان نمونه، بار دیگر !!{formula}~$\Box p \lif p$ را در نظر بگیرید.
+این فرمول بازتابی‌بودن را تعریف می‌کند. البته بازتابی‌بودن با
+!!{sentence} مرتبهٔ اول~$\lforall[x][\Atom{Q}{x,x}]$ تعریف‌پذیر است.
+اما با !!{sentence} مرتبهٔ دوم یکانی زیر نیز تعریف‌پذیر است:
+\[
+\lforall[X][\lforall[x][(\lforall[y][(\Atom{Q}{x,y} \lif \Atom{X}{y})]
+    \lif \Atom{X}{x})]].
+\]
+البته این بدان معناست که دو جمله هم‌ارزند. به این ترتیب می‌توانید
+مستقیماً خود را به این امر قانع کنید: نخست فرض کنید جملهٔ مرتبهٔ دوم در
+!!a{structure}~$\Struct{M}$ صادق است. چون~$x$ و~$X$ سور کلی دارند،
+باقی فرمول باید برای هر~$x \in W$ و هر مجموعه~$X \subseteq W$ برقرار
+باشد؛ برای نمونه، برای مجموعهٔ~$\Setabs{z}{Rxz}$ که در آن
+$R = \Assign{Q}{M}$. پس برای هر~$s$ با~$s(x) \in W$ و
+$s(X) = \Setabs{z}{Rxz}$ داریم
+$\Sat{M}{\lforall[y][(\Atom{Q}{x,y} \lif
+    \Atom{X}{y})] \lif \Atom{X}{x}}[s]$. اما بنا بر انتخاب~$s(X)$،
+این یعنی
+$\Sat{M}{\lforall[y][(\Atom{Q}{x,y} \lif
+    \Atom{Q}{x,y})] \lif \Atom{Q}{x,x}}[s]$، که چون مقدم معتبر است
+با~$\Atom{Q}{x,x}$ هم‌ارز است. چون~$s(x)$ دلخواه است، داریم
+$\Sat{M}{\lforall[x][\Atom{Q}{x,x}]}$.
+
+اکنون فرض کنید~$\Sat{M}{\lforall[x][\Atom{Q}{x,x}]}$ و نشان دهید
+$\Sat{M}{\lforall[X][\lforall[x][(\lforall[y][(\Atom{Q}{x,y} \lif
+        \Atom{X}{y})] \lif \Atom{X}{x})]]}$. هر تخصیص~$s$ را انتخاب
+کنید و فرض کنید
+$\Sat{M}{\lforall[y][(\Atom{Q}{x,y} \lif \Atom{X}{y})]}[s]$.
+بگذارید~$s'$ واریانت~$y$ از~$s$ با~$s'(y) = s(x)$ باشد؛ داریم
+$\Sat{M}{\Atom{Q}{x,y} \lif \Atom{X}{y}}[s']$، یعنی
+$\Sat{M}{\Atom{Q}{x,x} \lif \Atom{X}{x}}[s]$. چون
+$\Sat{M}{\lforall[x][\Atom{Q}{x,x}]}$، مقدم صادق است و داریم
+$\Sat{M}{\Atom{X}{x}}[s]$، که همان مطلوب است.
+
+چون برخی رده‌های تعریف‌پذیر قاب‌ها تعریف‌پذیر مرتبهٔ اول نیستند، هر
+!!{sentence} مرتبهٔ دوم یکانی به‌صورت~$!A'$ با یک !!{sentence} مرتبهٔ
+اول هم‌ارز نیست. هیچ روش مؤثری برای تصمیم‌گیری دربارهٔ اینکه کدام‌یک
+هم‌ارزند وجود ندارد.
+
+\end{document}

@@ -1,0 +1,114 @@
+% Part: incompleteness
+% Chapter: arithmetization-syntax
+% Section: coding-symbols
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{art}{cod}
+\olsection{رمزگذاری نمادها}
+
+زبان پایهٔ~$\Lang L$ از منطق مرتبه‌اول نمادهای زیر را به کار می‌برد:
+\[
+\lfalse \quad \lnot \quad \lor \quad \land \quad \lif \quad \lforall
+\quad \lexists \quad \eq \quad ( \quad ) \quad ,
+\]
+همراه با مجموعه‌های !!{enumerable} متغیرها و !!{constant}s، و مجموعه‌های
+!!{enumerable} !!{function}s و !!{predicate}sیی با آریتی دلخواه. می‌توانیم
+به هر یک از این نمادها \emph{رمز}ی چنان نسبت دهیم که هر نماد عددی
+یکتا به‌عنوان رمزش بگیرد و هیچ دو نماد متفاوتی عددی یکسان نگیرند.
+می‌دانیم این ممکن است زیرا مجموعهٔ همهٔ نمادها !!{enumerable} است و
+بنابراین !!a{bijection} میان آن و مجموعهٔ اعداد طبیعی وجود دارد.
+اما می‌خواهیم مطمئن شویم نماد، و نیز برخی اطلاعات دربارهٔ آن مانند
+آریتیِ یک !!a{function}، را بتوان به‌طور محاسبه‌پذیر از رمزش بازیابی کرد.
+البته راه‌های ممکن بسیاری برای این کار هست. اینجا یک راه را می‌آوریم
+که از توابع بازگشتی اولیه بهره می‌گیرد. (به یاد آورید
+$\tuple{n_0,\dots,n_k}$ عددی است که دنبالهٔ اعداد
+$n_0$،~\dots، $n_k$ را رمزگذاری می‌کند.)
+
+\begin{defn}
+اگر $s$ نمادی از~$\Lang L$ باشد، \emph{رمز نمادِ}~$\scode s$ را چنین
+تعریف کنید:
+\begin{enumerate}
+\item اگر $s$ در میان نمادهای منطقی باشد، $\scode s$ را جدول زیر
+  می‌دهد:
+\[
+\begin{array}{cccccccccc}
+  \lfalse & \lnot & \lor & \land & \lif & \lforall \\
+\tuple{0, 0} & \tuple{0, 1} & \tuple{0, 2} & \tuple{0, 3} &
+\tuple{0, 4} & \tuple{0, 5} \\
+\lexists & \eq & ( & ) & ,\\
+\tuple{0, 6} & \tuple{0, 7} &
+\tuple{0, 8} & \tuple{0, 9} & \tuple{0, 10}
+\end{array}
+\]
+\item اگر $s$ متغیر $i$اُمِ~$\Obj v_i$ باشد،
+$\scode s=\tuple{1,i}$.
+\item اگر $s$ !!{constant} $i$اُمِ~$\Obj c_i$ باشد،
+  $\scode s=\tuple{2,i}$.
+\item اگر $s$ !!{function} $n$موضعیِ $i$اُمِ~$\Obj f_i^n$ باشد،
+  $\scode s=\tuple{3,n,i}$.
+\item اگر $s$ !!{predicate} $n$موضعیِ $i$اُمِ~$\Obj P_i^n$ باشد،
+  $\scode s=\tuple{4,n,i}$.
+\end{enumerate}
+\end{defn}
+
+\begin{prop}
+روابط زیر بازگشتی اولیه‌اند:
+\begin{enumerate}
+\item $\fn{Fn}(x,n)$ اگر و تنها اگر $x$ برای بعضی~$i$ رمز
+$\Obj f_i^n$ باشد؛ یعنی $x$ رمز یک !!{function} $n$موضعی باشد.
+\item $\fn{Pred}(x,n)$ اگر و تنها اگر $x$ برای بعضی~$i$ رمز
+$\Obj P_i^n$ باشد، یا $x$ رمز~$\eq$ و~$n=2$ باشد؛ یعنی $x$ رمز یک
+!!{predicate} $n$موضعی باشد.
+\end{enumerate}
+\end{prop}
+
+\begin{defn}
+اگر $s_0$،~\dots، $s_{n-1}$ دنباله‌ای از نمادها باشد، \emph{عدد
+گودلِ} آن برابر است با
+$\tuple{\scode{s_0},\dots,\scode{s_{n-1}}}$.
+\end{defn}
+
+\begin{explain}
+توجه کنید \emph{رمزها} و \emph{اعداد گودل} چیزهایی متفاوت‌اند. برای
+نمونه، متغیر~$\Obj v_5$ رمز
+$\scode{\Obj v_5}=\tuple{1,5}=2^2\cdot3^6$ را دارد. اما متغیر
+$\Obj v_5$ وقتی به‌عنوان ترم در نظر گرفته شود دنباله‌ای از نمادها
+(به طول~$1$) نیز هست. \emph{عدد گودلِ}~$\Gn{\Obj v_5}$ برای
+\emph{ترمِ}~$\Obj v_5$ برابر است با
+$\tuple{\scode{\Obj v_5}}=2^{\scode{\Obj v_5}+1}
+=2^{2^2\cdot3^6+1}$.
+\end{explain}
+
+\begin{ex}
+به یاد آورید اگر $k_0$،~\dots، $k_{n-1}$ دنباله‌ای از اعداد باشد،
+رمز دنبالهٔ~$\tuple{k_0,\dots,k_{n-1}}$ در رمزگذاریِ توان‌های اعداد
+اول برابر است با
+\[
+2^{k_0+1}\cdot3^{k_1+1}\cdot \dots \cdot p_{n-1}^{k_{n-1}+1},
+\]
+که در آن $p_i$ عدد اول $i$اُم است (با آغاز از~$p_0=2$). پس برای
+نمونه، فرمول~$\eq[\Obj v_0][\Obj 0]$ یا، به‌طور صریح‌تر،
+${\eq}(\Obj v_0,\Obj c_0)$ عدد گودل زیر را دارد:
+\[
+\tuple{\scode{\eq},\scode{(},\scode{\Obj v_0},\scode{,}, \scode{\Obj
+    c_0},\scode{)}}.
+\]
+اینجا $\scode{\eq}$ برابر
+$\tuple{0,7}=2^{0+1}\cdot3^{7+1}$، $\scode{\Obj v_0}$ برابر
+$\tuple{1,0}=2^{1+1}\cdot3^{0+1}$ و به همین ترتیب است. پس
+$\Gn{=(\Obj v_0,\Obj c_0)}$ برابر است با
+\begin{multline*}
+2^{\scode{=} + 1}\cdot 3^{\scode{(}+1}\cdot 5^{\scode{\Obj v_0}+1}
+\cdot 7^{\scode{,} + 1} \cdot 11^{\scode{\Obj c_0}+1} \cdot
+13^{\scode{)}+1} = \\
+2^{2^1\cdot 3^8 + 1}\cdot 3^{2^1\cdot 3^9+1}\cdot 5^{2^2\cdot 3^1+1}
+\cdot 7^{2^1\cdot 3^{11} + 1} \cdot 11^{2^3\cdot3^1+1} \cdot
+13^{2^1\cdot3^{10}+1} = \\
+2^{13\,123}\cdot 3^{39\,367}\cdot 5^{13}\cdot 7^{354\,295}\cdot11^{25}\cdot13^{118\,099}.
+\end{multline*}
+\end{ex}
+
+\end{document}

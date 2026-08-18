@@ -1,0 +1,44 @@
+% Part: many-valued-logic
+% Chapter: syntax-and-semantics
+% Section: formulas
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mvl}{syn}{fml}
+
+\olsection{\usetoken{P}{formula}}
+
+\begin{defn}[فرمول]
+\ollabel{defn:formulas}
+مجموعهٔ~$\Frm[L]$ از~\emph{!!{formula}های} زبان گزاره‌ای~$\Lang L$
+به‌صورت استقرایی چنین تعریف می‌شود:
+\begin{enumerate}
+\item هر~!!{propositional variable} چون~$\Obj p_i$ یک~!!{formula} اتمی
+  است.
+\item هر رابط صفرموضعی (ثابت گزاره‌ای) از~$\Lang L$ یک~!!{formula}
+اتمی است.
+\item اگر~$\star$ رابطی~$n$موضعی از~$\Lang L$ باشد، به‌طوری‌که
+$n>0$، و~$!A_1$، \dots،~$!A_n$ !!{formula} باشند، آنگاه
+$\star(!A_1, \dots, !A_n)$ نیز~!!a{formula} است.
+\tagitem{limitClause}{هیچ چیز دیگری~!!a{formula} نیست.}{}
+\end{enumerate}
+اگر~$\star$ یک‌موضعی باشد، اغلب~$\star(!A_1)$ را به‌سادگی
+$\star !A_1$ می‌نویسیم. اگر~$\star$ دوموضعی باشد، اغلب
+$\star(!A_1,!A_2)$ را به‌صورت~$(!A_1 \star !A_2)$ می‌نویسیم.
+\end{defn}
+
+طبق معمول، اغلب بیرونی‌ترین پرانتزها را بی‌ذکر حذف می‌کنیم.
+
+\begin{ex}
+  در زبان استاندارد~$\Lang{L_0}$، عبارت
+  $\Obj p_1 \lif (\Obj p_1 \land \lnot \Obj p_2)$ یک فرمول است. در
+  زبان منطق ضربی، این فرمول به‌جای آن به‌صورت
+  $\Obj p_1 \lif (\Obj p_1 \odot \lnot \Obj p_2)$ نوشته می‌شود. اگر
+  رابط یک‌موضعی~$\triangle$ را به زبان بیفزاییم، فرمول‌هایی مانند
+  $\triangle (\Obj p_1 \land \Obj p_2) \lif
+  (\triangle \Obj p_1 \land \triangle \Obj p_2)$ نیز خواهیم داشت.
+\end{ex}
+
+\end{document}

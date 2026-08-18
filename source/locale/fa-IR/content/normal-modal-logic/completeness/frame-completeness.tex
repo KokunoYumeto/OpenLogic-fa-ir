@@ -1,0 +1,235 @@
+% Part: normal-modal-logic
+% Chapter: completeness
+% Section: frame-completeness
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{com}{fra}
+
+\olsection{تمامیت نسبت به قاب‌ها}
+
+قضیهٔ تمامیت برای~\Log{K} را می‌توان به دستگاه‌های موجهاتی دیگر گسترش
+داد، مشروط بر آنکه نشان دهیم مدل کانونیِ یک منطق مفروض، خاصیت متناظرِ
+قاب را دارد.
+
+\begin{thm}\ollabel{thm:completeframeprops}
+  اگر یک منطق موجهات عادی~$\Sigma$ شامل یکی از !!{formula}های سمت چپ
+  \olref{tab:correspondencetable} باشد، آنگاه مدل کانونیِ~$\Sigma$
+  خاصیت متناظرِ سمت راست را دارد.
+\end{thm}
+
+\begin{table}[htp]
+  \centering
+    \begin{tabular}{| l || l |}
+      \hline
+      \emph{اگر~$\Sigma$ شاملِ \dots{} باشد} & \emph{\dots{} مدل
+        کانونیِ~$\Sigma$ چنین است:} \\
+      \hline \hline
+      \Ax{D}:\;\; $\Box!A \lif \Diamond !A$ & \quad سریال؛ \\
+      \hline
+      \Ax{T}:\;\; $\Box!A \lif !A$ &\quad بازتابی؛\\
+      \hline
+      \Ax{B}: \;\;$!A \lif \Box\Diamond!A$ &\quad متقارن؛ \\
+      \hline
+      \Ax{4}: \;\; $\Box!A \lif \Box\Box!A$ & \quad متعدی؛ \\
+      \hline 
+      \Ax{5}: \;\; $\Diamond !A \lif \Box\Diamond!A$& \quad اقلیدسی.\\
+      \hline
+    \end{tabular}
+    \caption{واقعیت‌های پایهٔ تناظر.}
+    \ollabel{tab:correspondencetable}
+\end{table}
+
+\begin{proof}
+  هریک از این موارد را به‌ترتیب بررسی می‌کنیم.
+
+  فرض کنید~$\Sigma$ شامل~\Ax{D} باشد و~$\Delta \in W^\Sigma$؛ باید
+  نشان دهیم~$\Delta'$ای وجود دارد چنان‌که~$R^\Sigma
+  \Delta\Delta'$. کافی است نشان دهیم~$\Box^{-1}\Delta$ نسبت به
+  $\Sigma$ سازگار است؛ زیرا در این صورت بنا بر لم لیندنباوم مجموعهٔ
+  کاملِ~$\Sigma$-سازگار~$\Delta' \supseteq \Box^{-1}\Delta$ وجود
+  دارد، و بنا به تعریف~$R^\Sigma$ \iftag{prvBox}{}{و
+  \olref[mod]{lem:box-iff-diamond} }داریم~$R^\Sigma
+  \Delta\Delta'$. پس برای رسیدن به تناقض فرض کنید~$\Box^{-1}\Delta$
+  نسبت به~$\Sigma$ \emph{ناسازگار} است؛ یعنی
+  $\Box^{-1}\Delta \Proves[\Sigma] \lfalse$. بنا بر
+  \olref[mod]{lem:box2}، $\Delta \Proves[\Sigma] \Box\lfalse$، و چون
+  $\Sigma$ شامل~\Ax{D} است، همچنین~$\Delta \Proves[\Sigma]
+  \Diamond\lfalse$. اما~$\Sigma$ عادی است، پس
+  $\Sigma \Proves \lnot\Diamond \lfalse$
+  (\olref[prf][nor]{prop:notDiamondBot})، و ازاین‌رو همچنین
+  $\Delta \Proves[\Sigma] \lnot\Diamond \lfalse$؛ که با سازگاری
+  $\Delta$ ناسازگار است.
+
+  اکنون فرض کنید~$\Sigma$ شامل~\Ax{T} باشد و~$\Delta \in
+  W^\Sigma$. می‌خواهیم نشان دهیم~$R^\Sigma \Delta\Delta$؛ یعنی
+  \iftag{prvBox}{}{بنا بر \olref[mod]{lem:box-iff-diamond}،}
+  $\Box^{-1}\Delta \subseteq \Delta$. اما اگر~$\Box!A \in \Delta$،
+  آنگاه بنا بر~\Ax{T}، $!A \in \Delta$ نیز، چنان‌که مطلوب بود.
+
+  اکنون فرض کنید~$\Sigma$ شامل~\Ax{B} باشد و برای~$\Delta$،
+  $\Delta' \in W^\Sigma$، فرض کنید~$R^\Sigma \Delta\Delta'$. باید
+  نشان دهیم~$R^\Sigma \Delta'\Delta$؛ یعنی \iftag{prvBox}{
+    $\Box^{-1}\Delta' \subseteq \Delta$. بنا بر
+    \olref[mod]{lem:box-iff-diamond}، این با}{ }
+  $\Diamond\Delta \subseteq \Delta'$ هم‌ارز است. پس فرض کنید
+  $!A \in \Delta$. بنا بر~\Ax{B}، $\Box\Diamond!A \in \Delta$ نیز.
+  از فرض~$R^\Sigma \Delta\Delta'$\iftag{prvBox}{}{ و
+    \olref[mod]{lem:box-iff-diamond}} داریم~$\Box^{-1}\Delta
+  \subseteq \Delta'$؛ پس چنان‌که مطلوب بود~$\Diamond!A \in
+  \Delta'$.
+
+  اکنون فرض کنید~$\Sigma$ شامل~\Ax{4} باشد و
+  $R^\Sigma \Delta_1\Delta_2$ و~$R^\Sigma \Delta_2\Delta_3$. باید
+  نشان دهیم~$R^\Sigma \Delta_1\Delta_3$. از فرض‌ها\iftag{prvBox}{}{ و
+    \olref[mod]{lem:box-iff-diamond}}، هم~$\Box^{-1}\Delta_1
+  \subseteq \Delta_2$ و هم~$\Box^{-1}\Delta_2 \subseteq \Delta_3$
+  را داریم. برای نشان‌دادن~$R^\Sigma \Delta_1\Delta_3$ کافی است نشان
+  دهیم~$\Box^{-1}\Delta_1 \subseteq \Delta_3$. پس بگذارید
+  $!B \in \Box^{-1}\Delta_1$؛ یعنی~$\Box!B \in \Delta_1$. بنا بر
+  \Ax{4}، $\Box\Box!B \in \Delta_1$ نیز، و از فرض‌ها نخست
+  $\Box!B \in \Delta_2$ و سپس~$!B \in \Delta_3$ به دست می‌آید،
+  چنان‌که مطلوب بود.
+
+  اکنون فرض کنید~$\Sigma$ شامل~\Ax{5} باشد و
+  $R^\Sigma \Delta_1\Delta_2$ و~$R^\Sigma \Delta_1\Delta_3$. باید
+  نشان دهیم~$R^\Sigma \Delta_2\Delta_3$. فرض نخست
+  $\Box^{-1}\Delta_1 \subseteq \Delta_2$ را به دست
+  می‌دهد\iftag{prvBox}{}{ بنا بر
+    \olref[mod]{lem:box-iff-diamond}}، و فرض دوم با
+  $\Diamond\Delta_3 \subseteq \Delta_1$ هم‌ارز
+  است\iftag{prvBox}{، بنا بر \olref[mod]{lem:box-iff-diamond}}{}.
+  برای نشان‌دادن~$R^\Sigma \Delta_2\Delta_3$\iftag{prvBox}{، بنا بر
+    \olref[mod]{lem:box-iff-diamond} کافی است}{ باید} نشان دهیم
+  $\Diamond\Delta_3 \subseteq \Delta_2$. پس بگذارید
+  $\Diamond!A \in \Diamond\Delta_3$؛ یعنی~$!A \in \Delta_3$. بنا بر
+  فرض دوم~$\Diamond!A \in \Delta_1$، و بنا بر~\Ax{5} همچنین
+  $\Box\Diamond!A \in \Delta_1$. اکنون فرض نخست
+  $\Diamond!A \in \Delta_2$ را به دست می‌دهد، چنان‌که مطلوب بود.
+  \end{proof}
+
+به‌عنوان نتیجه، برای چند دستگاه نتایج تمامیت به دست می‌آوریم. برای
+نمونه، می‌دانیم~$\Log{S5} = \Log{KT5} = \Log{KTB4}$ نسبت به ردهٔ همهٔ
+مدل‌های بازتابی و اقلیدسی کامل است؛ و این همان ردهٔ همهٔ مدل‌های
+بازتابی، متقارن و متعدی است.
+
+\begin{thm}\ollabel{thm:generaldet}
+  بگذارید~$\mClass{C}_\Ax{D}$، $\mClass{C}_\Ax{T}$،
+  $\mClass{C}_\Ax{B}$، $\mClass{C}_\Ax{4}$ و
+  $\mClass{C}_\Ax{5}$ به‌ترتیب ردهٔ همهٔ مدل‌های سریال، بازتابی،
+  متقارن، متعدی و اقلیدسی باشند. آنگاه برای هر طرح‌وارهٔ~$!A_1$،
+  \dots، $!A_n$ از میان~\Ax{D}، \Ax{T}، \Ax{B}، \Ax{4} و~\Ax{5}،
+  دستگاه~$\Log{K}!A_1 \dots !A_n$ به‌وسیلهٔ ردهٔ مدل‌های
+  $\mClass{C} = \mClass{C}_{!A_1} \cap \dots
+  \cap \mClass{C}_{!A_n}$ تعیین می‌شود.
+\end{thm}
+
+\begin{prop}
+  بگذارید~$\Sigma$ یک منطق موجهات عادی باشد؛ آنگاه:
+  \begin{enumerate}
+  \item\ollabel{prop:anotherfive-a}%
+    اگر~$\Sigma$ شامل طرح‌وارهٔ~$\Diamond!A \lif \Box
+    !A$ باشد، آنگاه مدل کانونیِ~$\Sigma$ نیمه‌تابعی است.
+  \item اگر~$\Sigma$ شامل طرح‌وارهٔ~$\Diamond!A \liff \Box
+    !A$ باشد، آنگاه مدل کانونیِ~$\Sigma$ تابعی است.
+  \item اگر~$\Sigma$ شامل طرح‌وارهٔ~$\Box\Box!A \lif \Box
+    !A$ باشد، آنگاه مدل کانونیِ~$\Sigma$ به‌طور ضعیف چگال است.
+  \end{enumerate}
+(برای تعریف این خواص قاب بنگرید به
+  \olref[frd][acc]{tab:anotherfive}).
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+  \item فرض کنید~$\Sigma$ شامل طرح‌وارهٔ~$\Diamond !A \lif
+    \Box !A$ باشد. برای نشان‌دادن اینکه~$R^\Sigma$ نیمه‌تابعی است،
+    باید ثابت کنیم برای هر~$\Delta_1$، $\Delta_2$، $\Delta_3 \in
+    W^\Sigma$، اگر~$R^\Sigma \Delta_1\Delta_2$ و~$R^\Sigma
+    \Delta_1\Delta_3$، آنگاه~$\Delta_2=\Delta_3$. چون~$R^\Sigma
+    \Delta_1\Delta_2$، داریم~$\Box^{-1}\Delta_1 \subseteq \Delta_2$؛
+    و چون~$R^\Sigma \Delta_1\Delta_3$، همچنین
+    $\Box^{-1}\Delta_1 \subseteq \Delta_3$\iftag{prvBox}{}{، هر دو
+      بنا بر \olref[mod]{lem:box-iff-diamond}}. همانیِ
+    $\Delta_2=\Delta_3$ از اثبات دو شمول~$\Delta_2 \subseteq
+    \Delta_3$ و~$\Delta_3 \subseteq \Delta_2$ نتیجه خواهد شد. برای
+    شمول نخست بگذارید~$!A \in \Delta_2$؛ آنگاه~$\Diamond!A \in
+    \Delta_1$، و بنا بر طرح‌واره و بسته‌بودن استنتاجیِ~$\Delta_1$،
+    $\Box!A \in \Delta_1$ نیز؛ پس از فرض~$R^\Sigma
+    \Delta_1\Delta_3$ نتیجه می‌شود~$!A \in \Delta_3$. شمول دوم نیز
+    مشابه است.
+
+  \item این نتیجه بی‌درنگ از بخش~\olref{prop:anotherfive-a} و اثبات
+    سریال‌بودن در~\olref{thm:completeframeprops} به دست می‌آید.
+
+  \item فرض کنید~$\Sigma$ شامل طرح‌وارهٔ~$\Box\Box!A \lif \Box!A$
+    باشد. برای نشان‌دادن اینکه~$R^\Sigma$ به‌طور ضعیف چگال است،
+    بگذارید~$R^\Sigma \Delta_1\Delta_2$. باید نشان دهیم مجموعهٔ
+    کاملِ~$\Sigma$-سازگار~$\Delta_3$ای وجود دارد چنان‌که
+    $R^\Sigma \Delta_1\Delta_3$ و~$R^\Sigma \Delta_3\Delta_2$. قرار
+    دهید:
+    \[
+    \Gamma = \Box^{-1}\Delta_1 \cup \Diamond\Delta_2.
+    \]
+    کافی است نشان دهیم~$\Gamma$ نسبت به~$\Sigma$ سازگار است؛ زیرا
+    آنگاه بنا بر لم لیندنباوم می‌توان آن را به مجموعهٔ کاملِ
+    $\Sigma$-سازگار~$\Delta_3$ای گسترش داد چنان‌که
+    $\Box^{-1}\Delta_1 \subseteq \Delta_3$ و
+    $\Diamond\Delta_2 \subseteq \Delta_3$؛ یعنی
+    $R^\Sigma \Delta_1\Delta_3$\iftag{prvBox}{}{ (بنا بر
+      \olref[mod]{lem:box-iff-diamond})} و
+    $R^\Sigma \Delta_3\Delta_2$\iftag{prvBox}{ (بنا بر
+      \olref[mod]{lem:box-iff-diamond})}{}.
+
+    برای رسیدن به تناقض فرض کنید~$\Gamma$ سازگار نیست. آنگاه
+    !!{formula}های~$\Box!A_1$، \dots، $\Box!A_n \in \Delta_1$ و
+    $!B_1$، \dots،~$!B_m \in \Delta_2$ وجود دارند چنان‌که
+    \[!A_1, \dots, !A_n, \Diamond!B_1, \dots, \Diamond!B_m
+    \Proves[\Sigma] \lfalse.\] چون
+    $\Diamond (!B_1 \land \dots \land !B_m) \lif
+    (\Diamond!B_1 \land \dots \land \Diamond!B_m)$ در هر منطق
+    موجهات عادی !!{derivable} است، چنین استدلال می‌کنیم و با سازگاری
+    $\Delta_2$ به تناقض می‌رسیم:
+    \begin{align*}
+      !A_1, \dots, !A_n, & \Diamond!B_1, \dots,
+      \Diamond!B_m \Proves[\Sigma] \lfalse \\
+      !A_1, \dots,!A_n & \Proves[\Sigma] (\Diamond!B_1 \land
+      \dots \land \Diamond!B_m) \lif \lfalse\\
+      & \qquad\text{بنا بر قضیهٔ استنتاج}\\
+      & \qquad\text{\olref[prf][prp]{prop:derivabilityfacts}\olref[prf][prp]{prop:derivabilityfacts-deduction} و~\Taut} \\
+      !A_1, \dots,!A_n & \Proves[\Sigma]
+      \Diamond(!B_1 \land
+      \dots \land !B_m) \lif \lfalse\\
+      & \qquad \text{زیرا~$\Sigma$ عادی است} \\
+      !A_1, \dots,!A_n & \Proves[\Sigma]
+      \lnot\Diamond (!B_1 \land \dots \land !B_m)\\
+      & \qquad\text{بنا بر~\PL} \\
+      !A_1, \dots,!A_n & \Proves[\Sigma]
+      \Box\lnot (!B_1 \land \dots \land !B_m)\\
+      & \qquad\text{$\Box\lnot$ به‌جای~$\lnot\Diamond$} \\
+      \Box!A_1, \dots,\Box!A_n
+      & \Proves[\Sigma] \Box\Box \lnot (!B_1 \land \dots \land !B_m)\\
+      & \qquad\text{بنا بر \olref[mod]{lem:box1}} \\
+      \Box!A_1, \dots,\Box!A_n
+      & \Proves[\Sigma]
+      \Box\lnot (!B_1 \land \dots \land !B_m)\\
+      &\qquad\text{بنا بر طرح‌وارهٔ~$\Box\Box!A \lif \Box!A$} \\
+      \Delta_1 & \Proves[\Sigma]
+      \Box\lnot (!B_1 \land \dots \land !B_m)\\
+      &\qquad\text{بنا بر یکنوایی، \olref[prf][prp]{prop:derivabilityfacts}\olref[prf][prp]{prop:derivabilityfacts-monotonicity}} \\
+      & \Box\lnot (!B_1 \land \dots \land !B_m) \in \Delta_1\\
+      &\qquad\text{بنا بر بسته‌بودن استنتاجی؛} \\
+      & \lnot (!B_1 \land \dots \land !B_m) \in \Delta_2\\
+      &\qquad \text{زیرا }
+      R^\Sigma \Delta_1\Delta_2.
+    \end{align*}
+  \end{enumerate}
+\end{proof}
+
+بر پایهٔ این نمونه‌ها شاید گمان رود هر دستگاه منطق موجهاتی~$\Sigma$
+\emph{کامل} است، بدین معنا که هر فرمولی را اثبات می‌کند که در هر قابی
+معتبر است که همهٔ قضایای~$\Sigma$ در آن معتبرند. متأسفانه دستگاه‌های
+بسیاری وجود دارند که به این معنا کامل نیستند.
+
+\end{document}

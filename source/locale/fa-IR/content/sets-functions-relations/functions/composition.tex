@@ -1,0 +1,67 @@
+% Part: sets-functions-relations
+% Chapter: functions
+% Section: composition
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[fa-IR]{sfr}{fun}{cmp}
+\olsection{ترکیب توابع}
+
+\begin{explain}
+\oliflabeldef{sfr:fun:inv:sec}{در \olref[inv]{sec} دیدیم که
+وارونِ~$f^{-1}$ِ !!a{bijection}~$f$ خود تابع است. عمل دیگری
+که روی توابع انجام می‌دهیم، ترکیب است. اکنون می‌توانیم}{می‌توانیم} تابعی جدید را با
+ترکیب دو تابع $f$ و~$g$ تعریف کنیم؛ یعنی نخست
+$f$ و سپس~$g$ را اعمال کنیم. البته این کار تنها هنگامی ممکن است که
+بردها و دامنه‌ها سازگار باشند؛ یعنی بردِ~$f$ باید زیرمجموعه‌ای از
+دامنهٔ~$g$ باشد. \oliflabeldef{sfr:rel:ops:sec}{این عمل روی
+توابع همانند عمل حاصل‌ضرب نسبی روی
+روابط است که در \olref[rel][ops]{sec} معرفی شد.}{}
+
+یک نمودار می‌تواند به توضیح ایدهٔ ترکیب کمک کند. در
+\olref{fig:composition} دو تابع $f \colon A \to B$
+و $g \colon B \to C$ و ترکیبشان~$(\comp{f}{g})$ را نشان می‌دهیم. تابع
+$(\comp{f}{g}) \colon A \to C$ هر !!{element} از~$A$
+را با !!a{element}ی از~$C$ جفت می‌کند. اینکه کدام !!{element} از~$C$
+با !!a{element}ی از $A$ جفت می‌شود، چنین مشخص می‌گردد: با داشتن ورودی $x \in
+A$، نخست تابع $f$ را بر~$x$ اعمال می‌کنیم که مقداری مانند $f(x)
+= y \in B$ خروجی می‌دهد؛ سپس تابع $g$ را بر~$y$ اعمال می‌کنیم که مقداری مانند
+$g(f(x)) = g(y) = z \in C$ خروجی می‌دهد.
+\begin{figure}
+  \olasset[2\olphotowidth]{assets/diagrams/composition.tikz}
+  \caption{ترکیبِ $g \circ f$ از دو تابع $f$ و~$g$.}
+  \ollabel{fig:composition}
+\end{figure}
+\end{explain}
+
+\begin{defn}[ترکیب]
+فرض کنید $f\colon A \to B$ و $g\colon B \to C$ تابع باشند.
+\emph{ترکیبِ} $f$ با~$g$ برابر است با $\comp{f}{g} \colon A \to C$،
+که در آن $(\comp{f}{g})(x) = g(f(x))$.
+\end{defn}
+
+\begin{ex}
+توابع $f(x) = x + 1$ و $g(x) = 2x$ را در نظر بگیرید. چون
+$(\comp{f}{g})(x) = g(f(x))$، برای هر ورودی~$x$ باید نخست
+پسین آن را بگیرید و سپس حاصل را در دو ضرب کنید. پس ترکیب آن‌ها
+به‌وسیلهٔ $(\comp{f}{g})(x) = 2(x+1)$ داده می‌شود.
+\end{ex}
+
+\begin{prob}
+نشان دهید اگر $f \colon A \to B$ و $g \colon B \to C$ هر دو
+!!{injective} باشند، آنگاه $\comp{f}{g}\colon A \to C$ نیز !!{injective} است.
+\end{prob}
+
+\begin{prob}
+نشان دهید اگر $f \colon A \to B$ و $g \colon B \to C$ هر دو
+!!{surjective} باشند، آنگاه $\comp{f}{g}\colon A \to C$ نیز !!{surjective} است.
+\end{prob}
+
+\begin{prob}
+فرض کنید $f \colon A \to B$ و $g \colon B \to C$. نشان دهید گراف
+$\comp{f}{g}$ برابر است با $R_f \mid R_g$.
+\end{prob}
+
+\end{document}

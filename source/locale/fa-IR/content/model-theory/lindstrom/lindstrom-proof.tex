@@ -1,0 +1,148 @@
+% Part: model-theory
+% Chapter: lindstrom
+% Section: lindstrom-proof
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mod}{lin}{prf}
+
+\olsection{قضیهٔ لیندستروم}
+
+\begin{lem}
+\ollabel{lem:lindstrom}
+فرض کنید $!E \in L(\Lang{L})$ و~$\Lang{L}$ متناهی است. همچنین فرض
+کنید $n \in \Nat$ای وجود دارد چنان‌که برای هر دو
+!!{structure}s~$\Struct{M}$ و~$\Struct{N}$، اگر
+$\Struct{M} \equiv_n \Struct{N}$ و
+$\Struct{M} \models_L !E$، آنگاه $\Struct{N} \models_L !E$ نیز.
+در این صورت $!E$ با یک !!{sentence} مرتبهٔ اول هم‌ارز است؛ یعنی
+جملهٔ مرتبهٔ اولی چون~$!D$ وجود دارد چنان‌که
+$\Mod(L){!E} = \Mod(L){!D}$.
+\end{lem}
+
+\begin{proof}
+$n$ را چنان برگزینید که هر دو !!{structure}s~$n$-هم‌ارز
+$\Struct{M}$ و~$\Struct{N}$ دربارهٔ ارزش نسبت‌داده‌شده به~$!E$ توافق
+داشته باشند.
+\olref[bas][pis]{prop:qr-finite} را به یاد آورید: در یک
+!!{language} متناهی، تا حد هم‌ارزی منطقی، تنها به‌شمار متناهی
+!!{sentence}s مرتبهٔ اول با رتبهٔ سوری حداکثر~$n$ وجود دارد. اکنون برای
+هر !!{structure} ثابت~$\Struct{M}$، بگذارید $!D_{\Struct{M}}$ عطفِ
+همهٔ !!{sentence}s مرتبهٔ اول~$!A$ باشد که در~$\Struct{M}$ صادق‌اند
+و $\QuantRank{!A} \le n$ (این عطف متناهی است). آنگاه
+$\Struct{N} \models !D_{\Struct{M}}$ هرگاه و تنها هرگاه
+$\Struct{N} \equiv_n \Struct{M}$. سپس قرار دهید
+$!D = \textstyle\bigvee
+\Setabs{!D_{\Struct{M}}}{\Struct{M} \models_L !E}$؛ این فصل نیز، تا
+حد هم‌ارزی منطقی، متناهی است.
+
+اکنون $\Mod(L){!E} = \Mod(L){!D}$. در واقع، اگر
+$\Struct{N} \models_L !D$، برای یک
+$\Struct{M} \models_L !E$ داریم
+$\Struct{N} \models !D_{\Struct{M}}$، و از فرض لم نتیجه می‌شود
+$\Struct{N} \models_L !E$. برعکس، اگر
+$\Struct{N} \models_L !E$، آنگاه
+$!D_{\Struct{N}}$ یکی از اجزای فصل~$!D$ است؛ و چون
+$\Struct{N} \models !D_{\Struct{N}}$، همچنین
+$\Struct{N} \models_L !D$.
+\end{proof}
+
+\begin{thm}[قضیهٔ لیندستروم]
+  \ollabel{thm:lindstrom} فرض کنید $\tuple{L, \models_L}$ منطقی نرمال
+  با ویژگی‌های فشردگی و لوونهایم--اسکولم باشد. آنگاه
+  $\tuple{L, \models_L} \le \tuple{F, \models}$ (پس
+  $\tuple{L, \models_L}$ با منطق مرتبهٔ اول هم‌ارز است).
+\end{thm}
+
+\begin{proof}
+بنا بر
+\olref{lem:lindstrom} کافی است نشان دهیم برای هر
+$!E \in L(\Lang{L})$، با~$\Lang{L}$ متناهی، عددی
+$n \in \Nat$ وجود دارد چنان‌که برای هر دو
+!!{structure}s~$\Struct{M}$ و~$\Struct{N}$، اگر
+$\Struct{M} \equiv_n \Struct{N}$، آنگاه $\Struct{M}$ و~$\Struct{N}$
+دربارهٔ~$!E$ توافق دارند. زیرا در این صورت $!E$ با !!{sentence}
+مرتبهٔ اول هم‌ارز است و از آن
+$\tuple{L, \models_L} \le \tuple{F, \models}$ نتیجه می‌شود. چون در
+!!{language} متناهی و صرفاً رابطه‌ای کار می‌کنیم، بنا بر
+\olref[bas][pis]{thm:b-n-f} می‌توانیم گزارهٔ
+$\Struct{M} \equiv_n \Struct{N}$ را با گزارهٔ جبری متناظر
+$I_n(\emptyset,\emptyset)$ جایگزین کنیم.
+
+$!E$ را معین بگیرید و برای رسیدن به تناقض فرض کنید برای هر~$n$،
+!!{structure}sی چون $\Struct{M}_n$ و~$\Struct{N}_n$ وجود دارند چنان‌که
+$I_n(\emptyset, \emptyset)$، اما، برای مثال،
+$\Struct{M}_n \models_L !E$ درحالی‌که
+$\Struct{N}_n \not\models_L !E$. بنا بر ویژگی همریختی می‌توانیم فرض
+کنیم همهٔ~$\Struct{M}_n$ها ثابت‌های زبان را با اشیای یکسان تعبیر
+می‌کنند. افزون بر این، چون زبان تنها به‌شمار متناهی !!{sentence}s
+اتمی دارد، می‌توانیم فرض کنیم همهٔ آن‌ها همان !!{sentence}s اتمی را
+ارضا می‌کنند (وگرنه زیردنباله‌ای از~$\Struct{M}$ها می‌گیریم). بگذارید
+$\Struct{M}$ اجتماع همهٔ~$\Struct{M}_n$ها باشد؛ یعنی !!{structure}
+کمینهٔ یکتایی که هر~$\Struct{M}_n$ را به‌عنوان زیرساختار دارد.
+همچون اثبات
+\olref[lsp]{thm:abstract-p-isom}، بگذارید $\Struct{M}^*$ بسط
+$\Struct{M}$ با !!{domain}
+$\Domain{M} \cup \Domain{M}^{<\omega}$ در !!{language} بسط‌یافته‌ای
+باشد که محمول‌های الحاق~$P$ و~$Q$ را دربر دارد.
+
+$\Struct{N}_n$، $\Struct{N}$ و $\Struct{N}^*$ را نیز به‌طور مشابه
+تعریف کنید. اکنون بگذارید $\Struct{A}$ !!{structure}ای باشد که
+!!{domain} آن !!{domain}s~$\Struct{M}^*$ و~$\Struct{N}^*$، و نیز
+اعداد طبیعی~$\Nat$ را همراه با ترتیب طبیعی~$\le$ دربر می‌گیرد.
+!!{language} آن محمول‌های افزوده‌ای دارد که !!{domain}s
+$\Domain{M}$، $\Domain{N}$، $\Domain{M}^{<\omega}$ و
+$\Domain{N}^{<\omega}$ را مشخص می‌کنند؛ همچنین محمول‌هایی دارد که
+دامنه‌های~$\Struct{M}_n$ و~$\Struct{N}_n$ را به معنای زیر کد می‌کنند:
+\begin{align*}
+  \Domain{M_n} & = \Setabs{a \in \Domain{M}}{R(a, n)}; &
+  \Domain{N_n} & = \Setabs{a \in \Domain{N}}{S(a,n)}; \\
+  \Domain{M}^{<\omega}_n & = \Setabs{a \in \Domain{M}^{<\omega}}{R(a,n)}; &
+  \Domain{N}^{<\omega}_n & = \Setabs{a \in \Domain{N}^{<\omega}}{S(a,n)}.
+\end{align*}
+!!{structure}~$\Struct{A}$ رابطه‌ای سه‌موضعی چون~$J$ نیز دارد چنان‌که
+$J(n, \mathbf{a}, \mathbf{b})$ هرگاه و تنها هرگاه برقرار است که
+$I_n(\mathbf{a}, \mathbf{b})$.
+
+اکنون در !!{language} حاصل از افزودن~$R$، $S$، $J$ و جز آن به
+$\Lang{L}$، !!a{sentence} چون~$!D$ وجود دارد که می‌گوید~$\le$ ترتیبی
+خطی و گسسته، دارای نخستین عنصر و بی‌آخرین عنصر است؛ همچنین برای هر~$n$
+در آن ترتیب، $\Struct{M}_n \models_L !E$،
+$\Struct{N}_n \not\models_L !E$، و
+$J(n, \mathbf{a}, \mathbf{b})$ هرگاه و تنها هرگاه
+$I_n(\mathbf{a}, \mathbf{b})$. وجود این جمله از نرمال‌بودن
+منطق، ویژگی نسبی‌سازی و بسته‌بودن بولی نتیجه می‌شود.
+
+برای واداشتن ترتیب به داشتن عنصری بالاتر از هر جایگاه استاندارد، ثابت
+تازه‌ای چون~$c$ در بخش مرتب‌شدهٔ زبان بیفزایید. برای هر
+$k \in \Nat$، بگذارید $!B_k(c)$ جمله‌ای مرتبهٔ اول باشد که
+می‌گوید دست‌کم~$k$ عنصر متمایز کوچک‌تر از~$c$ وجود دارند. مجموعهٔ
+\[
+\Gamma = \{!D\} \cup \Setabs{!B_k(c)}{k \in \Nat}
+\]
+متناهی‌وار ارضاپذیر است: هر زیرمجموعهٔ متناهی آن در~$\Struct{A}$ با
+تعبیر~$c$ به‌وسیلهٔ عدد طبیعی به‌اندازهٔ کافی بزرگ ارضا می‌شود. پس
+ویژگی فشردگی مدلی چون~$\Struct{A}^*$ از~$\Gamma$ به دست می‌دهد. اگر
+$n^*=\Assign{c}{A^*}$، آنگاه $n^*$ بالاتر از هر جایگاه استاندارد در
+ترتیب است و بنابراین نااستاندارد است.
+
+به‌طور خاص، $\Struct{A}^*$ زیر!!{structure}sی چون
+$\Struct{M_{n^*}}$ و~$\Struct{N_{n^*}}$ دارد چنان‌که
+$\Struct{M_{n^*}} \models_L !E$ و
+$\Struct{N_{n^*}} \not\models_L !E$. اکنون می‌توانیم مجموعه‌ای
+$\mathcal{I}$ از زوج‌های چندتایی‌های~$k$تایی از
+$\Domain{M_{n^*}}$ و~$\Domain{N_{n^*}}$ تعریف کنیم: قرار می‌دهیم
+$\tuple{\mathbf{a}, \mathbf{b}} \in \mathcal{I}$ هرگاه و تنها هرگاه
+$J(n^*-k, \mathbf{a}, \mathbf{b})$، که در آن~$k$ طول
+$\mathbf{a}$ و~$\mathbf{b}$ است. چون $n^*$ بالاتر از همهٔ جایگاه‌های
+استاندارد است، برای هر~$k$ استاندارد داریم $n^* - k >0$؛ و
+$\mathcal{I}$ گواه این واقعیت است که
+$\Struct{M_{n^*}} \simeq_p \Struct{N_{n^*}}$. اما بنا بر
+\olref[lsp]{thm:abstract-p-isom}،
+$\Struct{M_{n^*}}$ با~$\Struct{N_{n^*}}$ نسبت به~$L$ هم‌ارز است، که
+تناقض است.
+\end{proof}
+
+\end{document}

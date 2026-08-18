@@ -1,0 +1,125 @@
+% Part: first-order-logic
+% Chapter: completeness
+% Section: completeness-theorem
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{com}{cth}}
+      {\olfileid{pl}{com}{cth}}
+
+\olsection{قضیهٔ تمامیت}
+
+\begin{explain}
+اکنون نتایجی را که به دست آورده‌ایم با هم ترکیب می‌کنیم و به قضیهٔ
+تمامیت می‌رسیم.
+\end{explain}
+
+\begin{thm}[قضیهٔ تمامیت]
+\ollabel{thm:completeness}
+فرض کنید $\Gamma$ مجموعه‌ای از !!{sentence}s باشد. اگر $\Gamma$ سازگار
+باشد، ارضاپذیر است.
+\end{thm}
+
+\begin{proof}
+فرض کنید $\Gamma$ سازگار باشد.\iftag{FOL}{ بنا بر
+  \olref[hen]{lem:henkin}، مجموعهٔ سازگار و اشباع‌شده‌ای چون
+  $\Gamma' \supseteq \Gamma$ وجود دارد.}{} بنا بر \olref[lin]{lem:lindenbaum}،
+مجموعه‌ای چون $\Gamma^* \supseteq \iftag{FOL}{\Gamma'}{\Gamma}$ وجود
+دارد که سازگار و !!{complete} است.
+\iftag{FOL}{
+  چون $\Gamma' \subseteq \Gamma^*$، برای هر
+  !!{formula}~$!A(x)$، مجموعهٔ $\Gamma^*$ شامل !!a{sentence} به صورت
+  \iftag{prvEx}
+        {$\lexists[x][!A(x)] \lif !A(c)$}
+        {$\lnot\lforall[x][!A(x)] \lif \lnot !A(c)$}
+  است و بنابراین $\Gamma^*$ اشباع‌شده است. اگر $\Gamma$ شامل~$\eq$
+  نباشد، آنگاه بنا بر}{بنا بر}
+\olref[mod]{lem:truth}،
+$\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{!A}$ اگر و تنها اگر
+$!A \in \Gamma^*$ باشد. به‌ویژه، از این نتیجه می‌شود که برای هر
+$!A \in \Gamma$، $\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{!A}$؛
+پس $\Gamma$ ارضاپذیر است.\iftag{FOL}{
+  اگر $\Gamma$ شامل~$\eq$ باشد،
+  آنگاه بنا بر \olref[ide]{lem:truth}، برای هر !!{sentence}~$!A$،
+  $\Sat{\equivclass{M}{\approx}}{!A}$ اگر و تنها اگر $!A \in \Gamma^*$.
+  به‌ویژه، برای هر $!A \in \Gamma$،
+  $\Sat{\equivclass{M}{\approx}}{!A}$؛ پس $\Gamma$ ارضاپذیر است.}{}
+\end{proof}
+
+\begin{cor}[قضیهٔ تمامیت، صورت دوم]
+\ollabel{cor:completeness}
+برای هر $\Gamma$ و هر !!{sentence}~$!A$: اگر $\Gamma \Entails !A$،
+آنگاه $\Gamma \Proves !A$.
+\end{cor}
+
+\begin{proof}
+توجه کنید که $\Gamma$ها در \olref{cor:completeness} و
+\olref{thm:completeness} به‌طور کلی سوربندی شده‌اند. برای آنکه دچار
+ابهام نشویم، \olref{thm:completeness} را با متغیری دیگر بازمی‌گوییم:
+برای هر مجموعهٔ $\Delta$ از !!{sentence}s، اگر $\Delta$ سازگار باشد،
+ارضاپذیر است. با نقیض‌گیری، اگر $\Delta$ ارضاپذیر نباشد، $\Delta$
+ناسازگار است.
+از این مطلب برای اثبات نتیجه استفاده خواهیم کرد.
+
+فرض کنید $\Gamma \Entails !A$. آنگاه بنا بر
+\olref[syn][sem]{prop:entails-unsat}، مجموعهٔ
+$\Gamma \cup \{\lnot !A\}$ ارضاپذیر نیست. اگر $\Gamma \cup \{\lnot
+!A\}$ را به‌جای $\Delta$ بگیریم، صورت پیشین
+\olref{thm:completeness} نتیجه می‌دهد که $\Gamma \cup \{\lnot !A\}$
+ناسازگار است. بنا بر
+\iftag{FOL}{%
+  \tagrefs{prfAX/{fol:axd:prv:prop:prov-incons},
+    prfSC/{fol:seq:prv:prop:prov-incons},
+    prfND/{fol:ntd:prv:prop:prov-incons},
+    prfTab/{fol:tab:prv:prop:prov-incons}}}{%
+  \tagrefs{prfAX/{pl:axd:prv:prop:prov-incons},
+    prfSC/{pl:seq:prv:prop:prov-incons},
+    prfND/{pl:ntd:prv:prop:prov-incons},
+    prfTab/{pl:tab:prv:prop:prov-incons}}}،
+$\Gamma \Proves !A$.
+\end{proof}
+
+\tagprob{FOL}
+\begin{prob}
+با استفاده از \olref[fol][com][cth]{cor:completeness}،
+\olref[fol][com][cth]{thm:completeness} را اثبات کنید و بدین‌ترتیب نشان
+دهید که دو صورت‌بندی قضیهٔ تمامیت هم‌ارزند.
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+با استفاده از \olref[pl][com][cth]{cor:completeness}،
+\olref[pl][com][cth]{thm:completeness} را اثبات کنید و بدین‌ترتیب نشان
+دهید که دو صورت‌بندی قضیهٔ تمامیت هم‌ارزند.
+\end{prob}
+\tagendprob
+
+\tagprob{FOL}
+\begin{prob}
+برای آنکه یک دستگاه !!a{derivation} کامل باشد، قواعد آن باید به‌اندازه‌ای
+قوی باشند که بتوان ناسازگاری هر مجموعهٔ ارضاناپذیر را اثبات کرد. کدام‌یک
+از قواعد !!{derivation} برای اثبات تمامیت لازم بودند؟ آیا هیچ‌یک از این
+قواعد در هیچ جای اثبات به کار نرفته‌اند؟ برای پاسخ به این پرسش‌ها، فهرست
+یا نموداری تهیه کنید که نشان دهد در هر یک از نتایج منتهی به اثبات
+\olref[fol][com][cth]{thm:completeness} از کدام قواعد !!{derivation}
+استفاده شده است. کاربردهای ضمنی قواعد در این اثبات‌ها را نیز حتماً ذکر کنید.
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+برای آنکه یک دستگاه !!a{derivation} کامل باشد، قواعد آن باید به‌اندازه‌ای
+قوی باشند که بتوان ناسازگاری هر مجموعهٔ ارضاناپذیر را اثبات کرد. کدام‌یک
+از قواعد !!{derivation} برای اثبات تمامیت لازم بودند؟ آیا هیچ‌یک از این
+قواعد در هیچ جای اثبات به کار نرفته‌اند؟ برای پاسخ به این پرسش‌ها، فهرست
+یا نموداری تهیه کنید که نشان دهد در هر یک از نتایج منتهی به اثبات
+\olref[pl][com][cth]{thm:completeness} از کدام قواعد !!{derivation}
+استفاده شده است. کاربردهای ضمنی قواعد در این اثبات‌ها را نیز حتماً ذکر کنید.
+\end{prob}
+\tagendprob
+
+\end{document}

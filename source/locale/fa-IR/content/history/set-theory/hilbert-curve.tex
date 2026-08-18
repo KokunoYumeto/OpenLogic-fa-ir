@@ -1,0 +1,150 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{his}{set}{hilbertcurve}
+
+\olsection{پیوست: منحنی‌های پُرکنندهٔ فضای هیلبرت}
+
+در \olref[pathology]{sec} گفتیم که اثبات کانتور دربارهٔ برابری تعداد نقاط
+یک خط و یک مربع (\olref[his][set][cantorplane]{thm:cantorplane}) پئانو را
+به این پرسش رساند که آیا ممکن است \emph{منحنی‌ای} پُرکنندهٔ فضا وجود داشته
+باشد. او در ۱۸۹۰ پاسخی مثبت یافت. در این بخش، به شیوه‌ای غیررسمی، ساخت
+منحنی پُرکنندهٔ فضای هیلبرت را با تغییری کوچک توضیح می‌دهیم.\footnote{برای
+شرحی دقیق‌تر، بنگرید به \cite{Rose2010}. تغییر کوچک همان افزودن بخش‌های
+قرمز منحنی‌های زیر است و بررسی پیوستگی منحنی را اندکی آسان‌تر می‌کند.}
+
+باید تابع $h$ را حد دنباله‌ای از توابع $h_1,h_2,h_3,\dots$ تعریف کنیم.
+هر تقریب $h_n$ را به صورت نگاشتی پیوسته
+$h_n\colon\unitline\to\unitsquare$ پارامتربندی می‌کنیم. ابتدا ساخت را
+شرح می‌دهیم، سپس نشان می‌دهیم حد آن پیوسته و پُرکنندهٔ فضاست.
+
+هم‌دامنهٔ $h$ را مربع واحد، $\unitsquare$، می‌گیریم. تقریب نخست، یعنی
+$h_1$، چنین است:
+\begin{center}
+	\begin{tikzpicture}
+	\draw[gray] (0pt, 0pt) rectangle (80pt, 80pt);
+	\draw[step = 40pt, gray, very thin] (0pt, 0pt) grid (80pt, 80pt);
+	\draw[oldiagcolorC, thick] (20pt, 0)--(20pt, 20pt);
+	\draw[oldiagcolorC, thick] (60pt, 0)--(60pt, 20pt);
+	\begin{scope}[xshift=20pt, yshift=20pt]
+	\draw [black, thick, l-system={Hilbert curve, step=40pt, angle=90, axiom=L, order=1}]  lindenmayer system;
+	\end{scope}
+	\end{tikzpicture}
+\end{center}
+برای دنبال‌کردن ساخت، شبکه‌ای $2\times2$ روی مربع قرار داده‌ایم. می‌توان
+منحنی را چنین تصور کرد: از ربع پایین چپ آغاز می‌شود، به ربع بالا چپ، سپس
+بالا راست و سرانجام پایین راست می‌رود. مرحلهٔ دوم ساخت، یعنی $h_2$، چنین
+است:
+\begin{center}
+	\begin{tikzpicture}
+	\draw[gray] (0pt, 0pt) rectangle (80pt, 80pt);
+	\draw[step = 20pt, gray, very thin] (0pt, 0pt) grid (80pt, 80pt);
+	\draw[oldiagcolorC, thick] (0pt, 10pt)--(10pt, 10pt);
+	\draw[oldiagcolorC, thick] (70pt, 10pt)--(80pt, 10pt);
+	\draw[thick, oldiagcolorE] (10pt, 30pt)--(10pt, 50pt);
+	\draw[thick, oldiagcolorE] (30pt, 50pt)--(50pt, 50pt);
+	\draw[thick, oldiagcolorE] (70pt, 50pt)--(70pt, 30pt); \begin{scope}[xshift=10pt, yshift=30pt]
+	\draw [thick, rotate=270,black, l-system={Hilbert curve, step=20pt, angle=90, axiom=L, order=1}]  lindenmayer system;
+	\end{scope}
+	\begin{scope}[xshift=10pt, yshift=50pt]
+	\draw [thick, black, l-system={Hilbert curve, step=20pt, angle=90, axiom=L, order=1}]  lindenmayer system;
+	\end{scope}
+	\begin{scope}[xshift=50pt, yshift=50pt]
+	\draw [thick, black, l-system={Hilbert curve, step=20pt, angle=90, axiom=L, order=1}]  lindenmayer system;
+	\end{scope}
+	\begin{scope}[xshift=70pt, yshift=10pt]
+	\draw [thick, rotate=90,black, l-system={Hilbert curve, step=20pt, angle=90, axiom=L, order=1}]  lindenmayer system;
+	\end{scope}
+	\end{tikzpicture}
+\end{center}
+رنگ‌های متفاوت چگونگی ساخت $h_2$ را روشن می‌کنند. ابتدا نسخه‌های
+کوچک‌شدهٔ بخش غیر !!{colorC} از $h_1$ را در ربع‌های پایین چپ، بالا چپ،
+بالا راست و پایین راست مربع قرار می‌دهیم (بخش‌های سیاه). سپس این چهار شکل
+را با خط‌های !!{colorE} به هم وصل می‌کنیم. سرانجام شکل را با خط‌های
+!!{colorC} به مرز مربع متصل می‌کنیم.
+
+اکنون به $h_3$ می‌رسیم. همان‌گونه که $h_2$ از چهار نسخهٔ کوچک‌شده و
+به‌هم‌پیوستهٔ بخش غیرقرمز $h_1$ ساخته شد، $h_3$ نیز از چهار نسخهٔ
+کوچک‌شدهٔ بخش غیرقرمز $h_2$ تشکیل می‌شود (به رنگ سیاه)؛ این نسخه‌ها با
+خط‌های !!{colorE} به هم و در پایان با خط‌های !!{colorC} به مرز مربع متصل
+می‌شوند.
+\begin{center}
+	\begin{tikzpicture}
+	\draw[gray] (0pt, 0pt) rectangle (80pt, 80pt);
+	\draw[step = 10pt, gray, very thin] (0pt, 0pt) grid (80pt, 80pt);
+	\draw[thick, oldiagcolorC](5pt, 0pt)--(5pt, 5pt);
+	\draw[thick, oldiagcolorC] (75pt, 0pt)--(75pt, 5pt);
+	\draw[thick, oldiagcolorE] (75pt, 45pt)--(75pt, 35pt);
+	\draw[thick, oldiagcolorE] (5pt, 35pt)--(5pt, 45pt);
+	\draw[thick, oldiagcolorE] (35pt, 45pt)--(45pt, 45pt); \begin{scope}[xshift=5pt, yshift=35pt]
+	\draw [rotate=270, thick, black, l-system={Hilbert curve, step=10pt, angle=90, axiom=L, order=2}]  lindenmayer system;
+	\end{scope}
+	\begin{scope}[xshift=5pt, yshift=45pt]
+	\draw [thick, black, l-system={Hilbert curve, step=10pt, angle=90, axiom=L, order=2}]  lindenmayer system;
+	\end{scope}
+	\begin{scope}[xshift=45pt, yshift=45pt]
+	\draw [thick, black, l-system={Hilbert curve, step=10pt, angle=90, axiom=L, order=2}]  lindenmayer system;
+	\end{scope}
+	\begin{scope}[xshift=75pt, yshift=5pt]
+	\draw [thick, rotate=90,black, l-system={Hilbert curve, step=10pt, angle=90, axiom=L, order=2}]  lindenmayer system;
+	\end{scope}
+	\end{tikzpicture}
+\end{center}
+اکنون الگوی کلی تعریف $h_{n+1}$ از روی $h_n$ آشکار است. سرانجام خود منحنی
+$h$ را با گرفتن حد نقطه‌به‌نقطهٔ توابع پیاپی $h_1,h_2,\dots$ تعریف
+می‌کنیم. یعنی برای هر $x\in\unitline$:
+\begin{align*}
+	h(x) &= \lim_{n \rightarrow \infty} h_n(x)
+\end{align*}
+
+\begin{defn}
+منحنی نگاشتی پیوسته از $\unitline$ به $\Real^2$ است.
+\end{defn}
+
+این تعریف شهودی است: منحنی نگاشتی \emph{پیوسته} است که خط معیار را به
+صفحهٔ $\Real^2$ می‌برد. تابع $h$ نگاشتی از $\unitline$ به $\Real^2$ است؛
+پس باید پیوستگی آن را نشان دهیم. پیوستگی را در
+\olref[limits]{sec} با نمادگذاری $\epsilon$/$\delta$ تعریف کردیم.
+
+ساخت بازگشتی تضمین می‌کند که هر پالایش پس از مرحلهٔ $n$، تصویر هر پارامتر
+را در همان خانهٔ مرحلهٔ $n$ یا در خانه‌ای مجاور نگه می‌دارد. بنابراین
+ثابتی مستقل از $m,n$ و $x$، مثلاً $C>0$، وجود دارد به‌طوری‌که برای هر
+$m>n$:
+\[
+  \sup_{x\in\unitline}\lVert h_m(x)-h_n(x)\rVert \leq C2^{-n}.
+\]
+پس $(h_n)$ در نرم یکنواخت دنباله‌ای کوشی است و به $h$ به‌طور یکنواخت
+همگرا می‌شود. هر $h_n$ پیوسته است؛ در نتیجه، چون حد یکنواخت توابع پیوسته
+پیوسته است، $h$ نیز پیوسته و بنابراین یک منحنی است.
+
+اکنون نشان می‌دهیم که این منحنی فضا را پُر می‌کند. هنگام رسم $h_n$، شبکه‌ای
+$2^n\times2^n$ بر $\unitsquare$ قرار می‌دهیم. بنا بر قضیهٔ فیثاغورس، قطر
+هر خانهٔ شبکه برابر است با:
+\[
+\sqrt{\left(\nicefrac{1}{2^{n}}\right)^2+
+\left(\nicefrac{1}{2^{n}}\right)^2} = 2^{(\frac{1}{2}-n)}.
+\]
+افزون بر این، $h_n$ از هر خانهٔ شبکه می‌گذرد. نقطه‌ای دلخواه
+$p\in\unitsquare$ را ثابت کنید. برای هر $n$، خانهٔ مرحلهٔ $n$ شامل $p$ را
+$Q_n$ بنامید و $x_n\in\unitline$ را چنان برگزینید که
+$h_n(x_n)\in Q_n$. چنین انتخابی وجود دارد، زیرا $h_n$ از همهٔ خانه‌ها
+می‌گذرد؛ و داریم
+\[
+  \lVert h_n(x_n)-p\rVert \leq 2^{(\frac{1}{2}-n)}.
+\]
+فشردگی $\unitline$ تضمین می‌کند که $(x_n)$ زیر‌دنباله‌ای همگرا
+$x_{n_j}\to x$ دارد. اکنون از نامساوی مثلثی استفاده می‌کنیم:
+\[
+\lVert h(x)-p\rVert \leq
+\lVert h(x)-h(x_{n_j})\rVert
++\lVert h(x_{n_j})-h_{n_j}(x_{n_j})\rVert
++\lVert h_{n_j}(x_{n_j})-p\rVert.
+\]
+جملهٔ نخست به سبب پیوستگی $h$ و همگرایی $x_{n_j}\to x$، جملهٔ دوم به
+سبب همگرایی یکنواخت $h_n\to h$، و جملهٔ سوم بر اثر کران قطر خانه‌ها به
+صفر میل می‌کند. پس $\lVert h(x)-p\rVert=0$ و $h(x)=p$. چون $p$ دلخواه
+بود، هر نقطهٔ $\unitsquare$ روی منحنی قرار دارد. بنابراین $h$ فضا را پُر
+می‌کند!
+
+\end{document}

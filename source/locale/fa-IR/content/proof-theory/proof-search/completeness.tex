@@ -1,0 +1,211 @@
+% Part: proof-theory
+% Chapter: proof-search
+% Section: completeness
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{ps}{cpl}
+
+\olsection{تمامیت}
+
+اکنون نشان می‌دهیم الگوریتم جست‌وجوی برهان خطاناپذیر است؛ یعنی اگر
+متوقف شود یا هرگز پایان نیابد، برای دنبالهٔ آغازین
+~$\Gamma \Sequent \Delta$ هیچ !!{proof}ی وجود ندارد. برای این کار
+!!a{structure}~$\Struct M$ را چنان تعریف می‌کنیم که برای هر
+$!A \in \Gamma$، $\Sat{M}{!A}$، و برای هر~$!A \in \Delta$،
+$\Sat/{M}{!A}$. به بیان دیگر، همهٔ !!{formula}s موجود در~$\Gamma$ در
+~$\Struct M$ صادق و همهٔ !!{formula}s موجود در~$\Delta$ کاذب‌اند؛ پس
+$\Gamma \Sequent \Delta$ معتبر نیست. چون \Log{G3c} درست است،
+$\Gamma \Sequent \Delta$ هیچ !!{proof}ی ندارد.
+
+~‌$\Struct{M}$ را از یک جفت مجموعهٔ $\Theta, \Xi$ از !!{formula}s و
+یک مجموعهٔ~$C$ از !!{constant}s تعریف می‌کنیم. $\Theta$، $\Xi$ و~$C$
+را از یک \emph{شاخهٔ شکست} در اجرای ناموفق (متوقف‌شده یا پایان‌ناپذیر)
+جست‌وجوی برهان به دست می‌آوریم. شاخهٔ شکست دنباله‌ای متناهی یا
+نامتناهی از دنباله‌های $\Pi_n \Sequent \Lambda_n$ و مجموعه‌های
+!!{constant}s~$C_n$ است، به‌گونه‌ای که $\Pi_0 \Sequent \Lambda_0$
+همان دنبالهٔ پایانی $\Gamma \Sequent \Delta$ باشد و، برای هر~$n$ که
+جملهٔ نهایی شاخهٔ متناهی نیست،
+$\Pi_{n+1} \Sequent \Lambda_{n+1}$ مقدمه‌ای از
+$\Pi_n \Sequent \Lambda_n$ باشد که در مرحلهٔ~$n+1$ تولید شده و
+الگوریتم برای آن !!a{proof}ی نمی‌یابد. برای هر چنین~$n$ باید آشکارا
+این مقدمه وجود داشته باشد، وگرنه الگوریتم !!a{proof}ی یافته بود.
+$C_n$ را مجموعهٔ !!{constant}s متناظر با
+~$\Pi_n \Sequent \Lambda_n$ می‌گیریم.
+
+اگر الگوریتم در دنباله‌ای بالایی که تنها از !!{formula}s اتمی تشکیل
+شده متوقف شود، شاخهٔ منتهی به آن دنباله یک شاخهٔ شکست است. اگر
+الگوریتم هرگز پایان نیابد، پیوسته درخت‌های بزرگ‌تر تولید می‌کند. می‌توان
+این درخت‌ها را مراحل رشد یک درخت نامتناهی دانست (درختی که پس از اجرای
+بی‌نهایت مرحلهٔ الگوریتم به دست می‌آمد). این درخت نامتناهی، متناهی‌شاخه
+است: هر گره تنها یک یا دو فرزند، یعنی دنباله‌های بی‌درنگ بالای خود،
+دارد. بنا بر لم کونیگ، هر درخت نامتناهی متناهی‌شاخه یک شاخهٔ نامتناهی
+دارد. اگر الگوریتم جست‌وجو تا ابد اجرا شود، چنین شاخه‌ای یک شاخهٔ شکست
+خواهد بود.
+
+اگر دنبالهٔ $\Pi_n \Sequent \Lambda_n$ و $C_n$ یک شاخهٔ شکست باشد،
+می‌گذاریم $\Theta = \bigcup_n \Pi_n$ و
+$\Xi = \bigcup_n \Lambda_n$ (با حذف اندیس‌ها و وقوع‌های تکراری
+!!{formula}s)، و $C = \bigcup_n C_n$.
+
+اکنون آماده‌ایم~$\Struct{M}$ را تعریف کنیم.
+\begin{enumerate}
+\item دامنهٔ $\Domain{M}$ مجموعهٔ ترم‌هایی است که می‌توان آن‌ها را
+از~$C$ و !!{function}s موجود در $\Gamma \Sequent \Delta$، اگر چنین
+نمادهایی وجود داشته باشند، و بدون هیچ !!{variable}s ساخت.
+\item اگر $c \in C$، آنگاه $\Assign{c}{M} = c$.
+\item اگر $f$ یک !!{function} $m$-موضعی در
+$\Gamma \Sequent \Delta$ باشد و
+$t_1$, \dots, $t_m \in \Domain{M}$، آنگاه
+$\Assign{f}{M}(t_1, \dots, t_m) = f(t_1, \dots, t_m)$.
+\item اگر $R$ یک !!{predicate} $m$-موضعی در
+$\Gamma \Sequent \Delta$ باشد، آنگاه
+$\Assign{R}{M} = \Setabs{\tuple{t_1, \dots, t_m} \in
+\Domain{M}^m}{R(t_1, \dots, t_m) \in \Theta}$.
+\end{enumerate}
+~‌$\Struct{M}$ یک \emph{مدل ترمی} است، زیرا دامنه‌اش مجموعه‌ای از
+ترم‌هاست و !!{constant}s و !!{function}s چنان تفسیر می‌شوند که
+$\Value{t}{M} = t$ تضمین شود. !!{formula}s اتمی در~$\Theta$ برای
+تعریف $\Assign{R}{M}$ چنان به کار می‌روند که
+$\Sat{M}{R(t_1, \dots, t_m)}$ اگر و تنها اگر
+$R(t_1, \dots, t_m) \in \Theta$ تضمین شود.
+
+\begin{lem}\ollabel{lem:truth}
+برای همهٔ $!A \in \Theta \cup \Xi$:
+\begin{enumerate}
+  \item اگر $!A \in \Theta$، آنگاه $\Sat{M}{!A}$.
+  \item اگر $!A \in \Xi$، آنگاه $\Sat/{M}{!A}$.
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+  بر $\depth{!A}$ استقرا می‌کنیم.
+
+نخست فرض کنید $!A$ اتمی است؛ یعنی یا $!A \ident \lfalse$ یا
+$!A \ident R(t_1, \dots, t_m)$.
+
+چون $\Pi_n \Sequent \Lambda_n$ شاخهٔ شکست است، هیچ $\Pi_n$ای
+نمی‌تواند شامل $\lfalse$ باشد (وگرنه
+$\Pi_n \Sequent \Lambda_n$ یک اصل بود). بنا بر تعریف~$\Struct{M}$،
+$\Sat{M}{R(t_1, \dots, t_m)}$ اگر و تنها اگر
+$R(t_1, \dots, t_m) \in \Theta$. این دو نکته با هم نشان می‌دهند اگر
+$!A \in \Theta$، آنگاه $\Sat{M}{!A}$.
+
+اگر $!A$ اتمی و $!A \in \Pi_n$ باشد، آنگاه
+$!A \in \Pi_{n+1}$؛ و اگر $!A \in \Lambda_n$ باشد، آنگاه
+$!A \in \Lambda_{n+1}$. (این امر از شیوهٔ تولید دنباله‌های جانشین در
+الگوریتم جست‌وجوی برهان نتیجه می‌شود.) پس اگر
+$!A \in \Theta \cap \Xi$، برای یک~$n$ داریم
+$!A \in \Pi_n \cap \Lambda_n$. در این صورت
+$\Pi_n \Sequent \Lambda_n$ اصل است، حال آنکه شاخهٔ شکست نمی‌تواند
+اصلی داشته باشد. بنابراین بنا به ساخت، برای $!A$ اتمی
+$!A \notin \Theta \cap \Xi$؛ پس اگر $!A \in \Xi$، آنگاه
+$!A \notin \Theta$. بنا بر تعریف~$\Struct{M}$، از این امر نتیجه
+می‌شود که اگر $!A \in \Xi$، آنگاه $\Sat/{M}{!A}$.
+
+برای گام استقرا، فرض کنید (1) و (2) برای همهٔ !!{formula}s با
+!!{depth} کمتر از~$!A$ برقرارند. (1) و (2) را برای~$!A$ با جداسازی
+حالت‌ها اثبات می‌کنیم.
+
+نخست توجه کنید که وقتی $!A^i$ در
+$\Pi_n \Sequent \Lambda_n$ رخ دهد، در
+$\Pi_{n+1} \Sequent \Lambda_{n+1}$ نیز رخ می‌دهد، مگر آنکه $i$
+کوچک‌ترین اندیس در میان وقوع‌های غیراتمی
+$\Pi_n \Sequent \Lambda_n$ باشد. چون اندیس‌های تازه همواره از اندیس
+بیشینهٔ کنونی بزرگ‌ترند، سرانجام به
+$\Pi_n \Sequent \Lambda_n$ای می‌رسیم که $!A^i$ در آن رخ می‌دهد و
+$i$ کوچک‌ترین اندیس غیراتمی است. در مرحلهٔ $n+1$ الگوریتم~$!A^i$ را
+کاهش می‌دهد. به بیان دیگر، اگر $!A \in \Theta$، برای یک $n$ داریم
+$\Pi_n = \Pi_n', !A^i$ و $i$ کوچک‌ترین اندیس غیراتمی است؛ و اگر
+$!A \in \Xi$، برای یک $n$ داریم
+$\Lambda_n = \Lambda_n', !A^i$ و $i$ کوچک‌ترین اندیس غیراتمی است.
+
+\begin{enumerate}
+  \item فرض کنید $!A \in \Theta$ و
+  $!A \ident !B \land !C$. برای یک $n$ داریم
+  $\Pi_n = \Pi_n', (!B \land !C)^i$.
+  $\Pi_{n+1} \Sequent \Lambda_{n+1}$ مقدمهٔ متناظر
+  ~\LeftR{\land} است؛ یعنی
+  $\Pi_{n+1} = \Pi_n', !B^{k+1}, !C^{k+2}$. در نتیجه
+  $!B, !C \in \Theta$. بنا بر فرض استقرا، $\Sat{M}{!B}$ و
+  $\Sat{M}{!C}$. بنا بر تعریف $\Sat{M}{}$، داریم
+  $\Sat{M}{!B \land !C}$.
+
+  \item فرض کنید $!A \in \Xi$ و $!A \ident !B \land !C$. برای
+  یک $n$ داریم $\Lambda_n = \Lambda_n', !B \land !C$.
+  $\Pi_{n+1} \Sequent \Lambda_{n+1}$ یکی از دو مقدمهٔ
+  ~\RightR{\land} با نتیجهٔ
+  $\Pi_n \Sequent \Lambda'_n, !B \land !C$ است؛ یعنی
+  $\Lambda_{n+1} = \Lambda_n', !B^{k+1}$ یا
+  $\Lambda_{n+1} = \Lambda_n', !C^{k+1}$. در نتیجه یا
+  $!B \in \Xi$ یا $!C \in \Xi$. بنا بر فرض استقرا، یا
+  $\Sat/{M}{!B}$ یا $\Sat/{M}{!C}$. بنا بر تعریف $\Sat{M}{}$، داریم
+  $\Sat/{M}{!B \land !C}$.
+
+  \item حالت‌های $!A \ident \lnot !B$، $!A \ident !B \lor !C$ و
+  $!A \ident !B \lif !C$ مشابه‌اند و به‌عنوان تمرین واگذار می‌شوند.
+
+  \item فرض کنید $!A \in \Theta$ و
+  $!A \ident \lexists[x][!B(x)]$. برای یک $n$ داریم
+  $\Pi_n = \Pi_n', \lexists[x][!B(x)]^i$.
+  $\Pi_{n+1} \Sequent \Lambda_{n+1}$ مقدمهٔ متناظر
+  ~\LeftR{\lexists} است؛ یعنی
+  $\Pi_{n+1} = \Pi_n', !B(c)^{k+1}$ برای یک~$c$. در نتیجه
+  $!B(c) \in \Theta$ و~$c \in C$. بنا بر فرض استقرا
+  $\Sat{M}{!B(c)}$. بنا بر تعریف $\Sat{M}{}$، داریم
+  $\Sat{M}{\lexists[x][!B(x)]}$.
+
+  \item فرض کنید $!A \in \Xi$ و
+  $!A \ident \lexists[x][!B(x)]$. برای یک $n$ داریم
+  $\Lambda_n = \Lambda_n', \lexists[x][!B(x)]^i$. هر بار که
+  $\lexists[x][!B(x)]$ کاهش می‌یابد، با اندیسی تازه در سمت راست مقدمه
+  باقی می‌ماند؛ بنابراین اگر در شاخهٔ شکست در سمت راست رخ دهد،
+  بی‌نهایت بار در آن سمت کاهش می‌یابد. هر ترم
+  $t \in \Domain{M}$ سرانجام در شاخهٔ شکست «نخستین ترمی خواهد بود که
+  تنها شامل ثابت‌های~$C_n$ است و پیش‌تر در کاهش راست
+  $\lexists[x][!B(x)]$ به کار نرفته است». پس برای هر
+  $t \in \Domain{M}$، برای یک~$n$ داریم $!B(t) \in \Lambda_n$ و در
+  نتیجه $!B(t) \in \Xi$. بنا بر فرض استقرا، برای همهٔ
+  $t \in \Domain{M}$ داریم $\Sat/{M}{!B(t)}$. بنا بر تعریف
+  $\Sat{M}{}$، نتیجه می‌شود
+  $\Sat/{M}{\lexists[x][!B(x)]}$.
+
+  \item حالت‌های $!A \ident \lforall[x][!B(x)]$ مشابه‌اند و
+  به‌عنوان تمرین واگذار می‌شوند.
+\end{enumerate}
+\end{proof}
+
+\begin{cor}\ollabel{cor:complete}
+الگوریتم جست‌وجوی برهان برای \Log{G3c} کامل است: اگر متوقف شود یا
+هرگز پایان نیابد، دنبالهٔ آغازین~$\Gamma \Sequent \Delta$ معتبر نیست
+و بنابراین هیچ !!{proof}ی ندارد.
+\end{cor}
+
+\begin{proof}
+  اگر الگوریتم متوقف شود یا هرگز پایان نیابد، شاخهٔ شکستی وجود دارد که
+  می‌توان $\Struct{M}$ را از آن تعریف کرد. بنا بر \olref{lem:truth}،
+  برای همهٔ $!A \in \Gamma$ داریم $\Sat{M}{!A}$ و برای همهٔ
+  $!A \in \Delta$ داریم $\Sat/{M}{!A}$. (به یاد آورید
+  $\Pi_0 = \Gamma$ و $\Lambda_0 = \Delta$؛ پس
+  $\Gamma \subseteq \Theta$ و $\Delta \subseteq \Xi$.) بنابراین
+  $\Gamma \Sequent \Delta$ معتبر نیست. بنا بر درستی~\Log{G3c}،
+  $\Gamma \Sequent \Delta$ هیچ !!{proof}ی ندارد.
+\end{proof}
+
+\begin{cor}
+~\Log{G3c} کامل است: اگر $\Gamma \Sequent \Delta$ معتبر باشد،
+$\Log{G3c} \Proves \Gamma \Sequent \Delta$.
+\end{cor}
+
+\begin{proof}
+  عکس نقیض را اثبات می‌کنیم. فرض کنید
+  $\Log{G3c} \Proves/ \Gamma \Sequent \Delta$. چون هیچ !!{proof}ی
+  برای یافتن وجود ندارد، الگوریتم جست‌وجوی برهان باید متوقف شود یا
+  هرگز پایان نیابد. بنا بر \olref{cor:complete}،
+  $\Gamma \Sequent \Delta$ معتبر نیست.
+\end{proof}
+
+
+\end{document}

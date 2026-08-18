@@ -1,0 +1,62 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{ord-arithmetic}{expo}
+\olsection{توان‌رسانیِ ترتیبی}
+
+اکنون به توان‌رسانیِ ترتیبی می‌پردازیم. متأسفانه برای آن تعریف
+ترکیبیِ \emph{خوشایندی} وجود ندارد.
+
+البته تعریف‌های ترکیبیِ صریح \emph{وجود دارند}. این یکی را در نظر
+بگیرید. بگذارید $\text{finfun}(\alpha,\beta)$ مجموعهٔ همهٔ توابع
+$f \colon \alpha \to \beta$ باشد به‌طوری‌که
+$\Setabs{\gamma \in \alpha}{f(\gamma) \neq 0}$ با یک عدد طبیعی
+هم‌شمار باشد. روی $\text{finfun}(\alpha,\beta)$ چنین خوش‌ترتیبی
+تعریف کنید: $f \sqsubset g$ اگر و تنها اگر $f \neq g$ و
+$f(\gamma_0) < g(\gamma_0)$، که در آن
+$\gamma_0 = \text{max}\Setabs{\gamma \in \alpha}{f(\gamma) \neq
+g(\gamma)}$. آن‌گاه می‌توانیم $\ordexpo{\alpha}{\beta}$ را به‌صورت
+$\ordtype{\text{finfun}(\beta, \alpha), \sqsubset}$ تعریف کنیم.
+پاتر این تعریف صریح را به کار می‌گیرد و بی‌درنگ توضیح می‌دهد:
+\begin{quote}
+	انتخاب این ترتیب صرفاً از خواست ما برای به‌دست‌آوردن تعریفی از
+	توان‌رسانیِ ترتیبی تعیین می‌شود که شرط بازگشتیِ مناسب را برآورده
+	کند\ldots، و تجسم آن بسیار دشوارتر از جمعِ مرتب یا ضربِ مرتب است.
+	\citep[p.~199]{Potter2004}
+\end{quote}
+دقیقاً. جمع را چنین توضیح دادیم: «یک نسخه از $\alpha$ و سپس یک نسخه
+از $\beta$»؛ و ضرب را چنین: «دنباله‌ای $\beta$تایی از نسخه‌های
+$\alpha$». اما دربارهٔ $\text{finfun}(\gamma,\alpha)$ هیچ بیان کوتاه
+و گویایی نداریم. بنابراین، تعریف توان‌رسانیِ ترتیبی را
+\emph{صرفاً با} بازگشت ترامتناهی عرضه می‌کنیم؛ یعنی:
+
+\begin{defn}\ollabel{ordexporecursion}
+\begin{align*}
+	\ordexpo{\alpha}{0} &= 1\\
+	\ordexpo{\alpha}{\beta\ordplus 1} &=\ordexpo{\alpha}{\beta} \ordtimes \alpha\\
+	\ordexpo{\alpha}{\beta} &= \bigcup_{\delta < \beta}\ordexpo{\alpha}{\delta}& & \text{هرگاه $\beta$ عدد ترتیبیِ حدی باشد}
+\end{align*}
+\end{defn}
+
+اگر \emph{به‌عنوان} نظریه‌پرداز مجموعه‌ها کار می‌کردیم، شاید
+می‌خواستیم برخی ویژگی‌های توان‌رسانی ترتیبی را بررسی کنیم. اما مطلب
+چندانی برای افزودن نداریم، جز این واقعیتِ غافلگیرنکننده که توان‌رسانی
+ترتیبی جابجایی‌پذیر نیست. پس
+$\ordexpo{2}{\omega} =
+\bigcup_{\delta < \omega}\ordexpo{2}{\delta} = \omega$، درحالی‌که
+$\ordexpo{\omega}{2} = \omega \ordtimes \omega$. البته نباید
+\emph{انتظار} داشته باشیم توان‌رسانی جابجایی‌پذیر باشد، زیرا روی
+اعداد طبیعی نیز چنین نیست:
+$\ordexpo{2}{3} = 8 < 9 = \ordexpo{3}{2}$.
+
+\begin{prob}
+با استفاده از استقرای ترامتناهی اثبات کنید که اگر
+$\ordexpo{\alpha}{\beta} =
+\ordtype{\text{finfun}(\beta, \alpha), \sqsubset}$ را تعریف کنیم،
+معادلات بازگشتیِ
+\olref[sth][ord-arithmetic][expo]{ordexporecursion} را به دست
+می‌آوریم.
+\end{prob}
+
+\end{document}

@@ -1,0 +1,65 @@
+% Part: model-theory
+% Chapter: basics
+% Section: theory-of-m
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mod}{bas}{thm}
+
+\section{نظریهٔ یک \printtoken{S}{structure}}
+
+هر !!{structure}~$\Struct{M}$ برخی !!{sentence}s را صادق و برخی را
+کاذب می‌سازد. مجموعهٔ همهٔ !!{sentence}sی که آن ساختار صادق می‌سازد
+\emph{نظریهٔ} آن نامیده می‌شود. این مجموعه در واقع یک نظریه است، زیرا
+هرچه از آن نتیجه شود باید در همهٔ مدل‌هایش، از جمله~$\Struct{M}$، صادق
+باشد.
+
+\begin{defn}
+  به ازای !!a{structure}~$\Struct M$، \emph{نظریهٔ} $\Struct{M}$
+  مجموعهٔ~$\Theory{M}$ از !!{sentence}sی است که در~$\Struct{M}$ صادق‌اند؛
+  یعنی $\Theory{M} = \Setabs{!A}{\Sat{M}{!A}}$.
+\end{defn}
+
+اصطلاح «نظریه» را همچنین به‌طور غیررسمی برای اشاره به مجموعه‌هایی از
+!!{sentence}s دارای تعبیر مقصود به کار می‌بریم، خواه از نظر استنتاجی
+بسته باشند خواه نباشند.
+
+\begin{prop}
+برای هر $\Struct{M}$، $\Theory{M}$ کامل است.
+\end{prop}
+
+\begin{proof}
+برای هر !!{sentence}~$!A$، یا $\Sat{M}{!A}$ یا
+$\Sat{M}{\lnot !A}$؛ پس یا $!A \in \Theory{M}$ یا
+$\lnot !A \in \Theory{M}$.
+\end{proof}
+
+\begin{prop}\ollabel{prop:equiv}
+  اگر برای هر $!A \in \Theory{M}$، $\Struct{N} \models !A$، آنگاه
+  $\Struct{M} \elemequiv \Struct{N}$.
+\end{prop}
+
+\begin{proof}
+چون برای همهٔ $!A \in \Theory{M}$، $\Sat{N}{!A}$، داریم
+$\Theory{M} \subseteq \Theory{N}$. اگر $\Sat{N}{!A}$، آنگاه
+$\Sat/{N}{\lnot !A}$، پس $\lnot !A \notin \Theory{M}$. چون
+$\Theory{M}$ کامل است، $!A \in \Theory{M}$. بنابراین
+$\Theory{N} \subseteq \Theory{M}$، و داریم
+$\Struct{M} \elemequiv \Struct{N}$.
+\end{proof}
+
+\begin{rem}\ollabel{remark:R}
+  $\Struct{R} = \langle\Real, <\rangle$ را در نظر بگیرید؛ یعنی
+  !!{structure}ای که دامنه‌اش مجموعهٔ~$\Real$ از اعداد حقیقی است، در
+  !!{language}ی که تنها از یک !!{predicate} دوموضعی تشکیل می‌شود که به
+  رابطهٔ~$<$ روی اعداد حقیقی تعبیر شده است. آشکارا $\Struct{R}$
+  !!{nonenumerable} است؛ اما چون $\Theory{R}$ آشکارا سازگار است، بنا بر
+  قضیهٔ لوونهایم--اسکولم !!a{enumerable} مدل، مثلاً $\Struct{S}$، دارد
+  و بنا بر \olref{prop:equiv}، $\Struct{R} \equiv \Struct{S}$. افزون
+  بر این، چون $\Struct{R}$ و~$\Struct{S}$ همریخت نیستند، این نشان
+  می‌دهد که عکس \olref[iso]{thm:isom} به‌طور کلی برقرار نیست.
+\end{rem}
+
+\end{document}

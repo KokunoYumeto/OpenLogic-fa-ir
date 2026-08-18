@@ -1,0 +1,138 @@
+% Part: first-order-logic
+% Chapter: syntax-and-semantics
+% Section: extensionality
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{syn}{ext}
+
+\olsection{اصل گسترش}
+
+\begin{explain}
+اصل گسترش، که گاه ربط نیز نامیده می‌شود، به‌طور غیرصوری چنین بیان می‌شود:
+تنها عواملی که بر ارضای !!{formula}~$!A$ در !!a{structure}~$\Struct M$
+نسبت به گمارش !!a{variable}~$s$ اثر می‌گذارند، اندازهٔ !!{domain} و
+انتساب‌هایی هستند که~$\Struct M$ و~$s$ به عناصر زبانی می‌دهند که واقعاً
+در~$!A$ ظاهر می‌شوند.
+
+یکی از پیامدهای بی‌درنگ اصل گسترش این است که هرگاه دو
+!!{structure}~$\Struct M$ و~$\Struct M'$ دربارهٔ همهٔ عناصر زبان که در
+جملهٔ~$!A$ ظاهر می‌شوند توافق داشته باشند و دامنهٔ یکسانی داشته باشند،
+~$\Struct M$ و~$\Struct M'$ باید دربارهٔ صادق‌بودن یا نبودن خود $!A$ نیز
+توافق داشته باشند.
+\end{explain}
+
+\begin{prop}[اصل گسترش]
+  \ollabel{prop:extensionality}
+  بگذارید $!A$ یک !!a{formula}، و $\Struct M_1$ و $\Struct M_2$ دو
+  !!{structure} با $\Domain{M_1} = \Domain{M_2}$ باشند، و $s$ گمارش
+  متغیری روی $\Domain{M_1} = \Domain{M_2}$ باشد. اگر برای هر
+  !!{constant}~$c$، نماد رابطهٔ~$R$ و !!{function}~$f$ که در~$!A$ رخ
+  می‌دهند، $\Assign{c}{M_1} = \Assign{c}{M_2}$،
+  $\Assign{R}{M_1}=\Assign{R}{M_2}$ و
+  $\Assign{f}{M_1} = \Assign{f}{M_2}$، آنگاه
+  $\Sat{M_1}{!A}[s]$ اگر و تنها اگر $\Sat{M_2}{!A}[s]$.
+\end{prop}
+
+\begin{proof}
+  نخست (با استقرا بر~$t$) ثابت کنید که برای هر ترم،
+  $\Value{t}{M_1}[s] = \Value{t}{M_2}[s]$. سپس گزاره را با استقرا
+  بر~$!A$ اثبات کنید و در پایهٔ استقرا (که $!A$ اتمی است) از ادعای
+  تازه‌اثبات‌شده بهره بگیرید.
+\end{proof}
+
+\begin{prob}
+برهان \olref[fol][syn][ext]{prop:extensionality} را با جزئیات کامل کنید.
+\end{prob}
+
+\begin{cor}[اصل گسترش برای !!^{sentence}s]
+  \ollabel{cor:extensionality-sent}
+  بگذارید $!A$ یک !!a{sentence} و $\Struct{M_1}$، $\Struct{M_2}$ مانند
+  \olref{prop:extensionality} باشند. آنگاه $\Sat{M_1}{!A}$ اگر و تنها
+  اگر $\Sat{M_2}{!A}$.
+\end{cor}
+
+\begin{proof}
+از \olref{prop:extensionality} به‌کمک
+\olref[ass]{cor:sat-sentence} نتیجه می‌شود.
+\end{proof}
+
+افزون بر این، ارزش یک ترم و اینکه !!a{structure} یک !!a{formula} را ارضا
+می‌کند یا نه، تنها به ارزش‌های زیرترم‌های آن بستگی دارد.
+
+\begin{prop}\ollabel{prop:ext-terms}
+بگذارید $\Struct M$ یک !!a{structure}، $t$ و $t'$ دو ترم و $s$ یک گمارش
+متغیر باشد. آنگاه $\Value{\Subst{t}{t'}{x}}{M}[s] =
+\Value{t}{M}[\Subst{s}{\Value{t'}{M}[s]}{x}]$.
+\end{prop}
+
+\begin{proof}
+با استقرا بر~$t$.
+\begin{enumerate}
+\item اگر $t$ یک ثابت باشد، مثلاً $t\ident c$، آنگاه
+  $\Subst{t}{t'}{x} = c$، و $\Value{c}{M}[s] = \Assign{c}{M} =
+  \Value{c}{M}[\Subst{s}{\Value{t'}{M}[s]}{x}]$.
+
+\item اگر $t$ متغیری غیر از~$x$ باشد، مثلاً $t \ident y$، آنگاه
+  $\Subst{t}{t'}{x} = y$، و چون
+  $\varAssign{s}{\Subst{s}{\Value{t'}{M}[s]}{x}}{x}$، داریم
+  $\Value{y}{M}[s] =
+  \Value{y}{M}[\Subst{s}{\Value{t'}{M}[s]}{x}]$.
+
+\item اگر $t \ident x$، آنگاه $\Subst{t}{t'}{x} = t'$. اما بنا بر
+  تعریف~$\Subst{s}{\Value{t'}{M}[s]}{x}$،
+  $\Value{x}{M}[\Subst{s}{\Value{t'}{M}[s]}{x}] = \Value{t'}{M}[s]$.
+
+\item اگر $t \ident \Atom{f}{t_1,\dots,t_n}$، آنگاه داریم:
+\begin{multline*}
+  \Value{\Subst{t}{t'}{x}}{M}[s]  = \\
+  \begin{aligned}[b]
+& \Value{\Atom{f}{\Subst{t_1}{t'}{x}, \dots, \Subst{t_n}{t'}{x}}}{M}[s]\\
+& \qquad    \text{ بنا بر تعریف $\Subst{t}{t'}{x}$}\\
+& = \Assign{f}{M}(\Value{\Subst{t_1}{t'}{x}}{M}[s], \dots,
+    \Value{\Subst{t_n}{t'}{x}}{M}[s])\\
+    & \qquad  \text{ بنا بر تعریف $\Value{\Atom{f}{\dots}}{M}[s]$}\\
+& = \Assign{f}{M}(\Value{t_1}{M}[\Subst{s}{\Value{t'}{M}[s]}{x}], \dots,
+   \Value{t_n}{M}[\Subst{s}{\Value{t'}{M}[s]}{x}])\\
+& \qquad    \text{ بنا بر فرض استقرا}\\
+& = \Value{t}{M}[\Subst{s}{\Value{t'}{M}[s]}{x}]
+    \text{ بنا بر تعریف $\Value{\Atom{f}{\dots}}{M}[\Subst{s}{\Value{t'}{M}[s]}{x}]$}
+  \end{aligned}
+\end{multline*}
+\end{enumerate}
+\end{proof}
+
+\begin{prop}\ollabel{prop:ext-formulas} بگذارید $\Struct M$ یک
+!!a{structure}، $!A$ یک !!a{formula}، $t'$ یک ترم و $s$ یک گمارش متغیر
+باشد. آنگاه $\Sat{M}{\Subst{!A}{t'}{x}}[s]$ اگر و تنها اگر
+$\Sat{M}{!A}[\Subst{s}{\Value{t'}{M}[s]}{x}]$.
+\end{prop}
+
+\begin{proof}
+تمرین.
+\end{proof}
+
+\begin{prob}
+\olref[fol][syn][ext]{prop:ext-formulas} را اثبات کنید.
+\end{prob}
+
+\begin{explain}
+  مقصود از
+  \cref{fol:syn:ext:prop:ext-terms,fol:syn:ext:prop:ext-formulas} چنین است.
+  فرض کنید ترم $t$ یا !!a{formula}~$!A$ و ترمی چون~$t'$ داریم، و می‌خواهیم
+  ارزش $\Subst{t}{t'}{x}$ را بدانیم یا بدانیم
+  $\Subst{!A}{t'}{x}$ در !!a{structure}~$\Struct M$ نسبت به گمارش
+  !!a{variable}~$s$ ارضا می‌شود یا نه. در این صورت، یا می‌توانیم نخست
+  جانشینی را انجام دهیم و سپس ارزش یا ارضا را نسبت به $\Struct{M}$ و~$s$
+  در نظر بگیریم؛ یا می‌توانیم ابتدا ارزش~$m = \Value{t'}{M}[s]$ ترم $t'$
+  را در $\Struct{M}$ نسبت به~$s$ تعیین کنیم، گمارش !!{variable} را به
+  ~$\Subst{s}{m}{x}$ تغییر دهیم و سپس ارزش~$t$ را در $\Struct{M}$
+  و~$\Subst{s}{m}{x}$ بررسی کنیم، یا ببینیم آیا
+  $\Sat{M}{!A}[\Subst{s}{m}{x}]$.
+  \Cref{fol:syn:ext:prop:ext-terms,fol:syn:ext:prop:ext-formulas}
+  تضمین می‌کنند که از هر راهی برویم، پاسخ یکسان خواهد بود.
+\end{explain}
+
+\end{document}

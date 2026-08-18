@@ -1,0 +1,167 @@
+% Part: computability
+% Chapter: recursive-functions
+% Section: pr-relations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cmp}{rec}{prr}
+\olsection{روابط بازگشتی اولیه}
+
+
+\begin{defn}
+رابطهٔ~$R(\vec x)$ را بازگشتی اولیه می‌نامیم اگر تابع مشخصهٔ آن،
+\[
+\Char{R}(\vec x) = \left\{
+  \begin{array}{ll}
+  1 & \mbox{اگر $R(\vec x)$} \\
+  0 & \mbox{در غیر این صورت}
+  \end{array}
+\right.
+\]
+بازگشتی اولیه باشد.
+\end{defn}
+
+به بیان دیگر، وقتی از رابطهٔ بازگشتی اولیه~$R(\vec x)$ سخن می‌گوییم،
+منظور رابطه‌ای به صورت $\Char{R}(\vec x) = 1$ است که در آن
+$\Char{R}$ تابعی بازگشتی اولیه است که برای هر ورودی یا~$1$ و یا~$0$
+بازمی‌گرداند. برای نمونه، رابطهٔ~$\fn{IsZero}(x)$ که هرگاه و تنها
+هرگاه $x = 0$ برقرار است، متناظر با تابع~$\Char{\fn{IsZero}}$ است که
+با بازگشت اولیه چنین تعریف می‌شود:
+\begin{align*}
+\Char{\fn{IsZero}}(0) & = 1,\\
+\Char{\fn{IsZero}}(x+1) & = 0.
+\end{align*}
+
+باید روشن باشد که می‌توان روابط را با دیگر توابع بازگشتی اولیه ترکیب
+کرد. پس موارد زیر نیز بازگشتی اولیه‌اند:
+\begin{enumerate}
+\item رابطهٔ برابری~$x = y$ که با
+$\fn{IsZero}(\left|x-y\right|)$ تعریف می‌شود؛
+\item رابطهٔ کوچک‌تر یا مساوی~$x \leq y$ که با
+$\fn{IsZero}(x \tsub y)$ تعریف می‌شود.
+\end{enumerate}
+
+
+\begin{prop}
+  مجموعهٔ روابط بازگشتی اولیه نسبت به عملیات بولی بسته است؛ یعنی اگر
+  $P(\vec x)$ و~$Q(\vec x)$ بازگشتی اولیه باشند، روابط زیر نیز چنین‌اند:
+  \begin{enumerate}
+  \item $\lnot P(\vec x)$؛
+  \item $P(\vec x) \land Q(\vec x)$؛
+  \item $P(\vec x) \lor Q(\vec x)$؛
+  \item $P(\vec x) \lif Q(\vec x)$.
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  فرض کنید $P(\vec x)$ و~$Q(\vec x)$ بازگشتی اولیه‌اند؛ یعنی توابع
+  مشخصهٔ آن‌ها، $\Char{P}$ و~$\Char{Q}$، بازگشتی اولیه‌اند. باید نشان
+  دهیم توابع مشخصهٔ $\lnot P(\vec x)$ و جز آن نیز بازگشتی اولیه‌اند.
+  \[
+  \Char{\lnot P}(\vec x) = \begin{cases}
+    0 & \text{اگر $\Char{P}(\vec x) = 1$}\\
+    1 & \text{در غیر این صورت}
+  \end{cases}
+  \]
+  می‌توانیم $\Char{\lnot P}(\vec x)$ را به صورت
+  $1 \tsub \Char{P}(\vec x)$ تعریف کنیم.
+  \[
+  \Char{P \land Q}(\vec x) = \begin{cases}
+    1 & \text{اگر $\Char{P}(\vec x) = \Char{Q}(\vec x) = 1$}\\
+    0 & \text{در غیر این صورت}
+  \end{cases}
+  \]
+  می‌توانیم $\Char{P \land Q}(\vec x)$ را به صورت
+  $\Char{P}(\vec x) \cdot \Char{Q}(\vec x)$ یا
+  $\fn{min}(\Char{P}(\vec x), \Char{Q}(\vec x))$ تعریف کنیم. به همین
+  ترتیب،
+  \begin{align*}
+    \Char{P \lor Q}(\vec x) & = \fn{max}(\Char{P}(\vec x), \Char{Q}(\vec x)) \text{ و}\\
+    \Char{P \lif Q}(\vec x) & = \fn{max}(1 \tsub
+  \Char{P}(\vec x), \Char{Q}(\vec x)).
+  \end{align*}
+\end{proof}
+
+\begin{prop}
+  مجموعهٔ روابط بازگشتی اولیه نسبت به سوربندی کراندار بسته است؛ یعنی
+  اگر $R(\vec x, z)$ رابطه‌ای بازگشتی اولیه باشد، روابط
+  \begin{align*}
+    & \bforall{z < y}{R(\vec x, z)} \text{ و}\\
+    & \bexists{z < y}{R(\vec x, z)}
+  \end{align*}
+  نیز چنین‌اند. $\bforall{z < y}{R(\vec x, z)}$ برای~$\vec x$ و~$y$
+  هرگاه و تنها هرگاه برقرار است که $R(\vec x,z)$ برای هر $z<y$
+  برقرار باشد؛ و برای~$\bexists{z < y}{R(\vec x,z)}$ نیز به‌طور
+  مشابه.
+\end{prop}
+
+\begin{proof}
+  بنا بر قرارداد، $\bforall{z < 0}{R(\vec x, z)}$ را صادق می‌گیریم
+  (به این دلیل ساده که هیچ $z<0$ای وجود ندارد) و
+  $\bexists{z < 0}{R(\vec x, z)}$ را کاذب می‌گیریم. سور کلی کراندار
+  درست مانند حاصل‌ضرب متناهی یا کمینهٔ تکرارشده عمل می‌کند؛ یعنی اگر
+  $P(\vec x, y) \defiff \bforall{z < y}{R(\vec x, z)}$، می‌توان
+  $\Char{P}(\vec x,y)$ را چنین تعریف کرد:
+  \begin{align*}
+    \Char{P}(\vec x, 0) & = 1\\
+    \Char{P}(\vec x, y+1) & =
+    \fn{min}(\Char{P}(\vec x, y), \Char{R}(\vec x, y)).
+  \end{align*}
+  سور وجودی کراندار را نیز می‌توان به‌طور مشابه با~$\fn{max}$ تعریف
+  کرد. راه دیگر آن است که با استفاده از هم‌ارزی
+  $\bexists{z < y}{R(\vec x, z)}
+  \liff \lnot \bforall{z < y}{\lnot R(\vec x, z)}$، آن را از سور
+  کلی کراندار تعریف کنیم. توجه کنید که، برای نمونه، سور کرانداری به
+  صورت $\bexists{x \leq y}{\dots x\dots}$ با
+  $\bexists{x < y+1}{\dots x \dots}$ هم‌ارز است.
+\end{proof}
+
+\begin{prob}
+  نشان دهید رابطهٔ سه‌موضعی $x \equiv y \mod n$ (هم‌نهشتی به پیمانهٔ
+  $n$) بازگشتی اولیه است.
+\end{prob}
+
+تابع بازگشتی اولیهٔ سودمند دیگری تابع شرطی~$\fn{cond}(x,y,z)$ است که
+چنین تعریف می‌شود:
+\begin{align*}
+  \fn{cond}(x,y,z) & = \begin{cases}
+  y & \text{اگر $x = 0$} \\
+  z & \text{در غیر این صورت}.
+\end{cases}
+\intertext{این تابع به‌طور بازگشتی چنین تعریف می‌شود:}
+\fn{cond}(0,y,z) & = y,\\
+\fn{cond}(x+1,y,z) & = z.
+\end{align*}
+می‌توان از این تابع برای توجیه تعریف موردی توابع بازگشتی اولیه بر پایهٔ
+روابط بازگشتی اولیه استفاده کرد:
+
+\begin{prop}
+اگر $g_0(\vec x)$، \dots، $g_m(\vec x)$ توابع بازگشتی اولیه و
+$R_0(\vec x)$، \dots، $R_{m-1}(\vec x)$ روابط بازگشتی اولیه باشند،
+تابع~$f$ که با
+\[
+f(\vec x) = \begin{cases}
+    g_0(\vec x) & \text{اگر $R_0(\vec{x})$} \\
+    g_1(\vec x) & \text{اگر $R_1(\vec{x})$ و نه $R_0(\vec{x})$} \\
+    \vdots & \\
+    g_{m-1}(\vec x) & \text{اگر $R_{m-1}(\vec{x})$ و هیچ‌یک از
+      حالت‌های پیشین برقرار نباشد}
+    \\
+    g_m(\vec x) & \mbox{در غیر این صورت}
+\end{cases}
+\]
+تعریف می‌شود نیز بازگشتی اولیه است.
+\end{prop}
+
+\begin{proof}
+  اگر $m = 1$، این همان تابعی است که با
+  \[
+  f(\vec x) = \fn{cond}(\Char{\lnot R_0}(\vec x),g_0(\vec x),g_1(\vec
+  x))
+  \]
+  تعریف می‌شود. برای $m>1$ کافی است تعریف‌هایی از این صورت را با هم
+  ترکیب کنیم.
+\end{proof}
+\end{document}

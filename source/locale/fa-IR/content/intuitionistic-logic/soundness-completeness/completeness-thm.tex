@@ -1,0 +1,49 @@
+% part: intuitionistic-logic
+% chapter: soundness-completeness
+% section: completeness-thm
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{sc}{cpl}
+
+\olsection{قضیهٔ تمامیت}
+
+\begin{thm}\ollabel{thm:completeness}
+  اگر~$\Gamma \Entails !A$، آنگاه~$\Gamma \Proves !A$.
+\end{thm}
+
+\begin{proof}
+  عکس نقیض را ثابت می‌کنیم. فرض کنید~$\Gamma \Proves/ !A$. بنا بر
+  \olref[lin]{lem:lindenbaum}، مجموعهٔ اول
+  $\Gamma^* \supseteq \Gamma$ای وجود دارد چنان‌که
+  $\Gamma^* \Proves/ !A$. مدل کانونی~$\mModel{M(\Gamma^*)}$ برای
+  $\Gamma^*$ را، چنان‌که در~\olref[mod]{defn:canonical-model} تعریف
+  شده است، در نظر بگیرید. برای هر~$!B \in \Gamma$،
+  $\Gamma^* \Proves !B$. توجه کنید
+  $\Gamma^*(\emptyseq) = \Gamma^*$. بنا بر لم صدق
+  (\olref[tru]{lem:truth})، برای هر~$!B \in \Gamma$،
+  $\mSat{M(\Gamma^*)}{!B}[\emptyseq]$، و نیز
+  $\mSat/{M(\Gamma^*)}{!A}[\emptyseq]$. پس~$\Gamma \Entails/ !A$.
+\end{proof}
+
+\begin{prob}
+  نشان دهید اگر~$!A$ تنها شامل !!{propositional variable}ها، $\lor$ و
+  $\land$ باشد، آنگاه~$\Entails/ !A$. از این امر نتیجه بگیرید که در
+  منطق شهودگرایانه~$\lif$ با~$\lor$ و~$\land$ تعریف‌پذیر نیست.
+\end{prob}
+  
+\begin{prob}
+  با استفاده از قضیهٔ تمامیت ثابت کنید اگر~$\Proves !A \lor !B$،
+  آنگاه~$\Proves !A$ یا~$\Proves !B$. (راهنمایی: فرض کنید
+  $\mSat/{M_1}{!A}$ و~$\mSat/{M_2}{!B}$ و مدل تازه‌ای~$\mModel{M}$
+  بسازید چنان‌که~$\mSat/{M}{!A \lor !B}$.)
+\end{prob}
+  
+\begin{prob}
+  نشان دهید اگر~$\mModel{M}$ یک مدل رابطه‌ای با ترتیب خطی باشد، آنگاه
+  $\mSat{M}{(!A \lif !B)\lor(!B \lif !A)}$.
+\end{prob}
+
+\end{document}

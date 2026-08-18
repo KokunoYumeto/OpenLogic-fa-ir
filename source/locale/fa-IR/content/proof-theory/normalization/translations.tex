@@ -1,0 +1,324 @@
+% Part: proof-theory
+% Chapter: normalization
+% Section: translations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{nor}{tr}
+
+\olsection{ترجمه میان \usetoken{P}{proof} بهنجار \Log{N2i} و \Log{G2i}}
+
+می‌توان !!^{proof}های \Log{N2i} را به !!{proof}های \Log{G2i} ترجمه
+کرد و برعکس. نخست، ترجمهٔ !!{proof}های بدون برش \Log{G2i}،
+!!{proof}های بهنجار \Log{N2i} به دست می‌دهد.
+
+برای بیان نتیجه به اندکی اصطلاح نیاز داریم تا بتوانیم مقدم‌های
+دنباله‌ها در~\Log{N2i} و~\Log{G2i} را آسان‌تر به هم مربوط کنیم:
+مجموعهٔ~$\Gamma'$ از !!{formula}های برچسب‌دار با چندمجموعهٔ~$\Gamma$
+از !!{formula}های بی‌برچسب \emph{متناظر است} هرگاه برای هر
+!!{formula}~$!A$، تعداد !!{element}های~$\Gamma'$ به شکل $x:!A$ کمتر
+یا مساوی فراوانی~$!A$ در~$\Gamma$ باشد.
+
+\begin{cor}
+اگر برهانی بدون برش در \Log{G2i} برای
+$\Gamma \Sequent \Delta$ وجود داشته باشد، آنگاه !!{proof} بهنجار
+\Log{N2i}ای چون~$\delta$ برای $\Gamma' \Sequent !C$ وجود دارد؛ در
+اینجا اگر $\Delta=\emptyset$ باشد $!C=\lfalse$، و اگر
+$\Delta=\{!A\}$ باشد $!C=!A$ است. مجموعهٔ~$\Gamma'$ از
+!!{formula}های برچسب‌دار با چندمجموعهٔ~$\Gamma$ متناظر است؛ یعنی برای
+هر !!{formula}~$!A$، تعداد !!{element}های~$\Gamma'$ به شکل $x:!A$
+کمتر یا مساوی فراوانی~$!A$ (یعنی تعداد نسخه‌های~$!A$) در~$\Gamma$
+است.
+\end{cor}
+
+\begin{proof}
+با وارسی برهان \olref[nat][tgi]{prop:G2i-to-N2i}: قواعد
+!!{introduction} را به انتهای !!{proof}ها و قواعد !!{elimination} را
+تنها به بالای !!{proof}ها می‌افزاییم؛ پس هرگز قاعده‌ای
+!!{introduction} را بالای قاعده‌ای !!a{elimination} پدید نمی‌آوریم.
+\end{proof}
+
+بااین‌حال، ترجمهٔ قاعدهٔ \Cut{} که در
+\olref[nat][tgi]{prop:G2i-to-N2i} آمده است می‌تواند در
+!!{proof} \Log{N2i}ای~$\delta$ برش پدید آورد. اگر یک !!{proof}
+\Log{G2i} با~\Cut{} پایان یابد و زیر-!!{proof}های بی‌واسطهٔ آن
+$\pi_1$ و $\pi_2$ به‌ترتیب برهان‌هایی برای
+$\Gamma_1 \Sequent !A$ و $!A, \Gamma_2 \Sequent \Delta_2$ باشند،
+ترجمهٔ~$\pi_1$، یعنی~$\delta_1$، را بر اصول
+$x:!A \Sequent !A$ که در ترجمهٔ~$\pi_2$، یعنی~$\delta_2$، رخ
+می‌دهند پیوند می‌زنیم. اگر $\delta_1$ با قاعده‌ای !!a{introduction}
+پایان یابد که !!{formula} اصلی‌اش~$!A$ باشد و اصل
+$x:!A \Sequent !A$ در~$\delta_2$ مقدمهٔ اصلی قاعده‌ای
+!!a{elimination} باشد، نتیجه در~$\delta$ یک برش خواهد بود.
+
+همچنین می‌توان !!{proof}های \Log{N2i} را به !!{proof}های \Log{G2i}
+ترجمه کرد. در برهان \olref[nat][tni]{prop:N2-to-G2}، ترجمهٔ
+\Elim{\land}، \Elim{\lif}، \Elim{\lnot} و \Elim{\lforall} در
+!!{proof} حاصل \Log{G2i} استنتاج‌های~\Cut{} پدید می‌آورد. اما اگر
+!!{proof} آغازین \Log{N2i} بهنجار باشد، می‌توان از این برش‌ها پرهیز
+کرد.
+
+فهرست بیشینه‌ای چون $S_1$، \dots،~$S_n$ از وقوع‌های دنباله‌ها در یک
+!!{proof} \Log{N2i}ای~$\delta$ را \emph{شاخه} می‌نامیم اگر $S_1$ یک
+اصل باشد و هرگاه $S_i$ مقدمهٔ اصلی استنتاجی باشد، $S_{i+1}$ نتیجهٔ آن
+استنتاج باشد. بنابراین یک شاخه دنباله‌ها را در~$\delta$ از اصول به
+سمت پایین دنبال می‌کند، اما وقتی به مقدمهٔ فرعی یک قاعدهٔ
+!!{elimination} برسد متوقف می‌شود. \emph{شاخهٔ اصلی}~$\delta$ شاخه‌ای
+است که $S_n$ در آن دنبالهٔ پایانی باشد. هر !!{proof}~$\delta$ دست‌کم
+یک شاخهٔ اصلی دارد، زیرا هر قاعده دست‌کم یک مقدمهٔ اصلی دارد (تنها
+\Intro{\land} دو مقدمهٔ اصلی دارد).
+
+
+\begin{prop}\ollabel{prop:normal-N2i-to-G2i}
+اگر $\delta$ !!{proof} بهنجار \Log{N2i}ای برای
+~$\Gamma \Sequent !A$ باشد، آنگاه !!{proof} بدون برش
+\Log{G2i}ای چون~$\pi$ برای $\Gamma' \Sequent \Delta$ وجود دارد؛ این
+!!{proof} هیچ کاربردی از \Cut{} ندارد.
+$\Gamma'$ چندمجموعه‌ای از !!{formula}هاست که با حذف برچسب‌های
+$\Gamma$ حاصل می‌شود، و اگر $!A$ برابر~$\lfalse$ نباشد
+$\Delta = \{!A\}$ و اگر برابر باشد $\Delta = \emptyset$ است.
+\end{prop}
+
+\begin{proof}
+این بار بر تعداد استنتاج‌های !!{proof}~$\delta$ برای
+$\Gamma \Sequent !A$ استقرا می‌کنیم. اگر در~$\delta$ هیچ استنتاجی
+نباشد، این برهان همان اصل $x:!A \Sequent !A$ است و $\pi$ اصل متناظر
+$!A \Sequent !A$ است، یا اگر $!A \ident \lfalse$ باشد اصل
+$\lfalse \Sequent \ $.
+
+اگر $\delta$ با یک قاعدهٔ استنتاج پایان یابد، حالت‌ها را جدا می‌کنیم:
+\begin{enumerate}
+  \item اگر $R$ قاعده‌ای !!a{introduction} یا~\FalseInt باشد، ترجمه
+  دقیقاً همانند برهان \olref[nat][tni]{prop:N2-to-G2} پیش می‌رود و به
+  ~\Cut نیازی ندارد.
+
+  \item اگر آخرین قاعدهٔ~$\delta$، یعنی~$R$، قاعده‌ای
+  !!a{elimination} باشد، نکات زیر را در نظر می‌گیریم:
+  \begin{enumerate}
+    \item یک شاخهٔ اصلی~$\delta$ از هیچ قاعدهٔ !!{introduction}‌ای
+    نمی‌گذرد؛ وگرنه در آن شاخهٔ اصلی قاعده‌ای !!a{introduction} یا
+    ~\FalseInt{} پیش از قاعده‌ای !!a{elimination} قرار می‌گرفت و
+    $\delta$ بهنجار نبود.
+    \item چون در شاخه‌های اصلی~$\delta$ هیچ قاعدهٔ
+    !!{introduction}‌ای نیست، تنها یک شاخهٔ اصلی وجود دارد. (فقط
+    \Intro{\land} دو مقدمهٔ اصلی دارد؛ بنابراین چند شاخهٔ اصلی باید
+    از مقدمات یک قاعدهٔ \Intro{\land} عبور کنند.)
+    \item اگر شاخهٔ اصلی شامل مقدمهٔ اصلی \Elim{\lor} یا
+    \Elim{\lexists} باشد، تنها یک چنین قاعده‌ای وجود دارد و آن نیز
+    آخرین قاعده، یعنی~$R$، است. (در غیر این صورت شاخهٔ اصلی شامل یک
+    قاعدهٔ \Elim{\lor} یا \Elim{\lexists} می‌شد که نتیجه‌اش مقدمهٔ
+    اصلی قاعده‌ای !!a{elimination} است؛ در آن صورت برهان بهنجار نبود،
+    زیرا می‌توانستیم یک تبدیل جایگشتی اعمال کنیم.)
+    \item هیچ قاعدهٔ !!{elimination} دیگری جز \Elim{\lor} و
+    \Elim{\lexists} فرض‌ها را مرخص نمی‌کند، یعنی بافت سمت چپ دنباله‌ها
+    را تغییر نمی‌دهد. \Elim{\lor} و \Elim{\lexists} نیز فرض‌ها را
+    تنها بالای یک مقدمهٔ فرعی مرخص می‌کنند و بنابراین بافت سمت چپ را
+    فقط در مقدمات فرعی خود تغییر می‌دهند. به بیان دیگر، اگر دنبالهٔ
+    $S_i$ روی شاخهٔ اصلی~$\delta$ بافت~$\Gamma_1$ داشته باشد، نتیجهٔ
+    $S_{i+1}$ از استنتاجی که $S_i$ مقدمهٔ اصلی آن است بافت
+    $\Gamma_1' \supseteq \Gamma_1$ دارد.
+    \item در نتیجه، اگر $x: !C \Sequent !C$ بالاترین دنبالهٔ~$S_1$
+    در شاخهٔ اصلی باشد، آنگاه $x:!C \in \Gamma$.
+  \end{enumerate}
+  اکنون حالت‌ها را برحسب صورت~$!C$ جدا می‌کنیم. چون هر $S_i$ در
+  شاخهٔ اصلی مقدمهٔ اصلی قاعده‌ای !!a{elimination} است، این مطلب برای
+  $x:!C \Sequent !C$ نیز صادق است.
+
+  \item فرض کنید $!C \ident !D \land !E$. آنگاه $\delta$ چنین شکلی
+  دارد:
+  \[
+  \Axiom$x:!D \land !E \fCenter !D \land !E$
+  \RightLabel{\Elim{\land}[1]}
+  \UnaryInf$x:!D \land !E \fCenter !D$
+  \Deduce$x:!D \land !E, \Gamma_1 \fCenter !A$
+  \DisplayProof
+  \]
+  شاخهٔ اصلی که شامل $x:!D \land !E \Sequent !D$ است هیچ مقدمهٔ
+  اصلی \Intro{\lif} یا \Intro{\lnot} و هیچ مقدمهٔ فرعی
+  \Elim{\lor} یا \Elim{\lexists} را در بر ندارد؛ بنابراین
+  !!{formula} بافتی $x:!D \land !E$ در امتداد شاخهٔ اصلی بدون تغییر
+  می‌ماند. ازاین‌رو بافت دنبالهٔ پایانی باید شامل~$x:!D \land !E$
+  باشد. افزون‌براین، می‌توانیم !!{proof}~$\delta$ را با جایگزین‌کردن
+  زیر-!!{proof} منتهی به \Elim{\land} با $x:!D \Sequent !D$ و
+  جایگزین‌کردن $x:!D \land !E$ با $x:!D$ در بافت هر دنباله در امتداد
+  شاخهٔ اصلی، به !!{proof}~$\delta_1$ تبدیل کنیم؛ یعنی
+  \[
+  \bottomAlignProof
+  \Axiom$x:!D \land !E \fCenter !D \land !E$
+  \RightLabel{\Elim{\land}[1]}
+  \UnaryInf$x:!D \land !E \fCenter !D$
+  \Deduce$x:!D \land !E, \Gamma_1 \fCenter !A$
+  \DisplayProof
+  \quad\text{ را به }\quad
+  \bottomAlignProof
+  \Axiom$x:!D \fCenter !D$
+  \Deduce$x:!D, \Gamma_1 \fCenter !A$
+  \DisplayProof
+  \]
+  تبدیل کنیم. فرض استقرا بر~$\delta_1$ اعمال می‌شود، زیرا تعداد
+  استنتاج‌های~$\delta$ یک واحد بیش از تعداد استنتاج‌های~$\delta_1$
+  است.
+
+  بنا بر فرض استقرا، !!{proof} \Log{G2i}ای چون~$\pi_1$ برای
+  $!D, \Gamma_1' \Sequent \Delta$ وجود دارد. با اعمال
+  \LeftR{\land}، !!{proof}~$\pi$ را به دست می‌آوریم:
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_1$}
+  \Deduce$!D, \Gamma_1' \fCenter \Delta$
+  \RightLabel{\LeftR{\land}}
+  \UnaryInf$!D \land !E, \Gamma_1' \fCenter \Delta$
+  \DisplayProof
+  \]
+
+  \item اگر $!C \ident !D \lor !E$، باید مقدمهٔ اصلی
+  \Elim{\lor} باشد و این استنتاج باید آخرین استنتاج~$R$ در شاخهٔ اصلی
+  باشد. به بیان دیگر، $\delta$ چنین شکلی دارد:
+  \[
+  \Axiom$x:!D \lor !E \fCenter !D \lor !E$
+  \AxiomC{}
+  \RightLabel{$\delta_1$}
+  \Deduce$y:!D, \Gamma_1 \fCenter!A$
+  \AxiomC{}
+  \RightLabel{$\delta_2$}
+  \Deduce$z:!E, \Gamma_2 \fCenter !A$
+  \RightLabel{\Elim{\lor}}
+  \TrinaryInf$x:!D \lor !E, \Gamma_1, \Gamma_2 \fCenter !A$
+  \DisplayProof
+  \]
+  فرض استقرا بر !!{proof}های $\delta_1$ و $\delta_2$ اعمال می‌شود؛
+  !!{proof}های \Log{G2i}ای~$\pi_1$ و~$\pi_2$ را به‌ترتیب برای
+  $!D, \Gamma_1' \Sequent \Delta$ و
+  $!E, \Gamma_2' \Sequent \Delta$ به دست می‌آوریم. با اعمال
+  $\LeftR{\lor}$، ~‌$\pi$ حاصل می‌شود:
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_1$}
+  \Deduce$!D, \Gamma_1' \fCenter \Delta$
+  \AxiomC{}
+  \RightLabel{$\pi_2$}
+  \Deduce$!E, \Gamma_2' \fCenter \Delta$
+  \RightLabel{\LeftR{\lor}}
+  \BinaryInf$!D \lor !E, \Gamma_1', \Gamma_2' \fCenter \Delta$
+  \DisplayProof
+  \]
+  اگر \Elim{\lor} فرض‌های $y: !D$ یا $z: !E$ را مرخص نکند (یعنی این
+  فرض‌ها در بافت مقدمات فرعی حاضر نباشند)، باید چند
+  \LeftR{\Weakening} بیفزاییم. برای نمونه:
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_1$}
+  \Deduce$\Gamma_1' \fCenter \Delta$
+  \RightLabel{\LeftR{\Weakening}}
+  \UnaryInf$!D, \Gamma_1' \fCenter \Delta$
+  \AxiomC{}
+  \RightLabel{$\pi_2$}
+  \Deduce$\Gamma_2' \fCenter \Delta$
+  \RightLabel{\LeftR{\Weakening}}
+  \UnaryInf$!E, \Gamma_2' \fCenter \Delta$
+  \RightLabel{\LeftR{\lor}}
+  \BinaryInf$!D \lor !E, \Gamma_1', \Gamma_2' \fCenter \Delta$
+  \DisplayProof
+  \]
+
+  \item فرض کنید $!C \ident !D \lif !E$. آنگاه $\delta$ چنین شکلی
+  دارد:
+  \[
+  \Axiom$x:!D \lif !E \fCenter !D \lif !E$
+  \AxiomC{}
+  \RightLabel{$\delta_1$}
+  \Deduce$\Gamma_1 \fCenter!D$
+  \RightLabel{\Elim{\lif}}
+  \BinaryInf$x:!D \lif !E, \Gamma_1 \fCenter !E$
+  \RightLabel{$\delta_2$}
+  \Deduce$x:!D \lif !E, \Gamma_1, \Gamma_2 \fCenter !A$
+  \DisplayProof
+  \]
+  چون شاخهٔ اصلی، که شامل
+  $x:!D \lif !E, \Gamma_1 \Sequent !E$ است، هیچ مقدمهٔ اصلی
+  \Intro{\lif} یا \Intro{\lnot} و هیچ مقدمهٔ فرعی \Elim{\lor} یا
+  \Elim{\lexists} را در بر ندارد، !!{formula}های بافتی در
+  $x:!D \lif !E, \Gamma_1$ در امتداد شاخهٔ اصلی بدون تغییر می‌مانند.
+  این نکته توضیح می‌دهد که چرا بافت دنبالهٔ پایانی باید
+  ~‌$x:!D \lif !E, \Gamma_1$ را در بر داشته باشد. افزون‌براین، می‌توان
+  پارهٔ !!{proof}~$\delta_2$ را با جایگزین‌کردن زیر-!!{proof} منتهی به
+  \Elim{\lif} با $x:!E \Sequent !E$ و جایگزین‌کردن
+  $x:!D \lif !E, \Gamma_1$ با $x:!E$ در بافت هر دنباله در امتداد
+  شاخهٔ اصلی، به !!{proof} درستی چون~$\delta_2'$ تبدیل کرد؛ یعنی
+  \[
+  \bottomAlignProof
+  \Axiom$x:!D \lif !E, \Gamma_1 \fCenter !E$
+  \RightLabel{$\delta_2$}
+  \Deduce$x:!D \lif !E, \Gamma_1, \Gamma_2 \fCenter !A$
+  \DisplayProof
+  \quad\text{ را به }\quad
+  \bottomAlignProof
+  \Axiom$x:!E \fCenter !E$
+  \RightLabel{$\delta_2'$}
+  \Deduce$x:!E, \Gamma_2 \fCenter !A$
+  \DisplayProof
+  \]
+  تبدیل کرد. فرض استقرا بر $\delta_1$ و $\delta_2'$ اعمال می‌شود، زیرا
+  تعداد استنتاج‌های~$\delta$ برابر است با مجموع تعداد استنتاج‌های
+  $\delta_1$ و~$\delta_2$، به‌اضافهٔ~$1$ برای استنتاج \Elim{\lif} در
+  آغاز شاخهٔ اصلی. (اگر آن استنتاج آخرین استنتاج~$R$ در~$\delta$ نیز
+  باشد، $\delta_2$ شامل صفر استنتاج است.)
+
+  بنا بر فرض استقرا، اگر $!D\not\ident\lfalse$ باشد !!{proof}های
+  \Log{G2i}ای چون~$\pi_1$ برای $\Gamma_1' \Sequent !D$ و~$\pi_2$ برای
+  $!E, \Gamma_2' \Sequent \Delta$ داریم. با اعمال \LeftR{\lif}،
+  !!{proof}~$\pi$ را به دست می‌آوریم:
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_1$}
+  \Deduce$\Gamma_1' \fCenter !D$
+  \AxiomC{}
+  \RightLabel{$\pi_2$}
+  \Deduce$!E, \Gamma_2' \fCenter \Delta$
+  \RightLabel{\LeftR{\lif}}
+  \BinaryInf$!D \lif !E, \Gamma_1', \Gamma_2' \fCenter \Delta$
+  \DisplayProof
+  \]
+  اگر $!D \ident \lfalse$ باشد، فرض استقرا برای~$\delta_1$ برهانی با
+  تالی تهی می‌دهد و تنها برای ساخت مقدمهٔ نخست \LeftR{\lif} یک
+  \RightR{\Weakening} می‌افزاییم:
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_1$}
+  \Deduce$\Gamma_1' \fCenter $
+  \RightLabel{\RightR{\Weakening}}
+  \UnaryInf$\Gamma_1' \fCenter !D$
+  \AxiomC{}
+  \RightLabel{$\pi_2$}
+  \Deduce$!E, \Gamma_2' \fCenter \Delta$
+  \RightLabel{\LeftR{\lif}}
+  \BinaryInf$!D \lif !E, \Gamma_1', \Gamma_2' \fCenter \Delta$
+  \DisplayProof
+  \]
+
+\end{enumerate}
+حالت‌های باقی‌مانده به همین شیوه بررسی می‌شوند و به‌عنوان تمرین واگذار
+می‌شوند.
+\end{proof}
+
+\begin{cor}
+هر وقوع !!{formula} در یک !!{proof} بهنجار \Log{N2i} زیر-!!{formula}
+یکی از فرمول‌های دنبالهٔ پایانی آن است؛ و در حالت \Log{N1i}،
+زیر-!!{formula} فرمول پایانی یا یکی از فرض‌های باز آن است.
+\end{cor}
+
+\begin{proof}
+  بنا بر \olref{prop:normal-N2i-to-G2i}، هر !!{proof} بهنجار
+  \Log{N2i} را می‌توان به !!{proof} بدون برش \Log{G2i} ترجمه کرد.
+  وارسی برهان نشان می‌دهد هر !!{formula}ی که در !!{proof} \Log{N2i}
+  رخ می‌دهد، در !!{proof} \Log{G2i} نیز رخ می‌دهد. \Log{G2i} چون
+  قاعدهٔ~\Cut{} ندارد، دارای خاصیت زیر-!!{formula} است. سرانجام، ترجمهٔ
+  یک برهان بهنجار \Log{N1i} به \Log{N2i} تنها فرض‌های باز را در
+  بافت دنباله‌ها ثبت می‌کند و بهنجاری را حفظ می‌کند؛ ازاین‌رو نتیجهٔ
+  مربوط به \Log{N1i} نیز با احتساب فرمول پایانی و فرض‌های باز به دست
+  می‌آید.
+\end{proof}
+
+\end{document}

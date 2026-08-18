@@ -1,0 +1,131 @@
+% Part: model-theory
+% Chapter: interpolation
+% Section: definability
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mod}{int}{def}
+
+\olsection{قضیهٔ تعریف‌پذیری}
+
+یکی از کاربردهای مهم قضیهٔ درون‌یابی، قضیهٔ تعریف‌پذیری بث است. برای
+تعریف یک رابطهٔ $n$موضعی~$R$ می‌توانیم !!a{formula}~$!C$ با $n$
+!!{variable}s آزاد بدهیم که~$R$ در آن دخیل نیست. این تعریفی
+\emph{صریح} از~$R$ بر حسب~$!C$ خواهد بود. سپس می‌توانیم بگوییم
+نظریهٔ~$\Sigma(P)$ در !!{language}ی شامل !!{predicate}~$P$
+$n$موضعی، $P$ را صریحاً تعریف می‌کند اگر تعریفی صریح و صوری‌شده را در
+بر داشته باشد (یا دست‌کم نتیجه دهد)؛ یعنی
+\[
+\Sigma(P) \Entails \lforall[x_1][\dots
+  \lforall[x_n][(\Atom{P}{x_1,\dots, x_n} \liff !C(x_1, \dots,
+    x_n))]].
+\]
+اما تعریف صریح تنها یک راه برای تعریف‌کردن---به معنای تعیین کامل---یک
+رابطه است. همچنین ممکن است نظریه‌ای چنان باشد که در هر مدل، تعبیر~$P$
+با تعبیر باقی !!{language} تثبیت شود. قضیهٔ تعریف‌پذیری می‌گوید هرگاه
+نظریه‌ای تعبیر~$P$ را به این شیوه تثبیت کند---هرگاه~$P$ را
+\emph{به‌طور ضمنی تعریف کند}---آن را به‌طور صریح نیز تعریف می‌کند.
+
+\begin{defn}
+فرض کنید $\Lang{L}$ !!a{language} باشد که !!{predicate}~$P$ را در بر
+ندارد. مجموعهٔ~$\Sigma(P)$ از !!{sentence}s~$\Lang{L} \cup \{P\}$،
+$P$ را \emph{صریحاً تعریف می‌کند} هرگاه و تنها هرگاه
+!!a{formula}~$!C(x_1, \dots, x_n)$ از~$\Lang{L}$ وجود داشته باشد
+چنان‌که
+\[
+\Sigma(P) \Entails \lforall[x_1][\dots
+  \lforall[x_n][(\Atom{P}{x_1,\dots, x_n} \liff !C(x_1, \dots,
+    x_n))]].
+\]
+\end{defn}
+
+\begin{defn}
+فرض کنید $\Lang{L}$ !!a{language} باشد که !!{predicate}s~$P$ و~$P'$
+را در بر ندارد. مجموعهٔ~$\Sigma(P)$ از !!{sentence}s
+$\Lang{L} \cup \{P\}$، $P$ را \emph{به‌طور ضمنی تعریف می‌کند}
+هرگاه و تنها هرگاه
+\[
+\Sigma(P) \cup \Sigma(P') \Entails \lforall[x_1][\dots
+  \lforall[x_n][(\Atom{P}{x_1,\dots, x_n} \liff \Atom{P'}{x_1,\dots,
+      x_n})]],
+\]
+که در آن $\Sigma(P')$ حاصل جایگزینی یکنواخت~$P$ با~$P'$ در
+$\Sigma(P)$ است.
+\end{defn}
+
+به بیان دیگر، برای هر مدل~$\Struct{M}$ و
+$R, R' \subseteq \Domain{M}^n$، اگر هم
+$\Sat{\Expan{M}{R}}{\Sigma(P)}$ و هم
+$\Sat{\Expan{M}{R'}}{\Sigma(P')}$، آنگاه $R=R'$؛ که در آن
+$\Expan{M}{R}$ همان !!{structure}~$\Struct{M'}$ برای بسط~$\Lang{L}$
+به~$\Lang{L} \cup \{P\}$ است چنان‌که $\Assign{P}{M'} = R$، و برای
+$\Expan{M}{R'}$ نیز به همین ترتیب.
+
+\begin{thm}[قضیهٔ تعریف‌پذیری بث] مجموعهٔ~$\Sigma(P)$ از
+  !!{sentence}s-$\Lang{L} \cup\{P\}$، $P$ را به‌طور ضمنی تعریف می‌کند
+  اگر و تنها اگر $\Sigma(P)$، $P$ را به‌طور صریح تعریف کند.
+\end{thm}
+
+\begin{proof}
+اگر $\Sigma(P)$، $P$ را به‌طور صریح تعریف کند، آنگاه هر دو گزارهٔ
+\begin{align*}
+  \Sigma(P) & \Entails & \lforall[x_1][\dots \lforall[x_n]
+    [(\Atom{P}{x_1,\dots, x_n} \liff !C(x_1,\dots,x_n))]]\\
+  \Sigma(P') & \Entails & \lforall[x_1][\dots \lforall[x_n]
+    [(\Atom{P'}{x_1,\dots, x_n} \liff !C(x_1,\dots,x_n))]]
+\end{align*}
+برقرارند و نتیجه به دست می‌آید. برای عکس، فرض کنید $\Sigma(P)$، $P$
+را به‌طور ضمنی تعریف می‌کند. نخست !!{constant}s~$c_1$، \dots،~$c_n$
+را به~$\Lang{L}$ می‌افزاییم. آنگاه
+\[
+\Sigma(P) \cup \Sigma(P') \Entails
+\Atom{P}{c_1, \dots, c_n} \to  \Atom{P'}{c_1, \dots, c_n}.
+\]
+بنا بر فشردگی، مجموعه‌های متناهی
+$\Delta_0 \subseteq \Sigma(P)$ و $\Delta_1 \subseteq \Sigma(P')$
+وجود دارند چنان‌که
+\[
+\Delta_0 \cup \Delta_1 \Entails
+\Atom{P}{c_1, \dots, c_n} \to \Atom{P'}{c_1, \dots, c_n}.
+\]
+بگذارید $!D(P)$ عطف همهٔ !!{sentence}s~$!A(P)$ باشد چنان‌که یا
+$!A(P) \in \Delta_0$ یا $!A(P') \in \Delta_1$؛ و بگذارید $!D(P')$
+عطف همهٔ !!{sentence}s~$!A(P')$ باشد چنان‌که یا
+$!A(P) \in \Delta_0$ یا $!A(P') \in \Delta_1$. آنگاه
+$!D(P) \land !D(P') \Entails \Atom{P}{c_1, \dots, c_n} \to
+\Atom{P'}{c_1,\dots,c_n}$. می‌توانیم این عبارت را چنان بازآرایی کنیم
+که هر !!{predicate} در یک سوی~$\Entails$ رخ دهد:
+\[
+!D(P) \land \Atom{P}{c_1, \dots, c_n} \Entails
+!D(P') \to \Atom{P'}{c_1, \dots, c_n}.
+\]
+بنا بر قضیهٔ درون‌یابی کریگ، !!a{sentence}~$!C(c_1,\dots, c_n)$ که
+شامل~$P$ یا~$P'$ نیست وجود دارد چنان‌که:
+\begin{align*}
+  !D(P) \land \Atom{P}{c_1, \dots, c_n} & \Entails !C(c_1,\dots, c_n); \\
+  !C(c_1,\dots, c_n) & \Entails !D(P') \to \Atom{P'}{c_1, \dots, c_n}.
+\end{align*}
+از استلزام نخست داریم
+$!D(P) \Entails \Atom{P}{c_1,\dots, c_n} \lif !C(c_1,\dots, c_n)$.
+و از استلزام دوم، چون یک مدل~$\Lang{L} \cup \{P\}$ چون
+$\Expan{M}{R}$ فرمول~$!A(P)$ را هرگاه و تنها هرگاه ارضا می‌کند که مدل
+متناظر~$\Lang{L} \cup \{P'\}$ چون~$\Expan{M}{R}$، $!A(P')$ را ارضا
+کند، داریم
+$!C(c_1,\dots, c_n) \Entails !D(P) \lif \Atom{P}{c_1,\dots, c_n}$؛
+و از این:
+\[
+!D(P) \Entails !C(c_1,\dots,c_n) \to \Atom{P}{c_1,\dots, c_n}.
+\]
+با ترکیب این دو،
+$!D(P) \Entails \Atom{P}{c_1,\dots, c_n}
+\liff !C(c_1, \dots, c_n)$؛ و بنا بر یکنوایی و تعمیم نیز
+\[
+\Sigma(P) \Entails
+\lforall[x_1][\dots\lforall[x_n][(\Atom{P}{x_1,\dots, x_n} \liff
+    !C(x_1,\dots, x_n))]].
+\]
+\end{proof}
+
+\end{document}

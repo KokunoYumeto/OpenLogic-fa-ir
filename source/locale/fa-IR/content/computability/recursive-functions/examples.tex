@@ -1,0 +1,196 @@
+% Part: computability
+% Chapter: recursive-functions
+% Section: examples
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cmp}{rec}{exa}
+\olsection{نمونه‌هایی از توابع بازگشتی اولیه}
+
+
+از پیش چند نمونه از توابع بازگشتی اولیه داریم: توابع جمع و ضرب
+$\Add$ و~$\Mult$. تابع همانی~$\fn{id}(x) = x$ بازگشتی اولیه است،
+زیرا همان~$\Proj{1}{0}$ است. توابع ثابت~$\fn{const}_n(x) = n$
+بازگشتی اولیه‌اند، زیرا می‌توان آن‌ها را با ترکیب پیاپی از~$\Zero$ و
+$\Succ$ تعریف کرد. این امر هنگامی سودمند است که بخواهیم ثابت‌ها را در
+تعریف‌های بازگشتی اولیه به کار بریم. برای نمونه، تابع
+$f(x) = 2 \cdot x$ را می‌توان با ترکیب~$\fn{const}_n(x)$ و ضرب چنین
+به دست آورد:
+$f(x) = \Mult(\fn{const}_2(x), \Proj{1}{0}(x))$. ازاین‌پس از این
+ترفند استفاده خواهیم کرد.
+
+\begin{prop}
+  تابع توان‌رسانی~$\fn{exp}(x, y) = x^y$ بازگشتی اولیه است.
+\end{prop}
+
+\begin{proof}
+  می‌توانیم $\fn{exp}$ را به‌طور بازگشتی اولیه چنین تعریف کنیم:
+  \begin{align*}
+    \fn{exp}(x, 0) & = 1\\
+    \fn{exp}(x, y+1) & = \Mult(x, \fn{exp}(x,y)).
+    \intertext{اگر دقیق سخن بگوییم، این تعریفی بازگشتی از توابع
+      بازگشتی اولیه نیست. صورت رسمی تعریف چنین است:}
+    \fn{exp}(x, 0) & = f(x)\\
+    \fn{exp}(x, y+1) & = g(x, y, \fn{exp}(x,y)).
+    \intertext{که در آن}
+    f(x) & = \Succ(\Zero(x)) = 1\\
+    g(x, y, z) & = \Mult(\Proj{3}{0}(x, y, z), \Proj{3}{2}(x, y, z)) = x \cdot z.
+  \end{align*}
+  پس $f$ و~$g$ با ترکیب از توابع بازگشتی اولیه تعریف شده‌اند.
+\end{proof}
+
+\begin{prop}
+  تابع پیشین~$\fn{pred}(y)$ که با
+  \[
+  \fn{pred}(y) = \begin{cases}
+    0 & \text{اگر $y=0$}\\
+    y-1 & \text{در غیر این صورت}
+  \end{cases}
+  \]
+  تعریف می‌شود، بازگشتی اولیه است.
+\end{prop}
+
+\begin{proof}
+ توجه کنید که
+ \begin{align*}
+   \fn{pred}(0) & = 0 \text{ و}\\
+   \fn{pred}(y+1) & = y.
+ \end{align*}
+ این تقریباً تعریفی بازگشتی اولیه است. اگر دقیق سخن بگوییم، با الگوی
+ تعریف به‌وسیلهٔ بازگشت اولیه سازگار نیست، زیرا آن الگو دست‌کم یک
+ آرگومان افزودهٔ~$x$ می‌خواهد. همچنین از این جهت نامعمول است که در
+ تعریف~$\fn{pred}(y+1)$ واقعاً از~$\fn{pred}(y)$ استفاده نمی‌کند.
+ اما می‌توانیم نخست~$\fn{pred}'(x, y)$ را چنین تعریف کنیم:
+ \begin{align*}
+   \fn{pred}'(x, 0) & = \Zero(x) = 0,\\
+   \fn{pred}'(x, y+1) & = \Proj{3}{1}(x, y, \fn{pred'}(x, y)) = y.
+ \end{align*}
+و سپس~$\fn{pred}$ را با ترکیب از آن تعریف کنیم؛ برای نمونه،
+$\fn{pred}(x) = \fn{pred}'(\Zero(x), \Proj{1}{0}(x))$.
+\end{proof}
+
+\begin{prop}
+  تابع فاکتوریل~$\fn{fac}(x) = \fact{x} = 1 \cdot 2 \cdot 3
+  \cdot \dots \cdot x$ بازگشتی اولیه است.
+\end{prop}
+
+\begin{proof}
+  تعریف بازگشتی اولیهٔ آشکار آن چنین است:
+  \begin{align*}
+    \fn{fac}(0) &= 1\\
+    \fn{fac}(y+1) & = \fn{fac}(y) \cdot (y+1).
+    \intertext{در صورت رسمی، ابتدا باید تابعی دوموضعی چون~$h$ تعریف کنیم:}
+    h(x, 0) & = \fn{const}_1(x)\\
+    h(x, y+1) & = g(x, y, h(x, y))
+    \intertext{که در آن $g(x, y, z) = \Mult(\Proj{3}{2}(x, y, z),
+      \Succ(\Proj{3}{1}(x, y, z)))$؛ سپس قرار می‌دهیم}
+    \fn{fac}(y) & = h(\Proj{1}{0}(y), \Proj{1}{0}(y)) = h(y,y).
+  \end{align*}
+  ازاین‌پس اندکی سهل‌گیرانه‌تر عمل می‌کنیم و تعریف‌های رسمی با ترکیب
+  و بازگشت اولیه را ارائه نمی‌کنیم.
+\end{proof}
+
+\begin{prop}
+  تفریق بریده، $x \tsub y$، که با
+  \[
+  x \tsub y = \begin{cases}
+    0 & \text{اگر $x < y$}\\
+    x-y & \text{در غیر این صورت}
+  \end{cases}
+  \]
+  تعریف می‌شود، بازگشتی اولیه است.
+\end{prop}
+
+\begin{proof}
+  داریم:
+  \begin{align*}
+    x \tsub 0 & = x\\
+    x \tsub (y+1) & = \fn{pred}(x \tsub y).
+  \end{align*}
+\end{proof}
+
+\begin{prop}
+ فاصلهٔ میان $x$ و~$y$، یعنی $\left|x-y\right|$، بازگشتی اولیه است.
+\end{prop}
+
+\begin{proof}
+  داریم $\left| x-y \right| = (x \tsub y) + (y \tsub x)$؛ پس فاصله
+  را می‌توان با ترکیب از~$+$ و~$\tsub$ تعریف کرد که هر دو بازگشتی
+  اولیه‌اند.
+\end{proof}
+
+\begin{prop}
+  بیشینهٔ $x$ و~$y$، یعنی $\fn{max}(x,y)$، بازگشتی اولیه است.
+\end{prop}
+
+\begin{proof}
+  می‌توانیم $\fn{max}(x,y)$ را با ترکیب از~$+$ و~$\tsub$ چنین تعریف
+  کنیم:
+  \[
+  \fn{max}(x,y) \defis x + (y \tsub x).
+  \]
+  اگر $x$ بیشینه باشد، یعنی $x \ge y$، آنگاه
+  $y \tsub x = 0$ و بنابراین $x + (y \tsub x) = x + 0 = x$. اگر
+  $y$ بیشینه باشد، آنگاه $y \tsub x = y - x$؛ پس
+  $x + (y \tsub x) = x + (y - x) = y$.
+\end{proof}
+
+\begin{prop}
+  \ollabel{prop:min-pr}
+  کمینهٔ $x$ و~$y$، یعنی $\fn{min}(x,y)$، بازگشتی اولیه است.
+\end{prop}
+
+\begin{proof}
+  تمرین.
+\end{proof}
+
+\begin{prob}
+  \olref[cmp][rec][exa]{prop:min-pr} را ثابت کنید.
+\end{prob}
+
+\begin{prob}
+نشان دهید تابع
+\[
+f(x, y) =
+2^{(2^{\iddots^{2^{x}}})}\raisebox{1ex}{\bigg\rbrace}
+\raisebox{1ex}{\text{$y$ بار عدد~$2$}}
+\]
+بازگشتی اولیه است.
+\end{prob}
+
+\begin{prob}
+نشان دهید تقسیم صحیح $d(x, y) = \lfloor x/y \rfloor$ (یعنی تقسیمی
+که در آن همه‌چیز پس از ممیز نادیده گرفته می‌شود) بازگشتی اولیه است.
+وقتی $y = 0$، قرار می‌گذاریم $d(x, y) = 0$. تعریفی صریح از~$d$ با
+استفاده از بازگشت اولیه و ترکیب ارائه کنید.
+\end{prob}
+
+\begin{prop}
+مجموعهٔ توابع بازگشتی اولیه نسبت به دو عمل زیر بسته است:
+\begin{enumerate}
+\item مجموع‌های متناهی: اگر $f(\vec x, z)$ بازگشتی اولیه باشد، تابع
+\[
+g(\vec x, y) \defis \sum_{z = 0}^y f(\vec x, z)
+\]
+نیز چنین است.
+\item حاصل‌ضرب‌های متناهی: اگر $f(\vec x, z)$ بازگشتی اولیه باشد، تابع
+\[
+h(\vec x, y) \defis \prod_{z = 0}^y f(\vec x, z)
+\]
+نیز چنین است.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+برای نمونه، مجموع‌های متناهی به‌طور بازگشتی با معادلات زیر تعریف
+می‌شوند:
+\begin{align*}
+  g(\vec x, 0) & = f(\vec x, 0)\\
+  g(\vec x, y+1) & = g(\vec x, y) + f(\vec x, y+1).
+\end{align*}
+\end{proof}
+
+
+\end{document}

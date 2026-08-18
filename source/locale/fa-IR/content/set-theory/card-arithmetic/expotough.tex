@@ -1,0 +1,106 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+\olfileid{sth}{card-arithmetic}{expotough}
+
+\olsection[برخی ساده‌سازی‌ها]{برخی ساده‌سازی‌ها در توان‌رسانی کاردینالی}
+
+گرچه تعریف $\canonord$ اندکی پیچیده بود، حاصل آن نتیجه‌ای سودمند دربارهٔ
+جمع و ضرب کاردینالی، یعنی \olref[simp]{cardplustimesmax}، است. بااین‌حال،
+توان‌رسانی ترامتناهی را نمی‌توان به همان سادگی ساده کرد. برای توضیح علت،
+با نتیجه‌ای آغاز می‌کنیم که الگویی آشنا از حالت متناهی را گسترش می‌دهد
+(هرچند اثبات آن در سطح بالایی از انتزاع قرار دارد):
+
+\begin{prop}\ollabel{simplecardexpo}
+$\cardexpo{\cardfont{a}}{\cardfont{b} \cardplus \cardfont{c}} =
+\cardexpo{\cardfont{a}}{\cardfont{b}} \cardtimes
+\cardexpo{\cardfont{a}}{\cardfont{c}}$ و
+$\cardexpo{(\cardexpo{\cardfont{a}}{\cardfont{b}})}{\cardfont{c}} =
+\cardexpo{\cardfont{a}}{\cardfont{b} \cardtimes \cardfont{c}}$، برای
+هر سه کاردینال $\cardfont{a}, \cardfont{b}, \cardfont{c}$.
+\end{prop}
+
+\begin{proof}
+برای ادعای نخست، تابعی چون $f \colon
+(\cardfont{b}\disjointsum\cardfont{c}) \to \cardfont{a}$ را در نظر
+بگیرید. اکنون آن را «دو پاره» کنید: برای هر
+$\beta \in \cardfont{b}$ بگذارید $f_\cardfont{b}(\beta) = f(\beta, 0)$،
+و برای هر $\gamma \in \cardfont{c}$ بگذارید
+$f_\cardfont{c}(\gamma) = f(\gamma, 1)$. نگاشت
+$f \mapsto \tuple{f_{\cardfont{b}}, f_{\cardfont{c}}}$ یک !!a{bijection}
+از $\funfromto{\cardfont{b} \disjointsum \cardfont{c}}{\cardfont{a}}$ به
+$(\funfromto{\cardfont{b}}{\cardfont{a}} \times
+\funfromto{\cardfont{c}}{\cardfont{a}})$ است.
+
+برای ادعای دوم، تابعی چون $f \colon \cardfont{c} \to
+(\funfromto{\cardfont{b}}{\cardfont{a}})$ را در نظر بگیرید؛ پس برای هر
+$\gamma \in \cardfont{c}$ تابعی چون
+$f(\gamma) \colon \cardfont{b} \to \cardfont{a}$ داریم. اکنون برای هر
+$\tuple{\beta, \gamma} \in \cardfont{b} \times \cardfont{c}$ تعریف کنید
+$f^*(\beta, \gamma) = (f(\gamma))(\beta)$. نگاشت $f \mapsto f^*$ یک
+!!a{bijection} از
+$\funfromto{\cardfont{c}}{(\funfromto{\cardfont{b}}{\cardfont{a}})}$
+به $\funfromto{\cardfont{b} \times \cardfont{c}}{\cardfont{a}}$ است.
+\end{proof}
+
+آنچه \emph{می‌خواهیم}، راهی آسان برای محاسبهٔ
+$\cardexpo{\cardfont{a}}{\cardfont{b}}$ در هنگام سروکارداشتن با
+کاردینال‌های نامتناهی است. نتیجهٔ زیر گامی مناسب در این جهت است:
+
+\begin{prop}\ollabel{cardexpo2reduct}
+اگر $2 \leq \cardfont{a} \leq \cardfont{b}$ و $\cardfont{b}$ نامتناهی
+باشد، آنگاه $\cardexpo{\cardfont{a}}{\cardfont{b}} =
+\cardexpo{2}{\cardfont{b}}$.
+\end{prop}
+
+\begin{proof}
+\begin{align*}
+	\cardexpo{2}{\cardfont{b}} &\leq
+	\cardexpo{\cardfont{a}}{\cardfont{b}}\text{، زیرا $2 \leq \cardfont{a}$}\\
+	&\leq \cardexpo{(\cardexpo{2}{\cardfont{a}})}{\cardfont{b}}
+	\text{، بنا بر \olref[opps]{cantorcor}}\\
+	&= \cardexpo{2}{\cardfont{a} \cardtimes \cardfont{b}}
+	\text{، بنا بر \olref{simplecardexpo}} \\
+	&= \cardexpo{2}{\cardfont{b}}
+	\text{، بنا بر \olref[simp]{cardplustimesmax}}.
+\end{align*}
+\end{proof}
+
+واقعاً نباید انتظار داشته باشیم که بتوان این را بیش از این ساده کرد،
+زیرا بنا بر \olref[card-arithmetic][opps]{cantorcor}،
+$\cardfont{b} < \cardexpo{2}{\cardfont{b}}$. بااین‌حال، این نتیجه به ما
+نمی‌گوید وقتی $\cardfont{b} < \cardfont{a}$ است دربارهٔ
+$\cardexpo{\cardfont{a}}{\cardfont{b}}$ چه بگوییم. البته اگر
+$\cardfont{b}$ \emph{متناهی} باشد، می‌دانیم چه باید کرد.
+
+\begin{prop}
+اگر $\cardfont{a}$ نامتناهی و $0<n<\omega$ باشد، آنگاه
+$\cardexpo{\cardfont{a}}{n} = \cardfont{a}$.
+\end{prop}
+
+\begin{proof}
+$\cardexpo{\cardfont{a}}{n} = \cardfont{a} \cardtimes \cardfont{a}
+\cardtimes \ldots \cardtimes \cardfont{a} = \cardfont{a}$، بنا بر
+\olref[simp]{cardplustimesmax}.
+\end{proof}
+\noindent
+افزون‌براین، در برخی حالت‌های دیگر نیز می‌توانیم اندازهٔ
+$\cardexpo{\cardfont{a}}{\cardfont{b}}$ را مهار کنیم:
+
+\begin{prop}
+اگر $2 \leq \cardfont{b} < \cardfont{a} \leq
+\cardexpo{2}{\cardfont{b}}$ و $\cardfont{b}$ نامتناهی باشد، آنگاه
+$\cardexpo{\cardfont{a}}{\cardfont{b}} = \cardexpo{2}{\cardfont{b}}$.
+\end{prop}
+
+\begin{proof}
+$\cardexpo{2}{\cardfont{b}}\leq \cardexpo{\cardfont{a}}{\cardfont{b}}
+\leq \cardexpo{(\cardexpo{2}{\cardfont{b}})}{\cardfont{b}} =
+\cardexpo{2}{\cardfont{b}\cardtimes\cardfont{b}} =
+\cardexpo{2}{\cardfont{b}}$؛ استدلال همانند
+\olref{cardexpo2reduct} است.
+\end{proof}
+\noindent
+اما از این نقطه به بعد، امور بسیار ظریف‌تر می‌شوند.
+
+\end{document}

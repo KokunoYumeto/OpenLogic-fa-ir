@@ -1,0 +1,111 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{spine}{Valphabasic}
+\olsection{ویژگی‌های پایهٔ مراحل}
+
+برای آشکارکردن اهمیت بنیادیِ تعریف~$V_\alpha$ها، چند نتیجهٔ پایه دربارهٔ
+آن‌ها ارائه می‌کنیم. با یک تعریف آغاز می‌کنیم:\footnote{برای «توانمند»
+اصطلاح معیار واحدی وجود ندارد؛ این نام را~\citet{ButtonLT1} به کار
+می‌برد.}
+\begin{defn}
+	مجموعهٔ~$A$ \emph{توانمند} است اگر و تنها اگر
+	$\forall x((\exists y \in A)x \subseteq y \lif x \in A)$.
+\end{defn}
+\begin{lem}\ollabel{Valphabasicprops}
+برای هر عدد ترتیبی~$\alpha$:
+\begin{enumerate}
+	\item\ollabel{Valphatrans} $V_\alpha$ متعدی است.
+	\item\ollabel{Valphapotent} $V_\alpha$ توانمند است.
+	\item\ollabel{Valphacum} اگر~$\gamma\in\alpha$، آنگاه
+	$V_\gamma\in V_\alpha$ (و در نتیجه بنا بر~\olref{Valphatrans}،
+	$V_\gamma\subseteq V_\alpha$ نیز برقرار است).
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+این سه ادعا را هم‌زمان با استقرای ترامتناهی اثبات می‌کنیم. برای فرض
+استقرا، فرض کنید~\olref{Valphatrans}--\olref{Valphacum} برای هر عدد
+ترتیبی~$\beta<\alpha$ برقرار باشند.
+
+حالت~$\alpha=\emptyset$ بدیهی است.
+
+فرض کنید~$\alpha=\ordsucc{\beta}$. برای اثبات~\olref{Valphacum}، اگر
+$\gamma\in\alpha$، آنگاه یا~$\gamma\in\beta$ یا~$\gamma=\beta$.
+در حالت نخست بنا بر فرض استقرا و در حالت دوم بنا بر بازتابی‌بودن شمول،
+$V_\gamma\subseteq V_\beta$؛ پس
+$V_\gamma\in\Pow{V_\beta}=V_\alpha$. برای اثبات
+\olref{Valphapotent}، فرض کنید
+$A\subseteq B\in V_\alpha$؛ یعنی
+$A\subseteq B\subseteq V_\beta$. در نتیجه~$A\subseteq V_\beta$ و پس
+$A\in V_\alpha$. برای اثبات~\olref{Valphatrans}، توجه کنید اگر
+$x\in A\in V_\alpha$، آنگاه~$A\subseteq V_\beta$، پس~$x\in V_\beta$.
+چون بنا بر فرض استقرا~$V_\beta$ متعدی است، $x\subseteq V_\beta$؛ و در
+نتیجه~$x\in V_\alpha$.
+
+فرض کنید~$\alpha$ عدد ترتیبی حدی باشد. برای اثبات~\olref{Valphacum}،
+اگر~$\gamma\in\alpha$، آنگاه
+$\gamma\in\ordsucc{\gamma}\in\alpha$؛ پس بنا بر فرض استقرا
+$V_\gamma\in V_{\ordsucc{\gamma}}$ و بنابراین
+$V_\gamma\in\bigcup_{\beta\in\alpha}V_\beta=V_\alpha$. برای اثبات
+\olref{Valphatrans} و~\olref{Valphapotent} کافی است توجه کنیم اجتماع
+مجموعه‌های متعدی (و به‌ترتیب، توانمند) متعدی (و به‌ترتیب، توانمند) است.
+\end{proof}
+
+\begin{lem}\ollabel{Valphanotref}
+برای هر عدد ترتیبی~$\alpha$، $V_\alpha\notin V_\alpha$.
+\end{lem}
+
+\begin{proof}
+با استقرای ترامتناهی. آشکار است که
+$V_\emptyset\notin V_\emptyset$.
+
+اگر~$V_{\ordsucc{\alpha}}\in V_{\ordsucc{\alpha}}=
+\Pow{V_\alpha}$، آنگاه
+$V_{\ordsucc{\alpha}}\subseteq V_\alpha$؛ و چون بنا بر
+\olref{Valphabasicprops}، $V_\alpha\in V_{\ordsucc{\alpha}}$، نتیجه
+می‌شود~$V_\alpha\in V_\alpha$. پس فرض استقرایی
+$V_\alpha\notin V_\alpha$ نتیجه می‌دهد
+$V_{\ordsucc{\alpha}}\notin V_{\ordsucc{\alpha}}$.
+
+اگر~$\alpha$ حدی و
+$V_\alpha\in V_\alpha=\bigcup_{\beta\in\alpha}V_\beta$ باشد، برای یک
+$\beta\in\alpha$ داریم~$V_\alpha\in V_\beta$؛ اما از سوی دیگر
+$V_\beta\in V_\alpha$، و بنابراین با دو بار استفاده از
+\olref{Valphabasicprops}، $V_\beta\in V_\beta$. پس فرض‌های استقرایی
+$V_\beta\notin V_\beta$ برای همهٔ~$\beta\in\alpha$ نتیجه می‌دهند
+$V_\alpha\notin V_\alpha$.
+\end{proof}
+
+\begin{cor}
+برای هر دو عدد ترتیبی~$\alpha$ و~$\beta$:
+$\alpha\in\beta$ اگر و تنها اگر~$V_\alpha\in V_\beta$.
+\end{cor}
+
+\begin{proof}
+\Olref{Valphabasicprops} یک جهت را به دست می‌دهد. برای جهت عکس، فرض کنید
+$V_\alpha\in V_\beta$. بنا بر~\olref{Valphanotref}،
+$\alpha\neq\beta$؛ و~$\beta\notin\alpha$، زیرا در غیر این صورت
+$V_\beta\in V_\alpha$ می‌بود و با دو بار استفاده از
+\olref{Valphabasicprops} نتیجه می‌شد~$V_\beta\in V_\beta$، برخلاف
+\olref{Valphanotref}. پس بنا بر سه‌شقی، $\alpha\in\beta$.
+\end{proof}
+\noindent
+همهٔ این نتایج به ما اجازه می‌دهند هر~$V_\alpha$ را مرحلهٔ~$\alpha$ام
+سلسله‌مراتب بدانیم. دلیلش چنین است.
+
+بی‌تردید می‌توان~$V_\alpha$ها را حاصل فرایندی \emph{تکراری} دانست، زیرا
+کاربرد اعداد ترتیبی مفهوم تکرار را پی می‌گیرد. افزون بر این، اگر یک مرحله
+پیش از مرحله‌ای دیگر تشکیل شود، یعنی~$V_\beta\in V_\alpha$ یا به‌عبارتی
+$\beta\in\alpha$، فرایند تشکیل ما \emph{انباشتی} است، زیرا
+$V_\beta\subseteq V_\alpha$. سرانجام، واقعاً \emph{همهٔ} گردایه‌های ممکن
+از مجموعه‌های در دسترس در مراحل پیشین را تشکیل می‌دهیم، زیرا هر مرحلهٔ
+جانشین~$V_{\ordsucc{\alpha}}$ مجموعهٔ توانیِ مرحلهٔ پیشین خود، یعنی
+$V_\alpha$، است.
+
+خلاصه آنکه با~$\ZFminus$ برای بیان تصورمان از سلسله‌مراتب
+انباشتی-تکراریِ مجموعه‌ها \emph{تقریباً} کار را به پایان رسانده‌ایم.
+(البته هنوز باید جایگزینی را توجیه کنیم.)
+
+\end{document}

@@ -1,0 +1,70 @@
+% Part: lambda-calculus
+% Chapter: lambda-definability
+% Section: minimization
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{ldf}{min}
+\olsection{کمینه‌سازی}
+
+توابع بازگشتی عمومی توابعی هستند که بتوان آن‌ها را از توابع پایهٔ
+$\Zero$، $\Succ$ و~$\Proj{n}{i}$ با ترکیب، بازگشت اولیه و کمینه‌سازی
+منظم به دست آورد. برای نشان‌دادن اینکه همهٔ توابع بازگشتی عمومی
+!!{lambda definable} هستند، باید نشان دهیم هر تابعی که با کمینه‌سازی
+منظم از یک تابع~!!a{lambda
+  definable} تعریف شود، خود
+!!{lambda definable} است.
+
+\begin{lem}
+  \ollabel{lem:min} اگر~$f(x_1, \dots, x_k, y)$ منظم و
+  !!{lambda definable} باشد، آنگاه تابع~$h$ که با
+  \[
+  h(x_1, \dots, x_k) = \umin{y}{f(x_1,\dots,x_k, y) = 0}
+  \]
+  تعریف می‌شود نیز~!!{lambda definable} است.
+\end{lem}
+
+\begin{proof}
+  فرض کنید ترم لامبدای~$F$ تابع منظم~$f(\vec x, y)$ را تعریف‌پذیر با
+  لامبدا می‌کند. برای~!!{lambda define} تابع~$h$ از یک تابع جست‌وجو و
+  یک ترکیبگر نقطهٔ ثابت استفاده می‌کنیم:
+  \begin{align*}
+    \fn{Search} & \ident \lambd[g][\lambd[f\,\vec{x}\,y][
+        \fn{IsZero} (f\, \vec{x}\, y)\, y\, (g\, f\, \vec{x}\, (\fn{Succ}\, y))]]\\
+    H & \ident \lambd[\vec x][(Y \, \fn{Search}) F\, \vec{x}\, \num{0}],
+  \end{align*}
+  که در آن~$Y$ هر ترکیبگر نقطهٔ ثابتی است. به‌طور غیرصوری،
+  $\fn{Search}$ تابعی خودارجاع است: با~$y$ آغاز می‌کند و می‌آزماید آیا
+  $f\, \vec x\, y$ صفر است؛ اگر چنین باشد~$y$ را بازمی‌گرداند، وگرنه
+  خود را با همان~$f$ و~$\vec x$ و با~$\fn{Succ}\, y$ فرا می‌خواند. پس
+  $(Y \, \fn{Search}) F \num{n_1}\dots\num{n_k}\,\num{0}$ کوچک‌ترین
+  $m$ای را بازمی‌گرداند که~$f(n_1, \dots, n_k, m) = 0$.
+  
+  به‌طور مشخص، توجه کنید که
+  \begin{align*}
+    (Y \, \fn{Search}) F \num{n_1}
+    \dots\num{n_k}\, \num{m} & \red \num{m}
+    \intertext{اگر~$f(n_1, \dots, n_k, m) = 0$؛ و در غیر این صورت}
+    & \red (Y \, \fn{Search}) F\, \num{n_1} \dots\num{n_k}\, \num{m+1}.
+    \intertext{چون~$f$ منظم است، برای عددی چون~$y$ داریم
+      $f(n_1, \dots, n_k, y) = 0$؛ ازاین‌رو}
+    (Y \, \fn{Search}) F \num{n_1} \dots\num{n_k}\,\num{0}
+    & \red \num{h(n_1, \dots, n_k)}.
+    \end{align*}
+\end{proof}
+
+
+\begin{prop}
+  هر تابع بازگشتی عمومی~!!{lambda definable} است.
+\end{prop}
+
+\begin{proof}
+ بنا بر~\olref[prf]{lem:basic}، همهٔ توابع پایه~!!{lambda definable}
+ هستند؛ و بنا بر~\olref[prf]{lem:comp}، \olref[prf]{lem:prim} و
+ \olref{lem:min}، توابع~!!{lambda definable} تحت ترکیب، بازگشت اولیه و
+ کمینه‌سازی منظم بسته‌اند.
+\end{proof}
+
+\end{document}

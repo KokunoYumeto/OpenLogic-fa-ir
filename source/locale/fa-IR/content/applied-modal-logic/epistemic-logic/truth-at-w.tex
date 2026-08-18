@@ -1,0 +1,115 @@
+% Part: applied-modal-logics
+% Chapter: epistemic-logic
+% Section: truth-at-w
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{aml}{el}{trw}
+
+\olsection{صدق در یک جهان}
+
+درست همانند منطق موجهات عادی، هر مدل معرفتی تعیین می‌کند کدام
+!!{formula} در کدام جهان‌های آن صادق به شمار می‌آیند. برای مفهوم پایهٔ
+معناشناسی رابطه‌ای از همان نمادگذاریِ «مدل~$\mModel{M}$،
+!!{formula}~$!A$ را در جهان~$w$ صادق می‌سازد» استفاده می‌کنیم. این رابطه
+به‌طور استقرایی تعریف می‌شود و برای همهٔ عملگرهای غیرموجهاتی با حالت
+منطق موجهات عادی یکسان است.
+
+\begin{defn}\ollabel{defn:mmodels}
+  \emph{صدق !!a{formula}~$!A$ در~$w$} در مدل~$\mModel M$، که با
+  $\mSat{M}{!A}[w]$ نمادگذاری می‌شود، به‌طور استقرایی چنین تعریف می‌شود:
+  \begin{enumerate}
+  \tagitem{prvFalse}{\indcase{!A}{\lfalse}{$\mSat{M}{\lfalse}[w]$ هرگز برقرار نیست.}}{}
+  \tagitem{prvTrue}{\indcase{!A}{\ltrue}{$\mSat{M}{\ltrue}[w]$ همواره برقرار است.}}{}
+  \item $\mSat{M}{p}[w]$ اگر و تنها اگر~$w \in V(p)$.
+  \tagitem{prvNot}{\indcase{!A}{\lnot !B}{$\mSat{M}{\indfrm}[w]$ اگر و تنها اگر
+    $\mSat/{M}{!B}[w]$.}}{}
+  \tagitem{prvAnd}{\indcase{!A}{(!B \land !C)}{$\mSat{M}{\indfrm}[w]$ اگر و تنها اگر
+    $\mSat{M}{!B}[w]$ و~$\mSat{M}{!C}[w]$.}}{}
+  \tagitem{prvOr}{\indcase{!A}{(!B \lor !C)}{$\mSat{M}{\indfrm}[w]$ اگر و تنها اگر
+    $\mSat{M}{!B}[w]$ یا~$\mSat{M}{!C}[w]$} (یا هر دو).}{}
+  \tagitem{prvIf}{\indcase{!A}{(!B \lif !C)}{$\mSat{M}{\indfrm}[w]$ اگر و تنها اگر
+    $\mSat/{M}{!B}[w]$ یا~$\mSat{M}{!C}[w]$.}}{}
+  \tagitem{prvIff}{\indcase{!A}{(!B \liff !C)}{$\mSat{M}{\indfrm}[w]$ اگر و تنها اگر
+    یا هر دو رابطهٔ~$\mSat{M}{!B}[w]$ و~$\mSat{M}{!C}[w]$ برقرار باشند، یا
+    هیچ‌یک از~$\mSat{M}{!B}[w]$ و~$\mSat{M}{!C}[w]$ برقرار نباشند.}}{}
+  \item\ollabel{defn:sub:mmodels-box}
+    \indcase{!A}{\Knows_a !B}{$\mSat{M}{\indfrm}[w]$ اگر و تنها اگر
+    برای هر~$w' \in W$ که~$R_a ww'$، رابطهٔ~$\mSat{M}{!B}[w']$ برقرار باشد.}
+  \end{enumerate}
+\end{defn}
+
+بااین‌حال، اینجا باید دربارهٔ قیود روابط دسترسی‌پذیری خود بیندیشیم.
+زیرا بنا بر بند~\olref{defn:sub:mmodels-box}، هرگاه هیچ~$w'$ای نباشد
+که~$R_a ww'$، !!a{formula}~$\Knows_a !B$ در~$w$ صادق است. این همان بند
+منطق موجهات عادی است: وقتی جهانی هیچ جانشینی ندارد، همهٔ فرمول‌های
+$\Box$ در آن به‌طور تهی صادق‌اند. اما اگر~$\Knows$ را نمایانگر
+\emph{دانش} بدانیم، این نتیجه به‌شدت خلاف شهود می‌نماید. به‌هرحال، معمولاً
+می‌پنداریم هیچ وضعیتی وجود ندارد که در آن عاملی بتواند هم‌زمان هم~$!A$
+و هم~$\lnot !A$ را بداند.
+
+یک راه‌حل آن است که تضمین کنیم رابطهٔ دسترسی‌پذیری در منطق معرفتی همواره
+\emph{بازتابی} باشد. این تقریباً متناظر با این اندیشه است که جهان واقعی
+با اطلاعات عامل سازگار است. در واقع، منطق‌های معرفتی معمولاً از~S5
+استفاده می‌کنند، اما بسته به اینکه دقیقاً بخواهند رابطهٔ~$\Knows_a$ چه
+چیزی را نمایان سازد، ممکن است دستگاه‌های ضعیف‌تری به کار گیرند.
+
+\begin{figure}
+  \begin{center}
+    \begin{tikzpicture}[modal]
+      \node[world] (w1) [label={[align=right]right:\mTrue{p}\\ \mFalse{q}}]{$w_1$};
+      \node[world] (w2) [label={[align=right]right:\mTrue{p}\\ \mTrue{q}},
+        above right=of w1]{$w_2$};
+      \node[world] (w3) [label={[align=right]right:\mFalse{p}\\ \mFalse{q}},
+        below right=of w1] {$w_3$};
+      \draw[<->] (w1) to node {$a$} (w2);
+      \draw[->,loop left] (w1) to node {$a,b$} (w1);
+      \draw[<->] (w1) to [swap] node {$b$} (w3);
+      \draw[->,loop above] (w2) to node {$a,b$} (w2) ;
+      \draw[->,loop below] (w3) to node {$a,b$} (w3) ;
+    \end{tikzpicture}
+  \end{center}
+  \caption{یک مدل معرفتی ساده.}
+  \ollabel{fig:simple}
+\end{figure}
+
+\begin{prob}
+  بررسی کنید کدام‌یک از موارد زیر در
+  \olref[aml][el][trw]{fig:simple} برقرارند:
+  \begin{enumerate}
+    \item $\mSat{M}{\lnot q}[w_1]$؛
+    \item $\mSat{M}{\Knows_a \lnot q}[w_1]$؛
+    \item $\mSat{M}{\Knows_b \lnot q}[w_1]$؛
+    \item $\mSat{M}{\Knows_b q \lor \Knows_b \lnot q}[w_2]$؛
+    \item $\mSat{M}{\Knows_a( \Knows_b q \lor \Knows_b \lnot q)}[w_2]$؛
+    \item $\mSat{M}{\EKnows_{\{a,b\}} \lnot q}[w_3]$؛
+    \end{enumerate}
+\end{prob}
+
+اکنون که تعریف پایهٔ صدق در یک جهان را داده‌ایم، دیگر مفاهیم معناشناختیِ
+منطق موجهات عادی، مانند اعتبار موجهاتی و استلزام، بی‌درنگ به اینجا منتقل
+می‌شوند و بر این شیوهٔ تازهٔ اندیشیدن به تفسیر عملگرهای موجهاتی اعمال
+می‌گردند.
+
+اکنون همچنین می‌توانیم شرایط صدق عملگر دانش مشترک~$\CKnows_G$ را بیان
+کنیم. به یاد آورید که در~\olref[sfr][rel][ops]{sec}، \emph{بستار
+تعدی}~$R^+$ رابطهٔ~$R$ چنین تعریف شد:
+\begin{align*}
+  R^+ &= \bigcup_{ n \in \mathbb{N}} R^n,
+\intertext{که در آن}
+  R^0 & = R \text{ و}\\
+  R^{n+1} & = \Setabs{\tuple{x, z}}{\exists y (R^n xy \land Ryz)}.
+\end{align*}
+سپس، هرگاه~$G$ گروهی از عامل‌ها باشد،
+$R_G = ( \bigcup_{b \in G} R_b )^+$ را بستار تعدیِ اجتماع روابط
+دسترسی‌پذیری همهٔ عامل‌ها تعریف می‌کنیم.
+
+\begin{defn}
+اگر~$G' \subseteq G$، آنگاه~$\mSat{M}{\CKnows_{G'} !A}[ w]$ را اگر و
+تنها اگر برای هر~$w'$ای که~$R_{G'} w w'$، رابطهٔ~$\mSat{M}{!A}[w']$
+برقرار باشد، تعریف می‌کنیم.
+\end{defn}
+
+\end{document}

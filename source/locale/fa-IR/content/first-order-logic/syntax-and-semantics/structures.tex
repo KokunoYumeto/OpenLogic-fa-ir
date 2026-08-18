@@ -1,0 +1,109 @@
+% Part: first-order-logic
+% Chapter: syntax-and-semantics
+% Section: Structures
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{syn}{str}
+
+\olsection{\printtoken{P}{structure} برای زبان‌های مرتبهٔ اول}
+
+\begin{explain}
+زبان‌های مرتبهٔ اول به‌خودیِ خود \emph{تعبیرنشده‌اند:} هیچ معنای
+مشخصی به !!{constant}s، !!{function}s و !!{predicate}s آن‌ها نسبت
+داده نشده است. معناها با مشخص‌کردن \article{structure}
+\emph{!!{structure}} داده می‌شوند. این ساختار \emph{دامنه} را
+مشخص می‌کند، یعنی اشیایی را که !!{constant}s برمی‌گزینند،
+!!{function}s بر روی آن‌ها عمل می‌کنند و سورها بر روی آن‌ها تغییر
+می‌کنند. افزون بر این، ساختار مشخص می‌کند کدام !!{constant}s کدام
+اشیا را برمی‌گزینند، !!a{function} چگونه اشیا را به اشیا نگاشت می‌کند
+و !!{predicate}s بر کدام اشیا صدق می‌کنند. !!^{structure}s مبنای
+مفاهیم \emph{معناشناختی} در منطق‌اند، مانند مفهوم نتیجه، اعتبار و
+ارضاپذیری. در نوشته‌های تخصصی، آن‌ها را به‌گونه‌های مختلف «ساختارها»،
+«تعبیرها» یا «مدل‌ها» می‌نامند.
+\end{explain}
+
+\begin{defn}[!!^{structure}s]
+برای یک زبان مرتبهٔ اولِ $\Lang{L}$، \Article{structure}
+\emph{!!{structure}}~$\Struct M$ از عناصر زیر تشکیل می‌شود:
+\begin{enumerate}
+\item \emph{دامنه:} مجموعه‌ای ناتهی، $\Domain M$
+\item \emph{تعبیر !!{constant}s:} به‌ازای هر !!{constant}~$c$ از
+  $\Lang{L}$، یک !!a{element} به‌صورت
+  $\Assign{c}{M} \in \Domain M$
+\item \emph{تعبیر !!{predicate}s:} به‌ازای هر !!{predicate}~$R$
+  با $n$ موضع از $\Lang{L}$ (غیر از $\eq$)، یک رابطهٔ $n$موضعی
+  $\Assign{R}{M} \subseteq \Domain{M}^n$
+\item \emph{تعبیر !!{function}s:} به‌ازای هر !!{function}~$f$
+  با $n$ موضع از $\Lang{L}$، یک تابع $n$موضعی
+  $\Assign{f}{M} \colon \Domain{M}^n \to \Domain{M}$
+\end{enumerate}
+\end{defn}
+
+\begin{ex}
+!!^a{structure}~$\Struct M$ برای زبان حساب شامل یک مجموعه،
+یک عنصر از $\Domain M$، یعنی $\Assign{\Obj 0}{M}$، به‌عنوان تعبیر
+!!{constant}~$\Obj 0$، یک تابع یک‌موضعی
+$\Assign{\Obj \prime}{M} \colon \Domain{M} \to \Domain M$، دو تابع
+دوموضعی $\Assign{\Obj +}{M}$ و $\Assign{\Obj
+  \times}{M}$، هر دو $\Domain M^2 \to \Domain M$، و
+یک رابطهٔ دوموضعی $\Assign{\Obj <}{M} \subseteq \Domain{M}^2$ است.
+
+نمونه‌ای بدیهی از چنین ساختاری به شرح زیر است:
+\begin{enumerate}
+\item $\Domain N = \Nat$
+\item $\Assign{\Obj 0}{N} = 0$
+\item $\Assign{\Obj \prime}{N}(n) = n + 1$ برای هر $n \in \Nat$
+\item $\Assign{\Obj +}{N}(n, m) = n + m$ برای هر $n, m \in \Nat$
+\item $\Assign{\Obj \times}{N}(n, m) = n\cdot m$ برای هر $n, m \in \Nat$
+\item $\Assign{\Obj <}{N} = \Setabs{\tuple{n, m}}{n \in \Nat, m \in
+  \Nat, n < m}$
+\end{enumerate}
+ساختار~$\Struct N$ برای $\Lang L_A$ که بدین‌گونه تعریف شد
+\emph{مدل استاندارد حساب} نامیده می‌شود، زیرا نمادهای غیرمنطقیِ
+$\Lang L_A$ را دقیقاً به همان شیوه‌ای تعبیر می‌کند که انتظار می‌رود.
+
+بااین‌حال، !!{structure}s ممکنِ بسیار دیگری برای~$\Lang L_A$ وجود
+دارند. برای مثال، می‌توانیم به‌جای~$\Nat$ مجموعهٔ~$\Int$ از اعداد صحیح
+را دامنه بگیریم و تعبیرهای $\Obj 0$، $\Obj \prime$، $\Obj +$،
+$\Obj \times$ و $\Obj <$ را به‌تناسب تعریف کنیم. اما می‌توانیم
+ساختارهایی برای~$\Lang L_A$ نیز تعریف کنیم که حتی از دور هم هیچ
+ارتباطی با اعداد ندارند.
+\end{ex}
+
+\begin{ex}
+یک ساختار~$\Struct M$ برای زبان~$\Lang L_Z$ نظریهٔ مجموعه‌ها تنها به
+یک مجموعهٔ ناتهی و یک رابطهٔ دوموضعی نیاز دارد. بنابراین، از نظر فنی،
+برای مثال، مجموعهٔ انسان‌ها به‌همراه رابطهٔ «$x$ از $y$ مسن‌تر است»
+می‌تواند همچون !!a{structure} برای $\Lang L_Z$ به کار رود؛ همچنین
+$\Nat$ به‌همراه $n \ge m$ برای $n, m \in \Nat$ نیز چنین است.
+
+یک !!{structure} به‌ویژه جالب برای $\Lang L_Z$ که در آن !!{element}s
+دامنه واقعاً مجموعه‌اند و تعبیر $\Obj \in$ واقعاً همان رابطهٔ
+«$x$ یک !!a{element} از~$y$ است» به شمار می‌رود، !!{structure}~$\Struct{{HF}}$
+از \emph{مجموعه‌های موروثاً متناهی} است:
+\begin{enumerate}
+\item $\Domain{{{HF}}} = \emptyset \cup \Pow{\emptyset} \cup
+  \Pow{\Pow{\emptyset}} \cup \Pow{\Pow{\Pow{\emptyset}}} \cup \dots$؛
+\item $\Assign{\Obj \in}{{{HF}}} = \Setabs{\tuple{x, y}}{x, y \in
+  \Domain{{{HF}}}, x \in y}$.
+\end{enumerate}
+\end{ex}
+
+\begin{digress}
+شرط‌هایی که دربارهٔ آنچه !!a{structure} به شمار می‌رود وضع می‌کنیم،
+بر منطق ما اثر می‌گذارند. برای مثال، انتخابِ منع دامنه‌های تهی، با فرض
+تبیین متعارف ارضا (یا صدق) برای جمله‌های سور‌دار، تضمین می‌کند که
+$\lexists[x][(!A(x) \lor \lnot !A(x))]$ معتبر باشد---یعنی حقیقتی
+منطقی باشد. همچنین این شرط که همهٔ !!{constant}s باید به شیئی در دامنه
+ارجاع دهند تضمین می‌کند که تعمیم وجودی الگوی استنتاجی صحیحی باشد:
+$!A(a)$، پس $\lexists[x][!A(x)]$. اگر اجازه می‌دادیم نام‌ها به بیرون
+از دامنه ارجاع دهند یا اصلاً ارجاع ندهند، در مسیر رسیدن به
+\emph{منطق آزاد} قرار می‌گرفتیم؛ منطقی که در آن تعمیم وجودی به مقدمه‌ای
+اضافی نیاز دارد: $!A(a)$ و $\lexists[x][\eq[x][a]]$، پس
+$\lexists[x][!A(x)]$.
+\end{digress}
+
+\end{document}

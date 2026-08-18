@@ -1,0 +1,201 @@
+% Part: proof-theory
+% Chapter: proof-search
+% Section: tableaux
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{ps}{tab}
+
+\olsection{تابلوها}
+
+دستگاه‌های تابلو، دستگاه‌های !!{proof}ی‌اند که ارتباط نزدیکی با
+حساب‌های دنباله‌ای دارند و به‌ویژه برای جست‌وجوی برهان، چه دستی و چه
+پیاده‌سازی‌شده در نرم‌افزار، مناسب‌اند. در تابلوها به جای ساختن
+درخت‌هایی از دنباله‌ها، !!a{proof} درختی از !!{formula}s است. اما
+برخلاف استنتاج طبیعی، قواعد آن‌ها بازتاب قواعد حساب دنباله‌ای‌اند. یک
+!!{proof} تابلویی در اصل جست‌وجویی صریح برای یک مدل است. ازاین‌رو
+گاه آن‌ها را \emph{تابلوهای معنایی} یا \emph{درخت‌های صدق} می‌نامند.
+
+یک تابلوی \emph{نشاندار} درختی از !!{formula}s نشاندار است که
+می‌توانند به شکل $\sFmla{\True}{!A}$ یا $\sFmla{\False}{!A}$ باشند.
+درخت‌ها رو به پایین رشد می‌کنند. آن‌ها با !!{formula}s آغاز می‌شوند
+که آنچه را می‌خواهیم !!{prove} کنیم مشخص می‌سازند. برای نمونه، برای
+!!{prove} دنبالهٔ $!A, !B \Sequent !C, !D$، تابلو با
+$\sFmla{\True}{!A}, \sFmla{\True}{!B},
+\sFmla{\False}{!C}, \sFmla{\False}{!D}$ آغاز می‌شود.
+!!^a{structure} که $!A$ و $!B$ را صادق و $!C$ و $!D$ را کاذب سازد،
+!!a{structure}ی است که نشان می‌دهد
+$!A, !B \Sequent !C, !D$ معتبر نیست.
+
+گره برگ (پایین‌ترین گره) تابلو را می‌توان با قواعد گسترش شاخه توسعه
+داد؛ این قواعد یا گره‌های دیگری به همان شاخه می‌افزایند، یا دو گرهٔ
+هم‌نیا را در پایین می‌افزایند و شاخه را به دو شاخهٔ تازه تقسیم
+می‌کنند. قواعد را می‌توان بر هر !!{formula} نشاندار بالای گره در همان
+شاخه اعمال کرد. قواعد گسترش شاخه برای دستگاه تابلویی کلاسیک \Log{Tc}
+در \olref{tab:Tc} آمده‌اند.
+
+\subfile{rules-Tc}
+
+همان‌گونه که می‌بینید، این قواعد همان قواعد \Log{G3c} وارونه‌اند و
+نشان‌های $\True$ و $\False$ مشخص می‌کنند که !!a{formula} به‌ترتیب در
+سمت چپ یا راست یک دنباله فرمول اصلی است.
+
+یک شاخهٔ تابلو \emph{بسته} است اگر شامل $\sFmla{\True}{\lfalse}$
+باشد، یا هم $\sFmla{\True}{!A}$ و هم $\sFmla{\False}{!A}$ را در بر
+داشته باشد. اگر همهٔ شاخه‌ها بسته باشند، کل تابلو را بسته می‌نامیم.
+برای نمونه، تابلوی بستهٔ زیر برای
+$!A \lor (!B \land !C) \Sequent (!A \lor !B) \land (!A \lor !C)$
+است؛ یعنی با $\sFmla{\True}{!A \lor (!B \land !C)}$ و
+$\sFmla{\False}{(!A \lor !B) \land (!A \lor !C)}$ آغاز می‌شود:
+\begin{oltableau}
+  [\sFmla{\True}{\formula{A} \lor (\formula{B} \land \formula{C})},
+    just=\TAss, checked
+    [\sFmla{\False}{(\formula{A} \lor \formula{B}) \land
+        (\formula{A} \lor \formula{C})}, just=\TAss, checked
+      [\sFmla{\True}{\formula{A}}, just={\TRule{\True}{\lor}[1]}
+        [\sFmla{\False}{\formula{A} \lor \formula{B}},
+          just={\TRule{\False}{\land}[2]}, checked
+          [\sFmla{\False}{\formula{A}},
+            just={\TRule{\False}{\lor}[4]}
+            [\sFmla{\False}{\formula{B}},
+              just={\TRule{\False}{\lor}[4]}, close]
+          ]
+        ]
+        [\sFmla{\False}{\formula{A} \lor \formula{C}},
+          just={\TRule{\False}{\land}[2]}, checked
+          [\sFmla{\False}{\formula{A}},
+            just={\TRule{\False}{\lor}[4]}
+            [\sFmla{\False}{\formula{C}},
+              just={\TRule{\False}{\lor}[4]}, close]
+          ]
+        ]
+      ]
+      [\sFmla{\True}{\formula{B} \land \formula{C}},
+        just={\TRule{\True}{\lor}[1]}, checked
+        [\sFmla{\False}{\formula{A} \lor \formula{B}},
+          just={\TRule{\False}{\land}[2]}, checked
+          [\sFmla{\True}{\formula{B}},
+            just={\TRule{\True}{\land}[3]}, move by=2
+            [\sFmla{\True}{\formula{C}},
+              just={\TRule{\True}{\land}[3]}
+              [\sFmla{\False}{\formula{A}},
+                just={\TRule{\False}{\lor}[4]}
+                [\sFmla{\False}{\formula{B}},
+                  just={\TRule{\False}{\lor}[4]},close
+                ]
+              ]
+            ]
+          ]
+        ]
+        [\sFmla{\False}{\formula{A} \lor \formula{C}},
+          just={\TRule{\False}{\land}[2]}, checked
+          [\sFmla{\True}{\formula{B}},
+            just={\TRule{\True}{\land}[3]}, move by=2
+              [\sFmla{\True}{\formula{C}},
+                just={\TRule{\True}{\land}[3]}
+                [\sFmla{\False}{\formula{A}},
+                  just={\TRule{\False}{\lor}[4]}
+                  [\sFmla{\False}{\formula{C}},
+                  just={\TRule{\False}{\lor}[4]},close
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+\end{oltableau}
+
+علامت‌های تیک نشان می‌دهند قاعدهٔ متناظر بر !!a{formula} در همهٔ
+شاخه‌های زیر آن اعمال شده است. نماد $\otimes$ بسته‌بودن شاخه را نشان
+می‌دهد. شمارهٔ خط پس از هر قاعده مشخص می‌کند قاعده بر کدام
+!!{formula}s نشاندار اعمال شده است (یعنی !!{formula} همان شاخه در خط
+مشخص‌شده).
+
+جست‌وجوی برهان در تابلوها آسان است. تابلو را مرحله‌به‌مرحله تولید
+می‌کنیم. در مرحلهٔ~$0$ تنها !!{formula}s آغازین را در بالا می‌نویسیم.
+در مرحلهٔ~$n+1$ برای هر گره برگ روی یک شاخهٔ باز چنین می‌کنیم: نخستین
+(بالاترین) فرمول نشاندار غیراتمی را که هنوز تیک نخورده است بیابید و
+قاعدهٔ گسترش شاخه را بر آن اعمال کنید. وقتی قاعده در هر شاخهٔ بازی که
+آن فرمول نشاندار را شامل می‌شود اعمال شد، بر آن تیک بزنید. بنابراین
+فقط فرمول‌های غیراتمی در شاخه‌های باز که نباید تکرار شوند تیک
+می‌خورند. (مثال بالا با همین الگوریتم تولید شده است.)
+
+!!{formula}s نشاندار به شکل $\sFmla{\True}{\lforall}$ و
+$\sFmla{\False}{\lexists}$ هرگز تیک نمی‌خورند و باید جداگانه بررسی
+شوند. اگر حاضر باشند، باید تضمین کنیم قواعد
+$\TRule{\True}{\lforall}$ و $\TRule{\False}{\lexists}$ سرانجام برای
+همهٔ ترم‌های قابل اعمال به کار روند. برای نمونه، می‌توان در هر مرحله
+آن‌ها را بر همهٔ چنین فرمول‌هایی در هر شاخه اعمال کرد، پس از رسیدگی به
+بالاترین !!{formula} نشانداری که از این دو صورت نیست. ترم~$t$ نخستین
+ترمی است که می‌توان آن را از !!{constant}s از پیش رخ‌داده در شاخه
+(یا $\Obj c_0$ اگر هیچ !!{constant}ی رخ نداده باشد) و
+!!{function}s رخ‌داده در !!{formula}s آغازین ساخت، به‌گونه‌ای که
+!!{formula} نشاندار متناظر $\sFmla{\True}{!B(t)}$ یا
+~$\sFmla{\False}{!B(t)}$ از پیش در شاخه رخ نداده باشد. اگر برای یک
+قاعده همهٔ ترم‌های قابل ساخت از پیش نمونه‌ای در شاخه داشته باشند، آن
+قاعده در آن مرحله گره تازه‌ای نمی‌افزاید.
+
+اگر این جست‌وجوی برهان تابلوی بسته‌ای تولید نکند، یا شاخهٔ باز متناهی‌ای
+دارد که همهٔ !!{formula}s غیراتمی آن بررسی شده‌اند، یا جست‌وجو
+درختی نامتناهی و متناهی‌شاخه تولید می‌کند که باید شاخه‌ای نامتناهی
+داشته باشد. درست مانند \olref[cpl]{sec}، می‌توانیم
+!!a{structure}~$\Struct{M}$ را چنان تعریف کنیم که اگر
+$\sFmla{\True}{!A}$ در شاخه رخ دهد، $\Sat{M}{!A}$؛ و اگر
+$\sFmla{\False}{!A}$ رخ دهد، $\Sat/{M}{!A}$. (بگذارید
+$\Theta = \Setabs{!A}{\sFmla{\True}{!A} \text{ در شاخه}}$ و
+$\Xi = \Setabs{!A}{\sFmla{\False}{!A} \text{ در شاخه}}$.)
+
+تابلوهایی که با این روش جست‌وجوی برهان تولید می‌شوند را می‌توان به‌آسانی
+با اختصاص دنباله‌ای به هر گره، به برهان‌های \Log{G3c} ترجمه کرد. اگر
+فرمول‌های آغازین متناظر با دنبالهٔ $\Gamma \Sequent \Delta$ باشند،
+هر یک از فرمول‌های آغازین را با $\Gamma \Sequent \Delta$ برچسب
+بزنید. اگر شاخه با اعمال قاعده‌ای گسترشی بر !!{formula} نشاندار
+$\sFmla{\True}{!A}$ توسعه یابد، برگ با
+$!A, \Pi \Sequent \Lambda$ برچسب می‌خورد؛ و اگر قاعده بر
+!!{formula} نشاندار $\sFmla{\False}{!A}$ اعمال شود، برگ با
+$\Pi \Sequent \Lambda, !A$ برچسب می‌خورد. هر جا تابلو قاعدهٔ
+$\TRule{\True}{\star}$ را اعمال می‌کند، قاعدهٔ $\LeftR{\star}$ را
+بر دنباله (با $!A$ همچون فرمول اصلی) اعمال کنید؛ و هر جا قاعدهٔ
+$\TRule{\False}{\star}$ را اعمال می‌کند، $\RightR{\star}$ را به کار
+برید. مقدمات قاعده همان دنباله‌هایی هستند که گره‌های متناظر افزوده‌شده
+به تابلو را برچسب می‌زنند. وقتی تابلو با
+$\sFmla{\True}{!A}$ و $\sFmla{\False}{!A}$ بسته می‌شود، برچسب گره برگ
+پایانی دنباله‌ای به شکل
+$!A, \Pi \Sequent \Lambda, !A$ خواهد بود. اگر شاخه با
+$\sFmla{\True}{\lfalse}$ بسته شود، برچسب برگ پایانی دنباله‌ای با
+$\lfalse$ در مقدم است؛ این نیز اصل \Log{G3c} است. برخی گره‌های پیاپی
+تابلو دنبالهٔ یکسانی می‌گیرند؛ موارد تکراری را حذف کنید. برای نمونه،
+تابلوی بالا به !!{proof} زیر ترجمه می‌شود:
+\[\small
+\Axiom$!A \fCenter !A, !B$
+\RightLabel{\RightR{\lor}}
+\UnaryInf$!A \fCenter !A \lor !B$
+\Axiom$!A \fCenter !A, !C$
+\RightLabel{\RightR{\lor}}
+\UnaryInf$!A \fCenter !A \lor !C$
+\RightLabel{\RightR{\land}}
+\BinaryInf$!A \fCenter (!A \lor !B) \land (!A \lor !C)$
+\Axiom$!B, !C \fCenter !A, !B$
+\RightLabel{\RightR{\lor}}
+\UnaryInf$!B, !C \fCenter !A \lor !B$
+\RightLabel{\LeftR{\land}}
+\UnaryInf$!B \land !C \fCenter !A \lor !B$
+\Axiom$!B, !C \fCenter !A, !C$
+\RightLabel{\RightR{\lor}}
+\UnaryInf$!B, !C \fCenter !A \lor !C$
+\RightLabel{\LeftR{\land}}
+\UnaryInf$!B \land !C \fCenter !A \lor !C$
+\RightLabel{\RightR{\land}}
+\BinaryInf$!B \land !C \fCenter (!A \lor !B) \land
+(!A \lor !C)$
+\RightLabel{\LeftR{\lor}}
+\BinaryInf$!A \lor (!B \land !C) \fCenter (!A \lor !B) \land
+(!A \lor !C)$
+\DisplayProof
+\]
+
+\end{document}

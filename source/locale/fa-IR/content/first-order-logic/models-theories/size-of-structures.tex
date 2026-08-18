@@ -1,0 +1,71 @@
+% Part: first-order-logic
+% Chapter: models-theories
+% Section: size-of-structures
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{mat}{siz}
+
+\olsection{بیان اندازهٔ \printtoken{P}{structure}}
+
+\begin{explain}
+برخی خواص ساختارها را حتی بدون استفاده از نمادهای غیرمنطقی یک زبان
+می‌توانیم بیان کنیم. برای نمونه، !!{sentence}sی وجود دارند که در
+!!a{structure} صادق‌اند هرگاه و تنها هرگاه !!{domain} آن !!{structure}
+دست‌کم، حداکثر، یا دقیقاً تعداد معینی چون~$n$ !!{element} داشته باشد.
+\end{explain}
+
+\begin{prop}
+!!{sentence}
+\begin{multline*}
+  !A_{\ge n} \ident \lexists[x_1][\lexists[x_2][\dots\lexists[x_n][{}]]]\\
+  \begin{aligned}
+  (\eq/[x_1][x_2] \land {}
+  \eq/[x_1][x_3] \land \eq/[x_1][x_4] \land \dots \land \eq/[x_1][x_n] \land {}\\
+\eq/[x_2][x_3] \land \eq/[x_2][x_4] \land \dots \land {} \eq/[x_2][x_n] \land {} \\
+\vdots\\
+\eq/[x_{n-1}][x_n])
+\end{aligned}
+\end{multline*}
+در !!a{structure}~$\Struct M$ صادق است هرگاه و تنها هرگاه~$\Domain M$
+دست‌کم $n$~!!{element}s داشته باشد. در نتیجه،
+$\Sat{M}{\lnot !A_{\ge n+1}}$ هرگاه و تنها هرگاه~$\Domain M$ حداکثر
+$n$~!!{element}s داشته باشد.
+
+\end{prop}
+
+\begin{prop}
+!!{sentence}
+\begin{multline*}
+!A_{= n} \ident \lexists[x_1][\lexists[x_2][\dots\lexists[x_n][{}]]] \\
+\begin{aligned}
+  (\eq/[x_1][x_2] \land {}
+  \eq/[x_1][x_3] \land \eq/[x_1][x_4] \land \dots \land \eq/[x_1][x_n] \land {}\\
+\eq/[x_2][x_3] \land \eq/[x_2][x_4] \land \dots \land {} \eq/[x_2][x_n] \land {} \\
+\vdots\\
+\eq/[x_{n-1}][x_n] \land {} \\
+\lforall[y][(\eq[y][x_1] \lor \dots \lor \eq[y][x_n])]
+\end{aligned}
+\end{multline*}
+در !!a{structure}~$\Struct M$ صادق است هرگاه و تنها هرگاه~$\Domain M$
+دقیقاً $n$~!!{element}s داشته باشد.
+\end{prop}
+
+\begin{prop}
+!!a{structure} نامتناهی است هرگاه و تنها هرگاه مدلی از مجموعهٔ زیر باشد:
+\[
+\{!A_{\ge 1}, !A_{\ge 2}, !A_{\ge 3}, \dots \}.
+\]
+\end{prop}
+
+هیچ جملهٔ صرفاً منطقیِ واحدی وجود ندارد که در~$\Struct M$ صادق
+باشد هرگاه و تنها هرگاه~$\Domain M$ نامتناهی باشد. بااین‌حال، می‌توان
+!!{sentence}sی دارای !!{predicate}s غیرمنطقی به دست داد که فقط مدل‌های
+نامتناهی دارند (هرچند هر !!{structure} نامتناهی‌ای مدل آن‌ها نیست).
+خاصیت متناهی‌بودن یک ساختار و خاصیت !!{nonenumerable}بودن یک ساختار را
+حتی با مجموعه‌ای نامتناهی از !!{sentence}s نیز نمی‌توان بیان کرد. این
+واقعیت‌ها از قضیه‌های فشردگی و لوونهایم--اسکولم نتیجه می‌شوند.
+
+\end{document}

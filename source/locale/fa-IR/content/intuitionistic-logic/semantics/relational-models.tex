@@ -1,0 +1,73 @@
+% part: intuitionistic-logic
+% chapter: semantics
+% section: relational-models
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{sem}{rel}
+
+\olsection{\usetoken{P}{relational model}}
+
+برای ارائهٔ معناشناسی دقیقی برای منطق گزاره‌ای شهودگرایانه، باید تعریف
+کنیم چه چیزی مدلی به شمار می‌آید که بتوانیم !!{formula}ها را نسبت به آن
+ارزیابی کنیم. بر پایهٔ چنین تعریفی سپس می‌توان مفاهیم معناشناختی مانند
+اعتبار و استلزام را نیز تعریف کرد. یکی از این معناشناسی‌ها با
+!!{relational model}ها داده می‌شود.
+
+\begin{defn}
+  یک !!^a{relational model} برای منطق گزاره‌ای شهودگرایانه سه‌تاییِ
+  $\mModel{M} = \tuple{W, R, V}$ است، که در آن
+  \begin{enumerate}
+  \item $W$ مجموعه‌ای ناتهی است؛
+  \item $R$ یک ترتیب جزئی (یعنی رابطه‌ای دوتایی، بازتابی، پادتقارنی و
+    تعدی) روی~$W$ است؛
+  \item $V$ تابعی است که به هر !!{propositional
+    variable}~$p$ زیرمجموعه‌ای از~$W$ نسبت می‌دهد؛ و
+  \item $V$ نسبت به~$R$ یکنواست؛ یعنی اگر~$w \in V(p)$ و~$Rww'$،
+    آنگاه~$w' \in V(p)$.
+  \end{enumerate}
+\end{defn}
+
+\begin{defn}\ollabel{defn:true-at-w}
+  مفهوم \emph{صادق‌بودن~$!A$ در~$w$ در مدل~$\mModel{M}$}، یعنی
+  $\mSat{M}{!A}[w]$، را به‌طور استقرایی چنین تعریف می‌کنیم:
+  \begin{enumerate}
+  \item \indcase{!A}{p}{$\mSat{M}{\indfrm}[w]$ اگر و تنها اگر~$w \in V(p)$.}
+  \item \indcase{!A}{\lfalse}{$\mSat{M}{\indfrm}[w]$ برقرار نیست.}
+  \item \indcase{!A}{\lnot !B}{$\mSat{M}{\indfrm}[w]$ اگر و تنها اگر
+    هیچ~$w'$ای با~$Rww'$ وجود نداشته باشد که~$\mSat{M}{!B}[w']$.}
+  \item \indcase{!A}{!B \land !C}{$\mSat{M}{\indfrm}[w]$ اگر و تنها اگر
+    $\mSat{M}{!B}[w]$ و~$\mSat{M}{!C}[w]$.}
+  \item \indcase{!A}{!B \lor !C}{$\mSat{M}{\indfrm}[w]$ اگر و تنها اگر
+    $\mSat{M}{!B}[w]$ یا~$\mSat{M}{!C}[w]$} (یا هر دو).
+  \item \indcase{!A}{!B \lif !C}{$\mSat{M}{\indfrm}[w]$ اگر و تنها اگر
+    برای هر~$w'$ با~$Rww'$، $\mSat/{M}{!B}[w']$ یا
+    $\mSat{M}{!C}[w']$} (یا هر دو).
+  \end{enumerate}
+  اگر~$\mSat{M}{!A}[w]$ برقرار نباشد، می‌نویسیم~$\mSat/{M}{!A}[w]$.
+  اگر~$\Gamma$ مجموعه‌ای از !!{formula}ها باشد، $\mSat{M}{\Gamma}[w]$
+  یعنی~$\mSat{M}{!B}[w]$ برای هر~$!B \in \Gamma$.
+\end{defn}
+
+\begin{prob}
+  نشان دهید بنا بر~\olref[int][sem][rel]{defn:true-at-w}،
+  $\mSat{M}{\lnot !A}[w]$ اگر و تنها اگر
+  $\mSat{M}{!A \lif \lfalse}[w]$.
+\end{prob}
+
+\begin{prop}\ollabel{prop:true-monotonic}
+  صدق در جهان‌ها نسبت به~$R$ یکنواست؛ یعنی اگر~$\mSat{M}{!A}[w]$ و
+  $Rww'$، آنگاه~$\mSat{M}{!A}[w']$.
+\end{prop}
+
+\begin{proof}
+  تمرین.
+\end{proof}
+
+\begin{prob}
+  \olref[int][sem][rel]{prop:true-monotonic} را ثابت کنید.
+\end{prob}
+
+\end{document}

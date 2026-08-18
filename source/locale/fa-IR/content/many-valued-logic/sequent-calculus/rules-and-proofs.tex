@@ -1,0 +1,74 @@
+% Part: many-valued-logic
+% Chapter: sequent-calculus
+% Section: rules-and-proofs
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mvl}{seq}{rul}
+
+\olsection{قواعد و \usetoken{P}{derivation}}
+
+در ادامه، بگذارید~$\Gamma, \Delta, \Pi, \Lambda$ نمایندهٔ دنباله‌های
+متناهی و احتمالاً تهی از~!!{sentence}ها باشند.
+
+\begin{defn}[دنباله]
+یک \emph{دنبالهٔ $n$سویه} عبارتی به‌صورت
+\[
+\Gamma_1 \nSequent \dots \nSequent \Gamma_n
+\]
+است که در آن هر~$\Gamma_i$ دنباله‌ای متناهی و احتمالاً تهی از
+!!{sentence}های زبان~$\Lang L$ است.
+\end{defn}
+
+\begin{defn}[دنبالهٔ آغازین]
+یک \emph{دنبالهٔ آغازین $n$سویه}، برای هر~!!{sentence} چون~$!A$ در
+زبان، دنباله‌ای~$n$سویه به‌صورت
+$!A \nSequent \dots \nSequent !A$ است.
+
+اگر زبان شامل رابط صفرموضعی~$\star$، یعنی یک ثابت گزاره‌ای، باشد،
+دنباله‌ای را نیز آغازین می‌گیریم که~$\star$ دقیقاً در جایگاه متناظر با
+ارزش صدق~$\tf{\star}[\Log L] \in V$ قرار دارد و همهٔ جایگاه‌های دیگرش
+تهی‌اند؛ یعنی~$\dots \nSequent \star \nSequent \dots$.
+\end{defn}
+
+برای هر رابط در منطق~$n$ارزشی~$\Log{L}$، به‌ازای هر ارزش صدقی که آن
+رابط می‌تواند در~$\Log{L}$ بگیرد، یک قاعدهٔ منطقی وجود دارد.
+!!^{derivation}ها در حساب دنباله‌ای~$n$سویهٔ~$\Log{L}$ درخت‌هایی از
+دنباله‌ها هستند که بالاترین دنباله‌هایشان دنباله‌های آغازین‌اند؛ و اگر
+دنباله‌ای زیر یک یا چند دنبالهٔ دیگر قرار گیرد، باید به‌درستی با یکی از
+قواعد استنتاج رابط‌های~$\Log{L}$ از آن‌ها به دست آید.
+
+\begin{defn}[قضایا]
+!!^a{sentence} چون~$!A$ یک \emph{قضیه} از منطق~$n$ارزشی~$\Log{L}$ است
+اگر~!!a{derivation} از دنبالهٔ~$n$سویه‌ای وجود داشته باشد که~$!A$ را
+در هر جایگاه متناظر با یک ارزش صدق ممتاز~$\Log{L}$ و دنبالهٔ تهی را در
+هر جایگاه ناممتاز دارد. اگر~$!A$ قضیه باشد
+$\Proves[\Log{L}] !A$، و اگر نباشد~$\Proves/[\Log{L}] !A$ می‌نویسیم.
+\end{defn}
+
+\begin{defn}[!!^{derivability}]
+!!^a{sentence} چون~$!A$ را در منطق~$n$ارزشی~$\Log{L}$
+\emph{!!{derivable} از} مجموعه‌ای از !!{sentence}ها چون~$\Gamma$
+می‌نامیم و~$\Gamma \Proves[\Log{L}] !A$ می‌نویسیم، اگر و تنها اگر زیرمجموعهٔ متناهی
+$\Gamma_0 \subseteq \Gamma$ و دنباله‌ای~$\Gamma_0'$ از
+!!{sentence}های~$\Gamma_0$ وجود داشته باشد که دنبالهٔ زیر
+!!a{derivation} داشته باشد:
+\[ \Lambda_1 \nSequent \dots \nSequent \Lambda_n \]
+که در آن اگر جایگاه~$i$ متناظر با ارزش صدقی ممتاز باشد، $\Lambda_i$
+برابر~$!A$، و در غیر این صورت برابر~$\Gamma_0'$ است. اگر~$!A$ از
+$\Gamma$ !!{derivable} نباشد، $\Gamma \Proves/ !A$ می‌نویسیم.
+\end{defn}
+
+برای نمونه، منطق سه‌ارزشی \L ukasiewicz یک حساب دنباله‌ای سه‌سویه دارد.
+در دنبالهٔ سه‌سویهٔ~$\Gamma \nSequent \Pi \nSequent \Delta$،
+$\Gamma$ متناظر با~$\False$، $\Delta$ متناظر با~$\True$، و~$\Pi$
+متناظر با~$\Undef$ است. اصل‌ها به‌صورت
+$!A \nSequent !A \nSequent !A$ هستند. چون فقط~$\True$ ممتاز است،
+$\Gamma \Proves[\LogLuk[3]] !A$ اگر و تنها اگر دنبالهٔ
+$\Gamma \nSequent \Gamma \nSequent !A$ دارای~!!a{derivation} باشد.
+(اگر~$\Undef$ نیز ممتاز بود، به~!!a{derivation} از دنبالهٔ
+$\Gamma \nSequent !A \nSequent !A$ نیاز داشتیم.)
+
+\end{document}

@@ -1,0 +1,75 @@
+% Part: normal-modal-logic
+% Chapter: syntax-and-semantics
+% Section: modal-validity
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{syn}{val}
+
+\olsection{اعتبار}
+
+\begin{explain}
+  !!^{formula}هایی که در همهٔ مدل‌ها صادق‌اند، یعنی در هر جهانِ هر مدل
+  صادق‌اند، اهمیت ویژه‌ای دارند. آن‌ها نمایانگر گزاره‌های موجهاتی‌ای
+  هستند که مستقل از چگونگی تفسیر~$\Box$ و~$\Diamond$ صادق‌اند، مشروط
+  بر اینکه تفسیر از این حیث «عادی» باشد که از رابطه‌ای دسترسی بر
+  جهان‌های ممکن به دست آمده باشد. چنین !!{formula}هایی را
+  \emph{معتبر} می‌نامیم. برای نمونه، $\Box(p \land q) \lif \Box p$
+  معتبر است. بااین‌حال، برخی !!{formula}هایی که بر پایهٔ تفسیر صدقیِ
+  $\Box$ انتظار می‌رود معتبر باشند، مانند~$\Box p \lif p$، معتبر
+  نیستند. یکی از وجوه اهمیت مدل‌های رابطه‌ای این است که تفسیرهای
+  متفاوت~$\Box$ و~$\Diamond$ را می‌توان با گونه‌های متفاوتی از روابط
+  دسترسی بازنمایی کرد. این نکته پیشنهاد می‌کند که اعتبار را نه‌فقط
+  نسبت به \emph{همهٔ} مدل‌ها، بلکه نسبت به همهٔ مدل‌های \emph{نوعی
+  معین} تعریف کنیم. برای مثال، روشن خواهد شد که~$\Box p \lif p$ در
+  همهٔ مدل‌هایی صادق است که هر جهان در آن‌ها از خودش دسترس‌پذیر است،
+  یعنی~$R$ بازتابی است. تعریف اعتبار نسبت به رده‌های مدل‌ها به ما امکان
+  می‌دهد این مطلب را فشرده بیان کنیم: $\Box p \lif p$ در ردهٔ مدل‌های
+  بازتابی معتبر است.
+\end{explain}
+
+\begin{defn}
+  !!^a{formula}~$!A$ در ردهٔ~$\mClass{C}$ از مدل‌ها \emph{معتبر} است
+  اگر در هر مدلِ~$\mClass{C}$ صادق باشد (یعنی در هر جهانِ هر مدلِ
+  $\mClass{C}$ صادق باشد). اگر~$!A$ در~$\mClass{C}$ معتبر باشد،
+  $\mClass{C} \Entails !A$ می‌نویسیم؛ و اگر~$!A$ در ردهٔ
+  \emph{همهٔ} مدل‌ها معتبر باشد، $\Entails !A$ می‌نویسیم.
+\end{defn}
+
+\begin{prop}\ollabel{prop:subset-class}
+  اگر~$!A$ در~$\mClass{C}$ معتبر باشد، در هر ردهٔ
+  $\mClass{C}' \subseteq \mClass{C}$ نیز معتبر است.
+\end{prop}
+
+\begin{prop}\ollabel{prop:Nec-rule}
+  اگر~$!A$ معتبر باشد، $\Box!A$ نیز معتبر است.
+\end{prop}
+
+\begin{proof}
+  فرض کنید~$\Entails !A$. برای نشان‌دادن~$\Entails \Box!A$، مدل
+  $\mModel{M} = \tuple{W, R, V}$ و~$w \in W$ را در نظر بگیرید. اگر
+  $Rww'$، آنگاه چون~$!A$ معتبر است، $\mSat{M}{!A}[w']$؛ پس
+  $\mSat{M}{\Box!A}[w]$ نیز برقرار است. چون~$\mModel{M}$ و~$w$
+  دلخواه بودند، $\Entails \Box!A$.
+\end{proof}
+
+\begin{prob}
+  نشان دهید موارد زیر معتبرند:
+  \begin{enumerate}
+  \item $\Box p \lif \Box (q \lif p)$؛
+  \item $\Box \lnot \lfalse$؛
+  \item $\Box p \lif (\Box q \lif \Box p)$.
+  \end{enumerate}
+\end{prob}
+
+\begin{prob}
+  نشان دهید~$!A \lif \Box!A$ در ردهٔ~$\mClass{C}$ از مدل‌های
+  $\mModel{M} = \tuple{W, R, V}$ که در آن‌ها~$W = \{w\}$ معتبر است.
+  همچنین نشان دهید~$!B \lif \Box !A$ و~$\Diamond !A \lif !B$ در ردهٔ
+  مدل‌های~$\mModel{M} = \tuple{W, R, V}$ که در آن‌ها
+  $R = \emptyset$ معتبرند.
+\end{prob}
+
+\end{document}

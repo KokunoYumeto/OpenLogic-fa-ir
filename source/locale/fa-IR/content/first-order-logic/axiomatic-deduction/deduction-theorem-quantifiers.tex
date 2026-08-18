@@ -1,0 +1,57 @@
+% Part: first-order-logic
+% Chapter: axiomatic-deduction
+% Section: deduction-theorem-quantifiers
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{axd}{ddq}
+
+\olsection{قضیهٔ استنتاج با سورها}
+
+\begin{thm}[قضیهٔ استنتاج]
+\ollabel{thm:deduction-thm-q} اگر $\Gamma \cup \{!A\} \Proves !B$،
+آنگاه $\Gamma \Proves !A \lif !B$.
+\end{thm}
+
+\begin{proof}
+باز بر طول !!{derivation}~$!B$ از $\Gamma \cup \{!A\}$ استقرا
+می‌کنیم.
+
+برهان پایهٔ استقرا با پایهٔ برهان
+~\olref[ded]{thm:deduction-thm} یکسان است.
+
+برای گام استقرا، باز فرض کنید !!{derivation}~$!B$ از
+$\Gamma \cup \{!A\}$ با گام~$!B$ پایان یابد که با قاعدهٔ استنتاجی توجیه
+شده است. اگر قاعدهٔ استنتاج وضع مقدم باشد، مانند برهان
+\olref[ded]{thm:deduction-thm} پیش می‌رویم. اگر قاعدهٔ استنتاج \QR باشد،
+می‌دانیم $!B \ident !C \lif \lforall[x][!D(x)]$ و !!a{formula} به‌شکل
+$!C \lif !D(a)$ پیش‌تر در !!{derivation} آمده است، که در آن $a$ در
+~$!C$، $!A$ یا $\Gamma$ رخ نمی‌دهد. پس داریم
+\begin{align*}
+  \Gamma \cup \{!A\} & \Proves !C \lif !D(a),\\
+  \intertext{و فرض استقرا اعمال می‌شود؛ یعنی داریم}
+    \Gamma & \Proves !A \lif (!C \lif !D(a)).\\
+  \intertext{بنا بر}
+  & \Proves (!A \lif (!C \lif !D(a))) \lif ((!A \land !C) \lif !D(a))\\
+  \intertext{و با وضع مقدم به دست می‌آوریم}
+  \Gamma & \Proves (!A \land !C) \lif !D(a).\\
+  \intertext{چون شرط متغیر ویژه همچنان برقرار است، می‌توانیم گامی را که با \QR توجیه شده است به این !!{derivation} بیفزاییم و به دست آوریم}
+    \Gamma & \Proves (!A \land !C) \lif \lforall[x][!D(x)].\\
+    \intertext{همچنین داریم}
+    & \Proves ((!A \land !C) \lif \lforall[x][!D(x)]) \lif (!A \lif (!C \lif \lforall[x][!D(x)])),\\
+    \intertext{پس با وضع مقدم،}
+    \Gamma & \Proves !A \lif (!C \lif \lforall[x][!D(x)]),
+\end{align*}
+یعنی $\Gamma \Proves !A \lif !B$.
+
+حالتی را که $!B$ با قاعدهٔ \QR توجیه شده اما به‌شکل
+$\lexists[x][!D(x)] \lif !C$ است، به‌عنوان تمرین واگذار می‌کنیم.
+\end{proof}
+
+\begin{prob}
+  برهان \olref[fol][axd][ddq]{thm:deduction-thm-q} را کامل کنید.
+\end{prob}
+
+\end{document}

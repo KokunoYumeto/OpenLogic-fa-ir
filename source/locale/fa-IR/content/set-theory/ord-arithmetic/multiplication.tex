@@ -1,0 +1,118 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{ord-arithmetic}{mult}
+
+\olsection{ضربِ ترتیبی}
+
+اکنون به ضرب ترتیبی می‌پردازیم و آن را تقریباً همانند جمع ترتیبی
+بررسی می‌کنیم. فرض کنید می‌خواهیم $\alpha$ را در~$\beta$ ضرب کنیم.
+برای این کار می‌توانید شبکه‌ای مستطیلی با پهنای $\alpha$ و ارتفاع
+$\beta$ تصور کنید؛ حاصل‌ضربِ $\alpha$ و $\beta$ با پیمودن هر سطر و
+سپس رفتن به سطر بعدی به دست می‌آید، \ldots، تا آنکه سراسر شبکه را
+پیموده باشید. به بیان دیگر، حاصل‌ضربِ $\alpha$ و $\beta$ از آنجا
+پدید می‌آید که \emph{هر} عضوِ $\beta$ را با نسخه‌ای از $\alpha$
+جایگزین کنیم.
+
+برای صورت‌بندی دقیق، کافی است ترتیب واژه‌نامه‌ایِ معکوس را روی
+ضرب دکارتیِ $\alpha$ و $\beta$ به کار ببریم:
+
+\begin{defn}
+برای هر دو عدد ترتیبیِ $\alpha, \beta$، حاصل‌ضرب آن‌ها برابر است با
+$\alpha \ordtimes \beta =
+\ordtype{\alpha \times \beta, \rlexless}$.
+\end{defn}
+\noindent
+باز باید تأیید کنیم که این تعریف خوش‌صورت است:
+
+\begin{lem}\ollabel{ordtimeslessiswo}
+$\tuple{\alpha \times \beta, \rlexless}$ برای هر دو عدد ترتیبیِ
+$\alpha$ و $\beta$ یک خوش‌ترتیب است.
+\end{lem}
+
+\begin{proof}
+دقیقاً مانند \olref[add]{ordsumlessiswo}.
+\end{proof}
+\noindent
+اثبات رفتار بازگشتی زیر نیز دشوار نیست:
+
+\begin{lem}\ollabel{ordtimesrecursion}
+برای هر دو عدد ترتیبیِ $\alpha, \beta$:
+\begin{align*}
+	\alpha \ordtimes 0 &= 0\\
+	\alpha \ordtimes (\beta \ordplus 1) &=
+		(\alpha \ordtimes \beta) \ordplus \alpha\\
+	\alpha  \ordtimes \beta &=
+		\supstrict_{\delta < \beta}(\alpha \ordtimes \delta) &&
+		\text{هرگاه $\beta$ عدد ترتیبیِ حدی باشد}.
+\end{align*}
+\end{lem}
+
+\begin{proof}
+به‌عنوان تمرین واگذار می‌شود.
+\end{proof}
+
+در واقع، درست مانند حالت جمع، می‌توانستیم ضرب ترتیبی را با این
+معادلات بازگشتی تعریف کنیم، نه با یک تعریف مستقیم. باز هم مانند جمع،
+برخی رفتارها آشنا هستند:
+
+\begin{lem}\ollabel{ordinalmultiplicationisnice}
+اگر $\alpha, \beta, \gamma$ اعداد ترتیبی باشند، آن‌گاه:
+\begin{enumerate}
+	\item\ollabel{ordtimes1} اگر $\alpha \neq 0$ و
+	$\beta < \gamma$، آن‌گاه
+	$\alpha \ordtimes \beta < \alpha \ordtimes \gamma$؛
+	\item\ollabel{ordtimes2} اگر $\alpha \neq 0$ و
+	$\alpha \ordtimes \beta = \alpha\ordtimes\gamma$، آن‌گاه
+	$\beta = \gamma$؛
+	\item\ollabel{ordtimes3}
+	$\alpha \ordtimes (\beta \ordtimes \gamma) =
+	(\alpha \ordtimes \beta) \ordtimes \gamma$؛
+	\item\ollabel{ordtimes4} اگر $\alpha \leq \beta$، آن‌گاه
+	$\alpha \ordtimes \gamma \leq \beta \ordtimes \gamma$؛
+	\item\ollabel{ordtimes5}
+	$\alpha \ordtimes (\beta \ordplus \gamma) =
+	(\alpha \ordtimes \beta )\ordplus
+	(\alpha\ordtimes \gamma)$.
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+به‌عنوان تمرین واگذار می‌شود.
+\end{proof}
+
+می‌توانید نتایج دیگری را به دلخواه اثبات کنید (یا در منابع
+بیابید). اما با توجه به
+\olref[ord-arithmetic][add]{ordsumnotcommute}، نتیجهٔ زیر نباید
+غافلگیرکننده باشد:
+
+\begin{prop}
+ضرب ترتیبی جابجایی‌پذیر نیست:
+$2 \ordtimes \omega = \omega < \omega \ordtimes 2$
+\end{prop}
+
+\begin{proof}
+$2 \ordtimes \omega = \supstrict_{n < \omega}(2\ordtimes n) =
+\omega \in \supstrict_{n < \omega}(\omega \ordplus n) =
+\omega \ordplus \omega = \omega \ordtimes 2$.
+\end{proof}
+\noindent
+دلیل شهودی باز هم کاملاً سرراست است. برای محاسبهٔ
+$2 \ordtimes \omega$، هر عدد طبیعی را با دو شیء جایگزین می‌کنید.
+اگر صرفاً همهٔ عددهای «نیمه» را میان اعداد طبیعی درج کنید نیز همان
+نوع ترتیب را به دست می‌آورید؛ یعنی ترتیب طبیعی روی
+$\Setabs{\nicefrac{n}{2}}{n \in \omega}$ را در نظر بگیرید. با این
+بیان، آشکار است که نوع ترتیب با نوع ترتیبِ خودِ $\omega$ یکسان است.
+اما برای محاسبهٔ $\omega \ordtimes 2$، دو نسخه از $\omega$ را
+یکی پس از دیگری می‌گذارید.
+
+\begin{prob}
+\olref[sth][ord-arithmetic][mult]{ordtimeslessiswo}،
+\olref[sth][ord-arithmetic][mult]{ordtimesrecursion}،
+و
+\olref[sth][ord-arithmetic][mult]{ordinalmultiplicationisnice}
+را اثبات کنید.
+\end{prob}
+
+\end{document}

@@ -1,0 +1,295 @@
+% Part: incompleteness
+% Chapter: representability-in-q
+% Section: sigma1-completeness
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{inp}{s1c}
+\olsection{\texorpdfstring{$\Sigma_1$}{Sigma-1} کامل‌بودن}
+
+با وجود ناتمامیت~$\Th{Q}$ و گسترش‌های سازگار و اصل‌موضوعه‌پذیر آن،
+دیدیم که~$\Th{Q}$ بسیاری از واقعیت‌های پایه دربارهٔ عددنماها را ثابت
+می‌کند. در واقع، می‌توان این نتیجه را به‌طور چشمگیری گسترش داد. برای
+درک گسترهٔ آنچه در~$\Th{Q}$ اثبات‌پذیر است، مفاهیم !!{formula}sی
+$\Delta_0$، $\Sigma_1$ و~$\Pi_1$ را معرفی می‌کنیم. به‌طور تقریبی،
+!!{formula} $\Sigma_1$ فرمولی به صورت~$\lexists[x][!B(x)]$ است که
+در آن~$!B$ تنها با پیوندهای گزاره‌ای و سورهای کراندار ساخته شده است.
+نشان خواهیم داد اگر~$!A$ یک !!{sentence} $\Sigma_1$ باشد که در
+$\Struct{N}$ صادق است، آنگاه~$\Th{Q} \Proves !A$
+(\olref{thm:sigma1-completeness}).
+
+\begin{defn}
+\ollabel{defn:bd-quant}
+یک \emph{!!{formula} وجودی کراندار} فرمولی به صورت
+$\lexists[x][(x < t \land !A(x))]$ است، که در آن~$t$ هر ترمی است؛
+آن را به‌طور قراردادی به صورت~$\bexists{x < t}{!A(x)}$ می‌نویسیم.
+%
+یک \emph{!!{formula} کلی کراندار} فرمولی به صورت
+$\lforall[x][(x < t \lif !A(x))]$ است، که در آن~$t$ هر ترمی است؛
+آن را به‌طور قراردادی به صورت~$\bforall{x < t}{!A(x)}$ می‌نویسیم.
+\end{defn}
+
+\begin{defn}
+\ollabel{defn:delta0-sigma1-pi1-frm}
+!!{formula}~$!B$ را $\Delta_0$ می‌نامیم اگر از !!{formula}sی اتمی،
+تنها با استفاده از پیوندهای گزاره‌ای و سورگذاری کراندار ساخته شده باشد.
+%
+!!{formula}~$!A$ را $\Sigma_1$ می‌نامیم اگر
+$!A \ident \lexists[x][!B(x)]$، که در آن~$!B$، $\Delta_0$ است.
+%
+!!{formula}~$!A$ را $\Pi_1$ می‌نامیم اگر
+$!A \ident \lforall[x][!B(x)]$، که در آن~$!B$، $\Delta_0$ است.
+\end{defn}
+
+\begin{lem}
+\ollabel{lem:q-proves-clterm-id} فرض کنید~$t$ ترمی بسته باشد به‌گونه‌ای
+که~$\Value{t}{N} = n$. آنگاه~$\Th{Q} \Proves \eq[t][\num n]$.
+\end{lem}
+
+\begin{proof}
+این را با استقرا روی پیچیدگی~$t$ ثابت می‌کنیم. در حالت پایه،
+$\Value{\Obj 0}{N} = 0$ و~$\Th{Q} \Proves \eq[\Obj 0][\num 0]$،
+زیرا~$\num 0 \ident \Obj 0$.
+%
+برای حالت استقرایی، بگذارید~$t_1$ و~$t_2$ ترم‌هایی باشند به‌گونه‌ای که
+$\Value{t_1}{N} = n_1$، $\Value{t_2}{N} = n_2$،
+$\Th{Q} \Proves \eq[t_1][\num n_1]$ و
+$\Th{Q} \Proves \eq[t_2][\num n_2]$.
+
+آنگاه~$\Value{(t_1')}{N} = n_1 + 1$، و داریم
+$\Th{Q} \Proves \eq[t_1'][{\num n_1}']$؛ این از اعمال قواعد
+مرتبه‌اول این‌همانی به فرض استقرا و !!{formula}
+$\eq[\num{n_1}'][\num{n_1}']$ به دست می‌آید. پس بنا بر تعریف عددنماها
+$\Th{Q} \Proves \eq[t_1'][\num{n_1 + 1}]$.
+
+برای جمع‌ها داریم
+\[
+      \Value{(t_1 + t_2)}{N}
+    = \Value{t_1}{N} + \Value{t_2}{N}
+    = n_1 + n_2.
+\]
+بنا بر فرض استقرا و قواعد این‌همانی،
+$\Th{Q} \Proves \eq[t_1 + t_2][\num{n_1} + t_2]$، و سپس با کاربرد
+دوبارهٔ قواعد این‌همانی
+$\Th{Q} \Proves \eq[t_1 + t_2][\num{n_1} + \num{n_2}]$.
+بنا بر~\olref[inc][req][bre]{lem:q-proves-add}،
+$\Th{Q} \Proves \eq[\num{n_1} + \num{n_2}][\num{n_1 + n_2}]$؛
+پس~$\Th{Q} \Proves \eq[t_1 + t_2][\num{n_1 + n_2}]$.
+
+استدلالی مشابه برای~$\times$ نیز کار می‌کند، با استفاده از
+\olref[inc][req][bre]{lem:q-proves-mult}.
+%
+چون بدین ترتیب همهٔ ترم‌های بستهٔ حساب را بررسی کرده‌ایم، داریم
+$\Th{Q} \Proves \eq[t][\num n]$ برای همهٔ ترم‌های بستهٔ~$t$ که
+$\Value{t}{N} = n$.
+\end{proof}
+
+\begin{prob}
+بخش مربوط به~$\times$ از~\olref{lem:q-proves-clterm-id} را با جزئیات
+ثابت کنید.
+\end{prob}
+
+\begin{lem}
+\ollabel{lem:atomic-completeness}
+فرض کنید~$t_1$ و~$t_2$ ترم‌هایی بسته باشند. آنگاه
+\begin{enumerate}
+\item اگر~$\Value{t_1}{N} = \Value{t_2}{N}$،
+    آنگاه~$\Th{Q} \Proves \eq[t_1][t_2]$.
+\item اگر~$\Value{t_1}{N} \neq \Value{t_2}{N}$،
+    آنگاه~$\Th{Q} \Proves \eq/[t_1][t_2]$.
+\item اگر~$\Value{t_1}{N} < \Value{t_2}{N}$،
+    آنگاه~$\Th{Q} \Proves t_1 < t_2$.
+\item اگر~$\Value{t_2}{N} \leq \Value{t_1}{N}$،
+    آنگاه~$\Th{Q} \Proves \lnot(t_1 < t_2)$.
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+با داشتن ترم‌های~$t_1$ و~$t_2$، قرار می‌دهیم
+$n = \Value{t_1}{N}$ و~$m = \Value{t_2}{N}$.
+
+فرض کنید~$!A \ident t_1 = t_2$. بنا بر
+\olref{lem:q-proves-clterm-id}،
+$\Th{Q} \Proves \eq[t_1][\num n]$ و
+$\Th{Q} \Proves \eq[t_2][\num m]$.
+اگر~$n = m$، آنگاه~$\Th{Q} \Proves \eq[\num n][\num m]$ و بنابراین
+به سبب تعدی این‌همانی~$\Th{Q} \Proves \eq[t_1][t_2]$.
+اگر~$n \neq m$، آنگاه~$\Th{Q} \Proves \eq/[\num n][\num m]$، و
+باز هم به سبب تعدی این‌همانی،
+$\Th{Q} \Proves \eq/[t_1][t_2]$.
+
+اکنون بگذارید~$!A \ident t_1 < t_2$. در هر دو حالت بر اصل موضوعهٔ
+$!Q_8$ تکیه می‌کنیم، که می‌گوید
+$x < y \liff \lexists[z][\eq[z' + x][y]]$ برای همهٔ~$x,y$.
+
+فرض کنید~$\Sat{N}{t_1 < t_2}$. آنگاه~$k \in \Nat$ای وجود دارد
+به‌گونه‌ای که~$n + k + 1 = m$. بنا بر
+\olref{lem:q-proves-clterm-id}،
+$\Th{Q} \Proves \eq[t_1][\num n]$ و
+$\Th{Q} \Proves \eq[t_2][\num m]$، و بنا بر بخش نخست این لم،
+$\Th{Q} \Proves \eq[{\num k}' + \num n][\num m]$.
+از تعدی این‌همانی نتیجه می‌شود
+$\Th{Q} \Proves \eq[{\num k}' + t_1][t_2]$؛ پس
+$\Th{Q} \Proves \lexists[z][\eq[z' + t_1][t_2]]$.
+از جهت راست‌به‌چپ~$!Q_8$، $\Th{Q} \Proves t_1 < t_2$.
+
+در مقابل فرض کنید~$\Sat/{N}{t_1 < t_2}$، یعنی~$m \leq n$.
+%
+در~$\Th{Q}$ کار می‌کنیم و فرض می‌کنیم~$t_1 < t_2$. بنا بر جهت
+چپ‌به‌راست~$!Q_8$، $z$ای وجود دارد به‌گونه‌ای که
+$\eq[z' + t_1][t_2]$. چون~$\Th{Q} \Proves \eq[t_1][\num n]$ و
+$\Th{Q} \Proves \eq[t_2][\num m]$، داریم
+$\eq[z' + \num n][\num m]$.
+%
+با استقرایی بیرونی روی~$m$ و با استفاده از~$!Q_5$،
+$\eq[z' + \num{n - m}][\Obj 0]$.
+اگر~$m = n$، آنگاه~$\eq[z'][\Obj 0]$، که با~$!Q_2$ تناقض دارد.
+اگر~$m < n$، آنگاه
+$\eq[(z' + \num{n - m - 1})'][\Obj 0]$، که باز هم بنا بر~$!Q_5$
+به دست می‌آید و با~$!Q_2$ تناقض دارد.
+پس~$\Th{Q} \Proves \lnot(t_1 < t_2)$.
+\end{proof}
+
+\begin{lem}
+\ollabel{lem:bounded-quant-equiv}
+فرض کنید~$!A$ یک !!a{formula}، $t$ ترمی بسته و
+$k=\Value{t}{N}$ باشد. آنگاه
+\begin{enumerate}
+\item $\Th{Q} \Proves \bforall{x<t}{!A(x)}$ اگر و تنها اگر
+$\Th{Q} \Proves !A(\num 0) \land \dots \land !A(\num{k-1})$.
+\item $\Th{Q} \Proves \bexists{x<t}{!A(x)}$ اگر و تنها اگر
+$\Th{Q} \Proves !A(\num 0) \lor \dots \lor !A(\num{k-1})$.
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+    حالت سور کلی کراندار را ثابت می‌کنیم.
+    اگر~$\Value{t}{N} = 0$، آنگاه سمت چپ هم‌ارزی در~$\Th{Q}$
+    اثبات‌پذیر است، زیرا بنا بر
+    \olref[inc][req][min]{lem:less-zero} هیچ~$x<\num 0$ای وجود ندارد.
+    به همین ترتیب، می‌توانیم هم‌بندی تهی را صرفاً~$\ltrue$ بگیریم،
+    که آن نیز در~$\Th{Q}$ اثبات‌پذیر است.
+    %
+    بنابراین فرض می‌کنیم~$\Value{t}{N} = k+1$ برای عدد طبیعی~$k$ای.
+    بنا بر~\olref{lem:q-proves-clterm-id}
+    می‌توانیم فرض کنیم با !!a{formula} به صورت
+    $\bforall{x<\num{k+1}}{!A(x)}$ کار می‌کنیم.
+
+    فرض کنید
+    $\Th{Q} \Proves \bforall{x<\num{k+1}}{!A(x)}$، و بگذارید
+    $n \leq k$. چون بنا بر~\olref{lem:atomic-completeness} داریم
+    $\Th{Q} \Proves \num n < \num{k+1}$، از منطق نتیجه می‌شود
+    $\Th{Q} \Proves !A(\num n)$. با به‌کاربردن این واقعیت~$k+1$
+    بار، یکی برای هر~$n \leq k$، چنان‌که می‌خواستیم به
+    $\Th{Q} \Proves !A(\num 0) \land \dots \land !A(\num k)$
+    می‌رسیم.
+
+    برای جهت دیگر، فرض کنید
+    $\Th{Q} \Proves !A(\num 0) \land \dots \land !A(\num k)$.
+    در~$\Th{Q}$ کار می‌کنیم و فرض می‌کنیم~$x < \num{k+1}$.
+    بنا بر~\olref[inc][req][min]{lem:less-nsucc} داریم
+    $x = \num 0 \lor \dots \lor x = \num k$؛ پس از منطق
+    $!A(x)$ نتیجه می‌شود، و بنابراین ادعای کلی
+    $\bforall{x<\num{k+1}}{!A(x)}$ به دست می‌آید.
+
+    اثبات هم‌ارزی برای !!{formula}sی دارای سور وجودی کراندار مشابه است.
+\end{proof}
+
+\begin{prob}
+حالت وجودی در~\olref{lem:bounded-quant-equiv} را با جزئیات ثابت کنید.
+\end{prob}
+
+\begin{lem}
+\ollabel{lem:delta0-completeness}
+اگر~$!A$ یک !!{sentence} $\Delta_0$ باشد که در~$\Struct{N}$ صادق است،
+آنگاه~$\Th{Q} \Proves !A$.
+\end{lem}
+
+\begin{proof}
+این را با استقرا روی پیچیدگی !!{formula} ثابت می‌کنیم.
+%
+حالت پایه را~\olref{lem:atomic-completeness} به دست می‌دهد، پس به
+گام استقرا می‌رویم. برای سادگی، حالت نقیض را بر حسب ساختار
+!!{formula}ی که نقیض بر آن اعمال شده است به زیرحالت‌هایی تقسیم می‌کنیم.
+
+\begin{enumerate}
+\item فرض کنید~$(!A \land !B)$ در~$\Struct{N}$ صادق باشد؛ پس~$!A$
+و~$!B$ در~$\Struct{N}$ صادق‌اند. بنا بر فرض استقرا،
+$\Th{Q} \Proves !A$ و~$\Th{Q} \Proves !B$؛ پس بنا بر منطق
+$\Th{Q} \Proves (!A \land !B)$.
+%
+\item فرض کنید~$\lnot (!A \land !B)$ در~$\Struct{N}$ صادق باشد؛
+پس یا~$\lnot !A$ یا~$\lnot !B$ در~$\Struct{N}$ صادق است. بدون کاستن
+از کلیت، اولی را فرض کنید. بنا بر فرض استقرا
+$\Th{Q} \Proves \lnot !A$، و بنابراین بنا بر منطق
+$\Th{Q} \Proves \lnot (!A \land !B)$.
+%
+\item فرض کنید~$(!A \lor !B)$ در~$\Struct{N}$ صادق باشد؛ پس یا
+$!A$ در~$\Struct{N}$ صادق است یا~$!B$ در~$\Struct{N}$. بدون کاستن از کلیت، فرض کنید
+اولی برقرار است. بنا بر فرض استقرا~$\Th{Q} \Proves !A$، و بنابراین
+بنا بر منطق~$\Th{Q} \Proves (!A \lor !B)$.
+%
+\item فرض کنید~$\lnot(!A \lor !B)$ در~$\Struct{N}$ صادق باشد؛ پس
+$\lnot !A$ و~$\lnot !B$ در~$\Struct{N}$ صادق‌اند. آنگاه بنا بر فرض
+استقرا~$\Th{Q} \Proves \lnot !A$ و
+$\Th{Q} \Proves \lnot !B$. در نتیجه، بنا بر منطق
+$\Th{Q} \Proves \lnot(!A \lor !B)$.
+%
+\item فرض کنید~$\bforall{x<t}{!A(x)}$ در~$\Struct{N}$ صادق باشد،
+که در آن~$t$ ترمی بسته و~$k=\Value{t}{N}$ است. بنا بر فرض استقرا و
+منطق، اگر~$!A(\num n)$ در~$\Struct{N}$ برای همهٔ
+$n < \Value{t}{N}$ صادق باشد، آنگاه
+$\Th{Q} \Proves !A(\num 0) \land \dots \land !A(\num{k-1})$.
+از~\olref{lem:bounded-quant-equiv} نتیجه می‌شود
+$\Th{Q} \Proves \bforall{x<t}{!A(x)}$.
+%
+\item حالت سور وجودی کراندار، که در آن !!a{sentence} به صورت
+$\bexists{x < t}{!A(x)}$ داریم، مشابه حالت سور کلی کراندار است.
+%
+\item فرض کنید~$\lnot \bforall{x<t}{!A(x)}$ در~$\Struct{N}$ صادق
+باشد، که در آن~$t$ ترمی بسته است. این !!{sentence} با !!{sentence}ٔ
+$\bexists{x<t}{\lnot !A(x)}$ هم‌ارز است و هم‌ارزی در~$\Th{Q}$
+اشتقاق‌پذیر است؛ پس می‌توانیم استدلال مربوط به سورهای وجودی کراندار را
+به کار بریم.
+%
+\item به‌طور مشابه، فرض کنید~$\lnot \bexists{x<t}!A(x)$ در
+$\Struct{N}$ صادق باشد، که در آن~$t$ ترمی بسته است. این !!{sentence} در
+$\Th{Q}$ با~$\bforall{x<t}{\lnot!A(x)}$ هم‌ارز است؛ پس می‌توانیم
+استدلال مربوط به سورهای کلی کراندار را به کار بریم.
+%
+\item سرانجام، فرض کنید~$\lnot !A$ در~$\Struct{N}$ صادق باشد. تنها
+حالت‌های باقیمانده این‌اند که~$!A$ اتمی باشد یا
+$\lnot !A \ident \lnot\lnot !B$ برای !!{sentence}
+$\Delta_0$ای چون~$!B$. اگر~$!A$ اتمی باشد، بنا بر
+\olref{lem:atomic-completeness}، $\Th{Q} \Proves \lnot !A$.
+اگر~$\lnot !A \ident \lnot\lnot !B$، آنگاه بنا بر منطق در
+$\Th{Q}$ به‌طور اثبات‌پذیر با~$!B$ هم‌ارز است؛ و آن در~$\Struct{N}$
+صادق است، زیرا~$\lnot !A$ در~$\Struct{N}$ صادق است. بنابراین
+بنا بر فرض استقرا~$\Th{Q} \Proves \lnot !A$.
+\end{enumerate}
+\end{proof}
+
+\begin{prob}
+حالت وجودی در~\olref{lem:delta0-completeness} را با جزئیات ثابت کنید.
+\end{prob}
+
+\begin{thm}
+\ollabel{thm:sigma1-completeness}
+اگر~$!A$ یک !!{sentence} $\Sigma_1$ باشد که در~$\Struct{N}$ صادق است،
+آنگاه~$\Th{Q} \Proves !A$.
+\end{thm}
+
+\begin{proof}
+اگر~$\lexists{x}!A(x)$ یک !!{sentence} $\Sigma_1$ باشد که در
+$\Struct{N}$ صادق است، آنگاه عدد طبیعی~$n$ و انتساب متغیری چون~$s$
+وجود دارند به‌گونه‌ای که~$s(x) = n$ و~$\Sat{N}{!A(x)}[s]$.
+از واقعیت‌های استاندارد دربارهٔ رابطهٔ ارضا نتیجه می‌شود
+$\Sat{N}{!A(\num n)}$. اما~$!A(\num n)$ یک !!{formula} $\Delta_0$
+است؛ پس بنا بر~\olref{lem:delta0-completeness} داریم
+$\Th{Q} \Proves !A(\num n)$، و بنابراین بنا بر منطق نیز
+$\Th{Q} \Proves \lexists[x][!A(x)]$.
+\end{proof}
+
+\end{document}

@@ -1,0 +1,147 @@
+% Part: first-order-logic
+% Chapter: axiomatic-deduction
+% Section: soundness
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{axd}{sou}}
+      {\olfileid{pl}{axd}{sou}}
+
+\olsection{صحت}
+
+\begin{explain}
+دستگاه !!^a{derivation}، مانند استنتاج اصل‌موضوعی، \emph{صحیح} است اگر
+نتواند چیزهایی را که در واقع برقرار نیستند !!{derive} کند. بنابراین،
+صحت گونه‌ای ویژگی ایمنیِ تضمین‌شده برای دستگاه‌های !!{derivation} است.
+بسته به اینکه کدام ویژگی برهان‌نظری محل بحث باشد، برای نمونه می‌خواهیم
+بدانیم که
+\begin{enumerate}
+\item هر $!A$~!!{derivable}، \iftag{FOL}{معتبر}{همان‌گویی} است؛
+\item اگر $!A$ از چند عضو دیگرِ~$\Gamma$~!!{derivable} باشد، نتیجهٔ
+  آن‌ها نیز هست؛
+\item اگر مجموعهٔ $\Gamma$ از !!{formula}s ناسازگار باشد، ارضاناپذیر است.
+\end{enumerate}
+این‌ها ویژگی‌های مهم دستگاه !!a{derivation} هستند. اگر هر یک از آن‌ها
+برقرار نباشد، دستگاه !!{derivation} ناقص است---بیش از اندازه !!{derive}
+می‌کند. ازاین‌رو، اثبات صحت دستگاه !!a{derivation} اهمیتی بنیادی دارد.
+\end{explain}
+
+\begin{prop}
+  اگر $!A$ یک اصل موضوع باشد، آنگاه
+  \iftag{FOL}
+    {$\Sat{M}{!A}[s]$ برای هر !!{structure}~$\Struct{M}$ و تخصیص~$s$.}
+    {$\pSat{v}{!A}$ برای هر !!{valuation}~$\pAssign{v}$.}
+\end{prop}
+
+\begin{proof}
+\iftag{FOL}{باید بررسی کنیم که همهٔ اصول موضوع معتبرند. برای نمونه،
+  حالت \olref[qua]{ax:q1} چنین است: فرض کنید $t$ برای $x$ در $!A$~
+  !!{free for} باشد و
+  $\Sat{M}{\lforall[x][!A]}[s]$ را فرض کنید. آنگاه بنا بر تعریف ارضا،
+  برای هر $\varAssign{s'}{s}{x}$، همچنین $\Sat{M}{!A}[s']$، و به‌ویژه
+  این حکم هنگامی برقرار است که $s'(x) = \Value{t}{M}[s]$. بنا بر
+  \olref[syn][ext]{prop:ext-formulas}،
+  $\Sat{M}{\Subst{!A}{t}{x}}[s]$. این نشان می‌دهد که
+  $\Sat{M}{(\lforall[x][!A] \lif \Subst{!A}{t}{x})}[s]$.}{برای هر اصل
+  موضوع جدول ارزش بسازید تا بررسی کنید که همان‌گویی است.}
+\end{proof}
+
+\begin{thm}[صحت]
+\ollabel{thm:soundness}
+اگر $\Gamma$ مجموعه‌ای از !!{sentence}s و $!A$ یک !!a{sentence} باشد و
+$\Gamma \Proves !A$ به‌وسیلهٔ !!a{derivation} که سراسر از
+!!{sentence}s تشکیل شده است، آنگاه $\Gamma \Entails !A$.
+\end{thm}
+
+\begin{proof}
+بر شمار کاربردهای قواعد استنتاج در همان !!{derivation} سراسر متشکل از
+!!{sentence}s برای $!A$ از $\Gamma$ استقرا می‌کنیم. اگر هیچ گامی با
+استنتاج توجیه نشده باشد، همهٔ !!{sentence}s در !!{derivation} یا
+نمونه‌هایی از اصول موضوع‌اند یا در
+~$\Gamma$ قرار دارند. بنا بر گزارهٔ پیشین، همهٔ اصول موضوع
+\iftag{FOL}{معتبر}{همان‌گویی} هستند؛ پس اگر $!A$ یک اصل موضوع باشد،
+$\Gamma \Entails !A$. اگر $!A \in \Gamma$، آنگاه بدیهتاً
+$\Gamma \Entails !A$.
+
+اگر گام آخر !!{derivation}~$!A$ با وضع مقدم توجیه شده باشد، آنگاه
+!!{sentence}s~$!B$ و $!B \lif !A$ در !!{derivation} وجود دارند، و فرض
+استقرا بر بخش‌هایی از !!{derivation} اعمال می‌شود که به این
+!!{sentence}s پایان می‌یابند (زیرا دست‌کم یک کاربرد قاعدهٔ استنتاج کمتر
+دارند). پس بنا بر فرض استقرا، $\Gamma \Entails !B$ و
+$\Gamma \Entails !B \lif !A$. آنگاه
+$\Gamma \Entails !A$ بنا بر
+\iftag{FOL}
+      {\olref[syn][sem]{thm:sem-deduction}}
+      {\olref[pl][syn][sem]{thm:sem-deduction}}.
+
+\iftag{FOL}{اکنون فرض کنید گام آخر با \QR توجیه شده باشد. آن گام
+!!a{sentence} به‌صورت $!C \lif \lforall[x][!B(x)]$ است و پیش از آن
+!!a{sentence}~$!C \lif !B(c)$ وجود دارد، که در آن $c$ در $\Gamma$، $!C$ یا
+$\lforall[x][!B(x)]$ نیست. بنا بر فرض استقرا،
+$\Gamma \Entails !C \lif !B(c)$. بنا بر
+\olref[syn][sem]{thm:sem-deduction}،
+$\Gamma \cup \{!C\} \Entails !B(c)$.
+
+ساختار~$\Struct{M}$ای را در نظر بگیرید چنان‌که
+$\Sat{M}{\Gamma \cup \{!C\}}$. باید نشان دهیم
+$\Sat{M}{\lforall[x][!B(x)]}$. چون $\lforall[x][!B(x)]$~!!a{sentence}
+است، این بدان معناست که باید نشان دهیم برای هر تخصیص متغیر~$s$،
+$\Sat{M}{!B(x)}[s]$
+(\olref[syn][ass]{prop:sat-quant}). چون $\Gamma \cup \{!C\}$ سراسر از
+جمله‌ها تشکیل شده است، $\Sat{M}{!D}[s]$ برای همهٔ $!D \in \Gamma$ بنا بر
+\olref[syn][sat]{defn:satisfaction}. فرض کنید $\Struct{M'}$ مانند
+$\Struct{M}$ باشد، جز آنکه $\Assign{c}{M'} = s(x)$. چون $c$ در
+~$\Gamma$ یا~$!C$ رخ نمی‌دهد، بنا بر
+\olref[syn][ext]{cor:extensionality-sent}،
+$\Sat{M'}{\Gamma \cup \{!C\}}$. چون
+$\Gamma \cup \{!C\} \Entails !B(c)$، $\Sat{M'}{!B(c)}$. چون
+$!B(c)$~!!a{sentence} است، بنا بر
+\olref[syn][ass]{prop:sentence-sat-true}، $\Sat{M'}{!B(c)}[s]$.
+$\Sat{M'}{!B(x)}[s]$ هرگاه و تنها هرگاه $\Sat{M'}{!B(c)}[s]$ بنا بر
+\olref[syn][ext]{prop:ext-formulas} (به یاد آورید که $!B(c)$ همان
+$\Subst{!B(x)}{c}{x}$ است). بنابراین، $\Sat{M'}{!B(x)}[s]$. چون $c$ در
+~$!B(x)$ رخ نمی‌دهد، بنا بر
+\olref[syn][ext]{prop:extensionality}، $\Sat{M}{!B(x)}[s]$. اما $s$
+تخصیص متغیری دلخواه بود، پس $\Sat{M}{\lforall[x][!B(x)]}$. بنابراین
+$\Gamma \cup \{!C\} \Entails \lforall[x][!B(x)]$. بنا بر
+\olref[syn][sem]{thm:sem-deduction}،
+$\Gamma \Entails !C \lif \lforall[x][!B(x)]$.
+
+حالتی که $!A$ با \QR{} توجیه شده اما به صورت
+$\lexists[x][!B(x)] \lif !C$ است، به‌عنوان تمرین واگذار می‌شود.}{}
+\end{proof}
+
+\tagprob{FOL}
+\begin{prob}
+  برهان \olref[fol][axd][sou]{thm:soundness} را کامل کنید.
+\end{prob}
+\tagendprob
+
+\begin{cor}
+\ollabel{cor:weak-soundness}
+اگر $\Proves !A$، آنگاه $!A$~\iftag{FOL}{معتبر}{همان‌گویی} است.
+\end{cor}
+
+\begin{cor}
+\ollabel{cor:consistency-soundness}
+اگر $\Gamma$ ارضاپذیر باشد، آنگاه سازگار است.
+\end{cor}
+
+\begin{proof}
+عکس نقیض را اثبات می‌کنیم. فرض کنید $\Gamma$ سازگار نباشد. آنگاه
+$\Gamma \Proves \lfalse$، یعنی !!a{derivation} برای $\lfalse$ از
+~$\Gamma$ وجود دارد. بنا بر \olref{thm:soundness}، هر
+\iftag{FOL}{!!{structure}~$\Struct{M}$}{!!{valuation}~$\pAssign{v}$}
+که $\Gamma$ را ارضا کند، باید~$\lfalse$ را ارضا کند. چون
+\iftag{FOL}{$\Sat/{M}{\lfalse}$ برای هر
+  !!{structure}~$\Struct{M}$}{$\pSat/{v}{\lfalse}$ برای هر
+  !!{valuation}~$\pAssign{v}$}، هیچ
+\iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} نمی‌تواند $\Gamma$ را ارضا
+کند؛ یعنی $\Gamma$ ارضاپذیر نیست.
+\end{proof}
+
+
+\end{document}

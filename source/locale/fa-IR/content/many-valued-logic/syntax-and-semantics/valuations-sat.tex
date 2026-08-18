@@ -1,0 +1,50 @@
+% Part: many-valued-logic
+% Chapter: syntax-and-semantics
+% Section: valuations-sat
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mvl}{syn}{val}
+
+\olsection{\usetoken{P}{valuation} و ارضا}
+
+\begin{defn}[!!^{valuation}s] 
+بگذارید~$V$ مجموعه‌ای از ارزش‌های صدق باشد. یک~\emph{!!{valuation}}
+برای~$\Lang{L}$ در~$V$ تابعی چون~$\pAssign{v}$ است که~!!a{element} از
+$V$ را به~!!{propositional variable}های زبان نسبت می‌دهد؛
+یعنی~$\pAssign{v} \colon \PVar \to V$.
+\end{defn}
+
+\begin{defn}\ollabel{defn:pValue}
+  با داشتن~!!a{valuation} چون~$\pAssign{v}$ در مجموعهٔ ارزش‌های صدق~$V$
+  از منطق چندارزشی~$\Log L$، تابع ارزیابی
+  $\pValue{v} \colon \Frm[L] \to V$ را به‌صورت استقرایی چنین تعریف
+  می‌کنیم:
+  \begin{enumerate}
+    \item $\pValue{v}(\Obj p_n) = \pAssign{v}(\Obj p_n)$؛
+    \item اگر~$\star$ رابطی صفرموضعی باشد، آنگاه
+    $\pValue{v}(\star)  = \tf{\star}[\Log L]$؛
+    \item اگر~$\star$ رابطی~$n$موضعی باشد، به‌طوری‌که~$n>0$، آنگاه
+    \[
+      \pValue{v}(\star(!A_1, \dots, !A_n)) = \tf{\star}[\Log L]
+      (\pValue{v}(!A_1), \dots, \pValue{v}(!A_n)).
+    \]
+  \end{enumerate}
+\end{defn}
+
+\begin{defn}[ارضا]
+\ollabel{defn:satisfaction} !!{formula} چون~$!A$ به‌وسیلهٔ
+!!a{valuation} چون~$\pAssign{v}$ \emph{ارضا می‌شود}، یعنی
+$\pSat{v}{!A}[\Log L]$، اگر و تنها اگر
+$\pValue{v}(!A)[\Log L] \in V^+$، که در آن~$V^+$ مجموعهٔ ارزش‌های صدق
+ممتاز~$\Log L$ است.
+  
+  $\pSat/{v}{!A}[\Log L]$ را برای بیان «نه
+  $\pSat{v}{!A}[\Log L]$» می‌نویسیم. اگر~$\Gamma$ مجموعه‌ای از
+  !!{formula}ها باشد، $\pSat{v}{\Gamma}[\Log L]$ اگر و تنها اگر برای
+  هر~$!A \in \Gamma$، $\pSat{v}{!A}[\Log L]$.
+\end{defn}
+
+\end{document}

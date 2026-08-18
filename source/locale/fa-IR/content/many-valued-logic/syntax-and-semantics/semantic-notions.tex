@@ -1,0 +1,70 @@
+% Part: many-valued-logic
+% Chapter: syntax-and-semantics
+% Section: semantic-notions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mvl}{syn}{sem}
+
+\olsection{مفاهیم معناشناختی}
+
+فرض کنید منطق چندارزشی~$\Log L$ با یک ماتریس داده شده باشد. آنگاه
+می‌توانیم مفاهیم معناشناختی متعارف را برای~$\Log L$ تعریف کنیم.
+
+\begin{defn} 
+\begin{enumerate}
+\item !!^a{formula} چون~$!A$ \emph{ارضاپذیر} است اگر برای
+  $\pAssign{v}$ای داشته باشیم~$\pSat{v}{!A}$؛ و \emph{ارضاناپذیر} است
+  اگر برای هیچ~$\pAssign{v}$ای~$\pSat{v}{!A}$ نباشد؛
+\item !!^a{formula} چون~$!A$ یک \emph{همان‌گویی} است اگر برای همهٔ
+  !!{valuation}های~$v$، $\pSat{v}{!A}$؛
+\item اگر~$\Gamma$ مجموعه‌ای از~!!{formula}ها باشد،
+  $\Gamma \Entails !A$ («$\Gamma$، $!A$ را نتیجه می‌دهد») اگر و تنها
+  اگر برای هر~!!{valuation} چون~$\pAssign{v}$ که
+  $\pSat{v}{\Gamma}$، داشته باشیم~$\pSat{v}{!A}$.
+\item اگر~$\Gamma$ مجموعه‌ای از~!!{formula}ها باشد، $\Gamma$
+  \emph{ارضاپذیر} است اگر~!!a{valuation} چون~$\pAssign{v}$ وجود داشته
+  باشد که~$\pSat{v}{\Gamma}$؛ وگرنه~$\Gamma$ \emph{ارضاناپذیر} است.
+\end{enumerate} 
+\end{defn}
+
+برخی واقعیت‌هایی که دربارهٔ این مفاهیم داریم همان واقعیت‌های حالت منطق
+کلاسیک‌اند:
+
+\begin{prop}
+\ollabel{prop:semanticalfacts} 
+\begin{enumerate} 
+\item $!A$ همان‌گویی است اگر و تنها اگر
+  $\emptyset \Entails !A$؛
+\item اگر~$\Gamma$ ارضاپذیر باشد، هر زیرمجموعهٔ متناهی~$\Gamma$ نیز
+  ارضاپذیر است؛
+\item\ollabel{def:monotonicity}%
+یکنوایی: اگر~$\Gamma \subseteq \Delta$ و~$\Gamma \Entails !A$، آنگاه
+  $\Delta \Entails !A$ نیز؛
+\item\ollabel{def:Cut}%
+تعدی: اگر~$\Gamma \Entails !A$ و
+  $\Delta \cup \{ !A\} \Entails !B$، آنگاه
+  $\Gamma \cup \Delta \Entails !B$؛
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+تمرین.
+\end{proof}
+
+\begin{prob}
+\olref[mvl][syn][sem]{prop:semanticalfacts} را ثابت کنید.
+\end{prob}
+
+در منطق کلاسیک می‌توانیم استلزام را به شرطی پیوند دهیم. برای نمونه،
+\emph{وضع مقدم} معتبر است: اگر~$\Gamma \Entails !A$ و
+$\Gamma \Entails !A \lif !B$، آنگاه~$\Gamma \Entails !B$. رابطهٔ مهم
+دیگر میان~$\Entails$ و~$\lif$ در منطق کلاسیک قضیهٔ استنتاج معناشناختی
+است: $\Gamma \Entails !A \lif !B$ اگر و تنها اگر
+$\Gamma \cup \{!A\} \Entails !B$. این نتایج در منطق‌های چندارزشی
+همواره برقرار \emph{نیستند}. برقراربودن آن‌ها به تابع صدق~$\tf{\lif}$
+بستگی دارد.
+
+\end{document}

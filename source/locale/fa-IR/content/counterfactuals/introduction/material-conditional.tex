@@ -1,0 +1,64 @@
+% Part: counterfactuals
+% Chapter: introduction
+% Section: material-conditional
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cnt}{int}{mat}
+
+\olsection{شرطی مادی}
+
+شرطی در ساده‌ترین صورت انگلیسی خود جمله‌ای به شکل «اگر \dots، آنگاه
+\dots» است که در آن جای خالی‌ها خود جمله‌اند؛ مانند «اگر پیشخدمت این
+کار را کرده باشد، آنگاه باغبان بی‌گناه است». در درس‌های مقدماتی منطق
+می‌آموزیم شرطی‌ها را با رابط~$\lif$ نمادگذاری کنیم: بخش‌های نشان‌داده‌شده
+با~\dots{} را، مثلاً با !!{formula}های~$!A$ و~$!B$، نمادگذاری می‌کنیم
+و کل شرطی با~$!A \lif !B$ نمادگذاری می‌شود.
+
+رابط~$\lif$ \emph{تابعِ صدق} است؛ یعنی ارزش صدق---$\True$ یا
+$\False$---ِ~$!A \lif !B$ با ارزش‌های صدق~$!A$ و~$!B$ تعیین می‌شود:
+$!A \lif !B$ صادق است اگر و تنها اگر~$!A$ کاذب یا~$!B$ صادق باشد، و
+در غیر این صورت کاذب است. نسبت به یک تخصیص ارزش صدق~$\pAssign v$،
+$\pSat{v}{!A \lif !B}$ را اگر و تنها اگر~$\pSat/{v}{!A}$ یا
+$\pSat{v}{!B}$ تعریف می‌کنیم. رابط~$\lif$ با این معناشناسی
+\emph{شرطی مادی} نامیده می‌شود.
+
+این تعریف شماری واقعیت منطقی ابتدایی به دست می‌دهد. نخست، قضیهٔ استنتاج
+برای شرطی مادی برقرار است:
+\begin{align}
+  \text{اگر } \Gamma, !A \Entails !B \text{، آنگاه } \Gamma \Entails !A \lif !B
+\end{align}
+این شرطی تابعِ صدق است: $!A \lif !B$ و~$\lnot !A \lor !B$ هم‌ارزند:
+\begin{align}
+  !A \lif !B & \Entails \lnot !A \lor !B\\
+  \lnot !A \lor !B & \Entails !A \lif !B
+  \intertext{تالیِ شرطی مادی و نیز نقیض مقدم آن، شرطی را نتیجه می‌دهند:}
+  !B & \Entails !A \lif !B\\
+  \lnot !A & \Entails !A \lif !B
+  \intertext{نقیض یک شرطی مادی با عطف مقدم آن و نقیض تالی آن هم‌ارز
+    است: اگر~$!A \lif !B$ کاذب باشد، $!A \land \lnot !B$ صادق است و
+    برعکس:}
+  \lnot(!A \lif !B) & \Entails !A \land \lnot !B\\
+  !A \land \lnot !B & \Entails \lnot(!A \lif !B)
+  \intertext{شرطی مادی وضع مقدم را پشتیبانی می‌کند:}
+  !A, !A \lif !B & \Entails !B
+  \intertext{شرطی مادی تجمیع‌پذیر است:}
+  !A \lif !B,  !A \lif !C & \Entails !A \lif (!B \land !C)
+  \intertext{همواره می‌توان مقدم را تقویت کرد؛ یعنی شرطی \emph{یکنوا} است:}
+  !A \lif !B & \Entails (!A \land !C) \lif !B
+  \intertext{شرطی مادی تعدی است؛ یعنی قاعدهٔ زنجیره معتبر است:}
+  !A \lif !B, !B \lif !C & \Entails !A \lif !C
+  \intertext{شرطی مادی با عکس نقیض خود هم‌ارز است:}
+  !A \lif !B & \Entails \lnot !B \lif \lnot !A\\
+  \lnot !B \lif \lnot !A & \Entails !A \lif !B
+\end{align}
+
+این‌ها همگی استنتاج‌هایی سودمند و بی‌اشکال در استدلال ریاضی‌اند. اما
+آثار فلسفی و زبان‌شناختی سرشار از پادنمونه‌های ادعایی برای استنتاج‌های
+متناظر در بافت‌های غیرریاضی است. این پادنمونه‌ها نشان می‌دهند شرطی
+مادی~$\lif$ رابط مناسب---یا دست‌کم همواره رابط مناسب---برای نمادگذاری
+عبارت‌های انگلیسی «اگر \dots، آنگاه \dots» نیست.
+
+\end{document}

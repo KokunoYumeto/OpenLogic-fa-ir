@@ -1,0 +1,281 @@
+% Part: turing-machines
+% Chapter: machines-computations
+% Section: representing-tms
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{tur}{mac}{rep}
+\olsection{نمایش ماشین‌های تورینگ}
+
+\begin{explain}
+ماشین‌های تورینگ را می‌توان به‌صورت دیداری با \emph{نمودارهای حالت}
+نمایش داد. این نمودارها از خانه‌های حالت ساخته شده‌اند که پیکان‌ها
+آن‌ها را به هم وصل می‌کنند. چنان‌که انتظار می‌رود، هر خانهٔ حالت
+نمایندهٔ حالتی از ماشین است. هر پیکان نمایندهٔ دستوری است که از آن
+حالت قابل اجراست و جزئیات دستور بالا یا پایین پیکان مناسب نوشته
+می‌شود. ماشین زیر را در نظر بگیرید که تنها دو حالت درونی $q_0$ و
+$q_1$ و یک دستور دارد:
+\[
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+                    semithick]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+
+  \node[initial,state]   (A)              {$q_0$};
+  \node[state]   (B) [right of=A] {$q_1$};
+
+  \path (A) edge  node {\TMtrans{\TMblank}{\TMstroke}{\TMright}} (B);
+\end{tikzpicture}
+\]
+به یاد آورید ماشین تورینگ سر خواندن--نوشتن و نواری دارد که ورودی روی
+آن نوشته شده است. دستور را می‌توان چنین خواند: \emph{اگر در حالت
+$q_0$ یک~$\TMblank$ می‌خوانی، یک~$\TMstroke$ بنویس، به راست برو و
+به حالت $q_1$ وارد شو}. این هم‌ارز آن است که تابع گذار
+$\tuple{q_0,\TMblank}$ را به $\tuple{q_1,\TMstroke,\TMright}$ بفرستد.
+\end{explain}
+
+\begin{ex}
+\emph{ماشین زوج}: ماشین تورینگ زیر متوقف می‌شود اگر و تنها اگر شمار
+$\TMstroke$های روی نوار زوج باشد (با این فرض که همهٔ $\TMstroke$ها
+پیش از نخستین $\TMblank$ روی نوار آمده‌اند).
+\[
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+                    semithick]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+
+  \node[initial,state]         (A)              {$q_0$};
+  \node[state]         (B) [right of=A] {$q_1$};
+
+  \path (A) edge [bend left] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (B)
+        (B) edge [loop above] node {\TMtrans{\TMblank}{\TMblank}{\TMright}} (B)
+            edge [bend left] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (A);
+\end{tikzpicture}
+\]
+
+نمودار حالت با تابع گذار زیر متناظر است:
+\begin{align*}
+\delta(q_0, \TMstroke) & = \tuple{q_1, \TMstroke, \TMright},\\
+\delta(q_1, \TMstroke) & = \tuple{q_0, \TMstroke, \TMright},\\
+\delta(q_1, \TMblank)  & = \tuple{q_1, \TMblank, \TMright}
+\end{align*}
+\end{ex}
+
+\begin{explain}
+ماشین بالا تنها هنگامی متوقف می‌شود که ورودی شمار زوجی از خط‌ها باشد.
+وگرنه ماشین (از نظر نظری) تا ابد به کار ادامه می‌دهد. برای هر ماشین و
+ورودی می‌توان \emph{پیکربندی‌های} ماشین را گام‌به‌گام دنبال کرد تا
+خروجی تعیین شود. بعداً تعریفی رسمی از پیکربندی‌ها می‌دهیم. فعلاً
+می‌توان به‌طور شهودی پیکربندی‌ها را دنباله‌ای از نمودارها دانست که
+حالت ماشین را در هر لحظهٔ کار نشان می‌دهند. پیکربندی‌ها محتوای نوار،
+حالت ماشین و جای سر خواندن--نوشتن را نشان می‌دهند.
+
+پیکربندی‌های ماشین زوج را هنگامی دنبال کنیم که با ورودی چهار
+$\TMstroke$ آغاز می‌شود. در این حالت انتظار داریم ماشین متوقف شود.
+سپس ماشین را با ورودی سه $\TMstroke$ اجرا می‌کنیم که در آن تا ابد
+کار خواهد کرد.
+
+ماشین در حالت~$q_0$ آغاز می‌کند و چپ‌ترین~$\TMstroke$ را می‌خواند.
+حالت آغازین ماشین را می‌توان چنین نمایش داد:
+\[
+\TMendtape \TMstroke_0 \TMstroke \TMstroke \TMstroke \TMblank \ldots
+\]
+پیکربندی بالا روشن است. ماشین در حالت صفر آغاز می‌کند و چپ‌ترین
+$\TMstroke$ را می‌خواند. این با زیرنویس نام حالت روی نخستین
+$\TMstroke$ نمایش داده شده است. دستور قابل اجرا در این نقطه
+$\delta(q_0,\TMstroke)=\tuple{q_1,\TMstroke,\TMright}$ است؛ پس ماشین
+روی نوار به راست می‌رود و به حالت~$q_1$ تغییر می‌کند.
+\[
+\TMendtape \TMstroke \TMstroke_1 \TMstroke \TMstroke \TMblank \ldots
+\]
+چون ماشین اکنون در حالت~$q_1$ یک~$\TMstroke$ می‌خواند، باید دستور
+$\delta(q_1,\TMstroke)=\tuple{q_0,\TMstroke,\TMright}$ را «دنبال»
+کنیم. حاصل پیکربندی زیر است:
+\[
+\TMendtape \TMstroke \TMstroke \TMstroke_0 \TMstroke \TMblank \ldots
+\]
+با ادامهٔ کار ماشین، قواعد دوباره به همان ترتیب اعمال می‌شوند و دو
+پیکربندی زیر را به دست می‌دهند:
+\[
+\TMendtape \TMstroke \TMstroke \TMstroke \TMstroke_1 \TMblank \ldots
+\]
+\[
+\TMendtape \TMstroke \TMstroke \TMstroke \TMstroke \TMblank_0 \ldots
+\]
+ماشین اکنون در حالت~$q_0$ یک~$\TMblank$ می‌خواند. از نمودار گذار
+به‌آسانی می‌بینیم هیچ دستوری برای اجرا نیست و بنابراین ماشین متوقف
+شده است. یعنی ورودی پذیرفته شده است.
+
+اکنون فرض کنید ماشین را با ورودی سه $\TMstroke$ آغاز کنیم. چند
+پیکربندی نخست مشابه‌اند، زیرا همان دستورها با تفاوت اندکی در ورودی
+نوار اجرا می‌شوند:
+\[
+\TMendtape \TMstroke_0 \TMstroke \TMstroke \TMblank \ldots
+\]
+\[
+\TMendtape \TMstroke \TMstroke_1 \TMstroke \TMblank \ldots
+\]
+\[
+\TMendtape \TMstroke \TMstroke \TMstroke_0 \TMblank \ldots
+\]
+\[
+\TMendtape \TMstroke \TMstroke \TMstroke \TMblank_1 \ldots
+\]
+ماشین اکنون از همهٔ $\TMstroke$ها گذشته و در حالت~$q_1$ یک
+$\TMblank$ می‌خواند. چنان‌که نمودار نشان می‌دهد، دستوری به شکل
+$\delta(q_1,\TMblank)=\tuple{q_1,\TMblank,\TMright}$ وجود دارد. چون
+نوار در سمت راست تا بی‌نهایت با $\TMblank$ پر است، ماشین اجرای این
+دستور را \emph{برای همیشه} ادامه می‌دهد؛ در حالت~$q_1$ می‌ماند و
+هرچه بیشتر به راست می‌رود. ماشین هرگز متوقف نمی‌شود و ورودی را
+نمی‌پذیرد.
+\end{explain}
+
+\begin{explain}
+مهم است توجه کنیم که همهٔ ماشین‌ها متوقف نمی‌شوند. اگر توقف یعنی تمام
+شدن دستورهای قابل اجرای ماشین، می‌توانیم صرفاً با تضمین وجود پیکانی
+خروجی برای هر نماد در هر حالت، ماشینی بسازیم که هرگز متوقف نشود.
+می‌توان ماشین زوج را با افزودن دستوری برای خواندن $\TMblank$ در~$q_0$
+چنان تغییر داد که بی‌پایان کار کند.
+\end{explain}
+
+\begin{ex}
+\[
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+                    semithick]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+
+  \node[initial,state] (A)              {$q_0$};
+  \node[state]         (B) [right of=A] {$q_1$};
+
+  \path
+  (A) edge [bend left] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (B)
+      edge [loop above] node {\TMtrans{\TMblank}{\TMblank}{\TMright}} (A)
+  (B) edge [loop above] node {\TMtrans{\TMblank}{\TMblank}{\TMright}} (B)
+      edge [bend left] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (A);
+\end{tikzpicture}
+\]
+\end{ex}
+
+\begin{explain}
+جدول‌های ماشین راه دیگری برای نمایش ماشین‌های تورینگ‌اند. در جدول
+ماشین، الفبای نوار روی محور~$x$ و مجموعهٔ حالت‌های ماشین روی محور~$y$
+نمایش داده می‌شود. درون جدول و در تقاطع هر حالت و نماد، باقی دستور---
+حالت تازه، نماد تازه و جهت حرکت---نوشته می‌شود. جدول ماشین تعیین حالت
+و نمادی را که ماشین در آن متوقف می‌شود آسان می‌کند. هر جای خالی جدول
+نقطه‌ای ممکن برای توقف ماشین است. برخلاف نمودارهای حالت و مجموعه‌های
+دستور، که نقاط توقف ماشین در آن‌ها همیشه فوراً آشکار نیست، همهٔ نقاط
+توقف با یافتن جاهای خالی جدول ماشین به‌سرعت شناسایی می‌شوند.
+\end{explain}
+
+\begin{ex}
+جدول ماشین برای ماشین زوج چنین است:
+\[
+\centering
+\begin{tabular}{lllll}
+\cline{2-4}
+\multicolumn{1}{l|}{}      & \multicolumn{1}{c|}{$\TMblank$}                
+& \multicolumn{1}{c|}{$\TMstroke$}     & \multicolumn{1}{c|}{$\TMendtape$}   &  \\ \cline{1-4}
+\multicolumn{1}{|l|}{$q_0$} & \multicolumn{1}{l|}{}                          
+& \multicolumn{1}{l|}{\TMtrans{\TMstroke}{q_1}{\TMright}} & 
+\multicolumn{1}{l|}{\phantom{\TMtrans{\TMstroke}{q_1}{\TMright}}} &  \\ \cline{1-4}
+\multicolumn{1}{|l|}{$q_1$} & \multicolumn{1}{l|}{\TMtrans{\TMblank}{q_1}{\TMright}} 
+& \multicolumn{1}{l|}{\TMtrans{\TMstroke}{q_0}{\TMright}} & 
+\multicolumn{1}{l|}{\phantom{\TMtrans{\TMstroke}{q_1}{\TMright}}} &  \\ \cline{1-4}
+\end{tabular}
+\]
+چنان‌که می‌بینیم، ماشین هنگام خواندن~$\TMblank$ در حالت~$q_0$ متوقف
+می‌شود.
+\end{ex}
+
+\begin{explain}
+تا اینجا تنها ماشین‌هایی را در نظر گرفته‌ایم که ورودی را می‌خوانند و
+می‌پذیرند. بااین‌حال، ماشین‌های تورینگ هم توان خواندن و هم نوشتن
+دارند. نمونهٔ چنین ماشینی (در میان نمونه‌های بسیار) \emph{دوبرابرکن}
+است. دوبرابرکن هنگامی که با بلوکی از $n$ عدد $\TMstroke$ روی نوار
+آغاز کند، بلوکی از $2n$ عدد $\TMstroke$ بیرون می‌دهد.
+\end{explain}
+
+\begin{ex}
+  \ollabel{ex:doubler} پیش از ساخت ماشین دوبرابرکن، باید
+  \emph{راهبردی} برای حل مسئله بیابیم. چون ماشین (چنان‌که صورت‌بندی
+  کرده‌ایم) نمی‌تواند به یاد بسپارد چند $\TMstroke$ خوانده است، به
+  راهی برای پیگیری همهٔ $\TMstroke$های نوار نیاز داریم. یک راه این
+  است که خروجی را با یک~$\TMblank$ از ورودی جدا کنیم. آنگاه ماشین
+  می‌تواند نخستین $\TMstroke$ ورودی را پاک کند، از باقی ورودی بگذرد،
+  یک $\TMblank$ باقی بگذارد و دو $\TMstroke$ تازه بنویسد. سپس
+  بازمی‌گردد، دومین $\TMstroke$ ورودی را می‌یابد و آن را نیز دوبرابر
+  می‌کند. به ازای هر یک $\TMstroke$ ورودی، دو $\TMstroke$ خروجی
+  می‌نویسد. با پاک‌کردن ورودی در حین کار تضمین می‌کنیم هیچ
+  $\TMstroke$ای از قلم نیفتد یا دوبار دوبرابر نشود. پس از پاک‌شدن کل
+  ورودی، $2n$ عدد $\TMstroke$ روی نوار می‌ماند. نمودار حالت ماشین
+  تورینگ حاصل در \olref{fig:doubler} آمده است.
+  \begin{figure}
+\[
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+                    semithick]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+
+  \node[initial,state] (1)              {$q_0$};
+  \node[state]         (2) [right of=1] {$q_1$};
+  \node[state]         (3) [right of=2] {$q_2$};
+  \node[state]         (4) [below of=3] {$q_3$};
+  \node[state]         (5) [left of=4]  {$q_4$};
+  \node[state]         (6) [left of=5]  {$q_5$};
+
+  \path (1) edge node {\TMtrans{\TMstroke}{\TMblank}{\TMright}} (2)
+    (2) edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (2)
+      edge node {\TMtrans{\TMblank}{\TMblank}{\TMright}} (3)
+    (3) edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (3)
+        edge node {\TMtrans{\TMblank}{\TMstroke}{\TMright}} (4)
+    (4) edge [loop below] node {\TMtrans{\TMblank}{\TMstroke}{\TMleft}} (4)
+        edge node {\TMtrans{\TMstroke}{\TMstroke}{\TMleft}} (5)
+    (5) edge [loop below]  node {\TMtrans{\TMstroke}{\TMstroke}{\TMleft}} (5)
+        edge              node {\TMtrans{\TMblank}{\TMblank}{\TMleft}} (6)
+    (6) edge [loop below] node {\TMtrans{\TMstroke}{\TMstroke}{\TMleft}} (6)
+        edge              node {\TMtrans{\TMblank}{\TMblank}{\TMright}} (1);
+\end{tikzpicture}
+\]
+\caption{ماشین دوبرابرکن}
+\ollabel{fig:doubler}
+\end{figure}
+\end{ex}
+
+\begin{prob}
+ورودی دلخواهی انتخاب کنید و پیکربندی‌های ماشین دوبرابرکن در
+\olref[tur][mac][rep]{ex:doubler} را گام‌به‌گام دنبال کنید.
+\end{prob}
+
+\begin{prob}
+ماشین تورینگی با الفبای $\{\TMendtape,\TMblank,A,B\}$ طراحی کنید که
+هر رشته از $A$ها و $B$ها را که در آن شمار $A$ها با شمار $B$ها برابر
+است \emph{و} همهٔ $A$ها پیش از همهٔ $B$ها آمده‌اند بپذیرد (یعنی روی
+آن متوقف شود)، و هر رشته‌ای را که شمار $A$هایش با شمار $B$ها برابر
+نیست یا $A$ها پیش از همهٔ $B$ها نیامده‌اند رد کند (یعنی روی آن متوقف
+نشود). (مثلاً ماشین باید $AABB$ و $AAABBB$ را بپذیرد، اما $AAB$ و
+$AABBAABB$ را رد کند.)
+\end{prob}
+
+\begin{prob}
+ماشین تورینگی با الفبای $\{\TMendtape,\TMblank,A,B\}$ طراحی کنید که
+هر رشتهٔ $\alpha$ از $A$ها و $B$ها را ورودی بگیرد و آن را تکثیر کند
+تا خروجی به شکل $\alpha\alpha$ تولید شود. (مثلاً ورودی $ABBA$ باید
+خروجی $ABBAABBA$ بدهد.)
+\end{prob}
+
+\begin{prob}
+\emph{به‌ترتیب الفبا؟} ماشین تورینگی با الفبای
+$\{\TMendtape,\TMblank,A,B\}$ طراحی کنید که با گرفتن دنباله‌ای متناهی
+از $A$ها و $B$ها بررسی کند آیا همهٔ $A$ها در چپ همهٔ $B$ها قرار
+دارند یا نه. ماشین باید رشتهٔ ورودی را روی نوار باقی بگذارد و اگر
+رشته «به‌ترتیب الفبا» است متوقف شود، وگرنه تا ابد در حلقه بماند.
+\end{prob}
+
+\begin{prob}
+\emph{مرتب‌کنندهٔ الفبایی:} ماشین تورینگی با الفبای
+$\{\TMendtape,\TMblank,A,B\}$ طراحی کنید که دنباله‌ای متناهی از $A$ها
+و $B$ها را ورودی بگیرد و آن‌ها را چنان بازآرایی کند که همهٔ $A$ها در
+چپ همهٔ $B$ها باشند. (مثلاً دنبالهٔ $BABAA$ باید به $AAABB$ و دنبالهٔ
+$ABBABB$ به $AABBBB$ تبدیل شود.)
+\end{prob}
+
+\end{document}

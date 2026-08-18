@@ -1,0 +1,161 @@
+% Part: first-order-logic
+% Chapter: syntax-and-semantics
+% Section: Semantic Notions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{syn}{sem}
+\olsection{مفاهیم معناشناختی}
+
+\begin{explain}
+با داشتن تعریف !!{structure}s برای زبان‌های مرتبهٔ اول، می‌توانیم برخی
+ویژگی‌ها و روابط معناشناختی بنیادی میان جمله‌ها را تعریف کنیم. ساده‌ترین
+آن‌ها مفهوم \emph{اعتبار} یک جمله است. جمله هنگامی معتبر است که در هر
+!!{structure} ارضا شود. جمله‌های معتبر مستقل از چگونگی تعبیر نمادهای
+غیرمنطقیِ درونشان ارضا می‌شوند. ازاین‌رو جمله‌های معتبر را \emph{صدق‌های
+منطقی} نیز می‌نامند---آن‌ها در هر !!{structure} صادق، یعنی ارضاشده، هستند؛
+پس صدقشان فقط به نمادهای منطقیِ درونشان و !!{structure} نحوی‌شان بستگی
+دارد، نه به نمادهای غیرمنطقی یا تعبیر آن‌ها.
+\end{explain}
+
+\begin{defn}[اعتبار]
+جملهٔ $!A$ \emph{معتبر} است، $\Entails !A$، اگر و تنها اگر برای هر
+!!{structure}~$\Struct M$، $\Sat{M}{!A}$.
+\end{defn}
+
+\begin{defn}[استلزام]
+مجموعهٔ جمله‌های~$\Gamma$ جملهٔ~$!A$ را \emph{نتیجه می‌دهد}،
+$\Gamma \Entails !A$، اگر و تنها اگر برای هر !!{structure}~$\Struct M$
+که $\Sat{M}{\Gamma}$، داشته باشیم $\Sat{M}{!A}$.
+\end{defn}
+
+
+\begin{defn}[ارضاپذیری]
+مجموعهٔ جمله‌های~$\Gamma$ \emph{ارضاپذیر} است هرگاه برای یک
+!!{structure}~$\Struct M$، $\Sat{M}{\Gamma}$. اگر $\Gamma$ ارضاپذیر
+نباشد، \emph{ارضاناپذیر} نامیده می‌شود.
+\end{defn}
+
+\begin{prop}
+جملهٔ $!A$ معتبر است اگر و تنها اگر برای هر مجموعهٔ جمله‌ها چون~$\Gamma$،
+$\Gamma \Entails !A$.
+\end{prop}
+
+\begin{proof}
+برای جهت پیش‌روی، بگذارید $!A$ معتبر و $\Gamma$ مجموعه‌ای از جمله‌ها باشد.
+بگذارید $\Struct M$ یک !!a{structure} باشد که $\Sat{M}{\Gamma}$. چون $!A$
+معتبر است، $\Sat{M}{!A}$؛ پس $\Gamma \Entails !A$.
+
+برای عکس نقیض جهت بازگشت، بگذارید $!A$ نامعتبر باشد؛ پس
+!!a{structure}~$\Struct M$ای وجود دارد که $\Sat/{M}{!A}$. اگر
+$\Gamma = \{ \ltrue \}$، چون $\ltrue$ معتبر است، $\Sat{M}{\Gamma}$.
+بنابراین !!a{structure}~$\Struct M$ای وجود دارد که $\Sat{M}{\Gamma}$، اما
+$\Sat/{M}{!A}$؛ پس $\Gamma$ فرمول $!A$ را نتیجه نمی‌دهد.
+\end{proof}
+
+\begin{prop}
+\ollabel{prop:entails-unsat}
+$\Gamma \Entails !A$ اگر و تنها اگر $\Gamma \cup \{\lnot !A\}$
+ارضاناپذیر باشد.
+\end{prop}
+
+\begin{proof}
+برای جهت پیش‌روی، فرض کنید $\Gamma \Entails !A$ و برخلاف مطلوب فرض کنید
+!!a{structure}~$\Struct M$ای وجود دارد که $\Sat{M}{\Gamma
+  \cup \{ \lnot !A \}}$. چون $\Sat{M}{\Gamma}$ و
+$\Gamma \Entails !A$، داریم $\Sat{M}{!A}$. نیز چون
+$\Sat{M}{\Gamma\cup \{ \lnot !A \}}$، داریم $\Sat{M}{\lnot !A}$؛ پس هم
+$\Sat{M}{!A}$ و هم $\Sat/{M}{!A}$، که تناقض است. بنابراین چنین
+!!{structure}~$\Struct M$ای نمی‌تواند وجود داشته باشد؛ پس
+$\Gamma \cup \{ \lnot !A \}$ ارضاناپذیر است.
+
+برای جهت بازگشت، فرض کنید $\Gamma \cup \{ \lnot !A \}$ ارضاناپذیر باشد.
+پس برای هر !!{structure}~$\Struct M$، یا $\Sat/{M}{\Gamma}$ یا
+$\Sat{M}{!A}$. بنابراین برای هر !!{structure}~$\Struct M$ که
+$\Sat{M}{\Gamma}$، داریم $\Sat{M}{!A}$؛ پس $\Gamma \Entails !A$.
+\end{proof}
+
+\begin{prob}
+\begin{enumerate}
+\item نشان دهید $\Gamma \Entails \lfalse$ اگر و تنها اگر $\Gamma$
+ارضاناپذیر باشد.
+\item نشان دهید $\Gamma \cup \{!A\} \Entails \lfalse$ اگر و تنها اگر
+$\Gamma \Entails \lnot !A$.
+\item فرض کنید $c$ در $!A$ یا $\Gamma$ رخ ندهد. نشان دهید
+  $\Gamma \Entails \lforall[x][!A]$ اگر و تنها اگر $\Gamma \Entails
+  \Subst{!A}{c}{x}$.
+\end{enumerate}
+\end{prob}
+
+\begin{prop}
+اگر $\Gamma \subseteq \Gamma'$ و $\Gamma \Entails !A$، آنگاه
+$\Gamma' \Entails !A$.
+\end{prop}
+
+\begin{proof}
+فرض کنید $\Gamma \subseteq \Gamma'$ و $\Gamma \Entails !A$. بگذارید
+$\Struct M$ ساختاری باشد که $\Sat{M}{\Gamma'}$؛ آنگاه
+$\Sat{M}{\Gamma}$، و چون $\Gamma \Entails !A$، نتیجه می‌گیریم
+$\Sat{M}{!A}$. پس هرگاه $\Sat{M}{\Gamma'}$، داریم $\Sat{M}{!A}$؛
+بنابراین $\Gamma' \Entails !A$.
+\end{proof}
+
+
+\begin{thm}[قضیهٔ استنتاج معناشناختی]
+\ollabel{thm:sem-deduction}
+$\Gamma \cup \{!A\} \Entails !B$ اگر و تنها اگر
+$\Gamma \Entails !A \lif !B$.
+\end{thm}
+
+\begin{proof}
+برای جهت پیش‌روی، بگذارید $\Gamma \cup \{ !A \} \Entails !B$ و
+$\Struct M$ یک !!a{structure} باشد که $\Sat{M}{\Gamma}$. اگر
+$\Sat{M}{!A}$، آنگاه $\Sat{M}{\Gamma \cup \{ !A \} }$؛ پس چون
+$\Gamma \cup \{ !A \}$ فرمول $!B$ را نتیجه می‌دهد، به
+$\Sat{M}{!B}$ می‌رسیم. بنابراین $\Sat{M}{!A \lif !B}$؛ پس
+$\Gamma \Entails !A \lif !B$.
+
+برای جهت بازگشت، بگذارید $\Gamma \Entails !A \lif !B$ و $\Struct M$
+یک !!a{structure} باشد که $\Sat{M}{\Gamma \cup \{ !A
+  \}}$. آنگاه $\Sat{M}{\Gamma}$؛ پس $\Sat{M}{!A \lif !B}$، و چون
+$\Sat{M}{!A}$، داریم $\Sat{M}{!B}$. بنابراین هرگاه
+$\Sat{M}{\Gamma \cup \{ !A \} }$، داریم $\Sat{M}{!B}$؛ پس
+$\Gamma \cup \{ !A \} \Entails !B$.
+\end{proof}
+
+\begin{prop}\ollabel{prop:quant-terms}
+  بگذارید $\Struct{M}$ یک !!a{structure}، $!A(x)$ یک !!a{formula} با یک
+  متغیر آزاد~$x$ و $t$ یک ترم بسته باشد. آنگاه:
+  \begin{tagenumerate}{prvEx,prvAll}
+    \tagitem{prvEx}{$!A(t) \Entails \lexists[x][!A(x)]$}{}
+    \tagitem{prvAll}{$\lforall[x][!A(x)] \Entails !A(t)$}{}
+  \end{tagenumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{tagenumerate}{prvEx,prvAll}
+    \tagitem{prvEx}{%
+      \iftag{probEx}{تمرین.}{فرض کنید $\Sat{M}{!A(t)}$. بگذارید $s$
+        گمارش متغیری باشد که $s(x) = \Value{t}{M}$. چون $!A(t)$ یک
+        !!a{sentence} است، $\Sat{M}{!A(t)}[s]$. بنا بر
+        \olref[ext]{prop:ext-formulas}، $\Sat{M}{!A(x)}[s]$. بنا بر
+        \olref[ass]{prop:sat-quant}،
+        $\Sat{M}{\lexists[x][!A(x)]}$.}}{}
+    \tagitem{prvAll}{%
+      \iftag{probAll}{تمرین.}{فرض کنید
+        $\Sat{M}{\lforall[x][!A(x)]}$. بگذارید $s$ گمارش متغیری باشد که
+        $s(x) = \Value{t}{M}$. بنا بر \olref[ass]{prop:sat-quant}،
+        $\Sat{M}{!A(x)}[s]$. بنا بر \olref[ext]{prop:ext-formulas}،
+        $\Sat{M}{!A(t)}[s]$. بنا بر
+        \olref[ass]{prop:sentence-sat-true}، چون $!A(t)$ یک
+        !!a{sentence} است، $\Sat{M}{!A(t)}$.}}{}
+  \end{tagenumerate}
+\end{proof}
+
+\begin{probtag}{probEx,probAll}
+  برهان \olref[fol][syn][sem]{prop:quant-terms} را کامل کنید.
+\end{probtag}
+
+\end{document}

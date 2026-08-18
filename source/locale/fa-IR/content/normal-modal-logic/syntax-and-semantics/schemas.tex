@@ -1,0 +1,172 @@
+% Part: normal-modal-logic
+% Chapter: syntax-and-semantics
+% Section: schemas
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{syn}{sch}
+
+\olsection{طرحواره‌ها و اعتبار}
+
+\begin{defn}
+  یک \emph{طرحواره} مجموعه‌ای از !!{formula}هاست که شامل همه و تنها
+  نمونه‌های جانشینی یک !!{formula} موجهاتی~$!C$ است؛ یعنی
+  \[
+  \Setabs{!B}{\lexists[!D_1], \dots, \lexists[!D_n] \left(!B =
+  \SSubst{!C}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}} \right) }.
+  \]
+  !!{formula}~$!C$، !!{formula} \emph{شاخص} طرحواره نامیده می‌شود و
+  تا تغییر نام !!{propositional variable}ها یکتاست. !!^a{formula}~$!A$
+  \emph{نمونه‌ای} از یک طرحواره است اگر عضو آن مجموعه باشد.
+\end{defn}
+
+مناسب است طرحواره را با عبارت فرازبانی‌ای نشان دهیم که از جانشین‌کردن
+«$!A$»، «$!B$»،~\dots، به‌جای مؤلفه‌های اتمی~$!C$ به دست می‌آید. برای
+نمونه، عبارت‌های زیر طرحواره‌هایی را نشان می‌دهند: «$!A$»،
+«$!A \lif \Box!A$»، «$!A \lif (!B \lif !A)$». !!{formula}های شاخص
+متناظر آن‌ها به‌ترتیب~$p$، $p \lif \Box p$ و~$p \lif (q \lif p)$
+هستند. طرحوارهٔ «$!A$» مجموعهٔ \emph{همهٔ} !!{formula}ها را نشان می‌دهد.
+
+\begin{defn}
+  یک طرحواره در یک مدل \emph{صادق} است اگر و تنها اگر همهٔ نمونه‌هایش
+  صادق باشند؛ و یک طرحواره \emph{معتبر} است اگر و تنها اگر در هر مدل
+  صادق باشد.
+\end{defn}
+
+\begin{prop}\ollabel{prop:Kvalid}
+  طرحوارهٔ زیر، یعنی~\Ax{K}، معتبر است:
+  \begin{equation*}
+  \Box(!A \lif !B) \lif (\Box !A \lif \Box !B). \tag{\Ax{K}}
+  \end{equation*}
+\end{prop}
+
+\begin{proof}
+  باید نشان دهیم همهٔ نمونه‌های طرحواره در هر جهانِ هر مدل صادق‌اند.
+  پس~$\mModel{M} = \tuple{W,R,V}$ و~$w \in W$ را دلخواه بگیرید. برای
+  نشان‌دادن اینکه یک شرطی در جهانی صادق است، صدق مقدم را فرض می‌کنیم
+  تا صدق تالی را نشان دهیم. در اینجا فرض کنید
+  $\mSat{M}{\Box(!A \lif !B)}[w]$ و~$\mSat{M}{\Box !A}[w]$. باید
+  $\mSat{M}{\Box !B}[w]$ را نشان دهیم. پس~$w'$ای دلخواه بگیرید که
+  $Rww'$. از فرض نخست~$\mSat{M}{!A \lif !B}[w']$ و از فرض دوم
+  $\mSat{M}{!A}[w']$. بنابراین~$\mSat{M}{!B}[w']$. چون~$w'$ دلخواه
+  بود، $\mSat{M}{\Box !B}[w]$.
+\end{proof}
+
+\begin{prop}\ollabel{prop:Dual-valid}
+  طرحوارهٔ زیر، یعنی~\Dual{}، معتبر است:
+  \begin{equation*}
+  \Diamond !A \liff \lnot\Box\lnot !A. \tag{\Dual}
+  \end{equation*}
+\end{prop}
+
+\begin{proof}
+  تمرین.
+\end{proof}
+
+\begin{prob}
+  \olref[nml][syn][sch]{prop:Dual-valid} را اثبات کنید.
+\end{prob}
+
+\begin{prop}\ollabel{prop:soundMP}
+  اگر~$!A$ و~$!A \lif !B$ در جهانی از یک مدل صادق باشند، $!B$ نیز در
+  آنجا صادق است. پس !!{formula}های معتبر تحت وضع مقدم بسته‌اند.
+\end{prop}
+
+\begin{prop}\ollabel{prop:valid-instances}
+  !!^a{formula}~$!A$ معتبر است اگر و تنها اگر همهٔ نمونه‌های جانشینی آن
+  معتبر باشند. به بیان دیگر، یک طرحواره معتبر است اگر و تنها اگر
+  !!{formula} شاخص آن معتبر باشد.
+\end{prop}
+
+\begin{proof}
+  جهت «اگر» آشکار است، زیرا~$!A$ نمونهٔ جانشینی خودش است.
+
+  برای اثبات جهت «تنها اگر»، ادعای زیر را نشان می‌دهیم. فرض کنید
+  $\mModel{M} = \tuple{W, R, V}$ یک مدل موجهاتی باشد و
+  $!B \ident \SSubst{!A}{\subst{!D_1}{p_1},\dots,\subst{!D_n}{p_n}}$
+  نمونهٔ جانشینی~$!A$ باشد. مدل~$\mModel{M'} = \tuple{W, R,V'}$ را با
+  $V'(p_i) = \Setabs{w}{\mSat{M}{!D_i}[w]}$ تعریف کنید. آنگاه برای هر
+  $w \in W$، $\mSat{M}{!B}[w]$ اگر و تنها اگر~$\mSat{M'}{!A}[w]$.
+  (اثبات را به‌صورت تمرین واگذار می‌کنیم.) حال فرض کنید~$!A$ معتبر است،
+  اما نمونهٔ جانشینی~$!B$ از~$!A$ معتبر نیست. در این صورت برای یک
+  $\mModel{M} = \tuple{W, R, V}$ و یک~$w \in W$،
+  $\mSat/{M}{!B}[w]$. اما بنا بر ادعا، $\mSat/{M'}{!A}[w]$؛ پس~$!A$
+  معتبر نیست، که تناقض است.
+\end{proof}
+
+\begin{prob}
+  ادعای بخش «تنها اگر» در اثباتِ
+  \olref[nml][syn][sch]{prop:valid-instances} را اثبات کنید. (راهنمایی:
+  از استقرا بر~$!A$ استفاده کنید.)
+\end{prob}
+
+بااین‌حال، درست نیست که یک طرحواره در مدلی صادق باشد اگر و تنها اگر
+فرمول شاخصش در آن مدل صادق باشد. البته جهت «تنها اگر» برقرار است: اگر
+هر نمونهٔ~$!A$ در~$\mModel{M}$ صادق باشد، خود~$!A$ نیز در~$\mModel{M}$
+صادق است. اما ممکن است~$!A$ در~$\mModel{M}$ صادق باشد، ولی نمونه‌ای از
+$!A$ در جهانی از~$\mModel{M}$ کاذب باشد. برای یک مثال نقض بسیار ساده،
+$p$ را در مدلی با تنها یک جهان~$w$ و~$V(p) = \{w\}$ در نظر بگیرید؛ پس
+$p$ در~$w$ صادق است. اما~$\lfalse$ نمونه‌ای از~$p$ است و در~$w$ صادق
+نیست.
+
+\begin{prob}
+  نشان دهید هیچ‌یک از !!{formula}های زیر معتبر نیستند:
+  \begin{enumerate}
+    \item[\Ax{D}:] \quad $\Box p \lif \Diamond p$؛
+    \item[\Ax{T}:] \quad $\Box p \lif p$؛
+    \item[\Ax{B}:] \quad $p \lif \Box\Diamond p$؛
+    \item[\Ax{4}:] \quad $\Box p \lif \Box \Box p$؛
+    \item[\Ax{5}:] \quad $\Diamond p \lif \Box \Diamond p$.
+  \end{enumerate}
+\end{prob}
+
+\begin{table}[t]
+    \centering
+    \begin{tabular}{| l || l |}
+      \hline
+      {\emph{طرحواره‌های معتبر}} & {\emph{طرحواره‌های نامعتبر}} \\
+      \hline\hline
+      $\Box(!A \lif !B) \lif (\Diamond !A \lif \Diamond !B)$
+      & $\Box (!A \lor !B) \lif (\Box !A \lor \Box !B)$ \\
+      $\Diamond (!A \lif !B) \lif (\Box !A \lif \Diamond !B)$
+      & $(\Diamond !A \land \Diamond !B) \lif \Diamond (!A \land !B)$\\
+      $\Box (!A \land !B) \liff (\Box !A \land \Box !B)$
+      & $!A \lif \Box !A$ \\
+      $\Box !A \lif \Box (!B \lif !A)$
+      & $\Box \Diamond !A \lif !B$ \\
+      $\lnot \Diamond !A \lif \Box (!A \lif !B)$
+      & $\Box \Box !A \lif \Box !A$ \\
+      $\Diamond (!A \lor !B) \liff (\Diamond !A \lor \Diamond !B)$
+      & $\Box \Diamond !A \lif \Diamond \Box !A$. \\
+      \hline
+    \end{tabular}
+    \caption{طرحواره‌های معتبر و نامعتبر.}
+    \ollabel{tab:valid-invalidSchemas}
+\end{table}
+
+\begin{prob}%\ollabel{ex:in/validSchemas}
+  ثابت کنید طرحواره‌های ستون نخستِ
+  \olref[nml][syn][sch]{tab:valid-invalidSchemas} معتبرند و طرحواره‌های
+  ستون دوم معتبر نیستند.
+\end{prob}
+
+\begin{prob}
+  تعیین کنید طرحواره‌های زیر معتبرند یا نامعتبر:
+  \begin{enumerate}
+  \item $(\Diamond !A \lif \Box !B) \lif (\Box !A \lif \Box !B)$؛
+  \item $\Diamond(!A \lif !B) \lor \Box(!B \lif !A)$.
+  \end{enumerate}
+\end{prob}
+
+\begin{prob}
+  برای هر یک از طرحواره‌های زیر مدلی~$\mModel{M}$ بیابید چنان‌که هر
+  نمونهٔ !!{formula} در~$\mModel{M}$ صادق باشد:
+  \begin{enumerate}
+  \item $p \lif \Diamond\Diamond p$؛
+  \item $\Diamond p \lif \Box p$.
+  \end{enumerate}
+\end{prob}
+
+\end{document}

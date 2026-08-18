@@ -1,0 +1,160 @@
+% Part: normal-modal-logic
+% Chapter: syntax-and-semantics
+% Section: tautological-instances
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{syn}{tau}
+
+\olsection{نمونه‌های همان‌گویی}
+
+\begin{explain}
+یک فرمول فاقد وجه همان‌گویی است اگر تحت هر تخصیص ارزش صدق صادق باشد.
+آشکار است که هر همان‌گویی در هر جهانِ هر مدل صادق است. اما برای
+!!{formula}هایی که شامل~$\Box$ و~$\Diamond$ هستند، مفهوم همان‌گویی
+تعریف نشده است. آیا برای نمونه~$\Box p \lor \lnot \Box p$، که نمونه‌ای
+از اصل طرد شق ثالث است، معتبر است؟ مفهوم \emph{نمونهٔ همان‌گویی} مفید
+است: !!a{formula} که نمونهٔ جانشینی یک همان‌گویی (غیرموجهاتی) باشد.
+اینکه هر نمونهٔ همان‌گویی معتبر است شگفت‌آور نیست، اما همچنان به اثبات
+نیاز دارد.
+\end{explain}
+
+\begin{defn}
+  !!{formula} موجهاتی~$!B$ یک \emph{نمونهٔ همان‌گویی} است اگر و تنها
+  اگر همان‌گوییِ فاقد وجه~$!A$ با !!{propositional variable}های
+  $p_1$، \dots،~$p_n$ و !!{formula}های~$!D_1$، \dots،~$!D_n$ وجود
+  داشته باشد چنان‌که
+  $!B \ident \SSubst{!A}{\subst{!D_1}{p_1},
+    \dots, \subst{!D_n}{p_n}}$.
+\end{defn}
+
+\begin{lem}\ollabel{lem:valid-taut}
+  فرض کنید~$!A$ یک !!{formula} فاقد وجه باشد که !!{propositional
+  variable}های آن~$p_1$، \dots، $p_n$ هستند، و~$!D_1$، \dots،
+  $!D_n$ !!{formula} موجهاتی باشند. آنگاه برای هر تخصیص~$\pAssign{v}$،
+  هر مدل~$\mModel{M} = \tuple{W, R, V}$ و هر~$w \in W$ چنان‌که
+  $\pAssign{v}(p_i) = \True$ اگر و تنها اگر~$\mSat{M}{!D_i}[w]$،
+  داریم~$\pSat{v}{!A}$ اگر و تنها اگر
+  $\mSat{M}{\SSubst{!A}{\subst{!D_1}{p_1}, \dots,
+      \subst{!D_n}{p_n}}}[w]$.
+\end{lem}
+
+\begin{proof}
+  با استقرا بر~$!A$.
+  \begin{enumerate}
+  \tagitem{prvFalse}{\indcase{!A}{\lfalse}{هم~$\pSat/{v}{\lfalse}$
+      و هم~$\mSat/{M}{\lfalse}[w]$.}}{}
+  \tagitem{prvTrue}{\indcase{!A}{\ltrue}{هم~$\pSat{v}{\ltrue}$
+      و هم~$\mSat{M}{\ltrue}[w]$.}}{}
+  \item \indcase{!A}{p_i}{%
+    \begin{align*}
+      \pSat{v}{p_i} \Leftrightarrow {} & \pAssign{v}(p_i) = \True \\
+      & \qquad \text{بنا بر تعریف~$\pSat{v}{p_i}$}\\
+      \Leftrightarrow {} & \mSat{M}{!D_i}[w] \\
+      &\qquad \text{بنا بر فرض}\\
+      \Leftrightarrow {} & \mSat{M}{\SSubst{p_i}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}}[w]\\
+      &\qquad \text{زیرا~$\SSubst{p_i}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}} \ident !D_i$}.
+      \end{align*}}
+  \tagitem{prvNot}{\indcase{!A}{\lnot !B}{%
+      \begin{align*}
+        \pSat{v}{\lnot !B} \Leftrightarrow {} & \pSat/{v}{!B}\\
+        &\qquad \text{بنا بر تعریف~$\pSat{v}{}$};\\
+        \Leftrightarrow {} & \mSat/{M}{\SSubst{!B}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}}[w]\\
+        &\qquad \text{بنا بر فرض استقرا}\\
+        \Leftrightarrow {} &
+        \mSat{M}{\SSubst{\lnot !B}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}}[w]\\
+        &\qquad \text{بنا بر تعریف~$\mSat{M}{}[w]$}.
+      \end{align*}}}{}
+  \tagitem{prvAnd}{\indcase{!A}{(!B \land !C)}{%
+      \begin{align*}
+        \pSat{v}{!B \land !C} \Leftrightarrow {} &
+        \pSat{v}{!B} \text{ و } \pSat{v}{!C}\\
+        &\qquad \text{بنا بر تعریف~$\pSat{v}{}$}\\
+        \Leftrightarrow {} &
+        \mSat{M}{\SSubst{!B}{\subst{!D_1}{p_1}, \dots,
+            \subst{!D_n}{p_n}}}[w] \text{ و } \\
+        & \mSat{M}{\SSubst{!C}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}}[w]\\
+        &\qquad \text{بنا بر فرض استقرا}\\
+        \Leftrightarrow{} &
+        \mSat{M}{\SSubst{(!B \land !C)}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}}[w]\\
+        &\qquad \text{بنا بر تعریف~$\mSat{M}{}[w]$}.
+      \end{align*}}}{}
+  \tagitem{prvOr}{\indcase{!A}{(!B \lor !C)}{%
+      \begin{align*}
+        \pSat{v}{!B \lor !C} \Leftrightarrow{} &
+        \pSat{v}{!B} \text{ یا } \pSat{v}{!C}\\
+        &\qquad \text{بنا بر تعریف~$\pSat{v}{}$};\\
+        \Leftrightarrow{} & \mSat{M}{\SSubst{!B}{\subst{!D_1}{p_1}, \dots,
+            \subst{!D_n}{p_n}}}[w] \text{ یا }\\
+        & \mSat{M}{\SSubst{!C}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}}[w]\\
+        &\qquad \text{بنا بر فرض استقرا}\\
+        \Leftrightarrow{} &
+        \mSat{M}{\SSubst{(!B \lor !C)}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}}[w]\\
+        &\qquad \text{بنا بر تعریف~$\mSat{M}{}[w]$}.
+      \end{align*}}}{}
+  \tagitem{prvIf}{\indcase{!A}{(!B \lif !C)}{%
+      \begin{align*}
+        \pSat{v}{!B \lif !C} \Leftrightarrow{} &
+        \pSat/{v}{!B} \text{ یا } \pSat{v}{!C}\\
+        &\qquad \text{بنا بر تعریف~$\pSat{v}{}$}\\
+        \Leftrightarrow{} &
+        \mSat/{M}{\SSubst{!B}{\subst{!D_1}{p_1}, \dots,
+            \subst{!D_n}{p_n}}}[w] \text{ یا }\\
+        & \mSat{M}{\SSubst{!C}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}}[w]\\
+        &\qquad \text{بنا بر فرض استقرا}\\
+        \Leftrightarrow{} &
+        \mSat{M}{\SSubst{(!B \lif !C)}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}}[w]\\
+        &\qquad \text{بنا بر تعریف~$\mSat{M}{}[w]$}.
+      \end{align*}}}{}
+  \tagitem{prvIff}{\indcase{!A}{(!B \liff !C)}{%
+      \begin{align*}
+        \pSat{v}{!B \liff !C} \Leftrightarrow {} &
+        \text{یا } \pSat{v}{!B} \text{ و } \pSat{v}{!C}\\
+        & \text{یا } \pSat/{v}{!B} \text{ و } \pSat/{v}{!C}\\
+        &\qquad \text{بنا بر تعریف~$\pSat{v}{}$}\\
+        \Leftrightarrow {} &
+        \text{یا } \mSat{M}{\SSubst{!B}{\subst{!D_1}{p_1}, \dots,
+            \subst{!D_n}{p_n}}}[w] \text{ و }\\
+        & \qquad \mSat{M}{\SSubst{!C}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}}[w]\\ 
+        &  \text{ یا } \mSat/{M}{\SSubst{!B}{\subst{!D_1}{p_1}, \dots,
+            \subst{!D_n}{p_n}}}[w] \text{ و }\\
+        & \qquad \mSat/{M}{\SSubst{!C}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}}[w]\\
+        &\qquad\text{بنا بر فرض استقرا}\\
+        \Leftrightarrow {} &
+        \mSat{M}{\SSubst{(!B \liff !C)}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}}[w]\\
+        &\qquad \text{بنا بر تعریف~$\mSat{M}{}[w]$}.
+      \end{align*}}}{}
+  \end{enumerate}
+  \end{proof}
+
+\begin{prop}\ollabel{prop:valid-taut}
+  همهٔ نمونه‌های همان‌گویی معتبرند.
+\end{prop}
+
+\begin{proof}
+  به نقیض، فرض کنید~$!A$ چنان باشد که برای یک مدل~$\mModel{M}$ و
+  جهان~$w$،
+  $\mSat/{M}{\SSubst{!A}{\subst{!D_1}{p_1}, \dots,
+  \subst{!D_n}{p_n}}}[w]$. تخصیص~$\pAssign{v}$ را چنان تعریف کنید که
+  $\pAssign{v}(p_i) = \True$ اگر و تنها اگر~$\mSat{M}{!D_i}[w]$
+  (و~$\pAssign{v}$ به هر~$q \notin \{p_1, \dots, p_n \}$ ارزشی دلخواه
+  نسبت دهد). آنگاه بنا بر~\olref{lem:valid-taut}، $\pSat/{v}{!A}$؛ پس
+  $!A$ همان‌گویی نیست.
+\end{proof}
+
+\end{document}

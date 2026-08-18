@@ -1,0 +1,206 @@
+% Part: first-order-logic
+% Chapter: completeness
+% Section: identity
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{com}{ide}
+\olsection{همانی}
+
+\begin{explain}
+ساخت مدل ترمی که در بخش پیش به دست داده شد برای اثبات تمامیت منطق
+مرتبهٔ اول برای مجموعه‌های~$\Gamma$ که شامل~$\eq$ نیستند کافی است. مدل
+ترمی هر $!A \in \Gamma^*$ را که شامل~$\eq$ نیست (و ازاین‌رو همهٔ
+$!A \in \Gamma$ را) ارضا می‌کند. اما اگر~$\eq$ حضور داشته باشد، این
+ساخت کار نمی‌کند. دلیلش این است که در آن صورت ممکن است $\Gamma^*$ شامل
+!!a{sentence}~$\eq[t][t']$ باشد، ولی در مدل ترمی مقدار هر ترم خود آن ترم
+است. بنابراین اگر $t$ و~$t'$ دو ترم متفاوت باشند، مقادیرشان در مدل
+ترمی---یعنی به‌ترتیب خود $t$ و~$t'$---متفاوت‌اند، و در نتیجه
+$\eq[t][t']$ کاذب است. بااین‌حال، می‌توانیم با استفاده از ساختی که
+«خارج‌قسمت‌گیری» نام دارد این مشکل را برطرف کنیم.
+\end{explain}
+
+\begin{defn}
+  فرض کنید $\Gamma^*$ مجموعه‌ای سازگار و !!{complete} از جمله‌ها
+  در~$\Lang L$ باشد. رابطهٔ~$\approx$ را روی مجموعهٔ ترم‌های بستهٔ
+  $\Lang L$ چنین تعریف می‌کنیم:
+  \[
+  t \approx t' \text{\quad iff \quad} \eq[t][t'] \in \Gamma^*
+  \]
+\end{defn}
+
+\begin{prop}
+\ollabel{prop:approx-equiv}
+رابطهٔ~$\approx$ خواص زیر را دارد:
+\begin{enumerate}
+\item $\approx$ بازتابی است.
+\item $\approx$ متقارن است.
+\item $\approx$ متعدی است.
+\item اگر $t \approx t'$،~$f$ !!a{function} باشد، و $t_1$، \dots،
+  $t_{i-1}$، $t_{i+1}$، \dots،~$t_n$ ترم‌هایی بسته باشند، آنگاه
+\[
+\Atom{f}{t_1,\dots, t_{i-1}, t, t_{i+1}, \dots, t_n} \approx
+\Atom{f}{t_1,\dots, t_{i-1}, t', t_{i+1}, \dots, t_n}.
+\]
+\item اگر $t \approx t'$،~$R$ !!a{predicate} باشد، و $t_1$، \dots،
+  $t_{i-1}$، $t_{i+1}$، \dots،~$t_n$ ترم‌هایی بسته باشند، آنگاه
+\begin{multline*}
+\Atom{R}{t_1,\dots, t_{i-1}, t, t_{i+1}, \dots, t_n} \in \Gamma^* \text{ iff } \\
+\Atom{R}{t_1,\dots, t_{i-1}, t', t_{i+1}, \dots, t_n} \in \Gamma^*.
+\end{multline*}
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+چون $\Gamma^*$ سازگار و !!{complete} است، $\eq[t][t'] \in \Gamma^*$
+هرگاه و تنها هرگاه $\Gamma^* \Proves \eq[t][t']$. پس کافی است موارد زیر
+را نشان دهیم:
+\begin{enumerate}
+\item برای همهٔ ترم‌های بستهٔ~$t$، $\Gamma^* \Proves \eq[t][t]$.
+\item اگر $\Gamma^* \Proves \eq[t][t']$، آنگاه
+$\Gamma^* \Proves \eq[t'][t]$.
+\item اگر $\Gamma^* \Proves \eq[t][t']$ و
+$\Gamma^* \Proves \eq[t'][t'']$، آنگاه
+$\Gamma^* \Proves \eq[t][t'']$.
+\item اگر $\Gamma^* \Proves \eq[t][t']$، آنگاه
+\[
+\Gamma^* \Proves
+\eq[\Atom{f}{t_1,\dots,t_{i-1},t,t_{i+1},,\dots,t_n}][\Atom{f}{t_1,\dots,t_{i-1},t',t_{i+1},\dots,t_n}]
+\]
+برای هر !!{function}~$f$ با $n$ موضع و ترم‌های بستهٔ $t_1$، \dots،
+$t_{i-1}$، $t_{i+1}$، \dots،~$t_n$.
+\item اگر $\Gamma^* \Proves \eq[t][t']$ و
+$\Gamma^* \Proves
+\Atom{R}{t_1,\dots,t_{i-1},t,t_{i+1},\dots,t_n}$، آنگاه
+$\Gamma^* \Proves \Atom{R}{t_1,\dots,t_{i-1},t',t_{i+1},\dots,t_n}$
+برای هر !!{predicate}~$R$ با $n$ موضع و ترم‌های بستهٔ $t_1$، \dots،
+$t_{i-1}$، $t_{i+1}$، \dots،~$t_n$.
+\end{enumerate}
+\end{proof}
+
+\begin{prob}
+اثبات~\olref[fol][com][ide]{prop:approx-equiv} را کامل کنید.
+\end{prob}
+
+\begin{defn}
+فرض کنید $\Gamma^*$ مجموعه‌ای سازگار و !!{complete} در زبان~$\Lang L$،
+$t$ ترمی بسته، و $\approx$ همان رابطهٔ تعریف پیشین باشد. متغیرهای ترمی
+در عبارت‌های مجموعه‌ساز زیر فقط بر ترم‌های بستهٔ همان زبان دامنه دارند.
+آنگاه:
+\[
+\equivrep{t}{\approx} = \Setabs{t'}{t'\in \Trm[L], t \approx t'}
+\]
+و $\equivclass{\Trm[L]}{\approx} = \Setabs{\equivrep{t}{\approx}}{t \in \Trm[L]}$.
+\end{defn}
+
+\begin{defn}
+\ollabel{defn:term-model-factor}
+فرض کنید $\Struct M = \Struct M(\Gamma^*)$ مدل ترمیِ~$\Gamma^*$ از
+\olref[mod]{defn:termmodel} باشد. آنگاه
+$\Struct{\equivclass{M}{\approx}}$ !!{structure} زیر است:
+\begin{enumerate}
+\item $\Domain{\equivclass{M}{\approx}} = \equivclass{\Trm[L]}{\approx}$.
+\item $\Assign{c}{\equivclass{M}{\approx}} = \equivrep{c}{\approx}$
+\item $\Assign{f}{\equivclass{M}{\approx}}(\equivrep{t_1}{\approx}, \dots,
+  \equivrep{t_n}{\approx}) = \equivrep{\Atom{f}{t_1,\dots, t_n}}{\approx}$
+\item $\tuple{\equivrep{t_1}{\approx}, \dots, \equivrep{t_n}{\approx}} \in
+  \Assign{R}{\equivclass{M}{\approx}}$ هرگاه و تنها هرگاه
+  $\Sat{M}{\Atom{R}{t_1,\dots, t_n}}$؛ یعنی هرگاه و تنها هرگاه
+  $\Atom{R}{t_1,\dots, t_n} \in \Gamma^*$.
+\end{enumerate}
+\end{defn}
+
+\begin{explain}
+توجه کنید که $\Assign{f}{\equivclass{M}{\approx}}$ و
+$\Assign{R}{\equivclass{M}{\approx}}$ را برای عناصر
+$\equivclass{\Trm[L]}{\approx}$ با اشاره به آن‌ها در قالب
+$\equivrep{t}{\approx}$ تعریف کرده‌ایم؛ یعنی به کمک
+\emph{نماینده‌ها}ی~$t \in \equivrep{t}{\approx}$. باید اطمینان یابیم
+که این تعریف‌ها به انتخاب این نماینده‌ها وابسته نیستند؛ یعنی اگر
+گزینه‌های دیگری~$t'$ همان کلاس‌های هم‌ارزی را تعیین کنند
+($\equivrep{t}{\approx} = \equivrep{t'}{\approx}$)، تعریف‌ها همان نتیجه
+را به دست دهند. برای نمونه، اگر $R$ !!{predicate}ای یک‌موضعی باشد، بند
+آخر تعریف می‌گوید $\equivrep{t}{\approx} \in
+\Assign{R}{\equivclass{M}{\approx}}$ هرگاه و تنها هرگاه
+$\Sat{M}{\Atom{R}{t}}$. اگر برای ترم دیگری~$t'$ که $t \approx t'$،
+$\Sat/{M}{\Atom{R}{t}}$، آنگاه تعریف ایجاب می‌کند
+$\equivrep{t'}{\approx} \notin \Assign{R}{\equivclass{M}{\approx}}$.
+اگر $t \approx t'$، آنگاه $\equivrep{t}{\approx} =
+\equivrep{t'}{\approx}$؛ اما ممکن نیست هم
+$\equivrep{t}{\approx} \in \Assign{R}{\equivclass{M}{\approx}}$ و هم
+$\equivrep{t}{\approx} \notin \Assign{R}{\equivclass{M}{\approx}}$.
+بااین‌حال، \olref{prop:approx-equiv} تضمین می‌کند که چنین چیزی نمی‌تواند
+رخ دهد.
+\end{explain}
+
+\begin{prop}
+$\Struct{\equivclass{M}{\approx}}$ خوش‌تعریف است؛ یعنی اگر $t_1$،
+  \dots،~$t_n$، $t_1'$، \dots،~$t_n'$ ترم‌هایی بسته باشند و
+  $t_i \approx t_i'$، آنگاه
+\begin{enumerate}
+\item $\equivrep{\Atom{f}{t_1,\dots, t_n}}{\approx} =
+    \equivrep{\Atom{f}{t_1',\dots, t_n'}}{\approx}$؛ یعنی
+  \[
+  \Atom{f}{t_1,\dots, t_n} \approx \Atom{f}{t_1',\dots, t_n'}
+  \]
+  و
+\item $\Sat{M}{\Atom{R}{t_1,\dots, t_n}}$ هرگاه و تنها هرگاه
+  $\Sat{M}{\Atom{R}{t_1',\dots, t_n'}}$؛ یعنی
+  \[
+    \Atom{R}{t_1,\dots, t_n} \in \Gamma^* \text{ iff }
+    \Atom{R}{t_1',\dots, t_n'} \in \Gamma^*.
+  \]
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+با استقرا بر~$n$ از \olref{prop:approx-equiv} نتیجه می‌شود.
+\end{proof}
+
+همانند مدل ترمی، پیش از اثبات لم صدق به لم زیر نیاز داریم.
+
+\begin{lem}
+\ollabel{lem:val-in-termmodel-factored} فرض کنید
+$\Struct M = \Struct M (\Gamma^*)$؛ آنگاه
+$\Value{t}{\equivclass{M}{\approx}} = \equivrep{t} {\approx}$.
+\end{lem}
+\begin{proof}
+اثبات همانند اثبات \olref[mod]{lem:val-in-termmodel} است.
+\end{proof}
+
+\begin{prob}
+اثبات~\olref[fol][com][ide]{lem:val-in-termmodel-factored} را کامل کنید.
+\end{prob}
+
+\begin{lem}
+\ollabel{lem:truth}
+برای همهٔ جمله‌های~$!A$، $\Sat{\equivclass{M}{\approx}}{!A}$ هرگاه و
+تنها هرگاه $!A \in \Gamma^*$.
+\end{lem}
+
+\begin{proof}
+با استقرا بر~$!A$، درست مانند اثبات \olref[mod]{lem:truth}. تنها حالتی
+که به توجه بیشتری نیاز دارد هنگامی است که $!A \ident \eq[t][t']$.
+\begin{align*}
+\Sat{\equivclass{M}{\approx}}{\eq[t][t']} & \text{ iff } \equivrep{t}{\approx} = \equivrep{t'}{\approx}
+\text{ (بنا بر تعریف $\Struct{\equivclass{M}{\approx}}$)}\\
+& \text{ iff } t \approx t' \text{ (بنا بر تعریف $\equivrep{t}{\approx}$)}\\
+& \text{ iff } \eq[t][t'] \in \Gamma^* \text{ (بنا بر تعریف $\approx$).}
+\end{align*}
+\end{proof}
+
+\begin{digress}
+توجه کنید که گرچه $\Struct{M(\Gamma^*)}$ همواره !!{enumerable} و
+نامتناهی است، $\Struct{\equivclass{M}{\approx}}$ ممکن است متناهی باشد،
+زیرا ممکن است فقط شمار متناهی‌ای از کلاس‌های
+$\equivrep{t}{\approx}$ وجود داشته باشد. چنین چیزی انتظار می‌رود، زیرا
+ممکن است $\Gamma$ شامل !!{sentence}sی باشد که ایجاب می‌کنند هر
+!!{structure}ای که در آن صادق‌اند متناهی باشد. برای نمونه،
+$\lforall[x][\lforall[y][x = y]]$ !!{sentence}ای سازگار است، اما فقط در
+!!{structure}sی ارضا می‌شود که !!{domain} آن‌ها دقیقاً یک
+!!{element} دارد.
+\end{digress}
+
+\end{document}

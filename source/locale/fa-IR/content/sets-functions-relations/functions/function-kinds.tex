@@ -1,0 +1,118 @@
+% Part: sets-functions-relations
+% Chapter: functions
+% Section: kinds
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[fa-IR]{sfr}{fun}{kin}
+\olsection{انواع توابع}
+
+\begin{explain}
+مفید است که نوعی رده‌بندی برای برخی از
+انواع توابعی که بیشتر با آن‌ها روبه‌رو می‌شویم معرفی کنیم.
+
+برای آغاز، ممکن است بخواهیم توابعی را بررسی کنیم که این ویژگی را دارند
+که هر عضو هم‌دامنه مقداری از تابع است. چنین
+توابعی !!{surjective} نامیده می‌شوند و می‌توان آن‌ها را چنان‌که در
+\olref{fig:surjective} آمده است به تصویر کشید.
+
+\begin{figure}
+  \olasset{assets/diagrams/surjective.tikz}
+  \caption{تابع !!^a{surjective} هر !!{element} از
+    هم‌دامنه را به‌عنوان یک مقدار دارد.}
+  \ollabel{fig:surjective}
+\end{figure}
+\end{explain}
+
+\begin{defn}[تابع !!^{surjective}]
+تابع $f \colon A \rightarrow B$ اگر و تنها اگر $B$
+بردِ~$f$ نیز باشد، \emph{!!{surjective}} است؛ یعنی برای هر $y \in B$ دست‌کم
+یک $x \in A$ وجود دارد چنان‌که~$f(x) = y$، یا به زبان نمادین:
+\[
+  (\forall y \in B)(\exists x \in A)f(x) = y.
+\]
+چنین تابعی را !!a{surjection} از $A$ به $B$ می‌نامیم.
+\end{defn}
+
+\begin{explain}
+اگر می‌خواهید نشان دهید که $f$ !!a{surjection} است، باید نشان دهید
+که هر شیء در هم‌دامنهٔ $f$ مقدار $f(x)$ برای یک
+ورودی $x$ است.
+
+توجه کنید که هر تابعی !!a{surjection} \emph{القا می‌کند}. چراکه
+با داشتن تابع $f \colon A \to B$، فرض کنید $f' \colon A \to \ran{f}$ به‌وسیلهٔ
+$f'(x) = f(x)$ تعریف شود. چون $\ran{f}$ \emph{بنا بر تعریف} برابر است با
+$\Setabs{f(x) \in B}{x \in A}$، تضمین می‌شود که این تابع $f'$
+!!a{surjection} باشد
+\end{explain}
+
+\begin{explain}
+حال هر تابع هر ورودی ممکن را به خروجی یکتایی نگاشت می‌کند. اما
+توابعی نیز وجود دارند که هرگز ورودی‌های متفاوت را به
+خروجی یکسان نگاشت نمی‌کنند. چنین توابعی !!{injective} نامیده می‌شوند و می‌توان آن‌ها را
+چنان‌که در \olref{fig:injective} آمده است به تصویر کشید.
+\begin{figure}
+  \olasset{assets/diagrams/injective.tikz}
+  \caption{تابع !!^a{injective} هرگز دو
+    آرگومان متفاوت را به مقدار یکسان نگاشت نمی‌کند.}
+  \ollabel{fig:injective}
+\end{figure}
+\end{explain}
+
+\begin{defn}[تابع !!^{injective}]
+تابع $f \colon A \rightarrow B$ \emph{!!{injective}} است اگر و تنها اگر برای
+هر $y \in B$ حداکثر یک $x \in A$ وجود داشته باشد چنان‌که~$f(x) = y$.
+چنین تابعی را !!a{injection} از $A$ به~$B$ می‌نامیم.
+\end{defn}
+
+\begin{explain}
+اگر می‌خواهید نشان دهید که $f$ !!a{injection} است، باید نشان دهید که
+برای هر $x$ و $y$ که !!{element}sی از دامنهٔ $f$ هستند، اگر $f(x)=f(y)$، آنگاه
+$x=y$.
+\end{explain}
+
+\begin{ex}
+تابع ثابت $f\colon \Nat \to \Nat$ که با $f(x) = 1$ داده می‌شود،
+نه !!{injective} است و نه !!{surjective}.
+
+تابع همانی $f\colon \Nat \to \Nat$ که با $f(x) = x$ داده می‌شود،
+هم !!{injective} است و هم !!{surjective}.
+
+تابع پسین $f \colon \Nat \to \Nat$ که با $f(x) = x+1$ داده می‌شود،
+!!{injective} است اما !!{surjective} نیست.
+
+تابع $f \colon \Nat \to \Nat$ که به‌صورت زیر تعریف می‌شود:
+\[
+  f(x) =
+  \begin{cases}
+    \frac{x}{2} & \text{اگر $x$ زوج باشد} \\
+    \frac{x+1}{2} & \text{اگر $x$ فرد باشد.}
+  \end{cases}
+\]
+!!{surjective} است اما !!{injective} نیست.
+\end{ex}
+
+\begin{explain}
+اغلب می‌خواهیم توابعی را بررسی کنیم که هم
+!!{injective} و هم !!{surjective} هستند. چنین توابعی را
+!!{bijective} می‌نامیم. آن‌ها مانند تابعی هستند که در
+\olref{fig:bijective} به تصویر کشیده شده است. !!^{bijection}s را گاهی
+\emph{تناظرهای یک‌به‌یک} نیز می‌نامند، زیرا اعضای
+هم‌دامنه را به‌طور یکتا با اعضای دامنه جفت می‌کنند.
+\begin{figure}
+  \olasset{assets/diagrams/bijective.tikz}
+  \caption{تابع !!^a{bijective} اعضای
+    هم‌دامنه را به‌طور یکتا با اعضای دامنه جفت می‌کند.}
+  \ollabel{fig:bijective}
+\end{figure}
+\end{explain}
+
+\begin{defn}[!!^{bijection}]
+تابع $f \colon A \to B$ \emph{!!{bijective}} است اگر و تنها اگر هم
+!!{surjective} و هم !!{injective} باشد. چنین تابعی را
+!!a{bijection} از $A$ به~$B$ (یا میان $A$ و~$B$) می‌نامیم.
+\end{defn}
+
+\end{document}

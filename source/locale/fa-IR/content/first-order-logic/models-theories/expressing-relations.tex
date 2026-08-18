@@ -1,0 +1,120 @@
+% Part: first-order-logic
+% Chapter: models-theories
+% Section: expressing-relations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{mat}{exr}
+
+\olsection{بیان روابط در \article{structure}
+  \printtoken{S}{structure}}
+
+\begin{explain}
+یکی از کاربردهای اصلی !!{formula}s بیان خواص و روابط در
+!!a{structure}~$\Struct M$ بر حسب مفاهیم اولیهٔ زبان~$\Lang L$یِ
+~$\Struct M$ است. منظورمان چنین است: !!{domain} ساختار~$\Struct M$ مجموعه‌ای
+از اشیاست. !!{constant}s، !!{function}s و !!{predicate}s در~$\Struct M$
+به‌ترتیب با اشیایی در~$\Domain M$، توابعی روی~$\Domain M$ و روابطی
+روی~$\Domain M$ تعبیر می‌شوند. برای نمونه، اگر~$\Obj A^2_0$ در~$\Lang L$
+باشد، آنگاه $\Struct M$ رابطه‌ای چون~$R = \Assign{{\Obj
+  A^2_0}}{M}$ را به آن نسبت می‌دهد. در این صورت فرمول
+$\Atom{\Obj A^2_0}{\Obj v_1, \Obj v_2}$ همان رابطه را به معنای زیر
+\emph{بیان می‌کند}: اگر گمارش متغیر~$s$، متغیر~$\Obj v_1$ را به
+$a \in \Domain{M}$ و~$\Obj v_2$ را به~$b \in \Domain M$ بفرستد، آنگاه
+\[
+Rab \text{\quad هرگاه و تنها هرگاه\quad} \Sat{M}{\Atom{\Obj A^2_0}{\Obj v_1, \Obj v_2}}[s].
+\]
+توجه کنید که در اینجا باید گمارش‌های متغیر را دخیل کنیم: نمی‌توانیم
+صرفاً بگوییم «$Rab$ هرگاه و تنها هرگاه
+$\Sat{M}{\Atom{\Obj A^2_0}{a, b}}$»، زیرا $a$ و~$b$ نمادهای زبان ما
+نیستند، بلکه !!{element}s دامنهٔ~$\Domain{M}$ هستند.
+
+ازآنجاکه فقط !!{formula}s اتمی نداریم، بلکه می‌توانیم آن‌ها را با
+رابط‌های منطقی و سورها ترکیب کنیم، !!{formula}s پیچیده‌تر می‌توانند
+روابط دیگری را تعریف کنند که مستقیماً در~$\Struct M$ گنجانده نشده‌اند.
+می‌خواهیم بدانیم این کار چگونه انجام می‌شود و، به‌ویژه، کدام روابط را
+می‌توانیم در !!a{structure} تعریف کنیم.
+\end{explain}
+
+\begin{defn}
+فرض کنید $!A(\Obj v_1,\dots, \Obj v_n)$ !!a{formula} از~$\Lang L$ باشد
+که در آن فقط $\Obj v_1$،\dots، $\Obj v_n$ آزاد رخ می‌دهند و فرض کنید
+$\Struct M$ !!a{structure} برای~$\Lang L$ باشد. فرمول
+$!A(\Obj v_1,\dots, \Obj v_n)$ رابطهٔ
+$R \subseteq \Domain M^n$ را \emph{بیان می‌کند} هرگاه و تنها هرگاه
+\[
+Ra_1\dots a_n \text{\quad هرگاه و تنها هرگاه\quad} \Sat{M}{\Atom{!A}{\Obj
+    v_1,\dots, \Obj v_n}}[s]
+\]
+برای هر گمارش متغیر~$s$ که $s(\Obj v_i) = a_i$ ($i = 1,
+\dots, n$).
+\end{defn}
+
+\begin{ex}
+در مدل استاندارد حساب~$\Struct N$، !!{formula}~$\Obj
+v_1 < \Obj v_2 \lor \eq[\Obj v_1][\Obj v_2]$ رابطهٔ~$\le$ را روی~$\Nat$
+بیان می‌کند. !!{formula}~$\eq[\Obj v_2][\Obj v_1']$ رابطهٔ جانشینی، یعنی
+رابطهٔ~$R \subseteq \Nat^2$ را بیان می‌کند که در آن $Rnm$ برقرار است اگر
+$m$ جانشین~$n$ باشد. فرمول~$\eq[\Obj v_1][\Obj v_2']$ رابطهٔ پیشینی را
+بیان می‌کند. دو !!{formula}~$\lexists[\Obj v_3][(\eq/[\Obj v_3][\Obj 0] \land
+  \eq[\Obj v_2][(\Obj v_1 + \Obj v_3)])]$ و~$\lexists[\Obj
+  v_3][\eq[(\Obj v_1 + {\Obj v_3}')][\Obj v_2]]$ هر دو رابطهٔ~$\Obj <$ را
+بیان می‌کنند. معنای این امر آن است که نماد محمول~$<$ در واقع
+در زبان حساب زائد است؛ می‌توان آن را تعریف کرد.
+\end{ex}
+
+\begin{explain}
+این ایده فقط در !!{structure}s خاص جالب نیست، بلکه هرگاه از زبانی برای
+توصیف یک یا چند مدل مورد نظر استفاده می‌کنیم، یعنی هنگامی که نظریه‌ها
+را بررسی می‌کنیم، به‌طور کلی اهمیت دارد. این نظریه‌ها اغلب فقط چند
+!!{predicate} را به‌عنوان نمادهای پایه در بر می‌گیرند، اما در حوزه‌ای
+که برای توصیف آن به کار می‌روند، بسیاری از روابط دیگر نیز نقشی مهم
+دارند. اگر بتوان این روابط دیگر را به‌طور نظام‌مند با روابطی بیان کرد
+که !!{predicate}s پایهٔ زبان را تعبیر می‌کنند، می‌گوییم می‌توانیم آن‌ها
+را در زبان \emph{تعریف} کنیم.
+\end{explain}
+
+\begin{prob}
+!!{formula}sی در~$\Lang L_A$ بیابید که روابط زیر را تعریف کنند:
+\begin{enumerate}
+\item $n$ میان $i$ و~$j$ است؛
+\item $n$، عدد~$m$ را بی‌باقی‌مانده تقسیم می‌کند (یعنی $m$ مضربی از~$n$ است)؛
+\item $n$ عددی اول است (یعنی هیچ عددی جز~$1$ و~$n$، عدد~$n$ را
+  بی‌باقی‌مانده تقسیم نمی‌کند).
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+فرض کنید فرمول~$!A(\Obj v_1, \Obj v_2)$ رابطهٔ
+$R \subseteq \Domain M^2$ را در !!a{structure}~$\Struct M$ بیان کند.
+فرمول‌هایی بیابید که روابط زیر را بیان کنند:
+\begin{enumerate}
+\item وارون~$R^{-1}$ از~$R$؛
+\item حاصل‌ضرب نسبی~$R \mid R$؛
+\end{enumerate}
+آیا می‌توانید راهی برای بیان~$R^+$، یعنی بستار تراگذری~$R$، بیابید؟
+\end{prob}
+
+\begin{prob}
+فرض کنید $\Lang{L}$ زبانی باشد که فقط شامل نماد محمول
+دوموضعی~$<$ است (و هیچ !!{constant}، !!{function} یا !!{predicate} دیگری
+ندارد---البته به‌جز~$\eq$). فرض کنید $\Struct{N}$ ساختاری باشد چنان‌که
+$\Domain{N} = \Nat$ و~$\Assign{<}{N} = \Setabs{\tuple{n,m}}{n <
+  m}$. موارد زیر را اثبات کنید:
+\begin{enumerate}
+\item $\{ 0 \}$ در~$\Struct{N}$ تعریف‌پذیر است؛
+\item $\{ 1 \}$ در~$\Struct{N}$ تعریف‌پذیر است؛
+\item $\{ 2 \}$ در~$\Struct{N}$ تعریف‌پذیر است؛
+\item برای هر $n \in \Nat$، مجموعهٔ~$\{ n \}$ در~$\Struct{N}$
+  تعریف‌پذیر است؛
+\item هر زیرمجموعهٔ متناهیِ~$\Domain{N}$ در~$\Struct{N}$ تعریف‌پذیر است؛
+\item هر زیرمجموعهٔ هم‌متناهیِ~$\Domain{N}$ در~$\Struct{N}$ تعریف‌پذیر
+  است (که در آن $X \subseteq \Nat$ هم‌متناهی است هرگاه و تنها هرگاه
+  $\Nat \setminus X$ متناهی باشد).
+\end{enumerate}
+\end{prob}
+
+
+\end{document}

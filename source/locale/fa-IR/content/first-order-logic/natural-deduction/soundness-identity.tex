@@ -1,0 +1,49 @@
+% Part: first-order-logic
+% Chapter: natural-deduction
+% Section: soundness-identity
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{ntd}{sid}
+
+\olsection{صحت با \usetoken{S}{identity}}
+
+\begin{prop}
+استنتاج طبیعی با قواعد $\eq$ صحیح است.
+\end{prop}
+
+\begin{proof}
+هر !!{formula} به صورت $\eq[t][t]$ معتبر است، زیرا برای هر
+!!{structure}~$\Struct M$، $\Sat{M}{\eq[t][t]}$. (توجه کنید فرض
+می‌کنیم ترم $t$ بسته است، یعنی هیچ متغیری ندارد؛ پس انتساب‌های متغیر
+بی‌تأثیرند).
+
+فرض کنید آخرین استنتاج در !!a{derivation}، \Elim{\eq} باشد؛ یعنی
+!!{derivation} صورت زیر را دارد:
+\begin{prooftree}
+  \AxiomC{$\Gamma_1$}
+  \RightLabel{$\delta_1$}
+  \DeduceC{$\eq[t_1][t_2]$}
+  \AxiomC{$\Gamma_2$}
+  \RightLabel{$\delta_2$}
+  \DeduceC{$!A(t_1)$}
+  \RightLabel{\Elim{\eq}}
+  \BinaryInfC{$!A(t_2)$}
+\end{prooftree}
+مقدمات $\eq[t_1][t_2]$ و $!A(t_1)$ به‌ترتیب ~!!{derive}d شده‌اند از
+فرض‌های !!{undischarged}~$\Gamma_1$ و $\Gamma_2$. می‌خواهیم
+نشان دهیم $!A(t_2)$ از $\Gamma_1 \cup \Gamma_2$ نتیجه می‌شود. یک
+!!a{structure}~$\Struct{M}$ را با $\Sat{M}{\Gamma_1 \cup
+  \Gamma_2}$ در نظر بگیرید. بنا بر فرض استقرا، $\Sat{M}{!A(t_1)}$ و
+$\Sat{M}{\eq[t_1][t_2]}$. بنابراین
+$\Value{t_1}{M} = \Value{t_2}{M}$. فرض کنید $s$ هر انتساب متغیری باشد و
+$m = \Value{t_1}{M} = \Value{t_2}{M}$. بنا بر
+\olref[fol][syn][ext]{prop:ext-formulas}، $\Sat{M}{!A(t_1)}[s]$ هرگاه و
+تنها هرگاه $\Sat{M}{!A(x)}[\Subst{s}{m}{x}]$، هرگاه و تنها هرگاه
+$\Sat{M}{!A(t_2)}[s]$. چون $\Sat{M}{!A(t_1)}$، داریم
+$\Sat{M}{!A(t_2)}$.
+\end{proof}
+
+\end{document}

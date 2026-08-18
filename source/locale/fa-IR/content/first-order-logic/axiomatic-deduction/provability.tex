@@ -1,0 +1,406 @@
+% Part: first-order-logic
+% Chapter: axiomatic-deduction
+% Section: provability
+
+% verification of properties of provability needed for maximally
+% consistent sets in the completeness chapter.
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{axd}{prv}}
+      {\olfileid{pl}{axd}{prv}}
+
+\olsection{ویژگی‌های \usetoken{S}{derivability}}
+
+\begin{prop}[یکنوایی] اگر $\Gamma \subseteq \Delta$ و $\Gamma \Proves !A$،
+آنگاه $\Delta \Proves !A$ نیز برقرار است.
+\end{prop}
+
+\begin{proof}
+هر زیرمجموعهٔ متناهی $\Gamma_0 \subseteq \Gamma$ زیرمجموعه‌ای متناهی
+از~$\Delta$ نیز هست؛ پس هر !!a{derivation} برای $\Gamma_0 \Proves !A$
+نشان می‌دهد که $\Delta \Proves !A$.
+\end{proof}
+
+\begin{prop}\ollabel{prop:provability}
+$\Gamma \Proves !A$ اگر و تنها اگر $\Gamma\cup \{\lnot!A \}$ ناسازگار باشد.
+\end{prop}
+
+\begin{proof}
+اگر $\Gamma \Proves !A$، زیرمجموعه‌ای متناهی
+$\Gamma_0\subseteq\Gamma$ وجود دارد که $\Gamma_0\Proves !A$.
+در نتیجه، با افزودن $\lnot !A$ و به‌کارگیری یک نمونهٔ اصل گزاره‌ای و
+قاعدهٔ MP، داریم
+$\Gamma_0\cup\{\lnot !A\}\Proves\lfalse$؛ بنابراین
+$\Gamma\cup\{\lnot !A\}$ ناسازگار است.
+
+برعکس، فرض کنید $\Gamma\cup\{\lnot !A\}$ ناسازگار باشد. در این صورت
+مجموعه‌ای متناهی
+$\Delta\subseteq\Gamma\cup\{\lnot !A\}$ وجود دارد که
+$\Delta\Proves\lfalse$. بگذارید
+$\Gamma_0=\Delta\setminus\{\lnot !A\}$؛ آنگاه
+$\Gamma_0\subseteq\Gamma$ متناهی است و، با یکنوایی،
+$\Gamma_0\cup\{\lnot !A\}\Proves\lfalse$. قضیهٔ استنتاج می‌دهد
+$\Gamma_0\Proves\lnot !A\lif\lfalse$، و از یک نمونهٔ \textbf{Ax0}
+و MP نتیجه می‌شود $\Gamma_0\Proves !A$. پس $\Gamma\Proves !A$.
+\end{proof}
+
+\begin{prop}\ollabel{prop:provability-properties}
+\begin{enumerate}
+\item \ollabel{prop:provability-contr}
+اگر $\Gamma \Proves !A$ و $\Gamma\cup \{ !A\} \Proves \lfalse$،
+آنگاه $\Gamma$ ناسازگار است.
+
+\item \ollabel{prop:provability-lnot}
+اگر $\Gamma \cup \{!A\}\Proves \lfalse$،
+آنگاه $\Gamma \Proves \lnot !A$.
+
+\item \ollabel{prop:provability-exhaustive}
+اگر $\Gamma \cup \{!A\}\Proves \lfalse$ و
+$\Gamma \cup \{\lnot !A\} \Proves \lfalse$،
+آنگاه $\Gamma \Proves \lfalse$.
+
+\tagitem{prvOr}{\ollabel{prop:provability-lor-left}
+اگر $\Gamma \cup \{!A\}\Proves \lfalse$ و
+$\Gamma \cup \{!B\}\Proves \lfalse$،
+آنگاه $\Gamma \cup \{!A \lor !B\} \Proves \lfalse$.}{}
+
+\tagitem{prvOr}{\ollabel{prop:provability-lor-right}
+اگر $\Gamma\Proves !A$ یا $\Gamma\Proves !B$،
+آنگاه $\Gamma\Proves !A \lor !B$.}{}
+
+\tagitem{prvAnd}{\ollabel{prop:provability-land-left}
+اگر $\Gamma\Proves !A \land !B$،
+آنگاه $\Gamma\Proves !A$ و $\Gamma\Proves !B$.}{}
+
+\tagitem{prvAnd}{\ollabel{prop:provability-land-right}
+اگر $\Gamma\Proves !A$ و $\Gamma\Proves !B$،
+آنگاه $\Gamma\Proves !A \land !B$.}{}
+
+\tagitem{prvIf}{\ollabel{prop:provability-mp}
+اگر $\Gamma\Proves !A$ و $\Gamma\Proves !A \lif !B$،
+آنگاه $\Gamma\Proves !B$.}{}
+
+\tagitem{prvIf}{\ollabel{prop:provability-lif}
+اگر $\Gamma\Proves \lnot !A$ یا $\Gamma\Proves !B$،
+آنگاه $\Gamma\Proves !A \lif !B$.}{}
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+\begin{enumerate}
+\item
+مجموعه‌های متناهی $\Gamma_0,\Gamma_1\subseteq\Gamma$ را چنان برگزینید که
+$\Gamma_0\cup\{!A\}\Proves\lfalse$ و $\Gamma_1\Proves !A$.
+
+\begin{derivation}
+1. & $\Gamma_0 \cup \{!A\} \Proves \lfalse$ & فرض \\
+2. & $\Gamma_1 \Proves !A$ & فرض \\
+3. & $\Gamma_0 \cup \Gamma_1 \Proves \lfalse$ & برش \\
+\end{derivation}
+
+چون $\Gamma_0 \subseteq \Gamma$ و $\Gamma_1 \subseteq \Gamma$،
+داریم $\Gamma_0 \cup \Gamma_1 \subseteq \Gamma$؛ پس
+$\Gamma \Proves \lfalse$.
+
+\item
+یک مجموعهٔ متناهی $\Gamma_0\subseteq\Gamma$ را چنان برگزینید که
+$\Gamma_0\cup\{!A\}\Proves\lfalse$.
+
+\begin{derivation}
+1. & $\Gamma_0 \cup\{!A\} \Proves \lfalse$ & فرض \\
+2. & $\Gamma_0 \Proves !A \lif \lfalse$ & قضیهٔ استنتاج \\
+3. & $\Gamma_0 \Proves (!A \lif \lfalse) \lif \lnot !A$ & Ax0 \\
+4. & $\Gamma_0 \Proves \lnot !A$ & MP 2, 3 \\
+\end{derivation}
+
+از $\Gamma_0\subseteq\Gamma$ نتیجه می‌شود
+$\Gamma\Proves\lnot !A$.
+
+\item
+مجموعه‌های متناهی $\Gamma_0,\Gamma_1\subseteq\Gamma$ را چنان برگزینید که
+$\Gamma_0\cup\{!A\}\Proves\lfalse$ و
+$\Gamma_1\cup\{\lnot !A\}\Proves\lfalse$.
+
+\begin{derivation}
+1. & $\Gamma_0 \cup\{!A\} \Proves \lfalse$ & فرض \\
+2. & $\Gamma_0 \Proves !A \lif \lfalse$ & قضیهٔ استنتاج \\
+3. & $\Gamma_1 \cup \{\lnot !A \} \Proves \lfalse$ & فرض \\
+4. & $\Gamma_0 \Proves (!A \lif \lfalse) \lif \lnot !A$ & Ax0 \\
+5. & $\Gamma_0 \Proves \lnot !A$ & MP 2, 4 \\
+6. & $\Gamma_0 \cup \Gamma_1 \Proves \lfalse$ & برش 3, 5 \\
+\end{derivation}
+
+چون $\Gamma_0 \subseteq \Gamma$ و $\Gamma_1 \subseteq \Gamma$،
+داریم $\Gamma_0 \cup \Gamma_1 \subseteq \Gamma$؛ بنابراین
+$\Gamma \Proves \lfalse$.
+
+% prop:provability-lor-left
+\tagitem{defOr}{}{
+\iftag{probOr}{تمرین.}{تمرین.}}
+
+% prop:provability-lor-right
+\tagitem{defOr}{}{\iftag{probOr}{تمرین.}{
+فرض کنید $\Gamma\Proves !A$ و یک مجموعهٔ متناهی
+$\Gamma_0\subseteq\Gamma$ چنان باشد که $\Gamma_0\Proves !A$.
+
+\begin{derivation}
+1. & $\Gamma_0 \Proves !A$ & فرض \\
+2. & $\Gamma_0 \Proves !A \lif (!A \lor !B)$ & Ax0 \\
+3. & $\Gamma_0 \Proves !A \lor !B$ & MP 1, 2 \\
+\end{derivation}
+
+پس $\Gamma \Proves !A \lor !B$. برهان حالت
+$\Gamma \Proves !B$ مشابه است.}}
+
+% prop:provability-land-left
+\tagitem{defAnd}{}{\iftag{probAnd}{تمرین}{
+فرض کنید $\Gamma\Proves !A\land !B$ و یک مجموعهٔ متناهی
+$\Gamma_0\subseteq\Gamma$ چنان باشد که
+$\Gamma_0\Proves !A\land !B$.
+
+\begin{derivation}
+1. & $\Gamma_0 \Proves !A \land !B$ & فرض \\
+2. & $\Gamma_0 \Proves (!A\land !B) \lif !A $ & Ax0 \\
+3. & $\Gamma_0 \Proves !A$ & MP 1, 2 \\
+\end{derivation}
+
+ازاین‌رو $\Gamma \Proves !A$. یک !!{derivation} مشابه نشان می‌دهد که
+$\Gamma \Proves !B$.}}
+
+% prop:provability-land-right
+\tagitem{defAnd}{}{\iftag{probAnd}{تمرین.}{تمرین.}}
+
+% prop:provability-mp
+\tagitem{defIf}{}{\iftag{probIf}{تمرین.}{
+یک مجموعهٔ متناهی $\Gamma_0\subseteq\Gamma$ را چنان برگزینید که هم
+$\Gamma_0 \Proves !A$ و هم $\Gamma_0 \Proves !A \lif !B$.
+
+\begin{derivation}
+1. & $\Gamma_0 \Proves !A$ & فرض \\
+2. & $\Gamma_0 \Proves !A \lif !B $ & فرض \\
+3. & $\Gamma_0 \Proves !B$ & MP 1, 2 \\
+\end{derivation}
+
+چون $\Gamma_0\subseteq\Gamma$، این نتیجه می‌دهد که
+$\Gamma\Proves !B$.}}
+
+% prop:provability-lif
+\tagitem{defIf}{}{\iftag{probIf}{تمرین.}{
+نخست فرض کنید $\Gamma\Proves\lnot !A$ و یک مجموعهٔ متناهی
+$\Gamma_0\subseteq\Gamma$ چنان باشد که
+$\Gamma_0\Proves\lnot !A$.
+
+\begin{derivation}
+1. & $\Gamma_0 \Proves \lnot !A$ & فرض \\
+2. & $\Gamma_0 \Proves \lnot !A \lif (!A \lif !B) $ & Ax0 \\
+3. & $\Gamma_0 \Proves !A \lif !B$ & MP 1, 2 \\
+\end{derivation}
+
+برهان حالت $\Gamma\Proves !B$ مشابه است:
+
+\begin{derivation}
+1. & $\Gamma_0 \Proves !B$ & فرض \\
+2. & $\Gamma_0 \Proves !B \lif (!A \lif !B) $ & Ax0 \\
+3. & $\Gamma_0 \Proves !A \lif !B$ & MP 1, 2 \\
+\end{derivation}}}
+
+\end{enumerate}
+\end{proof}
+
+\begin{probtag}{probOr,probAnd,probIf}
+برهان \olref[fol][axd][prv]{prop:provability-properties} را کامل کنید.
+\end{probtag}
+
+\begin{thm}[تعمیم]\ollabel{thm:Generalization}
+اگر $\Gamma \Proves !A$ و $x$ در هیچ !!{formula} متعلق به $\Gamma$
+آزاد نباشد، آنگاه $\Gamma \Proves \lforall[x][!A]$.
+\end{thm}
+
+\begin{proof}
+با استقرا روی $\mathsf{Thm}_\Gamma$ پیش می‌رویم: اگر $!A$ یک اصل باشد،
+$\lforall[x][!A]$ نیز یک اصل است. اگر $!A\in\Gamma$، آنگاه $x$ در
+$!A$ آزاد نیست؛ پس $!A\lif\lforall[x][!A]$ یک اصل
+(\textbf{Ax3}) است و با MP داریم
+$\Gamma\Proves\lforall[x][!A]$. اکنون فرض کنید $!A$ با MP از
+$\Gamma\Proves !B$ و $\Gamma\Proves !B\lif !A$ به دست آید. بنا بر فرض
+استقرا،
+$\Gamma\Proves\lforall[x][!B]$ و
+$\Gamma\Proves\lforall[x][(!B\lif !A)]$. اما بنا بر \textbf{Ax2} نیز
+\[
+\Gamma \Proves
+\lforall[x][(!B \lif !A)] \lif
+(\lforall[x][!B] \lif \lforall[x][!A]),
+\]
+و دو بار به‌کارگیری MP نتیجهٔ مطلوب
+$\Gamma\Proves\lforall[x][!A]$ را می‌دهد.
+\end{proof}
+
+\begin{thm}\ollabel{thm:WeakGen}
+(\emph{تعمیم ضعیف برای ثابت‌ها})
+اگر $\Gamma\Proves !A$ و $c$ یک !!a{constant} باشد که در $\Gamma$
+ظاهر نمی‌شود، آنگاه متغیری $x$ که در $!A$ ظاهر نمی‌شود وجود دارد به‌طوری
+که $\Gamma\Proves\lforall[x][\Subst{!A}{x}{c}]$، و برهان شامل $c$ نیست.
+\end{thm}
+
+\begin{proof}
+بگذارید $!A_1,\ldots,!A_n$ برهانی برای $!A$ از $\Gamma$ باشد، به‌طوری
+که $!A=!A_n$. متغیری $x$ را برگزینید که در
+$!A_1,\ldots,!A_n$ ظاهر نشود، و دنبالهٔ جدید
+\[
+\Subst{!A_1}{x}{c},\ldots,\Subst{!A_n}{x}{c}
+\]
+را در نظر بگیرید. این دنباله برهانی برای
+$\Subst{!A}{x}{c}$ از $\Gamma$ است. در واقع، برای هر
+$i=1,\ldots,n$:
+\begin{itemize}
+\item اگر $!A_i$ یک اصل باشد، $\Subst{!A_i}{x}{c}$ نیز یک اصل است؛
+\item اگر $!A_i\in\Gamma$، چون $c$ در $\Gamma$ ظاهر نمی‌شود، داریم
+$\Subst{!A_i}{x}{c}=!A_i\in\Gamma$؛
+\item اگر $!A_i$ از $!A_j$ و $!A_j\lif !A_i$ به دست آمده باشد، آنگاه
+$\Subst{!A_i}{x}{c}$ با MP از $\Subst{!A_j}{x}{c}$ و
+\[
+\Subst{(!A_j \lif !A_i)}{x}{c}
+=
+\Subst{!A_j}{x}{c} \lif \Subst{!A_i}{x}{c}
+\]
+به دست می‌آید.
+\end{itemize}
+روشن است که !!{constant} $c$ دیگر در دنبالهٔ جدید ظاهر نمی‌شود.
+اکنون $\Gamma'$ را مجموعهٔ آن !!{formula}ها از $\Gamma$ بگیرید که در
+!!{derivation} مربوط به $\Subst{!A}{x}{c}$ ظاهر می‌شوند؛ در این صورت
+$x$ در هیچ !!{formula} متعلق به $\Gamma'$ آزاد نیست و
+$\Gamma'\Proves\Subst{!A}{x}{c}$. بنا بر تعمیم
+(\olref{thm:Generalization})،
+$\Gamma'\Proves\lforall[x][\Subst{!A}{x}{c}]$؛ سپس یکنوایی نتیجه می‌دهد
+$\Gamma\Proves\lforall[x][\Subst{!A}{x}{c}]$، چنان‌که می‌خواستیم.
+\end{proof}
+
+\begin{explain}
+هدف ما این است که در \olref{thm:WeakGen} شرط «$x$ اصلاً در $!A$ ظاهر
+نمی‌شود» را با دو شرط ضعیف‌تر جایگزین کنیم: $x$ در $!A$ آزاد نباشد و
+برای $c$ در $!A$، !!{free for} باشد. روشن است که این کار را می‌توان با
+تغییر یک !!{variable} مقید انجام داد؛ پس ابتدا همین مطلب را اثبات می‌کنیم.
+\end{explain}
+
+\begin{lem}
+\ollabel{lem:free-for}
+اگر $x$ برای $c$ در $!A$ آزاد باشد و $y$ در $!A$ آزاد نباشد، آنگاه
+$x$ برای $y$ در $\Subst{!A}{y}{c}$، !!{free for} است.
+\end{lem}
+
+\begin{proof}
+اگر $x$ برای $y$ در $\Subst{!A}{y}{c}$، !!{free for} نباشد، آنگاه
+یک رخداد آزاد $y$ در $\Subst{!A}{y}{c}$ در دامنهٔ یک سور
+$\lforall[x]$ قرار می‌گیرد. اما بنا بر فرض، $y$ در $!A$ آزاد نیست؛ پس
+همهٔ چنین رخدادهایی از جانشینی $\Subst{}{y}{c}$ پدید آمده‌اند.
+بنابراین یک رخداد $c$ در دامنهٔ $\lforall[x]$ قرار می‌گیرد و $x$ برای
+$c$ در $!A$، !!{free for} نیست.
+\end{proof}
+
+\begin{lem}[تغییر متغیر مقید]
+\ollabel{lem:ChangeBdVar}
+اگر $x$ و $y$ در $!A$ آزاد نباشند و هر دو برای $c$ در $!A$،
+!!{free for} باشند، آنگاه
+\[
+\Proves \lforall[x][\Subst{!A}{x}{c}] \equiv
+\lforall[y][\Subst{!A}{y}{c}]
+\]
+و برهان شامل $c$ نیست.
+\end{lem}
+
+\begin{proof}
+بنا بر فرض‌ها، $y$ برای $c$ در $!A$، !!{free for} است و $x$ در
+$!A$ آزاد نیست؛ پس بنا بر \olref{lem:free-for}، $y$ برای $x$ در
+$\Subst{!A}{x}{c}$، !!{free for} است. بنابراین
+\[
+\lforall[x][\Subst{!A}{x}{c} \lif
+\Subst{!A}{x}{c} \Subst{}{y}{x}]
+\]
+یک اصل (\textbf{Ax1}) است. چون $x$ در $!A$ آزاد نیست، داریم
+$\Subst{!A}{x}{c}\Subst{}{y}{x}=\Subst{!A}{y}{c}$؛ پس
+\[
+\Proves \lforall[x][\Subst{!A}{x}{c}] \lif \Subst{!A}{y}{c}.
+\]
+قضیهٔ استنتاج نتیجه می‌دهد
+$\lforall[x][\Subst{!A}{x}{c}]\Proves\Subst{!A}{y}{c}$.
+چون $y$ در $!A$ آزاد نیست، در
+$\lforall[x][\Subst{!A}{x}{c}]$ نیز آزاد نیست؛ بنابراین با تعمیم داریم
+\[
+\lforall[x][\Subst{!A}{x}{c}]
+\Proves \lforall[y][\Subst{!A}{y}{c}],
+\]
+و قضیهٔ استنتاج بار دیگر می‌دهد
+\[
+\Proves
+\lforall[x][\Subst{!A}{x}{c}]
+\lif
+\lforall[y][\Subst{!A}{y}{c}].
+\]
+برهان
+\[
+\Proves
+\lforall[y][\Subst{!A}{y}{c}]
+\lif
+\lforall[x][\Subst{!A}{x}{c}]
+\]
+کاملاً متقارن است؛ پس نتیجه با Taut به دست می‌آید.
+\end{proof}
+
+\begin{thm}[تعمیم قوی برای ثابت‌ها]
+\ollabel{thm:StrongGen}
+اگر $\Gamma\Proves !A$، !!{constant} $c$ در $\Gamma$ ظاهر نشود، و
+$x$ در $!A$ آزاد نباشد ولی برای $c$ در $!A$، !!{free for} باشد،
+آنگاه
+$\Gamma\Proves\lforall[x][\Subst{!A}{x}{c}]$.
+\end{thm}
+
+\begin{proof}
+چون $\Gamma\Proves !A$ و $c$ در $\Gamma$ ظاهر نمی‌شود، بنا بر تعمیم
+ضعیف یک !!a{variable} به نام $y$ که در $!A$ ظاهر نمی‌شود وجود دارد
+به‌طوری که
+$\Gamma\Proves\lforall[y][\Subst{!A}{y}{c}]$.
+چون $y$ اصلاً در $!A$ ظاهر نمی‌شود، در $!A$ آزاد نیست و برای $c$ در
+$!A$ نیز !!{free for} است. همچنین، بنا بر فرض، $x$ در $!A$ آزاد نیست
+و برای $c$ در $!A$، !!{free for} است. پس شرایط تغییر !!{variable}
+مقید برقرارند و
+\[
+\Proves \lforall[x][\Subst{!A}{x}{c}] \equiv
+\lforall[y][\Subst{!A}{y}{c}].
+\]
+ازاین‌رو
+$\Gamma\Proves\lforall[x][\Subst{!A}{x}{c}]$.
+\end{proof}
+
+\begin{thm}
+\ollabel{thm:provability-quantifiers}
+\begin{tagenumerate}{prvEx,prvAll}
+\tagitem{prvEx}{
+اگر $\Gamma\Proves !A(t)$، آنگاه
+$\Gamma\Proves\lexists[x][!A(x)]$.}{}
+\tagitem{prvAll}{
+اگر $\Gamma\Proves\lforall[x][!A(x)]$، آنگاه
+$\Gamma\Proves !A(t)$.}{}
+\end{tagenumerate}
+\end{thm}
+
+\begin{proof}
+\begin{tagenumerate}{prvEx,prvAll}
+%%Need axioms for exists
+\tagitem{prvEx}{تمرین.}{}
+\tagitem{prvAll}{
+فرض کنید $\Gamma_0\Proves\lforall[x][!A(x)]$.
+
+\begin{derivation}
+1. & $\Gamma_0 \Proves \lforall[x][!A(x)]$ & فرض \\
+2. & $\Gamma_0 \Proves \lforall[x][!A(x)] \lif \Subst{!A}{t}{x}$ & Ax1 \\
+3. & $\Gamma_0 \Proves \Subst{!A}{t}{x}$ & MP 1, 2 \\
+\end{derivation}}{}
+
+\end{tagenumerate}
+\end{proof}
+
+\end{document}

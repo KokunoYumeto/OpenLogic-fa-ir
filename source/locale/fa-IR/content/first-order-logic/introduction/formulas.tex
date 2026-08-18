@@ -1,0 +1,87 @@
+% Part: first-order-logic
+% Chapter: introduction
+% Section: formulas
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{int}{fml}
+
+\section{\usetoken{P}{formula}}
+
+رویکردی که برای تعیین دقیق !!{sentence}s منطق مرتبهٔ اول و حل مسائل
+ناشی از کاربرد !!{variable}s به کار خواهیم برد چنین است. نخست مجموعهٔ
+\emph{متفاوتی} از عبارت‌ها، یعنی !!{formula}s، را تعریف می‌کنیم. پس از
+آن می‌توانیم نقشی را که !!{variable}s در آن‌ها دارند بررسی کنیم و بر
+پایهٔ چند ایدهٔ دیگر، یعنی !!{variable}s «آزاد» و «مقید»، تعریف کنیم
+!!a{sentence} چیست (یعنی !!a{formula} بدون !!{variable}s آزاد). این
+کار را نه‌فقط از آن رو انجام می‌دهیم که تعریف «!!{sentence}» را
+آسان‌تر می‌کند، بلکه از آن رو که برای شیوهٔ تعریف مفهوم معنایی ارضا
+ضروری خواهد بود.
+
+«!!{formula}» را برای یک زبان سادهٔ مرتبهٔ اول تعریف کنیم؛ زبانی که
+فقط شامل یک !!{predicate}~$\Obj P$، یک !!{constant}~$\Obj a$ و نمادهای
+منطقی $\lnot$، $\land$ و~$\lexists$ است. تعریف‌های کامل ما بسیار کلی‌تر
+خواهند بود: بی‌نهایت !!{predicate} و !!{constant} را مجاز خواهیم دانست.
+در واقع، !!{function}s را نیز بررسی خواهیم کرد که می‌توان آن‌ها را با
+!!{constant}s و !!{variable}s ترکیب کرد تا «ترم» ساخت. فعلاً
+$\Obj a$ و متغیرها تنها ترم‌های ما خواهند بود. البته به بی‌نهایت
+!!{variable} نیاز داریم. رسماً نمادهای $\Obj v_0$، $\Obj v_1$،
+\dots، را به‌عنوان متغیر به کار خواهیم برد.
+
+\begin{defn}
+مجموعهٔ \emph{!!{formula}s}~$\Frm$ به صورت زیر تعریف می‌شود:
+\begin{enumerate}
+\item\ollabel{fmls-atom} $\Atom{\Obj P}{\Obj a}$ و $\Atom{\Obj
+  P}{\Obj v_i}$ !!{formula} هستند ($i \in \Nat$).
+
+\tagitem{prvNot}{\ollabel{fmls-not}اگر $!A$ !!a{formula} باشد، $\lnot !A$
+  !!a{formula} است.}{}
+
+\tagitem{prvAnd}{اگر $!A$ و $!B$ !!{formula} باشند، $(!A \land
+  !B)$ !!a{formula} است.}{}
+
+\tagitem{prvEx}{\ollabel{fmls-ex}اگر $!A$ !!a{formula} و $x$ !!a{variable}
+  باشد، $\lexists[x][!A]$ !!a{formula} است.}{}
+
+\tagitem{limitClause}{\ollabel{fmls-limit}هیچ چیز دیگری !!a{formula}
+  نیست.}{}
+\end{enumerate}
+\end{defn}
+
+\olref{fmls-atom} به ما می‌گوید $\Atom{\Obj P}{\Obj a}$ و
+$\Atom{\Obj P}{\Obj v_i}$ برای هر $i \in \Nat$ !!{formula} هستند.
+این‌ها همان !!{formula}s موسوم به \emph{اتمی} هستند و نقطهٔ آغازی به
+دست می‌دهند. بندهای دیگر راه‌هایی برای ساختن !!{formula}s جدید از
+فرمول‌هایی می‌دهند که پیش‌تر ساخته‌ایم. برای نمونه، بنا بر
+\olref{fmls-not}، $\lnot \Atom{\Obj P}{\Obj v_2}$ !!a{formula} است،
+زیرا $\Atom{\Obj P}{\Obj v_2}$ بنا بر \olref{fmls-atom} از پیش
+!!a{formula} است. سپس بنا بر \olref{fmls-ex}،
+$\lexists[\Obj v_2][\lnot \Atom{\Obj P}{\Obj v_2}]$ نیز
+!!{formula} است، و همین‌طور ادامه می‌دهیم. \olref{fmls-limit} می‌گوید
+\emph{فقط} رشته‌هایی که به این شیوه می‌سازیم !!{formula} به شمار
+می‌آیند. به‌ویژه، $\lexists[\Obj v_0][\Atom{\Obj P}{\Obj a}]$ و
+$\lexists[\Obj v_0][\lexists[\Obj v_0][\Atom{\Obj P}{\Obj a}]]$
+\emph{فرمول به شمار می‌آیند}، اما $(\lnot \Atom{\Obj P}{\Obj a})$
+به‌سبب پرانتزهای بیرونیِ زائد فرمول نیست.
+
+این شیوهٔ تعریف !!{formula}s را \emph{تعریف استقرایی} می‌نامند و به ما
+اجازه می‌دهد با نوعی برهان استقرایی به نام \emph{استقرای ساختاری}
+مطالبی را دربارهٔ !!{formula}s اثبات کنیم. این مفاهیم به‌طور کلی در
+\olref[mth][ind][idf]{sec} و \olref[mth][ind][sti]{sec} بررسی شده‌اند
+و بهتر است پیش از ورود به برهان‌های بعدی آن‌ها را مرور کنید. ایدهٔ
+اصلی این است که برای اثبات مطلبی دربارهٔ همهٔ !!{formula}s، نخست نشان
+می‌دهید آن مطلب دربارهٔ !!{formula}s اتمی صادق است؛ سپس نشان می‌دهید
+\emph{اگر} دربارهٔ هر !!{formula}~$!A$ (و~$!B$) صادق باشد، دربارهٔ
+$\lnot !A$، $(!A \land !B)$ و $\lexists[x][!A]$ \emph{نیز} صادق است.
+برای نمونه، این روش اثبات می‌کند که مطلب دربارهٔ
+$\lexists[\Obj v_2][\lnot \Atom{\Obj P}{\Obj v_2}]$ صادق است: از بخش
+نخست می‌دانید دربارهٔ !!{formula} اتمی~$\Atom{\Obj P}{\Obj v_2}$ صادق
+است. سپس از بخش دوم به دست می‌آورید که دربارهٔ
+$\lnot \Atom{\Obj P}{\Obj v_2}$ صادق است، و با کاربرد دوبارهٔ آن
+می‌بینید دربارهٔ خود $\lexists[\Obj v_2][\lnot \Atom{\Obj P}{\Obj
+v_2}]$ نیز صادق است. چون همهٔ !!{formula}s به‌طور استقرایی از
+!!{formula}s اتمی ساخته می‌شوند، این روش برای هر فرمولی کار می‌کند.
+
+\end{document}

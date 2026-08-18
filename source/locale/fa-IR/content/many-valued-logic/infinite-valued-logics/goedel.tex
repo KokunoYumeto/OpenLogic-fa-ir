@@ -1,0 +1,127 @@
+% Part: many-valued-logic
+% Chapter: infinite-valued-logics
+% Section: goedel
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mvl}{inf}{god}
+
+\olsection{منطق‌های گودل}
+
+\begin{editorial}
+  این بخش پیش‌نویسی بسیار کوتاه دربارهٔ منطق بی‌نهایت‌ارزشی گودل است.
+\end{editorial}
+
+\begin{defn}\ollabel{def:goedel} منطق بی‌نهایت‌ارزشی گودل، یعنی
+$\LogGod[\infty]$، با ماتریس زیر تعریف می‌شود:
+\begin{enumerate}
+  \item زبان گزاره‌ای استاندارد~$\Lang L_0$ با~$\lfalse$، $\lnot$،
+  $\land$، $\lor$ و~$\lif$.
+  \item مجموعهٔ ارزش‌های صدق~$V_\infty$.
+  \item $1$ تنها ارزش ممتاز است؛ یعنی~$V^+ = \{1\}$.
+  \item توابع صدق با توابع زیر داده می‌شوند:
+  \begin{align*}
+    \tf{\lfalse} & = 0\\
+    \tf{\lnot}[\LogGod](x) & = \begin{cases}
+      1 & \text{اگر } x =0\\
+      0 & \text{در غیر این صورت}
+    \end{cases}\\
+    \tf{\land}[\LogGod](x,y) & = \min(x,y)\\
+    \tf{\lor}[\LogGod](x,y) & = \max(x,y)\\
+    \tf{\lif}[\LogGod](x,y) & = \begin{cases}
+      1 & \text{اگر } x \le y\\
+      y & \text{در غیر این صورت.}
+    \end{cases}
+    \end{align*}
+\end{enumerate}
+منطق~$m$ارزشی گودل نیز به همین شیوه تعریف می‌شود، جز اینکه~$V = V_m$.
+\end{defn}
+
+\begin{prop}
+  منطق~$\LogGod[3]$ که با~\olref[thr][god]{defn:goedel} تعریف شده،
+  همان~$\LogGod[3]$ تعریف‌شده با~\olref{def:goedel} است.
+\end{prop}
+
+\begin{proof}
+  این امر با مقایسهٔ جدول‌های صدق رابط‌ها در
+  \olref[thr][god]{defn:goedel} با جدول‌های صدقی که معادلات
+  \olref{def:goedel} تعیین می‌کنند روشن می‌شود:
+  \begin{center}
+    \begin{tabular}{c|c} 
+      $\tf{\lnot}[\LogGod[3]]$ & \\ 
+      \hline  
+      $1$ & $0$ \\ 
+      $1/2$ & $0$ \\
+      $0$ & $1$ 
+    \end{tabular}
+    \quad
+    \begin{tabular}{c|ccc} 
+      $\tf{\land}[\LogGod]$ & $1$ & $1/2$ & $0$ \\ 
+      \hline 
+      $1$ & $1$ & $1/2$ & $0$ \\ 
+      $1/2$ & $1/2$ & $1/2$ & $0$\\ 
+      $0$ & $0$ & $0$ & $0$ 
+    \end{tabular}
+    \\[2ex]
+    \begin{tabular}{c|ccc} 
+      $\tf{\lor}[\LogGod]$ & $1$ & $1/2$ & $0$ \\ 
+      \hline 
+      $1$ & $1$ & $1$ & $1$ \\ 
+      $1/2$ & $1$ & $1/2$ & $1/2$ \\
+      $0$ & $1$ & $1/2$ & $0$ 
+    \end{tabular}
+    \quad
+    \begin{tabular}{c|ccc} 
+      $\tf{\lif}[\LogGod]$ & $1$ & $1/2$ & $0$ \\ 
+      \hline 
+      $1$ & $1$ & $1/2$ & $0$ \\ 
+      $1/2$ & $1$ & $1$ & $0$  \\ 
+      $0$ & $1$ & $1$ & $1$ 
+    \end{tabular}
+  \end{center} 
+\end{proof}
+
+\begin{prop}\ollabel{prop:god-infty-m}
+  اگر~$\Gamma \Entails[\LogGod[\infty]] !B$، آنگاه برای همهٔ
+  $m \ge 2$، $\Gamma \Entails[\LogGod[m]] !B$.
+\end{prop}
+
+\begin{proof}
+  تمرین.
+\end{proof}
+
+\begin{prob}
+  \olref[mvl][inf][god]{prop:god-infty-m} را ثابت کنید.
+\end{prob}
+
+در واقع، عکس این گزاره نیز برقرار است.
+
+مانند~$\LogGod[3]$، در~$\LogGod[\infty]$ همهٔ~!!{formula}های معتبر از
+دید شهودگرایانه همان‌گویی‌اند، و همان مثال‌های ناهـمان‌گویی در
+$\LogGod[\infty]$ نیز همان‌گویی نیستند:
+\begin{align*}
+  & p \lor \lnot p && (p \lif q) \lif (\lnot p \lor q) \\
+  & \lnot\lnot p \lif p && \lnot(\lnot p \land \lnot q) \lif (p \lor q) \\
+  & ((p \lif q) \lif p) \lif p && \lnot(p \lif q) \lif (p \land \lnot q)
+\end{align*}
+مثال~$(p \lif q) \lor (q \lif p)$ که~!!{formula}ای نامعتبر از دید
+شهودگرایانه اما همان‌گویی~$\LogGod[3]$ است، در~$\LogGod[\infty]$ نیز
+همان‌گویی است. در واقع، می‌توان~$\LogGod[\infty]$ را منطق
+شهودگرایانه‌ای مشخص کرد که طرح‌وارهٔ
+$(!A \lif !B) \lor (!B \lif !A)$ به آن افزوده شده است. این نتیجه را
+مایکل دامت نشان داد؛ ازاین‌رو~$\LogGod[\infty]$ را اغلب منطق
+گودل--دامت~$\Log{LC}$ می‌نامند.
+
+\begin{prob}
+  نشان دهید~$(p \lif q) \lor (q \lif p)$ همان‌گویی
+  $\LogGod[\infty]$ است.
+\end{prob}
+
+\begin{prob}
+  نشان دهید~$(p \lif q) \lor (q \lif r) \lor (r \lif s)$، که
+  همان‌گویی~$\LogGod[3]$ است، در~$\LogGod[\infty]$ همان‌گویی نیست.
+\end{prob}
+
+\end{document}

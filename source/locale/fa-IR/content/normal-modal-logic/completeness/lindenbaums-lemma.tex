@@ -1,0 +1,108 @@
+% Part: normal-modal-logic
+% Chapter: completeness
+% Section: lindenbaums-lemma
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{com}{lin}
+
+\olsection{لم لیندنباوم}
+
+لم لیندنباوم ثابت می‌کند هر مجموعهٔ~$\Sigma$-سازگار از !!{formula}ها
+در دست‌کم یک مجموعهٔ~$\Sigma$-سازگار \emph{کامل} جای دارد. ساخت مدل
+کانونی ما نشان خواهد داد که برای هر مجموعهٔ~$\Sigma$-سازگار کامل
+$\Delta$، جهانی در مدل کانونی وجود دارد که همه و تنها !!{formula}های
+$\Delta$ در آن صادق‌اند. پس لم لیندنباوم تضمین می‌کند هر مجموعهٔ
+$\Sigma$-سازگار در جهانی از مدل کانونی صادق است.
+
+\begin{thm}[لم لیندنباوم]\ollabel{thm:lindenbaum}
+  اگر~$\Gamma$، $\Sigma$-سازگار باشد، مجموعهٔ~$\Sigma$-سازگار کامل
+  $\Delta$ای وجود دارد که~$\Gamma$ را گسترش می‌دهد.
+\end{thm}
+
+\begin{proof}
+بگذارید~$!A_0$، $!A_1$، \dots{} فهرستی فراگیر از همهٔ فرمول‌های زبان
+باشد (تکرار مجاز است). برای نمونه، با فهرست‌کردن~$\Obj p_0$ آغاز کنید
+و در هر مرحله~$n \ge 1$، فرمول‌های متناهی‌شمارِ با طول حداکثر~$n$ را
+که تنها از متغیرهای~$\Obj p_0$، \dots،~$\Obj p_n$ استفاده می‌کنند
+فهرست کنید. مجموعه‌های !!{formula}~$\Delta_n$ را با استقرا بر~$n$
+تعریف می‌کنیم و سپس~$\Delta = \bigcup_n \Delta_n$ قرار می‌دهیم. نخست
+$\Delta_0 = \Gamma$ قرار می‌دهیم. با فرض تعریف‌شدن~$\Delta_n$،
+$\Delta_{n+1}$ را چنین تعریف می‌کنیم:
+\[
+\Delta_{n+1} =
+\begin{cases}
+  \Delta_n \cup \{!A_n\}, & \text{اگر~$\Delta_n \cup \{ !A_n\}$
+    نسبت به~$\Sigma$ سازگار باشد؛} \\
+  \Delta_n \cup \{ \lnot !A_n\}, & \text{در غیر این صورت.}
+\end{cases}
+\]
+اکنون بگذارید~$\Delta = \bigcup_{n=0}^\infty \Delta_n$.
+
+باید نشان دهیم این تعریف واقعاً مجموعهٔ~$\Delta$ای با خواص لازم به دست
+می‌دهد؛ یعنی~$\Gamma \subseteq \Delta$ و~$\Delta$ کاملِ
+$\Sigma$-سازگار است.
+
+آشکار است~$\Gamma \subseteq \Delta$، زیرا بنا بر ساخت
+$\Delta_0 \subseteq \Delta$ و~$\Delta_0 = \Gamma$. در واقع، برای هر
+$n$، $\Delta_n \subseteq \Delta$، زیرا~$\Delta$ اجتماع همهٔ
+$\Delta_n$هاست. (چون در هر گام ساخت !!a{formula} به مجموعهٔ ازپیش‌ساخته
+می‌افزاییم، $\Delta_n \subseteq \Delta_{n+1}$؛ پس از تعدیِ~$\subseteq$
+نتیجه می‌شود هرگاه~$n \le m$، $\Delta_n \subseteq \Delta_m$.) در هر
+مرحلهٔ ساخت یا~$!A_n$ یا~$\lnot !A_n$ را می‌افزاییم و هر !!{formula}
+دست‌کم یک بار در فهرست همهٔ~$!A_n$ها ظاهر می‌شود. پس برای هر~$!A$، یا
+$!A \in \Delta$ یا~$\lnot !A \in \Delta$؛ بنابراین~$\Delta$ بنا به
+تعریف کامل است.
+
+سرانجام باید نشان دهیم~$\Delta$ نسبت به~$\Sigma$ سازگار است. برای این
+کار نشان می‌دهیم (الف) اگر~$\Delta$ نسبت به~$\Sigma$ ناسازگار می‌بود،
+یکی از~$\Delta_n$ها نسبت به~$\Sigma$ ناسازگار می‌بود، و (ب) همهٔ
+$\Delta_n$ها نسبت به~$\Sigma$ سازگارند.
+
+پس فرض کنید~$\Delta$ نسبت به~$\Sigma$ ناسازگار باشد. آنگاه
+$\Delta \Proves[\Sigma] \lfalse$؛ یعنی~$!A_1$، \dots،~$!A_k \in
+\Delta$ وجود دارند چنان‌که
+$\Sigma \Proves !A_1 \lif (!A_2 \lif \cdots (!A_k \lif
+\lfalse)\dots)$. چون~$\Delta = \bigcup_{n=0}^\infty \Delta_n$، هر
+$!A_i$ برای یک~$n_i$ عضو~$\Delta_{n_i}$ است. بگذارید~$n$ بزرگ‌ترینِ
+آن‌ها باشد. چون~$n_i \le n$، $\Delta_{n_i} \subseteq \Delta_n$. پس
+همهٔ~$!A_i$ها عضو یک~$\Delta_n$ هستند. این بدان معناست که
+$\Delta_n \Proves[\Sigma] \lfalse$؛ یعنی~$\Delta_n$ نسبت به~$\Sigma$
+ناسازگار است.
+
+برای نشان‌دادن اینکه هر~$\Delta_n$ نسبت به~$\Sigma$ سازگار است، از یک
+استقرای ساده بر~$n$ استفاده می‌کنیم. $\Delta_0 = \Gamma$ و فرض کردیم
+$\Gamma$ نسبت به~$\Sigma$ سازگار است. پس ادعا برای~$n=0$ برقرار است.
+اکنون فرض کنید برای~$n$ برقرار باشد؛ یعنی~$\Delta_n$ نسبت به~$\Sigma$
+سازگار باشد. اگر~$\Delta_n \cup \{!A_n\}$ نسبت به~$\Sigma$ سازگار
+باشد، $\Delta_{n+1}$ همان است؛ در غیر این صورت
+$\Delta_n \cup \{\lnot!A_n\}$ است. در حالت نخست~$\Delta_{n+1}$ آشکارا
+نسبت به~$\Sigma$ سازگار است. اما بنا بر
+\olref[prf][con]{prop:consistencyfacts}\olref[prf][con]{prop:consistencyfacts-c}،
+یا~$\Delta_n \cup \{!A_n\}$ یا~$\Delta_n \cup \{\lnot!A_n\}$ سازگار
+است؛ پس در حالت دیگر نیز~$\Delta_{n+1}$ سازگار است.
+\end{proof}
+
+\begin{cor}\ollabel{cor:provability-characterization}
+  $\Gamma \Proves[\Sigma] !A$ اگر و تنها اگر~$!A \in \Delta$ برای هر
+  مجموعهٔ~$\Sigma$-سازگار کامل~$\Delta$ که~$\Gamma$ را گسترش دهد
+  (از جمله وقتی~$\Gamma = \emptyset$، که در این صورت توصیفی دیگر از
+  دستگاه موجهاتی~$\Sigma$ به دست می‌آوریم).
+\end{cor}
+
+\begin{proof}
+  فرض کنید~$\Gamma \Proves[\Sigma] !A$ و~$\Delta$ هر مجموعهٔ
+  $\Sigma$-سازگار کامل گسترش‌دهندهٔ~$\Gamma$ باشد. اگر
+  $!A \notin \Delta$، آنگاه بنا بر بیشینگی~$\lnot!A \in \Delta$؛ پس
+  $\Delta \Proves[\Sigma] !A$ (بنا بر یکنوایی) و
+  $\Delta \Proves[\Sigma] \lnot!A$ (بنا بر بازتابی‌بودن)، و بنابراین
+  $\Delta$ ناسازگار است. برعکس، اگر~$\Gamma \Proves/[\Sigma] !A$،
+  آنگاه~$\Gamma \cup \{\lnot!A\}$ نسبت به~$\Sigma$ سازگار است؛ و بنا
+  بر لم لیندنباوم، مجموعهٔ سازگار کامل~$\Delta$ای وجود دارد که
+  $\Gamma \cup \{\lnot!A\}$ را گسترش می‌دهد. بنا بر سازگاری،
+  $!A \notin \Delta$.
+\end{proof}
+
+\end{document}

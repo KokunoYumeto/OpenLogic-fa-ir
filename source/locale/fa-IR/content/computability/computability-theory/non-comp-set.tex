@@ -1,0 +1,64 @@
+% Part: computability
+% Chapter: computability-theory
+% Section: non-comp-set
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cmp}{thy}{ncp}
+\olsection{مجموعه‌های محاسبه‌ناپذیر وجود دارند}
+
+در بالا دیدیم که هر مجموعهٔ محاسبه‌پذیر، محاسبه‌پذیرِ برشمردنی است.
+آیا عکس آن درست است؟ نتیجهٔ زیر نشان می‌دهد که در حالت کلی درست نیست.
+
+\begin{thm}\ollabel{thm:K-0}
+بگذارید $K_0$ مجموعهٔ
+$\Setabs{\tuple{e, x}}{\cfind{e}(x) \fdefined}$ باشد. آنگاه $K_0$
+محاسبه‌پذیرِ برشمردنی است، اما محاسبه‌پذیر نیست.
+\end{thm}
+
+\begin{proof}
+برای دیدن اینکه $K_0$ محاسبه‌پذیرِ برشمردنی است، توجه کنید که دامنهٔ
+تابع~$f$ زیر است:
+\[
+f(z) = \umin{y}{(\len{z} = 2 \land T((z)_0, (z)_1, y))}.
+\]
+زیرا اگر $\cfind{e}(x)$ تعریف شده باشد، $f(\tuple{e,x})$ دنبالهٔ
+محاسبهٔ متوقف‌شونده‌ای می‌یابد؛ اگر $\cfind{e}(x)$ تعریف‌نشده باشد،
+$f(\tuple{e,x})$ نیز تعریف‌نشده است؛ و اگر $z$ حتی زوجی را کد نکند،
+$f(z)$ نیز تعریف‌نشده است.
+
+محاسبه‌ناپذیریِ $K_0$ همان تصمیم‌ناپذیری مسئلهٔ توقف، یعنی
+\olref[hlt]{thm:halting-problem}، است.
+\end{proof}
+
+مجموعهٔ $K_0$ مجموعهٔ زوج‌های $\tuple{e,x}$ای است که
+$\cfind{e}(x)\fdefined$؛ یعنی $\tuple{e,x}\in K_0$ اگر و تنها اگر
+$\cfind{e}$ روی ورودی~$x$ تعریف شده باشد (متوقف شود). ازاین‌رو آن را
+«مجموعهٔ توقف» نیز می‌نامند. مجموعهٔ
+$K=\Setabs{e}{\cfind{e}(e)\fdefined}$ «مجموعهٔ خودتوقف» است و اغلب
+به‌عنوان مجموعهٔ تصمیم‌ناپذیر معیار به کار می‌رود.
+
+\begin{thm}\ollabel{thm:K}
+مجموعهٔ خودتوقف $K=\Setabs{e}{\cfind{e}(e)\fdefined}$ !!{c.e.} است،
+اما تصمیم‌پذیر نیست.
+\end{thm}
+
+\begin{proof}
+  فرض کنید $K$ تصمیم‌پذیر باشد، یعنی تابع مشخصهٔ آن~$\Char{K}$
+  محاسبه‌پذیر باشد. بگذارید
+  \[d(e) = \begin{cases}
+  1 & \text{اگر $\Char{K}(e) = 0$}\\
+  \fundefined & \text{در غیر این صورت.}
+  \end{cases}
+  \]
+  بگذارید $k$ نمایهٔ~$d$ باشد، یعنی $d\simeq\cfind{k}$. آنگاه
+  $d(k)\simeq\cfind{k}(k)$. این با این واقعیت تناقض دارد که
+  $d(k)\fdefined$ اگر و تنها اگر $\cfind{k}(k)\fundefined$، که از
+  تعریف~$d$ نتیجه می‌شود.
+
+  $K$ دامنهٔ $f(x)=\umin{y}{T(x,x,y)}$ است و بنابراین !!{c.e.} است.
+\end{proof}
+
+\end{document}

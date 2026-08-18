@@ -1,0 +1,81 @@
+% Part: many-valued-logic
+% Chapter: sequent-calculus
+% Section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mvl}{seq}{int}
+
+\olsection{مقدمه}
+
+حساب دنباله‌ای منطق کلاسیک دستگاه~!!{derivation} ساده و کارآمدی است.
+اگر یک منطق چندارزشی با ماتریسی دارای تعداد متناهی ارزش صدق تعریف شود،
+یعنی~$V$ متناهی باشد، می‌توان برای آن حسابی دنباله‌ای ارائه کرد. اندیشهٔ
+این کار از بررسی معنای دنباله‌ها و شکل قواعد استنتاج در حالت کلاسیک به
+دست می‌آید.
+
+اکنون به یاد آورید که دنبالهٔ
+\begin{align*}
+    !A_1, \dots, !A_m & \Sequent !B_1, \dots, !B_n
+\intertext{را می‌توان به‌صورت~!!{formula} زیر تفسیر کرد:}
+    (!A_1 \land \cdots \land !A_m) & \lif (!B_1 \lor \cdots \lor
+!B_n).
+\end{align*}
+به بیان دیگر، !!^a{valuation} چون~$\pAssign{v}$ دنبالهٔ
+$\Gamma \Sequent \Delta$ را \emph{ارضا می‌کند} اگر و تنها اگر یا برای
+یک~$!A \in \Gamma$ داشته باشیم~$\pValue{v}(!A) = \False$، یا برای
+یک~$!A \in \Delta$ داشته باشیم~$\pValue{v}(!A) = \True$. بنا بر این
+تفسیر، دنباله‌های آغازین~$!A \Sequent !A$ همواره ارضا می‌شوند، زیرا یا
+$\pValue v(!A) = \True$ یا~$\pValue v(!A) = \False$.
+
+قواعد استنتاج رابط شرطی در~$\Log{LK}$، با حذف فرمول‌های جانبی~$\Gamma$
+و~$\Delta$، چنین‌اند:
+
+\begin{defish}
+    \Axiom$ \fCenter !A$
+    \Axiom$ !B \fCenter $
+    \RightLabel{\LeftR{\lif}}
+    \BinaryInf$ !A \lif !B \fCenter $
+    \DisplayProof
+    \hfill
+    \Axiom$ !A \fCenter !B$
+    \RightLabel{\RightR{\lif}}
+    \UnaryInf$ \fCenter !A \lif !B $
+    \DisplayProof
+\end{defish}
+
+اگر تفسیر معناشناختی بالا از دنباله را به کار ببریم، قاعدهٔ
+$\LeftR{\lif}$ می‌گوید اگر~$\pValue v(!A) = \True$ و
+$\pValue v(!B) = \False$، آنگاه~$\pValue v(!A \lif !B) = \False$.
+به‌همین‌ترتیب، قاعدهٔ~$\RightR{\lif}$ می‌گوید اگر یا
+$\pValue v(!A) = \False$ یا~$\pValue v(!B) = \True$، آنگاه
+$\pValue v(!A \lif !B) = \True$. در واقع، این شرطی‌ها دوشرطی‌اند. در
+صورت‌بندی استاندارد قواعد~$\LeftR{\land}$ و~$\RightR{\lor}$، شرطی‌های
+متناظر دوشرطی نیستند؛ اما نسخه‌های بدیلی از این قواعد وجود دارند که در
+آن‌ها چنین است:
+
+\begin{defish}
+    \Axiom$!A, !B, \Gamma \fCenter \Delta$
+    \RightLabel{\LeftR{\land}}
+    \UnaryInf$!A \land !B, \Gamma \fCenter \Delta$
+    \DisplayProof
+    \hfill
+    \Axiom$ \Gamma \fCenter \Delta, !A, !B$
+    \RightLabel{\RightR{\lor}}
+    \UnaryInf$ \Gamma \fCenter \Delta, !A \lor !B$
+    \DisplayProof
+\end{defish}
+
+با اعمال این اندیشهٔ پایه به یک منطق~$n$ارزشی، حسابی دنباله‌ای با~$n$
+جایگاه، به‌جای دو جایگاه، به دست می‌آید؛ یک جایگاه برای هر ارزش صدق.
+برای یک منطق سه‌ارزشی با~$V = \{\False, \Undef, \True\}$، دنباله
+عبارتی به‌صورت~$\Gamma \mid \Pi \mid \Delta$ است. این دنباله در
+!!a{valuation} چون~$\pAssign v$ ارضا می‌شود اگر و تنها اگر یا برای یک
+$!A \in \Gamma$، $\pValue{v}(!A) = \False$، یا برای یک
+$!A \in \Delta$، $\pValue{v}(!A) = \True$، یا برای یک
+$!A \in \Pi$، $\pValue{v}(!A) = \Undef$. در نتیجه، دنباله‌های آغازین
+$!A \mid !A \mid !A$ همواره ارضا می‌شوند.
+
+\end{document}

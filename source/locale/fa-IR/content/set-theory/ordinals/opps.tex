@@ -1,0 +1,108 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{ordinals}{opps}
+\olsection{اعداد ترتیبی جانشین و حدی}
+
+در چند فصل آینده بسیار از اعداد ترتیبی استفاده خواهیم کرد. بنابراین معرفی
+چند مفهوم ساده سودمند خواهد بود.
+
+\begin{defn}
+برای هر عدد ترتیبی~$\alpha$، \emph{جانشین} آن
+$\ordsucc{\alpha}=\alpha\cup\{\alpha\}$ است. می‌گوییم~$\alpha$ یک عدد
+ترتیبی \emph{جانشین} است اگر برای یک عدد ترتیبی~$\beta$،
+$\ordsucc{\beta}=\alpha$. می‌گوییم~$\alpha$ یک عدد ترتیبی \emph{حدی}
+است اگر و تنها اگر نه تهی باشد و نه عدد ترتیبی جانشین.
+\end{defn}
+\noindent
+نتیجهٔ زیر نشان می‌دهد که این مفهوم درستی از \emph{جانشین} است:
+
+\begin{prop}
+برای هر عدد ترتیبی~$\alpha$:
+\begin{enumerate}
+	\item $\alpha \in \ordsucc{\alpha}$؛
+	\item $\ordsucc{\alpha}$ یک عدد ترتیبی است؛
+	\item هیچ عدد ترتیبی~$\beta$ وجود ندارد به‌طوری‌که
+	$\alpha \in \beta \in \ordsucc{\alpha}$.
+	\end{enumerate}
+\end{prop}
+
+\begin{proof}
+بدیهی است که~$\alpha\in\alpha\cup\{\alpha\}=\ordsucc{\alpha}$.
+همچنین~$\ordsucc{\alpha}$ مجموعه‌ای متعدی از اعداد ترتیبی است و بنابراین
+بنا بر~\olref[basic]{corordtransitiveord} یک عدد ترتیبی است. و ممکن نیست
+$\alpha\in\beta\in\ordsucc{\alpha}$، زیرا در آن صورت یا
+$\beta\in\alpha$ یا~$\beta=\alpha$، برخلاف~\olref[basic]{ordordered}.
+\end{proof}
+\noindent
+این نتیجه گونه‌ای از اثبات با استقرای ترامتناهی را نیز مجاز می‌سازد:
+
+\begin{thm}[استقرای ترامتناهی ساده]\ollabel{simpletransrecursion}
+فرض کنید~$\phi(x)$ فرمولی باشد به‌طوری‌که:
+\begin{enumerate}
+	\item $\phi(\emptyset)$؛ و
+	\item برای هر عدد ترتیبی~$\alpha$، اگر~$\phi(\alpha)$، آنگاه
+	$\phi(\ordsucc{\alpha})$؛ و
+	\item اگر~$\alpha$ عدد ترتیبی حدی و
+	$(\forall \beta \in \alpha)\phi(\beta)$ باشد، آنگاه~$\phi(\alpha)$.
+\end{enumerate}
+آنگاه~$\forall \alpha \phi(\alpha)$.
+\end{thm}
+
+\begin{proof}
+عکس نقیض را اثبات می‌کنیم. پس فرض کنید عدد ترتیبی‌ای وجود دارد که
+$\lnot\phi$ را ارضا می‌کند، و بگذارید~$\gamma$ کمینهٔ چنین اعداد ترتیبی
+باشد. اگر~$\gamma=\emptyset$، این با بند نخست تناقض دارد. اگر برای یک عدد
+ترتیبی~$\alpha$، $\gamma=\ordsucc{\alpha}$، کمینگی~$\gamma$ نتیجه
+می‌دهد~$\phi(\alpha)$؛ سپس بند دوم~$\phi(\gamma)$ را به دست می‌دهد،
+که باز تناقض است. و اگر~$\gamma$ عدد ترتیبی حدی باشد، کمینگی آن نتیجه
+می‌دهد~$(\forall \beta \in \gamma)\phi(\beta)$؛ سپس بند سوم
+$\phi(\gamma)$ را به دست می‌دهد، که تناقض است. این سه حالت بنا بر تعریف
+همهٔ امکان‌ها را دربر می‌گیرند؛ پس هیچ عدد ترتیبی ناقض~$\phi$ وجود ندارد.
+\end{proof}
+\noindent
+آخرین نمادگذاری زیر بعداً سودمند خواهد بود:
+
+\begin{defn}\ollabel{defsupstrict}
+اگر~$X$ مجموعه‌ای از اعداد ترتیبی باشد، آنگاه
+$\supstrict(X)=\bigcup_{\alpha \in X}\ordsucc{\alpha}$.
+\end{defn}
+\noindent
+در اینجا «lsub» مخفف «کمترین کران بالای اکید» است.\footnote{برخی کتاب‌ها
+برای این مفهوم از «$\text{sup}(X)$» استفاده می‌کنند. اما کتاب‌های دیگری
+«$\text{sup}(X)$» را برای کمترین کران بالای \emph{غیراکید}، یعنی صرفاً
+$\bigcup X$، به کار می‌برند. اگر~$X$ بزرگ‌ترین عضوی مانند~$\alpha$ داشته
+باشد، این دو مفهوم از هم جدا می‌شوند: کمترین کران بالای \emph{اکید}
+$\ordsucc{\alpha}$ است، درحالی‌که کمترین کران بالای \emph{غیراکید}
+صرفاً~$\alpha$ است.} نتیجهٔ زیر این مطلب را توضیح می‌دهد:
+
+\begin{prop}
+اگر~$X$ مجموعه‌ای از اعداد ترتیبی باشد، $\supstrict(X)$ کمترین عدد ترتیبی
+بزرگ‌تر از هر عدد ترتیبی عضو~$X$ است.
+\end{prop}
+
+\begin{proof}
+بگذارید~$Y=\Setabs{\ordsucc{\alpha}}{\alpha \in X}$، به‌طوری‌که
+$\supstrict(X)=\bigcup Y$. چون اعداد ترتیبی متعدی‌اند و هر عضو یک عدد
+ترتیبی خود عدد ترتیبی است، $\supstrict(X)$ مجموعه‌ای متعدی از اعداد
+ترتیبی است و بنابراین بنا بر~\olref[basic]{corordtransitiveord} یک عدد
+ترتیبی است.
+
+اگر~$\alpha\in X$، آنگاه~$\ordsucc{\alpha}\in Y$، پس
+$\ordsucc{\alpha}\subseteq\bigcup Y=\supstrict(X)$ و بنابراین
+$\alpha\in\supstrict(X)$. پس~$\supstrict(X)$ از هر عدد ترتیبی عضو~$X$
+اکیداً بزرگ‌تر است.
+
+برعکس، اگر~$\alpha\in\supstrict(X)$، آنگاه برای یک~$\beta\in X$،
+$\alpha\in\ordsucc{\beta}\in Y$ و در نتیجه~$\alpha\leq\beta$.
+
+اکنون فرض کنید~$\gamma$ عدد ترتیبی دلخواهی باشد که از هر عدد ترتیبی
+عضو~$X$ اکیداً بزرگ‌تر است. برای هر~$\alpha\in X$، از
+$\alpha\in\gamma$ نتیجه می‌شود~$\ordsucc{\alpha}\subseteq\gamma$؛ پس
+$\supstrict(X)=\bigcup_{\alpha \in X}\ordsucc{\alpha}\subseteq\gamma$.
+بنابراین~$\supstrict(X)\leq\gamma$، و در نتیجه~$\supstrict(X)$
+\emph{کمترین} کران بالای اکید~$X$ است.
+\end{proof}
+
+\end{document}

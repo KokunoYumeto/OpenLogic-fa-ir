@@ -1,0 +1,62 @@
+% Part: first-order-logic
+% Chapter: models-theories
+% Section: expressing-props-of-structures
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{mat}{exs}
+
+\olsection{بیان خواص \printtoken{P}{structure}}
+
+\begin{explain}
+بیان شرایطی دربارهٔ توابع و روابط، یا به‌طور کلی‌تر بیان اینکه توابع و
+روابط موجود در یک ساختار این شرایط را برآورده می‌کنند، اغلب سودمند و
+مهم است. برای نمونه، می‌خواهیم راه‌هایی برای تمایز آن !!{structure}s
+یک زبان که معنای مورد نظر ما برای !!{predicate}s را «بازمی‌نمایانند»
+از ساختارهایی داشته باشیم که چنین نمی‌کنند. البته کاملاً آزادیم مشخص
+کنیم کدام !!{structure}s را «مقصود» می‌دانیم؛ مثلاً می‌توانیم مقرر کنیم
+که تعبیر !!{predicate}~$\le$ باید یک ترتیب باشد، یا تنها به تعبیرهایی
+از~$\Lang L$ علاقه‌مند باشیم که در آن‌ها دامنه از مجموعه‌ها تشکیل شده و
+$\Obj \in$ با رابطهٔ «!!a{element} از ... است» تعبیر می‌شود. اما آیا می‌توانیم این
+کار را با !!{sentence}s زبان انجام دهیم؟ به بیان دیگر، کدام شرایط دربارهٔ
+!!a{structure}~$\Struct M$ را می‌توانیم با !!a{sentence} (یا شاید
+مجموعه‌ای از !!{sentence}s) در زبان~$\Struct M$ بیان کنیم؟ برخی شرایط را
+نخواهیم توانست بیان کنیم. برای نمونه، هیچ جمله‌ای از~$\Lang L_A$
+وجود ندارد که تنها در !!a{structure} چون~$\Struct M$ صادق باشد اگر
+$\Domain M = \Nat$. نمی‌توانیم بیان کنیم «دامنه فقط شامل اعداد طبیعی
+است». اما شاید بتوانیم «خواص ساختاری» !!{structure}s را بیان کنیم. کدام
+خواص !!{structure}s را می‌توان با !!{sentence}s بیان کرد؟ یا به تعبیری
+دیگر، کدام مجموعه‌های !!{structure}s را می‌توانیم ساختارهایی توصیف کنیم
+که !!a{sentence} (یا مجموعه‌ای از !!{sentence}s) را صادق می‌سازند؟
+\end{explain}
+
+\begin{defn}[مدل یک مجموعه]
+فرض کنید $\Gamma$ مجموعه‌ای از !!{sentence}s در زبان~$\Lang L$ باشد.
+می‌گوییم !!a{structure}~$\Struct M$ \emph{مدلی از}~$\Gamma$ است اگر برای
+هر $!A \in \Gamma$ داشته باشیم $\Sat{M}{!A}$.
+\end{defn}
+
+\begin{ex}
+جملهٔ~$\lforall[x][x \le x]$ در~$\Struct M$ صادق است هرگاه و تنها
+هرگاه $\Assign{\le}{M}$ رابطه‌ای بازتابی باشد. جملهٔ
+$\lforall[x][\lforall[y][((x \le y \land y \le x) \lif x = y)]]$ در
+~$\Struct M$ صادق است هرگاه و تنها هرگاه $\Assign{\le}{M}$ پادتقارن
+باشد. جملهٔ~$\lforall[x][\lforall[y][\lforall[z][((x \le y \land y \le z)
+      \lif x \le z)]]]$ در~$\Struct M$ صادق است هرگاه و تنها هرگاه
+$\Assign{\le}{M}$ تراگذری باشد. بنابراین مدل‌های
+\begin{align*}
+\{\quad &\lforall[x][x \le x], \\
+   & \lforall[x][\lforall[y][((x \le y \land y \le
+    x) \lif x = y)]], \\
+   &\lforall[x][\lforall[y][\lforall[z][((x \le y
+      \land y \le z) \lif x \le z)]]] \quad \}
+\end{align*}
+دقیقاً ساختارهایی هستند که در آن‌ها~$\Assign{\le}{M}$ بازتابی،
+پادتقارن و تراگذری، یعنی یک ترتیب جزئی، است. ازاین‌رو می‌توانیم این
+این جمله‌ها را اصول موضوع \emph{نظریهٔ مرتبهٔ اول ترتیب‌های جزئی}
+در نظر بگیریم.
+\end{ex}
+
+\end{document}

@@ -1,0 +1,169 @@
+% Part: first-order-logic
+% Chapter: completeness
+% Section: maximally-consistent-sets
+
+% تعریف مجموعه‌های بیشینه‌سازگار. ویژگی‌های لازم برای اثبات تمامیت
+% در فایل maximally-consistent-sets.tex از فصل دستگاه اثبات، اثبات شده‌اند.
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{com}{mcs}
+\olsection{مجموعه‌های بیشینه‌سازگار از \usetoken{P}{sentence}}
+
+\begin{defn}[مجموعهٔ بیشینه‌سازگار]
+\ollabel{mcs}
+مجموعهٔ~$\Gamma$ از !!{sentence}ها \emph{بیشینه‌سازگار} است اگر و تنها
+اگر:
+\begin{enumerate}
+\item $\Gamma$ سازگار باشد؛ و
+\item اگر $\Gamma \subsetneq \Gamma'$، آنگاه $\Gamma'$ ناسازگار باشد.
+\end{enumerate}
+\end{defn}
+
+\begin{explain}
+یک تعریف جایگزینِ هم‌ارز چنین است: مجموعهٔ $\Gamma$ از جمله‌ها
+\emph{بیشینه‌سازگار} است اگر و تنها اگر:
+\begin{enumerate}
+\item $\Gamma$ سازگار باشد؛ و
+\item اگر $\Gamma \cup \{ !A \}$ سازگار باشد، آنگاه $!A \in \Gamma$.
+\end{enumerate}
+به بیان دیگر، نمی‌توان !!{sentence}هایی را که از پیش در~$\Gamma$
+نیستند به مجموعهٔ بیشینه‌سازگار~$\Gamma$ افزود، بی‌آنکه مجموعهٔ
+بزرگ‌تر حاصل ناسازگار شود.
+\end{explain}
+
+\begin{explain}
+مجموعه‌های بیشینه‌سازگار در اثبات تمامیت مهم‌اند، زیرا می‌توانیم تضمین
+کنیم هر مجموعهٔ سازگار از !!{sentence}ها، یعنی~$\Gamma$، در یک مجموعهٔ
+بیشینه‌سازگار~$\Gamma^*$ قرار دارد؛ و یک مجموعهٔ بیشینه‌سازگار برای هر
+!!{sentence}~$!A$ یا $!A$ را در بر دارد یا نقیضش $\lnot !A$ را. این
+امر به‌ویژه دربارهٔ !!{sentence}های اتمی صادق است. پس از یک مجموعهٔ
+بیشینه‌سازگار در زبانی که با !!{constant}ها به‌طور مناسب گسترش یافته
+است، می‌توانیم !!a{structure} بسازیم که در آن تفسیر !!{predicate}ها بر
+پایهٔ اینکه کدام !!{sentence}های اتمی در~$\Gamma^*$ هستند تعریف شود.
+سپس می‌توان نشان داد این !!{structure} همهٔ !!{sentence}های
+~$\Gamma^*$، و در نتیجه جمله‌های $\Gamma$، را صادق می‌کند. اثبات این
+واقعیت اخیر نیازمند آن است که $\lnot !A \in \Gamma^*$ اگر و تنها اگر
+$!A \notin \Gamma^*$، و $(!A \lor !B) \in \Gamma^*$ اگر و تنها اگر
+$!A \in \Gamma^*$ یا $!B \in \Gamma^*$، و مانند آن.
+\end{explain}
+
+\begin{prop}
+\ollabel{prop:mcs}
+فرض کنید $\Gamma$ بیشینه‌سازگار است. آنگاه:
+\begin{enumerate}
+\item \ollabel{prop:mcs-prov-in} اگر $\Gamma \Proves !A$، آنگاه
+  $!A \in \Gamma$.
+
+\item \ollabel{prop:mcs-either-or} برای هر $!A$، یا $!A \in \Gamma$ یا
+  $\lnot !A \in \Gamma$.
+
+\tagitem{prvAnd}{\ollabel{prop:mcs-and} $(!A \land !B) \in \Gamma$
+  اگر و تنها اگر هم $!A \in \Gamma$ و هم $!B \in \Gamma$.}{}
+
+\tagitem{prvOr}{\ollabel{prop:mcs-or} $(!A \lor !B) \in \Gamma$ اگر و
+  تنها اگر یا $!A \in \Gamma$ یا $!B \in \Gamma$.}{}
+
+\tagitem{prvIf}{\ollabel{prop:mcs-if} $(!A \lif !B) \in \Gamma$ اگر و
+  تنها اگر یا $!A \notin \Gamma$ یا $!B \in \Gamma$.}{}
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+در سراسر موارد زیر فرض می‌کنیم $\Gamma$ بیشینه‌سازگار است.
+\begin{enumerate}
+\item اگر $\Gamma \Proves !A$، آنگاه $!A \in \Gamma$.
+
+فرض کنید $\Gamma \Proves !A$. خلاف نتیجه را فرض کنید، یعنی
+$!A \notin \Gamma$. چون $\Gamma$ بیشینه‌سازگار است،
+$\Gamma \cup \{!A\}$ ناسازگار است؛ پس
+$\Gamma \cup \{!A\} \Proves \lfalse$. بنا بر
+\tagrefs{prfSC/{fol:seq:prv:prop:provability-contr},prfND/{fol:ntd:prv:prop:provability-contr}}،
+$\Gamma$ ناسازگار است. این با فرض سازگاری $\Gamma$ تناقض دارد. پس
+نمی‌تواند $!A \notin \Gamma$ باشد و بنابراین $!A \in \Gamma$.
+
+\item برای هر $!A$، یا $!A \in \Gamma$ یا $\lnot !A \in \Gamma$.
+
+خلاف نتیجه را فرض کنید: برای $!A$ای، هم $!A \notin \Gamma$ و هم
+$\lnot !A \notin \Gamma$. چون $\Gamma$ بیشینه‌سازگار است، هر دو
+$\Gamma \cup \{!A\}$ و $\Gamma \cup \{\lnot !A\}$ ناسازگارند؛ پس
+$\Gamma \cup \{!A\} \Proves \lfalse$ و
+$\Gamma \cup \{\lnot !A\} \Proves \lfalse$. بنا بر
+\tagrefs{prfSC/{fol:seq:prv:prop:provability-exhaustive},prfND/{fol:ntd:prv:prop:provability-exhaustive}}،
+$\Gamma$ ناسازگار است، که تناقض است. پس چنین !!a{sentence}~$!A$ای
+وجود ندارد و برای هر $!A$، یا $!A \in \Gamma$ یا
+$\lnot !A \in \Gamma$.
+
+\tagitem{defAnd}{}{%
+\iftag{probAnd}{تمرین.}{%
+$(!A \land !B) \in \Gamma$ اگر و تنها اگر هم $!A \in \Gamma$ و هم
+$!B \in \Gamma$:
+
+برای جهت رفت، فرض کنید $(!A \land !B) \in \Gamma$. آنگاه
+$\Gamma \Proves !A \land !B$. بنا بر
+\tagrefs{prfSC/{fol:seq:prv:prop:provability-land-left},prfND/{fol:ntd:prv:prop:provability-land-left}}،
+$\Gamma \Proves !A$ و $\Gamma \Proves !B$. بنا بر
+\olref{prop:mcs-prov-in}، $!A \in \Gamma$ و $!B \in \Gamma$، چنان‌که
+لازم بود.
+
+برای جهت برگشت، فرض کنید $!A \in \Gamma$ و $!B \in \Gamma$. آنگاه
+$\Gamma \Proves !A$ و $\Gamma \Proves !B$. بنا بر
+\tagrefs{prfSC/{fol:seq:prv:prop:provability-land-right},prfND/{fol:ntd:prv:prop:provability-land-right}}،
+$\Gamma \Proves !A \land !B$. بنا بر \olref{prop:mcs-prov-in}،
+$(!A \land !B) \in \Gamma$.}}
+
+\tagitem{defOr}{}{%
+\iftag{probOr}{تمرین.}{%
+$(!A \lor !B) \in \Gamma$ اگر و تنها اگر یا $!A \in \Gamma$ یا
+$!B \in \Gamma$.
+
+برای عکس نقیض جهت رفت، فرض کنید $!A \notin \Gamma$ و
+$!B \notin \Gamma$. می‌خواهیم نشان دهیم
+$(!A \lor !B) \notin \Gamma$. چون $\Gamma$ بیشینه‌سازگار است،
+$\Gamma \cup \{!A\} \Proves \lfalse$ و
+$\Gamma \cup \{!B\} \Proves \lfalse$. بنا بر
+\tagrefs{prfSC/{fol:seq:prv:prop:provability-lor-left},prfND/{fol:ntd:prv:prop:provability-lor-left}}،
+$\Gamma \cup \{(!A \lor !B)\}$ ناسازگار است. پس
+$(!A \lor !B) \notin \Gamma$، چنان‌که لازم بود.
+
+برای جهت برگشت، فرض کنید $!A \in \Gamma$ یا $!B \in \Gamma$. آنگاه
+$\Gamma \Proves !A$ یا $\Gamma \Proves !B$. بنا بر
+\tagrefs{prfSC/{fol:seq:prv:prop:provability-lor-right},prfND/{fol:ntd:prv:prop:provability-lor-right}}،
+$\Gamma \Proves !A \lor !B$. بنا بر \olref{prop:mcs-prov-in}،
+$(!A \lor !B) \in \Gamma$، چنان‌که لازم بود.}}
+
+\tagitem{defIf}{}{%
+\iftag{probIf}{تمرین.}{%
+$(!A \lif !B) \in \Gamma$ اگر و تنها اگر یا $!A \notin \Gamma$ یا
+$!B \in \Gamma$:
+
+برای جهت رفت، فرض کنید $(!A \lif !B) \in \Gamma$ و خلاف نتیجه را
+بپذیرید: $!A \in \Gamma$ و $!B \notin \Gamma$. بنا بر این فرض‌ها،
+$\Gamma \Proves !A \lif !B$ و $\Gamma \Proves !A$. بنا بر
+\tagrefs{prfSC/{fol:seq:prv:prop:provability-mp},prfND/{fol:ntd:prv:prop:provability-mp}}،
+$\Gamma \Proves !B$. اما بنا بر \olref{prop:mcs-prov-in}، آنگاه
+$!B \in \Gamma$، که با فرض $!B \notin \Gamma$ تناقض دارد.
+
+برای جهت برگشت، نخست حالت $!A \notin \Gamma$ را در نظر بگیرید. بنا بر
+\olref{prop:mcs-either-or}، $\lnot !A \in \Gamma$ و بنابراین
+$\Gamma \Proves \lnot !A$. بنا بر
+\tagrefs{prfSC/{fol:seq:prv:prop:provability-lif},prfND/{fol:ntd:prv:prop:provability-lif}}،
+$\Gamma \Proves !A \lif !B$. باز هم بنا بر
+\olref{prop:mcs-prov-in} نتیجه می‌گیریم
+$(!A \lif !B) \in \Gamma$، چنان‌که لازم بود.
+
+اکنون حالت $!B \in \Gamma$ را در نظر بگیرید. آنگاه
+$\Gamma \Proves !B$ و بنا بر
+\tagrefs{prfSC/{fol:seq:prv:prop:provability-lif},prfND/{fol:ntd:prv:prop:provability-lif}}،
+$\Gamma \Proves !A \lif !B$. بنا بر \olref{prop:mcs-prov-in}،
+$(!A \lif !B) \in \Gamma$.}}
+\end{enumerate}
+\end{proof}
+
+\begin{prob}
+اثبات \olref[fol][com][mcs]{prop:mcs} را کامل کنید.
+\end{prob}
+
+\end{document}

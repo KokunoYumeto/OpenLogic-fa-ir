@@ -1,0 +1,47 @@
+% Part: first-order-logic
+% Chapter: tableaux
+% Section: soundness-identity
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{tab}{sid}
+
+\olsection{صحت با \usetoken{S}{identity}}
+
+\begin{prop}
+!!^{tableau}s دارای قواعد این‌همانی صحیح‌اند: هیچ !!{tableau} بسته‌ای
+ارضاپذیر نیست.
+\end{prop}
+
+\begin{proof}
+تنها باید مانند پیش نشان دهیم که اگر !!a{tableau} شاخه‌ای ارضاپذیر
+داشته باشد، شاخهٔ حاصل از اعمال یکی از قواعد $\eq$ بر آن نیز ارضاپذیر
+است. فرض کنید $\Gamma$ مجموعهٔ !!{formula}s علامت‌دار روی شاخه و
+$\Struct{M}$~!!a{structure} ارضاکنندهٔ~$\Gamma$ باشد.
+
+فرض کنید شاخه با استفاده از~$\eq$، یعنی با افزودن !!{formula}
+علامت‌دارِ~$\sFmla{\True}{\eq[t][t]}$، گسترش یابد. به‌طور بدیهی
+$\Sat{M}{\eq[t][t]}$؛ پس $\Struct{M}$ مجموعهٔ
+$\Gamma \cup \{\sFmla{\True}{\eq[t][t]}\}$ را نیز ارضا می‌کند.
+
+اگر شاخه با استفاده از $\TRule{\True}{\eq}$ گسترش یابد، !!{formula}
+علامت‌دارِ~$\sFmla{\True}{!A(t_2)}$ را می‌افزاییم، اما $\Gamma$ هم
+$\sFmla{\True}{\eq[t_1][t_2]}$ و هم $\sFmla{\True}{!A(t_1)}$ را دربر
+دارد. بنابراین $\Sat{M}{\eq[t_1][t_2]}$ و
+$\Sat{M}{!A(t_1)}$. فرض کنید $s$ تخصیص متغیری باشد چنان‌که
+$s(x) = \Value{t_1}{M}$. بنا بر
+\olref[syn][ass]{prop:sentence-sat-true}، $\Sat{M}{!A(t_1)}[s]$.
+چون $\varAssign{s}{s}{x}$، بنا بر
+\olref[syn][ext]{prop:ext-formulas}، $\Sat{M}{!A(x)}[s]$. چون
+$\Sat{M}{\eq[t_1][t_2]}$، داریم
+$\Value{t_1}{M} = \Value{t_2}{M}$ و ازاین‌رو
+$s(x) = \Value{t_2}{M}$. با اعمال دوبارهٔ
+\olref[syn][ext]{prop:ext-formulas}، همچنین
+$\Sat{M}{!A(t_2)}[s]$. بنا بر
+\olref[syn][ass]{prop:sentence-sat-true}، $\Sat{M}{!A(t_2)}$. حالت
+$\TRule{\False}{\eq}$ نیز به همین شیوه بررسی می‌شود.
+\end{proof}
+
+\end{document}

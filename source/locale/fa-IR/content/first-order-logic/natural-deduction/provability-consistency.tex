@@ -1,0 +1,133 @@
+% Part: first-order-logic
+% Chapter: natural-deduction
+% Section: provability-consistency
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{ntd}{prv}}
+      {\olfileid{pl}{ntd}{prv}}
+
+\olsection{\usetoken{S}{derivability} و سازگاری}
+
+اکنون چند خاصیت رابطهٔ !!{derivability} را اثبات می‌کنیم. این خواص
+به‌خودی‌خود جالب‌اند، اما هر یک در اثبات قضیهٔ تمامیت نقشی خواهند داشت.
+
+\begin{prop}\ollabel{prop:provability-contr}
+  اگر $\Gamma \Proves !A$ و $\Gamma \cup \{!A\}$ ناسازگار باشد، آنگاه
+  $\Gamma$ ناسازگار است.
+\end{prop}
+
+\begin{proof}
+فرض کنید !!{derivation} از~$!A$ از~$\Gamma$ برابر~$\delta_1$ و
+!!{derivation} از~$\lfalse$ از $\Gamma \cup \{!A\}$ برابر~$\delta_2$
+باشد. آنگاه می‌توانیم عبارت زیر را !!{derive} کنیم:
+\begin{prooftree}
+\AxiomC{$\Gamma, \Discharge{!A}{1}$}
+\RightLabel{$\delta_2$}
+\DeduceC{$\lfalse$}
+\DischargeRule{\Intro{\lnot}}{1}
+\UnaryInfC{$\lnot !A$}
+\AxiomC{$\Gamma$}
+\RightLabel{$\delta_1$}
+\DeduceC{$!A$}
+\RightLabel{\Elim{\lnot}}
+\BinaryInfC{$\lfalse$}
+\end{prooftree}
+در !!{derivation} جدید، فرض~$!A$~!!{discharged} شده است، پس این
+!!a{derivation} از~$\Gamma$ است.
+\end{proof}
+
+\begin{prop}
+\ollabel{prop:prov-incons}
+$\Gamma \Proves !A$ هرگاه و تنها هرگاه $\Gamma \cup \{\lnot !A\}$
+ناسازگار باشد.
+\end{prop}
+
+\begin{proof}
+نخست فرض کنید $\Gamma \Proves !A$؛ یعنی !!a{derivation}~$\delta_0$ از
+~$!A$ از فرض‌های !!{undischarged}~$\Gamma$ وجود دارد. !!a{derivation}
+از $\lfalse$ از $\Gamma \cup \{\lnot !A\}$ را به صورت زیر به دست
+می‌آوریم:
+\begin{prooftree}
+  \AxiomC{$\lnot !A$}
+  \AxiomC{$\Gamma$}
+  \RightLabel{$\delta_0$}
+  \DeduceC{$!A$}
+  \RightLabel{\Elim{\lnot}}
+  \BinaryInfC{$\lfalse$}
+\end{prooftree}
+
+اکنون فرض کنید $\Gamma \cup \{\lnot !A\}$ ناسازگار است و
+$\delta_1$~!!{derivation} متناظر از~$\lfalse$ از فرض‌های
+!!{undischarged} در~$\Gamma \cup \{\lnot !A\}$ باشد. با استفاده
+!!a{derivation} از~$!A$ را تنها از~$\Gamma$ و با استفاده از~$\FalseCl$
+به دست می‌آوریم:
+\begin{prooftree}
+  \AxiomC{$\Gamma, \Discharge{\lnot !A}{1}$}
+  \RightLabel{$\delta_1$}
+  \DeduceC{$\lfalse$}
+  \DischargeRule{\FalseCl}{1}
+  \UnaryInfC{$!A$}
+\end{prooftree}
+\end{proof}
+
+\begin{prob}
+ثابت کنید $\Gamma \Proves \lnot !A$ هرگاه و تنها هرگاه
+$\Gamma \cup \{!A\}$ ناسازگار باشد.
+\end{prob}
+
+\begin{prop}\ollabel{prop:explicit-inc}
+  اگر $\Gamma \Proves !A$ و $\lnot !A \in \Gamma$، آنگاه $\Gamma$
+  ناسازگار است.
+\end{prop}
+
+\begin{proof}
+  فرض کنید $\Gamma \Proves !A$ و $\lnot !A \in \Gamma$. در این صورت
+  !!a{derivation}~$\delta$ از~$!A$ از~$\Gamma$ وجود دارد. این کاربرد
+  سادهٔ قاعدهٔ $\Elim{\lnot}$ را در نظر بگیرید:
+  \begin{prooftree}
+    \AxiomC{$\lnot !A$}
+    \AxiomC{$\Gamma$}
+    \RightLabel{$\delta$}
+    \DeduceC{$!A$}
+    \RightLabel{\Elim{\lnot}}
+    \BinaryInfC{$\lfalse$}
+  \end{prooftree}
+  چون $\lnot !A \in \Gamma$، همهٔ فرض‌های !!{undischarged} در
+  ~$\Gamma$ هستند؛ بنابراین این عبارت $\Gamma \Proves \lfalse$ را
+  نشان می‌دهد.
+\end{proof}
+
+\begin{prop}\ollabel{prop:provability-exhaustive}
+  اگر $\Gamma \cup \{!A\}$ و $\Gamma \cup \{\lnot !A\}$ هر دو
+  ناسازگار باشند، آنگاه $\Gamma$ ناسازگار است.
+\end{prop}
+
+\begin{proof}
+!!{derivation}sی چون $\delta_1$ و $\delta_2$ وجود دارند که به‌ترتیب،
+  اولی از~$\lfalse$ از $\Gamma \cup \{ !A \}$ و دومی از $\lfalse$ از
+  $\Gamma \cup \{ \lnot !A \}$ است. آنگاه می‌توانیم عبارت زیر را
+  !!{derive} کنیم:
+\begin{prooftree}
+\AxiomC{$\Gamma, \Discharge{\lnot !A}{2}$}
+\RightLabel{$\delta_2$}
+\DeduceC{$\lfalse$}
+\DischargeRule{\Intro{\lnot}}{2}
+\UnaryInfC{$\lnot \lnot !A$}
+\AxiomC{$\Gamma, \Discharge{!A}{1}$}
+\RightLabel{$\delta_1$}
+\DeduceC{$\lfalse$}
+\DischargeRule{\Intro{\lnot}}{1}
+\UnaryInfC{$\lnot !A$}
+\RightLabel{\Elim{\lnot}}
+\BinaryInfC{$\lfalse$}
+\end{prooftree}
+چون فرض‌های $!A$ و $\lnot !A$~!!{discharged} شده‌اند، این
+!!a{derivation} از~$\lfalse$ تنها از~$\Gamma$ است. پس $\Gamma$
+ناسازگار است.
+\end{proof}
+
+\end{document}

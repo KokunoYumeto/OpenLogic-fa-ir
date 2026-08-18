@@ -1,0 +1,29 @@
+% Part: lambda-calculus
+% Chapter: introduction
+% Section: composition
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{int}{com}
+\olsection{توابع \usetoken{S}{lambda definable} تحت ترکیب بسته‌اند}
+
+\begin{lem}
+توابع !!{lambda definable} تحت ترکیب بسته‌اند.
+\end{lem}
+
+\begin{proof}
+فرض کنید~$f$ با ترکیب از~$h$، $g_0$،
+\dots،~$g_{k-1}$ تعریف شده باشد. با فرض اینکه~$h$، $g_0$،
+\dots،~$g_{k-1}$ به‌ترتیب به‌وسیلهٔ~$H$، $G_0$،
+\dots،~$G_{k-1}$ !!{lambda defined} باشند، باید ترم~$F$ای بیابیم که~$f$
+را !!{lambda define}s. اما می‌توانیم~$F$ را به‌سادگی چنین تعریف کنیم:
+\[
+F(x_0, \dots, x_{l-1}) = H(G_0(x_0, \dots, x_{l-1}),
+\dots, G_{k-1}(x_0, \dots, x_{l-1})).
+\]
+به بیان دیگر، زبان حساب لامبدا برای بازنمایی ترکیب کاملاً مناسب است.
+\end{proof}
+
+\end{document}

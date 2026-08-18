@@ -1,0 +1,95 @@
+% part: intuitionistic-logic
+% chapter: propositions-as-types
+% section: terms-to-proofs
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{pty}{tp}
+
+\olsection{بازیابی \usetoken{P}{derivation} از ترم‌های برهان}
+
+اکنون جهت دیگر را در نظر بگیریم: ترجمهٔ یک ترم برهان درست و نوع‌پذیر
+~$N$ به !!a{proof} در~\Log{N2i}. این بازسازی تنها نسبت به بافتی ممکن
+است که برای هر متغیر~$x$ آزاد در ترم برهان داده‌شده، جفتی به‌شکل
+$x:!A$ در بر داشته باشد. یک ترم خام که در چنین بافتی نوع‌پذیر نباشد
+لزوماً هیچ برهانی را رمزگذاری نمی‌کند. با نمونه‌ای بدون متغیر آزاد آغاز
+می‌کنیم، یعنی ترم
+\[
+\lambd[\typeof{x}{!A \land
+  !B}][\pair{\proj{2}{x}}{\proj{1}{x}}]
+\]
+این ترم به شکل~$\lambd[\typeof{x}{!A \land !B}][N_1]$ است. چون تنها
+قاعدهٔ~\Log{tN2i} که ترمی از این شکل می‌سازد~$\Intro{\lif}$ است،
+می‌دانیم !!{proof} رمزگذاری‌شده به‌وسیلهٔ~$N$ باید با~$\Intro{\lif}$
+پایان یابد؛ یعنی پایان آن چنین است:
+  \[
+  \Axiom$x : !A\land !B \fCenter \pair{\proj{2}{x}}{\proj{1}{x}} :
+    !C$
+  \RightLabel{\Intro\lif}
+  \UnaryInf$\fCenter \lambd[\typeof{x}{!A \land
+  !B}][\pair{\proj{2}{x}}{\proj{1}{x}}] : (!A \land !B) \lif !C$
+  \DisplayProof
+  \]
+هنوز نمی‌دانیم~$!C$ چیست، اما می‌دانیم مقدم شرطی~$!A \land !B$ است
+و بافت مقدمه باید~$x:!A \land !B$ را در بر داشته باشد.
+
+اکنون ترم برهان متناظر با مقدمه از پیش تعیین شده است:
+$\pair{\proj{2}{x}}{\proj{1}{x}}$. !!{proof}ی که این ترم رمزگذاری
+می‌کند باید با~$\Intro{\land}$ پایان یابد. هنوز نمی‌دانیم~$!C$ چیست،
+اما چون نتیجهٔ~$\Intro{\land}$ است، باید عطف باشد؛ یعنی
+$!C \ident (!C_1 \land !C_2)$. بازسازی را ادامه می‌دهیم:
+  \[
+  \Axiom$x : !A\land !B \fCenter \proj{2}{x} : !C_1$
+  \Axiom$x : !A\land !B \fCenter \proj{1}{x} : !C_2$
+  \RightLabel{\Intro\land}
+  \BinaryInf$x : !A\land !B \fCenter \pair{\proj{2}{x}}{\proj{1}{x}} :
+    !C_1 \land !C_2$
+  \RightLabel{\Intro\lif}
+  \UnaryInf$\fCenter \lambd[\typeof{x}{!A \land
+  !B}][\pair{\proj{2}{x}}{\proj{1}{x}}] : (!A \land !B) \lif (!C_1 \land !C_2)$
+  \DisplayProof
+  \]
+ترم برهان~$\proj{2}{x}$ نشان می‌دهد دنبالهٔ بالایی سمت چپ با
+$\Elim{\land}[2]$ به دست آمده و بنابراین مقدمه به شکل~$!D \land !C_1$
+است. در سمت راست می‌توان تعیین کرد استنتاج منتهی به~$!C_2$ باید
+$\Elim{\land}[1]$ باشد و مقدمه به شکل~$!C_2 \land !E$ باشد.
+  \[
+  \Axiom$x : !A\land !B \fCenter x: !D\land !C_1$
+  \RightLabel{\Elim\land[2]}
+  \UnaryInf$x : !A\land !B \fCenter \proj{2}{x} : !C_1$
+  \Axiom$x : !A\land !B \fCenter x: !C_2\land !E$
+  \RightLabel{\Elim\land[1]}
+  \UnaryInf$x : !A\land !B \fCenter \proj{1}{x} : !C_2$
+  \RightLabel{\Intro\land}
+  \BinaryInf$x : !A\land !B \fCenter \pair{\proj{2}{x}}{\proj{1}{x}} :
+    !C_1 \land !C_2$
+  \RightLabel{\Intro\lif}
+  \UnaryInf$\fCenter \lambd[\typeof{x}{!A \land
+  !B}][\pair{\proj{2}{x}}{\proj{1}{x}}] : (!A \land !B) \lif (!C_1 \land !C_2)$
+  \DisplayProof
+  \]
+چون ترم‌های برهان دنباله‌های بالایی اکنون متغیرند، می‌دانیم آن
+دنباله‌ها باید اصل باشند. این امر~$!C_1$، $!C_2$، $!D$ و~$!E$ را
+تعیین می‌کند: باید~$!D \ident !A$ و~$!C_1 \ident !B$ باشد، وگرنه
+دنبالهٔ چپ اصل نیست؛ و باید~$!C_2 \ident !A$ و~$!E \ident !B$ باشد،
+وگرنه دنبالهٔ راست اصل نیست. اکنون برهان را کاملاً بازیابی کرده‌ایم:
+  \[
+  \Axiom$x : !A\land !B \fCenter x: !A\land !B$
+  \RightLabel{\Elim\land[2]}
+  \UnaryInf$x : !A\land !B \fCenter \proj{2}{x} : !B$
+  \Axiom$x : !A\land !B \fCenter x: !A\land !B$
+  \RightLabel{\Elim\land[1]}
+  \UnaryInf$x : !A\land !B \fCenter \proj{1}{x} : !A$
+  \RightLabel{\Intro\land}
+  \BinaryInf$x : !A\land !B \fCenter \pair{\proj{2}{x}}{\proj{1}{x}} :
+    !B \land !A$
+  \RightLabel{\Intro\lif}
+  \UnaryInf$\fCenter \lambd[\typeof{x}{!A \land
+  !B}][\pair{\proj{2}{x}}{\proj{1}{x}}] : (!A \land !B) \lif (!B \land !A)$
+  \DisplayProof
+  \]
+
+
+\end{document}

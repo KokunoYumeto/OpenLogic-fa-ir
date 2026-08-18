@@ -1,0 +1,81 @@
+% Part: applied-modal-logics
+% Chapter: epistemic-logic
+% Section: public-announcement-logic-lang
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{aml}{el}{pal}
+
+\olsection{منطق اعلان عمومی}
+
+منطق‌های معرفتی پویا به ما امکان می‌دهند شیوه‌های تغییر دانش عامل‌ها
+در گذر زمان یا در پی کسب اطلاعات تازه را بازنمایی کنیم. بسیاری از این
+منطق‌ها تغییرات دانش را با \emph{رویدادها} یا \emph{به‌روزرسانی‌های}
+اطلاعاتی بازنمایی می‌کنند. پایه‌ای‌ترین گونهٔ به‌روزرسانی، اعلان عمومی
+است: فرمولی صادقانه اعلان می‌شود و همهٔ عامل‌ها با هم شاهد وقوع آن
+هستند. برای این منظور، زبان را چنین گسترش می‌دهیم:
+
+\begin{defn}
+فرض کنید~$G$ مجموعه‌ای از نمادهای عامل باشد. زبان پایهٔ منطق معرفتی
+چندعاملی با اعلان‌های عمومی شامل موارد زیر است:
+\begin{enumerate}
+  \tagitem{prvFalse}{ثابت گزاره‌ای برای !!{falsity}~$\lfalse$.}{}
+  \tagitem{prvTrue}{ثابت گزاره‌ای برای !!{truth}~$\ltrue$.}{}
+  \item یک مجموعهٔ !!{denumerable} از !!{propositional variable}ها:
+    $\Obj p_0$، $\Obj p_1$، $\Obj p_2$، \dots
+  \item رابط‌های گزاره‌ای: \startycommalist
+  \iftag{prvNot}{\ycomma $\lnot$ (نفی)}{}%
+  \iftag{prvAnd}{\ycomma $\land$ (عطف)}{}%
+  \iftag{prvOr}{\ycomma $\lor$ (فصل)}{}%
+  \iftag{prvIf}{\ycomma $\lif$ (!!{conditional})}{}%
+  \iftag{prvIff}{\ycomma $\liff$ (!!{biconditional})}{}%
+  \item عملگر دانش~$\Knows_a$، که~$a \in G$.
+  \item عملگر اعلان عمومی~$[!B]$، که~$!B$ یک !!a{formula} است.
+\end{enumerate}
+\end{defn}
+
+عملگر اعلان عمومی همچون عملگر جعبه عمل می‌کند و ازاین‌رو تعریف استقرایی
+زبان را چنین می‌دهیم:
+
+\begin{defn}
+  \emph{!!^{formula}های زبان معرفتی} با استقرا چنین تعریف می‌شوند:
+  \begin{enumerate}
+  \tagitem{prvFalse}{$\lfalse$ یک !!{formula} اتمی است.}{}
+
+  \tagitem{prvTrue}{$\ltrue$ یک !!{formula} اتمی است.}{}
+
+  \item هر متغیر گزاره‌ای~$\Obj p_i$ یک !!{formula} (اتمی) است.
+
+  \tagitem{prvNot}{اگر~$!A$ یک !!a{formula} باشد، آنگاه~$\lnot !A$ یک
+  !!a{formula} است.}{}
+
+  \tagitem{prvAnd}{اگر~$!A$ و~$!B$، !!{formula} باشند، آنگاه
+  $(!A \land !B)$ یک !!a{formula} است.}{}
+
+  \tagitem{prvOr}{اگر~$!A$ و~$!B$، !!{formula} باشند، آنگاه
+  $(!A \lor !B)$ یک !!a{formula} است.}{}
+
+  \tagitem{prvIf}{اگر~$!A$ و~$!B$، !!{formula} باشند، آنگاه
+  $(!A \lif !B)$ یک !!a{formula} است.}{}
+
+  \tagitem{prvIff}{اگر~$!A$ و~$!B$، !!{formula} باشند، آنگاه
+  $(!A \liff !B)$ یک !!a{formula} است.}{}
+
+  \item اگر~$!A$ یک !!a{formula} و~$a \in G$ باشد، آنگاه~$\Knows_a !A$
+  یک !!a{formula} است.
+  
+  \item اگر~$!A$ و~$!B$، !!{formula} باشند، آنگاه~$[!A] !B$ یک
+  !!a{formula} است.
+
+  \tagitem{limitClause}{هیچ چیز دیگری !!a{formula} نیست.}{}
+\end{enumerate}
+\end{defn}
+
+خوانش مقصود از !!{formula}~$[!A] !B$ این است: «پس از آنکه~$!A$
+صادقانه اعلان شود، $!B$ برقرار است.» گاه سخن‌گفتن از دانش مشترک در
+زمینهٔ اعلان‌های عمومی نیز سودمند است؛ ازاین‌رو زبان می‌تواند عملگر
+دانش مشترک~$\CKnows_G !A$ را نیز دربرگیرد.
+
+\end{document}

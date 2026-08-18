@@ -1,0 +1,56 @@
+% Part: first-order logic
+
+\documentclass[../../include/open-logic-part]{subfiles}
+
+\begin{document}
+
+\olpart{fol}{منطق مرتبهٔ اول}
+
+\begin{editorial}
+  این بخش فرامنطق منطق مرتبهٔ اول را تا مبحث تمامیت پوشش می‌دهد. در وضع
+  کنونی، به بررسی جداگانه‌ای از منطق گزاره‌ای متکی نیست و همه‌چیز در آن
+  اثبات می‌شود. اگر برچسب «FOL» نادرست باشد، فایل‌های منبع مطالب مربوط
+  به سورها را حذف می‌کنند (و «!!{structure}» را با «!!{valuation}»،
+  $\Struct{M}$ را با $\pAssign{v}$ و مانند آن جایگزین می‌کنند). در واقع،
+  بیشتر مطالب بخش منطق گزاره‌ای چیزی جز مطالب مرتبهٔ اول با برچسب
+  «FOL» خاموش نیست.
+
+  اگر بخش منطق گزاره‌ای گنجانده شود، تکرار فراوانی پدید می‌آید. بااین‌حال،
+  برنامه بر این است که بتوان کاری کرد این بخش مطالب منطق گزاره‌ای را
+  لحاظ کند (و مطالبی را که پیش‌تر پوشش داده شده‌اند حذف کند، و نیز
+  اثبات‌ها را با ارجاع به مواضع متناظر در بخش گزاره‌ای کوتاه‌تر سازد).
+\end{editorial}
+
+\olimport[introduction]{introduction}
+
+\olimport[syntax-and-semantics]{syntax}
+
+\olimport[syntax-and-semantics]{semantics}
+
+\olimport[models-theories]{models-theories}
+
+\olimport[proof-systems]{proof-systems}
+
+\iftag{prfSC}{%
+  \olimport[sequent-calculus]{sequent-calculus}
+}{}
+
+\iftag{prfND}{%
+  \olimport[natural-deduction]{natural-deduction}
+}{}
+
+\iftag{prfTab}{%
+  \olimport[tableaux]{tableaux}
+}{}
+
+\iftag{prfAX}{%
+  \olimport[axiomatic-deduction]{axiomatic-deduction}
+}{}
+
+\olimport[completeness]{completeness}
+
+\olimport[beyond]{beyond}
+
+\OLEndPartHook
+
+\end{document}

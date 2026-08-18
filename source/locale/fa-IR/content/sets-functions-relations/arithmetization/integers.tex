@@ -1,0 +1,87 @@
+% Part: sets-functions-relations
+% Chapter: arithmetization
+% Section: From N to Z
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+
+\begin{document}
+
+\olfileid[fa-IR]{sfr}{arith}{int}
+\olsection{از $\Nat$ به $\Int$}
+
+دو مشاهدهٔ بنیادی از این قرارند:
+	\begin{enumerate}
+		\item هر عدد صحیح را می‌توان به‌شکل $n - m$ نوشت، که در آن $n, m \in\Nat$.
+		\item اطلاعات نهفته در عبارت $n - m$ را به‌همان اندازه می‌توان با زوج مرتب $\tuple{n, m}$ رمزگذاری کرد.
+	\end{enumerate}
+از پیش می‌دانیم که زوج‌های مرتبِ اعداد طبیعی همان !!{element}sیِ $\Nat^2$ هستند. همچنین فرض می‌کنیم که $\Nat$ را می‌شناسیم. پس بر پایهٔ دو مشاهدهٔ بالا، پیشنهاد ساده‌انگارانهٔ زیر به ذهن می‌رسد: \emph{اعداد صحیح را زوج‌های مرتبِ اعداد طبیعی در نظر بگیریم}.
+
+در واقع، این پیشنهاد بیش از اندازه ساده‌انگارانه است. آشکارا می‌خواهیم $0- 2 = 4 - 6$ برقرار باشد، اما به‌روشنی $\tuple{0, 2 }\neq \tuple{4, 6}$. بنابراین نمی‌توانیم صرفاً بگوییم $\Nat^2$ مجموعهٔ اعداد صحیح است.
+
+با تعمیم مسئلهٔ بالا، خواستهٔ ما چنین است:
+	$$a - b = c - d \text{ iff }a + d = c + b$$
+(باید روشن باشد که اعداد صحیح \emph{قرار است} این‌گونه رفتار کنند: کافی است $b$ و $d$ را به دو سوی تساوی بیفزاییم.) راه ساده برای تضمین این رفتار آن است که رابطهٔ هم‌ارزیِ $\Intequiv$ را میان زوج‌های مرتب به‌صورت زیر تعریف کنیم:
+$$\tuple{ a, b } \Intequiv \tuple{c, d}\text{ iff }a + d = c + b$$
+اکنون باید نشان دهیم که این یک رابطهٔ هم‌ارزی است.
+\begin{prop} $\Intequiv$ یک رابطهٔ هم‌ارزی است.
+\end{prop}
+	\begin{proof}
+	باید نشان دهیم که $\Intequiv$ بازتابی، متقارن و تراگذری است.
+
+	\emph{بازتابی‌بودن:} آشکارا $\tuple{a, b} \Intequiv \tuple{a, b}$، زیرا $a + b = b + a$.
+
+	\emph{تقارن:} فرض کنید $\tuple{a, b} \Intequiv \tuple{c, d}$؛ پس $a + d = c + b$. آنگاه $c + b = a + d$ و در نتیجه $\tuple{c, d} \Intequiv \tuple{a, b}$.
+
+	\emph{تراگذری:} فرض کنید $\tuple{a, b} \Intequiv \tuple{c, d}\Intequiv \tuple{m, n}$. پس $a + d = c + b$ و $c + n = m + d$. بنابراین $a + d + c + n = c + b + m + d$ و ازاین‌رو $a + n = m + b$. در نتیجه $\tuple{a, b } \Intequiv \tuple{m, n}$.
+\end{proof}
+
+اکنون می‌توانیم با استفاده از این رابطهٔ هم‌ارزی، رده‌های هم‌ارزی را تشکیل دهیم:
+
+\begin{defn}
+		اعداد صحیح، رده‌های هم‌ارزیِ زوج‌های مرتبِ اعداد طبیعی تحت $\Intequiv$ هستند؛ یعنی $\Int = \equivclass{\Nat^2}{\Intequiv}$.
+\end{defn}
+
+ممکن است در برابر این تعریف قراردادی واکنش‌های \emph{فلسفی} گوناگونی داشته باشیم. اما پیش از بررسی آن واکنش‌ها، بهتر است برخی جزئیات فنی را دنبال کنیم.
+
+پس از تعیین اینکه اعداد صحیح چه هستند، باید توابع و روابط بنیادی روی آن‌ها را تعریف کنیم. $\equivrep{m, n}{\Intequiv}$ را برای ردهٔ هم‌ارزیِ تحت $\Intequiv$ می‌نویسیم که زوج مرتب $\tuple{m, n}$ را به‌عنوان یک !!a{element} در بر دارد.\footnote{توجه: با نمادگذاری معرفی‌شده در \olref[sfr][rel][eqv]{def:equivalenceclass}، باید همین شیء را به‌صورت $\equivrep{\tuple{m,n}}{\Intequiv}$ می‌نوشتیم؛ اما خواندن آن اندکی دشوارتر است.} یعنی:
+	$$\equivrep{m, n}{\Intequiv} = \Setabs{\tuple{a, b} \in \Nat^2}{\tuple{a, b}\Intequiv \tuple{m, n}}$$
+اکنون تعریف‌های زیر را به دست می‌دهیم:
+	\begin{align*}
+		\equivrep{a, b}{\Intequiv} + \equivrep{c, d}{\Intequiv} &= \equivrep{a + c, b + d}{\Intequiv}\\
+		\equivrep{a, b}{\Intequiv} \times \equivrep{c, d}{\Intequiv} &= \equivrep{a c + b  d, a  d + b c}{\Intequiv}\\
+		\equivrep{a, b}{\Intequiv} \leq \equivrep{c, d}{\Intequiv} &\text{ iff }a + d \leq b + c
+	\end{align*}
+(چنان‌که معمول است، برای آسان‌ترشدن خواندن اصول موضوعه، از «$ab$» به‌جای «$(a \times b)$» استفاده می‌کنم.) اکنون باید مطمئن شویم که این تعریف‌ها چنان‌که \emph{باید} رفتار می‌کنند. شرح دقیق مقصود و وارسی کامل آن کاری نسبتاً طولانی است؛ جزئیات را به \olref[check]{sec} وامی‌گذاریم. اما سخن کوتاه این است: همه‌چیز درست کار می‌کند!
+
+تنها یک نکتهٔ پایانی باقی می‌ماند. ما اعداد صحیح را با استفاده از
+اعداد طبیعی ساخته‌ایم؛ اما این به آن معناست که اعداد طبیعی \emph{خودشان
+عدد صحیح نیستند}. در \olref[ref]{sec} به اهمیت فلسفی این نکته بازخواهیم
+گشت. بااین‌حال، از دیدگاهی صرفاً فنی، به روشی نیاز داریم تا بتوانیم
+اعداد طبیعی را \emph{به‌منزلهٔ} اعداد صحیح در نظر بگیریم. ایده بسیار ساده
+است: برای هر $n \in \Nat$ صرفاً مقرر می‌کنیم که
+$n_\Int = \equivrep{n, 0}{\Intequiv}$. باید تأیید کنیم که این تعریف
+خوش‌رفتار است؛ یعنی برای هر $m, n \in \Nat$ روابط زیر برقرارند:
+\begin{align*}
+	(m + n)_\Int &= m_\Int + n_\Int\\
+	(m \times n)_\Int &= m_\Int \times n_\Int\\
+	m \leq n &\liff m_\Int \leq n_\Int
+\end{align*}
+اما همهٔ این‌ها نسبتاً سرراست‌اند. برای نمونه، برای نشان‌دادن اینکه
+رابطهٔ دوم برقرار است، می‌توانیم مستقیماً از رفتار اعداد طبیعی کمک
+بگیریم و چنین استدلال کنیم:
+%\begin{proof}
+%	Helping myself to the behaviour of the natural numbers, evidently:
+	\begin{align*}
+%		(m + n)_\Int  = \equivrep{m + n, 0}{\Intequiv} = \equivrep{m + n, 0 + 0}{\Intequiv} = \equivrep{m, 0}{\Intequiv} + \equivrep{n, 0}{\Intequiv} = m_\Int + n_\Int\\
+		(m \times n)_\Int  &= \equivrep{m \times n, 0}{\Intequiv} \\
+		&= \equivrep{m \times n + 0 \times 0, m \times 0 + 0 \times n}{\Intequiv} \\
+		&= \equivrep{m, 0}{\Intequiv} \times \equivrep{n, 0}{\Intequiv} \\
+		&= m_\Int \times n_\Int
+	\end{align*}
+%\end{proof}
+تأیید دو شرط دیگر را به‌عنوان تمرین وامی‌گذاریم.
+\begin{prob}
+	نشان دهید روابط $(m + n)_\Int = m_\Int + n_\Int$ و $m \leq n \liff m_\Int \leq n_\Int$، برای هر $m, n \in \Nat$، برقرارند.
+\end{prob}
+\end{document}

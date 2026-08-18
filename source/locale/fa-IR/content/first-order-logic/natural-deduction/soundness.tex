@@ -1,0 +1,311 @@
+% Part: first-order-logic
+% Chapter: natural-deduction
+% Section: soundness
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{ntd}{sou}}
+      {\olfileid{pl}{ntd}{sou}}
+
+\olsection{صحت}
+
+\begin{explain}
+دستگاه !!^a{derivation}، مانند استنتاج طبیعی، \emph{صحیح} است اگر
+نتواند چیزهایی را که در واقع نتیجه نمی‌شوند !!{derive} کند. بنابراین،
+صحت نوعی خاصیت ایمنی تضمین‌شده برای دستگاه‌های !!{derivation} است.
+بسته به اینکه کدام خاصیت برهان‌نظری محل بحث باشد، برای نمونه می‌خواهیم
+بدانیم که
+\begin{enumerate}
+\item هر !!{derivable}~!!{sentence}، \iftag{FOL}{معتبر}{همان‌گو} است؛
+\item اگر !!a{sentence} از چند جملهٔ دیگر !!{derivable} باشد، پیامد
+  آن‌ها نیز هست؛
+\item اگر مجموعه‌ای از !!{sentence}s ناسازگار باشد، ارضاناپذیر است.
+\end{enumerate}
+این‌ها خواص مهم دستگاه !!a{derivation} هستند. اگر هر یک از آن‌ها برقرار
+نباشد، دستگاه !!{derivation} معیوب است---زیرا بیش از اندازه !!{derive}
+می‌کند. ازاین‌رو، اثبات صحت دستگاه !!{derivation} اهمیتی اساسی دارد.
+\end{explain}
+
+\begin{thm}[صحت]
+\ollabel{thm:soundness}
+اگر $!A$~!!{derivable} باشد از فرض‌های !!{undischarged}~$\Gamma$، آنگاه
+$\Gamma \Entails !A$.
+\end{thm}
+
+\begin{proof}
+فرض کنید $\delta$ یک !!a{derivation} از $!A$ باشد. با استقرا بر تعداد
+استنتاج‌ها در~$\delta$ پیش می‌رویم.
+
+برای پایهٔ استقرا، ادعا را هنگامی نشان می‌دهیم که تعداد استنتاج‌ها~$0$
+است. در این حالت، $\delta$ تنها از یک !!{sentence}~$!A$، یعنی یک فرض،
+تشکیل می‌شود. آن فرض !!{undischarged} است، زیرا فرض‌ها تنها به‌وسیلهٔ
+استنتاج‌ها !!{discharged} می‌شوند و هیچ استنتاجی وجود ندارد. پس هر
+\iftag{FOL}{!!{structure}~$\Struct{M}$}{!!{valuation}~$\pAssign{v}$}
+که همهٔ فرض‌های !!{undischarged} برهان را ارضا کند، ~$!A$ را نیز ارضا
+می‌کند.
+
+اکنون به گام استقرا می‌پردازیم. فرض کنید $\delta$ شامل~$n$ استنتاج
+باشد. مقدمه یا مقدمات پایین‌ترین استنتاج !!{derive}d می‌شوند با استفاده
+از !!{derivation}s فرعی‌ای که هر یک کمتر از~$n$ استنتاج دارند. فرض
+استقرا را می‌پذیریم: مقدمات پایین‌ترین استنتاج از فرض‌های
+!!{undischarged}~!!{derivation}s فرعی‌ای نتیجه می‌شوند که به آن مقدمات ختم
+می‌شوند. باید نشان دهیم نتیجهٔ~$!A$ از فرض‌های !!{undischarged} کل
+برهان نتیجه می‌شود.
+
+حالت‌ها را برحسب نوع پایین‌ترین استنتاج متمایز می‌کنیم. نخست استنتاج‌های
+ممکن با تنها یک مقدمه را بررسی می‌کنیم.
+
+\begin{enumerate}
+\item فرض کنید آخرین استنتاج \Intro{\lnot} باشد: !!{derivation} صورت
+  زیر را دارد:
+  \begin{prooftree}
+    \AxiomC{$\Gamma, \Discharge{!A}{n}$}
+    \RightLabel{$\delta_1$}
+    \DeduceC{$\lfalse$}
+    \DischargeRule{\Intro{\lnot}}{n}
+    \UnaryInfC{$\lnot !A$}
+  \end{prooftree}
+  بنا بر فرض استقرا، $\lfalse$ از فرض‌های !!{undischarged}
+  $\Gamma \cup \{!A\}$ در~$\delta_1$ نتیجه می‌شود. یک
+  \iftag{FOL}{!!a{structure}~$\Struct{M}$}{!!a{valuation}~$\pAssign{v}$}
+  را در نظر بگیرید. باید نشان دهیم اگر
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$، آنگاه
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\lnot !A}$. برای برهان خلف فرض کنید
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$، اما
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{\lnot !A}$؛ یعنی
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$. این بدان معنا می‌بود که
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma \cup \{!A\}}$. این امر با فرض
+  استقرای ما منافات دارد. پس
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\lnot !A}$.
+
+\item آخرین استنتاج \Elim{\land} است: دو صورت وجود دارد؛ می‌توان $!A$
+  یا $!B$ را از مقدمهٔ $!A \land !B$ استنتاج کرد. حالت نخست را در نظر
+  بگیرید. !!{derivation}~$\delta$ چنین است:
+  \begin{prooftree}
+    \AxiomC{$\Gamma$}
+    \RightLabel{$\delta_1$}
+    \DeduceC{$!A \land !B$}
+    \RightLabel{\Elim{\land}}
+    \UnaryInfC{$!A$}
+  \end{prooftree}
+  بنا بر فرض استقرا، $!A \land !B$ از فرض‌های !!{undischarged}
+  ~$\Gamma$ در~$\delta_1$ نتیجه می‌شود. یک
+  \iftag{FOL}{!!a{structure}~$\Struct{M}$}{!!a{valuation}~$\pAssign{v}$}
+  را در نظر بگیرید. باید نشان دهیم اگر
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$، آنگاه
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$. فرض کنید
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$. بنا بر فرض استقرایمان
+  ($\Gamma \Entails !A \land !B$)، می‌دانیم که
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A \land !B}$. بنا بر تعریف،
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A \land !B}$ هرگاه و تنها هرگاه
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$ و
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!B}$. (حالت استنتاج $!B$ از
+  $!A \land !B$ نیز به همین صورت بررسی می‌شود.)
+
+\item آخرین استنتاج \Intro{\lor} است: دو صورت وجود دارد؛ می‌توان
+  $!A \lor !B$ را از مقدمهٔ~$!A$ یا مقدمهٔ~$!B$ استنتاج کرد. حالت نخست
+  را در نظر بگیرید. !!{derivation} صورت زیر را دارد:
+  \begin{prooftree}
+    \AxiomC{$\Gamma$}
+    \RightLabel{$\delta_1$}
+    \DeduceC{$!A$}
+    \RightLabel{\Intro{\lor}}
+    \UnaryInfC{$!A \lor !B$}
+  \end{prooftree}
+  بنا بر فرض استقرا، $!A$ از فرض‌های !!{undischarged}~$\Gamma$ در
+  ~$\delta_1$ نتیجه می‌شود. یک
+  \iftag{FOL}{!!a{structure}~$\Struct{M}$}{!!a{valuation}~$\pAssign{v}$}
+  را در نظر بگیرید. باید نشان دهیم اگر
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$، آنگاه
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A \lor !B}$. فرض کنید
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$؛ آنگاه
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$، زیرا $\Gamma \Entails !A$
+  (فرض استقرا). پس باید
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A \lor !B}$ نیز برقرار باشد. (حالت
+  استنتاج $!A \lor !B$ از~$!B$ نیز به همین صورت بررسی می‌شود.)
+
+\item آخرین استنتاج \Intro{\lif} است: $!A \lif !B$ از زیربرهانی با
+  فرض~$!A$ و نتیجهٔ~$!B$ استنتاج می‌شود؛ یعنی:
+  \begin{prooftree}
+    \AxiomC{$\Gamma, \Discharge{!A}{n}$}
+    \RightLabel{$\delta_1$}
+    \DeduceC{$!B$}
+    \DischargeRule{\Intro{\lif}}{n}
+    \UnaryInfC{$!A \lif !B$}
+  \end{prooftree}
+  بنا بر فرض استقرا، $!B$ از فرض‌های !!{undischarged} در~$\delta_1$،
+  یعنی $\Gamma \cup \{!A\} \Entails !B$، نتیجه می‌شود. یک
+  \iftag{FOL}{!!a{structure}~$\Struct{M}$}{!!a{valuation}~$\pAssign{v}$}
+  را در نظر بگیرید. فرض‌های !!{undischarged} در~$\delta$ فقط $\Gamma$
+  هستند، زیرا $!A$ در آخرین استنتاج رفع می‌شود. پس باید نشان دهیم
+  $\Gamma \Entails !A \lif !B$. برای برهان خلف، فرض کنید برای یک
+  \iftag{FOL}{!!{structure}~$\Struct{M}$}{!!{valuation}~$\pAssign{v}$}،
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$ اما
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!A \lif !B}$. پس
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$ و
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!B}$. اما بنا بر فرض، $!B$ پیامد
+  $\Gamma \cup \{!A\}$ است؛ یعنی
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!B}$، که تناقض است. پس
+  $\Gamma \Entails !A \lif !B$.
+
+\item آخرین استنتاج \FalseInt است: در اینجا $\delta$ به صورت زیر پایان
+  می‌یابد:
+  \begin{prooftree}
+    \AxiomC{$\Gamma$}
+    \RightLabel{$\delta_1$}
+    \DeduceC{$\lfalse$}
+    \RightLabel{\FalseInt}
+    \UnaryInfC{$!A$}
+  \end{prooftree}
+  بنا بر فرض استقرا، $\Gamma \Entails \lfalse$. باید نشان دهیم
+  $\Gamma \Entails !A$. خلاف آن را فرض کنید؛ آنگاه برای یک
+  ~$\iftag{FOL}{\Struct{M}}{\pAssign{v}}$ داریم
+    $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$ و
+    $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!A}$. اما همواره
+    $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{\lfalse}$؛ پس این بدان معناست که
+    $\Gamma \Entails/ \lfalse$، برخلاف فرض استقرا.
+
+\item آخرین استنتاج \FalseCl است: تمرین.
+
+\iftag{FOL}{
+\item آخرین استنتاج \Intro{\lforall} است: در این صورت $\delta$ صورت
+  زیر را دارد:
+  \begin{prooftree}
+    \AxiomC{$\Gamma$}
+    \RightLabel{$\delta_1$}
+    \DeduceC{$!A(a)$}
+    \RightLabel{\Intro{\lforall}}
+    \UnaryInfC{$\lforall[x][!A(x)]$}
+  \end{prooftree}
+  بنا بر فرض استقرا، مقدمهٔ $!A(a)$ پیامد فرض‌های !!{undischarged}
+  ~$\Gamma$ است. یک ساختار، یعنی $\Struct{M}$، را در نظر بگیرید که
+  $\Sat{M}{\Gamma}$. باید نشان دهیم $\Sat{M}{\lforall[x][!A(x)]}$.
+  چون $\lforall[x][!A(x)]$~!!a{sentence} است، باید نشان دهیم برای هر
+  انتساب متغیری~$s$، $\Sat{M}{!A(x)}[s]$
+  (\olref[syn][ass]{prop:sat-quant}). چون $\Gamma$ سراسر از جمله‌ها
+  تشکیل می‌شود، $\Sat{M}{!B}[s]$ برای همهٔ $!B \in \Gamma$، بنا بر
+  \olref[syn][sat]{defn:satisfaction}. فرض کنید $\Struct{M'}$
+  مانند $\Struct{M}$ باشد جز آنکه $\Assign{a}{M'} = s(x)$. چون $a$ در
+  ~$\Gamma$ رخ نمی‌دهد، $\Sat{M'}{\Gamma}$ بنا بر
+  \olref[syn][ext]{cor:extensionality-sent}. چون
+  $\Gamma \Entails !A(a)$، داریم $\Sat{M'}{!A(a)}$. چون
+  $!A(a)$~!!a{sentence} است، $\Sat{M'}{!A(a)}[s]$ بنا بر
+  \olref[syn][ass]{prop:sentence-sat-true}.
+  $\Sat{M'}{!A(x)}[s]$ هرگاه و تنها هرگاه $\Sat{M'}{!A(a)}$ بنا بر
+  \olref[syn][ext]{prop:ext-formulas} (به یاد آورید $!A(a)$ فقط
+  $\Subst{!A(x)}{a}{x}$ است). پس $\Sat{M'}{!A(x)}[s]$. چون $a$ در
+  ~$!A(x)$ رخ نمی‌دهد، بنا بر \olref[syn][ext]{prop:extensionality}،
+  $\Sat{M}{!A(x)}[s]$. اما $s$ انتساب متغیری دلخواه بود، پس
+  $\Sat{M}{\lforall[x][!A(x)]}$.
+
+\item آخرین استنتاج \Intro{\lexists} است: تمرین.
+
+\item آخرین استنتاج \Elim{\forall} است: تمرین.
+}{}
+\end{enumerate}
+
+اکنون استنتاج‌های ممکن با چند مقدمه را بررسی می‌کنیم:
+\Elim{\lor}، \Intro{\land}، \iftag{FOL}{\Elim{\lif} و
+  \Elim{\lexists}}{و \Elim{\lif}}.
+\begin{enumerate}
+
+\item آخرین استنتاج \Intro{\land} است. $!A \land !B$ از مقدمات $!A$
+  و $!B$ استنتاج می‌شود و $\delta$ صورت زیر را دارد:
+  \begin{prooftree}
+    \AxiomC{$\Gamma_1$}
+    \RightLabel{$\delta_1$}
+    \DeduceC{$!A$}
+    \AxiomC{$\Gamma_2$}
+    \RightLabel{$\delta_2$}
+    \DeduceC{$!B$}
+    \RightLabel{\Intro{\land}}
+    \BinaryInfC{$!A \land !B$}
+  \end{prooftree}
+  بنا بر فرض استقرا، $!A$ از فرض‌های !!{undischarged}~$\Gamma_1$ در
+  ~$\delta_1$ و $!B$ از فرض‌های !!{undischarged}~$\Gamma_2$ در
+  ~$\delta_2$ نتیجه می‌شود. فرض‌های !!{undischarged} در~$\delta$ برابر
+  $\Gamma_1 \cup \Gamma_2$ هستند، پس باید نشان دهیم
+  $\Gamma_1 \cup \Gamma_2 \Entails !A \land !B$. یک
+  \iftag{FOL}{!!a{structure}~$\Struct{M}$}{!!a{valuation}~$\pAssign{v}$}
+  را با $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma_1 \cup \Gamma_2}$ در
+  نظر بگیرید. چون $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma_1}$، باید
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$، زیرا $\Gamma_1 \Entails !A$؛
+  و چون $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma_2}$، داریم
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!B}$، زیرا $\Gamma_2 \Entails !B$.
+  در مجموع، $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A \land !B}$.
+
+\item آخرین استنتاج \Elim{\lor} است: تمرین.
+
+\item آخرین استنتاج \Elim{\lif} است. $!B$ از مقدمات $!A \lif !B$ و
+  ~$!A$ استنتاج می‌شود. !!{derivation}~$\delta$ چنین است:
+  \begin{prooftree}
+    \AxiomC{$\Gamma_1$}
+    \RightLabel{$\delta_1$}
+    \DeduceC{$!A \lif !B$}
+    \AxiomC{$\Gamma_2$}
+    \RightLabel{$\delta_2$}
+    \DeduceC{$!A$}
+    \RightLabel{\Elim{\lif}}
+    \BinaryInfC{$!B$}
+  \end{prooftree}
+  بنا بر فرض استقرا، $!A \lif !B$ از فرض‌های !!{undischarged}
+  ~$\Gamma_1$ در~$\delta_1$ نتیجه می‌شود و $!A$ از فرض‌های
+  !!{undischarged}~$\Gamma_2$ در~$\delta_2$ نتیجه می‌شود. یک
+  \iftag{FOL}{!!a{structure}~$\Struct{M}$}{!!a{valuation}~$\pAssign{v}$}
+  را در نظر بگیرید. باید نشان دهیم اگر
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma_1 \cup
+    \Gamma_2}$، آنگاه $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!B}$. فرض کنید
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma_1 \cup \Gamma_2}$. چون
+  $\Gamma_1 \Entails !A \lif !B$،
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A \lif !B}$. چون
+  $\Gamma_2 \Entails !A$، داریم $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$.
+  این بدان معناست که $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!B}$ (زیرا اگر
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!B}$، چون
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$، می‌داشتیم
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!A \lif !B}$، برخلاف
+  ~$\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A \lif !B}$).
+
+\item آخرین استنتاج \Elim{\lnot} است: تمرین.
+
+\tagitem{FOL}{آخرین استنتاج \Elim{\lexists} است: تمرین.}{}
+\end{enumerate}
+\end{proof}
+
+\tagprob{FOL}
+\begin{prob}
+اثبات \olref[fol][ntd][sou]{thm:soundness} را کامل کنید.
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+اثبات \olref[pl][ntd][sou]{thm:soundness} را کامل کنید.
+\end{prob}
+\tagendprob
+
+\begin{cor}
+\ollabel{cor:weak-soundness}
+اگر $\Proves !A$، آنگاه $!A$~\iftag{FOL}{معتبر}{همان‌گو} است.
+\end{cor}
+
+\begin{cor}
+\ollabel{cor:consistency-soundness}
+اگر $\Gamma$ ارضاپذیر باشد، آنگاه سازگار است.
+\end{cor}
+
+\begin{proof}
+عکس نقیض را ثابت می‌کنیم. فرض کنید $\Gamma$ سازگار نباشد. در این صورت
+$\Gamma \Proves \lfalse$؛ یعنی !!a{derivation} از $\lfalse$ از فرض‌های
+!!{undischarged} در~$\Gamma$ وجود دارد. بنا بر \olref{thm:soundness}،
+هر \iftag{FOL}{!!{structure}~$\Struct{M}$}{!!{valuation}~$\pAssign{v}$}
+که $\Gamma$ را ارضا کند باید $\lfalse$ را ارضا کند. چون
+$\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{\lfalse}$ برای هر
+\iftag{FOL}{!!{structure}~$\Struct{M}$}{!!{valuation}~$\pAssign{v}$}، هیچ
+\iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$}ی نمی‌تواند $\Gamma$ را ارضا
+کند؛ یعنی $\Gamma$ ارضاپذیر نیست.
+\end{proof}
+
+\end{document}

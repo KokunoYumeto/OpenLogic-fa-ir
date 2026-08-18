@@ -1,0 +1,197 @@
+% part: intuitionistic-logic
+% chapter: propositions-as-types
+% section: reduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{pty}{red}
+
+\olsection{کاهش}
+
+در !!{derivation}s استنتاج طبیعی، اگر !!a{introduction} بلافاصله با
+!!a{elimination} دنبال شود، انحرافی پدید می‌آید که می‌توان آن را «کاهش»
+داد. برای نمونه، یک~$\Intro{\land}$ که پس از آن~$\Elim{\land}$ بیاید
+«خنثی می‌شود»، زیرا نتیجهٔ~$\Elim{\land}$ همواره یکی از دو مؤلفهٔ
+عطفی است که~$\Intro{\land}$ می‌سازد و مقدمات~$\Intro{\land}$ نیز همان
+دو مؤلفه‌اند. پس اگر به !!a{derivation} برای یکی از دو مؤلفه نیاز داشته
+باشیم، می‌توانیم همان !!{derivation} را مستقیماً به کار ببریم و از
+معرفی عطف و سپس حذف آن صرف‌نظر کنیم. داریم
+\begin{gather*}
+  \bottomAlignProof
+  \AxiomC{}
+  \RightLabel{$\delta_1$}
+  \DeduceC{$!A_1$}
+  \AxiomC{}
+  \RightLabel{$\delta_2$}
+  \DeduceC{$!A_2$}
+  \RightLabel{$\Intro{\land}$}
+  \BinaryInfC{$!A_1 \land !A_2$}
+  \RightLabel{$\Elim{\land}_i$}
+  \UnaryInfC{$!A_i$}
+  \DisplayProof\bottomAlignProof
+  \quad
+  \redone
+  \quad
+  \AxiomC{}
+  \RightLabel{$\delta_i$}
+  \DeduceC{$!A_i$}
+  \DisplayProof
+\end{gather*}
+
+می‌توان رابطهٔ کاهش مشابهی را بر ترم‌های برهان متناظر، که این
+ساده‌سازی پیشنهاد می‌کند، در نظر گرفت. اگر~$N_1$ ترم برهان~$\delta_1$
+و~$N_2$ ترم برهان~$\delta_2$ باشد، می‌گوییم ترم برهانِ برهان سمت چپ
+در یک گام به ترم برهانِ برهان سمت راست کاهش می‌یابد:
+\[
+  \proj{i}{\pair{N_1}{N_2}} \redone N_i
+\]
+در حساب لامبدای نوع‌دار، این قاعدهٔ \emph{کاهش بتا} برای نوع ضرب است.
+
+در استنتاج طبیعی، جفتی از استنتاج‌ها مانند~$\Intro{\land}$ و
+$\Elim{\land}$ پس از آن، یعنی جفتی که می‌توان آن را کاهش داد،
+\emph{برش} نامیده می‌شود. در حساب لامبدای نوع‌دار، ترم سمت چپ
+~$\redone$ را \emph{ردکس} و ترم سمت راست را \emph{حاصل کاهش} می‌نامند.
+برخلاف حساب لامبدای بی‌نوع، که در آن فقط~$(\lambd[x][N])Q$ ردکس به
+شمار می‌آید، نحو حساب لامبدای نوع‌دار به ترم‌های شامل
+$\pair{N}{M}$، $\proj{i}{N}$، $\inj[!A]{i}{N}$،
+$\dcase{N}{x_1}{M_1}{x_2}{M_2}$ و $\abort{!A}{N}$ گسترش یافته است و
+ردکس‌های متناظر نیز دارد.
+
+برای فصل نیز کاهش مشابهی داریم:
+\begin{gather*}
+  \bottomAlignProof
+  \AxiomC{}
+  \RightLabel{$\delta$}
+  \DeduceC{$!A_i$}
+  \RightLabel{$\Intro{\lor}$}
+  \UnaryInfC{$!A_1 \lor !A_2$}
+  \AxiomC{$\Discharge{!A_1}{x_1}$}
+  \RightLabel{$\delta_1$}
+  \DeduceC{$!C$}
+  \AxiomC{$\Discharge{!A_2}{x_2}$}
+  \RightLabel{$\delta_2$}
+  \DeduceC{$!C$}
+  \DischargeRule{$\Elim{\lor}$}{x_1,x_2}
+  \TrinaryInfC{$!C$}
+  \DisplayProof\bottomAlignProof
+  \quad
+  \redone
+  \quad
+  \AxiomC{}
+  \RightLabel{$\delta$}
+  \DeduceC{$!A_i$}
+  \RightLabel{$\delta_i$}
+  \DeduceC{$!C$}
+  \DisplayProof
+\end{gather*}
+این تبدیل با کاهش زیر بر ترم‌های برهان متناظر است:
+\begin{gather*}
+  \dcase{\inj[!A_{3-i}]{i}{M}}{x_1}{N_1}{x_2}{N_2} \redone \Subst{N_i}{M}{x_i}
+\end{gather*}
+که در آن~$M$ ترم برهان~$\delta$ و~$N_i$ ترم برهان~$\delta_i$ است.
+این قاعدهٔ کاهش بتا برای نوع‌های جمع است. در اینجا
+$\Subst{N_i}{M}{x_i}$ یعنی جایگزین‌کردن همهٔ وقوع‌های آزاد متغیر
+~$x_i$ در~$N_i$ با~$M$.
+
+کاهش نوع تابعی متناظر با حذف انحرافی است که از~$\Intro\lif$ و سپس
+$\Elim\lif$ تشکیل شده است.
+\begin{gather*}
+  \bottomAlignProof
+  \AxiomC{$\Discharge{!A}{x}$}
+  \RightLabel{$\delta$}
+  \DeduceC{$!B$}
+  \DischargeRule{$\Intro{\lif}$}{x}
+  \UnaryInfC{$!A \lif !B$}
+  \AxiomC{}
+  \RightLabel{$\delta'$}
+  \DeduceC{$!A$}
+  \RightLabel{$\Elim{\lif}$}
+  \BinaryInfC{$!B$}
+  \DisplayProof\bottomAlignProof
+  \quad
+  \redone
+  \quad
+  \AxiomC{}
+  \RightLabel{$\delta'$}
+  \DeduceC{$!A$}
+  \RightLabel{$\delta$}
+  \DeduceC{$!B$}
+  \DisplayProof
+\end{gather*}
+برای ترم‌های برهان، این همان کاهش بتای معمولی است:
+\begin{gather*}
+  (\lambd[\typeof{x}{!A}][N]M)
+  \redone \Subst{N}{M}{x}
+\end{gather*}
+
+افزون بر تبدیل‌های کاهشی بر~!!{proof}s، می‌توان تبدیل‌های جایگشتی را
+نیز در نظر گرفت. این تبدیل‌ها بر (زیر)!!{proof}sی اعمال می‌شوند که با
+$\Elim{\lor}$ پایان می‌یابند و سپس یک قاعدهٔ !!{elimination} دیگر
+می‌آید؛ برای نمونه:
+\begin{multline*}
+  \bottomAlignProof
+  \AxiomC{}
+  \RightLabel{$\delta$}
+  \DeduceC{$!A_i$}
+  \RightLabel{$\Intro{\lor}$}
+  \UnaryInfC{$!A_1 \lor !A_2$}
+  \AxiomC{$\Discharge{!A_1}{x_1}$}
+  \RightLabel{$\delta_1$}
+  \DeduceC{$!C_1 \land !C_2$}
+  \AxiomC{$\Discharge{!A_2}{x_2}$}
+  \RightLabel{$\delta_2$}
+  \DeduceC{$!C_1 \land !C_2$}
+  \DischargeRule{$\Elim{\lor}$}{x_1,x_2}
+  \TrinaryInfC{$!C_1 \land !C_2$}
+  \RightLabel{\Elim{\land}[i]}
+  \UnaryInfC{$!C_i$}
+  \DisplayProof\bottomAlignProof
+  \quad
+  \redone
+  \\
+  \AxiomC{}
+  \RightLabel{$\delta$}
+  \DeduceC{$!A_i$}
+  \RightLabel{$\Intro{\lor}$}
+  \UnaryInfC{$!A_1 \lor !A_2$}
+  \AxiomC{$\Discharge{!A_1}{x_1}$}
+  \RightLabel{$\delta_1$}
+  \DeduceC{$!C_1 \land !C_2$}
+  \RightLabel{\Elim{\land}[i]}
+  \UnaryInfC{$!C_i$}
+  \AxiomC{$\Discharge{!A_2}{x_2}$}
+  \RightLabel{$\delta_2$}
+  \DeduceC{$!C_1 \land !C_2$}
+  \RightLabel{\Elim{\land}[i]}
+  \UnaryInfC{$!C_i$}
+  \DischargeRule{$\Elim{\lor}$}{x_1,x_2}
+  \TrinaryInfC{$!C_i$}
+  \DisplayProof
+\end{multline*}
+اگر ترم‌های برهان~$\delta$، $\delta_1$ و~$\delta_2$ به‌ترتیب
+~$M$، $N_1$ و~$N_2$ باشند، قاعدهٔ کاهش متناظر برای ترم‌های برهان،
+یعنی ترم‌های~$\lambd$، چنین است:
+\[
+  \proj{i}{\dcase{M}{x_1}{N_1}{x_2}{N_2}} \redone
+\dcase{M}{x_1}{\proj{i}{N_1}}{x_2}{\proj{i}{N_2}}
+\]
+
+البته انحراف‌ها را نه‌فقط در انتهای~!!{proof}s، بلکه درون~!!{proof}s نیز
+می‌توان حذف کرد: کافی است تبدیل کاهشی را بر زیر-!!{proof}ی که با یک
+انحراف پایان می‌یابد اعمال کنیم. به همین ترتیب، کاهش~$\beta$ بر
+زیرترم‌های ترم‌های~$\lambd$ اعمال می‌شود. اگر~$N$ زیرترمی از~$M$ و
+$N \redone N'$ باشد، می‌توانیم زیرترم~$N$ را در~$M$ با~$N'$ جایگزین
+کنیم و~$M'$ را به دست آوریم؛ در این حالت نیز می‌نویسیم
+$M \redone M'$. اگر دنباله‌ای
+$M = M_1 \redone M_2 \redone M_3 \redone \dots \redone M_k = M'$
+وجود داشته باشد، شامل حالت~$k=1$ یعنی~$M=M'$، می‌نویسیم
+$M \red M'$.
+
+یک !!{proof} که در هیچ زیر-!!{proof} آن نتوان تبدیلی اعمال کرد
+\emph{بهنجار} نامیده می‌شود. به همین ترتیب، ترم~$\lambd$ای که در هیچ
+زیرترمش نتوان تبدیلی اعمال کرد \emph{بهنجار} است. ترم~$\lambd$ بهنجار
+را \emph{صورت بهنجار} نیز می‌نامند.
+
+\end{document}

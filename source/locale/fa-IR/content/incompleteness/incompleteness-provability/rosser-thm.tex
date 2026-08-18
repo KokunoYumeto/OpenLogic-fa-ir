@@ -1,0 +1,145 @@
+% Part: incompleteness
+% Chapter: incompleteness-provability
+% Section: rosser-thm
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{inp}{ros}
+
+\olsection{قضیهٔ راسر}
+
+آیا می‌توانیم اثبات گودل را چنان اصلاح کنیم که به نتیجه‌ای قوی‌تر برسیم
+و «$\omega$-سازگار» را صرفاً با «سازگار» جایگزین کنیم؟ پاسخ با استفاده
+از ترفندی که راسر کشف کرد مثبت است. ترفند راسر استفاده از محمول
+!!{derivability} «اصلاح‌شده»ای چون~$\ORProv_T(y)$ به جای
+$\OProv[\Th{T}](y)$ است.
+
+\begin{thm}
+\ollabel{thm:rosser}
+فرض کنید~$\Th{T}$ نظریه‌ای دلخواه، سازگار و !!{axiomatizable} و
+گسترشی از~$\Th{Q}$ باشد. آنگاه~$\Th{T}$ کامل نیست.
+\end{thm}
+
+\begin{proof}
+به یاد آورید که~$\OProv[\Th{T}](y)$ به صورت
+$\lexists[x][\OPrf[\Th{T}](x, y)]$ تعریف می‌شود، که در آن
+$\OPrf[\Th{T}](x, y)$ رابطهٔ تصمیم‌پذیری را بازنمایی می‌کند که برقرار
+است اگر و تنها اگر~$x$ عدد گودل !!a{derivation}ی از !!{sentence}ی با
+عدد گودل~$y$ باشد. رابطه‌ای که میان~$x$ و~$y$ برقرار است هرگاه~$x$
+عدد گودل یک \emph{ابطال} جملهٔ دارای عدد گودل~$y$ باشد نیز تصمیم‌پذیر
+است. بگذارید~$\fn{not}(x)$ تابع بازگشتی اولیه‌ای باشد که چنین عمل
+می‌کند: اگر~$x$ رمز فرمول~$!A$ باشد، $\fn{not}(x)$ رمزی برای
+$\lnot !A$ است. آنگاه~$\Refut[\Th{T}](x, y)$ برقرار است اگر و تنها اگر
+$\Prf[\Th{T}](x, \fn{not}(y))$. بگذارید~$\ORefut[\Th{T}](x, y)$ آن را
+بازنمایی کند. پس اگر~$\Th{T} \Proves \lnot !A$ و~$\delta$
+!!{derivation} متناظر باشد، آنگاه
+$\Th{Q} \Proves \ORefut[\Th{T}](\gn{\delta}, \gn{!A})$. اکنون
+$\ORProv[\Th{T}](y)$ را چنین تعریف می‌کنیم:
+\[
+\lexists[x][(\OPrf[\Th{T}](x,y) \land \lforall[z][(z < x \lif \lnot
+  \ORefut[\Th{T}](z,y))])].
+\]
+به‌طور تقریبی، $\ORProv[\Th{T}](y)$ می‌گوید «اثباتی برای~$y$ در
+$\Th{T}$ وجود دارد و هیچ ابطال کوتاه‌تری برای~$y$ وجود ندارد.» با فرض
+سازگاری~$\Th{T}$، $\ORProv[\Th{T}](y)$ دربارهٔ همان اعدادی صادق است که
+$\OProv[\Th{T}](y)$ دربارهٔ آن‌ها صادق است؛ اما از دیدگاه
+\emph{اثبات‌پذیری} در~$\Th{T}$ (و اکنون می‌دانیم که صدق و اثبات‌پذیری
+متفاوت‌اند)، این دو ویژگی‌های متفاوتی دارند. اگر~$\Th{T}$
+\emph{نا}سازگار باشد، این دو دربارهٔ اعداد یکسانی برقرار \emph{نیستند}!{}
+($\ORProv[\Th{T}](y)$ را اغلب چنین می‌خوانند: «$y$ به شیوهٔ راسر
+اثبات‌پذیر است.» اما چون، چنان‌که دیدیم، اثبات‌پذیری راسر نوع ویژه‌ای از
+اثبات‌پذیری نیست---در نظریه‌های ناسازگار !!{sentence}sی وجود دارند که
+اثبات‌پذیرند اما به شیوهٔ راسر اثبات‌پذیر نیستند---این خوانش ممکن است
+گمراه‌کننده باشد. برای پرهیز از این ابهام می‌توانید آن را چنین بخوانید:
+«$y$ شِماثبات‌پذیر است».)
+
+بنا بر لم نقطهٔ ثابت، فرمولی چون~$!R_\Th{T}$ وجود دارد که
+\begin{equation}
+  \Th{Q} \Proves !R_\Th{T} \liff \lnot \ORProv[\Th{T}](\gn{!R_\Th{T}}).
+  \ollabel{RT}
+\end{equation}
+برخلاف اثبات~\olref[1in]{thm:first-incompleteness}، اینجا ادعا می‌کنیم
+اگر~$\Th{T}$ سازگار باشد، $\Th{T}$، $!R_\Th{T}$ را !!{derive}
+نمی‌کند و~$\Th{T}$، $\lnot !R_\Th{T}$ را نیز !!{derive} نمی‌کند. (به
+بیان دیگر، به فرض $\omega$-سازگاری نیاز نداریم.)
+
+نخست نشان می‌دهیم~$\Th{T} \Proves/ !R_{\Th{T}}$. خلاف آن را فرض کنید؛
+پس !!a{derivation}ی از~$!R_{\Th{T}}$ بر پایهٔ~$\Th{T}$ وجود دارد.
+بگذارید~$n$ عدد گودل آن باشد. آنگاه
+$\Th{Q} \Proves \OPrf[\Th{T}](\num{n}, \gn{!R_{\Th{T}}})$، زیرا
+$\OPrf[\Th{T}]$ رابطهٔ~$\Prf[\Th{T}]$ را در~$\Th{Q}$ بازنمایی می‌کند.
+همچنین برای هر~$k < n$، عدد~$k$ عدد گودل !!a{derivation}ی از
+$\lnot !R_{\Th{T}}$ نیست، زیرا~$\Th{T}$ سازگار است. پس برای هر
+$k < n$ داریم
+$\Th{Q} \Proves \lnot \ORefut[\Th{T}](\num{k}, \gn{!R_{\Th{T}}})$.
+بنا بر~\olref[req][min]{lem:less-nsucc}،
+$\Th{Q} \Proves \lforall[z][(z < \num{n} \lif \lnot \ORefut[\Th{T}](z,
+  \gn{!R_{\Th{T}}}))]$. بنابراین
+\[
+\Th{Q} \Proves \lexists[x][(\OPrf[\Th{T}](x,\gn{!R_{\Th{T}}}) \land \lforall[z][(z
+    < x \lif \lnot \ORefut[\Th{T}](z,\gn{!R_{\Th{T}}}))])],
+\]
+اما این همان~$\ORProv[\Th{T}](\gn{!R_{\Th{T}}})$ است. بنا بر
+\olref{RT}، $\Th{Q} \Proves \lnot !R_{\Th{T}}$. چون~$\Th{T}$ گسترشی
+از~$\Th{Q}$ است، $\Th{T} \Proves \lnot !R_{\Th{T}}$ نیز. فرض کرده
+بودیم~$\Th{T} \Proves !R_{\Th{T}}$، پس~$\Th{T}$ برخلاف فرض قضیه
+ناسازگار می‌شد.
+
+اکنون نشان می‌دهیم~$\Th{T} \Proves/ \lnot !R_{\Th{T}}$. باز هم خلاف
+آن را فرض کنید و بگذارید~$n$ عدد گودل !!a{derivation}ی از
+$\lnot !R_{\Th{T}}$ باشد. آنگاه~$\Refut[\Th{T}](n, \Gn{!R_{\Th{T}}})$
+برقرار است، و چون~$\ORefut[\Th{T}]$ رابطهٔ~$\Refut[\Th{T}]$ را در
+$\Th{Q}$ بازنمایی می‌کند،
+$\Th{Q} \Proves \ORefut[\Th{T}](\num{n}, \gn{!R_{\Th{T}}})$.
+دوباره نشان می‌دهیم در این صورت~$\Th{T}$ ناسازگار خواهد بود، زیرا
+$!R_{\Th{T}}$ را نیز !!{derive} می‌کند. چون
+\begin{align*}
+\Th{Q} & \Proves !R_{\Th{T}} \liff \lnot \ORProv[\Th{T}](\gn{!R_{\Th{T}}}),
+\intertext{و چون~$\Th{T}$ گسترشی از~$\Th{Q}$ است، کافی است نشان دهیم}
+\Th{Q} & \Proves \lnot \ORProv[\Th{T}](\gn{!R_{\Th{T}}}).
+\end{align*}
+!!{sentence}~$\lnot
+\ORProv[\Th{T}](\gn{!R_{\Th{T}}})$، یعنی
+\begin{align*}
+  \lnot & \lexists[x][(\OPrf[\Th{T}](x,\gn{!R_{\Th{T}}}) \land
+    \lforall[z][(z < x \lif \lnot \ORefut[\Th{T}](z,\gn{!R_{\Th{T}}}))])],
+  \intertext{از نظر منطقی هم‌ارز است با}
+  & \lforall[x][(\OPrf[\Th{T}](x,\gn{!R_{\Th{T}}}) \lif
+    \lexists[z][(z < x \land \ORefut[\Th{T}](z,\gn{!R_{\Th{T}}}))])].
+\end{align*}
+با استفاده از منطق و واقعیت‌هایی دربارهٔ آنچه~$\Th{Q}$ !!{derive}s می‌کند،
+به‌طور غیرصوری استدلال می‌کنیم. فرض کنید~$x$ دلخواه باشد و
+$\OPrf[\Th{T}](x, \gn{!R_{\Th{T}}})$. از پیش می‌دانیم
+$\Th{T} \Proves/ !R_{\Th{T}}$؛ پس برای هر~$k$ داریم
+$\Th{Q} \Proves \lnot \OPrf[\Th{T}](\num{k}, \gn{!R_{\Th{T}}})$.
+بنابراین برای هر~$k$ نتیجه می‌شود~$\eq/[x][\num{k}]$. به‌ویژه،
+(الف)~$\eq/[x][\num{n}]$. همچنین
+$\lnot(\eq[x][\num{0}] \lor \eq[x][\num{1}] \lor \dots \lor
+\eq[x][\num{n-1}])$ را داریم؛ پس بنا بر
+\olref[req][min]{lem:less-nsucc}، (ب)~$\lnot(x < \num{n})$. بنا بر
+\olref[req][min]{lem:trichotomy}، $\num{n} < x$. چون
+$\Th{Q} \Proves \ORefut[\Th{T}](\num{n}, \gn{!R_{\Th{T}}})$، داریم
+$\num{n} < x \land \ORefut[\Th{T}](\num{n}, \gn{!R_{\Th{T}}})$، و از آن
+$\lexists[z][(z < x \land \ORefut[\Th{T}](z,\gn{!R_{\Th{T}}}))]$.
+چون~$x$ دلخواه بود، چنان‌که لازم بود به دست می‌آوریم:
+\[
+\lforall[x][(\OPrf[\Th{T}](x,\gn{!R_{\Th{T}}}) \lif
+  \lexists[z][(z < x \land \ORefut[\Th{T}](z,\gn{!R_{\Th{T}}}))])].
+\]
+\end{proof}
+
+\begin{prob}
+دو مجموعهٔ~$A$ و~$B$ از اعداد طبیعی را به‌طور محاسبه‌پذیر
+\emph{جدایی‌ناپذیر} می‌نامیم اگر هیچ مجموعهٔ !!{decidable}~$X$ای وجود
+نداشته باشد که~$A \subseteq X$ و~$B \subseteq \Complement{X}$
+($\Complement{X}$ نماد متمم است: $\Nat \setminus X$، که متمم~$X$
+است). فرض کنید
+$\Th{T}$ گسترشی سازگار و !!{axiomatizable} از~$\Th{Q}$ باشد. فرض کنید
+$A$ مجموعهٔ اعداد گودل !!{sentence}sی اثبات‌پذیر در~$\Th{T}$ و~$B$
+مجموعهٔ اعداد گودل جمله‌های ابطال‌پذیر در~$\Th{T}$ باشد. ثابت کنید
+$A$ و~$B$ به‌طور محاسبه‌پذیر جدایی‌ناپذیرند.
+\end{prob}
+
+\end{document}

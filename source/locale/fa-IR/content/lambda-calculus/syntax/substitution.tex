@@ -1,0 +1,182 @@
+% Part: lambda-calculus
+% Chapter: syntax
+% Section: substitution
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{syn}{sub}
+\olsection{جای‌گذاری}
+
+\begin{explain}
+متغیرهای آزاد ارجاع‌هایی به متغیرهای محیط‌اند؛ ازاین‌رو معقول است که
+به‌جای یک متغیر آزاد، ارزشی معین را واقعاً به کار ببریم. برای مثال،
+ممکن است بخواهیم در~$\lambd[x][f x]$، به‌جای~$f$ ترم معینی، مانند تابع
+همانی~$\lambd[y][y]$، قرار دهیم. حاصل~$\lambd[x][(\lambd[y][y]) x]$
+است. فرایند جایگزین‌کردن متغیرهای آزاد با ترم‌های لامبدا
+جای‌گذاری نام دارد.
+\end{explain}
+
+\begin{defn}[جای‌گذاری] \ollabel{defn:substitution}
+  \emph{جای‌گذاری} ترم~$N$ به‌جای متغیر~$x$ در ترم~$M$، که با
+  $\Subst{M}{N}{x}$ نشان داده می‌شود، به‌صورت استقرایی چنین تعریف می‌شود:
+  \begin{enumerate}
+    \item $\Subst{x}{N}{x} = N$. \ollabel{defn:substitution-1} 
+    \item $\Subst{y}{N}{x}  = y$ اگر~$x \neq y$. \ollabel{defn:substitution-2} 
+    \item $\Subst{PQ}{N}{x}  = (\Subst{P}{N}{x}) (\Subst{Q}{N}{x})$.
+      \ollabel{def:substitution-3}
+    \item $\Subst{(\lambd[y][P])}{N}{x} = \lambd[y][\Subst{P}{N}{x}]$،
+      اگر~$x \neq y$ و~$y \notin \FV{N}$؛ وگرنه تعریف‌نشده است.
+      \ollabel{defn:substitution-4}
+  \end{enumerate}
+\end{defn}
+
+\begin{explain}
+در~\olref{defn:substitution}\olref{defn:substitution-4}، شرط~$x \neq y$
+را می‌گذاریم، زیرا نمی‌خواهیم رخدادهای \emph{مقید} متغیر~$x$ در~$M$ را
+با~$N$ جایگزین کنیم. برای مثال، در محاسبهٔ جای‌گذاری
+$\Subst{\lambd[x][x]}{y}{x}$، حاصل نباید~$\lambd[x][y]$ باشد. طبق این
+تعریفِ عمداً جزئی، این جای‌گذاری تعریف‌نشده است؛ مسئله بعدتر با تبدیل
+آلفا و تغییر نام متغیرهای مقید برطرف خواهد شد.
+
+هنگام جای‌گذاری~$N$ به‌جای~$x$ در~$\lambd[y][P]$، همچنین شرط
+$y \notin \FV{N}$ را می‌گذاریم. برای مثال، نمی‌توان~$y$ را به‌جای~$x$
+در~$\lambd[y][x]$ جای‌گذاری کرد، یعنی
+$\Subst{\lambd[y][x]}{y}{x}$، زیرا حاصل آن~$\lambd[y][y]$ می‌شد؛ ترمی
+که تابع پذیرندهٔ یک آرگومان و بازگردانندهٔ همان آرگومان را نشان می‌دهد.
+اما ترم~$\lambd[y][x]$ تابعی را نشان می‌دهد که همواره ترم~$x$ (یا هرچه
+$x$ به آن ارجاع می‌دهد) را بازمی‌گرداند. پس حاصل مطلوب در واقع تابعی
+است که آرگومانی می‌پذیرد، آن را کنار می‌گذارد و متغیر محیطی~$y$ را
+بازمی‌گرداند. برای انجام درست این کار، نخست باید متغیر مقید~$y$ را
+«تغییر نام» دهیم.
+\end{explain}
+
+\begin{prob}
+  حاصل جای‌گذاری‌های زیر چیست؟
+  \begin{enumerate}
+  \item $\Subst{\lambd[y][x(\lambd[w][vwx])]}{(uv)}{x}$
+  \item $\Subst{\lambd[y][x(\lambd[x][x])]}{(\lambd[y][xy])}{x}$
+  \item $\Subst{y(\lambd[v][xv])}{(\lambd[y][vy])}{x}$
+  \end{enumerate}
+\end{prob}
+
+\begin{thm} \ollabel{thm:notinfv}
+  اگر~$x \notin \FV{M}$، آنگاه، مشروط بر آنکه طرف چپ تعریف شده باشد،
+  $\FV{\Subst{M}{N}{x}} = \FV{M}$.
+\end{thm}
+
+\begin{proof}
+  با استقرا بر ساخت~$M$.
+  \begin{enumerate}
+  \item $M$ یک متغیر است: تمرین.
+  \item $M$ به‌صورت~$(PQ)$ است: تمرین.
+  \item $M$ به‌صورت~$\lambd[y][P]$ است، و چون
+    $\Subst{\lambd[y][P]}{N}{x}$ تعریف شده است، باید برابر با
+    $\lambd[y][\Subst{P}{N}{x}]$ باشد. بنابراین~$\Subst{P}{N}{x}$ نیز
+    باید تعریف شده باشد؛ افزون بر این، $x \neq y$، $y \notin \FV{N}$
+    و~$x \notin \FV{P}$. در نتیجه:
+    \begin{multline*}
+      \FV{\Subst{\lambd[y][P]}{N}{x}} = \\
+    \begin{aligned}
+      & = \FV{\lambd[y][\Subst{P}{N}{x}]} &&
+      \text{بنا بر \olref{defn:substitution-4}}\\
+      & = \FV{\Subst{P}{N}{x}} \setminus \{y\} &&
+      \text{بنا بر \olref[fv]{def:fv}\olref[fv]{def:fv2}}\\
+      & = \FV{P} \setminus \{y\} && \text{بنا بر فرض استقرا} \\
+      & = \FV{\lambd[y][P]} && \text{بنا بر \olref[fv]{def:fv}\olref[fv]{def:fv2}}
+    \end{aligned}
+    \end{multline*}
+  \end{enumerate}
+\end{proof}
+
+\begin{prob}
+  برهان~\olref[lam][syn][sub]{thm:notinfv} را کامل کنید.
+\end{prob}
+
+\begin{thm} \ollabel{thm:infv}
+  اگر~$x \in \FV{M}$، آنگاه
+  $\FV{\Subst{M}{N}{x}} = (\FV{M} \setminus \{x\}) \cup \FV{N}$،
+  مشروط بر آنکه طرف چپ تعریف شده باشد.
+\end{thm}
+
+\begin{proof}
+  با استقرا بر ساخت~$M$.
+  \begin{enumerate}
+  \item $M$ یک متغیر است: تمرین.
+  \item $M$ به‌صورت~$PQ$ است: چون
+    $\Subst{(PQ)}{N}{x}$ تعریف شده است، باید برابر با
+    $(\Subst{P}{N}{x})(\Subst{Q}{N}{x})$ باشد و هر دو جای‌گذاری نیز
+    تعریف شده باشند. همچنین چون~$x \in \FV{PQ}$، یا~$x \in \FV{P}$،
+    یا~$x \in \FV{Q}$، یا هر دو. بقیه به‌عنوان تمرین واگذار می‌شود.
+  \item $M$ به‌صورت~$\lambd[y][P]$ است. چون
+    $\Subst{\lambd[y][P]}{N}{x}$ تعریف شده است، باید برابر با
+    $\lambd[y][\Subst{P}{N}{x}]$ باشد، که در آن~$\Subst{P}{N}{x}$
+    تعریف شده، $x \neq y$ و~$y \notin \FV{N}$؛ همچنین چون~$x \in
+    \FV{\lambd[y][P]}$، داریم~$x \in \FV{P}$. اکنون:
+    \begin{multline*}
+      \FV{\Subst{(\lambd[y][P])}{N}{x}} = \\
+      \begin{aligned}
+      & = \FV{\lambd[y][\Subst{P}{N}{x}]} \\
+      & = \FV{\Subst{P}{N}{x}} \setminus \{y\} \\
+      &= ((\FV{P}\setminus\{x\})\cup\FV{N})\setminus\{y\}
+       && \text{بنا بر فرض استقرا} \\
+      &= (\FV{P}\setminus\{x,y\})\cup\FV{N}
+       && \text{چون }y\notin\FV{N} \\
+      & = (\FV{\lambd[y][P]} \setminus \{x\}) \cup \FV{N}
+      \end{aligned}
+      \end{multline*}
+  \end{enumerate}
+\end{proof}
+
+\begin{prob}
+  برهان~\olref[lam][syn][sub]{thm:infv} را کامل کنید.
+\end{prob}
+
+\begin{thm}\ollabel{thm:clr}
+  اگر طرف راست تعریف شده باشد و~$x \notin \FV{N}$، آنگاه
+  $x \notin \FV{\Subst{M}{N}{x}}$.
+\end{thm}
+
+\begin{proof}
+  تمرین.
+\end{proof}
+
+\begin{prob}
+  \olref[lam][syn][sub]{thm:clr} را ثابت کنید.
+\end{prob}
+
+
+\begin{thm}\ollabel{thm:inv}
+  اگر~$\Subst{M}{y}{x}$ تعریف شده باشد و~$y \notin \FV{M}$، آنگاه
+  $\Subst{\Subst{M}{y}{x}}{x}{y} = M$.
+\end{thm}
+
+\begin{proof}
+  با استقرا بر ساخت~$M$.
+  \begin{enumerate}
+  \item $M$ متغیر~$z$ است: تمرین.
+  \item $M$ به‌صورت~$(PQ)$ است. آنگاه:
+    \begin{align*}
+      \Subst{\Subst{(PQ)}{y}{x}}{x}{y}
+      &=\Subst{((\Subst{P}{y}{x})(\Subst{Q}{y}{x}))}{x}{y} \\
+      &= (\Subst{\Subst{P}{y}{x}}{x}{y})(\Subst{\Subst{Q}{y}{x}}{x}{y}) \\
+      &= (PQ) \text{ بنا بر فرض استقرا}
+    \end{align*}
+  \item $M$ به‌صورت~$\lambd[z][N]$ است. چون
+    $\Subst{\lambd[z][N]}{y}{x}$ تعریف شده است، می‌دانیم
+    $z \neq y$. پس:
+    \begin{align*}
+      \Subst{\Subst{(\lambd[z][N])}{y}{x}}{x}{y}\\
+      & = \Subst{(\lambd[z][\Subst{N}{y}{x}])}{x}{y} \\
+      & = \lambd[z][\Subst{\Subst{N}{y}{x}}{x}{y}] \\
+      &= \lambd[z][N] \text{ بنا بر فرض استقرا} 
+    \end{align*}
+  \end{enumerate}
+\end{proof}
+
+\begin{prob}
+  برهان~\olref[lam][syn][sub]{thm:inv} را کامل کنید.
+\end{prob}
+
+\end{document}

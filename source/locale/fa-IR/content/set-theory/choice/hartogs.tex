@@ -1,0 +1,97 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{choice}{hartogs}
+\olsection{مقایسه‌پذیری و لم هارتوگس}
+
+این جنبهٔ مثبت ماجرا بود. اکنون جنبهٔ منفی آن را ببینیم. بدون اصل
+انتخاب، اوضاع \emph{آشفته} می‌شود. برای روشن‌شدن علت، نتیجهٔ زیبای
+زیر را از \cite{Hartogs1915} در نظر بگیرید:
+
+\begin{lem}[\emph{در $\ZF$}]\ollabel{HartogsLemma}
+برای هر مجموعهٔ $A$، عدد ترتیبیِ $\alpha$ای وجود دارد به‌طوری‌که
+$\cardnless{\alpha}{A}$.
+\end{lem}
+
+\begin{proof}
+اگر $B \subseteq A$ و $R \subseteq B^2$، آن‌گاه بنا بر
+\olref[ord-arithmetic][using-addition]{rankcomputation} داریم
+$\tuple{B, R} \subseteq V_{\setrank{A}+4}$. پس با استفاده از
+جداسازی، در نظر بگیرید:
+\[
+	C = \Setabs{\tuple{B, R} \in V_{\setrank{A}+5}}{B\subseteq A
+	\text{ و $\tuple{B, R}$ یک خوش‌ترتیب است}}
+\]
+با استفاده از جایگزینی و
+\olref[ordinals][ordtype]{thmOrdinalRepresentation} مجموعهٔ زیر را
+تشکیل دهید:
+\[
+	\alpha = \Setabs{\ordtype{B, R}}{\tuple{B, R} \in C}.
+\]
+بنا بر \olref[ordinals][basic]{corordtransitiveord}، $\alpha$ عددی
+ترتیبی است، زیرا مجموعه‌ای متعدی از اعداد ترتیبی است. به‌راستی، اگر
+$\gamma \in \beta \in \alpha$، آن‌گاه برای یک
+$B \subseteq A$ داریم $\beta = \ordtype{B, R}$؛ سپس بنا بر
+\olref[ordinals][iso]{wellordinitialsegment}، برای یک $b \in B$
+داریم $\gamma = \ordtype{B_b, R_b}$، و بنابراین
+$\gamma \in \alpha$.
+
+برای برهان خلف، فرض کنید !!a{injection} مانند
+$f \colon \alpha \to A$ وجود داشته باشد. تعریف کنید:
+\begin{align*}
+	B &= \ran{f}\\
+	R &= \Setabs{\tuple{f(\alpha), f(\beta)} \in A \times A}{\alpha \in \beta}.
+\end{align*}
+آشکار است که $\alpha = \ordtype{B, R}$ و
+$\tuple{B, R} \in C$. پس $\alpha \in \alpha$، که تناقض است.
+\end{proof}
+
+از این لم نتیجه‌ای ژرف به دست می‌آید:
+
+\begin{thm}[\emph{در $\ZF$}]
+ادعاهای زیر هم‌ارزند:
+\begin{enumerate}
+	\item\ollabel{equivwo} اصل موضوع خوش‌ترتیبی؛
+	\item\ollabel{equivcompare} برای هر دو مجموعهٔ $A$ و $B$، یا
+	$\cardle{A}{B}$ یا $\cardle{B}{A}$.
+\end{enumerate}
+\end{thm}
+
+\begin{proof}
+\emph{\olref{equivwo} $\Rightarrow$ \olref{equivcompare}.}
+$A$ و $B$ را ثابت کنید. با به‌کارگیری \olref{equivwo}،
+خوش‌ترتیب‌هایی مانند $\tuple{A, R}$ و $\tuple{B, S}$ وجود دارند.
+با به‌کارگیری
+\olref[ordinals][ordtype]{thmOrdinalRepresentation}، بگذارید
+$f \colon \alpha \to \tuple{A, R}$ و
+$g \colon \beta \to \tuple{B, S}$ یکریختی باشند. بنا بر
+\olref[sth][ordinals][basic]{ordinalsaresubsets}، یا
+$\alpha \subseteq \beta$ یا $\beta \subseteq \alpha$. اگر
+$\alpha \subseteq \beta$، آن‌گاه
+$\comp{f^{-1}}{g} \colon A \to B$ یک !!a{injection} است و ازاین‌رو
+$\cardle{A}{B}$؛ به همین ترتیب، اگر
+$\beta \subseteq \alpha$، آن‌گاه $\cardle{B}{A}$.
+
+\emph{\olref{equivcompare} $\Rightarrow$ \olref{equivwo}.}
+$A$ را ثابت کنید؛ بنا بر \olref{HartogsLemma} عدد ترتیبیِ
+$\beta$ای وجود دارد که $\cardnless{\beta}{A}$. با به‌کارگیری
+\olref{equivcompare}، داریم $\cardle{A}{\beta}$. پس
+!!{injection} مانند $f \colon A \to \beta$ وجود دارد، و می‌توانیم
+با تعریف ترتیب
+$\Setabs{\tuple{a, b} \in A \times A}{f(a) \in f(b)}$، از این تزریق
+برای خوش‌ترتیب‌کردن اعضای $A$ استفاده کنیم.
+\end{proof}
+\noindent
+در نتیجه‌ای بی‌درنگ، اگر خوش‌ترتیبی شکست بخورد، برخی مجموعه‌ها از
+نظر اندازه \emph{به‌معنای واقعی کلمه مقایسه‌ناپذیر} خواهند بود.
+بنابراین، در صورت شکست خوش‌ترتیبی، حساب کاردینالیِ ترامتناهی آشفته
+می‌شود. برای نمونه، باید از این اندیشه دست بکشیم که اگر $A$ و $B$
+نامتناهی باشند، آن‌گاه $\cardeq{A \disjointsum B}{M}$ و
+$\cardeq{A \times B}{M}$، که در آن $M$ بزرگ‌ترِ $A$ و $B$ است
+(نگاه کنید به
+\olref[card-arithmetic][simp]{cardplustimesmax}). مشکل ساده است:
+اگر نتوانیم اندازهٔ $A$ و $B$ را \emph{مقایسه} کنیم، پرسیدن اینکه
+کدام‌یک بزرگ‌تر است بی‌معناست.
+
+\end{document}

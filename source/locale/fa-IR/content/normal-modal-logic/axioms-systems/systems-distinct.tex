@@ -1,0 +1,152 @@
+% Part: normal-modal-logic
+% Chapter: axioms-systems
+% Section: systems-distinct
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{prf}{dis}
+
+\olsection{نشان‌دادن تمایز دستگاه‌ها}
+
+در~\olref[prs]{sec} دیدیم چگونه ثابت کنیم دو دستگاه منطق موجهات در واقع
+یک دستگاه‌اند. \olref[snd]{thm:soundness} به ما امکان می‌دهد با یافتن
+!!a{formula}~$!A$ چنان‌که~$\Sigma' \Proves !A$ و این فرمول در مدلی از
+$\Sigma$ شکست بخورد، نشان دهیم دو دستگاه موجهاتی~$\Sigma$ و~$\Sigma'$
+متمایزند.
+
+\begin{prop}
+  $\Log{KD} \subsetneq \Log{KT}$
+\end{prop}
+
+\begin{proof} این حکم همتای نحوی این واقعیت معناشناختی است که همهٔ روابط
+  بازتابی مسلسل‌اند. برای نشان‌دادن~$\Log{KD} \subseteq \Log{KT}$ باید
+  ببینیم~$\Log{KD} \Proves !B$ مستلزم~$\Log{KT} \Proves !B$ است، که از
+  $\Log{KT} \Proves \Ax{D}$، چنان‌که در
+  \olref[prs]{prop:S5facts}\olref[prs]{prop:S5facts-KT-D} نشان داده شد،
+  نتیجه می‌شود. برای نشان‌دادن سره‌بودن شمول، بنا بر صحت
+  (\olref[snd]{thm:soundness})، کافی است مدلی از~\Log{KD} ارائه کنیم که
+  \Ax{T}، یعنی~$\Box p \lif p$، در آن شکست بخورد (کاری آسان که به‌صورت
+  تمرین واگذار می‌شود)؛ زیرا آنگاه بنا بر صحت
+  $\Log{KD} \Proves/ \Box p \lif p$.
+\end{proof}
+
+\begin{prop}
+  $\Log{KB} \neq \Log{K4}$. 
+\end{prop}
+
+\begin{proof}
+  مدلی متقارن می‌سازیم که نمونه‌ای از~\Ax{4} در آن شکست می‌خورد؛ چون
+  آشکارا این نمونه در~\Log{K4} !!{derivable} است اما در~\Log{KB} نیست،
+  نتیجه می‌شود~$\Log{K4} \nsubseteq \Log{KB}$. مدل متقارن
+  $\mModel{M}$ در~\olref{fig:Bnot4} را در نظر بگیرید. چون مدل متقارن
+  است، \Ax{K} و~\Ax{B} در~$\mModel{M}$ صادق‌اند (به‌ترتیب بنا بر
+  \olref[syn][sch]{prop:Kvalid} و
+  \olref[frd][acc]{thm:soundschemas}). بااین‌حال،
+  $\mSat/{M}{\Box p \lif \Box\Box p}[w_1]$.
+\end{proof}
+
+\begin{figure}[htpb]
+  \centering
+  \begin{tikzpicture}[modal]
+    \node[world] (w1) [label=above:\mFalse{p},
+    label={below:$\mSat{{}}{\Box p}$\\ $\mSat/{{}}{\Box\Box p}$}] {$w_1$}; 
+    \node[world] (w2) [label=above:\mTrue{p},
+      label=below:$\mSat/{{}}{\Box p}$, right=of w1]{$w_2$}; 
+    \draw[->, bend left] (w1) to (w2); 
+    \draw[->, bend left] (w2) to (w1); 
+  \end{tikzpicture}
+  \caption{مدلی متقارن که نمونه‌ای از~\Ax{4} را کاذب می‌سازد.}
+  \ollabel{fig:Bnot4}
+\end{figure}
+ 
+\begin{thm}\ollabel{thm:KTBnot45}
+  $\Log{KTB} \Proves/ \Ax{4}$ و~$\Log{KTB} \Proves/ \Ax{5}$.
+\end{thm}
+
+\begin{proof}
+  بنا بر~\olref[frd][acc]{thm:soundschemas} می‌دانیم همهٔ نمونه‌های
+  \Ax{T} و~\Ax{B} در هر مدل بازتابی و متقارن صادق‌اند (به‌ترتیب). پس
+  بنا بر صحت، کافی است مدل بازتابی و متقارنی بیابیم که جهانی داشته باشد
+  که نمونه‌ای از~\Ax{4} در آن شکست بخورد، و به‌طور مشابه برای~\Ax{5}.
+  برای هر دو ادعا از یک مدل استفاده می‌کنیم. مدل متقارن و بازتابیِ
+  \olref{fig:KTBnot45} را در نظر بگیرید. آنگاه
+  $\mSat/{M}{\Box p \to \Box \Box p}[w_1]$؛ پس~\Ax{4} در~$w_1$ شکست
+  می‌خورد. به همین ترتیب،
+  $\mSat/{M}{\Diamond \lnot p \lif \Box \Diamond \lnot p}[w_2]$؛ پس
+  نمونهٔ~\Ax{5} با~$!A = \lnot p$ در~$w_2$ شکست می‌خورد.
+\end{proof}
+
+\begin{figure}[htpb]
+  \centering
+  \begin{tikzpicture}[modal]
+    \node[world] (w1) [label={right:\mTrue{p}},
+      label={below: $\mSat{{}}{\Box p}$\\
+        $\mSat/{{}}{\Box\Box p}$\\
+        $\mSat/{{}}{\Diamond\lnot p}$}] {$w_1$};
+    \draw[reflexive above] (w1) to (w1);
+    \node[world] (w2) [label={right:\mTrue{p}}, label={below:
+        $\mSat{{}}{\Diamond\lnot p}$\\
+        $\mSat/{{}}{\Box\Diamond\lnot p}$}, right=of w1] {$w_2$} ;
+    \draw[reflexive above] (w2) to (w2);
+    \node[world] (w3) [label={right:\mFalse{p}},right=of w2] {$w_3$};
+    \draw[reflexive above] (w3) to (w3);
+    \draw[->, bend left] (w1) to (w2);  
+    \draw[->, bend left] (w2) to (w3);  
+    \draw[->, bend left] (w3) to (w2);  
+    \draw[->, bend left] (w2) to (w1);  
+  \end{tikzpicture}
+  \caption{مدلِ \olref{thm:KTBnot45}.}
+  \ollabel{fig:KTBnot45}
+\end{figure}
+
+\begin{thm}\ollabel{thm:KD5not4}
+  $\Log{KD5} \neq \Log{KT4} = \Log{S4}$.
+\end{thm}
+
+\begin{proof}
+  بنا بر~\olref[frd][acc]{thm:soundschemas} می‌دانیم همهٔ نمونه‌های
+  \Ax{D} و~\Ax{5} در همهٔ مدل‌های مسلسل و اقلیدسی صادق‌اند. پس کافی
+  است مدل مسلسل و اقلیدسی‌ای بیابیم که جهانی داشته باشد که نمونه‌ای
+  از~\Ax{4} در آن شکست بخورد. مدلِ \olref{fig:KD5not4} را در نظر بگیرید
+  و توجه کنید که~$\mSat/{M}{\Box p \lif \Box\Box p}[w_1]$.
+\end{proof}
+
+\begin{figure}[t]
+  \centering
+  \begin{tikzpicture}[modal]
+    \node[world] (w2) [label=north west:\mTrue{p}]{$w_2$} ;
+    \draw[reflexive left] (w2) to (w2);
+    \node[world] (w1) [label=right:\mFalse{p},
+      label=below:{$\mSat{{}}{\Box p}, \mSat/{{}}{\Box\Box p}$},
+      below right=of w2]{$w_1$};
+    \node[world] (w3) [label=north east:\mTrue{p}, above right=of w1]{$w_3$} ;
+    \draw[reflexive right] (w3) to (w3);
+    \node[world] (w4) [label=right:\mFalse{p},above right=of w2]{$w_4$};
+    \draw[reflexive above] (w4) to (w4);
+    \draw[->] (w1) to (w2);  
+    \draw[->] (w1) to (w3);  
+    \draw[->, bend left=15] (w2) to (w3);
+    \draw[->, bend left=15] (w3) to (w2);  
+    \draw[->, bend left=15] (w2) to (w4);
+    \draw[->, bend left=15] (w4) to (w2);  
+    \draw[->, bend left=15] (w3) to (w4);
+    \draw[->, bend left=15] (w4) to (w3);  
+  \end{tikzpicture}
+  \caption{مدلِ \olref{thm:KD5not4}.}
+  \ollabel{fig:KD5not4}
+\end{figure}
+
+\begin{prob}
+  اثباتی بدیل برای~\olref[nml][prf][dis]{thm:KD5not4} با استفاده از
+  مدلی دارای~$3$ جهان ارائه کنید.
+\end{prob}
+
+\begin{prob}
+  یک مدل بازتابی و متعدی واحد ارائه کنید که هم
+  $\Log{KT4} \Proves/ \Ax{B}$ و هم~$\Log{KT4} \Proves/ \Ax{5}$ را
+  نشان دهد.
+\end{prob}
+
+\end{document}

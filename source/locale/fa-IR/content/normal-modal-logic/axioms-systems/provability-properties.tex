@@ -1,0 +1,52 @@
+% Part: normal-modal-logic
+% Chapter: axioms-systems
+% Section: provability-properties
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{prf}{prp}
+
+\olsection{خواص \usetoken{S}{derivability}}
+
+\begin{prop}\ollabel{prop:derivabilityfacts}
+  فرض کنید~$\Sigma$ یک دستگاه موجهاتی و~$\Gamma$ مجموعه‌ای از
+  !!{formula}های موجهاتی باشد. خواص زیر برقرارند:
+  \begin{enumerate}
+  \item\ollabel{prop:derivabilityfacts-monotonicity} \emph{یکنوایی}: اگر
+    $\Gamma \Proves[\Sigma] !A$ و~$\Gamma \subseteq \Delta$، آنگاه
+    $\Delta \Proves[\Sigma] !A$؛
+  \item\ollabel{prop:derivabilityfacts-reflexivity}
+    \emph{بازتابی‌بودن}: اگر~$!A \in \Gamma$، آنگاه
+    $\Gamma \Proves[\Sigma] !A$؛
+  \item\ollabel{prop:derivabilityfacts-cut} \emph{برش}: اگر
+    $\Gamma \Proves[\Sigma] !A$ و
+    $\Delta \cup \{!A\} \Proves[\Sigma] !B$، آنگاه
+    $\Gamma \cup \Delta \Proves[\Sigma] !B$؛
+  \item\ollabel{prop:derivabilityfacts-deduction} \emph{قضیهٔ استنتاج}:
+    $\Gamma \cup \{!B\} \Proves[\Sigma] !A$ اگر و تنها اگر
+    $\Gamma \Proves[\Sigma] !B \lif !A$؛
+  \item \ollabel{prop:derivabilityfacts-ruleT}% \emph{Rule T}: If
+    اگر~$\Gamma \Proves[\Sigma] !A_1$ و~\dots{} و
+    $\Gamma \Proves[\Sigma] !A_n$، و
+    $!A_1 \lif (!A_2 \lif \cdots (!A_n \lif !B)\cdots)$ یک نمونهٔ
+    همان‌گویی باشد، آنگاه~$\Gamma \Proves[\Sigma] !B$.
+  \end{enumerate}
+\end{prop}
+
+اثبات تمرینی آسان است. بخش~\olref{prop:derivabilityfacts-ruleT} از
+\olref{prop:derivabilityfacts} برای نمونه به ما می‌گوید اگر
+$\Gamma \Proves[\Sigma] !A \lor !B$ و
+$\Gamma \Proves[\Sigma] \lnot !A$، آنگاه
+$\Gamma \Proves[\Sigma] !B$. همچنین در ادامه به‌جای
+$\Gamma \cup \{ !A\} \Proves[\Sigma] !B$ می‌نویسیم
+$\Gamma, !A \Proves[\Sigma] !B$.
+
+\begin{defn}
+  مجموعهٔ~$\Gamma$ نسبت به دستگاه~$\Sigma$ \emph{تحت استنتاج بسته} است
+  اگر و تنها اگر~$\Gamma \Proves[\Sigma] !A$ مستلزم
+  $!A \in \Gamma$ باشد.
+\end{defn}
+
+\end{document}

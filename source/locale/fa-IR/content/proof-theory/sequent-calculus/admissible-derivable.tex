@@ -1,0 +1,260 @@
+% Part: proof-theory
+% Chapter: sequent-calculus
+% Section: admissible-derivable
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{seq}{adm}
+
+\olsection{قواعد پذیرفتنی و مشتق‌شدنی}
+
+بسیاری از نتایج نظریهٔ برهان به این پرسش مربوط‌اند ــ یا از نتایجی دربارهٔ
+آن استفاده می‌کنند ــ که آیا هر آنچه با قاعده‌ای معین می‌توان !!{prove} کرد،
+بدون آن قاعده نیز !!{prove}شدنی است یا نه. قضیهٔ حذف برش شناخته‌شده‌ترین
+نمونه است. این قضیه نشان می‌دهد هر دنباله‌ای را که با قواعد یک دستگاه
+دنباله‌ایِ شامل~\Cut{} بتوان !!{prove} کرد، بدون~\Cut نیز می‌توان
+!!{prove} کرد. چون این‌گونه ویژگی بسیار مهم است، نامی ویژه دارد.
+
+\begin{defn}
+قاعدهٔ~$R$ در یک دستگاه دنباله‌ای \emph{پذیرفتنی} است هرگاه هر
+دنباله‌ای را که در آن دستگاه همراه با قاعدهٔ~$R$ بتوان اثبات کرد، بدون~$R$
+نیز بتوان اثبات کرد.
+\end{defn}
+
+\begin{ex}\ollabel{ex:land-deriv}
+قاعدهٔ~$\LeftR{\land}$ در~\Log{G1c} و~\Log{G3c} صورت‌های متفاوتی دارد.
+در~\Log{G1c} دو نسخه از قاعده هست: یکی با مؤلفهٔ عطفی چپ~$!A$ از
+!!{formula} اصلی~$!A \land !B$ در مقدمه، و دیگری با مؤلفهٔ عطفی راست~$!B$:
+\[
+\Axiom$ !A, \Gamma \fCenter \Delta$
+\RightLabel{$\LeftR{\land}_1$}
+\UnaryInf$ !A \land !B, \Gamma \fCenter \Delta$
+\DisplayProof
+\qquad
+\Axiom$!B, \Gamma \fCenter \Delta$
+\RightLabel{$\LeftR{\land}_2$}
+\UnaryInf$!A \land !B, \Gamma \fCenter \Delta$
+\DisplayProof
+\]
+در مقابل،~\Log{G3c} تنها یک قاعده دارد:
+\[
+\Axiom$ !A, !B, \Gamma \fCenter \Delta$
+\RightLabel{$\LeftR{\land}_3$}
+\UnaryInf$ !A \land !B, \Gamma \fCenter \Delta$
+\DisplayProof
+\]
+اکنون می‌توان پرسید: «آیا قاعدهٔ~$\LeftR{\land}_3$ در~\Log{G3c}،
+در~\Log{G1c} پذیرفتنی است؟» پاسخ مثبت است: هر استنتاج با
+$\LeftR{\land}_3$ را می‌توان مستقیماً و تنها با قواعد~\Log{G1c} شبیه‌سازی
+کرد. افزون بر~$\LeftR{\land}_1$ و~$\LeftR{\land}_2$، به قاعدهٔ ساختاری
+$\LeftR{\Contraction}$ نیز نیاز داریم:
+\[
+\Axiom$!A, !B, \Gamma \fCenter \Delta$
+\RightLabel{$\LeftR{\land}_1$}
+\UnaryInf$!A \land !B, !B, \Gamma \fCenter \Delta$
+\RightLabel{$\LeftR{\land}_2$}
+\UnaryInf$!A \land !B, !A \land !B, \Gamma \fCenter \Delta$
+\RightLabel{\LeftR{\Contraction}}
+\UnaryInf$!A \land !B, \Gamma \fCenter \Delta$
+\DisplayProof
+\]
+\end{ex}
+
+شبیه‌سازیِ استنتاجی با یک قاعده به‌وسیلهٔ قواعد دیگر، یکی از راه‌های نشان‌دادن
+پذیرفتنی‌بودن قاعده است؛ اما تنها راه نیست و برخی قواعد پذیرفتنی‌اند، بی‌آنکه
+چنین شبیه‌سازی‌ای برایشان ممکن باشد. قواعدی را که می‌توان بدین‌سان شبیه‌سازی
+کرد \emph{مشتق‌شدنی} می‌نامند.
+
+\begin{defn}
+قاعدهٔ~$R$،
+\[
+\AxiomC{$S_1$}
+\AxiomC{$\dots$}
+\AxiomC{$S_n$}
+\RightLabel{$R$}
+\TrinaryInfC{$S$}
+\DisplayProof
+\]
+در یک دستگاه \emph{مشتق‌شدنی} نامیده می‌شود هرگاه !!{proof}
+طرح‌واره‌ای از دنبالهٔ~$S$ وجود داشته باشد که در آن، قواعد و اصول موضوعهٔ
+دستگاه همراه با دنباله‌های آغازیِ اضافی به صورت‌های~$S_1$، \dots،~$S_n$
+به کار رفته باشند.
+\end{defn}
+
+!!{proof} داده‌شده در~\olref{ex:land-deriv} نشان می‌دهد
+$\LeftR{\land}_3$ قاعده‌ای مشتق‌شدنی در~\Log{G1c} است، زیرا آن
+!!{proof}، !!{proof} طرح‌واره‌ای از نتیجهٔ~$\LeftR{\land}_3$ بر پایهٔ
+مقدمات~$\LeftR{\land}_3$ به‌عنوان دنباله‌های آغازی و با استفادهٔ صرف از
+قواعد~\Log{G1c} است. (هیچ‌یک از اصول موضوعهٔ~\Log{G1c} در آن به کار
+نرفته است.)
+
+\begin{prop}\ollabel{prop:lor-G3-adm}
+قواعد~$\LeftR{\land}$ و~$\RightR{\lor}$ در~\Log{G3c}، در~\Log{G1c}
+مشتق‌شدنی‌اند.
+\end{prop}
+
+\begin{proof}
+  برهان~$\LeftR{\land}$ در~\olref{ex:land-deriv} داده شد. برهان
+  $\RightR{\lor}$ به‌عنوان تمرین واگذار می‌شود.
+\end{proof}
+
+\begin{prob}
+نشان دهید قاعدهٔ~$\RightR{\lor}$ در~\Log{G3c}، در~\Log{G1c}
+مشتق‌شدنی است.
+\end{prob}
+
+\begin{prob}
+فرض کنید~$\liff$ !!{operator} تعریف‌شده باشد: $!A \liff !B$ کوتاه‌شدهٔ
+$(!A \lif !B) \land (!B \lif !A)$ است. نشان دهید قواعد
+\begin{enumerate}
+\item \Axiom$\Gamma, !A, !B \fCenter \Delta$
+\Axiom$\Gamma \fCenter \Delta, !A, !B$
+\RightLabel{\LeftR{\liff}}
+\BinaryInf$!A \liff !B, \Gamma \fCenter \Delta$
+\DisplayProof
+\item
+\Axiom$!A, \Gamma \fCenter \Delta, !B$
+\Axiom$!B, \Gamma \fCenter \Delta, !A$
+\RightLabel{\RightR{\liff}}
+\BinaryInf$\Gamma \fCenter \Delta, !A \liff !B$
+\DisplayProof
+\end{enumerate}
+در (الف)~\Log{G1c} و (ب)~\Log{G3c} مشتق‌شدنی‌اند.
+\end{prob}
+
+
+\begin{ex}\ollabel{ex:weak-adm}
+قاعدهٔ~$\RightR{\Weakening}$ در~\Log{G1c}،
+\[
+\Axiom$ \Gamma \fCenter \Delta$
+\RightLabel{\RightR{\Weakening}}
+\UnaryInf$ \Gamma \fCenter \Delta, !A$
+\DisplayProof
+\]
+در~\Log{G3c} پذیرفتنی است. اندیشهٔ برهان ساده است: فرض کنید در~\Log{G3c}
+!!a{proof} به نام~$\pi$ از مقدمهٔ~$\Gamma \Sequent \Delta$ وجود دارد.
+!!{formula}~$!A$ را به تالیِ هر دنباله در~$\pi$ بیفزایید. اصول همچنان اصل
+می‌مانند و استنتاج‌های درست همچنان درست‌اند؛ همهٔ !!{formula}های پیشین نیز
+حفظ می‌شوند. دنبالهٔ پایانیِ !!{proof} جدید
+$\Gamma \Sequent \Delta, !A$ است.
+
+بااین‌حال، قاعدهٔ~$\RightR{\Weakening}$ در~\Log{G3c} مشتق‌شدنی نیست.
+زیرا فرض کنید چنین بود؛ یعنی می‌شد با اصول و قواعد~\Log{G3c}، و احتمالاً
+دنبالهٔ آغازیِ اضافی~$\Gamma \Sequent \Delta$، !!a{proof} از
+$\Gamma \Sequent \Delta, !A$ یافت. اگر این !!{proof}، آن‌گونه که برای
+مشتق‌شدنی‌بودن~$\RightR{\Weakening}$ لازم است، کاملاً طرح‌واره‌ای باشد،
+با حذف~$\Gamma$ و~$\Delta$ می‌توان آن را به !!a{proof} از~$\Sequent !A$
+تبدیل کرد. در این صورت دنباله‌های آغازیِ اضافی~$\Gamma \Sequent \Delta$
+به دنبالهٔ تهی~$\quad \Sequent \quad$ بدل می‌شوند. چون دنبالهٔ تهی اصلاً
+هیچ !!{formula}ی ندارد، ولی همهٔ قواعد~\Log{G3c} دست‌کم یک !!{formula}
+فعال در مقدماتشان می‌طلبند، دنبالهٔ تهی نمی‌تواند مقدمهٔ هیچ استنتاجی در این
+!!{proof} طرح‌واره‌ای باشد. در نتیجه، این !!{proof} تنها در صورتی
+طرح‌واره‌ای است که در واقع دنبالهٔ اضافی~$\Gamma \Sequent \Delta$ را
+به‌عنوان دنبالهٔ آغازی به کار نبرد. به بیان دیگر، اشتقاقی طرح‌واره‌ای از
+$\Gamma \Sequent \Delta, !A$ تنها با اصول و قواعد~\Log{G3c} می‌بود و
+نشان می‌دادیم هر دنباله‌ای به این صورت در~\Log{G3c} !!a{proof} دارد. اما
+این ناممکن است، زیرا~\Log{G3c} درست است و فقط دنباله‌هایی را می‌تواند
+!!{prove} کند که در هر !!{structure} صادق‌اند. با گرفتن
+$\Gamma = \Delta = \emptyset$ و~$!A \ident \lfalse$، دستگاه~\Log{G3c}
+ناگزیر می‌بود، برای مثال، دنبالهٔ~$\quad \Sequent \lfalse$ را
+!!{prove} کند، حال آنکه چنین نمی‌کند.
+\end{ex}
+
+اکنون برهانی استقرایی و خوش‌ساخت برای پذیرفتنی‌بودن تضعیف در~\Log{G3c}
+می‌دهیم. در واقع، همان‌گونه که استدلال شهودی نشان می‌دهد، نتیجه‌ای اندکی
+قوی‌تر برقرار است: افزودن~$!A$ به سمت راست هر دنبالهٔ~$\pi$ ساختار
+!!{proof} و، به‌ویژه، ارتفاع آن را تغییر نمی‌دهد. چون این نکته مهم است،
+تعریفی ویژه می‌طلبد.
+
+\begin{defn}
+قاعدهٔ~$R$،
+\[
+\AxiomC{$S_1$}
+\AxiomC{$\dots$}
+\AxiomC{$S_n$}
+\RightLabel{$R$}
+\TrinaryInfC{$S$}
+\DisplayProof
+\]
+در یک دستگاه \emph{پذیرفتنی با حفظ !!{height}} (یا
+\emph{!!{hp}-پذیرفتنی}) است هرگاه، اگر~$\Proves[h_i] S_i$ برای
+$i = 1$، \dots،~$n$، آنگاه~$\Proves[m] S$ برای عددی~$m$ چنان‌که
+$m \le \max(h_1, \dots, h_n)$.
+\end{defn}
+
+برای پذیرفتنی با حفظ !!{height} بودنِ قاعده کافی است هرگاه مقدمات~$S_i$
+دارای !!{proof}s~$\pi_i$ با !!{height}~$h_i = \pheight{\pi_i}$ باشند،
+!!a{proof}~$\pi$ از نتیجه با !!{height}~$\pheight{\pi}$ وجود داشته باشد
+که این ارتفاع از بیشینهٔ
+$h_i$ها بیشتر نباشد. به‌ویژه، اگر تنها یک مقدمهٔ~$S_1$ باشد، کافی است
+$\pheight{\pi} \le \pheight{\pi_1}$. در مورد
+$\RightR{\Weakening}$ و~$\LeftR{\Weakening}$ حتی
+$\pheight{\pi} = \pheight{\pi_1}$ داریم، اما برابری لازم نیست.
+
+\begin{prop}\ollabel{prop:weak-G3c-adm}
+قواعد~$\RightR{\Weakening}$ و~$\LeftR{\Weakening}$ در~\Log{G1c}،
+در~\Log{G3c} با حفظ !!{height} پذیرفتنی‌اند.
+\end{prop}
+
+\begin{proof}
+  باید نشان دهیم اگر~$\Log{G3c} \Proves \Gamma \Sequent \Delta$ با
+  !!{proof}~$\pi$ از !!{height}~$\pheight{\pi} = n$، آنگاه در
+  ~\Log{G3c} !!{proof}~$\pi'$ از~$\Gamma \Sequent \Delta, !A$ وجود
+  دارد که~$\pheight{\pi'} = n$. بر~$n$ استقرا می‌کنیم. اگر~$n=0$، آنگاه
+  $\pi$ یک اصل~$\Gamma \Sequent \Delta$ است: یا یک~$!C$ اتمی هم در
+  $\Gamma$ و هم در~$\Delta$ رخ می‌دهد، یا دنباله اصلی از نوع اصلِ
+  $\lfalse$ در چپ است. در هر دو حالت~$\Gamma \Sequent \Delta, !A$ نیز
+  اصل است. اگر~$n = \pheight{\pi} >0$، !!{proof}~$\pi$ استنتاج پایانی
+  دارد. بر حسب قاعدهٔ به‌کاررفته حالت‌بندی می‌کنیم. تنها یک نمونه را
+  می‌آوریم: فرض کنید استنتاج پایانی~$\RightR{\land}$ باشد. آنگاه
+  $\Delta = \Delta', !B \land !C$ و زیر-!!{proof}s بی‌واسطهٔ~$\pi_1$
+  و~$\pi_2$ در آن استنتاج، به‌ترتیب دنباله‌های پایانی
+  $\Gamma \Sequent \Delta', !B$ و~$\Gamma \Sequent \Delta', !C$ را
+  دارند. یعنی~$\pi$ چنین است:
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_1$}
+  \Deduce$\Gamma \fCenter \Delta', !B$
+  \AxiomC{}
+  \RightLabel{$\pi_2$}
+  \Deduce$\Gamma \fCenter \Delta', !C$
+  \RightLabel{\RightR{\land}}
+  \BinaryInf$\Gamma \fCenter \Delta', !B \land !C$
+  \DisplayProof
+  \]
+  همچنین~$n = \max(\pheight{\pi_1}, \pheight{\pi_2}) + 1$. پس
+  $\pheight{\pi_1} < n$ و~$\pheight{\pi_2} < n$ و فرض استقرا اعمال
+  می‌شود: !!{proof}s~$\pi_1'$ و~$\pi_2'$ به‌ترتیب از
+  $\Gamma \Sequent \Delta', !B, !A$ و
+  $\Gamma \Sequent \Delta', !C, !A$ وجود دارند. با قاعدهٔ
+  $\RightR{\land}$، !!a{proof}~$\pi'$ از
+  $\Gamma \Sequent \Delta', !B \land !C, !A$ به دست می‌آوریم:
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_1'$}
+  \Deduce$\Gamma \fCenter \Delta', !B, !A$
+  \AxiomC{}
+  \RightLabel{$\pi_2'$}
+  \Deduce$\Gamma \fCenter \Delta', !C, !A$
+  \RightLabel{\RightR{\land}}
+  \BinaryInf$\Gamma \fCenter \Delta', !B \land !C, !A$
+  \DisplayProof
+  \]
+  داریم
+  $\pheight{\pi'} =
+  \max(\pheight{\pi_1'}, \pheight{\pi_2'}) + 1 \le
+  \max(\pheight{\pi_1}, \pheight{\pi_2}) + 1 = \pheight{\pi}$.
+  حالت‌های دیگرِ قاعدهٔ پایانی به همین روش‌اند، و برهان تضعیف چپ نیز
+  متقارن است.
+\end{proof}
+
+\olref{prop:weak-G3c-adm} بسیار سودمند است. برای کاربرد مکرر آن نمادی
+معرفی می‌کنیم: اگر~$\pi$ !!a{proof} از~$\Gamma \Sequent \Delta$ باشد،
+$\pi[\Pi \Sequent \Lambda]$ حاصلِ اعمال پذیرفتنی‌بودن تضعیف چپ با همهٔ
+!!{formula}s موجود در~$\Pi$ و پذیرفتنی‌بودن تضعیف راست با همهٔ
+!!{formula}s موجود در~$\Lambda$ است. این !!a{proof} از
+$\Gamma, \Pi \Sequent \Delta, \Lambda$ است.
+
+\end{document}

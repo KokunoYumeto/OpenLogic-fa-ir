@@ -1,0 +1,629 @@
+% Part: proof-theory
+% Chapter: cut-elimination
+% Section: interpolation
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{cut}{itp}
+
+\olsection{لم مائهارا و قضیهٔ درونیابی کریگ}
+
+قضیهٔ درونیابی، از ویلیام کریگ، می‌گوید اگر $!A\Entails !B$، آنگاه
+!!a{sentence}~$!C$ای، موسوم به \emph{درونیاب}، وجود دارد که
+$!A\Entails !C$ و $!C\Entails !B$. نکتهٔ مهم این است که می‌توان~$!C$
+را چنان برگزید که همهٔ !!{constant}ها و !!{predicate}های ظاهرشده در
+آن هم در~$!A$ و هم در~$!B$ ظاهر شوند. (فرض می‌کنیم هیچ !!{function}ی
+در کار نیست.) بدون این محدودیت، خود~$!A$ و~$!B$ به‌سادگی می‌توانستند
+درونیاب باشند.
+
+قضیهٔ درونیابی برای منطق کلاسیک مرتبهٔ اول برقرار است و آن را
+«آخرین ویژگی مهم منطق مرتبهٔ اول» که کشف شد نامیده‌اند. این قضیه در
+نظریهٔ مدل و استدلال خودکار کاربردهای مهمی دارد. انگیزه و کاربرد اصلی
+آن در فلسفهٔ علم بود، زیرا می‌توان با آن مفاهیم اولیه‌ای را بررسی کرد
+که یک نظریه بر پایهٔ آن‌ها اصل‌موضوعی می‌شود یا نمی‌شود. این قضیه
+همچنین قضیهٔ تعریف‌پذیری بث را نتیجه می‌دهد: اگر نظریه‌ای بتواند
+مفهومی را به‌طور ضمنی تعریف کند، می‌تواند آن را به‌طور صریح نیز تعریف
+کند.
+
+مانند بسیاری از نتایج منطق ریاضی، قضیهٔ درونیابی را هم با روش‌های
+نظریهٔ مدل و هم با روش‌های نظریهٔ اثبات می‌توان اثبات کرد. مزیت
+روش‌های نظریه‌اثباتی این است که نه‌فقط وجود درونیاب را نشان می‌دهند،
+بلکه الگوریتمی برای محاسبهٔ آن از !!a{proof}ی برای
+$!A\Entails !B$، مثلاً !!a{proof}ی در~\Log{G3c} برای
+$!A\Sequent !B$، فراهم می‌کنند.
+
+بگذارید $\Lang L(!A)$ مجموعهٔ !!{constant}ها و !!{predicate}های
+درون~$!A$ باشد و
+$\Lang L(\Gamma)=\bigcup\Setabs{\Lang L(!A)}{!A\in\Gamma}$.
+در سراسر این بخش فرض می‌کنیم با !!{formula}های بدون !!{function}
+سروکار داریم.
+
+\begin{thm}[قضیهٔ درونیابی کریگ]\ollabel{thm:interpolation}
+بگذارید !!{language}~$!A$ برابر $\Lang L(!A)$ و زبان~$!B$ برابر
+$\Lang L(!B)$ باشد. اگر $\Log{G3c}\Proves !A\Sequent !B$، آنگاه
+!!a{formula}~$!C$ای در !!{language}
+$\Lang L(!C)\subseteq\Lang L(!A)\cap\Lang L(!B)$ وجود دارد که
+$\Log{G3c}\Proves !A\Sequent !C$ و
+$\Log{G3c}\Proves !C\Sequent !B$.
+\end{thm}
+
+برای بهره‌گرفتن از ساختار !!{proof}ها در~\Log{G3c}، تعمیمی از قضیهٔ
+درونیابی را اثبات می‌کنیم. مقدم و تالی دنباله‌ها را هرکدام به دو بخش
+تقسیم‌شده تصور کنید. می‌نویسیم
+$\maeh{\Gamma_1}{\Gamma_2}\Sequent
+\maeh{\Delta_1}{\Delta_2}$ تا نشان دهیم $\Gamma_1$ و~$\Delta_1$ به
+بخش نخست و $\Gamma_2$ و~$\Delta_2$ به بخش دوم تعلق دارند. قضیهٔ
+درونیابی بی‌درنگ از لم زیر نتیجه می‌شود.
+
+\begin{lem}[لم مائهارا]\ollabel{lem:maehara}
+اگر
+$\Log{G3c}\Proves\maeh{\Gamma_1}{\Gamma_2}\Sequent
+\maeh{\Delta_1}{\Delta_2}$، آنگاه !!a{formula}~$!C$ای در
+!!{language}
+\[
+\Lang L(!C)\subseteq
+\Lang L(\Gamma_1,\Delta_1)\cap\Lang L(\Gamma_2,\Delta_2)
+\]
+وجود دارد که
+$\Log{G3c}\Proves\Gamma_1\Sequent\Delta_1,!C$ و
+$\Log{G3c}\Proves !C,\Gamma_2\Sequent\Delta_2$.
+\end{lem}
+
+\begin{proof}
+فرض کنید
+$\pi\Proves\maeh{\Gamma_1}{\Gamma_2}\Sequent
+\maeh{\Delta_1}{\Delta_2}$. ادعا را با استقرا بر
+$n=\pheight{\pi}$ اثبات می‌کنیم.
+
+اگر $n=0$، آنگاه
+$\maeh{\Gamma_1}{\Gamma_2}\Sequent
+\maeh{\Delta_1}{\Delta_2}$ یک اصل است و !!{formula} اتمی~$!A$ای هم
+در $\Gamma_1,\Gamma_2$ و هم در $\Delta_1,\Delta_2$ ظاهر می‌شود. برحسب
+اینکه $!A$ در سمت چپ و راست به بخش نخست یا دوم تعلق دارد چهار حالت
+هست:
+\begin{enumerate}
+\item $!A\in\Gamma_1$ و $!A\in\Delta_1$. می‌خواهیم~$!C$ای بیابیم که
+هر دو $\Gamma_1\Sequent\Delta_1,!C$ و
+$!C,\Gamma_2\Sequent\Delta_2$ !!{provable} باشند. دنبالهٔ نخست،
+صرف‌نظر از انتخاب~$!C$، از پیش اصل است. تنها انتخابی که تضمین می‌کند
+دنبالهٔ دوم !!{provable} باشد، $!C\ident\lfalse$ است.
+\item $!A\in\Gamma_1$ و $!A\in\Delta_2$. هر دو دنبالهٔ
+$\Gamma_1\Sequent\Delta_1,!A$ و
+$!A,\Gamma_2\Sequent\Delta_2$ اصل‌اند؛ پس $!C\ident !A$ را
+برمی‌گزینیم.
+\item $!A\in\Gamma_2$ و $!A\in\Delta_1$. دنباله‌های
+$!A,\Gamma_1\Sequent\Delta_1$ و
+$\Gamma_2\Sequent\Delta_2,!A$ اصل‌اند، اما~$!A$ در سمت نادرست قرار
+دارد و درونیاب نیست. با استفاده از \RightR{\lnot} و
+\LeftR{\lnot} می‌توانیم
+$\Gamma_1\Sequent\Delta_1,\lnot !A$ و
+$\lnot !A,\Gamma_2\Sequent\Delta_2$ را !!{prove} کنیم.
+\item $!A\in\Gamma_2$ و $!A\in\Delta_2$. تمرین.
+\end{enumerate}
+حالت‌هایی که دنباله به سبب
+$\lfalse\in\Gamma_1$ یا $\lfalse\in\Gamma_2$ اصل است به‌عنوان تمرین
+واگذار می‌شوند.
+
+اگر $n>0$، $\pi$ به یک استنتاج منطقی پایان می‌یابد. باید حالت‌ها را
+برحسب قاعدهٔ به‌کاررفته و بخشی که فرمول اصلی به آن تعلق دارد جدا کنیم.
+در هر حالت از فرض استقرا استفاده می‌کنیم: لم برای هر !!{proof}
+~$\pi_1$ با $\pheight{\pi_1}<n$ و برای هر تقسیم دنبالهٔ پایانی آن به
+دو بخش برقرار است. چند حالت را بررسی کنیم.
+\begin{enumerate}
+\item $\pi$ به \RightR{\lnot} با فرمول اصلی~$\lnot !A$ پایان می‌یابد.
+برحسب اینکه $\lnot !A$ به بخش نخست یا دوم تعلق دارد، $\pi$ به یکی از
+دو شکل زیر پایان می‌یابد:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\maeh{!A, \Gamma_1}{\Gamma_2} \fCenter
+  \maeh{\Delta_1}{\Delta_2}$
+\RightLabel{\RightR{\lnot}}
+\UnaryInf$\maeh{\Gamma_1}{\Gamma_2} \fCenter
+  \maeh{\Delta_1, \lnot !A}{\Delta_2}$
+\DisplayProof
+\]
+یا
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\maeh{\Gamma_1}{!A, \Gamma_2} \fCenter
+  \maeh{\Delta_1}{\Delta_2}$
+\RightLabel{\RightR{\lnot}}
+\UnaryInf$\maeh{\Gamma_1}{\Gamma_2} \fCenter
+  \maeh{\Delta_1}{\Delta_2, \lnot !A}$
+\DisplayProof
+\]
+اگر !!{formula} اصلی~$\lnot !A$ به بخش نخست تعلق دارد، !!{formula}
+فعال~$!A$ را در مقدمه نیز به بخش نخست داده‌ایم. این انتخاب در اختیار
+ماست. فرض استقرا با قراردادن فرمول فعال در بخش دیگر نیز اعمال می‌شد،
+اما آنگاه درونیابی نمی‌یافتیم.
+
+نخست وضعیتی را در نظر بگیرید که $\lnot !A$ به بخش نخست تعلق دارد.
+بنا بر فرض استقرا، دنبالهٔ پایانی~$\pi_1$ درونیابی، یعنی
+!!a{formula}~$!C_1$، دارد که:
+\begin{align*}
+!A, \Gamma_1 & \Sequent \Delta_1, !C_1 &&\text{و} &
+!C_1, \Gamma_2 & \Sequent \Delta_2
+\intertext{اثبات‌پذیرند. به !!a{formula}~$!C$ای نیاز داریم که هر دو
+دنبالهٔ زیر !!{provable} باشند:}
+\Gamma_1 & \Sequent \Delta_1, \lnot !A, !C &&\text{و} &
+!C, \Gamma_2 & \Sequent \Delta_2
+\end{align*}
+کافی است $!C\ident !C_1$ بگیریم: فرض استقرا گفته است دنبالهٔ راست
+!!{provable} است و دنبالهٔ چپ با~$\RightR{\lnot}$ از دنبالهٔ فرض استقرا
+به دست می‌آید. همچنین
+$\Lang L(!C_1)\subseteq
+\Lang L(!A,\Gamma_1,\Delta_1)\cap\Lang L(\Gamma_2,\Delta_2)$.
+چون $\Lang L(\lnot !A)=\Lang L(!A)$ و
+$\Lang L(!C)=\Lang L(!C_1)$، داریم
+\[
+\Lang L(!C_1)\subseteq
+\Lang L(\Gamma_1,\Delta_1,\lnot !A)\cap
+\Lang L(\Gamma_2,\Delta_2).
+\]
+
+در وضعیت دوم $\lnot !A$ به بخش دوم تعلق دارد. !!{formula} فعال در
+مقدمه را نیز به بخش دوم می‌دهیم و فرض استقرا را اعمال می‌کنیم:
+\begin{align*}
+\Gamma_1 & \Sequent \Delta_1, !C_1 &&\text{و} &
+!C_1, !A, \Gamma_2 & \Sequent \Delta_2
+\intertext{اثبات‌پذیرند. با اعمال \RightR{\lnot} بر دومی،
+!!{proof}هایی برای این دو دنباله به دست می‌آوریم:}
+\Gamma_1 & \Sequent \Delta_1, !C_1 &&\text{و} &
+!C_1, \Gamma_2 & \Sequent \Delta_2, \lnot !A
+\end{align*}
+این‌ها دقیقاً همان دنباله‌هایی هستند که باید !!{provable} باشند؛ پس باز
+$!C\ident !C_1$. مانند پیش،
+$\Lang L(!C_1)\subseteq
+\Lang L(\Gamma_1,\Delta_1)\cap
+\Lang L(\Gamma_2,\Delta_2,\lnot !A)$.
+
+\item $\pi$ به \RightR{\lif} با !!{formula} اصلی~$!A\lif !B$ پایان
+می‌یابد. باز دو حالت داریم و !!{proof}~$\pi$ به یکی از دو شکل زیر پایان می‌یابد:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\maeh{!A, \Gamma_1}{\Gamma_2} \fCenter
+  \maeh{\Delta_1, !B}{\Delta_2}$
+\RightLabel{\RightR{\lif}}
+\UnaryInf$\maeh{\Gamma_1}{\Gamma_2} \fCenter
+  \maeh{\Delta_1, !A \lif !B}{\Delta_2}$
+\DisplayProof
+\]
+یا
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\maeh{\Gamma_1}{!A, \Gamma_2} \fCenter
+  \maeh{\Delta_1}{\Delta_2, !B}$
+\RightLabel{\RightR{\lif}}
+\UnaryInf$\maeh{\Gamma_1}{\Gamma_2} \fCenter
+  \maeh{\Delta_1}{\Delta_2, !A \lif !B}$
+\DisplayProof
+\]
+باز !!{formula}های فعال را در مقدمه به همان بخشی داده‌ایم که
+!!{formula} اصلی در نتیجه دارد. در وضعیت نخست، فرض استقرا
+!!{proof}هایی برای دنباله‌های زیر می‌دهد:
+\begin{align*}
+!A, \Gamma_1 & \Sequent \Delta_1, !B, !C_1 &&\text{و} &
+!C_1, \Gamma_2 & \Sequent \Delta_2
+\intertext{دنبالهٔ چپ مقدمهٔ مناسبی برای \RightR{\lif} است؛ پس
+دنباله‌های !!{provable} زیر را داریم:}
+\Gamma_1 & \Sequent \Delta_1, !A \lif !B, !C_1 &&\text{و} &
+!C_1, \Gamma_2 & \Sequent \Delta_2
+\end{align*}
+پس $!C_1$ برای دنبالهٔ پایانی~$\pi$ نیز درونیاب است و دوباره
+$!C\ident !C_1$. وضعیت دیگر نیز به همین روش حل می‌شود.
+
+\item $\pi$ به \LeftR{\lif} با !!{formula} اصلی~$!A\lif !B$ پایان
+می‌یابد. اگر $!A\lif !B$ به بخش نخست تعلق داشته باشد، !!{proof}~$\pi$ چنین
+پایان می‌یابد:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\maeh{\Gamma_1}{\Gamma_2} \fCenter
+  \maeh{\Delta_1, !A}{\Delta_2}$
+\AxiomC{}
+\RightLabel{$\pi_2$}
+\Deduce$\maeh{!B, \Gamma_1}{\Gamma_2} \fCenter
+  \maeh{\Delta_1}{\Delta_2}$
+\RightLabel{\LeftR{\lif}}
+\BinaryInf$\maeh{!A \lif !B, \Gamma_1}{\Gamma_2} \fCenter
+  \maeh{\Delta_1}{\Delta_2}$
+\DisplayProof
+\]
+فرض استقرا چهار دنبالهٔ !!{provable} می‌دهد؛ دو دنباله برای
+درونیاب~$!C_1$ مقدمهٔ چپ و دو دنباله برای درونیاب~$!C_2$ مقدمهٔ دوم:
+\begin{align*}
+\Gamma_1 & \Sequent \Delta_1, !A, !C_1 &&\text{(۱)} &
+!C_1, \Gamma_2 & \Sequent \Delta_2 &&\text{(۲)}\\
+!B, \Gamma_1 & \Sequent \Delta_1, !C_2 &&\text{(۳)} &
+!C_2, \Gamma_2 & \Sequent \Delta_2 &&\text{(۴)}
+\end{align*}
+دنباله‌های (۱) و~(۳)، پس از تضعیف و افزودن~$!C_2$ به راست (۱) و
+~$!C_1$ به راست (۳)، مقدمات \LeftR{\lif} می‌شوند:
+\[
+\AxiomC{}
+\Deduce$\Gamma_1 \fCenter \Delta_1, !A, !C_1, !C_2$
+\AxiomC{}
+\Deduce$!B, \Gamma_1 \fCenter \Delta_1, !C_1, !C_2$
+\RightLabel{\LeftR{\lif}}
+\BinaryInf$!A \lif !B, \Gamma_1 \fCenter \Delta_1, !C_1, !C_2$
+\DisplayProof
+\]
+با اعمال $\RightR{\lor}$ دنبالهٔ
+\[
+!A \lif !B, \Gamma_1 \fCenter \Delta_1, !C_1 \lor !C_2
+\]
+را به دست می‌آوریم. پس $!C_1\lor !C_2$ نامزد درونیاب است. دنبالهٔ
+دیگر لازم را نیز از (۲) و~(۴) !!{prove} می‌کنیم:
+\[
+\AxiomC{}
+\Deduce$!C_1, \Gamma_2 \fCenter \Delta_2$
+\AxiomC{}
+\Deduce$!C_2, \Gamma_2 \fCenter \Delta_2$
+\RightLabel{\LeftR{\lor}}
+\BinaryInf$!C_1 \lor !C_2, \Gamma_2 \fCenter \Delta_2$
+\DisplayProof
+\]
+فقط باید زبان مناسب را بررسی کنیم. فرض استقرا می‌دهد:
+\begin{align*}
+\Lang L(!C_1) & \subseteq
+\Lang L(\Gamma_1, \Delta_1, !A) \cap
+\Lang L(\Gamma_2, \Delta_2) &\text{و}\\
+\Lang L(!C_2) & \subseteq
+\Lang L(!B, \Gamma_1, \Delta_1) \cap
+\Lang L(\Gamma_2, \Delta_2)
+\intertext{از آنجا که}
+\Lang L(!A) & \subseteq \Lang L(!A \lif !B) &\text{و}\\
+\Lang L(!B) & \subseteq \Lang L(!A \lif !B)
+\intertext{هر دو رابطهٔ زیر برقرارند:}
+\Lang L(!C_1) & \subseteq
+\Lang L(\Gamma_1, \Delta_1, !A \lif !B) \cap
+\Lang L(\Gamma_2, \Delta_2) &\text{و}\\
+\Lang L(!C_2) & \subseteq
+\Lang L(\Gamma_1, \Delta_1, !A \lif !B) \cap
+\Lang L(\Gamma_2, \Delta_2)
+\intertext{و در نتیجه، چون
+$\Lang L(!C_1\lor !C_2)={}$}
+\Lang L(!C_1)\cup\Lang L(!C_2) & \subseteq
+\Lang L(\Gamma_1,\Delta_1,!A\lif !B)\cap
+\Lang L(\Gamma_2,\Delta_2).
+\end{align*}
+این همان رابطهٔ مطلوب است.
+
+اگر $!A\lif !B$ به بخش دوم تعلق داشته باشد، وضعیت متفاوت اما روش
+مشابه است. فرض استقرا باز چهار دنبالهٔ !!{provable} می‌دهد:
+\begin{align*}
+\Gamma_1 & \Sequent \Delta_1, !C_1 &&\text{(۱)} &
+!C_1, \Gamma_2 & \Sequent \Delta_2, !A &&\text{(۲)}\\
+\Gamma_1 & \Sequent \Delta_1, !C_2 &&\text{(۳)} &
+!C_2, !B, \Gamma_2 & \Sequent \Delta_2 &&\text{(۴)}
+\end{align*}
+اکنون دنباله‌های (۲) و~(۴)، همراه با چند !!{formula} افزوده‌شده با
+تضعیف، مقدمات \LeftR{\lif} می‌شوند:
+\[
+\AxiomC{}
+\Deduce$!C_1, !C_2, \Gamma_2 \fCenter \Delta_2, !A$
+\AxiomC{}
+\Deduce$!B, !C_1, !C_2, \Gamma_2 \fCenter \Delta_2$
+\RightLabel{\LeftR{\lif}}
+\BinaryInf$!A \lif !B, !C_1, !C_2, \Gamma_2 \fCenter \Delta_2$
+\DisplayProof
+\]
+این بار یک !!{formula} ساخته‌شده از~$!C_1$ و~$!C_2$ را در مقدم لازم
+داریم. با $\LeftR{\land}$ این کار انجام می‌شود و باید
+$!C\ident(!C_1\land !C_2)$ بگیریم. خوشبختانه از دنباله‌های باقی‌ماندهٔ
+(۱) و~(۳) نیز دنبالهٔ متناظر بخش دیگر را !!{prove} می‌کنیم:
+\[
+\AxiomC{}
+\Deduce$\Gamma_1 \fCenter \Delta_1, !C_1$
+\AxiomC{}
+\Deduce$\Gamma_1 \fCenter \Delta_1, !C_2$
+\RightLabel{\RightR{\land}}
+\BinaryInf$\Gamma_1 \fCenter \Delta_1, !C_1 \land !C_2$
+\DisplayProof
+\]
+مانند پیش،
+$\Lang L(!C_1\land !C_2)\subseteq
+\Lang L(\Gamma_1,\Delta_1)\cap
+\Lang L(\Gamma_2,\Delta_2,!A\lif !B)$.
+
+\item $\pi$ به \RightR{\lforall} با !!{formula} اصلی
+~$\lforall[x][!A(x)]$ پایان می‌یابد:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\maeh{\Gamma_1}{\Gamma_2} \fCenter
+  \maeh{\Delta_1, !A(c)}{\Delta_2}$
+\RightLabel{\RightR{\lforall}}
+\UnaryInf$\maeh{\Gamma_1}{\Gamma_2} \fCenter
+  \maeh{\Delta_1, \lforall[x][!A(x)]}{\Delta_2}$
+\DisplayProof
+\]
+یا
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\maeh{\Gamma_1}{\Gamma_2} \fCenter
+  \maeh{\Delta_1}{\Delta_2, !A(c)}$
+\RightLabel{\RightR{\lforall}}
+\UnaryInf$\maeh{\Gamma_1}{\Gamma_2} \fCenter
+  \maeh{\Delta_1}{\Delta_2, \lforall[x][!A(x)]}$
+\DisplayProof
+\]
+در وضعیت نخست، فرض استقرا !!{proof}هایی برای
+$\Gamma_1\Sequent\Delta_1,!A(c),!C_1$ و
+$!C_1,\Gamma_2\Sequent\Delta_2$ می‌دهد. با اعمال
+$\RightR{\lforall}$ بر نخستین، به
+$\Gamma_1\Sequent\Delta_1,\lforall[x][!A(x)],!C_1$ می‌رسیم.
+شرط متغیر ویژه برقرار است، زیرا در قاعدهٔ \RightR{\lforall} پایانی
+~$\pi$ برقرار بود. پس $!C_1$ درونیاب است، مشروط بر اینکه
+\[
+\Lang L(!C_1)\subseteq
+\Lang L(\Gamma_1,\Delta_1,\lforall[x][!A(x)])\cap
+\Lang L(\Gamma_2,\Delta_2).
+\]
+فرض استقرا رابطهٔ مشابه با~$!A(c)$ را می‌دهد. تنها نگرانی~$c$ است،
+اما $c$ نمی‌تواند در~$!C_1$ ظاهر شود. اگر ظاهر می‌شد، هم در
+$\Lang L(\Gamma_1,\Delta_1,!A(c))$ و هم در
+$\Lang L(\Gamma_2,\Delta_2)$ بود؛ در نتیجه در نتیجهٔ استنتاج
+\RightR{\lforall} در~$\pi$ ظاهر می‌شد و شرط متغیر ویژه را نقض می‌کرد.
+وضعیت دیگر مشابه است.
+
+\item $\pi$ به \RightR{\lexists} با !!{formula} اصلی
+~$\lexists[x][!A(x)]$ پایان می‌یابد. باز دو وضعیت داریم. حالتی را
+بررسی می‌کنیم که فرمول وجودی به بخش نخست تعلق دارد و دیگری را تمرین
+می‌گذاریم. در وضعیت نخست، $\pi$ چنین پایان می‌یابد:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\maeh{\Gamma_1}{\Gamma_2} \fCenter
+  \maeh{\Delta_1, \lexists[x][!A(x)], !A(t)}{\Delta_2}$
+\RightLabel{\RightR{\lexists}}
+\UnaryInf$\maeh{\Gamma_1}{\Gamma_2} \fCenter
+  \maeh{\Delta_1, \lexists[x][!A(x)]}{\Delta_2}$
+\DisplayProof
+\]
+فرض استقرا !!{proof}هایی برای
+$\Gamma_1\Sequent\Delta_1,\lexists[x][!A(x)],!A(t),!C_1$ و
+$!C_1,\Gamma_2\Sequent\Delta_2$ می‌دهد. با اعمال
+$\RightR{\lexists}$ بر نخستین، به
+$\Gamma_1\Sequent\Delta_1,\lexists[x][!A(x)],!C_1$ می‌رسیم. پس
+$!C_1$ درونیاب است اگر:
+\[
+\Lang L(!C_1)\subseteq
+\Lang L(\Gamma_1,\Delta_1,\lexists[x][!A(x)])\cap
+\Lang L(\Gamma_2,\Delta_2).
+\]
+فرض استقرا همین رابطه را با~$!A(t)$ افزوده به زبان نخست می‌دهد. چون
+!!{function} نداریم، ترم~$t$ یا متغیر است یا !!a{constant}. متغیر
+عضو زبان نیست و مشکلی ایجاد نمی‌کند. اگر $t\ident b$ ثابت باشد نیز،
+مگر در حالتی که $b\in\Lang L(!C_1)$ اما $b$ در اشتراک زبان‌های دو
+بخش نباشد، $!C_1$ را بی‌تغییر می‌گیریم. فقط در همین حالتِ ثابت
+نامشترک باید آن را انتزاع کنیم.
+
+با جایگزینی همهٔ رخدادهای~$b$ در~$!C_1$ با !!a{variable}~$y$،
+می‌نویسیم $!C_1\ident\Subst{!C_1'}{b}{y}$، که $!C_1'$ شامل~$b$ نیست.
+افزون بر این، یا
+$b\notin\Lang L(\Gamma_1,\Delta_1,\lexists[x][!A(x)])$ یا
+$b\notin\Lang L(\Gamma_2,\Delta_2)$. به‌ترتیب می‌گیریم
+$!C\ident\lforall[y][!C_1'(y)]$ یا
+$!C\ident\lexists[y][!C_1'(y)]$. در حالت نخست:
+\[
+\AxiomC{}
+\Deduce$\Gamma_1 \fCenter
+  \Delta_1, \lexists[x][!A(x)], !A(b), !C_1'(b)$
+\RightLabel{\RightR{\lexists}}
+\UnaryInf$\Gamma_1 \fCenter
+  \Delta_1, \lexists[x][!A(x)], !C_1'(b)$
+\RightLabel{\RightR{\lforall}}
+\UnaryInf$\Gamma_1 \fCenter
+  \Delta_1, \lexists[x][!A(x)], \lforall[y][!C_1'(y)]$
+\DisplayProof
+\]
+و
+\[
+\AxiomC{}
+\Deduce$!C_1'(b), \lforall[y][!C_1'(y)], \Gamma_2 \fCenter \Delta_2$
+\RightLabel{\LeftR{\lforall}}
+\UnaryInf$\lforall[y][!C_1'(y)], \Gamma_2 \fCenter \Delta_2$
+\DisplayProof
+\]
+!!{proof}های دنباله‌های بالایی از فرض استقرا می‌آیند؛ در دومی از
+پذیرفتنی‌بودن تضعیف با $\lforall[y][!C_1'(y)]$ در مقدم نیز استفاده
+می‌کنیم. شرط متغیر ویژهٔ \RightR{\lforall} در !!{proof} نخست برقرار
+است، زیرا
+$b\notin\Lang L(\Gamma_1,\Delta_1,\lexists[x][!A(x)])$ و~$!C_1'$
+چنان تعریف شد که شامل~$b$ نباشد.
+
+در حالت دوم، از فرض استقرا و پذیرفتنی‌بودن تضعیف با
+~$\lexists[y][!C_1'(y)]$ داریم:
+\[
+\AxiomC{}
+\Deduce$\Gamma_1 \fCenter
+  \Delta_1, \lexists[x][!A(x)], !A(b),
+  \lexists[y][!C_1'(y)], !C_1'(b)$
+\RightLabel{\RightR{\lexists}}
+\UnaryInf$\Gamma_1 \fCenter
+  \Delta_1, \lexists[x][!A(x)],
+  \lexists[y][!C_1'(y)], !C_1'(b)$
+\RightLabel{\RightR{\lexists}}
+\UnaryInf$\Gamma_1 \fCenter
+  \Delta_1, \lexists[x][!A(x)], \lexists[y][!C_1'(y)]$
+\DisplayProof
+\]
+و
+\[
+\AxiomC{}
+\Deduce$!C_1'(b), \Gamma_2 \fCenter \Delta_2$
+\RightLabel{\LeftR{\lexists}}
+\UnaryInf$\lexists[y][!C_1'(y)], \Gamma_2 \fCenter \Delta_2$
+\DisplayProof
+\]
+شرط متغیر ویژهٔ \LeftR{\lexists} در !!{proof} دوم برقرار است، زیرا
+$b\notin\Lang L(\Gamma_2,\Delta_2)$ و~$!C_1'$ شامل~$b$ نیست.
+\end{enumerate}
+حالت‌های دیگر مشابه‌اند و آن‌ها را به‌عنوان تمرین واگذار می‌کنیم.
+\end{proof}
+
+\begin{prob}
+فرض کنید رابط~$\lnand$ با قواعد زیر داشته باشیم:
+\[
+\Axiom$\Gamma \fCenter \Delta, !A$
+\Axiom$\Gamma \fCenter \Delta, !B$
+\RightLabel{\LeftR{\lnand}}
+\BinaryInf$!A \lnand !B, \Gamma \fCenter \Delta$
+\DisplayProof
+\quad
+\Axiom$!A, !B, \Gamma \fCenter \Delta$
+\RightLabel{\RightR{\lnand}}
+\UnaryInf$\Gamma \fCenter \Delta, !A \lnand !B$
+\DisplayProof
+\]
+با انجام حالت‌های اثبات \olref{lem:maehara} که در آن‌ها $\pi$ به یکی
+از این قواعد پایان می‌یابد، نشان دهید لم مائهارا همچنان برقرار است.
+\end{prob}
+
+اکنون که لم مائهارا ثابت شده است، از آن برای اثبات قضیهٔ درونیابی
+کریگ استفاده می‌کنیم.
+
+\begin{proof}[اثبات \olref{thm:interpolation}]
+فرض کنید $!A\Sequent !B$ !!{provable} باشد. \olref{lem:maehara} را
+بر $\maeh{!A}{\ }\Sequent\maeh{\ }{!B}$ اعمال کنید تا درونیاب~$!C$
+به دست آید. آنگاه
+$\Proves !A\Sequent !C$ و $\Proves !C\Sequent !B$.
+\end{proof}
+
+فرض کنید $\Gamma$ نظریه‌ای، یعنی مجموعه‌ای از !!{sentence}ها، در
+!!a{language}~$\Lang L$ باشد که یک !!{predicate}~$n$موضعی~$R$ دارد.
+می‌گوییم $\Gamma$، $R$ را \emph{به‌طور ضمنی تعریف می‌کند} اگر و تنها
+اگر:
+\begin{align*}
+\Gamma, \Gamma'
+& \Entails \lforall[x_1][\dots\lforall[x_n][
+  (R(x_1,\dots,x_n)\liff R'(x_1,\dots,x_n))]],
+\intertext{که در آن $\Gamma'$ از جایگزینی همهٔ رخدادهای~$R$ در
+$\Gamma$ با~$R'\notin\Lang L$ حاصل می‌شود. $\Gamma$، $R$ را
+\emph{به‌طور صریح تعریف می‌کند} اگر و تنها اگر
+$!A(x_1,\dots,x_n)$ای بدون~$R$ وجود داشته باشد به‌طوری‌که}
+\Gamma & \Entails
+\lforall[x_1][\dots\lforall[x_n][
+  (R(x_1,\dots,x_n)\liff !A(x_1,\dots,x_n))]].
+\end{align*}
+آشکار است اگر $\Gamma$، $R$ را صریحاً تعریف کند، آن را ضمنی نیز تعریف
+می‌کند. عکس آن بدیهی نیست، اما برقرار است:
+
+\begin{lem}[قضیهٔ تعریف‌پذیری بث]
+اگر $\Gamma$، $R$ را به‌طور ضمنی تعریف کند، آن را به‌طور صریح نیز
+تعریف می‌کند.
+\end{lem}
+
+\begin{proof}
+فرض کنید $\Gamma$، $R$ را ضمنی تعریف می‌کند. $R'$ و~$\Gamma'$ را
+مانند بالا بگیرید و
+$\Lang L'=\Lang L(\Gamma')=(\Lang L\setminus\{R\})\cup\{R'\}$.
+بنا بر فرض:
+\begin{align*}
+\Gamma,\Gamma' &
+\Sequent \lforall[x_1][\dots\lforall[x_n][
+  (R(x_1,\dots,x_n)\liff R'(x_1,\dots,x_n))]]
+\intertext{بگذارید $c_1$، \dots،~$c_n$ !!{constant}هایی باشند که در
+~$\Gamma$ ظاهر نمی‌شوند. بنا بر لم وارون‌پذیری:}
+\Gamma,\Gamma',R(c_1,\dots,c_n) &
+\Sequent R'(c_1,\dots,c_n)
+\intertext{لم مائهارا را بر دنبالهٔ زیر اعمال کنید:}
+\maeh{\Gamma,R(c_1,\dots,c_n)}{\Gamma'} &
+\Sequent \maeh{\ }{R'(c_1,\dots,c_n)}
+\intertext{تا $!A\ident !A(x_1,\dots,x_n)$ای بیابید که دنباله‌های زیر}
+\Gamma,R(c_1,\dots,c_n) &
+\Sequent !A(c_1,\dots,c_n)\\
+!A(c_1,\dots,c_n),\Gamma' &
+\Sequent R'(c_1,\dots,c_n)
+\intertext{!!{proof} داشته باشند. لم مائهارا به‌درستی می‌دهد
+$\Lang L(!A(c_1,\dots,c_n))\subseteq{}$}
+\Lang L(\Gamma,R(c_1,\dots,c_n)) &\cap
+\Lang L(\Gamma',R'(c_1,\dots,c_n))\\
+&=
+(\Lang L(\Gamma)\setminus\{R\})\cup\{c_1,\dots,c_n\}.
+\intertext{پس پس از انتزاع ثابت‌های تازه به متغیرها،
+$!A(x_1,\dots,x_n)$ شامل نه~$R$ و نه~$R'$ است. در !!{proof} دنبالهٔ
+دوم، همه‌جا $R'$ را با~$R$ جایگزین کنید تا !!a{proof}ی برای دنبالهٔ
+زیر به دست آید:}
+!A(c_1,\dots,c_n),\Gamma &
+\Sequent R(c_1,\dots,c_n).
+\end{align*}
+از دنبالهٔ نخست با \RightR{\lif}،
+$\Gamma\Sequent R(\vec c)\lif !A(\vec c)$، و از دنبالهٔ دوم،
+$\Gamma\Sequent !A(\vec c)\lif R(\vec c)$ را به دست می‌آوریم. دو جهت
+را با قواعد گزاره‌ای در یک دوشرطی ترکیب می‌کنیم:
+\[
+\Gamma\Sequent
+R(c_1,\dots,c_n)\liff !A(c_1,\dots,c_n).
+\]
+سپس \RightR{\lforall} را برای $c_1,\dots,c_n$ اعمال می‌کنیم و
+!!a{proof}ی برای
+\[
+\Gamma \Sequent
+\lforall[x_1][\dots\lforall[x_n][
+  (R(x_1,\dots,x_n)\liff !A(x_1,\dots,x_n))]]
+\]
+به دست می‌آوریم. این نشان می‌دهد $!A(x_1,\dots,x_n)$، $R$ را در
+~$\Gamma$ به‌طور صریح تعریف می‌کند.
+\end{proof}
+
+نتیجهٔ سومی که با درونیابی هم‌ارز است و مانند آن با لم مائهارا اثبات
+می‌شود چنین است: اگر دو نظریهٔ سازگار~$\Gamma_1$ و~$\Gamma_2$ یک
+نظریهٔ کامل~$\Gamma$ را در زبان
+$\Lang L(\Gamma)\subseteq
+\Lang L(\Gamma_1)\cap\Lang L(\Gamma_2)$ در بر داشته باشند، آنگاه
+$\Gamma_1\cup\Gamma_2$ سازگار است.
+
+به یاد آورید نظریه‌ای کامل است اگر برای هر !!{sentence}~$!A$ در
+زبانش، یا $\Gamma\Proves !A$ یا $\Gamma\Proves\lnot !A$. چون
+$\Gamma_1$ و~$\Gamma_2$ بسط‌های سازگار~$\Gamma$ هستند، خود~$\Gamma$
+سازگار است. در نتیجه، اگر $!A$ !!a{sentence}‌ای در زبان مشترک
+$\Lang L(\Gamma_1)\cap\Lang L(\Gamma_2)$ باشد، نمی‌توان هم
+$\Gamma_1\Entails !A$ و هم
+$\Gamma_2\Entails\lnot !A$ داشت. برای دیدن این امر، خلافش را فرض
+کنید. از کامل‌بودن~$\Gamma$، یا $\Gamma\Entails !A$ یا
+$\Gamma\Entails\lnot !A$. حالت دوم با
+$\Gamma\subseteq\Gamma_1$ ناسازگاری~$\Gamma_1$ را نتیجه می‌دهد؛ پس
+$\Gamma\Entails !A$. آنگاه $\Gamma\subseteq\Gamma_2$ می‌دهد
+$\Gamma_2\Entails !A$، که همراه با
+$\Gamma_2\Entails\lnot !A$ ناسازگاری~$\Gamma_2$ را نتیجه می‌دهد.
+
+برای اثبات فقط کافی است هیچ !!a{sentence}~$!A$ای در
+!!{language} مشترک
+$\Lang L(\Gamma_1)\cap\Lang L(\Gamma_2)$ وجود نداشته باشد که
+$\Gamma_1\Entails !A$ و $\Gamma_2\Entails\lnot !A$. اکنون اثبات
+نظریه‌اثباتی آن را با لم مائهارا می‌آوریم.
+
+\begin{thm}[قضیهٔ سازگاری مشترک رابینسون]
+فرض کنید $\Gamma_1$ و~$\Gamma_2$ نظریه‌هایی سازگارند و هیچ~$!A$ای در
+!!{language}
+$\Lang L(\Gamma_1)\cap\Lang L(\Gamma_2)$ نیست که هم
+$\Gamma_1\Entails !A$ و هم $\Gamma_2\Entails\lnot !A$. آنگاه
+$\Gamma_1\cup\Gamma_2$ سازگار است.
+\end{thm}
+
+\begin{proof}
+خلاف ادعا فرض کنید $\Gamma_1\cup\Gamma_2$ ناسازگار است. آنگاه
+$\Gamma_1,\Gamma_2\Sequent\ $ یک !!a{proof} دارد. لم مائهارا را بر
+$\maeh{\Gamma_1}{\Gamma_2}\Sequent\maeh{\ }{\ }$ اعمال کنید تا
+!!a{sentence}~$!A$ای در !!{language}
+$\Lang L(\Gamma_1)\cap\Lang L(\Gamma_2)$ به دست آید، به‌طوری‌که
+$\Proves\Gamma_1\Sequent !A$ و
+$\Proves !A,\Gamma_2\Sequent\quad$. از دومی
+$\Proves\Gamma_2\Sequent\lnot !A$ به دست می‌آید، اما فرض کرده بودیم
+چنین !!{sentence}‌ای وجود ندارد.
+\end{proof}
+
+در بالا به‌طور ضمنی فرض کردیم نظریه‌های $\Gamma$، $\Gamma_1$ و
+$\Gamma_2$ متناهی‌اند. با فشردگی، نتایج برای نظریه‌های نامتناهی نیز
+برقرارند.
+
+\end{document}

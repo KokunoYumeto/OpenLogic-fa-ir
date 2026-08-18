@@ -1,0 +1,103 @@
+% Part: methods
+% Chapter: proofs
+% Section: example-2
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mth}{prf}{ex2}
+
+\olsection{مثالی دیگر}
+
+\begin{prop}
+اگر $A \subseteq C$، آنگاه $A \cup (C \setminus A) = C$.
+\end{prop}
+
+\begin{proof}
+  فرض کنید $A \subseteq C$. می‌خواهیم نشان دهیم
+  $A \cup (C \setminus A) = C$.
+  \begin{quote}
+    نخست توجه می‌کنیم که این یک گزارهٔ شرطی است. سور کلی آن به‌طور
+    ضمنی در نظر گرفته شده است: حکم برای همهٔ مجموعه‌های $A$ و $C$
+    برقرار است. پس $A$ و $C$ متغیرهایی برای مجموعه‌های دلخواه‌اند.
+    برای اثبات چنین گزاره‌ای، مقدم را فرض و تالی را اثبات می‌کنیم.
+
+    کار را با استفاده از فرض $A \subseteq C$ ادامه می‌دهیم. تعریف
+    ~$\subseteq$ را باز کنیم: این فرض یعنی همهٔ !!{element}های~$A$،
+    !!{element}های~$C$ نیز هستند. این نکته را می‌نویسیم، زیرا در سراسر
+    اثبات به کارمان می‌آید.
+  \end{quote}
+  بنا بر تعریف~$\subseteq$، چون $A \subseteq C$، برای هر $z$، اگر
+  $z \in A$، آنگاه $z \in C$.
+  \begin{quote}
+    همهٔ تعریف‌های موجود در فرض را باز کرده‌ایم. اکنون می‌توانیم به
+    نتیجه بپردازیم. می‌خواهیم نشان دهیم $A \cup (C \setminus A) = C$؛
+    پس اثبات را مانند مثال پیش سامان می‌دهیم: نشان می‌دهیم هر
+    !!{element} از $A \cup (C \setminus A)$، !!a{element} از~$C$ نیز
+    هست و، برعکس، هر !!{element} از $C$، !!a{element} از
+    $A \cup (C \setminus A)$ است. می‌توانیم این را کوتاه‌تر چنین
+    بنویسیم: $A \cup (C \setminus A) \subseteq C$ و
+    $C \subseteq A \cup (C \setminus A)$. اینجا خلاف جهت بازکردن یک
+    تعریف حرکت می‌کنیم، اما خواندن اثبات کمی آسان‌تر می‌شود. چون این
+    یک عطف است، باید هر دو بخش را اثبات کنیم. برای نشان‌دادن بخش نخست،
+    یعنی اینکه هر !!{element} از $A \cup (C \setminus A)$،
+    !!a{element} از~$C$ نیز هست، برای $z$ دلخواه فرض می‌کنیم
+    $z \in A \cup (C \setminus A)$ و نشان می‌دهیم $z \in C$. از تعریف
+    $\cup$ می‌توانیم از $z \in A \cup (C \setminus A)$ نتیجه بگیریم
+    که یا $z \in A$ یا $z \in C \setminus A$. تا اینجا باید دیگر با
+    این شیوه آشنا شده باشید.
+  \end{quote}
+  $A \cup (C \setminus A) = C$ اگر و تنها اگر
+  $A \cup (C \setminus A) \subseteq C$ و
+  $C \subseteq A \cup (C \setminus A)$. نخست اثبات می‌کنیم
+  $A \cup (C \setminus A) \subseteq C$. فرض کنید
+  $z \in A \cup (C \setminus A)$. پس یا $z \in A$ یا
+  $z \in (C \setminus A)$.
+  \begin{quote}
+    به یک فصل رسیده‌ایم و می‌خواهیم از آن $z \in C$ را اثبات کنیم.
+    این کار را با تفکیک حالت‌ها انجام می‌دهیم.
+  \end{quote}
+  حالت ۱: $z \in A$. چون برای هر $z$، اگر $z \in A$ آنگاه
+  $z \in C$، نتیجه می‌شود $z \in C$.
+  \begin{quote}
+    اینجا از واقعیتی استفاده کردیم که پیش‌تر از فرض حکم، یعنی
+    $A \subseteq C$، به دست آمد. حالت نخست کامل است و به حالت دوم،
+    $z \in (C \setminus A)$، می‌پردازیم. به یاد آورید که
+    $C \setminus A$ نشان‌دهندهٔ \emph{تفاضل} دو مجموعه است؛ یعنی
+    مجموعهٔ همهٔ !!{element}های~$C$ که !!{element}های~$A$ نیستند. اما
+    هر !!{element} از $C$ که در~$A$ نباشد، به‌ویژه !!a{element} از~$C$
+    است.
+  \end{quote}
+  حالت ۲: $z \in (C \setminus A)$. این یعنی $z \in C$ و
+  $z \notin A$. پس به‌ویژه $z \in C$.
+  \begin{quote}
+    بسیار خوب، جهت نخست را اثبات کردیم. اکنون به جهت دوم می‌پردازیم.
+    اینجا $C \subseteq A \cup (C \setminus A)$ را اثبات می‌کنیم. پس
+    فرض می‌کنیم $z \in C$ و نشان می‌دهیم
+    $z \in A \cup (C \setminus A)$.
+  \end{quote}
+  اکنون فرض کنید $z \in C$. می‌خواهیم نشان دهیم یا $z \in A$ یا
+  $z \in C \setminus A$.
+  \begin{quote}
+    چون همهٔ !!{element}های $A$، !!{element}های $C$ نیز هستند و
+    $C \setminus A$ مجموعهٔ همهٔ چیزهایی است که !!{element}های $C$
+    هستند اما در $A$ نیستند، نتیجه می‌شود $z$ یا در $A$ است یا در
+    $C \setminus A$. اگر از پیش ندانید چرا نتیجه درست است، شاید این
+    بیان کمی مبهم باشد. بهتر است آن را گام‌به‌گام اثبات کنیم. واقعیت
+    ساده‌ای که می‌توانیم بدون اثبات به کار ببریم سودمند است:
+    $z \in A$ یا $z \notin A$. این را «اصل طرد شق ثالث» می‌نامند: برای
+    هر گزارهٔ~$p$، یا $p$ صادق است یا نقیض آن صادق است. اینجا $p$
+    همان گزارهٔ $z \in A$ است. چون این یک فصل است، می‌توانیم باز هم
+    اثبات به تفکیک حالت‌ها را به کار ببریم.
+  \end{quote}
+  یا $z \in A$ یا $z \notin A$. در حالت نخست،
+  $z \in A \cup (C \setminus A)$. در حالت دوم، $z \in C$ و
+  $z \notin A$؛ پس $z \in C \setminus A$. بنابراین در این حالت نیز
+  $z \in A \cup (C \setminus A)$.
+  \begin{quote}
+    اثبات کامل است: نشان دادیم $A \cup (C \setminus A) = C$.
+  \end{quote}
+\end{proof}
+
+\end{document}

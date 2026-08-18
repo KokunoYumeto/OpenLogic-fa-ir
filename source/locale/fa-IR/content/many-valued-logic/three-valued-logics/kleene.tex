@@ -1,0 +1,193 @@
+% Part: many-valued-logic
+% Chapter: three-valued-logics
+% Section: kleene
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mvl}{thr}{skl}
+
+\olsection{منطق‌های کلینی}
+
+استیون کلینی دو منطق سه‌ارزشی معرفی کرد که انگیزهٔ آن‌ها منطقی بود که
+در آن ارزش‌های صدق به‌منزلهٔ خروجی‌های رویه‌های محاسباتی در نظر گرفته
+می‌شوند: یک رویه ممکن است~$\True$ یا~$\False$ به دست دهد، اما همچنین
+ممکن است پایان نیابد. در آن صورت ارزش صدق متناظر تعریف‌نشده است و با
+$\Undef$ نمایش داده می‌شود.
+
+برای محاسبهٔ نقیض گزارهٔ~$!A$، ابتدا مقدار~$!A$ را محاسبه و سپس نقیض
+حاصل را بازمی‌گردانیم. اگر محاسبهٔ~$!A$ پایان نیابد، کل رویه نیز پایان
+نمی‌یابد؛ پس نقیض~$\Undef$ همان~$\Undef$ است.
+
+برای محاسبهٔ عطف~$!A \land !B$ دو گزینه وجود دارد. می‌توان ابتدا~$!A$
+و سپس~$!B$ را محاسبه کرد؛ حاصل اگر خروجی هر دو~$\True$ باشد~$\True$، و
+در غیر این صورت~$\False$ خواهد بود. اگر یکی از دو محاسبه متوقف نشود،
+کل رویه نیز متوقف نمی‌شود. بنابراین در این حالت اگر یکی از مؤلفه‌های
+عطف تعریف‌نشده باشد، خود عطف نیز تعریف‌نشده است. همین امر دربارهٔ فصل
+نیز برقرار است.
+
+اما اگر بتوانیم~$!A$ و~$!B$ را به‌طور موازی ارزیابی کنیم، نتیجهٔ بهتری
+می‌گیریم. اگر یکی از دو رویه متوقف شود و~$\False$ بازگرداند، می‌توانیم
+دست نگه داریم، زیرا پاسخ باید کاذب باشد. بنابراین در این حالت، عطفی با
+یک مؤلفهٔ کاذب کاذب است، حتی اگر مؤلفهٔ دیگر تعریف‌نشده باشد.
+به‌همین‌ترتیب، هنگام محاسبهٔ موازی یک فصل، به‌محض اینکه رویهٔ یکی از دو
+مؤلفهٔ فصل مقدار صادق را بازگرداند، می‌توانیم متوقف شویم؛ زیرا فصل باید
+صادق باشد. پس در این حالت حتی اگر یکی از مؤلفه‌ها تعریف‌نشده باشد،
+می‌توانیم حاصل یک ادعای مرکب را بدانیم. با این تفسیر می‌توان~$\Undef$
+را به‌جای «تعریف‌نشده»، «ناشناخته» خواند.
+
+این دو تفسیر به منطق قوی و ضعیف کلینی می‌انجامند. رابط شرطی هم‌ارز
+$\lnot !A \lor !B$ تعریف می‌شود.
+
+\begin{defn}
+\emph{منطق قوی کلینی}~$\LogKs$ با ماتریس زیر تعریف می‌شود:
+\begin{enumerate}
+  \item زبان گزاره‌ای استاندارد~$\Lang L_0$ با~$\lnot$، $\land$،
+  $\lor$ و~$\lif$.
+  \item مجموعهٔ ارزش‌های صدق~$V = \{\True, \Undef, \False\}$.
+  \item $\True$ تنها ارزش ممتاز است؛ یعنی~$V^+ = \{\True\}$.
+  \item توابع صدق با جدول‌های زیر داده می‌شوند:
+  \begin{center}
+    \begin{tabular}{c|c} 
+      $\tf{\lnot}$ & \\ 
+      \hline  
+      $\True$ & $\False$ \\ 
+      $\Undef$ & $\Undef$ \\
+      $\False$ & $\True$ 
+    \end{tabular}
+    \quad
+    \begin{tabular}{c|ccc} 
+      $\tf{\land}[\LogKs]$ & $\True$ & $\Undef$ & $\False$ \\ 
+      \hline 
+      $\True$ & $\True$ & $\Undef$ & $\False$ \\ 
+      $\Undef$ & $\Undef$ & $\Undef$ & $\False$\\ 
+      $\False$ & $\False$ & $\False$ & $\False$ 
+    \end{tabular}
+    \\[2ex]
+    \begin{tabular}{c|ccc} 
+      $\tf{\lor}[\LogKs]$ & $\True$ & $\Undef$ & $\False$ \\ 
+      \hline 
+      $\True$ & $\True$ & $\True$ & $\True$ \\ 
+      $\Undef$ & $\True$ & $\Undef$ & $\Undef$ \\
+      $\False$ & $\True$ & $\Undef$ & $\False$ 
+    \end{tabular}
+    \quad
+    \begin{tabular}{c|ccc} 
+      $\tf{\lif}[\LogKs]$ & $\True$ & $\Undef$ & $\False$ \\ 
+      \hline 
+      $\True$ & $\True$ & $\Undef$ & $\False$ \\ 
+      $\Undef$ & $\True$ & $\Undef$ & $\Undef$  \\ 
+      $\False$ & $\True$ & $\True$ & $\True$ 
+    \end{tabular}
+  \end{center} 
+\end{enumerate}
+\end{defn}
+
+\begin{defn}
+\emph{منطق ضعیف کلینی}~$\LogKw$ با ماتریس زیر تعریف می‌شود:
+\begin{enumerate}
+  \item زبان گزاره‌ای استاندارد~$\Lang L_0$ با~$\lnot$، $\land$،
+  $\lor$ و~$\lif$.
+  \item مجموعهٔ ارزش‌های صدق~$V = \{\True, \Undef, \False\}$.
+  \item $\True$ تنها ارزش ممتاز است؛ یعنی~$V^+ = \{\True\}$.
+  \item توابع صدق با جدول‌های زیر داده می‌شوند:
+  \begin{center}
+    \begin{tabular}{c|c} 
+      $\tf{\lnot}$ & \\ 
+      \hline  
+      $\True$ & $\False$ \\ 
+      $\Undef$ & $\Undef$ \\
+      $\False$ & $\True$ 
+    \end{tabular}
+    \quad
+    \begin{tabular}{c|ccc} 
+      $\tf{\land}[\LogKw]$ & $\True$ & $\Undef$ & $\False$ \\ 
+      \hline 
+      $\True$ & $\True$ & $\Undef$ & $\False$ \\ 
+      $\Undef$ & $\Undef$ & $\Undef$ & $\Undef$\\ 
+      $\False$ & $\False$ & $\Undef$ & $\False$ 
+    \end{tabular}
+    \\[2ex]
+    \begin{tabular}{c|ccc} 
+      $\tf{\lor}[\LogKw]$ & $\True$ & $\Undef$ & $\False$ \\ 
+      \hline 
+      $\True$ & $\True$ & $\Undef$ & $\True$ \\ 
+      $\Undef$ & $\Undef$ & $\Undef$ & $\Undef$ \\
+      $\False$ & $\True$ & $\Undef$ & $\False$ 
+    \end{tabular}
+    \quad
+    \begin{tabular}{c|ccc} 
+      $\tf{\lif}[\LogKw]$ & $\True$ & $\Undef$ & $\False$ \\ 
+      \hline 
+      $\True$ & $\True$ & $\Undef$ & $\False$ \\ 
+      $\Undef$ & $\Undef$ & $\Undef$ & $\Undef$  \\ 
+      $\False$ & $\True$ & $\Undef$ & $\True$ 
+    \end{tabular}
+  \end{center} 
+\end{enumerate}
+\end{defn}
+
+\begin{prop}
+  $\LogKs$ و~$\LogKw$ هیچ همان‌گویی‌ای ندارند.
+\end{prop}
+
+\begin{proof}
+  اگر برای همهٔ~!!{propositional variable}های~$p$ داشته باشیم
+  $\pAssign v(p) = \Undef$، هر فرمول~$!A$ ارزش صدق
+  $\pValue v(!A) = \Undef$ خواهد داشت، زیرا در هر دو منطق
+  \[
+    \tf{\lnot}(\Undef) = \tf{\lor}(\Undef, \Undef) = \tf{\land}(\Undef,
+  \Undef) = \tf{\lif}(\Undef, \Undef) = \Undef.
+  \]
+  چون در هیچ‌یک از~$\LogKs$ و~$\LogKw$، $\Undef \notin V^+$، در این
+  !!{valuation}، مقدار~$!A$ ممتاز نخواهد بود.
+\end{proof}
+
+هرچند منطق ضعیف و قوی کلینی هیچ همان‌گویی‌ای ندارند، روابط نتیجهٔ
+نابدیهی دارند.
+
+\begin{prob}
+  کدام‌یک از روابط زیر در (الف) منطق قوی و (ب) منطق ضعیف کلینی
+  برقرارند؟ برای هریک جدول صدق بدهید.
+  \begin{enumerate}
+    \item $p, p \lif q \Entails q$
+    \item $p \lor q, \lnot p \Entails q$
+    \item $p \land q \Entails p$
+    \item $p \Entails p \land p$
+    \item $p \Entails p \lor q$
+  \end{enumerate}
+\end{prob}
+
+دیمیتری بوچوار~$\Undef$ را به معنای «بی‌معنا» تفسیر کرد و کوشید با
+مقررکردن اینکه جمله‌های پارادوکسیک مقدار~$\Undef$ بگیرند، از آن برای حل
+پارادوکس‌هایی مانند پارادوکس دروغگو استفاده کند. او منطقی معرفی کرد که
+در اصل همان منطق ضعیف کلینی است که با رابط‌های دیگری گسترش یافته؛ دو
+مورد از آن‌ها «نقیض بیرونی» و عملگر «تعریف‌نشده است» هستند:
+\begin{center}
+  \begin{tabular}{c|c} 
+    $\tf{\sim}$ & \\ 
+    \hline  
+    $\True$ & $\False$ \\ 
+    $\Undef$ & $\True$ \\
+    $\False$ & $\True$ 
+  \end{tabular}
+\quad
+  \begin{tabular}{c|c} 
+    $\tf{+}$ & \\ 
+    \hline  
+    $\True$ & $\False$ \\ 
+    $\Undef$ & $\True$ \\
+    $\False$ & $\False$ 
+  \end{tabular}
+\end{center}
+
+\begin{prob}
+  آیا می‌توانید~$\sim$ را در منطق بوچوار برحسب~$\lnot$ و~$+$ تعریف
+  کنید؟ یعنی~!!a{formula} بیابید که فقط~!!{propositional variable}
+  چون~$p$ را داشته باشد و شامل~$\sim$ نباشد، اما همواره همان ارزش صدق
+  $\mathord{\sim}p$ را بگیرد. برای نشان‌دادن درستی پاسخ جدول صدق بدهید.
+\end{prob}
+
+
+\end{document}

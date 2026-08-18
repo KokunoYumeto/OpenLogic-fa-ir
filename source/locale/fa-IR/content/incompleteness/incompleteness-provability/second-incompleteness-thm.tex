@@ -1,0 +1,131 @@
+% Part: incompleteness
+% Chapter: incompleteness-provability
+% Section: second-incompleteness-thm
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{inp}{2in}
+
+\olsection{قضیهٔ دوم ناتمامیت}
+
+چگونه می‌توانیم این ادعا را بیان کنیم که~$\Th{PA}$ سازگاری خودش را
+اثبات نمی‌کند؟ ناسازگاری~$\Th{PA}$ همان است که
+$\Th{PA} \Proves \eq[0][1]$. پس می‌توانیم گزارهٔ سازگاری
+$\OCon[\Th{PA}]$ را !!{sentence}~$\lnot
+\OProv[\Th{PA}](\gn{\eq[0][1]})$ بگیریم؛ آنگاه قضیهٔ زیر مقصود را
+برآورده می‌کند:
+
+\begin{thm}
+\ollabel{thm:second-incompleteness}
+با فرض سازگاری~$\Th{PA}$، نظریهٔ~$\Th{PA}$، $\OCon[\Th{PA}]$ را
+!!{derive} نمی‌کند.
+\end{thm}
+
+مهم است توجه کنیم که قضیه به بازنمایی خاص~$\OCon[\Th{PA}]$ (یعنی
+بازنمایی خاص~$\OProv[\Th{PA}](y)$) وابسته است. تنها چیزی که به کار
+خواهیم برد این است که بازنمایی~$\OProv[\Th{PA}](y)$ سه شرط
+!!{derivability} را برآورده می‌کند؛ پس قضیه به هر نظریه‌ای تعمیم می‌یابد
+که !!a{derivability} محمول دارای این ویژگی‌ها داشته باشد.
+
+خواندن طرح استدلال گودل آموزنده است، زیرا قضیه همچون نتیجه‌گیری‌ای
+درخشان از آن حاصل می‌شود. استدلال چنین است. بگذارید~$!G_\Th{PA}$ جملهٔ
+گودلی باشد که در اثبات~\olref[1in]{thm:first-incompleteness} ساختیم.
+نشان داده‌ایم: «اگر~$\Th{PA}$ سازگار باشد، آنگاه~$\Th{PA}$،
+$!G_\Th{PA}$ را !!{derive} نمی‌کند.» اگر این را \emph{درون}
+$\Th{PA}$ صوری کنیم، اثباتی از عبارت زیر داریم:
+\[
+\OCon[\Th{PA}] \lif \lnot \OProv[\Th{PA}](\gn{!G_\Th{PA}}).
+\]
+اکنون فرض کنید~$\Th{PA}$، $\OCon[\Th{PA}]$ را !!{derive}s می‌کند.
+آنگاه~$\lnot \OProv[\Th{PA}](\gn{!G_\Th{PA}})$ را !!{derive}s می‌کند.
+اما چون~$!G_\Th{PA}$ یک جملهٔ گودلی است، این عبارت با~$!G_\Th{PA}$
+هم‌ارز است. پس~$\Th{PA}$، $!G_\Th{PA}$ را !!{derive}s می‌کند.
+
+اما می‌دانیم اگر~$\Th{PA}$ سازگار باشد، $!G_\Th{PA}$ را !!{derive}
+نمی‌کند!{} پس اگر~$\Th{PA}$ سازگار باشد، نمی‌تواند
+$\OCon[\Th{PA}]$ را !!{derive} کند.
+
+برای دقیق‌ترکردن استدلال، $!G_\Th{PA}$ را جملهٔ گودلیِ~$\Th{PA}$
+می‌گیریم و با استفاده از شرایط !!{derivability} یعنی (P1)--(P3) نشان
+می‌دهیم~$\Th{PA}$، $\OCon[\Th{PA}] \lif !G_\Th{PA}$ را !!{derive}s
+می‌کند. این نشان خواهد داد که~$\Th{PA}$، $\OCon[\Th{PA}]$ را
+!!{derive} نمی‌کند. در ادامه طرح اثبات در~$\Th{PA}$ آمده است. (برای
+سادگی، زیرنویس‌های~$\Th{PA}$ را حذف می‌کنیم.)
+\begin{align}
+& !G \liff \lnot \OProv(\gn{!G}) \ollabel{G2-1}\\
+& \qquad\text{$!G$ یک جملهٔ گودلی است}\notag \\
+& !G \lif \lnot \OProv(\gn{!G}) \ollabel{G2-2}\\
+  & \qquad\text{از \olref{G2-1}} \notag\\
+& !G \lif
+  (\OProv(\gn{!G}) \lif \lfalse) \ollabel{G2-3}\\
+  & \qquad\text{از \olref{G2-2} به‌کمک منطق}\notag\\
+& \OProv(\gn{
+    !G \lif
+    (\OProv(\gn{!G}) \lif \lfalse)
+  }) \ollabel{G2-4}\\
+  & \qquad\text{از \olref{G2-3} بنا بر شرط P1} \notag\\
+& \OProv(\gn{!G}) \lif
+  \OProv(\gn{
+    (\OProv(\gn{!G}) \lif \lfalse)
+    }) \ollabel{G2-5}\\
+  & \qquad\text{از \olref{G2-4} بنا بر شرط P2} \notag\\
+& \OProv(\gn{!G}) \lif (\OProv(\gn{\OProv(\gn{!G})}) \lif \OProv(\gn{\lfalse})) \ollabel{G2-6}\\
+  & \qquad\text{از \olref{G2-5} بنا بر شرط P2 و منطق} \notag\\
+& \OProv(\gn{!G}) \lif
+  \OProv(\gn{\OProv(\gn{!G})}) \ollabel{G2-7}\\
+   & \qquad\text{بنا بر P3} \notag\\
+& \OProv(\gn{!G}) \lif \OProv(\gn{\lfalse}) \ollabel{G2-8}\\
+  & \qquad \text{از \olref{G2-6} و \olref{G2-7} به‌کمک منطق}\notag\\
+& \OCon \lif \lnot \OProv(\gn{!G}) \ollabel{G2-9}\\
+  & \qquad\text{عکس نقیض \olref{G2-8} و $\OCon \ident \lnot \OProv(\gn{\lfalse})$}\notag \\
+& \OCon \lif !G \notag\\
+  & \qquad\text{از \olref{G2-1} و \olref{G2-9} به‌کمک منطق}\notag
+\end{align}
+کاربرد منطق در بالا فقط از واقعیت‌های مقدماتی منطق گزاره‌ای بهره
+می‌گیرد؛ برای نمونه، \olref{G2-3} از
+$\Proves \lnot!A \liff (!A\lif \lfalse)$ و~\olref{G2-8} از
+$!A \lif (!B \lif !C), !A \lif !B \Proves !A \lif !C$ استفاده
+می‌کند. کاربرد شرط~P2 در~\olref{G2-5} و~\olref{G2-6} بر نمونه‌هایی از
+P2 تکیه دارد:
+$\OProv(\gn{!A \lif !B}) \lif (\OProv(\gn{!A}) \lif
+\OProv(\gn{!B}))$. در نمونهٔ نخست~$!A \ident !G$ و
+$!B \ident \OProv(\gn{!G}) \lif \lfalse$؛ در نمونهٔ دوم
+$!A \ident \OProv(\gn{!G})$ و~$!B \ident \lfalse$.
+
+صورت انتزاعی‌تر قضیهٔ دوم ناتمامیت چنین است:
+
+\begin{thm}
+\ollabel{thm:second-incompleteness-gen} فرض کنید~$\Th{T}$ نظریه‌ای
+دلخواه، سازگار و !!{axiomatized} و گسترشی از~$\Th{Q}$ باشد و
+$\OProv[\Th{T}](y)$ هر فرمولی باشد که شرایط !!{derivability} یعنی
+P1--P3 را برای~$\Th{T}$ برآورده کند. آنگاه~$\Th{T}$،
+$\OCon[\Th{T}]$ را !!{derive} نمی‌کند.
+\end{thm}
+
+\begin{prob}
+نشان دهید~$\Th{PA}$، $!G_{\Th{PA}} \lif \OCon[\Th{PA}]$ را
+!!{derive}s می‌کند.
+\end{prob}
+
+\begin{digress}
+نتیجهٔ اخلاقی داستان آن است که هیچ نظریهٔ سازگار و «معقول» برای ریاضیات
+نمی‌تواند گزارهٔ سازگاری خودش را !!{derive} کند. فرض کنید~$\Th{T}$
+نظریه‌ای ریاضی باشد که~$\Th{Q}$ و استدلال «متناهی‌گرایانهٔ» هیلبرت
+(هرچه معنایش باشد) را در بر می‌گیرد. آنگاه کل~$\Th{T}$ نمی‌تواند
+گزارهٔ سازگاری~$\Th{T}$ را !!{derive} کند؛ پس به طریق اولی، بخش
+متناهی‌گرای آن نیز نمی‌تواند گزارهٔ سازگاری~$\Th{T}$ را !!{derive}
+کند. به این معنا، اثباتی متناهی‌گرایانه برای سازگاری «تمام ریاضیات»
+نمی‌تواند وجود داشته باشد.
+
+در تفسیر اصطلاح «متناهی‌گرایانه» قدری مجال انعطاف وجود دارد و گودل در
+مقالهٔ سال ۱۹۳۱ احتمال می‌دهد چیزی که شاید آن را «متناهی‌گرایانه» بدانیم
+بیرون از انواع ریاضیاتی قرار گیرد که هیلبرت می‌خواست صوری کند. اما گودل
+سخاوتمندانه داوری می‌کرد؛ امروزه دشوار است ببینیم چگونه ممکن است چیزی
+بیابیم که بتوان به‌طور معقول متناهی‌گرایانه نامید، اما مثلاً در
+$\Th{ZFC}$، یعنی نظریهٔ مجموعه‌های زرملو--فرانکل با اصل انتخاب،
+صورت‌بندی‌پذیر نباشد.
+\end{digress}
+
+\end{document}

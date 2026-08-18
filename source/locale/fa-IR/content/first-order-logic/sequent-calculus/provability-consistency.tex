@@ -1,0 +1,134 @@
+% Part: first-order-logic
+% Chapter: sequent-calculus
+% Section: provability-consistency
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{seq}{prv}}
+      {\olfileid{pl}{seq}{prv}}
+
+\olsection{\usetoken{S}{derivability} و سازگاری}
+
+اکنون چند ویژگیِ رابطهٔ !!{derivability} را اثبات می‌کنیم. این
+ویژگی‌ها مستقلاً جالب‌اند، اما هر یک در اثبات قضیهٔ تمامیت نقشی
+خواهند داشت.
+
+\begin{prop}\ollabel{prop:provability-contr}
+  اگر $\Gamma \Proves !A$ و $\Gamma \cup \{!A\}$ ناسازگار باشد،
+  آنگاه $\Gamma$ ناسازگار است.
+\end{prop}
+
+\begin{proof}
+$\Gamma_0$ و $\Gamma_1 \subseteq \Gamma$ متناهی‌ای وجود دارند
+به‌طوری‌که $\Log{LK}$، $\Gamma_0 \Sequent !A$ و
+$!A, \Gamma_1 \Sequent \quad$ را !!{derive}s می‌کند. فرض کنید
+$\Log{LK}$-!!{derivation} برای $\Gamma_0 \Sequent !A$ همان~$\pi_0$
+و $\Log{LK}$-!!{derivation} برای $\Gamma_1, !A \Sequent \quad$
+همان~$\pi_1$ باشد. آنگاه می‌توانیم عبارت زیر را !!{derive} کنیم:
+\begin{prooftree}
+\AxiomC{}
+\RightLabel{$\pi_0$}
+\Deduce$ \Gamma_0 \fCenter !A $
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$!A, \Gamma_1 \fCenter $
+\RightLabel{\Cut}
+\BinaryInf$ \Gamma_0,\Gamma_1 \fCenter $
+\end{prooftree}
+
+چون $\Gamma_0 \subseteq \Gamma$ و $\Gamma_1 \subseteq \Gamma$،
+$\Gamma_0 \cup \Gamma_1 \subseteq \Gamma$؛ پس $\Gamma$~ناسازگار است.
+\end{proof}
+
+\begin{prop}
+\ollabel{prop:prov-incons}
+$\Gamma \Proves !A$ اگر و تنها اگر
+$\Gamma \cup \{\lnot !A\}$ ناسازگار باشد.
+\end{prop}
+
+\begin{proof}
+نخست فرض کنید $\Gamma \Proves !A$؛ یعنی !!a{derivation}~$\pi_0$
+برای $\Gamma \Sequent !A$ وجود دارد. با افزودن قاعدهٔ
+$\LeftR{\lnot}$، !!a{derivation} برای
+~$\lnot !A, \Gamma \Sequent \quad$ به دست می‌آوریم؛ یعنی
+$\Gamma \cup \{\lnot !A\}$ ناسازگار است.
+
+اگر $\Gamma \cup \{\lnot !A\}$ ناسازگار باشد، !!a{derivation}~$\pi_1$
+برای $\lnot !A, \Gamma \Sequent \quad$ وجود دارد. عبارت زیر
+!!a{derivation} برای $\Gamma \Sequent !A$ است:
+\begin{prooftree}
+  \Axiom$!A \fCenter !A$
+  \RightLabel{\RightR{\lnot}}
+  \UnaryInf$\fCenter !A, \lnot !A$
+  \AxiomC{}
+  \RightLabel{$\pi_1$}
+  \Deduce$\lnot !A, \Gamma \fCenter$
+  \RightLabel{\Cut}
+  \BinaryInf$\Gamma \fCenter !A$
+\end{prooftree}
+\end{proof}
+
+\begin{prob}
+ثابت کنید $\Gamma \Proves \lnot !A$ اگر و تنها اگر
+$\Gamma \cup \{!A\}$ ناسازگار باشد.
+\end{prob}
+
+\begin{prop}\ollabel{prop:explicit-inc}
+  اگر $\Gamma \Proves !A$ و $\lnot !A \in \Gamma$، آنگاه
+  $\Gamma$ ناسازگار است.
+\end{prop}
+
+\begin{proof}
+  فرض کنید $\Gamma \Proves !A$ و $\lnot !A \in \Gamma$. آنگاه
+  !!a{derivation}~$\pi$ برای دنبالهٔ $\Gamma_0 \Sequent !A$ وجود
+  دارد. دنبالهٔ $\lnot !A, \Gamma_0 \Sequent \quad$ نیز
+  !!{derivable} است:
+  \begin{prooftree}
+    \AxiomC{}
+    \RightLabel{$\pi$}
+    \Deduce$\Gamma_0 \fCenter !A$
+    \Axiom$!A \fCenter !A$
+    \RightLabel{\LeftR{\lnot}}
+    \UnaryInf$\lnot !A, !A \fCenter$
+    \RightLabel{\LeftR{\Exchange}}
+    \UnaryInf$!A, \lnot !A \fCenter$
+    \RightLabel{\Cut}
+    \BinaryInf$\Gamma_0, \lnot !A \fCenter$
+  \end{prooftree}
+  چون $\lnot !A \in \Gamma$ و $\Gamma_0 \subseteq \Gamma$، این
+  نشان می‌دهد که $\Gamma$ ناسازگار است.
+\end{proof}
+
+\begin{prop}\ollabel{prop:provability-exhaustive}
+  اگر $\Gamma \cup \{!A\}$ و $\Gamma \cup \{\lnot !A\}$ هر دو
+  ناسازگار باشند، آنگاه $\Gamma$ ناسازگار است.
+\end{prop}
+
+\begin{proof}
+مجموعه‌های متناهی $\Gamma_0 \subseteq \Gamma$ و
+$\Gamma_1 \subseteq \Gamma$ و $\Log{LK}$-!!{derivation}s
+$\pi_0$ و $\pi_1$ به‌ترتیب برای
+$!A, \Gamma_0 \Sequent \quad$ و
+$\lnot !A, \Gamma_1 \Sequent \quad$ وجود دارند. آنگاه می‌توانیم
+عبارت زیر را !!{derive} کنیم:
+\begin{prooftree}
+\AxiomC{}
+\RightLabel{$\pi_0$}
+\Deduce$ !A, \Gamma_0 \fCenter $
+\RightLabel{\RightR{\lnot}}
+\UnaryInf$ \Gamma_0 \fCenter \lnot !A$
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\lnot !A, \Gamma_1 \fCenter  $
+\RightLabel{\Cut}
+\BinaryInf$ \Gamma_0, \Gamma_1 \fCenter $
+\end{prooftree}
+چون $\Gamma_0 \subseteq \Gamma$ و $\Gamma_1 \subseteq \Gamma$،
+$\Gamma_0 \cup \Gamma_1 \subseteq \Gamma$. بنابراین $\Gamma$
+ناسازگار است.
+\end{proof}
+
+\end{document}

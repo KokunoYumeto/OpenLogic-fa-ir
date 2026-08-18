@@ -1,0 +1,50 @@
+% Part: normal-modal-logic
+% Chapter: frame-definability
+% Section: frames
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{frd}{fra}
+
+\olsection{قاب‌ها}
+
+\begin{defn}
+  یک \emph{قاب} زوج~$\mModel{F} = \tuple{W,R}$ است، که در آن~$W$
+  مجموعه‌ای ناتهی از جهان‌ها و~$R$ رابطه‌ای دوتایی روی~$W$ است. مدل
+  $\mModel{M}$ \emph{مبتنی بر} قاب~$\mModel{F} = \tuple{W,R}$ است اگر
+  و تنها اگر برای یک ارزش‌گذاری~$V$،
+  $\mModel{M} = \tuple{W, R, V}$.
+\end{defn}
+
+\begin{defn}
+  اگر~$\mModel{F}$ یک قاب باشد، می‌گوییم~$!A$ \emph{در~$\mModel{F}$
+  معتبر است}، و~$\mModel{F} \Entails !A$ می‌نویسیم، اگر برای هر مدل
+  $\mModel{M}$ مبتنی بر~$\mModel{F}$، $\mSat{M}{!A}$.
+  
+  اگر~$\mClass{F}$ رده‌ای از قاب‌ها باشد، می‌گوییم~$!A$ \emph{در
+  $\mClass{F}$ معتبر است}، و~$\mClass{F} \Entails !A$ می‌نویسیم، اگر
+  و تنها اگر برای هر قاب~$\mModel{F} \in \mClass{F}$،
+  $\mModel{F} \Entails !A$.
+\end{defn}
+
+اهمیت قاب‌ها از آن روست که تناظر میان طرحواره‌ها و خواص رابطهٔ
+دسترسی~$R$ در سطح قاب‌ها برقرار است، \emph{نه مدل‌ها}. برای نمونه، گرچه
+\Ax{T} در همهٔ مدل‌های بازتابی صادق است، هر مدلی که~\Ax{T} در آن صادق
+است بازتابی نیست. بااین‌حال، درست است که نه‌تنها~\Ax{T} در همهٔ
+\emph{قاب‌های} بازتابی \emph{معتبر} است، بلکه هر قابی که~\Ax{T} در آن
+معتبر باشد نیز بازتابی است.
+
+\begin{rem}
+اعتبار در یک ردهٔ قاب‌ها حالت خاصی از مفهوم اعتبار در یک ردهٔ مدل‌هاست:
+$\mClass{F} \Entails !A$ اگر و تنها اگر~$\mClass{C} \Entails !A$، که
+در آن~$\mClass{C}$ ردهٔ همهٔ مدل‌هایی است که بر قابی در~$\mClass{F}$
+مبتنی‌اند.
+
+بدیهی است اگر !!a{formula} یا یک طرحواره معتبر باشد، یعنی نسبت به ردهٔ
+\emph{همهٔ} مدل‌ها معتبر باشد، نسبت به هر ردهٔ~$\mClass{F}$ از قاب‌ها
+نیز معتبر است.
+\end{rem}
+
+\end{document}

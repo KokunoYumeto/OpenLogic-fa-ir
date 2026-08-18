@@ -1,0 +1,42 @@
+% Part: computability
+% Chapter: recursive-functions
+% Section: pr-functions-computable
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cmp}{rec}{cmp}
+\olsection{توابع بازگشتی اولیه محاسبه‌پذیرند}
+
+فرض کنید تابع~$h$ با بازگشت اولیه تعریف شده باشد:
+\begin{eqnarray*}
+h(\vec x, 0)     & = & f(\vec x) \\
+h(\vec x, y + 1) & = & g(\vec x, y, h(\vec x, y)),
+\end{eqnarray*}
+و فرض کنید توابع~$f$ و~$g$ محاسبه‌پذیرند. (از~$\vec x$ به‌عنوان
+اختصار $x_0$، \dots، $x_{k-1}$ استفاده می‌کنیم.) آنگاه آشکارا
+$h(\vec x, 0)$ محاسبه‌پذیر است، زیرا همان~$f(\vec x)$ است که بنا بر
+فرض محاسبه‌پذیر است. سپس $h(\vec x, 1)$ نیز محاسبه‌پذیر است، زیرا
+$1 = 0 + 1$ و بنابراین $h(\vec x, 1)$ برابر است با
+\begin{align*}
+ h(\vec x, 1) & = g(\vec x, 0, h(\vec x, 0)) =  g(\vec x, 0, f(\vec x)).
+\intertext{می‌توانیم به همین شیوه ادامه دهیم و محاسبه کنیم:}
+h(\vec x, 2) & = g(\vec x, 1, h(\vec x, 1)) = g(\vec x, 1, g(\vec x, 0, f(\vec x)))\\
+h(\vec x, 3) & = g(\vec x, 2, h(\vec x, 2)) = g(\vec x, 2, g(\vec x, 1, g(\vec x, 0, f(\vec x))))\\
+h(\vec x, 4) & = g(\vec x, 3, h(\vec x, 3)) = g(\vec x, 3, g(\vec x, 2, g(\vec x, 1, g(\vec x, 0, f(\vec x)))))\\
+& \vdots
+\end{align*}
+پس برای محاسبهٔ $h(\vec x, y)$ در حالت کلی، به‌ترتیب
+$h(\vec x, 0)$، $h(\vec x, 1)$، \dots را محاسبه می‌کنیم تا به
+$h(\vec x, y)$ برسیم.
+
+بنابراین اگر توابع~$f$ و~$g$ محاسبه‌پذیر باشند، تعریف بازگشتی اولیه
+تابع محاسبه‌پذیر تازه‌ای به دست می‌دهد. ترکیب توابع نیز، اگر~$f$ و
+$g_i$ها محاسبه‌پذیر باشند، تابعی محاسبه‌پذیر به دست می‌دهد.
+
+چون توابع پایهٔ $\Zero$، $\Succ$ و~$\Proj{n}{i}$ محاسبه‌پذیرند و
+ترکیب و بازگشت اولیه از توابع محاسبه‌پذیر توابع محاسبه‌پذیر می‌سازند،
+هر تابع بازگشتی اولیه محاسبه‌پذیر است.
+
+\end{document}

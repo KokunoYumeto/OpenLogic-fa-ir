@@ -1,0 +1,153 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{card-arithmetic}{opps}
+\olsection{تعریف عمل‌های پایه}
+
+چون لازم نیست ترتیب را پی بگیریم، تعریف حساب کاردینالی بسیار آسان‌تر از
+حساب ترتیبی است. جمع، ضرب و توان‌رسانی را هم‌زمان تعریف می‌کنیم.
+
+\begin{defn}
+اگر~$\cardfont{a}$ و~$\cardfont{b}$ کاردینال باشند:
+\begin{align*}
+	\cardfont{a} \cardplus \cardfont{b} &\defis
+	\card{\cardfont{a} \disjointsum \cardfont{b}}\\
+	\cardfont{a} \cardtimes \cardfont{b} &\defis
+	\card{\cardfont{a} \times \cardfont{b}}\\
+	\cardexpo{\cardfont{a}}{\cardfont{b}} &\defis
+	\card{\funfromto{\cardfont{b}}{\cardfont{a}}}
+\end{align*}
+که در آن
+$\funfromto{X}{Y}=\Setabs{f}{f\text{ تابعی }X\to Y\text{ است}}$.
+(به‌آسانی می‌توان نشان داد~$\funfromto{X}{Y}$ برای هر دو مجموعهٔ~$X$ و
+$Y$ وجود دارد؛ اثبات را به‌عنوان تمرین واگذار می‌کنیم.)
+\end{defn}
+
+\begin{prob}
+در~$\Zminus$ اثبات کنید~$\funfromto{X}{Y}$ برای هر دو مجموعهٔ~$X$ و~$Y$
+وجود دارد. در~$\ZF$ و به شیوهٔ
+\olref[sth][ord-arithmetic][using-addition]{rankcomputation}،
+$\setrank{\funfromto{X}{Y}}$ را بر حسب~$\setrank{X}$ و~$\setrank{Y}$
+محاسبه کنید.
+\end{prob}
+
+شاید توضیح این تعریف سودمند باشد. دربارهٔ جمع: این تعریف از مفهوم جمع
+مجزا، یعنی~$\disjointsum$، که در
+\olref[ord-arithmetic][add]{defdissum} تعریف شد استفاده می‌کند؛ و
+به‌آسانی می‌توان دید در حالت‌های متناهی پاسخ درست می‌دهد. دربارهٔ ضرب:
+\olref[sfr][set][pai]{cardnmprod} می‌گوید اگر~$A$ دارای~$n$ عضو و~$B$
+دارای~$m$ عضو باشد، $A\times B$ دارای~$n\cdot m$ عضو است؛ پس تعریف ما
+صرفاً این اندیشه را به ضرب ترامتناهی تعمیم می‌دهد. توان‌رسانی نیز مشابه
+است: صرفاً اندیشه‌ای متناهی را به حالت ترامتناهی تعمیم می‌دهیم. در واقع،
+حساب کاردینالی ترامتناهی از برخی جهات بسیار بیش از حساب ترتیبی ترامتناهی
+به حساب «معمولی» شباهت دارد:
+
+\begin{prop}\ollabel{cardplustimescommute}
+$\cardplus$ و~$\cardtimes$ جابه‌جایی و شرکت‌پذیرند.
+\end{prop}
+
+\begin{proof}
+برای جابه‌جایی، بنا بر
+\olref[cardinals][cardsasords]{lem:CardinalsBehaveRight} کافی است توجه
+کنیم
+$\cardeq{(\cardfont{a}\disjointsum\cardfont{b})}
+{(\cardfont{b}\disjointsum\cardfont{a})}$ و
+$\cardeq{(\cardfont{a}\times\cardfont{b})}
+{(\cardfont{b}\times\cardfont{a})}$. شرکت‌پذیری را به‌عنوان تمرین واگذار
+می‌کنیم.
+\end{proof}
+
+\begin{prob}
+اثبات کنید~$\cardplus$ و~$\cardtimes$ شرکت‌پذیرند.
+\end{prob}
+
+\begin{prop}
+$A$ نامتناهی است اگر و تنها اگر
+$\card{A}\cardplus1=1\cardplus\card{A}=\card{A}$.
+\end{prop}
+
+\begin{proof}
+همانند~\olref[cardinals][classing]{generalinfinitycharacter}، این نتیجه
+از~\olref[ord-arithmetic][using-addition]{ordinfinitycharacter} و
+\olref[cardinals][cardsasords]{lem:CardinalsBehaveRight} حاصل می‌شود.
+\end{proof}
+
+این امر توضیح می‌دهد چرا باید برای جمع و ضرب ترتیبی و کاردینالی از
+نمادهای متفاوتی استفاده کنیم: این‌ها واقعاً عمل‌هایی \emph{متفاوت‌اند}.
+دو نتیجهٔ بعدی نشان می‌دهند توان‌رسانی ترتیبی و کاردینالی نیز عمل‌هایی
+متفاوت‌اند. (به یاد آورید~\olref[z][infinity-again]{defnomega} مستلزم
+$2=\{0,1\}$ است):
+
+\begin{lem}\ollabel{lem:SizePowerset2Exp}
+برای هر~$A$، $\card{\Pow{A}}=\cardexpo{2}{\card{A}}$.
+\end{lem}
+
+\begin{proof}
+برای هر زیرمجموعهٔ~$B\subseteq A$، بگذارید
+$\chi_B\in\funfromto{A}{2}$ چنین تعریف شود:
+\begin{align*}
+	\chi_{B}(x) &\defis
+	\begin{cases}
+		1 & \text{اگر }x\in B\\
+		0 & \text{در غیر این صورت.}
+	\end{cases}
+\end{align*}
+اکنون بگذارید~$f(B)=\chi_B$؛ این یک~!!a{bijection} به‌صورت
+$f\colon\Pow{A}\to\funfromto{A}{2}$ تعریف می‌کند. پس
+$\cardeq{\Pow{A}}{\funfromto{A}{2}}$. در نتیجه
+$\cardeq{\Pow{A}}{\funfromto{\card{A}}{2}}$، و بنابراین
+$\card{\Pow{A}}=\card{\funfromto{\card{A}}{2}}=
+\cardexpo{2}{\card{A}}$.
+\end{proof}
+
+این اثبات کوتاه اساساً بحث~\olref[sfr][siz][red-alt]{sec} را دربر
+می‌گیرد. آنجا نشان دادیم چگونه می‌توان ناشمارابودن~$\Pow{\omega}$ را به
+ناشمارابودن مجموعهٔ رشته‌های دودویی نامتناهی، یعنی~$\Bin^\omega$، فرو
+کاست. در واقع، $\Bin^\omega$ همان~$\funfromto{\omega}{2}$ است؛ و اثبات
+پیشین نشان داد استدلال~\olref[sfr][siz][red-alt]{sec} با هر مجموعهٔ~$A$
+به‌جای~$\omega$ نیز کار می‌کند. این نتیجه واقعیت کوتاه زیر را نیز دربارهٔ
+توان‌رسانی کاردینالی به دست می‌دهد:
+
+\begin{cor}\ollabel{cantorcor}
+برای هر کاردینال~$\cardfont{a}$،
+$\cardfont{a}<\cardexpo{2}{\cardfont{a}}$.
+\end{cor}
+
+\begin{proof}
+از قضیهٔ کانتور (\olref[sfr][siz][car]{thm:cantor}) و
+\olref{lem:SizePowerset2Exp}.
+\end{proof}
+\noindent
+پس~$\omega<\cardexpo{2}{\omega}$. اما توجه کنید این نتیجه دربارهٔ
+توان‌رسانی \emph{کاردینالی} است. باید آن را با توان‌رسانی
+\emph{ترتیبی} مقایسه کرد، زیرا در حالت دوم
+$\omega=\ordexpo{2}{\omega}$ (بنگرید به
+\olref[ord-arithmetic][expo]{sec}).
+
+حال که دربارهٔ توان‌رسانی کاردینالی سخن می‌گوییم، می‌توانیم «شیوهٔ»
+!!{nonenumerable} بودن~$\Real$ را نیز اندکی دقیق‌تر بیان کنیم.
+
+\begin{thm}\ollabel{continuumis2aleph0}
+$\card{\Real}=\cardexpo{2}{\omega}$.
+\end{thm}
+
+\begin{proof}[طرح اثبات]
+راه‌های فراوانی برای اثبات این نتیجه وجود دارد. سرراست‌ترین راه آن است
+که~$\cardle{\Pow{\omega}}{\Real}$ و
+$\cardle{\Real}{\Pow{\omega}}$ را اثبات کنیم؛ سپس با استفاده از قضیهٔ
+شرودر--برنشتاین نتیجه بگیریم
+$\cardeq{\Real}{\Pow{\omega}}$، و با
+\olref[card-arithmetic][opps]{lem:SizePowerset2Exp} نتیجه بگیریم
+$\card{\Real}=\cardexpo{2}{\omega}$. تعریف دو تزریق
+$f\colon\Pow{\omega}\to\Real$ و
+$g\colon\Real\to\Pow{\omega}$ را به‌عنوان تمرینی روشنگر واگذار می‌کنیم.
+\end{proof}
+
+\begin{prob}
+اثبات~\olref[sth][card-arithmetic][opps]{continuumis2aleph0} را با
+نشان‌دادن~$\cardle{\Pow{\omega}}{\Real}$ و
+$\cardle{\Real}{\Pow{\omega}}$ کامل کنید.
+\end{prob}
+
+\end{document}

@@ -1,0 +1,274 @@
+% Part: incompleteness
+% Chapter: arithmetization-syntax
+% Section: proofs-in-lk
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{art}{plk}
+\olsection{\usetoken{P}{derivation} در~$\Log{LK}$}
+
+\begin{explain}
+برای حسابی‌سازی !!{derivation}s باید !!{derivation}s را با اعداد بازنمایی کنیم.
+چون !!{derivation}s درخت‌هایی از سکوئنت‌ها هستند و هر استنتاج نیز
+برچسبی دارد، بازنمایی بازگشتی آشکارترین رویکرد است: !!{derivation} را
+به‌صورت چندتایی‌ای بازنمایی می‌کنیم که مؤلفه‌هایش سکوئنت پایانی،
+برچسب و بازنمایی زیر!!{derivation}sی منتهی به مقدمات آخرین استنتاج‌اند.
+\end{explain}
+
+\begin{defn}
+اگر $\Gamma$ دنباله‌ای متناهی از !!{sentence}s باشد،
+$\Gamma=\tuple{!A_1,\dots,!A_n}$، آنگاه
+$\Gn{\Gamma}=\tuple{\Gn{!A_1},\dots,\Gn{!A_n}}$.
+
+اگر $\Gamma\Sequent\Delta$ سکوئنت باشد، یک عدد گودلِ
+$\Gamma\Sequent\Delta$ عبارت است از
+\[
+\Gn{\Gamma \Sequent \Delta} = \tuple{\Gn{\Gamma}, \Gn{\Delta}}.
+\]
+
+اگر $\pi$ !!a{derivation}ی در~$\Log{LK}$ باشد، $\Gn{\pi}$ چنین تعریف
+می‌شود:
+\begin{enumerate}
+\item اگر $\pi$ فقط از سکوئنت آغازین~$\Gamma\Sequent\Delta$ تشکیل
+  شده باشد، آنگاه $\Gn{\pi}$ برابر است با
+  \[
+    \tuple{0, \Gn{\Gamma \Sequent \Delta}}.
+  \]
+\item اگر $\pi$ با استنتاجی دارای یک یا دو مقدمه پایان یابد،
+  $\Gamma\Sequent\Delta$ نتیجهٔ آن باشد، و~$\pi_1$ و~$\pi_2$
+  زیراثبات‌های بی‌واسطه‌ای باشند که به مقدمات آخرین استنتاج منتهی
+  می‌شوند، آنگاه $\Gn{\pi}$ به‌ترتیب برابر است با
+  \begin{align*}
+    & \tuple{1, \Gn{\pi_1}, \Gn{\Gamma \Sequent \Delta}, k} \text{ یا}\\
+    & \tuple{2, \Gn{\pi_1}, \Gn{\pi_2}, \Gn{\Gamma \Sequent \Delta}, k},
+  \end{align*}
+  که در آن~$k$، بر حسب قاعدهٔ به‌کاررفته در آخرین استنتاج، از جدول
+  زیر به دست می‌آید:
+
+  \begin{tabular}{lccccccc}
+    \text{قاعده:} & \LeftR{\Weakening} & \RightR{\Weakening} &
+    \LeftR{\Contraction} & \RightR{\Contraction} &
+    \LeftR{\Exchange} & \RightR{\Exchange} \\
+    $k$: & 1 & 2 & 3 & 4 & 5 & 6 \\[2ex]
+    \text{قاعده:} & \LeftR{\lnot} & \RightR{\lnot} &
+    \LeftR{\land} & \RightR{\land} &
+    \LeftR{\lor} & \RightR{\lor} \\
+    $k$: & 7 & 8 & 9 & 10 & 11 & 12 \\[2ex]
+    \text{قاعده:} & \LeftR{\lif} & \RightR{\lif} &
+    \LeftR{\lforall} & \RightR{\lforall} &
+    \LeftR{\lexists} & \RightR{\lexists} \\
+    $k$: & 13 & 14 & 15 & 16 & 17 & 18 \\[2ex]
+    \text{قاعده:} & \Cut & = \\
+    $k$: & 19 & 20
+  \end{tabular}
+\end{enumerate}
+\end{defn}
+
+\begin{ex}
+  !!{derivation} بسیار سادهٔ زیر را در نظر بگیرید:
+  \begin{prooftree}
+    \Axiom$!A \fCenter !A$
+    \RightLabel{\LeftR{\land}}
+    \UnaryInf$!A \land !B \fCenter !A$
+    \RightLabel{\RightR{\lif}}
+    \UnaryInf$\fCenter (!A \land !B) \lif !A$
+  \end{prooftree}
+  عدد گودل سکوئنت آغازین برابر
+  $p_0=\tuple{0,\Gn{!A\Sequent !A}}$ خواهد بود. عدد گودلِ
+  !!{derivation} منتهی به نتیجهٔ~$\LeftR{\land}$ برابر
+  $p_1=\tuple{1,p_0,\Gn{!A\land !B\Sequent !A},9}$ خواهد بود
+  ($1$ چون~$\LeftR{\land}$ یک مقدمه دارد، سپس عدد گودل نتیجهٔ
+  $!A\land !B\Sequent !A$، و~$9$ عدد رمزکنندهٔ~$\LeftR{\land}$ است).
+  بنابراین عدد گودل کل !!{derivation} برابر
+  $\tuple{1,p_1,\Gn{\Sequent(!A\land !B)\lif !A},14}$ است؛ یعنی
+  \[
+  \tuple{1, \tuple{1, \tuple{0, \Gn{!A \Sequent !A}}, \Gn{!A \land !B \Sequent !A}, 9},
+    \Gn{\Sequent (!A \land !B) \lif !A}, 14}.
+  \]
+\end{ex}
+
+\begin{explain}
+پس از تثبیت بازنمایی !!{derivation}s، باید نشان دهیم می‌توانیم چنین
+!!{derivation}sیی را به‌طور بازگشتی اولیه دست‌کاری کنیم و ویژگی‌ها و
+روابط اساسی‌شان را نیز چنین بیان کنیم. بعضی عملیات ساده‌اند: مثلاً
+با داشتن عدد گودل~$p$ از !!a{derivation}ی،
+$\fn{EndSeq}(p)=(p)_{(p)_0+1}$ عدد گودل سکوئنت پایانی و
+$\fn{LastRule}(p)=(p)_{(p)_0+2}$ رمز آخرین قاعده را به دست می‌دهد.
+ویژگی~$\fn{Sequent}(s)$ که با
+\[
+  \len{s} = 2 \land \bforall{i<\len{(s)_0} + \len{(s)_1}}{\fn{Sent}(((s)_0 \concat (s)_1)_i)}
+\]
+تعریف می‌شود، دربارهٔ~$s$ برقرار است اگر و تنها اگر $s$ عدد گودل
+سکوئنتی متشکل از !!{sentence}s باشد. بعضی موارد بسیار دشوارترند. دست‌کم
+طرحی از چگونگی انجامشان می‌دهیم. هدف، نشان‌دادن این است که رابطهٔ
+«$\pi$ !!a{derivation}ی از~$!A$ بر پایهٔ~$\Gamma$ است» رابطه‌ای بازگشتی
+اولیه میان اعداد گودل~$\pi$ و~$!A$ است.
+\end{explain}
+
+\begin{prop}\ollabel{prop:followsby}
+  ویژگی~$\fn{Correct}(p)$ که برقرار است اگر و تنها اگر آخرین استنتاج
+  در !!{derivation}~$\pi$ با عدد گودل~$p$ درست باشد، بازگشتی اولیه است.
+\end{prop}
+
+\begin{proof}
+  $\Gamma\Sequent\Delta$ سکوئنت آغازین است اگر یا !!a{sentence}ای چون
+  $!A$ وجود داشته باشد که~$\Gamma\Sequent\Delta$ همان
+  $!A\Sequent !A$ باشد، یا ترمی چون~$t$ وجود داشته باشد که
+  $\Gamma\Sequent\Delta$ همان~$\emptyset\Sequent\eq[t][t]$ باشد. بر
+  حسب اعداد گودل، $\fn{InitSeq}(s)$ برقرار است اگر و تنها اگر
+  \begin{align*}
+  \bexists{x < s}{} (\fn{Sent}(x) & \land
+  s = \tuple{\tuple{x},\tuple{x}})
+  \lor {}\\
+  \bexists{t<s}{} (\fn{Term}(t) & \land
+  s = \tuple{0, \tuple{\Gn{{\eq}(} \concat t \concat \Gn{,} \concat t \concat \Gn{)}}}).
+  \end{align*}
+
+  همچنین باید نشان دهیم به ازای هر قاعدهٔ استنتاج~$R$، رابطهٔ
+  $\fn{FollowsBy}_R(p)$ بازگشتی اولیه است؛
+  $\fn{FollowsBy}_R(p)$ برقرار است اگر و
+  تنها اگر $p$ عدد گودل !!{derivation}~$\pi$ باشد و سکوئنت پایانی~$\pi$
+  با کاربرد درست~$R$ از زیر!!{derivation}sی بی‌واسطهٔ~$\pi$ نتیجه شود.
+
+  حالت ساده، قاعدهٔ~$\RightR{\land}$ است. اگر $\pi$ با استنتاج درست
+  $\RightR{\land}$ پایان یابد، چنین شکلی دارد:
+  \begin{prooftree}
+    \AxiomC{}
+    \RightLabel{$\pi_1$}
+    \Deduce$\Gamma \fCenter \Delta, !A$
+
+    \AxiomC{}
+    \RightLabel{$\pi_2$}
+    \Deduce$\Gamma \fCenter \Delta, !B$
+
+    \RightLabel{\RightR\land}
+    \BinaryInf$\Gamma \fCenter \Delta, !A \land !B$
+  \end{prooftree}
+  پس آخرین استنتاج در !!{derivation}~$\pi$ کاربردی درست از~$\RightR{\land}$ است اگر
+  و تنها اگر دنباله‌های !!{sentence}sیِ~$\Gamma$ و~$\Delta$ و دو مورد از
+  !!{sentence}s، یعنی~$!A$ و~$!B$ وجود داشته باشند به‌گونه‌ای که سکوئنت پایانی
+  $\pi_1$ برابر~$\Gamma\Sequent\Delta,!A$، سکوئنت پایانی~$\pi_2$
+  برابر~$\Gamma\Sequent\Delta,!B$، و سکوئنت پایانی~$\pi$ برابر
+  $\Gamma\Sequent\Delta,!A\land !B$ باشد. فقط باید این را به اعداد
+  گودل ترجمه کنیم. اگر $s=\Gn{\Gamma\Sequent\Delta}$، آنگاه
+  $(s)_0=\Gn{\Gamma}$ و~$(s)_1=\Gn{\Delta}$. بنابراین
+  $\fn{FollowsBy}_{\RightR{\land}}(p)$ برقرار است اگر و تنها اگر
+\begin{align*}
+& \bexists{g < p}{\bexists{d < p}{\bexists{a < p}{\bexists{b < p}{\quad}}}} \\
+& \qquad \fn{EndSeq}(p) =
+  \tuple{g, d \concat
+    \tuple{\Gn{(} \concat a \concat \Gn{\land} \concat b \concat \Gn{)}}} \land {} \\
+& \qquad \fn{EndSeq}((p)_1) = \tuple{g, d \concat \tuple{a}} \land {}\\
+& \qquad \fn{EndSeq}((p)_2) = \tuple{g, d \concat \tuple{b}} \land {}\\
+& \qquad (p)_0 = 2 \land \fn{LastRule}(p) = 10.
+\end{align*}
+سطرها به‌ترتیب بیان می‌کنند «دنباله‌ای~($\Gamma$) با عدد گودل~$g$،
+دنباله‌ای~($\Delta$) با عدد گودل~$d$، !!a{formula}ی~($!A$) با عدد
+گودل~$a$ و !!a{formula}ی~($!B$) با عدد گودل~$b$ وجود دارند» به‌گونه‌ای
+که «سکوئنت پایانی~$\pi$ برابر~$\Gamma\Sequent\Delta,!A\land !B$»،
+«سکوئنت پایانی~$\pi_1$ برابر~$\Gamma\Sequent\Delta,!A$»، «سکوئنت
+پایانی~$\pi_2$ برابر~$\Gamma\Sequent\Delta,!B$»، و «$\pi$ دو
+زیر‌اشتقاق بی‌واسطه دارد و آخرین قاعدهٔ استنتاج
+$\RightR\land$ (با شمارهٔ~$10$) است».
+
+آخرین استنتاج در~$\pi$ کاربردی درست از~$\RightR\lexists$ است اگر و
+تنها اگر دنباله‌های~$\Gamma$ و~$\Delta$، !!a{formula}~$!A$، متغیر~$x$
+و ترم بستهٔ~$t$ وجود داشته باشند به‌گونه‌ای که سکوئنت پایانی~$\pi$ برابر
+$\Gamma\Sequent\Delta,\lexists[x][!A]$ و سکوئنت پایانی~$\pi_1$
+برابر~$\Gamma\Sequent\Delta,\Subst{!A}{t}{x}$ باشد. پس بر حسب اعداد
+گودل، $\fn{FollowsBy}_{\RightR\lexists}(p)$ برقرار است اگر و تنها اگر
+\begin{align*}
+  & \bexists{g<p}{\bexists{d<p}{\bexists{a<p}{\bexists{x<p}{\bexists{t<p}{\quad}}}}}\\
+  & \qquad \fn{Var}(x) \land \fn{ClTerm}(t) \land {}\\
+  & \qquad \fn{EndSeq}(p) =
+  \tuple{
+    g,
+    d \concat \tuple{\Gn{\lexists} \concat x \concat a}
+  } \land {}\\
+  & \qquad \fn{EndSeq}((p)_1) =
+  \tuple{
+    g,
+    d \concat \tuple{\fn{Subst}(a, t, x)}
+  } \land {}\\
+  & \qquad (p)_0 = 1 \land \fn{LastRule}(p) = 18.
+\end{align*}
+سپس $\fn{Correct}(p)$ را چنین تعریف می‌کنیم:
+\begin{multline*}
+  \fn{Sequent}(\fn{EndSeq}(p)) \land {}\\
+  [(\fn{LastRule}(p) = 1 \land
+  \fn{FollowsBy}_{\LeftR\Weakening}(p)) \lor \dots \lor {}\\
+  (\fn{LastRule}(p) = 20 \land \fn{FollowsBy}_{\eq}(p)) \lor {}\\
+  (p)_0 = 0 \land \fn{InitSeq}(\fn{EndSeq}(p))]
+\end{multline*}
+سطر نخست تضمین می‌کند سکوئنت پایانی~$p$ واقعاً سکوئنتی متشکل از
+!!{sentence}sست. سطر آخر حالتی را پوشش می‌دهد که $p$ فقط یک سکوئنت
+آغازین است.
+\end{proof}
+
+\begin{prob}
+  ویژگی‌های زیر را مانند \olref[inc][art][plk]{prop:followsby} تعریف
+  کنید:
+  \begin{enumerate}
+  \item $\fn{FollowsBy}_{\Cut}(p)$؛
+  \item $\fn{FollowsBy}_{\LeftR\lif}(p)$؛
+  \item $\fn{FollowsBy}_{\eq}(p)$؛
+  \item $\fn{FollowsBy}_{\RightR{\lforall}}(p)$.
+  \end{enumerate}
+  برای مورد آخر باید همچنین نشان دهید می‌توان به‌طور بازگشتی اولیه
+  آزمود که آخرین استنتاجِ !!{derivation} با عدد گودل~$p$ شرط متغیر ویژه
+  را برآورده می‌کند؛ یعنی متغیر ویژهٔ~$a$ برای~$\RightR{\lforall}$
+  در سکوئنت پایانی رخ نمی‌دهد.
+  \end{prob}
+
+
+\begin{prop}
+  \ollabel{prop:deriv}
+  رابطهٔ~$\fn{Deriv}(p)$ که برقرار است اگر $p$ عدد گودل یک
+  !!{derivation} درست~$\pi$ باشد، بازگشتی اولیه است.
+\end{prop}
+
+\begin{proof}
+  !!^a{derivation}~$\pi$ درست است اگر هر استنتاج آن کاربردی درست از یک
+  قاعده باشد؛ یعنی اگر هر زیر!!{derivation}s آن با استنتاجی درست پایان
+  یابد. پس $\fn{Deriv}(p)$ اگر و تنها اگر
+  \[
+  \bforall{i<\len{\fn{SubtreeSeq}(p)}}{\fn{Correct}((\fn{SubtreeSeq}(p))_i)}.
+  \]
+\end{proof}
+
+
+\begin{prop}
+فرض کنید $\Gamma$ مجموعه‌ای بازگشتی اولیه از !!{sentence}s باشد. آنگاه
+رابطهٔ~$\Prf[\Gamma](x,y)$ که بیان می‌کند «$x$ رمز !!a{derivation}~$\pi$
+از~$\Gamma_0\Sequent !A$ برای بعضی~$\Gamma_0\subseteq\Gamma$ متناهی
+است و~$y$ عدد گودل~$!A$ است»، بازگشتی اولیه است.
+\end{prop}
+
+\begin{proof}
+فرض کنید «$y\in\Gamma$» با محمول بازگشتی اولیهٔ~$R_\Gamma(y)$ داده
+شود. باید نشان دهیم $\Prf[\Gamma](x,y)$، که برقرار است اگر و تنها اگر
+$y$ عدد گودل جملهٔ~$!A$ و~$x$ رمز یک !!{derivation}~$\Log{LK}$ با
+سکوئنت پایانی~$\Gamma_0\Sequent !A$ باشد، بازگشتی اولیه است.
+
+بنا بر گزارهٔ پیشین، ویژگی~$\fn{Deriv}(x)$ که برقرار است اگر و تنها
+اگر $x$ رمز !!{derivation} درست~$\pi$ در~$\Log{LK}$ باشد بازگشتی اولیه
+است. اگر $x$ چنین رمزی باشد، $\fn{EndSeq}(x)$ رمز سکوئنت پایانی
+$\pi$ است؛ پس $(\fn{EndSeq}(x))_0$ رمز سمت چپ سکوئنت پایانی و
+$(\fn{EndSeq}(x))_1$ رمز سمت راست آن است. بنابراین می‌توانیم
+«سمت راست سکوئنت پایانی~$\pi$ برابر~$!A$ است» را با
+$\len{(\fn{EndSeq}(x))_1}=1\land
+((\fn{EndSeq}(x))_1)_0=y$ بیان کنیم. سمت چپ سکوئنت پایانی~$\pi$
+البته خودبه‌خود متناهی است؛ فقط باید بیان کنیم هر جملهٔ آن در~$\Gamma$
+است. پس می‌توانیم $\Prf[\Gamma](x,y)$ را چنین تعریف کنیم:
+\begin{align*}
+\Prf[\Gamma](x, y) \defiff {}&
+\fn{Deriv}(x) \land {} \\
+& \bforall{i <
+  \len{(\fn{EndSeq}(x))_0}}{R_\Gamma(((\fn{EndSeq}(x))_0)_i)} \land {}\\
+& \len{(\fn{EndSeq}(x))_1} = 1 \land ((\fn{EndSeq}(x))_1)_0 = y.
+\end{align*}
+\end{proof}
+
+\end{document}

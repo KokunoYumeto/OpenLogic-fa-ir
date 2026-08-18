@@ -1,0 +1,79 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{ordinals}{ordtype}
+\olsection{اعداد ترتیبی به‌مثابه نوع‌های ترتیب}
+
+اکنون که با در اختیار داشتن جایگزینی در~$\ZFminus$ کار می‌کنیم، سرانجام
+می‌توانیم نتیجه‌ای را اثبات کنیم که در پی آن بوده‌ایم:
+
+\begin{thm}\ollabel{thmOrdinalRepresentation}
+هر خوش‌ترتیب با یک عدد ترتیبی یکتا هم‌ریخت است.
+\end{thm}
+
+\begin{proof}
+فرض کنید~$\tuple{A,<}$ یک خوش‌ترتیب باشد. بنا
+بر~\olref[basic]{ordisoidentity}، این خوش‌ترتیب حداکثر با یک عدد ترتیبی
+هم‌ریخت است. پس برای برهان خلف فرض کنید~$\tuple{A,<}$ با \emph{هیچ}
+عدد ترتیبی‌ای هم‌ریخت نیست. ابتدا «$\tuple{A,<}$ را تا حد ممکن کوچک
+می‌کنیم». به‌تفصیل: اگر قطعهٔ آغازین سره‌ای مانند~$\tuple{A_a,<_a}$
+با هیچ عدد ترتیبی هم‌ریخت نباشد، عضو کمینه‌ای~$a\in A$ با این ویژگی
+وجود دارد؛ در این صورت بگذارید~$B=A_a$ و
+$\mathord{\lessdot}=\mathord{<_a}$. در غیر این صورت، بگذارید~$B=A$ و
+$\mathord{\lessdot}=\mathord{<}$.
+
+بنا بر تعریف، هر قطعهٔ آغازین سرهٔ~$B$ با عدد ترتیبی‌ای هم‌ریخت است که،
+چنان‌که در بالا دیدیم، یکتاست. بنابراین با جایگزینی، مجموعهٔ زیر وجود دارد
+و یک تابع است:
+\[
+	f = \Setabs{\tuple{\beta, b}}{b \in B\text{ و }\ordeq{\beta}{\tuple{B_b, \lessdot_b}}}
+\]
+برای تکمیل برهان خلف نشان می‌دهیم~$f$، برای یک عدد ترتیبی~$\alpha$،
+هم‌ریختی‌ای~$\alpha\to B$ است.
+
+آشکار است که~$\ran{f}=B$. همچنین بنا بر~\olref[iso]{lemordsegments}،
+$f$ ترتیب را حفظ می‌کند؛ یعنی~$\gamma\in\beta$ اگر و تنها اگر
+$f(\gamma)\lessdot f(\beta)$. برای نشان‌دادن اینکه~$\dom{f}$ عدد ترتیبی
+است، بنا بر~\olref[basic]{corordtransitiveord} کافی است نشان دهیم~$\dom{f}$
+متعدی است. پس~$\beta\in\dom{f}$ را ثابت بگیرید؛ یعنی برای یک~$b$،
+$\ordeq{\beta}{\tuple{B_b, \lessdot_b}}$. اگر~$\gamma\in\beta$، آنگاه
+بنا بر~\olref[iso]{wellordinitialsegment}، $\gamma\in\dom{f}$. با تعمیم،
+$\beta\subseteq\dom{f}$.
+\end{proof}
+
+این نتیجه تعریف زیر را مجاز می‌سازد؛ تعریفی که از~\olref[vn]{sec} در پی
+ارائهٔ آن بوده‌ایم:
+
+\begin{defn}
+اگر~$\tuple{A,<}$ یک خوش‌ترتیب باشد، نوع ترتیب آن، یعنی~$\ordtype{A,<}$،
+عدد ترتیبی یکتای~$\alpha$ است به‌طوری‌که
+$\ordeq{\tuple{A,<}}{\alpha}$.
+\end{defn}
+
+افزون بر این، این تعریف دو اصل خوشایند زیر را مجاز می‌سازد:
+
+\begin{cor}\ollabel{ordtypesworklikeyouwant}
+اگر~$\tuple{A,<}$ و~$\tuple{B,\lessdot}$ خوش‌ترتیب باشند:
+\begin{align*}
+	\ordtype{A, <} = \ordtype{B, \lessdot}&\text{ اگر و تنها اگر }\ordeq{\tuple{A, <}}{\tuple{B, \lessdot}}\\
+	\ordtype{A, <} \in \ordtype{B, \lessdot}&\text{ اگر و تنها اگر }\ordeq{\tuple{A, <}}{\tuple{B_b, \lessdot_b}}\text{ برای یک }b \in B
+\end{align*}
+\end{cor}
+
+\begin{proof}
+تساوی بنا بر~\olref[basic]{ordisoidentity} برقرار است. برای اثبات ادعای
+دوم، بگذارید~$\ordtype{A,<}=\alpha$ و~$\ordtype{B,\lessdot}=\beta$، و
+بگذارید~$f\colon\beta\to B$ تابع زیربناییِ هم‌ریختی ترتیبی میان~$\beta$
+و~$\tuple{B,\lessdot}$ باشد. آنگاه:
+\begin{align*}
+	\alpha \in \beta&\text{ اگر و تنها اگر }\funrestrictionto{f}{\alpha} \colon \alpha \to B_{f(\alpha)}\text{ یک هم‌ریختی باشد}\\
+	&\text{ اگر و تنها اگر }\ordeq{\tuple{A, <}}{\tuple{B_{f(\alpha)}, \lessdot_{f(\alpha)}}}\\
+	&\text{ اگر و تنها اگر }\ordeq{\tuple{A, <}}{\tuple{B_b, \lessdot_b}}\text{ برای یک $b \in B$}
+\end{align*}
+بنا بر~\olref[iso]{ordisounique}،
+\olref[iso]{wellordinitialsegment} و
+\olref[basic]{ordissetofsmallerord}.
+\end{proof}
+
+\end{document}

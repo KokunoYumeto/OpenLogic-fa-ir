@@ -1,0 +1,171 @@
+% Part: first-order-logic
+% Chapter: completeness
+% Section: compactness-direct
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{com}{cpd}}
+      {\olfileid{pl}{com}{cpd}}
+
+\olsection{اثبات مستقیم قضیهٔ فشردگی}
+
+می‌توانیم قضیهٔ فشردگی را بی‌آنکه به قضیهٔ تمامیت متوسل شویم، مستقیماً
+و با استفاده از همان ایده‌های اثبات قضیهٔ تمامیت ثابت کنیم. در اثبات
+قضیهٔ تمامیت، با مجموعهٔ سازگاری چون~$\Gamma$ از !!{sentence}s آغاز
+کردیم، آن را به مجموعهٔ سازگار\iftag{FOL}{، اشباع‌شده}{} و
+!!{complete}ی چون~$\Gamma^*$ از !!{sentence}s گسترش دادیم، و سپس نشان
+دادیم که در \iftag{FOL}{مدل ترمی~$\Struct{M(\Gamma^*)}$}{!!{valuation}
+~$\pAssign{v(\Gamma^*)}$} ساخته‌شده از $\Gamma^*$، همهٔ !!{sentence}s
+موجود در~$\Gamma$ صادق‌اند؛ پس $\Gamma$ ارضاپذیر است.
+
+از همین روش می‌توانیم برای نشان‌دادن ارضاپذیری مجموعه‌ای متناهی‌وار
+ارضاپذیر از جمله‌ها استفاده کنیم. تنها باید صورت‌های متناظر نتایج منتهی
+به لم صدق را اثبات کنیم که در آن‌ها «سازگار» با «متناهی‌وار ارضاپذیر»
+جایگزین شده است.
+
+\begin{prop}
+\ollabel{prop:fsat-ccs}
+فرض کنید $\Gamma$ !!{complete} و متناهی‌وار ارضاپذیر باشد. آن‌گاه:
+\begin{enumerate}
+\tagitem{prvAnd}{$(!A \land !B) \in \Gamma$
+  اگر و تنها اگر هم $!A \in \Gamma$ و هم $!B \in \Gamma$.}{}
+
+\tagitem{prvOr}{$(!A \lor !B) \in \Gamma$ اگر و تنها اگر
+  $!A \in \Gamma$ یا $!B \in \Gamma$.}{}
+
+\tagitem{prvIf}{$(!A \lif !B) \in \Gamma$ اگر و تنها اگر
+  $!A \notin \Gamma$ یا $!B \in \Gamma$.}{}
+\end{enumerate}
+\end{prop}
+
+\tagprob{FOL}
+\begin{prob}
+\olref[fol][com][cpd]{prop:fsat-ccs} را بدون استفاده از $\Proves$
+اثبات کنید.
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+\olref[pl][com][cpd]{prop:fsat-ccs} را بدون استفاده از $\Proves$
+اثبات کنید.
+\end{prob}
+\tagendprob
+
+\iftag{FOL}{%
+\begin{lem}
+\ollabel{lem:fsat-henkin} هر مجموعهٔ متناهی‌وار ارضاپذیر~$\Gamma$ را
+می‌توان به مجموعهٔ متناهی‌وار ارضاپذیر و اشباع‌شده‌ای چون~$\Gamma'$
+گسترش داد.
+\end{lem}
+}{}
+
+\tagprob{FOL}
+\begin{prob}
+\olref[fol][com][cpd]{lem:fsat-henkin} را اثبات کنید. (راهنمایی: گام
+اساسی این است که بدون هیچ توسل به !!{derivation}s یا سازگاری نشان دهید
+اگر $\Gamma_n$ متناهی‌وار ارضاپذیر باشد، $\Gamma_n \cup \{!D_n\}$ نیز
+متناهی‌وار ارضاپذیر است.)
+\end{prob}
+\tagendprob
+
+\iftag{FOL}{
+\begin{prop}\ollabel{prop:fsat-instances}
+فرض کنید $\Gamma$ کامل، متناهی‌وار ارضاپذیر و اشباع‌شده باشد.
+\begin{tagenumerate}{prvEx,prvAll}
+\tagitem{prvEx}{$\lexists[x][!A(x)] \in \Gamma$ اگر و تنها اگر برای
+  دست‌کم یک ترم بستهٔ~$t$، $!A(t) \in \Gamma$.}{}
+\tagitem{prvAll}{$\lforall[x][!A(x)] \in \Gamma$ اگر و تنها اگر برای
+  همهٔ ترم‌های بستهٔ~$t$، $!A(t) \in \Gamma$.}{}
+\end{tagenumerate}
+\end{prop}
+}{}
+
+\tagprob{FOL}
+\begin{prob}
+\olref[fol][com][cpd]{prop:fsat-instances} را اثبات کنید.
+\end{prob}
+\tagendprob
+
+\begin{lem}
+\ollabel{lem:fsat-lindenbaum} هر مجموعهٔ متناهی‌وار ارضاپذیر~$\Gamma$
+را می‌توان به مجموعهٔ !!a{complete} و متناهی‌وار ارضاپذیر~$\Gamma^*$
+گسترش داد.
+\end{lem}
+
+\tagprob{FOL}
+\begin{prob}
+\olref[fol][com][cpd]{lem:fsat-lindenbaum} را اثبات کنید. (راهنمایی:
+گام اساسی این است که نشان دهید اگر $\Gamma_n$ متناهی‌وار ارضاپذیر
+باشد، دست‌کم یکی از $\Gamma_n \cup \{!A_n\}$ و
+$\Gamma_n \cup \{\lnot !A_n\}$ متناهی‌وار ارضاپذیر است.)
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+\olref[pl][com][cpd]{lem:fsat-lindenbaum} را اثبات کنید. (راهنمایی:
+گام اساسی این است که نشان دهید اگر $\Gamma_n$ متناهی‌وار ارضاپذیر
+باشد، دست‌کم یکی از $\Gamma_n \cup \{!A_n\}$ و
+$\Gamma_n \cup \{\lnot !A_n\}$ متناهی‌وار ارضاپذیر است.)
+\end{prob}
+\tagendprob
+
+\begin{thm}[فشردگی]
+\ollabel{thm:compactness-direct} $\Gamma$ ارضاپذیر است اگر و تنها اگر
+متناهی‌وار ارضاپذیر باشد.
+\end{thm}
+
+\begin{proof}
+اگر $\Gamma$ ارضاپذیر باشد،
+\iftag{FOL}{!!a{structure}~$\Struct{M}$}{!!a{valuation}~$\pAssign{v}$}
+وجود دارد به‌طوری‌که برای هر $!A \in \Gamma$،
+$\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$. البته همین
+\iftag{FOL}{$\Struct{M}$}{$\pAssign{v}$} هر زیرمجموعهٔ متناهی
+از~$\Gamma$ را نیز ارضا می‌کند؛ پس $\Gamma$ متناهی‌وار ارضاپذیر است.
+
+اکنون فرض کنید $\Gamma$ متناهی‌وار ارضاپذیر باشد.\iftag{FOL}{ بنا بر
+  \olref{lem:fsat-henkin}، مجموعهٔ متناهی‌وار ارضاپذیر و اشباع‌شده‌ای
+  چون $\Gamma' \supseteq \Gamma$ وجود دارد.}{} بنا بر
+\olref{lem:fsat-lindenbaum}، $\iftag{FOL}{\Gamma'}{\Gamma}$ را می‌توان
+به مجموعهٔ !!a{complete} و متناهی‌وار ارضاپذیر~$\Gamma^*$ گسترش
+داد\iftag{FOL}{، و $\Gamma^*$ همچنان اشباع‌شده است}{}. مطابق
+\olref[mod]{defn:termmodel}، \iftag{FOL}{مدل ترمی
+~$\Struct{M(\Gamma^*)}$}{!!{valuation}~$\pAssign{v(\Gamma^*)}$} را
+بسازید.\iftag{FOL}{ توجه کنید که \olref[mod]{prop:quant-termmodel} بر
+سازگار بودن $\Gamma^*$ (یا حتی !!{complete} یا اشباع‌شده بودن آن)
+متکی نبود، بلکه تنها بر این واقعیت متکی بود که
+$\Struct{M(\Gamma^*)}$ پوشیده است.}{}
+\iftag{FOL}{اگر $\Gamma$ شامل~$\eq$ نباشد، }{}اثبات لم صدق
+(\olref[mod]{lem:truth}) با جایگزین‌کردن ارجاع‌های
+\olref[ccs]{prop:ccs} با ارجاع‌های \olref{prop:fsat-ccs}
+\iftag{FOL}{و ارجاع‌های \olref[hen]{prop:saturated-instances} با
+ارجاع‌های \olref{prop:fsat-instances}}{} عیناً برقرار می‌ماند.
+\iftag{FOL}{ اگر $\Gamma$ شامل~$\eq$ باشد، رابطهٔ~$\approx$ و ساختار
+خارج‌قسمتی~$\equivclass{M}{\approx}$ را مانند \olref[ide]{lem:truth}
+می‌سازیم. اثبات لم صدق برای این ساختار نیز با همان جایگزینی ارجاع‌ها
+عیناً برقرار است. در هر دو حالت، ساختار حاصل همهٔ جمله‌های~$\Gamma$ را
+ارضا می‌کند.}{ در نتیجه، ارزش‌گذاری حاصل همهٔ فرمول‌های~$\Gamma$ را
+ارضا می‌کند.}
+\end{proof}
+
+\tagprob{FOL}
+\begin{prob}
+اثبات کامل لم صدق (\olref[fol][com][mod]{lem:truth}) را در صورتی که
+برای اثبات \olref[fol][com][cpd]{thm:compactness-direct} لازم است
+بنویسید.
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+اثبات کامل لم صدق (\olref[pl][com][mod]{lem:truth}) را در صورتی که
+برای اثبات \olref[pl][com][cpd]{thm:compactness-direct} لازم است
+بنویسید.
+\end{prob}
+\tagendprob
+
+\end{document}

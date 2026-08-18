@@ -1,0 +1,52 @@
+% Part: first-order-logic
+% Chapter: axiomatic-deduction
+% Section: provability-quantifiers
+
+% verification of properties of provability needed for maximally
+% consistent sets in the completeness chapter.
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{axd}{qpr}
+
+\olsection{\usetoken{S}{derivability} و سورها}
+
+\begin{explain}
+  قضیهٔ تمامیت همچنین مستلزم آن است که اشتقاق‌های اصل‌موضوعی واقعیت‌های
+  مربوط به~$\Proves$ را که در این بخش اثبات شده‌اند به دست دهند.
+\end{explain}
+
+\begin{thm}
+\ollabel{thm:strong-generalization} اگر $c$~!!a{constant}ای باشد که در
+$\Gamma$ یا $!A(x)$ رخ نمی‌دهد و $\Gamma \Proves !A(c)$، آنگاه
+$\Gamma \Proves \lforall[x][!A(x)]$.
+\end{thm}
+
+\begin{proof}
+بنا بر قضیهٔ استنتاج، $\Gamma \Proves \ltrue \lif !A(c)$. چون $c$ در
+$\Gamma$ یا~$\ltrue$ رخ نمی‌دهد، به دست می‌آوریم
+$\Gamma \Proves \ltrue \lif \lforall[x][!A(x)]$. همچنین
+$\Gamma \Proves \ltrue$؛ پس بنا بر \olref[ded]{prop:mp}،
+$\Gamma \Proves \lforall[x][!A(x)]$.
+\end{proof}
+
+\begin{prop}
+\ollabel{prop:provability-quantifiers}
+برای هر ترم بستهٔ $t$:
+\begin{tagenumerate}{prvEx,prvAll}
+\tagitem{prvEx}{$!A(t) \Proves \lexists[x][!A(x)]$.}{}
+
+\tagitem{prvAll}{$\lforall[x][!A(x)] \Proves !A(t)$.}{}
+\end{tagenumerate}
+\end{prop}
+
+\begin{proof}
+\begin{tagenumerate}{prvEx,prvAll}
+\tagitem{prvEx}{بنا بر \olref[qua]{ax:q2} و قضیهٔ استنتاج.}{}
+\tagitem{prvAll}{بنا بر \olref[qua]{ax:q1} و قضیهٔ استنتاج.}{}
+\end{tagenumerate}
+\end{proof}
+
+\end{document}

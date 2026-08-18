@@ -1,0 +1,63 @@
+% Part: applied-modal-logics
+% Chapter: temporal-logic
+% Section: properties-accessibility
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{aml}{tl}{acc}
+
+\olsection{خواص قاب‌های زمانی}
+
+چون مدل‌های زمانی ما هیچ شرطی بر رابطهٔ~$\prec$ تحمیل نمی‌کنند، تنها
+اصل آشنایی که در همهٔ مدل‌ها برقرار است~$K$، یا همتاهای آن
+$K_{\Gtemp}$ و~$K_{\Htemp}$، است:
+\begin{align*}
+\tag{$K_{\Gtemp}$}  \Gtemp (p \to q) & \to (\Gtemp p \to \Gtemp q)\\
+\tag{$K_{\Htemp}$}  \Htemp (p \to q) & \to (\Htemp p \to \Htemp q)
+\end{align*}
+
+بااین‌حال، اگر بخواهیم مدل‌هایمان شرایط سخت‌گیرانه‌تری بر چگونگی
+بازنمایی زمان تحمیل کنند، برای نمونه با تضمین اینکه~$\prec$ ترتیبی
+خطی است، اعتبارهای دیگری در مدل‌هایمان به دست خواهیم آورد.
+
+\begin{table}[t]
+  \begin{tabular}{| p{.48\textwidth} || p{.48\textwidth} |}
+    \hline
+    {\emph{اگر~$\prec$ چنین باشد:}} & {\emph{آنگاه این عبارت
+      در~$\mModel{M}$ صادق است:}} \\
+    \hline \hline
+    \emph{متعدی}: \newline
+    $\forall u \forall v \forall w ((u \prec v \land v \prec w) \lif u \prec w)$ & 
+    $\Ftemp \Ftemp p \lif \Ftemp p$  \\
+    \hline 
+    \emph{خطی}: \newline
+    $\forall w \forall v (w \prec v \lor w = v \lor v \prec w)$ &  
+    $(\Ftemp \Ptemp p \lor \Ptemp \Ftemp p) \lif (\Ptemp p \lor p \lor \Ftemp p)$\\
+    \hline
+    \emph{چگال}: \newline
+    $\forall w \forall v (w \prec v \to \exists u(w \prec u \land u \prec v))$ &  
+    $\Ftemp p \lif \Ftemp \Ftemp p$ \\
+    \hline
+    \emph{بی‌کران (گذشته)}: \newline
+    $\forall w \exists v( v \prec w)$ &  
+    $\Htemp p \to \Ptemp p$ \\
+    \hline
+    \emph{بی‌کران (آینده)}: \newline
+    $\forall w \exists v( w \prec v)$ &  
+    $\Gtemp p \to \Ftemp p$ \\
+    \hline
+  \end{tabular}
+  \caption{برخی خواص تناظر قاب‌های زمانی.}
+  \ollabel{tab:correspondence}
+\end{table} 
+
+چند خاصیتِ~\olref{tab:correspondence} ممکن است برای مدلی که بناست زمان
+را بازنمایی کند مطلوب به نظر برسند. بااین‌حال، توجه کنید هرچند می‌توانیم
+هر شرط دلخواهی بر رابطهٔ~$\prec$ تحمیل کنیم، همهٔ شرایط با
+!!{formula}هایی متناظر نیستند که در زبان منطق زمانی بیان‌پذیر باشند.
+برای نمونه، بازتاب‌ناپذیری، یا این اندیشه که~$\forall w \lnot (w
+\prec w)$، هیچ فرمول متناظری در منطق زمانی ندارد.
+
+\end{document}

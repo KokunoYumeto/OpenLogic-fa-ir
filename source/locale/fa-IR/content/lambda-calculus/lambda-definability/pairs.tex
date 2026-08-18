@@ -1,0 +1,54 @@
+% Part: lambda-calculus
+% Chapter: lambda-definability
+% Section: pairs
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{ldf}{pai}
+\olsection{زوج‌ها و تابع پیشین}
+
+\begin{defn}
+زوج~$M$ و~$N$ (با نماد~$\tuple{M,N}$) چنین تعریف می‌شود:
+\[
+\tuple{M,N} \ident \lambd[f][fMN].
+\]
+\end{defn}
+  
+به‌طور شهودی، زوج تابعی است که تابعی را می‌پذیرد و آن تابع را بر دو
+مؤلفهٔ زوج اعمال می‌کند. بر پایهٔ این ایده، سازندهٔ زیر را داریم که دو
+ترم را می‌پذیرد و زوجی شامل آن‌ها بازمی‌گرداند:
+\[
+  \fn{Pair} \ident \lambd[mn][\lambd[f][fmn]]
+\]
+همچنین می‌خواهیم با داشتن یک زوج بتوانیم مؤلفه‌های آن را بازیابی کنیم.
+برای این کار به دو تابع دسترسی نیاز داریم که یک زوج را به‌عنوان آرگومان
+می‌پذیرند و مؤلفهٔ نخست یا دوم آن را بازمی‌گردانند:
+\begin{align*}
+  \fn{Fst} & \ident \lambd[p][p(\lambd[mn][m])]\\
+  \fn{Snd} & \ident \lambd[p][p(\lambd[mn][n])]
+\end{align*}
+
+\begin{prob}
+  توضیح دهید چرا توابع دسترسی~$\fn{Fst}$ و~$\fn{Snd}$ درست کار می‌کنند.
+\end{prob}
+
+اکنون با استفاده از زوج‌ها می‌توانیم تابع پیشین را~!!{lambda define}:
+\[
+  \fn{Pred} \ident \lambd[n][\fn{Fst}(n (\lambd[p][\tuple{\fn{Snd}\, {p}, \fn{Succ}(\fn{Snd}\, {p})}]) \tuple{\num 0, \num 0})]
+\]
+به یاد آورید که~$\num n\, f x$ به~$f^{n}(x)$ کاهش می‌یابد. در اینجا
+$f$ تابعی است که زوج~$p$ را می‌پذیرد و زوج تازه‌ای شامل مؤلفهٔ دوم~$p$
+و جانشین مؤلفهٔ دوم را بازمی‌گرداند؛ و~$x$ زوج
+$\tuple{\num 0,\num 0}$ است. بنابراین برای~$n=0$ حاصل
+$\tuple{\num 0,\num 0}$، و در غیر این صورت
+$\tuple{\num{n-1}, \num n}$ است. سپس~$\fn{Pred}$ مؤلفهٔ نخست حاصل را
+بازمی‌گرداند.
+
+تفریق را می‌توان با اعمال~$b$بارهٔ~$\fn{Pred}$ بر~$a$ تعریف کرد:
+\[
+\fn{Sub} \ident \lambd[ab][b \fn{Pred}\, a].
+\]
+    
+\end{document}

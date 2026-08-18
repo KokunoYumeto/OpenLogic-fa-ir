@@ -1,0 +1,50 @@
+% Part: first-order-logic
+% Chapter: natural-deduction
+% Section: rules-and-proofs
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{ntd}{rul}}
+      {\olfileid{pl}{ntd}{rul}}
+
+\olsection{قواعد و \usetoken{P}{derivation}}
+
+\begin{explain}
+قرار است دستگاه‌های استنتاج طبیعی با استدلال غیرصوریِ به‌کاررفته در
+برهان‌های ریاضی تناظر نزدیکی داشته باشند (و ازاین‌رو تا حدی «طبیعی»
+هستند). برهان‌های استنتاج طبیعی با فرض‌ها آغاز می‌شوند. سپس قواعد
+استنتاج اعمال می‌شوند. فرض‌ها به‌وسیلهٔ قواعد استنتاج
+\Intro{\lnot}، \Intro{\lif}، \iftag{FOL}{\Elim{\lor} و
+  \Elim{\lexists}}{ و \Elim{\lor}} «!!{discharged}» می‌شوند و برای
+روشنی، برچسب فرضِ !!{discharged} در کنار استنتاج قرار می‌گیرد.
+\end{explain}
+
+\begin{defn}[فرض]
+\emph{فرض} هر !!{sentence}ای است که در بالاترین جایگاه یکی از شاخه‌ها
+قرار گیرد.
+\end{defn}
+
+!!^{derivation}s در استنتاج طبیعی درخت‌های معینی از !!{sentence}s
+هستند که در آن‌ها بالاترین !!{sentence}s فرض‌اند؛ و اگر
+!!a{sentence} زیر یک، دو یا سه جملهٔ دیگر قرار گیرد، باید به‌درستی از
+یک قاعدهٔ استنتاج نتیجه شود. !!{sentence}s بالای استنتاج را
+\emph{مقدمات} و !!{sentence} زیر آن‌ها را \emph{نتیجهٔ} استنتاج
+می‌نامند. قواعد به‌صورت جفت می‌آیند: برای هر !!{operator} یک قاعدهٔ
+معرفی و یک قاعدهٔ حذف وجود دارد. این قواعد در نتیجه !!a{operator} را
+معرفی می‌کنند یا !!a{operator} را از مقدمه‌ای از قاعده حذف می‌کنند.
+برخی قواعد اجازه می‌دهند فرضی از نوعی معین \emph{!!{discharged}} شود.
+برای نشان‌دادن اینکه کدام فرض به‌وسیلهٔ کدام استنتاج !!{discharged}
+می‌شود، به فرض و استنتاج هر دو برچسب می‌دهیم. این امر با نوشتن فرض به
+صورت «$\Discharge{!A}{n}$» نشان داده می‌شود.
+
+% Only include this sentence is on of \land, lor, lif or lnot is defined.
+
+\iftag{notprvNot,notprvAnd,notprvOr,notprvIf}{}%
+	{مرسوم است که حتی اگر برخی از !!{operator}s تعریف شده باشند، قواعدی برای همهٔ آن‌ها، یعنی $\land$، $\lor$، $\lif$، $\lnot$ و $\lfalse$، در نظر بگیریم.}
+
+
+
+\end{document}

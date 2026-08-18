@@ -1,0 +1,86 @@
+% Part: first-order-logic
+% Chapter: proof-systems
+% Section: tableaux
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{prf}{tab}}
+      {\olfileid{pl}{prf}{tab}}
+
+\olsection{\usetoken{P}{tableau}}
+
+در حالی که بسیاری از دستگاه‌های !!{derivation} با آرایش‌هایی از !!{sentence}s
+کار می‌کنند، !!{tableau}s با !!{signed formula}s کار می‌کنند. هر
+!!^a{signed formula} زوجی است متشکل از یک علامت ارزش صدق
+($\True$ یا $\False$) و !!^a{sentence}:
+\[
+\sFmla{\True}{!A} \text{ یا } \sFmla{\False}{!A}.
+\]
+هر !!^a{tableau} از !!{signed formula}s تشکیل می‌شود که در درختی با انشعاب
+رو به پایین آرایش یافته‌اند. تابلو با شماری \emph{فرض} آغاز می‌شود و با
+!!{signed formula}s ادامه می‌یابد که از اعمال یکی از قواعد استنتاج بر یکی
+از !!{signed formula}s بالای آن حاصل شده‌اند. هر قاعده به ما امکان می‌دهد یک
+یا چند !!{signed formula} را به انتهای یک شاخه بیفزاییم، یا دو
+!!{signed formula} را در کنار هم بیفزاییم---در حالت اخیر، شاخه به دو شاخه
+تقسیم می‌شود و دو !!{signed
+  formula} افزوده‌شده انتهای آن دو شاخه را می‌سازند.
+
+قاعده‌ای که بر یک !!{signed formula} مرکب اعمال شود، به این می‌انجامد که
+!!{signed formula}s افزوده شوند؛ این‌ها زیر!!{formula}s بی‌واسطهٔ آن‌اند. قواعد
+به صورت جفت می‌آیند، یک قاعده برای هر یک از دو علامت. برای نمونه، قاعدهٔ
+$\TRule{\True}{\land}$ بر $\sFmla{\True}{!A \land !B}$ اعمال می‌شود و
+افزودن هر دو !!{signed formula} یعنی $\sFmla{\True}{!A}$ و
+~$\sFmla{\True}{!B}$ را به انتهای هر شاخه‌ای که
+$\sFmla{\True}{!A \land !B}$ را دربر دارد مجاز می‌سازد؛ و قاعدهٔ
+$\TRule{\False}{\land}$ اجازه می‌دهد شاخه با افزودن
+$\sFmla{\False}{!A}$ و $\sFmla{\False}{!B}$ در کنار هم منشعب شود. هر
+!!^a{tableau} بسته است هرگاه تک‌تک شاخه‌هایش یک جفت متناظر از
+!!{signed formula}s، یعنی $\sFmla{\True}{!A}$ و
+$\sFmla{\False}{!A}$، را دربر داشته باشند.
+
+رابطهٔ $\Proves$ مبتنی بر !!{tableau}s چنین تعریف می‌شود:
+$\Gamma \Proves !A$ اگر و تنها اگر مجموعهٔ متناهی‌ای چون
+~$\Gamma_0 = \{!B_1, \dots, !B_n\} \subseteq \Gamma$ وجود داشته باشد
+که برای فرض‌های
+\[
+\{\sFmla{\False}{!A}, \sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\}
+\]
+!!^a{tableau}ی بسته‌ای وجود داشته باشد. برای نمونه، !!^a{tableau}ی بستهٔ زیر
+نشان می‌دهد که $\Proves (!A \land !B) \lif !A$:
+\begin{oltableau}
+  [\sFmla{\False}{(\formula{A} \land \formula{B}) \lif \formula{A}}, just = \TAss
+    [\sFmla{\True}{\formula{A} \land \formula{B}}, just = {\TRule{\False}{\lif}[1]}
+      [\sFmla{\False}{\formula{A}}, just = {\TRule{\False}{\lif}[1]}
+        [\sFmla{\True}{\formula{A}}, just = {\TRule{\True}{\land}[2]}
+          [\sFmla{\True}{\formula{B}}, just = {\TRule{\True}{\land}[2]}, close]
+        ]
+      ]
+    ]
+  ]
+\end{oltableau}
+
+مجموعهٔ $\Gamma$ در حساب !!{tableau} ناسازگار است هرگاه برای فرض‌های
+\[
+\{\sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\}
+\]
+برای برخی $!B_i \in \Gamma$، !!^a{tableau}ی بسته‌ای وجود داشته باشد.
+
+!!^{tableau}s را اورت بث و یاکو هینتیکا در دههٔ ۱۹۵۰، مستقل از یکدیگر،
+ابداع کردند و ریموند اسمولیان آن‌ها را ساده و رایج کرد. کاربردشان بسیار
+آسان است، زیرا ساختن !!^a{tableau} روندی بسیار نظام‌مند است. به سبب ماهیت
+نظام‌مند !!{tableau}s، پیاده‌سازی رایانه‌ای آن‌ها نیز آسان است. با این حال،
+خواندن !!^a{tableau} غالباً دشوار است و پیوند آن با برهان‌ها همیشه به‌آسانی
+دیده نمی‌شود. این رویکرد همچنین کاملاً عام است و بسیاری از منطق‌های گوناگون
+دستگاه‌های !!{tableau} دارند. !!^{tableau}s همچنین به ما کمک می‌کنند
+!!{structure}sیی بیابیم که (مجموعه‌هایی از) !!{sentence}s داده‌شده را ارضا
+می‌کنند: اگر مجموعه ارضاپذیر باشد، !!^a{tableau}ی بسته نخواهد داشت؛ یعنی هر
+!!^a{tableau} شاخه‌ای باز خواهد داشت. !!{structure} ارضاکننده را می‌توان از
+یک شاخهٔ باز «خواند»، مشروط بر اینکه هر قاعده‌ای که اعمالش ممکن است بر آن
+شاخه اعمال شده باشد. پیوند بسیار نزدیکی نیز با حساب دنباله‌ای وجود دارد:
+در اصل، هر !!^a{tableau}ی بسته !!^a{derivation}ی فشرده‌ای در حساب دنباله‌ای
+است که وارونه نوشته شده است.
+
+\end{document}

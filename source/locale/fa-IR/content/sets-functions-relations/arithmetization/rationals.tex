@@ -1,0 +1,76 @@
+% Part: sets-functions-relations
+% Chapter: arithmetization
+% Section: rationals
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[fa-IR]{sfr}{arith}{rat}
+\olsection{از $\Int$ به $\Rat$}
+
+دیدیم که چگونه می‌توان با بهره‌گیری از قدری نظریهٔ طبیعی مجموعه‌ها،
+اعداد صحیح را از اعداد طبیعی ساخت. اکنون خواهیم دید که چگونه می‌توان
+اعداد گویا را به روشی بسیار مشابه از اعداد صحیح ساخت. دو مشاهدهٔ
+نخستین ما چنین‌اند:
+\begin{enumerate}
+	\item هر عدد گویا را می‌توان به‌شکل $\nicefrac{i}{j}$ نوشت،
+	که در آن $i$ و $j$ هر دو عدد صحیح‌اند، اما $j$ ناصفر است.
+	\item اطلاعات نهفته در عبارت $\nicefrac{i}{j}$ را به‌همان اندازه
+	می‌توان با زوج مرتب $\tuple{ i, j}$ رمزگذاری کرد.
+\end{enumerate}
+رویکرد آشکار آن بود که اعداد گویا را \emph{همان} زوج‌های مرتبِ برگرفته
+از $\Int \times (\Int \setminus \{0_\Int\})$ در نظر بگیریم. اما مانند
+گذشته، این رویکرد اندکی بیش از اندازه ساده‌انگارانه است، زیرا می‌خواهیم
+$\nicefrac{3}{2} = \nicefrac{6}{4}$، درحالی‌که $\tuple{ 3, 2}\neq \tuple{ 6,
+4}$. به‌طور کلی‌تر، خواستهٔ ما چنین است:
+\[
+	\nicefrac{a}{b} = \nicefrac{c}{d} \text{ iff } a \times d = b \times c
+\]
+برای دستیابی به این خواسته، رابطهٔ هم‌ارزیِ زیر را روی $\Int \times
+(\Int \setminus \{0_\Int\})$ تعریف می‌کنیم:
+\[
+	\tuple{ a, b }\Ratequiv \tuple{ c, d} \text{ iff }a \times d = b \times c
+\]
+باید بررسی کنیم که این یک رابطهٔ هم‌ارزی است. این بررسی بسیار شبیه
+حالت $\Intequiv$ است و آن را به‌عنوان تمرین وامی‌گذاریم.
+\begin{prob}
+نشان دهید $\Ratequiv$ یک رابطهٔ هم‌ارزی است.
+\end{prob}
+این رابطه به ما اجازه می‌دهد بگوییم:
+\begin{defn}
+اعداد گویا، رده‌های هم‌ارزیِ زوج‌های اعداد صحیح تحت $\Ratequiv$
+هستند (زوج‌هایی که مؤلفهٔ دومشان ناصفر است). یعنی $\Rat =
+\equivclass{(\Int \times (\Int\setminus \{0_\Int\}))}{\Ratequiv}$.
+\end{defn}
+
+همانند اعداد صحیح، می‌خواهیم برخی اعمال بنیادی را نیز تعریف کنیم.
+هرگاه $\equivrep{i,j}{\Ratequiv}$ ردهٔ هم‌ارزیِ تحت $\Ratequiv$ باشد
+که $\tuple{i, j}$ را به‌عنوان یک !!a{element} در بر دارد، می‌گوییم:
+\begin{align*}
+	\equivrep{a, b}{\Ratequiv} + \equivrep{c, d}{\Ratequiv} &= \equivrep{ad + bc,  bd}{\Ratequiv}\\
+	\equivrep{a, b}{\Ratequiv} \times \equivrep{c, d}{\Ratequiv} &= \equivrep{a  c, b d}{\Ratequiv}.
+\intertext{برای تعریف $r \leq s$ روی این اعداد گویا، از این واقعیت بهره می‌بریم که
+$r \le s$ اگر و تنها اگر $s - r$ منفی نباشد؛ یعنی $r - s$ را بتوان به‌شکل
+$\nicefrac{i}{j}$ نوشت، که در آن $i$ نامنفی و $j$ مثبت است:}
+	\equivrep{a, b}{\Ratequiv} \leq \equivrep{c, d}{\Ratequiv} &\text{ iff }
+	\equivrep{c, d}{\Ratequiv} - \equivrep{a, b}{\Ratequiv} =
+	\equivrep{i_\Int, j_\Int}{\Ratequiv}
+\end{align*}
+برای بعضی $i \in \Nat$ و $0 \neq j \in \Nat$.
+
+سپس باید بررسی کنیم که این تعریف‌ها چنان‌که \emph{باید} رفتار
+می‌کنند؛ این بررسی را به \olref[check]{sec} وامی‌گذاریم. اما آن‌ها
+به‌راستی چنین‌اند!{} در پایان، می‌خواهیم راهی داشته باشیم تا اعداد
+صحیح را \emph{به‌منزلهٔ} اعداد گویا در نظر بگیریم؛ پس برای هر
+$i \in \Int$ مقرر می‌کنیم که $i_\Rat =
+\equivrep{i, 1_\Int}{\Ratequiv}$. در \olref[check]{sec} دوباره بررسی
+می‌کنیم که همهٔ این تعریف‌ها درست رفتار می‌کنند.
+
+\begin{prob}
+نشان دهید $(i + j)_\Rat = i_\Rat+ j_\Rat$ و $(i \times j)_\Rat =
+i_\Rat \times j_\Rat$ و $i \leq j \liff i_\Rat \leq j_\Rat$، برای هر
+$i, j \in \Int$.
+\end{prob}
+
+\end{document}

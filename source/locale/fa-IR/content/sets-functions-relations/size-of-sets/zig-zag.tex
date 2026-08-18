@@ -1,0 +1,128 @@
+% Part:sets-functions-relations
+% Chapter: size-of-sets
+% Section: zig-zag
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[fa-IR]{sfr}{siz}{zigzag}
+
+\olsection{روش زیگزاگ کانتور}
+
+\begin{explain}
+پیش‌تر چند برشماریِ ``آسان'' را بررسی کرده‌ایم. اکنون موردی کمی
+دشوارتر را بررسی می‌کنیم. مجموعهٔ زوج‌های مرتب اعداد طبیعی را در نظر
+بگیرید\oliflabeldef{sfr:set:pai:sec}{، که آن را در
+\olref[set][pai]{sec} چنین تعریف کردیم:}{، که چنین تعریف می‌شود:}
+\[
+\Nat \times \Nat = \Setabs{\tuple{n,m}}{n,m \in \Nat}
+\]
+می‌توانیم این زوج‌های مرتب را در یک \emph{آرایه} به‌شکل زیر سامان دهیم:
+\[
+\begin{array}{ c | c | c | c | c | c}
+& \mathbf 0 & \mathbf 1 & \mathbf 2 & \mathbf 3 & \dots \\
+\hline
+\mathbf 0 & \tuple{0,0} & \tuple{0,1} & \tuple{0,2} & \tuple{0,3} & \dots \\
+\hline
+\mathbf 1 & \tuple{1,0} & \tuple{1,1} & \tuple{1,2} & \tuple{1,3} & \dots \\
+\hline
+\mathbf 2 & \tuple{2,0} & \tuple{2,1} & \tuple{2,2} & \tuple{2,3} & \dots \\
+\hline
+\mathbf 3 & \tuple{3,0} & \tuple{3,1} & \tuple{3,2} & \tuple{3,3} & \dots \\
+\hline
+\vdots & \vdots & \vdots & \vdots & \vdots & \ddots\\
+\end{array}
+\]
+آشکار است که هر زوج مرتب در $\Nat \times \Nat$ دقیقاً یک‌بار در آرایه
+ظاهر می‌شود. به‌ویژه، $\tuple{n,m}$ در سطر $n$اُم و ستون $m$اُم ظاهر
+خواهد شد. اما چگونه اعضای چنین آرایه‌ای را در فهرستی ``یک‌بعدی'' سامان
+دهیم؟ الگوی آرایهٔ زیر یک شیوهٔ انجام این کار را نشان می‌دهد (هرچند
+البته گزینه‌های بسیار دیگری نیز وجود دارند):
+\[
+\begin{array}{ c | c | c | c | c | c | c}
+& \mathbf 0 & \mathbf 1 & \mathbf 2 & \mathbf 3 & \mathbf 4 &\dots \\
+\hline
+\mathbf 0 & 0  & 1& 3 & 6& 10 &\ldots \\
+\hline
+\mathbf 1 &2 & 4& 7 & 11 & \dots &\ldots \\
+\hline
+\mathbf 2 & 5 & 8 & 12 & \ldots & \dots&\ldots \\
+\hline
+\mathbf 3 & 9 & 13 & \ldots & \ldots & \dots & \ldots \\
+\hline
+\mathbf 4 & 14 & \ldots & \ldots & \ldots & \dots & \ldots \\
+\hline
+\vdots & \vdots & \vdots & \vdots & \vdots&\ldots & \ddots\\
+\end{array}
+\]\noindent
+این الگو \emph{روش زیگزاگ کانتور} نامیده می‌شود. این روش
+$\Nat \times \Nat$ را به‌صورت زیر برمی‌شمارد:
+\[
+\tuple{0,0}, \tuple{0,1}, \tuple{1,0}, \tuple{0,2}, \tuple{1,1},
+\tuple{2,0}, \tuple{0,3}, \tuple{1,2}, \tuple{2,1}, \tuple{3,0}, \dots
+\]
+و این، گزارهٔ زیر را ثابت می‌کند:
+\end{explain}
+
+\begin{prop}\ollabel{natsquaredenumerable}
+$\Nat \times \Nat$ !!{enumerable} است.
+\end{prop}
+
+\begin{proof}
+تابع $f \colon \Nat \to \Nat\times\Nat$ را چنان تعریف می‌کنیم که هر
+$k \in \Nat$ را به زوج $\tuple{n,m} \in \Nat \times \Nat$ بفرستد،
+به‌گونه‌ای که $k$
+مقدار خانهٔ واقع در سطر $n$اُم و ستون $m$اُمِ آرایهٔ زیگزاگ کانتور باشد.
+\end{proof}
+
+\begin{explain}
+این فن به‌خوبی قابل تعمیم نیز هست. برای نمونه، می‌توانیم از آن برای
+برشمردن مجموعهٔ سه‌تایی‌های مرتب اعداد طبیعی استفاده کنیم؛ یعنی:
+\[
+\Nat \times \Nat \times \Nat = \Setabs{\tuple{n,m,k}}{n,m,k \in \Nat}
+\]
+$\Nat \times \Nat \times \Nat$ را ضرب دکارتیِ
+$\Nat \times \Nat$ در $\Nat$ در نظر می‌گیریم؛ یعنی
+\[
+\Nat^3 = (\Nat \times \Nat) \times \Nat =
+\Setabs{\tuple{\tuple{n,m},k}}{n, m, k
+  \in \Nat }
+\]
+و ازاین‌رو می‌توانیم $\Nat^3$ را با آرایه‌ای برشماریم که یک محور آن
+با برشماریِ $\Nat$ و محور دیگرش با برشماریِ $\Nat^2$ برچسب‌گذاری شده است:
+\[
+\begin{array}{ c | c | c | c | c | c}
+& \mathbf 0 & \mathbf 1 & \mathbf 2 & \mathbf 3 & \dots \\
+\hline
+\mathbf{\tuple{0,0}} & \tuple{0,0,0} & \tuple{0,0,1} & \tuple{0,0,2} & \tuple{0,0,3} & \dots \\
+\hline
+\mathbf{\tuple{0,1}} & \tuple{0,1,0} & \tuple{0,1,1} & \tuple{0,1,2} & \tuple{0,1,3} & \dots \\
+\hline
+\mathbf{\tuple{1,0}} & \tuple{1,0,0} & \tuple{1,0,1} & \tuple{1,0,2} & \tuple{1,0,3} & \dots \\
+\hline
+\mathbf{\tuple{0,2}} & \tuple{0,2,0} & \tuple{0,2,1} & \tuple{0,2,2} & \tuple{0,2,3} & \dots\\
+\hline
+\vdots & \vdots & \vdots & \vdots & \vdots & \ddots \\
+\end{array}
+\]
+پس با استفاده از روشی مانند روش زیگزاگ کانتور، می‌توانیم به همین ترتیب
+برشماری‌ای از~$\Nat^3$ به دست آوریم. همچنین می‌توانیم این روند را ادامه
+دهیم و برشماری‌هایی از $\Nat^n$ برای هر عدد طبیعی $n$ به دست آوریم.
+بنابراین داریم:
+\end{explain}
+
+\begin{prop}
+$\Nat^n$ برای هر $n \in \Nat$ !!{enumerable} است.
+\end{prop}
+
+\begin{prob}\label{sfr:siz:zigzag:prob:posint-n}
+نشان دهید $(\PosInt)^n$ برای هر $n \in \Nat$ !!{enumerable} است.
+\end{prob}
+
+\begin{prob}\label{sfr:siz:zigzag:prob:posint-star}
+  نشان دهید $(\PosInt)^*$ !!{enumerable} است. می‌توانید
+  \cref{sfr:siz:zigzag:prob:posint-n} را فرض کنید.
+\end{prob}
+
+\end{document}

@@ -1,0 +1,59 @@
+% Part: first-order-logic
+% Chapter: sequent-calculus
+% Section: provability-quantifiers
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{seq}{qpr}
+\olsection{\usetoken{S}{derivability} و سورها}
+
+\begin{explain}
+  قضیهٔ تمامیت همچنین ایجاب می‌کند که قواعد حساب دنباله‌ای، واقعیت‌های
+  مربوط به~$\Proves$ را که در این بخش اثبات می‌شوند به دست دهند.
+\end{explain}
+
+\begin{thm}
+\ollabel{thm:strong-generalization} اگر $c$ ثابتی باشد که در
+$\Gamma$ یا $!A(x)$ رخ نمی‌دهد و $\Gamma \Proves !A(c)$، آنگاه
+$\Gamma \Proves \lforall[x][!A(x)]$.
+\end{thm}
+
+\begin{proof}
+فرض کنید $\pi_0$ یک $\Log{LK}$-!!{derivation} برای
+$\Gamma_0 \Sequent !A(c)$ و یک $\Gamma_0 \subseteq \Gamma$ متناهی
+باشد. با افزودن یک استنتاج $\RightR{\lforall}$،
+!!a{derivation}ی برای $\Gamma_0 \Sequent \lforall[x][!A(x)]$ به دست
+می‌آوریم، زیرا $c$ در $\Gamma$ یا $!A(x)$ رخ نمی‌دهد و ازاین‌رو شرط
+متغیر ویژه برقرار است.
+\end{proof}
+
+\begin{prop}
+\ollabel{prop:provability-quantifiers}
+\begin{tagenumerate}{prvEx,prvAll}
+\tagitem{prvEx}{$!A(t) \Proves \lexists[x][!A(x)]$.}{}
+\tagitem{prvAll}{$\lforall[x][!A(x)] \Proves !A(t)$.}{}
+\end{tagenumerate}
+\end{prop}
+
+\begin{proof}
+\begin{tagenumerate}{prvEx,prvAll}
+\tagitem{prvEx}{دنبالهٔ $!A(t) \Sequent \lexists[x][!A(x)]$
+  !!{derivable} است:
+  \begin{prooftree}
+    \Axiom$!A(t) \fCenter !A(t)$
+    \RightLabel{\RightR{\lexists}}
+    \UnaryInf$!A(t) \fCenter \lexists[x][!A(x)]$
+    \end{prooftree}}{}
+\tagitem{prvAll}{دنبالهٔ $\lforall[x][!A(x)] \Sequent !A(t)$
+  !!{derivable} است:
+  \begin{prooftree}
+    \Axiom$!A(t) \fCenter !A(t)$
+    \RightLabel{\LeftR{\lforall}}
+    \UnaryInf$\lforall[x][!A(x)] \fCenter !A(t)$
+    \end{prooftree}}{}
+\end{tagenumerate}
+\end{proof}
+
+\end{document}

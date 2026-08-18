@@ -1,0 +1,138 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{spine}{rank}
+\olsection{رتبه}
+
+اکنون که مراحل را به‌منزلهٔ~$V_\alpha$ها تعریف کرده‌ایم و می‌دانیم هر
+مجموعه زیرمجموعهٔ مرحله‌ای است، می‌توانیم \emph{رتبهٔ} یک مجموعه را تعریف
+کنیم. به‌طور شهودی، رتبهٔ~$A$ نخستین لحظه‌ای است که~$A$ در آن تشکیل
+می‌شود. به‌بیان دقیق‌تر:
+
+\begin{defn}\ollabel{defnsetrank}
+برای هر مجموعهٔ~$A$، $\setrank{A}$ کمترین عدد ترتیبی~$\alpha$ است
+به‌طوری‌که~$A\subseteq V_\alpha$.
+\end{defn}
+\begin{prop}\ollabel{ranksexist}
+	برای هر~$A$، $\setrank{A}$ وجود دارد.
+\end{prop}
+\begin{proof}
+	به‌عنوان تمرین واگذار می‌شود.
+\end{proof}
+\begin{prob}
+	\olref[sth][spine][rank]{ranksexist} را اثبات کنید.
+\end{prob}
+\noindent
+خوش‌ترتیبی رتبه‌ها به ما اجازه می‌دهد چند نتیجهٔ مهم را اثبات کنیم:
+\begin{prop}\ollabel{valphalowerrank}
+برای هر عدد ترتیبی~$\alpha$،
+$V_\alpha=\Setabs{x}{\setrank{x}\in\alpha}$.
+\end{prop}
+
+\begin{proof}
+اگر~$\setrank{x}\in\alpha$، آنگاه
+$x\subseteq V_{\setrank{x}}\in V_\alpha$؛ پس چون~$V_\alpha$ توانمند
+است، با چند بار استفاده از~\olref[Valphabasic]{Valphabasicprops} نتیجه
+می‌شود~$x\in V_\alpha$. برعکس، اگر~$x\in V_\alpha$، آنگاه
+$x\subseteq V_\alpha$ و بنابراین~$\setrank{x}\leq\alpha$؛ و استقرای
+ترامتناهی ساده‌ای نشان می‌دهد~$x\notin V_{\setrank{x}}$. پس
+$\setrank{x}\neq\alpha$ و در نتیجه~$\setrank{x}\in\alpha$.
+\end{proof}
+\begin{prob}
+	استقرای ترامتناهی ساده‌ای را که در
+	\olref[sth][spine][rank]{valphalowerrank} ذکر شد کامل کنید.
+\end{prob}
+
+\begin{prop}\ollabel{rankmemberslower}
+اگر~$B\in A$، آنگاه~$\setrank{B}\in\setrank{A}$.
+\end{prop}
+
+\begin{proof}
+$A\subseteq V_{\setrank{A}}=
+\Setabs{x}{\setrank{x}\in\setrank{A}}$ بنا بر~\olref{valphalowerrank}.
+\end{proof}
+\noindent
+با استفاده از این واقعیت می‌توانیم نتیجه‌ای به دست آوریم که نوعی استقرا
+روی \emph{همهٔ مجموعه‌ها} را ممکن می‌سازد:
+
+\begin{thm}[طرحوارهٔ استقرای $\in$]
+برای هر فرمول~$\phi$:
+\[
+	\forall A((\forall x \in A)\phi(x) \lif \phi(A)) \lif \forall A \phi(A).
+\]
+\end{thm}
+
+\begin{proof}
+عکس نقیض را اثبات می‌کنیم. فرض کنید~$\lnot\forall A\phi(A)$. بنا بر
+استقرای ترامتناهی
+(\olref[ordinals][basic]{ordinductionschema})، یک مجموعهٔ فاقد~$\phi$ با
+کمترین رتبهٔ ممکن وجود دارد؛ یعنی~$A$ای هست به‌طوری‌که
+$\lnot\phi(A)$ و
+$\forall x(\setrank{x}\in\setrank{A}\lif\phi(x))$. حال اگر~$x\in A$،
+آنگاه بنا بر~\olref{rankmemberslower}،
+$\setrank{x}\in\setrank{A}$، و ازاین‌رو~$\phi(x)$؛ یعنی
+$(\forall x\in A)\phi(x)\land\lnot\phi(A)$.
+\end{proof}\noindent
+شرح غیرصوریِ این نتیجهٔ نیرومند چنین است. می‌گوییم~$\phi$
+\emph{وراثتی} است اگر و تنها اگر هرگاه هر~!!{element} یک مجموعه دارای
+$\phi$ باشد، خود مجموعه نیز دارای~$\phi$ باشد. استقرای~$\in$ می‌گوید:
+اگر~$\phi$ وراثتی باشد، هر مجموعه دارای~$\phi$ است.
+
+برای پایان‌دادن به بحث رتبه‌ها (دست‌کم فعلاً)، چند ادعایی را اثبات می‌کنیم
+که پیش‌تر چند بار نویدشان را داده بودیم.
+
+\begin{prop}\ollabel{ranksupstrict}
+$\setrank{A}=\supstrict_{x\in A}\setrank{x}$.
+\end{prop}
+
+\begin{proof}
+بگذارید~$\alpha=\supstrict_{x\in A}\setrank{x}$. بنا بر
+\olref{rankmemberslower}، $\alpha\leq\setrank{A}$. اما اگر~$x\in A$،
+آنگاه~$\setrank{x}\in\alpha$؛ پس بنا بر~\olref{valphalowerrank}،
+$x\in V_\alpha$ و بنابراین~$A\subseteq V_\alpha$؛ یعنی
+$\setrank{A}\leq\alpha$. پس~$\setrank{A}=\alpha$.
+\end{proof}
+
+\begin{cor}\ollabel{ordsetrankalpha}
+برای هر عدد ترتیبی~$\alpha$، $\setrank{\alpha}=\alpha$.
+\end{cor}
+
+\begin{proof}
+برای استقرای ترامتناهی فرض کنید برای همهٔ~$\beta\in\alpha$،
+$\setrank{\beta}=\beta$. اکنون
+$\setrank{\alpha}=\supstrict_{\beta\in\alpha}\setrank{\beta}=
+\supstrict_{\beta\in\alpha}\beta=\alpha$ بنا بر
+\olref{ranksupstrict}.
+%	نخست توجه کنید $\setrank{\alpha}\neq\beta$ برای هر $\beta\in\alpha$.
+%	زیرا در غیر این صورت بنا بر \olref{rankmemberslower} می‌داشتیم
+%	$\beta=\setrank{\beta}\in\setrank{\alpha}=\beta$، یعنی
+%	$\beta\in\beta$، که تناقض است.
+%
+%	اکنون توجه کنید $\alpha\subseteq V_\alpha$. زیرا
+%	$\alpha=\Setabs{\beta}{\beta\in\alpha}$ بنا بر
+%	\olref[sfr][ordinals][basic]{ordissetofsmallerord}. و اگر
+%	$\beta\in\alpha$، آنگاه
+%	$\beta\subseteq V_{\setrank{\beta}}=V_\beta\in V_\alpha$، و ازاین‌رو
+%	با دو بار استفاده از \olref[sfr][spine][Valphabasic]{Valphabasicprops}،
+%	$\beta\in V_\alpha$.
+\end{proof}
+
+سرانجام، در اینجا اثباتی کوتاه از نتیجه‌ای می‌آوریم که در پایان
+\olref[foundation]{sec} وعده داده شد: اینکه~$\ZFminus$ شرطیِ
+$\emph{قاعده‌مندی}\Rightarrow\emph{بنیاد}$ را اثبات می‌کند. (توجه کنید
+مفهوم «رتبه» و~\olref{rankmemberslower} در این اثبات در دسترس‌اند، زیرا
+همان‌طور که در آغاز این بخش گفتیم، می‌توان آن‌ها را با استفاده از
+$\ZFminus+\text{قاعده‌مندی}$ ارائه کرد.)
+
+\begin{prop}[در $\ZFminus + \text{قاعده‌مندی}$]\ollabel{zfminusregularityfoundation}
+بنیاد برقرار است.
+\end{prop}
+
+\begin{proof}
+$A\neq\emptyset$ را ثابت بگیرید و~$B\in A$ را با کمترین رتبهٔ ممکن
+انتخاب کنید. اگر~$c\in B$، آنگاه بنا بر~\olref{rankmemberslower}،
+$\setrank{c}\in\setrank{B}$؛ پس به‌سبب انتخاب~$B$، $c\notin A$.
+\end{proof}
+
+\end{document}

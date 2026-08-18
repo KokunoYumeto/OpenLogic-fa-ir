@@ -1,0 +1,105 @@
+% Part: counterfactuals
+% Chapter: introduction
+% Section: strict-conditional
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cnt}{int}{str}
+
+\olsection{شرطی اکید}
+
+لوئیس \emph{شرطی اکید}~$\strictif$ را معرفی کرد و استدلال کرد که این
+رابط، نه شرطی مادی، با استلزام متناظر است. در منطق موجهات صدقی،
+$!A \strictif !B$ را می‌توان به‌صورت~$\Box(!A \lif !B)$ تعریف کرد.
+پس شرطی اکید (در یک جهان) صادق است اگر و تنها اگر شرطی مادی متناظر
+ضروری باشد.
+
+شرطی اکید در برابر پارادوکس‌های شرطی مادی چگونه عمل می‌کند؟ شرطی اکیدی
+با مقدم کاذب، و نیز شرطی اکیدی با تالی صادق، ممکن است صادق یا کاذب
+باشد. افزون‌براین، $(!A \strictif !B) \lor (!B \strictif !A)$ معتبر
+نیست. شرطی اکید~$!A \strictif !B$ نیز با~$\lnot !A \lor !B$ هم‌ارز
+نیست، پس تابعِ صدق نیست.
+
+داریم:
+\begin{align}
+  !A \strictif !B & \Entails \lnot !A \lor !B
+  \text{ اما:}\\
+  \lnot !A \lor !B & \Entails/ !A \strictif !B\\
+  !B & \Entails/ !A \strictif !B\\
+  \lnot !A & \Entails/ !A \strictif !B\\
+  \lnot(!A \strictif !B) & \Entails/ !A \land \lnot !B
+  \text{ اما:}\\
+  !A \land \lnot !B & \Entails \lnot(!A \strictif !B)
+  \intertext{بااین‌حال، شرطی اکید همچنان وضع مقدم را پشتیبانی می‌کند:}
+  !A, !A \strictif !B & \Entails !B
+  \intertext{شرطی اکید تجمیع‌پذیر است:}
+  !A \strictif !B,  !A \strictif !C & \Entails !A \strictif (!B \land !C)
+  \intertext{تقویت مقدم برای شرطی اکید برقرار است:}
+  !A \strictif !B & \Entails (!A \land !C) \strictif !B
+  \intertext{شرطی اکید نیز تعدی است:}
+  !A \strictif !B, !B \strictif !C & \Entails !A \strictif !C
+  \intertext{سرانجام، شرطی اکید با عکس نقیض خود هم‌ارز است:}
+  !A \strictif !B & \Entails \lnot !B \strictif \lnot !A\\
+  \lnot !B \strictif \lnot !A & \Entails !A \strictif !B
+\end{align}
+
+\begin{prob}
+  برای روابط استلزامی‌ای که برای شرطی اکید برقرار نیستند، یعنی موارد
+  زیر، پادمثال‌هایی در~$\Log{S5}$ بدهید:
+  \begin{enumerate}
+  \item $\lnot p \Entails/ \Box(p \lif q)$
+  \item $q \Entails/ \Box(p \lif q)$
+  \item $\lnot\Box(p \lif q) \Entails/ p \land \lnot q$
+  \item $\Entails/ \Box(p \lif q) \lor \Box(q \lif p)$
+  \end{enumerate}
+\end{prob}
+
+\begin{prob}
+  با ارائهٔ اثبات‌هایی در~$\Log{S5}$ برای موارد زیر، نشان دهید روابط
+  استلزام معتبر برای شرطی اکید برقرارند:
+  \begin{enumerate}
+  \item  $\Box(!A \lif !B) \Entails \lnot !A \lor !B$
+  \item $!A \land \lnot !B \Entails \lnot\Box(!A \lif !B)$
+  \item $!A, \Box(!A \lif !B) \Entails !B$
+  \item $\Box(!A \lif !B), \Box(!A \lif !C) \Entails \Box(!A \lif (!B
+    \land !C))$
+  \item $\Box(!A \lif !B) \Entails \Box((!A \land !C) \lif !B)$
+  \item $\Box(!A \lif !B), \Box(!B \lif !C) \Entails \Box(!A
+    \lif !C)$
+  \item $\Box(!A \lif !B) \Entails \Box(\lnot !B \lif \lnot !A)$
+  \item $\Box(\lnot !B \lif \lnot !A) \Entails \Box(!A \lif !B)$
+  \end{enumerate}
+  \end{prob}
+
+بااین‌حال، شرطی اکید «پارادوکس‌های» خاص خود را دارد. همان‌گونه که شرطی
+مادی با مقدم کاذب یا تالی صادق، صادق است، شرطی اکید با مقدم
+\emph{ضرورتاً} کاذب یا تالی ضرورتاً صادق، صادق است. افزون‌براین، هر
+شرطی اکید صادق ضرورتاً صادق، و هر شرطی اکید کاذب ضرورتاً کاذب است. به
+بیان دیگر، داریم:
+\begin{align}
+  \Box \lnot !A & \Entails !A \strictif !B\\
+  \Box !B & \Entails !A \strictif !B\\
+  !A \strictif !B& \Entails \Box(!A \strictif !B)\\
+  \lnot(!A \strictif !B) & \Entails \Box\lnot(!A \strictif !B)
+\end{align}
+اگر~$\strictif$ را «مستلزم است» بفهمید، این‌ها مشکلی پدید نمی‌آورند.
+روابط استلزام منطقی، به‌هرحال، واقعیت‌هایی ریاضی‌اند و نمی‌توانند امکانی
+باشند. اما اگر بخواهید~$\strictif$ را رابطی منطقی برای صورت‌بندی «اگر
+\dots، آنگاه \dots» بدانید، به‌ویژه دو مورد آخر، مسئله‌ساز می‌شوند.
+زیرا یقیناً عبارت‌های «اگر \dots، آنگاه \dots»ای وجود دارند که به‌طور
+ممکن صادق یا به‌طور ممکن کاذب‌اند---در واقع، آن‌ها عموماً نه ضروری‌اند
+و نه ناممکن.
+
+\begin{prob}
+  در~$\Log{S5}$ موارد زیر را ثابت کنید:
+  \begin{enumerate}
+    \item  $\Box \lnot !A \Entails !A \strictif !B$
+    \item $!A \strictif !B \Entails \Box(!A \strictif !B)$
+    \item $\lnot(!A \strictif !B)  \Entails \Box\lnot(!A \strictif !B)$
+  \end{enumerate}
+  برای این کار از تعریف~$\strictif$ استفاده کنید.
+\end{prob}
+
+\end{document}

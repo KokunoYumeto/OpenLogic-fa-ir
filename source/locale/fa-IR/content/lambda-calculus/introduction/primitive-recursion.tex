@@ -1,0 +1,139 @@
+% Part: lambda-calculus
+% Chapter: introduction
+% Section: primitive-recursion
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{int}{pr}
+\olsection{توابع \usetoken{S}{lambda definable} تحت بازگشت اولیه بسته‌اند}
+
+در مورد بازگشت اولیه سرانجام باید قدری کار کنیم و مرحله‌به‌مرحله پیش
+برویم. مانند قبل، فرض کنید از پیش ترم‌های~$G'$ و~$H'$ را در اختیار داریم،
+به‌گونه‌ای که هر یک به‌ترتیب تابع~$g$ و~$h$ را !!{lambda define}؛ می‌خواهیم
+ترم~$F$ای بیابیم که تابع~$f$ با تعریف زیر را !!{lambda define}s:
+\begin{align*}
+f(0, \vec z) & = g(\vec z) \\
+f(x+1, \vec z) & = h(x, f(x,\vec z), \vec z).
+\end{align*}
+پس به‌طور کلی، با داشتن ترم‌های لامبدای~$G'$ و~$H'$ کافی است ترم~$F$ای
+بیابیم که
+\begin{align*}
+F(\num{0}, \vec z) & \equiv G(\vec z) \\
+F(\overline{n+1}, \vec z) & \equiv H(\num{n}, F(\num{n}, \vec z), \vec z)
+\end{align*}
+را برای هر عدد طبیعی~$n$ برآورده کند؛ اینکه~$G'$ و~$H'$ هر یک به‌ترتیب
+$g$ و~$h$ را !!{lambda define} بدین معناست که هرگاه عددنماهای~$\num{\vec m}$
+را به‌جای~$\vec z$ بگذاریم، $F(\num{n+1}, \num{\vec m})$ به پاسخ درست
+نرمال می‌شود.
+
+اما برای این کار کافی است ترم~$F$ای بیابیم که
+\begin{align*}
+F(\num 0) & \equiv G \\
+F(\overline {n+1}) & \equiv H(\num{n},F(\num{n}))
+\intertext{را برای هر عدد طبیعی~$n$ برآورده کند، که در آن}
+G & = \lambd[\vec z][G'(\vec z)] \text{ و}\\
+H(u,v) & = \lambd[\vec z][H'(u,v(\vec z),\vec z)].
+\end{align*}
+به بیان دیگر، با ترفندهای لامبدایی می‌توانیم از نگرانی دربارهٔ پارامترهای
+اضافی~$\vec z$ بپرهیزیم؛ این پارامترها در نمادگذاری لامبدا جذب می‌شوند.
+
+پیش از تعریف ترم~$F$، به سازوکاری برای کار با زوج‌های مرتب نیاز داریم.
+لم بعدی چنین سازوکاری را فراهم می‌کند.
+
+\begin{lem}
+ترم لامبدای~$D$ای وجود دارد که برای هر زوج از ترم‌های لامبدای~$M$ و~$N$،
+$D(M,N)(\num{0}) \red M$ و~$D(M,N)(\num{1}) \red N$.
+\end{lem}
+
+\begin{proof}
+نخست ترم لامبدای~$K$ را چنین تعریف کنید:
+\[
+K(y) = \lambd[x][y].
+\]
+به بیان دیگر، $K$ همان ترم~$\lambd[y][\lambd[x][y]]$ است. از دیدگاهی
+دیگر، برای هر~$M$، عبارت~$K(M)$ تابع ثابتی است که با هر ورودی~$M$ را
+برمی‌گرداند.
+
+اکنون~$D(x,y,z)$ را با~$D(x,y,z) = z (K(y))x$ تعریف کنید. آنگاه داریم
+\begin{align*}
+D(M,N,\num 0) & \red \num 0 (K(N)) M \red M \text{ و}\\
+D(M,N,\num 1) & \red \num 1 (K(N)) M \red K(N) M \red N,
+\end{align*}
+چنان‌که لازم بود.
+\end{proof}
+
+اندیشه این است که~$D(M,N)$ زوج~$\tuple{M, N}$ را بازنمایی می‌کند و اگر
+فرض کنیم~$P$ چنین زوجی را بازنمایی می‌کند، $P(\num 0)$ و~$P(\num 1)$
+به‌ترتیب افکنش‌های چپ و راست، $(P)_0$ و~$(P)_1$، را بازنمایی می‌کنند.
+از این پس از همین نمادهای اخیر استفاده می‌کنیم.
+
+\begin{lem}
+توابع !!{lambda definable} تحت بازگشت اولیه بسته‌اند.
+\end{lem}
+
+\begin{proof}
+باید نشان دهیم که با داشتن هر دو ترم~$G$ و~$H$، می‌توان ترم~$F$ای یافت
+که
+\begin{align*}
+F(\num{0}) & \equiv G \\
+F(\num{n+1}) & \equiv H(\num{n}, F(\num{n}))
+\end{align*}
+را برای هر عدد طبیعی~$n$ برآورده کند. اندیشهٔ کلی آن است که با استفاده
+از عددنماها به‌عنوان تکرارگر، دنباله‌ای از \emph{زوج‌ها}
+\[
+\tuple{\num 0, F(\num 0)}, \tuple{\num 1, F(\num 1)}, \dots,
+\]
+را محاسبه کنیم. توجه کنید که زوج نخست همان~$\tuple{\num 0, G}$ است.
+با داشتن زوج~$\tuple{\num{n}, F(\num{n})}$، زوج بعدی یعنی
+$\tuple{\num{n+1}, F(\num{n+1})}$ باید با
+$\tuple{\num{n+1}, H(\num{n}, F(\num{n}))}$ هم‌ارز باشد. ترم لامبدای~$T$
+را چنان طراحی می‌کنیم که این گذار یک‌مرحله‌ای را انجام دهد.
+
+جزئیات چنین است. $T(u)$ را با
+\[
+T(u) = \tuple{\fn{Succ}((u)_0), H((u)_0,(u)_1)}.
+\]
+تعریف کنید. اکنون به‌آسانی می‌توان بررسی کرد که برای هر عدد~$n$،
+\[
+T(\tuple{\num{n}, M}) \red \tuple{\num{n+1}, H(\num{n}, M)}.
+\]
+همان‌گونه که گفته شد، با داشتن~$G$ و~$H$، $F(u)$ را با
+\[
+F(u) = (u(T,\tuple{\num 0, G}))_1.
+\]
+تعریف کنید. به بیان دیگر، با ورودی~$\num{n}$، تابع~$F$، ترم~$T$ را
+$n$ بار بر~$\tuple{\num 0, G}$ تکرار می‌کند و سپس مؤلفهٔ دوم را
+برمی‌گرداند. برای آغاز داریم
+\begin{enumerate}
+\item $\num{0} (T, \tuple{\num 0, G}) \equiv \tuple{\num{0}, G}$
+\item $F(\num{0}) \equiv G$
+\end{enumerate}
+با استقرا بر~$n$ می‌توان نشان داد که برای هر عدد طبیعی، موارد زیر برقرارند:
+\begin{enumerate}
+\item $\num{n+1}(T, \tuple{\num{0}, G}) \equiv \tuple{\num{n+1}, F(\num{n+1})}$
+\item $F(\num{n+1}) \equiv H(\num{n}, F(\num{n}))$
+\end{enumerate}
+برای بند دوم داریم
+\begin{align*}
+F(\num{n+1}) & \red (\num{n+1}(T, \tuple{\num 0, G}))_1 \\
+& \equiv (T(\num{n} (T, \tuple{\num 0, G})))_1 \\
+& \equiv (T(\tuple{\num{n}, F(\num{n})}))_1 \\
+& \equiv (\tuple{\num{n+1}, H(\num{n}, F(\num{n}))})_1 \\
+& \equiv H(\num{n}, F(\num{n})).
+\end{align*}
+در سطر ماقبل آخر از فرض استقرا استفاده کرده‌ایم. برای بند نخست داریم
+\begin{align*}
+\num{n+1} (T, \tuple{\num 0, G}) &
+\equiv T(\num{n} (T, \tuple{\num 0, G})) \\
+& \equiv T( \tuple{\num{n}, F(\num{n})}) \\
+& \equiv \tuple{\num{n+1}, H(\num{n}, F(\num{n}))} \\
+& \equiv \tuple{\num{n+1}, F(\num{n+1})}.
+\end{align*}
+در سطر آخر از بند دوم استفاده کرده‌ایم. پس نشان دادیم که
+$F(\num 0) \equiv G$ و برای هر~$n$، $F(\num {n+1}) \equiv H(\num
+n, F(\num{n}))$؛ و این دقیقاً همان چیزی بود که نیاز داشتیم.
+\end{proof}
+
+\end{document}

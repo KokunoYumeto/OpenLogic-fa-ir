@@ -1,0 +1,62 @@
+% Part: normal-modal-logic
+% Chapter: completeness
+% Section: completeness-K
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{com}{cmk}
+
+\olsection{تعیین‌گری و تمامیت برای~\Log{K}}
+
+اکنون آماده‌ایم تا از مدل کانونی برای اثبات تمامیت استفاده کنیم. تمامیت
+از این واقعیت نتیجه می‌شود که !!{formula}های صادق در مدل کانونیِ
+$\Sigma$ دقیقاً همان فرمول‌های !!{derivable} از~$\Sigma$ هستند. گفته
+می‌شود مدل‌هایی با این خاصیت، $\Sigma$ را \emph{تعیین می‌کنند}.
+
+\begin{defn}
+  مدل~$\mModel{M}$ یک منطق موجهات عادی~$\Sigma$ را دقیقاً هنگامی
+  \emph{تعیین می‌کند} که برای هر !!{formula}~$!A$،
+  $\mSat{M}{!A}$ اگر و تنها اگر~$\Sigma \Proves !A$.
+\end{defn}
+
+\begin{thm}[تعیین‌گری]\ollabel{thm:determination}
+   $\mSat{M^\Sigma}{!A}$ اگر و تنها اگر~$\Sigma \Proves !A$.
+\end{thm}
+
+\begin{proof}
+  اگر~$\mSat{M^\Sigma}{!A}$، آنگاه برای هر مجموعهٔ کاملِ
+  $\Sigma$-سازگار~$\Delta$ داریم
+  $\mSat{M^\Sigma}{!A}[\Delta]$. پس بنا بر لم صدق، $!A \in
+  \Delta$ برای هر مجموعهٔ کاملِ~$\Sigma$-سازگار~$\Delta$؛ ازاین‌رو
+  بنا بر \olref[lin]{cor:provability-characterization} (با
+  $\Gamma = \emptyset$)، $\Sigma \Proves !A$.
+
+  برعکس، اگر~$\Sigma \Proves !A$، آنگاه بنا بر
+  \olref[ccs]{prop:ccs-properties}\olref[ccs]{prop:ccs-closed}، هر
+  مجموعهٔ کاملِ~$\Sigma$-سازگار~$\Delta$ شامل~$!A$ است؛ پس بنا بر لم
+  صدق، $\mSat{M^\Sigma}{!A}[\Delta]$ برای هر~$\Delta \in
+  W^\Sigma$، یعنی~$\mSat{M^\Sigma}{!A}$.
+\end{proof}
+
+چون مدل کانونیِ~\Log{K}، منطق~\Log{K} را تعیین می‌کند، بی‌درنگ
+تمامیت~\Log{K} را به‌صورت نتیجه‌ای فرعی به دست می‌آوریم:
+
+\begin{cor}\ollabel{cor:Kcomplete}
+  منطق موجهات پایهٔ~\Log{K} نسبت به ردهٔ همهٔ مدل‌ها کامل است؛ یعنی اگر
+  $\Entails !A$، آنگاه~$\Log{K} \Proves !A$.
+\end{cor}
+
+\begin{proof}
+  به روش عکس نقیض، اگر~$\Log{K} \Proves/ !A$، آنگاه بنا بر
+  تعیین‌گری~$\mSat/{M^{\Log{K}}}{!A}$ و بنابراین~$!A$ معتبر نیست.
+\end{proof}
+
+برای حالت کلیِ تمامیت دستگاه~$\Sigma$ نسبت به رده‌ای از مدل‌ها، برای
+نمونه تمامیت~\Log{KTB4} نسبت به ردهٔ مدل‌های بازتابی، متقارن و متعدی،
+تعیین‌گری به‌تنهایی کافی نیست. باید همچنین نشان دهیم مدل کانونیِ
+دستگاه~$\Sigma$ عضوی از آن رده است؛ امری که آشکارا از ساخت مدل کانونی
+نتیجه نمی‌شود---و حتی همواره درست نیست!
+
+\end{document}

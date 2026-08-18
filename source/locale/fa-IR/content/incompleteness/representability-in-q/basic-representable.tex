@@ -1,0 +1,234 @@
+% Part: incompleteness
+% Chapter: representability-in-q
+% Section: basic-representable
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{req}{bre}
+\olsection{توابع پایه در~$\Th{Q}$ بازنمایی‌پذیرند}
+
+نخست باید نشان دهیم همهٔ توابع پایه در~$\Th{Q}$ بازنمایی‌پذیرند. در
+نهایت باید نشان دهیم چگونه به هر تابع پایهٔ $k$موضعی
+$f(x_0,\dots,x_{k-1})$، !!a{formula}ی چون
+$!A_f(x_0,\dots,x_{k-1},y)$ نسبت دهیم که آن را بازنمایی کند.
+
+خواهیم توانست صفر، جانشین، جمع، ضرب، تابع مشخصهٔ برابری و افکنش‌ها را
+بازنمایی کنیم. در هر مورد، فرمول بازنمایندهٔ مناسب کاملاً سرراست
+است؛ برای نمونه، صفر با فرمول~$y=\Obj 0$، جانشین با !!{formula}
+$x_0'=y$، و جمع با !!{formula}~$(x_0+x_1)=y$ بازنمایی می‌شود. کار اصلی
+نشان‌دادن این است که~$\Th{Q}$ می‌تواند !!{sentence}sی مربوط را ثابت کند؛
+برای نمونه، اینکه جمع با !!{formula} بالا بازنمایی می‌شود مستلزم آن است
+که نشان دهیم به ازای هر زوج از اعداد طبیعی~$m$ و~$n$، $\Th{Q}$
+عبارات زیر را ثابت می‌کند:
+\begin{align*}
+& \eq[\num n + \num m][\num {n+m}] \text{ و}\\
+& \lforall[y][(\eq[(\num n + \num m)][y] \lif \eq[y][\num{n+m}])].
+\end{align*}
+
+\begin{prop}
+\ollabel{prop:rep-zero}
+تابع صفر~$\Zero(x)=0$ در~$\Th{Q}$ با
+$!A_{\Zero}(x,y)\ident\eq[y][\Obj 0]$ بازنمایی می‌شود.
+\end{prop}
+
+\begin{prop}
+\ollabel{prop:rep-succ}
+تابع جانشین~$\Succ(x)=x+1$ در~$\Th{Q}$ با
+$!A_{\Succ}(x,y)\ident\eq[y][x']$ بازنمایی می‌شود.
+\end{prop}
+
+\begin{prop}
+\ollabel{prop:rep-proj}
+تابع افکنش~$\Proj{n}{i}(x_0,\dots,x_{n-1})=x_i$ در~$\Th{Q}$ با
+\[!A_{\Proj{n}{i}}(x_0, \dots, x_{n-1}, y) \ident \eq[y][x_i].\]
+بازنمایی می‌شود.
+\end{prop}
+
+\begin{prob}
+ثابت کنید $\eq[y][\Obj 0]$، $\eq[y][x']$ و~$\eq[y][x_i]$ به‌ترتیب
+$\Zero$، $\Succ$ و~$\Proj{n}{i}$ را بازنمایی می‌کنند.
+\end{prob}
+
+\begin{prop}
+\ollabel{prop:rep-id}
+تابع مشخصهٔ~$=$،
+\[
+\Char{=}(x_0, x_1) =
+\begin{cases}
+  1 & \text{اگر } x_0 =x_1\\
+  0 & \text{در غیر این صورت}
+\end{cases}
+\]
+در~$\Th{Q}$ با فرمول زیر بازنمایی می‌شود:
+\[
+  !A_{\Char{=}}(x_0, x_1, y) \ident (\eq[x_0][x_1] \land \eq[y][\num{1}]) \lor (\eq/[x_0][x_1] \land
+  \eq[y][\num{0}]).
+\]
+\end{prop}
+
+اثبات به لم زیر نیاز دارد.
+
+\begin{lem}
+\ollabel{lem:q-proves-neq} اگر $n$ و~$m$ اعداد طبیعی باشند و
+$n\neq m$، آنگاه $\Th{Q}\Proves\eq/[\num n][\num m]$.
+\end{lem}
+
+\begin{proof}
+با استقرا روی~$n$ نشان دهید برای هر~$m$، اگر $n\neq m$، آنگاه
+$Q\Proves\eq/[\num n][\num m]$.
+
+در حالت پایه، $n=0$. اگر $m$ برابر~$0$ نباشد، برای عدد طبیعی~$k$ای
+$m=k+1$. اصل موضوعه‌ای داریم که می‌گوید
+$\lforall[x][\eq/[0][x']]$. با یک اصل موضوعهٔ سور، با جایگزین‌کردن
+$x$ با~$\num k$، می‌توانیم $\eq/[0][\num k']$ را نتیجه بگیریم. اما
+$\num k'$ همان~$\num m$ است.
+
+در گام استقرا می‌توانیم ادعا را برای~$n$ فرض و~$n+1$ را بررسی کنیم.
+بگذارید $m$ هر عدد طبیعی باشد. دو امکان هست: یا~$m=0$، یا برای
+بعضی~$k$، $m=k+1$. حالت نخست مانند بالا رسیدگی می‌شود. در حالت دوم
+فرض کنید $n+1\neq k+1$. آنگاه $n\neq k$. بنا بر فرض استقرا برای~$n$
+داریم $\Th{Q}\Proves\eq/[\num n][\num k]$. اصل موضوعه‌ای داریم که
+می‌گوید
+$\lforall[x][\lforall[y][\eq[x'][y']\lif\eq[x][y]]]$. با یک اصل
+موضوعهٔ سور داریم
+$\eq[\num n'][\num k']\lif\eq[\num n][\num k]$. با استفاده از
+منطق گزاره‌ای می‌توانیم در~$\Th{Q}$ نتیجه بگیریم
+$\eq/[\num n][\num k]\lif\eq/[\num n'][\num k']$. با وضع مقدم
+$\eq/[\num n'][\num k']$ را نتیجه می‌گیریم، که همان چیزی است که
+می‌خواستیم، زیرا~$\num k'$ همان~$\num m$ است.
+\end{proof}
+
+\begin{explain}
+توجه کنید لم ادعای چندانی ندارد: در اصل می‌گوید~$\Th{Q}$ می‌تواند
+ثابت کند عددنماهای متفاوت بر اشیای متفاوت دلالت می‌کنند. برای نمونه،
+$\Th{Q}$ ثابت می‌کند $0''\neq0'''$. اما نشان‌دادن این امر در حالت
+کلی به کمی دقت نیاز دارد. همچنین توجه کنید با آنکه از استقرا استفاده
+می‌کنیم، این استقرا \emph{بیرون} از~$\Th{Q}$ است.
+\end{explain}
+
+\begin{proof}[اثبات \olref{prop:rep-id}]
+اگر $n=m$، آنگاه $\num{n}$ و~$\num{m}$ یک ترم‌اند و
+$\Char{=}(n,m)=1$. اما
+$\Th{Q}\Proves(\eq[\num{n}][\num{m}]\land
+\eq[\num{1}][\num{1}])$؛ پس~$!A_=(\num{n},\num{m},\num{1})$ را
+ثابت می‌کند. اگر $n\neq m$، آنگاه $\Char=(n,m)=0$. بنا بر
+\olref{lem:q-proves-neq}،
+$\Th{Q}\Proves\eq/[\num{n}][\num{m}]$ و بنابراین
+$(\eq/[\num{n}][\num{m}]\land\Obj 0=\Obj 0)$ را نیز ثابت می‌کند.
+پس $\Th{Q}\Proves !A_=(\num{n},\num{m},\num{0})$.
+
+برای بخش دوم نیز دو حالت داریم. اگر $n=m$، باید نشان دهیم
+$\Th{Q}\Proves\lforall[y][(!A_=(\num{n},\num{m},y)
+\lif\eq[y][\num{1}])]$. به‌طور غیرصوری استدلال می‌کنیم. فرض کنید
+$!A_=(\num{n},\num{m},y)$؛ یعنی
+\[
+(\eq[\num{n}][\num{n}] \land \eq[y][\num{1}]) \lor
+(\eq/[\num{n}][\num{n}] \land \eq[y][\num{0}]).
+\]
+فصل نخست بنا بر منطق~$\eq[y][\num{1}]$ را نتیجه می‌دهد؛ فصل دوم با
+$\eq[\num{n}][\num{n}]$ در تناقض است، و این آخری بنا بر منطق
+اثبات‌پذیر است.
+
+از سوی دیگر، فرض کنید $n\neq m$. آنگاه
+$!A_=(\num{n},\num{m},y)$ عبارت است از
+\[
+(\eq[\num{n}][\num{m}] \land \eq[y][\num{1}]) \lor
+(\eq/[\num{n}][\num{m}] \land \eq[y][\num{0}]).
+\]
+اینجا فصل نخست با~$\eq/[\num{n}][\num{m}]$ در تناقض است، که بنا بر
+\olref{lem:q-proves-neq} در~$\Th{Q}$ اثبات‌پذیر است؛ فصل دوم
+$\eq[y][\num{0}]$ را نتیجه می‌دهد.
+\end{proof}
+
+\begin{prop}
+\ollabel{prop:rep-add}
+تابع جمع~$\Add(x_0,x_1)=x_0+x_1$ در~$\Th{Q}$ با
+\[
+  !A_{\Add}(x_0, x_1, y) \ident \eq[y][(x_0 + x_1)].
+\]
+بازنمایی می‌شود.
+\end{prop}
+
+\begin{lem}
+\ollabel{lem:q-proves-add}
+$\Th{Q} \Proves \eq[(\num{n} + \num{m})][\num{n+m}]$.
+\end{lem}
+
+\begin{proof}
+این را با استقرا روی~$m$ ثابت می‌کنیم. اگر $m=0$، ادعا این است که
+$\Th{Q}\Proves\eq[(\num{n}+\Obj 0)][\num{n}]$. این از اصل موضوعهٔ
+$!Q_4$ نتیجه می‌شود. اکنون ادعا را برای~$m$ فرض کنید؛ ادعا را برای
+$m+1$ ثابت کنیم، یعنی ثابت کنیم
+$\Th{Q}\Proves\eq[(\num{n}+\num{m+1})][\num{n+m+1}]$. توجه کنید
+$\num{m+1}$ همان~$\num{m}'$ و~$\num{n+m+1}$ همان~$\num{n+m}'$ است.
+بنا بر اصل موضوعهٔ~$!Q_5$،
+$\Th{Q}\Proves\eq[(\num{n}+\num{m}')][(\num{n}+\num{m})']$. بنا بر
+فرض استقرا،
+$\Th{Q}\Proves\eq[(\num{n}+\num{m})][\num{n+m}]$. پس
+$\Th{Q}\Proves\eq[(\num{n}+\num{m}')][\num{n+m}']$.
+\end{proof}
+
+\begin{proof}[اثبات \olref{prop:rep-add}]
+!!{formula}~$!A_\Add(x_0,x_1,y)$ که~$\Add$ را بازنمایی می‌کند
+$\eq[y][(x_0+x_1)]$ است. نخست نشان می‌دهیم اگر~$\Add(n,m)=k$، آنگاه
+$\Th{Q}\Proves !A_\Add(\num{n},\num{m},\num{k})$؛ یعنی
+$\Th{Q}\Proves\eq[\num{k}][(\num{n}+\num{m})]$. اما چون~$k=n+m$،
+$\num{k}$ همان~$\num{n+m}$ است، و در~\olref{lem:q-proves-add} نشان
+داده‌ایم $\Th{Q}\Proves\eq[(\num{n}+\num{m})][\num{n+m}]$.
+
+همچنین باید نشان دهیم اگر~$\Add(n,m)=k$، آنگاه
+\[
+\Th{Q} \Proves \lforall[y][(!A_\Add(\num{n}, \num{m}, y) \lif
+  \eq[y][\num{k}])].
+\]
+فرض کنید $\eq[(\num{n}+\num{m})][y]$ را داریم. چون
+\[
+\Th{Q} \Proves \eq[(\num{n}+\num{m})][\num{n+m}],
+\]
+می‌توانیم سمت چپ را با~$\num{n+m}$ جایگزین کنیم و برای~$y$ دلخواه
+$\eq[\num{n+m}][y]$ را به دست آوریم.
+\end{proof}
+
+\begin{prop}
+\ollabel{prop:rep-mult}
+تابع ضرب~$\Mult(x_0,x_1)=x_0\cdot x_1$ در~$\Th{Q}$ با
+\[
+  !A_{\Mult}(x_0, x_1, y) \ident y = (x_0 \times x_1).
+\]
+بازنمایی می‌شود.
+\end{prop}
+
+\begin{proof} تمرین. \end{proof}
+
+\begin{lem}
+\ollabel{lem:q-proves-mult}
+$\Th{Q} \Proves \eq[(\num{n} \times \num{m})][\num{n \cdot m}]$.
+\end{lem}
+
+\begin{proof} تمرین. \end{proof}
+
+\begin{prob}
+\olref[inc][req][bre]{lem:q-proves-mult} را ثابت کنید.
+\end{prob}
+
+\begin{prob}
+با استفاده از~\olref[inc][req][bre]{lem:q-proves-mult}،
+\olref[inc][req][bre]{prop:rep-mult} را ثابت کنید.
+\end{prob}
+
+\begin{explain}
+  به یاد آورید برای نماد تابع در زبان حساب از~$\times$ و برای عمل
+  معمول ضرب روی اعداد از~$\cdot$ استفاده می‌کنیم. پس~$\cdot$ می‌تواند
+  میان عبارت‌های مربوط به اعداد ظاهر شود (مانند~$m\cdot n$)، درحالی‌که
+  $\times$ فقط میان ترم‌های زبان حساب می‌آید (مانند
+  $(\num{m}\times\num{n})$). گیج‌کننده‌تر اینکه~$+$ هم برای !!{function}
+  و هم برای عمل جمع به کار می‌رود. هنگامی که میان ترم‌ها ظاهر شود---
+  برای نمونه در~$(\num{n}+\num{m})$---!!{function} دوموضعیِ زبان حساب
+  است، و هنگامی که میان اعداد بیاید---برای نمونه در~$n+m$---عمل جمع
+  است. این شامل حالت~$\num{n+m}$ نیز می‌شود: این عددنمای استانداردِ
+  متناظر با عدد~$n+m$ است.
+\end{explain}
+
+\end{document}

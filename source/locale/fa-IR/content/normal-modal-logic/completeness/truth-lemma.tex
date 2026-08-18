@@ -1,0 +1,151 @@
+% Part: normal-modal-logic
+% Chapter: completeness
+% Section: truth-lemma
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{com}{tru}
+
+\olsection{لم صدق}
+
+مدل کانونی~$\mModel{M^\Sigma}$ چنان تعریف شده است که
+$\mSat{M^\Sigma}{!A}[\Delta]$ اگر و تنها اگر~$!A \in \Delta$. برای
+!!{propositional variable}ها، تعریف~$V^\Sigma$ این نتیجه را بی‌واسطه
+به دست می‌دهد. بااین‌حال، باید بررسی کنیم این هم‌ارزی برای همهٔ
+!!{formula}ها برقرار است. این کار را با استقرا انجام می‌دهیم. گام
+استقرا مستلزم اثبات هم‌ارزی برای !!{formula}های دارای عملگرهای گزاره‌ای
+(با استفاده از \olref[ccs]{prop:ccs-properties}) و عملگرهای موجهاتی
+(با به‌کارگیری نتایج \olref[mod]{sec}) است.
+
+\begin{prop}[لم صدق]
+  \ollabel{prop:truthlemma}
+  برای هر !!{formula}~$!A$، $\mSat{M^\Sigma}{!A}[\Delta]$ اگر و تنها اگر
+  $!A \in \Delta$.
+\end{prop}
+
+\begin{proof}
+  با استقرا بر~$!A$.
+  \begin{enumerate}
+    \tagitem{prvFalse}{\indcase{!A}{\lfalse}{$\mSat/{M^\Sigma}{\lfalse}[\Delta]$
+        بنا بر \olref[syn][trw]{defn:mmodels}، و $\lfalse \notin \Delta$
+        بنا بر
+        \olref[ccs]{prop:ccs-properties}\olref[ccs]{prop:ccs-lfalse}.}}{}
+
+    \tagitem{prvTrue}{\indcase{!A}{\ltrue}{$\mSat{M^\Sigma}{\ltrue}[\Delta]$
+        بنا بر \olref[syn][trw]{defn:mmodels}، و $\ltrue \in \Delta$ بنا بر
+        \olref[ccs]{prop:ccs-properties}\olref[ccs]{prop:ccs-ltrue}.}}{}
+
+    \item \indcase{!A}{p}{$\mSat{M^\Sigma}{p}[\Delta]$ اگر و تنها اگر
+      $\Delta \in V^\Sigma(p)$، بنا بر \olref[syn][trw]{defn:mmodels}.
+      همچنین، بنا به تعریف~$V^\Sigma$، $\Delta \in V^\Sigma(p)$ اگر و
+      تنها اگر~$p \in \Delta$.}
+
+    \tagitem{prvNot}{\indcase{!A}{\lnot !B}{%
+        \iftag{probNot}{تمرین.}{$\mSat{M^\Sigma}{\lnot !B}[\Delta]$
+          اگر و تنها اگر~$\mSat/{M^\Sigma}{!B}[\Delta]$
+          (\olref[syn][trw]{defn:mmodels})، اگر و تنها اگر~$!B \notin
+          \Delta$ (بنا بر فرض استقرا)، اگر و تنها اگر~$\lnot !B \in
+          \Delta$ (بنا بر
+          \olref[ccs]{prop:ccs-properties}\olref[ccs]{prop:ccs-lnot}).}}}{}
+
+    \tagitem{prvAnd}{\indcase{!A}{!B \land !C}{%
+        \iftag{probAnd}{تمرین.}{$\mSat{M^\Sigma}{!B \land
+            !C}[\Delta]$ اگر و تنها اگر~$\mSat{M^\Sigma}{!B}[\Delta]$
+          و~$\mSat{M^\Sigma}{!C}[\Delta]$ (بنا بر
+          \olref[syn][trw]{defn:mmodels})، اگر و تنها اگر~$!B \in
+          \Delta$ و~$!C \in \Delta$ (بنا بر فرض استقرا)، اگر و تنها
+          اگر~$!B \land !C \in \Delta$ (بنا بر
+          \olref[ccs]{prop:ccs-properties}\olref[ccs]{prop:ccs-land}).}}}{}
+
+    \tagitem{prvOr}{\indcase{!A}{!B \lor !C}{%
+        \iftag{probOr}{تمرین.}{$\mSat{M^\Sigma}{!B \lor
+            !C}[\Delta]$ اگر و تنها اگر~$\mSat{M^\Sigma}{!B}[\Delta]$
+          یا~$\mSat{M^\Sigma}{!C}[\Delta]$ (بنا بر
+          \olref[syn][trw]{defn:mmodels})، اگر و تنها اگر~$!B \in
+          \Delta$ یا~$!C \in \Delta$ (بنا بر فرض استقرا)، اگر و تنها
+          اگر~$!B \lor !C \in \Delta$ (بنا بر
+          \olref[ccs]{prop:ccs-properties}\olref[ccs]{prop:ccs-lor}).}}}{}
+
+    \tagitem{prvIf}{\indcase{!A}{!B \lif !C}{%
+        \iftag{probIf}{تمرین.}{$\mSat{M^\Sigma}{!B \lif
+            !C}[\Delta]$ اگر و تنها اگر~$\mSat/{M^\Sigma}{!B}[\Delta]$
+          یا~$\mSat{M^\Sigma}{!C}[\Delta]$ (بنا بر
+          \olref[syn][trw]{defn:mmodels})، اگر و تنها اگر~$!B \notin
+          \Delta$ یا~$!C \in \Delta$ (بنا بر فرض استقرا)، اگر و تنها
+          اگر~$!B \lif !C \in \Delta$ (بنا بر
+          \olref[ccs]{prop:ccs-properties}\olref[ccs]{prop:ccs-lif}).}}}{}
+
+    \tagitem{prvIff}{\indcase{!A}{!B \liff !C}{%
+        \iftag{probIff}{تمرین.}{$\mSat{M^\Sigma}{!B \liff
+            !C}[\Delta]$ اگر و تنها اگر یا~$\mSat{M^\Sigma}{!B}[\Delta]$
+          و~$\mSat{M^\Sigma}{!C}[\Delta]$، یا
+          $\mSat/{M^\Sigma}{!B}[\Delta]$ و
+          $\mSat/{M^\Sigma}{!C}[\Delta]$ (بنا بر
+          \olref[syn][trw]{defn:mmodels})، اگر و تنها اگر یا~$!B \in
+          \Delta$ و~$!C \in \Delta$، یا~$!B \notin \Delta$ و
+          $!C \notin \Delta$ (بنا بر فرض استقرا)، اگر و تنها اگر
+          $!B \liff !C \in \Delta$ (بنا بر
+          \olref[ccs]{prop:ccs-properties}\olref[ccs]{prop:ccs-liff}).}}}{}
+
+    \tagitem{prvBox}{\indcase{!A}{\Box !B}{%
+        \iftag{probBox}{تمرین.}{نخست فرض کنید
+          $\mSat{M^\Sigma}{\Box !B}[\Delta]$. بنا بر
+          \olref[syn][trw]{defn:mmodels}، برای هر~$\Delta' \in W^\Sigma$
+          چنان‌که~$R^\Sigma \Delta\Delta'$،
+          $\mSat{M^\Sigma}{!B}[\Delta']$. بنا بر فرض استقرا، برای هر
+          $\Delta' \in W^\Sigma$ چنان‌که~$R^\Sigma \Delta\Delta'$،
+          $!B \in \Delta'$. بنا به تعریف~$R^\Sigma$، برای هر
+          $\Delta' \in W^\Sigma$ چنان‌که~$\Box^{-1} \Delta \subseteq
+          \Delta'$، $!B \in \Delta'$. بنا بر \olref[mod]{prop:box}،
+          $\Box !B \in \Delta$.
+
+          اکنون فرض کنید~$\Box !B \in \Delta$. بگذارید
+          $\Delta' \in W^\Sigma$ چنان باشد که~$R^\Sigma
+          \Delta\Delta'$؛ یعنی~$\Box^{-1}\Delta \subseteq \Delta'$.
+          چون~$\Box !B \in \Delta$، داریم~$!B \in \Box^{-1}
+          \Delta$. در نتیجه~$!B \in \Delta'$. بنا بر فرض استقرا،
+          $\mSat{M^\Sigma}{!B}[\Delta']$. چون~$\Delta'$ در میان
+          جهان‌های دارای~$R^\Sigma \Delta\Delta'$ دلخواه است، برای
+          همهٔ~$\Delta' \in W^\Sigma$ چنان‌که~$R^\Sigma
+          \Delta\Delta'$، $\mSat{M^\Sigma}{!B}[\Delta']$. بنا بر
+          \olref[syn][trw]{defn:mmodels}، $\mSat{M^\Sigma}{\Box
+            !B}[\Delta]$.}}}{}
+
+    \tagitem{prvDiamond}{\indcase{!A}{\Diamond !B}{%
+        \iftag{probDiamond}{تمرین.}{نخست فرض کنید
+          $\mSat{M^\Sigma}{\Diamond !B}[\Delta]$. بنا بر
+          \olref[syn][trw]{defn:mmodels}، برای یک~$\Delta' \in W^\Sigma$
+          چنان‌که~$R^\Sigma \Delta\Delta'$،
+          $\mSat{M^\Sigma}{!B}[\Delta']$. بنا بر فرض استقرا، برای یک
+          $\Delta' \in W^\Sigma$ چنان‌که~$R^\Sigma \Delta\Delta'$،
+          $!B \in \Delta'$. بنا به تعریف~$R^\Sigma$،\iftag{prvBox}{
+            برای یک~$\Delta' \in W^\Sigma$ چنان‌که
+            $\Box^{-1} \Delta \subseteq \Delta'$، $!B \in \Delta'$.
+            بنا بر \olref[mod]{prop:diamond}،}{} برای یک
+          $\Delta' \in W^\Sigma$ چنان‌که~$\Diamond \Delta' \subseteq
+          \Delta$، $!B \in \Delta'$. چون~$!B \in \Delta'$،
+          $\Diamond !B \in \Diamond \Delta'$؛ پس~$\Diamond !B \in
+          \Delta$.
+
+          اکنون فرض کنید~$\Diamond !B \in \Delta$. بنا بر
+          \olref[mod]{prop:diamond}، مجموعهٔ کاملِ~$\Sigma$-سازگار
+          $\Delta' \in W^\Sigma$ای وجود دارد چنان‌که
+          $\Diamond \Delta' \subseteq \Delta$ و~$!B \in
+          \Delta'$.\iftag{prvBox}{ بنا بر
+            \olref[mod]{lem:box-iff-diamond}، $\Delta' \in W^\Sigma$ای
+            وجود دارد چنان‌که~$\Box^{-1} \Delta \subseteq \Delta'$ و
+            $!B \in \Delta'$.}{} بنا به تعریف~$R^\Sigma$،
+          $R^\Sigma \Delta\Delta'$؛ پس~$\Delta' \in W^\Sigma$ای وجود
+          دارد چنان‌که~$R^\Sigma \Delta\Delta'$ و~$!B \in \Delta'$.
+          بنا بر \olref[syn][trw]{defn:mmodels}،
+          $\mSat{M^\Sigma}{\Diamond !B}[\Delta]$.}}}{}
+  \end{enumerate}
+\end{proof}
+
+\begin{probtag}{probFalse,probTrue,probNot,probAnd,probOr,probIf,probIff,probBox,probDiamond}
+  اثبات \olref[nml][com][tru]{prop:truthlemma} را کامل کنید.
+\end{probtag}
+
+\end{document}

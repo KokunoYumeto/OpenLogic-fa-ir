@@ -1,0 +1,71 @@
+% Part: sets-functions-relations
+% Chapter: relations
+% Section: operations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[fa-IR]{sfr}{rel}{ops}
+\olsection{عملیات روی روابط}
+
+اغلب مفید است که روابط را تغییر دهیم یا با هم ترکیب کنیم. در
+\olref[sfr][rel][ord]{prop:stricttopartial}، \emph{اجتماعِ}
+روابط را بررسی کردیم، که صرفاً اجتماع دو رابطه است وقتی آن دو را
+به‌منزلهٔ مجموعه‌هایی از زوج‌ها در نظر بگیریم. به همین ترتیب، در
+\olref[sfr][rel][ord]{prop:partialtostrict}، تفاضل نسبی روابط را
+بررسی کردیم. در اینجا چند عمل دیگر آمده است که می‌توانیم روی روابط انجام دهیم.
+
+\begin{defn}\ollabel{relationoperations}
+فرض کنید $R$ و $S$ رابطه باشند و $A$ مجموعه‌ای دلخواه باشد.
+
+\emph{وارون} $R$ برابر است با $R^{-1} = \Setabs{\tuple{y, x}}{\tuple{x,
+    y} \in R}$.
+
+\emph{حاصل‌ضرب نسبی} $R$ و $S$ برابر است با $(R \mid S) =
+\{\tuple{x, z} : \exists y(Rxy \land Syz)\}$.
+
+\emph{تحدید} $R$ به $A$ برابر است با $\funrestrictionto{R}{A}= R
+\cap A^2$.
+
+\emph{اعمال} $R$ بر $A$ برابر است با $\funimage{R}{A} = \{y :
+(\exists x \in A)Rxy\}$
+\end{defn}
+
+\begin{ex}
+فرض کنید $S \subseteq \Int^2$ رابطهٔ جانشینی روی~$\Int$ باشد؛ یعنی
+$S = \Setabs{\tuple{x, y} \in \Int^2}{x + 1 = y}$، به‌طوری‌که $Sxy$ اگر و تنها اگر $x + 1 = y$.
+
+$S^{-1}$ رابطهٔ پیشینی روی $\Int$ است؛ یعنی
+$\Setabs{\tuple{x,y}\in\Int^2}{x -1 =y}$.
+
+$S\mid S$ برابر است با
+$ \Setabs{\tuple{x,y}\in\Int^2}{x + 2 =y}$
+
+$\funrestrictionto{S}{\Nat}$ رابطهٔ جانشینی روی~$\Nat$ است.
+
+$\funimage{S}{\{1,2,3\}}$ برابر است با $\{2, 3, 4\}$.
+\end{ex}
+
+\begin{defn}[بستار تراگذری]فرض کنید $R \subseteq A^2$ یک رابطهٔ دوتایی باشد.
+
+\emph{بستار تراگذریِ}~$R$ برابر است با $R^+ = \bigcup_{0 < n \in
+\Nat} R^n$، که در آن به‌صورت بازگشتی $R^1 = R$ و $R^{n+1} = R^n
+\mid R$ را تعریف می‌کنیم.
+
+\emph{بستار بازتابی و تراگذریِ} $R$ برابر است با $R^* = R^+ \cup
+\Id{A}$.
+\end{defn}
+
+\begin{ex}
+رابطهٔ جانشینی $S \subseteq \Int^2$ را در نظر بگیرید. $S^2xy$ اگر و تنها اگر $x + 2 =
+y$، و $S^3xy$ اگر و تنها اگر $x + 3 = y$، و به همین ترتیب. پس $S^+xy$ اگر و تنها اگر $x + n = y$ برای یک
+$n \geq 1$ برقرار باشد. به عبارت دیگر، $S^+xy$ اگر و تنها اگر $x < y$، و $S^*xy$ اگر و تنها اگر $x \le
+y$.
+\end{ex}
+
+\begin{prob}
+نشان دهید که بستار تراگذریِ $R$ در واقع تراگذری است.
+\end{prob}
+
+\end{document}

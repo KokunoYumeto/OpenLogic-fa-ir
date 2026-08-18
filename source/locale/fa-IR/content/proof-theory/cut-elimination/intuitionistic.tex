@@ -1,0 +1,71 @@
+اگر $!A \ident (!B \lif !C)$، آنگاه $\pi$ چنین پایان می‌یابد:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$!B, \Gamma \fCenter \Delta, !C$
+\RightLabel{\RightR{\lif}}
+\UnaryInf$\Gamma \fCenter \Delta, !B \lif !C$
+\LeftSubproofLabel{$\pi_1$}
+\AxiomC{}
+\RightLabel{$\pi_2'$}
+\Deduce$!B \lif !C, \Pi \fCenter \Lambda, !B$
+\AxiomC{}
+\RightLabel{$\pi_2''$}
+\Deduce$!C, \Pi \fCenter \Lambda$
+\RightLabel{\LeftR{\lif}}
+\BinaryInf$!B \lif !C, \Pi \fCenter \Lambda$
+\RightSubproofLabel{$\pi_2$}
+\RightLabel{\Cut}
+\BinaryInf$\Gamma, \Pi \fCenter \Delta, \Lambda$
+\DisplayProof
+\]
+!!{proof} زیر که به \Cut پایان می‌یابد،
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$!B, \Gamma \fCenter \Delta, !C$
+\RightLabel{\RightR{\lif}}
+\UnaryInf$\Gamma \fCenter \Delta, !B \lif !C$
+\LeftSubproofLabel{$\pi_1$}
+\AxiomC{}
+\RightLabel{$\pi_2'$}
+\Deduce$!B \lif !C, \Pi \fCenter \Lambda, !B$
+\RightLabel{\Cut}
+\BinaryInf$\Gamma, \Pi \fCenter \Delta, \Lambda, !B$
+\DisplayProof
+\]
+!!{height} برش کمتری از~$\pi$ دارد. فرض استقرا !!a{proof}~$\pi_1''$
+برای $\Gamma, \Pi \fCenter \Delta, \Lambda, !B$ به دست می‌دهد.
+!!{proof} زیر نیز به \Cut پایان می‌یابد:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$!B, \Gamma \fCenter \Delta, !C$
+\AxiomC{}
+\RightLabel{$\pi_2''$}
+\Deduce$!C, \Pi \fCenter \Lambda$
+\RightLabel{\Cut}
+\BinaryInf$!B, \Gamma, \Pi \fCenter \Delta, \Lambda$
+\DisplayProof
+\]
+هم رتبهٔ برش و هم !!{height} برش آن از رتبه و !!{height} برش~$\pi$
+کمتر است؛ پس فرض استقرا یک \Log{G3c}-!!{proof}~$\pi_2'''$ برای
+$!B, \Gamma, \Pi \fCenter \Delta, \Lambda$ به دست می‌دهد. اکنون فرض
+استقرا را بر !!{proof} زیر که به \Cut پایان می‌یابد اعمال کنید:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1''$}
+\Deduce$\Gamma, \Pi \fCenter \Delta, \Lambda, !B$
+\AxiomC{}
+\RightLabel{$\pi_2'''$}
+\Deduce$!B, \Gamma, \Pi \fCenter \Delta, \Lambda$
+\RightLabel{\Cut}
+\BinaryInf$\Gamma, \Gamma, \Pi, \Pi \fCenter
+  \Delta, \Delta, \Lambda, \Lambda$
+\DisplayProof
+\]
+(رتبهٔ برش آن $< \cutrank{\pi}$ است) تا !!a{proof}ی برای
+$\Gamma, \Gamma, \Pi, \Pi \fCenter \Delta, \Delta, \Lambda, \Lambda$
+به دست آید. با اعمال \olref[seq][inv]{prop:G3c-cont-adm} و انقباض،
+!!{proof}~$\pi'$ برای $\Gamma, \Pi \fCenter \Delta, \Lambda$ را
+به دست می‌آوریم.

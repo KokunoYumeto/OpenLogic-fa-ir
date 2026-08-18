@@ -1,0 +1,58 @@
+% Part: first-order-logic
+% Chapter: axiomatic-deduction
+
+\documentclass[../../../include/open-logic-chapter]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olchapter{fol}{axd}{\usetoken{P}{derivation} اصل‌موضوعی}}
+      {\olchapter{pl}{axd}{\usetoken{P}{derivation} اصل‌موضوعی}}
+
+\begin{editorial}
+  هنوز کوششی نشده است تا تضمین شود مطالب این فصل به برچسب‌های گوناگونی
+  احترام می‌گذارند که نشان می‌دهند کدام ادات و سورها اولیه یا تعریف‌شده‌اند:
+  همه اولیه فرض شده‌اند، جز $\liff$ که تعریف‌شده فرض شده است. اگر برچسب
+  FOL درست باشد، نسخه‌ای با سورها تولید می‌کنیم و در غیر این صورت نسخه‌ای
+  بدون سورها.
+\end{editorial}
+
+\olimport{rules-and-proofs}
+
+\olimport{axioms-rules-propositional}
+
+\iftag{FOL}{%
+  \olimport{axioms-rules-quantifiers}
+}{}
+
+\olimport{proving-things}
+
+\iftag{FOL}{%
+  \olimport{proving-things-quant}
+}{}
+
+\olimport{proof-theoretic-notions}
+
+\olimport{deduction-theorem}
+
+\iftag{FOL}{%
+  \olimport{deduction-theorem-quantifiers}
+}{}
+
+\olimport{provability-consistency}
+
+\olimport{provability-propositional}
+
+\iftag{FOL}{%
+  \olimport{provability-quantifiers}
+}{}
+
+\olimport{soundness}
+
+\iftag{FOL}{
+  \olimport{identity}
+}{}
+
+\OLEndChapterHook
+
+\end{document}

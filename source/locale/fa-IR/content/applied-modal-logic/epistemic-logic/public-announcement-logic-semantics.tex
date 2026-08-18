@@ -1,0 +1,124 @@
+% Part: applied-modal-logics
+% Chapter: epistemic-logic
+% Section: public-announcement-logic-semantics
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{aml}{el}{psm}
+
+\olsection{معناشناسی منطق اعلان عمومی}
+
+مدل‌های رابطه‌ایِ منطق‌های اعلان عمومی همان مدل‌های منطق معرفتی‌اند.
+اما معناشناسی عملگر اعلان عمومی امری تازه است.
+
+\begin{defn}\ollabel{defn:mmodels} \emph{صدق !!a{formula}~$!A$
+  در~$w$} در مدل~$\mModel M = \tuple{W, R, V}$، که با
+  $\mSat{M}{!A}[w]$ نمادگذاری می‌شود، به‌طور استقرایی چنین تعریف می‌شود:
+  \begin{enumerate}
+  \tagitem{prvFalse}{\indcase{!A}{\lfalse}{$\mSat{M}{\lfalse}[w]$ هرگز برقرار نیست.}}{}
+  \tagitem{prvTrue}{\indcase{!A}{\ltrue}{$\mSat{M}{\ltrue}[w]$ همواره برقرار است.}}{}
+  \item $\mSat{M}{p}[w]$ اگر و تنها اگر~$w \in V(p)$.
+  \tagitem{prvNot}{\indcase{!A}{\lnot !B}{$\mSat{M}{\indfrm}[w]$ اگر و تنها اگر
+    $\mSat/{M}{!B}[w]$.}}{}
+  \tagitem{prvAnd}{\indcase{!A}{(!B \land !C)}{$\mSat{M}{\indfrm}[w]$ اگر و تنها اگر
+    $\mSat{M}{!B}[w]$ و~$\mSat{M}{!C}[w]$.}}{}
+  \tagitem{prvOr}{\indcase{!A}{(!B \lor !C)}{$\mSat{M}{\indfrm}[w]$ اگر و تنها اگر
+    $\mSat{M}{!B}[w]$ یا~$\mSat{M}{!C}[w]$} (یا هر دو).}{}
+  \tagitem{prvIf}{\indcase{!A}{(!B \lif !C)}{$\mSat{M}{\indfrm}[w]$ اگر و تنها اگر
+    $\mSat/{M}{!B}[w]$ یا~$\mSat{M}{!C}[w]$.}}{}
+  \tagitem{prvIff}{\indcase{!A}{(!B \liff !C)}{$\mSat{M}{\indfrm}[w]$ اگر و تنها اگر
+    یا هر دو رابطهٔ~$\mSat{M}{!B}[w]$ و~$\mSat{M}{!C}[w]$ برقرار باشند، یا
+    هیچ‌یک از~$\mSat{M}{!B}[w]$ و~$\mSat{M}{!C}[w]$ برقرار نباشند.}}{}
+  \item\ollabel{defn:sub:mmodels-box}
+    \indcase{!A}{\Knows_a !B}{$\mSat{M}{\indfrm}[w]$ اگر و تنها اگر
+    برای هر~$w' \in W$ که~$R_a ww'$، رابطهٔ~$\mSat{M}{!B}[w']$ برقرار باشد.}
+  \item\ollabel{defn:sub:mmodels-pal}
+    \indcase{!A}{[!B] !C}{$\mSat{M}{\indfrm}[w]$ اگر و تنها اگر
+    $\mSat{M}{!B}[w]$ مستلزم~$\mSat{M \mid !B}{!C}[w]$ باشد.}
+
+  در اینجا~$\mModel M \mid !B = \tuple{W', R', V'}$ چنین تعریف می‌شود:
+  \begin{enumerate}
+    \item $W' = \Setabs{ u \in W}{\mSat{M}{!B}[u]}$. پس جهان‌های
+      $\mModel M \mid !B$ همان جهان‌های~$\mModel M$ هستند که~$!B$
+      در آن‌ها برقرار است.
+    \item $R'_a = R_a \cap (W' \times W')$. رابطهٔ دسترسی‌پذیریِ هر
+      عامل صرفاً به جهان‌های باقی‌مانده در~$W'$ محدود می‌شود.
+    \item $V'(p) = \Setabs{ u \in W'}{u \in V(p) }$. به همین ترتیب،
+      ارزش‌گذاری‌های گزاره‌ای در جهان‌ها یکسان می‌مانند؛ این امر بیانگر
+      آن است که رویدادهای اطلاعاتی ارزش صدق متغیرهای گزاره‌ای را تغییر
+      نمی‌دهند.
+  \end{enumerate}
+  
+  \end{enumerate}
+\end{defn}
+
+پس ویژگی متمایز منطق‌های اعلان عمومی آن است که گاهی صدق
+!!a{formula} در~$\mModel M$ را تنها با ارجاع به مدلی غیر از خودِ
+$\mModel M$ می‌توان تعیین کرد.
+
+همچنین توجه کنید که معناشناسی ما عملگر اعلان را عملگری از نوع~$\Box$
+می‌گیرد. بنابراین، اگر نتوان !!a{formula}~$!A$ را در جهانی صادقانه
+اعلان کرد، آنگاه~$[!A]!B$ در آنجا بدیهی‌وار برقرار خواهد بود، درست
+همان‌گونه که همهٔ !!{formula}های~$\Box$ در نقاط پایانی برقرارند.
+
+\begin{figure}
+  \begin{center}
+    \begin{tikzpicture}[modal]
+      \node[world] (w1) [label={below left:$p, \lnot q$}]{$w_1$};
+      \node[world] (w2) [left=of w1, label={left:$\lnot p, \lnot q$}]{$w_2$};
+      \node[world] (w3) [above=of w1, label={right:$p, q$}] {$w_3$};
+      \draw[<->] (w1) to [swap] node {$b$} (w2);
+      \draw[->,loop below] (w1) to node {$a, b$} (w1);
+      \draw[<->] (w1) to [swap] node {$a$} (w3);
+      \draw[->,loop above] (w2) to node {$a, b$} (w2) ;
+      \draw[->,loop above] (w3) to node {$a, b$} (w3) ;
+      
+      \node[world](v1)[right of=w1, xshift=1.25in, label={right:$p, \lnot q$}]{$w'_1$};
+      \node[world](v3)[above of=v1,label={right:$p,q$}]{$w'_3$};
+      \draw[<->] (v1) to node {$a$} (v3);
+      \draw[->,loop below] (v1) to node {$a,b$} (v1);
+      \draw[->,loop above] (v3) to node {$a,b$} (v3) ;
+      
+      \node(m)[below=of w1]{$\mModel M$};
+      \node(m')[below=of v1]{$\mModel M \mid p$};
+
+      \draw[-,dotted] (w1) to node {\footnotesize اعلانِ~$p$}(v1) ;
+     
+    \end{tikzpicture}
+  \end{center}
+  \caption{پیش و پس از اعلان عمومیِ~$p$.}
+  \ollabel{fig:announcement-example}
+\end{figure}
+
+می‌توان اعلان عمومیِ !!a{formula} را کوچک‌کردن یک مدل، یا محدودکردن
+آن به جهان‌هایی دانست که !!{formula} در آن‌ها صادق بوده است.
+\olref{fig:announcement-example} نمونه‌ای از آثار اعلان عمومیِ~$p$ را
+نشان می‌دهد. نکتهٔ شایان توجه دربارهٔ آن مدل این است که در نتیجهٔ
+اعلان، عامل~$b$ درمی‌یابد که~$p$، اما عامل~$a$ چنین دانشی را تازه به
+دست نمی‌آورد (زیرا~$a$ از پیش می‌دانست که~$p$ صادق است).
+
+به‌طور صوری، $\mSat{M}{\lnot \Knows_b p}[w_1]$، اما
+$\mSat{M \mid p}{\Knows_b p}[w_1]$. از این امر نتیجه می‌شود که
+$\mSat{M}{[p] \Knows_b p}[w_1]$. اما دربارهٔ نتیجهٔ اعلان می‌توانیم
+ادعاهایی حتی قوی‌تر مطرح کنیم. در واقع،
+$\mSat{M}{[p]\CKnows_{\{a,b\}} p}[w_1]$. به بیان دیگر، پس از اعلانِ
+$p$، آن گزاره به \emph{دانش مشترک} بدل می‌شود.
+
+بااین‌حال، شاید بپرسیم آیا این نتیجه در حالت کلی برقرار است و آیا اعلان
+صادقانهٔ~$!A$ \emph{همواره} موجب می‌شود~$!A$ به دانش مشترک بدل گردد.
+شاید شگفت‌آور باشد که پاسخ منفی است. در واقع، می‌توان !!{formula}هایی
+را صادقانه اعلان کرد که پس از اعلان دیگر صادق نباشند. برای نمونه، آثار
+اعلانِ~$p \land \lnot \Knows_b p$ در~$w_1$ از
+\olref{fig:announcement-example} را در نظر بگیرید. مدل
+$\mModel M \mid p$ جهان‌های~$w_1$ و~$w_3$ را نگه می‌دارد، اما
+$\mModel M \mid (p \land \lnot \Knows_b p)$ تنها جهان~$w_1$ را نگه
+می‌دارد. در این مدل تک‌جهانی،
+$\mSat{M \mid (p \land \lnot \Knows_b p)}{\Knows_b p}[w_1]$؛ بنابراین
+$\mSat/{M \mid (p \land \lnot \Knows_b p)}{p \land \lnot \Knows_b p}[w_1]$
+و در نتیجه
+$\mSat/{M}{[p \land \lnot \Knows_b p](p \land \lnot \Knows_b p)}[w_1]$.
+پس این !!a{formula} پس از اعلان خود کاذب می‌شود.
+
+\end{document}

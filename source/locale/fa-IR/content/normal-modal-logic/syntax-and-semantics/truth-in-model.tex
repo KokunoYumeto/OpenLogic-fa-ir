@@ -1,0 +1,84 @@
+% Part: normal-modal-logic
+% Chapter: syntax-and-semantics
+% Section: truth-in-model
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{syn}{tru}
+
+\olsection{صدق در یک مدل}
+
+گاه می‌خواهیم بدانیم کدام !!{formula} در هر جهانِ یک مدل معین صادق‌اند.
+برای این مفهوم نمادی معرفی می‌کنیم.
+
+\begin{defn}
+  !!^a{formula}~$!A$ در مدل~$M = \tuple{W, R, V}$ \emph{صادق است}، که
+  با~$\mSat{M}{!A}$ نمادگذاری می‌شود، اگر و تنها اگر برای هر~$w \in W$،
+  رابطهٔ~$\mSat{M}{!A}[w]$ برقرار باشد.
+\end{defn}
+
+\begin{prop}\ollabel{prop:truthfacts}
+  \begin{enumerate}
+  \item اگر~$\mSat{M}{!A}$، آنگاه~$\mSat/{M}{\lnot !A}$؛ اما عکس آن
+    برقرار \emph{نیست}.
+  \item اگر~$\mSat{M}{!A \lif !B}$، آنگاه~$\mSat{M}{!A}$ تنها در صورتی
+    که~$\mSat{M}{!B}$؛ اما عکس آن \emph{برقرار نیست}.
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+  \item اگر~$\mSat{M}{!A}$، آنگاه~$!A$ در همهٔ جهان‌های~$W$ صادق است،
+    و چون~$W \neq \emptyset$، نمی‌تواند~$\mSat{M}{\lnot!A}$ باشد؛ زیرا
+    در غیر این صورت~$!A$ باید در یک جهان هم صادق و هم کاذب باشد.
+
+    از سوی دیگر، اگر~$\mSat/{M}{\lnot !A}$، آنگاه~$!A$ در یک جهان
+    $w \in W$ صادق است. از این نتیجه نمی‌شود که~$\mSat{M}{!A}[w]$ برای
+    \emph{هر}~$w \in W$. برای نمونه، در مدلِ
+    \olref[rel]{fig:simple}، هم~$\mSat/{M}{\lnot p}$ و هم~$\mSat/{M}{p}$.
+  \item فرض کنید~$\mSat{M}{!A \lif !B}$ و~$\mSat{M}{!A}$. برای نشان‌دادن
+    $\mSat{M}{!B}$، جهان دلخواه~$w \in W$ را در نظر بگیرید. آنگاه
+    $\mSat{M}{!A \lif !B}[w]$ و~$\mSat{M}{!A}[w]$، پس
+    $\mSat{M}{!B}[w]$؛ و چون~$w$ دلخواه بود، $\mSat{M}{!B}$.
+
+    برای نشان‌دادن اینکه عکس حکم برقرار نیست، باید مدلی~$\mModel{M}$
+    بیابیم چنان‌که~$\mSat{M}{!A}$ تنها در صورتی که~$\mSat{M}{!B}$، اما
+    $\mSat/{M}{!A \lif !B}$. بار دیگر مدلِ \olref[rel]{fig:simple} را
+    در نظر بگیرید: $\mSat/{M}{p}$ و ازاین‌رو (به‌طور تهی)
+    $\mSat{M}{p}$ تنها در صورتی که~$\mSat{M}{q}$. بااین‌حال،
+    $\mSat/{M}{p \lif q}$، زیرا در~$w_1$، $p$ صادق اما~$q$ کاذب است.
+  \end{enumerate}
+\end{proof}
+
+\begin{prob}
+  مدل زیر، یعنی~$\mModel{M}$، را برای زبانی در نظر بگیرید که تنها
+  !!{propositional variable}های آن~$p_1$، $p_2$ و~$p_3$ هستند:
+  \begin{center}
+    \begin{tikzpicture}[modal]
+      \node[world] (w1) [label={[align=right]left:\mTrue{p_1}\\\mFalse{p_2}\\\mFalse{p_3}}]
+            {$w_1$} ; 
+      \node[world] (w2) [label={[align=right]right:\mTrue{p_1}\\\mTrue{p_2}\\\mFalse{p_3}},
+        below right=of w1]  {$w_2$}; 
+      \node[world] (w3) [label={[align=right]right:\mTrue{p_1}\\\mTrue{p_2}\\\mTrue{p_3}},
+        above right=of w2] {$w_3$};
+      \draw[reflexive above] (w3) to (w3); 
+      \draw[->] (w1) to (w2);
+      \draw[->] (w2) to (w3);
+      \draw[->] (w1) to (w3); 
+    \end{tikzpicture}
+  \end{center}
+  آیا !!{formula} و طرحواره‌های زیر در مدل~$\mModel{M}$ صادق‌اند، یعنی
+  در هر جهانِ~$\mModel{M}$ صادق‌اند؟ توضیح دهید.
+  \begin{enumerate}
+  \item $p\lif \Diamond p$ (برای~$p$ اتمی)؛
+  \item $!A\lif \Diamond !A$ (برای~$!A$ دلخواه)؛
+  \item $\Box p \lif p$ (برای~$p$ اتمی)؛
+  \item $\lnot p \lif \Diamond \Box p$ (برای~$p$ اتمی)؛
+  \item $\Diamond \Box !A$ (برای~$!A$ دلخواه)؛
+  \item $\Box \Diamond p$ (برای~$p$ اتمی).
+  \end{enumerate}
+\end{prob}
+
+\end{document}

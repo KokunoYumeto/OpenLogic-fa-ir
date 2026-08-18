@@ -1,0 +1,106 @@
+% Part: first-order-logic
+% Chapter: tableaux
+% Section: quantifier-rules
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{tab}{qrl}
+
+\olsection{قواعد سورها}
+
+\subsection{قواعد $\lforall$}
+
+\begin{defish}
+\AxiomC{\sFmla{\True}{\lforall[x][!A(x)]}}
+\RightLabel{\TRule{\True}{\forall}}
+\UnaryInfC{\sFmla{\True}{!A(t)}}
+\DisplayProof
+\hfill
+\AxiomC{\sFmla{\False}{\lforall[x][!A(x)]}}
+\RightLabel{\TRule{\False}{\lforall}}
+\UnaryInfC{\sFmla{\False}{!A(a)}}
+\DisplayProof
+\end{defish}
+
+در \TRule{\True}{\lforall}، $t$ یک ترم بسته است (یعنی ترمی بدون
+متغیر). در \TRule{\False}{\lforall}، $a$~!!a{constant} است که نباید در
+هیچ‌جای شاخهٔ بالای قاعدهٔ \TRule{\False}{\lforall} رخ دهد. $a$ را
+\emph{متغیر ویژهٔ} استنتاج \TRule{\False}{\forall} می‌نامیم.\footnote{هرچند
+$a$ در قاعدهٔ بالا !!a{constant} است، اصطلاح «متغیر ویژه» را به کار
+می‌بریم. این کاربرد دلایل تاریخی دارد.}
+
+\subsection{قواعد $\lexists$}
+
+\begin{defish}
+\AxiomC{\sFmla{\True}{\lexists[x][!A(x)]}}
+\RightLabel{\TRule{\True}{\lexists}}
+\UnaryInfC{\sFmla{\True}{!A(a)}}
+\DisplayProof
+\hfill
+\AxiomC{\sFmla{\False}{\lexists[x][!A(x)]}}
+\RightLabel{\TRule{\False}{\lexists}}
+\UnaryInfC{\sFmla{\False}{!A(t)}}
+\DisplayProof
+\end{defish}
+
+باز هم $t$ یک ترم بسته است و $a$~!!a{constant} است که در شاخهٔ بالای
+قاعدهٔ~\TRule{\True}{\lexists} رخ نمی‌دهد. $a$ را \emph{متغیر ویژهٔ}
+استنتاج \TRule{\True}{\lexists} می‌نامیم.
+
+شرطِ رخ‌ندادن متغیر ویژه در شاخهٔ بالای استنتاج
+\TRule{\False}{\lforall} یا \TRule{\True}{\lexists}، \emph{شرط متغیر ویژه}
+نامیده می‌شود.
+
+\begin{explain}
+قرارداد را به یاد آورید که هرگاه $!A$~!!a{formula} با !!{variable} آزادِ
+~$x$ باشد، این امر را با نوشتن~$!A(x)$ نشان می‌دهیم. در همان بافت،
+$!A(t)$ اختصاری برای~$\Subst{!A}{t}{x}$ است. بنابراین می‌توانستیم قاعدهٔ
+\TRule{\False}{\lexists} را به صورت زیر نیز بنویسیم:
+\begin{prooftree}
+  \AxiomC{\sFmla{\False}{\lexists[x][!A]}}
+  \RightLabel{\TRule{\False}{\lexists}}
+  \UnaryInfC{\sFmla{\False}{\Subst{!A}{t}{x}}}
+\end{prooftree}
+توجه کنید که $t$ ممکن است از پیش در~$!A$ رخ دهد؛ برای نمونه، ممکن است
+$!A$ همان~$\Atom{\Obj P}{t,x}$ باشد. پس استنتاج
+$\sFmla{\False}{\Atom{\Obj P}{t,t}}$ از
+~$ \sFmla{\False}{\lexists[x][\Atom{\Obj P}{t,x}]}$ کاربردی درست از
+~\TRule{\False}{\lexists} است. با این حال، شروط متغیر ویژه در
+\TRule{\False}{\lforall} و~\TRule{\True}{\lexists} ایجاب می‌کنند که
+!!{constant}~$a$ در~$!A$ رخ ندهد. بنابراین نمی‌توان
+$\sFmla{\False}{\Atom{\Obj P}{a,a}}$ را از
+$\sFmla{\False}{\lforall[x][\Atom{\Obj P}{a,x}]}$ با استفاده
+از~$\TRule{\False}{\lforall}$ به‌درستی استنتاج کرد.
+\end{explain}
+
+\begin{explain}
+در \TRule{\True}{\lforall} و \TRule{\False}{\lexists} هیچ محدودیتی بر
+ترم~$t$ وجود ندارد. از سوی دیگر، در قواعد \TRule{\True}{\lexists} و
+\TRule{\False}{\lforall}، شرط متغیر ویژه ایجاب می‌کند که !!{constant}~$a$
+در هیچ‌جای شاخه‌های بالای استنتاج مربوط رخ ندهد. این شرط برای تضمین صحت
+دستگاه ضروری است. بدون آن، عبارت زیر !!{tableau}ی بسته برای
+$\lexists[x][\formula{A}(x)] \lif \lforall[x][\formula{A}(x)]$ می‌بود:
+\begin{center}
+\begin{tableau}{}
+  [\sFmla{\False}{\lexists[x][\formula{A}(x)] \lif \lforall[x][\formula{A}(x)]}, just=\TAss
+    [\sFmla{\True}{\lexists[x][\formula{A}(x)]},
+      just={\TRule{\False}{\lif}[1]}
+      [\sFmla{\False}{\lforall[x][\formula{A}(x)]},
+        just={\TRule{\False}{\lif}[1]}
+        [\sFmla{\True}{\formula{A}(a)},
+          just={\TRule{\True}{\lexists}[2]}
+          [\sFmla{\False}{\formula{A}(a)},
+            just={\TRule{\False}{\lforall}[3]}, close]
+        ]
+      ]
+    ]
+  ]
+\end{tableau}
+\end{center}
+با این همه، $\lexists[x][\formula{A}(x)] \lif
+\lforall[x][\formula{A}(x)]$ معتبر نیست.
+\end{explain}
+
+\end{document}

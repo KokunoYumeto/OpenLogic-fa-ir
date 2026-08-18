@@ -1,0 +1,83 @@
+% Part: first-order-logic
+% Chapter: axiomatic-deduction
+% Section: provability-propositional
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{axd}{ppr}}
+      {\olfileid{pl}{axd}{ppr}}
+
+\olsection{\usetoken{S}{derivability} و ادات گزاره‌ای}
+
+\begin{explain}
+  نشان می‌دهیم که رابطهٔ !!{derivability}~$\Proves$ در استنتاج
+  اصل‌موضوعی آن‌قدر نیرومند است که برخی واقعیت‌های بنیادی دربارهٔ ادات
+  گزاره‌ای را اثبات کند؛ مانند $!A \land !B \Proves !A$ و
+  $!A, !A \lif !B \Proves !B$ (وضع مقدم). این واقعیت‌ها در اثبات قضیهٔ
+  تمامیت لازم‌اند.
+\end{explain}
+
+\begin{prop}\ollabel{prop:provability-land}
+  \begin{enumerate}
+  \item \ollabel{prop:provability-land-left} هم
+    $!A \land !B \Proves !A$ و هم $!A \land !B \Proves !B$.
+  \item \ollabel{prop:provability-land-right} $!A, !B \Proves !A \land !B$.
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+    \item از \olref[prp]{ax:land1} و \olref[prp]{ax:land2} با وضع مقدم.
+  \item از \olref[prp]{ax:land3} با دو بار کاربرد وضع مقدم.
+  \end{enumerate}
+\end{proof}
+
+
+\begin{prop}\ollabel{prop:provability-lor}
+  \begin{enumerate}
+  \item $!A \lor !B, \lnot !A, \lnot !B$ ناسازگار است.
+  \item هم $!A \Proves !A \lor !B$ و هم $!B \Proves !A \lor !B$.
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+  \item از \olref[prp]{ax:lnot2} به دست می‌آوریم
+    $\Proves \lnot !A \lif (!A \lif \lfalse)$ و
+    $\Proves \lnot !B \lif (!B \lif \lfalse)$. پس بنا بر قضیهٔ
+    استنتاج، داریم $\{\lnot !A\} \Proves !A \lif \lfalse$ و
+    $\{\lnot !B\} \Proves !B \lif \lfalse$. از
+    \olref[prp]{ax:lor3} به دست می‌آوریم
+    $\{\lnot !A, \lnot !B\} \Proves (!A \lor !B) \lif \lfalse$.
+    بنا بر قضیهٔ استنتاج،
+    $\{!A \lor !B, \lnot !A, \lnot !B\} \Proves \lfalse$.
+  \item از \olref[prp]{ax:lor1} و \olref[prp]{ax:lor2} با وضع مقدم.
+  \end{enumerate}
+\end{proof}
+
+\begin{prop}\ollabel{prop:provability-lif}
+  \begin{enumerate}
+  \item \ollabel{prop:provability-lif-left} $!A, !A \lif !B \Proves !B$.
+  \item \ollabel{prop:provability-lif-right}
+    هم $\lnot !A \Proves !A \lif !B$ و هم $!B \Proves !A \lif !B$.
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+  \item می‌توانیم !!{derive} کنیم:
+    \begin{derivation}
+      1. & $!A$ & \Hyp\\
+      2. & $!A \lif !B$ & \Hyp\\
+      3. & $!B$ & 1, 2, \MP
+    \end{derivation}
+
+  \item به‌ترتیب، بنا بر \olref[prp]{ax:lnot2} و
+    \olref[prp]{ax:lif1} و قضیهٔ استنتاج.
+  \end{enumerate}
+\end{proof}
+
+\end{document}

@@ -1,0 +1,397 @@
+% Part: proof-theory
+% Chapter: sequent-calculus
+% Section: invertibility
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{seq}{inv}
+
+\olsection{وارون‌پذیری قواعد}
+
+\begin{defn}
+قاعدهٔ~$R$،
+\[
+\AxiomC{$S_1$}
+\AxiomC{$\dots$}
+\AxiomC{$S_n$}
+\RightLabel{$R$}
+\TrinaryInfC{$S$}
+\DisplayProof
+\]
+در یک دستگاه \emph{وارون‌پذیر} است هرگاه از~$\Proves S$ بتوان برای هر
+$i = 1$، \dots،~$n$ نتیجه گرفت که~$\Proves S_i$. این قاعده در دستگاه
+\emph{وارون‌پذیر با حفظ !!{height}} (یا
+\emph{!!{hp}-وارون‌پذیر}) است هرگاه از~$\Proves[n] S$ بتوان برای هر
+$i = 1$، \dots،~$n$ نتیجه گرفت که~$\Proves[n] S_i$.
+\end{defn}
+
+\begin{lem}\ollabel{lem:G3c-invert}
+قواعد~\Log{G3c} برای~$\lnot$، $\land$، $\lor$ و~$\lif$ با حفظ
+!!{height} وارون‌پذیرند؛ یعنی:
+\begin{enumerate}
+  \item \RightR{\lnot}: اگر~$\Log{G3c} \Proves[n] \Gamma \Sequent
+  \Delta, \lnot !A$، آنگاه~$\Log{G3c} \Proves[n] !A, \Gamma \Sequent
+  \Delta$.
+  \item \LeftR{\lnot}: اگر~$\Log{G3c} \Proves[n] \Gamma, \lnot !A
+  \Sequent \Delta$، آنگاه~$\Log{G3c} \Proves[n] \Gamma \Sequent \Delta,
+  !A$.
+  \item \RightR{\land}: اگر~$\Log{G3c} \Proves[n] \Gamma \Sequent
+  \Delta, !A \land !B$، آنگاه~$\Log{G3c} \Proves[n] \Gamma \Sequent
+  \Delta, !A$ و~$\Log{G3c} \Proves[n] \Gamma \Sequent
+  \Delta, !B$.
+  \item \LeftR{\land}: اگر~$\Log{G3c} \Proves[n] \Gamma, !A \land !B
+  \Sequent \Delta$، آنگاه~$\Log{G3c} \Proves[n] !A, !B, \Gamma \Sequent
+  \Delta$.
+  \item \RightR{\lor}: اگر~$\Log{G3c} \Proves[n] \Gamma \Sequent
+  \Delta, !A \lor !B$، آنگاه~$\Log{G3c} \Proves[n] \Gamma \Sequent
+  \Delta, !A, !B$.
+  \item \LeftR{\lor}: اگر~$\Log{G3c} \Proves[n] !A \lor !B, \Gamma
+  \Sequent \Delta$، آنگاه~$\Log{G3c} \Proves[n] !A, \Gamma \Sequent
+  \Delta$ و~$\Log{G3c} \Proves[n] !B, \Gamma \Sequent
+  \Delta$.
+  \item \RightR{\lif}: اگر~$\Log{G3c} \Proves[n] \Gamma \Sequent
+  \Delta, !A \lif !B$، آنگاه~$\Log{G3c} \Proves[n] !A, \Gamma \Sequent
+  \Delta, !B$.
+  \item \LeftR{\lif}: اگر~$\Log{G3c} \Proves[n] !A \lif !B, \Gamma
+  \Sequent \Delta$، آنگاه~$\Log{G3c} \Proves[n] \Gamma \Sequent \Delta,
+  !A$ و~$\Log{G3c} \Proves[n] !B, \Gamma \Sequent \Delta$.
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+باید نشان دهیم برای هر قاعدهٔ~$R$ در~\Log{G3c}، اگر !!a{proof}~$\pi$
+از نتیجهٔ~$S$ قاعدهٔ~$R$ وجود داشته باشد، !!{proof}s~$\pi_i$ از مقدمات
+$S_i$ نیز وجود دارند، به‌طوری‌که
+$\pheight{\pi_i} \le \pheight{\pi}$. قاعدهٔ~\LeftR{\land} را در نظر
+بگیرید: فرض کنید !!a{proof}~$\pi$ با دنبالهٔ پایانی به صورت
+$!A \land !B, \Gamma \Sequent \Delta$ وجود دارد. باید نشان دهیم
+!!a{proof}~$\pi'$ از~$!A, !B, \Gamma \Sequent \Delta$ وجود دارد که
+$\pheight{\pi'} \le \pheight{\pi}$. بر~$n = \pheight{\pi}$ استقرا
+می‌کنیم.
+
+اگر~$n = 0$، $\pi$ تنها از یک اصل~$!A \land !B, \Gamma
+\Sequent \Delta$ تشکیل می‌شود. اصول~\Log{G3c} یا از صورت
+$!C, \Gamma \Sequent \Delta, !C$ با~$!C$ اتمی‌اند، یا اصلِ دارای
+$\lfalse$ در سمت چپ‌اند. در صورت نخست،~$!C$ نمی‌تواند~$!A \land !B$
+باشد؛ پس یک~$!C$ اتمی !!a{element} از هر دو~$\Gamma$ و~$\Delta$ است و
+$!A, !B, \Gamma \Sequent \Delta$ نیز اصل است. در صورت دوم نیز افزودن
+$!A$ و~$!B$ آن اصل را حفظ می‌کند. بنابراین !!{proof}~$\pi'$
+را یافته‌ایم که آن هم !!{height}~$0$ دارد.
+
+اگر~$n>0$، $\pi$ به استنتاجی ختم می‌شود. باید ادعا را برای~$n$ ثابت
+کنیم، اما می‌توانیم در مورد هر !!{proof} با ارتفاع کمتر از~$n$، حتی با
+بافتی متفاوت، آن را فرض کنیم. به بیان دیگر، برای هر~$k<n$ و هر~$\Pi$
+و~$\Lambda$، اگر~$!A \land !B, \Pi \Sequent \Lambda$ !!a{proof} با
+!!{height}~$k$ داشته باشد، آنگاه~$!A, !B, \Pi \Sequent \Lambda$
+!!a{proof} با~!!{height}~$\le k$ دارد.
+
+دو حالت داریم: یا~$!A \land !B$ در سمت چپ اصلی است یا نیست. اگر اصلی
+باشد، استنتاج پایانی~\LeftR{\land} است و زیر-!!{proof} بی‌واسطهٔ
+$\pi_1$ به~$!A, !B, \Gamma \Sequent \Delta$ ختم می‌شود. در این حالت
+نتیجه برقرار است، زیرا~$\pheight{\pi_1} < \pheight{\pi}$.
+
+اگر~$!A \land !B$ اصلی نباشد، !!{formula} دیگری اصلی است و
+$!A \land !B$ در بافتِ استنتاج پایانی قرار دارد. در این صورت فرض استقرا
+بر زیر-!!{proof}s بی‌واسطهٔ قاعدهٔ پایانی~$R$ اعمال می‌شود و یک
+!!a{proof}~$\pi_1'$ یا دو~!!{proof}s~$\pi_1'$ و~$\pi_2'$ می‌دهد که
+!!{height} آن‌ها از ارتفاع زیر-!!{proof}s بی‌واسطهٔ~$\pi$ بیشتر نیست.
+دنباله‌های پایانی~$\pi_1'$ و~$\pi_2'$ به‌جای~$!A \land !B$ در بافت چپ،
+$!A, !B$ دارند. با اعمال قاعدهٔ~$R$، برهان~$\pi'$ را به دست
+می‌آوریم. برای نمونه، فرض کنید~$\pi$ به~\LeftR{\lif} ختم شود:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$!A \land !B, \Gamma' \fCenter \Delta, !C$
+\AxiomC{}
+\RightLabel{$\pi_2$}
+\Deduce$!A \land !B, \Gamma', !D \fCenter \Delta$
+\RightLabel{\LeftR{\lif}}
+\BinaryInf$!A \land !B, \Gamma', !C \lif !D \fCenter \Delta$
+\DisplayProof
+\]
+در اینجا~$!C \lif !D$ در سمت چپ اصلی است و بافت چپ
+$!A \land !B, \Gamma'$ است؛ یعنی~$\Gamma = \Gamma', !C \lif !D$.
+فرض استقرا به‌ترتیب !!{proof}s~$\pi_1'$ و~$\pi_2'$ را از
+$!A, !B, \Gamma' \Sequent \Delta, !C$ و
+$!A, !B, \Gamma', !D \Sequent \Delta$ می‌دهد. این دو دنباله بار دیگر
+مقدمات قاعدهٔ~\LeftR{\lif} می‌شوند تا~$\pi'$ به دست آید:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$!A, !B, \Gamma' \fCenter \Delta, !C$
+\AxiomC{}
+\RightLabel{$\pi_2'$}
+\Deduce$!A, !B, \Gamma', !D \fCenter \Delta$
+\RightLabel{\LeftR{\lif}}
+\BinaryInf$!A, !B, \Gamma', !C \lif !D \fCenter \Delta$
+\DisplayProof
+\]
+داریم
+\begin{align*}
+\pheight{\pi} & = \max(\pheight{\pi_1}, \pheight{\pi_2}) + 1\\
+\pheight{\pi'} & = \max(\pheight{\pi_1'}, \pheight{\pi_2'}) + 1
+\intertext{طبق تعریف، و}
+\pheight{\pi_1'} & \le \pheight{\pi_1}\\
+\pheight{\pi_2'} & \le \pheight{\pi_2}
+\intertext{طبق فرض استقرا. پس}
+\pheight{\pi'} & \le \pheight{\pi}.
+\end{align*}
+\end{proof}
+
+\begin{prob}
+برهان~\olref{lem:G3c-invert} را برای~\RightR{\lif} ارائه کنید.
+\end{prob}
+
+\begin{lem}\ollabel{lem:invert-quant}
+قواعد~\RightR{\lforall} و~\LeftR{\lexists} به معنای زیر با حفظ
+!!{height} وارون‌پذیرند:
+\begin{enumerate}
+  \item اگر~$\Log{G3c} \Proves[n] \Gamma \Sequent \Delta,
+  \lforall[x][!A(x)]$، آنگاه~$\Log{G3c} \Proves[n] \Gamma \Sequent
+  \Delta, !A(c)$؛ و
+  \item اگر~$\Log{G3c} \Proves[n] \lexists[x][!A(x)], \Gamma \Sequent
+  \Delta$، آنگاه~$\Log{G3c} \Proves[n] !A(c), \Gamma \Sequent \Delta$،
+\end{enumerate}
+برای هر~$c$ که به‌ترتیب در~$\Gamma$، $\Delta$ و فرمول کمیت‌گذاری‌شدهٔ
+$\lforall[x][!A(x)]$ یا~$\lexists[x][!A(x)]$ رخ ندهد.
+\end{lem}
+
+\begin{proof}
+  بند~(1) را نشان می‌دهیم و بند~(2) را به‌عنوان تمرین واگذار می‌کنیم.
+  استدلال شبیه برهان~\olref{lem:G3c-invert} است. در گام استقرا باز دو
+  حالت داریم. اگر~$\lforall[x][!A(x)]$ اصلی باشد، کار سریع است: مقدمهٔ
+  آخرین استنتاج~$\RightR{\lforall}$ به صورت مطلوب
+  $\Gamma \Sequent \Delta, !A(a)$ است و زیر-!!{proof} بی‌واسطهٔ~$\pi_1$
+  که به آن ختم می‌شود،~$\pheight{\pi_1} < \pheight{\pi}$ دارد. افزون
+  بر این، شرط متغیر ویژه می‌گوید~$a$ در~$\Gamma$، $\Delta$ یا
+  $\lforall[x][!A(x)]$ رخ نمی‌دهد. چون می‌توان فرض کرد~$\pi_1$ منظم
+  است، بنا بر~\olref[qua]{lem:subst-regular}،
+  $\Subst{\pi_1}{c}{a}$ !!a{proof} با همان !!{height} از
+  $\Gamma \Sequent \Delta, !A(c)$ است.
+
+  در حالت دوم،~$\lforall[x][!A(x)]$ در استنتاج پایانی اصلی نیست و
+  فرمول دیگری اصلی است. بار دیگر یک حالت را به‌عنوان نمونه بررسی می‌کنیم.
+  فرض کنید استنتاج پایانی~\RightR{\land} باشد. !!{formula}ی در~$\Delta$ به
+  صورت~$!B \land !C$ و اصلی است. !!{proof}~$\pi$ چنین پایان می‌یابد:
+  \[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\Gamma \fCenter \Delta', \lforall[x][!A(x)], !B$
+\AxiomC{}
+\RightLabel{$\pi_2$}
+\Deduce$\Gamma \fCenter \Delta', \lforall[x][!A(x)], !C$
+\RightLabel{\RightR{\land}}
+\BinaryInf$\Gamma \fCenter \Delta', \lforall[x][!A(x)], !B \land !C$
+\DisplayProof
+\]
+که در آن~$\Delta = \Delta', !B \land !C$. !!a{constant}~$c$ را چنان
+برگزینید
+که در~$\Gamma$، $\Delta$ و~$\lforall[x][!A(x)]$ رخ ندهد؛ پس به‌روشنی
+در~$\Delta', !B$ و~$\Delta', !C$ نیز رخ نمی‌دهد. بنابراین فرض استقرا
+بر~$\pi_1$ و~$\pi_2$ اعمال می‌شود؛ !!{proof}s~$\pi_1'$ و~$\pi_2'$
+داریم که
+$\pheight{\pi_1'} \le \pheight{\pi_1}$ و
+$\pheight{\pi_2'} \le \pheight{\pi_2}$. !!{proof} مطلوب~$\pi'$ از
+$\Gamma \Sequent \Delta, !A(c)$ چنین است:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$\Gamma \fCenter \Delta', !A(c), !B$
+\AxiomC{}
+\RightLabel{$\pi_2'$}
+\Deduce$\Gamma \fCenter \Delta', !A(c), !C$
+\RightLabel{\RightR{\land}}
+\BinaryInf$\Gamma \fCenter \Delta', !A(c), !B \land !C$
+\DisplayProof
+\]
+و
+$\pheight{\pi'} = \max(\pheight{\pi_1'}, \pheight{\pi_2'})+1
+\le \pheight{\pi}$.
+\end{proof}
+
+\Olref{lem:G3c-invert} در برهان قضیهٔ حذف برش نقش مهمی دارد، اما برای
+نشان‌دادن نتیجهٔ زیر نیز به کار می‌رود:
+
+\begin{prop}\ollabel{prop:G3c-cont-adm}
+قواعد انقباض~\LeftR{\Contraction} و~\RightR{\Contraction} در~\Log{G1c}،
+در~\Log{G3c} با حفظ !!{height} پذیرفتنی‌اند.
+\end{prop}
+
+\begin{proof}
+استدلال~\RightR{\Contraction} و~\LeftR{\Contraction} را هم‌زمان
+می‌آوریم. فرض کنید~$\pi$ در~\Log{G3c} !!a{proof} از
+$\Gamma \Sequent \Delta, !A, !A$ یا
+$!A, !A, \Gamma \Sequent \Delta$ باشد. باید نشان دهیم !!{proof}
+~\Log{G3c} به نام~$\pi'$ به‌ترتیب از
+$\Gamma \Sequent \Delta, !A$ یا~$!A, \Gamma \Sequent \Delta$ وجود دارد
+که~$\pheight{\pi'} \le \pheight{\pi}$. بر
+$n = \pheight{\pi}$ استقرا می‌کنیم.
+
+اگر~$n=0$، $\pi$ فقط یک اصل است. اگر
+$\Gamma \Sequent \Delta, !A, !A$ اصل~\Log{G3c} باشد،
+$\Gamma \Sequent \Delta, !A$ نیز اصل است: یا یک~$!C$ اتمی
+!!a{element} از هر دو~$\Gamma$ و~$\Delta$ است، یا~$!A$ اتمی
+و~!!a{element} از~$\Gamma$ است،
+یا مقدم دارای~$\lfalse$ است. همین استدلال برای دنبالهٔ پایانی
+$!A, !A, \Gamma \Sequent \Delta$ نیز برقرار است.
+
+اگر~$n>0$، $\pi$ به قاعده‌ای چون~$R$ ختم می‌شود. اگر~$!A$ در این
+استنتاج پایانی اصلی نباشد، همانند برهان~\olref{lem:G3c-invert}،
+!!a{proof}~$\pi'$ را با اعمال فرض استقرا بر زیر-!!{proof}s بی‌واسطهٔ
+$\pi$ و سپس اعمال همان قاعدهٔ~$R$ بر !!{proof}(s) حاصل به دست می‌آوریم.
+فرض استقرا این است که اگر~$k<n$ و !!a{proof} با !!{height}~$k$ از
+$\Pi \Sequent \Lambda, !D, !D$ یا
+$!D, !D, \Pi \Sequent \Lambda$ وجود داشته باشد، آنگاه به‌ترتیب
+!!a{proof} با~!!{height}~$\le k$ از
+$\Pi \Sequent \Lambda, !D$ یا~$!D, \Pi \Sequent \Lambda$ وجود دارد.
+(توجه کنید فرض استقرا حتی وقتی بافت‌ها یا !!{formula} منقبض‌شونده با
+$\Gamma$، $\Delta$ یا~$!A$ متفاوت‌اند نیز اعمال می‌شود.)
+
+برای نمونه، فرض کنید~$R$ همان~$\RightR{\land}$ باشد و~$\pi$ چنین پایان
+یابد:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\Gamma \fCenter \Delta', !B, !A, !A$
+\AxiomC{}
+\RightLabel{$\pi_2$}
+\Deduce$\Gamma \fCenter \Delta', !C, !A, !A$
+\RightLabel{\RightR{\land}}
+\BinaryInf$\Gamma \fCenter \Delta', !B \land !C, !A, !A$
+\DisplayProof
+\]
+که در آن~$\Delta = \Delta', !B \land !C$. فرض استقرا !!{proof}s
+$\pi_1'$ و~$\pi_2'$ را به‌ترتیب از
+$\Gamma \fCenter \Delta', !B, !A$ و
+$\Gamma \fCenter \Delta', !C, !A$ می‌دهد، با
+$\pheight{\pi_1'} \le \pheight{\pi_1}$ و
+$\pheight{\pi_2'} \le \pheight{\pi_2}$. !!{proof}~$\pi'$ چنین است:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$\Gamma \fCenter \Delta', !B, !A$
+\AxiomC{}
+\RightLabel{$\pi_2'$}
+\Deduce$\Gamma \fCenter \Delta', !C, !A$
+\RightLabel{\RightR{\land}}
+\BinaryInf$\Gamma \fCenter \Delta', !B \land !C, !A$
+\DisplayProof
+\]
+
+اگر~$!A$ در استنتاج پایانی اصلی باشد، لم وارون‌سازی
+(~\olref{lem:G3c-invert}) را بر زیر-!!{proof}s بی‌واسطهٔ~$\pi$ اعمال
+می‌کنیم، سپس فرض استقرا و بعد دوباره قاعدهٔ~$R$ را. برای نمونه، فرض کنید
+$\pi$ دنبالهٔ~$\Gamma \Sequent \Delta, !A, !A$ را اثبات کند،
+$!A \ident (!B \land !C)$ باشد و در استنتاج پایانی اصلی باشد. آنگاه
+$\pi$ چنین است:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\Gamma \fCenter \Delta, !B \land !C, !B$
+\AxiomC{}
+\RightLabel{$\pi_2$}
+\Deduce$\Gamma \fCenter \Delta, !B \land !C, !C$
+\RightLabel{\RightR{\land}}
+\BinaryInf$\Gamma \fCenter \Delta, !B \land !C, !B \land !C$
+\DisplayProof
+\]
+با اعمال~\olref{lem:G3c-invert} بر~$\pi_1$، !!a{proof}~$\pi_1'$ از
+$\Gamma \Sequent \Delta, !B, !B$ می‌گیریم. (این لم !!a{proof}ی از
+$\Gamma \Sequent \Delta, !C, !B$ نیز می‌دهد که به آن نیاز نداریم.)
+به همین ترتیب، اعمال~\olref{lem:G3c-invert} بر~$\pi_2$،
+!!a{proof}~$\pi_2'$ از~$\Gamma \Sequent \Delta, !C, !C$ می‌دهد. چون
+وارون‌سازی~\RightR{\land} !!{height} را حفظ می‌کند،
+$\pheight{\pi_1'} \le \pheight{\pi_1} < \pheight{\pi}$ و
+$\pheight{\pi_2'} \le \pheight{\pi_2} < \pheight{\pi}$. پس فرض استقرا
+بر~$\pi_1'$ و~$\pi_2'$ اعمال می‌شود: !!{proof}s~$\pi_1''$ و~$\pi_2''$
+به‌ترتیب از~$\Gamma \Sequent \Delta, !B$ و
+$\Gamma \Sequent \Delta, !C$ وجود دارند، با
+$\pheight{\pi_1''} \le \pheight{\pi_1'} \le \pheight{\pi_1}$ و
+$\pheight{\pi_2''} \le \pheight{\pi_2'} \le \pheight{\pi_2}$.
+آنگاه !!{proof}~$\pi'$ چنین است:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1''$}
+\Deduce$\Gamma \fCenter \Delta, !B$
+\AxiomC{}
+\RightLabel{$\pi_2''$}
+\Deduce$\Gamma \fCenter \Delta, !C$
+\RightLabel{\RightR{\land}}
+\BinaryInf$\Gamma \fCenter \Delta, !B \land !C$
+\DisplayProof
+\]
+و~$\pheight{\pi'} \le \pheight{\pi}$.
+
+در حالت‌هایی که !!{formula} کمیت‌گذار و اصلی است باید دقت ویژه‌ای به خرج
+دهیم.
+
+فرض کنید~$!A \ident \lforall[x][!B(x)]$ در سمت راست اصلی باشد. آنگاه
+$\pi$ چنین پایان می‌یابد:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\Gamma \fCenter \Delta, \lforall[x][!B(x)], !B(a)$
+\RightLabel{\RightR{\lforall}}
+\UnaryInf$\Gamma \fCenter \Delta, \lforall[x][!B(x)], \lforall[x][!B(x)]$
+\DisplayProof
+\]
+بنا بر~\olref{lem:invert-quant}، برای هر~$c$ که در~$\Gamma$، $\Delta$،
+$\lforall[x][!B(x)]$ و~$!B(a)$ رخ ندهد، !!a{proof}~$\pi_1'$ از
+$\Gamma \fCenter \Delta, !B(c), !B(a)$ با !!{height}~$\le$
+$\pheight{\pi_1}$ وجود دارد. می‌توان فرض کرد~$\pi_1'$ منظم است؛ پس بنا
+بر~\olref[qua]{lem:subst-regular}، !!{proof}
+$\Subst{\pi_1'}{a}{c}$، !!a{proof} از
+$\Gamma \fCenter \Delta, !B(a), !B(a)$ با
+!!{height}~$\le \pheight{\pi_1}$ است. اکنون فرض استقرا اعمال می‌شود و
+!!a{proof}~$\pi_1''$ از~$\Gamma \fCenter \Delta, !B(a)$ می‌دهد. با
+قاعدهٔ~\RightR{\lforall}، $\pi'$ را می‌گیریم:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1''$}
+\Deduce$\Gamma \fCenter \Delta, !B(a)$
+\RightLabel{\RightR{\lforall}}
+\UnaryInf$\Gamma \fCenter \Delta, \lforall[x][!B(x)]$
+\DisplayProof
+\]
+و~$\pheight{\pi'} \le \pheight{\pi}$.
+
+اکنون فرض کنید~$!A \ident \lexists[x][!B(x)]$ و در سمت راست اصلی باشد.
+آنگاه~$\pi$ چنین است:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\Gamma \fCenter \Delta, \lexists[x][!B(x)], \lexists[x][!B(x)], !B(t)$
+\RightLabel{\RightR{\lexists}}
+\UnaryInf$\Gamma \fCenter \Delta, \lexists[x][!B(x)], \lexists[x][!B(x)]$
+\DisplayProof
+\]
+فرض استقرا بر~$\pi_1$ اعمال می‌شود و !!a{proof}~$\pi_1'$ از
+$\Gamma \Sequent \Delta, \lexists[x][!B(x)], !B(t)$ وجود دارد.
+(اینجا به هیچ لم وارون‌سازی نیاز نیست.) آنگاه !!{proof}~$\pi'$ چنین است:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$\Gamma \fCenter \Delta, \lexists[x][!B(x)], !B(t)$
+\RightLabel{\RightR{\lexists}}
+\UnaryInf$\Gamma \fCenter \Delta, \lexists[x][!B(x)]$
+\DisplayProof
+\]
+و~$\pheight{\pi'} \le \pheight{\pi}$.
+\end{proof}
+
+\begin{prob}
+برهان~\olref{prop:G3c-cont-adm} را برای~\LeftR{\Contraction} طرح کنید.
+حالت‌هایی را شرح دهید که~$!A \ident (!B \land !C)$ و
+$!A \ident (!B \lif !C)$.
+\end{prob}
+
+\begin{prob}
+برهان~\olref{prop:G3c-cont-adm} را برای~\LeftR{\Contraction} در حالت‌های
+کمیت‌گذارِ باقی‌مانده طرح کنید؛ یعنی وقتی~$!A \ident
+\lforall[x][!B(x)]$ و~$!A \ident \lexists[x][!B(x)]$.
+\end{prob}
+
+
+\end{document}

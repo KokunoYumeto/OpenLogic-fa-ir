@@ -1,0 +1,40 @@
+% Part: normal-modal-logic
+% Chapter: axioms-systems
+% Section: duals
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{prf}{dua}
+
+\olsection{\usetoken{P}{formula}های دوگان}
+
+\begin{defn}\ollabel{def:duals}
+  هر یک از !!{formula}های~\Ax{T}، \Ax{B}، \Ax{4} و~\Ax{5} دوگانی
+  دارد که با لوزیِ زیرنویس‌دار نشان داده می‌شود:
+  \begin{align}
+    \tag{\Ax{T_\Diamond}} p & \lif \Diamond p\\
+    \tag{\Ax{B_\Diamond}} \Diamond\Box p & \lif p\\
+    \tag{\Ax{4_\Diamond}} \Diamond\Diamond p & \lif \Diamond p\\
+    \tag{\Ax{5_\Diamond}} \Diamond\Box p & \lif \Box p
+    \end{align}
+\end{defn}
+
+هر یک از !!{formula}های دوگان بالا از !!{formula} متناظر با جانشینی
+$\lnot p$ به‌جای~$p$، گرفتن عکس نقیض، جایگزینی~$\lnot\Box\lnot$ با
+$\Diamond$ و جایگزینی~$\lnot\Diamond\lnot$ با~$\Box$ به دست می‌آید.
+\Ax{D}، یعنی~$\Box!A \lif \Diamond!A$، به این معنا دوگان خودش است.
+
+\begin{prop}\ollabel{prop:dualsys}
+  برای هر !!{formula}~$!A$ در~\olref[nml][prf][dua]{def:duals}:
+  $\Log{K}!A = \Log{K}!A_{\Diamond}$.
+\end{prop}
+\begin{proof}
+  تمرین.
+\end{proof}
+\begin{prob}
+  \olref[nml][prf][dua]{prop:dualsys} را اثبات کنید.
+\end{prob}
+
+\end{document}

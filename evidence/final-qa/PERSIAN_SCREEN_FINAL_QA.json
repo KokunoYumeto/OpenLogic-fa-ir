@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "release": "OLP-0722-SCREEN-20260818",
+  "language": "fa-IR",
+  "source_commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "source_tree": "f67757bb9305b173634082ab4cefd5601a707a34",
+  "concept_doi": "10.5281/zenodo.21921852",
+  "exact_zenodo_version_doi": null,
+  "zenodo_screen_version_published": false,
+  "authorship": {
+    "sole_creator": "Open Logic Project",
+    "contributor": {
+      "name": "AI typesetting & translation",
+      "type": "Other",
+      "identifiers": [],
+      "affiliations": []
+    }
+  },
+  "content_scope": {
+    "complete_reader_units": 642,
+    "closure_supplement_units": 80,
+    "total_units": 722,
+    "translation_targets_changed": false,
+    "closure_manifests_changed": false,
+    "bindings_changed": false
+  },
+  "layout": {
+    "kind": "fixed-layout screen retypesetting",
+    "responsive_or_reflowable": false,
+    "page_size_points": [612, 792],
+    "base_font_points": 12,
+    "oneside": true,
+    "pdf_open_view": "FitH",
+    "pdf_page_layout": "OneColumn",
+    "pdf_page_mode": "UseOutlines",
+    "tagged": false,
+    "pdf_ua_certified": false
+  },
+  "outputs": {
+    "complete_reader": {
+      "filename": "05_OPENLOGIC_fa-IR_COMPLETE_LINKED_READER_SCREEN_OLP-0722.pdf",
+      "pages": 748,
+      "bytes": 7666348,
+      "sha256": "A4B7BEAC391B9C8704BA970B9422913D5236E3C6B4E0F123170D74D08771993C"
+    },
+    "closure_supplement": {
+      "filename": "06_OPENLOGIC_fa-IR_CLOSURE_SUPPLEMENT_80_UNITS_SCREEN_OLP-0722.pdf",
+      "pages": 108,
+      "bytes": 1185336,
+      "sha256": "710116E91278A63C362F523C93F1916458048A2B1B1E5A0E7942DA39840F38C0"
+    }
+  },
+  "determinism": {
+    "independent_clean_rebuild": true,
+    "byte_identical": true,
+    "all_final_gates_passed": true
+  },
+  "limitations": [
+    "The PDFs are untagged and are not PDF/UA certified.",
+    "Mathematical, ZWNJ, and bidirectional text extraction is not fully authoritative; editable TeX is authoritative.",
+    "No Persian-speaking human/native review, community approval, accessibility certification, or Open Logic Project endorsement is claimed."
+  ]
+}

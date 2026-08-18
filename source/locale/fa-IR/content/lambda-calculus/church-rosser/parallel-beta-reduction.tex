@@ -1,0 +1,163 @@
+% Part: lambda-calculus
+% Chapter: church-rosser
+% Section: parallel-beta-reduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{cr}{pb}
+
+\olsection{کاهش موازی~$\beta$}
+
+مفهوم \emph{کاهش موازی~$\beta$} را معرفی می‌کنیم و ثابت می‌کنیم که
+دارای خاصیت چرچ--راسر است.
+
+\begin{defn}[کاهش موازی~$\beta$، $\bredpar$] \ollabel{defn:bredpar}
+  کاهش موازی ترم‌ها ($\bredpar$) به‌صورت استقرایی چنین تعریف می‌شود:
+  \begin{enumerate}
+    \item \ollabel{defn:bredpar1} $x \bredpar x$.
+    \item \ollabel{defn:bredpar2} اگر~$N \bredpar N'$، آنگاه
+      $\lambd[x][N] \bredpar \lambd[x][N']$.
+    \item \ollabel{defn:bredpar3} اگر~$P \bredpar P'$ و~$Q \bredpar Q'$،
+      آنگاه~$PQ \bredpar P'Q'$.
+    \item \ollabel{defn:bredpar4} اگر~$N \bredpar N'$ و~$Q \bredpar Q'$،
+      آنگاه~$(\lambd[x][N])Q \bredpar \Subst{N'}{Q'}{x}$.
+  \end{enumerate}
+\end{defn}
+
+کاهش موازی~$\beta$ به ما امکان می‌دهد هر تعداد سرخ‌عبارت را در یک گام
+کاهش دهیم. تفاوت آن با کاهش~$\beta$ در این است که فقط می‌توانیم
+سرخ‌عبارت‌هایی را منقبض کنیم که در ترم اصلی رخ می‌دهند، نه
+سرخ‌عبارت‌هایی را که بر اثر کاهش موازی~$\beta$ پدید می‌آیند. برای مثال،
+ترم~$(\lambd[f][fx])(\lambd[y][y])$ را در یک گام کاهش موازی~$\beta$ فقط
+می‌توان به خودش یا به~$(\lambd[y][y])x$ کاهش داد، نه بیش از آن به~$x$؛
+هرچند این ترم با کاهش~$\beta$ به~$x$ می‌رسد، زیرا این سرخ‌عبارت تنها پس
+از یک گام کاهش موازی~$\beta$ پدید می‌آید. بااین‌حال، گام دوم کاهش
+موازی~$\beta$ نتیجهٔ~$x$ را به دست می‌دهد.
+
+\begin{thm}\ollabel{thm:refl}
+  $M \bredpar M$.
+\end{thm}
+
+\begin{proof}
+  تمرین.
+\end{proof}
+
+\begin{prob}
+  \olref[lam][cr][pb]{thm:refl} را ثابت کنید.
+\end{prob}
+
+\begin{defn}[بسط کامل~$\beta$]\ollabel{defn:bcd}
+  \emph{بسط کامل~$\beta$} ترم~$M$، یعنی~$\bcd{M}$، به‌صورت استقرایی
+  چنین تعریف می‌شود:
+  \begin{align}
+    \bcd{x} &= x \ollabel{defn:bcd1} \\
+    \bcd{(\lambd[x][N])} &= \lambd[x][\bcd{N}] \ollabel{defn:bcd2}\\
+    \bcd{(PQ)} &= \bcd{P}\bcd{Q} && \text{اگر $P$ یک انتزاع~$\lambd$ نباشد} 
+    \ollabel{defn:bcd3} \\
+    \bcd{((\lambd[x][N])Q)} &= \Subst{\bcd{N}}{\bcd{Q}}{x} \ollabel{defn:bcd4}
+  \end{align}
+\end{defn}
+
+همان‌گونه که نام بسط کامل~$\beta$ یک ترم نشان می‌دهد، این بسط نوعی
+«کاهش موازی کامل» است. در کاهش موازی~$\beta$ هنوز می‌توانیم انتخاب کنیم
+که یک سرخ‌عبارت را منقبض نکنیم، اما در بسط کامل ناگزیریم همهٔ آن‌ها را
+منقبض کنیم. ازاین‌رو بسط کامل~$(\lambd[f][fx])(\lambd[y][y])$ برابر
+$(\lambd[y][y])x$ است، نه خود ترم.
+
+\begin{editorial}
+  این تعریف با این مشکل روبه‌روست که هنوز توضیح نداده‌ایم چگونه توابع
+  را به‌صورت بازگشتی روی ترم‌های~($\lambd$) تعریف کنیم. این موضوع در
+  آینده اصلاح خواهد شد.
+\end{editorial}
+
+\begin{lem}\ollabel{lem:comp}
+  اگر~$M \bredpar M'$ و~$R \bredpar R'$، آنگاه
+  $\Subst{M}{R}{y} \bredpar \Subst{M'}{R'}{y}$.
+\end{lem}
+
+\begin{proof}
+  با استقرا بر~!!{derivation}ِ $M \bredpar M'$. در حالت‌هایی که
+  جای‌گذاری از زیر یک انتزاع می‌گذرد، می‌توانیم با تبدیل آلفا نمایندگان
+  را از پیش چنان تغییر نام دهیم که~$x \neq y$ و
+  $x \notin \FV{R} \cup \FV{R'}$.
+  \begin{enumerate}
+    \item گام آخر~\olref{defn:bredpar1} است: تمرین.
+    \item گام آخر~\olref{defn:bredpar2} است: در این صورت~$M$ برابر
+      $\lambd[x][N]$ و~$M'$ برابر~$\lambd[x][N']$ است، که در آن
+      $N \bredpar N'$. می‌خواهیم ثابت کنیم
+      $\Subst{(\lambd[x][N])}{R}{y} \bredpar
+      \Subst{(\lambd[x][N'])}{R'}{y}$، یعنی
+      $\lambd[x][\Subst{N}{R}{y}] \bredpar
+      \lambd[x][\Subst{N'}{R'}{y}]$. این نتیجه بی‌درنگ از
+      \olref{defn:bredpar2} و فرض استقرا به دست می‌آید.
+    \item گام آخر~\olref{defn:bredpar3} است: تمرین.
+    \item گام آخر~\olref{defn:bredpar4} است: $M$ برابر
+      $(\lambd[x][N])Q$ و~$M'$ برابر~$\Subst{N'}{Q'}{x}$ است.
+      می‌خواهیم ثابت کنیم
+      $\Subst{((\lambd[x][N])Q)}{R}{y} \bredpar
+      \Subst{\Subst{N'}{Q'}{x}}{R'}{y}$، یعنی
+      $(\lambd[x][\Subst{N}{R}{y}])\Subst{Q}{R}{y} \bredpar
+      \Subst{\Subst{N'}{R'}{y}}{\Subst{Q'}{R'}{y}}{x}$. این نتیجه از
+      \olref{defn:bredpar4} و فرض استقرا به دست می‌آید.
+  \end{enumerate}
+\end{proof}
+
+\begin{prob}
+  برهان~\olref[lam][cr][pb]{lem:comp} را کامل کنید.
+\end{prob}
+
+\begin{lem}\ollabel{lem:cont}
+  اگر~$M \bredpar M'$، آنگاه~$M' \bredpar \bcd{M}$.
+\end{lem}
+\begin{proof}
+  با استقرا بر~!!{derivation}ِ $M \bredpar M'$.
+  \begin{enumerate}
+    \item قاعدهٔ آخر~\olref{defn:bredpar1} است: تمرین.
+    \item قاعدهٔ آخر~\olref{defn:bredpar2} است: $M$ برابر
+      $\lambd[x][N]$ و~$M'$ برابر~$\lambd[x][N']$ است، به‌طوری‌که
+      $N \bredpar N'$. می‌خواهیم نشان دهیم~$\lambd[x][N'] \bredpar
+      \bcd{(\lambd[x][N])}$، یعنی بنا بر~\olref{defn:bcd2}،
+      $\lambd[x][N'] \bredpar \lambd[x][\bcd{N}]$. این نتیجه از
+      \olref{defn:bredpar2} و فرض استقرا به دست می‌آید.
+    \item قاعدهٔ آخر~\olref{defn:bredpar3} است: $M$ برابر~$PQ$ و~$M'$
+      برابر~$P'Q'$ است، برای ترم‌هایی~$P$، $Q$، $P'$ و~$Q'$ که
+      $P \bredpar P'$ و~$Q \bredpar Q'$. بنا بر فرض استقرا،
+      $P' \bredpar \bcd{P}$ و~$Q' \bredpar \bcd{Q}$ را داریم.
+      \begin{enumerate}
+        \item اگر~$P$ برای متغیر~$x$ و ترم~$N$ برابر~$\lambd[x][N]$
+          باشد، آنگاه~$P'$ باید برای ترمی چون~$N'$ برابر
+          $\lambd[x][N']$ باشد، به‌طوری‌که~$N \bredpar N'$. بنا بر فرض
+          استقرا، $N' \bredpar \bcd{N}$ و~$Q' \bredpar \bcd{Q}$. پس
+          $(\lambd[x][N'])Q' \bredpar
+          \Subst{\bcd{N}}{\bcd{Q}}{x}$ بنا بر~\olref{defn:bredpar4}.
+        \item اگر~$P$ یک انتزاع~$\lambd$ نباشد، آنگاه
+          $P'Q' \bredpar \bcd{P}\bcd{Q}$ بنا بر~\olref{defn:bredpar3}؛
+          و طرف راست بنا بر~\olref{defn:bcd3} همان~$\bcd{PQ}$ است.
+      \end{enumerate}
+    \item قاعدهٔ آخر~\olref{defn:bredpar4} است: $M$ برابر
+      $(\lambd[x][N])Q$ و~$M'$ برابر~$\Subst{N'}{Q'}{x}$ است، برای
+      $x$، $N$، $Q$، $N'$ و~$Q'$ که~$N \bredpar N'$ و
+      $Q \bredpar Q'$. بنا بر فرض استقرا می‌دانیم
+      $N' \bredpar \bcd{N}$ و~$Q' \bredpar \bcd{Q}$. بنا بر
+      \olref{lem:comp} داریم
+      $\Subst{N'}{Q'}{x} \bredpar \Subst{\bcd{N}}{\bcd{Q}}{x}$، که
+      طرف راست آن دقیقاً~$\bcd{((\lambd[x][N])Q)}$ است.
+  \end{enumerate}
+\end{proof}
+
+\begin{prob}
+  برهان~\olref[lam][cr][pb]{lem:cont} را کامل کنید.
+\end{prob}
+
+\begin{thm}\ollabel{thm:cr}
+  رابطهٔ~$\bredpar$ خاصیت چرچ--راسر را دارد.
+\end{thm}
+
+\begin{proof}
+  بی‌درنگ از~\olref{lem:cont}.
+\end{proof}
+
+\end{document}
+

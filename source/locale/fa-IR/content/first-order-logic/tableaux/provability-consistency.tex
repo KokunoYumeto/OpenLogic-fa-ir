@@ -1,0 +1,144 @@
+% Part: first-order-logic
+% Chapter: tableaux
+% Section: provability-consistency
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{tab}{prv}}
+      {\olfileid{pl}{tab}{prv}}
+
+\olsection{\usetoken{S}{derivability} و سازگاری}
+
+اکنون شماری از ویژگی‌های رابطهٔ !!{derivability} را اثبات می‌کنیم. این
+ویژگی‌ها مستقلاً جالب‌اند، اما هر یک در اثبات قضیهٔ تمامیت نقشی خواهند
+داشت.
+
+\begin{prop}\ollabel{prop:provability-contr}
+  اگر $\Gamma \Proves !A$ و $\Gamma \cup \{!A\}$ ناسازگار باشد، آنگاه
+  $\Gamma$ ناسازگار است.
+\end{prop}
+
+\begin{proof}
+مجموعه‌های متناهی $\Gamma_0 = \{!B_1, \dots, !B_n\}$ و $\Gamma_1
+  =\{!C_1, \dots, !C_m\} \subseteq \Gamma$ وجود دارند به‌طوری‌که
+  \begin{align*}
+    \{\sFmla{\False}{!A}, &
+    \sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\} \\
+    \{\sFmla{\True}{!A}, &
+    \sFmla{\True}{!C_1}, \dots, \sFmla{\True}{!C_m}\}
+  \end{align*}
+  !!{tableau}s بسته دارند. با استفاده از قاعدهٔ \Cut{} بر $!A$ می‌توانیم
+  این دو را در !!{tableau} بسته‌ای یگانه ترکیب کنیم که نشان می‌دهد
+  $\Gamma_0 \cup \Gamma_1$ ناسازگار است. چون $\Gamma_0
+  \subseteq \Gamma$ و $\Gamma_1 \subseteq \Gamma$، داریم $\Gamma_0 \cup
+  \Gamma_1 \subseteq \Gamma$؛ پس $\Gamma$ ناسازگار است.
+\end{proof}
+
+\begin{prop}
+\ollabel{prop:prov-incons}
+$\Gamma \Proves !A$ هرگاه و تنها هرگاه $\Gamma \cup \{\lnot !A\}$
+ناسازگار باشد.
+\end{prop}
+
+\begin{proof}
+نخست فرض کنید $\Gamma \Proves !A$؛ یعنی !!{tableau} بسته‌ای برای
+\[
+\{\sFmla{\False}{!A},
+\sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\}
+\]
+وجود دارد. با استفاده از قاعدهٔ $\TRule{\True}{\lnot}$ می‌توان آن را به
+!!{tableau} بسته‌ای برای مجموعهٔ زیر تبدیل کرد:
+\[
+\{\sFmla{\True}{\lnot !A},
+\sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\}.
+\]
+
+از سوی دیگر، اگر برای مجموعهٔ دوم !!{tableau} بسته‌ای وجود داشته باشد،
+می‌توانیم با حذف هر فرمولی که از اعمال \TRule{\True}{\lnot} بر فرض
+نخست~$\sFmla{\True}{\lnot !A}$ حاصل شده است، همراه با خود آن فرض، و
+افزودن فرض $\sFmla{\False}{!A}$، آن را به !!{tableau} بسته‌ای برای
+مجموعهٔ نخست تبدیل کنیم. زیرا اگر شاخه‌ای پیش‌تر از آن رو بسته بود که
+نتیجهٔ اعمال \TRule{\True}{\lnot} بر
+$\sFmla{\True}{\lnot !A}$، یعنی $\sFmla{\False}{!A}$، را دربر داشت، شاخهٔ
+متناظر در !!{tableau} تازه نیز بسته است. اگر شاخه‌ای در تابلوی قدیمی از
+آن رو بسته بود که هم فرض $\sFmla{\True}{\lnot !A}$ و هم
+$\sFmla{\False}{\lnot !A}$ را دربر داشت، می‌توانیم با اعمال
+$\TRule{\False}{\lnot}$ بر $\sFmla{\False}{\lnot !A}$ و به‌دست‌آوردن
+$\sFmla{\True}{!A}$، آن را به شاخه‌ای بسته تبدیل کنیم. این کار شاخه را
+می‌بندد، زیرا $\sFmla{\False}{!A}$ را به‌عنوان فرض افزوده‌ایم.
+\end{proof}
+
+\begin{prob}
+ثابت کنید $\Gamma \Proves \lnot !A$ هرگاه و تنها هرگاه
+$\Gamma \cup \{!A\}$ ناسازگار باشد.
+\end{prob}
+
+\begin{prop}\ollabel{prop:explicit-inc}
+  اگر $\Gamma \Proves !A$ و $\lnot !A \in \Gamma$، آنگاه $\Gamma$
+  ناسازگار است.
+\end{prop}
+
+\begin{proof}
+  فرض کنید $\Gamma \Proves !A$ و $\lnot !A \in \Gamma$. آنگاه
+  $!B_1$، \dots، $!B_n \in \Gamma$ وجود دارند به‌طوری‌که
+  \[
+  \{\sFmla{\False}{!A}, \sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\}
+  \]
+  تابلویی بسته دارد. فرض \sFmla{\False}{!A} را با
+  \sFmla{\True}{\lnot !A} جایگزین کنید و نتیجهٔ اعمال
+  \TRule{\True}{\lnot} بر \sFmla{\True}{\lnot !A} را پس از فرض‌ها درج
+  کنید. هر !!{sentence} در !!{tableau} که در !!{tableau} قدیمی با ارجاع به
+  سطر~$1$ توجیه می‌شد، اکنون با ارجاع به سطر~$n+2$ توجیه می‌شود. پس اگر
+  !!{tableau} قدیمی بسته بود، تابلوی تازه نیز بسته است. این تابلو نشان
+  می‌دهد $\Gamma$ ناسازگار است، زیرا همهٔ فرض‌ها در~$\Gamma$ هستند.
+\end{proof}
+
+\begin{prop}\ollabel{prop:provability-exhaustive}
+  اگر $\Gamma \cup \{!A\}$ و $\Gamma \cup \{\lnot !A\}$ هر دو ناسازگار
+  باشند، آنگاه $\Gamma$ ناسازگار است.
+\end{prop}
+
+\begin{proof}
+  اگر $!B_1$، \dots، $!B_n \in \Gamma$ و $!C_1$، \dots،
+  $!C_m \in \Gamma$ وجود داشته باشند به‌طوری‌که
+  \begin{align*}
+    \{\sFmla{\True}{!A}, &
+    \sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\} \text{ و}\\
+    \{\sFmla{\True}{\lnot !A}, &
+    \sFmla{\True}{!C_1}, \dots, \sFmla{\True}{!C_m}\}
+  \end{align*}
+  هر دو !!{tableau}s بسته داشته باشند، می‌توانیم !!{tableau} ترکیبی و
+  یگانه‌ای بسازیم که ناسازگاری $\Gamma$ را نشان دهد. برای این کار
+  $\sFmla{\True}{!B_1}$، \dots، $\sFmla{\True}{!B_n}$ را همراه با
+  $\sFmla{\True}{!C_1}$، \dots، $\sFmla{\True}{!C_m}$ فرض می‌گیریم و
+  سپس قاعدهٔ \Cut{} را اعمال می‌کنیم. حاصل دو شاخه است که یکی با
+  $\sFmla{\True}{!A}$ و دیگری با $\sFmla{\False}{!A}$ آغاز می‌شود.
+
+  در سوی چپ، بخش زیر فرض‌های !!{tableau} نخست را بیفزایید. در اینجا هر
+  کاربرد قاعده همچنان درست است، زیرا همهٔ فرض‌های !!{tableau} نخست، از
+  جمله $\sFmla{\True}{!A}$، در دسترس‌اند. پس هر شاخهٔ زیر
+  $\sFmla{\True}{!A}$ بسته می‌شود.
+
+  در سوی راست، بخش زیر فرضِ !!{tableau} دوم را بیفزایید و حاصل هر کاربرد
+  ~$\TRule{\True}{\lnot}$ بر $\sFmla{\True}{\lnot !A}$ را حذف کنید.
+  نتیجهٔ $\TRule{\True}{\lnot}$ بر $\sFmla{\True}{\lnot !A}$ همان
+  $\sFmla{\False}{!A}$ است که با این همه در دسترس است، زیرا نتیجهٔ
+  قاعدهٔ \Cut{} در سوی راستِ !!{tableau} ترکیبی است.
+
+  اگر شاخه‌ای در تابلوی دوم از آن رو بسته بود که هم فرض
+  $\sFmla{\True}{\lnot !A}$ (که دیگر به‌عنوان فرض در !!{tableau} ترکیبی
+  ظاهر نمی‌شود) و هم $\sFmla{\False}{\lnot !A}$ را دربر داشت، می‌توانیم
+  $\TRule{\False}{\lnot}$ را بر $\sFmla{\False}{\lnot !A}$ اعمال کنیم تا
+  $\sFmla{\True}{!A}$ به دست آید. اکنون شاخهٔ متناظر در !!{tableau}
+  ترکیبی نیز بسته می‌شود، زیرا نتیجهٔ سمت راستِ قاعدهٔ \Cut{}، یعنی
+  $\sFmla{\False}{!A}$، را دربر دارد. اگر شاخه‌ای در !!{tableau} دوم به
+  هر دلیل دیگری بسته شده باشد، شاخهٔ متناظر در !!{tableau} ترکیبی نیز
+  بسته می‌شود، زیرا هر !!{signed formula}s جز
+  $\sFmla{\True}{\lnot !A}$ که در شاخهٔ !!{tableau} دومِ قدیمی رخ می‌دهد، در
+  شاخهٔ متناظرِ !!{tableau} ترکیبی نیز رخ می‌دهد.
+  \end{proof}
+
+\end{document}

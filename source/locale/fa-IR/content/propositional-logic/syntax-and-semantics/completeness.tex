@@ -1,0 +1,122 @@
+% Part: propositional-logic
+% Chapter: propositional-logic 
+% Section: completeness
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pl}{prp}{com}
+
+\olsection{کامل‌بودن منطق گزاره‌ای}
+
+\begin{defn}
+\ollabel{def:MaxCon}
+مجموعهٔ~$\Gamma$ از~!!{formula}s را \emph{بیشینه‌سازگار} می‌نامیم اگر
+سازگار باشد و هرگاه~$\Delta$ مجموعه‌ای سازگار و
+$\Gamma\subseteq\Delta$ باشد، آنگاه~$\Gamma=\Delta$.
+\end{defn}
+
+\begin{lem}[لم صدق]
+  \ollabel{lem:truth}
+فرض کنید~$\Gamma$ بیشینه‌سازگار باشد؛ آنگاه:
+\begin{enumerate}
+\item \ollabel{lem:truth-1} $!A\in\Gamma$ اگر و تنها اگر
+  $\lnot !A\notin\Gamma$؛
+\item \ollabel{lem:truth-2} $\Gamma\Proves !A$ اگر و تنها اگر
+  $!A\in\Gamma$؛
+\item \ollabel{lem:truth-3} $!A\lif !B\in\Gamma$ اگر و تنها اگر
+  یا~$!A\notin\Gamma$ یا~$!B\in\Gamma$.
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+\begin{enumerate}
+\item فرض کنید~$!A\in\Gamma$. سازگاری نتیجه می‌دهد که
+  $\lnot !A\notin\Gamma$. برعکس، فرض کنید~$\lnot !A\notin\Gamma$ و
+  $!A\notin\Gamma$. در این صورت هیچ‌یک در~$\Gamma$ نیست؛ بنا بر
+  \olref[axd]{prop:phi} یکی از~$\Gamma\cup\{!A\}$ و
+  $\Gamma\cup\{\lnot !A\}$ امتدادی درست و سازگار از~$\Gamma$ است، که
+  با بیشینگی آن تناقض دارد. پس~$!A\in\Gamma$.
+\item اگر~$!A\in\Gamma$، آشکار است که~$\Gamma\Proves !A$. از سوی
+  دیگر، فرض کنید~$\Gamma\Proves !A$. اگر~$!A\notin\Gamma$ باشد، بنا بر
+  \olref{lem:truth-1} داریم~$\lnot !A\in\Gamma$. پس هم
+  $\Gamma\Proves !A$ و هم~$\Gamma\Proves\lnot !A$، که تناقض است.
+\item تمرین.
+\end{enumerate}
+\end{proof}
+
+جهت چپ‌به‌راستِ~\olref{lem:truth}\olref{lem:truth-2} نشان می‌دهد که
+$\Gamma$ \emph{استنتاجاً بسته} است؛ یعنی اگر~$\Gamma\Proves !A$، آنگاه
+$!A\in\Gamma$، برای هر~$!A$.
+
+\begin{prob}
+  برهان~\olref{lem:truth} را کامل کنید.
+\end{prob}
+
+\begin{thm}[کامل‌بودن]
+\ollabel{thm:completeness}
+اگر~$\Gamma$ سازگار باشد، ارضاپذیر است.
+\end{thm}
+
+\begin{proof}
+فرض کنید~$!A_0,!A_1,\dots$ فهرستی فراگیر از همهٔ~!!{formula}s زبان
+باشد. دنباله‌ای افزایشی از مجموعه‌های~!!{formula}s، یعنی
+$\Gamma_0,\Gamma_1,\dots$، را با قرار دادن موارد زیر به‌طور بازگشتی
+تعریف می‌کنیم:
+\begin{align*}
+\Gamma_0 & = \Gamma\\
+\Gamma_{n+1} &  =
+\begin{cases}
+  \Gamma_n \cup \{!A_n\} & \text{اگر $\Gamma_n\cup\{!A_n\}$
+    سازگار باشد؛}\\
+  \Gamma_n \cup \{\lnot !A_n\} & \text{در غیر این صورت.}
+\end{cases}
+\end{align*}
+سپس تعریف می‌کنیم:
+\[
+\Gamma^*=\bigcup_{0\le n}\Gamma_n.
+\]
+اکنون برهان با اثبات پیاپیِ واقعیت‌های زیر ادامه می‌یابد:
+\begin{enumerate}
+\item برای هر~$n$، مجموعهٔ~$\Gamma_n$ سازگار است (با استقرا بر~$n$ و
+  استفاده از~\olref[axd]{prop:phi})؛
+\item $\Gamma^*$ سازگار است؛
+\item $\Gamma^*$ بیشینه است.
+\end{enumerate}
+سپس ارزش‌گذاری~$v$ را با~$v(p_i)=\True$ اگر و تنها اگر
+$p_i\in\Gamma^*$ تعریف می‌کنیم. با استقرا بر~$!A$ نشان می‌دهیم که برای
+!!{sentence}s پیچیده‌تر نیز عضویت در~$\Gamma^*$ با صدق بر حسب~$v$
+منطبق است: $\overline{v}(!A)=\True$ اگر و تنها اگر
+$!A\in\Gamma^*$. به‌ویژه، $v$ مجموعهٔ~$\Gamma^*$ را ارضا می‌کند؛ و چون
+$\Gamma\subseteq\Gamma^*$، $\Gamma$ نیز ارضاپذیر است، چنان‌که می‌خواستیم.
+\end{proof}
+
+\begin{cor}
+اگر~$\Gamma\Entails !A$، آنگاه~$\Gamma\Proves !A$.
+\end{cor}
+
+\begin{proof}
+اگر~$\Gamma\Proves/ !A$، بنا بر~\olref[axd]{prop:prov-incons} مجموعهٔ
+$\Gamma\cup\{\lnot !A\}$ سازگار است. پس به موجب قضیهٔ کامل‌بودن،
+$\Gamma\cup\{\lnot !A\}$ ارضاپذیر است و~$\Gamma\Entails/ !A$.
+\end{proof}
+
+\begin{prop}[قضیهٔ فشردگی]
+\ollabel{prop:compactness}
+$\Gamma$ ارضاپذیر است اگر و تنها اگر هر زیرمجموعهٔ \emph{متناهی}
+$\Gamma_0$ از~$\Gamma$ ارضاپذیر باشد.
+\end{prop}
+
+\begin{proof}
+$\Gamma$ ارضاناپذیر است اگر و تنها اگر ناسازگار باشد؛ اگر و تنها اگر
+زیرمجموعه‌ای متناهی چون~$\Gamma_0$ از~$\Gamma$ ناسازگار باشد؛ و اگر و
+تنها اگر زیرمجموعه‌ای متناهی چون~$\Gamma_0$ از~$\Gamma$ ارضاناپذیر باشد.
+\end{proof}
+
+\begin{cor}
+$\Gamma\Entails !A$ اگر و تنها اگر زیرمجموعه‌ای متناهی چون~$\Gamma_0$
+از~$\Gamma$ وجود داشته باشد که~$\Gamma_0\Entails !A$.
+\end{cor}
+
+\end{document}

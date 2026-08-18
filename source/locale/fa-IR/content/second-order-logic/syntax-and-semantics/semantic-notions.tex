@@ -1,0 +1,39 @@
+% Part: second-order-logic
+% Chapter: syntax-and-semantics
+% Section: semantic-notions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sol}{syn}{sem}
+\olsection{مفاهیم معناشناختی}
+
+\begin{explain}
+مفاهیم منطقی محوریِ \emph{اعتبار}، \emph{نتیجهٔ منطقی} و
+\emph{ارضاشدنی‌بودن} در منطق مرتبهٔ دوم همان‌گونه تعریف می‌شوند که در
+منطق مرتبهٔ اول، جز اینکه رابطهٔ ارضای مبنا اکنون رابطهٔ مربوط به
+!!{formula}s مرتبهٔ دوم است. البته یک !!{sentence} مرتبهٔ دوم
+!!a{formula}ی است که همهٔ متغیرهای آن، از جمله متغیرهای محمولی و
+تابعی، مقید باشند.
+\end{explain}
+
+\begin{defn}[اعتبار]
+یک جملهٔ~$!A$ \emph{معتبر} است، یعنی~$\Entails !A$، اگر و تنها اگر
+$\Sat{M}{!A}$ برای هر !!{structure}~$\Struct M$ برقرار باشد.
+\end{defn}
+
+\begin{defn}[نتیجهٔ منطقی]
+مجموعه‌ای از جمله‌ها چون~$\Gamma$ جملهٔ~$!A$ را \emph{نتیجه می‌دهد}،
+یعنی~$\Gamma \Entails !A$، اگر و تنها اگر برای هر
+!!{structure}~$\Struct M$ که~$\Sat{M}{\Gamma}$، داشته باشیم
+$\Sat{M}{!A}$.
+\end{defn}
+
+\begin{defn}[ارضاشدنی‌بودن]
+مجموعه‌ای از جمله‌ها چون~$\Gamma$ \emph{ارضاشدنی} است هرگاه
+$\Sat{M}{\Gamma}$ برای !!{structure}ی چون~$\Struct M$ برقرار باشد. اگر
+$\Gamma$ ارضاشدنی نباشد، آن را \emph{ارضاناپذیر} می‌نامیم.
+\end{defn}
+
+\end{document}

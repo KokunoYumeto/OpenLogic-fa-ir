@@ -1,0 +1,178 @@
+% Part: first-order-logic
+% Chapter: sequent-calculus
+% Section: proof-theoretic-notions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\begin{editorial}
+  این بخش تعریف‌های رابطهٔ اثبات‌پذیری و سازگاری را برای حساب دنباله‌ای
+  گرد می‌آورد.
+\end{editorial}
+
+\iftag{FOL}
+      {\olfileid{fol}{seq}{ptn}}
+      {\olfileid{pl}{seq}{ptn}}
+
+\olsection{مفاهیم برهان‌نظری}
+
+\begin{explain}
+همان‌گونه که چند مفهوم معناشناختی مهم (اعتبار، استلزام و ارضاپذیری)
+را تعریف کردیم، اکنون \emph{مفاهیم برهان‌نظریِ} متناظر را تعریف
+می‌کنیم. این مفاهیم نه با توسل به ارضای !!{sentence}s در
+\iftag{FOL}{!!{structure}s}{!!{valuation}s}، بلکه با توسل به
+!!{derivability} یا !!{nonderivability} برخی دنباله‌ها تعریف می‌شوند.
+کشف انطباق این مفاهیم اهمیتی بسیار داشت. این انطباق محتوای قضیه‌های
+\emph{صحت} و \emph{تمامیت} است.
+\end{explain}
+
+\begin{defn}[قضایا]
+!!^a{sentence}~$!A$ \emph{قضیه} است هرگاه در~$\Log{LK}$،
+!!a{derivation}ی برای دنبالهٔ $\quad \Sequent !A$ وجود داشته باشد.
+$\Proves !A$ می‌نویسیم اگر $!A$ قضیه باشد، و اگر قضیه نباشد
+$\Proves/ !A$ می‌نویسیم.
+\end{defn}
+
+\begin{defn}[!!^{derivability}]
+برای !!^a{sentence}~$!A$، عبارت \emph{!!{derivable} از مجموعه‌ای از}
+!!{sentence}s چون~$\Gamma$ را به کار می‌بریم، و
+$\Gamma \Proves !A$ می‌نویسیم، اگر و تنها اگر
+زیرمجموعهٔ متناهی~$\Gamma_0 \subseteq \Gamma$ و توالی‌ای چون
+$\Gamma_0'$ از !!{sentence}s موجود در~$\Gamma_0$ وجود داشته باشد
+به‌طوری‌که $\Log{LK}$، $\Gamma_0' \Sequent !A$ را !!{derive}s کند.
+اگر $!A$ از $\Gamma$ !!{derivable} نباشد، $\Gamma \Proves/ !A$
+می‌نویسیم.
+\end{defn}
+
+به سبب قواعد انقباض، تضعیف و تبادل، ترتیب و شمار !!{sentence}s در
+~$\Gamma_0'$ اهمیتی ندارد: اگر دنبالهٔ
+$\Gamma_0' \Sequent !A$ !!{derivable} باشد، آنگاه
+$\Gamma_0'' \Sequent !A$ نیز برای هر $\Gamma_0''$ که همان
+!!{sentence}s موجود در~$\Gamma_0'$ را دربر دارد چنین است.
+برای نمونه، اگر $\Gamma_0 = \{!B, !C\}$ باشد، آنگاه هم
+$\Gamma_0' = \tuple{!B, !B, !C}$ و هم
+$\Gamma_0'' = \tuple{!C, !C, !B}$ توالی‌هایی‌اند که دقیقاً
+!!{sentence}s موجود در~$\Gamma_0$ را دربر دارند. اگر دنباله‌ای که
+یکی از آن‌ها را دربر دارد !!{derivable} باشد، دنبالهٔ دیگر نیز چنین
+است؛ برای نمونه:
+\begin{prooftree}
+  \AxiomC{}
+  \Deduce$!B, !B, !C \fCenter !A$
+  \RightLabel{\LeftR{\Contraction}}
+  \UnaryInf$!B, !C \fCenter !A$
+  \RightLabel{\LeftR{\Exchange}}
+  \UnaryInf$!C, !B \fCenter !A$
+  \RightLabel{\LeftR{\Weakening}}
+  \UnaryInf$!C, !C, !B \fCenter !A$
+\end{prooftree}
+از این پس می‌گوییم اگر $\Gamma_0$ مجموعه‌ای متناهی از !!{sentence}s
+باشد، آنگاه $\Gamma_0 \Sequent !A$ هر دنباله‌ای است که مقدمش توالی‌ای
+از !!{sentence}s موجود در~$\Gamma_0$ باشد؛ و در صورت لزوم انقباض‌ها،
+تبادل‌ها و تضعیف‌ها را به‌طور ضمنی منظور می‌کنیم.
+
+\begin{defn}[سازگاری]
+مجموعه‌ای از جمله‌ها چون~$\Gamma$ \emph{ناسازگار} است اگر و تنها اگر
+زیرمجموعهٔ متناهی~$\Gamma_0 \subseteq \Gamma$ وجود داشته باشد
+به‌طوری‌که $\Log{LK}$، $\Gamma_0 \Sequent \quad$ را !!{derive}s کند.
+اگر $\Gamma$ ناسازگار نباشد، یعنی اگر برای هر
+$\Gamma_0 \subseteq \Gamma$ متناهی، $\Log{LK}$،
+$\Gamma_0 \Sequent \quad$ را !!{derive} نکند، می‌گوییم
+\emph{سازگار} است.
+\end{defn}
+
+\begin{prop}[بازتابی]
+\ollabel{prop:reflexivity}
+اگر $!A \in \Gamma$، آنگاه $\Gamma \Proves !A$.
+\end{prop}
+
+\begin{proof}
+دنبالهٔ آغازینِ $!A \Sequent !A$ !!{derivable} است و
+$\{!A\} \subseteq \Gamma$.
+\end{proof}
+
+\begin{prop}[یکنوایی]
+\ollabel{prop:monotonicity}
+اگر $\Gamma \subseteq \Delta$ و $\Gamma \Proves !A$، آنگاه
+$\Delta \Proves !A$.
+\end{prop}
+
+\begin{proof}
+فرض کنید $\Gamma \Proves !A$؛ یعنی $\Gamma_0 \subseteq \Gamma$
+متناهی‌ای وجود دارد که $\Gamma_0 \Sequent !A$ !!{derivable} است.
+چون $\Gamma \subseteq \Delta$، پس $\Gamma_0$ زیرمجموعه‌ای متناهی
+از~$\Delta$ نیز هست. بنابراین !!{derivation} مربوط به
+$\Gamma_0 \Sequent !A$ همچنین $\Delta \Proves !A$ را نشان می‌دهد.
+\end{proof}
+
+\begin{prop}[تعدی]
+\ollabel{prop:transitivity}
+اگر $\Gamma \Proves !A$ و $\{!A\} \cup \Delta \Proves !B$، آنگاه
+$\Gamma \cup \Delta \Proves !B$.
+\end{prop}
+
+\begin{proof}
+اگر $\Gamma \Proves !A$، آنگاه مجموعهٔ متناهی
+$\Gamma_0 \subseteq \Gamma$ و !!a{derivation}~$\pi_0$ برای
+$\Gamma_0 \Sequent !A$ وجود دارند. اگر
+$\{!A\} \cup \Delta \Proves !B$، آنگاه برای زیرمجموعهٔ متناهی‌ای چون
+$\Delta_0 \subseteq \Delta$، !!a{derivation}~$\pi_1$ برای
+$!A, \Delta_0 \Sequent !B$ وجود دارد. !!{derivation} زیر را در نظر
+بگیرید:
+\begin{prooftree}
+  \AxiomC{}
+  \RightLabel{$\pi_0$}
+  \Deduce$\Gamma_0 \fCenter !A$
+  \AxiomC{}
+  \RightLabel{$\pi_1$}
+  \Deduce$!A, \Delta_0 \fCenter !B$
+  \RightLabel{\Cut}
+  \BinaryInf$\Gamma_0, \Delta_0 \fCenter !B$
+\end{prooftree}
+چون $\Gamma_0 \cup \Delta_0 \subseteq \Gamma \cup \Delta$، این
+نشان می‌دهد $\Gamma \cup \Delta \Proves !B$.
+\end{proof}
+
+توجه کنید که این به‌ویژه بدان معناست که اگر $\Gamma \Proves !A$ و
+$!A \Proves !B$، آنگاه $\Gamma \Proves !B$. همچنین نتیجه می‌شود که
+اگر $!A_1, \dots, !A_n \Proves !B$ و $\Gamma \Proves !A_i$ برای
+هر~$i$، آنگاه $\Gamma \Proves !B$.
+
+\begin{prop}
+\ollabel{prop:incons}
+$\Gamma$ ناسازگار است اگر و تنها اگر $\Gamma \Proves {!A}$ برای هر
+جملهٔ~$!A$.
+\end{prop}
+
+\begin{proof}
+تمرین.
+\end{proof}
+
+\begin{prob}
+\olref[fol][seq][ptn]{prop:incons} را ثابت کنید.
+\end{prob}
+
+\begin{prop}[فشردگی]
+  \ollabel{prop:proves-compact}
+  \begin{enumerate}
+  \item اگر $\Gamma \Proves !A$، آنگاه زیرمجموعهٔ متناهی
+    $\Gamma_0 \subseteq \Gamma$ وجود دارد که $\Gamma_0 \Proves !A$.
+  \item اگر هر زیرمجموعهٔ متناهیِ~$\Gamma$ سازگار باشد، آنگاه
+    $\Gamma$ سازگار است.
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+    \item اگر $\Gamma \Proves !A$، آنگاه زیرمجموعهٔ متناهی
+      $\Gamma_0 \subseteq \Gamma$ وجود دارد که دنبالهٔ
+      $\Gamma_0 \Sequent !A$ دارای !!a{derivation} است. در نتیجه،
+      $\Gamma_0 \Proves !A$.
+    \item اگر $\Gamma$ ناسازگار باشد، زیرمجموعهٔ متناهی
+      ~$\Gamma_0 \subseteq \Gamma$ وجود دارد که $\Log{LK}$،
+      $\Gamma_0 \Sequent \quad$ را !!{derive}s می‌کند. اما در این صورت،
+      $\Gamma_0$ زیرمجموعه‌ای متناهی و ناسازگار از~$\Gamma$ است.
+  \end{enumerate}
+\end{proof}
+
+\end{document}

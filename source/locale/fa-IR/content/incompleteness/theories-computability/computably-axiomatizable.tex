@@ -1,0 +1,39 @@
+% Part: incompleteness
+% Chapter: theories-computability
+% Section: computably-axiomatizable
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{tcp}{cax}
+
+\olsection{نظریه‌های \printtoken{S}{axiomatizable}}
+
+نظریهٔ~$\Th{T}$ را \emph{!!{axiomatizable}} می‌نامیم اگر مجموعه‌ای
+محاسبه‌پذیر از اصول موضوعه چون~$A$ داشته باشد. (اینکه~$A$ مجموعه‌ای
+از اصول موضوعه برای~$\Th{T}$ است یعنی
+$T = \Setabs{!A}{A \Proves !A}$.) هر اصل‌موضوعه‌بندی «معقولی» از
+اعداد طبیعی این ویژگی را خواهد داشت. به‌ویژه، هر نظریه‌ای با مجموعهٔ
+متناهی اصول موضوعه، !!{axiomatizable} است.
+
+\begin{lem}
+فرض کنید~$\Th{T}$، !!{axiomatizable} باشد. آنگاه~$\Th{T}$،
+!!{computably
+enumerable} است.
+\end{lem}
+
+\begin{proof}
+فرض کنید~$A$ مجموعه‌ای محاسبه‌پذیر از اصول موضوعه برای~$\Th{T}$
+باشد. برای نیمه‌تصمیم‌گیری دربارهٔ اینکه آیا~$!A \in T$، کافی است به دنبال
+!!a{derivation} از~$!A$ بر پایهٔ اصول موضوعه بگردیم.
+
+به بیانی اندکی متفاوت، $!A$ عضو~$\Th{T}$ است اگر و تنها اگر فهرستی
+متناهی از اصول موضوعه~$!B_1$، \dots، $!B_k$ در~$A$ و
+!!a{derivation} در منطق مرتبه‌اول از
+$(!B_1 \land \dots \land !B_k) \lif !A$ وجود داشته باشد. اما از پیش
+می‌دانیم هر مجموعه‌ای با تعریفی به صورت «\dots وجود دارد به‌گونه‌ای
+که \dots» !!{c.e.} است، مشروط بر آنکه «\dots» دوم محاسبه‌پذیر باشد.
+\end{proof}
+
+\end{document}

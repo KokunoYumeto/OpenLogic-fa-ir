@@ -1,0 +1,136 @@
+% Part: second-order-logic
+% Chapter: syntax-and-semantics
+% Section: size-of-domain
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sol}{syn}{siz}
+
+\olsection{توصیف نامتناهی‌بودن و \usetoken{S}{enumerable}بودنِ
+  \usetoken{P}{domain}}
+
+مجموعهٔ~$M$ (به معنای ددکیندی) نامتناهی است اگر و تنها اگر
+!!a{injective} تابع~$f\colon M \to M$ وجود داشته باشد که !!{surjective}
+نباشد، یعنی~$\ran{f} \neq M$. در منطق مرتبهٔ اول می‌توانیم یک
+!!{function} یک‌موضعی~$f$ را در نظر بگیریم و بگوییم تابع~$\Assign{f}{M}$
+که در !!a{structure} چون~$\Struct{M}$ به آن نسبت داده شده !!{injective}
+است و~$\ran{f} \neq \Domain{M}$:
+\[
+\lforall[x][\lforall[y][(\eq[f(x)][f(y)] \lif \eq[x][y])]] \land
+\lexists[y][\lforall[x][\eq/[y][f(x)]]].
+\]
+اگر~$\Struct{M}$ این !!{sentence} را ارضا کند، $\Assign{f}{M}:
+\Domain{M} \to \Domain{M}$ !!{injective} است و بنابراین~$\Domain{M}$
+باید نامتناهی باشد. اگر~$\Domain{M}$ نامتناهی باشد و در نتیجه چنین
+تابعی وجود داشته باشد، می‌توانیم~$\Assign{f}{M}$ را همان تابع بگیریم و
+$\Struct{M}$ این !!{sentence} را ارضا خواهد کرد. بااین‌حال، این کار
+مستلزم آن است که زبان ما نماد غیرمنطقی~$f$ را داشته باشد تا برای این
+منظور به کار رود. در منطق مرتبهٔ دوم می‌توانیم به‌سادگی بگوییم چنین
+تابعی \emph{وجود دارد}. دیگر به~$f$ نیاز نداریم و !!{sentence} زیر را
+در منطق مرتبهٔ دوم محض به دست می‌آوریم:
+\[
+\fn{Inf} \ident \lexists[u][(\lforall[x][\lforall[y][(\eq[u(x)][u(y)]
+      \lif \eq[x][y])]] \land \lexists[y][\lforall[x][\eq/[y][u(x)]]])].
+\]
+$\Sat{M}{\fn{Inf}}$ اگر و تنها اگر~$\Domain{M}$ نامتناهی باشد. سپس
+می‌توانیم~$\fn{Fin} \ident \lnot \fn{Inf}$ را تعریف کنیم؛
+$\Sat{M}{\fn{Fin}}$ اگر و تنها اگر~$\Domain{M}$ متناهی باشد. هیچ
+!!{sentence} منفردی از منطق مرتبهٔ اول محض نمی‌تواند نامتناهی‌بودن
+!!{domain} را بیان کند، هرچند مجموعه‌ای نامتناهی از آن‌ها می‌تواند.
+هیچ مجموعه‌ای از !!{sentence}s منطق مرتبهٔ اول محض وجود ندارد که در
+!!a{structure}ی ارضا شود اگر و تنها اگر دامنهٔ آن متناهی باشد.
+
+\begin{prop}
+$\Sat{M}{\fn{Inf}}$ اگر و تنها اگر~$\Domain{M}$ نامتناهی باشد.
+\end{prop}
+
+\begin{proof}
+$\Sat{M}{\fn{Inf}}$ اگر و تنها اگر
+  $\Sat{M}{\lforall[x][\lforall[y][(\eq[u(x)][u(y)] \lif \eq[x][y])]]
+    \land \lexists[y][\lforall[x][\eq/[y][u(x)]]]}[s]$ برای تخصیصی
+  چون~$s$ برقرار باشد. اگر چنین
+باشد، $s(u)$ !!a{injective} تابع است و~$y \in \Domain{M}$ای وجود دارد
+که در برد~$s(u)$ نیست. برعکس، اگر !!a{injective} چون
+$f\colon \Domain{M} \to \Domain{M}$ وجود داشته باشد که
+$\ran{f} \neq \Domain{M}$، تخصیصی چون~$s$ برگزینید که~$s(u) = f$.
+\end{proof}
+
+یک مجموعهٔ ناتهی~$M$ !!{enumerable} است هرگاه شمارشی
+\[
+m_0, m_1, m_2, \dots
+\]
+از !!{element}s آن وجود داشته باشد (بدون تکرار، اما ممکن است متناهی
+باشد). چنین شمارشی وجود دارد اگر و تنها اگر !!a{element} چون~$z \in M$
+و تابعی چون~$f\colon M \to M$ وجود داشته باشند به‌گونه‌ای که~$z$،
+$f(z)$، $f(f(z))$، \dots همهٔ !!{element}s مجموعهٔ~$M$ باشند. زیرا اگر
+شمارش وجود داشته باشد، $z = m_0$ و~$f(m_k) = m_{k+1}$ (یا
+$f(m_k) = m_k$، اگر~$m_k$ آخرین !!{element} شمارش باشد) !!{element} و تابع لازم
+هستند. از سوی دیگر، اگر چنین~$z$ و~$f$ای وجود داشته باشند، $z$،
+$f(z)$، $f(f(z))$، \dots شمارشی از~$M$ است و~$M$ !!{enumerable} است.
+می‌توانیم وجود~$z$ و~$f$ را در منطق مرتبهٔ دوم بیان کنیم تا
+!!{sentence}ی بسازیم که در !!a{structure}ی صادق است اگر و تنها اگر آن
+!!{structure} !!{enumerable} باشد:
+\[
+\fn{Count} \ident
+\lexists[z][\lexists[u][\lforall[X][((X(z) \land
+      \lforall[x][(X(x) \lif X(u(x)))]) \lif \lforall[x][X(x)])]]]
+\]
+
+\begin{prop}
+$\Sat{M}{\fn{Count}}$ اگر و تنها اگر~$\Domain{M}$ !!{enumerable} باشد.
+\end{prop}
+
+\begin{proof}
+فرض کنید~$\Domain{M}$ !!{enumerable} باشد و~$m_0$، $m_1$، \dots یک
+شمارش باشد. با حذف تکرارها می‌توانیم تضمین کنیم که هیچ~$m_k$ای دو بار
+ظاهر نشود. $f(m_k) = m_{k+1}$ را تعریف کنید؛ اگر شمارش متناهی باشد،
+در نقطهٔ پایانی بگذارید~$f(m_k) = m_k$. همچنین بگذارید~$s(z) = m_0$
+و~$s(u) = f$. نشان می‌دهیم
+\[
+\Sat{M}{\lforall[X][((X(z) \land \lforall[x][(X(x) \lif X(u(x)))])
+    \lif \lforall[x][X(x)])]}[s]
+\]
+فرض کنید~$S \subseteq \Domain{M}$ دلخواه باشد. افزون بر این فرض کنید
+$\Sat{M}{(X(z) \land \lforall[x][(X(x) \lif
+X(u(x)))])}[\Subst{s}{S}{X}]$. آنگاه~$\Subst{s}{S}{X}(z) \in S$ و
+هرگاه~$x \in S$، همچنین~$(\Subst{s}{S}{X}(u))(x) \in S$. به بیان
+دیگر، چون~$\varAssign{\Subst{s}{S}{X}}{s}{X}$، داریم~$m_0 \in S$ و
+اگر~$x \in S$ آنگاه~$f(x) \in S$؛ پس~$m_0 \in S$،
+$m_1 = f(m_0) \in S$، $m_2 = f(f(m_0)) \in S$ و به همین ترتیب.
+بنابراین~$S = \Domain{M}$ و در نتیجه
+$\Sat{M}{\lforall[x][X(x)]}[\Subst{s}{S}{X}]$. چون
+$S \subseteq \Domain{M}$ دلخواه بود، کار تمام است:
+$\Sat{M}{\fn{Count}}$.
+
+اکنون فرض کنید~$\Sat{M}{\fn{Count}}$، یعنی
+\[
+\Sat{M}{\lforall[X][((X(z) \land \lforall[x][(X(x) \lif X(u(x)))])
+    \lif \lforall[x][X(x)])]}[s]
+\]
+برای تخصیصی چون~$s$. بگذارید~$m = s(z)$ و~$f = s(u)$ و مجموعهٔ
+$S = \{m, f(m), f(f(m)), \dots\}$ را در نظر بگیرید. مجموعهٔ~$S$ که
+چنین تعریف شده آشکارا !!{enumerable} است. آنگاه، بنا بر فرض، داریم
+\[
+\Sat{M}{(X(z) \land \lforall[x][(X(x) \lif X(u(x)))])
+    \lif \lforall[x][X(x)]}[\Subst{s}{S}{X}]
+\]
+همچنین~$\Sat{M}{X(z)}[\Subst{s}{S}{X}]$، زیرا
+$S \ni m = \Subst{s}{S}{X}(z)$؛ و نیز
+$\Sat{M}{\lforall[x][(X(x) \lif X(u(x)))]}[\Subst{s}{S}{X}]$، زیرا
+هرگاه~$x \in S$، همچنین~$f(x) \in S$. پس چون هم مقدم و هم شرطی ارضا
+می‌شوند، تالی نیز باید ارضا شود:
+$\Sat{M}{\lforall[x][X(x)]}[\Subst{s}{S}{X}]$. اما این بدان معناست که
+$S = \Domain{M}$؛ پس~$\Domain{M}$ !!{enumerable} است، زیرا~$S$ بنا بر
+تعریف چنین است.
+\end{proof}
+
+\begin{prob}
+!!{sentence}~$\fn{Inf} \land \fn{Count}$ دقیقاً در همهٔ دامنه‌های
+!!{denumerable} صادق است. تعریف~$\fn{Count}$ را چنان تغییر دهید که به
+!!{sentence} متفاوتی تبدیل شود که مستقیماً !!{denumerable}بودن دامنه را
+بیان کند، و ثابت کنید که چنین می‌کند.
+\end{prob}
+
+\end{document}

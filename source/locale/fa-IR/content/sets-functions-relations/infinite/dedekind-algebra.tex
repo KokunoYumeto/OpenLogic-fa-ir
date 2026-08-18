@@ -1,0 +1,128 @@
+% Part: sets-functions-relations
+% Chapter: infinite
+% Section: dedekind
+%
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[fa-IR]{sfr}{infinite}{dedekind}
+\olsection{جبرهای ددکیند}
+
+نه‌تنها می‌خواهیم اعداد طبیعی نامتناهی باشند، بلکه می‌خواهیم خواص
+(جبریِ) معینی نیز داشته باشند: باید تحت جمع، ضرب و مانند آن به‌خوبی رفتار
+کنند.
+
+اندیشهٔ ددکیند این بود که مفهوم \emph{تابع جانشین} را بنیادی بگیریم و
+سپس اعداد را همچون اشیایی با خواص زیر مشخص کنیم:
+\begin{enumerate}
+	\item عددی چون $0$ وجود دارد که جانشین هیچ عددی نیست
+	\\یعنی، $0 \notin \ran{s}$
+	\\یعنی، $\forall x\ s(x) \neq 0$
+	\item اعداد متمایز جانشین‌های متمایز دارند
+	\\یعنی، $s$ یک !!a{injection} است
+	\\یعنی، $\forall x \forall y (s(x) = s(y) \lif x = y)$
+	\item\ollabel{repeatedapplication} هر عدد با اعمال مکررِ تابع جانشین
+	بر $0$ به دست می‌آید.
+\end{enumerate}
+رسیدگی به دو شرط نخست با منطق مرتبهٔ اول آسان است (بنگرید به بالا). اما
+نمی‌توانیم تنها با منطق مرتبهٔ اول به \olref{repeatedapplication} رسیدگی
+کنیم. پیشرفت تعیین‌کنندهٔ ددکیند این بود که شرط
+\olref{repeatedapplication} را به‌صورت مجموعه‌شناختیِ زیر بازنویسی کرد:
+\begin{enumerate}
+	\item[3$'$.] اعداد طبیعی کوچک‌ترین مجموعه‌ای هستند که
+	\emph{تحت تابع جانشین بسته} است: یعنی اگر $s$ را بر هر !!{element}
+	از مجموعه اعمال کنیم، !!{element} دیگری از مجموعه به دست می‌آوریم.
+\end{enumerate}
+اما باید این مطلب را به‌آرامی و با جزئیات بیان کنیم.
+
+\begin{defn}\ollabel{Closure}
+	برای هر تابع $f$، مجموعهٔ $X$ تحت $f$-
+	\emph{بسته} است {اگر و تنها اگر} $(\forall x \in X)f(x) \in X$. اکنون
+	برای هر $o$ تعریف کنید:
+	$$\closureofunder{f}{o} = \bigcap\Setabs{X}{o \in X\text{ و }X
+\text{ تحت $f$ بسته است}}$$
+\end{defn}
+
+پس $\closureofunder{f}{o}$ اشتراک همهٔ مجموعه‌های بسته تحت $f$ است که
+$o$ را به‌عنوان !!a{element} دارند. بنابراین، به‌طور شهودی،
+$\closureofunder{f}{o}$ \emph{کوچک‌ترین} مجموعهٔ بسته تحت $f$ است که
+$o$ را به‌عنوان !!a{element} دارد. نتیجهٔ بعدی این اندیشهٔ شهودی را
+دقیق می‌کند؛
+\begin{lem}\ollabel{closureproperties}
+	برای هر تابع $f$ و هر $o \in A$:
+	\begin{enumerate}
+		\item\ollabel{closurehaselem} $o \in \closureofunder{f}{o}$؛ و
+		\item\ollabel{closureclosed} $\closureofunder{f}{o}$ تحت $f$ بسته است؛ و
+		\item\ollabel{closuresmallest} اگر $X$ تحت $f$ بسته باشد و $o \in
+		X$، آنگاه $\closureofunder{f}{o} \subseteq X$
+	\end{enumerate}
+\end{lem}
+
+\begin{proof}
+توجه کنید که دست‌کم یک مجموعهٔ بسته تحت $f$ وجود دارد که $o$ را به‌عنوان
+!!a{element} دارد، یعنی $\ran{f}\cup \{o\}$. پس
+$\closureofunder{f}{o}$، یعنی اشتراک \emph{همهٔ} چنین مجموعه‌هایی، وجود
+دارد. اکنون باید \olref{closurehaselem}--\olref{closuresmallest} را
+بررسی کنیم.
+
+دربارهٔ \olref{closurehaselem}: داریم $o \in \closureofunder{f}{o}$،
+زیرا این مجموعه اشتراک مجموعه‌هایی است که همگی $o$ را به‌عنوان
+!!a{element} دارند.
+
+دربارهٔ \olref{closureclosed}: فرض کنید $x \in
+\closureofunder{f}{o}$. پس اگر $o \in X$ و $X$ تحت $f$ بسته باشد، آنگاه
+$x \in X$، و اکنون $f(x) \in X$، زیرا $X$ تحت $f$ بسته است. بنابراین
+$f(x) \in \closureofunder{f}{o}$.
+
+دربارهٔ \olref{closuresmallest}: به‌طور کلی، اگر $X \in C$، آنگاه
+$\bigcap C \subseteq X$.
+\end{proof}
+
+با استفاده از این نتیجه می‌توانیم بگوییم:
+
+\begin{defn}
+یک \emph{جبر ددکیند} مجموعه‌ای چون $A$ همراه با تابعی چون $f
+\colon A \to A$ و عضوی چون $o \in A$ است، چنان‌که:
+	\begin{enumerate}
+		\item \ollabel{ded:proper} $o \notin \ran{f}$
+		\item \ollabel{ded:injection} $f$ یک !!a{injection} است
+		\item \ollabel{ded:closure} $A = \closureofunder{f}{o}$
+	\end{enumerate}
+\end{defn}
+
+چون $A = \closureofunder{f}{o}$، نتیجهٔ پیشین به ما می‌گوید $A$
+کوچک‌ترین مجموعهٔ بسته تحت $f$ است که $o$ را به‌عنوان !!a{element}
+دارد. یک جبر ددکیند آشکارا نامتناهیِ ددکیندی است؛ کافی است به بندهای
+\olref{ded:proper} و \olref{ded:injection} تعریف بنگرید. اما واقعیت
+هیجان‌انگیزتر این است که هر مجموعهٔ نامتناهیِ ددکیندی را می‌توان به یک
+جبر ددکیند تبدیل کرد.
+
+\begin{thm}\ollabel{thm:DedekindInfiniteAlgebra}
+اگر مجموعه‌ای نامتناهیِ ددکیندی وجود داشته باشد، آنگاه یک جبر ددکیند وجود
+دارد.
+\end{thm}
+
+\begin{proof}
+فرض کنید $D$ نامتناهیِ ددکیندی باشد. پس تابع تزریقیِ $g \colon D \to
+D$ و عضوی چون $o  \in D \setminus \ran{g}$ وجود دارند. اکنون بگذارید
+$A = \closureofunder{g}{o}$؛ بنا بر \olref{closureproperties}، $A$ وجود
+دارد و $o \in A$. بگذارید $f = \funrestrictionto{g}{A}$. نشان خواهیم
+داد که $A, f, o$ یک جبر ددکیند را تشکیل می‌دهند.
+
+دربارهٔ \olref{ded:proper}: داریم $o \notin \ran{g}$ و $\ran{f}
+\subseteq \ran{g}$، پس $o\notin \ran{f}$.
+
+دربارهٔ \olref{ded:injection}: تابع $g$ روی $D$ تزریقی است؛ پس
+$f \subseteq g$ نیز باید تزریقی باشد.
+
+دربارهٔ \olref{ded:closure}: بنا بر \olref{closureproperties}، $A$ تحت
+$g$ بسته است؛ پس به طریق اولی، $A$ تحت $f$ بسته است. بنابراین
+$\closureofunder{f}{o} \subseteq A$، بنا بر \olref{closureproperties}. از سوی
+دیگر، چون $\closureofunder{f}{o}$ نیز تحت $f$ بسته است و $f =
+\funrestrictionto{g}{A}$، نتیجه می‌شود $\closureofunder{f}{o}$ تحت $g$
+بسته است. پس $A \subseteq \closureofunder{f}{o}$، بنا بر
+\olref{closureproperties}.
+\end{proof}
+
+\end{document}

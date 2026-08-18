@@ -1,0 +1,106 @@
+% Part: lambda-calculus
+% Chapter: church-rosser
+% Section: parallel-beta-eta-reduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{cr}{pbe}
+
+\olsection{کاهش موازی~$\beta\eta$}
+
+در این بخش خاصیت چرچ--راسر را برای کاهش موازی~$\beta\eta$ ثابت می‌کنیم؛
+یعنی مفهوم کاهش موازیِ متناظر با کاهش~$\beta\eta$.
+
+\begin{defn}[کاهش موازی~$\beta\eta$، $\beredpar$] \ollabel{defn:beredpar}
+  \emph{کاهش موازی~$\beta\eta$} ($\beredpar$) روی ترم‌ها به‌صورت
+  استقرایی چنین تعریف می‌شود:
+  \begin{enumerate}
+    \item \ollabel{defn:beredpar1} $x \beredpar x$.
+    \item \ollabel{defn:beredpar2} اگر~$N \beredpar N'$، آنگاه
+      $\lambd[x][N] \beredpar \lambd[x][N']$.
+    \item \ollabel{defn:beredpar3} اگر~$P \beredpar P'$ و
+      $Q \beredpar Q'$، آنگاه~$PQ \beredpar P'Q'$.
+    \item \ollabel{defn:beredpar4} اگر~$N \beredpar N'$ و
+      $Q \beredpar Q'$، آنگاه
+      $(\lambd[x][N])Q \beredpar \Subst{N'}{Q'}{x}$.
+    \item \ollabel{defn:beredpar5} اگر~$N \beredpar N'$، آنگاه
+      $\lambd[x][Nx] \beredpar N'$، مشروط بر اینکه~$x \notin \FV{N}$.
+  \end{enumerate}
+\end{defn}
+
+\begin{thm}\ollabel{thm:refl}
+  $M \beredpar M$.
+\end{thm}
+
+\begin{proof}
+  تمرین.
+\end{proof}
+
+\begin{prob}
+  \olref[lam][cr][pbe]{thm:refl} را ثابت کنید.
+\end{prob}
+
+\begin{defn}[بسط کامل~$\beta\eta$]\ollabel{defn:becd}
+  \emph{بسط کامل~$\beta\eta$} ترم~$M$، یعنی~$\becd{M}$، چنین تعریف
+  می‌شود:
+  \begin{align}
+    \becd{x} &= x \ollabel{defn:becd1} \\
+    \becd{(\lambd[x][N])} &= \lambd[x][\becd{N}]
+      && \text{اگر $N$ به‌صورت $P x$ با $x \notin \FV{P}$ نباشد}
+      \ollabel{defn:becd2}\\
+    \becd{(PQ)} &= \becd{P}\becd{Q} && \text{اگر $P$ یک انتزاع~$\lambd$ نباشد} 
+    \ollabel{defn:becd3} \\
+    \becd{((\lambd[x][N])Q)} &= \Subst{\becd{N}}{\becd{Q}}{x}
+                             \ollabel{defn:becd4} \\
+    \becd{(\lambd[x][Nx])} &= \becd{N} \ollabel{defn:becd5} & \text{اگر
+                                                       $x \notin \FV{N}$}
+  \end{align}
+\end{defn}
+
+\begin{lem}\ollabel{lem:comp}
+  اگر~$M \beredpar M'$ و~$R \beredpar R'$، آنگاه
+  $\Subst{M}{R}{y} \beredpar \Subst{M'}{R'}{y}$.
+\end{lem}
+
+\begin{proof}
+  با استقرا بر~!!{derivation}ِ $M \beredpar M'$. در حالت‌هایی که
+  جای‌گذاری از زیر یک انتزاع می‌گذرد، می‌توانیم با تبدیل آلفا نمایندگان
+  را از پیش چنان تغییر نام دهیم که~$x \neq y$ و
+  $x \notin \FV{R} \cup \FV{R'}$.
+
+  چهار حالت نخست دقیقاً مانند حالت‌های~\olref[pb]{lem:comp} هستند.
+  اگر قاعدهٔ آخر~\olref{defn:beredpar5} باشد، آنگاه~$M$ برابر
+  $\lambd[x][Nx]$ و~$M'$ برابر~$N'$ است، برای~$x$ و~$N'$ی که
+  $x \notin \FV{N}$ و~$N \beredpar N'$. می‌خواهیم نشان دهیم
+  $\Subst{(\lambd[x][Nx])}{R}{y} \beredpar \Subst{N'}{R'}{y}$، یعنی
+  $\lambd[x][\Subst{N}{R}{y} x] \beredpar \Subst{N'}{R'}{y}$. این
+  نتیجه از~\olref{defn:beredpar}\olref{defn:beredpar5} و فرض استقرا
+  به دست می‌آید.
+\end{proof}
+
+\begin{lem}\ollabel{lem:cont}
+  اگر~$M \beredpar M'$، آنگاه~$M' \beredpar \becd{M}$.
+\end{lem}
+
+\begin{proof}
+  با استقرا بر~!!{derivation}ِ $M \beredpar M'$.
+
+  چهار حالت نخست مانند حالت‌های~\olref[pb]{lem:cont} هستند. اگر قاعدهٔ
+  آخر~\olref{defn:beredpar5} باشد، آنگاه~$M$ برابر~$\lambd[x][Nx]$ و
+  $M'$ برابر~$N'$ است، برای~$x$، $N$ و~$N'$ی که~$x \notin \FV{N}$ و
+  $N \beredpar N'$. می‌خواهیم نشان دهیم
+  $N' \beredpar \becd{(\lambd[x][Nx])}$، یعنی
+  $N' \beredpar \becd{N}$، که بی‌درنگ از فرض استقرا به دست می‌آید.
+\end{proof}
+
+\begin{thm}\ollabel{thm:cr}
+  رابطهٔ~$\beredpar$ خاصیت چرچ--راسر را دارد.
+\end{thm}
+
+\begin{proof}
+  بی‌درنگ از~\olref{lem:cont}.
+\end{proof}
+
+\end{document}

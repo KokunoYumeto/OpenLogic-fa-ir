@@ -1,0 +1,92 @@
+% Part: many-valued-logic
+% Chapter: syntax-and-semantics
+% Section: sublogics
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mvl}{syn}{sub}
+
+\olsection{منطق‌های چندارزشی به‌مثابهٔ زیرمنطق‌های~$\LogCL$}
+
+منطق‌های چندارزشی متعارف همگی با ماتریس‌هایی تعریف می‌شوند که در آن‌ها
+مقدار یک تابع صدق برای آرگومان‌های~$\{\True, \False\}$ با توابع صدق
+کلاسیک یکسان است. به‌طور مشخص، در این منطق‌ها اگر
+$x \in \{\True, \False\}$، آنگاه
+$\tf{\lnot}[\Log L](x) = \tf{\lnot}[\LogCL](x)$؛ و برای هر رابط
+$\star$ از میان~$\land$، $\lor$ و~$\lif$، اگر
+$x, y \in \{\True, \False\}$، آنگاه
+$\tf{\star}[\Log L](x,y) = \tf{\star}[\LogCL](x,y)$. به بیان دیگر،
+توابع صدق~$\lnot$، $\land$، $\lor$ و~$\lif$ هنگامی که به
+$\{\True,\False\}$ محدود شوند، دقیقاً همان توابع صدق کلاسیک‌اند.
+
+\begin{prop}\ollabel{prop:mvl-cl}
+  فرض کنید زبان یک منطق چندارزشی~$\Log L$ شامل رابط‌های~$\lnot$،
+  $\land$، $\lor$ و~$\lif$ باشد، $\True, \False \in V$، و توابع صدق
+  آن شرایط زیر را برآورده کنند:
+  \begin{enumerate}
+    \item\ollabel{prop:not} اگر~$x = \True$ یا~$x = \False$، آنگاه
+    $\tf{\lnot}[\Log L](x) = \tf{\lnot}[\LogCL](x)$؛
+    \item\ollabel{prop:land} $\tf{\land}[\Log L](x,y) = \tf{\land}[\LogCL](x,y)$،
+    \item\ollabel{prop:lor} $\tf{\lor}[\Log L](x,y) = \tf{\lor}[\LogCL](x,y)$،
+    \item\ollabel{prop:lif} $\tf{\lif}[\Log L](x,y) = \tf{\lif}[\LogCL](x,y)$،
+    اگر~$x, y \in \{\True, \False\}$.
+  \end{enumerate}
+  آنگاه برای هر ارزش‌گذاری~$\pAssign v$ در~$V$ چنان‌که برای هر متغیر
+  گزاره‌ای~$p$ که در~$!A$ رخ می‌دهد
+  $\pAssign v(p) \in \{\True,\False\}$، داریم
+  $\pValue v[\Log L](!A) = \pValue v[\LogCL](!A)$.
+\end{prop}
+
+\begin{proof}
+  با استقرا بر~$!A$.
+  \begin{enumerate}
+  \item اگر~$!A \ident p$ اتمی باشد، داریم
+  $\pValue v[\Log L](!A) = \pAssign v(p) =
+  \pValue v[\LogCL](!A)$.
+  \item اگر~$!A \ident \lnot B$، داریم
+  \begin{align*}
+    \pValue v[\Log L](!A) & = \tf{\lnot}[\Log L](\pValue v[\Log L](!B)) & &\text{بنا بر \olref[val]{defn:pValue}}\\
+    & = \tf{\lnot}[\Log L](\pValue v[\LogCL](!B)) && \text{بنا بر فرض استقرا}\\
+    & = \tf{\lnot}[\LogCL](\pValue v[\LogCL](!B)) 
+  &&\text{بنا بر فرض~\olref{prop:not}،}\\
+  &&&\text{زیرا~$\pValue v[\LogCL](!B) \in \{\True, \False\}$،}\\
+  & = \pValue v[\LogCL](!A) &&\text{بنا بر \olref[val]{defn:pValue}}.
+\end{align*}
+\item اگر~$!A \ident (!B \land !C)$، داریم
+\begin{align*}
+  \pValue v[\Log L](!A) & = \tf{\land}[\Log L](\pValue v[\Log L](!B), \pValue v[\Log L](!C)) & &\text{بنا بر \olref[val]{defn:pValue}}\\
+  & = \tf{\land}[\Log L](\pValue v[\LogCL](!B),\pValue v[\LogCL](!C)) && \text{بنا بر فرض استقرا}\\
+  & = \tf{\land}[\LogCL](\pValue v[\LogCL](!B),\pValue v[\LogCL](!C)) 
+  &&\text{بنا بر فرض~\olref{prop:land}،}\\
+  &&&\text{زیرا~$\pValue v[\LogCL](!B),\pValue v[\LogCL](!C) \in \{\True, \False\}$،}\\
+  & = \pValue v[\LogCL](!A) &&\text{بنا بر \olref[val]{defn:pValue}}.
+\end{align*}
+\end{enumerate}
+حالت‌های~$!A \ident (!B \lor !C)$ و~$!A \ident (!B \lif !C)$ مشابه‌اند.
+\end{proof}
+
+\begin{cor}
+  اگر یک منطق چندارزشی شرایط~\olref{prop:mvl-cl} را برآورده کند،
+  $\True \in V^+$ و~$\False \notin V^+$، آنگاه
+  ${\Entails[\Log L]} \subseteq {\Entails[\LogCL]}$؛ یعنی اگر
+  $\Gamma \Entails[\Log L] !B$، آنگاه~$\Gamma \Entails[\LogCL] !B$.
+  به‌ویژه، هر همان‌گویی~$\Log L$ یک همان‌گویی کلاسیک نیز هست.
+\end{cor}
+
+\begin{proof}
+  عکس نقیض را ثابت می‌کنیم. فرض کنید~$\Gamma \Entails/[\LogCL] !B$.
+  پس~!!{valuation}ای چون
+  $\pAssign v\colon \PVar \to \{\True, \False\}$ وجود دارد که برای
+  همهٔ~$!A \in \Gamma$، $\pValue v[\LogCL](!A) = \True$ و نیز
+  $\pValue v[\LogCL](!B) = \False$. چون~$\True, \False \in V$،
+  !!{valuation} چون~$\pAssign v$ برای~$\Log L$ نیز~!!a{valuation} است.
+  بنا بر~\olref{prop:mvl-cl}، برای همهٔ~$!A \in \Gamma$ داریم
+  $\pValue v[\Log L](!A) = \True$ و نیز
+  $\pValue v[\Log L](!B) = \False$. چون~$\True \in V^+$ و
+  $\False \notin V^+$، این یعنی~$\pAssign v \Entails[\Log L] \Gamma$
+  و~$\pAssign v \Entails/[\Log L] !B$؛ یعنی
+  $\Gamma \Entails/[\Log L] !B$.
+\end{proof}
+\end{document}

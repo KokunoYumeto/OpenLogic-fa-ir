@@ -1,0 +1,54 @@
+% Part: incompleteness
+% Chapter: arithmetization-syntax
+% Section: substitution
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{art}{sub}
+\olsection{جانشانی}
+
+به یاد آورید جانشانی عملِ جایگزین‌کردن همهٔ رخدادهای آزادِ
+!!a{variable}~$u$ در !!a{formula}~$!A$ با ترم~$t$ است و با
+$\Subst{!A}{t}{u}$ نوشته می‌شود. وقتی این عمل روی اعداد گودلِ
+!!{variable}s، !!{formula}s و ترم‌ها انجام شود، بازگشتی اولیه است.
+
+\begin{prop}\ollabel{prop:subst-primrec}
+تابع بازگشتی اولیه‌ای چون~$\fn{Subst}(x,y,z)$ وجود دارد با این ویژگی
+که
+\[
+\fn{Subst}(\Gn{!A}, \Gn{t}, \Gn{u}) = \Gn{\Subst{!A}{t}{u}}.
+\]
+\end{prop}
+
+\begin{proof}
+می‌توانیم تابع~$\fn{hSubst}$ را با بازگشت اولیه چنین تعریف کنیم:
+\begin{multline*}
+\begin{aligned}
+\fn{hSubst}(x, y, z, 0) & = \emptyseq \\
+\fn{hSubst}(x, y, z, i+1) & =
+\end{aligned}\\
+\begin{cases}
+\fn{hSubst}(x, y, z, i) \concat y & \text{اگر $\fn{FreeOcc}(x, z, i)$} \\
+\fn{append}(\fn{hSubst}(x, y, z, i), (x)_{i}) & \text{در غیر این صورت.}
+\end{cases}
+\end{multline*}
+اکنون می‌توان $\fn{Subst}(x,y,z)$ را برابر
+$\fn{hSubst}(x,y,z,\len{x})$ تعریف کرد.
+\end{proof}
+
+\begin{prop}
+\ollabel{prop:free-for}
+رابطهٔ~$\fn{FreeFor}(x,y,z)$، که برقرار است اگر و تنها اگر ترم دارای
+عدد گودل~$y$ برای متغیر دارای عدد گودل~$z$ در فرمول دارای عدد
+گودل~$x$ !!{free for} باشد، بازگشتی اولیه است.
+\end{prop}
+
+\begin{proof} تمرین. \end{proof}
+
+\begin{prob}
+\olref[inc][art][sub]{prop:free-for} را ثابت کنید.
+\end{prob}
+
+\end{document}

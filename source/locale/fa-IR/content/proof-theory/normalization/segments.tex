@@ -1,0 +1,110 @@
+% Part: proof-theory
+% Chapter: normalization
+% Section: segments
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{nor}{seg}
+
+\olsection{قطعه‌ها و برش‌ها}
+
+اگر قاعده‌ای !!^a{introduction} و سپس قاعده‌ای !!a{elimination} به کار
+رود، در !!a{proof} یک مسیر انحرافی پدید می‌آید؛ بهنجار کردن !!a{proof}
+یعنی حذف چنین مسیرهایی. بااین‌حال، قواعد \Elim{\lor} و
+\Elim{\lexists} حتی تعریف «مسیر انحرافی‌ای که می‌خواهیم حذف کنیم» را
+کمی پیچیده می‌کنند. مسئله این است که، به‌سبب این قواعد، تضمینی نیست
+که در یک مسیر انحرافی قاعدهٔ !!{elimination} \emph{بی‌درنگ} پس از
+قاعدهٔ !!{introduction} بیاید. ممکن است میان آن‌ها یک \Elim{\lor} یا
+\Elim{\lexists} قرار گیرد؛ برای نمونه:
+\[
+\AxiomC{}
+\DeduceC{$\lexists[x][!C(x)]$}
+\AxiomC{$\Discharge{!A}{x}$}
+\DeduceC{$!B$}
+\DischargeRule{\Intro{\lif}}{x}
+\UnaryInfC{$!A \lif !B$}
+\DischargeRule{\Elim{\lexists}}{y}
+\BinaryInfC{$!A \lif !B$}
+\AxiomC{}
+\DeduceC{$!A$}
+\RightLabel{\Elim{\lif}}
+\BinaryInfC{$!B$}
+\DisplayProof
+\]
+در واقع، هر تعداد قاعدهٔ \Elim{\lor} یا \Elim{\lexists} می‌تواند
+\Intro{\lif} را از \Elim{\lif} جدا کند؛ برای نمونه:
+\[
+\AxiomC{}
+\DeduceC{$\lexists[x][!C(x)]$}
+\AxiomC{}
+\DeduceC{$!D \lor !E$}
+\AxiomC{$\Discharge{!A}{x}$}
+\DeduceC{$!B$}
+\DischargeRule{\Intro{\lif}}{x}
+\UnaryInfC{$!A \lif !B$}
+\AxiomC{$\Discharge{!A}{x}$}
+\DeduceC{$!B$}
+\DischargeRule{\Intro{\lif}}{x}
+\UnaryInfC{$!A \lif !B$}
+\RightLabel{\Elim{\lor}}
+\TrinaryInfC{$!A \lif !B$}
+\DischargeRule{\Elim{\lexists}}{y}
+\BinaryInfC{$!A \lif !B$}
+\AxiomC{}
+\DeduceC{$!A$}
+\RightLabel{\Elim{\lif}}
+\BinaryInfC{$!B$}
+\DisplayProof
+\]
+این مثال نشان می‌دهد که ممکن است یک \Elim{\lif} واحد در چند مسیر
+انحرافی دخیل باشد، زیرا پس از بیش از یک~\Intro{\lif} می‌آید. برای
+درنظرگرفتن همهٔ این امکان‌ها، مسیرهای انحرافی را با استفاده از گونه‌ای
+دنبالهٔ وقوع‌های !!{formula} در یک برهان \Log{N1i} تعریف می‌کنیم
+که به آن‌ها \emph{قطعه} می‌گوییم. در مثال ما، این دنباله‌ای از وقوع‌های
+~$!A \lif !B$ است که در آن نتیجهٔ هر $\Elim{\lor}$ یا
+$\Elim{\lexists}$ در ادامهٔ مقدمهٔ فرعی آن می‌آید. در این مثال دو چنین
+قطعه‌ای وجود دارد و هریک سه وقوع از~$!A \lif !B$ را در بر دارد. تعریف
+رسمی چنین است.
+
+\begin{defn}
+یک \emph{قطعه} در !!{proof} \Log{N1i}ای~$\delta$ دنباله‌ای از وقوع‌های
+$!A_1$، \dots، $!A_n$ از !!{formula} یکسان~$!A$ در $\delta$ است که در
+آن
+\begin{enumerate}
+  \item $!A_1$ نتیجهٔ \Elim{\lor} یا \Elim{\lexists} نیست؛
+  \item $!A_n$ مقدمهٔ فرعی \Elim{\lor} یا \Elim{\lexists} نیست؛
+  \item برای $i = 1$، \dots،~$n-1$، $!A_i$ مقدمهٔ فرعی یک کاربرد از
+  \Elim{\lor} یا \Elim{\lexists} است و $!A_{i+1}$ نتیجهٔ همان استنتاج
+  است که پس از آن مقدمه می‌آید.
+\end{enumerate}
+\emph{طول} آن قطعه~$n$ است.
+\end{defn}
+
+هر قطعه‌ای هدف حذف (یعنی مسیر انحرافی) نیست. قطعه‌هایی که چنین‌اند
+\emph{برش} نام دارند.
+
+\begin{defn}
+یک \emph{برش} قطعه‌ای است که در آن $!A_n$ مقدمهٔ اصلی یک استنتاج
+!!a{elimination} است و یا $n=1$ و $!A_1 = !A_n$ نتیجهٔ یک استنتاج
+!!a{introduction} یا نتیجهٔ~\FalseInt است، یا~$n>1$.
+\end{defn}
+
+توجه کنید که لازم نیست قطعهٔ برش با نتیجهٔ یک قاعدهٔ !!a{introduction}
+آغاز شود. تنها شرط این است که به مقدمهٔ اصلی یک قاعدهٔ
+!!a{elimination} ختم شود. اما برای آن‌که قطعه‌ای با طول~$1$ برش به شمار
+آید، باید با نتیجهٔ یک قاعدهٔ !!{introduction} یا نتیجهٔ \FalseInt آغاز
+شود.
+
+\begin{defn}
+\emph{رتبهٔ} یک برش~$\depth{!A}$ است. \emph{رتبهٔ
+برش}~$\cutrank{\delta}$ در !!a{proof}~$\delta$ بیشینهٔ رتبهٔ برش‌های
+موجود در~$\delta$ است و اگر برشی وجود نداشته باشد، برابر صفر است. یک
+برش در~$\delta$ \emph{بیشینه} است هرگاه رتبه‌اش
+~$\cutrank{\delta}$ باشد، یعنی رتبهٔ بیشینه داشته باشد. \emph{طول
+برش}~$\delta$ مجموع طول همهٔ برش‌های بیشینهٔ آن است و اگر برشی وجود
+نداشته باشد، برابر صفر است.
+\end{defn}
+
+\end{document}

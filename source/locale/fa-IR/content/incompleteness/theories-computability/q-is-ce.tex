@@ -1,0 +1,60 @@
+% Part: incompleteness
+% Chapter: theories-computability
+% Section: q-is-ce
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{tcp}{qce}
+
+\olsection{$\Th{Q}$، \printtoken{S}{c.e.}-کامل است}
+
+
+\begin{thm}
+$\Th{Q}$، !!{c.e.} است اما تصمیم‌پذیر نیست. در واقع، یک مجموعهٔ
+!!{c.e.} کامل است.
+\end{thm}
+
+\begin{proof}
+دیدن اینکه~$\Th{Q}$، !!{c.e.} است دشوار نیست، زیرا مجموعهٔ
+(رمزهای) جمله‌های~$y$ است که اثباتی چون~$x$ از~$y$ در~$\Th{Q}$
+وجود دارد:
+\[
+Q = \Setabs{y}{\lexists[x][\Prf[\Th{Q}](x,y)]}.
+\]
+اما می‌دانیم~$\Prf[\Th{Q}](x,y)$ محاسبه‌پذیر (و در واقع بازگشتی
+اولیه) است، و هر مجموعه‌ای که بتوان آن را به صورت بالا نوشت، c.e.
+است.
+
+گفتن اینکه این مجموعه c.e. کامل است، با گفتن اینکه
+$K \leq_m Q$، که در آن
+$K = \Setabs{x}{!A_x(x) \downarrow}$، هم‌ارز است. پس نشان می‌دهیم
+$K$ به~$\Th{Q}$ کاهش‌پذیر است. از آنجا که محمول کلینی
+$T(e,x,s)$ بازگشتی اولیه است، در~$\Th{Q}$، مثلاً با~$!A_T$،
+بازنمایی‌پذیر است. آنگاه برای هر~$x$ داریم
+\begin{align*}
+x \in K & \lif \lexists[s][T(x,x,s)] \\
+& \lif \lexists[s][(\Th{Q} \Proves !A_T(\num x,\num x, \num s))]
+  \\
+& \lif \Th{Q} \Proves \lexists[s][!A_T(\num x, \num x, s)].
+\end{align*}
+برعکس، اگر
+$\Th{Q} \Proves \lexists[s][!A_T(\num x, \num x, s)]$، آنگاه در
+واقع برای عدد طبیعی~$n$ای، فرمول
+$!A_T(\num x, \num x, \num n)$ باید صادق باشد. اگر
+$T(x,x,n)$ کاذب بود، $\Th{Q}$،
+$\lnot !A_T(\num x, \num x, \num n)$ را ثابت می‌کرد، زیرا
+$!A_T$، $T$ را بازنمایی می‌کند.
+اما در آن صورت~$\Th{Q}$ فرمولی کاذب را ثابت می‌کرد، که تناقض است.
+پس~$T(x,x,n)$ باید صادق باشد و این
+$!A_x(x) \downarrow$ را نتیجه می‌دهد.
+
+خلاصه اینکه برای هر~$x$، $x$ عضو~$K$ است اگر و تنها اگر
+$\Th{Q}$، $\lexists[s][!A_T(\num x,\num x,s)]$ را ثابت کند. پس
+تابع~$f$ که~$x$ را به (رمزِ) جملهٔ
+$\lexists[s][!A_T(\num x, \num x, s)]$ می‌برد، کاهشی از~$K$ به
+$\Th{Q}$ است.
+\end{proof}
+
+\end{document}

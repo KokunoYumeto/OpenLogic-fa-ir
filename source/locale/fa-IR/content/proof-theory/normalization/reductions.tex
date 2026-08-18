@@ -1,0 +1,338 @@
+% Part: proof-theory
+% Chapter: normalization
+% Section: reductions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{nor}{red}
+
+\olsection{تبدیل‌های کاهشی}
+
+اگر برشی در !!a{proof} در \Log{N1i} طول~$1$ داشته باشد، قطعه‌ای شامل
+تنها یک رخداد !!{formula} است. آن !!{formula} نتیجهٔ !!a{introduction}
+یا نتیجهٔ~\FalseInt، و هم‌زمان مقدمهٔ عمدهٔ !!a{elimination} است. در
+اثبات نرمال‌سازی، چنین برش‌هایی با جایگزینی زیر-!!{proof} منتهی به این
+جفت !!{introduction}/!!{elimination} یا جفت
+\FalseInt/حذف با !!{proof} تازه‌ای که این دو استنتاج در آن
+حذف شده‌اند «کاهش» می‌یابند. این جایگزینی ممکن است برش‌های تازه‌ای
+بسازد، اما برش‌های تازه رتبه‌ای کمتر از برش کاهش‌یافته دارند. هنگامی
+که یک برش بیشینهٔ بالاترین و راست‌ترین را برمی‌گزینیم، !!{proof} تازه
+یا طول برش کمتری دارد، چون یک برش بیشینهٔ طول~$1$ حذف شده، یا رتبهٔ
+برشِ !!{proof} کاهش می‌یابد، اگر آن برش تنها برش بیشینه بوده باشد.
+
+برای نمونه، اگر استنتاج‌های درگیر \Intro{\lif} و \Elim{\lif} باشند،
+$!A\ident !B\lif !C$ و زیر-!!{proof}~$\delta_1$ای داریم که چنین پایان
+می‌یابد:
+\[
+\AxiomC{$\Discharge{!B}{x}$}
+\RightLabel{$\delta_2$}
+\DeduceC{$!C$}
+\DischargeRule{\Intro{\lif}}{x}
+\UnaryInfC{$!B \lif !C$}
+\AxiomC{}
+\RightLabel{$\delta_3$}
+\DeduceC{$!B$}
+\RightLabel{\Elim{\lif}}
+\BinaryInfC{$!C$}
+\DisplayProof
+\]
+برای حذف این برش، زیر‌برهان~$\delta_1$ در~$\delta$ را با برهان زیر
+جایگزین می‌کنیم:
+\[
+\AxiomC{}
+\RightLabel{$\delta_3$}
+\DeduceC{$!B$}
+\RightLabel{$\Subst{\delta_2}{\delta_3}{!B^x}$}
+\DeduceC{$!C$}
+\DisplayProof
+\]
+منظور از $\Subst{\delta_2}{\delta_3}{!B^x}$، !!{proof}ی است که با
+جایگزینی هر فرض~$!B$ دارای برچسب~$x$ در~$\delta_2$ با کل !!{proof}
+~‌$\delta_3$ حاصل می‌شود. این !!{proof} دیگر فرض بازی به شکل~$!B$ با
+برچسب~$x$ ندارد و هیچ !!{formula} دیگری نیز با همان برچسب ندارد. هر
+نسخهٔ~$\delta_3$ را به‌گونه‌ای بی‌گرفتاری پیوند می‌زنیم: متغیرهای ویژه
+و برچسب‌های ترخیص داخلی آن را نسبت به~$\delta_2$ و نسبت به دیگر نسخه‌ها
+تازه می‌کنیم. از این رو !!{proof} تازه همان فرمول‌ها و برچسب‌های فرض
+باز~$\delta_1$ را دارد، هرچند بعضی رخدادها ممکن است چند بار تکرار شوند؛
+استنتاج‌های~$\delta_2$ همان فرض‌های پیشین را مرخص می‌کنند و هر نسخهٔ
+استنتاج‌های مرخص‌کنندهٔ~$\delta_3$ فرض‌های متناظر همان نسخه را مرخص
+می‌کند.
+
+برش‌های سراسر در~$\delta_2$ و برش‌های سراسر بیرون از~$\delta_1$ در
+~‌$\delta$ بی‌تغییر می‌مانند. برش‌های هر نسخهٔ تازه‌شدهٔ~$\delta_3$
+نیز همان !!{formula}ها، رتبه و طول برش‌های متناظر در~$\delta_3$ را
+دارند. انتخاب یک برش بیشینه که هم بالاترین و هم راست‌ترین است تضمین
+می‌کند هیچ برش بیشینه‌ای در بخش‌های کپی‌شده وجود ندارد. پس با حذف برش
+بیشینهٔ طول~$1$، یا طول برش کاهش می‌یابد، یا اگر این تنها برش بیشینه
+بود، رتبهٔ برش کاهش می‌یابد.
+
+با این همه دو رخداد ممکن است:
+\begin{enumerate}
+  \item با جایگزینی همهٔ فرض‌های~$!B^x$ با~$\delta_3$، همهٔ برش‌های
+  ~‌$\delta_3$ را چند برابر کرده‌ایم. اگر برخی از آن‌ها بیشینه باشند،
+  طول برشِ !!{proof} تازه ممکن است از طول برشِ !!{proof} پیشین بیشتر
+  شود. باید جلوی این امر را بگیریم. از این رو تبدیل‌های کاهشی را فقط
+  بر برش‌های بیشینه‌ای اعمال می‌کنیم که هم \emph{بالاترین} و هم
+  \emph{راست‌ترین} هستند. اگر برشی بیشینه در~$\delta_3$ بود، در شاخه‌ای
+  در سمت راست برش مورد کاهش قرار می‌گرفت؛ و اگر برشی بیشینه در بخش
+  کپی‌شوندهٔ بالای آن بود، برش برگزیده بالاترین نبود. با این انتخاب یا
+  طول برشِ !!{proof} کاهش می‌یابد یا حتی رتبهٔ برش کم می‌شود.
+
+  \item اگر فرض~$!B^x$ در~$\delta_2$ مقدمهٔ عمدهٔ !!a{elimination}
+  باشد و آخرین استنتاج~$\delta_3$، \Elim{\lor}، \Elim{\lexists}،
+  !!a{introduction} یا~\FalseInt باشد، با پیوندزدن~$\delta_3$ به آن
+  فرض در~$\delta_2$ برشی تازه ساخته‌ایم. چیزی که در~$\delta_2$ فقط یک
+  فرض بود، اکنون برشی با طول~$1$ است---نتیجهٔ !!a{introduction} یا
+  \FalseInt و مقدمهٔ عمدهٔ !!a{elimination}---یا آخرین رخداد
+  !!{formula} یک قطعهٔ برشی، یعنی مقدمهٔ عمدهٔ !!a{elimination} و
+  نتیجهٔ \Elim{\lor} یا \Elim{\lexists}. اگر $!B^x$ مقدمهٔ فرعی
+  \Elim{\lor} یا \Elim{\lexists} بود، از پیش نخستین رخداد
+  !!{formula} یک قطعه، و شاید قطعه‌ای برشی، بود. در !!{proof} تازه آن
+  قطعه ممکن است بلندتر شود. اما !!{formula} سازندهٔ این برش تازه یا
+  قطعهٔ برشی موجود~$!B$ است و
+  $\depth{!B}<\depth{!B\lif !C}$. پس گرچه ممکن است برش افزوده یا طول
+  برشی زیاد شده باشد، هیچ‌یک بیشینه نیست. بنابراین یا رتبهٔ برش را کم
+  کرده‌ایم، یا اگر برش‌های هم‌رتبه باقی مانده‌اند، طول برش را کاهش
+  داده‌ایم.
+\end{enumerate}
+
+فرایند کاهش برش با طول~$1$ را \emph{تبدیل کاهشی} یا \emph{تبدیل
+انحراف} می‌نامند. الگوهای برخی جفت‌قاعده‌ها در
+\olref{tab:reduction-conversions} آمده‌اند و بقیه به‌عنوان تمرین واگذار
+می‌شوند.
+
+\begin{table}
+\begin{multline*}
+\bottomAlignProof
+\AxiomC{$\Discharge{!B}{x}$}
+\RightLabel{$\delta_2$}
+\shortDeduce
+\DeduceC{$!C$}
+\DischargeRule{\Intro{\lif}}{x}
+\UnaryInfC{$!B \lif !C$}
+\AxiomC{}
+\RightLabel{$\delta_3$}
+\shortDeduce
+\DeduceC{$!B$}
+\RightLabel{\Elim{\lif}}
+\BinaryInfC{$!C$}
+\DisplayProof
+\quad \longrightarrow\quad
+\shoveright{\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\delta_3$}
+\shortDeduce
+\DeduceC{$!B$}
+\RightLabel{$\Subst{\delta_2}{\delta_3}{!B^x}$}
+\shortDeduce
+\DeduceC{$!C$}
+\DisplayProof}
+\\[4ex]
+\shoveleft{\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\shortDeduce
+\DeduceC{$!B$}
+\AxiomC{}
+\RightLabel{$\delta_3$}
+\shortDeduce
+\DeduceC{$!C$}
+\RightLabel{\Intro{\land}}
+\BinaryInfC{$!B \land !C$}
+\RightLabel{\Elim{\land}[1]}
+\UnaryInfC{$!B$}
+\DisplayProof
+\quad \longrightarrow\quad
+\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\shortDeduce
+\DeduceC{$!B$}
+\DisplayProof}\qquad
+\shoveright{\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\shortDeduce
+\DeduceC{$!B$}
+\AxiomC{}
+\RightLabel{$\delta_3$}
+\shortDeduce
+\DeduceC{$!C$}
+\RightLabel{\Intro{\land}}
+\BinaryInfC{$!B \land !C$}
+\RightLabel{\Elim{\land}[2]}
+\UnaryInfC{$!C$}
+\DisplayProof
+\quad \longrightarrow\quad
+\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\delta_3$}
+\shortDeduce
+\DeduceC{$!C$}
+\DisplayProof}
+\\[4ex]
+\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\shortDeduce
+\DeduceC{$!B$}
+\RightLabel{\Intro{\lor}[1]}
+\UnaryInfC{$!B \lor !C$}
+\AxiomC{$\Discharge{!B}{x}$}
+\RightLabel{$\delta_3$}
+\shortDeduce
+\DeduceC{$!D$}
+\AxiomC{$\Discharge{!C}{y}$}
+\RightLabel{$\delta_4$}
+\shortDeduce
+\DeduceC{$!D$}
+\DischargeRule{\Elim{\lor}}{x\,y}
+\TrinaryInfC{$!D$}
+\DisplayProof
+\quad \longrightarrow\quad
+\shoveright{\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\shortDeduce
+\DeduceC{$!B$}
+\RightLabel{$\Subst{\delta_3}{\delta_2}{!B^x}$}
+\shortDeduce
+\DeduceC{$!D$}
+\DisplayProof}
+\\[2ex]
+\shoveleft{\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\shortDeduce
+\DeduceC{$!B(c)$}
+\RightLabel{\Intro{\lforall}}
+\UnaryInfC{$\lforall[x][!B(x)]$}
+\RightLabel{\Elim{\lforall}}
+\UnaryInfC{$!B(t)$}
+\DisplayProof
+\quad \longrightarrow\quad
+\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\Subst{\delta_2}{t}{c}$}
+\shortDeduce
+\DeduceC{$!B(t)$}
+\DisplayProof}
+\\[4ex]
+\shoveright{\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\shortDeduce
+\DeduceC{$!B(t)$}
+\RightLabel{\Intro{\lexists}}
+\UnaryInfC{$\lexists[x][!B(x)]$}
+\AxiomC{$\Discharge{!B(c)}{x}$}
+\RightLabel{$\delta_3$}
+\shortDeduce
+\DeduceC{$!D$}
+\DischargeRule{\Elim{\lexists}}{x}
+\BinaryInfC{$!D$}
+\DisplayProof
+\quad \longrightarrow\quad
+\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\shortDeduce
+\DeduceC{$!B(t)$}
+\RightLabel{$\Subst{\Subst{\delta_3}{t}{c}}{\delta_2}{!B(t)^x}$}
+\shortDeduce
+\DeduceC{$!D$}
+\DisplayProof}
+\end{multline*}
+\caption{چند تبدیل کاهشی برای \Log{N1i}.}
+\ollabel{tab:reduction-conversions}
+\end{table}
+
+\begin{prob}
+تبدیل کاهشی را برای \Intro{\lnot} که \Elim{\lnot} در پی آن می‌آید
+بنویسید.
+\end{prob}
+
+یک حالت دیگر باقی می‌ماند. تعریف برش حالتی را نیز در بر می‌گیرد که طول
+برش~$1$ است و~$!A$ هم نتیجهٔ~\FalseInt{} و هم مقدمهٔ عمدهٔ
+!!a{elimination} است. این حالت مانند حالتی بررسی می‌شود که~$!A$ نتیجهٔ
+!!a{introduction} است. برای نمونه، برهان زیر را
+\[
+\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\DeduceC{$\lfalse$}
+\RightLabel{\FalseInt}
+\UnaryInfC{$!B \lif !C$}
+\AxiomC{}
+\RightLabel{$\delta_3$}
+\DeduceC{$!B$}
+\RightLabel{\Elim{\lif}}
+\BinaryInfC{$!C$}
+\DisplayProof
+\quad\text{با}\quad
+\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\DeduceC{$\lfalse$}
+\RightLabel{\FalseInt}
+\UnaryInfC{$!C$}
+\DisplayProof
+\]
+جایگزین کنید. در حالت‌های $!A\ident(!B\lor !C)$ یا
+$!A\ident\lexists[x][!B(x)]$ باید کمی محتاط باشیم. برای نمونه، اگر
+برهان
+\[
+\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\DeduceC{$\lfalse$}
+\RightLabel{\FalseInt}
+\UnaryInfC{$!B \lor !C$}
+\AxiomC{$\Discharge{!B}{x}$}
+\RightLabel{$\delta_3$}
+\DeduceC{$!D$}
+\AxiomC{$\Discharge{!C}{y}$}
+\RightLabel{$\delta_4$}
+\DeduceC{$!D$}
+\DischargeRule{\Elim{\lor}}{x\,y}
+\TrinaryInfC{$!D$}
+\DisplayProof
+\quad\text{را با}\quad
+\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\DeduceC{$\lfalse$}
+\RightLabel{\FalseInt}
+\UnaryInfC{$!D$}
+\DisplayProof
+\]
+جایگزین می‌کردیم، ممکن بود برش تازه‌ای با !!{formula} برش~$!D$ معرفی
+کنیم و هیچ تضمینی نیست که
+$\depth{!D}<\depth{!B\lor !C}$!{} پس باید همانند کاهش
+\Intro{\lor}/\Elim{\lor} عمل کنیم و آن را با یکی از دو برهان زیر
+جایگزین سازیم:
+\[
+\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\DeduceC{$\lfalse$}
+\RightLabel{\FalseInt}
+\UnaryInfC{$!B$}
+\RightLabel{$\delta_3$}
+\DeduceC{$!D$}
+\DisplayProof
+\quad\text{یا}\quad
+\bottomAlignProof
+\AxiomC{}
+\RightLabel{$\delta_2$}
+\DeduceC{$\lfalse$}
+\RightLabel{\FalseInt}
+\UnaryInfC{$!C$}
+\RightLabel{$\delta_4$}
+\DeduceC{$!D$}
+\DisplayProof
+\]
+
+\end{document}

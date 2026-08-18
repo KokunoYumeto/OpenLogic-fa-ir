@@ -1,0 +1,91 @@
+% Part: model-theory
+% Chapter: basics
+% Section: dlo
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mod}{bas}{dlo}
+\section{ترتیب‌های خطی چگال}
+
+\begin{defn}
+  یک \emph{ترتیب خطی چگال بدون نقاط انتهایی} !!a{structure} چون
+  $\Struct{M}$ برای !!{language}ی شامل تنها یک
+  !!{predicate}~$<$ دوموضعی است که جمله‌های زیر را برآورده می‌کند:
+  \begin{enumerate}
+  \item $\lforall[x][\lnot x < x]$؛
+  \item $\lforall[x][\lforall[y][\lforall[z][(x < y \lif (y < z \lif x
+    <z ))]]]$؛
+  \item $\lforall[x][\lforall[y][(x< y \lor \eq[x][y] \lor y < x)]]$؛
+  \item $\lforall[x][\lexists[y][x < y]]$؛
+  \item $\lforall[x][\lexists[y][y < x]]$؛
+  \item $\lforall[x][\lforall[y][(x < y \lif \lexists[z][(x < z \land
+        z < y))]]]$.
+ \end{enumerate}
+\end{defn}
+
+\begin{thm}\ollabel{thm:cantorQ}
+  هر دو ترتیب خطی چگال بدون نقاط انتهایی که !!{enumerable} باشند
+  همریخت‌اند.
+\end{thm}
+
+\begin{proof}
+  بگذارید $\Struct{M_1}$ و~$\Struct{M_2}$ ترتیب‌های خطی چگال بدون نقاط
+  انتهایی و !!{enumerable} باشند، به‌گونه‌ای که
+  ${<_1} = \Assign{<}{M_1}$ و ${<_2} = \Assign{<}{M_2}$؛ و بگذارید
+  $\PIso{I}$ مجموعهٔ همهٔ همریختی‌های جزئی میان آن‌ها باشد. $\PIso{I}$
+  ناتهی است، زیرا دست‌کم $\emptyset \in \PIso{I}$. نشان می‌دهیم
+  $\PIso{I}$ خاصیت پس‌وپیش را برآورده می‌کند. آنگاه
+  $\Struct{M_1} \iso[p] \Struct{M_2}$، و قضیه بنا بر
+  \olref[pis]{thm:p-isom1} نتیجه می‌شود.
+
+  برای نشان‌دادن اینکه $\PIso{I}$ خاصیت پیش را برآورده می‌کند،
+  $p \in \PIso{I}$ و $a \in \Domain{M_1}$ را بگیرید. اگر $a$ از پیش
+  در دامنهٔ~$p$ باشد، $q=p$ را بگیرید. اگر $p=\emptyset$، هر
+  $b \in \Domain{M_2}$ را برگزینید و
+  $q=\{\langle a,b\rangle\}$ را بگیرید. در حالت باقی‌مانده، فرض کنید
+  $p(a_i)=b_i$ برای $i = 1$، \dots،~$n$ و، بدون کاستن از کلیت،
+  $a_1 <_1 a_2 <_1 \cdots <_1 a_n$. برای
+  $a \in \Domain{M_1}$ که در دامنهٔ~$p$ نیست، $b \in \Domain{M_2}$ را
+  چنین بیابید:
+  \begin{enumerate}
+  \item اگر $a <_1 a_1$، $b \in \Domain{M_2}$ را چنان بگیرید که
+    $b <_2 b_1$؛
+  \item اگر $a_n <_1 a$، $b \in \Domain{M_2}$ را چنان بگیرید که
+    $b_n <_2 b$؛
+  \item اگر برای یک $i$، $a_i <_1 a <_1 a_{i+1}$، آنگاه
+    $b \in \Domain{M_2}$ را چنان بگیرید که
+    $b_i <_2 b <_2 b_{i+1}$.
+  \end{enumerate}
+  چون $\Struct{M_2}$ یک ترتیب خطی چگال بدون نقاط انتهایی است، همواره
+  می‌توان $b$ای با خاصیت مطلوب یافت. تعریف کنید
+  $q = p \cup \{ \langle a, b \rangle \}$ تا $q \in \PIso{I}$ بسط
+  مطلوب~$p$ باشد. این خاصیت پیش را برقرار می‌کند. خاصیت پس مشابه است.
+  پس $\Struct{M_1} \iso[p] \Struct{M_2}$؛ بنا بر
+  \olref[pis]{thm:p-isom1}، $\Struct{M_1} \iso \Struct{M_2}$.
+\end{proof}
+
+\begin{prob}
+  برهان \olref[mod][bas][dlo]{thm:cantorQ} را با وارسی اینکه
+  $\PIso{I}$ خاصیت پس را برآورده می‌کند کامل کنید.
+\end{prob}
+
+\begin{rem}
+  بگذارید $\Struct{S}$ هر ترتیب خطی چگال بدون نقاط انتهایی و
+  !!{enumerable} باشد. آنگاه (بنا بر \olref{thm:cantorQ})
+  $\Struct{S} \iso \Struct{Q}$، که در آن
+  $\Struct{Q} = (\Rat, <)$ ترتیب خطی چگال و !!{enumerable}ی است که
+  مجموعهٔ~$\Rat$ از اعداد گویا دامنهٔ آن است. اکنون دوباره
+  !!{structure}~$\Struct{R} = (\Real, <)$ از
+  \olref[thm]{remark:R} را در نظر بگیرید. دیدیم که !!a{enumerable}
+  !!{structure}~$\Struct{S}$ای وجود دارد که
+  $\Struct{R} \elemequiv \Struct{S}$. اما $\Struct{S}$
+  !!a{enumerable} ترتیب خطی چگال بدون نقاط انتهایی است، پس با
+  !!{structure}~$\Struct{Q}$ همریخت (و در نتیجه هم‌ارز ابتدایی) است.
+  بنا بر تعدی هم‌ارزی ابتدایی، $\Struct{R} \elemequiv \Struct{Q}$.
+  (می‌توانستیم این را مستقیماً با برقراری
+  $\Struct{R} \iso[p] \Struct{Q}$ از طریق همان استدلال پس‌وپیش نشان
+  دهیم.)
+\end{rem}
+\end{document}

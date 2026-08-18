@@ -1,0 +1,187 @@
+% Part: proof-theory
+% Chapter: sequent-calculus
+% Section: rules-proofs
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{seq}{rp}
+
+\olsection{قواعد و\usetoken{P}{proof}}
+
+با چند تعریف و تثبیت برخی اصطلاحات آغاز می‌کنیم.
+
+برای نمونه، دو قاعدهٔ~\Log{G3c} را در نظر بگیرید که~!!{proving}
+دنباله‌های شامل~$!A\land !B$ را از دنباله‌های شامل~$!A$ و~$!B$ ممکن
+می‌کنند:
+\[
+\Axiom$ !A, !B, \Gamma \fCenter \Delta$
+\RightLabel{\LeftR{\land}}
+\UnaryInf$ !A \land !B, \Gamma \fCenter \Delta$
+\DisplayProof
+\qquad
+\Axiom$\Gamma \fCenter \Delta, !A$
+\Axiom$ \Gamma \fCenter \Delta, !B$
+\RightLabel{\RightR{\land}}
+\BinaryInf$ \Gamma \fCenter \Delta, !A \land !B $
+\DisplayProof
+\]
+دنباله‌های بالای خط را \emph{مقدمات} و دنبالهٔ زیر خط را \emph{نتیجه}
+می‌نامند. !!{formula}s موجود در~$\Gamma$ و~$\Delta$ در هر قاعده
+\emph{بافت} یا~!!{formula}s \emph{جانبی} نام دارند. !!{formula}ی که
+در نتیجه بخشی از بافت نیست، !!{formula} \emph{اصلی} نامیده می‌شود؛ و
+!!{formula}s موجود در مقدمات که در بافت نیستند، !!{formula}s
+\emph{فعال} (یا \emph{کمکی}) نام دارند.
+
+قواعد سورها کمی پیچیده‌ترند. برای مثال قواعد~$\lforall$ در~\Log{G1c}
+چنین‌اند:
+\[\Axiom$ !A(t), \Gamma \fCenter \Delta$
+\RightLabel{\LeftR{\lforall}}
+\UnaryInf$ \lforall[x][!A(x)],\Gamma \fCenter \Delta$
+\DisplayProof
+\qquad
+\Axiom$ \Gamma \fCenter \Delta, !A(a) $
+\RightLabel{\RightR{\lforall}}
+\UnaryInf$ \Gamma \fCenter \Delta, \lforall[x][!A(x)]$
+\DisplayProof
+\]
+در قاعدهٔ~\LeftR{\lforall}، !!{formula} فعال~$!A(t)$ است؛ در اینجا
+$t$ جمله‌ای بسته، یعنی جمله‌ای بدون متغیر، است. چنین استنتاجی درست است---
+یعنی با طرح قاعدهٔ~\LeftR{\lforall} مطابقت دارد---اگر~!!{formula}ی چون
+$!A$، متغیری چون~$x$ و جملهٔ بسته‌ای چون~$t$ وجود داشته باشند، به‌گونه‌ای
+که~!!{formula} اصلی در نتیجه~$\lforall[x][!A]$ و~!!{formula} فعال در
+مقدمه~$\Subst{!A}{t}{x}$ باشد. قاعدهٔ~\RightR{\lforall} نیز همان‌گونه
+کار می‌کند، جز اینکه به‌جای جملهٔ دلخواه~$t$، !!{formula} فعال باید
+$\Subst{!A}{a}{x}$ باشد، که در آن~$a$~!!a{constant} است. این ثابت را
+\emph{متغیر ویژهٔ} استنتاج~\RightR{\lforall} می‌نامند. استنتاج تنها
+زمانی درست است که دنبالهٔ پایین~$a$ را در بر نداشته باشد؛ یعنی~$a$ در
+$\Gamma$، $\Delta$ یا~$!A$ رخ ندهد. این را \emph{شرط متغیر ویژه}
+می‌نامند.
+
+دستگاه‌های دنباله‌ای مانند~\Log{G1c} و~\Log{G3c} از مجموعه‌ای از چنین
+قواعد طرح‌وار و شماری دنبالهٔ طرح‌وار که اصل به شمار می‌آیند تشکیل
+می‌شوند. !!^{proof}s در چنین دستگاهی درخت‌های متناهیِ دنباله‌ها هستند
+که به‌طور استقرایی از اصول و با کاربرد قواعد استنتاج تعریف می‌شوند. هر
+برگ یک اصل است و هر دنبالهٔ دیگر با یکی از قواعد استنتاج دستگاه از
+دنباله‌های بلافاصله بالای خود به دست می‌آید.
+
+\begin{defn}\ollabel{defn:proof}
+\emph{!!^{proof}s} در یک دستگاه دنباله‌ای، درخت‌های متناهیِ دنباله‌ها
+هستند که چنین به‌طور استقرایی تعریف می‌شوند:
+\begin{enumerate}
+  \item\ollabel{defn:prf:axiom} هر اصل~!!a{proof} است.
+  \item\ollabel{defn:prf:one-prem} اگر~$\pi_1$~!!a{proof} باشد که به
+  دنبالهٔ~$S_1$ ختم می‌شود، و~$S$ دنباله‌ای باشد که با قاعدهٔ تک‌مقدمه‌ای
+  $R$ از~$S_1$ نتیجه می‌شود، آنگاه
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_1$}
+  \DeduceC{$S_1$}
+  \RightLabel{$R$}
+  \UnaryInfC{$S$}
+  \DisplayProof
+  \]
+  !!a{proof} است.
+  \item\ollabel{defn:prf:two-prem} اگر~$\pi_1$ و~$\pi_2$~!!{proof}s
+  باشند که به‌ترتیب به~$S_1$ و~$S_2$ ختم می‌شوند، و~$S$ دنباله‌ای باشد
+  که با قاعدهٔ دومقدمه‌ای~$R$ از~$S_1$ و~$S_2$ نتیجه می‌شود، آنگاه
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_1$}
+  \DeduceC{$S_1$}
+  \AxiomC{}
+  \RightLabel{$\pi_2$}
+  \DeduceC{$S_2$}
+  \RightLabel{$R$}
+  \BinaryInfC{$S$}
+  \DisplayProof
+  \]
+  !!a{proof} است.
+\end{enumerate}
+\end{defn}
+
+\Olref{defn:proof}، !!{proof}s را درخت‌هایی از دنباله‌ها تعریف می‌کند.
+این درخت‌ها را «رو به بالا» روینده تصور می‌کنیم. گره‌های بالایی (برگ‌ها)
+اصل‌اند و \emph{دنباله‌های آغازی} نامیده می‌شوند. پایین‌ترین دنباله
+\emph{دنبالهٔ پایانی} است. اگر~$\pi$~!!a{proof} با دنبالهٔ پایانی~$S$
+باشد، می‌نویسیم~$\pi\Proves S$. اگر~!!a{proof}ی برای دنبالهٔ~$S$ وجود
+داشته باشد، می‌نویسیم~$\Proves S$؛ گاهی دستگاه را نیز در سمت چپ نماد
+$\Proves$ مشخص می‌کنیم، مثلاً
+$\Log{G1c}\Proves !A,!B\Sequent !A\land !B$. هر دنباله در~!!a{proof}،
+جز دنباله‌های آغازی، \emph{نتیجهٔ} استنتاجی با قاعدهٔ~$R$ است. یک یا دو
+دنباله‌ای که بلافاصله بالای دنباله‌ای در~!!a{proof} قرار دارند (یعنی
+والدهای گره)، \emph{مقدمات} استنتاج نامیده می‌شوند.
+
+!!{proof}s به‌کاررفته در ساخت استقراییِ~!!a{proof}،
+\emph{زیرـ!!{proof}s} آن نام دارند. زیرـ!!{proof}sی که به مقدمات یک
+استنتاج ختم می‌شوند، \emph{زیرـ!!{proof}s بی‌واسطهٔ} آن استنتاج‌اند.
+
+اغلب لازم است پیچیدگی~!!{proof}s را با عددی طبیعی بسنجیم. می‌توان تعداد
+دنباله‌های موجود در~!!a{proof} را شمرد، اما سنجه‌ای که غالباً سودمندتر
+است~!!{height}~!!a{proof} است: بیشترین شمار گام‌های استنتاج، یا یال‌ها،
+در شاخه‌ای از دنبالهٔ پایانی تا یک دنبالهٔ آغازی. می‌توان تعریفی استقرایی
+نیز ارائه کرد.
+
+\begin{defn}
+\emph{!!{height}}~$\pheight{\pi}$ برای~!!a{proof}~$\pi$ چنین به‌طور
+استقرایی تعریف می‌شود:
+\begin{enumerate}
+  \item اگر~$\pi$ تنها از یک اصل تشکیل شده باشد، $\pheight{\pi}=0$.
+  \item اگر~$\pi$ به استنتاجی تک‌مقدمه‌ای با زیرـ!!{proof} بی‌واسطهٔ
+  $\pi_1$ ختم شود، $\pheight{\pi}=\pheight{\pi_1}+1$.
+  \item اگر~$\pi$ به استنتاجی دومقدمه‌ای با زیرـ!!{proof}s بی‌واسطهٔ
+  $\pi_1$ و~$\pi_2$ ختم شود،
+  $\pheight{\pi}=\max(\pheight{\pi_1},\pheight{\pi_2})+1$.
+\end{enumerate}
+اگر دنبالهٔ~$S$~!!a{proof}ی با ارتفاع~$\le n$ داشته باشد، می‌نویسیم
+$\Proves[n]S$.
+\end{defn}
+
+\begin{ex}
+در~\Log{G3c}، هر دنباله به صورت~$!C,\Gamma\Sequent\Delta,!C$ اصل است،
+مشروط به اینکه~$!C$ اتمی باشد. فرض کنید~$!D$ و~$!E$ جمله‌هایی اتمی
+باشند. آنگاه~$!D,!E\Sequent !D$ و~$!D,!E\Sequent !E$ نمونه‌هایی از
+اصل~$!C,\Gamma\Sequent\Delta,!C$ هستند. برای مثال، با انتخاب
+$!C\ident !E$، $\Gamma=\{!D\}$ و~$\Delta=\emptyset$ دقیقاً دنبالهٔ
+$!D,!E\Sequent !E$ را به دست می‌آوریم. (به یاد داشته باشید که با
+چندمجموعه‌ها سروکار داریم؛ پس~$!D,!E\Sequent !E$ و
+$!E,!D\Sequent !E$ همان دنباله‌اند.)
+
+چون~$!D,!E\Sequent !D$ نمونه‌ای از یک اصل~\Log{G3c} است، به‌تنهایی
+!!a{proof}ی در~\Log{G3c} به شمار می‌آید؛ و بنا بر
+\olref{defn:proof}\olref{defn:prf:axiom}، $!D,!E\Sequent !E$ نیز چنین
+است. آن‌ها را~$\pi_1$ و~$\pi_2$ می‌نامیم. بنا بر
+\olref{defn:prf:two-prem}، می‌توان این دو~!!{proof}s را با قاعدهٔ
+دومقدمه‌ای~\RightR{\land} به برهان تازهٔ~$\pi_3$ تبدیل کرد:
+\[
+\Axiom$!D, !E \fCenter !D$
+\Axiom$!D, !E \fCenter !E$
+\RightLabel{\RightR{\land}}
+\BinaryInf$!D, !E  \fCenter !D \land !E $
+\DisplayProof
+\]
+سپس از~$\pi_3$، !!{proof}~$\pi_4$ را به دست می‌آوریم:
+\[
+\Axiom$!D, !E \fCenter !D$
+\Axiom$!D, !E \fCenter !E$
+\RightLabel{\RightR{\land}}
+\insertBetweenHyps{\hspace{5ex}}
+\BinaryInf$!D, !E  \fCenter !D \land !E $
+\LeftSubproofLabel{$\pi_3$}
+\RightLabel{\LeftR{\land}}
+\UnaryInf$!D \land !E  \fCenter !D \land !E$
+\RightSubproofLabel{$\pi_4$}
+\DisplayProof
+\]
+که در آن قاعدهٔ تک‌مقدمه‌ای~\LeftR{\land} را به کار برده‌ایم
+(\olref{defn:proof}\olref{defn:prf:one-prem}). زیرـ!!{proof} بی‌واسطهٔ
+آخرین استنتاج در~$\pi_4$، $\pi_3$ است. زیرـ!!{proof}s بی‌واسطهٔ استنتاج
+\RightR{\land}، $\pi_1$ و~$\pi_2$ هستند. زیرـ!!{proof}s~$\pi_4$ شامل
+$\pi_1$، $\pi_2$، $\pi_3$ و خود~$\pi_4$ می‌شوند. داریم
+$\pheight{\pi_1}=\pheight{\pi_2}=0$، $\pheight{\pi_3}=1$ و
+$\pheight{\pi_4}=2$. پس برای هر~$!D$ و~$!E$ اتمی نشان داده‌ایم که
+$\Log{G3c}\Proves[2] !D\land !E\Sequent !D\land !E$.
+\end{ex}
+
+\end{document}

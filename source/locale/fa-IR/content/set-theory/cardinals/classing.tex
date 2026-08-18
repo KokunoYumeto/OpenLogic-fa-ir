@@ -1,0 +1,192 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{cardinals}{classing}
+\olsection{متناهی، \usetoken{S}{enumerable}، \usetoken{S}{nonenumerable}}
+
+اکنون که با کاردینال‌ها آشنا شده‌ایم، شایسته است اندکی دربارهٔ گونه‌های
+مختلف آن‌ها، به‌ویژه کاردینال‌های متناهی، !!{enumerable} و
+!!{nonenumerable}، سخن بگوییم.
+
+دو نتیجهٔ نخست ما مستلزم آن‌اند که کاردینال‌های متناهی دقیقاً همان اعداد
+ترتیبی متناهی باشند که پیش‌تر در~\olref[z][infinity-again]{defnomega}
+آن‌ها را \emph{اعداد طبیعی} تعریف کردیم:
+
+\begin{prop}\ollabel{finitecardisoequal}
+فرض کنید~$n,m\in\omega$. آنگاه~$n=m$ اگر و تنها اگر
+$\cardeq{n}{m}$.
+\end{prop}
+
+\begin{proof}
+جهت \emph{چپ به راست} بدیهی است. برای اثبات جهت \emph{راست به چپ}،
+فرض کنید با وجود~$n\neq m$، $\cardeq{n}{m}$. بنا بر سه‌شقی، یا
+$n\in m$ یا~$m\in n$؛ بدون کاستن از کلیت فرض کنید~$n\in m$. آنگاه
+$n\subsetneq m$ و یک~!!a{bijection} به‌صورت~$f\colon m\to n$ وجود
+دارد؛ پس~$m$ نامتناهیِ ددکیندی است، برخلاف
+\olref[z][infinity-again]{naturalnumbersarentinfinite}.
+\end{proof}
+
+\begin{cor}\ollabel{naturalsarecardinals}
+اگر~$n\in\omega$، آنگاه~$n$ یک کاردینال است.
+\end{cor}
+
+\begin{proof}
+بی‌درنگ.
+\end{proof}
+\noindent
+همچنین نتیجه می‌شود چند برداشت معقول از معنای «متناهی» یا «نامتناهی»
+بودن یک کاردینال بر هم منطبق‌اند:
+\begin{thm}\ollabel{generalinfinitycharacter}
+برای هر مجموعهٔ~$A$، عبارت‌های زیر هم‌ارزند:
+\begin{enumerate}
+	\item\ollabel{card:notinomega} $\card{A}\notin\omega$؛ یعنی
+	$\card{A}$ یک عدد طبیعی نیست؛
+	\item\ollabel{card:omegaplus} $\omega\leq\card{A}$؛
+	\item\ollabel{card:infinite} $A$ نامتناهیِ ددکیندی است.
+\end{enumerate}
+\end{thm}
+
+\begin{proof}
+از~\olref[ord-arithmetic][using-addition]{ordinfinitycharacter}،
+\olref[cardinals][cardsasords]{lem:CardinalsBehaveRight} و
+\olref{naturalsarecardinals}.
+\end{proof}
+
+این نتیجه تعریف \emph{صوریِ} مفاهیمی را مجاز می‌سازد که در
+\olref[sfr][][]{part} نسبتاً غیرصوری به کار بردیم:
+
+\begin{defn}\ollabel{defnfinite}
+می‌گوییم~$A$ \emph{متناهی} است اگر و تنها اگر~$\card{A}$ یک عدد طبیعی
+باشد؛ یعنی~$\card{A}\in\omega$. در غیر این صورت می‌گوییم~$A$
+\emph{نامتناهی} است.
+\end{defn}
+\noindent
+اما توجه کنید که این تعریف با فرض زمینه‌ایِ~$\ZFC$ عرضه می‌شود. زیرا
+برای تضمین اینکه هر مجموعه کاردینالیته‌ای دارد، به اصل خوش‌ترتیبی نیاز
+داشتیم. در واقع، بدون خوش‌ترتیبی ممکن است مجموعه‌ای نه متناهی و نه
+نامتناهیِ ددکیندی باشد. در~\olref[choice][]{chap} به این نوع مسائل
+بازخواهیم گشت. فعلاً همچنان بر خوش‌ترتیبی تکیه می‌کنیم.
+
+اکنون از کاردینال‌های متناهی به کاردینال‌های نامتناهی بپردازیم. نخست دو
+نکتهٔ مقدماتی:
+
+\begin{cor}\ollabel{omegaisacardinal}
+$\omega$ کوچک‌ترین کاردینال نامتناهی است.
+\end{cor}
+
+\begin{proof}
+$\omega$ یک کاردینال است، زیرا نامتناهیِ ددکیندی است؛ و اگر برای یک
+$n\in\omega$، $\cardeq{\omega}{n}$، آنگاه~$n$ نیز نامتناهیِ ددکیندی
+می‌بود، برخلاف~\olref[z][infinity-again]{naturalnumbersarentinfinite}.
+اکنون بنا بر تعریف، $\omega$ کوچک‌ترین کاردینال نامتناهی است.
+\end{proof}
+
+\begin{cor}
+هر کاردینال نامتناهی یک عدد ترتیبی حدی است.
+\end{cor}
+
+\begin{proof}
+فرض کنید~$\alpha$ یک عدد ترتیبی جانشینِ نامتناهی باشد؛ پس برای یک
+$\beta$، $\alpha=\beta\ordplus1$. بنا بر~\olref{finitecardisoequal}،
+$\beta$ نیز نامتناهی است؛ ازاین‌رو بنا بر
+\olref[ord-arithmetic][using-addition]{ordinfinitycharacter}،
+$\cardeq{\beta}{\beta\ordplus1}$. اکنون بنا بر
+\olref[cardinals][cardsasords]{lem:CardinalsBehaveRight}،
+$\card{\beta}=\card{\beta\ordplus1}=\card{\alpha}$؛ پس
+$\alpha\neq\card{\alpha}$.
+\end{proof}
+
+پیش‌تر، در~\olref[sfr][siz][enm-alt]{defn:enumerable}، اشاره کردیم که
+می‌توان میان مجموعه‌های نامتناهیِ~!!{enumerable} و~!!{nonenumerable}
+تمایز گذاشت. آن تعریف به‌طور طبیعی به نتیجهٔ زیر می‌انجامد:
+
+\begin{prop}
+$A$~!!{enumerable} است اگر و تنها اگر~$\card{A}\leq\omega$، و
+$A$~!!{nonenumerable} است اگر و تنها اگر~$\omega<\card{A}$.
+\end{prop}
+
+\begin{proof}
+بنا بر سه‌شقی، دو ادعا هم‌ارزند؛ پس کافی است اثبات کنیم~$A$
+!!{enumerable} است اگر و تنها اگر~$\card{A}\leq\omega$. برای جهت
+\emph{راست به چپ}: اگر~$\card{A}\leq\omega$، آنگاه بنا بر
+\olref[cardinals][cardsasords]{lem:CardinalsBehaveRight} و
+\olref{omegaisacardinal}، $\cardle{A}{\omega}$. برای جهت
+\emph{چپ به راست}: فرض کنید~$A$~!!{enumerable} باشد؛ آنگاه بنا بر
+\olref[sfr][siz][enm-alt]{defn:enumerable} سه حالت ممکن وجود دارد:
+\begin{enumerate}
+	\item اگر~$A=\emptyset$، آنگاه بنا بر~\olref{naturalsarecardinals}
+	و~\olref[cardinals][cardsasords]{lem:CardinalsBehaveRight}،
+	$\card{A}=0\in\omega$؛
+	\item اگر~$\cardeq{n}{A}$، آنگاه بنا بر
+	\olref{naturalsarecardinals} و
+	\olref[cardinals][cardsasords]{lem:CardinalsBehaveRight}،
+	$\card{A}=n\in\omega$؛
+	\item اگر~$\cardeq{\omega}{A}$، آنگاه بنا بر
+	\olref{omegaisacardinal}، $\card{A}=\omega$.
+\end{enumerate}
+پس در همهٔ حالت‌ها~$\card{A}\leq\omega$.
+\end{proof}
+\noindent
+در واقع، $\omega$ جایگاهی ویژه دارد. هرچند اعداد ترتیبی شمارای بسیاری
+وجود دارند:
+
+\begin{cor}
+$\omega$ تنها کاردینال نامتناهیِ~!!{enumerable} است.
+\end{cor}
+
+\begin{proof}
+فرض کنید~$\cardfont{a}$ یک کاردینال نامتناهیِ~!!a{enumerable} باشد.
+چون~$\cardfont{a}$ نامتناهی است، $\omega\leq\cardfont{a}$. چون
+$\cardfont{a}$ کاردینالی~!!a{enumerable} است،
+$\cardfont{a}=\card{\cardfont{a}}\leq\omega$. پس بنا بر سه‌شقی،
+$\cardfont{a}=\omega$.
+\end{proof}
+
+البته بی‌نهایت کاردینال وجود دارد. پس شاید بپرسیم: \emph{چند کاردینال
+وجود دارد؟} نتایج زیر نشان می‌دهند شاید بهتر باشد در این پرسش بازاندیشی
+کنیم.
+
+\begin{prop}\ollabel{unioncardinalscardinal}
+اگر هر عضو~$X$ یک کاردینال باشد، آنگاه~$\bigcup X$ یک کاردینال است.
+\end{prop}
+
+\begin{proof}
+به‌آسانی می‌توان بررسی کرد که~$\bigcup X$ یک عدد ترتیبی است. فرض کنید
+$\alpha\in\bigcup X$ یک عدد ترتیبی باشد؛ آنگاه برای یک کاردینال
+$\cardfont{b}$، $\alpha\in\cardfont{b}\in X$. چون~$\cardfont{b}$ یک
+کاردینال است، $\cardless{\alpha}{\cardfont{b}}$. چون
+$\cardfont{b}\subseteq\bigcup X$، داریم
+$\cardle{\cardfont{b}}{\bigcup X}$؛ و بنابراین
+$\cardneq{\alpha}{\bigcup X}$. با تعمیم، $\bigcup X$ یک کاردینال است.
+\end{proof}
+
+\begin{thm}\ollabel{lem:NoLargestCardinal}
+بزرگ‌ترین کاردینال وجود ندارد.
+\end{thm}
+
+\begin{proof}
+برای هر کاردینال~$\cardfont{a}$، قضیهٔ کانتور
+(\olref[sfr][siz][car]{thm:cantor}) و
+\olref[cardinals][cardsasords]{lem:CardinalsExist} نتیجه می‌دهند
+$\cardfont{a}<\card{\Pow{\cardfont{a}}}$.
+\end{proof}
+
+\begin{thm}
+مجموعهٔ همهٔ کاردینال‌ها وجود ندارد.
+\end{thm}
+
+\begin{proof}
+برای برهان خلف فرض کنید
+$C=\Setabs{\cardfont{a}}{\cardfont{a}\text{ یک کاردینال است}}$.
+اکنون بنا بر~\olref{unioncardinalscardinal}، $\bigcup C$ یک کاردینال
+است؛ پس بنا بر~\olref{lem:NoLargestCardinal} کاردینالی مانند
+$\cardfont{b}>\bigcup C$ وجود دارد. بنا بر تعریف، $\cardfont{b}\in C$؛
+پس~$\cardfont{b}\subseteq\bigcup{C}$ و در نتیجه
+$\cardfont{b}\leq\bigcup C$، که تناقض است.
+\end{proof}
+
+شایسته است این نتیجه را هم با پارادوکس راسل و هم با پارادوکس
+بورالی--فورتی مقایسه کنید.
+
+\end{document}

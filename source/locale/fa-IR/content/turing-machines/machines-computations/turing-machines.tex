@@ -1,0 +1,60 @@
+% Part: turing-machines
+% Chapter: machines-computations
+% Section: turing-machines
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{tur}{mac}{tur}
+\olsection{ماشین‌های تورینگ}
+
+\begin{explain}
+تعریف رسمیِ آنچه ماشین تورینگ را می‌سازد انتزاعی به نظر می‌رسد، اما
+در واقع ساده است: فقط همهٔ اطلاعات لازم برای مشخص‌کردن کار ماشین
+تورینگ را در یک ساختار ریاضی می‌گنجاند. این اطلاعات عبارت‌اند از:
+(۱)~حالت‌هایی که ماشین می‌تواند در آن‌ها باشد، (۲)~نمادهای مجاز روی
+نوار، (۳)~حالتی که ماشین باید در آن آغاز کند، و (۴)~مجموعهٔ دستورهای
+ماشین.
+\end{explain}
+
+\begin{defn}[ماشین تورینگ]
+\emph{ماشین تورینگ} $M$ چهارتاییِ
+$\langle Q,\Sigma,q_0,\delta\rangle$ است که از این اجزا تشکیل می‌شود:
+\begin{enumerate}
+\item مجموعهٔ متناهیِ \emph{حالت‌ها}~$Q$؛
+\item \emph{الفبای} متناهیِ $\Sigma$ که $\TMendtape$ و~$\TMblank$ را
+  دربر می‌گیرد؛
+\item \emph{حالت آغازین}~$q_0\in Q$؛
+\item \emph{مجموعهٔ دستورهای} متناهی
+  $\delta\colon Q\times\Sigma
+  \pto Q\times\Sigma\times\{\TMleft,\TMright,\TMstay\}$.
+\end{enumerate}
+تابع جزئیِ~$\delta$ را \emph{تابع گذارِ}~$M$ نیز می‌نامند.
+\end{defn}
+
+\begin{explain}
+فرض می‌کنیم نوار تنها در یک جهت نامتناهی است. به همین دلیل مفید است
+نماد خاص~$\TMendtape$ را نشانگر انتهای چپ نوار قرار دهیم. این کار
+تشخیص زمانی را که برنامهٔ ماشین تورینگ «در خطر» بیرون‌رفتن از نوار
+است آسان‌تر می‌کند. می‌توانستیم فرض کنیم این نماد هرگز بازنویسی
+نمی‌شود؛ یعنی اگر $\delta(q,\TMendtape)$ تعریف شده باشد، آنگاه
+$\delta(q,\TMendtape)=\tuple{q',\TMendtape,D}$. بعضی کتاب‌های درسی
+چنین می‌کنند، اما ما نمی‌کنیم. هنگام ساخت ماشین تورینگتان صرفاً
+مراقب باشید هرگز $\TMendtape$ را بازنویسی نکند. افزون بر این، گاه
+اجازه‌دادن به چنین بازنویسی‌ای انعطاف سودمندی فراهم می‌کند.
+\end{explain}
+
+\begin{ex}
+\emph{ماشین زوج:} ماشین زوج به‌طور رسمی چهارتایی
+$\tuple{Q,\Sigma,q_0,\delta}$ است که در آن
+\begin{align*}
+Q & = \{ q_0, q_1 \} \\
+\Sigma & = \{ \TMendtape, \TMblank, \TMstroke \}, \\
+\delta(q_0, \TMstroke) & = \tuple{q_1, \TMstroke, \TMright},\\
+\delta(q_1, \TMstroke) & = \tuple{q_0, \TMstroke, \TMright},\\
+\delta(q_1, \TMblank)  & = \tuple{q_1, \TMblank, \TMright}.
+\end{align*}
+\end{ex}
+
+\end{document}

@@ -1,0 +1,121 @@
+% Part: first-order-logic
+% Chapter: sequent-calculus
+% Section: derivations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{seq}{der}}
+      {\olfileid{pl}{seq}{der}}
+
+\olsection{\usetoken{P}{derivation}}
+
+\begin{explain}
+گفتیم دنبالهٔ آغازین چه صورتی دارد و قواعد استنتاج را نیز به دست دادیم.
+!!^{derivation}s حساب دنباله‌ای به‌طور استقرایی از این‌ها ساخته می‌شوند:
+هر !!{derivation} یا به‌تنهایی دنباله‌ای آغازین است، یا از
+!!{derivation}s تشکیل می‌شود---یک یا دو مورد---که استنتاجی در پی دارند.
+\end{explain}
+
+\begin{defn}[$\Log{LK}$ !!{derivation}]
+\emph{!!{derivation} در $\Log{LK}$} برای دنبالهٔ~$S$، درختی متناهی
+از دنباله‌هاست که شرایط زیر را برآورده می‌کند:
+\begin{enumerate}
+\item بالاترین دنباله‌های درخت دنباله‌های آغازین‌اند.
+\item پایین‌ترین دنبالهٔ درخت~$S$ است.
+\item هر دنبالهٔ درخت جز $S$، مقدمهٔ کاربرد درستی از یک قاعدهٔ استنتاج
+  است که نتیجهٔ آن بی‌درنگ زیر آن دنباله در درخت قرار دارد.
+\end{enumerate}
+سپس می‌گوییم $S$ \emph{دنبالهٔ پایانیِ} !!{derivation} است و
+$S$ \emph{در $\Log{LK}$ !!{derivable} است} (یا در
+$\Log{LK}$-!!{derivable} است).
+\end{defn}
+
+\begin{ex}
+هر دنبالهٔ آغازین، برای نمونه $!C \Sequent !C$، !!a{derivation} است.
+می‌توانیم با اعمال مثلاً قاعدهٔ $\LeftR{\Weakening}$،
+\begin{prooftree}
+\Axiom$ \Gamma \fCenter \Delta $
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$ !A, \Gamma \fCenter \Delta$
+\end{prooftree}
+!!{derivation} تازه‌ای از آن به دست آوریم. بااین‌حال، مراد این است که
+قاعده عام باشد: می‌توان $!A$ را در قاعده با هر !!{sentence}، برای نمونه
+با~$!D$، جایگزین کرد. اگر مقدمه با دنبالهٔ آغازینِ
+$!C \Sequent !C$ منطبق باشد، این بدان معناست که هم $\Gamma$ و هم
+$\Delta$ صرفاً~$!C$ هستند و آنگاه نتیجه $!D, !C \Sequent !C$ خواهد
+بود. بنابراین عبارت زیر !!a{derivation} است:
+\begin{prooftree}
+\Axiom$ !C \fCenter !C $
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$ !D, !C \fCenter !C$
+\end{prooftree}
+اکنون می‌توانیم قاعده‌ای دیگر، مثلاً $\LeftR{\Exchange}$، را اعمال
+کنیم که اجازه می‌دهد در میان !!{sentence}s سمت چپ، دو مورد را جابه‌جا
+کنیم. پس عبارت
+زیر نیز !!{derivation} درستی است:
+\begin{prooftree}
+\Axiom$ !C \fCenter !C $
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$ !D, !C \fCenter !C$
+\RightLabel{\LeftR{\Exchange}}
+\UnaryInf$ !C, !D \fCenter !C$
+\end{prooftree}
+در این کاربرد قاعده که به صورت زیر داده شده بود،
+\begin{prooftree}
+\Axiom$ \Gamma, !A, !B, \Pi \fCenter \Delta $
+\RightLabel{\LeftR{\Exchange}}
+\UnaryInf$ \Gamma, !B, !A, \Pi \fCenter \Delta,$
+\end{prooftree}
+هم $\Gamma$ و هم $\Pi$ تهی بودند، $\Delta$ همان $!C$ است و نقش‌های
+$!A$ و $!B$ را به‌ترتیب $!D$ و~$!C$ بازی می‌کنند. تقریباً به همین
+شیوه می‌بینیم که
+\begin{prooftree}
+\Axiom$ !D \fCenter !D $
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$ !C, !D \fCenter !D$
+\end{prooftree}
+نیز !!a{derivation} است. اکنون می‌توانیم این !!{derivation}s، یعنی
+هر دو را،
+برداریم و با استفاده از $\RightR{\land}$ ترکیب کنیم. آن قاعده چنین بود:
+\begin{prooftree}
+\Axiom$\Gamma \fCenter \Delta, !A$
+\Axiom$ \Gamma \fCenter \Delta, !B$
+\RightLabel{\RightR{\land}}
+\BinaryInf$ \Gamma \fCenter \Delta, !A \land !B $
+\end{prooftree}
+در مورد ما، مقدمه‌ها باید با آخرین دنباله‌های !!{derivation}sی که به
+آن مقدمه‌ها ختم می‌شوند منطبق باشند. یعنی $\Gamma$ همان $!C, !D$،
+$\Delta$ تهی، $!A$ همان $!C$ و $!B$ همان $!D$ است. پس اگر استنتاج
+درست باشد، نتیجه $!C, !D \Sequent !C \land !D$ است.
+\begin{prooftree}
+\Axiom$ !C \fCenter !C $
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$ !D, !C \fCenter !C$
+\RightLabel{\LeftR{\Exchange}}
+\UnaryInf$ !C, !D \fCenter !C$
+\Axiom$ !D \fCenter !D $
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$ !C, !D \fCenter !D$
+\RightLabel{\RightR{\land}}
+\BinaryInf$ !C, !D \fCenter !C \land !D $
+\end{prooftree}
+البته می‌توانیم ترتیب مقدمه‌ها را نیز وارونه کنیم؛ آنگاه $!A$ همان
+$!D$ و $!B$ همان~$!C$ خواهد بود.
+\begin{prooftree}
+\Axiom$ !D \fCenter !D $
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$ !C, !D \fCenter !D$
+\Axiom$ !C \fCenter !C $
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$ !D, !C \fCenter !C$
+\RightLabel{\LeftR{\Exchange}}
+\UnaryInf$ !C, !D \fCenter !C$
+\RightLabel{\RightR{\land}}
+\BinaryInf$ !C, !D \fCenter !D \land !C $
+\end{prooftree}
+\end{ex}
+
+\end{document}

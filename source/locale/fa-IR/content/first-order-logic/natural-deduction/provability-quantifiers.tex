@@ -1,0 +1,63 @@
+% Part: first-order-logic
+% Chapter: natural-deduction
+% Section: provability-quantifiers
+
+% verification of properties of provability needed for maximally
+% consistent sets in the completeness chapter.
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{ntd}{qpr}
+
+\olsection{\usetoken{S}{derivability} و سورها}
+
+\begin{explain}
+  قضیهٔ تمامیت همچنین ایجاب می‌کند که قواعد استنتاج طبیعی واقعیت‌های
+  مربوط به~$\Proves$ را که در این بخش اثبات می‌شوند به دست دهند.
+\end{explain}
+
+\begin{thm}
+\ollabel{thm:strong-generalization} اگر $c$ ثابتی باشد که در
+$\Gamma$ یا $!A(x)$ رخ نمی‌دهد و $\Gamma \Proves !A(c)$، آنگاه
+$\Gamma \Proves \lforall[x][!A(x)]$.
+\end{thm}
+
+\begin{proof}
+فرض کنید $\delta$ یک !!a{derivation} از $!A(c)$ از $\Gamma$ باشد. با
+افزودن یک استنتاج \Intro{\lforall}، !!a{derivation} از
+$\lforall[x][!A(x)]$ به دست می‌آوریم. چون $c$ در $\Gamma$ یا $!A(x)$
+رخ نمی‌دهد، شرط متغیر ویژه برقرار است.
+\end{proof}
+
+\begin{prop}
+\ollabel{prop:provability-quantifiers}
+\begin{tagenumerate}{prvEx,prvAll}
+\tagitem{prvEx}{$!A(t) \Proves \lexists[x][!A(x)]$.}{}
+
+\tagitem{prvAll}{$\lforall[x][!A(x)] \Proves !A(t)$.}{}
+\end{tagenumerate}
+\end{prop}
+
+\begin{proof}
+\begin{tagenumerate}{prvEx,prvAll}
+\tagitem{prvEx}{عبارت زیر !!a{derivation} از
+  ~$\lexists[x][!A(x)]$ از~$!A(t)$ است:
+\begin{prooftree}
+\AxiomC{$!A(t)$}
+\RightLabel{\Intro{\lexists}}
+\UnaryInfC{$\lexists[x][!A(x)]$}
+\end{prooftree}}{}
+
+\tagitem{prvAll}{عبارت زیر !!a{derivation} از~$!A(t)$
+  از~$\lforall[x][!A(x)]$ است:
+\begin{prooftree}
+\AxiomC{$\lforall[x][!A(x)]$}
+\RightLabel{\Elim{\lforall}}
+\UnaryInfC{$!A(t)$}
+\end{prooftree}}{}
+\end{tagenumerate}
+\end{proof}
+
+\end{document}

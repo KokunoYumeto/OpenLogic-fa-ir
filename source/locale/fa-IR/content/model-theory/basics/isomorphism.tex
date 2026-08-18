@@ -1,0 +1,131 @@
+% Part: model-theory
+% Chapter: basics
+% Section: isomorphism
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mod}{bas}{iso}
+\olsection{ساختارهای همریخت}
+
+!!{structure}s مرتبهٔ اول از دو جهت می‌توانند همانند باشند. یک جهتِ
+همانندی آن است که !!{sentence}s یکسانی را صادق سازند. چنین
+!!{structure}sی را \emph{هم‌ارز ابتدایی} می‌نامیم. اما ساختارها
+می‌توانند بسیار متفاوت باشند و بااین‌حال همان !!{sentence}s را صادق
+سازند---برای نمونه، یکی ممکن است !!{enumerable} باشد و دیگری نباشد.
+علت این است که ویژگی‌های فراوانی از !!a{structure} را نمی‌توان در
+زبان‌های مرتبهٔ اول بیان کرد، خواه به این سبب که زبان به‌اندازهٔ کافی
+غنی نیست و خواه به سبب محدودیت‌های بنیادی منطق مرتبهٔ اول، مانند قضیهٔ
+لوونهایم--اسکولم. پس جهتِ دیگر و سخت‌گیرانه‌تری که در آن
+!!{structure}s می‌توانند همانند باشند این است که از بنیاد یکسان باشند؛
+یعنی تنها در اشیای تشکیل‌دهنده‌شان تفاوت کنند، نه در ویژگی‌های
+ساختاری‌شان. راهی برای دقیق‌کردن این معنا مفهوم \emph{همریختی} است.
+
+\begin{defn}
+\ollabel{defn:elem-equiv}
+دو !!{structure}s~$\Struct{M}$ و~$\Struct M'$ را برای
+!!{language} یکسان~$\Lang{L}$ در نظر بگیرید. می‌گوییم $\Struct{M}$
+\emph{با}~$\Struct M'$ \emph{هم‌ارز ابتدایی است}، و می‌نویسیم
+$\Struct{M} \equiv \Struct M'$، هرگاه و تنها هرگاه برای هر
+!!{sentence}~$!A$ از~$\Lang{L}$، $\Sat{M}{!A}$ هرگاه و تنها هرگاه
+$\Sat{M'}{!A}$.
+\end{defn}
+
+\begin{defn}
+\ollabel{defn:isomorphism} دو !!{structure}s~$\Struct{M}$ و
+$\Struct M'$ را برای !!{language} یکسان~$\Lang L$ در نظر بگیرید.
+می‌گوییم $\Struct{M}$ \emph{با}~$\Struct M'$ \emph{همریخت است}، و
+می‌نویسیم $\Struct{M} \simeq \Struct M'$، هرگاه و تنها هرگاه تابعی
+$h \colon \Domain{M} \to \Domain{M'}$ با شرایط زیر وجود داشته باشد:
+\begin{enumerate}
+\item $h$ !!{injective} است: اگر $h(x) = h(y)$، آنگاه $x = y$؛
+\item $h$ !!{surjective} است: برای هر $y \in \Domain{M'}$،
+  $x \in \Domain{M}$ای وجود دارد که $h(x) = y$؛
+\item \ollabel{defn:iso-const}برای هر !!{constant}~$c$:
+  $h(\Assign{c}{M}) = \Assign{c}{M'}$؛
+\item \ollabel{defn:iso-pred}برای هر !!{predicate}~$n$موضعی $P$:
+  \[
+  \tuple{a_1, \dots, a_n}\in \Assign{P}{M} \quad\text{هرگاه و تنها هرگاه}\quad
+  \tuple{h(a_1), \dots, h(a_n)} \in \Assign{P}{M'};
+  \]
+\item \ollabel{defn:iso-func}برای هر !!{function}~$n$موضعی $f$:
+  \[
+  h(\Assign{f}{M}(a_1, \dots, a_n)) =
+  \Assign{f}{M'}(h(a_1), \dots, h(a_n)).
+  \]
+\end{enumerate}
+\end{defn}
+
+\begin{thm}
+\ollabel{thm:isom}
+اگر $\Struct{M} \iso \Struct M'$، آنگاه $\Struct{M} \elemequiv
+\Struct{M'}$.
+\end{thm}
+
+\begin{proof}
+$h$ را همریختی‌ای از~$\Struct{M}$ به روی~$\Struct M'$ بگیرید. برای هر
+گمارش~$s$، $h \circ s$ ترکیب $h$ و~$s$ است؛ یعنی گمارشی در
+$\Struct{M'}$ که $(h \circ s)(x) = h(s(x))$. با استقرا بر $t$ و~$!A$
+می‌توان ادعاهای قوی‌تر زیر را اثبات کرد:
+\begin{enumerate}
+  \item[a.] $h(\Value{t}{M}[s]) = \Value{t}{M'}[h\circ s]$.
+  \item[b.] $\Sat{M}{!A}[s]$ هرگاه و تنها هرگاه
+  $\Sat{M'}{!A}[h \circ s]$.
+\end{enumerate}
+ادعای نخست با استقرا بر پیچیدگی~$t$ اثبات می‌شود.
+\begin{enumerate}
+\item اگر $t \ident c$، آنگاه $\Value{c}{M}[s] = \Assign{c}{M}$ و
+  $\Value{c}{M'}[h \circ s] = \Assign{c}{M'}$. پس
+  $h(\Value{t}{M}[s]) = h(\Assign{c}{M}) = \Assign{c}{M'}$ (بنا بر
+  \olref{defn:iso-const} از \olref{defn:isomorphism}) $=
+  \Value{t}{M'}[h \circ s]$.
+\item اگر $t \ident x$، آنگاه $\Value{x}{M}[s] = s(x)$ و
+  $\Value{x}{M'}[h \circ s] = h(s(x))$. پس
+  $h(\Value{x}{M}[s]) = h(s(x)) = \Value{x}{M'}[h \circ s]$.
+\item اگر $t \ident f(t_1, \dots, t_n)$، آنگاه
+  \begin{align*}
+    \Value{t}{M}[s] & = \Assign{f}{M}(\Value{t_1}{M}[s], \dots, \Value{t_n}{M}[s]) \quad\text{و}\\
+  \Value{t}{M'}[h \circ s] & = \Assign{f}{M'}(\Value{t_1}{M'}[h \circ
+    s], \dots, \Value{t_n}{M'}[h \circ s]).
+  \end{align*}
+  فرض استقرا این است که برای هر $i$،
+  $h(\Value{t_i}{M}[s]) = \Value{t_i}{M'}[h\circ s]$. بنابراین،
+  \begin{align}
+    h(\Value{t}{M}[s])
+    & = h(\Assign{f}{M}(\Value{t_1}{M}[s], \dots, \Value{t_n}{M}[s])) \notag\\
+    & = \Assign{f}{M'}(h(\Value{t_1}{M}[s]), \dots,
+    h(\Value{t_n}{M}[s])) \ollabel{iso-1}\\
+    & = \Assign{f}{M'}(\Value{t_1}{M'}[h \circ s], \dots,
+    \Value{t_n}{M'}[h \circ s]) \ollabel{iso-2}\\
+    & = \Value{t}{M'}[h\circ s] \notag
+  \end{align}
+  در اینجا، \olref{iso-1} از \olref{defn:iso-func} در
+  \olref{defn:isomorphism} و \olref{iso-2} از فرض استقرا نتیجه می‌شود.
+\end{enumerate}
+بخش (b) به‌عنوان تمرین واگذاشته می‌شود.
+
+اگر $!A$ یک جمله باشد، گمارش‌های $s$ و~$h \circ s$ بی‌اثرند و
+$\Sat{M}{!A}$ هرگاه و تنها هرگاه $\Sat{M'}{!A}$.
+\end{proof}
+
+\begin{prob}
+برهان بخش (b) از \olref[mod][bas][iso]{thm:isom} را با جزئیات کامل
+کنید. حتماً مشخص کنید هر یک از پنج خاصیتی که همریختی‌ها را در
+\olref[mod][bas][iso]{defn:isomorphism} مشخصه‌سازی می‌کنند در کجا به
+کار می‌رود.
+\end{prob}
+
+\begin{defn}
+یک \emph{خودریختی} ساختار~$\Struct{M}$ همریختی‌ای از~$\Struct{M}$ به
+روی خودش است.
+\end{defn}
+
+\begin{prob}
+نشان دهید برای هر ساختار~$\Struct{M}$، اگر $X$ زیرمجموعه‌ای تعریف‌پذیر
+از~$\Struct{M}$ و $h$ خودریختی‌ای از~$\Struct{M}$ باشد، آنگاه
+$X = \Setabs{h(x)}{x \in X}$ (یعنی $X$ تحت~$h$ ثابت می‌ماند).
+\end{prob}
+
+
+\end{document}

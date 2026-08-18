@@ -1,0 +1,210 @@
+% Part: incompleteness
+% Chapter: arithmetization-syntax
+% Section: proofs-in-ax
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{art}{pax}
+\olsection{\usetoken{P}{derivation}ی اصل‌موضوعی}
+
+\begin{explain}
+برای حسابی‌سازی !!{derivation}sی اصل‌موضوعی باید !!{derivation}s را با اعداد
+بازنمایی کنیم. چون !!{derivation}s صرفاً دنباله‌هایی از !!{formula}s
+هستند، رویکرد آشکار آن است که هر !!{derivation} را با رمز دنبالهٔ رمزهای
+!!{formula}sی آن رمزگذاری کنیم.
+\end{explain}
+
+\begin{defn}
+اگر $\delta$ !!{derivation}ی اصل‌موضوعی متشکل از !!{formula}sی
+$!A_1$،~\dots،~$!A_n$ باشد، آنگاه $\Gn{\delta}$ برابر است با
+\[
+\tuple{\Gn{!A_1}, \dots, \Gn{!A_n}}.
+\]
+\end{defn}
+
+\begin{ex}
+  !!{derivation} بسیار سادهٔ زیر را در نظر بگیرید:
+  \begin{derivation}
+  1. & $!B \lif (!B \lor !A)$ \\
+  2. & $(!B \lif (!B \lor !A)) \lif (!A  \lif (!B \lif (!B \lor !A)))$\\
+  3. & $!A  \lif (!B \lif (!B \lor !A))$
+  \end{derivation}
+  عدد گودل این !!{derivation} برابر خواهد بود با
+  \begin{align*}
+  \openTuple\,
+    & \Gn{!B \lif (!B \lor !A)}, \\
+    &\Gn{(!B \lif (!B \lor !A)) \lif (!A  \lif (!B \lif (!B \lor !A)))},\\
+    & \Gn{!A  \lif (!B \lif (!B \lor !A))} \,\closeTuple.
+  \end{align*}
+\end{ex}
+
+\begin{explain}
+پس از تثبیت بازنمایی !!{derivation}s باید نشان دهیم می‌توانیم چنین
+!!{derivation}sیی را به‌طور بازگشتی اولیه دست‌کاری کنیم و ویژگی‌ها و
+روابط اساسی‌شان را نیز چنین بیان کنیم. بعضی عملیات ساده‌اند: برای
+نمونه، با داشتن عدد گودل~$d$ از !!a{derivation}ی،
+$(d)_{\len{d}-1}$ عدد گودل !!{formula} پایانی آن را به دست می‌دهد.
+بعضی موارد بسیار دشوارترند و دست‌کم طرحی از چگونگی انجامشان می‌دهیم.
+هدف نشان‌دادن این است که رابطهٔ «$\delta$ !!a{derivation}ی از~$!A$ بر
+پایهٔ~$\Gamma$ است» نسبت به اعداد گودل~$\delta$ و~$!A$ بازگشتی
+اولیه است.
+\end{explain}
+
+\begin{prop}
+\ollabel{prop:followsby}
+روابط زیر بازگشتی اولیه‌اند:
+\begin{enumerate}
+\item $!A$ یک اصل موضوعه است.
+\item سطر $i$اُم در~$\delta$ با وضع مقدم توجیه می‌شود.
+\item سطر $i$اُم در~$\delta$ با~\QR{} توجیه می‌شود.
+\item $\delta$ یک !!{derivation} درست است.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+باید نشان دهیم روابط متناظر میان اعداد گودل !!{formula}s و اعداد
+گودل !!{derivation}s بازگشتی اولیه‌اند.
+\begin{enumerate}
+\item فهرستی معین از شِماهای اصل موضوعه داریم و~$!A$ هنگامی اصل
+  موضوعه است که شکلی مطابق یکی از این شِماها داشته باشد. چون فهرست
+  شِماها متناهی است، کافی است نشان دهیم برای هر شِمای اصل موضوعه
+  می‌توانیم به‌طور بازگشتی اولیه بیازماییم که آیا~$!A$ آن شکل را
+  دارد. برای نمونه، شِمای اصل موضوعهٔ زیر را در نظر بگیرید:
+  \[
+  !B \lif (!C \lif !B).
+  \]
+  $!A$ نمونه‌ای از این شِماست اگر !!{formula}sیی چون~$!B$ و~$!C$
+  وجود داشته باشند که از الحاق «$($»، سپس~$!B$، سپس «$\lif$»، سپس
+  «$($»، سپس~$!C$، سپس «$\lif$»، سپس~$!B$ و سرانجام «$))$»،
+  فرمول~$!A$ به دست آید. می‌توانیم ویژگی متناظرِ عدد گودل~$n$ برای
+  $!A$ را بیازماییم، زیرا الحاق دنباله‌ها بازگشتی اولیه است و اعداد
+  گودل~$!B$ و~$!C$ باید از عدد گودل~$!A$ کوچک‌تر باشند؛ زیرا هرگاه
+  رابطه برقرار باشد، هر دو زیر!!{formula}s~$!A$ هستند. بنابراین می‌توانیم
+  تعریف کنیم:
+  \begin{multline*}
+  \fn{IsAx}_{!B \lif (!C \lif !B)}(n) \defiff \bexists{b< n}{
+    \bexists{c < n}{(\fn{Sent}(b) \land \fn{Sent}(c) \land {}}}\\ n =
+  \Gn{(} \concat b \concat \Gn{\lif} \concat \Gn{(} \concat c \concat
+  \Gn{\lif} \concat b \concat \Gn{))}).
+  \end{multline*}
+  اگر برای هر شِمای اصل موضوعه چنین تعریفی داشته باشیم، فصلِ
+  آن‌ها ویژگی~$\fn{IsAx}(n)$، یعنی «$n$ عدد گودل یک اصل موضوعه
+  است»، را تعریف می‌کند.
+\item سطر $i$اُم در~$\delta$ با وضع مقدم توجیه می‌شود اگر و تنها اگر
+  سطرهایی چون~$j$ و~$k<i$ وجود داشته باشند که !!{sentence}ٔ سطر~$j$
+  فرمولی چون~$!A$، جملهٔ سطر~$k$ برابر~$!A\lif !B$، و جملهٔ
+  سطر~$i$ برابر~$!B$ باشد:
+  \begin{multline*}
+    \fn{MP}(d, i) \defiff \bexists{j < i}{\bexists{k < i}{}}\\
+    (d)_k = \Gn{(} \concat (d)_j
+      \concat \Gn{\lif} \concat (d)_i \concat \Gn{)}.
+  \end{multline*}
+  چون کمیت‌گذاری کراندار، الحاق و~$=$ بازگشتی اولیه‌اند، این تعریف
+  رابطه‌ای بازگشتی اولیه به دست می‌دهد.
+\item سطری در~$\delta$ با~\QR{} توجیه می‌شود اگر به صورت
+  $!B\lif\lforall[x][!A(x)]$ باشد، سطری پیشین برای بعضی !!{constant}~$c$
+  برابر~$!B\lif !A(c)$ باشد، و~$c$ در~$!B$ رخ ندهد. این درست است اگر
+  و تنها اگر
+  \begin{enumerate}
+  \item !!a{sentence}ای چون~$!B$ و
+  \item !!a{formula}ی چون~$!A(x)$ با تنها متغیر آزاد~$x$ وجود داشته
+    باشند به‌گونه‌ای که
+  \item سطر~$i$ شامل~$!B\lif\lforall[x][!A(x)]$ باشد،
+  \item سطری چون~$j<i$ شامل~$!B\lif\Subst{!A}{c}{x}$ برای
+    ثابتی چون~$c$ باشد،
+  \item و این~$c$ در~$!B$ رخ ندهد.
+  \end{enumerate}
+  همهٔ این‌ها را می‌توان به‌طور بازگشتی اولیه آزمود، زیرا اعداد گودل
+  $!B$، $!A(x)$ و~$x$ از عدد گودل فرمول سطر~$i$، و عدد گودل~$c$ از
+  عدد گودل فرمول سطر~$j$ کوچک‌ترند:
+  \begin{multline*}
+    \fn{QR}_1(d, i) \defiff \bexists{j<i}{\bexists{b < (d)_i}{\bexists{x <
+        (d)_i}{\bexists{a < (d)_i}{\bexists{c < (d)_j}{(}}}}}
+    \\ \fn{Var}(x) \land \fn{Const}(c) \land {} \\
+    (d)_i = \Gn{(} \concat
+    b \concat \Gn{\lif} \concat \Gn{\lforall} \concat x \concat a
+    \concat \Gn{)} \land {}\\
+    (d)_j = \Gn{(} \concat b \concat
+    \Gn{\lif} \concat \fn{Subst}(a,c,x) \concat \Gn{)} \land {}\\ \fn{Sent}(b)
+    \land \fn{Sent}(\fn{Subst}(a,c,x)) \land {} \bforall{k <
+      \len{b}}{(b)_k \neq (c)_0}).
+  \end{multline*}
+  اینجا فرض می‌کنیم $c$ و~$x$ اعداد گودل ثابت و متغیرِ درنظرگرفته‌شده
+  به‌عنوان ترم‌اند، نه رمز نمادشان. اینکه $x$ تنها متغیر آزادِ
+  $!A(x)$ است با آزمودن اینکه~$\Subst{!A(x)}{c}{x}$ یک !!a{sentence} است بررسی
+  می‌شود؛ و با الزام متفاوت‌بودن هر نماد~$!B$ از~$c$ تضمین می‌کنیم
+  که~$c$ در~$!B$ رخ ندهد.
+
+  صورت دیگر~\QR{} را به‌عنوان تمرین وا می‌گذاریم.
+\item $d$ عدد گودل یک !!{derivation} درست است اگر و تنها اگر هر سطر آن
+  اصلی موضوعه باشد یا با وضع مقدم یا~\QR{} توجیه شود. بنابراین:
+  \[
+  \fn{Deriv}(d) \defiff \bforall{i < \len{d}}{(\fn{IsAx}((d)_i) \lor
+    \fn{MP}(d,i) \lor \fn{QR}(d, i))}.
+  \]
+\end{enumerate}
+\end{proof}
+
+\begin{prob}
+روابط زیر را مانند \olref[inc][art][pax]{prop:followsby} تعریف کنید:
+\begin{enumerate}
+\item $\fn{IsAx}_{!A \lif (!B \lif (!A \land !B))}(n)$؛
+\item $\fn{IsAx}_{\lforall[x][!A(x)] \lif !A(t)}(n)$؛
+\item $\fn{QR}_{2}(d, i)$ (برای صورت دیگر~\QR).
+\end{enumerate}
+\end{prob}
+
+\begin{prop}
+فرض کنید $\Gamma$ مجموعه‌ای بازگشتی اولیه از !!{sentence}s باشد. آنگاه
+رابطهٔ~$\Prf[\Gamma](x,y)$ که بیان می‌کند «$x$ رمز
+!!a{derivation}~$\delta$ از~$!A$ بر پایهٔ~$\Gamma$ است و~$y$ عدد گودل
+$!A$ است»، بازگشتی اولیه است.
+\end{prop}
+
+\begin{proof}
+فرض کنید «$y\in\Gamma$» با محمول بازگشتی اولیهٔ~$R_\Gamma(y)$ داده
+شود. باید نشان دهیم رابطهٔ~$\Prf[\Gamma](x,y)$ بازگشتی اولیه است؛
+$\Prf[\Gamma](x,y)$ برقرار است اگر و تنها اگر $y$ عدد گودل
+!!a{sentence}ای چون~$!A$
+و~$x$ رمز !!a{derivation}ی از~$!A$ بر پایهٔ~$\Gamma$ باشد.
+
+بنا بر گزارهٔ پیشین، ویژگی~$\fn{Deriv}(x)$ که برقرار است اگر و تنها
+اگر $x$ رمز !!{derivation} درست~$\delta$ باشد، بازگشتی اولیه است. اما آن
+تعریف، مجموعهٔ~$\Gamma$ را به‌عنوان راهی دیگر برای توجیه سطرهای
+!!{derivation} در نظر نمی‌گرفت. آزمون بازگشتی اولیهٔ ما برای توجیه‌شدن
+سطری با~\QR{} نیز این شرط را نادیده گرفت که ثابت~$c$ مجاز نیست
+در~$\Gamma$ رخ دهد. می‌توان تعریف را چنان اصلاح کرد که~$\Gamma$ را
+مستقیماً در نظر بگیرد، اما استفاده از~$\fn{Deriv}$ و قضیهٔ استنتاج
+آسان‌تر است. $\Gamma\Proves !A$ اگر و تنها اگر فهرستی متناهی از
+!!{sentence}sی $!B_1$،~\dots،~$!B_n\in\Gamma$ وجود داشته باشد که
+$\{!B_1,\dots,!B_n\}\Proves !A$. و بنا بر قضیهٔ استنتاج، این درست
+است هرگاه
+$\Proves(!B_1\lif(!B_2\lif\cdots(!B_n\lif !A)\cdots))$.
+می‌توان به‌طور بازگشتی اولیه آزمود که آیا !!a{sentence}ای با عدد گودل~$z$
+این شکل را دارد. پس به‌جای آنکه $x$ را عدد گودل !!a{derivation} !!{sentence}ای
+با عدد گودل~$y$ \emph{بر پایهٔ~$\Gamma$} بدانیم، آن را عدد گودل
+!!a{derivation} یک شرطی تودرتو با شکل بالا بر پایهٔ~$\emptyset$ می‌گیریم.
+
+نخست، اگر دنباله‌ای از !!{sentence}s داشته باشیم، می‌توانیم به‌طور
+بازگشتی اولیه شرطی‌ای بسازیم که همهٔ این جمله‌ها مقدم و !!{sentence}ای
+معین تالی آن باشند:
+\begin{align*}
+  \fn{hCond}(s, y, 0) & = y \\
+  \fn{hCond}(s, y, n+1) & = \Gn{(} \concat (s)_{n} \concat \Gn{\lif}
+  \concat \fn{hCond}(s, y, n) \concat \Gn{)}\\
+  \fn{Cond}(s, y) & = \fn{hCond}(s, y, \len{s})\\
+  \intertext{پس می‌توانیم $\Prf[\Gamma](x,y)$ را چنین تعریف کنیم:}
+  \Prf[\Gamma](x, y) & \defiff \bexists{s < \fn{sequenceBound}(x,x)}{(} \\
+  &\qquad (x)_{\len{x}-1} = \fn{Cond}(s,y) \land {} \\
+  &\qquad\bforall{i<\len{s}}{(s)_i \in \Gamma} \land {} \\
+  &\qquad\fn{Deriv}(x)).
+\end{align*}
+کران~$s$ از این ملاحظه به دست می‌آید که هر~$(s)_i$ عدد گودل یک
+زیر!!{formula} از آخرین سطر !!{derivation} است و بنابراین از
+$(x)_{\len{x}-1}$ کوچک‌تر است. تعداد مقدم‌های~$!B\in\Gamma$، یعنی
+طول~$s$، نیز از طول آخرین سطر~$x$ کوچک‌تر است.
+\end{proof}
+
+\end{document}

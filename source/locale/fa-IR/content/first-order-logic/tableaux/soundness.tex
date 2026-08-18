@@ -1,0 +1,245 @@
+% Part: first-order-logic
+% Chapter: tableaux
+% Section: soundness.tex
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{tab}{sou}}
+      {\olfileid{pl}{tab}{sou}}
+
+\olsection{صحت}
+
+\begin{explain}
+دستگاه !!^a{derivation}، مانند تابلو،
+\emph{صحیح} است اگر نتواند چیزهایی را که در واقع برقرار نیستند
+!!{derive} کند. بنابراین، صحت گونه‌ای ویژگی ایمنیِ تضمین‌شده برای
+دستگاه‌های !!{derivation} است. بسته به اینکه کدام ویژگی برهان‌نظری محل بحث
+باشد، برای نمونه می‌خواهیم بدانیم که
+\begin{enumerate}
+\item هر $!A$~!!{derivable}،
+\iftag{FOL}{معتبر}{همان‌گویی} است؛
+\item اگر !!a{sentence} از چند جملهٔ دیگر !!{derivable} باشد، نتیجهٔ
+  آن‌ها نیز هست؛
+\item اگر مجموعه‌ای از !!{sentence}s ناسازگار باشد، ارضاناپذیر است.
+\end{enumerate}
+این‌ها ویژگی‌های مهم دستگاه !!a{derivation} هستند. اگر هر یک از آن‌ها
+برقرار نباشد، دستگاه !!{derivation} ناقص است---بیش از اندازه !!{derive}
+می‌کند. ازاین‌رو، اثبات صحت دستگاه !!a{derivation} اهمیتی بنیادی دارد.
+
+چون همهٔ این ویژگی‌های برهان‌نظری به‌واسطهٔ گونه‌ای !!{tableau}s بسته
+تعریف شده‌اند، اثبات موارد (۱)--(۳) بالا مستلزم اثبات مطلبی دربارهٔ
+ویژگی‌های معنایی !!{tableau}s بسته است. نخست تعریف می‌کنیم که ارضاشدن
+!!a{signed formula} در یک \iftag{FOL}{ساختار}{ارزش‌گذاری} به چه معناست،
+و سپس نشان می‌دهیم که اگر !!{tableau} بسته باشد، هیچ
+\iftag{FOL}{ساختاری}{ارزش‌گذاری‌ای} همهٔ فرض‌های آن را ارضا نمی‌کند.
+آن‌گاه (۱)--(۳) به‌صورت نتیجه‌هایی از این حکم به دست می‌آیند.
+\end{explain}
+
+\begin{defn}
+\iftag{FOL}{!!^a{structure}}{!!^a{valuation}}~$\iftag{FOL}{\Struct{M}}{\pAssign{v}}$
+را \emph{ارضا‌کنندهٔ} !!a{signed formula}~$\sFmla{\True}{!A}$ می‌نامیم هرگاه و تنها هرگاه
+$\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$، و
+$\sFmla{\False}{!A}$ را ارضا می‌کند هرگاه و تنها هرگاه
+$\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!A}$.
+$\iftag{FOL}{\Struct{M}}{\pAssign{v}}$ مجموعهٔ
+$\Gamma$ از !!{signed formula}s را ارضا می‌کند هرگاه و تنها هرگاه هر
+$\sFmla{S}{!A} \in \Gamma$ را ارضا کند. $\Gamma$~\emph{ارضاپذیر} است
+اگر \iftag{FOL}{!!a{structure}}{!!a{valuation}} وجود داشته باشد که آن
+را ارضا کند، و در غیر این صورت \emph{ارضاناپذیر} است.
+\end{defn}
+
+\begin{thm}[صحت]
+  \ollabel{thm:tableau-soundness}
+  اگر $\Gamma$ !!{tableau} بسته‌ای داشته باشد، $\Gamma$ ارضاناپذیر است.
+\end{thm}
+
+\begin{proof}
+شاخه‌ای از !!a{tableau} را ارضاپذیر می‌نامیم هرگاه و تنها هرگاه مجموعهٔ
+!!{signed formula}s روی آن ارضاپذیر باشد؛ و !!a{tableau} را ارضاپذیر
+می‌نامیم اگر دست‌کم یک شاخهٔ ارضاپذیر داشته باشد.
+
+حکم زیر را نشان می‌دهیم: گسترش یک !!{tableau} ارضاپذیر با یکی از قواعد
+استنتاج همواره !!{tableau} ارضاپذیری به دست می‌دهد. این امر قضیه را
+اثبات می‌کند: هر !!{tableau} بسته با اعمال قواعد استنتاج بر !!{tableau}ای
+پدید می‌آید که تنها از فرض‌های~$\Gamma$ تشکیل شده است. پس اگر $\Gamma$
+ارضاپذیر می‌بود، هر !!{tableau} برای آن ارضاپذیر می‌بود. اما
+!!{tableau} بسته آشکارا ارضاپذیر نیست: هر شاخه هم
+$\sFmla{\True}{!A}$ و هم $\sFmla{\False}{!A}$ را دربر دارد، و هیچ
+\iftag{FOL}{!!a{structure}}{!!a{valuation}} نمی‌تواند هم $!A$ را ارضا
+کند و هم آن را ارضا نکند.
+
+فرض کنید !!{tableau} ارضاپذیری داریم، یعنی !!a{tableau} با دست‌کم یک
+شاخهٔ ارضاپذیر. اعمال یک قاعدهٔ استنتاج یا !!{signed formula}s را به
+یک شاخه می‌افزاید، یا شاخه‌ای را به دو شاخه می‌شکافد. اگر !!{tableau}
+شاخهٔ ارضاپذیری داشته باشد که با اعمال قاعدهٔ مورد نظر گسترش نیابد، آن
+شاخه در !!{tableau} گسترش‌یافته ارضاپذیر می‌ماند و بنابراین تابلوی
+گسترش‌یافته ارضاپذیر است. پس تنها لازم است حالتی را بررسی کنیم که قاعده
+بر شاخه‌ای ارضاپذیر اعمال می‌شود.
+
+فرض کنید $\Gamma$ مجموعهٔ !!{signed formula}s روی آن شاخه باشد و
+$\sFmla{S}{!A} \in \Gamma$ همان !!{signed formula}ای باشد که قاعده بر
+آن اعمال می‌شود. اگر قاعده به شاخهٔ منشعب نینجامد، باید نشان دهیم شاخهٔ
+گسترش‌یافته، یعنی $\Gamma$ به‌همراه نتایج قاعده، همچنان ارضاپذیر است.
+اگر قاعده به شاخهٔ منشعب بینجامد، باید نشان دهیم دست‌کم یکی از دو شاخهٔ
+حاصل ارضاپذیر است.
+
+نخست استنتاج‌های ممکنی را بررسی می‌کنیم که به شاخهٔ منشعب نمی‌انجامند.
+\begin{enumerate}
+\item شاخه با اعمال $\TRule{\True}{\lnot}$ بر
+  $\sFmla{\True}{\lnot !B} \in \Gamma$ گسترش می‌یابد. آن‌گاه شاخهٔ
+  گسترش‌یافته !!{signed formula}s مجموعهٔ $\Gamma \cup
+  \{\sFmla{\False}{!B}\}$ را دربر دارد. فرض کنید
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$. به‌ویژه،
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\lnot !B}$. پس
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!B}$، یعنی
+  $\iftag{FOL}{\Struct{M}}{\pAssign{v}}$ فرمول
+  $\sFmla{\False}{!B}$ را ارضا می‌کند.
+\item شاخه با اعمال $\TRule{\False}{\lnot}$ بر
+  $\sFmla{\False}{\lnot !B} \in \Gamma$ گسترش می‌یابد: تمرین.
+\item شاخه با اعمال $\TRule{\True}{\land}$ بر
+  $\sFmla{\True}{!B \land !C} \in \Gamma$ گسترش می‌یابد؛ در نتیجه دو
+  !!{signed formula}s جدید روی شاخه پدید می‌آیند:
+  $\sFmla{\True}{!B}$ و $\sFmla{\True}{!C}$. فرض کنید
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$، و به‌ویژه
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!B \land !C}$. آنگاه
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!B}$ و
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!C}$. این بدان معناست که
+  $\iftag{FOL}{\Struct{M}}{\pAssign{v}}$ هر دو فرمول
+  $\sFmla{\True}{!B}$ و $\sFmla{\True}{!C}$ را ارضا می‌کند.
+\item شاخه با اعمال $\TRule{\False}{\lor}$ بر
+  $\sFmla{\False}{!B \lor !C} \in \Gamma$ گسترش می‌یابد: تمرین.
+\item شاخه با اعمال $\TRule{\False}{\lif}$ بر
+  $\sFmla{\False}{!B \lif !C} \in \Gamma$ گسترش می‌یابد. در نتیجه دو
+  !!{signed formula}s جدید روی شاخه پدید می‌آیند:
+  $\sFmla{\True}{!B}$ و $\sFmla{\False}{!C}$. فرض کنید
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$، و به‌ویژه
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!B \lif !C}$. آنگاه
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!B}$ و
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$. این بدان معناست که
+  $\iftag{FOL}{\Struct{M}}{\pAssign{v}}$ هر دو فرمول
+  $\sFmla{\True}{!B}$ و $\sFmla{\False}{!C}$ را ارضا می‌کند.
+
+\iftag{FOL}{%
+\item شاخه با اعمال $\TRule{\True}{\lforall}$ بر
+  $\sFmla{\True}{\lforall[x][!A(x)]} \in \Gamma$ گسترش می‌یابد. در
+  نتیجه !!{signed formula} جدیدِ~$\sFmla{\True}{!A(t)}$ روی شاخه پدید
+  می‌آید. فرض کنید $\Sat{M}{\Gamma}$، و به‌ویژه
+  $\Sat{M}{\lforall[x][!A(x)]}$. بنا بر
+  \olref[syn][sem]{prop:quant-terms}، $\Sat{M}{!A(t)}$. در نتیجه،
+  $\Struct{M}$ فرمول $\sFmla{\True}{!A(t)}$ را ارضا می‌کند.
+
+\item شاخه با اعمال $\TRule{\False}{\lforall}$ بر
+  $\sFmla{\False}{\lforall[x][!A(x)]} \in \Gamma$ گسترش می‌یابد. در
+  نتیجه !!{signed formula} جدیدِ~$\sFmla{\False}{!A(a)}$ روی شاخه پدید
+  می‌آید، که در آن $a$~!!a{constant}ای است که در~$\Gamma$ رخ نمی‌دهد.
+  چون $\Gamma$ ارضاپذیر است، $\Struct{M}$ای وجود دارد چنان‌که
+  $\Sat{M}{\Gamma}$، و به‌ویژه
+  $\Sat/{M}{\lforall[x][!A(x)]}$. باید نشان دهیم
+  $\Gamma \cup \{\sFmla{\False}{!A(a)}\}$ ارضاپذیر است. برای این کار،
+  $\Struct{M'}$ مناسبی را به شرح زیر تعریف می‌کنیم.
+
+  بنا بر \olref[syn][ass]{prop:sat-quant}،
+  $\Sat/{M}{\lforall[x][!A(x)]}$ هرگاه و تنها هرگاه برای یک $s$،
+  $\Sat/{M}{!A(x)}[s]$. اکنون $\Struct{M'}$ را درست مانند
+  $\Struct{M}$ بگیرید، جز آنکه $\Assign{a}{M'} = s(x)$. بنا بر
+  \olref[syn][ext]{cor:extensionality-sent}، برای هر
+  $\sFmla{\True}{!C} \in \Gamma$، $\Sat{M'}{!C}$، و برای هر
+  $\sFmla{\False}{!C} \in \Gamma$، $\Sat/{M'}{!C}$، زیرا $a$ در
+  $\Gamma$ رخ نمی‌دهد.
+
+  بنا بر \olref[syn][ext]{prop:extensionality}،
+  $\Sat/{M'}{!A(x)}[s]$. بنا بر
+  \olref[syn][ext]{prop:ext-formulas}، $\Sat/{M'}{!A(a)}[s]$. چون
+  $!A(a)$~!!a{sentence} است، بنا بر
+  \olref[syn][ass]{prop:sentence-sat-true}، $\Sat/{M'}{!A(a)}$؛ یعنی
+  $\Struct{M'}$ فرمول $\sFmla{\False}{!A(a)}$ را ارضا می‌کند.
+\item شاخه با اعمال $\TRule{\True}{\lexists}$ بر
+  $\sFmla{\True}{\lexists[x][!B(x)]} \in \Gamma$ گسترش می‌یابد: تمرین.
+\item شاخه با اعمال $\TRule{\False}{\lexists}$ بر
+  $\sFmla{\False}{\lexists[x][!B(x)]} \in \Gamma$ گسترش می‌یابد: تمرین.}{}
+\end{enumerate}
+اکنون استنتاج‌های ممکنی را بررسی می‌کنیم که به شاخه‌ای منشعب می‌انجامند.
+\begin{enumerate}
+\item شاخه با اعمال $\TRule{\False}{\land}$ بر
+  $\sFmla{\False}{!B \land !C} \in \Gamma$ گسترش می‌یابد و دو شاخه
+  پدید می‌آورد: شاخهٔ چپی که با $\sFmla{\False}{!B}$ ادامه می‌یابد و
+  شاخهٔ راستی که با $\sFmla{\False}{!C}$ ادامه می‌یابد. فرض کنید
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$، و به‌ویژه
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!B \land !C}$. آنگاه یا
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!B}$ یا
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!C}$. در حالت نخست،
+  $\iftag{FOL}{\Struct{M}}{\pAssign{v}}$ فرمول
+  $\sFmla{\False}{!B}$ را ارضا می‌کند؛ یعنی
+  $\iftag{FOL}{\Struct{M}}{\pAssign{v}}$ فرمول‌های شاخهٔ چپ را ارضا
+  می‌کند. در حالت دوم، $\iftag{FOL}{\Struct{M}}{\pAssign{v}}$ فرمول
+  $\sFmla{\False}{!C}$ را ارضا می‌کند؛ یعنی
+  $\iftag{FOL}{\Struct{M}}{\pAssign{v}}$ فرمول‌های شاخهٔ راست را ارضا
+  می‌کند.
+\item شاخه با اعمال $\TRule{\True}{\lor}$ بر
+  $\sFmla{\True}{!B \lor !C} \in \Gamma$ گسترش می‌یابد: تمرین.
+\item شاخه با اعمال $\TRule{\True}{\lif}$ بر
+  $\sFmla{\True}{!B \lif !C} \in \Gamma$ گسترش می‌یابد: تمرین.
+\item شاخه با \Cut گسترش می‌یابد. در نتیجه دو شاخه پدید می‌آیند که
+  یکی $\sFmla{\True}{!B}$ و دیگری $\sFmla{\False}{!B}$ را دربر دارد.
+  چون $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$ و یا
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!B}$ یا
+  $\iftag{FOL}{\Sat/{M}}{\pSat/{v}}{!B}$،
+  $\iftag{FOL}{\Struct{M}}{\pAssign{v}}$ یا شاخهٔ چپ یا شاخهٔ راست را
+  ارضا می‌کند.
+\end{enumerate}
+\end{proof}
+
+\tagprob{FOL}
+\begin{prob}
+برهان \olref[fol][tab][sou]{thm:tableau-soundness} را کامل کنید.
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+برهان \olref[pl][tab][sou]{thm:tableau-soundness} را کامل کنید.
+\end{prob}
+\tagendprob
+
+\begin{cor}
+\ollabel{cor:weak-soundness}
+اگر $\Proves !A$، آنگاه $!A$~\iftag{FOL}{معتبر}{همان‌گویی} است.
+\end{cor}
+
+\begin{cor}
+\ollabel{cor:entailment-soundness}
+اگر $\Gamma \Proves !A$، آنگاه $\Gamma \Entails !A$.
+\end{cor}
+
+\begin{proof}
+  اگر $\Gamma \Proves !A$، آنگاه برای چند $!B_1$، \dots،
+  $!B_n \in \Gamma$، مجموعهٔ $\{\sFmla{\False}{!A},
+  \sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\}$ دارای
+  !!{tableau} بسته‌ای است. بنا بر
+  \olref{thm:tableau-soundness}، هر
+  \iftag{FOL}{!!{structure}}{!!{valuation}}~$\iftag{FOL}{\Struct{M}}{\pAssign{v}}$
+  یا یک $!B_i$ را کاذب می‌کند یا $!A$ را صادق می‌کند. بنابراین، اگر
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{\Gamma}$، آنگاه نیز
+  $\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$.
+\end{proof}
+
+\begin{cor}
+\ollabel{cor:consistency-soundness}
+اگر $\Gamma$ ارضاپذیر باشد، آنگاه سازگار است.
+\end{cor}
+
+\begin{proof}
+عکس نقیض را اثبات می‌کنیم. فرض کنید $\Gamma$ سازگار نباشد. آنگاه چند
+$!B_1$، \dots، $!B_n \in \Gamma$ و یک !!{tableau} بسته برای
+$\{\sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\}$ وجود دارند. بنا بر
+\olref{thm:tableau-soundness}، هیچ
+$\iftag{FOL}{\Struct{M}}{\pAssign{v}}$ای وجود ندارد چنان‌که
+$\iftag{FOL}{\Sat{M}}{\pSat{v}}{!B_i}$ برای همهٔ $i=1$، \dots،~$n$.
+اما در این
+صورت $\Gamma$ ارضاپذیر نیست.
+\end{proof}
+
+\end{document}

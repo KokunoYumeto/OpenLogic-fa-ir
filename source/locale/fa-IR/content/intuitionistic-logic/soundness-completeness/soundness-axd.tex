@@ -1,0 +1,60 @@
+% part: intuitionistic-logic
+% chapter: soundness-completeness
+% section: soundness-axd
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{sc}{sax}
+
+\olsection{درستیِ \usetoken{P}{derivation} اصل‌موضوعی}
+
+\begin{editorial}
+  اثبات درستی بر این واقعیت متکی است که همهٔ اصول موضوع از نظر
+  شهودگرایانه معتبرند؛ این امر هنوز باید، مثلاً در فصل معناشناسی، ثابت
+  شود.
+\end{editorial}
+
+\begin{thm}[درستی]
+  \ollabel{thm:soundness}
+  اگر~$\Gamma \Proves !A$، آنگاه~$\Gamma \Entails !A$.
+\end{thm}
+
+\begin{proof}
+  ثابت می‌کنیم اگر~$\Gamma \Proves !A$، آنگاه~$\Gamma \Entails !A$.
+  اثبات با استقرا بر شمار~$n$ از !!{formula}های !!{derivation}~$!A$
+  از~$\Gamma$ است. نشان می‌دهیم اگر~$!A_1$، \dots، $!A_n = !A$ یک
+  !!a{derivation} از~$\Gamma$ باشد، آنگاه~$\Gamma \Entails !A_n$.
+  توجه کنید اگر~$!A_1$، \dots، $!A_n$ یک !!a{derivation} باشد، برای
+  هر~$k<n$، $!A_1$، \dots، $!A_k$ نیز چنین است.
+
+  هیچ !!{derivation}ای با طول~$0$ وجود ندارد، پس برای~$n=0$ ادعا
+  به‌طور تهی برقرار است. بنابراین ادعا برای همهٔ !!{derivation}های با
+  طول کم‌تر از~$n$ برقرار است. برحسب توجیه~$!A_n$ حالت‌بندی می‌کنیم.
+  
+  \begin{enumerate}
+  \item $!A_n$ یک اصل موضوع است. همهٔ اصول موضوع معتبرند، پس برای هر
+    $\Gamma$، $\Gamma \Entails !A_n$.
+  \item $!A_n \in \Gamma$. آنگاه برای هر~$\mModel{M}$ و~$w$، اگر
+    $\mSat{M}{\Gamma}[w]$، آشکارا~$\mSat{M}{!A_n}[w]$؛ یعنی
+    $\Gamma \Entails !A$.
+  \item $!A_n$ با~\MP{} از~$!A_i$ و
+    $!A_j \ident !A_i \lif !A_n$ نتیجه می‌شود. $!A_1$، \dots، $!A_i$
+    و~$!A_1$، \dots، $!A_j$، !!{derivation}هایی از~$\Gamma$ هستند، پس
+    بنا بر فرض استقرا، $\Gamma \Entails !A_i$ و
+    $\Gamma \Entails !A_i \lif !A_n$.
+    
+    فرض کنید~$\mSat{M}{\Gamma}[w]$. چون~$\mSat{M}{\Gamma}[w]$ و
+    $\Gamma \Entails !A_i \lif !A_n$، داریم
+    $\mSat{M}{!A_i \lif !A_n}[w]$. بنا بر تعریف، این یعنی برای هر~$w'$
+    با~$Rww'$، اگر~$\mSat{M}{!A_i}[w']$، آنگاه
+    $\mSat{M}{!A_n}[w']$. چون~$R$ بازتابی است، $w$ یکی از~$w'$هایی است
+    که~$Rww'$؛ یعنی اگر~$\mSat{M}{!A_i}[w]$، آنگاه
+    $\mSat{M}{!A_n}[w]$. چون~$\Gamma \Entails !A_i$،
+    $\mSat{M}{!A_i}[w]$. پس، چنان‌که می‌خواستیم،
+    $\mSat{M}{!A_n}[w]$.
+  \end{enumerate}
+\end{proof}
+
+\end{document}

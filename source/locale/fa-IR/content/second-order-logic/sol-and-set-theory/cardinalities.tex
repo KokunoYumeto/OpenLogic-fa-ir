@@ -1,0 +1,67 @@
+% Part: second-order-logic
+% Chapter: sol-and-set-theory
+% Section: cardinalities
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sol}{set}{crd}
+
+\olsection{توان‌های مجموعه‌ها}
+
+\begin{explain}
+همان‌گونه که می‌توانیم متناهی یا نامتناهی و !!{enumerable} یا
+!!{nonenumerable}بودن دامنه را بیان کنیم، می‌توانیم ویژگی متناهی یا
+نامتناهی و !!{enumerable} یا !!{nonenumerable}بودن زیرمجموعه‌ای از
+$\Domain{M}$ را تعریف کنیم.
+\end{explain}
+
+\begin{prop}
+فرمول~$\fn{Inf}(X) \ident$
+\begin{multline*}
+\lexists[u][(\lforall[x][\lforall[y][(\eq[u(x)][u(y)] \lif
+      \eq[x][y])]] \land {} \\ \lforall[x][(X(x) \lif X(u(x)))]
+      \land {} \\ \lexists[y][(X(y) \land \lforall[x][(X(x)
+      \lif \eq/[y][u(x)])])])]
+\end{multline*}
+نسبت به تخصیص متغیر~$s$ ارضا می‌شود اگر و تنها اگر~$s(X)$ نامتناهی
+باشد.
+\end{prop}
+
+\begin{prop}
+فرمول~$\fn{Count}(X) \ident $
+\begin{multline*}
+(\lnot \lexists[x][X(x)] \lor \lexists[z][\lexists[u][(X(z) \land
+    \lforall[x][(X(x) \lif X(u(x)))] \land {} \\ \lforall[Y][((Y(z) \land
+      \lforall[x][(Y(x) \lif Y(u(x)))]) \lif X \subseteq Y)])]])
+\end{multline*}
+نسبت به تخصیص متغیر~$s$ ارضا می‌شود اگر و تنها اگر~$s(X)$
+!!{enumerable} باشد.
+\end{prop}
+
+از قضیهٔ کانتور می‌دانیم مجموعه‌های !!{nonenumerable} وجود دارند و در
+واقع بی‌نهایت سطح متفاوت از اندازه‌های نامتناهی در کار است. نظریهٔ
+مجموعه‌ها حسابی کامل برای اندازهٔ مجموعه‌ها می‌پرورد و اعداد اصلی
+نامتناهی را به مجموعه‌ها نسبت می‌دهد. اعداد طبیعی نقش اعداد اصلیِ
+اندازه‌گیرِ مجموعه‌های متناهی را دارند. توان مجموعه‌های !!{denumerable}
+نخستین توان نامتناهی است که~$\aleph_0$ («الفِ صفر») نامیده می‌شود. اندازهٔ
+نامتناهی بعدی~$\aleph_1$ است. این کوچک‌ترین اندازه‌ای است که مجموعه‌ای
+می‌تواند داشته باشد بی‌آنکه شمارا باشد (یعنی اندازهٔ~$\aleph_0$ داشته
+باشد). می‌توانیم «$X$ اندازهٔ~$\aleph_0$ دارد» را با
+$\fn{Aleph}_0(X) \liff \fn{Inf}(X) \land \fn{Count}(X)$ تعریف کنیم.
+$X$ اندازهٔ~$\aleph_1$ دارد اگر و تنها اگر نامتناهی باشد، همهٔ
+  زیرمجموعه‌هایش متناهی یا دارای اندازهٔ~$\aleph_0$ یا هم‌شمار با خود آن
+  باشند، و خود اندازهٔ~$\aleph_0$ نداشته باشد. پس می‌توانیم این امر را
+با فرمول~$\fn{Aleph_1}(X) \ident \fn{Inf}(X) \land
+\lforall[Y][(Y \subseteq X \lif (\lnot\fn{Inf}(Y) \lor
+\fn{Aleph}_0(Y) \lor \cardeq{X}{Y}))] \land \lnot
+\fn{Aleph}_0(X)$ بیان کنیم. اندازهٔ~$\aleph_2$ نیز به‌شیوه‌ای مشابه
+تعریف می‌شود، و الی آخر.
+
+یک اندازه اهمیت ویژه دارد که به آن توان پیوستار می‌گویند. این اندازهٔ
+$\Pow{\Nat}$ یا، به‌طور هم‌ارز، اندازهٔ~$\Real$ است. اندازهٔ
+پیوستارداشتن یک مجموعه را نیز می‌توان در منطق مرتبهٔ دوم بیان کرد، اما
+این کار اندکی بیشتر زحمت می‌طلبد.
+
+\end{document}

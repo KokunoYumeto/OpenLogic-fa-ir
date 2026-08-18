@@ -1,0 +1,102 @@
+% Part: first-order-logic
+% Chapter: axiomatic-deduction
+% Section: provability-consistency
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{axd}{prv}}
+      {\olfileid{pl}{axd}{prv}}
+
+\olsection{\usetoken{S}{derivability} و سازگاری}
+
+اکنون چند ویژگی رابطهٔ !!{derivability} را اثبات می‌کنیم. این ویژگی‌ها
+به‌خودی‌خود جالب‌اند، اما هر یک در اثبات قضیهٔ تمامیت نقشی خواهد داشت.
+
+\begin{prop}\ollabel{prop:provability-contr}
+  اگر $\Gamma \Proves !A$ و $\Gamma \cup \{!A\}$ ناسازگار باشد، آنگاه
+  $\Gamma$ ناسازگار است.
+\end{prop}
+
+\begin{proof}
+  اگر $\Gamma \cup \{!A\}$ ناسازگار باشد، آنگاه
+  $\Gamma \cup \{!A\} \Proves \lfalse$. بنا بر
+  \olref[ptn]{prop:reflexivity}، $\Gamma \Proves !B$ برای هر
+  $!B \in \Gamma$. چون بنا بر فرض همچنین $\Gamma \Proves !A$،
+  $\Gamma \Proves !B$ برای هر $!B \in \Gamma \cup \{!A\}$. بنا بر
+  \olref[ptn]{prop:transitivity}، $\Gamma \Proves \lfalse$؛ یعنی
+  $\Gamma$ ناسازگار است.
+\end{proof}
+
+\begin{prop}
+\ollabel{prop:prov-incons}
+$\Gamma \Proves !A$ هرگاه و تنها هرگاه $\Gamma \cup \{\lnot !A\}$
+ناسازگار باشد.
+\end{prop}
+
+\begin{proof}
+نخست فرض کنید $\Gamma \Proves !A$. آنگاه
+$\Gamma \cup \{\lnot !A\} \Proves !A$ بنا بر
+\olref[ptn]{prop:monotonicity}. همچنین
+$\Gamma \cup \{\lnot !A\} \Proves \lnot !A$ بنا بر
+\olref[ptn]{prop:reflexivity}. نیز
+$\Proves \lnot !A \lif (!A \lif \lfalse)$ بنا بر
+\olref[prp]{ax:lnot2}.
+پس با دو بار کاربرد \olref[ded]{prop:mp}، داریم
+$\Gamma \cup \{\lnot !A\} \Proves \lfalse$.
+
+اکنون فرض کنید $\Gamma \cup \{\lnot !A\}$ ناسازگار باشد؛ یعنی
+$\Gamma \cup \{\lnot !A\} \Proves \lfalse$. بنا بر قضیهٔ استنتاج،
+$\Gamma \Proves \lnot !A \lif \lfalse$.
+$\Gamma \Proves (\lnot !A \lif \lfalse) \lif \lnot\lnot !A$ بنا بر
+\olref[prp]{ax:lfalse2}؛ پس $\Gamma \Proves \lnot\lnot !A$ بنا بر
+\olref[ded]{prop:mp}. چون
+$\Gamma \Proves \lnot\lnot !A \lif !A$
+(\olref[prp]{ax:dne})، $\Gamma \Proves !A$ با کاربرد دوبارهٔ
+\olref[ded]{prop:mp}.
+\end{proof}
+
+\begin{prob}
+اثبات کنید $\Gamma \Proves \lnot !A$ هرگاه و تنها هرگاه
+$\Gamma \cup \{!A\}$ ناسازگار باشد.
+\end{prob}
+
+\begin{prop}\ollabel{prop:explicit-inc}
+  اگر $\Gamma \Proves !A$ و $\lnot !A \in \Gamma$، آنگاه $\Gamma$
+  ناسازگار است.
+\end{prop}
+
+\begin{proof}
+  $\Gamma \Proves \lnot !A \lif (!A \lif \lfalse)$ بنا بر
+  \olref[prp]{ax:lnot2}.
+  $\Gamma \Proves \lfalse$ با دو بار کاربرد
+  \olref[ded]{prop:mp}.
+\end{proof}
+
+
+\begin{prop}\ollabel{prop:provability-exhaustive}
+  اگر هر دو مجموعهٔ $\Gamma \cup \{!A\}$ و
+  $\Gamma \cup \{\lnot !A\}$ ناسازگار باشند، آنگاه $\Gamma$ ناسازگار
+  است.
+\end{prop}
+
+\begin{proof}
+تمرین.
+\end{proof}
+
+\tagprob{FOL}
+\begin{prob}
+  \olref[fol][axd][prv]{prop:provability-exhaustive} را اثبات کنید.
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+  \olref[pl][axd][prv]{prop:provability-exhaustive} را اثبات کنید.
+\end{prob}
+\tagendprob
+
+
+\end{document}

@@ -1,0 +1,139 @@
+% Part: normal-modal-logic
+% Chapter: completeness
+% Section: complete-consistent-sets
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{com}{ccs}
+
+\olsection{مجموعه‌های کاملِ~$\Sigma$-سازگار}
+
+فرض کنید~$\Sigma$ مجموعه‌ای از !!{formula}های موجهاتی باشد؛ آن‌ها را
+اصل‌ها یا اصول تعریف‌کنندهٔ یک منطق موجهات عادی در نظر بگیرید. مجموعهٔ
+$\Gamma$، $\Sigma$-سازگار است اگر و تنها اگر
+$\Gamma \Proves/[\Sigma] \lfalse$؛ یعنی هیچ !!{derivation}ای از
+$!A_1 \lif (!A_2 \lif \cdots (!A_n \lif \lfalse)\dots)$ از~$\Sigma$
+وجود ندارد که هر~$!A_i \in \Gamma$. مدلی «کانونی» می‌سازیم که در آن
+هر جهان نوع خاصی از مجموعهٔ~$\Sigma$-سازگار گرفته می‌شود: مجموعه‌ای که
+نه‌تنها~$\Sigma$-سازگار، بلکه به این معنا به‌طور بیشینه سازگار است که
+ارزش صدق هر !!{formula} موجهاتی را تعیین می‌کند: برای هر~$!A$، یا
+$!A \in \Gamma$ یا~$\lnot !A \in \Gamma$.
+
+\begin{defn}
+  مجموعهٔ~$\Gamma$ \emph{کاملِ~$\Sigma$-سازگار} است اگر و تنها اگر
+  $\Sigma$-سازگار باشد و برای هر~$!A$، یا~$!A \in \Gamma$ یا
+  $\lnot !A \in \Gamma$.
+\end{defn}
+
+مجموعه‌های کاملِ~$\Sigma$-سازگار~$\Gamma$ چند خاصیت سودمند دارند. نخست
+آنکه تحت استنتاج بسته‌اند؛ یعنی اگر~$\Gamma \Proves[\Sigma] !A$،
+آنگاه~$!A \in \Gamma$. این امر به‌ویژه بدان معناست که هر نمونه از
+!!a{formula}~$!A \in \Sigma$ نیز عضو~$\Gamma$ است. افزون‌براین، عضویت
+در~$\Gamma$ شرایط صدق رابط‌های گزاره‌ای را بازتاب می‌دهد. این امر هنگام
+تعریف «مدل کانونی» مهم خواهد بود.
+
+\begin{prop}\ollabel{prop:ccs-properties}
+  فرض کنید~$\Gamma$ کاملِ~$\Sigma$-سازگار باشد. آنگاه:
+  \begin{enumerate}
+  \item \ollabel{prop:ccs-closed}%
+    $\Gamma$ در~$\Sigma$ تحت استنتاج بسته است.
+  \item \ollabel{prop:ccs-sigma}%
+    $\Sigma \subseteq \Gamma$.
+  \tagitem{prvFalse}{\ollabel{prop:ccs-lfalse}%
+    $\lfalse \notin \Gamma$}{}
+  \tagitem{prvTrue}{\ollabel{prop:ccs-ltrue}%
+    $\ltrue \in \Gamma$}{}
+  \item \ollabel{prop:ccs-lnot}%
+    $\lnot!A \in \Gamma$ اگر و تنها اگر~$!A \notin \Gamma$.
+  \tagitem{prvAnd}{\ollabel{prop:ccs-land}%
+    $!A \land !B \in \Gamma$ اگر و تنها اگر~$!A \in \Gamma$ و~$!B \in \Gamma$.}{}
+  \tagitem{prvOr}{\ollabel{prop:ccs-lor}%
+    $!A \lor !B \in \Gamma$ اگر و تنها اگر~$!A \in \Gamma$ یا~$!B \in \Gamma$.}{}
+  \tagitem{prvIf}{\ollabel{prop:ccs-lif}%
+    $!A \lif !B \in \Gamma$ اگر و تنها اگر~$!A \notin \Gamma$ یا~$!B \in \Gamma$.}{}
+  \tagitem{prvIff}{\ollabel{prop:ccs-liff}%
+    $!A \liff !B \in \Gamma$ اگر و تنها اگر یا~$!A \in \Gamma$ و
+    $!B \in \Gamma$، یا~$!A \notin \Gamma$ و~$!B \notin \Gamma$.}{}
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+  \item فرض کنید~$\Gamma \Proves[\Sigma] !A$ اما~$!A \notin \Gamma$.
+    چون~$\Gamma$ کاملِ~$\Sigma$-سازگار است، $\lnot!A \in \Gamma$.
+    این امر~$\Gamma$ را ناسازگار می‌کند، زیرا
+    $!A, \lnot !A \Proves[\Sigma] \lfalse$.
+    
+  \item اگر~$!A \in \Sigma$، آنگاه~$\Gamma \Proves[\Sigma] !A$ و
+    بنا بر بسته‌بودن استنتاجی، یعنی مورد~\olref{prop:ccs-closed}،
+    $!A \in \Gamma$.
+    
+  \tagitem{prvFalse}{اگر~$\lfalse \in \Gamma$، آنگاه
+    $\Gamma \Proves[\Sigma] \lfalse$؛ پس~$\Gamma$ نسبت به~$\Sigma$
+    ناسازگار خواهد بود.}{}
+  
+  \tagitem{prvTrue}{$\Gamma \Proves[\Sigma] \ltrue$؛ پس بنا بر
+    بسته‌بودن استنتاجی، یعنی مورد~\olref{prop:ccs-closed}،
+    $\ltrue \in \Gamma$.}{}
+
+\item اگر~$\lnot!A \in \Gamma$، آنگاه بنا بر سازگاری
+    $!A \notin \Gamma$؛ و اگر~$!A \notin \Gamma$، آنگاه چون~$\Gamma$
+    کاملِ~$\Sigma$-سازگار است، $\lnot!A \in \Gamma$.
+    
+  \tagitem{prvAnd}{\iftag{probAnd}{تمرین.}{فرض کنید
+      $!A \land !B \in \Gamma$. چون~$(!A \land !B) \lif !A$ یک
+      نمونهٔ همان‌گویی است، بنا بر بسته‌بودن استنتاجی، یعنی مورد
+      \olref{prop:ccs-closed}، $!A \in \Gamma$. به‌طور مشابه
+      $!B \in \Gamma$. از سوی دیگر، فرض کنید هم~$!A \in \Gamma$ و
+      هم~$!B \in \Gamma$. آنگاه بسته‌بودن استنتاجی مستلزم
+      $(!A \land !B) \in \Gamma$ است، زیرا
+      $!A \lif (!B \lif (!A \land !B))$ یک نمونهٔ همان‌گویی است.}}{}
+
+  \tagitem{prvOr}{\iftag{probOr}{تمرین.}{فرض کنید~$!A \lor !B \in
+      \Gamma$ و~$!A \notin \Gamma$ و~$!B \notin \Gamma$. چون
+      $\Gamma$ کاملِ~$\Sigma$-سازگار است، $\lnot!A \in \Gamma$ و
+      $\lnot !B \in \Gamma$. آنگاه~$\lnot(!A \lor !B) \in \Gamma$،
+      زیرا~$\lnot !A \lif (\lnot !B \lif \lnot (!A \lor !B))$ یک
+      نمونهٔ همان‌گویی است. این بدان معناست که~$\Gamma$ نسبت به
+      $\Sigma$ ناسازگار است، که تناقض است. برعکس، اگر~$!A \in \Gamma$،
+      چون~$!A \lif (!A \lor !B)$ یک نمونهٔ همان‌گویی است، بنا بر
+      بسته‌بودن استنتاجی~$!A \lor !B \in \Gamma$؛ و اگر
+      $!B \in \Gamma$ نیز به‌طور مشابه چنین است.}}{}
+  
+  \tagitem{prvIf}{\iftag{probIf}{تمرین.}{فرض کنید~$!A \lif !B \in
+      \Gamma$ و~$!A \in \Gamma$؛ آنگاه~$\Gamma \Proves[\Sigma] !B$،
+      و از بسته‌بودن استنتاجی~$!B \in \Gamma$. برعکس، اگر
+      $!A \lif !B \notin \Gamma$، چون~$\Gamma$ کاملِ~$\Sigma$-سازگار
+      است، $\lnot (!A \lif !B) \in \Gamma$. چون
+      $\lnot(!A \lif !B) \lif !A$ یک نمونهٔ همان‌گویی است، بنا بر
+      بسته‌بودن استنتاجی~$!A \in \Gamma$. چون
+      $\lnot(!A \lif !B) \lif \lnot !B$ یک نمونهٔ همان‌گویی است،
+      $\lnot !B \in \Gamma$. پس چون~$\Gamma$ نسبت به~$\Sigma$ سازگار
+      است، $!B \notin \Gamma$.}}{}
+  
+  \tagitem{prvIff}{\iftag{probIff}{تمرین.}{فرض کنید
+      $!A \liff !B \in \Gamma$. اگر~$!A \in \Gamma$، آنگاه
+      $!B \in \Gamma$، زیرا~$(!A \liff !B) \lif (!A \lif !B)$ یک
+      نمونهٔ همان‌گویی است. به‌طور مشابه، اگر~$!B \in \Gamma$، آنگاه
+      $!A \in \Gamma$. پس یا هم~$!A \in \Gamma$ و هم~$!B \in
+      \Gamma$، یا نه~$!A \in \Gamma$ و نه~$!B \in \Gamma$.
+      
+      برعکس، فرض کنید~$!A \liff !B \notin \Gamma$. چون~$\Gamma$
+      کاملِ~$\Sigma$-سازگار است، $\lnot (!A \liff !B) \in \Gamma$.
+      چون~$\lnot(!A \liff !B) \lif (!A \lif \lnot !B)$ یک نمونهٔ
+      همان‌گویی است، اگر~$!A \in \Gamma$، آنگاه
+      $\lnot !B \in \Gamma$؛ و چون~$\Gamma$ نسبت به~$\Sigma$ سازگار
+      است، $!B \notin \Gamma$. به‌طور مشابه، اگر~$!B \in \Gamma$،
+      آنگاه~$!A \notin \Gamma$. پس نه هر دو~$!A \in \Gamma$ و
+      $!B \in \Gamma$، و نه هر دو~$!A \notin \Gamma$ و
+      $!B \notin \Gamma$.}}{}
+  \end{enumerate}
+\end{proof}
+
+\begin{probtag}{probAnd,probOr,probIf,probIff}
+  اثباتِ \olref[nml][com][ccs]{prop:ccs-properties} را کامل کنید.
+\end{probtag}
+
+\end{document}

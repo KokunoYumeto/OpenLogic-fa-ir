@@ -1,0 +1,48 @@
+% Part: normal-modal-logic
+% Chapter: sequent-calculus
+% Section: introduction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{seq}{int}
+
+\olsection{مقدمه}
+
+حساب سکوئنت برای منطق گزاره‌ای را می‌توان با قواعد افزوده‌ای گسترش داد
+که به~\iftag{prvBox}{$\Box$\iftag{prvDiamond}{ و~}{}}{}%
+\iftag{prvDiamond}{$\Diamond$}{} می‌پردازند. برای نمونه، برای~$\Log{K}$،
+\Log{LK} را همراه با قواعد زیر داریم:
+\[
+  \iftag{prvBox}{\iftag{prvDiamond}{% <> and [] primitive
+    \Axiom$\Gamma \fCenter \Delta, !A$
+    \RightLabel{$\Box$}
+    \UnaryInf$\Box\Gamma \fCenter \Diamond\Delta, \Box!A$
+    \DisplayProof  
+    \qquad
+    \Axiom$!A, \Gamma \fCenter \Delta$
+    \RightLabel{$\Diamond$}
+    \UnaryInf$\Diamond!A, \Box\Gamma \fCenter \Diamond\Delta$
+    \DisplayProof
+}{% only Box primitive
+\Axiom$\Gamma \fCenter !A$
+\RightLabel{$\Box$}
+\UnaryInf$\Box\Gamma \fCenter \Box!A$
+\DisplayProof
+}}{% only <> primitive
+  \Axiom$!A \fCenter \Delta$
+  \RightLabel{$\Diamond$}
+  \UnaryInf$\Diamond!A \fCenter \Diamond\Delta$
+  \DisplayProof
+}
+\]
+برای گسترش‌های~$\Log{K}$ باید قواعد دیگری نیز افزوده شوند.
+
+هر منطق موجهاتی چنین حساب سکوئنتی ندارد. حتی~$\Log{S5}$، که از نظر
+معناشناختی ساده است (می‌توان آن را بی‌هیچ استفاده‌ای از روابط
+دسترسی‌پذیری تعریف کرد)، حساب سکوئنتیِ حاصل از~$\Log{LK}$ که بدون
+قاعدهٔ~\Cut{} کامل باشد شناخته‌شده نیست. بااین‌حال، این منطق حساب
+\emph{فراسکوئنت} کامل و بدون برش دارد.
+
+\end{document}

@@ -1,0 +1,35 @@
+% ضمیمهٔ فارسیِ مناسب صفحه‌نمایش؛ ارجاع‌های بیرونی به فایل کمکی نسخهٔ
+% صفحه‌نمایش متصل می‌شوند تا شمارهٔ صفحه و مقصد پیوند یکسان بمانند.
+
+\PassOptionsToClass{12pt,oneside}{memoir}
+\AddToHook{class/memoir/after}{%
+  \setstocksize{11in}{8.5in}%
+  \settrimmedsize{\stockheight}{\stockwidth}{*}%
+  \settrims{0pt}{0pt}%
+  \settypeblocksize{9.45in}{7.1in}{*}%
+  \setlrmarginsandblock{0.70in}{0.70in}{*}%
+  \setulmarginsandblock{0.75in}{0.75in}{*}%
+  \setheadfoot{18pt}{24pt}%
+  \setheaderspaces{8pt}{*}{*}%
+  \checkandfixthelayout
+  \setlength{\emergencystretch}{1.5em}%
+  \setlength{\tabcolsep}{4pt}%
+  \raggedbottom
+}
+
+\newcommand*{\OLCompleteReaderJob}{open-logic-complete-fa-IR-screen}
+\newcommand*{\OLSupplementPDFTitle}{متن منطق باز — ضمیمهٔ فارسی بازچینی‌شده برای صفحه‌نمایش}
+\newcommand*{\OLSupplementEditionTitle}{ضمیمهٔ بازچینی‌شده برای صفحه‌نمایش}
+\newcommand*{\OLSupplementEditionScope}{هشتاد واحدِ بیرون از مسیر خوانشگر}
+\newcommand*{\OLSecondaryEditionSubtitleBlock}{%
+  \vspace{0.55cm}%
+  {\Large\foreignlanguage{english}{Screen-Optimized Closure Supplement}\par}%
+}
+\newcommand*{\OLReleaseDOIBlock}{%
+  {\large DOI مفهومی پایدار: \babelsublr{10.5281/zenodo.21921852}\par}%
+}
+\AddToHook{begindocument/before}{%
+  \hypersetup{pdfstartview=FitH,pdfpagelayout=OneColumn,pdfpagemode=UseOutlines}%
+}
+
+\input{open-logic-closure-supplement-fa-IR.tex}

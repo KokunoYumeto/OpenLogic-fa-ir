@@ -1,0 +1,191 @@
+% Part: first-order-logic
+% Chapter: tableaux
+% Section: proof-theoretic-notions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{tab}{ptn}}
+      {\olfileid{pl}{tab}{ptn}}
+
+\olsection{مفاهیم برهان‌نظری}
+
+\begin{editorial}
+این بخش تعریف‌های رابطهٔ اثبات‌پذیری و سازگاری برای تابلوها را گرد
+می‌آورد.
+\end{editorial}
+
+\begin{explain}
+همان‌گونه که شماری از مفاهیم مهم معنایی (اعتبار، استلزام، ارضاپذیری) را
+تعریف کرده‌ایم، اکنون \emph{مفاهیم برهان‌نظریِ} متناظر را تعریف می‌کنیم.
+این مفاهیم با توسل به ارضای !!{sentence}s در
+\iftag{FOL}{!!{structure}s}{!!{valuation}s} تعریف نمی‌شوند، بلکه با توسل
+به وجود برخی !!{tableau}x بسته تعریف می‌شوند. اینکه این مفاهیم بر هم
+منطبق‌اند کشفی مهم بود. انطباق آن‌ها مضمون \emph{قضیه‌های صحت} و
+\emph{تمامیت} است.
+\end{explain}
+
+
+\begin{defn}[قضیه‌ها]
+!!{sentence}~$!A$ یک \emph{قضیه} است اگر !!{tableau} بسته‌ای برای
+~$\sFmla{\False}{!A}$ وجود داشته باشد. $\Proves !A$ می‌نویسیم اگر
+$!A$ قضیه باشد و اگر نباشد، $\Proves/ !A$.
+\end{defn}
+
+\begin{defn}[!!^{derivability}]
+!!^a{sentence}~$!A$ \emph{!!{derivable} از} مجموعه‌ای از
+!!{sentence}s~$\Gamma$ است، و $\Gamma \Proves !A$، هرگاه و تنها هرگاه
+مجموعه‌ای متناهی $\{!B_1, \dots, !B_n\} \subseteq \Gamma$ و
+!!{tableau} بسته‌ای برای مجموعهٔ زیر وجود داشته باشد:
+\[
+\{
+  \sFmla{\False}{!A},
+  \sFmla{\True}{!B_1}, \dots,
+  \sFmla{\True}{!B_n}
+  \}.
+\]
+اگر $!A$ از $\Gamma$~!!{derivable} نباشد، $\Gamma \Proves/
+!A$ می‌نویسیم.
+\end{defn}
+
+\begin{defn}[سازگاری]
+مجموعه‌ای از !!{sentence}s، یعنی~$\Gamma$، \emph{ناسازگار} است هرگاه و تنها
+هرگاه مجموعه‌ای متناهی $\{!B_1, \dots, !B_n\} \subseteq \Gamma$ و
+!!{tableau} بسته‌ای برای مجموعهٔ زیر وجود داشته باشد:
+\[
+\{
+  \sFmla{\True}{!B_1}, \dots,
+  \sFmla{\True}{!B_n}
+  \}.
+\]
+اگر $\Gamma$ ناسازگار نباشد، می‌گوییم \emph{سازگار} است.
+\end{defn}
+
+\begin{prop}[بازتابی‌بودن]
+\ollabel{prop:reflexivity}
+اگر $!A \in \Gamma$، آنگاه $\Gamma \Proves !A$.
+\end{prop}
+
+\begin{proof}
+اگر $!A \in \Gamma$، آنگاه $\{!A\}$ زیرمجموعه‌ای متناهی از~$\Gamma$ است
+و !!{tableau} زیر بسته است:
+\begin{oltableau}
+  [\sFmla{\False}{\formula{A}}, just = \TAss
+    [\sFmla{\True}{\formula{A}}, just = \TAss,close]
+  ]
+\end{oltableau}
+\end{proof}
+
+
+\begin{prop}[یکنوایی]
+\ollabel{prop:monotonicity}
+اگر $\Gamma \subseteq \Delta$ و $\Gamma \Proves !A$، آنگاه $\Delta
+\Proves !A$.
+\end{prop}
+
+\begin{proof}
+هر زیرمجموعهٔ متناهیِ~$\Gamma$ زیرمجموعهٔ متناهیِ~$\Delta$ نیز هست.
+\end{proof}
+
+\begin{prop}[تعدی]
+\ollabel{prop:transitivity}
+اگر $\Gamma \Proves !A$ و $\{!A\} \cup
+\Delta \Proves !B$، آنگاه $\Gamma \cup \Delta \Proves !B$.
+\end{prop}
+
+\begin{proof}
+اگر $\{!A\} \cup \Delta \Proves !B$، آنگاه زیرمجموعه‌ای متناهی
+$\Delta_0 = \{!C_1, \dots, !C_n\} \subseteq \Delta$ وجود دارد به‌طوری‌که
+\begin{align*}
+\{\sFmla{\False}{!B}, & \sFmla{\True}{!A}, \sFmla{\True}{!C_1},
+\dots, \sFmla{\True}{!C_n}\}
+\intertext{!!{tableau} بسته‌ای دارد. اگر $\Gamma \Proves !A$، آنگاه
+  $!D_1$، \dots، $!D_m \in \Gamma$ وجود دارند به‌طوری‌که}
+\{\sFmla{\False}{!A}, & \sFmla{\True}{!D_1},
+\dots, \sFmla{\True}{!D_m}\}
+\end{align*}
+!!{tableau} بسته‌ای دارد.
+
+اکنون !!{tableau} با فرض‌های زیر را در نظر بگیرید:
+\[
+\sFmla{\False}{!B},
+\sFmla{\True}{!C_1}, \dots, \sFmla{\True}{!C_n},
+\sFmla{\True}{!D_1}, \dots, \sFmla{\True}{!D_m}.
+\]
+قاعدهٔ \Cut{} را بر~$!A$ اعمال کنید. این کار دو شاخه تولید می‌کند که یکی
+$\sFmla{\True}{!A}$ و دیگری $\sFmla{\False}{!A}$ را دربر دارد. پس در
+یک شاخه، همهٔ موارد زیر در دسترس‌اند:
+\[
+\{\sFmla{\False}{!B}, \sFmla{\True}{!A},
+\sFmla{\True}{!C_1}, \dots, \sFmla{\True}{!C_n}\}
+\]
+چون !!{tableau} بسته‌ای برای این فرض‌ها وجود دارد، می‌توانیم آن را به
+شاخه پیوند دهیم؛ هر شاخه‌ای که از $\sFmla{\True}{!A}$ می‌گذرد بسته
+می‌شود. در شاخهٔ دیگر، همهٔ موارد زیر در دسترس‌اند:
+\[
+\{\sFmla{\False}{!A}, \sFmla{\True}{!D_1}, \dots,
+\sFmla{\True}{!D_m}\}
+\]
+پس می‌توانیم سوی دیگر را نیز کامل کنیم تا !!{tableau} بسته‌ای به دست
+آوریم. این امر $\Gamma \cup \Delta \Proves !B$ را نشان می‌دهد.
+\end{proof}
+
+توجه کنید که این به‌ویژه بدان معناست که اگر $\Gamma \Proves !A$ و $!A
+\Proves !B$، آنگاه $\Gamma \Proves !B$. همچنین نتیجه می‌شود که اگر
+$!A_1, \dots, !A_n \Proves !B$ و $\Gamma \Proves !A_i$ برای هر~$i$،
+آنگاه $\Gamma \Proves !B$.
+
+\begin{prop}
+\ollabel{prop:incons}
+$\Gamma$ ناسازگار است هرگاه و تنها هرگاه $\Gamma \Proves !A$ برای هر
+  !!{sentence}~$!A$.
+\end{prop}
+
+\begin{proof}
+تمرین.
+\end{proof}
+
+\tagprob{FOL}
+\begin{prob}
+\olref[fol][tab][ptn]{prop:incons} را ثابت کنید.
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+\olref[pl][tab][ptn]{prop:incons} را ثابت کنید.
+\end{prob}
+\tagendprob
+
+\begin{prop}[فشردگی]
+  \ollabel{prop:proves-compact}
+  \begin{enumerate}
+  \item اگر $\Gamma \Proves !A$، آنگاه زیرمجموعه‌ای متناهی
+    $\Gamma_0 \subseteq \Gamma$ وجود دارد به‌طوری‌که
+    $\Gamma_0 \Proves !A$.
+  \item اگر هر زیرمجموعهٔ متناهیِ~$\Gamma$ سازگار باشد، آنگاه
+    $\Gamma$ سازگار است.
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+    \item اگر $\Gamma \Proves !A$، آنگاه زیرمجموعه‌ای متناهی
+      $\Gamma_0 = \{!B_1, \dots, !B_n\}$ و !!{tableau} بسته‌ای برای
+      \[
+      \{\sFmla{\False}{!A}, \sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\}
+      \]
+      وجود دارد. این !!{tableau} همچنین $\Gamma_0 \Proves !A$ را نشان
+      می‌دهد.
+    \item اگر $\Gamma$ ناسازگار باشد، آنگاه برای زیرمجموعه‌ای متناهی
+      $\Gamma_0 = \{!B_1, \dots, !B_n\}$، !!{tableau} بسته‌ای برای
+      \[
+      \{\sFmla{\True}{!B_1}, \dots, \sFmla{\True}{!B_n}\}
+      \]
+      وجود دارد. این !!{tableau} بسته نشان می‌دهد $\Gamma_0$ ناسازگار است.
+  \end{enumerate}
+\end{proof}
+
+\end{document}

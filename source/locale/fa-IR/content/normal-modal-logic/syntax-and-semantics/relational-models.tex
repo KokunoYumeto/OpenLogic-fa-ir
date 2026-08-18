@@ -1,0 +1,58 @@
+% Part: normal-modal-logic
+% Chapter: syntax-and-semantics
+% Section: relational-models
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{syn}{rel}
+
+\olsection{مدل‌های رابطه‌ای}
+
+مفهوم پایهٔ معناشناسی برای منطق‌های موجهات عادی، مفهوم
+\emph{مدل رابطه‌ای} است. چنین مدلی از مجموعه‌ای از جهان‌ها تشکیل می‌شود
+که با یک «رابطهٔ دسترسی» دوتایی به یکدیگر مرتبط‌اند، به‌همراه یک
+تخصیص که تعیین می‌کند کدام !!{propositional variable} در کدام جهان
+«صادق» به شمار می‌آید.
+
+\begin{defn}
+  یک \emph{مدل} برای زبان پایهٔ موجهات سه‌تاییِ~$\mModel{M}
+  = \tuple{W, R, V}$ است، که در آن
+  \begin{enumerate}
+  \item $W$ مجموعه‌ای ناتهی از «جهان‌ها» است؛
+  \item $R$ یک رابطهٔ دسترسی دوتایی روی~$W$ است؛ و
+  \item $V$ تابعی است که به هر !!{propositional
+    variable}~$p$ مجموعه‌ای از جهان‌های ممکن، یعنی~$V(p)$، نسبت می‌دهد.
+  \end{enumerate}
+  هرگاه~$Rww'$ برقرار باشد، می‌گوییم~$w'$ \emph{از~$w$ دسترس‌پذیر}
+  است. هرگاه~$w \in V(p)$، می‌گوییم~$p$ \emph{در~$w$ صادق} است.
+\end{defn}
+
+مزیت بزرگ معناشناسی رابطه‌ای این است که مدل‌ها را می‌توان با نمودارهای
+ساده‌ای مانند نمودار~\olref{fig:simple} نمایش داد. جهان‌ها با گره‌ها
+نمایش داده می‌شوند، و جهان~$w'$ دقیقاً هنگامی از~$w$ دسترس‌پذیر است که
+پیکانی از~$w$ به~$w'$ وجود داشته باشد. افزون‌براین، هرگاه
+$w \in V(p)$ باشد، گره (جهان) را با~$\mTrue{p}$، و در غیر این صورت
+با~\mFalse{p} برچسب می‌زنیم. \olref{fig:simple} مدلی را نمایش می‌دهد
+که در آن~$W = \{w_1, w_2, w_3\}$،
+$R = \{\tuple{w_1, w_2},\tuple{w_1, w_3}\}$،
+$V(p) = \{w_1, w_2\}$ و~$V(q) = \{w_2\}$ است.
+
+\begin{figure}
+  \begin{center}
+    \begin{tikzpicture}[modal]
+      \node[world] (w1) [label={[align=right]right:\mTrue{p}\\ \mFalse{q}}]{$w_1$}; 
+      \node[world] (w2) [label={[align=right]right:\mTrue{p}\\ \mTrue{q}},
+        above right=of w1]{$w_2$}; 
+      \node[world] (w3) [label={[align=right]right:\mFalse{p}\\ \mFalse{q}},
+        below right=of w1] {$w_3$};
+      \draw[->] (w1) to (w2);
+      \draw[->] (w1) to (w3);
+    \end{tikzpicture}
+  \end{center}
+  \caption{یک مدل ساده.}
+  \ollabel{fig:simple}
+\end{figure}
+
+\end{document}

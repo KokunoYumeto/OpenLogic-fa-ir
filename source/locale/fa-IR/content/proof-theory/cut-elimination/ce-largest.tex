@@ -1,0 +1,353 @@
+% Part: proof-theory
+% Chapter: cut-elimination
+% Section: ce-largest
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{cut}{inv}
+
+\olsection{حذف بزرگ‌ترین برش‌ها}
+
+اثبات \olref[seq][inv]{lem:G3c-invert} نشان داد که اگر \Log{G3c}
+نتیجهٔ یک قاعدهٔ منطقی، جز \RightR{\lexists} و
+\LeftR{\lforall}، را !!{prove} کند، هر یک از مقدمات آن قاعده را نیز
+!!{prove} می‌کند، بی‌آنکه !!{height} برهان افزایش یابد. می‌توانیم نتیجه‌ای
+قوی‌تر نشان دهیم: این امر برای $\Log{G3c}+\CutCS$ نیز برقرار است.
+
+مانند پیش، \emph{رتبهٔ برش} یک استنتاج \CutCS{} را عمق
+!!{formula} برش آن می‌گیریم.
+
+\begin{lem}\ollabel{lem:inv-G3c-cut}
+اگر $\Log{G3c}+\CutCS$ نتیجهٔ یک قاعدهٔ منطقی~$R$، جز
+\RightR{\lexists} یا \LeftR{\lforall}، را !!{prove} کند و این کار را با
+!!a{proof}~$\pi$ انجام دهد، هر مقدمه را نیز !!{prove} می‌کند، با
+!!{proof}~$\pi'$ (یا با !!{proof}های~$\pi'$ و~$\pi''$، برحسب اینکه
+قاعده یک یا دو مقدمه دارد). افزون بر این:
+(الف)~$\pheight{\pi'}\le\pheight{\pi}$ (و
+$\pheight{\pi''}\le\pheight{\pi}$)؛ و
+(ب)~شمار استنتاج‌های \CutCS{} و نیز رتبه‌هایشان در~$\pi'$ (و
+$\pi''$) همان است که در~$\pi$ بود.
+\end{lem}
+
+\begin{proof}
+اثبات‌های
+\cref{pt:seq:inv:lem:G3c-invert,pt:seq:inv:lem:invert-quant}
+را بررسی کنید. آن اثبات با استقرا بر~$\pheight{\pi}$ بود. در حالت
+پایه، یک اصل را با اصلی دیگر جایگزین کردیم؛ پس شرط‌های (الف) و~(ب)
+بدیهی‌اند. اگر آخرین قاعدهٔ~$\pi$ همان~$R$ باشد، زیر-!!{proof}های
+بی‌واسطهٔ آن همان !!{proof}های~$\pi_i$ مطلوب‌اند و هر دو شرط برقرارند.
+در همهٔ حالت‌های دیگر، اگر آخرین استنتاج~$S$ باشد، فرض استقرا را بر
+زیر-!!{proof}های بی‌واسطهٔ~$\pi$، یعنی برهان‌های منتهی به مقدمه یا
+مقدمات~$S$، اعمال می‌کنیم و سپس همان قاعدهٔ~$S$ را دوباره بر نتایج
+اعمال می‌کنیم. شرط‌های (الف) و~(ب) برای زیر-!!{proof}های بی‌واسطهٔ
+برهان تازه برقرارند و بنابراین برای کل برهان نیز برقرارند. فقط باید
+حالتی را بررسی کنیم که آخرین استنتاج \CutCS است. باز تنها یک نمونه را
+می‌آوریم: فرض کنید $\pi$ !!a{proof}ی برای نتیجهٔ
+$!B \land !C, \Gamma \Sequent \Delta$ از \LeftR{\land} باشد و به
+~\CutCS پایان یابد:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$!B \land !C, \Gamma \fCenter \Delta, !A$
+\AxiomC{}
+\RightLabel{$\pi_2$}
+\Deduce$!A, !B \land !C, \Gamma \fCenter \Delta$
+\RightLabel{\CutCS}
+\BinaryInf$!B \land !C, \Gamma \fCenter \Delta$
+\DisplayProof
+\]
+فرض استقرا بر $\pi_1$ و~$\pi_2$ اعمال می‌شود، زیرا آن‌ها نیز
+!!{proof}هایی از نمونه‌های نتیجهٔ \LeftR{\land} هستند، و
+!!{proof}های~$\pi_1'$ و~$\pi_2'$ را به‌ترتیب برای
+$!B,!C,\Gamma \fCenter \Delta,!A$ و
+$!A,!B,!C,\Gamma \fCenter \Delta$ به دست می‌دهد. آن‌ها را با
+\CutCS{} ترکیب می‌کنیم تا~$\pi'$ حاصل شود:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$!B, !C, \Gamma \fCenter \Delta, !A$
+\AxiomC{}
+\RightLabel{$\pi_2'$}
+\Deduce$!A, !B, !C, \Gamma \fCenter \Delta$
+\RightLabel{\CutCS}
+\BinaryInf$!B, !C, \Gamma \fCenter \Delta$
+\DisplayProof
+\]
+آشکار است که (الف) و~(ب) برقرارند.
+\end{proof}
+
+توجه کنید اگر به جای \CutCS از \Cut{} استفاده می‌کردیم این استدلال
+کار نمی‌کرد، زیرا نتیجهٔ آخرین !!{proof} در مقدم دو نسخه از
+$!B,!C,\Gamma$ و در تالی دو نسخه از~$\Delta$ داشت. ناچار بودیم به
+پذیرفتنی‌بودن انقباض استناد کنیم، اما اثبات
+\olref[seq][inv]{prop:G3c-cont-adm} از لم وارون‌پذیری استفاده می‌کند؛
+پس استدلال دوری می‌شد.
+
+می‌توانیم با \cref{pt:cut:inv:lem:inv-G3c-cut} اثبات دیگری برای حذف
+برش ارائه کنیم. در این اثبات رخدادهای بالاترین استنتاج‌های \CutCS{}
+را پی‌درپی حذف نمی‌کنیم، بلکه رخدادهای استنتاج‌های \CutCS{} با رتبهٔ
+بیشینه را حذف می‌کنیم. یعنی با !!a{proof}~$\pi$ در
+$\Log{G3c}+\CutCS$ آغاز می‌کنیم، برشی را در هر جای آن حذف می‌کنیم
+(و شاید آن را با برش‌هایی با رتبهٔ کمتر جایگزین کنیم)، و این کار را
+تا وقتی هیچ برشی نماند ادامه می‌دهیم. تنها شرط این است که بالای برشی
+که با آن کار می‌کنیم، هیچ برشی با همان رتبه یا رتبه‌ای بالاتر نباشد.
+
+\begin{lem}\ollabel{lem:max-cut-red-G3c}
+اگر $\pi$ !!a{proof}ی در $\Log{G3c}+\CutCS$ باشد که به استنتاج
+\CutCS{} با رتبهٔ~$n$ پایان می‌یابد و در جای دیگر فقط از قواعد
+~\Log{G3c} و استنتاج‌های \CutCS{} با رتبهٔ~$<n$ استفاده کند، آنگاه
+برهانی~$\pi'$ برای همان دنبالهٔ پایانی در
+$\Log{G3c}+\CutCS$ وجود دارد که هر استنتاج \CutCS{} در آن رتبهٔ
+~$<n$ دارد.
+\end{lem}
+
+\begin{proof}
+!!{proof}~$\pi$ چنین پایان می‌یابد:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\Gamma \fCenter \Delta, !A$
+\AxiomC{}
+\RightLabel{$\pi_2$}
+\Deduce$!A, \Gamma \fCenter \Delta$
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta$
+\DisplayProof
+\]
+حالت‌ها را برحسب شکل~$!A$ جدا می‌کنیم.
+
+فرض کنید $!A$ اتمی است. چون همهٔ استنتاج‌های \CutCS{} در~$\pi_1$ و
+$\pi_2$ باید رتبه‌ای کمتر از $\depth{!A}=0$ داشته باشند، هیچ استنتاج
+\CutCS{}ای در آن‌ها وجود ندارد. با استقرا بر~$\pheight{\pi_2}$ نشان
+می‌دهیم $\Gamma \Sequent \Delta$ برهانی بدون برش دارد. اگر
+$\pheight{\pi_2}=0$، آنگاه $!A,\Gamma\Sequent\Delta$ یک اصل است. اگر
+$!A$ اصلی نباشد، یک $!C$ اتمی !!a{element} هم~$\Gamma$ و هم~$\Delta$
+است و خود $\Gamma\Sequent\Delta$ یک اصل است. اگر $!A$ اصلی باشد،
+آنگاه $\Delta=\Delta',!A$. در این حالت $\pi_1$ به
+$\Gamma\Sequent\Delta',!A,!A$ پایان می‌یابد. با اعمال
+\olref[seq][inv]{prop:G3c-cont-adm}، یعنی پذیرفتنی‌بودن انقباض، برهانی
+بدون برش برای $\Gamma\Sequent\Delta',!A$ به دست می‌آوریم.
+
+اگر $\pheight{\pi_2}>0$، برهان به قاعده‌ای~$R$ پایان می‌یابد. یک
+مقدمهٔ آن قاعده را در نظر بگیرید؛ شکل آن
+$!A,\Gamma',\Pi\Sequent\Delta',\Lambda$ است، که $\Pi$ و~$\Lambda$
+!!{formula}های فعال~$R$ هستند. اعمال
+\olref[seq][adm]{prop:weak-G3c-adm} بر~$\pi_1$ و~$\pi_2$،
+!!{proof}هایی برای
+$\Gamma,\Gamma',\Pi\Sequent\Delta,\Delta',\Lambda,!A$ و
+$!A,\Gamma,\Gamma',\Pi\Sequent\Delta,\Delta',\Lambda$ به دست می‌دهد
+که فرض استقرا بر آن‌ها اعمال می‌شود. برای هر مقدمهٔ~$R$،
+!!a{proof}ی برای
+$\Gamma,\Gamma',\Pi\Sequent\Delta,\Delta',\Lambda$ حاصل می‌شود. با
+اعمال~$R$ به $\Gamma,\Gamma\Sequent\Delta,\Delta$ می‌رسیم و
+\olref[seq][inv]{prop:G3c-cont-adm} برهان بدون برش
+$\Gamma\Sequent\Delta$ را فراهم می‌کند.
+
+اگر $!A$ اتمی نباشد، حالت‌ها را برحسب !!{main operator} آن جدا
+می‌کنیم. در هر حالت \olref{lem:inv-G3c-cut} را به کار می‌بریم تا
+!!{proof}های مقدمات قواعد چپ و راست را که $!A$ در آن‌ها فرمول اصلی
+است به دست آوریم. سپس مانند حالت~E در اثبات
+\olref[top]{lem:cut-adm-G3c} پیش می‌رویم.
+\begin{enumerate}
+  \item $!A\ident\lnot !B$. !!{proof}های~$\pi_1$ و~$\pi_2$ به
+  $\Gamma\Sequent\Delta,\lnot !B$ و
+  $\lnot !B,\Gamma\Sequent\Delta$ پایان می‌یابند. بنا بر
+  \olref{lem:inv-G3c-cut}، !!{proof}های~$\pi_1'$ و~$\pi_2'$ برای
+  $!B,\Gamma\Sequent\Delta$ و $\Gamma\Sequent\Delta,!B$ وجود دارند.
+  !!{proof}~$\pi'$ چنین است:
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_2'$}
+  \Deduce$\Gamma \fCenter \Delta, !B$
+  \AxiomC{}
+  \RightLabel{$\pi_1'$}
+  \Deduce$!B, \Gamma \fCenter \Delta$
+  \RightLabel{\CutCS}
+  \BinaryInf$\Gamma \fCenter \Delta$
+  \DisplayProof
+  \]
+
+  \item $!A\ident(!B\lor !C)$. !!{proof}های~$\pi_1$ و~$\pi_2$ به
+  $\Gamma\Sequent\Delta,!B\lor !C$ و
+  $!B\lor !C,\Gamma\Sequent\Delta$ پایان می‌یابند. بنا بر
+  \olref{lem:inv-G3c-cut}، با وارون‌سازی \RightR{\lor} در~$\pi_1$،
+  !!a{proof}~$\pi_1'$ برای $\Gamma\Sequent\Delta,!B,!C$ وجود دارد.
+  بنا بر \olref{lem:inv-G3c-cut}، با وارون‌سازی \LeftR{\lor} در~$\pi_2$،
+  !!a{proof}~$\pi_2'$ برای
+  $!B,\Gamma\Sequent\Delta$ و !!a{proof}~$\pi_2''$ برای
+  $!C,\Gamma\Sequent\Delta$ وجود دارند. با اعمال
+  \olref[seq][adm]{prop:weak-G3c-adm} بر~$\pi_2''$ نیز
+  !!a{proof}~$\pi_2'''$ برای $!C,\Gamma\Sequent\Delta,!B$ به دست
+  می‌آوریم. !!{proof}~$\pi'$ چنین است:
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_1'$}
+  \Deduce$\Gamma \fCenter \Delta, !B, !C$
+  \AxiomC{}
+  \RightLabel{$\pi_2'''$}
+  \Deduce$!C, \Gamma \fCenter \Delta, !B$
+  \RightLabel{\CutCS}
+  \BinaryInf$\Gamma \fCenter \Delta, !B$
+  \AxiomC{}
+  \RightLabel{$\pi_2'$}
+  \Deduce$!B, \Gamma \fCenter \Delta$
+  \RightLabel{\CutCS}
+  \BinaryInf$\Gamma \fCenter \Delta$
+  \DisplayProof
+  \]
+
+  \item $!A\ident(!B\land !C)$. تمرین.
+
+  \item $!A\ident(!B\lif !C)$. !!{proof}های~$\pi_1$ و~$\pi_2$ به
+  $\Gamma\Sequent\Delta,!B\lif !C$ و
+  $!B\lif !C,\Gamma\Sequent\Delta$ پایان می‌یابند. بنا بر
+  \olref{lem:inv-G3c-cut}، با وارون‌سازی \RightR{\lif} در~$\pi_1$،
+  !!a{proof}~$\pi_1'$ برای $!B,\Gamma\Sequent\Delta,!C$ وجود دارد.
+  بنا بر \olref{lem:inv-G3c-cut}، با وارون‌سازی \LeftR{\lif} در~$\pi_2$،
+  !!a{proof}~$\pi_2'$ برای
+  $\Gamma\Sequent\Delta,!B$ و !!a{proof}~$\pi_2''$ برای
+  $!C,\Gamma\Sequent\Delta$ وجود دارند. با اعمال
+  \olref[seq][adm]{prop:weak-G3c-adm} بر~$\pi_2''$ نیز
+  !!a{proof}~$\pi_2'''$ برای $!C,!B,\Gamma\Sequent\Delta$ به دست
+  می‌آوریم. !!{proof}~$\pi'$ چنین است:
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_2'$}
+  \Deduce$\Gamma \fCenter \Delta, !B$
+  \AxiomC{}
+  \RightLabel{$\pi_1'$}
+  \Deduce$!B, \Gamma \fCenter \Delta, !C$
+  \AxiomC{}
+  \RightLabel{$\pi_2'''$}
+  \Deduce$!C, !B, \Gamma \fCenter \Delta$
+  \RightLabel{\CutCS}
+  \BinaryInf$!B, \Gamma \fCenter \Delta$
+  \RightLabel{\CutCS}
+  \BinaryInf$\Gamma \fCenter \Delta$
+  \DisplayProof
+  \]
+
+  \item $!A\ident\lforall[x][!B(x)]$. !!{proof}های~$\pi_1$ و~$\pi_2$
+  به $\Gamma\Sequent\Delta,\lforall[x][!B(x)]$ و
+  $\lforall[x][!B(x)],\Gamma\Sequent\Delta$ پایان می‌یابند. بنا بر
+  \olref{lem:inv-G3c-cut}، !!a{proof}~$\pi_1'$ برای
+  $\Gamma\Sequent\Delta,!B(c)$ وجود دارد.
+
+  اکنون !!{proof}~$\pi_2$ را در نظر بگیرید. این برهان به
+  $\lforall[x][!B(x)],\Gamma\Sequent\Delta$ پایان می‌یابد. از دنبالهٔ
+  پایانی~$\pi_2$ رو به بالا حرکت کنید و هر رخداد
+  $\lforall[x][!B(x)]$ در سمت چپ دنباله‌ای را علامت بزنید که به رخداد
+  $\lforall[x][!B(x)]$ در دنبالهٔ پایانی~$\pi_2$ «می‌انجامد»:
+  (الف)~$\lforall[x][!B(x)]$ را در دنبالهٔ پایانی~$\pi_2$ علامت
+  بزنید. (ب)~اگر $\lforall[x][!B(x)]$ در بافت نتیجهٔ قاعده‌ای ظاهر
+  شده و علامت خورده است، رخداد متناظر آن را در مقدمه یا مقدمات قاعده
+  علامت بزنید. (ج)~اگر $\lforall[x][!B(x)]$ در نتیجهٔ یک قاعدهٔ
+  \LeftR{\lforall} اصلی و علامت‌خورده است، رخدادهای فعال متناظر
+  $\lforall[x][!B(x)]$ و~$!B(t)$ را در مقدمه علامت بزنید.
+
+  همهٔ رخدادهای علامت‌خوردهٔ $\lforall[x][!B(x)]$ را در نظر بگیرید.
+  هیچ‌یک در قاعده‌ای جز \LeftR{\lforall} فعال نیستند، زیرا فقط
+  !!{formula}های فعال \LeftR{\lforall} علامت می‌خورند. همهٔ رخدادهای
+  علامت‌خوردهٔ $\lforall[x][!B(x)]$ را از~$\pi_2$ حذف کنید.
+  اگر حاصل یک !!{proof} درست باشد، رخدادهای علامت‌خورده هرگز فعال
+  نبوده‌اند و همگی مستقیماً از اصول آمده‌اند. !!{proof} حاصل به
+  ~$\Gamma\Sequent\Delta$ پایان می‌یابد و می‌توانیم $\pi$ را با آن
+  جایگزین کنیم. بدین‌سان یک برش با رتبهٔ بیشینه حذف کرده‌ایم.
+
+  در غیر این صورت، حاصل برهان درستی نیست، زیرا !!{formula}های
+  $\lforall[x][!B(x)]$ را حذف کرده‌ایم که در برخی استنتاج‌های
+  \LeftR{\lforall} فعال بوده‌اند. آن‌ها را به «استنتاج»هایی به شکل
+  زیر تبدیل کرده‌ایم:
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_t$}
+  \Deduce$!B(t), \Pi \fCenter \Lambda$
+  \RightLabel{\LeftR{\lforall}}
+  \UnaryInf$\Pi \fCenter \Lambda$
+  \DisplayProof
+  \]
+  هر بالاترین «استنتاج» از این نوع را با برهان زیر جایگزین کنید:
+  \[
+  \AxiomC{}
+  \RightLabel{$\Subst{\pi_1'}{t}{c}[\Pi \Sequent \Lambda]$}
+  \Deduce$\Gamma, \Pi \fCenter \Delta, \Lambda, !B(t)$
+  \AxiomC{}
+  \RightLabel{$\pi_t[\Gamma \Sequent \Delta]$}
+  \Deduce$!B(t), \Gamma, \Pi \fCenter \Delta, \Lambda$
+  \RightLabel{\CutCS}
+  \BinaryInf$\Gamma, \Pi \fCenter \Delta, \Lambda$
+  \DisplayProof
+  \]
+  و به سمت چپ هر دنبالهٔ پایین آن~$\Gamma$ و به سمت راستش~$\Delta$
+  را بیفزایید. این کار را تکرار کنید تا همهٔ «استنتاج»های
+  \LeftR{\lforall} که یک $!B(t)$ علامت‌خورده در مقدمه دارند با
+  استنتاج \CutCS{} بر یک~$!B(t)$ جایگزین شوند. دنبالهٔ پایانی
+  !!{proof} حاصل، که اکنون واقعاً یک !!{proof} درست است، به شکل
+  $\Gamma,\dots,\Gamma\Sequent\Delta,\dots,\Delta$ است. پذیرفتنی‌بودن
+  انقباض را اعمال کنید تا !!a{proof}ی برای~$\Gamma\Sequent\Delta$
+  به دست آید و $\pi$ را با آن جایگزین کنید. یک برش بر
+  $\lforall[x][!B(x)]$ را با شاید چندین برش بر~$!B(t)$ جایگزین
+  کرده‌ایم، اما همهٔ آن‌ها رتبهٔ کمتری دارند. برش‌های موجود در~$\pi_1$
+  یا~$\pi_2$ باقی می‌مانند و آن‌ها نیز همگی رتبهٔ کمتری دارند.
+\end{enumerate}
+\end{proof}
+
+\begin{prob}
+حالت $!A\ident(!B\land !C)$ را در اثبات
+\olref{lem:max-cut-red-G3c} بررسی کنید. یعنی نشان دهید اگر
+!!a{proof}~$\pi$ای وجود داشته باشد که چنین پایان می‌یابد:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\Gamma \fCenter \Delta, !B \land !C$
+\AxiomC{}
+\RightLabel{$\pi_2$}
+\Deduce$!B \land !C, \Gamma \fCenter \Delta$
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta$
+\DisplayProof
+\]
+و $\pi_1$ و~$\pi_2$ فقط برش‌هایی با رتبهٔ
+$<\depth{!B\land !C}$ داشته باشند، آنگاه !!a{proof}~$\pi'$ای برای
+$\Gamma\Sequent\Delta$ وجود دارد که فقط برش‌هایی با رتبهٔ
+$<\depth{!B\land !C}$ دارد.
+\end{prob}
+
+% \begin{prob}
+% Verify the case where $!A \ident \lexists[x][!B(x)]$ in the proof of
+% \olref{lem:inv-G3c-cut}.
+% \end{prob}
+
+\olref{lem:max-cut-red-G3c} ثابت می‌کند که می‌توان یک استنتاج \CutCS{}
+با بالاترین رتبه در !!a{proof} را با استنتاج‌های \CutCS{} با رتبهٔ
+کمتر جایگزین کرد. باز می‌توانیم از این لم استفاده کنیم تا هر تعداد
+استنتاج \CutCS{} را از !!a{proof} حذف کنیم: آن را پی‌درپی بر بالاترین
+زیر-!!{proof}هایی اعمال می‌کنیم که به \CutCS{} بیشینه پایان می‌یابند.
+
+\begin{thm}\ollabel{thm:cut-elim-G3c-largest}
+هر !!{proof}~$\pi$ در $\Log{G3c}+\CutCS$ را می‌توان به برهانی در
+~\Log{G3c} تبدیل کرد.
+\end{thm}
+
+\begin{proof}
+نخست ثابت می‌کنیم همهٔ برش‌های با رتبهٔ بیشینه در~$\pi$ را می‌توان
+حذف کرد. بگذارید $d$ رتبهٔ بیشینهٔ برش‌های موجود در~$\pi$ و $n$ شمار
+برش‌های رتبهٔ~$d$ باشد. با استقرا بر~$n$ پیش می‌رویم. اگر $n=0$ چیزی
+برای اثبات نیست. اگر $n>0$، یک بالاترین برش با رتبهٔ~$d$ را برگزینید
+و بگذارید $\pi_1$ زیر-!!{proof} منتهی به آن باشد. بنا بر
+\olref{lem:max-cut-red-G3c}، !!a{proof}~$\pi_1'$ای برای همان دنبالهٔ
+پایانی وجود دارد که همهٔ برش‌هایش رتبهٔ~$<d$ دارند. $\pi_1$ را در
+~$\pi$ با~$\pi_1'$ جایگزین کنید. !!a{proof} حاصل $n-1$ برش با
+رتبهٔ~$d$ دارد و فرض استقرا اعمال می‌شود.
+
+اکنون نتیجه با استقرا بر~$d$ به دست می‌آید. اگر $d=0$، همهٔ برش‌ها
+اتمی‌اند و بنا بر نتیجهٔ پیشین می‌توان همه را حذف کرد. اگر $d>0$،
+نتیجهٔ پیشین برهانی می‌دهد که در آن همهٔ برش‌های رتبهٔ~$d$ با
+برش‌هایی با رتبهٔ~$<d$ جایگزین شده‌اند. چون $d$ رتبهٔ بیشینهٔ
+برش‌های~$\pi$ بود، اکنون برهانی داریم که رتبهٔ بیشینهٔ برش‌های آن
+$<d$ است و فرض استقرا اعمال می‌شود.
+\end{proof}
+
+\end{document}

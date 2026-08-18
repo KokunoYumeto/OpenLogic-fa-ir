@@ -1,0 +1,328 @@
+% Part: turing-machines
+% Chapter: undecidability
+% Section: verification
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{tur}{und}{ver}
+\olsection{بررسی بازنمایی}
+
+\begin{explain}
+برای بررسی اینکه بازنمایی ما کار می‌کند باید دو چیز را ثابت کنیم.
+نخست باید نشان دهیم اگر $M$ روی ورودی~$w$ متوقف شود، آنگاه
+$!T(M,w)\lif !E(M,w)$ معتبر است. سپس باید عکس آن را نشان دهیم؛ یعنی
+اگر $!T(M,w)\lif !E(M,w)$ معتبر باشد، $M$ در اجرای روی ورودی~$w$ در
+واقع سرانجام متوقف می‌شود.
+
+راهبرد اثبات این دو نتیجه بسیار متفاوت است. برای نتیجهٔ نخست باید
+نشان دهیم !!a{sentence}ای از منطق مرتبه‌اول (یعنی
+$!T(M,w)\lif !E(M,w)$) معتبر است. ساده‌ترین راه، ارائهٔ !!a{derivation}ی
+برای آن است. اما قرار است اثبات ما برای همهٔ $M$ و~$w$ کار کند؛ پس
+در واقع یک !!{sentence}ٔ منفرد نداریم که برایش !!a{derivation} بدهیم، بلکه
+بی‌نهایت جمله داریم. بنابراین بهترین کاری که می‌توانیم بکنیم این است
+که با استقرا ثابت کنیم $M$ و~$w$ هرچه باشند و توقف~$M$ روی ورودی~$w$
+هرچند گام طول بکشد، !!a{derivation}ی از $!T(M,w)\lif !E(M,w)$ وجود دارد.
+
+طبعاً استقرای ما بر تعداد گام‌هایی پیش می‌رود که $M$ تا رسیدن به
+پیکربندی توقف برمی‌دارد. در اثبات استقرایی نشان می‌دهیم به ازای هر
+گام~$n$ از اجرای~$M$ روی ورودی~$w$ تا و شامل نخستین پیکربندی توقف،
+$!T(M,w)\Entails !C(M,w,n)$، که در آن $!C(M,w,n)$ پیکربندی~$M$ را پس
+از اجرای~$n$ گام روی~$w$ به‌درستی توصیف می‌کند. حال اگر $M$ مثلاً پس
+از~$n$ گام روی~$w$ متوقف شود، $!C(M,w,n)$ پیکربندی توقف را توصیف
+خواهد کرد. همچنین نشان می‌دهیم هرگاه $!C(M,w,n)$ پیکربندی توقف را
+توصیف کند، $!C(M,w,n)\Entails !E(M,w)$. پس اگر $M$ روی ورودی~$w$
+متوقف شود، برای بعضی~$n$ پس از~$n$ گام در پیکربندی توقف خواهد بود.
+بنابراین $!T(M,w)\Entails !C(M,w,n)$، که در آن $!C(M,w,n)$ پیکربندی
+توقف را توصیف می‌کند؛ و چون در این حالت
+$!C(M,w,n)\Entails !E(M,w)$، به
+$!T(M,w)\Entails !E(M,w)$، یعنی
+$\Entails !T(M,w)\lif !E(M,w)$، می‌رسیم.
+
+راهبرد اثبات عکس بسیار متفاوت است. اینجا فرض می‌کنیم
+$\Entails !T(M,w)\lif !E(M,w)$ و باید ثابت کنیم $M$ روی ورودی~$w$
+متوقف می‌شود. از فرض نتیجه می‌گیریم
+$!T(M,w)\Entails !E(M,w)$؛ یعنی $!E(M,w)$ در هر !!{structure}ی که
+$!T(M,w)$ در آن صادق است، صادق خواهد بود. پس !!a{structure}ی چون
+$\Struct{M}$ توصیف می‌کنیم که $!T(M,w)$ در آن صادق است: دامنهٔ آن
+$\Nat$ خواهد بود و تعبیر همهٔ $\Obj Q_q$ها و~$\Obj S_\sigma$ها را
+پیکربندی‌های~$M$ هنگام اجرای روی ورودی~$w$ تعیین می‌کنند. برای نمونه،
+$\Sat{M}{\Obj Q_q(\num{m},\num{n})}$ اگر و تنها اگر $M$ پس از اجرای
+$n$ گام روی ورودی~$w$ در حالت~$q$ باشد و خانهٔ~$m$ را پویش کند. اکنون
+چون بنا بر فرض $!T(M,w)\Entails !E(M,w)$، و بنا بر ساخت
+$\Sat{M}{!T(M,w)}$، داریم $\Sat{M}{!E(M,w)}$. اما
+$\Sat{M}{!E(M,w)}$ اگر و تنها اگر $n\in\Domain{M}=\Nat$ای وجود داشته
+باشد که $M$ پس از اجرای~$n$ گام روی ورودی~$w$ در پیکربندی توقف باشد.
+\end{explain}
+
+\begin{defn}
+بگذارید $!C(M,w,n)$ !!{sentence}ٔ زیر باشد:
+\[
+\Obj Q_q(\num{m}, \num{n}) \land \Obj S_{\sigma_0}(\num{0}, \num{n})
+\land \dots \land \Obj S_{\sigma_k}(\num{k}, \num{n}) \land
+\lforall[x][(\num{k} < x \lif \Obj S_\TMblank(x, \num{n}))]
+\]
+که در آن $q$ حالت~$M$ در زمان~$n$ است، $M$ در زمان~$n$ خانهٔ~$m$ را
+پویش می‌کند، خانهٔ~$i$ در زمان~$n$ برای $0\le i\le k$ شامل نماد
+$\sigma_i$ است، و~$k$ بزرگ‌ترِ این دو است: شمارهٔ راست‌ترین خانهٔ
+ناخالیِ نوار در زمان~$0$ و شمارهٔ راست‌ترین خانه‌ای که سر نوار پس از
+$n$ گام دیده است.
+\end{defn}
+
+\begin{lem}\ollabel{lem:halt-config-implies-halt}
+اگر اجرای~$M$ روی ورودی~$w$ پس از~$n$ گام در پیکربندی توقف باشد،
+$!C(M,w,n)\Entails !E(M,w)$.
+\end{lem}
+
+\begin{proof}
+فرض کنید $M$ پس از~$n$ گام برای ورودی~$w$ متوقف شود. حالت~$q$،
+خانهٔ~$m$ و نماد~$\sigma$ای وجود دارند به‌گونه‌ای که:
+\begin{enumerate}
+\item پس از~$n$ گام، $M$ در حالت~$q$ خانهٔ~$m$ را که روی آن
+  $\sigma$ قرار دارد پویش می‌کند؛
+\item تابع گذار~$\delta(q,\sigma)$ تعریف‌نشده است.
+\end{enumerate}
+$!C(M,w,n)$ توصیف این پیکربندی است و بندهای
+$\Obj Q_q(\num{m},\num{n})$ و
+$\Obj S_\sigma(\num{m},\num{n})$ را در بر دارد. این دو بند در کنار هم
+$!E(M,w)$ را نتیجه می‌دهند:
+\[
+\lexists[x][\lexists[y][(\bigvee_{\tuple{q, \sigma} \in
+      X}(\Obj Q_q(x, y) \land \Obj S_\sigma(x, y)))]]
+\]
+زیرا
+$\Obj Q_q(\num{m},\num{n})\land\Obj S_\sigma(\num{m},\num{n})
+\Entails \bigvee_{\tuple{q',\sigma'}\in X}
+(\Obj Q_{q'}(\num{m},\num{n})\land
+\Obj S_{\sigma'}(\num{m},\num{n}))$، چون
+$\tuple{q,\sigma}\in X$.
+\end{proof}
+
+\begin{explain}
+پس اگر $M$ برای ورودی~$w$ متوقف شود، $n$ای وجود دارد که
+$!C(M,w,n)\Entails !E(M,w)$. اکنون نشان می‌دهیم برای هر زمان~$n$ که
+$M$ پیش از انجام~$n$ گام متوقف نشده باشد،
+$!T(M,w)\Entails !C(M,w,n)$.
+\end{explain}
+
+\begin{lem}
+\ollabel{lem:config}
+برای هر~$n$، اگر $M$ پیش از انجام~$n$ گام متوقف نشده باشد، آنگاه
+$!T(M,w)\Entails !C(M,w,n)$.
+\end{lem}
+
+\begin{proof}
+پایهٔ استقرا: اگر $n=0$، عطف‌های~$!C(M,w,0)$ عطف‌های~$!T(M,w)$ نیز
+هستند و بنابراین از آن نتیجه می‌شوند.
+
+فرض استقرا: اگر $M$ پیش از گام $n$اُم متوقف نشده باشد، آنگاه
+$!T(M,w)\Entails !C(M,w,n)$. باید نشان دهیم (مگر آنکه
+$!C(M,w,n)$ پیکربندی توقف را توصیف کند)
+$!T(M,w)\Entails !C(M,w,n+1)$.
+
+فرض کنید $n\ge 0$ و~$M$ که روی~$w$ آغاز شده است پس از~$n$ گام در
+حالت~$q$ خانهٔ~$m$ را پویش کند. چون $M$ پس از~$n$ گام متوقف نمی‌شود،
+دستوری از یکی از سه صورت زیر باید در برنامهٔ~$M$ باشد:
+
+\begin{enumerate}
+\item \ollabel{right} $\delta(q, \sigma) = \tuple{q', \sigma', \TMright}$
+
+\item \ollabel{left} $\delta(q, \sigma) = \tuple{q', \sigma', \TMleft}$
+
+\item \ollabel{stay} $\delta(q, \sigma) = \tuple{q', \sigma', \TMstay}$
+\end{enumerate}
+
+هر یک از این سه حالت را به‌ترتیب بررسی می‌کنیم.
+
+\begin{enumerate}
+\item فرض کنید دستوری از صورت~\olref{right} وجود دارد. بنا بر
+  \olref[rep]{defn:tm-descr}\olref[rep]{rep-right}، این یعنی
+\begin{align*}
+& \lforall[x][\lforall[y][((\Obj Q_{q}(x,
+  y) \land \Obj S_\sigma(x, y)) \lif {}]]\\
+& \qquad (\Obj Q_{q'}(x',
+  y') \land \Obj S_{\sigma'}(x, y') \land !A(x, y)))
+\intertext{عطفی از $!T(M,w)$ است. این فرمول !!{sentence}ٔ زیر را نتیجه
+  می‌دهد (با نمونه‌سازی همگانیِ $\num{m}$ برای~$x$ و~$\num{n}$
+  برای~$y$):}
+& (\Obj Q_{q}(\num{m}, \num{n}) \land \Obj S_{\sigma}(\num{m},
+\num{n})) \lif {}\\
+& \qquad (\Obj Q_{q'}(\num{m}', \num{n}') \land
+\Obj S_{\sigma'}(\num{m}, \num{n}') \land !A(\num{m}, \num{n})).
+\intertext{بنا بر فرض استقرا، $!T(M,w)\Entails !C(M,w,n)$؛ یعنی}
+& \Obj Q_q(\num{m}, \num{n}) \land \Obj S_{\sigma_0}(\num{0}, \num{n})
+\land \dots \land \Obj S_{\sigma_k}(\num{k}, \num{n}) \land \\
+& \qquad\lforall[x][(\num{k} < x \lif \Obj S_\TMblank(x, \num{n}))]\\
+\intertext{چون پس از~$n$ گام خانهٔ~$m$ شامل~$\sigma$ است، عطف متناظر
+  $\Obj S_\sigma(\num{m},\num{n})$ است؛ پس این فرمول نتیجه می‌دهد:}
+& \Obj Q_{q}(\num{m}, \num{n}) \land \Obj S_{\sigma}(\num{m},
+   \num{n})
+\intertext{اکنون به فرمول زیر می‌رسیم:}
+& \Obj Q_{q'}(\num{m}', \num{n}') \land \Obj S_{\sigma'}(\num{m},
+  \num{n}') \land {}\\
+& \qquad\Obj S_{\sigma_0}(\num{0}, \num{n}') \land \dots \land
+  \Obj S_{\sigma_k}(\num{k}, \num{n}') \land {}\\
+& \qquad \lforall[x][(\num{k} < x \lif \Obj S_\TMblank(x, \num{n}'))]
+\end{align*}
+به این ترتیب: سطر نخست با وضع مقدم مستقیماً از تالیِ شرطی پیشین به
+دست می‌آید. هر عطف در سطر میانی، که
+$S_{\sigma_m}(\num{m},\num{n}')$ را در بر نمی‌گیرد، از عطف متناظر در
+$!C(M,w,n)$ همراه با~$!A(\num{m},\num{n})$ نتیجه می‌شود.
+
+اگر $m<k$، آنگاه
+$!T(M,w)\Proves\num{m}<\num{k}$
+(\olref[rep]{prop:mlessk}) و از تعدیِ~$<$ داریم
+$\lforall[x][(\num{k}<x\lif\num{m}<x)]$. اگر $m=k$، همین فرمول فقط
+با منطق نتیجه می‌شود. سپس سطر آخر از عطف متناظر در~$!C(M,w,n)$،
+$\lforall[x][(\num{k}<x\lif\num{m}<x)]$ و~$!A(\num{m},\num{n})$
+نتیجه می‌شود. اگر $m<k$، این همان~$!C(M,w,n+1)$ است.
+
+اکنون فرض کنید $m=k$. در این صورت پس از~$n+1$ گام سر نوار خانهٔ
+$k+1$ را نیز دیده است که اکنون راست‌ترین خانهٔ دیده‌شده است. پس
+$!C(M,w,n+1)$ عطف تازهٔ
+$\Obj S_\TMblank(\num{k}',\num{n}')$ را دارد و آخرین عطف آن
+$\lforall[x][(\num{k}'<x\lif\Obj S_\TMblank(x,\num{n}'))]$ است. باید
+بررسی کنیم که این دو !!{sentence}s نیز نتیجه می‌شوند.
+
+از پیش داریم
+$\lforall[x][(\num{k}<x\lif\Obj S_\TMblank(x,\num{n}'))]$. به‌ویژه،
+از این
+$\num{k}<\num{k}'\lif\Obj S_\TMblank(\num{k}',\num{n}')$ به دست
+می‌آید. از اصل موضوعهٔ~$\lforall[x][x<x']$ نیز
+$\num{k}<\num{k}'$ را می‌گیریم. با وضع مقدم،
+$\Obj S_\TMblank(\num{k}',\num{n}')$ نتیجه می‌شود.
+
+همچنین چون $!T(M,w)\Proves\num{k}<\num{k}'$، اصل موضوعهٔ تعدیِ~$<$
+$\lforall[x][(\num{k}'<x\lif\Obj S_\TMblank(x,\num{n}'))]$ را به ما
+می‌دهد. (بررسی این نکته را به‌عنوان تمرین وا می‌گذاریم.)
+
+\item فرض کنید دستوری از صورت~\olref{left} وجود دارد. آنگاه بنا بر
+  \olref[rep]{defn:tm-descr}\olref[rep]{rep-left}،
+\begin{align*}
+& \lforall[x][\lforall[y][((\Obj Q_{q}(x', y) \land \Obj
+    S_{\sigma}(x', y)) \lif {}]]\\
+& \qquad (\Obj Q_{q'}(x, y') \land \Obj
+  S_{\sigma'}(x', y') \land !A(x', y))) \land {}\\
+& \lforall[y][((\Obj Q_{q_i}(\num{0}, y) \land \Obj S_{\sigma}(\num{0},
+    y)) \lif {}]\\
+& \qquad (\Obj Q_{q_j}(\num{0}, y') \land \Obj S_{\sigma'}(\num{0}, y')
+  \land !A(\num{0}, y)))
+\intertext{عطفی از $!T(M,w)$ است. اگر $m>0$، بگذارید $l=m-1$
+  (یعنی $m=l+1$). عطف نخستِ !!{sentence}ٔ بالا فرمول زیر را نتیجه می‌دهد:}
+& (\Obj Q_{q}(\num{l}', \num{n}) \land \Obj S_{\sigma}(\num{l}', \num{n}))
+\lif {} \\
+& \qquad (\Obj Q_{q'}(\num{l}, \num{n}') \land \Obj S_{\sigma'}(\num{l}',
+\num{n}') \land !A(\num{l}', \num{n}))
+\intertext{در غیر این صورت بگذارید $l=m=0$ و !!{sentence}ٔ زیر را که از
+  عطف دوم نتیجه می‌شود در نظر بگیرید:}
+& ((\Obj Q_{q_i}(\num{0}, \num{n}) \land \Obj S_{\sigma}(\num{0}, \num{n})) \lif {}\\
+& \qquad   (\Obj Q_{q_j}(\num{0}, \num{n}') \land \Obj S_{\sigma'}(\num{0}, \num{n}') \land
+!A(\num{0}, \num{n})))
+\intertext{هر یک از این دو جمله، مانند پیش، فرمول زیر را نتیجه می‌دهد:}
+&  \Obj Q_{q'}(\num{l}, \num{n}') \land \Obj S_{\sigma'}(\num{m},
+  \num{n}') \land {}\\
+&\qquad  \Obj S_{\sigma_0}(\num{0}, \num{n}')\land \dots \land
+  \Obj S_{\sigma_k}(\num{k}, \num{n}')  \land {} \\
+& \qquad  \lforall[x][(\num{k} < x
+  \lif \Obj S_\TMblank(x, \num{n}'))]
+\end{align*}
+(توجه کنید در حالت نخست
+$\num{l}'\ident\num{l+1}\ident\num{m}$ و در حالت دوم
+$\num{l}\ident\num{0}$.) اما این دقیقاً $!C(M,w,n+1)$ است.
+
+\item حالت~\olref{stay} به‌عنوان تمرین واگذار می‌شود.
+\end{enumerate}
+نشان دادیم هرگاه $M$ پیش از انجام~$n$ گام متوقف نشده باشد،
+$!T(M,w)\Entails !C(M,w,n)$.
+\end{proof}
+
+\begin{prob}
+حالت~\olref[tur][und][ver]{stay} از اثبات
+\olref[tur][und][ver]{lem:config} را کامل کنید.
+\end{prob}
+
+\begin{prob}
+!!a{derivation}ی از~$\Obj S_{\sigma_i}(\num{i},\num{n}')$ بر پایهٔ
+$\Obj S_{\sigma_i}(\num{i},\num{n})$ و~$!A(m,n)$ ارائه کنید (با فرض
+$i\neq m$، یعنی یا $i<m$ یا $m<i$).
+\end{prob}
+
+\begin{prob}
+!!a{derivation}ی از
+$\lforall[x][(\num{k}' < x \lif \Obj S_\TMblank(x, \num{n}'))]$ بر
+پایهٔ $\lforall[x][(\num{k} < x \lif \Obj
+  S_\TMblank(x, \num{n}'))]$، $\lforall[x][x < x']$ و
+$\lforall[x][\lforall[y][\lforall[z][ ((x < y \land y < z) \lif x <
+      z)]]]$ ارائه کنید.)
+\end{prob}
+
+
+\begin{lem}
+\ollabel{lem:valid-if-halt}
+اگر $M$ روی ورودی~$w$ متوقف شود، آنگاه $!T(M,w)\lif !E(M,w)$ معتبر
+است.
+\end{lem}
+
+\begin{proof}
+از \olref{lem:config} می‌دانیم برای هر زمان~$n$ که $M$ پیش از انجام
+$n$ گام متوقف نشده باشد، توصیف~$!C(M,w,n)$ از پیکربندی~$M$ در
+زمان~$n$ از~$!T(M,w)$ نتیجه می‌شود. فرض کنید $M$
+پس از~$k$ گام متوقف شود. در آن نقطه، برای بعضی~$m\in\Nat$، خانهٔ~$m$
+را پویش می‌کند. آنگاه $!C(M,w,k)$ پیکربندی توقف~$M$ را توصیف می‌کند؛
+یعنی هم $\Obj Q_q(\num{m},\num{k})$ و هم
+$\Obj S_\sigma(\num{m},\num{k})$ را با $\delta(q,\sigma)$ تعریف‌نشده
+به‌عنوان عطف در بر دارد. بنابراین بنا بر
+\olref{lem:halt-config-implies-halt}،
+$!C(M,w,k)\Entails !E(M,w)$. اما چون
+$!T(M,w)\Entails !C(M,w,k)$، داریم
+$!T(M,w)\Entails !E(M,w)$ و در نتیجه
+$!T(M,w)\lif !E(M,w)$ معتبر است.
+\end{proof}
+
+
+\begin{explain}
+برای تکمیل بررسی ادعایمان باید جهت عکس را نیز ثابت کنیم: اگر
+$!T(M,w)\lif !E(M,w)$ معتبر باشد، $M$ در واقع پس از آغاز با ورودی~$w$
+متوقف می‌شود.
+\end{explain}
+
+\begin{lem}
+\ollabel{lem:halt-if-valid}
+اگر $\Entails !T(M,w)\lif !E(M,w)$، آنگاه $M$ روی ورودی~$w$ متوقف
+می‌شود.
+\end{lem}
+
+\begin{proof}
+!!{structure}~$\Struct M$ برای زبان~$\Lang L_M$ را در نظر بگیرید که دامنه‌اش
+$\Nat$ است، $\Obj 0$ را به~$0$، $\prime$ را به تابع جانشین و~$<$ را
+به رابطهٔ کوچک‌تر تعبیر می‌کند و محمول‌های~$\Obj Q_q$ و
+$\Obj S_\sigma$ را چنین تعبیر می‌کند:
+\begin{align*}
+  \Assign{\Obj Q_q}{M} & =
+\Setabs{\tuple{m, n}}{\begin{array}{ll}\text{$M$ پس از آغاز روی~$w$ و اجرای~$n$ گام}\ \text{در حالت $q$ است
+  و خانهٔ~$m$ را پویش می‌کند}
+\end{array}} \\
+\Assign{\Obj S_\sigma}{M} & = \Setabs{\tuple{m, n}}{\begin{array}{ll}
+\text{$M$ پس از آغاز روی~$w$ و اجرای~$n$ گام،}\ \text{در خانهٔ~$m$
+  نماد~$\sigma$ را دارد}
+\end{array}}
+\end{align*}
+به بیان دیگر، !!{structure}~$\Struct M$ را چنان می‌سازیم که آنچه را $M$
+پس از آغاز روی ورودی~$w$ واقعاً گام‌به‌گام انجام می‌دهد توصیف کند.
+روشن است که $\Sat{M}{!T(M,w)}$. اگر
+$\Entails !T(M,w)\lif !E(M,w)$، آنگاه $\Sat{M}{!E(M,w)}$ نیز؛ یعنی
+\[
+\Sat{M}{\lexists[x][\lexists[y][(\bigvee_{\tuple{q, \sigma} \in
+      X}(\Obj Q_q(x, y) \land \Obj S_\sigma(x, y)))]]}.
+\]
+چون $\Domain{M}=\Nat$، باید $m,n\in\Nat$ای وجود داشته باشند که برای
+بعضی~$q$ و~$\sigma$ با $\delta(q,\sigma)$ تعریف‌نشده،
+$\Sat{M}{\Obj Q_q(\num{m},\num{n})\land
+\Obj S_\sigma(\num{m},\num{n})}$. بنا بر تعریف~$\Struct M$، یعنی
+$M$ پس از آغاز روی ورودی~$w$ و اجرای~$n$ گام در حالت~$q$ است و
+نماد~$\sigma$ را می‌خواند، در حالی که تابع گذار تعریف‌نشده است؛ یعنی
+$M$ متوقف شده است.
+\end{proof}
+
+\end{document}

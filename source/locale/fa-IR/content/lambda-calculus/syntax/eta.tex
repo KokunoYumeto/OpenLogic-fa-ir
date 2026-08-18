@@ -1,0 +1,86 @@
+% Part: lambda-calculus
+% Chapter: syntax
+% Section: eta
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{syn}{eta}
+\olsection{تبدیل~$\eta$}
+
+رابطهٔ دیگری نیز روی ترم‌های~$\lambda$ وجود دارد. در~\olref[fv]{sec}
+از مثال~$\lambd[x][(fx)]$ استفاده کردیم؛ این ترم آرگومانی می‌پذیرد و
+$f$ را بر آن اعمال می‌کند. به بیان دیگر، همان تابع~$f$ است:
+$\lambd[x][(fx)]N$ و~$fN$ هر دو به~$fN$ کاهش می‌یابند. برای بیان این
+ایده از کاهش~$\eta$ (و گسترش~$\eta$) استفاده می‌کنیم.
+
+\begin{defn}[انقباض~$\eta$، $\eredone$]
+  \ollabel{defn:beredone}
+  \emph{انقباض~$\eta$} ($\eredone$) کوچک‌ترین رابطهٔ سازگار روی ترم‌هاست
+  که شرط زیر را برآورده می‌کند:
+  \[
+    \lambd[x][M x] \eredone M \text{ مشروط بر اینکه } x \notin \FV{M}
+  \]
+\end{defn}
+
+\begin{defn}[کاهش~$\beta\eta$، $\bered$] \ollabel{defn:bered}
+  \emph{کاهش~$\beta\eta$} ($\bered$) کوچک‌ترین رابطهٔ بازتابی و تعدی
+  روی ترم‌هاست که~$\bredone$ و~$\eredone$ را در بر می‌گیرد؛ یعنی قواعد
+  بازتابی و تعدی، به‌اضافهٔ دو قاعدهٔ زیر:
+  \begin{enumerate}
+  \item اگر~$M \bredone N$، آنگاه~$M \bered N$. \ollabel{defn:bered3}
+  \item اگر~$M \eredone N$، آنگاه~$M \bered N$. \ollabel{defn:bered4}
+  \end{enumerate}
+    
+\end{defn}
+
+\begin{defn}
+  رابطهٔ هم‌ارزی~$\equal$ را با قاعدهٔ تبدیل~$\eta$ گسترش می‌دهیم:
+  \[
+  \lambd[x][f x] \equal f
+  \]
+  و رابطهٔ گسترش‌یافته را با~$\equal[\eta]$ نشان می‌دهیم.
+\end{defn}
+
+هم‌ارزی~$\eta$ مهم است، زیرا با برون‌گرایی ترم‌های لامبدا ارتباط دارد:
+
+\begin{defn}[برون‌گرایی]
+  رابطهٔ هم‌ارزی~$\equal$ را با قاعدهٔ~(\ext) گسترش می‌دهیم:
+  \begin{center}
+  اگر~$Mx \equal Nx$، آنگاه~$M \equal N$، مشروط بر اینکه~$x \notin \FV{MN}$.
+  \end{center}
+  و رابطهٔ گسترش‌یافته را با~$\equal[\ext]$ نشان می‌دهیم.
+\end{defn}
+
+به‌طور تقریبی، این قاعده می‌گوید دو ترم، هنگامی که به‌مثابهٔ تابع نگریسته
+شوند، باید برابر دانسته شوند اگر برای آرگومان یکسان رفتار یکسانی داشته
+باشند.
+
+اکنون ثابت می‌کنیم که قاعدهٔ~$\eta$ دقیقاً برون‌گرایی را، و نه چیزی
+بیشتر، فراهم می‌کند.
+
+\begin{thm}
+  $M \equal[\ext] N$ اگر و تنها اگر~$M \equal[\eta] N$.
+\end{thm}
+
+\begin{proof}
+  نخست ثابت می‌کنیم~$\equal[\eta]$ تحت قاعدهٔ برون‌گرایی بسته است؛ یعنی
+  قاعدهٔ~$ext$ چیزی به~$\equal[\eta]$ نمی‌افزاید. در نتیجه
+  $\equal[\eta]$ رابطهٔ~$\equal[\ext]$ را در بر می‌گیرد، و اگر
+  $M \equal[\ext] N$، آنگاه~$M \equal[\eta] N$.
+
+  برای اثبات بسته‌بودن~$\equal[\eta]$ تحت~\ext، توجه کنید که برای هر
+  $M \equal N$ که با قاعدهٔ~\ext{} مشتق شده باشد، مقدمهٔ
+  $Mx \equal[\eta] Nx$ را داریم. سپس
+  $\lambd[x][Mx] \equal[\eta] \lambd[x][Nx]$ را بنا بر یکی از
+  قواعد~$\equal$ داریم؛ با اعمال~$\eta$ بر هر دو طرف،
+  $M \equal[\eta] N$ را به دست می‌آوریم.
+
+  به‌همین‌ترتیب ثابت می‌کنیم که قاعدهٔ~$\eta$ در~$\equal[\ext]$ گنجانده
+  شده است. برای هر~$\lambd[x][Mx]$ و~$M$ با~$x \notin \FV{M}$، داریم
+  $(\lambd[x][Mx])x \equal[\ext] Mx$، و
+  $\lambd[x][Mx] \equal[\ext] M$ را از قاعدهٔ~\ext{} به دست می‌آوریم.
+\end{proof}
+
+\end{document}

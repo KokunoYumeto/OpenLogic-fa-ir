@@ -1,0 +1,103 @@
+% Part: first-order-logic
+% Chapter: sequent-calculus
+% Section: quantifier-rules
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{seq}{qrl}
+
+\olsection{قواعد سورها}
+
+\subsection{قواعد $\lforall$}
+
+\begin{defish}
+\Axiom$ !A(t), \Gamma \fCenter \Delta$
+\RightLabel{\LeftR{\lforall}}
+\UnaryInf$ \lforall[x][!A(x)],\Gamma \fCenter \Delta$
+\DisplayProof
+\hfill
+\Axiom$ \Gamma \fCenter \Delta, !A(a) $
+\RightLabel{\RightR{\lforall}}
+\UnaryInf$ \Gamma \fCenter \Delta, \lforall[x][!A(x)]$
+\DisplayProof
+\end{defish}
+
+در \LeftR{\lforall}، $t$ ترمی بسته است (یعنی متغیر ندارد). در
+\RightR{\lforall}، $a$~!!a{constant}ی است که نباید در هیچ جای دنبالهٔ
+پایینیِ قاعدهٔ \RightR{\lforall} رخ دهد. $a$ را \emph{متغیر ویژهٔ}
+استنتاج \RightR{\forall} می‌نامیم.\footnote{گرچه $a$ در قاعدهٔ بالا
+!!a{constant} است، اصطلاح «متغیر ویژه» را به کار می‌بریم. این کاربرد
+دلایل تاریخی دارد.}
+
+\subsection{قواعد $\lexists$}
+
+\begin{defish}
+\Axiom$ !A(a), \Gamma \fCenter \Delta $
+\RightLabel{\LeftR{\lexists}}
+\UnaryInf$ \lexists[x][!A(x)], \Gamma \fCenter \Delta$
+\DisplayProof
+\hfill
+\Axiom$ \Gamma \fCenter \Delta, !A(t) $
+\RightLabel{\RightR{\lexists}}
+\UnaryInf$ \Gamma \fCenter \Delta, \lexists[x][!A(x)]$
+\DisplayProof
+\end{defish}
+
+باز هم $t$~ترمی بسته است و $a$~!!a{constant}ی است که در دنبالهٔ
+پایینیِ قاعدهٔ \LeftR{\lexists} رخ نمی‌دهد. $a$ را \emph{متغیر ویژهٔ}
+استنتاج \LeftR{\lexists} می‌نامیم.
+
+این شرط که متغیر ویژه در دنبالهٔ پایینیِ استنتاج
+\RightR{\lforall} یا \LeftR{\lexists} رخ ندهد، \emph{شرط متغیر ویژه}
+نامیده می‌شود.
+
+\begin{explain}
+قرارداد زیر را به یاد آورید: هرگاه $!A$ !!a{formula}ی باشد که
+!!{variable}~$x$ در آن آزاد است، این امر را با نوشتن~$!A(x)$ نشان
+می‌دهیم. در همان بافت، $!A(t)$ کوتاه‌شدهٔ~$\Subst{!A}{t}{x}$ است.
+بنابراین می‌توانستیم قاعدهٔ \RightR{\lexists} را چنین نیز بنویسیم:
+\begin{prooftree}
+  \Axiom$\Gamma \fCenter \Delta, \Subst{!A}{t}{x}$
+  \RightLabel{\RightR{\lexists}}
+  \UnaryInf$\Gamma \fCenter \Delta, \lexists[x][!A]$
+\end{prooftree}
+توجه کنید که $t$ ممکن است از پیش در~$!A$ رخ دهد؛ برای نمونه، ممکن است
+$!A$ همان~$\Atom{\Obj P}{t,x}$ باشد. پس استنتاج
+$\Gamma \Sequent \Delta, \lexists[x][\Atom{\Obj P}{t,x}]$ از
+~$\Gamma \Sequent \Delta, \Atom{\Obj P}{t,t}$ کاربرد درستی از
+~\RightR{\lexists} است---می‌توان یک یا چند رخداد~$t$ در مقدمه را، و
+نه لزوماً همهٔ آن‌ها را، با !!{variable} مقید~$x$ «جایگزین» کرد.
+بااین‌حال، شرط‌های متغیر ویژه در \RightR{\lforall} و
+~\LeftR{\lexists} ایجاب می‌کنند که !!{constant}~$a$ در~$!A$ رخ ندهد.
+پس نمی‌توان $\Gamma \Sequent \Delta, \lforall[x][\Atom{\Obj P}{a,x}]$
+را به‌درستی از $\Gamma \Sequent \Delta, \Atom{\Obj P}{a,a}$ با استفاده
+از~$\RightR{\lforall}$ استنتاج کرد.
+\end{explain}
+
+\begin{explain}
+در \RightR{\lexists} و \LeftR{\lforall} هیچ محدودیتی بر ترم~$t$ وجود
+ندارد. از سوی دیگر، در قواعد \LeftR{\lexists} و
+\RightR{\lforall}، شرط متغیر ویژه ایجاب می‌کند که !!{constant}~$a$
+در دنبالهٔ بالایی در هیچ جایی بیرون از~$!A(a)$ رخ ندهد. این شرط برای
+تضمین صحت دستگاه ضروری است؛ یعنی دستگاه فقط دنباله‌هایی را که معتبرند
+!!{derive}s می‌کند. بدون این شرط، استنتاج زیر مجاز می‌بود:
+\begin{prooftree}
+  \Axiom$!A(a) \fCenter !A(a)$
+  \RightLabel{*\LeftR{\lexists}}
+  \UnaryInf$\lexists[x][!A(x)] \fCenter !A(a)$
+  \RightLabel{\RightR{\lforall}}
+  \UnaryInf$\lexists[x][!A(x)] \fCenter \lforall[x][!A(x)]$
+  \DisplayProof\bottomAlignProof
+  \qquad
+  \Axiom$!A(a) \fCenter !A(a)$
+  \RightLabel{*\RightR{\lforall}}
+  \UnaryInf$!A(a) \fCenter \lforall[x][!A(x)]$
+  \RightLabel{\LeftR{\lexists}}
+  \UnaryInf$\lexists[x][!A(x)] \fCenter \lforall[x][!A(x)]$
+\end{prooftree}
+اما $\lexists[x][!A(x)] \Sequent \lforall[x][!A(x)]$ معتبر نیست.
+\end{explain}
+
+\end{document}

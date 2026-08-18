@@ -1,0 +1,56 @@
+% Part: first-order-logic
+% Chapter: tableaux
+% Section: rules-and-proofs
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{tab}{rul}}
+      {\olfileid{pl}{tab}{rul}}
+
+\olsection{قواعد و \usetoken{P}{tableau}}
+
+!!^a{tableau} بررسی نظام‌مند راه‌های ممکنی است که !!a{sentence} می‌تواند
+در \iftag{FOL}{!!a{structure}}{!!a{valuation}} صادق یا کاذب باشد. اجزای
+سازندهٔ تابلو !!{signed formula}s هستند: !!{sentence}s به‌همراه یک ارزش
+صدق به نام «علامت»، که یا $\True$ است یا~$\False$. این
+!!{formula}s علامت‌دار در درختی (که رو به پایین رشد می‌کند) آرایش می‌یابند.
+
+\begin{defn}
+  هر \emph{!!{signed formula}} زوجی متشکل از یک ارزش صدق و
+  !!a{sentence} است؛ یعنی یکی از این دو:
+  \[
+  \sFmla{\True}{!A} \text{ یا } \sFmla{\False}{!A}.
+  \]
+\end{defn}
+
+به‌طور شهودی، می‌توانیم $\sFmla{\True}{!A}$ را «ممکن است $!A$ صادق
+باشد» و $\sFmla{\False}{!A}$ را «ممکن است $!A$ کاذب باشد» بخوانیم
+(در یک \iftag{FOL}{!!{structure}}{!!{valuation}}).
+
+هر !!{signed formula} در درخت یا یک \emph{فرض} است (فرض‌ها در بالاترین
+قسمت درخت فهرست می‌شوند)، یا از !!a{signed formula} بالاتر از خود با یکی
+از چند قاعدهٔ استنتاج به دست آمده است. برای هر !!{main operator} ممکنی
+در !!{formula} پیشین، دو قاعده وجود دارد: یکی برای حالتی که علامت~$\True$
+است و دیگری برای حالتی که علامت~$\False$ است. برخی قواعد به درخت اجازهٔ
+انشعاب می‌دهند و برخی فقط !!{signed formula}s را به شاخه می‌افزایند.
+یک قاعده را می‌توان (و اغلب باید) نه بر !!{signed formula} بلافاصله پیشین،
+بلکه بر هر !!{signed formula} در شاخهٔ میان ریشه و محل اعمال قاعده اعمال کرد.
+
+شاخه هنگامی \emph{بسته} است که هم $\sFmla{\True}{!A}$ و هم
+$\sFmla{\False}{!A}$ را دربر داشته باشد. !!{tableau} بسته تابلویی است که
+هر شاخه‌اش بسته باشد. بنا بر تفسیر شهودی، هر شاخه یک امکان مشترک را وصف
+می‌کند، اما $\sFmla{\True}{!A}$ و $\sFmla{\False}{!A}$ نمی‌توانند با هم
+ممکن باشند. به بیان دیگر، اگر شاخه‌ای بسته باشد، امکانی که وصف می‌کند
+منتفی شده است. به‌ویژه، این بدان معناست که !!{tableau} بسته همهٔ امکان‌های
+صادق‌کردن هم‌زمانِ هر فرض به صورت $\sFmla{\True}{!A}$ و کاذب‌کردنِ هر
+فرض به صورت~$\sFmla{\False}{!A}$ را منتفی می‌کند.
+
+!!{tableau} بسته \emph{برای $!A$}، !!{tableau}ی بسته با
+ریشهٔ~$\sFmla{\False}{!A}$ است. اگر چنین !!{tableau} بسته‌ای وجود داشته
+باشد، همهٔ امکان‌های کاذب‌بودن~$!A$ منتفی شده‌اند؛ یعنی $!A$ باید در هر
+\iftag{FOL}{!!{structure}}{!!{valuation}} صادق باشد.
+
+\end{document}

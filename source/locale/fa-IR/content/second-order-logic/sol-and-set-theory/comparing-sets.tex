@@ -1,0 +1,81 @@
+% Part: second-order-logic
+% Chapter: sol-and-set-theory
+% Section: comparing-sets
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sol}{set}{cmp}
+
+\olsection{مقایسهٔ مجموعه‌ها}
+
+\begin{prop}
+!!{formula}~$\lforall[x][(X(x) \lif Y(x))]$ رابطهٔ زیرمجموعه‌بودن را
+تعریف می‌کند؛ یعنی~$\Sat{M}{\lforall[x][(X(x) \lif Y(x))]}[s]$ اگر و
+تنها اگر~$s(X) \subseteq s(Y)$.
+\end{prop}
+
+\begin{prop}
+!!{formula}~$\lforall[x][(X(x) \liff Y(x))]$ رابطهٔ همانی بر مجموعه‌ها
+را تعریف می‌کند؛ یعنی~$\Sat{M}{\lforall[x][(X(x) \liff Y(x))]}[s]$ اگر
+و تنها اگر~$s(X) = s(Y)$.
+\end{prop}
+
+\begin{prop}
+!!{formula}~$\lexists[x][X(x)]$ ویژگی ناتهی‌بودن را تعریف می‌کند؛ یعنی
+$\Sat{M}{\lexists[x][X(x)]}[s]$ اگر و تنها اگر
+$s(X) \neq \emptyset$.
+\end{prop}
+
+مجموعهٔ~$X$ از مجموعهٔ~$Y$ بزرگ‌تر نیست، یعنی~$\cardle{X}{Y}$، اگر و
+تنها اگر تابعی~!!a{injective} چون~$f\colon X \to Y$ وجود داشته باشد. چون
+می‌توانیم یک‌به‌یک‌بودن تابع و نیز قرارگرفتن ارزش‌های آن برای آرگومان‌های
+$X$ در~$Y$ را بیان کنیم، می‌توانیم رابطهٔ بزرگ‌ترنبودن را بر
+زیرمجموعه‌های دامنه نیز تعریف کنیم.
+
+\begin{prop}
+فرمول
+\[
+\lexists[u][(\lforall[x][(X(x) \lif Y(u(x)))] \land \lforall[x][\lforall[y][(\eq[u(x)][u(y)] \lif
+      \eq[x][y])]])]
+\]
+رابطهٔ بزرگ‌ترنبودن را تعریف می‌کند.
+\end{prop}
+
+دو مجموعه هم‌اندازه، یا «هم‌شمار»، هستند، یعنی~$\cardeq{X}{Y}$، اگر و
+تنها اگر تابعی~!!a{bijective} چون~$f\colon X \to Y$ وجود داشته باشد.
+
+\begin{prop}
+فرمول
+\begin{multline*}
+  \lexists[u][(\lforall[x][(X(x) \lif Y(u(x)))] \land {}\\
+    \lforall[x][\lforall[y][((X(x) \land X(y) \land \eq[u(x)][u(y)]) \lif \eq[x][y])]]
+  \land {} \\ \lforall[y][(Y(y) \lif \lexists[x][(X(x)
+      \land \eq[y][u(x)])])])]
+\end{multline*}
+رابطهٔ هم‌شماربودن را تعریف می‌کند.
+\end{prop}
+
+این !!{formula}s را به‌ترتیب با~$X \subseteq Y$، $X = Y$،
+$X \neq \emptyset$، $\cardle{X}{Y}$ و~$\cardeq{X}{Y}$ کوتاه می‌کنیم.
+(این کار شاید اندکی گیج‌کننده باشد، زیرا هنگامی که به‌طور غیرصوری
+دربارهٔ مجموعه‌های~$X$ و~$Y$ سخن می‌گوییم نیز همین نمادگذاری را به کار
+می‌بریم؛ اما اینجا نمادگذاری، کوتاه‌نوشتِ !!{formula}sی در منطق مرتبهٔ
+دوم است که متغیرهای رابطه‌ای یک‌موضعی~$X$ و~$Y$ را در بر دارند.)
+
+\begin{prop}
+!!{sentence}~$\lforall[X][\lforall[Y][((\cardle{X}{Y} \land
+    \cardle{Y}{X}) \lif \cardeq{X}{Y})]]$ معتبر است.
+\end{prop}
+
+\begin{proof}
+این !!{sentence} در !!a{structure}ی چون~$\Struct{M}$ ارضا می‌شود اگر
+برای هر دو زیرمجموعه~$X \subseteq \Domain{M}$ و
+$Y \subseteq \Domain{M}$، از~$\cardle{X}{Y}$ و~$\cardle{Y}{X}$ نتیجه
+شود~$\cardeq{X}{Y}$. اما این نتیجه برای \emph{هر} دو مجموعهٔ~$X$ و~$Y$
+برقرار است: این همان قضیهٔ شرودر--برنشتاین است.
+\end{proof}
+
+
+\end{document}

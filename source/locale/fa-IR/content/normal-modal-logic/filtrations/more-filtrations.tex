@@ -1,0 +1,134 @@
+% Part: normal-modal-logic
+% Chapter: filtrations
+% Section: more-filtrations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{fil}{acc}
+
+\olsection{تصفیه‌ها و خواص دسترس‌پذیری}
+
+همان‌گونه که یاد شد، تصفیه‌های مدل‌های همگانی، سریال و بازتابی نیز
+همواره، به‌ترتیب، همگانی، سریال یا بازتابی‌اند. اما هر تصفیه‌ای از
+یک مدل متقارن یا متعدی، لزوماً به‌ترتیب متقارن یا متعدی نیست. بااین‌حال،
+در برخی موارد می‌توان تصفیه‌ها را چنان تعریف کرد که این خواص برقرار
+بمانند. برای این کار، همچون تعریف درشت‌ترین تصفیه پیش می‌رویم، اما
+شرط‌های دیگری نیز به تعریف~$R^*$ می‌افزاییم. فرض کنید~$\Gamma$ تحت
+زیر-!!{formula}ها بسته باشد. رابطه‌های~$C_i(u,v)$ میان جهان‌های~$u$ و
+$v$ در مدل~$\mModel{M} =\tuple{W, R, V}$ را که در
+\olref{tab:Cn-filtrations} آمده‌اند در نظر بگیرید. می‌توانیم~$R^*[u][v]$
+را بر پایهٔ ترکیب‌هایی از این شرط‌ها تعریف کنیم. برای نمونه، اگر مقرر
+کنیم~$R^*[u][v]$ اگر و تنها اگر شرط~$C_1(u,v)$ برقرار باشد، دقیقاً
+درشت‌ترین تصفیه را به دست می‌آوریم. اگر مقرر کنیم~$R^*[u][v]$ اگر و تنها
+اگر هر دو شرط~$C_1(u,v)$ و~$C_2(u, v)$ برقرار باشند، تصفیه‌ای متفاوت
+به دست می‌آوریم. این تصفیه از درشت‌ترین تصفیه «ریزتر» است، زیرا زوج‌های
+کم‌تری از جهان‌ها هر دو شرط~$C_1(u,v)$ و~$C_2(u,v)$ را برآورده می‌کنند
+تا شرط~$C_1(u,v)$ به‌تنهایی.
+
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{|ll|}
+    \hline
+    \multirow{2}{*}{$C_1(u,v)$:}
+    \iftag{prvBox}{&
+      اگر $\Box!A \in \Gamma$ و $\mSat{M}{\Box!A}[u]$ باشد،
+      آنگاه $\mSat{M}{!A}[v]$؛\iftag{prvDiamond}{ و}{}\\}{}
+    \iftag{prvDiamond}{&
+      اگر $\Diamond!A \in \Gamma$ و $\mSat{M}{!A}[v]$ باشد،
+      آنگاه $\mSat{M}{\Diamond!A}[u]$؛ \\}{}
+    \hline
+    \multirow{2}{*}{$C_2(u,v)$:} 
+    \iftag{prvBox}{&
+      اگر $\Box!A \in \Gamma$ و $\mSat{M}{\Box!A}[v]$ باشد،
+      آنگاه $\mSat{M}{!A}[u]$؛\iftag{prvDiamond}{ و}{}\\}{}
+    \iftag{prvDiamond}{&
+      اگر $\Diamond!A \in \Gamma$ و $\mSat{M}{!A}[u]$ باشد،
+      آنگاه $\mSat{M}{\Diamond!A}[v]$؛ \\}{}
+    \hline
+    \multirow{2}{*}{$C_3(u,v)$:}
+    \iftag{prvBox}{&
+      اگر $\Box!A \in \Gamma$ و $\mSat{M}{\Box!A}[u]$ باشد،
+      آنگاه $\mSat{M}{\Box!A}[v]$؛\iftag{prvDiamond}{ و}{}\\}{}
+    \iftag{prvDiamond}{&
+      اگر $\Diamond!A \in \Gamma$ و $\mSat{M}{\Diamond!A}[v]$ باشد،
+      آنگاه $\mSat{M}{\Diamond!A}[u]$؛ \\}{}
+    \hline
+    \multirow{2}{*}{$C_4(u,v)$:}
+    \iftag{prvBox}{&
+      اگر $\Box!A \in \Gamma$ و $\mSat{M}{\Box!A}[v]$ باشد،
+      آنگاه $\mSat{M}{\Box!A}[u]$؛\iftag{prvDiamond}{ و}{}\\}{}
+    \iftag{prvDiamond}{&
+      اگر $\Diamond!A \in \Gamma$ و $\mSat{M}{\Diamond!A}[u]$ باشد،
+      آنگاه $\mSat{M}{\Diamond!A}[v]$؛ \\}{}
+    \hline
+    \end{tabular}
+  \caption{شرط‌های مربوط به جهان‌های ممکن برای تعریف تصفیه‌ها.}
+  \ollabel{tab:Cn-filtrations}
+\end{table}
+
+\begin{thm}\ollabel{thm:more-filtrations}
+  فرض کنید~$\mModel{M} =\tuple{W,R,V}$ یک مدل و~$\Gamma$ تحت
+  زیر-!!{formula}ها بسته باشد. فرض کنید~$W^*$ و~$V^*$ همچون
+  \olref[fil]{defn:filtration} تعریف شده باشند. آنگاه:
+  \begin{enumerate}
+  \item فرض کنید~$R^*[u][v]$ اگر و تنها اگر $C_1(u, v) \land
+    C_2(u,v)$. آنگاه~$R^*$ متقارن است، و اگر~$\mModel{M}$ متقارن باشد،
+    $\mModel{M^*} = \tuple{W^*,R^*,V^*}$ یک تصفیه است.
+  \item فرض کنید~$R^*[u][v]$ اگر و تنها اگر $C_1(u, v)
+    \land C_3(u,v)$. آنگاه~$R^*$ متعدی است، و اگر~$\mModel{M}$ متعدی
+    باشد، $\mModel{M^*}=\tuple{W^*,R^*,V^*}$ یک تصفیه است.
+  \item فرض کنید~$R^*[u][v]$ اگر و تنها اگر $C_1(u, v) \land C_2(u,v)
+    \land C_3(u,v) \land C_4(u,v)$. آنگاه~$R^*$ متقارن و متعدی است،
+    و اگر~$\mModel{M}$ متقارن و متعدی باشد،
+    $\mModel{M^*}=\tuple{W^*,R^*,V^*}$ یک تصفیه است.
+  \item فرض کنید~$R^*$ چنین تعریف شده باشد: $R^*[u][v]$ اگر و تنها
+    اگر $C_1(u, v) \land C_3(u,v) \land C_4(u,v)$. آنگاه~$R^*$
+    متعدی و اقلیدسی است، و اگر~$\mModel{M}$ متعدی و اقلیدسی باشد،
+    $\mModel{M^*}=\tuple{W^*,R^*,V^*}$ یک تصفیه است.
+  \end{enumerate}
+\end{thm}
+
+\begin{proof}
+  \begin{enumerate}
+    \item بی‌درنگ روشن است که~$R^*$ متقارن است، زیرا $C_1(u,v)
+      \Leftrightarrow C_2(v,u)$ و $C_2(u,v) \Leftrightarrow
+      C_1(v,u)$. پس تنها باید نشان دهیم که اگر~$\mModel{M}$ متقارن
+      باشد، آنگاه~$\mModel{M^*}$ تصفیه‌ای از میان~$\Gamma$ است. شرط
+      $C_1(u,v)$ تضمین می‌کند که
+      \iftag{prvBox}{%
+        \iftag{prvDiamond}{%
+          \olref[fil]{defn:filtration-R2} و
+          \olref[fil]{defn:filtration-R3} از
+          \olref[fil]{defn:filtration}}{%
+          \olref[fil]{defn:filtration}\olref[fil]{defn:filtration-R2}}}{%
+        \olref[fil]{defn:filtration}\olref[fil]{defn:filtration-R3}}
+      برقرار است. پس تنها باید
+      \olref[fil]{defn:filtration}\olref[fil]{defn:filtration-R1} را
+      وارسی کنیم؛ یعنی اینکه~$Ruv$ مستلزم~$R^*[u][v]$ است.
+
+      پس فرض کنید~$Ruv$. برای نشان‌دادن~$R^*[u][v]$ باید ثابت کنیم که
+      $C_1(u,v)$ و~$C_2(u,v)$ برقرارند. برای~$C_1$:
+      \iftag{prvBox}{اگر $\Box!A \in\Gamma$ و
+        $\mSat{M}{\Box!A}[u]$، آنگاه $\mSat{M}{!A}[v]$ نیز (زیرا
+        $Ruv$).\iftag{prvDiamond}{ به همین سان، }{}}{}\iftag{prvDiamond}{اگر
+        $\Diamond!A \in \Gamma$ و $\mSat{M}{!A}[v]$، آنگاه چون
+        $Ruv$، داریم~$\mSat{M}{\Diamond!A}[u]$.}{} برای~$C_2$:
+      \iftag{prvBox}{اگر $\Box!A \in \Gamma$ و
+        $\mSat{M}{\Box!A}[v]$، آنگاه به‌سبب تقارن، $Ruv$ مستلزم
+        $Rvu$ است، و بنابراین~$\mSat{M}{!A}[u]$.\iftag{prvDiamond}{ به
+        همین سان، }{}}{}\iftag{prvDiamond}{اگر $\Diamond!A \in\Gamma$
+        و $\mSat{M}{!A}[u]$، آنگاه $\mSat{M}{\Diamond!A}[v]$ (زیرا
+        بنا بر تقارن~$Rvu$).}{}
+    \item تمرین.
+    \item تمرین.
+    \item تمرین.
+  \end{enumerate}
+\end{proof}
+
+\begin{prob}
+  برهان~\olref[nml][fil][acc]{thm:more-filtrations} را کامل کنید.
+\end{prob}
+
+\end{document}

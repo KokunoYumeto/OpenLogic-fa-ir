@@ -1,0 +1,70 @@
+% part: intuitionistic-logic
+% chapter: introduction
+% section: axiomatic-derivations
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{int}{axd}
+
+\olsection{\usetoken{P}{derivation} اصل‌موضوعی}
+
+!!{derivation}های اصل‌موضوعی برای منطق گزاره‌ای شهودگرایانه، از نظر
+مفهومی ساده‌ترین و از نظر تاریخی نخستین دستگاه‌های !!{derivation}
+هستند. آن‌ها درست همانند منطق گزاره‌ای کلاسیک عمل می‌کنند.
+
+\begin{defn}[!!^{derivability}]
+اگر~$\Gamma$ مجموعه‌ای از !!{formula}های~$\Lang L$ باشد، آنگاه یک
+\emph{!!{derivation}} از~$\Gamma$ دنبالهٔ متناهی
+$!A_1$، \dots،~$!A_n$ از !!{formula}هاست که برای هر~$i \le n$ یکی از
+شرایط زیر برقرار است:
+\begin{enumerate}
+\item $!A_i \in \Gamma$؛ یا
+\item $!A_i$ یک اصل موضوع است؛ یا
+\item $!A_i$ با وضع مقدم از دو~$!A_j$ و~$!A_k$، که~$j < i$ و~$k < i$،
+  نتیجه می‌شود؛ یعنی~$!A_k \ident !A_j \lif !A_i$.
+\end{enumerate}
+\end{defn}
+
+\begin{defn}[اصول موضوع]
+مجموعهٔ~$\PAx$ از \emph{اصول موضوع} منطق گزاره‌ای شهودگرایانه شامل همهٔ
+!!{formula}های صورت‌های زیر است:
+\begin{align}
+  & (!A \land !B) \lif !A \ollabel{ax:land1}\\
+  & (!A \land !B) \lif !B \ollabel{ax:land2}\\
+  & !A \lif (!B \lif (!A \land !B)) \ollabel{ax:land3}\\
+  & !A \lif (!A \lor !B) \ollabel{ax:lor1}\\
+  & !A \lif (!B \lor !A) \ollabel{ax:lor2}\\
+  & (!A \lif !C) \lif ((!B \lif !C) \lif ((!A \lor !B) \lif !C)) \ollabel{ax:lor3}\\
+  & !A \lif (!B \lif !A) \ollabel{ax:lif1}\\
+  & (!A \lif (!B \lif !C)) \lif ((!A \lif !B) \lif (!A \lif !C)) \ollabel{ax:lif2}\\
+  & \lfalse \lif !A \ollabel{ax:lfalse1}
+\end{align}
+\end{defn}
+
+\begin{defn}[!!^{derivability}]
+!!^a{formula}~$!A$ از~$\Gamma$ \emph{!!{derivable}} است، که می‌نویسیم
+$\Gamma \Proves !A$، اگر !!a{derivation}ای از~$\Gamma$ وجود داشته
+باشد که به~$!A$ پایان یابد.
+\end{defn}
+
+\begin{defn}[قضایا]
+!!^a{formula}~$!A$ یک \emph{قضیه} است هرگاه !!a{derivation}ای از~$!A$
+از مجموعهٔ تهی وجود داشته باشد. اگر~$!A$ قضیه باشد می‌نویسیم
+$\Proves !A$، و اگر نباشد~$\Proves/ !A$.
+\end{defn}
+
+\begin{prop}
+  اگر~$\Gamma \Proves !A$ در دستگاه !!{derivation} اصل‌موضوعی برای
+  منطق شهودگرایانه، آنگاه~$\Gamma \Proves !A$ در منطق کلاسیک نیز.
+  به‌ویژه، اگر~$!A$ قضیه‌ای شهودگرایانه باشد، قضیه‌ای کلاسیک نیز هست.
+\end{prop}
+
+\begin{proof}
+  هر اصل موضوع شهودگرایانه یک اصل موضوع کلاسیک نیز هست؛ پس هر
+  !!{derivation} در منطق شهودگرایانه !!a{derivation}ای در منطق کلاسیک
+  نیز هست.
+\end{proof}
+
+\end{document}

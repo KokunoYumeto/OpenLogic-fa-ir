@@ -1,0 +1,73 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{replacement}{finiteaxiomatizability}
+\olsection{پیوست: اصل‌موضوع‌پذیریِ متناهی}
+این فصل را با استخراج چند نتیجه از جایگزینی به پایان می‌بریم. نتیجهٔ نخست از \citet{Montague1961} است؛ توجه کنید که این نه اثباتی \emph{درونِ} $\ZF$، بلکه اثباتی \emph{دربارهٔ} $\ZF$ است:
+\begin{thm}\ollabel{zfnotfinitely}
+	$\ZF$ به‌طور متناهی اصل‌موضوع‌پذیر نیست. به‌طور کلی‌تر: اگر $\Th{T}$ متناهی باشد و $\Th{T} \Proves \ZF$، آن‌گاه $\Th{T}$ ناسازگار است.
+
+	(در اینجا به‌طور ضمنی خود را به جمله‌های مرتبه‌اولی محدود می‌کنیم که تنها نماد اولیهٔ غیرمنطقی‌شان $\in$ است، و $\Th{T} \Proves \ZF$ را برای بیان این می‌نویسیم که به‌ازای هر $\phi \in \ZF$، رابطهٔ $\Th{T} \Proves \phi$ برقرار است.)
+\end{thm}
+\begin{proof}
+	$\Th{T}$ متناهی‌ای را ثابت کنید که $\Th{T} \Proves \ZF$. پس $\Th{T}$ بازتاب، یعنی \olref[sth][replacement][ref]{reflectionschema}، را اثبات می‌کند. چون $\Th{T}$ متناهی است، می‌توانیم آن را به‌صورت عطفی یگانه، $\theta$، بازنویسی کنیم. با بازتاباندن این فرمول، $\Th{T} \Proves \exists \beta(\theta \liff \theta^{V_\beta})$. چون بدیهی است که $\Th{T} \Proves \theta$، نتیجه می‌گیریم $\Th{T} \Proves \exists \beta\ \theta^{V_\beta}$.
+
+	اکنون $\psi(X)$ را اختصارِ عبارت زیر بگیرید:
+	\[
+		\theta^X \land X\text{ یک مرحله است} \land (\forall Y \in X)(Y\text{ یک مرحله است}\lif \lnot \theta^{Y})
+	\]
+	تقریباً یعنی $X$ مدلی مرحله‌ای از $\theta$ و از این حیث $\in$-کمینه است. اکنون با یادآوریِ $\Th{T} \Proves \exists \beta\ \theta^{V_\beta}$، و با استفاده از واقعیت‌های پایه‌ای دربارهٔ رتبه‌ها درون $\ZF$ و بنابراین درون $\Th{T}$، داریم:
+	\begin{equation}
+		\Th{T} \Proves \exists M \psi(M). \tag{*}\label{Mpsi}
+	\end{equation}
+	از عطف نخستِ $\psi(X)$ استفاده کنید. هرگاه $\Th{T} \Proves \sigma$، داریم $\Th{T} \Proves \forall X(\psi(X) \lif \sigma^X)$. پس بنا بر \eqref{Mpsi}:
+	\begin{align*}
+		\Th{T} &\Proves \forall X(\psi(X) \lif (\exists N \psi(N))^X)\\
+	\intertext{با استفاده از این و بار دیگر \eqref{Mpsi}:}
+		\Th{T} &\Proves \exists M(\psi(M) \land (\exists N \psi(N))^M)
+	\intertext{پس به‌ویژه:}
+		\Th{T} &\Proves \exists M(\psi(M) \land (\exists N \in M)((N\text{ یک مرحله است})^M \land (\theta^N)^M))
+	\intertext{پس با استدلال مقدماتی دربارهٔ مطلقیتِ مرحله‌ها و رتبه‌ها:}
+		\Th{T} &\Proves \exists M(\psi(M) \land (\exists N \in M)(N\text{ یک مرحله است} \land \theta^N))
+	\end{align*}
+	و بنابراین $\Th{T}$ ناسازگار است.\footnote{این «استدلال مقدماتی» مستلزم اثبات برخی واقعیت‌های مطلقیت دربارهٔ مرحله‌ها و رتبه‌های سلسله‌مراتب است.}
+\end{proof}
+
+نتیجه‌ای مشابه را \citet[223]{Potter2004} ذکر کرده است:
+
+\begin{prop}\ollabel{finiteextensionofZ}
+	فرض کنید $\Th{T}$ با شمار متناهی‌ای اصل موضوع تازه، $\Z$ را گسترش دهد. اگر $\Th{T} \Proves \ZF$، آن‌گاه $\Th{T}$ ناسازگار است. (در اینجا همان محدودیت‌های ضمنیِ \olref{zfnotfinitely} را به کار می‌بریم.)
+\end{prop}
+\begin{proof}
+	$\theta$ را عطفِ همهٔ اصل‌های موضوعِ $\Th{T}$ به‌جز نمونه‌های (بی‌نهایتِ) جداسازی بگیرید. اگر $\psi$ را از $\theta$ مانند \olref{zfnotfinitely}، و بر پایهٔ مرحله‌ها، تعریف کنیم، می‌توانیم نشان دهیم که $\Th{T} \Proves \exists M \psi(M)$.
+
+	مانند \olref{zfnotfinitely} می‌توانیم این طرحواره را برقرار کنیم: هرگاه $\Th{T} \Proves \sigma$، داریم $\Th{T} \Proves \forall X(\psi(X) \lif \sigma^X)$. سپس اثبات را دقیقاً مانند \olref{zfnotfinitely} به پایان می‌رسانیم.
+
+	بااین‌حال، برقراری این طرحواره اندکی بیش از \olref{zfnotfinitely} کار می‌طلبد. آخر، نمونه‌های جداسازی در $\Th{T}$ هستند، اما از عطف‌های $\theta$ نیستند. می‌توانیم با اثباتِ $\Th{T} \Proves \forall X(X\text{ یک مرحله است}\lif \sigma^X)$ برای هر نمونهٔ جداسازیِ $\sigma$ بر این مانع غلبه کنیم. اثبات را به خواننده واگذار می‌کنیم.
+\end{proof}
+\begin{prob}
+	نشان دهید برای هر نمونهٔ جداسازیِ $\sigma$ داریم: $\Z \Proves \forall X(X\text{ یک مرحله است}\lif \sigma^X)$. (این طرحواره را در \olref[sth][replacement][finiteaxiomatizability]{finiteextensionofZ} به کار بردیم.)
+\end{prob}
+\begin{prob}
+	نشان دهید برای هر $\phi \in \Z$ داریم $\ZF \Proves \phi^{V_{\omega+\omega}}$.
+\end{prob}
+\begin{prob}
+	بقیهٔ نتایج طرحواره‌ایِ به‌کاررفته در اثبات‌های \olref[sth][replacement][finiteaxiomatizability]{zfnotfinitely} و \olref[sth][replacement][finiteaxiomatizability]{finiteextensionofZ} را تأیید کنید.
+\end{prob}
+
+همان‌گونه که در \olref[sth][replacement][absinf]{sec} گفته شد، این نشان می‌دهد که جایگزینی اکیداً قوی‌تر از
+\olref[ordinals][ordtype]{thmOrdinalRepresentation} است. یا اندکی دقیق‌تر: اگر $\Z$ + «هر خوش‌ترتیب با یک عدد ترتیبیِ یکتا یکریخت است» سازگار باشد، در اثبات دست‌کم یکی از نمونه‌های جایگزینی ناکام می‌ماند.
+
+
+	%بنا بر فرض، $\psi^{V_\alpha}$ صورت زیر را دارد:
+	%\[
+	%	(\forall A \in V_\alpha)(\exists S \in V_\alpha)(\forall x \in V_\alpha)(x \in S \liff (\phi^{V_\alpha}(x) \land x \in A))
+	%\]
+	%برای اثبات آن، $A \in V_\alpha$ را ثابت کنید. با جداسازی به دست آورید:
+	%\[
+	%	S = \Setabs{x \in A}{\phi^{V_\alpha}(x)}
+	%\]
+	%اکنون چون $S \subseteq A \in V_\alpha$، داریم $S \in V_\alpha$؛ و روشن است که $(\forall x \in V_\alpha)(x \in S \liff (\phi^{V_\alpha}(x) \land x \in A)$.
+
+\end{document}

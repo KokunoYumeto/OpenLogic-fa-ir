@@ -1,0 +1,74 @@
+% part: intuitionistic-logic
+% chapter: introduction
+% section: syntax
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{int}{syn}
+
+\olsection{نحو منطق شهودگرایانه}
+
+نحو منطق شهودگرایانه همان نحو منطق گزاره‌ای است. در منطق گزاره‌ای
+کلاسیک می‌توان برخی رابط‌ها را به‌کمک رابط‌های دیگر تعریف کرد؛ برای
+نمونه، می‌توان~$!A \lif !B$ را با~$\lnot !A \lor !B$، یا~$!A \lor !B$
+را با~$\lnot(\lnot !A \land \lnot !B)$ تعریف کرد. ازاین‌رو در
+ارائه‌های منطق کلاسیک غالباً برخی رابط‌ها به‌عنوان اختصار این تعریف‌ها
+معرفی می‌شوند. در منطق شهودگرایانه چنین نیست، جز در دو مورد:
+$\lnot !A$ را می‌توان---و اغلب چنین می‌کنند---اختصار
+$!A \lif \lfalse$ تعریف کرد. در آن صورت، البته، خود~$\lfalse$ نباید
+تعریف شود!{} همچنین~$!A \liff !B$ را می‌توان، مانند منطق کلاسیک،
+به‌صورت~$(!A \lif !B) \land (!B \lif !A)$ تعریف کرد.
+
+!!^{formula}های منطق گزاره‌ای شهودگرایانه از
+\emph{!!{propositional variable}ها} و ثابت گزاره‌ای~$\lfalse$ با
+استفاده از \emph{رابط‌های منطقی} ساخته می‌شوند. داریم:
+
+\begin{enumerate}
+\item مجموعهٔ !!^a{denumerable}~$\PVar$ از !!{propositional variable}ها:
+  $\Obj p_0$، $\Obj p_1$، \dots
+\item ثابت گزاره‌ای برای !!{falsity}~$\lfalse$.
+\item رابط‌های منطقی: $\land$ (عطف)، $\lor$ (فصل)، $\lif$
+  (شرطی).
+\item علائم سجاوندی: (، )، و ویرگول.
+\end{enumerate}
+
+\begin{defn}[فرمول]
+\ollabel{defn:formulas} مجموعهٔ~$\Frm[L_0]$ از
+\emph{!!{formula}های} منطق گزاره‌ای شهودگرایانه به‌طور استقرایی چنین
+تعریف می‌شود:
+\begin{enumerate}
+\item $\lfalse$ یک !!{formula} اتمی است.
+
+\item هر !!{propositional variable}~$\Obj p_i$ یک !!{formula} اتمی
+است.
+
+\item اگر~$!A$ و~$!B$، !!{formula} باشند، آنگاه~$(!A \land !B)$ یک
+!!a{formula} است.
+
+\item اگر~$!A$ و~$!B$، !!{formula} باشند، آنگاه~$(!A \lor !B)$ یک
+!!a{formula} است.
+
+\item اگر~$!A$ و~$!B$، !!{formula} باشند، آنگاه~$(!A \lif !B)$ یک
+!!a{formula} است.
+
+\tagitem{limitClause}{هیچ چیز دیگری !!a{formula} نیست.}{}
+\end{enumerate}
+\end{defn}
+
+افزون بر رابط‌های اولیه‌ای که در بالا معرفی شدند، از نمادهای
+\emph{تعریف‌شدهٔ} زیر نیز استفاده می‌کنیم: $\lnot$ (نفی) و~$\liff$
+(!!{biconditional}). فرمول‌هایی که با عملگرهای تعریف‌شده ساخته می‌شوند
+چنین فهمیده می‌شوند:
+\begin{enumerate}
+\item $\lnot !A$ اختصار~$!A \lif \lfalse$ است.
+
+\item $!A \liff !B$ اختصار~$(!A \lif !B) \land (!B \lif !A)$ است.
+\end{enumerate}
+
+هرچند~$\lnot$ رسماً اختصار تلقی می‌شود، گاه در قواعد و بندهای تعریف‌ها
+صریحاً با آن چنان رفتار می‌کنیم که گویی اولیه است. هدف اصلی این کار آن
+است که بتوانیم مسئله‌های تمرینی را بیان کنیم.
+
+\end{document}

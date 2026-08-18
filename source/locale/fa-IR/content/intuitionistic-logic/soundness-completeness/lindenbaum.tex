@@ -1,0 +1,149 @@
+% part: intuitionistic-logic
+% chapter: soundness-completeness
+% section: lindenbaum
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{sc}{lin}
+
+\olsection{لم لیندنباوم}
+
+قضیهٔ تمامیت منطق شهودگرایانه با فرض~$\Gamma \Proves/ !A$ و ساختن
+مدلی با~$\mSat{M}{\Gamma}$ و~$\mSat/{M}{!A}$ اثبات می‌شود.
+
+در منطق کلاسیک، رابطهٔ !!{derivability} را می‌توان به مفهوم سازگاری
+فروکاست، زیرا !!a{formula}~$!A$، !!{derivable} از مجموعه‌ای از
+!!{formula}هاست اگر و تنها اگر آن مجموعه همراه با نقیض~$!A$ ناسازگار
+باشد. در منطق شهودگرایانه چنین کاری ممکن نیست. در منطق شهودگرایانه، اگر
+$\lnot!A$ ناسازگار باشد، تنها~$\Proves \lnot\lnot !A$ را به دست
+می‌آوریم. چون~$\lnot\lnot!A \lif !A$ به‌طور کلی در منطق شهودگرایانه
+برقرار نیست، نمی‌توانیم نتیجه بگیریم~$\Proves !A$.
+
+ازاین‌رو هنگام ساختن مدل~$\mModel{M}$ باید نا-!!{derivability}ِ
+!!{formula}~$!A$ را پیگیری کنیم و بنابراین، برخلاف روش کلاسیک،
+نمی‌توانیم برای ساختن مدل~$\mModel{M}$ از مجموعه‌ای تمام
+$\Gamma^* \supseteq \Gamma$ استفاده کنیم؛ زیرا در هر مجموعهٔ تمام
+$\Gamma^*$، $\Gamma^* \Proves !A \lor \lnot !A$.
+
+به‌جای استفاده از مجموعهٔ تمام~$\Gamma^*$، از مفهوم مجموعهٔ اول فرمول‌ها
+استفاده می‌کنیم:
+
+\begin{defn}\ollabel{defn:prime}
+  مجموعهٔ !!{formula}های~$\Gamma$ \emph{اول} است اگر و تنها اگر
+  \begin{enumerate}
+  \item\ollabel{defn:prime1} $\Gamma$ سازگار است؛ یعنی
+    $\Gamma \Proves/ \lfalse$؛
+  \item\ollabel{defn:prime2} اگر~$\Gamma \Proves !A$، آنگاه
+    $!A \in \Gamma$؛ و
+  \item\ollabel{defn:prime3} اگر~$!A \lor !B \in \Gamma$، آنگاه
+    $!A \in \Gamma$ یا~$!B \in \Gamma$.
+  \end{enumerate}
+\end{defn}
+
+\begin{lem}[لم لیندنباوم]
+  \ollabel{lem:lindenbaum} اگر~$\Gamma \Proves/ !A$، آنگاه
+  $\Gamma^* \supseteq \Gamma$ای وجود دارد چنان‌که~$\Gamma^*$ اول و
+  $\Gamma^* \Proves/ !A$.
+\end{lem}
+
+\begin{proof}
+  فرض کنید~$!B_1 \lor !C_1$، $!B_2 \lor !C_2$، \dots، شمارشی از همهٔ
+  !!{formula}های صورت~$!B \lor !C$ باشد. دنباله‌ای صعودی از مجموعه‌های
+  !!{formula}ها، یعنی~$\Gamma_n$، تعریف می‌کنیم که در آن هر
+  $\Gamma_{n+1}$ از~$\Gamma_n$ همراه با یک !!{formula} تازه تشکیل
+  می‌شود. $\Gamma^*$ اجتماع همهٔ~$\Gamma_n$ها خواهد بود. !!{formula}های
+  تازه چنان برگزیده می‌شوند که تضمین کنند~$\Gamma^*$ اول بماند و هنوز
+  $\Gamma^* \Proves/ !A$. یعنی در هر گام باید نخستین فصل
+  $!B_i \lor !C_i$ را بیابیم که:
+  \begin{enumerate}
+  \item\ollabel{gamma-1} $\Gamma_n \Proves !B_i \lor !C_i$
+  \item\ollabel{gamma-2} $!B_i \notin \Gamma_n$ و
+    $!C_i \notin \Gamma_n$
+  \end{enumerate}
+  به~$\Gamma_n$ یا~$!B_i$ را، اگر
+  $\Gamma_n \cup \{!B_i\} \Proves/ !A$، می‌افزاییم، یا در غیر این
+  صورت~$!C_i$ را. باید نشان دهیم این روش کار می‌کند. فعلاً~$i(n)$ را
+  کم‌ترین~$i$ای تعریف می‌کنیم که~\olref{gamma-1} و~\olref{gamma-2}
+  را برآورده سازد.
+  
+  $\Gamma_0 = \Gamma$ و
+  \[
+  \Gamma_{n+1} = \begin{cases}
+    \Gamma_n \cup \{!B_{i(n)}\} &
+    \text{اگر~$\Gamma_n \cup \{!B_{i(n)}\} \Proves/ !A$} \\
+    \Gamma_n \cup \{!C_{i(n)}\} & \text{در غیر این صورت}
+    \end{cases}
+  \]
+  را تعریف کنید. اگر~$i(n)$ تعریف‌نشده باشد، یعنی هرگاه
+  $\Gamma_n \Proves !B \lor !C$، یا~$!B \in \Gamma_n$ یا
+  $!C \in \Gamma_n$، می‌گذاریم~$\Gamma_{n+1} = \Gamma_n$. اکنون
+  بگذارید~$\Gamma^* = \bigcup_{n=0}^\infty \Gamma_n$.
+
+  نخست نشان می‌دهیم برای هر~$n$، $\Gamma_n \Proves/ !A$. با استقرا بر
+  $n$ پیش می‌رویم. برای~$n = 0$ ادعا بنا بر فرض قضیه، یعنی
+  $\Gamma \Proves/ !A$، برقرار است. اگر~$n>0$، باید نشان دهیم اگر
+  $\Gamma_n \Proves/ !A$، آنگاه~$\Gamma_{n+1} \Proves/ !A$. اگر
+  $i(n)$ تعریف‌نشده باشد، $\Gamma_{n+1} = \Gamma_n$ و چیزی برای اثبات
+  نیست. پس فرض کنید~$i(n)$ تعریف‌شده باشد. برای سادگی، بگذارید
+  $i = i(n)$.
+  
+  عکس نقیض ادعا را ثابت می‌کنیم. فرض کنید~$\Gamma_{n+1} \Proves !A$.
+  بنا بر ساخت، اگر~$\Gamma_n \cup \{!B_i\} \Proves/ !A$، آنگاه
+  $\Gamma_{n+1} = \Gamma_n \cup \{!B_i\}$؛ وگرنه
+  $\Gamma_{n+1} = \Gamma_n \cup \{!C_i\}$. حالت نخست آشکارا ناممکن
+  است، زیرا آنگاه~$\Gamma_{n+1} \Proves/ !A$. پس
+  $\Gamma_n \cup \{!B_i\} \Proves !A$ و
+  $\Gamma_{n+1} = \Gamma_n \cup \{!C_i\}$. بنا بر تعریف~$i(n)$،
+  $\Gamma _n \Proves !B_i \lor !C_i$. همچنین
+  $\Gamma_n \cup \{!B_i\} \Proves !A$ و
+  $\Gamma_{n+1} = \Gamma_n \cup \{!C_i\} \Proves !A$. بنابراین
+  $\Gamma_n \Proves !A$، که همان مطلوب بود.
+
+  اگر~$\Gamma^* \Proves !A$، زیرمجموعه‌ای متناهی
+  $\Gamma' \subseteq \Gamma^*$ وجود می‌داشت چنان‌که
+  $\Gamma' \Proves !A$. هر~$!D \in \Gamma'$ باید برای یک~$i$ در
+  $\Gamma_i$ باشد. بگذارید~$n$ بزرگ‌ترینِ این شاخص‌ها باشد. چون هرگاه
+  $i \le n$، $\Gamma_i \subseteq \Gamma_n$، داریم
+  $\Gamma' \subseteq \Gamma_n$. اما آنگاه~$\Gamma_n \Proves !A$،
+  برخلاف آنچه در بالا ثابت کردیم، یعنی~$\Gamma_n \Proves/ !A$.
+
+  سرانجام نشان می‌دهیم~$\Gamma^*$ اول است؛ یعنی شرایط
+  \olref{defn:prime1}، \olref{defn:prime2} و~\olref{defn:prime3} از
+  \olref{defn:prime} را برآورده می‌کند.
+
+  نخست، $\Gamma^* \Proves/ !A$، پس~$\Gamma^*$ سازگار است و
+  \olref{defn:prime1} برقرار است.
+
+  اکنون نشان می‌دهیم اگر~$\Gamma^* \Proves !B \lor !C$، آنگاه یا
+  $!B \in \Gamma^*$ یا~$!C \in \Gamma^*$. این امر
+  \olref{defn:prime3} را ثابت می‌کند، زیرا اگر
+  $!B \lor !C \in \Gamma^*$، آنگاه~$\Gamma^* \Proves !B \lor !C$ نیز.
+  پس فرض کنید~$\Gamma^* \Proves !B \lor !C$، اما
+  $!B \notin \Gamma^*$ و~$!C \notin \Gamma^*$. چون
+  $\Gamma^* \Proves !B \lor !C$، برای یک~$n$ داریم
+  $\Gamma_n \Proves !B \lor !C$. فرمول~$!B \lor !C$ در شمارش همهٔ
+  فصل‌ها، مثلاً، به‌صورت~$!B_j \lor !C_j$ ظاهر می‌شود. این فرمول خواص
+  تعریف~$i(n)$ را برآورده می‌کند: $\Gamma_n \Proves !B_j \lor !C_j$،
+  درحالی‌که~$!B_j \notin \Gamma_n$ و~$!C_j \notin \Gamma_n$. در هر
+  مرحله، دست‌کم یک فصل~$!B_i \lor !C_i$ کم‌تر شرایط را برآورده می‌کند
+  (زیرا در هر مرحله یا~$!B_i$ یا~$!C_i$ را می‌افزاییم)، پس در مرحله‌ای
+  $m$ خواهیم داشت~$j = i(m)$. اما آنگاه یا
+  $!B \in \Gamma_{m+1}$ یا~$!C \in \Gamma_{m+1}$، برخلاف فرض
+  $!B \notin \Gamma^*$ و~$!C \notin \Gamma^*$.
+
+  اکنون فرض کنید~$\Gamma^* \Proves !B$. آنگاه
+  $\Gamma^* \Proves !B \lor !B$. اما همین اکنون ثابت کردیم اگر
+  $\Gamma^* \Proves !B \lor !B$، آنگاه~$!B \in \Gamma^*$. بنابراین
+  $\Gamma^*$ شرط~\olref{defn:prime2} از~\olref{defn:prime} را برآورده
+  می‌کند.
+\end{proof}
+
+\begin{prob}
+نشان دهید اگر~$\Gamma \Proves/ \bot$، آنگاه~$\Gamma$ در منطق کلاسیک
+سازگار است؛ یعنی ارزش‌گذاری‌ای وجود دارد که همهٔ فرمول‌های~$\Gamma$ را
+صادق سازد.
+\end{prob}
+
+\end{document}

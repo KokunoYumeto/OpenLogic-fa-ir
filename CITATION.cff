@@ -1,46 +1,47 @@
 cff-version: 1.2.0
-message: "لطفاً DOI دقیق نسخهٔ فارسی ایران OLP-0722 را که در ادامه آمده است استناد کنید. / Please cite the exact Iranian Persian OLP-0722 version DOI below."
-title: "مخزن منبع و ساخت نسخهٔ کامل فارسی ایران از متن منطق باز / Source and build repository for the complete Iranian Persian edition of The Open Logic Text"
+message: "لطفاً هنگام استناد، DOI مفهومی پایدار و برچسب انتشار صفحه‌نمایش را به‌کار ببرید. / Please cite the stable concept DOI and the screen-release tag."
+title: "مخزن منبع و ساخت نسخهٔ کامل فارسی ایران از متن منطق باز، با پی‌دی‌اف‌های بازچینی‌شده برای صفحه‌نمایش / Source and build repository for the complete Iranian Persian edition with screen-retypeset PDFs"
 type: software
 authors:
   - name: "Open Logic Project"
 abstract: >
-  نسخهٔ مستقل و کامل فارسی ایران برای منبع تثبیت‌شده: خوانشگر پیونددارِ
-  اصلی با 642 واحد در 839 صفحه و ضمیمهٔ فنی مستقل با 80 واحد دیگر در
-  127 صفحه. مشارکت‌کننده با نقش «سایر»: AI typesetting & translation.
-  English descriptor: independent complete Iranian Persian translation
-  closure; untagged PDFs, incomplete mathematical/ZWNJ/RTL extraction, and
-  no human/native review or accessibility certification.
+  نسخهٔ مستقل و کامل فارسی ایران برای منبع تثبیت‌شده، با دو قالب افزوده برای
+  مطالعه روی صفحه‌نمایش: خوانشگر 642 واحدی در 748 صفحه و ضمیمهٔ فنی 80
+  واحدی در 108 صفحه. دارایی‌های چاپی پیشین بدون تغییر بایتی نگه داشته شده‌اند.
+  پی‌دی‌اف‌های صفحه‌نمایش ثابت و بدون برچسب ساختاری‌اند و خروجی واکنش‌گرا یا
+  PDF/UA نیستند. English descriptor: additive fixed-layout screen retypesetting
+  of the complete 722-unit Iranian Persian edition; no separate Zenodo version
+  DOI is claimed until a new Zenodo version is published.
 repository-code: "https://github.com/KokunoYumeto/OpenLogic-fa-ir"
-version: "OLP-0722-20260818"
+url: "https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/tag/fa-ir-olp-0722-screen-20260818"
+version: "OLP-0722-SCREEN-20260818"
 date-released: "2026-08-18"
-doi: "10.5281/zenodo.21987687"
+doi: "10.5281/zenodo.21921852"
 identifiers:
   - type: doi
-    value: "10.5281/zenodo.21987687"
-    description: "DOI دقیق و تغییرناپذیر نسخهٔ OLP-0722 / Exact immutable OLP-0722 version"
-  - type: doi
     value: "10.5281/zenodo.21921852"
-    description: "DOI مفهومی پایدار نسخهٔ فارسی ایران / Stable Iranian Persian edition concept"
+    description: "DOI مفهومی پایدار نسخهٔ فارسی ایران / Stable Iranian Persian edition concept DOI"
+  - type: url
+    value: "https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/tag/fa-ir-olp-0722-screen-20260818"
+    description: "انتشار افزودهٔ صفحه‌نمایش / Additive screen release"
 license: CC-BY-4.0
 preferred-citation:
   type: book
-  title: "متن منطق باز — نسخهٔ کامل فارسی ایران برای منبع تثبیت‌شده / The Open Logic Text — Complete Iranian Persian Edition of the Frozen Source (OLP-0722)"
+  title: "متن منطق باز — نسخهٔ کامل فارسی ایران بر پایهٔ منبع تثبیت‌شده؛ پی‌دی‌اف‌های بازچینی‌شده برای مطالعه روی صفحه‌نمایش"
   authors:
     - name: "Open Logic Project"
   languages:
     - fas
-  doi: "10.5281/zenodo.21987687"
+  doi: "10.5281/zenodo.21921852"
   license: CC-BY-4.0
-  version: "OLP-0722-20260818"
+  version: "OLP-0722-SCREEN-20260818"
   date-released: "2026-08-18"
-  edition: "بسته‌شدن کامل: خوانشگر اصلی 642 واحدی و ضمیمهٔ فنی 80 واحدی / Complete closure: 642-unit canonical reader plus 80-unit technical supplement"
+  edition: "بازچینی افزوده برای صفحه‌نمایش: خوانشگر 642 واحدی و ضمیمهٔ فنی 80 واحدی / Additive screen retypesetting: 642-unit reader plus 80-unit supplement"
   year: 2026
-  url: "https://doi.org/10.5281/zenodo.21987687"
+  url: "https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/tag/fa-ir-olp-0722-screen-20260818"
   abstract: >
-    ترجمهٔ مستقل و کامل فارسی ایران برای همهٔ 722 واحد بسته‌شدن. دو PDF
-    برچسب‌گذاری ساختاری ندارند؛ استخراج ریاضیات، نیم‌فاصله و ترتیب راست‌به‌چپ
-    کاملاً مرجع نیست؛ و هیچ بازبینی انسانی/بومی فارسی یا گواهی دسترس‌پذیری
-    ادعا نمی‌شود. English descriptor: complete independent Iranian Persian
-    edition of the frozen source; editable TeX is authoritative for extraction
+    بازچینی ثابت و افزوده برای مطالعه روی صفحه‌نمایش از نسخهٔ کامل 722 واحدی
+    فارسی ایران؛ دارایی‌های چاپی پیشین بدون تغییر بایتی حفظ شده‌اند. فایل‌ها
+    برچسب ساختاری و گواهی PDF/UA ندارند. English descriptor: fixed-layout
+    screen-retypeset edition; editable TeX remains authoritative for extraction
     limitations.

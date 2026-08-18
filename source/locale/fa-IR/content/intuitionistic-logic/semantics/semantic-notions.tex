@@ -1,0 +1,75 @@
+% part: intuitionistic-logic
+% chapter: semantics
+% section: semantic-notions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{sem}{sem}
+
+\olsection{مفاهیم معناشناختی}
+
+\begin{defn}
+  می‌گوییم~$!A$ \emph{در مدل~$\mModel{M} = \tuple{W,R,V}$ صادق است}،
+  یعنی~$\mSat{M}{!A}$، اگر و تنها اگر برای هر~$w \in W$،
+  $\mSat{M}{!A}[w]$. فرمول~$!A$ \emph{معتبر} است، یعنی~$\Entails !A$،
+  اگر و تنها اگر در همهٔ مدل‌ها صادق باشد. می‌گوییم مجموعهٔ
+  !!{formula}های~$\Gamma$، $!A$ را \emph{نتیجه می‌دهد}، یعنی
+  $\Gamma \Entails !A$، اگر و تنها اگر برای هر مدل~$\mModel{M}$ و
+  هر~$w$ چنان‌که~$\mSat{M}{\Gamma}[w]$، رابطهٔ~$\mSat{M}{!A}[w]$
+  برقرار باشد.
+\end{defn}
+
+\begin{prop}\ollabel{prop:sat-entails}
+  \begin{enumerate}
+  \item\ollabel{prop:sat-entails1} اگر~$\mSat{M}{\Gamma}[w]$ و
+    $\Gamma \Entails !A$، آنگاه~$\mSat{M}{!A}[w]$.
+  \item\ollabel{prop:sat-entails2} اگر~$\mSat{M}{\Gamma}$ و
+    $\Gamma \Entails !A$، آنگاه~$\mSat{M}{!A}$.
+  \end{enumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{enumerate}
+  \item فرض کنید~$\mSat{M}{\Gamma}[w]$. چون~$\Gamma \Entails !A$،
+    بنا بر تعریف استلزام، $\mSat{M}{!A}[w]$.
+  \item فرض کنید~$\mSat{M}{\Gamma}$. آنگاه برای هر~$w \in W$،
+    $\mSat{M}{\Gamma}[w]$؛ پس بنا بر~\olref{prop:sat-entails1}، برای
+    هر~$w \in W$، $\mSat{M}{!A}[w]$. بنابراین~$\mSat{M}{!A}$.
+  \end{enumerate}
+\end{proof}
+
+
+\begin{defn}\ollabel{defn:restrict}
+  فرض کنید~$\mModel{M}$ یک مدل رابطه‌ای و~$w \in W$ باشد.
+  \emph{محدودیت}~$\mModel{M}$ به~$w$، یعنی
+  $\mModel{M}_w=\tuple{W_w, R_w, V_w}$، چنین داده می‌شود:
+  \begin{align*}
+    W_w & = \Setabs{u \in W}{Rwu},\\
+    R_w  & = R \cap (W_w)^2, \text{ و}\\
+    V_w(p) & = V(p) \cap W_w.
+  \end{align*}
+\end{defn}
+
+\begin{prop}\ollabel{prop:restrict}
+  $\mSat{M}{!A}[w]$ اگر و تنها اگر~$\mSat{M_w}{!A}$.
+\end{prop}
+
+\begin{prob}
+  \olref[int][sem][sem]{prop:restrict} را ثابت کنید.
+\end{prob}
+
+\begin{prop}
+  فرض کنید برای هر مدل~$\mModel{M}$ چنان‌که~$\mSat{M}{\Gamma}$،
+  رابطهٔ~$\mSat{M}{!A}$ برقرار باشد. آنگاه~$\Gamma \Entails !A$.
+\end{prop}
+
+\begin{proof}
+  فرض کنید~$\mSat{M}{\Gamma}[w]$. با اعمال~\olref{prop:restrict} بر
+  هر~$!B \in \Gamma$، داریم~$\mSat{M_w}{\Gamma}$. بنا بر فرض،
+  $\mSat{M_w}{!A}$. با کاربرد دوبارهٔ~\olref{prop:restrict} نتیجه
+  می‌گیریم~$\mSat{M}{!A}[w]$.
+\end{proof}
+
+\end{document}

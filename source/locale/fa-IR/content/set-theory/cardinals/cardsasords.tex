@@ -1,0 +1,135 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{cardinals}{cardsasords}
+\olsection{کاردینال‌ها به‌مثابه اعداد ترتیبی}
+
+در واقع، نظریهٔ کاردینال‌های ما صرفاً (و بی‌پروا) از نظریهٔ اعداد
+ترتیبی‌مان بهره خواهد گرفت. یعنی کاردینال‌ها را فقط به‌عنوان برخی
+اعداد ترتیبیِ خاص تعریف خواهیم کرد. به‌طور مشخص، تعریف زیر را عرضه
+می‌کنیم:
+
+\begin{defn}\ollabel{defcardinalasordinal}
+اگر بتوان $A$ را خوش‌ترتیب کرد، آن‌گاه $\card{A}$ کوچک‌ترین عدد
+ترتیبیِ $\gamma$ است که $\cardeq{A}{\gamma}$. برای هر عدد ترتیبیِ
+$\gamma$ می‌گوییم $\gamma$ یک \emph{کاردینال} است اگر و تنها اگر
+$\gamma = \card{\gamma}$.
+\end{defn}
+
+همین حالا عبارت «می‌توان $A$ را خوش‌ترتیب کرد» را به کار بردیم.
+چنان‌که تقریباً همیشه در ریاضیات رخ می‌دهد، تعبیر وجهی در اینجا فقط
+شرحی غیررسمی از یک ادعای وجودی است: گفتنِ «می‌توان $A$ را خوش‌ترتیب
+کرد» صرفاً یعنی «رابطه‌ای وجود دارد که $A$ را خوش‌ترتیب می‌کند».
+
+اما \olref{defcardinalasordinal} مشکلی دارد. می‌خواهیم \emph{هر}
+مجموعه اندازه‌ای داشته باشد؛ یعنی $\card{A}$ برای هر~$A$ وجود داشته
+باشد. ولی تعریفی که همین حالا دادیم با یک شرطی آغاز می‌شود:
+«\emph{اگر} بتوان $A$ را خوش‌ترتیب کرد\ldots». اگر مجموعه‌ای مانند
+$A$ باشد که نتوان آن را خوش‌ترتیب کرد، تعریف ما به‌سادگی در تعریف
+شیءِ~$\card{A}$ ناکام می‌ماند.
+
+بنابراین، برای استفاده از \olref{defcardinalasordinal} به تضمینی
+نیاز داریم که هر مجموعه را بتوان خوش‌ترتیب کرد. اما متأسفانه چنین
+تضمینی در~$\ZF$ در دسترس نیست. پس اگر بخواهیم
+\olref{defcardinalasordinal} را به کار ببریم، چاره‌ای جز افزودن اصل
+موضوعی تازه، مانند اصل زیر، نداریم:
+\begin{axiom}[خوش‌ترتیبی]
+هر مجموعه را می‌توان خوش‌ترتیب کرد.
+\end{axiom}
+در \olref[choice][]{chap} بررسی خواهیم کرد که آیا اصل موضوع
+خوش‌ترتیبی پذیرفتنی است یا نه. اما از این پس آزادانه آن را به کار
+می‌بریم. با استفاده از آن، کاملاً سرراست می‌توان اثبات کرد که
+کاردینال‌ها (به تعریفِ \olref{defcardinalasordinal}) وجود دارند و
+به‌خوبی رفتار می‌کنند:
+
+\begin{lem}\ollabel{lem:CardinalsExist}
+برای هر مجموعهٔ $A$:
+\begin{enumerate}
+	\item\ollabel{cardaexists} $\card{A}$ وجود دارد و یکتاست؛
+	\item\ollabel{cardaapprox} $\cardeq{\card{A}}{A}$؛
+	\item\ollabel{cardaidem} $\card{A}$ یک کاردینال است؛ یعنی
+	$\card{A} = \card{\card{A}}$.
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+$A$ را ثابت کنید. بنا بر اصل خوش‌ترتیبی، خوش‌ترتیبی‌ای مانند
+$\tuple{A, R}$ وجود دارد. بنا بر
+\olref[ordinals][ordtype]{thmOrdinalRepresentation}،
+$\tuple{A, R}$ با عدد ترتیبیِ یکتایی مانند $\beta$ یکریخت است. پس
+$\cardeq{A}{\beta}$. بنا بر استقرای ترامتناهی، کوچک‌ترین عدد ترتیبیِ
+یکتایی مانند $\gamma$ وجود دارد که $\cardeq{A}{\gamma}$. بنابراین
+$\card{A} = \gamma$؛ و این \olref{cardaexists} و
+\olref{cardaapprox} را اثبات می‌کند. برای اثبات \olref{cardaidem}
+توجه کنید که اگر $\delta \in \gamma$، آن‌گاه به سبب انتخاب
+$\gamma$ داریم $\cardless{\delta}{A}$؛ و چون هم‌شماری رابطهٔ
+هم‌ارزی است
+(\olref[sfr][siz][equ]{equinumerosityisequi})،
+$\cardless{\delta}{\gamma}$ نیز برقرار است. پس
+$\gamma = \card{\gamma}$.
+%برای برهان خلف، فرض کنید عدد ترتیبیِ $\delta \in \gamma$ای باشد که $\cardeq{\gamma}{\delta}$. آن‌گاه از هم‌ارزیِ هم‌شماری تناقضی با انتخاب $\gamma$ به‌عنوان کوچک‌ترین عدد ترتیبیِ هم‌شمار با $A$ حاصل می‌شود.
+\end{proof}
+
+نتیجهٔ بعدی اصل کانتور، و حتی بیش از آن، را تضمین می‌کند. (توجه
+کنید که کاردینال‌ها ترتیب خود را از اعداد ترتیبی به ارث می‌برند؛
+یعنی $\cardfont{a} < \cardfont{b}$ اگر و تنها اگر
+$\cardfont{a} \in \cardfont{b}$. در صورت‌بندی این مطلب برای اشیایی
+که می‌دانیم کاردینال‌اند از حروف فراکتور استفاده می‌کنیم. این
+قرارداد نسبتاً رایج است. بدیل رایج دیگر استفاده از حروف یونانی است،
+زیرا کاردینال‌ها عدد ترتیبی‌اند، اما آن حروف را از میانهٔ الفبا
+برمی‌گزینند؛ برای نمونه: $\kappa, \lambda$.)
+\begin{lem}\ollabel{lem:CardinalsBehaveRight}
+برای هر دو مجموعهٔ $A$ و $B$:
+\begin{align*}
+	\cardeq{A}{B} &\text{ اگر و تنها اگر } \card{A} = \card{B}\\
+	\cardle{A}{B} &\text{ اگر و تنها اگر } \card{A} \leq \card{B}\\
+	\cardless{A}{B}&\text{ اگر و تنها اگر } \card{A} < \card{B}
+\end{align*}
+\end{lem}
+
+\begin{proof}
+جهت چپ‌به‌راستِ ادعای دوم را اثبات می‌کنیم (حالت‌های دیگر مشابه‌اند
+و به‌عنوان تمرین واگذار می‌شوند). نمودار زیر را در نظر بگیرید:
+\begin{center}
+	\begin{tikzpicture}
+	\node (nodea) {$A$};
+	\node[right = 6em of nodea] (nodeb) {$B$};
+	\node[below = 2em of nodea] (nodecarda) {$\card{A}$};
+	\node[below = 2em of nodeb] (nodecardb) {$\card{B}$};
+	\draw[->] (nodea)--(nodeb);
+	\draw[<->] (nodea)--(nodecarda);
+	\draw[<->] (nodeb)--(nodecardb);
+	\draw[->, dashed] (nodecarda)--(nodecardb);
+\end{tikzpicture}
+\end{center}
+پیکان‌های دوسر نشان‌دهندهٔ !!{bijection}هایی‌اند که وجودشان را
+\olref{lem:CardinalsExist} تضمین می‌کند. با فرض
+$\cardle{A}{B}$، !!a{injection} مانند $A\to B$ وجود دارد. اکنون با
+دنبال‌کردن پیکان‌ها از $\card{A}$ به $A$، سپس به $B$ و بعد به
+$\card{B}$، !!a{injection} از $\card{A}$ به $\card{B}$ به دست
+می‌آوریم (پیکان خط‌چین).
+\end{proof}\noindent
+همچنین می‌توانیم با \olref{lem:CardinalsBehaveRight} قضیهٔ
+شرودر--برنشتاین را دوباره اثبات کنیم. این قضیه می‌گوید اگر
+$\cardle{A}{B}$ و $\cardle{B}{A}$، آن‌گاه $\cardeq{A}{B}$. آن را
+به‌صورت \olref[sfr][siz][sb]{thm:schroder-bernstein} بیان کردیم، اما
+نخست آن را ــ با قدری زحمت ــ در
+\olref[sfr][infinite][card-sb]{sec} اثبات کردیم. اکنون ملاحظه کنید:
+
+\begin{proof}[اثبات دوبارهٔ Schr\"oder--Bernstein]
+اگر $\cardle{A}{B}$ و $\cardle{B}{A}$، آن‌گاه بنا بر
+\olref{lem:CardinalsBehaveRight} داریم
+$\card{A} \leq \card{B}$ و $\card{B} \leq \card{A}$. بنابراین، بنا
+بر سه‌شقی و \olref{lem:CardinalsBehaveRight}،
+$\card{A} = \card{B}$ و $\cardeq{A}{B}$.
+\end{proof}
+\noindent
+هرچند این اثبات بسیار ساده است، به‌طور ضمنی هم به جایگزینی (برای
+به‌دست‌آوردن
+\olref[ordinals][ordtype]{thmOrdinalRepresentation}) و هم به اصل
+خوش‌ترتیبی (برای تضمین \olref{lem:CardinalsBehaveRight}) وابسته
+است. در مقابل، اثباتِ \olref[sfr][infinite][card-sb]{sec} بسیار
+خودبسنده‌تر بود (در واقع، می‌توان آن را در~$\Zminus$ انجام داد).
+
+\end{document}

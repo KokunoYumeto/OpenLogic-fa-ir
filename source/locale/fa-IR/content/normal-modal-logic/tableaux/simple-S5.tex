@@ -1,0 +1,87 @@
+% Part: normal-modal-logic
+% Chapter: tableaux
+% Section: simple-S5
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{tab}{s5}
+
+\olsection{\usetoken{P}{tableau}های ساده برای~\Log{S5}}
+
+\Log{S5} نسبت به ردهٔ مدل‌های همگانی درست و کامل است؛ یعنی مدل‌هایی
+که هر جهان در آن‌ها از هر جهان دسترسی‌پذیر است. در مدل‌های همگانی
+رابطهٔ دسترسی‌پذیری اهمیتی ندارد: «جهان~$w$ای وجود دارد که
+$\mSat{M}{!A}[w]$» صادق است اگر و تنها اگر چنین~$w$ای وجود داشته باشد
+که از~$u$ دسترسی‌پذیر است. پس در~\Log{S5} می‌توانیم مدل‌ها را صرفاً
+به‌صورت مجموعه‌ای از جهان‌ها و ارزش‌گذاری~$V$ تعریف کنیم. این نشان
+می‌دهد که باید بتوانیم قواعد !!{tableau} را نیز ساده کنیم. در حالت کلی،
+دنباله‌های اعداد صحیح مثبت را پیشوند می‌گیریم تا بتوانیم پیگیری کنیم
+کدام پیشوندها جهان‌هایی را نام می‌برند که از جهان‌های دیگر
+دسترسی‌پذیرند: $\sigma.n$ نام جهانی دسترسی‌پذیر از~$\sigma$ است. اما
+در~\Log{S5} هر جهان از هر جهان دسترسی‌پذیر است، پس نیازی به این پیگیری
+نیست. در عوض می‌توانیم از اعداد صحیح مثبت به‌عنوان پیشوند استفاده کنیم.
+قواعد ساده‌شده در~\olref{tab:rules-S5} آمده‌اند.
+
+\begin{table}
+  \begin{center}
+    \def\arraystretch{3}\def\fCenter{}
+    \begin{tabular}{|c|c|}
+    \hline
+    \iftag{prvBox}{
+      \AxiomC{\sFmla{\True}{\Box !A}[n]}
+      \RightLabel{\TRule{\True}{\Box}}
+      \UnaryInfC{\sFmla{\True}{!A}[m]}
+      \DisplayProof
+      &
+      \AxiomC{\sFmla{\False}{\Box !A}[n]}
+      \RightLabel{\TRule{\False}{\Box}}
+      \UnaryInfC{\sFmla{\False}{!A}[m]}
+      \DisplayProof\\
+      $m$ استفاده‌شده است & $m$ تازه است
+      \\[1ex]
+      \hline}{}
+    \iftag{prvDiamond}{
+      \AxiomC{\sFmla{\True}{\Diamond !A}[n]}
+      \RightLabel{\TRule{\True}{\Diamond}}
+      \UnaryInfC{\sFmla{\True}{!A}[m]}
+      \DisplayProof
+      &
+      \AxiomC{\sFmla{\False}{\Diamond !A}[n]}
+      \RightLabel{\TRule{\False}{\Diamond}}
+      \UnaryInfC{\sFmla{\False}{!A}[m]}
+      \DisplayProof\\
+      $m$ تازه است & $m$ استفاده‌شده است
+      \\[1ex]
+      \hline}{}
+    \end{tabular}
+  \end{center}
+  \caption{قواعد ساده‌شده برای~\Log{S5}.}
+  \ollabel{tab:rules-S5}
+\end{table}
+
+\begin{ex}
+  تابلوی بستهٔ ساده‌شده‌ای ارائه می‌کنیم که نشان می‌دهد
+  $\Log{S5} \Proves \Ax{5}$؛ یعنی~$\Diamond!A \lif \Box\Diamond!A$.
+  \begin{oltableau}
+    [\pFmla{\False}{\Diamond\formula{A} \lif \Box\Diamond \formula{A}}{1},
+      just = \TAss
+      [\pFmla{\True}{\Diamond \formula{A}}{1}, just = {\TRule{\False}{\lif}[1]}
+        [\pFmla{\False}{\Box\Diamond \formula{A}}{1},
+          just = {\TRule{\False}{\lif}[1]}
+          [\pFmla{\False}{\Diamond \formula{A}}{2},
+            just = {\TRule{\False}{\Box}[3]}
+            [\pFmla{\True}{\formula{A}}{3},
+              just = {\TRule{\True}{\Diamond}[2]}
+                [\pFmla{\False}{\formula{A}}{3},
+                  just = {\TRule{\False}{\Diamond}[4]}, close]
+            ]
+          ]
+        ]
+      ]
+    ]
+  \end{oltableau}
+\end{ex}
+
+\end{document}

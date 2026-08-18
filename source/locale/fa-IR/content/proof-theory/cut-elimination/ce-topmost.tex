@@ -1,0 +1,641 @@
+% Part: proof-theory
+% Chapter: cut-elimination
+% Section: ce-topmost
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{cut}{top}
+
+\olsection{حذف بالاترین برش‌ها}
+
+\begin{defn}
+!!a{proof}~$\pi$ را در نظر بگیرید که به قاعدهٔ \CutCS{} پایان می‌یابد،
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\Gamma \fCenter \Delta, !A$
+\AxiomC{}
+\RightLabel{$\pi_2$}
+\Deduce$!A, \Gamma \fCenter \Delta$
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta$
+\DisplayProof
+\]
+و هیچ استنتاج \CutCS{} دیگری ندارد. \emph{ارتفاع برش}~$\pi$ برابر
+$\cheight{\pi}=\pheight{\pi_1}+\pheight{\pi_2}$ است. \emph{رتبهٔ
+برش}~$\pi$ برابر $\cutrank{\pi}=\depth{!A}$ است.
+\end{defn}
+
+\begin{lem}\ollabel{lem:cut-adm-G3c}
+قاعدهٔ \CutCS{} در~\Log{G3c} پذیرفتنی است. به بیان دیگر، اگر $\pi$
+!!a{proof}ی باشد که به تنها یک~\CutCS{} پایان می‌یابد و در جای دیگر
+فقط از قواعد~\Log{G3c} استفاده می‌کند، آنگاه !!a{proof}~$\pi'$ای برای
+همان دنبالهٔ پایانی در~\Log{G3c} وجود دارد.
+\end{lem}
+
+\begin{proof}
+اثبات با استقرای دوگانه بر !!{height} و رتبهٔ برش است. !!{proof}~$\pi$
+چنین پایان می‌یابد:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\Gamma \fCenter \Delta, !A$
+\AxiomC{}
+\RightLabel{$\pi_2$}
+\Deduce$!A, \Gamma \fCenter \Delta$
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta$
+\DisplayProof
+\]
+
+پایهٔ استقرا: $\cheight{\pi}=0$ و $\cutrank{\pi}=0$. چون
+$\cheight{\pi}=\pheight{\pi_1}+\pheight{\pi_2}=0$، هر دو دنبالهٔ
+$\Gamma\Sequent\Delta,!A$ و $!A,\Gamma\Sequent\Delta$ اصل‌اند. دو
+حالت داریم: (الف)~$!A$ در یکی از آن‌ها اصلی نیست؛ یا (ب)~$!A$ در هر
+دو اصلی است. در پایین نشان می‌دهیم در هر دو حالت
+$\Gamma\Sequent\Delta$ باید یک اصل باشد و نیازی به فرض استقرا نیست.
+
+اکنون حالت‌های ممکن را برحسب اینکه $\pi_1$ و~$\pi_2$ اصل‌اند یا به
+استنتاجی پایان می‌یابند، و اینکه $!A$ در آن استنتاج اصلی است یا نه،
+جدا می‌کنیم. حالت‌های A و~B پایهٔ استقرا را پوشش می‌دهند. در گام
+استقرا فرض می‌کنیم $\cheight{\pi}>0$ یا $\cutrank{\pi}>0$، یا هر دو.
+می‌توانیم از فرض استقرا استفاده کنیم: آخرین~\CutCS{} را می‌توان از هر
+!!{proof}ی حذف کرد که به تنها یک~\CutCS{} پایان می‌یابد و یا رتبهٔ
+برش آن $=\cutrank{\pi}$ و !!{height} برش آن
+$<\cheight{\pi}$ است، یا رتبهٔ برش آن $<\cutrank{\pi}$ است.
+حالت $\cheight{\pi}=0$، که هر دو مقدمه اصل‌اند، در A و~B؛ و
+حالت‌های $\cheight{\pi}>0$ در C--D پوشش داده می‌شوند.
+
+\paragraph{حالت A:}
+فرمولی~$!B$ هم در~$\Gamma$ و هم در~$\Delta$ ظاهر می‌شود. آنگاه
+$\Gamma\Sequent\Delta$، اگر $!B$ اتمی باشد، یک اصل است؛ و در غیر این
+صورت بنا بر \olref[seq][ex]{prop:G3c-axioms} در \Log{G3c} بدون
+\CutCS{} یک !!a{proof}~$\pi'$ دارد. این حالت (الف) پایهٔ استقرا را
+پوشش می‌دهد: اگر $!A$ در $\Gamma\Sequent\Delta,!A$ یا در
+$!A,\Gamma\Sequent\Delta$ اصلی نباشد و این دنباله‌ها اصل باشند، یک
+$!B$ اتمی دیگر باید هم در~$\Gamma$ و هم در~$\Delta$ ظاهر شود. همچنین
+گام استقرا را در حالتی پوشش می‌دهد که یکی از مقدمات اصلی است که در آن
+$!A$ اصلی نیست، حتی اگر مقدمهٔ دیگر نتیجهٔ قاعده‌ای باشد.
+
+\paragraph{حالت B:}
+هر دو مقدمه اصل‌اند و $!A$ اصلی و بنابراین اتمی است. مقدمهٔ چپ
+$\Gamma\Sequent\Delta,!A$ را در نظر بگیرید. چون $!A$ اصلی است، باید
+در~$\Gamma$ ظاهر شود؛ وگرنه این دنباله اصل نبود. به همین ترتیب، $!A$
+باید در~$\Delta$ ظاهر شود؛ وگرنه
+$!A,\Gamma\Sequent\Delta$ اصل نبود. پس $!A$ اتمی و عضو هر دو
+$\Gamma$ و~$\Delta$ است؛ یعنی $\Gamma\Sequent\Delta$ یک اصل است. این
+حالت (ب) پایهٔ استقرا را پوشش می‌دهد.
+
+\begin{center}
+حالت‌های جایگزین A و B
+\end{center}
+
+\paragraph{حالت A:}
+یکی از مقدمات برش اصلی به شکل
+$!C,\Gamma'\Sequent\Delta',!C$ است که $!C$ اتمی است. اگر $!C$ !!{formula}
+برش~$!A$ نباشد، باید هم در~$\Gamma$ و هم در~$\Delta$ ظاهر شود. آنگاه
+$\Gamma\Sequent\Delta$ یک اصل است و می‌توان آن را~$\pi'$ گرفت. اگر
+$!C\ident !A$ !!{formula} برش باشد، یا، وقتی مقدمهٔ چپ اصل است،
+$!A\in\Gamma$ و $\Gamma=\Gamma',!A$؛ یا، وقتی مقدمهٔ راست اصل است،
+$!A\in\Delta$ و $\Delta=\Delta',!A$. در حالت نخست $\pi_2$
+!!a{proof}ی برای $!A,!A,\Gamma'\Sequent\Delta$ است و بنا بر
+پذیرفتنی‌بودن \LeftR{\Contraction}
+(\olref[seq][inv]{prop:G3c-cont-adm})، !!a{proof}ی برای
+$\Gamma\Sequent\Delta$ وجود دارد. در حالت دوم $\pi_1$ !!a{proof}ی
+برای $\Gamma\Sequent\Delta',!A,!A$ است و با پذیرفتنی‌بودن
+\RightR{\Contraction}، !!a{proof}ی برای $\Gamma\Sequent\Delta$ به دست
+می‌آوریم.
+
+\paragraph{حالت B:}
+یکی از مقدمات اصلی به شکل~$\lfalse,\Gamma'\Sequent\Delta'$ است. اگر
+مقدمهٔ چپ چنین اصلی باشد، $\lfalse\in\Gamma$ و
+$\Gamma\Sequent\Delta$ نیز اصل است. اگر مقدمهٔ راست چنین باشد، یا
+$\lfalse\in\Gamma$ است، که باز نتیجه اصل است، یا
+$!A\ident\lfalse$. در حالت دوم، $\pi_1$ !!a{proof}ی برای
+$\Gamma\Sequent\Delta,\lfalse$ است. با حذف یک نسخهٔ~$\lfalse$ از
+تالی هر دنباله در~$\pi_1$، آن را به !!a{proof}ی برای
+$\Gamma\Sequent\Delta$ تبدیل می‌کنیم. (تمرین: این را با استقرا بر
+~$\pheight{\pi_1}$ بررسی کنید.)
+
+اکنون فرض کنید هیچ‌یک از حالت‌های A و~B برقرار نیست. در حالت‌های
+باقی‌مانده $\cheight{\pi}>0$؛ یعنی دست‌کم یکی از مقدمات نتیجهٔ یک
+استنتاج است.
+
+\paragraph{حالت‌های C و D: جابه‌جایی برش‌ها.}
+امکان‌های C و~D همگی الگویی مشترک دارند. با !!a{proof}ی آغاز می‌کنیم
+که به~\CutCS{} پایان می‌یابد و یکی از مقدماتش با قاعده‌ای~$R$ حاصل
+شده است که !!{formula} برش~$!A$ در آن اصلی نیست و !!{formula} دیگری~$!D$
+اصلی است. در این !!{proof}، \CutCS{} پس از~$R$ می‌آید و شکل شماتیک
+زیر را دارد:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\Gamma \fCenter \Delta', !D, !A$
+\AxiomC{}
+\RightLabel{$\pi_3$}
+\Deduce$!A, \Gamma, \Pi \fCenter \Delta', \Lambda$
+\RightLabel{$R$}
+\UnaryInf$!A, \Gamma \fCenter \Delta', !D$
+\RightSubproofLabel{$\pi_2$}
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta', !D$
+\DisplayProof
+\]
+این نمودار فقط حالتی را نشان می‌دهد که $R$ قاعده‌ای راست با یک مقدمه
+است، $!A$ !!{formula} اصلی~$R$ نیست، و !!{formula} اصلی~$!D$ در تالی
+مقدمهٔ راست \CutCS{} قرار دارد. اگر $!D$ در مقدم باشد، یعنی $R$ قاعدهٔ
+چپ باشد، یا در مقدمهٔ چپ \CutCS{} باشد، نمودار متفاوت خواهد بود.
+!!{formula}های~$\Pi$ و~$\Lambda$ نمایندهٔ !!{formula}های فعال~$R$
+هستند.
+
+ترتیب را وارونه می‌کنیم و !!a{proof}ی را در نظر می‌گیریم که در آن
+$R$ پس از~\CutCS{} می‌آید:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$\Gamma, \Pi \fCenter \Delta', !D, \Lambda, !A$
+\AxiomC{}
+\RightLabel{$\pi_3'$}
+\Deduce$!A, \Gamma, \Pi \fCenter \Delta', !D, \Lambda$
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma, \Pi \fCenter \Delta', !D, \Lambda$
+\RightLabel{$R$}
+\UnaryInf$\Gamma \fCenter \Delta', !D, !D$
+\DisplayProof
+\]
+با تضعیف حافظ !!{height}، $\pi_1'$ و~$\pi_3'$ را به‌ترتیب از
+$\pi_1$ و~$\pi_3$ به دست می‌آوریم.
+
+چون ترتیب \CutCS{} و~$R$ را عوض می‌کنیم، این کار را «جابه‌جاکردن برش
+به بالا از میان~$R$» می‌نامند. این کار ارتفاع !!{proof} منتهی به
+مقدمهٔ راست \CutCS{} و بنابراین !!{height} برش را کاهش می‌دهد. یعنی
+می‌توان فرض کرد زیر-!!{proof}های منتهی به \CutCS{} تازه !!{height}ی
+بیش از~$\pi_1$ و~$\pi_3$ ندارند؛ پس !!{height} برش کاهش یافته است،
+زیرا یک استنتاج از سمت راست حذف کرده‌ایم. اکنون فرض استقرا اعمال
+می‌شود و می‌گوید استنتاج \CutCS{} را می‌توان حذف کرد. در پایان نسخهٔ
+اضافی~$!D$ را با پذیرفتنی‌بودن \RightR{\Contraction} حذف می‌کنیم.
+
+\paragraph{حالت C:}
+دست‌کم یکی از $\pi_1$ و~$\pi_2$ به قاعدهٔ یک‌مقدمه‌ای~$R$ پایان
+می‌یابد که $!A$ در آن اصلی نیست. در مجموع ۱۸ حالت داریم، برحسب اینکه
+$!A$ در مقدمهٔ چپ یا راست \CutCS{} اصلی نیست و اینکه~$R$ کدام‌یک از
+نه قاعدهٔ یک‌مقدمه‌ای است:
+\LeftR{\lnot}، \RightR{\lnot}، \RightR{\lor}،
+\LeftR{\land}، \RightR{\lif} و چهار قاعدهٔ سور. فقط دو نمونه را
+بررسی می‌کنیم: $!A$ در آخرین استنتاج~$\pi_2$ اصلی نیست و آن استنتاج
+یا \RightR{\lif} است یا~\LeftR{\lexists}. دیگر حالت‌ها مشابه‌اند و
+به‌عنوان تمرین واگذار می‌شوند.
+
+فرض کنید $\pi$ چنین پایان می‌یابد:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\Gamma \fCenter \Delta', !B \lif !C, !A$
+\AxiomC{}
+\RightLabel{$\pi_3$}
+\Deduce$!A, !B, \Gamma \fCenter \Delta', !C$
+\RightLabel{$\RightR{\lif}$}
+\UnaryInf$!A, \Gamma \fCenter \Delta', !B \lif !C$
+\RightSubproofLabel{$\pi_2$}
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta', !B \lif !C$
+\DisplayProof
+\]
+که در آن $\Delta=\Delta',!B\lif !C$. تضعیف حافظ !!{height}
+(\olref[seq][adm]{prop:weak-G3c-adm}) را بر~$\pi_1$ اعمال می‌کنیم تا
+!!a{proof}~$\pi_1'$ برای
+$!B,\Gamma\fCenter\Delta',!B\lif !C,!C,!A$ به دست آید؛ یعنی با~$!B$
+در چپ و~$!C$ در راست تضعیف می‌کنیم. به همین ترتیب،
+\olref[seq][adm]{prop:weak-G3c-adm} را بر~$\pi_3$ اعمال می‌کنیم تا با
+افزودن $!B\lif !C$ در راست، !!a{proof}~$\pi_3'$
+برای $!A,!B,\Gamma\fCenter\Delta',!B\lif !C,!C$ حاصل شود.
+فرض استقرا بر برهان زیر اعمال می‌شود:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$!B, \Gamma \fCenter \Delta', !B \lif !C, !C, !A$
+\AxiomC{}
+\RightLabel{$\pi_3'$}
+\Deduce$!A, !B, \Gamma \fCenter \Delta', !B \lif !C, !C$
+\RightLabel{\CutCS}
+\BinaryInf$!B, \Gamma \fCenter \Delta', !B \lif !C, !C$
+\DisplayProof
+\]
+!!{formula} برش~$!A$ است. این !!{proof} همان رتبهٔ برش~$\pi$ و !!{height}
+برش کمتری دارد. پس !!a{proof}~$\pi_4$ بدون \CutCS{} در~\Log{G3c}
+برای $!B,\Gamma\fCenter\Delta',!B\lif !C,!C$ به دست می‌آید.
+$\RightR{\lif}$ را اعمال کنید تا !!a{proof}ی برای
+$\Gamma\fCenter\Delta',!B\lif !C,!B\lif !C$ حاصل شود:
+\[
+\AxiomC{}
+\RightLabel{$\pi_4$}
+\Deduce$!B, \Gamma \fCenter \Delta', !B \lif !C, !C$
+\RightLabel{$\RightR{\lif}$}
+\UnaryInf$\Gamma \fCenter \Delta', !B \lif !C, !B \lif !C$
+\DisplayProof
+\]
+برای به‌دست‌آوردن !!a{proof}~$\pi'$ برای
+$\Gamma\Sequent\Delta$، یعنی
+$\Gamma\fCenter\Delta',!B\lif !C$،
+\olref[seq][inv]{prop:G3c-cont-adm}، یعنی پذیرفتنی‌بودن انقباض، را
+اعمال کنید.
+
+اکنون فرض کنید $\pi$ چنین پایان می‌یابد:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\lexists[x][!B(x)], \Gamma' \fCenter \Delta, !A$
+\AxiomC{}
+\RightLabel{$\pi_3$}
+\Deduce$!A, !B(c), \Gamma' \fCenter \Delta$
+\RightLabel{$\LeftR{\lexists}$}
+\UnaryInf$!A, \lexists[x][!B(x)], \Gamma' \fCenter \Delta$
+\RightSubproofLabel{$\pi_2$}
+\RightLabel{\CutCS}
+\BinaryInf$\lexists[x][!B(x)], \Gamma' \fCenter \Delta$
+\DisplayProof
+\]
+باز فرض استقرا را بر برهان زیر اعمال می‌کنیم:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1[!B(c) \Sequent {}]$}
+\Deduce$\lexists[x][!B(x)], !B(c), \Gamma' \fCenter \Delta, !A$
+\AxiomC{}
+\LeftLabel{$\pi_3[\lexists[x][!B(x)] \Sequent {}]$}
+\Deduce$!A, \lexists[x][!B(x)], !B(c), \Gamma' \fCenter \Delta$
+\RightLabel{\CutCS}
+\BinaryInf$\lexists[x][!B(x)], !B(c), \Gamma' \fCenter \Delta$
+\RightLabel{\LeftR{\lexists}}
+\UnaryInf$\lexists[x][!B(x)], \lexists[x][!B(x)], \Gamma'
+  \fCenter \Delta$
+\DisplayProof
+\]
+شرط متغیر ویژه برقرار است، زیرا شرط آن برای~\LeftR{\lexists} در
+~$\pi_2$ تضمین می‌کند $c$ در $\lexists[x][!B(x)]$، $\Gamma'$ یا
+~$\Delta$ ظاهر نشود. در پایان
+\olref[seq][inv]{prop:G3c-cont-adm} را اعمال کنید.
+
+\paragraph{حالت D:}
+دست‌کم یکی از $\pi_1$ و~$\pi_2$ به قاعدهٔ دومقدمه‌ای~$R$ پایان
+می‌یابد که $!A$ در آن اصلی نیست. ۶ حالت وجود دارد. حالتی را بررسی
+می‌کنیم که $!A$ در آخرین استنتاج~$\pi_2$ اصلی نیست و آن استنتاج
+~\RightR{\land} است؛ دیگر حالت‌ها مشابه‌اند.
+
+فرض کنید $\pi$ چنین پایان می‌یابد:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$\Gamma \fCenter \Delta', !B \land !C, !A$
+\AxiomC{}
+\RightLabel{$\pi_3$}
+\Deduce$!A, \Gamma \fCenter \Delta', !B$
+\AxiomC{}
+\RightLabel{$\pi_4$}
+\Deduce$!A, \Gamma \fCenter \Delta', !C$
+\RightLabel{$\RightR{\land}$}
+\BinaryInf$!A, \Gamma \fCenter \Delta', !B \land !C$
+\RightSubproofLabel{$\pi_2$}
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta$
+\DisplayProof
+\]
+فرض استقرا بر دو !!{proof} زیر اعمال می‌شود:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$\Gamma \fCenter \Delta', !B \land !C, !B, !A$
+\AxiomC{}
+\RightLabel{$\pi_3'$}
+\Deduce$!A, \Gamma \fCenter \Delta', !B \land !C, !B$
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta', !B \land !C, !B$
+\DisplayProof
+\]
+و
+\[
+\AxiomC{}
+\RightLabel{$\pi_1''$}
+\Deduce$\Gamma \fCenter \Delta', !B \land !C, !C, !A$
+\AxiomC{}
+\RightLabel{$\pi_4'$}
+\Deduce$!A, \Gamma \fCenter \Delta', !B \land !C, !C$
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta', !B \land !C, !C$
+\DisplayProof
+\]
+در اینجا \Log{G3c}-!!{proof}های~$\pi_1'$ و~$\pi_1''$ با تضعیف حافظ
+!!{height} (\olref[seq][adm]{prop:weak-G3c-adm}) از~$\pi_1$ به دست
+می‌آیند؛ یک بار با~$!B$ و یک بار با~$!C$ در راست. !!{proof}های
+$\pi_3'$ و~$\pi_4'$ نیز به‌ترتیب از~$\pi_3$ و~$\pi_4$ با تضعیف حافظ
+!!{height}، یعنی افزودن $!B\land !C$ در راست، حاصل می‌شوند.
+
+فرض استقرا \Log{G3c}-!!{proof}های~$\pi_5$ و~$\pi_6$ را برای
+$\Gamma\fCenter\Delta',!B\land !C,!B$ و
+$\Gamma\fCenter\Delta',!B\land !C,!C$ به دست می‌دهد. آن‌ها را با
+قاعدهٔ~$\RightR{\land}$ ترکیب می‌کنیم تا !!a{proof}ی برای
+$\Gamma\Sequent\Delta',!B\land !C,!B\land !C$ حاصل شود:
+\[
+\AxiomC{}
+\RightLabel{$\pi_5$}
+\Deduce$\Gamma \fCenter \Delta', !B \land !C, !B$
+\AxiomC{}
+\RightLabel{$\pi_6$}
+\Deduce$\Gamma \fCenter \Delta', !B \land !C, !C$
+\RightLabel{\RightR{\land}}
+\BinaryInf$\Gamma \fCenter \Delta', !B \land !C, !B \land !C$
+\DisplayProof
+\]
+برای به‌دست‌آوردن !!a{proof}ی برای $\Gamma\Sequent\Delta$، یعنی
+$\Gamma\fCenter\Delta',!B\land !C$،
+\olref[seq][inv]{prop:G3c-cont-adm} را اعمال کنید.
+
+\paragraph{حالت E: کاهش برش‌ها.}
+حالت پایانی مربوط به وضعی است که هر دو $\pi_1$ و~$\pi_2$ به
+استنتاج‌هایی پایان می‌یابند که $!A$ در آن‌ها اصلی است. شش حالت، یکی
+برای هر !!{main operator} ممکن~$!A$، وجود دارد.
+
+در هر حالت یک \CutCS{} با !!{formula} برش~$!A$ را به یک یا چند برش بر
+زیر-!!{formula}های~$!A$ تبدیل می‌کنیم؛ یعنی بر !!{formula}های فعال
+استنتاج‌هایی که $!A$ !!{formula} اصلی آن‌هاست. از این رو این حالت‌ها را
+اغلب «کاهش» یا «تبدیل» استنتاج برش می‌نامند.
+
+\begin{enumerate}
+\item اگر $!A\ident\lnot !B$، آنگاه $\pi$ چنین پایان می‌یابد:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$!B, \Gamma \fCenter \Delta$
+\RightLabel{\RightR{\lnot}}
+\UnaryInf$\Gamma \fCenter \Delta, \lnot !B$
+\LeftSubproofLabel{$\pi_1$}
+\AxiomC{}
+\RightLabel{$\pi_2'$}
+\Deduce$\Gamma \fCenter \Delta, !B$
+\RightLabel{\LeftR{\lnot}}
+\UnaryInf$\lnot !B, \Gamma \fCenter \Delta$
+\RightSubproofLabel{$\pi_2$}
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta$
+\DisplayProof
+\]
+بنا بر فرض استقرا، \CutCS{} را می‌توان از برهان زیر حذف کرد:
+\[
+\AxiomC{}
+\RightLabel{$\pi_2'$}
+\Deduce$\Gamma \fCenter \Delta, !B$
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$!B, \Gamma \fCenter \Delta$
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta$
+\DisplayProof
+\]
+
+\item اگر $!A\ident(!B\lor !C)$، آنگاه $\pi$ چنین پایان می‌یابد:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$\Gamma \fCenter \Delta, !B, !C$
+\RightLabel{\RightR{\lor}}
+\UnaryInf$\Gamma \fCenter \Delta, !B \lor !C$
+\LeftSubproofLabel{$\pi_1$}
+\AxiomC{}
+\RightLabel{$\pi_2'$}
+\Deduce$!B, \Gamma \fCenter \Delta$
+\AxiomC{}
+\RightLabel{$\pi_2''$}
+\Deduce$!C, \Gamma \fCenter \Delta$
+\RightLabel{\LeftR{\lor}}
+\BinaryInf$!B \lor !C, \Gamma \fCenter \Delta$
+\RightSubproofLabel{$\pi_2$}
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta$
+\DisplayProof
+\]
+!!{proof} زیر را که به \CutCS پایان می‌یابد در نظر بگیرید:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$\Gamma \fCenter \Delta, !B, !C$
+\AxiomC{}
+\RightLabel{$\pi_2'''$}
+\Deduce$!C, \Gamma \fCenter \Delta, !B$
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta, !B$
+\DisplayProof
+\]
+در اینجا $\pi_2'''$ با تضعیف حافظ !!{height} از~$\pi_2''$ به دست
+می‌آید. رتبهٔ برش آن $<\cutrank{\pi}$ است، زیرا
+$\depth{!C}<\depth{!B\lor !C}$؛ پس فرض استقرا !!a{proof}
+~$\pi_1''$ای در~\Log{G3c} برای
+$\Gamma\fCenter\Delta,!B$ به دست می‌دهد. !!{proof} زیر که به
+\CutCS پایان می‌یابد،
+\[
+\AxiomC{}
+\RightLabel{$\pi_1''$}
+\Deduce$\Gamma \fCenter \Delta, !B$
+\AxiomC{}
+\RightLabel{$\pi_2'$}
+\Deduce$!B, \Gamma \fCenter \Delta$
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta$
+\DisplayProof
+\]
+رتبهٔ برش $=\depth{!B}<\depth{!B\lor !C}$ دارد؛ پس فرض استقرا دوباره
+اعمال می‌شود و !!a{proof}~$\pi'$ برای
+$\Gamma\fCenter\Delta$ به دست می‌دهد.
+
+\item $!A\ident(!B\land !C)$. تمرین.
+
+\item اگر $!A\ident(!B\lif !C)$، آنگاه $\pi$ چنین پایان می‌یابد:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$!B, \Gamma \fCenter \Delta, !C$
+\RightLabel{\RightR{\lif}}
+\UnaryInf$\Gamma \fCenter \Delta, !B \lif !C$
+\LeftSubproofLabel{$\pi_1$}
+\AxiomC{}
+\RightLabel{$\pi_2'$}
+\Deduce$\Gamma \fCenter \Delta, !B$
+\AxiomC{}
+\RightLabel{$\pi_2''$}
+\Deduce$!C, \Gamma \fCenter \Delta$
+\RightLabel{\LeftR{\lif}}
+\BinaryInf$!B \lif !C, \Gamma \fCenter \Delta$
+\RightSubproofLabel{$\pi_2$}
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta$
+\DisplayProof
+\]
+!!{proof} زیر که به \CutCS پایان می‌یابد،
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$!B, \Gamma \fCenter \Delta, !C$
+\AxiomC{}
+\RightLabel{$\pi_2''$}
+\Deduce$!C, \Gamma \fCenter \Delta$
+\RightLabel{\CutCS}
+\BinaryInf$!B, \Gamma \fCenter \Delta$
+\DisplayProof
+\]
+رتبهٔ برش کمتری از~$\pi$ دارد. فرض استقرا !!a{proof}~$\pi_1''$ را
+برای $!B,\Gamma\fCenter\Delta$ به دست می‌دهد. اکنون !!{proof} زیر را
+در نظر بگیرید:
+\[
+\AxiomC{}
+\RightLabel{$\pi_2'$}
+\Deduce$\Gamma \fCenter \Delta, !B$
+\AxiomC{}
+\RightLabel{$\pi_1''$}
+\Deduce$!B, \Gamma \fCenter \Delta$
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta$
+\DisplayProof
+\]
+رتبهٔ برش این برهان نیز از رتبهٔ برش~$\pi$ کمتر است؛ پس فرض استقرا یک
+\Log{G3c}-!!{proof}~$\pi'$ برای $\Gamma\fCenter\Delta$ می‌دهد.
+
+\item اگر $!A\ident\lforall[x][!B(x)]$، آنگاه $\pi$ چنین پایان
+می‌یابد:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$\Gamma \fCenter \Delta, !B(c)$
+\RightLabel{\RightR{\lforall}}
+\UnaryInf$\Gamma \fCenter \Delta, \lforall[x][!B(x)]$
+\LeftSubproofLabel{$\pi_1$}
+\AxiomC{}
+\RightLabel{$\pi_2'$}
+\Deduce$!B(t), \lforall[x][!B(x)], \Gamma \fCenter \Delta$
+\RightLabel{\LeftR{\lforall}}
+\UnaryInf$\lforall[x][!B(x)], \Gamma \fCenter \Delta$
+\RightSubproofLabel{$\pi_2$}
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta$
+\DisplayProof
+\]
+بنا بر فرض استقرا، \CutCS{} را می‌توان از برهان زیر حذف کرد:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1''$}
+\Deduce$!B(t), \Gamma \fCenter \Delta, \lforall[x][!B(x)]$
+\AxiomC{}
+\RightLabel{$\pi_2'$}
+\Deduce$!B(t), \lforall[x][!B(x)], \Gamma \fCenter \Delta$
+\RightLabel{\CutCS}
+\BinaryInf$!B(t), \Gamma \fCenter \Delta$
+\DisplayProof
+\]
+در اینجا $\pi_1''$ با تضعیف حافظ !!{height} از~$\pi_1$، و نه
+~$\pi_1'$، به دست می‌آید. این !!{proof} همان رتبهٔ برش اما !!{height}
+برش کمتری دارد. بدین‌سان !!a{proof}~$\pi_2''$ برای
+$!B(t),\Gamma\fCenter\Delta$ حاصل می‌شود.
+
+دنبالهٔ پایانی !!{proof}~$\pi_1'$ برابر
+$\Gamma\Sequent\Delta,!B(c)$ است، که در آن $c$ متغیر ویژهٔ یک استنتاج
+\RightR{\lforall} است. پس $c$ در~$!B(x)$، $\Gamma$ یا~$\Delta$ ظاهر
+نمی‌شود. فرض می‌کنیم !!{proof}~$\pi$ منظم است؛ بنابراین $c$ فقط متغیر
+ویژهٔ همین استنتاج \RightR{\lforall} است و فقط بالای آن، یعنی فقط در
+~$\pi_1'$، ظاهر می‌شود و متغیر ویژهٔ استنتاجی در~$\pi_1'$ نیست. چون
+$c$ در~$\pi_2$ ظاهر نمی‌شود، نمی‌تواند در~$t$ باشد. بنا بر
+\olref[seq][qua]{lem:subst-regular}، !!{proof}
+~$\Subst{\pi_1'}{t}{c}$ یک !!a{proof} برای
+$\Gamma\Sequent\Delta,!B(t)$ است. اکنون فرض استقرا را بر !!{proof}
+زیر اعمال می‌کنیم:
+\[
+\AxiomC{}
+\RightLabel{$\Subst{\pi_1'}{t}{c}$}
+\Deduce$\Gamma \fCenter \Delta, !B(t)$
+\AxiomC{}
+\RightLabel{$\pi_2''$}
+\Deduce$!B(t), \Gamma \fCenter \Delta$
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta$
+\DisplayProof
+\]
+(فرض استقرا اعمال می‌شود، زیرا !!{formula} برش~$!B(t)$ است و این
+!!{proof} رتبهٔ برش کمتری از~$\pi$ دارد.)
+
+\item حالت $!A\ident\lexists[x][!B(x)]$ را به‌عنوان تمرین واگذار
+می‌کنیم.
+\end{enumerate}
+\end{proof}
+
+\begin{prob}
+زیرحالت D در اثبات \olref{lem:cut-adm-G3c} را بررسی کنید که $!A$ در
+آخرین استنتاج~$\pi_1$ اصلی نیست و آن استنتاج به~$\LeftR{\lif}$ پایان
+می‌یابد. (بخشی از تمرین این است که آنچه باید اثبات شود، یعنی شکل
+$\pi$ در این حالت، را روشن بیان کنید.)
+\end{prob}
+
+\begin{prob}
+زیرحالت D در اثبات \olref{lem:cut-adm-G3c} را بررسی کنید که $!A$ در
+آخرین استنتاج~$\pi_1$ اصلی نیست و آن استنتاج به
+~$\LeftR{\lforall}$ پایان می‌یابد.
+\end{prob}
+
+\begin{prob}
+زیرحالت E در اثبات \olref{lem:cut-adm-G3c} را بررسی کنید که $!A$ در
+آخرین استنتاج‌های هر دو $\pi_1$ و~$\pi_2$ اصلی است و
+$!A\ident(!B\land !C)$.
+\end{prob}
+
+\begin{prob}
+زیرحالت E در اثبات \olref{lem:cut-adm-G3c} را بررسی کنید که $!A$ در
+آخرین استنتاج‌های هر دو $\pi_1$ و~$\pi_2$ اصلی است و
+$!A\ident\lexists[x][!B(x)]$.
+\end{prob}
+
+توجه کنید در حالت~E، !!{height} برش !!{proof} منتهی به \CutCS{} که
+فرض استقرا را بر آن اعمال می‌کنیم ممکن است از !!{height} برش برهان
+اصلی بیشتر باشد. برای نمونه، در حالت $!A\ident(!B\lif !C)$،
+$\pi$ را به !!a{proof}ی با دو استنتاج \CutCS{} تبدیل کردیم:
+\[
+\AxiomC{}
+\RightLabel{$\pi_2'$}
+\Deduce$\Gamma \fCenter \Delta, !B$
+\AxiomC{}
+\RightLabel{$\pi_1'$}
+\Deduce$!B, \Gamma \fCenter \Delta, !C$
+\AxiomC{}
+\RightLabel{$\pi_2''$}
+\Deduce$!C, \Gamma \fCenter \Delta$
+\RightLabel{\CutCS}
+\BinaryInf$!B, \Gamma \fCenter \Delta$
+\RightSubproofLabel{$\pi_1''$}
+\RightLabel{\CutCS}
+\BinaryInf$\Gamma \fCenter \Delta$
+\DisplayProof
+\]
+\CutCS{} بالایی میان~$\pi_1'$ و~$\pi_2''$ هم رتبهٔ برش و هم
+!!{height} برش کمتری از~$\pi$ دارد. اما !!{proof}~$\pi_1''$، که حاصل
+اعمال فرض استقراست، دیگر !!{height} برش کمتری از~$\pi$ ندارد. با این
+همه، چون !!{formula} برش \CutCS{} پایینی~$!B$ است، \emph{رتبهٔ} برش
+آن از رتبهٔ برش~$\pi$ کمتر است.
+
+\olref{lem:cut-adm-G3c} ثابت می‌کند که می‌توان یک بالاترین استنتاج
+\CutCS{} را از !!a{proof} حذف کرد. می‌توان نشان داد که هر تعداد استنتاج
+\CutCS{} را از !!a{proof} حذف کرد، با اعمال پی‌درپی آن بر بالاترین
+زیر-!!{proof}های منتهی به~\CutCS.
+
+\begin{thm}\ollabel{thm:cut-elim-G3c-topmost}
+هر !!{proof}~$\pi$ در $\Log{G3c}+\CutCS$ را می‌توان به !!a{proof}ی
+در~\Log{G3c} تبدیل کرد.
+\end{thm}
+
+\begin{proof}
+با استقرا بر شمار~$n$ استنتاج‌های \CutCS{} در~$\pi$. اگر $n=0$،
+کاری لازم نیست: $\pi$ از پیش !!a{proof}ی در~\Log{G3c} است. در غیر این
+صورت، زیر-!!{proof}~$\pi'$ را در نظر بگیرید که به یک بالاترین استنتاج
+\CutCS{} پایان می‌یابد. تنها قاعدهٔ \CutCS{} آن، آخرین استنتاج است.
+\olref{lem:cut-adm-G3c} را اعمال کنید تا آن را به برهان
+بدون-\CutCS{}~$\pi''$ تبدیل کند و زیر-!!{proof}~$\pi'$ را با~$\pi''$
+جایگزین کنید. حاصل !!a{proof}ی با $n-1$ استنتاج \CutCS{} است و فرض
+استقرا اعمال می‌شود.
+\end{proof}
+
+\end{document}

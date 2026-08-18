@@ -1,0 +1,223 @@
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sth}{ord-arithmetic}{add}
+\olsection{جمعِ ترتیبی}
+
+فرض کنید می‌خواهیم $\alpha$ و $\beta$ را جمع کنیم. می‌توانیم به‌سادگی
+یک {نسخه} از $\beta$ را بی‌درنگ پس از یک نسخه از $\alpha$ بگذاریم.
+(باید \emph{نسخه} برداریم، زیرا از
+\olref[ordinals][basic]{ordinalsaresubsets} می‌دانیم که یا
+$\alpha \subseteq \beta$ یا $\beta \subseteq \alpha$.) اثر شهودی این
+کار آن است که نخست دنباله‌ای $\alpha$تایی از گام‌ها را طی کنیم و
+\emph{سپس} دنباله‌ای $\beta$تایی را. دنبالهٔ حاصل خوش‌ترتیب خواهد
+بود؛ بنابراین، بنا بر
+\olref[ordinals][ordtype]{thmOrdinalRepresentation}، با یک عدد
+ترتیبی (یکتا) یکریخت است. می‌توان آن عدد ترتیبی را \emph{جمعِ}
+$\alpha$ و $\beta$ دانست.
+
+این همان اندیشهٔ شهودیِ پشت جمع ترتیبی است. برای تعریف دقیق آن، از
+ایدهٔ گرفتن \emph{نسخه‌هایی} از مجموعه‌ها آغاز می‌کنیم. در اینجا
+برچسب‌های اختیاریِ $0$ و $1$ را به کار می‌بریم تا معلوم بماند هر
+شیء از کجا آمده است:
+
+\begin{defn}\ollabel{defdissum}
+\emph{جمعِ مجزای} $A$ و $B$ برابر است با
+$A \disjointsum B = (A\times \{0\}) \cup (B \times \{1\})$.
+\end{defn}
+
+اکنون ترتیبی را روی زوج‌های اعداد ترتیبی تعریف می‌کنیم:
+
+\begin{defn}
+برای هر اعداد ترتیبیِ $\alpha_1, \alpha_2, \beta_1, \beta_2$، می‌گوییم:
+\begin{align*}
+	\tuple{\alpha_1, \alpha_2} \rlexless \tuple{\beta_1, \beta_2}\text{ اگر و تنها اگر }&
+	\text{یا $\alpha_2 \in \beta_2$}\\
+	& \text{یا هم $\alpha_2 = \beta_2$ و هم $\alpha_1 \in \beta_1$}
+\end{align*}
+\end{defn}
+
+این یک ترتیب \emph{واژه‌نامه‌ایِ معکوس} است، زیرا نخست بر پایهٔ
+مؤلفهٔ دوم و سپس بر پایهٔ مؤلفهٔ نخست مرتب می‌کنید. به یاد آورید که
+می‌خواستیم $\alpha \ordplus \beta$ را نوع ترتیبِ نسخه‌ای از $\alpha$
+که نسخه‌ای از $\beta$ در پی آن می‌آید تعریف کنیم. برای این منظور
+می‌گوییم:
+
+\begin{defn}\ollabel{defordplus}
+برای هر دو عدد ترتیبیِ $\alpha$ و $\beta$، جمع آن‌ها برابر است با
+$\alpha \ordplus \beta =
+\ordtype{\alpha \disjointsum \beta, \rlexless}$.
+\end{defn}
+\noindent
+توجه کنید که در اینجا اندکی از نمادگذاری سوءاستفاده کرده‌ایم؛ به‌دقت
+باید به‌جای «$\rlexless$» می‌نوشتیم
+«$\Setabs{\tuple{x,y}\in(\alpha\disjointsum\beta)^2}{x \rlexless y}$».
+بااین‌حال، برای اختصار در ادامه نیز همین سوءاستفادهٔ نمادی را پی
+می‌گیریم.
+
+نتیجهٔ زیر، همراه با
+\olref[ordinals][ordtype]{thmOrdinalRepresentation}، تأیید می‌کند
+که تعریف ما خوش‌صورت است:
+
+\begin{lem}\ollabel{ordsumlessiswo}
+$\tuple{\alpha \disjointsum \beta, \rlexless}$ برای هر دو عدد ترتیبیِ
+$\alpha$ و $\beta$ یک خوش‌ترتیب است.
+\end{lem}
+
+\begin{proof}
+آشکار است که $\rlexless$ روی $\alpha \disjointsum \beta$ متصل است.
+برای نشان‌دادن خوش‌بنیادیِ آن، زیرمجموعهٔ ناتهیِ
+$X \subseteq \alpha \disjointsum \beta$ را ثابت کنید. بگذارید $Y$
+زیرمجموعه‌ای از $X$ باشد که مؤلفهٔ دومِ اعضایش تا جای ممکن کوچک است؛
+یعنی
+$Y = \Setabs{\tuple{\gamma, i} \in X}{(\forall \tuple{\delta, j} \in X)i \leq j}$.
+اکنون عضوی از $Y$ را برگزینید که کوچک‌ترین مؤلفهٔ نخست را دارد.
+\end{proof}
+\noindent
+پس تعریفی خوب و صریح از جمع ترتیبی داریم. واقعیت زیر نیز غافلگیرکننده
+نیست (به یاد آورید که بنا بر
+\olref[z][infinity-again]{defnomega}، $1 = \{0\}$):
+\begin{prop}
+برای هر عدد ترتیبیِ $\alpha$،
+$\alpha \ordplus 1 = \ordsucc{\alpha}$.
+\end{prop}
+
+\begin{proof}
+یکریختیِ $f$ را از
+$\ordsucc{\alpha} = \alpha \cup \{\alpha\}$ به
+$\alpha\disjointsum1 = (\alpha \times \{0\})
+\cup (\{0\} \times \{1\})$ در نظر بگیرید که برای
+$\gamma \in \alpha$ با $f(\gamma) = \tuple{\gamma, 0}$ و برای
+$\alpha$ با $f(\alpha) = \tuple{0, 1}$ داده می‌شود.
+\end{proof}
+\noindent
+افزون بر این، به‌آسانی می‌توان نشان داد که جمع از چند شرط بازگشتی
+پیروی می‌کند:
+
+\begin{lem}\ollabel{ordadditionrecursion}
+برای هر دو عدد ترتیبیِ $\alpha, \beta$ داریم:
+\begin{align*}
+	\alpha\ordplus 0 &= \alpha\\
+	\alpha \ordplus  (\beta\ordplus 1) &= (\alpha \ordplus  \beta) \ordplus  1\\
+	\alpha  \ordplus  \beta &= \supstrict_{\delta < \beta}(\alpha \ordplus  \delta) && \text{اگر $\beta$ عدد ترتیبیِ حدی باشد}
+\end{align*}
+\end{lem}
+
+\begin{proof}
+حالت‌ها را یک‌به‌یک بررسی می‌کنیم؛ نخست:
+\begin{align*}
+	\alpha \ordplus  0
+	&= \ordtype{\alpha \times \{0\}, \rlexless}\\
+	&= \alpha\\
+	\alpha \ordplus (\beta \ordplus  1)
+	%&= \ordtype{(\alpha\times \{0\}) \cup (\ordtype{\beta \ordplus  1}\times \{1\}), \rlexless} \\
+	&= \ordtype{(\alpha\times \{0\}) \cup (\ordsucc{\beta}\times \{1\}), \rlexless} \\
+	&= \ordtype{(\alpha\times \{0\}) \cup (\beta \times \{1\}), \rlexless} \ordplus 1\\
+	&= (\alpha \ordplus  \beta) \ordplus  1
+\end{align*}
+اکنون فرض کنید $\beta \neq \emptyset$ حدی باشد. اگر
+$\delta < \beta$، آن‌گاه $\delta\ordplus 1 < \beta$ نیز برقرار است؛
+پس $\alpha \ordplus \delta$ یک پارهٔ آغازینِ سره از
+$\alpha \ordplus \beta$ است. بنابراین $\alpha \ordplus \beta$ یک
+کران بالای اکید برای
+$X = \Setabs{\alpha \ordplus \delta}{\delta < \beta}$ است. افزون بر
+این، اگر $\alpha \leq \gamma < \alpha \ordplus \beta$، آشکار است که
+برای یک $\delta < \beta$ داریم
+$\gamma = \alpha \ordplus \delta$. پس
+$\alpha \ordplus \beta =
+\supstrict_{\delta< \beta}(\alpha\ordplus \delta)$.
+\end{proof}
+
+اما واقعیت چشمگیری در کار است. برای تعریف جمع ترتیبی می‌توانستیم
+\emph{به‌جای آن} صرفاً قضیهٔ بازگشت ترامتناهی را به کار بریم و
+معادلات بازگشتی را دقیقاً به صورتِ
+\olref{ordadditionrecursion} مقرر کنیم (البته با
+«$\ordsucc{\beta}$» به‌جای «$\beta \ordplus 1$»).
+
+پس برای تعریف عمل‌ها روی اعداد ترتیبی دو راه متفاوت داریم. می‌توانیم
+آن‌ها را \emph{ترکیبی} تعریف کنیم: یک مجموعهٔ خوش‌ترتیب را به‌صراحت
+بسازیم و نوع ترتیبش را در نظر بگیریم. یا می‌توانیم آن‌ها را
+\emph{بازگشتی} تعریف کنیم، فقط با مقررکردن معادلات بازگشت. با اجرای
+درست، نتیجه یکسان است. قضیهٔ بازگشت ترامتناهی تضمین می‌کند که این
+معادلات بازگشت اعداد ترتیبیِ \emph{یکتایی} را تعیین می‌کنند.
+
+حساب ترتیبی از بسیاری جهات درست مانند جمع اعداد طبیعی رفتار می‌کند.
+برای نمونه، می‌توانیم نتیجهٔ زیر را اثبات کنیم:
+
+\begin{lem}\ollabel{ordinaladditionisnice}
+اگر $\alpha, \beta, \gamma$ اعداد ترتیبی باشند، آن‌گاه:
+\begin{enumerate}
+	\item\ollabel{ordaddition1} اگر $\beta < \gamma$، آن‌گاه
+	$\alpha \ordplus \beta < \alpha \ordplus \gamma$؛
+	\item\ollabel{ordaddition2} اگر
+	$\alpha \ordplus \beta = \alpha\ordplus \gamma$، آن‌گاه
+	$\beta = \gamma$؛
+	\item\ollabel{ordaddition3}
+	$\alpha \ordplus (\beta \ordplus \gamma) =
+	(\alpha \ordplus \beta) \ordplus \gamma$؛ یعنی جمع شرکت‌پذیر است؛
+	\item\ollabel{ordaddition4} اگر $\alpha \leq \beta$، آن‌گاه
+	$\alpha \ordplus \gamma \leq \beta \ordplus \gamma$.
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+\olref{ordaddition3} را اثبات می‌کنیم و بقیه را به‌عنوان تمرین
+واگذار می‌کنیم. اثبات با استقرای ترامتناهیِ ساده بر $\gamma$ و با
+استفاده از \olref{ordadditionrecursion} است. وقتی $\gamma = 0$:
+\[
+(\alpha \ordplus  \beta) \ordplus  0 = \alpha \ordplus  \beta  = \alpha \ordplus  (\beta \ordplus  0)
+\]
+وقتی $\gamma = \delta\ordplus 1$، به‌عنوان فرض استقرا بپذیرید که
+$(\alpha \ordplus \beta) \ordplus \delta =
+\alpha \ordplus (\beta \ordplus \delta)$؛ اکنون با سه بار استفاده
+از \olref{ordadditionrecursion}:
+\begin{align*}
+	(\alpha \ordplus  \beta) \ordplus  (\delta \ordplus  1) & = ((\alpha \ordplus  \beta) \ordplus  \delta)\ordplus 1\\
+	& = (\alpha \ordplus  (\beta \ordplus  \delta)) \ordplus  1\\
+	& = \alpha \ordplus  ((\beta \ordplus  \delta)\ordplus 1)\\
+	& = \alpha \ordplus  (\beta \ordplus  (\delta\ordplus 1))
+\end{align*}
+وقتی $\gamma$ عدد ترتیبیِ حدی است، به‌عنوان فرض استقرا بپذیرید که
+اگر $\delta \in \gamma$، آن‌گاه
+$(\alpha \ordplus \beta) \ordplus \delta =
+\alpha \ordplus (\beta \ordplus \delta)$؛ اکنون:
+\begin{align*}
+	(\alpha \ordplus  \beta) \ordplus  \gamma & = \supstrict_{\delta < \gamma}((\alpha \ordplus  \beta) \ordplus  \delta) \\
+	&= \supstrict_{\delta < \gamma}(\alpha \ordplus  (\beta \ordplus  \delta))\\
+	&= \alpha \ordplus  \supstrict_{\delta < \gamma}(\beta \ordplus  \delta)\\
+	& = \alpha \ordplus  (\beta \ordplus  \gamma)
+\end{align*}
+\end{proof}
+
+\begin{prob}
+باقیِ \olref[sth][ord-arithmetic][add]{ordinaladditionisnice} را
+اثبات کنید.
+\end{prob}
+
+از این جهات، جمع ترتیبی باید بسیار آشنا به نظر برسد. اما یک تفاوت
+بنیادی میان جمع ترتیبی و جمع اعداد طبیعی وجود دارد.
+
+\begin{prop}\ollabel{ordsumnotcommute}
+جمع ترتیبی {جابجایی‌پذیر نیست}؛
+$1 \ordplus \omega = \omega < \omega \ordplus 1$.
+\end{prop}
+
+\begin{proof}
+توجه کنید که
+$1 \ordplus \omega = \supstrict_{n < \omega} (1 \ordplus n)
+= \omega \in \omega \cup \{\omega\} = \ordsucc{\omega} = \omega
+\ordplus 1$.
+\end{proof}
+\noindent
+هرچند این امر ممکن است در آغاز غافلگیرکننده باشد، \emph{نباید چنین
+باشد}. از یک سو، وقتی $1 \ordplus \omega$ را در نظر می‌گیرید، به نوع
+ترتیبی می‌اندیشید که از گذاشتن یک عضو اضافی \emph{پیش از} همهٔ اعداد
+طبیعی به دست می‌آید. با استدلالی همانند هتل هیلبرت در
+\olref[sfr][infinite][hilbert]{sec}، از نظر شهودی این عضو نخستینِ
+اضافی نباید نوع ترتیب کلی را تغییر دهد. از سوی دیگر، وقتی
+$\omega \ordplus 1$ را در نظر می‌گیرید، به نوع ترتیبی می‌اندیشید که
+از گذاشتن یک عضو اضافی \emph{پس از} همهٔ اعداد طبیعی حاصل می‌شود.
+و آن موجودی یکسره متفاوت است!
+
+\end{document}

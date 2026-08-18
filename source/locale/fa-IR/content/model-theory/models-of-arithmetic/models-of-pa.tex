@@ -1,0 +1,274 @@
+% Part: model-theory
+% Chapter: models-of-arithmetic
+% Section: models-of-pa
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mod}{mar}{mpa}
+\section{مدل‌های $\Th{PA}$}
+
+\begin{explain}
+هر مدل نااستاندارد~$\Th{TA}$ مدلی از~$\Th{PA}$ نیز هست. می‌دانیم
+مدل‌های نااستاندارد~$\Th{TA}$ و در نتیجه مدل‌های نااستاندارد
+$\Th{PA}$ وجود دارند. همچنین می‌دانیم چنین مدل‌هایی «اعداد»
+نااستاندارد دارند؛ یعنی !!{element}sی از دامنه که «فراتر» از همهٔ
+«اعداد» استانداردند. اما چگونه آرایش یافته‌اند؟ شمارشان چقدر است؟
+دیدیم که مدل‌های نظریهٔ ضعیف‌تر~$\Th{Q}$ ممکن است تنها یک عدد
+نااستاندارد داشته باشند. اما آن !!{structure}s ساده مدل~$\Th{PA}$ یا
+$\Th{TA}$ نیستند.
+
+کلید فهم ساختار مدل‌های~$\Th{PA}$ یا~$\Th{TA}$ این است که ببینیم چه
+واقعیت‌هایی در این نظریه‌ها !!{derivable}اند. برای نمونه، خود
+$\Th{PA}$ ثابت می‌کند
+$\lforall[x][\eq/[x][x']]$ و
+$\lforall[x][\lforall[y][\eq[(x+y)][(y+x)]]]$؛ پس این گزاره‌ها
+!!{sentence}s ساده‌ای را که در آن‌ها کاذب‌اند، از مدل‌های~$\Th{PA}$
+بودن خارج می‌کنند.
+
+فرض کنید~$\Struct{M}$ مدلی از~$\Th{PA}$ باشد. در این صورت، اگر
+$\Th{PA} \Proves !A$، آنگاه $\Sat{M}{!A}$. بار دیگر
+$\nszero$ را برای~$\Assign{\Obj{0}}{M}$، $\nssucc$ را برای
+$\Assign{\prime}{M}$، $\nsplus$ را برای~$\Assign{+}{M}$،
+$\nstimes$ را برای~$\Assign{\times}{M}$ و $\nsless$ را برای
+$\Assign{<}{M}$ به کار می‌بریم. هر !!{sentence}~$!A$ در این صورت
+شرطی دربارهٔ $\nszero$، $\nssucc$، $\nsplus$، $\nstimes$ و
+$\nsless$ بیان می‌کند؛ و اگر $\Sat{M}{!A}$، آن شرط باید برقرار باشد.
+برای نمونه، اگر $\Sat{M}{!Q_1}$، یعنی
+$\Sat{M}{\lforall[x][\lforall[y][(\eq[x'][y'] \lif \eq[x][y])]]}$،
+آنگاه $\nssucc$ باید !!{injective} باشد.
+\end{explain}
+
+\begin{prop}
+در~$\Struct{M}$، رابطهٔ~$\nsless$ یک ترتیب خطیِ اکید است؛ یعنی شرایط
+زیر را برآورده می‌کند:
+\begin{enumerate}
+\item برای هیچ $x \in \Domain{M}$، $x \nsless x$ نیست.
+\item اگر $x \nsless y$ و $y \nsless z$، آنگاه $x \nsless z$.
+\item برای هر $x \neq y$، یا $x \nsless y$ یا $y \nsless x$.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+$\Th{PA}$ گزاره‌های زیر را ثابت می‌کند:
+\begin{enumerate}
+\item $\lforall[x][\lnot x < x]$؛
+\item $\lforall[x][\lforall[y][\lforall[z][((x < y \land y < z) \lif x < z)]]]$؛
+\item $\lforall[x][\lforall[y][((x < y \lor y < x) \lor \eq[x][y])]]$.
+\end{enumerate}
+\end{proof}
+
+\begin{prop}
+\ollabel{prop:M-discrete} $\nszero$ کوچک‌ترین !!{element}
+$\Domain{M}$ در ترتیب~$\nsless$ است. برای هر~$x$،
+$x \nsless x^\nssucc$ و $x^\nssucc$ کوچک‌ترین !!{element} نسبت به
+$\nsless$ است که از~$x$ بزرگ‌تر است. برای هر
+$x \neq \nszero$، یک~$y$ یکتا وجود دارد چنان‌که
+$y^\nssucc = x$. ($y$ را «پیشین»~$x$ در~$\Struct{M}$ می‌نامیم و آن
+را با~$^\nssucc x$ نشان می‌دهیم.)
+\end{prop}
+
+\begin{proof}
+تمرین.
+\end{proof}
+
+\begin{prob}
+!!{sentence}sی در~$\Lang{L_A}$ بیابید که در~$\Th{PA}$
+!!{derivable}اند (و ازاین‌رو در~$\Struct{N}$ صادق‌اند) و ویژگی‌های
+$\nszero$، $\nssucc$ و $\nsless$ در
+\olref[mod][mar][mpa]{prop:M-discrete} را تضمین می‌کنند.
+\end{prob}
+
+\begin{prop}
+همهٔ !!{element}s استاندارد~$\Struct{M}$، بنا بر~$\nsless$، از همهٔ
+!!{element}s نااستاندارد کوچک‌ترند.
+\end{prop}
+
+\begin{proof}
+$n$ را به‌اختصار به‌جای $\Value{\num{n}}{M}$، یعنی !!{element}
+استاندارد~$\Struct{M}$، به کار می‌بریم. خود~$\Th{Q}$ ثابت می‌کند که
+برای هر $n \in \Nat$،
+$\lforall[x][(x < \num{n}' \lif (\eq[x][\num{0}] \lor
+  \eq[x][\num{1}] \lor \dots \lor \eq[x][\num{n}]))]$. هیچ
+!!{element}sی وجود ندارد که $\nsless \nszero$ باشد. پس اگر $n$
+استاندارد و $x$ نااستاندارد باشد، نمی‌توانیم $x \nsless n$ داشته
+باشیم. بنا بر تعریف، عنصر نااستاندارد عنصری است که برای هیچ
+$n \in \Nat$ برابر $\Value{\num{n}}{M}$ نیست؛ پس $x \neq n$ نیز.
+چون $\nsless$ ترتیبی خطی است، باید $n \nsless x$.
+\end{proof}
+
+\begin{prop}
+هر !!{element} نااستاندارد~$x$ از~$\Domain{M}$ عضو زیرمجموعهٔ
+\[
+\dots ^{\nssucc\nssucc\nssucc}x \nsless ^{\nssucc\nssucc}x \nsless
+^{\nssucc}x \nsless x \nsless x^{\nssucc} \nsless x^{\nssucc\nssucc}
+\nsless x^{\nssucc\nssucc\nssucc} \nsless \dots
+\]
+است. این زیرمجموعه را
+\emph{بلوکِ~$x$} می‌نامیم و با~$[x]$ نشان می‌دهیم. این مجموعه نه
+کوچک‌ترین و نه بزرگ‌ترین !!{element} دارد. همچنین می‌توان آن را
+مجموعهٔ همهٔ $y \in \Domain{M}$هایی دانست که برای عدد استانداردی
+چون~$n$، یا $x \nsplus n = y$ یا $y \nsplus n = x$.
+\end{prop}
+
+\begin{proof}
+چنین مجموعه‌ای~$[x]$ همواره وجود دارد، زیرا هر !!{element}~$y$
+در~$[x]$ جانشین یکتای~$y^\nssucc$ و، از آنجا که نااستاندارد و در
+نتیجه ناصفر است، پیشین یکتای~$^\nssucc y$ دارد. برای !!{element}s
+متوالی $y$ و~$y^\nssucc$، داریم $y \nsless y^\nssucc$ و
+$y^\nssucc$ کوچک‌ترین !!{element}~$\Domain{M}$ نسبت به~$\nsless$ است
+که از~$y$ بزرگ‌تر است. چون همیشه
+$^\nssucc y \nsless y$ و $y \nsless y^\nssucc$، مجموعهٔ~$[x]$
+کوچک‌ترین یا بزرگ‌ترین !!{element} ندارد. اگر $y \in [x]$، آنگاه
+$x \in [y]$، زیرا در این صورت یا
+$y^{\nssucc\dots\nssucc} = x$ یا
+$x^{\nssucc\dots\nssucc} = y$. اگر
+$y^{\nssucc\dots\nssucc} = x$ (با $n$ بار~$\nssucc$)، آنگاه
+$y \nsplus n = x$ و برعکس، زیرا $\Th{PA}$ ثابت می‌کند
+$\lforall[x][\eq[x^{\prime\dots\prime}][(x + \num{n})]]$ (اگر~$n$
+تعداد~$\prime$ها باشد).
+\end{proof}
+
+\begin{prop}
+اگر $[x] \neq [y]$ و $x \nsless y$، آنگاه برای هر $u \in [x]$ و هر
+$v \in [y]$، $u \nsless v$.
+\end{prop}
+
+\begin{proof}
+توجه کنید که
+$\Th{PA} \Proves \lforall[x][\lforall[y][(x < y \lif (x' < y
+    \lor x' = y))]]$. بنابراین اگر $u \nsless v$، برای هر~$n$ نیز،
+به شرط $[u] \neq [v]$، $u \nsplus n^\nssucc \nsless v$.
+
+هر $u \in [x]$ از~$y$ کوچک‌تر است: بنا بر فرض $x \nsless y$. اگر
+$u \nsless x$، از تعدی $u \nsless y$. و اگر $x \nsless u$ اما
+$u \in [x]$، برای یک~$n$ داریم $u = x\nsplus n^\nssucc$؛ پس بنا بر
+واقعیتی که همین اکنون ثابت شد، $u \nsless y$.
+
+اکنون فرض کنید $v \in [y]$ و $v \nsless y$؛ یعنی برای یک عدد
+استاندارد~$m$، $v \nsplus m^\nssucc = y$. این امر امکان
+$v \nsless x$ را منتفی می‌کند، زیرا وگرنه
+$y = v \nsplus m^\nssucc \nsless x$. آشکار است که $x \neq v$ نیز؛
+وگرنه $x \nsplus m^\nssucc = v \nsplus m^\nssucc = y$ و
+$[x] = [y]$ می‌بود. پس $x \nsless v$. آنگاه برای هر~$n$ نیز
+$x \nsplus n^\nssucc \nsless v$. ازاین‌رو اگر $x \nsless u$ و
+$u \in [x]$، داریم $u \nsless v$. اگر $u \nsless x$، باز هم از
+تعدی $u \nsless v$.
+
+سرانجام، اگر $y \nsless v$، چون نشان داده‌ایم $u \nsless y$، از
+تعدی $u \nsless v$.
+\end{proof}
+
+\begin{cor}
+اگر $[x] \neq [y]$، آنگاه $[x] \cap [y] = \emptyset$.
+\end{cor}
+
+\begin{proof}
+فرض کنید $z \in [x]$ و $x \nsless y$. آنگاه برای هر $u \in [y]$،
+$z \nsless u$. اگر $z \in [y]$ بود، $z \nsless z$ می‌داشتیم. حالت
+$y \nsless x$ نیز مشابه است.
+\end{proof}
+
+\begin{explain}
+این بدان معناست که خود بلوک‌ها را می‌توان به شیوه‌ای سازگار
+با~$\nsless$ مرتب کرد: $[x] \nsless [y]$ هرگاه و تنها هرگاه
+$x \nsless y$؛ یا، به‌طور هم‌ارز، هرگاه برای هر $u \in [x]$ و
+$v \in [y]$، $u \nsless v$. آشکارا بلوک استاندارد~$[0]$ کوچک‌ترین
+بلوک است. با هیچ بلوک نااستانداردی اشتراک ندارد و هیچ دو بلوک
+نااستانداردی نیز اشتراک ندارند. به‌طور مشخص، با گرفتن پیاپی جانشین یا
+پیشین نمی‌توان به بلوکی دیگر «رسید».
+\end{explain}
+
+\begin{prop}
+اگر $x$ و~$y$ نااستاندارد باشند، آنگاه
+$x \nsless x \nsplus y$ و $x \nsplus y \notin [x]$.
+\end{prop}
+
+\begin{proof}
+اگر $y$ نااستاندارد باشد، $y \neq \nszero$. $\Th{PA}$ ثابت می‌کند
+$\lforall[x][(y \neq \Obj{0} \lif x < (x+y))]$. اکنون فرض کنید
+$x \nsplus y \in [x]$. چون $x \nsless x \nsplus y$، برای یک~$n$
+می‌داشتیم $x \nsplus n^\nssucc = x \nsplus y$. اما $\Th{PA}$ قانون
+حذف برای جمع را ثابت می‌کند:
+$\lforall[x][\lforall[y][\lforall[z][(\eq[(x+y)][(x+z)] \lif y = z)]]]$.
+این نتیجه می‌داد $y = n^\nssucc$ برای یک~$n$ استاندارد، درحالی‌که
+فرض کرده‌ایم $y$ نااستاندارد است.
+\end{proof}
+
+\begin{prop}
+هیچ کوچک‌ترین بلوک نااستانداردی وجود ندارد.
+\end{prop}
+
+\begin{proof}
+$\Th{PA}$ ثابت می‌کند
+$\lforall[x][\lexists[y][(\eq[(y+y)][x] \lor
+      \eq[(y+y)'][x])]]$؛ یعنی هر~$x$ بر~$2$ بخش‌پذیر است (احتمالاً
+با باقیماندهٔ~$1$). اگر $x$ نااستاندارد باشد، $y$ نیز نااستاندارد
+است. بنا بر گزارهٔ پیشین، $y \nsless y \nsplus y$ و
+$y \nsplus y \notin [y]$. همچنین
+$y \nsless (y \nsplus y)^\nssucc$ و
+$(y \nsplus y)^\nssucc \notin [y]$. اما
+$x = y \nsplus y$ یا $x = (y \nsplus y)^\nssucc$؛ پس
+$y \nsless x$ و $y \notin [x]$.
+\end{proof}
+
+\begin{prop}
+هیچ بزرگ‌ترین بلوکی وجود ندارد.
+\end{prop}
+
+\begin{proof}
+تمرین.
+\end{proof}
+
+\begin{prob}
+نشان دهید در هر مدل نااستاندارد~$\Th{PA}$ هیچ بزرگ‌ترین بلوکی وجود
+ندارد.
+\end{prob}
+
+\begin{prop}
+\ollabel{prop:blocks-dense}
+ترتیب بلوک‌ها چگال است. یعنی اگر $x \nsless y$ و
+$[x] \neq [y]$، آنگاه بلوکی چون~$[z]$ وجود دارد که از هر دو متمایز و
+میان آن‌هاست.
+\end{prop}
+
+\begin{proof}
+فرض کنید $x \nsless y$. همچون پیش‌تر، $x \nsplus y$ بر دو بخش‌پذیر
+است (احتمالاً با باقیمانده): $z \in \Domain{M}$ای وجود دارد چنان‌که
+یا $x \nsplus y = z \nsplus z$ یا
+$x \nsplus y = (z \nsplus z)^\nssucc$. عنصر~$z$ «میانگین»~$x$
+و~$y$ است و $x \nsless z$ و $z \nsless y$.
+\end{proof}
+
+\begin{prob}
+اثباتی تفصیلی برای
+\olref[mod][mar][mpa]{prop:blocks-dense} بنویسید. $\Th{PA}$ باید کدام
+!!{sentence} را !!{derive} کند تا وجود~$z$ تضمین شود؟ چرا
+$x \nsless z$ و $z \nsless y$، و چرا
+$[x] \neq [z]$ و $[z] \neq [y]$؟
+\end{prob}
+
+\begin{explain}
+در یک مدل شمارای نااستاندارد، بلوک‌های نااستاندارد مانند اعداد گویا
+مرتب شده‌اند: آن‌ها !!a{denumerable} ترتیب خطی چگال بدون نقاط انتهایی
+تشکیل می‌دهند. می‌توان نشان داد هر دو !!{denumerable} ترتیب با این
+ویژگی‌ها همریخت‌اند. نتیجه می‌شود که برای هر دو مدل نااستاندارد
+!!{enumerable}~$\Struct{M}_1$ و
+$\Struct{M}_2$ از حساب حقیقی، تحویل‌های آن‌ها به زبانی که تنها شامل
+$<$ و~$=$ است همریخت‌اند. در واقع، می‌توان همریختی~$h$ را چنین تعریف
+کرد: بخش‌های استاندارد~$\Struct{M}_1$ و~$\Struct{M}_2$ با مدل
+استاندارد~$\Struct{N}$ و بنابراین با یکدیگر همریخت‌اند. بلوک‌های تشکیل‌دهندهٔ
+بخش نااستاندارد خود مانند اعداد گویا مرتب شده‌اند و ازاین‌رو همریخت‌اند؛
+یک همریختی میان بلوک‌ها را می‌توان به همریختی
+\emph{درون} بلوک‌ها بسط داد: در هر جفت بلوک عناصری دلخواه را با هم
+منطبق می‌کنیم و سپس تصویر جانشین~$x$ در~$\Struct{M}_1$ را جانشین
+تصویر~$x$ در~$\Struct{M}_2$ می‌گیریم. توجه کنید از این نتیجه
+\emph{نمی‌شود} که $\mathfrak{M}_1$ و~$\mathfrak{M}_2$ در زبان کامل
+حساب همریخت‌اند (در واقع، همریختی همیشه نسبت به !!a{language} است)،
+زیرا جمع و ضرب را می‌توان به شیوه‌های ناهمریختی روی
+$\Domain{M_1}$ و~$\Domain{M_2}$ تعریف کرد. (این واقعیت همچنین از
+قضیهٔ مشهوری از ووت نتیجه می‌شود که بنابر آن شمار مدل‌های شمارای یک
+نظریهٔ کامل نمی‌تواند~$2$ باشد.)
+\end{explain}
+\end{document}

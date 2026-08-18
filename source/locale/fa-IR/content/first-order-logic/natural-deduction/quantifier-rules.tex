@@ -1,0 +1,108 @@
+% Part: first-order-logic
+% Chapter: natural-deduction
+% Section: quantifier-rules
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{ntd}{qrl}
+
+\olsection{قواعد سورها}
+
+\subsection{قواعد $\lforall$}
+
+\begin{defish}
+\AxiomC{$!A(a)$}
+\RightLabel{\Intro{\lforall}}
+\UnaryInfC{$\lforall[x][\Atom{!A}{x}]$}
+\DisplayProof
+\hfill
+\AxiomC{$\lforall[x][\Atom{!A}{x}]$}
+\RightLabel{\Elim{\lforall}}
+\UnaryInfC{$!A(t)$}
+\DisplayProof
+\end{defish}
+
+در قواعد~$\lforall$، $t$ ترمی بسته است (ترمی که هیچ متغیری ندارد) و
+$a$~!!a{constant} است که نه در نتیجهٔ~$\lforall[x][!A(x)]$ رخ می‌دهد و
+نه در هیچ فرضِ !!{undischarged} در !!{derivation} منتهی به
+مقدمهٔ~$!A(a)$. $a$ را \emph{متغیر ویژهٔ} استنتاج
+\Intro{\lforall} می‌نامیم.\footnote{اصطلاح «متغیر ویژه» را به کار
+می‌بریم، هرچند $a$ در قاعدهٔ بالا یک ثابت است. این کاربرد دلایل تاریخی
+دارد.}
+
+\subsection{قواعد $\lexists$}
+
+\begin{defish}
+\AxiomC{$\Atom{!A}{t}$}
+\RightLabel{\Intro{\lexists}}
+\UnaryInfC{$\lexists[x][\Atom{!A}{x}]$}
+\DisplayProof
+\hfill
+\AxiomC{$\lexists[x][\Atom{!A}{x}]$}
+\AxiomC{[$\Atom{!A}{a}$]$^n$}
+\DeduceC{$!C$}
+\DischargeRule{\Elim{\lexists}}{n}
+\BinaryInfC{$!C$}
+\DisplayProof
+\end{defish}
+
+باز هم $t$ ترمی بسته است و $a$~!!a{constant} است که در مقدمهٔ
+$\lexists[x][!A(x)]$، در نتیجهٔ~$!C$، یا در هیچ فرضِ
+!!{undischarged} در !!{derivation}s منتهی به دو مقدمه رخ نمی‌دهد
+(جز فرض‌های $!A(a)$). $a$ را \emph{متغیر ویژهٔ} استنتاج
+\Elim{\lexists} می‌نامیم.
+
+شرط اینکه متغیر ویژه نه در نتیجه‌ها و نه در هیچ فرضِ !!{undischarged}
+در !!{derivation}s منتهی به مقدمات استنتاج \Intro{\lforall} یا
+\Elim{\lexists} رخ دهد، \emph{شرط متغیر ویژه}
+نامیده می‌شود.
+
+\begin{explain}
+قراردادمان را به یاد آورید که هرگاه $!A$~!!a{formula} باشد که
+!!{variable}~$x$ در آن آزاد است، این امر را با نوشتن~$!A(x)$ نشان
+می‌دهیم. در همان بافت، $!A(t)$ مخفف~$\Subst{!A}{t}{x}$ است. پس می‌توانیم
+قاعدهٔ $\Intro\lexists$ را نیز چنین بنویسیم:
+\begin{prooftree}
+\AxiomC{$\Subst{!A}{t}{x}$}
+\RightLabel{\Intro{\lexists}}
+\UnaryInfC{$\lexists[x][!A]$}
+\end{prooftree}
+توجه کنید که ممکن است $t$ از پیش در~$!A$ رخ داده باشد؛ برای مثال، ممکن
+است $!A$~برابر با~$\Atom{\Obj P}{t,x}$ باشد. بنابراین استنتاج
+$\lexists[x][\Atom{\Obj P}{t,x}]$ از~$\Atom{\Obj P}{t,t}$ کاربردی درست
+از~$\Intro\lexists$ است---می‌توانید یک یا چند رخداد~$t$ در مقدمه را،
+و نه لزوماً همهٔ آن‌ها را، با !!{variable} مقید~$x$ «جایگزین» کنید. با
+این حال، شرایط متغیر ویژه در $\Intro\lforall$ و~$\Elim\lexists$ ایجاب
+می‌کنند که !!{constant}~$a$ در~$!A$ رخ ندهد. پس نمی‌توان
+$\lforall[x][\Atom{\Obj P}{a,x}]$ را از $\Atom{\Obj P}{a,a}$ با
+استفاده از~$\Intro\lforall$ به‌درستی استنتاج کرد.
+\end{explain}
+
+\begin{explain}
+در \Intro{\lexists} و \Elim{\lforall} هیچ محدودیتی وجود ندارد و
+ترم~$t$ می‌تواند هر چیزی باشد؛ پس لازم نیست نگران هیچ شرطی باشیم. از
+سوی دیگر، در قواعد \Elim{\lexists} و \Intro{\lforall}، شرط متغیر ویژه
+ایجاب می‌کند که !!{constant}~$a$ هیچ‌جا در نتیجه یا در یک فرض
+!!{undischarged} رخ ندهد. این شرط برای تضمین صحت دستگاه ضروری است؛ یعنی
+در آن فقط !!{derive}s کردنِ !!{sentence}s از فرض‌های !!{undischarged}ی
+مجاز باشد که آن جمله‌ها از آن‌ها نتیجه می‌شوند. بدون این شرط، عبارت زیر
+مجاز می‌بود:
+\begin{prooftree}
+  \AxiomC{$\lexists[x][!A(x)]$}
+  \AxiomC{$\Discharge{!A(a)}{1}$}
+  \RightLabel{*\Intro{\lforall}}
+  \UnaryInfC{$\lforall[x][!A(x)]$}
+  \RightLabel{\Elim{\lexists}}
+  \BinaryInfC{$\lforall[x][!A(x)]$}
+\end{prooftree}
+اما $\lexists[x][!A(x)] \Entails/ \lforall[x][!A(x)]$.
+
+از آنجا که قواعد حذف سورها تنها جایگذاری ترم‌های بسته به‌جای
+!!{variable}s را مجاز می‌دانند، نتیجه می‌شود که هر !!{formula} که از
+مجموعه‌ای از !!{sentence}s اشتقاق‌پذیر باشد خود !!a{sentence} است.
+\end{explain}
+
+
+\end{document}

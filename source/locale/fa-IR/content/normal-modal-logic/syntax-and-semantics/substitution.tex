@@ -1,0 +1,103 @@
+% Part: normal-modal-logic
+% Chapter: syntax-and-semantics
+% Section: substitution
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{syn}{sub}
+
+\olsection{جانشینی هم‌زمان}
+
+یک \emph{نمونه} از !!a{formula}~$!A$ حاصل جایگزین‌کردن همهٔ رخدادهای
+!!a{propositional variable} در~$!A$ با !!{formula} دیگری است. بارها به
+نمونه‌های !!{formula} اشاره خواهیم کرد، چه در بحث اعتبار و چه در بحث
+!!{derivability}. ازاین‌رو، سودمند است این مفهوم را دقیقاً تعریف کنیم.
+
+\begin{defn}\ollabel{def:subst-inst}
+  فرض کنید~$!A$ یک !!{formula} موجهاتی باشد که همهٔ !!{propositional
+    variable}های آن در میان~$p_1$، \dots، $p_n$ باشند، و~$!D_1$،
+  \dots، $!D_n$ نیز !!{formula} موجهاتی باشند. در این صورت
+  $\SSubst{!A}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}}$ را حاصل
+  جانشینی هم‌زمان هر~$!D_i$ به‌جای~$p_i$ در~$!A$ تعریف می‌کنیم. تعریف
+  صوری آن با استقرا بر~$!A$ چنین است:
+  \begin{enumerate}
+    \tagitem{prvFalse}{\indcase{!A}{\lfalse}{%
+        $\SSubst{\indfrm}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}$ برابر با~$\lfalse$ است.}}{}
+    \tagitem{prvTrue}{\indcase{!A}{\ltrue}{%
+        $\SSubst{\indfrm}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}$ برابر با~$\ltrue$ است.}}{}
+    \item \indcase{!A}{q}{$\SSubst{\indfrm}{\subst{!D_1}{p_1}, \dots,
+        \subst{!D_n}{p_n}}$ برابر با~$q$ است، مشروط بر اینکه
+      $q \not\ident p_i$ برای~$i = 1$، \dots،~$n$.}
+    \item \indcase{!A}{p_i}{$\SSubst{\indfrm}{\subst{!D_1}{p_1},
+        \dots, \subst{!D_n}{p_n}}$ برابر با~$!D_i$ است.}
+    \tagitem{prvNot}{\indcase{!A}{\lnot !B}{%
+        $\SSubst{\indfrm}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}}$
+        برابر است با
+        $\lnot \SSubst{!B}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}}$.}}{}
+    \tagitem{prvAnd}{\indcase{!A}{(!B \land
+        !C)}{$\SSubst{\indfrm}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}$ برابر است با
+        \[(\SSubst{!B}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}} \land
+          \SSubst{!C}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}}).\]}}{}
+    \tagitem{prvOr}{\indcase{!A}{(!B \lor
+          !C)}{$\SSubst{\indfrm}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}$ برابر است با
+        \[(\SSubst{!B}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}} \lor
+          \SSubst{!C}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}}).\]}}{}
+    \tagitem{prvIf}{\indcase{!A}{(!B \lif
+          !C)}{$\SSubst{\indfrm}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}$ برابر است با
+        \[(\SSubst{!B}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}} \lif
+          \SSubst{!C}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}}).\]}}{}
+    \tagitem{prvIff}{\indcase{!A}{(!B \liff
+          !C)}{$\SSubst{\indfrm}{\subst{!D_1}{p_1}, \dots,
+          \subst{!D_n}{p_n}}$ برابر است با
+        \[(\SSubst{!B}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}} \liff
+          \SSubst{!C}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}}).\]}}{}
+    \item \indcase{!A}{\Box !B}{%
+        $\SSubst{\indfrm}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}}$
+        برابر است با
+        $\Box
+        \SSubst{!B}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}}$.}
+    \tagitem{prvDiamond}{\indcase{!A}{\Diamond !B}{%
+        $\SSubst{\indfrm}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}}$
+        برابر است با
+        $\Diamond
+        \SSubst{!B}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}}$.}}{}
+  \end{enumerate}
+  !!{formula}~$\SSubst{!A}{\subst{!D_1}{p_1}, \dots,
+    \subst{!D_n}{p_n}}$ یک \emph{نمونهٔ جانشینی} از~$!A$ نامیده می‌شود.
+\end{defn}
+
+\begin{ex}
+  فرض کنید~$!A$ برابر با~$p_1 \lif \Box(p_1 \land p_2)$، $!D_1$
+  برابر با~$\Diamond(p_2 \lif p_3)$ و~$!D_2$ برابر با~$\lnot\Box p_1$
+  باشد. در این صورت
+  $\SSubst{!A}{\subst{!D_1}{p_1}, \subst{!D_2}{p_2}}$ برابر است با
+  \begin{align*}
+    \Diamond(p_2 \lif p_3) &
+    \lif \Box(\Diamond(p_2 \lif p_3) \land \lnot\Box p_1)
+    \intertext{درحالی‌که $\SSubst{!A}{\subst{!D_2}{p_1}, \subst{!D_1}{p_2}}$ برابر است با}
+    \lnot\Box p_1 &
+    \lif \Box(\lnot\Box p_1 \land \Diamond(p_2 \lif p_3))
+    \intertext{توجه کنید که جانشینی هم‌زمان عموماً با جانشینی تکرارشده
+      یکسان نیست. برای نمونه، عبارت
+      $\SSubst{!A}{\subst{!D_1}{p_1}, \subst{!D_2}{p_2}}$ در بالا را با
+      $\Subst{(\Subst{!A}{!D_1}{p_1})}{!D_2}{p_2}$ مقایسه کنید که برابر است با:}
+    & \Subst{\Diamond(p_2 \lif p_3) \lif \Box(\Diamond(p_2 \lif p_3) \land p_2)}{\lnot\Box p_1}{p_2}, \text{ یعنی،}\\
+    \Diamond(\lnot\Box p_1 \lif p_3) &
+    \lif \Box(\Diamond(\lnot\Box p_1
+    \lif p_3) \land \lnot\Box p_1)\\
+    \intertext{و نیز با $\Subst{(\Subst{!A}{!D_2}{p_2})}{!D_1}{p_1}$ مقایسه کنید:}
+    & \Subst{p_1 \lif \Box(p_1 \land \lnot\Box p_1)}{\Diamond(p_2 \lif p_3)}{p_1}, \text{ یعنی،}\\
+    \Diamond(p_2 \lif p_3) &
+    \lif \Box(\Diamond(p_2
+    \lif p_3) \land \lnot\Box\Diamond(p_2 \lif p_3)).
+  \end{align*}
+\end{ex}
+
+\end{document}

@@ -1,0 +1,41 @@
+% Part: incompleteness
+% Chapter: theories-computability
+% Section: complete-decidable
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{tcp}{cdc}
+
+\olsection{نظریه‌های کاملِ \printtoken{S}{axiomatizable} تصمیم‌پذیرند}
+
+نظریه‌ای را {\em کامل} می‌نامیم هرگاه برای هر جملهٔ~$!A$، یا
+$!A$ اثبات‌پذیر باشد یا~$\lnot !A$.
+
+\begin{lem}
+فرض کنید نظریهٔ~$\Th{T}$ کامل و !!{axiomatizable} باشد. آنگاه
+$\Th{T}$ تصمیم‌پذیر است.
+\end{lem}
+
+\begin{proof}
+فرض کنید $\Th{T}$ کامل باشد و~$A$ مجموعه‌ای محاسبه‌پذیر از اصول موضوعه
+باشد. اگر $\Th{T}$ ناسازگار باشد، آشکارا محاسبه‌پذیر است (الگوریتم:
+«همیشه پاسخ مثبت بده»). پس می‌توانیم فرض کنیم که~$\Th{T}$ سازگار نیز
+هست.
+
+برای تصمیم‌گیری دربارهٔ اینکه آیا جملهٔ~$!A$ در~$\Th{T}$ است یا نه،
+هم‌زمان در پی !!a{derivation}ی از~$!A$ بر پایهٔ~$\Th{T}$ و
+!!a{derivation}ی از~$\lnot !A$ بر پایهٔ~$\Th{T}$ بگردید. چون~$\Th{T}$ کامل است، ناگزیر
+یکی از این دو را خواهید یافت؛ و چون~$\Th{T}$ سازگار است، اگر
+!!a{derivation}ی از~$\lnot !A$ بیابید، هیچ !!{derivation}ی از~$!A$
+وجود ندارد.
+
+به بیان دیگر، از پیش می‌دانیم که~$\Th{T}$ !!{c.e.} است؛ پس بنا بر
+قضیه‌ای که پیش‌تر ثابت کردیم، کافی است نشان دهیم متمم~$\Th{T}$ نیز
+!!{c.e.} است. اما !!a{sentence}ی چون~$!A$ در~$\Th{\bar T}$ است اگر و
+تنها اگر~$\lnot !A$ در~$\Th{T}$ باشد؛ بنابراین
+$\Th{\bar T} \leq_m \Th{T}$.
+\end{proof}
+
+\end{document}

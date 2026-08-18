@@ -1,0 +1,85 @@
+% Part: applied-modal-logics
+% Chapter: epistemic-logic
+% Section: language-epistemic-logic
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{aml}{el}{lan}
+
+\olsection{زبان منطق معرفتی}
+
+\begin{defn}
+بگذارید~$G$ مجموعه‌ای از نمادهای عامل باشد. زبان پایهٔ منطق معرفتی
+چندعاملی شامل موارد زیر است:
+\begin{enumerate}
+  \tagitem{prvFalse}{ثابت گزاره‌ای برای !!{falsity}~$\lfalse$.}{}
+  \tagitem{prvTrue}{ثابت گزاره‌ای برای !!{truth}~$\ltrue$.}{}
+  \item یک مجموعهٔ !!{denumerable} از !!{propositional variable}ها:
+    $\Obj p_0$، $\Obj p_1$، $\Obj p_2$، \dots
+  \item رابط‌های گزاره‌ای: \startycommalist
+  \iftag{prvNot}{\ycomma $\lnot$ (نفی)}{}%
+  \iftag{prvAnd}{\ycomma $\land$ (عطف)}{}%
+  \iftag{prvOr}{\ycomma $\lor$ (فصل)}{}%
+  \iftag{prvIf}{\ycomma $\lif$ (!!{conditional})}{}%
+  \iftag{prvIff}{\ycomma $\liff$ (!!{biconditional})}{}.
+  \item عملگر دانش~$\Knows_a$، که~$a \in G$.
+\end{enumerate}
+\end{defn}
+
+اگر در دستگاه خود تنها به دانش یک عامل می‌پردازیم، می‌توانیم ارجاع به
+مجموعهٔ~$G$ و عامل‌های منفرد را کنار بگذاریم. در آن صورت تنها عملگر
+پایهٔ~$\Knows$ را داریم.
+
+\begin{defn}
+\emph{!!^{formula}های زبان معرفتی} با استقرا چنین تعریف می‌شوند:
+\begin{enumerate}
+\tagitem{prvFalse}{$\lfalse$ یک !!{formula} اتمی است.}{}
+
+\tagitem{prvTrue}{$\ltrue$ یک !!{formula} اتمی است.}{}
+
+\item هر متغیر گزاره‌ای~$\Obj p_i$ یک !!{formula} (اتمی) است.
+
+\tagitem{prvNot}{اگر~$!A$ یک !!a{formula} باشد، آنگاه~$\lnot !A$ یک
+  !!a{formula} است.}{}
+
+\tagitem{prvAnd}{اگر~$!A$ و~$!B$، !!{formula} باشند، آنگاه
+  $(!A \land !B)$ یک !!a{formula} است.}{}
+
+\tagitem{prvOr}{اگر~$!A$ و~$!B$، !!{formula} باشند، آنگاه
+  $(!A \lor !B)$ یک !!a{formula} است.}{}
+
+\tagitem{prvIf}{اگر~$!A$ و~$!B$، !!{formula} باشند، آنگاه
+  $(!A \lif !B)$ یک !!a{formula} است.}{}
+
+\tagitem{prvIff}{اگر~$!A$ و~$!B$، !!{formula} باشند، آنگاه
+  $(!A \liff !B)$ یک !!a{formula} است.}{}
+
+\item اگر~$!A$ یک !!a{formula} و~$a \in G$ باشد، آنگاه~$\Knows_a !A$
+  یک !!a{formula} است.
+
+\tagitem{limitClause}{هیچ چیز دیگری !!a{formula} نیست.}{}
+\end{enumerate}
+\end{defn}
+
+!!a{formula}~$!A$ \emph{فاقد وجه} است اگر و تنها اگر برای هیچ
+$a \in G$ شامل~$\Knows_a$ نباشد.
+
+\begin{defn}
+  درحالی‌که عملگر~$\Knows$ برای نمادسازی دانش فردی در نظر گرفته شده
+  است، $\EKnows$، که اغلب «همه می‌دانند» خوانده می‌شود، دانش گروهی را
+  نمادسازی می‌کند. هرگاه~$G' \subseteq G$، $\EKnows_{G'} !A$ را
+  کوته‌نوشتِ~\[\bigwedge_{b \in G'} \Knows_b !A\] تعریف می‌کنیم.
+\end{defn}
+
+می‌توانیم معنایی حتی قوی‌تر از دانش، یعنی \emph{دانش مشترک} میان گروهی
+از عامل‌های~$G$، تعریف کنیم. وقتی اطلاعاتی میان گروهی از عامل‌ها دانش
+مشترک است، یعنی برای هر ترکیبی از عامل‌های آن گروه، همگی می‌دانند که
+یکدیگر می‌دانند که یکدیگر می‌دانند~\dots{} تا بی‌نهایت. این مفهوم
+به‌طور چشمگیری از دانش گروهی قوی‌تر است و به‌آسانی می‌توان مدل‌های
+رابطه‌ای‌ای ساخت که در آن‌ها !!a{formula} دانش گروهی است اما دانش
+مشترک نیست. از~$\CKnows_G !A$ برای نمادسازی «میان~$G$ دانش مشترک است
+که~$!A$» استفاده می‌کنیم.
+
+\end{document}

@@ -1,0 +1,159 @@
+% Part: proof-theory
+% Chapter: sequent-calculus
+% Section: quantifiers
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{seq}{qua}
+
+\olsection{برهان‌های منظم و جانشینی}
+
+قواعد سورها به‌سبب «شرط‌های متغیر ویژه» که بر قواعد
+\LeftR{\lexists} و~\RightR{\lforall} حاکم‌اند، پیچیدگی‌هایی پدید
+می‌آورند. بیشتر این پیچیدگی‌ها را می‌توان با این تضمین رفع کرد که
+!!{constant}~$a$ در این استنتاج‌ها دوباره به کار نرود. تعریف زیر را
+در نظر می‌گیریم.
+
+\begin{defn}
+!!^a{proof}~$\pi$ در~\Log{G1c} یا~\Log{G3c} را \emph{منظم} می‌نامیم
+هرگاه:
+\begin{enumerate}
+  \item هیچ متغیر ویژه‌ای چون~$a$ در بیش از یک استنتاج
+  \LeftR{\lexists} یا~\RightR{\lforall} به‌عنوان متغیر ویژه به کار
+  نرفته باشد؛ و
+  \item اگر~$a$ متغیر ویژهٔ یک استنتاج~\LeftR{\lexists} یا
+  \RightR{\lforall} باشد، در~$\pi$ فقط بالای همان استنتاج رخ دهد.
+\end{enumerate}
+\end{defn}
+
+\begin{lem}\ollabel{lem:subst-regular} اگر~$\pi$ منظم باشد و به
+$\Gamma \Sequent \Delta$ ختم شود، $c$~!!a{constant} باشد که در~$\pi$
+متغیر ویژه نیست، و~$t$ جمله‌ای باشد که هیچ متغیر ویژهٔ~$\pi$ را در بر
+ندارد، آنگاه~$\Subst{\pi}{t}{c}$، که با جایگزین‌کردن هر رخداد~$c$ با
+$t$ در~$\pi$ حاصل می‌شود، !!{proof}ی منظم است. دنبالهٔ پایانی آن
+$\Subst{\Gamma}{t}{c} \Sequent \Subst{\Delta}{t}{c}$ است؛ در اینجا
+$\Subst{\Gamma}{t}{c}$ چندمجموعه‌ای است که با جایگزینی~$c$ با~$t$ در
+هر رخداد فرمولیِ~$\Gamma$، با حفظ همهٔ رخدادها و چندگانگی‌هایشان، به دست
+می‌آید.
+\end{lem}
+
+\begin{proof}
+  بر~$\pheight{\pi}$ استقرا می‌کنیم. اگر~$\pheight{\pi}=0$، $\pi$
+  فقط از یک اصل تشکیل شده است. در این صورت~$\Subst{\pi}{t}{c}$ نیز اصل
+  است، زیرا هر~!!{formula}~$!A(c)$ در آن به~$!A(t)$ تبدیل می‌شود.
+
+  اگر~$\pheight{\pi}>0$ باشد، بر حسب آخرین استنتاج~$\pi$ حالت‌بندی
+  می‌کنیم. حالت‌های قواعد ساختاری (در~\Log{G1c}) و قواعد منطقیِ رابط‌های
+  گزاره‌ای آسان‌اند و به‌عنوان تمرین واگذار می‌شوند. حالت‌هایی را بررسی
+  می‌کنیم که~$\pi$ به استنتاجی سورمند ختم می‌شود.
+  \begin{enumerate}
+    \item اگر آخرین استنتاج~\RightR{\lforall} باشد، $\pi$ به صورت
+    زیر است:
+    \[
+    \AxiomC{}
+    \RightLabel{$\pi'$}
+    \Deduce$\Gamma(c) \fCenter \Delta'(c), !A(a,c)$
+    \RightLabel{\RightR{\lforall}}
+    \UnaryInf$\Gamma(c) \fCenter \Delta'(c), \lforall[x][!A(x,c)]$
+    \DisplayProof
+    \]
+    بنا بر فرض استقرا، $\Subst{\pi'}{t}{c}$~!!{proof}ی منظم از
+    $\Gamma(t) \fCenter \Delta'(t), !A(a,t)$ است. چون~$a$ متغیر ویژهٔ
+    $\pi$ است، در~$t$ رخ نمی‌دهد. پس آخرین استنتاج در
+    $\Subst{\pi}{t}{c}$،
+    \[
+    \AxiomC{}
+    \RightLabel{$\Subst{\pi'}{t}{c}$}
+    \Deduce$\Gamma(t) \fCenter \Delta'(t), !A(a,t)$
+    \RightLabel{\RightR{\lforall}}
+    \UnaryInf$\Gamma(t) \fCenter \Delta'(t), \lforall[x][!A(x,t)]$
+    \DisplayProof
+    \]
+    درست است: نتیجه شامل~$a$ نیست.
+    \item اگر آخرین استنتاج~\LeftR{\lforall} در~\Log{G3c} باشد،
+    $\pi$ به صورت
+    \[
+    \AxiomC{}
+    \RightLabel{$\pi'$}
+    \Deduce$!A(s(c),c), \lforall[x][!A(x,c)], \Gamma(c) \fCenter \Delta'(c)$
+    \RightLabel{\LeftR{\lforall}}
+    \UnaryInf$\lforall[x][!A(x,c)], \Gamma(c) \fCenter \Delta'(c)$
+    \DisplayProof
+    \]
+    است. بنا بر فرض استقرا، $\Subst{\pi'}{t}{c}$~!!{proof}ی منظم از
+    $!A(s(t),t), \lforall[x][!A(x,t)], \Gamma(t) \fCenter
+    \Delta'(t)$ است. آخرین استنتاج در~$\Subst{\pi}{t}{c}$،
+    \[
+    \AxiomC{}
+    \RightLabel{$\Subst{\pi'}{t}{c}$}
+    \Deduce$!A(s(t),t), \lforall[x][!A(x,t)], \Gamma(t) \fCenter \Delta'(t)$
+    \RightLabel{\LeftR{\lforall}}
+    \UnaryInf$\lforall[x][!A(x,t)], \Gamma(t) \fCenter \Delta'(t)$
+    \DisplayProof
+    \]
+    درست است. حالت~\LeftR{\lforall} در~\Log{G1c} مشابه، اما اندکی
+    ساده‌تر است.
+    \item اگر آخرین استنتاج~\RightR{\lexists} یا~\LeftR{\lexists}
+    باشد، بررسی آن تمرین است.
+  \end{enumerate}
+  در هر حالت، دنباله‌ای به پایان یک~!!{proof} منظم (یا در قواعد
+  دومقدمه‌ای به~!!{proof}s منظم) افزوده‌ایم.
+  در هر حالت، استنتاج‌های متغیر ویژه تغییر نمی‌کنند. چون~$c$ متغیر ویژه
+  نبود و~$t$ هیچ متغیر ویژهٔ~$\pi$ را در بر ندارد، جانشینی هیچ متغیر
+  ویژه‌ای را پایین‌تر از استنتاج ویژهٔ آن وارد نمی‌کند؛ فرض‌های استقرا نیز
+  منظمی را حفظ می‌کنند. بنابراین~$\Subst{\pi}{t}{c}$ منظم است.
+\end{proof}
+
+\begin{prop}
+اگر~$\pi$~!!a{proof} در~\Log{G1c} یا~\Log{G3c} باشد، !!{proof}ی منظم
+چون~$\pi'$ با همان ساختار (و به‌ویژه همان~!!{height}) وجود دارد که فقط
+در جایگزینی متغیرهای ویژه با~$\pi$ تفاوت دارد.
+\end{prop}
+
+\begin{proof}
+فقط برای این برهان، استنتاج متغیر ویژه‌ای از~$\pi$ را \emph{پاک}
+می‌نامیم اگر متغیر ویژهٔ آن، متغیر ویژهٔ هیچ استنتاج دیگری نباشد و در
+$\pi$ جز در~!!{proof} بی‌واسطهٔ آن استنتاج رخ ندهد؛ در غیر این صورت آن
+را \emph{ناپاک} می‌نامیم. فرض کنید~$n$ شمار استنتاج‌های ناپاک متغیر ویژه
+در~$\pi$ باشد. با استقرا بر~$n$ نشان می‌دهیم که~$\pi$ را می‌توان به
+!!{proof} منظم مطلوب~$\pi'$ تبدیل کرد. اگر~$n=0$ باشد، همهٔ استنتاج‌های
+متغیر ویژه در~$\pi$ پاک‌اند؛ پس~$\pi$ منظم است و چیزی برای اثبات باقی
+نمی‌ماند. در غیر این صورت، بالاترین استنتاج ناپاک متغیر ویژه را برمی‌گزینیم؛
+فرض کنیم استنتاجی با~\RightR{\lforall} باشد. زیرـ!!{proof}~$\pi_1$ که
+به آن ختم می‌شود، به صورت
+    \[
+    \AxiomC{}
+    \RightLabel{$\pi_2$}
+    \Deduce$\Gamma \fCenter \Delta, !A(c)$
+    \RightLabel{\RightR{\lforall}}
+    \UnaryInf$\Gamma \fCenter \Delta, \lforall[x][!A(x)]$
+    \DisplayProof
+    \]
+است. چون~$c$ متغیر ویژه است، در~$\Gamma$، $\Delta$ یا
+$\lforall[x][!A(x)]$ رخ نمی‌دهد. برهان~$\pi_2$ منظم است، زیرا هر
+استنتاج متغیر ویژهٔ بالای استنتاج برگزیده پاک است. فرض کنید~$a$
+!!a{constant} باشد که در~$\pi$ رخ نمی‌دهد. به موجب
+\olref{lem:subst-regular}، $\Subst{\pi_2}{a}{c}$ برهانی منظم از
+$\Gamma \fCenter \Delta, !A(a)$ است و می‌توان~\RightR{\lforall} را
+بر آن اعمال کرد. اگر~$\pi_1$ را در~$\pi$ با برهان~$\pi_1'$،
+    \[
+    \AxiomC{}
+    \RightLabel{$\Subst{\pi_2}{a}{c}$}
+    \Deduce$\Gamma \fCenter \Delta, !A(a)$
+    \RightLabel{\RightR{\lforall}}
+    \UnaryInf$\Gamma \fCenter \Delta, \lforall[x][!A(x)]$
+    \DisplayProof
+    \]
+جایگزین کنیم، متغیر ویژهٔ تازهٔ~$a$ را جایگزین~$c$ کرده‌ایم. برهان
+حاصل اکیداً کمتر از~$n$ استنتاج ناپاک متغیر ویژه دارد، زیرا این تغییر نام
+ممکن است بیش از یک استنتاج را پاک کند. اکنون نتیجه از فرض استقرا به دست
+می‌آید. حالت‌های دیگر قواعد متغیر ویژه مشابه‌اند.
+\end{proof}
+
+از گزاره‌ای که همین اکنون اثبات شد صریحاً استفاده نخواهیم کرد، اما فرض
+می‌کنیم همهٔ !!{proof}s مورد بررسی منظم‌اند؛ اگر چنین نباشند، همیشه
+می‌توان متغیرهای ویژه را جایگزین کرد و آن‌ها را منظم ساخت.
+
+\end{document}

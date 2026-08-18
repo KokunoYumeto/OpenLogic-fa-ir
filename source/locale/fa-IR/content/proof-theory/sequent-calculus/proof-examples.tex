@@ -1,0 +1,344 @@
+% Part: proof-theory
+% Chapter: sequent-calculus
+% Section: proof-examples
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{seq}{ex}
+
+\olsection{نمونه‌هایی از برهان}
+
+برای ارائهٔ !!{proof}s دنباله‌ها معمولاً مناسب است از دنبالهٔ پایانی به سمت
+بالا پیش برویم: !!a{formula} از آن را به‌عنوان !!{formula} فعال برگزینیم،
+مقدمات قاعدهٔ متناظر را بالای دنباله بنویسیم و این فرایند را تا رسیدن به
+اصول تکرار کنیم. برای نمونه، فرض کنید می‌خواهیم دنبالهٔ
+\[(!C \land !D) \lif !E \Sequent !C \lif (!D \lif !E)\]
+را اثبات کنیم. فرمول~$!C \lif (!D \lif !E)$ را در نظر بگیرید: به صورت
+$!A \lif !B$ است و در سمت راست دنباله رخ می‌دهد. تطبیق کل دنباله با قاعدهٔ
+$\RightR{\lif}$ در~\Log{G1c}،
+\[\Axiom$ !A, \Gamma \fCenter \Delta, !B$
+\RightLabel{\RightR{\lif}}
+\UnaryInf$ \Gamma \fCenter \Delta, !A \lif !B $
+\DisplayProof\]
+پیشنهاد می‌کند~$\Gamma = \{(!C \land !D) \lif !E\}$،
+$\Delta = \emptyset$، $!A \ident !C$ و~$!B \ident !D \lif !E$ بگیریم.
+پس آخرین استنتاجِ یک برهان می‌تواند چنین باشد:
+\[\Axiom$ !C, (!C \land !D) \lif !E \fCenter !D \lif !E$
+\RightLabel{\RightR{\lif}}
+\UnaryInf$(!C \land !D) \lif !E \fCenter !C \lif (!D \lif !E)$
+\DisplayProof\]
+اگر همین اندیشه را با تمرکز بر~$!D \lif !E$ به‌عنوان فرمول فعال تکرار کنیم،
+به این می‌رسیم:
+\[\Axiom$ !D, !C, (!C \land !D) \lif !E \fCenter !E$
+\RightLabel{\RightR{\lif}}
+\UnaryInf$!C, (!C \land !D) \lif !E \fCenter !D \lif !E$
+\RightLabel{\RightR{\lif}}
+\UnaryInf$(!C \land !D) \lif !E \fCenter !C \lif (!D \lif !E)$
+\DisplayProof\]
+اکنون باید بر~$(!C \land !D) \lif !E$ تمرکز کنیم و قاعدهٔ
+$\LeftR{\lif}$ در~\Log{G1c} را به کار ببریم:
+\[\Axiom$ \Gamma \fCenter \Delta, !A$
+\Axiom$ !B, \Gamma \fCenter \Delta$
+\RightLabel{\LeftR{\lif}}
+\BinaryInf$ !A \lif !B, \Gamma \fCenter \Delta$
+\DisplayProof\]
+این کار ما را به اینجا می‌رساند:
+\[\Axiom$!D, !C \fCenter !E, !C \land !D$
+\Axiom$!D, !C, !E \fCenter !E$
+\RightLabel{\LeftR{\lif}}
+\BinaryInf$ !D, !C, (!C \land !D) \lif !E \fCenter !E$
+\RightLabel{\RightR{\lif}}
+\UnaryInf$!C, (!C \land !D) \lif !E \fCenter !D \lif !E$
+\RightLabel{\RightR{\lif}}
+\UnaryInf$(!C \land !D) \lif !E \fCenter !C \lif (!D \lif !E)$
+\DisplayProof\]
+با گرفتن~!!{formula}~$!C \land !D$ در دنبالهٔ بالاییِ سمت چپ به‌عنوان
+فرمول اصلی و به‌کاربردن قاعدهٔ~$\RightR{\land}$، داریم:
+\[
+\Axiom$!D, !C \fCenter !E, !C$
+\Axiom$!D, !C \fCenter !E, !D$
+\RightLabel{\RightR{\land}}
+\BinaryInf$!D, !C \fCenter !E, !C \land !D$
+\Axiom$!D, !C, !E \fCenter !E$
+\RightLabel{\LeftR{\lif}}
+\BinaryInf$ !D, !C, (!C \land !D) \lif !E \fCenter !E$
+\RightLabel{\RightR{\lif}}
+\UnaryInf$!C, (!C \land !D) \lif !E \fCenter !D \lif !E$
+\RightLabel{\RightR{\lif}}
+\UnaryInf$(!C \land !D) \lif !E \fCenter !C \lif (!D \lif !E)$
+\DisplayProof
+\]
+تا اینجا همه‌چیز درست است. توجه کنید همهٔ کارهای انجام‌شده در~\Log{G3c}
+نیز معتبرند، زیرا قواعدی که تاکنون به کار برده‌ایم در~\Log{G1c} و
+~\Log{G3c} یکسان‌اند. به پاره‌ای از !!a{proof} رسیده‌ایم که در همهٔ
+دنباله‌های بالایی‌اش !!{formula} یکسانی در چپ و راست آمده است، اما این
+دنباله‌ها هنوز دقیقاً اصل نیستند.
+
+در~\Log{G1c} باید برای دنباله‌های بالایی از اصولی به صورت
+$!A \Sequent !A$، !!{proof}s ارائه کنیم. این کار با قواعد تضعیف آسان
+است؛ برای مثال، دنبالهٔ
+بالاییِ سمت چپ~$!D, !C \Sequent !E, !C$ را می‌توان چنین !!{prove} کرد:
+\[
+\Axiom$!C \fCenter !C$
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$!D, !C \fCenter !C$
+\RightLabel{\RightR{\Weakening}}
+\UnaryInf$!D, !C \fCenter !E, !C$
+\]
+در مجموع، در~\Log{G1c} !!a{proof} به صورت زیر داریم:
+\[
+\Axiom$!C \fCenter !C$
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$!D, !C \fCenter !C$
+\RightLabel{\RightR{\Weakening}}
+\UnaryInf$!D, !C \fCenter !E, !C$
+\Axiom$!D \fCenter !D$
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$!D, !C \fCenter !D$
+\RightLabel{\RightR{\Weakening}}
+\UnaryInf$!D, !C \fCenter !E, !D$
+\RightLabel{\RightR{\land}}
+\BinaryInf$!D, !C \fCenter !E, !C \land !D$
+\Axiom$!E \fCenter !E$
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$!C, !E \fCenter !E$
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$!D, !C, !E \fCenter !E$
+\RightLabel{\LeftR{\lif}}
+\BinaryInf$ !D, !C, (!C \land !D) \lif !E \fCenter !E$
+\RightLabel{\RightR{\lif}}
+\UnaryInf$!C, (!C \land !D) \lif !E \fCenter !D \lif !E$
+\RightLabel{\RightR{\lif}}
+\UnaryInf$(!C \land !D) \lif !E \fCenter !C \lif (!D \lif !E)$
+\DisplayProof
+\]
+ساختار این برهان، به‌ویژه ارتفاع آن، مستقل از چیستیِ !!{formula}s
+$!C$، $!D$ و~$!E$ است. می‌توان این نمادها را در !!{proof} بالا با هر
+!!{formula}s دلخواه جایگزین کرد و حاصل همچنان !!{proof} در~\Log{G1c}
+خواهد بود. این برهان در~\Log{G1c} \emph{طرح‌واره‌ای} است.
+
+در~\Log{G3c} اصول دنباله‌هایی به صورت~$!A, \Gamma \Sequent
+\Delta, !A$ هستند که در آن‌ها~$!A$ باید اتمی باشد. پس هرچند
+$!D, !C \Sequent !E, !C$ شبیه اصلی از~\Log{G3c} است
+(~$\Gamma = \{!D\}$؛ $\Delta = \{!E\}$)، تنها هنگامی
+\emph{واقعاً} اصل است که~$!C$ اتمی باشد. پاره‌برهان ما تنها در صورتی
+برهان کامل در~\Log{G3c} است که~$!C$، $!D$ و~$!E$ همگی
+!!{formula}s اتمی باشند.
+
+اگرچه، به معنای دقیق، هنوز نشان نداده‌ایم که
+\[\Log{G3c} \Proves (!C \land !D) \lif !E \Sequent !C \lif (!D \lif
+!E),\]
+در عمل همین تمام کاری است که لازم است ــ و می‌توانیم ــ انجام دهیم. زیرا
+هر دنباله به صورت~$!A, \Gamma \Sequent \Delta, !A$ در~\Log{G3c}
+اثبات‌پذیر است، حتی اگر خود~$!A$ اتمی نباشد. این را می‌توان با استقرا بر
+عمق~$\depth{!A}$ فرمول~$!A$ نشان داد.
+
+\begin{defn}\ollabel{defn:depth}
+\emph{عمق}~$\depth{!A}$ یک !!a{formula} به صورت زیر تعریف می‌شود:
+\begin{enumerate}
+  \item اگر~$!A$ اتمی باشد، $\depth{!A} = 0$.
+  \item اگر~$!A \ident \lnot !B$، $!A \ident \lforall[x][!B(x)]$ یا
+  $!A \ident \lexists[x][!B(x)]$، آنگاه
+  $\depth{!A} = \depth{!B} + 1$.
+  \item اگر~$!A \ident (!B \land !C)$،
+  $!A \ident (!B \lor !C)$ یا~$!A \ident (!B \lif !C)$، آنگاه
+  $\depth{!A} = \max(\depth{!B},\depth{!C}) + 1$.
+\end{enumerate}
+\end{defn}
+
+اثبات اینکه~$\depth{!A(x)} = \depth{!A(t)}$ برای هر ترم~$t$ دشوار
+نیست. واقعیت مهم برای ما این است که در هر قاعده، عمق !!{formula} اصلی
+همواره از عمق !!{formula}s فعال بیشتر است. برای نمونه:
+\begin{align*}
+\depth{P(x)} = \depth{P(a)} & = 0,\\
+\depth{\lforall[x][P(x)]} & = 1,\\
+\depth{(\lforall[x][P(x)] \lif P(a))} & = \max(1,0) + 1 = 2.
+\end{align*}
+می‌توانیم از این واقعیت برای اثبات نتایجی با استقرا بر~$\depth{!A}$، مانند
+نتیجهٔ زیر، استفاده کنیم.
+
+\begin{prop}\ollabel{prop:G1c-axioms}
+برای هر~$!A$، در~$\Log{G1c}$ !!a{proof} از~$!A \Sequent !A$ وجود دارد
+که همهٔ اصول آن اتمی‌اند.
+\end{prop}
+
+\begin{proof}
+  بر~$\depth{!A}$ استقرا می‌کنیم. اگر~$\depth{!A} = 0$، آنگاه~$!A$
+  اتمی است و~$!A \Sequent !A$ خود !!{proof} در~\Log{G1c} به صورت
+  مطلوب است. اگر~$\depth{!A} > 0$، $!A$ از !!{formula}sی با عمق کمتر
+  ساخته شده است؛ برای نمونه،~$!A \ident \lnot !B$،
+  $!A \ident (!B \land !C)$ یا~$!A \ident \lforall[x][!B(x)]$.
+  فرض استقرا می‌گوید برای هر~$!D$ با~$\depth{!D} < \depth{!A}$،
+  $\Log{G1c} \Proves !D \Sequent !D$ از اصول اتمی.
+
+  اگر~$!A \ident \lnot !B$، آنگاه~$\depth{!B} < \depth{!A}$ و بنا بر
+  فرض استقرا، در~\Log{G1c} !!a{proof}~$\pi_1$ از اصول اتمی برای
+  $!B \Sequent !B$ وجود دارد. می‌توان آن را به !!a{proof} از
+  $\lnot !B \Sequent \lnot !B$ چنین گسترش داد:
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_1$}
+  \Deduce$!B \fCenter !B$
+  \RightLabel{\LeftR{\lnot}}
+  \UnaryInf$\lnot !B, !B \fCenter $
+  \RightLabel{\RightR{\lnot}}
+  \UnaryInf$\lnot !B \fCenter \lnot !B$
+  \DisplayProof
+\]
+
+  اگر~$!A \ident (!B \land !C)$، آنگاه
+  $\depth{!B} < \depth{!A}$ و~$\depth{!C} < \depth{!A}$. بنا بر فرض
+  استقرا، در~\Log{G1c} !!{proof}s~$\pi_1$ و~$\pi_2$ از اصول اتمی،
+  به‌ترتیب برای~$!B \Sequent !B$ و~$!C \Sequent !C$، وجود دارند. آن‌ها
+  را می‌توان به !!a{proof} از~$!B \land !C \Sequent !B \land !C$ چنین
+  گسترش داد:
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_1$}
+  \Deduce$!B \fCenter !B$
+  \RightLabel{\LeftR{\Weakening}}
+  \UnaryInf$!B, !C \fCenter !B$
+  \RightLabel{\LeftR{\land}}
+  \UnaryInf$!B \land !C, !C \fCenter !B$
+  \RightLabel{\LeftR{\land}}
+  \UnaryInf$!B \land !C, !B \land !C \fCenter !B$
+  \AxiomC{}
+  \RightLabel{$\pi_2$}
+  \Deduce$!C \fCenter !C$
+  \RightLabel{\LeftR{\Weakening}}
+  \UnaryInf$!B, !C \fCenter !C$
+  \RightLabel{\LeftR{\land}}
+  \UnaryInf$!B \land !C, !C \fCenter !C$
+  \RightLabel{\LeftR{\land}}
+  \UnaryInf$!B \land !C, !B \land !C \fCenter !C$
+  \RightLabel{\RightR{\land}}
+  \BinaryInf$!B \land !C, !B \land !C \fCenter !B \land !C$
+  \RightLabel{\LeftR{\Contraction}}
+  \UnaryInf$!B \land !C \fCenter !B \land !C$
+  \DisplayProof
+  \]
+
+  اکنون فرض کنید~$!A \ident \lforall[x][!B(x)]$. !!a{constant}~$c$ را چنان
+  برگزینید که در~$\lforall[x][!B(x)]$ رخ ندهد. آنگاه
+  $\depth{!B(c)} = \depth{!B(x)} < \depth{!A}$ و بنا بر فرض استقرا،
+  در~\Log{G1c} !!a{proof}~$\pi_1$ از اصول اتمی برای
+  $!B(c) \Sequent !B(c)$ وجود دارد. آن را می‌توان چنین به !!a{proof}
+  از~$\lforall[x][!B(x)] \Sequent \lforall[x][!B(x)]$ گسترش داد:
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_1$}
+  \Deduce$!B(c) \fCenter !B(c)$
+  \RightLabel{\LeftR{\lforall}}
+  \UnaryInf$\lforall[x][!B(x)] \fCenter !B(c)$
+  \RightLabel{\RightR{\lforall}}
+  \UnaryInf$\lforall[x][!B(x)] \fCenter \lforall[x][!B(x)]$
+  \DisplayProof
+\]
+
+  حالت‌های باقی‌مانده به‌عنوان تمرین واگذار می‌شوند.
+\end{proof}
+
+\begin{prob}
+  برهان~\olref{prop:G1c-axioms} را با انجام حالت‌های
+  $!A \ident (!B \lor !C)$، $!A \ident (!B \lif !C)$ و
+  $!A \ident \lexists[x][!B(x)]$ کامل کنید.
+\end{prob}
+
+برای مقصود ما، در حالت~$!A \ident \lnot !B$ می‌شد از !!{proof} زیر نیز
+استفاده کرد:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$!B \fCenter !B$
+\RightLabel{\RightR{\lnot}}
+\UnaryInf$\fCenter !B, \lnot !B$
+\RightLabel{\LeftR{\lnot}}
+\UnaryInf$\lnot !B \fCenter \lnot !B$
+\DisplayProof
+\]
+اما دستگاه‌های دنباله‌ای‌ای وجود دارند که این روش در آن‌ها کار نمی‌کند.
+حساب دنباله‌ای شهودی~\Log{G1i} مانند~\Log{G1c} است، جز آنکه همهٔ دنباله‌ها
+را به داشتن حداکثر یک !!{formula} در سمت راست محدود می‌کند. اگر
+$\Delta = \emptyset$ باشد، !!{proof} نخست در~\Log{G1i} نیز !!a{proof}
+خواهد بود، اما دومی نه، زیرا یکی از دنباله‌های آن هم~$!B$ و هم~$\lnot !B$
+را در سمت راست دارد.
+
+توجه کنید حتی در~\Log{G1c} نیز در حالت
+$!A \ident \lforall[x][!B(x)]$ نمی‌شد قواعد را با ترتیبی جایگزین به کار
+برد. عبارت زیر !!a{proof} \emph{نیست}:
+  \[
+  \AxiomC{}
+  \RightLabel{$\pi_1$}
+  \Deduce$!B(c) \fCenter !B(c)$
+  \RightLabel{\RightR{\lforall}}
+  \UnaryInf$!B(c) \fCenter \lforall[x][!B(x)]$
+  \RightLabel{\LeftR{\lforall}}
+  \UnaryInf$\lforall[x][!B(x)] \fCenter \lforall[x][!B(x)]$
+  \DisplayProof
+\]
+زیرا شرط متغیر ویژهٔ~$\RightR{\lforall}$ نقض شده است.
+
+\begin{prop}\ollabel{prop:G3c-axioms}
+هر دنباله‌ای به صورت~$!A, \Gamma
+\Sequent \Delta, !A$، که در آن~$!A$ لزوماً اتمی نیست، در~\Log{G3c}
+اثبات‌پذیر است.
+\end{prop}
+
+\begin{proof}
+برهان بسیار شبیه برهان~\olref{prop:G1c-axioms} است، اما باید در صورت‌بندی
+فرض استقرا دقت کنیم. حالت~$n = \depth{!A} = 0$ باز آسان است. اگر~$n=0$،
+$!A$ اتمی و~$!A, \Gamma \Sequent \Delta, !A$ اصلی از~\Log{G3c} است.
+
+اکنون فرض کنید~$n>0$. باز حالت‌بندی می‌کنیم. فرض استقرا چنین است: برای
+هر~$!D$ با~$\depth{!D} < n$، و هر~$\Pi$ و~$\Lambda$،
+$\Log{G3c} \Proves !D, \Pi \Sequent \Lambda, !D$. حالت
+$!A \ident (!B \land !C)$ چنین است. فرض استقرا را دو بار به کار می‌بریم:
+یک بار با~$!D = !B$، $\Pi = !C, \Gamma$ و~$\Lambda = \Delta$ تا
+!!a{proof}~$\pi_1$ از~$!B, !C, \Gamma \Sequent \Delta, !B$ بگیریم؛ و
+بار دیگر با~$!D = !C$، $\Pi = !B, \Gamma$ و~$\Lambda = \Delta$ تا
+!!a{proof}~$\pi_2$ از~$!B, !C, \Gamma \Sequent \Delta, !C$ بگیریم.
+!!{proof}~$!B \land !C, \Gamma \Sequent \Delta, !B \land !C$ چنین است:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$!B, !C, \Gamma \fCenter \Delta, !B$
+\RightLabel{\LeftR{\land}}
+\UnaryInf$!B \land !C, \Gamma \fCenter \Delta, !B$
+\AxiomC{}
+\RightLabel{$\pi_2$}
+\Deduce$!B, !C, \Gamma \fCenter \Delta, !C$
+\RightLabel{\LeftR{\land}}
+\UnaryInf$!B \land !C, \Gamma \fCenter \Delta, !C$
+\RightLabel{\RightR{\land}}
+\BinaryInf$!B \land !C, \Gamma \fCenter \Delta, !B \land !C$
+\DisplayProof
+\]
+
+برای~$!A \ident \lforall[x][!B(x)]$، !!a{constant}~$c$ را چنان برگزینید که در
+$\lforall[x][!B(x)]$، $\Gamma$ یا~$\Delta$ رخ ندهد. فرض استقرا را برای
+$!D = !B(c)$، $\Pi = \lforall[x][!B(x)], \Gamma$ و
+$\Lambda = \Delta$ به کار ببرید. از این راه !!a{proof}~$\pi_1$ از
+$!B(c), \lforall[x][!B(x)], \Gamma \Sequent \Delta, !B(c)$ به دست
+می‌آید و سپس داریم:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$!B(c), \lforall[x][!B(x)], \Gamma \fCenter \Delta, !B(c)$
+\RightLabel{\LeftR{\lforall}}
+\UnaryInf$\lforall[x][!B(x)], \Gamma \fCenter \Delta, !B(c)$
+\RightLabel{\RightR{\lforall}}
+\UnaryInf$\lforall[x][!B(x)], \Gamma \fCenter \Delta, \lforall[x][!B(x)]$
+\DisplayProof
+\]
+شیوهٔ انتخاب~$c$ شرط متغیر ویژهٔ~$\RightR{\lforall}$ را برآورده می‌کند.
+\end{proof}
+
+\begin{prob}
+  برهان~\olref{prop:G3c-axioms} را با انجام حالت‌های
+  $!A \ident (!B \lif !C)$ و~$!A \ident
+  \lexists[x][!B(x)]$ ادامه دهید.
+\end{prob}
+
+\end{document}

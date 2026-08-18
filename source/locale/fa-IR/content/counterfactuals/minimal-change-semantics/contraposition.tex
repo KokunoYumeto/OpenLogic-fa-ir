@@ -1,0 +1,64 @@
+% Part: counterfactuals
+% Chapter: minimal-change-semantics
+% Section: contraposition
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{cnt}{min}{cpo}
+
+\olsection{عکس نقیض}
+
+شرطی‌های مادی و اکید با عکس نقیض خود هم‌ارزند. شرطی‌های خلاف واقع چنین
+نیستند. مثال زیر از کراتزر است:
+\begin{quote}
+  اگر گوته در سال ۱۸۳۲ نمرده بود، اکنون (همچنان) مرده بود.
+
+  اگر گوته اکنون مرده نمی‌بود، در سال ۱۸۳۲ مرده بود.
+\end{quote}
+جملهٔ نخست صادق است: انسان‌ها صدها سال عمر نمی‌کنند. جملهٔ دوم آشکارا
+کاذب است: اگر گوته اکنون مرده نمی‌بود، هنوز زنده می‌بود و بنابراین
+نمی‌توانست در سال ۱۸۳۲ مرده باشد.
+
+\begin{ex}\ollabel{ex:contraposition-counterex}
+  معناشناسی کره‌ای عکس نقیض را نامعتبر می‌سازد؛ یعنی
+  $p \cif q \Entails/ \lnot q \cif \lnot p$. $p$ را «گوته در سال
+  ۱۸۳۲ نمرد» و~$q$ را «گوته اکنون مرده است» در نظر بگیرید. می‌توانیم
+  این وضعیت را در مدل~$\mModel{M_1} = \tuple{W, O, V}$ صورت‌بندی کنیم،
+  که در آن~$W = \{w, w_1, w_2\}$،
+  $O_w = \{\{w\}, \{w, w_1\}, \{w, w_1, w_2\}\}$،
+  $V(p) = \{w_1, w_2\}$ و~$V(q) = \{w, w_1\}$. پس~$w$ جهان بالفعل
+  است که گوته در سال ۱۸۳۲ در آن مرد و هنوز مرده است؛ $w_1$ جهان
+  (نزدیکی) است که گوته، مثلاً، در سال ۱۸۳۳ در آن مرد و هنوز مرده است؛
+  و~$w_2$ جهان (دوری) است که گوته در آن هنوز زنده است.
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}[scale=.6,layerwidth=1.5]\tiny
+  \spheresystem{3}
+  \begin{scope}
+    \clip \propositionplot{0}{.8}{50}{4.5} -- (4.5,-4.5) -- (-4.5,-4.5) -- (-4.5,4.5) -- (4.5,4.5);
+    \spherelayer{3}
+  \end{scope}
+  \propositionintersect{0}{2}{110}{5.5}
+  \proposition{0}{.8}{50}{4.5}
+  \path (0,0) node[world] {$w$};
+  \spherepos{0}{2}{node[world] {$w_1$}}
+  \spherepos{-50}{3}{node[world] {$w_2$}}
+  \spherepos{28}{3}{node {$q$}}
+  \spherepos{42}{3}{node {$\lnot q$}}
+  \spherepos{-55}{4}{node {$p$}}
+  \spherepos{-67}{4}{node {$\lnot p$}}
+\end{tikzpicture}
+\caption{پادمثال برای عکس نقیض}
+\ollabel{fig:contraposition}
+\end{center}
+\end{figure}
+کرهٔ پذیرای~$p$، یعنی~$S = \{w, w_1\}$، وجود دارد و~$p \lif q$ در
+همهٔ جهان‌های آن صادق است، پس~$\mSat{M_1}{p \cif q}[w]$. اما کرهٔ
+پذیرای~$\lnot q$، یعنی~$\{w, w_1, w_2\}$، جهانی به نام~$w_2$ دارد که
+در آن~$q$ کاذب و~$p$ صادق است؛ پس
+$\mSat/{M_1}{\lnot q \lif \lnot p}[w_2]$.
+\end{ex}
+
+\end{document}

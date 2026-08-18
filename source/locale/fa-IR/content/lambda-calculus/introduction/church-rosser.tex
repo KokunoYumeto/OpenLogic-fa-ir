@@ -1,0 +1,42 @@
+% Part: lambda-calculus
+% Chapter: introduction
+% Section: church-rosser
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{int}{cr}
+\olsection{ویژگی چرچ--راسر}
+
+\begin{thm}
+\ollabel{thm:church-rosser}
+فرض کنید~$M$، $N_1$ و~$N_2$ ترم‌هایی باشند چنان‌که~$M \red N_1$ و
+$M \red N_2$. آنگاه ترمی چون~$P$ وجود دارد که~$N_1 \red P$ و
+$N_2 \red P$.
+\end{thm}
+
+\begin{cor}
+فرض کنید~$M$ را بتوان به صورت نرمال کاهش داد. آنگاه این صورت نرمال
+یکتاست.
+\end{cor}
+
+\begin{proof}
+اگر~$M \red N_1$ و~$M \red N_2$، بنا بر قضیهٔ پیشین ترمی چون~$P$ وجود
+دارد که~$N_1$ و~$N_2$ هر دو به~$P$ کاهش می‌یابند. اگر~$N_1$ و~$N_2$ هر
+دو در صورت نرمال باشند، این امر تنها هنگامی ممکن است که
+$N_1 \ident P \ident N_2$.
+\end{proof}
+
+سرانجام، می‌گوییم دو ترم~$M$ و~$N$ \emph{$\beta$-هم‌ارز} یا صرفاً
+\emph{هم‌ارز} هستند هرگاه به ترمی مشترک کاهش یابند؛ به بیان دیگر، هرگاه
+$P$ای وجود داشته باشد که~$M \red P$ و~$N \red P$. این را به‌صورت
+$M \equal[\beta] N$ می‌نویسیم. با استفاده از
+\olref{thm:church-rosser} می‌توانید بررسی کنید که~$\equal[\beta]$ رابطه‌ای
+هم‌ارزی است و ویژگی افزودهٔ زیر را دارد: برای هر~$M$ و~$N$، اگر
+$M \red N$ یا~$N \red M$، آنگاه~$M \equal[\beta] N$. (در واقع می‌توان
+نشان داد که~$\equal[\beta]$ \emph{کوچک‌ترین} رابطهٔ هم‌ارزیِ دارای این
+ویژگی است.)
+
+\end{document}
+

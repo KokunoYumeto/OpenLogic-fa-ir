@@ -1,0 +1,133 @@
+% Part: model-theory
+% Chapter: lindstrom
+% Section: ls-property
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mod}{lin}{lsp}
+
+\olsection{ویژگی‌های فشردگی و لوونهایم--اسکولم}
+
+اکنون تعمیم‌های طبیعی فشردگی و لوونهایم--اسکولم را به منطق‌های
+انتزاعی ارائه می‌کنیم.
+
+\begin{defn}
+منطق انتزاعی~$\tuple{L, \models_L}$
+\emph{ویژگی فشردگی} دارد اگر هر مجموعهٔ~$\Gamma$ از !!{sentence}s
+$L(\Lang{L})$، هرگاه هر $\Gamma_0 \subseteq \Gamma$ متناهی ارضاپذیر
+باشد، ارضاپذیر باشد.
+\end{defn}
+
+\begin{defn}
+$\tuple{L, \models_L}$
+\emph{ویژگی لوونهایم--اسکولم نزولی} دارد اگر هر~$\Gamma$ ارضاپذیر
+!!a{enumerable} مدل داشته باشد.
+\end{defn}
+
+
+مفهوم همریختی جزئی از
+\olref[bas][pis]{defn:partialisom} کاملاً «جبری» است؛ یعنی بدون ارجاع
+به !!{sentence}s زبان و تنها برحسب محمول‌ها و ثابت‌هایی تعریف شده است
+که !!{language}~$\Lang{L}$ در اختیار !!{structure}s می‌گذارد. پس این
+مفهوم برای منطق‌های انتزاعی نیز کاربرد دارد. دربارهٔ منطق مرتبهٔ اول،
+از
+\olref[bas][pis]{thm:p-isom2} می‌دانیم اگر دو !!{structure}s تا حدی
+همریخت باشند، هم‌ارز مقدماتی‌اند. آن اثبات به منطق‌های انتزاعی منتقل
+نمی‌شود، زیرا ممکن است استقرا روی !!{formula}s برای
+$!E \in L(\Lang{L})$ دلخواه در دسترس نباشد؛ بااین‌حال، اگر ویژگی
+لوونهایم--اسکولم برقرار باشد، خود قضیه همچنان درست است.
+
+\begin{thm}
+\ollabel{thm:abstract-p-isom}
+فرض کنید $\tuple{L, \models_L}$ منطقی نرمال با ویژگی
+لوونهایم--اسکولم باشد. آنگاه هر دو !!{structure}s که تا حدی همریخت
+باشند، در~$\tuple{L,\models_L}$ هم‌ارز مقدماتی‌اند.
+\end{thm}
+
+\begin{proof}
+فرض کنید $\Struct{M} \simeq_p \Struct{N}$، اما برای یک~$!E$،
+$\Struct{M} \models_L !E$ درحالی‌که
+$\Struct{N} \not\models_L !E$. بنا بر ویژگی همریختی می‌توانیم فرض کنیم
+$\Domain{M}$ و~$\Domain{N}$ جدا از هم‌اند، و بنا بر ویژگی بسط
+می‌توانیم فرض کنیم $!E \in L(\Lang{L})$ برای !!{language} متناهی
+$\Lang{L}$. بگذارید $\mathcal{I}$ مجموعه‌ای از همریختی‌های جزئی میان
+$\Struct{M}$ و~$\Struct{N}$ باشد؛ بی‌کاستن از کلیت، همچنین فرض کنید
+اگر $p \in \mathcal{I}$ و $q \subseteq p$، آنگاه
+$q \in \mathcal{I}$.
+
+$\Domain{M}^{<\omega}$ مجموعهٔ دنباله‌های متناهی از !!{element}s
+$\Domain{M}$ است. بگذارید $S$ رابطه‌ای سه‌موضعی روی
+$\Domain{M}^{<\omega}$ باشد که الحاق را بازنمایی می‌کند؛ یعنی اگر
+$\mathbf{a}, \mathbf{b}, \mathbf{c} \in \Domain{M}^{<\omega}$،
+آنگاه $S(\mathbf{a}, \mathbf{b}, \mathbf{c})$ هرگاه و تنها هرگاه
+برقرار است که $\mathbf{c}$ حاصل الحاق~$\mathbf{a}$ و~$\mathbf{b}$
+باشد. همچنین بگذارید $T$ رابطه‌ای سه‌موضعی باشد چنان‌که برای
+$b \in \Domain{M}$ و
+$\mathbf{a}, \mathbf{c} \in \Domain{M}^{<\omega}$،
+$T(\mathbf{a}, b, \mathbf{c})$ هرگاه و تنها هرگاه برقرار باشد که
+$\mathbf{a}=a_1,\dots,a_n$ و
+$\mathbf{c}=a_1,\dots,a_n,b$. !!{predicate}s سه‌موضعی تازهٔ~$P$ و
+$Q$ را برگزینید و !!{structure}~$\Struct{M}^*$ را با جهان
+$\Domain{M} \cup \Domain{M}^{<\omega}$ بسازید، به‌گونه‌ای که
+$\Struct{M}$ زیرساختار آن باشد و $P$ و~$Q$ به‌ترتیب با روابط
+الحاق~$S$ و~$T$ تعبیر شوند (پس $\Struct{M}^*$ در !!{language}
+$\Lang{L} \cup \{P,Q\}$ است).
+
+$\Domain{N}^{<\omega}$، $S'$، $T'$، $P'$، $Q'$ و
+$\Struct{N}^*$ را به‌طور مشابه تعریف کنید. چون بنا بر فرض
+$\Struct{M} \simeq_p \Struct{N}$، رابطه‌ای چون~$I$ میان
+$\Domain{M}^{<\omega}$ و $\Domain{N}^{<\omega}$ وجود دارد چنان‌که
+$I(\mathbf{a},\mathbf{b})$ هرگاه و تنها هرگاه برقرار است که نگاشت
+مؤلفه‌های~$\mathbf{a}$ به مؤلفه‌های متناظر~$\mathbf{b}$ همریختی جزئی
+باشد و شرط رفت‌وبرگشتِ
+\olref[bas][pis]{defn:partialisom} را برآورده کند. اکنون بگذارید
+$\Struct{A}$ !!{structure}ای باشد که !!{domain} آن اجتماع
+!!{domain}s دو ساختار~$\Struct{M}^*$ و~$\Struct{N}^*$ است، این دو را
+به‌عنوان زیر!!{structure}s دربر می‌گیرد، و !!{language} آن یک !!{predicate}
+دوموضعی افزودهٔ~$R$ دارد که با رابطهٔ~$I$ تعبیر می‌شود؛ زبان همچنین
+!!{predicate}sی دارد که !!{domain}s
+$\Domain{M}^*$ و~$\Domain{N}^*$ را مشخص می‌کنند.
+
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}[node distance=2cm, auto, thick, >=stealth']
+    \draw [rounded corners] (0,0) -- (8,0) -- (8,4) -- (0,4) --  cycle;
+    \draw (2,2) circle (0.5cm);
+    \draw (2,2) circle (1.25cm);
+    \draw (6,2) circle (0.5cm);
+    \draw (6,2) circle (1.25cm);
+    \path node at (0.75,3.5) {\large $\Struct{A}$};
+    \path node at (2,2) {\large $\Struct{M}$};
+    \path node at (6,2) {\large $\Struct{N}$};
+    \path node at (3.5,1) {\large $\Struct{M}^*$};
+    \path node at (7.5,1) {\large $\Struct{N}^*$};
+    \node (Idom) at (2.8,2) {};
+    \node (Irng) at (5.2,2) {};
+    \draw[<->, bend left] (Idom) to node {\large $I$} (Irng) ;
+  \end{tikzpicture}
+  \caption{!!{structure}~$\Struct{A}$ با همریختی جزئی درونی.}
+\end{figure}
+
+مشاهدهٔ تعیین‌کننده این است که در !!{language} این !!{structure}،
+یعنی~$\Struct{A}$، به کمک ویژگی نسبی‌سازی، !!{sentence}~$!D_1$ از
+منطق انتزاعی~$L$ وجود دارد
+که در~$\Struct{A}$ صادق است و می‌گوید
+$\Struct{M} \models_L !E$ و $\Struct{N} \not\models_L !E$. همچنین
+!!{sentence}
+\emph{مرتبهٔ اول}~$!D_2$ در~$\Struct{A}$ صادق است که می‌گوید
+$\Struct{M} \simeq_p \Struct{N}$ از راه همریختی جزئی~$I$. چون منطق
+نرمال همهٔ جمله‌های مرتبهٔ اول را دربر می‌گیرد و نسبت به عطف بسته است،
+$!D_1$ و~$!D_2$ را می‌توان با هم در~$L$ بیان کرد. بنا بر ویژگی
+لوونهایم--اسکولم، این دو جمله مشترکاً در !!a{enumerable} مدل
+$\Struct{A}_0$ صادق‌اند؛ مدلی که زیرساختارهای تا حدی همریخت
+$\Struct{M}_0$ و~$\Struct{N}_0$ را دربر دارد، چنان‌که
+$\Struct{M}_0 \models_L !E$ و
+$\Struct{N}_0 \not\models_L !E$. اما !!{enumerable} !!{structure}s تا حدی
+همریخت، بنا بر
+\olref[bas][pis]{thm:p-isom1}، در واقع همریخت‌اند؛ و این با ویژگی
+همریختی منطق‌های انتزاعی نرمال در تناقض است.
+\end{proof}
+
+\end{document}

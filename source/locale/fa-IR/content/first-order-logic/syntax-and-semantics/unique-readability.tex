@@ -1,0 +1,198 @@
+% Part: first-order-logic
+% Chapter: syntax-and-semantics
+% Section: unique-readability
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{syn}{unq}
+
+\olsection{خوانش یکتا}
+
+\begin{explain}
+شیوه‌ای که !!{formula}s را تعریف کردیم تضمین می‌کند که هر !!{formula}
+\emph{خوانشی یکتا} دارد؛ یعنی در اصل فقط یک راه برای ساختن آن طبق قواعد
+ساخت !!{formula}s و تنها یک راه برای «تفسیر» آن وجود دارد. اگر چنین نبود،
+!!{formula}sی مبهم می‌داشتیم، یعنی !!{formula}sی با بیش از یک خوانش یا
+تفسیر---و آشکار است که می‌خواهیم از این امر پرهیز کنیم. مهم‌تر آنکه بدون
+این ویژگی، بیشتر تعریف‌ها و برهان‌هایی که ارائه خواهیم کرد به نتیجه
+نمی‌رسیدند.
+
+شاید بهترین راه روشن‌کردن این نکته آن باشد که ببینیم اگر قواعد نادرستی برای
+ساخت !!{formula}s می‌دادیم که خوانش یکتا را تضمین نمی‌کردند، چه پیش
+می‌آمد. برای نمونه، ممکن بود پرانتزها را در قواعد ساخت رابط‌ها فراموش کنیم
+و مثلاً قاعدهٔ زیر را مجاز بدانیم:
+\begin{quote}
+اگر $!A$ و $!B$ از !!{formula}s باشند، آنگاه $!A \lif !B$ نیز چنین است.
+\end{quote}
+اگر از فرمول اتمی $!D$ آغاز کنیم، این قاعده اجازه می‌دهد $!D \lif !D$ را
+بسازیم. سپس از این فرمول همراه با $!D$، فرمول $!D \lif !D \lif !D$ را
+به دست می‌آوریم. اما این کار را به دو شیوه می‌توان انجام داد:
+\begin{enumerate}
+\item $!D$ را $!A$ و $!D \lif !D$ را $!B$ می‌گیریم.
+\item $!A$ را $!D \lif !D$ و $!B$ را~$!D$ می‌گیریم.
+\end{enumerate}
+به همین ترتیب، برای «خواندن» !!{formula}~$!D \lif !D \lif !D$ نیز دو
+راه وجود دارد. این فرمول به صورت $!B \lif !C$ است که در آن $!B$ همان
+$!D$ و $!C$ همان $!D \lif !D$ است؛ اما \emph{همچنین} به صورت
+$!B \lif !C$ است که در آن $!B$ برابر $!D \lif !D$ و $!C$ برابر~$!D$ است.
+
+اگر چنین اتفاقی بیفتد، تعریف‌های ما همیشه درست کار نخواهند کرد. برای نمونه،
+هنگام تعریف !!{main operator} یک فرمول می‌گوییم: در فرمولی به صورت
+$!B \lif !C$، !!{main operator} همان رخداد نشان‌داده‌شدهٔ~$\lif$ است. اما
+اگر بتوانیم فرمول $!D \lif !D \lif !D$ را به دو شیوهٔ یادشده با
+$!B \lif !C$ تطبیق دهیم، در یک حالت رخداد نخست $\lif$ و در حالت دیگر
+رخداد دوم آن را به‌عنوان !!{main operator} به دست می‌آوریم. حال آنکه
+می‌خواهیم !!{main operator} \emph{تابعی} از !!{formula} باشد؛ یعنی هر
+!!{formula} باید دقیقاً یک رخداد !!{main operator} داشته باشد.
+\end{explain}
+
+\begin{lem}
+شمار پرانتزهای باز و بسته در !!a{formula}~$!A$ برابر است.
+\end{lem}
+
+\begin{proof}
+این ادعا را با استقرا بر شیوهٔ ساخت $!A$ اثبات می‌کنیم. دو کار لازم است:
+(الف) نخست باید ثابت کنیم همهٔ فرمول‌های اتمی ویژگی مورد نظر را دارند
+(پایهٔ استقرا). (ب) سپس باید ثابت کنیم هرگاه از فرمول‌های داده‌شده
+فرمول‌هایی تازه بسازیم، اگر فرمول‌های پیشین ویژگی را داشته باشند،
+فرمول‌های تازه نیز آن را دارند.
+
+بگذارید $l(!A)$ شمار پرانتزهای باز و $r(!A)$ شمار پرانتزهای بسته در~$!A$
+باشد؛ به همین ترتیب، $l(t)$ و $r(t)$ به‌ترتیب شمار پرانتزهای باز و بسته در
+ترم~$t$ باشند.
+
+\begin{prob}
+    اثبات کنید برای هر ترم~$t$، $l(t) = r(t)$.
+\end{prob}
+
+\begin{enumerate}
+\tagitem{prvFalse}{\indcase{!A}{\lfalse}{$\indfrm$ دارای $0$ پرانتز باز و
+    $0$ پرانتز بسته است.}}{}
+
+\tagitem{prvTrue}{\indcase{!A}{\ltrue}{$\indfrm$ دارای $0$ پرانتز باز و
+    $0$ پرانتز بسته است.}}{}
+
+\item \indcase{!A}{\Atom{R}{t_1,\dots,t_n}}{$l(\indfrm) = 1 + l(t_1) +
+  \dots + l(t_n) = 1 + r(t_1) + \dots + r(t_n) = r(\indfrm)$. در اینجا
+  از این واقعیت استفاده می‌کنیم که، چنان‌که در تمرین خواسته شد، برای هر
+  ترم~$t$ داریم $l(t) = r(t)$.}
+
+\item \indcase{!A}{\eq[t_1][t_2]}{$l(\indfrm) = l(t_1) + l(t_2) =
+  r(t_1) + r(t_2) = r(\indfrm)$.}
+
+\tagitem{prvNot}{\indcase{!A}{\lnot !B}{بنا بر فرض استقرا،
+    $l(!B) = r(!B)$. پس $l(\indfrm) = l(!B) = r(!B) =
+    r(\indfrm)$.}}{}
+
+\item \indcase{!A}{(!B \ast !C)}{بنا بر فرض استقرا، $l(!B) =
+  r(!B)$ و $l(!C) = r(!C)$. پس $l(\indfrm) = 1 + l(!B) + l(!C) =
+  1 + r(!B) + r(!C) = r(\indfrm)$.}
+
+\tagitem{prvAll}{\indcase{!A}{\lforall[x][!B]}{بنا بر فرض استقرا،
+    $l(!B) = r(!B)$. پس $l(\indfrm) = l(!B) = r(!B) =
+    r(\indfrm)$.}}{}
+
+% Print case for \lexists if prvEx and not prvAll
+\tagitem{prvAll,notprvEx}{}{\indcase{!A}{\lexists[x][!B]}{بنا بر فرض
+    استقرا، $l(!B) = r(!B)$. پس $l(\indfrm) = l(!B) = r(!B) =
+    r(\indfrm)$.}}
+
+% Just say similarly if prvEx and prvAll
+\tagitem{notprvAll,notprvEx}{}{\indcase{!A}{\lexists[x][!B]}{به همین ترتیب.}}
+\end{enumerate}
+\end{proof}
+
+\begin{defn}[پیشوند سره]
+رشتهٔ نمادهای $!B$ \emph{پیشوند سرهٔ} رشتهٔ نمادهای~$!A$ است هرگاه الحاق
+$!B$ با رشته‌ای ناتهی از نمادها،~$!A$ را به دست دهد.
+\end{defn}
+
+\begin{lem}\ollabel{lem:no-prefix}
+اگر $!A$ یک !!a{formula} و $!B$ پیشوند سرهٔ $!A$ باشد، آنگاه $!B$ یک
+!!a{formula} نیست.
+\end{lem}
+
+\begin{proof}
+تمرین.
+\end{proof}
+
+\begin{prob}
+\olref[fol][syn][unq]{lem:no-prefix} را اثبات کنید.
+\end{prob}
+
+\begin{prop}
+\ollabel{prop:unique-atomic}
+اگر $!A$ یک !!{formula} اتمی باشد، یکی و فقط یکی از شرط‌های زیر را برآورده
+می‌کند.
+\begin{enumerate}
+\tagitem{prvFalse}{$!A \ident \lfalse$.}{}
+\tagitem{prvTrue}{$!A \ident \ltrue$.}{}
+\item $!A \ident \Atom{R}{t_1,\dots,t_n}$، که در آن $R$ یک
+  !!{predicate} $n$جایگاهی و $t_1$، \dots، $t_n$ ترم‌اند، و هر یک از
+  $R$، $t_1$، \dots، $t_n$ به‌طور یکتا تعیین شده است.
+\item $!A \ident \eq[t_1][t_2]$، که در آن $t_1$ و $t_2$ ترم‌هایی هستند
+  که به‌طور یکتا تعیین شده‌اند.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+تمرین.
+\end{proof}
+
+\begin{prob}
+\olref[fol][syn][unq]{prop:unique-atomic} را اثبات کنید. (راهنمایی: نسخه‌ای
+از \olref[fol][syn][unq]{lem:no-prefix} را برای ترم‌ها صورت‌بندی و اثبات
+کنید.)
+\end{prob}
+
+\begin{prop}[خوانش یکتا]
+هر !!{formula} یکی و فقط یکی از شرط‌های زیر را برآورده می‌کند.
+\begin{enumerate}
+\item $!A$ اتمی است.
+
+\tagitem{prvNot}{$!A$ به صورت $\lnot !B$ است.}{}
+
+\tagitem{prvAnd}{$!A$ به صورت $(!B \land !C)$ است.}{}
+
+\tagitem{prvOr}{$!A$ به صورت $(!B \lor !C)$ است.}{}
+
+\tagitem{prvIf}{$!A$ به صورت $(!B \lif !C)$ است.}{}
+
+\tagitem{prvIff}{$!A$ به صورت $(!B \liff !C)$ است.}{}
+
+\tagitem{prvAll}{$!A$ به صورت $\lforall[x][!B]$ است.}{}
+
+\tagitem{prvEx}{$!A$ به صورت $\lexists[x][!B]$ است.}{}
+\end{enumerate}
+افزون بر این، در هر حالت $!B$، یا $!B$ و $!C$، به‌طور یکتا تعیین می‌شوند.
+برای نمونه، این بدان معناست که دو جفت متفاوت $!B$، $!C$ و $!B'$، $!C'$
+وجود ندارند که $!A$ هم به صورت
+\iftag{prvIf}{$(!B \lif !C)$ و هم $(!B' \lif !C')$ باشد.}{
+    \iftag{prvOr}{$(!B \lor !C)$ و هم $(!B' \lor !C')$ باشد.}{
+      \iftag{prvAnd}{$(!B \land !C)$ و هم $(!B' \land !C')$ باشد.}{}}}
+\end{prop}
+
+\begin{proof}
+قواعد ساخت ایجاب می‌کنند که اگر !!a{formula} اتمی نباشد، باید با یک
+پرانتز باز~(، \iftag{prvNot}{$\lnot$،}{} یا یک سور آغاز شود. از سوی دیگر،
+هر !!{formula} که با یکی از نمادهای زیر آغاز شود باید اتمی باشد:
+!!a{predicate}، !!a{function}، !!a{constant}، !!a{variable}
+\iftag{prvFalse}{، $\lfalse$}{}\iftag{prvTrue}{، $\ltrue$}{}.
+
+پس در واقع تنها باید نشان دهیم که اگر $!A$ هم به صورت $(!B \ast
+!C)$ و هم به صورت $(!B' \mathbin{\ast'} !C')$ باشد، آنگاه $!B \ident
+!B'$، $!C \ident !C'$ و $\ast = {\ast'}$.
+
+فرض کنید هم $!A \ident (!B \ast !C)$ و هم $!A \ident (!B'
+\mathbin{\ast'} !C')$. آنگاه یا $!B \ident !B'$ است یا نیست. اگر باشد،
+آشکار است که $\ast = {\ast'}$ و $!C \ident !C'$، زیرا در این صورت آن‌ها
+زیررشته‌هایی از $!A$ هستند که از یک جایگاه آغاز می‌شوند و طول یکسانی دارند.
+حالت دیگر $!B \not\ident !B'$ است. چون $!B$ و $!B'$ هر دو زیررشته‌هایی از
+$!A$ هستند که از جایگاه واحدی آغاز می‌شوند، یکی باید پیشوند سرهٔ دیگری
+باشد. اما بنا بر \olref{lem:no-prefix} این امر محال است.
+\end{proof}
+
+
+\end{document}

@@ -1,0 +1,277 @@
+% Part: lambda-calculus
+% Chapter: syntax
+% Section: alpha
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lam}{syn}{alp}
+\olsection{تبدیل~$\alpha$}
+
+میان~$\lambd[x][x]$ و~$\lambd[y][y]$ چه رابطه‌ای هست؟ هر دو تابع
+همانی را بازنمایی می‌کنند. البته از حیث نحوی ترم‌هایی متفاوت‌اند. تفاوت
+آن‌ها تنها در نام متغیر مقید است و یکی حاصل «تغییر نام» متغیر مقید در
+دیگری است. این عمل \emph{تبدیل~$\alpha$} نام دارد.
+
+\begin{defn}[تغییر متغیر مقید، $\aconvone$]
+  اگر ترم~$M$ شامل رخدادی از~$\lambd[x][N]$ باشد، $y \notin
+  \FV{N}$، و~$\Subst{N}{y}{x}$ تعریف شده باشد، آنگاه جایگزین‌کردن این
+  رخداد با
+  \begin{equation*}
+    \lambd[y][\Subst{N}{y}{x}]
+  \end{equation*}
+  که به~$M'$ می‌انجامد، \emph{تغییر متغیر مقید} نامیده و به‌صورت
+  $M \redone[\alpha] M'$ نوشته می‌شود.
+\end{defn}
+
+\begin{defn}[سازگاری رابطه]
+  رابطهٔ~$R$ روی ترم‌ها \emph{سازگار} نامیده می‌شود اگر شرایط زیر را
+  برآورده کند:
+  \begin{enumerate}
+  \item اگر~$R N N'$، آنگاه~$R \lambd[x][N] \lambd[x][N']$
+  \item اگر~$R P P'$، آنگاه~$R (PQ) (P'Q)$
+  \item اگر~$R Q Q'$، آنگاه~$R (PQ) (PQ')$
+  \end{enumerate}
+\end{defn}
+
+پس تعریف را چنین بازنویسی می‌کنیم:
+\begin{defn}[تغییر متغیر مقید، $\aconvone$]
+  \emph{تغییر متغیر مقید} ($\redone[\alpha]$) کوچک‌ترین رابطهٔ
+  سازگار روی ترم‌هاست که شرط زیر را برآورده می‌کند:
+  \begin{align*}
+    &\lambd[x][N] \redone[\alpha] \lambd[y][\Subst{N}{y}{x}] && \text{اگر
+      $x \neq y$ و~$y \notin \FV{N}$} \\
+    & &&\text{و~$\Subst{N}{y}{x}$ تعریف شده باشد}
+  \end{align*}
+\end{defn}
+
+«کوچک‌ترین» در اینجا یعنی رابطه فقط زوج‌هایی را در بر می‌گیرد که
+سازگاری و شرط افزوده اقتضا می‌کنند، و نه هیچ زوج دیگری را. بنابراین
+می‌توان این رابطه را به‌صورت زیر نیز تعریف کرد:
+
+\begin{defn}[تغییر متغیر مقید، $\aconvone$] \ollabel{defn:aconvone}
+  \emph{تغییر متغیر مقید} ($\aconvone$) به‌صورت استقرایی چنین تعریف
+  می‌شود:
+  \begin{enumerate}
+  \item اگر~$N \aconvone N'$، آنگاه~$\lambd[x][N] \aconvone
+    \lambd[x][N']$ \ollabel{defn:aconvone1}
+  \item اگر~$P \aconvone P'$، آنگاه~$(PQ) \aconvone (P'Q)$ \ollabel{defn:aconvone2}
+  \item اگر~$Q \aconvone Q'$، آنگاه~$(PQ) \aconvone (PQ')$ \ollabel{defn:aconvone3}
+  \item اگر~$x \neq y$، $y \notin \FV{N}$ و~$\Subst{N}{y}{x}$ تعریف شده باشد، آنگاه
+    $\lambd[x][N] \redone[\alpha] \lambd[y][\Subst{N}{y}{x}]$.
+    \ollabel{defn:aconvone4}
+  \end{enumerate}
+\end{defn}
+
+این تعریف‌ها هم‌ارزند، اما اثبات را به‌عنوان تمرین واگذار می‌کنیم. از
+این پس تعریف استقرایی را به کار خواهیم برد.
+
+\begin{defn}[تبدیل~$\alpha$، $\aconv$]
+  \emph{تبدیل~$\alpha$} ($\aconv$) کوچک‌ترین رابطهٔ بازتابی و تعدی
+  روی ترم‌هاست که~$\aconvone$ را در بر می‌گیرد.
+\end{defn}
+
+همانند بالا، «کوچک‌ترین» یعنی رابطه فقط زوج‌هایی را در بر می‌گیرد که
+تعدی و~$\aconvone$ اقتضا می‌کنند؛ این امر به تعریف هم‌ارز زیر می‌انجامد:
+
+\begin{defn}[تبدیل~$\alpha$، $\aconv$] \ollabel{defn:aconv}
+  \emph{تبدیل~$\alpha$} ($\aconv$) به‌صورت استقرایی چنین تعریف می‌شود:
+  \begin{enumerate}
+  \item اگر~$P \aconv Q$ و~$Q \aconv R$، آنگاه~$P \aconv R$.
+    \ollabel{defn:aconv1}
+  \item اگر~$P \aconvone Q$، آنگاه~$P \aconv Q$. \ollabel{defn:aconv2}
+  \item $P \aconv P$. \ollabel{defn:aconv3}
+  \end{enumerate}
+\end{defn}
+
+\begin{ex}
+  ترم~$\lambd[x][f x]$ تبدیل~$\alpha$ به~$\lambd[y][f y]$ می‌شود، و
+  برعکس. به‌طور غیرصوری، هر دو تابعی هستند که آرگومانی می‌پذیرند و حاصل
+  اعمال~$f$ بر آن آرگومان را، با ارجاع به متغیر محیطی~$f$، بازمی‌گردانند.
+
+  ترم~$\lambd[x][f x]$ تبدیل~$\alpha$ به~$\lambd[x][g x]$ نمی‌شود.
+  به‌طور غیرصوری، این دو به‌ترتیب به متغیرهای محیطی~$f$ و~$g$ ارجاع
+  می‌دهند، و همین آن‌ها را توابعی متفاوت می‌سازد: در محیط‌هایی که~$f$
+  و~$g$ متفاوت‌اند، رفتارشان نیز متفاوت است.
+\end{ex}
+
+\begin{prob}
+  آیا زوج‌های زیر از ترم‌ها تبدیل‌پذیر به~$\alpha$ هستند؟
+  \begin{enumerate}
+  \item $\lambd[x][\lambd[y][x]]$ و~$\lambd[y][\lambd[x][y]]$
+  \item $\lambd[x][\lambd[y][x]]$ و~$\lambd[c][\lambd[b][a]]$
+  \item $\lambd[x][\lambd[y][x]]$ و~$\lambd[c][\lambd[b][a]]$
+  \end{enumerate}
+\end{prob}
+
+\begin{lem}\ollabel{lem:fv-one}
+  اگر~$P \aconvone Q$، آنگاه~$\FV{P} = \FV{Q}$.
+\end{lem}
+
+\begin{proof}
+  با استقرا بر !!{derivation} رابطهٔ~$P \aconvone Q$.
+  \begin{enumerate}
+  \item اگر قاعدهٔ آخر~\olref{defn:aconvone4} باشد، $P$ به‌صورت
+    $\lambd[x][N]$ و~$Q$ به‌صورت~$\lambd[y][\Subst{N}{y}{x}]$ است،
+    که در آن~$x \neq y$، $y \notin \FV{N}$ و~$\Subst{N}{y}{x}$ تعریف
+    شده است. بر حسب اینکه~$x \in \FV{N}$ باشد یا نه، حالت‌ها را جدا
+    می‌کنیم:
+    \begin{enumerate}
+    \item اگر~$x \in \FV{N}$، آنگاه:
+      \begin{align*}
+        \FV{\lambd[y][\Subst{N}{y}{x}]} &=
+        \FV{\Subst{N}{y}{x}} \setminus \{y\} \\
+        & = ((\FV{N} \setminus \{x\}) \cup \{y\}) \setminus \{y\}
+         && \text{بنا بر \olref[sub]{thm:infv}} \\
+        & = \FV{N} \setminus \{x\} \\
+        & = \FV{\lambd[x][N]}
+      \end{align*}
+    \item اگر~$x \notin \FV{N}$، آنگاه:
+      \begin{align*}
+        \FV{\lambd[y][\Subst{N}{y}{x}]}
+        & = \FV{\Subst{N}{y}{x}} \setminus \{y\} \\
+        & = \FV{N} \setminus \{x\}
+         && \text{بنا بر \olref[sub]{thm:notinfv}} \\
+        & = \FV{\lambd[x][N]}.
+      \end{align*}
+    \end{enumerate}
+  \item سه حالت دیگر به‌عنوان تمرین واگذار می‌شوند. 
+  \end{enumerate}
+\end{proof}
+
+\begin{prob}
+  برهان~\olref[lam][syn][alp]{lem:fv-one} را کامل کنید.
+\end{prob}
+
+\begin{lem}\ollabel{lem:inv}
+  اگر~$P \aconvone Q$، آنگاه~$Q \aconvone P$.
+\end{lem}
+
+\begin{proof}
+  استقرا بر !!{derivation} رابطهٔ~$P \aconvone Q$.
+  \begin{enumerate}
+  \item اگر قاعدهٔ آخر~\olref{defn:aconvone4} باشد، $P$ به‌صورت
+    $\lambd[x][N]$ و~$Q$ به‌صورت~$\lambd[y][\Subst{N}{y}{x}]$ است،
+    که در آن~$x \neq y$، $y \notin \FV{N}$ و~$\Subst{N}{y}{x}$ تعریف
+    شده است. نخست، داریم~$y \notin
+    \FV{\Subst{N}{y}{x}}$، بنا بر~\olref[sub]{thm:clr}. بنا بر
+    \olref[sub]{thm:inv}، ترم
+    $\Subst{\Subst{N}{y}{x}}{x}{y}$ نه‌تنها تعریف شده، بلکه برابر
+    با~$N$ است. سپس بنا بر~\olref{defn:aconvone4} داریم
+    $\lambd[y][\Subst{N}{y}{x}]
+    \aconvone \lambd[x][\Subst{\Subst{N}{y}{x}}{x}{y}] =
+    \lambd[x][N]$.
+  \end{enumerate}
+\end{proof}
+
+\begin{prob}
+  برهان~\olref[lam][syn][alp]{lem:inv} را کامل کنید.
+\end{prob}
+
+\begin{thm}
+  تبدیل~$\alpha$ رابطه‌ای هم‌ارزی روی ترم‌هاست؛ یعنی بازتابی، متقارن و
+  تعدی است.
+\end{thm}
+
+\begin{proof}
+  \begin{enumerate}
+  \item برای هر ترم~$M$، می‌توان~$M$ را با \emph{صفر} تغییر متغیر مقید
+    به~$M$ تبدیل کرد.
+  \item اگر~$P$ با رشته‌ای از تغییرهای متغیر مقید به~$Q$ تبدیل~$\alpha$
+    شود، از~$Q$ می‌توان این تغییرها را (بنا بر~\olref{lem:inv}) به ترتیب
+    معکوس وارونه کرد و~$P$ را به دست آورد.
+  \item اگر~$P$ با رشته‌ای از تغییرهای متغیر مقید به~$Q$ تبدیل~$\alpha$
+    شود و~$Q$ با رشته‌ای دیگر به~$R$، می‌توان با اعمال نخستین رشته و سپس
+    دومین رشته، $P$ را به~$R$ تبدیل کرد.
+  \end{enumerate}
+\end{proof}
+
+از این پس می‌گوییم~$M$ و~$N$ \emph{هم‌ارز به~$\alpha$} هستند،
+$M \aeq N$، اگر و تنها اگر~$M$ به~$N$ تبدیل~$\alpha$ شود (که چنان‌که
+همین اکنون نشان دادیم، اگر و تنها اگر~$N$ به~$M$ تبدیل~$\alpha$ شود).
+
+\begin{thm}\ollabel{thm:fv}
+  اگر~$M \aeq N$، آنگاه~$\FV{M} = \FV{N}$.
+\end{thm}
+
+\begin{proof}
+  بی‌درنگ از~\olref{lem:fv-one}.
+\end{proof}
+
+\begin{lem}\ollabel{lem:sub:R}
+  اگر~$R \aeq R'$ و~$\Subst{M}{R}{y}$ تعریف شده باشد، آنگاه
+  $\Subst{M}{R'}{y}$ تعریف شده و نسبت به~$\alpha$ با
+  $\Subst{M}{R}{y}$ هم‌ارز است.
+\end{lem}
+
+\begin{proof}
+  تمرین.
+\end{proof}
+
+\begin{prob}
+  \olref[lam][syn][alp]{lem:sub:R} را ثابت کنید.
+\end{prob}
+
+به یاد آورید که در~\olref[sub]{sec}، جای‌گذاری در برخی حالت‌ها تعریف‌نشده
+است؛ بااین‌حال، با به‌کارگیری تبدیل~$\alpha$ روی ترم‌ها می‌توان از راه
+تغییر نام متغیرهای مقید، جای‌گذاری را همواره تعریف‌شده ساخت. چنان‌که
+قضیهٔ زیر نشان می‌دهد، حاصل هم‌ارزی به~$\alpha$ را حفظ می‌کند:
+
+\begin{thm}\ollabel{thm:sub}
+  برای هر~$M$، $R$ و~$y$، ترمی~$M'$ وجود دارد چنان‌که~$M \aeq M'$
+  و~$\Subst{M'}{R}{y}$ تعریف شده است. افزون بر این، اگر زوج دیگری
+  $M'' \aeq M$ و~$R''$ وجود داشته باشد که~$\Subst{M''}{R''}{y}$ تعریف
+  شده و~$R'' \aeq R$، آنگاه
+  $\Subst{M'}{R}{y} \aeq \Subst{M''}{R''}{y}$.
+\end{thm}
+
+\begin{proof}
+  با استقرا بر ساخت~$M$:
+  \begin{enumerate}
+  \item $M$ متغیر~$z$ است: تمرین.
+  \item فرض کنید~$M$ به‌صورت~$\lambd[x][N]$ باشد. متغیری~$z$ برگزینید
+    که با~$x$ و~$y$ متفاوت باشد و~$z \notin \FV{N}$ و~$z
+    \notin \FV{R}$. بنا بر فرض استقرا، ترمی~$N'$ وجود دارد که
+    $N' \aeq N$ و~$\Subst{N'}{z}{x}$ تعریف شده است. پس
+    $\lambd[x][N] \aeq \lambd[x][N']$ نیز، بنا بر
+    \olref{defn:aconvone}\olref{defn:aconvone1}، برقرار است. اکنون
+    $\lambd[x][N'] \aeq \lambd[z][\Subst{N'}{z}{x}]$ بنا بر
+    \olref{defn:aconvone}\olref{defn:aconvone4}. این کار ممکن
+    است، زیرا~$z \ne x$، $z \notin \FV{N'}$ و~$\Subst{N'}{z}{x}$ تعریف
+    شده است. سرانجام، $\Subst{\lambd[z][\Subst{N'}{z}{x}]}{R}{y}$
+    تعریف شده است، زیرا~$z \neq y$ و~$z \notin \FV{R}$.
+
+    افزون بر این، اگر~$N''$ و~$R''$ دیگری با همان شرایط وجود داشته باشند،
+    \begin{multline*}
+      \Subst{(\lambd[z][\Subst{N''}{z}{x}])}{R''}{y} =\\
+    \begin{aligned}
+      &= \lambd[z][\Subst{\Subst{N''}{z}{x}}{R''}{y}] \\
+      &= \lambd[z][\Subst{\Subst{N''}{z}{x}}{R}{y}] && \text{بنا بر
+        \olref{lem:sub:R}}\\
+      &=\lambd[z][\Subst{\Subst{N'}{z}{x}}{R}{y}]
+      && \text{بنا بر فرض استقرا}\\
+      &=\Subst{(\lambd[z][\Subst{N'}{z}{x}])}{R}{y}
+    \end{aligned}
+    \end{multline*}
+    \item $M$ به‌صورت~$(PQ)$ است: تمرین.
+  \end{enumerate}
+\end{proof}
+
+\begin{prob}
+  برهان~\olref[lam][syn][alp]{thm:sub} را کامل کنید.
+\end{prob}
+
+\begin{cor}\ollabel{cor:sub}
+  برای هر~$M$، $R$ و~$y$، زوجی از~$M'$ و~$R'$ وجود دارد چنان‌که
+  $M' \aeq M$، $R \aeq R'$ و~$\Subst{M'}{R'}{y}$ تعریف شده است. افزون
+  بر این، اگر زوج دیگری~$M'' \aeq M$ و~$R''$ وجود داشته باشد که
+  $\Subst{M''}{R''}{y}$ تعریف شده باشد، آنگاه
+  $\Subst{M'}{R'}{y} \aeq \Subst{M''}{R''}{y}$.
+\end{cor}
+
+\begin{proof}
+  بی‌درنگ از~\olref{thm:sub}.
+\end{proof}
+
+\end{document}

@@ -1,0 +1,222 @@
+% Part: normal-modal-logic
+% Chapter: tableaux
+% Section: completeness
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{tab}{cpl}
+
+\olsection{تمامیت برای~\Log{K}}
+
+\begin{explain}
+  برای نشان‌دادن کامل‌بودن روش !!{tableau}ها باید نشان دهیم هرگاه هیچ
+  !!{tableau} بسته‌ای برای اثبات~$\Gamma \Proves !A$ وجود نداشته
+  باشد، آنگاه~$\Gamma \Entails/ !A$؛ یعنی پادمدلی وجود دارد. اما «هیچ
+  !!{tableau} بسته‌ای وجود ندارد» یعنی هر راهی که برای ساختنش
+  می‌آزماییم باید در بسته‌شدن شکست بخورد. نکته این است که اگر همهٔ این
+  راه‌ها شکست بخورند، یک راه مشخص، \emph{نظام‌مند و فراگیر} نیز در
+  بسته‌شدن شکست می‌خورد. و اگر !!{tableau} بسته‌ای وجود می‌داشت، این
+  روش نظام‌مند و فراگیر بسته می‌شد. همین یک تابلو در میان شاخه‌های
+  بازش همهٔ اطلاعات لازم برای تعریف پادمدل را در بر خواهد داشت. پادمدل
+  حاصل از یک شاخهٔ باز در این تابلو همهٔ پیشوندهای به‌کاررفته روی آن
+  شاخه را به‌عنوان جهان‌ها خواهد داشت؛ و !!a{propositional variable}~$p$
+  در~$\sigma$ صادق است اگر و تنها اگر~$\sFmla{\True}{p}[\sigma]$ روی
+  شاخه ظاهر شود.
+\end{explain}
+
+\begin{defn}
+  شاخه‌ای در !!a{tableau} را کامل می‌نامیم اگر هرگاه شامل
+  !!{formula} پیشونددار~$\sFmla{S}{!A}[\sigma]$ای باشد که قاعده‌ای بر
+  آن اعمال‌پذیر است، موارد زیر را نیز شامل شود:
+  \begin{enumerate}
+    \item در مورد قواعد گزاره‌ایِ انباشتی، !!{formula}های پیشوندداری
+      که نتایج متناظر قاعده‌اند؛
+    \item در مورد قواعد گزاره‌ایِ انشعابی، یکی از !!{formula}های
+      نتیجهٔ متناظر؛
+    \item در مورد قواعد موجهاتیِ نیازمند پیشوند تازه، دست‌کم یک نتیجهٔ
+      ممکن؛
+    \item در مورد قواعد موجهاتیِ نیازمند پیشوند استفاده‌شده، نتیجهٔ
+      متناظر برای هر پیشوند ظاهرشونده روی شاخه.
+  \end{enumerate}
+\end{defn}
+
+\begin{explain}
+برای نمونه، هر شاخهٔ کامل هرگاه~$\sFmla{\True}{!B \land
+  !C}[\sigma]$ را شامل شود، $\sFmla{\True}{!B}[\sigma]$ و
+$\sFmla{\True}{!C}[\sigma]$ را نیز شامل می‌شود. اگر
+$\sFmla{\True}{!B \lor !C}[\sigma]$ را شامل شود، دست‌کم یکی از
+$\sFmla{\True}{!B}[\sigma]$ و~$\sFmla{\True}{!C}[\sigma]$ را شامل
+می‌شود. اگر \iftag{prvBox}{$\sFmla{\False}{\Box !B}[\sigma]$}
+{$\sFmla{\True}{\Diamond !B}[\sigma]$} را شامل شود، برای دست‌کم یک
+$n$، \iftag{prvBox}{$\sFmla{\False}{!B}[\sigma.n]$}
+{$\sFmla{\True}{!B}[\sigma.n]$} را نیز شامل می‌شود. و هرگاه
+\iftag{prvBox}{$\sFmla{\True}{\Box !B}[\sigma]$}
+{$\sFmla{\False}{\Diamond !B}[\sigma]$} را شامل شود، برای هر~$n$ که
+$\sigma.n$ روی شاخه استفاده‌شده است، \iftag{prvBox}
+{$\sFmla{\True}{!B}[\sigma.n]$}
+{$\sFmla{\False}{!B}[\sigma.n]$} را نیز شامل می‌شود.
+\end{explain}
+
+\begin{prop}\ollabel{prop:complete-tableau}
+  هر~$\Gamma$ متناهی یک !!a{tableau} دارد که هر شاخهٔ آن کامل است.
+\end{prop}
+
+\begin{proof}
+  شاخه‌ای باز در !!a{tableau}ای برای~$\Gamma$ را در نظر بگیرید. شمار
+  !!{formula}های پیشونددار روی شاخه که قاعده‌ای بر آن‌ها اعمال‌پذیر
+  است متناهی است. با ترتیبی ثابت (مثلاً از بالا به پایین)، برای هریک از
+  این !!{formula}های پیشونددار که شرایط (1)--(4) درباره‌اش ازپیش برقرار
+  نیست، قواعد اعمال‌پذیر را برای گسترش شاخه اعمال کنید. در برخی موارد
+  این کار به انشعاب می‌انجامد؛ برای همهٔ !!{formula}های پیشونددار
+  باقی‌مانده، قاعده را در انتهای هریک از شاخه‌های حاصل اعمال کنید. چون
+  شمار !!{formula}های پیشونددار و شمار پیشوندهای استفاده‌شده روی شاخه
+  متناهی است، این روش سرانجام شاخه‌هایی (احتمالاً بسیار) به دست می‌دهد
+  که شاخهٔ اصلی را گسترش می‌دهند. روش را بر هریک اعمال و تکرار کنید.
+  بنا بر ساخت، هر شاخه کامل است.
+\end{proof}
+
+\begin{thm}[تمامیت]
+  \ollabel{thm:tableau-completeness}
+  اگر~$\Gamma$ متناهی باشد و هیچ !!{tableau} بسته‌ای نداشته باشد،
+  $\Gamma$ ارضاپذیر است.
+\end{thm}
+
+\begin{proof}
+بنا بر گزاره، $\Gamma$ یک !!a{tableau} دارد که هر شاخهٔ آن کامل است.
+چون هیچ !!{tableau} بسته‌ای ندارد، !!a{tableau}ای دارد که دست‌کم یک
+شاخهٔ آن باز و کامل است. بگذارید~$\Delta$ مجموعهٔ !!{formula}های
+پیشونددار روی آن شاخه و~$P(\Delta)$ مجموعهٔ پیشوندهای ظاهرشونده در آن
+باشد.
+
+مدل~$\mModel{M(\Delta)} = \tuple{P(\Delta), R, V}$ را تعریف می‌کنیم؛
+جهان‌های آن پیشوندهای ظاهرشونده در~$\Delta$ هستند و رابطهٔ
+دسترسی‌پذیری چنین داده می‌شود:
+\[
+R\sigma\sigma' \quad \text{اگر و تنها اگر} \quad
+\sigma'=\sigma.n \quad \text{برای یک~$n$}
+\]
+و
+\[
+V(p) = \Setabs{\sigma}{\sFmla{\True}{p}[\sigma] \in \Delta}.
+\]
+با استقرا بر~$!A$ نشان می‌دهیم اگر~$\sFmla{\True}{!A}[\sigma] \in
+\Delta$، آنگاه~$\mSat{M(\Delta)}{!A}[\sigma]$؛ و اگر
+$\sFmla{\False}{!A}[\sigma] \in \Delta$، آنگاه
+$\mSat/{M(\Delta)}{!A}[\sigma]$.
+
+\begin{enumerate}
+  \item \indcase{!A}{p}{اگر~$\sFmla{\True}{\indfrm}[\sigma] \in
+    \Delta$، آنگاه~$\sigma \in V(p)$ (بنا به تعریف~$V$)، و بنابراین
+    $\mSat{M(\Delta)}{\indfrm}[\sigma]$.
+
+    اگر~$\sFmla{\False}{\indfrm}[\sigma] \in \Delta$، آنگاه
+    $\sFmla{\True}{\indfrm}[\sigma] \notin \Delta$، زیرا وگرنه شاخه
+    بسته می‌بود. پس~$\sigma \notin V(p)$ و بنابراین
+    $\mSat/{M(\Delta)}{\indfrm}[\sigma]$.}
+  \item \indcase{!A}{\lnot !B}{\iftag{probNot}{تمرین.}{اگر
+      $\sFmla{\True}{\indfrm}[\sigma] \in \Delta$، آنگاه چون شاخه
+      کامل است، $\sFmla{\False}{!B}[\sigma] \in \Delta$. بنا بر فرض
+      استقرا، $\mSat/{M(\Delta)}{!B}[\sigma]$؛ پس
+      $\mSat{M(\Delta)}{\indfrm}[\sigma]$.
+
+      اگر~$\sFmla{\False}{\indfrm}[\sigma] \in \Delta$، آنگاه چون
+      شاخه کامل است، $\sFmla{\True}{!B}[\sigma] \in \Delta$. بنا بر
+      فرض استقرا، $\mSat{M(\Delta)}{!B}[\sigma]$؛ پس
+      $\mSat/{M(\Delta)}{\indfrm}[\sigma]$.}}
+  \item \indcase{!A}{!B \land !C}{\iftag{probAnd}{تمرین.}{اگر
+      $\sFmla{\True}{\indfrm}[\sigma] \in \Delta$، آنگاه چون شاخه
+      کامل است، هم~$\sFmla{\True}{!B}[\sigma] \in \Delta$ و هم
+      $\sFmla{\True}{!C}[\sigma] \in \Delta$. بنا بر فرض استقرا،
+      $\mSat{M(\Delta)}{!B}[\sigma]$ و
+      $\mSat{M(\Delta)}{!C}[\sigma]$. پس
+      $\mSat{M(\Delta)}{\indfrm}[\sigma]$.
+
+      اگر~$\sFmla{\False}{\indfrm}[\sigma] \in \Delta$، آنگاه چون
+      شاخه کامل است، یا~$\sFmla{\False}{!B}[\sigma] \in \Delta$ یا
+      $\sFmla{\False}{!C}[\sigma] \in \Delta$. بنا بر فرض استقرا،
+      یا~$\mSat/{M(\Delta)}{!B}[\sigma]$ یا
+      $\mSat/{M(\Delta)}{!C}[\sigma]$. پس
+      $\mSat/{M(\Delta)}{\indfrm}[\sigma]$.}}
+  \item \indcase{!A}{!B \lor !C}{\iftag{probOr}{تمرین.}{اگر
+      $\sFmla{\True}{\indfrm}[\sigma] \in \Delta$، آنگاه چون شاخه
+      کامل است، یا~$\sFmla{\True}{!B}[\sigma] \in \Delta$ یا
+      $\sFmla{\True}{!C}[\sigma] \in \Delta$. بنا بر فرض استقرا،
+      یا~$\mSat{M(\Delta)}{!B}[\sigma]$ یا
+      $\mSat{M(\Delta)}{!C}[\sigma]$. پس
+      $\mSat{M(\Delta)}{\indfrm}[\sigma]$.
+
+      اگر~$\sFmla{\False}{\indfrm}[\sigma] \in \Delta$، آنگاه چون
+      شاخه کامل است، هم~$\sFmla{\False}{!B}[\sigma] \in \Delta$ و هم
+      $\sFmla{\False}{!C}[\sigma] \in \Delta$. بنا بر فرض استقرا،
+      هم~$\mSat/{M(\Delta)}{!B}[\sigma]$ و هم
+      $\mSat/{M(\Delta)}{!C}[\sigma]$. پس
+      $\mSat/{M(\Delta)}{\indfrm}[\sigma]$.}}
+  \item \indcase{!A}{!B \lif !C}{\iftag{probIf}{تمرین.}{اگر
+      $\sFmla{\True}{\indfrm}[\sigma] \in \Delta$، آنگاه چون شاخه
+      کامل است، یا~$\sFmla{\False}{!B}[\sigma] \in \Delta$ یا
+      $\sFmla{\True}{!C}[\sigma] \in \Delta$. بنا بر فرض استقرا،
+      یا~$\mSat/{M(\Delta)}{!B}[\sigma]$ یا
+      $\mSat{M(\Delta)}{!C}[\sigma]$. پس
+      $\mSat{M(\Delta)}{\indfrm}[\sigma]$.
+
+      اگر~$\sFmla{\False}{\indfrm}[\sigma] \in \Delta$، آنگاه چون
+      شاخه کامل است، هم~$\sFmla{\True}{!B}[\sigma] \in \Delta$ و هم
+      $\sFmla{\False}{!C}[\sigma] \in \Delta$. بنا بر فرض استقرا،
+      هم~$\mSat{M(\Delta)}{!B}[\sigma]$ و هم
+      $\mSat/{M(\Delta)}{!C}[\sigma]$. پس
+      $\mSat/{M(\Delta)}{\indfrm}[\sigma]$.}}
+  \item \indcase{!A}{\Box !B}{\iftag{probBox}{تمرین.}{اگر
+      $\sFmla{\True}{\indfrm}[\sigma] \in \Delta$، آنگاه چون شاخه
+      کامل است، برای هر~$\sigma.n$ استفاده‌شده روی شاخه، یعنی برای هر
+      $\sigma' \in P(\Delta)$ که~$R\sigma\sigma'$، داریم
+      $\sFmla{\True}{!B}[\sigma.n] \in \Delta$. بنا بر فرض استقرا،
+      برای هر~$\sigma'$ با~$R\sigma\sigma'$،
+      $\mSat{M(\Delta)}{!B}[\sigma']$. بنابراین
+      $\mSat{M(\Delta)}{\indfrm}[\sigma]$.
+
+      اگر~$\sFmla{\False}{\indfrm}[\sigma] \in \Delta$، آنگاه چون
+      شاخه کامل است، برای یک~$\sigma.n$،
+      $\sFmla{\False}{!B}[\sigma.n] \in \Delta$. بنا بر فرض استقرا،
+      $\mSat/{M(\Delta)}{!B}[\sigma.n]$. چون~$R\sigma(\sigma.n)$،
+      $\sigma'$ای وجود دارد چنان‌که
+      $\mSat/{M(\Delta)}{!B}[\sigma']$. پس
+      $\mSat/{M(\Delta)}{\indfrm}[\sigma]$.}}
+  \item \indcase{!A}{\Diamond !B}{\iftag{probDiamond}{تمرین.}{اگر
+      $\sFmla{\True}{\indfrm}[\sigma] \in \Delta$، آنگاه چون شاخه
+      کامل است، برای یک~$\sigma.n$،
+      $\sFmla{\True}{!B}[\sigma.n] \in \Delta$. بنا بر فرض استقرا،
+      $\mSat{M(\Delta)}{!B}[\sigma.n]$. چون~$R\sigma(\sigma.n)$،
+      $\sigma'$ای وجود دارد چنان‌که~$\mSat{M(\Delta)}{!B}[\sigma']$.
+      پس~$\mSat{M(\Delta)}{\indfrm}[\sigma]$.
+
+      اگر~$\sFmla{\False}{\indfrm}[\sigma] \in \Delta$، آنگاه چون
+      شاخه کامل است، برای هر~$\sigma.n$ استفاده‌شده روی شاخه، یعنی
+      برای هر~$\sigma' \in P(\Delta)$ که~$R\sigma\sigma'$، داریم
+      $\sFmla{\False}{!B}[\sigma.n] \in \Delta$. بنا بر فرض استقرا،
+      برای هر~$\sigma'$ با~$R\sigma\sigma'$،
+      $\mSat/{M(\Delta)}{!B}[\sigma']$. بنابراین
+      $\mSat/{M(\Delta)}{\indfrm}[\sigma]$.}}
+\end{enumerate}
+تابع همانی روی~$P(\Delta)$ تفسیری از پیشوندهای~$P(\Delta)$ در
+$\mModel{M(\Delta)}$ است، و~$\mModel{M(\Delta)}$ نسبت به این تفسیر،
+$\Gamma$ را ارضا می‌کند.
+\end{proof}
+
+\begin{prob}
+اثبات \olref[nml][tab][cpl]{thm:tableau-completeness} را کامل کنید.
+\end{prob}
+
+\begin{cor}
+\ollabel{cor:entailment-completeness}
+اگر~$\Gamma$ متناهی باشد و~$\Gamma \Entails !A$، آنگاه
+$\Gamma \Proves !A$.
+\end{cor}
+
+\begin{cor}
+\ollabel{cor:weak-completeness}
+اگر~$!A$ در همهٔ مدل‌ها صادق باشد، آنگاه~$\Proves !A$.
+\end{cor}
+
+\end{document}

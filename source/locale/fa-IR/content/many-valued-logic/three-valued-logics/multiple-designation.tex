@@ -1,0 +1,222 @@
+% Part: many-valued-logic
+% Chapter: three-valued-logics
+% Section: multiple-designation
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mvl}{thr}{mul}
+
+\olsection{ممتاز دانستن ارزشی جز~$\True$}
+
+همهٔ منطق‌هایی که تاکنون دیده‌ایم مجموعهٔ ارزش‌های صدق ممتاز
+$V^+ = \{\True\}$ را داشته‌اند؛ یعنی چیزی صادق شمرده می‌شود اگر و تنها
+اگر ارزش صدقش~$\True$ باشد. اما می‌توان چیزی را صادق شمرد اگر فقط
+$\False$ نباشد. در آن صورت، برای مثال با مقررکردن
+$V^+ = \{\True, \Undef\}$ در ماتریس، منطقی به دست می‌آید.
+
+\begin{defn}
+\emph{منطق پارادوکس}~$\LogLP$ با ماتریس زیر تعریف می‌شود:
+\begin{enumerate}
+  \item زبان گزاره‌ای استاندارد~$\Lang L_0$ با~$\lnot$، $\land$،
+  $\lor$ و~$\lif$.
+  \item مجموعهٔ ارزش‌های صدق~$V = \{\True, \Undef, \False\}$.
+  \item $\True$ و~$\Undef$ ممتازند؛ یعنی~$V^+ = \{\True, \Undef\}$.
+  \item توابع صدق همان توابع منطق قوی کلینی‌اند.
+\end{enumerate}
+\end{defn}
+
+\begin{defn}
+\emph{منطق بی‌معنایی} هالدن~$\LogHal$ با ماتریس زیر تعریف می‌شود:
+\begin{enumerate}
+  \item زبان گزاره‌ای استاندارد~$\Lang L_0$ با~$\lnot$، $\land$،
+  $\lor$، $\lif$ و رابط یک‌موضعی~$+$.
+  \item مجموعهٔ ارزش‌های صدق~$V = \{\True, \Undef, \False\}$.
+  \item $\True$ و~$\Undef$ ممتازند؛ یعنی~$V^+ = \{\True, \Undef\}$.
+  \item توابع صدق همان توابع منطق ضعیف کلینی‌اند، به‌اضافهٔ عملگر
+  «بی‌معناست»:
+  \begin{center}
+    \begin{tabular}{c|c} 
+    $\tf{+}$ & \\ 
+    \hline  
+    $\True$ & $\False$ \\ 
+    $\Undef$ & $\True$ \\
+    $\False$ & $\False$ 
+    \end{tabular}
+  \end{center}
+\end{enumerate}
+\end{defn}
+
+برخلاف منطق‌های کلینی که جدول‌های صدق مشترکی با آن‌ها دارند، این منطق‌ها
+\emph{دارای} همان‌گویی‌اند.
+
+\begin{prop}\ollabel{prop:LP-taut-CL} همان‌گویی‌های~$\LogLP$ همان
+  همان‌گویی‌های منطق گزاره‌ای کلاسیک‌اند.
+\end{prop}
+
+\begin{proof}
+  بنا بر~\olref[syn][sub]{prop:mvl-cl}، اگر~$\Entails[\LogLP] !A$،
+  آنگاه~$\Entails[\LogCL] !A$. برای نشان‌دادن جهت عکس، ثابت می‌کنیم اگر
+  !!a{valuation} چون
+  $\pAssign v\colon \PVar \to \{\False, \True, \Undef\}$ وجود داشته
+  باشد که~$\pValue v[\LogKs](!A) = \False$، آنگاه~!!a{valuation} چون
+  $\pAssign {v'}\colon \PVar \to \{\False, \True\}$ وجود دارد که
+  $\pValue {v'}[\LogCL](!A) = \False$. این ادعا نتیجه را برای~$\LogLP$
+  ثابت می‌کند، زیرا~$\LogKs$ و~$\LogLP$ توابع صدق مشخصهٔ یکسان دارند و
+  $\False$ تنها ارزش صدق ناممتاز~$\LogLP$ است؛ همین تنها تفاوت~$\LogLP$
+  و~$\LogKs$ است. پس اگر~$\Entails/[\LogLP] !A$، برای~!!{valuation}ای
+  چون~$\pAssign v$ داریم
+  $\pValue v[\LogLP](!A) = \pValue v[\LogKs](!A) = \False$. بنا بر
+  ادعایی که ثابت می‌کنیم، $\pValue{v'}[\LogCL](!A) = \False$؛ یعنی
+  $\Entails/[\LogCL] !A$.
+  
+  برای اثبات ادعا، نخست~$\pAssign {v'}$ را چنین تعریف می‌کنیم:
+  \[
+    \pAssign {v'}(p) = 
+    \begin{cases}
+    \True & \text{اگر } \pAssign {v}(p) \in \{\True, \Undef\}\\
+    \False & \text{در غیر این صورت}
+  \end{cases}
+  \]
+  اکنون با استقرا بر~$!A$ نشان می‌دهیم که (الف) اگر
+  $\pValue v[\LogKs](!A) = \False$، آنگاه
+  $\pValue {v'}[\LogCL](!A) = \False$؛ و (ب) اگر
+  $\pValue v[\LogKs](!A) = \True$، آنگاه
+  $\pValue {v'}[\LogCL](!A) = \True$.
+  \begin{enumerate}
+    \item پایهٔ استقرا: $!A \ident p$. بنا بر
+    \olref[syn][val]{defn:pValue}، اگر
+    $\pValue v[\LogKs](!A) = \False$، آنگاه
+    $\pAssign v(p) = \False$ و از تعریف~$v'$ داریم
+    $\pValue {v'}[\LogCL](!A) = \False$. همچنین اگر
+    $\pValue v[\LogKs](!A) = \True$، آنگاه
+    $\pAssign v(p) = \True$ و از تعریف~$v'$ داریم
+    $\pValue {v'}[\LogCL](!A) = \True$. پس هر دو بند (الف) و (ب)
+    برقرارند.
+    
+    برای گام استقرا، حالت‌های زیر را در نظر می‌گیریم:
+    \item $!A \ident \lnot !B$.
+    \begin{enumerate}
+      \item فرض کنید~$\pValue v[\LogKs](\lnot!B) = \False$. بنا بر
+      تعریف~$\tf{\lnot}[\LogKs]$،
+      $\pValue v[\LogKs](!B) = \True$. بنا بر فرض استقرا، بند~(ب)،
+      $\pValue {v'}[\LogCL](!B) = \True$؛ پس
+      $\pValue {v'}[\LogCL](\lnot !B) = \False$.
+      \item فرض کنید~$\pValue v[\LogKs](\lnot!B) = \True$. بنا بر
+      تعریف~$\tf{\lnot}[\LogKs]$،
+      $\pValue v[\LogKs](!B) = \False$. بنا بر فرض استقرا، بند~(الف)،
+      $\pValue {v'}[\LogCL](!B) = \False$؛ پس
+      $\pValue {v'}[\LogCL](\lnot !B) = \True$.
+    \end{enumerate}
+
+    \item $!A \ident (!B \land !C)$.
+    \begin{enumerate}
+      \item فرض کنید~$\pValue v[\LogKs](!B \land !C) = \False$. بنا بر
+      تعریف~$\tf{\land}[\LogKs]$، یا
+      $\pValue v[\LogKs](!B) = \False$، یا
+      $\pValue v[\LogKs](!C) = \False$. بنا بر فرض استقرا، بند~(الف)،
+      یا~$\pValue {v'}[\LogCL](!B) = \False$، یا
+      $\pValue {v'}[\LogCL](!C) = \False$؛ پس
+      $\pValue {v'}[\LogCL](!B \land !C) = \False$.
+      \item فرض کنید~$\pValue v[\LogKs](!B \land !C) = \True$. بنا بر
+      تعریف~$\tf{\land}[\LogKs]$،
+      $\pValue v[\LogKs](!B) = \True$ و
+      $\pValue v[\LogKs](!C) = \True$. بنا بر فرض استقرا، بند~(ب)،
+      $\pValue {v'}[\LogCL](!B) = \True$ و
+      $\pValue {v'}[\LogCL](!C) = \True$؛ پس
+      $\pValue {v'}[\LogCL](!B \land !C) = \True$.
+    \end{enumerate}
+  \end{enumerate}
+
+  دو حالت دیگر مشابه‌اند و به‌عنوان تمرین واگذار می‌شوند. راه دیگر این
+  است که برهان بالا را اثبات نتیجه برای همهٔ~!!{formula}هایی بدانیم که
+  فقط شامل~$\lnot$ و~$\land$ هستند. سپس می‌توان از این واقعیت استفاده
+  کرد که هم در~$\LogKs$ و هم در~$\LogCL$، برای هر~$\pAssign v$،
+  $\pValue v(!B \lor !C) = \pValue v(\lnot(\lnot!B \land \lnot !C))$
+  و~$\pValue v(!B \lif !C) = \pValue v(\lnot(!B \land \lnot !C))$.
+\end{proof}
+
+\begin{prob}
+  برهان~\olref[mvl][thr][mul]{prop:LP-taut-CL} را کامل کنید؛ یعنی
+  بندهای~(الف) و~(ب) را برای حالت‌های~$!A \ident (!B \lor !C)$ و
+  $!A \ident (!B \lif !C)$ ثابت کنید.
+\end{prob}
+
+\begin{prob}
+ثابت کنید هر همان‌گویی کلاسیک در~$\LogHal$ همان‌گویی است.
+\end{prob}
+
+با اینکه همان‌گویی‌های این منطق‌ها همان همان‌گویی‌های منطق کلاسیک‌اند،
+روابط نتیجهٔ آن‌ها متفاوت است. برای نمونه، $\LogLP$
+\emph{فرا‌سازگار} است، زیرا~$\lnot p, p \Entails/ q$؛ پس اصل انفجار
+$\lnot !A, !A \Entails !B$ به‌طور کلی برقرار نیست. (این اصل برای برخی
+حالت‌های~$!A$ و~$!B$ برقرار است؛ مثلاً اگر~$!B$ همان‌گویی باشد.)
+
+\begin{prob}
+  کدام‌یک از روابط زیر در (الف)~$\LogLP$ و (ب)~$\LogHal$ برقرارند؟
+  برای هریک جدول صدق بدهید.
+  \begin{enumerate}
+    \item $p, p \lif q \Entails q$
+    \item $\lnot q, p \lif q \Entails \lnot p$
+    \item $p \lor q, \lnot p \Entails q$
+    \item $\lnot p, p \Entails q$
+    \item $p \Entails p \lor q$
+    \item $p \lif q, q\lif r \Entails p \lif r$
+  \end{enumerate}
+\end{prob}
+
+اگر~$\Undef$ را در~$\LogLuk[3]$ ممتاز کنیم چه می‌شود؟
+
+\begin{defn}
+  \emph{R-Mingle سه‌ارزشی}~$\LogRM[3]$ با ماتریس زیر تعریف می‌شود:
+  \begin{enumerate}
+    \item زبان گزاره‌ای استاندارد~$\Lang L_0$ با~$\lfalse$، $\lnot$،
+    $\land$، $\lor$ و~$\lif$.
+    \item مجموعهٔ ارزش‌های صدق~$V = \{\True, \Undef, \False\}$.
+    \item $\True$ و~$\Undef$ ممتازند؛ یعنی~$V^+ = \{\True, \Undef\}$.
+    \item توابع صدق همان توابع منطق \L ukasiewicz، یعنی~$\LogLuk[3]$،
+    هستند.
+  \end{enumerate}
+\end{defn}
+
+\begin{prob}
+  کدام‌یک از روابط زیر در~$\LogRM[3]$ برقرارند؟
+  \begin{enumerate}
+    \item $p, p \lif q \Entails q$
+    \item $p \lor q, \lnot p \Entails q$
+    \item $\lnot p, p \Entails q$
+    \item $p \Entails p \lor q$
+  \end{enumerate}
+\end{prob}
+
+گاهی جدول‌های صدق متفاوت فقط با تغییر ارزش‌های ممتاز، یک منطق واحد،
+یعنی یک رابطهٔ استلزام واحد، تولید می‌کنند. برای مثال، اگر در منطق گودل
+به‌جای~$\{\True\}$، مجموعهٔ~$V^+ = \{\True, \Undef\}$ را بگیریم، چنین
+می‌شود.
+
+\begin{prop}\ollabel{prop:gl-udes}
+  ماتریسی با~$V = \{\False, \Undef,\True\}$،
+  $V^+=\{\True, \Undef\}$ و توابع صدق منطق سه‌ارزشی گودل، منطق کلاسیک
+  را تعریف می‌کند.
+\end{prop}
+
+\begin{proof}
+  تمرین.
+\end{proof}
+
+\begin{prob}
+  \olref[mvl][thr][mul]{prop:gl-udes} را چنین ثابت کنید: برای منطق
+  $\Log L$ که درست مانند منطق گودل، اما با
+  $V^+=\{\True,\Undef\}$، تعریف شده است، نشان دهید اگر
+  $\Gamma \Entails/[\Log L] !B$، آنگاه~$\Gamma \Entails/[\LogCL] !B$.
+  از اندیشه‌های~\olref[mvl][thr][mul]{prop:LP-taut-CL} استفاده کنید، با
+  این تفاوت که به‌جای اثبات خواص~(الف) و~(ب)، نشان دهید
+  $\pValue v[\LogGod](!A) = \False$ اگر و تنها اگر
+  $\pValue {v'}[\LogCL](!A) = \False$؛ و در نتیجه
+  $\pValue v[\LogGod](!A) \in \{\True,\Undef\}$ اگر و تنها اگر
+  $\pValue {v'}[\LogCL](!A) = \True$. توضیح دهید چرا این نتیجه گزاره
+  را ثابت می‌کند.
+\end{prob}
+
+\end{document}

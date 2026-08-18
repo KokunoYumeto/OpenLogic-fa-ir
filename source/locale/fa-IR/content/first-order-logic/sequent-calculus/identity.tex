@@ -1,0 +1,77 @@
+% Part: first-order-logic
+% Chapter: sequent-calculus
+% Section: equality
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{seq}{ide}
+
+\olsection{\usetoken{P}{derivation} با \usetoken{S}{identity}}
+
+!!^{derivation}s با !!{identity} به دنباله‌های آغازین و قواعد استنتاج
+افزوده‌ای نیاز دارند.
+
+\begin{defn}[دنباله‌های آغازین برای $\eq$]
+اگر $t$ ترمی بسته باشد، آنگاه ${} \Sequent \eq[t][t]$ دنباله‌ای
+آغازین است.
+\end{defn}
+
+قواعد $\eq$ چنین‌اند ($t_1$ و $t_2$ ترم‌های بسته‌اند):
+
+\begin{defish}
+\Axiom$ \eq[t_1][t_2], \Gamma \fCenter \Delta, !A(t_1) $
+\RightLabel{$\eq$}
+\UnaryInf$\eq[t_1][t_2], \Gamma \fCenter \Delta, !A(t_2)$
+\DisplayProof
+\hfill
+\Axiom$\eq[t_1][t_2], \Gamma \fCenter \Delta, !A(t_2) $
+\RightLabel{$\eq$}
+\UnaryInf$\eq[t_1][t_2], \Gamma  \fCenter \Delta, !A(t_1)$
+\DisplayProof
+\end{defish}
+
+\begin{ex}
+اگر $s$ و $t$ ترم‌های بسته باشند، آنگاه
+$\eq[s][t], !A(s) \Proves !A(t)$:
+\begin{prooftree}
+\Axiom$ !A(s) \fCenter !A(s)$
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$\eq[s][t], !A(s)  \fCenter !A(s)$
+\RightLabel{$\eq$}
+\UnaryInf$\eq[s][t], !A(s)  \fCenter !A(t)$
+\end{prooftree}
+این اصل را شاید با نام اصل جانشینی همانی‌ها یا قانون لایبنیتس بشناسید.
+
+$\Log{LK}$ ثابت می‌کند که $\eq$ متقارن و متعدی است:
+\begin{prooftree}
+\Axiom$ \fCenter \eq[t_1][t_1] $
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$ \eq[t_1][t_2] \fCenter \eq[t_1][t_1] $
+\RightLabel{$\eq$}
+\UnaryInf$ \eq[t_1][t_2] \fCenter \eq[t_2][t_1]$
+\DisplayProof\qquad\bottomAlignProof
+\Axiom$ \eq[t_1][t_2] \fCenter \eq[t_1][t_2] $
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$\eq[t_2][t_3], \eq[t_1][t_2]  \fCenter \eq[t_1][t_2] $
+\RightLabel{$\eq$}
+\UnaryInf$\eq[t_2][t_3], \eq[t_1][t_2]  \fCenter \eq[t_1][t_3]$
+\RightLabel{\LeftR{\Exchange}}
+\UnaryInf$\eq[t_1][t_2], \eq[t_2][t_3]  \fCenter \eq[t_1][t_3]$
+\end{prooftree}
+در !!{derivation} سمت چپ، !!{formula}~$\eq[x][t_1]$ همان
+$!A(x)$ ماست. در سمت راست، $!A(x)$ را~$\eq[t_1][x]$ می‌گیریم.
+\end{ex}
+
+\begin{prob}
+برای دنباله‌های زیر !!{derivation}sی لازم را به دست دهید:
+\begin{enumerate}
+\item $\Sequent \lforall[x][\lforall[y][((x = y \land !A(x)) \lif !A(y))]]$
+\item $\lexists[x][!A(x)] \land \lforall[y][\lforall[z][((!A(y) \land
+    !A(z)) \lif y = z)]] \Sequent
+\lexists[x][(!A(x) \land \lforall[y][(!A(y) \lif y = x)])]$
+\end{enumerate}
+\end{prob}
+
+\end{document}

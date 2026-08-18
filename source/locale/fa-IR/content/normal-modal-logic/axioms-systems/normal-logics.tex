@@ -1,0 +1,122 @@
+% Part: normal-modal-logic
+% Chapter: axioms-systems
+% Section: normal-logics
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{prf}{nor}
+
+\olsection{منطق‌های موجهات عادی}
+
+هر مجموعه‌ای از !!{formula}های موجهاتی را نمی‌توان به‌آسانی به‌صورت
+!!{formula}های اشتقاق‌پذیر از مجموعه‌ای از اصل‌ها مشخص کرد. می‌خواهیم
+منطق‌های موجهات خوش‌رفتار باشند. نخست، هرچه را در منطق گزاره‌ای کلاسیک
+می‌توانیم !!{derive} کنیم باید همچنان !!{derivable} باشد؛ البته با توجه
+به اینکه !!{formula}ها اکنون ممکن است
+\iftag{prvBox}{$\Box$\iftag{prvDiamond}{
+    و~}{}}{}\iftag{prvDiamond}{$\Diamond$}{} را نیز در بر داشته باشند.
+برای این منظور لازم می‌دانیم یک منطق موجهات شامل همهٔ نمونه‌های
+همان‌گویی باشد و تحت وضع مقدم بسته باشد.
+
+\begin{defn}
+  یک \emph{منطق موجهات} مجموعهٔ~$\Sigma$ از !!{formula}های موجهاتی است
+  که
+  \begin{enumerate}
+  \item شامل همهٔ همان‌گویی‌هاست؛ و
+  \item تحت جانشینی بسته است؛ یعنی اگر~$!A \in \Sigma$ و~$!D_1$،
+    \dots، $!D_n$ !!{formula} باشند، آنگاه
+    \[
+    \SSubst{!A}{\subst{!D_1}{p_1}, \dots, \subst{!D_n}{p_n}} \in \Sigma
+    \]؛
+  \item تحت \emph{وضع مقدم} بسته است؛ یعنی اگر~$!A$ و
+    $!A \lif !B \in \Sigma$، آنگاه~$!B \in \Sigma$.
+  \end{enumerate}
+\end{defn}
+
+برای استفاده از معناشناسی رابطه‌ای برای منطق‌های موجهات، باید همچنین
+همهٔ !!{formula}های معتبر در همهٔ مدل‌های موجهاتی را در آن‌ها بگنجانیم.
+روشن می‌شود این شرط به‌محض آن برآورده است که همهٔ نمونه‌های
+\Ax{K}\iftag{prvDiamond}{ و~\Dual{}}{} !!{derivable} باشند و هرگاه
+!!a{formula}~$!A$ !!{derivable} است، $\Box !A$ نیز چنین باشد. منطق
+موجهاتی که این شرایط را برآورده کند \emph{عادی} نامیده می‌شود. (البته
+منطق‌های موجهات غیرعادی نیز وجود دارند، اما مدل‌های رابطه‌ای معمول برای
+آن‌ها مناسب نیستند.)
+
+\begin{defn}
+  منطق موجهات~$\Sigma$ \emph{عادی} است اگر شامل
+  \begin{align*}
+    \tag{\Ax{K}} & \Box(p \lif q) \lif (\Box p \lif \Box q),
+    \iftag{prvDiamond}{\\
+      \tag{\Dual} & \Diamond p \liff \lnot\Box\lnot p}{}
+  \end{align*}
+  باشد و تحت \emph{ضرورت‌بخشی} بسته باشد؛ یعنی اگر~$!A \in \Sigma$،
+  آنگاه~$\Box !A \in \Sigma$.
+\end{defn}
+
+توجه کنید که درحالی‌که استلزام همان‌گویانه به‌اندازهٔ کافی «ریزساخت»
+است تا \emph{صدق در یک جهان} را حفظ کند، قاعدهٔ~\Nec{} تنها \emph{صدق
+در یک مدل} را حفظ می‌کند (و ازاین‌رو اعتبار در یک قاب یا رده‌ای از
+قاب‌ها را نیز حفظ می‌کند).
+
+\begin{prop}\ollabel{prop:rk}
+  هر منطق موجهات عادی تحت قاعدهٔ~\RK بسته است:
+  \begin{prooftree}
+    \AxiomC{$!A_1 \lif (!A_2 \lif \cdots (!A_{n-1} \lif !A_n)\cdots)$}
+    \RightLabel{\RK}
+    \UnaryInfC{$\Box!A_1 \lif (\Box!A_2 \lif \cdots (\Box!A_{n-1}
+      \lif \Box!A_n)\cdots).$}
+  \end{prooftree}
+\end{prop}
+
+\begin{proof}
+  با استقرا بر~$n$: اگر~$n=1$، قاعده همان~\Nec{} است و هر منطق
+  موجهات عادی تحت~\Nec{} بسته است.
+
+  اکنون فرض کنید نتیجه برای~$n-1$ برقرار باشد؛ نشان می‌دهیم برای~$n$
+  نیز برقرار است.
+
+  فرض کنید
+  \begin{align*}
+  & !A_1 \lif (!A_2 \lif \cdots (!A_{n-1} \lif !A_n)\cdots) \in \Sigma
+  \intertext{بنا بر فرض استقرا داریم}
+  & \Box!A_1 \lif (\Box!A_2 \lif \cdots \Box(!A_{n-1} \lif !A_n)\cdots)
+  \in \Sigma
+  \intertext{چون~$\Sigma$ منطق موجهات عادی است، همهٔ نمونه‌های~$\Ax{K}$،
+    و به‌ویژه عبارت زیر، را شامل می‌شود:}
+  & \Box(!A_{n-1} \lif !A_n) \lif (\Box!A_{n-1} \lif \Box!A_n) \in \Sigma
+  \intertext{با استفاده از وضع مقدم و نمونه‌های همان‌گویانهٔ مناسب به دست می‌آوریم}
+  & \Box!A_1 \lif (\Box!A_2 \lif \cdots (\Box!A_{n-1}
+  \lif \Box!A_n)\cdots) \in \Sigma. 
+  \end{align*}
+\end{proof}
+
+\begin{prop}\ollabel{prop:notDiamondBot}
+  هر منطق موجهات عادی~$\Sigma$ شامل~$\lnot\Diamond\lfalse$ است.
+\end{prop}
+
+\begin{prob}
+  \olref[nml][prf][nor]{prop:notDiamondBot} را اثبات کنید.
+\end{prob}
+
+\begin{prop}
+  فرض کنید~$!A_1$، \dots، $!A_n$ !!{formula} باشند. آنگاه کوچک‌ترین
+  منطق موجهات عادی~$\Sigma$ که همهٔ نمونه‌های~$!A_1$، \dots، $!A_n$
+  را در بر دارد وجود دارد.
+\end{prop}
+
+\begin{proof}
+  با داشتن~$!A_1$، \dots، $!A_n$، $\Sigma$ را اشتراک همهٔ منطق‌های
+  موجهات عادی‌ای تعریف کنید که همهٔ نمونه‌های~$!A_1$، \dots، $!A_n$
+  را در بر دارند. این خانواده ناتهی است، زیرا~$\Frm[L]$، یعنی مجموعهٔ
+  همهٔ !!{formula}ها، یک چنین منطق موجهاتی است.
+\end{proof}
+
+\begin{defn}
+کوچک‌ترین منطق موجهات عادی شامل~$!A_1$، \dots، $!A_n$ یک
+\emph{دستگاه موجهاتی} نامیده می‌شود و با~$\Log{K} !A_1 \dots !A_n$
+نشان داده می‌شود. کوچک‌ترین منطق موجهات عادی با~\Log{K} نشان داده می‌شود.
+\end{defn}
+
+\end{document}

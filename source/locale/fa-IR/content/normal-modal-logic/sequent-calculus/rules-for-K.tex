@@ -1,0 +1,131 @@
+% Part: normal-modal-logic
+% Chapter: sequent-calculus
+% Section: rules-for-K
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{seq}{rul}
+
+\olsection{قواعد برای~\Log{K}}
+
+قواعد رابط‌های گزاره‌ای معمول همان قواعد حساب سکوئنت معمول~$\Log{LK}$
+هستند. اصول نیز یکسان‌اند: هر سکوئنت به‌شکل~$!A \Sequent !A$ یک اصل
+به شمار می‌آید.
+
+برای عملگر\iftag{prvBox}{\iftag{prvDiamond}{های موجهاتی~$\Box$
+و}{ موجهاتی~$\Box$}}{}\iftag{prvDiamond}{ موجهاتی~$\Diamond$}{}،
+\iftag{notprvBox,notprvDiamond}{قاعدهٔ}{قواعد} افزودهٔ زیر را داریم:
+\[
+  \iftag{prvBox}{\iftag{prvDiamond}{% <> and [] primitive
+    \Axiom$\Gamma \fCenter \Delta, !A$
+    \RightLabel{$\Box$}
+    \UnaryInf$\Box\Gamma \fCenter \Diamond\Delta, \Box!A$
+    \DisplayProof  
+    \qquad
+    \Axiom$!A, \Gamma \fCenter \Delta$
+    \RightLabel{$\Diamond$}
+    \UnaryInf$\Diamond!A, \Box\Gamma \fCenter \Diamond\Delta$
+    \DisplayProof
+}{% only Box primitive
+\Axiom$\Gamma \fCenter !A$
+\RightLabel{$\Box$}
+\UnaryInf$\Box\Gamma \fCenter \Box!A$
+\DisplayProof
+}}{% only <> primitive
+  \Axiom$!A \fCenter \Delta$
+  \RightLabel{$\Diamond$}
+  \UnaryInf$\Diamond!A \fCenter \Diamond\Delta$
+  \DisplayProof
+}
+\]
+در اینجا، \iftag{prvBox}{$\Box\Gamma$ دنبالهٔ !!{formula}هایی است
+که با قراردادن~$\Box$ در ابتدای هر !!{formula} در~$\Gamma$ از
+$\Gamma$ حاصل می‌شود\iftag{prvDiamond}{، و
+}{}}{}\iftag{prvDiamond}{$\Diamond\Delta$ دنبالهٔ !!{formula}هایی
+است که با قراردادن~$\Diamond$ در ابتدای هر !!{formula} در~$\Delta$
+از~$\Delta$ حاصل می‌شود}{}. \iftag{notprvDiamond}{سمت راست مقدمهٔ
+قاعدهٔ~$\Box$ باید حداکثر شامل یک !!{formula}~$!A$ باشد. }{}%
+\iftag{notprvBox}{سمت چپ مقدمهٔ قاعدهٔ~$\Diamond$ باید حداکثر شامل
+یک !!{formula}~$!A$ باشد. }{}%
+\iftag{prvBox}{$\Gamma$\iftag{prvDiamond}{ و~}{}}{}\iftag{prvDiamond}{$\Delta$}{}
+ممکن است تهی باشند؛ در این صورت بخش متناظر
+\iftag{prvBox}{$\Box\Gamma$\iftag{prvDiamond}{ و~}{}}{}\iftag{prvDiamond}{$\Diamond\Delta$}{}
+از سکوئنت نتیجه نیز تهی است.
+
+محدودیتِ افزودن
+\iftag{prvBox}{$\Box$ در سمت راست\iftag{prvDiamond}{ و
+}{}}{}\iftag{prvDiamond}{$\Diamond$ در سمت چپ}{}
+به یک !!{formula} واحد~$!A$ ضروری است. اگر اجازه می‌دادیم
+\iftag{prvBox}{$\Box$ به هر تعداد !!{formula} در سمت راست افزوده
+شود\iftag{prvDiamond}{ یا }{}}{}\iftag{prvDiamond}{$\Diamond$ به هر
+تعداد !!{formula} در سمت چپ افزوده شود}{}، می‌توانستیم مورد زیر را
+!!{derive} کنیم:
+  \[
+    \iftag{prvBox}{
+      \Axiom$!A \fCenter !A$
+      \RightLabel{\RightR{\lnot}}
+      \UnaryInf$\fCenter !A, \lnot !A$
+      \RightLabel{$\Box*$}
+      \UnaryInf$\fCenter \Box!A, \Box\lnot !A$
+      \doubleLine
+      \RightLabel{\RightR{\lor}}
+      \UnaryInf$\fCenter \Box!A \lor \Box \lnot !A$
+      \DisplayProof}{}
+    \iftag{notprvBox,notprvDiamond}{}{\qquad}
+    \iftag{prvDiamond}{
+      \Axiom$!A \fCenter !A$
+      \RightLabel{\LeftR{\lnot}}
+      \UnaryInf$\lnot !A, !A \fCenter$
+      \RightLabel{$\Diamond*$}
+      \UnaryInf$\Diamond\lnot !A,\Diamond!A \fCenter $
+      \RightLabel{\RightR{\lnot}}
+      \UnaryInf$\Diamond!A \fCenter \lnot\Diamond\lnot !A$
+      \RightLabel{\RightR{\lif}}
+      \UnaryInf$ \fCenter \Diamond!A \lif \lnot\Diamond\lnot !A$
+      \DisplayProof}{}
+  \]
+اما \iftag{prvBox}{$\Box!A \lor \Box \lnot !A$\iftag{prvDiamond}{ و
+$\Diamond!A \lif \lnot\Diamond\lnot !A$ در~$\Log{K}$ معتبر
+نیستند}{ در~$\Log{K}$ معتبر نیست}}{$\Diamond!A \lif
+\lnot\Diamond\lnot !A$ در~$\Log{K}$ معتبر نیست}.
+
+اگر در مقدمه افزون بر~$!A$ فرمول‌های جانبی را مجاز می‌کردیم و اجازه
+می‌دادیم \iftag{prvBox}{قاعدهٔ~$\Box$ تنها به~$!A$ در سمت راست
+$\Box$ بیفزاید\iftag{prvDiamond}{، یا اجازه می‌دادیم }{}}{}\iftag{prvDiamond}{قاعدهٔ
+$\Diamond$ تنها به~$!A$ در سمت چپ~$\Diamond$ بیفزاید}{} (اما با
+فرمول‌های جانبی کاری نداشته باشد)، می‌توانستیم مورد زیر را !!{derive}
+کنیم:
+\[
+  \iftag{prvBox}{
+    \Axiom$!A \fCenter !A$
+    \RightLabel{\RightR{\lnot}}
+    \UnaryInf$\fCenter !A, \lnot !A$
+    \RightLabel{\RightR{\Exchange}}
+    \UnaryInf$\fCenter \lnot !A, !A$
+    \RightLabel{$\Box*$}
+    \UnaryInf$\fCenter \lnot!A, \Box !A$
+    \doubleLine
+    \RightLabel{\RightR{\lor}}
+    \UnaryInf$\fCenter \lnot!A \lor \Box !A$
+    \DisplayProof}{}
+  \iftag{notprvBox,notprvDiamond}{}{\qquad}
+  \iftag{prvDiamond}{
+    \Axiom$!A \fCenter !A$
+    \RightLabel{\LeftR{\lnot}}
+    \UnaryInf$\lnot !A, !A \fCenter$
+    \RightLabel{$\Diamond*$}
+    \UnaryInf$\Diamond\lnot !A, !A \fCenter $
+    \RightLabel{\RightR{\lnot}}
+    \UnaryInf$!A \fCenter \lnot\Diamond\lnot !A$
+    \RightLabel{\RightR{\lif}}
+    \UnaryInf$ \fCenter !A \lif \lnot\Diamond\lnot !A$
+    \DisplayProof}{}
+\]
+اما \iftag{prvBox}{$\lnot!A \lor \Box !A$ (که با~$!A
+\lif \Box!A$ هم‌ارز است)\iftag{prvDiamond}{ و~$!A \lif
+\lnot\Diamond\lnot !A$ در~$\Log{K}$ معتبر نیستند}{ در~$\Log{K}$
+معتبر نیست}}{$!A \lif \lnot\Diamond\lnot !A$ در~$\Log{K}$ معتبر نیست}.
+
+\end{document}

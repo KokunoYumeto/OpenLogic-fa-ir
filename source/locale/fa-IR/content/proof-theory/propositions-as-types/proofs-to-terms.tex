@@ -1,0 +1,94 @@
+% part: intuitionistic-logic
+% chapter: propositions-as-types
+% section: proofs-to-terms
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{pty}{pt}
+
+\olsection{تبدیل \usetoken{P}{derivation} به ترم‌های برهان}
+
+فرایند تبدیل !!{proof}s استنتاج طبیعی به ترم‌های برهان، یعنی ترجمهٔ
+!!{proof}s~\Log{N2i} به !!{proof}s~\Log{tN2i}، بسیار ساده است.
+کافی است در سمت چپ هر !!{formula} واقع در راست یک دنباله در
+!!{derivation}، ترم برهانی بنویسیم؛ در نتیجه دنباله‌هایی به شکل
+$\Gamma \Sequent M : !A$ حاصل می‌شوند. سپس می‌گوییم $M$ در بافت
+~$\Gamma$ \emph{گواه}~$!A$ است. قواعد \Log{tN2i} ترم برهانی را که
+باید نوشته شود کاملاً تعیین می‌کنند.
+
+\begin{prop}
+هر !!{proof}~$\delta$ برای $\Gamma \Sequent !A$ در \Log{N2i} با
+!!a{proof}~$\delta'$ برای $\Gamma \Sequent N : !A$ در \Log{tN2i}
+متناظر است. ترم برهان~$N$ به‌طور یکتا با~$\delta$ تعیین می‌شود.
+\end{prop}
+
+\begin{proof}
+بر ارتفاع~$\delta$ استقرا می‌کنیم. اگر $\delta$ اصل
+$x:!A \Sequent !A$ باشد، $\delta'$ اصل~$x:!A \Sequent x:!A$ است.
+اگر $\delta$ با قاعده‌ای استنتاجی پایان یابد، فرض استقرا برای هر مقدمه
+ترم برهانی و برای دنبالهٔ شامل آن ترم، !!{proof}s در~\Log{tN2i} فراهم
+می‌کند که با آن مقدمه متناظر است. قاعدهٔ متناظر \Log{tN2i} را اعمال
+می‌کنیم؛ قاعدهٔ استنتاج \Log{tN2i} ترم برهان متناظر را تعیین می‌کند.
+\end{proof}
+
+\begin{ex}
+  !!{proof} بسیار سادهٔ زیر را در \Log{N1i} برای
+  $(!A \land !B) \lif (!B \land !A)$ در نظر بگیرید:
+  \[
+  \AxiomC{$\Discharge{!A\land !B}{x}$}
+  \RightLabel{\Elim\land[2]}
+  \UnaryInfC{$!B$}
+  \AxiomC{$\Discharge{!A\land !B}{x}$}
+  \RightLabel{\Elim\land[1]}
+  \UnaryInfC{$!A$}
+  \RightLabel{\Intro\land}
+  \BinaryInfC{$!B \land !A$}
+  \DischargeRule{\Intro\lif}{x}
+  \UnaryInfC{$(!A \land !B) \lif (!B \land !A)$}
+  \DisplayProof
+  \]
+  این برهان در \Log{N2i} چنین است:
+  \[
+  \Axiom$x : !A\land !B \fCenter !A\land !B$
+  \RightLabel{\Elim\land[2]}
+  \UnaryInf$x : !A\land !B \fCenter !B$
+  \Axiom$x : !A\land !B \fCenter !A\land !B$
+  \RightLabel{\Elim\land[1]}
+  \UnaryInf$x : !A\land !B \fCenter !A$
+  \RightLabel{\Intro\land}
+  \BinaryInf$x : !A\land !B \fCenter !B \land !A$
+  \RightLabel{\Intro\lif}
+  \UnaryInf$\fCenter (!A \land !B) \lif (!B \land !A)$
+  \DisplayProof
+  \]
+  ترم‌های برهان را از بالا به پایین اختصاص می‌دهیم. ترم‌های برهان
+  اصول همان متغیر موجود در بافت، یعنی~$x$، هستند. ترم‌های برهان متناظر
+  با $\Elim\land[i]$ سپس به صورت $\proj{2}{x}$ و~$\proj{1}{x}$ تعیین
+  می‌شوند. با اعمال \Intro{\land} این دو ترم را ترکیب می‌کنیم:
+  $\pair{\proj{2}{x}}{\proj{1}{x}}$. سرانجام، قاعدهٔ \Intro{\lif}
+  یک انتزاع~$\lambd$ اعمال می‌کند، $x$ را مقید می‌سازد و ثبت می‌کند که
+  $x$ فرض~$!A \land !B$ را برچسب زده بود:
+  $\lambd[\typeof{x}{!A \land
+  !B}][\pair{\proj{2}{x}}{\proj{1}{x}}]$.
+  آنگاه !!{proof} در \Log{tN2i} چنین است:
+  \[
+  \Axiom$x : !A\land !B \fCenter x: !A\land !B$
+  \RightLabel{\Elim\land[2]}
+  \UnaryInf$x : !A\land !B \fCenter \proj{2}{x} : !B$
+  \Axiom$x : !A\land !B \fCenter x: !A\land !B$
+  \RightLabel{\Elim\land[1]}
+  \UnaryInf$x : !A\land !B \fCenter \proj{1}{x} : !A$
+  \RightLabel{\Intro\land}
+  \BinaryInf$x : !A\land !B \fCenter \pair{\proj{2}{x}}{\proj{1}{x}} :
+    !B \land !A$
+  \RightLabel{\Intro\lif}
+  \UnaryInf$\fCenter \lambd[\typeof{x}{!A \land
+  !B}][\pair{\proj{2}{x}}{\proj{1}{x}}] : (!A \land !B) \lif (!B \land !A)$
+  \DisplayProof
+  \]
+\end{ex}
+
+
+\end{document}

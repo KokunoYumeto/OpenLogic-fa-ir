@@ -1,0 +1,260 @@
+% Part: incompleteness
+% Chapter: representability-in-q
+% Section: minimization-representable
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{req}{min}
+\olsection{کمینه‌سازی منظم در~$\Th{Q}$ بازنمایی‌پذیر است}
+
+جست‌وجوی نامحدود را در نظر بگیریم. فرض کنید $g(x, z)$ منظم و در
+$\Th{Q}$ بازنمایی‌پذیر باشد، مثلاً با !!{formula}~$!A_g(x, z, y)$.
+بگذارید $f$ با $f(z) = \umin{x}{[g(x, z) = 0]}$ تعریف شود. می‌خواهیم
+!!a{formula}ی چون~$!A_f(z, y)$ بیابیم که~$f$ را بازنمایی کند. مقدار~$f(z)$
+آن عدد~$x$ است که (الف) در $g(x, z) = 0$ صدق می‌کند و (ب) کوچک‌ترین
+چنین عددی است؛ یعنی برای هر $w < x$، $g(w, z) \neq 0$. پس انتخاب زیر
+طبیعی است:
+\[
+!A_f(z,y) \ident !A_g(y, z, \Obj 0) \land \lforall[w][(w < y \lif \lnot
+  !A_g(w, z, \Obj 0))].
+\]
+البته در حالت کلی باید $z$ را با $z_0$، \dots، $z_k$ جایگزین کنیم.
+
+این اثبات نیز چند لم دربارهٔ اموری در بر خواهد داشت که~$\Th{Q}$ برای
+اثباتشان به‌اندازهٔ کافی نیرومند است.
+
+\begin{lem}
+\ollabel{lem:succ} برای هر !!{constant}~$a$ و هر عدد طبیعی~$n$،
+\[
+\Th{Q} \Proves \eq[(a' + \num n)][(a + \num n)'].
+\]
+\end{lem}
+
+\begin{proof}
+اثبات، طبق معمول، با استقرا روی~$n$ است. در حالت پایه، $n = 0$، باید
+نشان دهیم $\Th{Q}$ فرمول $\eq[(a' + \Obj 0)][(a + \Obj 0)']$ را ثابت
+می‌کند. اما داریم:
+\begin{align}
+  \Th{Q} & \Proves \eq[(a' + \Obj 0)][a'] \quad \text{بنا بر اصل موضوعهٔ $Q_4$}
+  \ollabel{step1}\\
+  \Th{Q} & \Proves  \eq[(a + \Obj 0)][a] \quad \text{بنا بر اصل موضوعهٔ $Q_4$}
+  \ollabel{step2} \\
+  \Th{Q} & \Proves \eq[(a + \Obj 0)'][a'] \quad \text{بنا بر \olref{step2}}
+  \ollabel{step3} \\
+  \Th{Q} & \Proves \eq[(a' + \Obj 0)][(a + \Obj 0)'] \quad
+  \text{بنا بر \olref{step1} و \olref{step3}.}\notag
+\end{align}
+در گام استقرا می‌توانیم فرض کنیم نشان داده‌ایم $\Th{Q}
+\Proves \eq[(a' + \num n)][(a + \num n)']$. چون
+$\num{n+1}$ همان~$\num{n}'$ است، باید نشان دهیم $\Th{Q}$ فرمول
+$\eq[(a' + \num{n}')][(a + \num{n}')']$ را ثابت می‌کند. داریم:
+\begin{align}
+  \Th{Q} & \Proves \eq[(a' + \num n')][(a' + \num n)'] \quad
+  \text{بنا بر اصل موضوعهٔ $!Q_5$} \ollabel{step5}\\
+  \Th{Q} & \Proves \eq[(a' + \num n')][(a + \num n')'] \quad
+  \text{بنا بر فرض استقرا، اصل موضوعهٔ $!Q_5$ و منطق برابری} \ollabel{step6}\\
+  \Th{Q} & \Proves \eq[(a' + \num n)'][(a + \num n')'] \quad
+  \text{بنا بر \olref{step5} و \olref{step6}.} \notag
+\end{align}
+\end{proof}
+
+باز هم شایان ذکر است که این ادعا ضعیف‌تر از آن است که بگوییم~$\Th{Q}$
+$\lforall[x][\lforall[y][(x' + y) = (x + y)']]$ را ثابت می‌کند.
+با آنکه این !!{sentence} در~$\Struct{N}$ صادق است، $\Th{Q}$ آن را ثابت
+نمی‌کند.
+
+\begin{lem}
+\ollabel{lem:less-zero}
+$\Th{Q} \Proves \lforall[x][\lnot x < \Obj 0]$.
+\end{lem}
+
+\begin{proof}
+اثبات را به‌طور غیرصوری ارائه می‌کنیم (یعنی فقط راهنمایی‌هایی دربارهٔ
+چگونگی ساختن !!{derivation} صوری می‌دهیم).
+
+باید $\lnot a < \Obj 0$ را برای~$a$ دلخواه ثابت کنیم. بنا بر تعریف
+$<$، باید $\lnot \lexists[y][\eq[(y'+a)][\Obj 0]]$ را در~$\Th{Q}$
+ثابت کنیم. $\lexists[y][\eq[(y'+a)][\Obj 0]]$ را فرض می‌کنیم و
+تناقضی به دست می‌آوریم. فرض کنید $\eq[(b'+a)][\Obj 0]$. با استفاده
+از~$!Q_3$ داریم $\eq[a][\Obj 0] \lor \lexists[y][\eq[a][y']]$.
+دو حالت را از هم متمایز می‌کنیم.
+
+حالت ۱: $\eq[a][\Obj 0]$ برقرار است. از $\eq[(b'+a)][\Obj 0]$ داریم
+$\eq[(b' + \Obj 0)][\Obj 0]$. بنا بر اصل موضوعهٔ~$!Q_4$ از~$\Th{Q}$،
+$\eq[(b' + \Obj 0)][b']$ را داریم و ازاین‌رو $\eq[b'][\Obj 0]$.
+اما بنا بر اصل موضوعهٔ~$!Q_2$، $\eq/[b'][\Obj 0]$ نیز داریم، که
+تناقض است.
+
+حالت ۲: برای یک~$c$، $\eq[a][c']$. اما آنگاه
+$\eq[(b' + c')][\Obj 0]$ را داریم. بنا بر اصل موضوعهٔ~$!Q_5$،
+$\eq[(b' + c)'][\Obj 0]$ را داریم که باز هم با اصل موضوعهٔ~$Q_2$
+در تناقض است.
+\end{proof}
+
+\begin{lem}
+\ollabel{lem:less-nsucc}
+برای هر عدد طبیعی~$n$،
+  \[
+  \Th{Q} \Proves
+  \lforall[x][(x < \num {n+1} \lif (\eq[x][\Obj 0] \lor \dots \lor
+    \eq[x][\num n]))].
+  \]
+\end{lem}
+
+\begin{proof}
+از استقرا روی~$n$ استفاده می‌کنیم. نخست حالت پایه، یعنی $n = 0$، را
+در نظر بگیریم. در این حالت باید نشان دهیم
+$a < \num 1 \lif \eq[a][\Obj 0]$، برای~$a$ دلخواه. فرض کنید
+$a < \num 1$. آنگاه بنا
+بر اصل موضوع تعریف‌کنندهٔ~$<$، داریم
+$\lexists[y][\eq[(y'+a)][\Obj 0']]$ (زیرا $\num 1 \ident \Obj 0'$).
+
+فرض کنید $b$ دارای این خاصیت باشد؛ یعنی $\eq[(b'+a)][\Obj 0']$ را
+داشته باشیم. باید $\eq[a][\Obj 0]$ را نشان دهیم. بنا بر اصل موضوعهٔ
+$!Q_3$، یا $\eq[a][\Obj 0]$ را داریم یا~$c$ای هست که
+$\eq[a][c']$. در حالت نخست چیزی برای نشان‌دادن نیست. پس فرض کنید
+$\eq[a][c']$. آنگاه $\eq[(b' + c')][\Obj 0']$ را داریم. بنا بر اصل
+موضوعهٔ~$!Q_5$ از~$\Th{Q}$، $\eq[(b'+c)'][\Obj 0']$ را داریم. بنا بر
+اصل موضوعهٔ~$!Q_1$، $\eq[(b' + c)][\Obj 0]$ را داریم. اما این امر،
+بنا بر اصل موضوعهٔ~$!Q_8$، به معنای $c < \Obj 0$ است و با
+\olref{lem:less-zero} تناقض دارد.
+
+اکنون به گام استقرا می‌پردازیم. حالت~$n+1$ را ثابت می‌کنیم و حالت~$n$
+را فرض می‌کنیم. پس فرض کنید $a < \num {n+2}$. باز هم با استفاده از~$!Q_3$
+می‌توانیم دو حالت را از هم متمایز کنیم: $\eq[a][\Obj 0]$ و اینکه برای
+یک~$b$، $\eq[a][b']$. در حالت نخست،
+$\eq[a][\Obj 0] \lor \dots \lor \eq[a][\num{n+1}]$ بی‌درنگ نتیجه
+می‌شود. در حالت دوم، $b' < \num {n+2}$، یعنی
+$b' < \num{n+1}'$ را داریم. بنا بر اصل موضوعهٔ~$!Q_8$، برای یک~$c$،
+$\eq[(c'+b')][\num{n+1}']$. بنا بر اصل موضوعهٔ~$!Q_5$،
+$\eq[(c'+b)'][\num{n+1}']$. بنا بر اصل موضوعهٔ~$!Q_1$،
+$\eq[(c'+b)][\num{n+1}]$، و بنابراین
+$b < \num{n+1}$ بنا بر اصل موضوعهٔ~$!Q_8$. بنا بر فرض استقرا،
+$\eq[b][\Obj 0] \lor \dots \lor \eq[b][\num{n}]$. با منطق از این
+$\eq[b'][\Obj 0'] \lor \dots \lor \eq[b'][\num{n}']$ را به دست
+می‌آوریم، و بنابراین
+$\eq[a][\num{1}] \lor \dots \lor \eq[a][\num{n+1}]$، زیرا
+$\eq[a][b']$.
+\end{proof}
+
+\begin{lem}
+  \ollabel{lem:trichotomy} برای هر عدد طبیعی~$m$،
+  \[
+  \Th{Q} \Proves
+  \lforall[y][((y < \num{m} \lor \num{m} < y) \lor \eq[y][\num{m}])].
+  \]
+\end{lem}
+
+\begin{proof}
+با استقرا روی~$m$. نخست حالت $m=0$ را در نظر بگیرید.
+$\Th{Q} \Proves
+\lforall[y][(\eq[y][\Obj 0] \lor \lexists[z][\eq[y][z']])]$ بنا بر~$!Q_3$.
+بگذارید $a$ دلخواه باشد. آنگاه یا $\eq[a][\Obj 0]$ یا برای یک~$b$،
+$\eq[a][b']$. در حالت نخست،
+$(a < \Obj 0 \lor \Obj 0 < a) \lor \eq[a][\Obj 0]$ را نیز داریم.
+اما اگر $\eq[a][b']$، آنگاه $\eq[(b' + \Obj 0)][(a + \Obj 0)]$،
+بنا بر منطق~$\eq$. بنا بر~$!Q_4$،
+$\eq[(a + \Obj 0)][a]$؛ پس $\eq[(b' + \Obj 0)][a]$ و در نتیجه
+$\lexists[z][\eq[(z' + \Obj 0)][a]]$ را داریم. بنا بر تعریف~$<$ در
+$!Q_8$، $\Obj 0 < a$. اگر $\Obj 0 < a$، آنگاه
+$(\Obj 0 < a \lor a < \Obj 0) \lor \eq[a][\Obj 0]$ را نیز داریم.
+
+اکنون فرض کنید
+\begin{align*}
+  \Th{Q} & \Proves \lforall[y][((y < \num{m} \lor \num{m} < y) \lor
+    \eq[y][\num{m}])]
+  \intertext{و می‌خواهیم نشان دهیم}
+  \Th{Q} & \Proves \lforall[y][((y < \num{m+1} \lor \num{m+1} < y) \lor
+    \eq[y][\num{m+1}])].
+\end{align*}
+بگذارید $a$ دلخواه باشد. بنا بر~$!Q_3$، یا $\eq[a][\Obj 0]$ یا برای
+یک~$b$، $\eq[a][b']$. در حالت نخست،
+$\eq[\num{m}' + a][\num{m+1}]$ را بنا بر~$!Q_4$ داریم، و بنابراین
+$a < \num{m+1}$ بنا بر~$!Q_8$.
+
+اکنون حالت دوم، یعنی $\eq[a][b']$، را در نظر بگیرید. بنا بر فرض
+استقرا، $(b < \num{m} \lor \num{m} < b) \lor
+    \eq[b][\num{m}]$.
+
+فصل نخست، $b < \num{m}$، (بنا بر~$!Q_8$) هم‌ارز است با
+$\lexists[z][\eq[(z' + b)][\num{m}]]$. فرض کنید $c$ این خاصیت را
+داشته باشد. اگر $\eq[(c' + b)][\num{m}]$، آنگاه
+$\eq[(c' + b)'][\num{m}']$ نیز داریم. بنا بر~$!Q_5$،
+$\eq[(c' + b)'][(c' + b')]$. ازاین‌رو $\eq[(c' +
+b')][\num{m}']$. فرمول
+$\lexists[u][\eq[(u' + b')][\num{m+1}]]$ را با تعمیم وجودی روی~$c$
+به دست می‌آوریم، با توجه به اینکه
+$\num{m}' \ident \num{m+1}$. بنابراین اگر
+$b < \num{m}$، آنگاه $b' < \num{m+1}$ و پس $a < \num{m+1}$.
+
+اکنون فرض کنید $\num{m} < b$؛ یعنی
+$\lexists[z][\eq[(z' + \num{m})][b]]$. فرض کنید $c$ چنین~$z$ای باشد؛
+یعنی $\eq[(c' + \num{m})][b]$. بنا بر منطق،
+$\eq[(c' + \num{m})'][b']$. بنا بر~$!Q_5$،
+$\eq[(c' + \num{m}')][b']$. چون $\eq[a][b']$ و
+$\num{m}' \ident \num{m+1}$، داریم $\eq[(c' + \num{m+1})][a]$.
+بنا بر~$!Q_8$، $\num{m+1} < a$.
+
+در پایان، $\eq[b][\num{m}]$ را فرض کنید. آنگاه بنا بر منطق،
+$\eq[b'][\num{m}']$ و بنابراین $\eq[a][\num{m+1}]$.
+
+پس از هر فصل حالت مربوط به~$m$ و~$b$ می‌توانیم فصل متناظر برای~$m+1$
+و~$a$ را به دست آوریم.
+\end{proof}
+
+\begin{prop}
+\ollabel{prop:rep-minimization}
+اگر $!A_g(x, z, y)$ تابع $g(x, z)$ را در~$\Th{Q}$ بازنمایی کند، آنگاه
+\[
+!A_f(z,y) \ident !A_g(y, z, \Obj 0) \land \lforall[w][(w < y \lif \lnot
+  !A_g(w, z, \Obj 0))]
+\]
+تابع $f(z) = \umin{x}{[g(x, z) = 0]}$ را بازنمایی می‌کند.
+\end{prop}
+
+\begin{proof}
+نخست نشان می‌دهیم اگر $f(n) = m$، آنگاه
+$\Th{Q} \Proves !A_f(\num n, \num m)$؛ یعنی
+\begin{align}
+  \Th{Q} & \Proves !A_g(\num{m}, \num{n}, \Obj 0) \land \lforall[w][(w <
+    \num{m} \lif \lnot !A_g(w, \num{n}, \Obj 0))]. \notag
+  \intertext{چون $!A_g(x, z, y)$ تابع $g(x, z)$ را بازنمایی می‌کند و
+    $g(m, n) = 0$ هرگاه $f(n) = m$، داریم}
+\Th{Q} & \Proves !A_g(\num{m}, \num{n}, \Obj 0). \notag
+\intertext{اگر $f(n) = m$، آنگاه برای هر $k < m$، $g(k, n) \neq 0$. پس}
+\Th{Q} & \Proves \lnot !A_g(\num{k}, \num{n}, \Obj 0). \notag
+\intertext{به دست می‌آوریم که}
+\Th{Q} & \Proves \lforall[w][(w < \num{m} \lif \lnot
+  !A_g(w, \num{n}, \Obj 0))]. \ollabel{rep-less}
+\end{align}
+اگر $m = 0$ باشد این امر بنا بر \olref{lem:less-zero} و در غیر این
+صورت بنا بر \olref{lem:less-nsucc} نتیجه می‌شود.
+
+اکنون نشان دهیم اگر $f(n) = m$، آنگاه $\Th{Q} \Proves
+\lforall[y][(!A_f(\num{n}, y) \lif \eq[y][\num{m}])]$. باز هم
+استدلال را به‌طور غیرصوری طرح می‌کنیم و صورت‌بندی صوری آن را به خواننده
+می‌سپاریم.
+
+فرض کنید $!A_f(\num{n}, b)$. از این (الف)~$!A_g(b, \num{n},
+\Obj 0)$ و (ب)~$\lforall[w][(w < b \lif \lnot !A_g(w, \num{n}, \Obj
+  0))]$ را به دست می‌آوریم. بنا بر \olref{lem:trichotomy}،
+$(b < \num{m} \lor \num{m} < b) \lor \eq[b][\num{m}]$. نشان خواهیم
+داد که هم $b < \num{m}$ و هم $\num{m} < b$ به تناقض می‌انجامند.
+
+اگر $\num{m} < b$، آنگاه از~(ب) داریم
+$\lnot !A_g(\num{m}, \num{n}, \Obj 0)$. اما $m = f(n)$؛ پس
+$g(m, n) = 0$، و بنابراین
+$\Th{Q} \Proves !A_g(\num{m}, \num{n}, \Obj 0)$، زیرا $!A_g$
+تابع~$g$ را بازنمایی می‌کند. بنابراین به تناقض
+می‌رسیم.
+
+اکنون فرض کنید $b < \num{m}$. چون
+$\Th{Q} \Proves \lforall[w][(w <
+  \num{m} \lif \lnot !A_g(w, \num{n}, \Obj 0))]$ بنا بر
+\olref{rep-less}، نتیجه می‌گیریم
+$\lnot !A_g(b, \num{n}, \Obj 0)$. این نیز با~(الف) در تناقض است.
+\end{proof}
+
+\end{document}

@@ -1,0 +1,290 @@
+% Part: first-order-logic
+% Chapter: completeness
+% Section: construction-of-model
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{com}{mod}}
+      {\olfileid{pl}{com}{mod}}
+
+\olsection{ساختن مدل}
+
+\begin{explain}
+\iftag{FOL}{در حال حاضر به~$\eq$ نمی‌پردازیم؛ یعنی فقط می‌خواهیم نشان
+  دهیم مجموعهٔ سازگار~$\Gamma$ از !!{sentence}s که شامل~$\eq$ نیست،
+  ارضاپذیر است. نخست~$\Gamma$ را به مجموعهٔ سازگار، !!{complete} و
+  اشباع‌شدهٔ~$\Gamma^*$ گسترش می‌دهیم. در این حالت، تعریف
+  مدل~$\Struct{M(\Gamma^*)}$ ساده است: مجموعهٔ ترم‌های بستهٔ~$\Lang{L'}$
+  را دامنه می‌گیریم. هر !!{constant} را به خودش نسبت می‌دهیم و به‌طور
+  کلی‌تر اطمینان می‌یابیم که برای هر ترم بستهٔ~$t$،
+  $\Value{t}{M(\Gamma^*)} = t$. به !!{predicate}s چنان مصداق‌هایی نسبت
+  می‌دهیم که هر !!{sentence} اتمی در~$\Struct{M(\Gamma^*)}$ صادق باشد
+  هرگاه و تنها هرگاه در~$\Gamma^*$ باشد. آشکار است که این کار همهٔ
+  !!{sentence}s اتمیِ در~$\Gamma^*$ را در~$\Struct{M(\Gamma^*)}$ صادق
+  می‌سازد. باقی جمله‌ها نیز صادق‌اند، مشروط بر اینکه $\Gamma^*$ آغازین
+  سازگار، کامل و اشباع‌شده باشد.}{اکنون آماده‌ایم !!a{valuation} تعریف
+  کنیم که همهٔ $!A \in \Gamma$ را صادق سازد. برای این کار، نخست لم
+  لیندنباوم را به کار می‌بریم: مجموعهٔ کامل و سازگار
+  $\Gamma^* \supseteq \Gamma$ به دست می‌آوریم. می‌گذاریم
+  !!{propositional variable}s در~$\Gamma^*$،~$\pAssign v(\Gamma^*)$ را
+  تعیین کنند.}
+\end{explain}
+
+\iftag{FOL}{%
+\begin{defn}[مدل ترمی]
+\ollabel{defn:termmodel}
+فرض کنید $\Gamma^*$ !!a{complete} مجموعهٔ سازگار و اشباع‌شده از
+!!{sentence}s در زبان~$\Lang L$ باشد. \emph{مدل ترمی}
+~$\Struct M(\Gamma^*)$ برای~$\Gamma^*$ !!{structure}ای است که به صورت
+زیر تعریف می‌شود:
+\begin{enumerate}
+\item !!{domain}~$\Domain{M(\Gamma^*)}$ مجموعهٔ همهٔ ترم‌های بستهٔ
+  $\Lang L$ است.
+\item تعبیر !!a{constant}~$c$ خود~$c$ است:
+  $\Assign{c}{M(\Gamma^*)} = c$.
+\item به !!{function}~$f$ تابعی نسبت داده می‌شود که با گرفتن ترم‌های
+  بستهٔ $t_1$، \dots،~$t_n$ به‌عنوان آرگومان، ترم بستهٔ
+  $f(t_1, \dots, t_n)$ را به‌عنوان مقدار دارد:
+\[
+\Assign{f}{M(\Gamma^*)}(t_1, \dots, t_n) = f(t_1,\dots, t_n)
+\]
+\item اگر $R$ !!{predicate}ای $n$موضعی باشد، آنگاه
+  \[
+  \tuple{t_1, \dots,
+  t_n} \in \Assign{R}{M(\Gamma^*)} \text{ iff } \Atom{R}{t_1, \dots,
+    t_n} \in \Gamma^*.
+  \]
+\end{enumerate}
+\end{defn}
+}{%
+\begin{defn}
+\ollabel{defn:termmodel}
+فرض کنید $\Gamma^*$ مجموعه‌ای کامل و سازگار از !!{formula}s باشد. آنگاه
+می‌گذاریم
+\[
+\pAssign v(\Gamma^*)(p) = \begin{cases}
+  \True & \text{اگر $p \in \Gamma^*$}\\
+  \False & \text{اگر $p \notin \Gamma^*$}
+  \end{cases}
+\]
+\end{defn}
+}
+
+\iftag{FOL}{%
+اکنون بررسی می‌کنیم که واقعاً $\Value{t}{M(\Gamma^*)} = t$.
+
+\begin{lem}
+\ollabel{lem:val-in-termmodel} اگر $\Struct M(\Gamma^*)$ مدل ترمیِ
+\olref{defn:termmodel} باشد، آنگاه $\Value{t}{M(\Gamma^*)} = t$.
+\end{lem}
+\begin{proof}
+ اثبات با استقرا بر~$t$ است. حالت پایه، که در آن $t$ !!a{constant}
+ است، مستقیماً از تعریف مدل ترمی نتیجه می‌شود. برای گام استقرا فرض کنید
+ $t_1, \ldots, t_n$ ترم‌هایی بسته‌اند چنان‌که
+ $\Value{t_i}{M(\Gamma^*)} = t_i$، و $f$ !!{function}ای $n$موضعی است.
+ آنگاه
+\begin{align*}
+\Value{f(t_1,\ldots,t_n)}{M(\Gamma^*)} &= \Assign{f}{M(\Gamma^*)}(\Value{t_1}
+ {M(\Gamma^*)},
+\ldots, \Value{t_n}{M(\Gamma^*)}) \\
+&= \Assign{f}{M(\Gamma^*)}(t_1, \dots, t_n) \\
+&= f(t_1,\dots, t_n),
+\end{align*}
+و بنابراین با استقرا این برابری برای هر ترم بستهٔ~$t$ برقرار است.
+\end{proof}
+}
+
+\iftag{FOL}{%
+\begin{explain}
+  \iftag{prvEx}{ممکن است !!^a{structure}~$\Struct{M}$
+    !!{sentence} وجودیِ مسور~$\lexists[x][!A(x)]$ را صادق سازد، بی‌آنکه
+    نمونه‌ای~$!A(t)$ وجود داشته باشد که آن را صادق سازد.}{}
+  \iftag{prvAll}{ممکن است !!^a{structure}~$\Struct{M}$ همهٔ
+    نمونه‌های~$!A(t)$ از !!{sentence} کلیِ مسور
+    $\lforall[x][!A(x)]$ را صادق سازد، بی‌آنکه خود
+    $\lforall[x][!A(x)]$ را صادق سازد.}{} دلیلش این است که به‌طور کلی
+  هر !!{element} در~$\Domain{M}$ مقدار یک ترم بسته نیست
+  ($\Struct{M}$ ممکن است پوشیده نباشد). از همین رو رابطهٔ ارضا به کمک
+  گمارش‌های متغیر تعریف می‌شود. بااین‌حال، برای مدل ترمی ما، یعنی
+  $\Struct{M(\Gamma^*)}$، این کار لازم نمی‌بود---زیرا این مدل پوشیده
+  است. نتیجهٔ بعدی همین مطلب را بیان می‌کند.
+\end{explain}
+
+\begin{prop}
+\ollabel{prop:quant-termmodel}
+فرض کنید $\Struct M(\Gamma^*)$ مدل ترمیِ \olref{defn:termmodel} باشد.
+\begin{tagenumerate}{prvEx,prvAll}
+\tagitem{prvEx}{$\Sat{M(\Gamma^*)}{\lexists[x][!A(x)]}$ هرگاه و تنها
+  هرگاه برای دست‌کم یک ترم بستهٔ~$t$،
+  $\Sat{M(\Gamma^*)}{!A(t)}$.}{}
+\tagitem{prvAll}{$\Sat{M(\Gamma^*)}{\lforall[x][!A(x)]}$ هرگاه و تنها
+  هرگاه برای همهٔ ترم‌های بستهٔ~$t$،
+  $\Sat{M(\Gamma^*)}{!A(t)}$.}{}
+\end{tagenumerate}
+\end{prop}
+
+\begin{proof}
+\begin{tagenumerate}{prvEx,prvAll}
+\tagitem{prvEx}{%
+  \iftag{probEx}{تمرین.}{بنا بر \olref[syn][ass]{prop:sat-quant}،
+    $\Sat{M(\Gamma^*)}{\lexists[x][!A(x)]}$ هرگاه و تنها هرگاه برای
+    دست‌کم یک گمارش متغیر~$s$، $\Sat{M(\Gamma^*)}{!A(x)}[s]$. چون
+    $\Domain{M(\Gamma^*)}$ از ترم‌های بستهٔ~$\Lang{L}$ تشکیل شده است،
+    این امر هرگاه و تنها هرگاه برقرار است که دست‌کم یک ترم بستهٔ~$t$
+    وجود داشته باشد چنان‌که $s(x) = t$ و
+    $\Sat{M(\Gamma^*)}{!A(x)}[s]$. بنا بر
+    \olref[fol][syn][ext]{prop:ext-formulas}،
+    $\Sat{M(\Gamma^*)}{!A(x)}[s]$ هرگاه و تنها هرگاه
+    $\Sat{M(\Gamma^*)}{!A(t)}[s]$، که در آن $s(x) = t$. بنا بر
+    \olref[fol][syn][ass]{prop:sentence-sat-true}،
+    $\Sat{M(\Gamma^*)}{!A(t)}[s]$ هرگاه و تنها هرگاه
+    $\Sat{M(\Gamma^*)}{!A(t)}$، زیرا $!A(t)$ جمله است.}}{}
+\tagitem{prvAll}{%
+  \iftag{probAll}{تمرین.}{بنا بر \olref[syn][ass]{prop:sat-quant}،
+    $\Sat{M(\Gamma^*)}{\lforall[x][!A(x)]}$ هرگاه و تنها هرگاه برای هر
+    گمارش متغیر~$s$، $\Sat{M(\Gamma^*)}{!A(x)}[s]$. به یاد آورید که
+    $\Domain{M(\Gamma^*)}$ از ترم‌های بستهٔ~$\Lang{L}$ تشکیل شده است؛
+    پس برای هر ترم بستهٔ~$t$، $s(x) = t$ چنین گمارش متغیری است، و برای
+    هر گمارش متغیر، $s(x)$ ترم بسته‌ای~$t$ است. بنا بر
+    \olref[fol][syn][ext]{prop:ext-formulas}،
+    $\Sat{M(\Gamma^*)}{!A(x)}[s]$ هرگاه و تنها هرگاه
+    $\Sat{M(\Gamma^*)}{!A(t)}[s]$، که در آن $s(x) = t$. بنا بر
+    \olref[fol][syn][ass]{prop:sentence-sat-true}،
+    $\Sat{M(\Gamma^*)}{!A(t)}[s]$ هرگاه و تنها هرگاه
+    $\Sat{M(\Gamma^*)}{!A(t)}$، زیرا $!A(t)$ جمله است.}}{}
+\end{tagenumerate}
+\end{proof}
+}{}
+
+\tagprob[FOL]{probEx,probAll}
+\begin{prob}
+اثبات \olref[fol][com][mod]{prop:quant-termmodel} را کامل کنید.
+\end{prob}
+\tagendprob
+
+\begin{lem}[لم صدق]
+\ollabel{lem:truth} \iftag{FOL}{فرض کنید $!A$ شامل~$\eq$ نباشد. آنگاه}{}
+$\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{!A}$ هرگاه و تنها
+هرگاه $!A \in \Gamma^*$.
+\end{lem}
+
+\begin{proof}
+هر دو جهت را هم‌زمان و با استقرا بر~$!A$ اثبات می‌کنیم.
+\begin{enumerate}
+\tagitem{prvFalse}{\indcase{!A}{\lfalse}
+  {$\iftag{FOL}{\Sat/{M(\Gamma^*)}{\lfalse}}{\pSat/{v(\Gamma^*)}{\lfalse}}$
+    بنا بر تعریف ارضا. از سوی دیگر، چون $\Gamma^*$ سازگار است،
+    $\lfalse \notin \Gamma^*$.}}{}
+
+\tagitem{prvTrue}{\indcase{!A}{\ltrue}
+  {$\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{\ltrue}$
+    بنا بر تعریف ارضا. از سوی دیگر، چون $\Gamma^*$ سازگار و
+    !!{complete} است و $\Gamma^* \Proves \ltrue$،
+    $\ltrue \in \Gamma^*$.}}{}
+
+\tagitem{FOL}{\indcase{!A}{R(t_1, \dots, t_n)}
+  {$\Sat{M(\Gamma^*)}{\Atom{R}{t_1, \dots, t_n}}$ هرگاه و تنها هرگاه
+    $\tuple{t_1, \dots, t_n} \in \Assign{R}{M(\Gamma^*)}$ (بنا بر
+    تعریف ارضا)، هرگاه و تنها هرگاه $R(t_1, \dots, t_n) \in \Gamma^*$
+    (بنا بر ساخت $\Struct M(\Gamma^*)$).}}{\indcase{!A}{p}
+    {$\pSat{v(\Gamma^*)}{p}$ هرگاه و تنها هرگاه
+    $\pAssign v(\Gamma^*)(p) = \True$ (بنا بر تعریف ارضا)، هرگاه و تنها
+    هرگاه $p \in \Gamma^*$ (بنا بر ساخت $\pAssign v(\Gamma^*)$).}}
+
+\tagitem{prvNot}{%
+  \indcase{!A}{\lnot !B}
+    {$\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{\indfrm}$ هرگاه
+    و تنها هرگاه
+    $\iftag{FOL}{\Sat/{M(\Gamma^*)}{!B}}{\pSat/{v(\Gamma^*)}{!B}}$
+    (بنا بر تعریف ارضا). بنا بر فرض استقرا،
+    $\iftag{FOL}{\Sat/{M(\Gamma^*)}{!B}}{\pSat/{v(\Gamma^*)}{!B}}$
+    هرگاه و تنها هرگاه $!B \notin \Gamma^*$. چون $\Gamma^*$ سازگار و
+    !!{complete} است، $!B \notin \Gamma^*$ هرگاه و تنها هرگاه
+    $\lnot !B \in \Gamma^*$.}}{}
+
+\tagitem{prvAnd}{%
+\iftag{probAnd}{%
+  \indcase!{!A}{!B \land !C}{}}{%
+  \indcase{!A}{!B \land
+    !C}{$\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{\indfrm}$
+    هرگاه و تنها هرگاه هم
+    $\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{!B}$ و هم
+    $\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{!C}$ (بنا بر
+    تعریف ارضا)، هرگاه و تنها هرگاه هم $!B \in \Gamma^*$ و هم
+    $!C \in \Gamma^*$ (بنا بر فرض استقرا). بنا بر
+    \olref[ccs]{prop:ccs}\olref[ccs]{prop:ccs-and}، این امر هرگاه و تنها
+    هرگاه $(!B \land !C) \in \Gamma^*$.}}}{}
+
+\tagitem{prvOr}{%
+\iftag{probOr}{%
+  \indcase!{!A}{!B \lor !C}{}}{%
+  \indcase{!A}{!B \lor !C}
+    {$\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{\indfrm}$
+    هرگاه و تنها هرگاه
+    $\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{!B}$ یا
+    $\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{!C}$ (بنا بر
+    تعریف ارضا)، هرگاه و تنها هرگاه $!B \in \Gamma^*$ یا
+    $!C \in \Gamma^*$ (بنا بر فرض استقرا). بنا بر
+    \olref[ccs]{prop:ccs}\olref[ccs]{prop:ccs-or}، این امر هرگاه و تنها
+    هرگاه $(!B \lor !C) \in \Gamma^*$.}}}{}
+
+\tagitem{prvIf}{%
+\iftag{probIf}{%
+  \indcase!{!A}{!B \lif !C}{}}{%
+  \indcase{!A}{!B \lif !C}
+    {$\iftag{FOL}{\Sat{M(\Gamma^*)}}{\pSat{v(\Gamma^*)}}{\indfrm}$
+    هرگاه و تنها هرگاه
+    $\iftag{FOL}{\Sat/{M(\Gamma^*)}}{\pSat/{v(\Gamma^*)}}{!B}$ یا
+    $\iftag{FOL}{\Sat{M (\Gamma^*)}}{\pSat{v(\Gamma^*)}}{!C}$ (بنا بر
+    تعریف ارضا)، هرگاه و تنها هرگاه $!B \notin \Gamma^*$ یا
+    $!C \in \Gamma^*$ (بنا بر فرض استقرا). بنا بر
+    \olref[ccs]{prop:ccs}\olref[ccs]{prop:ccs-if}، این امر هرگاه و تنها
+    هرگاه $(!B \lif !C) \in \Gamma^*$.}}}{}
+
+\iftag{FOL}{%
+\tagitem{prvAll}{%
+  \iftag{probAll}{%
+    \indcase!{!A}{\lforall[x][!B(x)]}{}}{%
+    \indcase{!A}{\lforall[x][!B(x)]}{$\Sat{M(\Gamma^*)}{\indfrm}$ هرگاه
+      و تنها هرگاه برای همهٔ ترم‌های بستهٔ~$t$،
+      $\Sat{M(\Gamma^*)}{!B(t)}$ (\olref{prop:quant-termmodel}). بنا بر
+      فرض استقرا، این امر هرگاه و تنها هرگاه برای همهٔ ترم‌های بستهٔ~$t$،
+      $!B(t) \in \Gamma^*$؛ و بنا بر
+      \olref[hen]{prop:saturated-instances}، این امر نیز هرگاه و تنها
+      هرگاه $\lforall[x][!B(x)] \in \Gamma^*$.}}}{}
+
+\tagitem{prvEx}{%
+  \iftag{probEx}{%
+    \indcase!{!A}{\lexists[x][!B(x)]}{}}{%
+    \indcase{!A}{\lexists[x][!B(x)]}{$\Sat{M(\Gamma^*)}{\indfrm}$ هرگاه
+      و تنها هرگاه برای دست‌کم یک ترم~$t$،
+      $\Sat{M(\Gamma^*)}{!B(t)}$ (\olref{prop:quant-termmodel}). بنا بر
+      فرض استقرا، این امر هرگاه و تنها هرگاه برای دست‌کم یک ترم~$t$،
+      $!B(t) \in \Gamma^*$. بنا بر
+      \olref[hen]{prop:saturated-instances}، این امر نیز هرگاه و تنها
+      هرگاه $\lexists[x][!B(x)] \in \Gamma^*$.}}}{}
+}{}
+\end{enumerate}
+\end{proof}
+
+
+\tagprob[FOL]{probOr,probAnd,probIf,probEx,probAll}
+
+\begin{prob}
+اثبات \olref[fol][com][mod]{lem:truth} را کامل کنید.
+\end{prob}
+
+\tagendprob
+
+\tagprob[notFOL]{probOr,probAnd,probIf}
+
+\begin{prob}
+اثبات \olref[pl][com][mod]{lem:truth} را کامل کنید.
+\end{prob}
+
+\tagendprob
+
+\end{document}

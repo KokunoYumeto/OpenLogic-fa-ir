@@ -1,0 +1,273 @@
+% Part: normal-modal-logic
+% Chapter: tableaux
+% Section: rules-for-K
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{tab}{rul}
+
+\olsection{قواعد برای~\Log{K}}
+
+قواعد رابط‌های گزاره‌ای معمول همان قواعد !!{tableau}های نشاندار
+گزاره‌ای معمول‌اند، تنها با افزودن پیشوندها. در هر مورد، قاعده‌ای که بر
+!!{formula} نشاندار~$\sFmla{S}{!A}[\sigma]$ اعمال می‌شود،
+!!{formula}های تازه‌ای تولید می‌کند که آن‌ها نیز با~$\sigma$ پیشوند
+دارند. قاعده فقط مجاز است این فرمول‌ها را در همان پیشوند تولید کند؛
+این ادعا به پیشوند یا جهان دیگری تسری ندارد. این امر باید از نظر شهودی
+روشن باشد: برای نمونه، اگر~$!A \land !B$ در (جهان موسوم به)
+$\sigma$ صادق باشد، آنگاه~$!A$ و~$!B$ در~$\sigma$ صادق‌اند. قواعد
+گزاره‌ای را در~\olref{tab:prop-rules} گرد می‌آوریم.
+
+\begin{table}
+  \[\def\arraystretch{3}\begin{array}{|c|c|}
+    \hline
+    \AxiomC{\sFmla{\True}{\lnot !A}[\sigma]}
+    \RightLabel{\TRule{\True}{\lnot}}
+    \UnaryInfC{\sFmla{\False}{!A}[\sigma]}
+    \DisplayProof
+    &
+    \AxiomC{\sFmla{\False}{\lnot !A}[\sigma]}
+    \RightLabel{\TRule{\False}{\lnot}}
+    \UnaryInfC{\sFmla{\True}{!A}[\sigma]}
+    \DisplayProof
+    \\[1ex]
+    \hline
+    \AxiomC{\sFmla{\True}{!A \land !B}[\sigma]}
+    \RightLabel{\TRule{\True}{\land}}
+    \UnaryInfC{\sFmla{\True}{!A}[\sigma]}
+    \noLine
+    \UnaryInfC{\sFmla{\True}{!B}[\sigma]}
+    \DisplayProof
+    &
+    \AxiomC{\sFmla{\False}{!A \land !B}[\sigma]}
+    \RightLabel{\TRule{\False}{\land}}
+    \UnaryInfC{$\sFmla{\False}{!A}[\sigma] \quad \mid \quad
+      \sFmla{\False}{!B}[\sigma]$}
+    \DisplayProof
+    \\[2ex]
+    \hline
+    \AxiomC{\sFmla{\True}{!A \lor !B}[\sigma]}
+    \RightLabel{\TRule{\True}{\lor}}
+    \UnaryInfC{$\sFmla{\True}{!A}[\sigma] \quad \mid \quad
+      \sFmla{\True}{!B}[\sigma]$}
+    \DisplayProof
+    &
+    \AxiomC{\sFmla{\False}{!A \lor !B}[\sigma]}
+    \RightLabel{\TRule{\False}{\lor}}
+    \UnaryInfC{\sFmla{\False}{!A}[\sigma]}
+    \noLine
+    \UnaryInfC{\sFmla{\False}{!B}[\sigma]}
+    \DisplayProof
+    \\[2ex]
+    \hline
+    \AxiomC{\sFmla{\True}{!A \lif !B}[\sigma]}
+    \RightLabel{\TRule{\True}{\lif}}
+    \UnaryInfC{$\sFmla{\False}{!A}[\sigma] \quad \mid
+      \quad \sFmla{\True}{!B}[\sigma]$}
+    \DisplayProof
+    &
+    \AxiomC{\sFmla{\False}{!A \lif !B}[\sigma]}
+    \RightLabel{\TRule{\False}{\lif}}
+    \UnaryInfC{\sFmla{\True}{!A}[\sigma]}
+    \noLine
+    \UnaryInfC{\sFmla{\False}{!B}[\sigma]}
+    \DisplayProof
+    \\[2ex]
+    \hline
+  \end{array}\]
+  \caption{قواعد !!{tableau} پیشونددار برای رابط‌های گزاره‌ای}
+  \ollabel{tab:prop-rules}
+\end{table}
+
+شرط بسته‌شدن همانند !!{tableau}های معمول است، هرچند لازم است نه‌فقط
+!!{formula}ها بلکه پیشوندها نیز یکسان باشند. پس شاخه‌ای بسته است اگر
+هر دو عبارت زیر را شامل شود:
+\[
+\sFmla{\True}{!A}[\sigma] \quad\text{و}\quad \sFmla{\False}{!A}[\sigma]
+\]
+برای یک پیشوند~$\sigma$ و !!{formula}~$!A$.
+
+قواعد برپایی فرض‌ها نیز مانند !!{tableau}های معمول است، جز آنکه برای
+فرض‌ها همواره از پیشوند~$1$ استفاده می‌کنیم. (مهم نیست کدام پیشوند را
+به کار بریم، مشروط بر اینکه برای همهٔ فرض‌ها یکسان باشد.) پس، برای
+نمونه، می‌گوییم:
+\[
+!B_1, \dots, !B_n \Proves !A
+\]
+اگر و تنها اگر تابلویی بسته برای فرض‌های زیر وجود داشته باشد:
+\[
+\sFmla{\True}{!B_1}[1], \dots, \sFmla{\True}{!B_n}[1],
+\sFmla{\False}{!A}[1].
+\]
+
+برای عملگر\iftag{prvBox}{\iftag{prvDiamond}{های موجهاتی~$\Box$
+    و~$\Diamond$}{ موجهاتی~$\Box$}}{}\iftag{prvDiamond}{ موجهاتی
+    $\Diamond$}{}، پیشوند نتیجهٔ قاعده‌ای که بر !!a{formula} دارای
+پیشوند~$\sigma$ اعمال می‌شود، $\sigma.n$ است. بااین‌حال، اینکه کدام
+$n$ مجاز است به~$\True$ یا~$\False$ بودن نشانه بستگی دارد.
+
+\iftag{prvBox}{قاعدهٔ~$\TRule{\True}{\Box}$ شاخه‌ای شامل
+  $\sFmla{\True}{\Box !A}[\sigma]$ را با
+  $\sFmla{\True}{!A}[\sigma.n]$ گسترش می‌دهد.\iftag{prvDiamond}{
+    به‌همین‌سان، ق}{}}{ق}\iftag{prvDiamond}{اعدهٔ
+  $\TRule{\False}{\Diamond}$ شاخه‌ای شامل
+  $\sFmla{\False}{\Diamond !A}[\sigma]$ را با
+  $\sFmla{\False}{!A}[\sigma.n]$ گسترش می‌دهد.}{}
+\iftag{notprvBox,notprvDiamond}{این قاعده}{این قواعد} را تنها برای
+پیشوند~$\sigma.n$ای می‌توان اعمال کرد که \emph{ازپیش} روی شاخهٔ محل
+اعمال ظاهر شده باشد. چنین پیشوندی را (روی شاخه) «استفاده‌شده» می‌نامیم.
+
+\iftag{prvBox}{قاعدهٔ~$\TRule{\False}{\Box}$ شاخه‌ای شامل
+  $\sFmla{\False}{\Box !A}[\sigma]$ را با
+  $\sFmla{\False}{!A}[\sigma.n]$ گسترش می‌دهد.\iftag{prvDiamond}{
+    به‌همین‌سان، ق}{}}{ق}\iftag{prvDiamond}{اعدهٔ
+  $\TRule{\True}{\Diamond}$ شاخه‌ای شامل
+  $\sFmla{\True}{\Diamond !A}[\sigma]$ را با
+  $\sFmla{\True}{!A}[\sigma.n]$ گسترش می‌دهد.}{}
+\iftag{notprvBox,notprvDiamond}{اما این قاعده}{اما این قواعد} را تنها
+برای پیشوند~$\sigma.n$ای می‌توان اعمال کرد که \emph{ازپیش} روی شاخهٔ
+محل اعمال ظاهر نشده باشد. چنین پیشوندهایی را برای شاخه «تازه» می‌نامیم.
+
+قواعد در~\olref{tab:rules-K} آمده‌اند.
+
+\begin{table}
+  \begin{center}
+    \def\arraystretch{3}\def\fCenter{}
+    \begin{tabular}{|c|c|}
+    \hline
+    \iftag{prvBox}{
+      \AxiomC{\sFmla{\True}{\Box !A}[\sigma]}
+      \RightLabel{\TRule{\True}{\Box}}
+      \UnaryInfC{\sFmla{\True}{!A}[\sigma.n]}
+      \DisplayProof
+      &
+      \AxiomC{\sFmla{\False}{\Box !A}[\sigma]}
+      \RightLabel{\TRule{\False}{\Box}}
+      \UnaryInfC{\sFmla{\False}{!A}[\sigma.n]}
+      \DisplayProof\\
+      $\sigma.n$ استفاده‌شده است & $\sigma.n$ تازه است
+      \\[1ex]
+      \hline}{}
+    \iftag{prvDiamond}{
+      \AxiomC{\sFmla{\True}{\Diamond !A}[\sigma]}
+      \RightLabel{\TRule{\True}{\Diamond}}
+      \UnaryInfC{\sFmla{\True}{!A}[\sigma.n]}
+      \DisplayProof
+      &
+      \AxiomC{\sFmla{\False}{\Diamond !A}[\sigma]}
+      \RightLabel{\TRule{\False}{\Diamond}}
+      \UnaryInfC{\sFmla{\False}{!A}[\sigma.n]}
+      \DisplayProof\\
+      $\sigma.n$ تازه است & $\sigma.n$ استفاده‌شده است
+      \\[1ex]
+      \hline}{}
+    \end{tabular}
+  \end{center}
+  \caption{قواعد موجهاتی برای~\Log{K}.}
+  \ollabel{tab:rules-K}
+\end{table}
+
+الزامِ استفاده‌شده‌بودن پیشوند برای
+\iftag{prvBox}{$\TRule{\True}{\Box}$}{$\TRule{\False}{\Diamond}$}
+ضروری است؛ وگرنه مورد زیر را یک !!{tableau} بسته به شمار می‌آوردیم:
+\iftag{notprvBox,notprvDiamond}{%
+  \iftag{prvBox}{%
+  \begin{oltableau}
+    [\pFmla{\True}{\Box \formula{A}}{1}, just = \TAss
+      [\pFmla{\False}{\lnot\Box\lnot \formula{A}}{1}, just = \TAss
+        [\pFmla{\True}{\formula{A}}{1.1}, just = {\TRule{\True}{\Box}[1]}
+          [\pFmla{\True}{\Box\lnot\formula{A}}{1},
+            just ={\TRule{\False}{\lnot}[2]}
+            [\pFmla{\True}{\lnot\formula{A}}{1.1},
+              just = {\TRule{\True}{\Box}[4]}
+              [\pFmla{\False}{\formula{A}}{1.1},
+                  just ={\TRule{\True}{\lnot}[5]}, close]
+            ]
+          ]
+        ]
+      ]
+    ]
+  \end{oltableau}
+  }{
+  \begin{oltableau}
+    [\pFmla{\True}{\lnot\Diamond\lnot \formula{A}}{1}, just = \TAss
+      [\pFmla{\False}{\Diamond\formula{A}}{1}, just = \TAss
+        [\pFmla{\False}{\formula{A}}{1.1}, just = {\TRule{\False}{\Diamond}[2]}
+          [\pFmla{\False}{\Diamond\lnot\formula{A}}{1},
+            just ={\TRule{\True}{\lnot}[1]}
+            [\pFmla{\False}{\lnot\formula{A}}{1.1},
+              just = {\TRule{\False}{\Diamond}[4]}
+              [\pFmla{\True}{\formula{A}}{1.1},
+                  just ={\TRule{\True}{\lnot}[5]}, close]
+            ]
+          ]
+        ]
+      ]
+    ]
+  \end{oltableau}
+}}{
+  \begin{oltableau}
+    [\pFmla{\True}{\Box \formula{A}}{1}, just = \TAss
+      [\pFmla{\False}{\Diamond \formula{A}}{1}, just = \TAss
+        [\pFmla{\True}{\formula{A}}{1.1}, just = {\TRule{\True}{\Box}[1]}
+          [\pFmla{\False}{\formula{A}}{1.1},
+            just = {\TRule{\False}{\Diamond}[2]}, close]
+        ]
+      ]
+    ]
+\end{oltableau}}
+
+اما~$\Box \formula{A} \Entails/ \Diamond \formula{A}$؛ پس دستگاه
+اثبات ما نادرست می‌بود. همچنین~$\Diamond \formula{A} \Entails/
+\Box \formula{A}$؛ اما بدون الزامِ تازه‌بودن پیشوند برای
+\iftag{prvBox}{$\TRule{\False}{\Box}$}{$\TRule{\True}{\Diamond}$}،
+مورد زیر تابلویی بسته می‌بود: \iftag{notprvBox,notprvDiamond}{%
+  \iftag{prvBox}{%
+  \begin{oltableau}
+    [\pFmla{\True}{\lnot\Box\lnot \formula{A}}{1}, just = \TAss
+      [\pFmla{\False}{\Box \formula{A}}{1}, just = \TAss
+        [\pFmla{\False}{\formula{A}}{1.1}, just = {\TRule{\True}{\Box}[2]}
+          [\pFmla{\False}{\Box\lnot\formula{A}}{1},
+            just ={\TRule{\True}{\lnot}[1]}
+            [\pFmla{\False}{\lnot\formula{A}}{1.1},
+              just = {\TRule{\False}{\Box}[4]}
+              [\pFmla{\True}{\formula{A}}{1.1},
+                  just ={\TRule{\False}{\lnot}[5]}, close]
+            ]
+          ]
+        ]
+      ]
+    ]
+  \end{oltableau}
+  }{
+  \begin{oltableau}
+    [\pFmla{\True}{\Diamond \formula{A}}{1}, just = \TAss
+      [\pFmla{\False}{\lnot\Diamond\lnot\formula{A}}{1}, just = \TAss
+        [\pFmla{\True}{\formula{A}}{1.1}, just = {\TRule{\True}{\Diamond}[1]}
+          [\pFmla{\True}{\Diamond\lnot\formula{A}}{1},
+            just ={\TRule{\False}{\lnot}[2]}
+            [\pFmla{\True}{\lnot\formula{A}}{1.1},
+              just = {\TRule{\True}{\Diamond}[4]}
+              [\pFmla{\False}{\formula{A}}{1.1},
+                  just ={\TRule{\True}{\lnot}[5]}, close]
+            ]
+          ]
+        ]
+      ]
+    ]
+  \end{oltableau}
+}}{
+  \begin{oltableau}
+    [\pFmla{\True}{\Diamond \formula{A}}{1}, just = \TAss,name=one
+      [\pFmla{\False}{\Box \formula{A}}{1}, just = \TAss, name=two
+        [\pFmla{\True}{\formula{A}}{1.1}, just = {\TRule{\True}{\Diamond}[1]}
+          [\pFmla{\False}{\formula{A}}{1.1},
+            just = {\TRule{\False}{\Box}[2]}, close]
+        ]
+      ]
+    ]
+  \end{oltableau}}
+
+\end{document}

@@ -1,0 +1,196 @@
+% Part: first-order-logic
+% Chapter: completeness
+% Section: compactness
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{com}{com}}
+      {\olfileid{pl}{com}{com}}
+
+\olsection{قضیهٔ فشردگی}
+
+یکی از پیامدهای مهم قضیهٔ تمامیت، قضیهٔ فشردگی است. قضیهٔ فشردگی
+می‌گوید اگر هر زیرمجموعهٔ \emph{متناهی} از مجموعه‌ای از !!{sentence}s
+ارضاپذیر باشد، کل مجموعه ارضاپذیر است---حتی اگر خود مجموعه نامتناهی
+باشد. این مطلب به‌هیچ‌وجه بدیهی نیست. دست‌کم در نگاه نخست، هیچ چیز امکان
+وجود مجموعه‌های نامتناهی‌ای از !!{sentence}s را منتفی نمی‌کند که متناقض
+باشند، اما تناقضشان، به‌اصطلاح، تنها از شمار نامتناهی اعضا پدید آید.
+قضیهٔ فشردگی چنین وضعی را منتفی می‌داند: هیچ مجموعهٔ نامتناهی و
+ارضا‌ناپذیری از !!{sentence}s وجود ندارد که هر زیرمجموعهٔ متناهی‌اش
+ارضاپذیر باشد. این قضیه نیز، همچون قضیهٔ تمامیت، صورتی دربارهٔ استلزام
+دارد: اگر مجموعه‌ای نامتناهی از !!{sentence}s چیزی را نتیجه دهد، از پیش
+یک زیرمجموعهٔ متناهی آن نیز همان چیز را نتیجه می‌دهد.
+
+\begin{defn}
+  مجموعهٔ $\Gamma$ از !!{formula}s را \emph{متناهی‌وار ارضاپذیر}
+  می‌نامیم هرگاه هر $\Gamma_0 \subseteq \Gamma$ متناهی ارضاپذیر باشد.
+\end{defn}
+
+\begin{thm}[قضیهٔ فشردگی]
+\ollabel{thm:compactness}
+برای هر مجموعهٔ $\Gamma$ از جمله‌ها و هر جملهٔ $!A$، موارد زیر برقرارند:
+\begin{enumerate}
+  \item $\Gamma \Entails !A$ اگر و تنها اگر $\Gamma_0
+    \subseteq \Gamma$ متناهی‌ای وجود داشته باشد که
+    $\Gamma_0 \Entails !A$.
+  \item $\Gamma$ ارضاپذیر است اگر و تنها اگر متناهی‌وار
+    ارضاپذیر باشد.
+\end{enumerate}
+\end{thm}
+
+\begin{proof}
+بند (۲) را اثبات می‌کنیم. اگر $\Gamma$ ارضاپذیر باشد،
+\iftag{FOL}{!!a{structure}~$\Struct{M}$}{!!a{valuation}~$\pAssign{v}$}
+وجود دارد به‌طوری‌که برای هر $!A \in \Gamma$،
+$\iftag{FOL}{\Sat{M}}{\pSat{v}}{!A}$. البته همین
+$\iftag{FOL}{\Struct{M}}{\pAssign{v}}$ هر زیرمجموعهٔ متناهی
+از~$\Gamma$ را نیز ارضا می‌کند؛ پس $\Gamma$ متناهی‌وار ارضاپذیر است.
+
+اکنون فرض کنید $\Gamma$ متناهی‌وار ارضاپذیر باشد. در این صورت هر
+زیرمجموعهٔ متناهی~$\Gamma_0 \subseteq \Gamma$ ارضاپذیر است. بنا بر صحت
+(\iftag{FOL}{%
+  \tagrefs{prfAX/{fol:axd:sou:cor:consistency-soundness},
+    prfSC/{fol:seq:sou:cor:consistency-soundness},
+    prfND/{fol:ntd:sou:cor:consistency-soundness},
+    prfTab/{fol:tab:sou:cor:consistency-soundness}}}{%
+  \tagrefs{prfAX/{pl:axd:sou:cor:consistency-soundness},
+    prfSC/{pl:seq:sou:cor:consistency-soundness},
+    prfND/{pl:ntd:sou:cor:consistency-soundness},
+    prfTab/{pl:tab:sou:cor:consistency-soundness}}})،
+هر زیرمجموعهٔ متناهی سازگار است. آن‌گاه بنا بر
+\iftag{FOL}{%
+  \tagrefs{prfAX/{fol:axd:ptn:prop:proves-compact},
+    prfSC/{fol:seq:ptn:prop:proves-compact},
+    prfND/{fol:ntd:ptn:prop:proves-compact},
+    prfTab/{fol:tab:ptn:prop:proves-compact}}}{%
+  \tagrefs{prfAX/{pl:axd:ptn:prop:proves-compact},
+    prfSC/{pl:seq:ptn:prop:proves-compact},
+    prfND/{pl:ntd:ptn:prop:proves-compact},
+    prfTab/{pl:tab:ptn:prop:proves-compact}}}،
+خود $\Gamma$ نیز باید سازگار باشد. بنا بر تمامیت
+(\olref[cth]{thm:completeness})، چون $\Gamma$ سازگار است، ارضاپذیر است.
+\end{proof}
+
+\tagprob{FOL}
+\begin{prob}
+بند (۱) از \olref[fol][com][com]{thm:compactness} را اثبات کنید.
+\end{prob}
+\tagendprob
+
+\tagprob{notFOL}
+\begin{prob}
+بند (۱) از \olref[pl][com][com]{thm:compactness} را اثبات کنید.
+\end{prob}
+\tagendprob
+
+\iftag{FOL}{%
+\begin{ex}
+در هر مدل~$\Struct{M}$ از نظریهٔ~$\Gamma$، هر ترم~$t$ البته
+!!a{element} از~$\Domain{M}$ را مشخص می‌کند. آیا می‌توانیم تضمین کنیم
+که عکس آن نیز برقرار است، یعنی هر !!{element} از~$\Domain{M}$ را ترمی
+مشخص می‌کند؟ به بیان دیگر، آیا نظریه‌هایی چون~$\Gamma$ وجود دارند که
+همهٔ مدل‌هایشان پوشیده باشند؟ قضیهٔ فشردگی نشان می‌دهد اگر $\Gamma$
+مدل‌های نامتناهی داشته باشد، چنین نیست. برای دیدن این مطلب، فرض کنید
+$\Struct{M}$ مدلی نامتناهی از~$\Gamma$ باشد و $c$ !!a{constant} باشد
+که در زبان~$\Gamma$ نیست. مجموعهٔ $\Delta$ را مجموعهٔ همهٔ جمله‌های
+$\eq/[c][t]$ برای ترم‌های $t$ از زبان~$\Lang{L}$ِ $\Gamma$ بگیرید؛ یعنی
+  \[
+  \Delta = \Setabs{\eq/[c][t]}{t \in \Trm[L]}.
+  \]
+هر زیرمجموعهٔ متناهی از $\Gamma \cup \Delta$ را می‌توان به صورت
+$\Gamma' \cup \Delta'$ نوشت، که در آن $\Gamma' \subseteq \Gamma$ و
+$\Delta' \subseteq \Delta$. چون $\Delta'$ متناهی است، تنها می‌تواند
+شامل تعداد متناهی‌ای ترم باشد. فرض کنید $a \in \Domain{M}$
+!!a{element}ی از $\Domain{M}$ باشد که هیچ‌یک از آن ترم‌ها آن را مشخص
+نمی‌کند، و $\Struct{M'}$ همان !!{structure}~$\Struct{M}$ باشد با این
+تفاوت که $\Assign{c}{M'} = a$. چون برای هر~$t$ که در~$\Delta'$ ظاهر
+می‌شود $a \neq \Value{t}{M}$، داریم $\Sat{M'}{\Delta'}$. همچنین چون
+$\Sat{M}{\Gamma}$، $\Gamma' \subseteq \Gamma$ و $c$ در~$\Gamma$ ظاهر
+نمی‌شود، $\Sat{M'}{\Gamma'}$. در نتیجه، برای هر زیرمجموعهٔ متناهی
+$\Gamma' \cup \Delta'$ از $\Gamma \cup \Delta$،
+$\Sat{M'}{\Gamma' \cup \Delta'}$. پس هر زیرمجموعهٔ متناهی از
+$\Gamma \cup \Delta$ ارضاپذیر است. بنا بر فشردگی، خود
+$\Gamma \cup \Delta$ ارضاپذیر است. بنابراین مدل‌هایی چون
+$\Sat{M^+}{\Gamma \cup \Delta}$ وجود دارند. تحویلِ $\Lang{L}$یِ هر
+چنین $\Struct{M^+}$ مدلی از~$\Gamma$ است، اما پوشیده نیست، زیرا برای
+هر ترم~$t$ از~$\Lang{L}$، $\Value{c}{M^+} \neq \Value{t}{M^+}$.
+\end{ex}
+
+\begin{ex}
+!!a{language}~$\Lang{L}$ را در نظر بگیرید که شامل !!{predicate}~$<$،
+!!{constant}s~$\Obj{0}$ و $\Obj{1}$، و !!{function}s~$+$، $\times$ و
+$-$ است. فرض کنید $\Gamma$ مجموعهٔ همهٔ !!{sentence}s این
+!!{language} باشد که در !!{structure}~$\Struct{Q}$ با دامنهٔ~$\Rat$ و
+تفسیرهای متعارف صادق‌اند. پس $\Gamma$ مجموعهٔ همهٔ !!{sentence}s
+زبان~$\Lang{L}$ است که دربارهٔ اعداد گویا صادق‌اند. البته در~$\Rat$
+(و حتی در~$\Real$) عددی چون~$r$ وجود ندارد که بزرگ‌تر از~$0$ و برای هر
+$k \in \PosInt$ کوچک‌تر از $1/k$ باشد. چنین عددی، اگر وجود می‌داشت،
+یک \emph{بی‌نهایت‌کوچک} بود: ناصفر، اما بی‌نهایت کوچک. با استفاده از
+قضیهٔ فشردگی می‌توان نشان داد مدل‌هایی از~$\Gamma$ وجود دارند که در
+آن‌ها بی‌نهایت‌کوچک‌ها وجود دارند. در زبان ما !!a{function} برای تقسیم
+نداریم (تقسیم بر صفر تعریف‌نشده است و !!{function}s باید با تابع‌های
+تام تفسیر شوند). بااین‌حال، هنوز می‌توانیم $r < 1/k$ را بیان کنیم، زیرا
+این شرط درست است اگر و تنها اگر $r \cdot k < 1$. اکنون $c$ را
+!!{constant}ی تازه بگیرید و $\Delta$ را چنین تعریف کنید:
+\[
+\{\Obj{0} < c\}
+\cup \Setabs{ c \times \num k < \Obj{1} }{k \in \PosInt}
+\]
+(که در آن $\num{k} = (\Obj{1} + (\Obj{1} + \dots + (\Obj{1} +
+\Obj{1})\dots))$ شامل $k$ بار~$\Obj{1}$ است). برای هر زیرمجموعهٔ
+متناهی~$\Delta_0$ از~$\Delta$، عددی چون~$K$ وجود دارد به‌طوری‌که همهٔ
+!!{sentence}s به صورت $c \times \num{k} < \Obj{1}$ در~$\Delta_0$
+دارای $k < K$ هستند. اگر $\Struct{Q}$ را به~$\Struct{Q'}$ گسترش دهیم
+و $\Assign{c}{Q'} = 1/K$ بگذاریم، برای هر $\Gamma_0 \subseteq \Gamma$
+متناهی داریم $\Sat{Q'}{\Gamma_0 \cup \Delta_0}$؛ پس
+$\Gamma \cup \Delta$ متناهی‌وار ارضاپذیر است (تمرین: این مطلب را
+با جزئیات اثبات کنید). بنا بر فشردگی، $\Gamma \cup \Delta$ ارضاپذیر
+است. هر مدل~$\Struct{S}$ از $\Gamma \cup \Delta$ شامل یک
+بی‌نهایت‌کوچک، یعنی~$\Assign{c}{S}$، است.
+\end{ex}
+}{}
+
+\tagprob{FOL}
+\begin{prob}
+در مدل استاندارد حساب~$\Struct{N}$، هیچ !!{element}~$k \in \Domain{N}$
+وجود ندارد که همهٔ فرمول‌های~$\num{n} < x$ را ارضا کند (که در آن
+$\num{n}$ برابر $\Obj{0}^{\prime\dots\prime}$ با $n$ بار $\prime$ است).
+با استفاده از قضیهٔ فشردگی نشان دهید که مجموعهٔ !!{sentence}s زبان حساب
+که در مدل استاندارد حساب~$\Struct{N}$ صادق‌اند، در
+!!a{structure}~$\Struct{N'}$ نیز صادق‌اند که شامل !!a{element}ی است که
+\emph{همهٔ} فرمول‌های $\num{n} < x$ را ارضا می‌کند.
+\end{prob}
+\tagendprob
+
+\iftag{FOL}{
+\begin{ex}
+می‌دانیم که منطق مرتبهٔ اول با !!{identity} می‌تواند بیان کند که اندازهٔ
+!!{domain} باید دست‌کم مقداری معین باشد: جملهٔ~$!A_{\ge n}$ (که می‌گوید
+«دست‌کم $n$ شیء متمایز وجود دارد») تنها در ساختارهایی صادق است که
+$\Domain{M}$ دست‌کم $n$ شیء داشته باشد. پس اگر بگیریم
+  \[
+  \Delta = \Setabs{!A_{\ge n}}{n \ge 1}
+  \]
+هر مدل $\Delta$ باید نامتناهی باشد. بنابراین با افزودن~$\Delta$ به یک
+نظریه می‌توانیم تضمین کنیم که آن نظریه تنها مدل‌های نامتناهی دارد:
+مدل‌های $\Gamma \cup \Delta$ دقیقاً مدل‌های نامتناهی~$\Gamma$ هستند.
+
+پس منطق مرتبهٔ اول می‌تواند نامتناهی‌بودن را بیان کند. اما قضیهٔ فشردگی
+نشان می‌دهد که این منطق نمی‌تواند متناهی‌بودن را بیان کند. زیرا فرض کنید
+مجموعه‌جمله‌ای چون $\Lambda$ دقیقاً در همهٔ !!{structure}s متناهی ارضا
+شود. آن‌گاه $\Delta \cup \Lambda$ متناهی‌وار ارضاپذیر است. چرا؟ فرض
+کنید $\Delta' \cup \Lambda' \subseteq \Delta \cup \Lambda$ متناهی
+باشد، با $\Delta' \subseteq \Delta$ و $\Lambda' \subseteq \Lambda$.
+فرض کنید $n$ بزرگ‌ترین عددی باشد که $!A_{\ge n} \in \Delta'$.
+$\Lambda$، چون در همهٔ ساختارهای متناهی ارضا می‌شود، مدلی چون
+$\Struct{M}$ دارد که تعداد متناهی اما $\ge n$ !!{element}s دارد.
+اما در این صورت $\Sat{M}{\Delta' \cup \Lambda'}$. بنا بر فشردگی،
+$\Delta \cup \Lambda$ مدلی نامتناهی دارد، و این با فرض اینکه
+$\Lambda$ تنها در !!{structure}s متناهی ارضا می‌شود تناقض دارد.
+\end{ex}
+}{}
+
+\end{document}

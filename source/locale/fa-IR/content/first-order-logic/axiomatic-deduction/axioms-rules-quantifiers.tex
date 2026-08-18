@@ -1,0 +1,35 @@
+% Part: first-order-logic
+% Chapter: axiomatic-deduction
+% Section: axioms-rules-quantifiers
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{axd}{qua}
+
+\olsection{اصول موضوع و قواعد سورها}
+
+\begin{defn}[اصول موضوع سورها]
+\emph{اصول موضوع} حاکم بر سورها همهٔ نمونه‌های شِماهای زیرند:
+\begin{align}
+\ollabel{ax:q1} & \lforall[x][!B] \lif !B(t), \\
+\ollabel{ax:q2} & !B(t) \lif \lexists[x][!B],
+\end{align}
+برای هر ترم بستهٔ~$t$.
+\end{defn}
+
+\begin{defn}[قواعد سورها]
+\begin{enumerate}
+\item اگر $!B \lif !A(a)$ از پیش در !!{derivation} آمده باشد و $a$ در
+  ~$\Gamma$ یا~$!B$ رخ ندهد، آنگاه $!B \lif
+  \lforall[x][!A(x)]$ گام استنتاجی درستی است.
+\item اگر $!A(a) \lif !B$ از پیش در !!{derivation} آمده باشد و $a$ در
+  ~$\Gamma$ یا~$!B$ رخ ندهد، آنگاه $\lexists[x][!A(x)] \lif
+  !B$ گام استنتاجی درستی است.
+\end{enumerate}
+\end{defn}
+
+هر یک از این دو قاعده را به‌اختصار «\QR» می‌نامیم.
+
+\end{document}

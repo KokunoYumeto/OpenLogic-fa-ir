@@ -1,0 +1,81 @@
+% Part: first-order-logic
+% Chapter: sequent-calculus
+% Section: structural-rules
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{seq}{srl}}
+      {\olfileid{pl}{seq}{srl}}
+
+\olsection{قواعد ساختاری}
+
+همچنین به چند قاعده نیاز داریم که امکان بازآرایی !!{sentence}s را در
+سمت چپ و راست دنباله فراهم کنند. چون قواعد منطقی ایجاب می‌کنند که در
+مقدمه، !!{sentence}sیی که قاعده بر آن‌ها عمل می‌کند یا در منتهی‌الیه
+چپ باشند یا در منتهی‌الیه راست، به قاعدهٔ «تبادل» نیاز داریم تا
+!!{sentence}s را به جایگاه درست منتقل کنیم. گاهی نیز مهم است که بتوان
+از میان !!{sentence}s، دو مورد یکسان را در یکی ادغام کرد و
+!!a{sentence} را به هر
+یک از دو سو افزود.
+
+\subsection{تضعیف}
+
+\begin{defish}
+\Axiom$ \Gamma \fCenter \Delta $
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$ !A, \Gamma \fCenter \Delta$
+\DisplayProof
+\hfill
+\Axiom$ \Gamma \fCenter \Delta$
+\RightLabel{\RightR{\Weakening}}
+\UnaryInf$ \Gamma \fCenter \Delta, !A$
+\DisplayProof
+\end{defish}
+
+\subsection{انقباض}
+
+\begin{defish}
+\Axiom$ !A, !A, \Gamma \fCenter \Delta $
+\RightLabel{\LeftR{\Contraction}}
+\UnaryInf$ !A, \Gamma \fCenter \Delta$
+\DisplayProof
+\hfill
+\Axiom$ \Gamma \fCenter \Delta, !A, !A$
+\RightLabel{\RightR{\Contraction}}
+\UnaryInf$ \Gamma \fCenter \Delta, !A$
+\DisplayProof
+\end{defish}
+
+\subsection{تبادل}
+
+\begin{defish}
+\Axiom$ \Gamma, !A, !B, \Pi \fCenter \Delta $
+\RightLabel{\LeftR{\Exchange}}
+\UnaryInf$ \Gamma, !B, !A, \Pi \fCenter \Delta$
+\DisplayProof
+\hfill
+\Axiom$ \Gamma \fCenter \Delta, !A, !B, \Lambda$
+\RightLabel{\RightR{\Exchange}}
+\UnaryInf$ \Gamma \fCenter \Delta, !B, !A, \Lambda$
+\DisplayProof
+\end{defish}
+
+زنجیره‌ای از استنتاج‌های تضعیف، انقباض و تبادل را اغلب با خط‌های
+استنتاج دوتایی نشان می‌دهیم.
+
+قاعدهٔ زیر که «برش» نام دارد، به معنای دقیق کلمه ضروری نیست، اما
+استفادهٔ دوباره و ترکیب !!{derivation}s را بسیار آسان‌تر می‌کند.
+\begin{defish}
+\[
+\Axiom$ \Gamma \fCenter \Delta, !A$
+\Axiom$ !A, \Pi \fCenter \Lambda $
+\RightLabel{\Cut}
+\BinaryInf$ \Gamma, \Pi \fCenter \Delta, \Lambda$
+\DisplayProof
+\]
+\end{defish}
+
+\end{document}

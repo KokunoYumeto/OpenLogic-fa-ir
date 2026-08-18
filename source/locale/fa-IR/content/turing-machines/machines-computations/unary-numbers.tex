@@ -1,0 +1,233 @@
+% Part: turing-machines
+% Chapter: machines-computations
+% Section: unary-numbers
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{tur}{mac}{una}
+\olsection{نمایش یکانی اعداد}
+
+\begin{explain}
+ماشین‌های تورینگ روی دنباله‌های نمادهای نوشته‌شده بر نوارشان کار
+می‌کنند. بسته به الفبای ماشین تورینگ، این دنباله‌های نمادها می‌توانند
+نمایندهٔ ورودی‌ها و خروجی‌های گوناگون باشند. البته ماشین‌های تورینگی
+که توابع \emph{حسابی}، یعنی توابع اعداد طبیعی، را محاسبه می‌کنند
+اهمیت ویژه‌ای دارند. راهی ساده برای نمایش اعداد صحیح مثبت، کدکردن
+آن‌ها به‌صورت دنباله‌هایی از نماد یگانهٔ~$\TMstroke$ است. اگر
+$n\in\Nat$، بگذارید $\TMstroke^n$ برای $n=0$ دنبالهٔ تهی و در غیر
+این صورت دنباله‌ای متشکل از دقیقاً $n$ عدد $\TMstroke$ باشد.
+\end{explain}
+
+\begin{defn}[محاسبه]
+ماشین تورینگ~$M$ تابع $f\colon\Nat^k\to\Nat$ را \emph{محاسبه
+می‌کند} اگر و تنها اگر برای همهٔ $n_1$، \dots،~$n_k\in\Nat$، $M$ روی ورودی
+\[
+\TMstroke^{n_1} \TMblank \TMstroke^{n_2} \TMblank \dots \TMblank \TMstroke^{n_k}
+\]
+با خروجی $\TMstroke^{f(n_1,\dots,n_k)}$ متوقف شود.
+\end{defn}
+
+\begin{prob}
+  تعریف کنید ماشین تورینگ~$M$ چه هنگام تابع
+  $f\colon\Nat^k\to\Nat^m$ را محاسبه می‌کند.
+\end{prob}
+
+\begin{ex}\ollabel{ex:adder}
+\emph{جمع:}
+ماشینی بسازیم که تابع $f(n,m)=n+m$ را محاسبه کند. به ماشینی نیاز داریم
+که با دو بلوک $\TMstroke$ به طول‌های $n$ و~$m$ روی نوار آغاز کند و
+با یک بلوک متشکل از $n+m$ عدد $\TMstroke$ متوقف شود. دو بلوک ورودی
+$\TMstroke$ با یک~$\TMblank$ جدا می‌شوند؛ پس یک روش آن است که در
+خانهٔ دارای $\TMblank$ خطی بنویسیم و آخرین~$\TMstroke$ را پاک کنیم.
+\begin{figure}\[
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+                    semithick]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+
+  \node[initial,state]         (A)              {$q_0$};
+  \node[state]         (B) [right of=A] {$q_1$};
+  \node[state]         (C) [right of=B] {$q_2$};
+
+  \path (A) edge node {\TMtrans{\TMblank}{\TMstroke}{\TMstay}} (B)
+           edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (A)
+        (B) edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (B)
+            edge node {\TMtrans{\TMblank}{\TMblank}{\TMleft}} (C)
+        (C) edge [loop above] node {\TMtrans{\TMstroke}{\TMblank}{\TMstay}} (C);
+\end{tikzpicture}
+\]\caption{ماشینی که $f(x,y)=x+y$ را محاسبه می‌کند}
+\ollabel{fig:adder}
+\end{figure}
+\end{ex}
+
+\begin{prob}
+پیکربندی‌های ماشین \olref[tur][mac][una]{ex:adder} را برای ورودی
+$\tuple{3,2}$ گام‌به‌گام دنبال کنید. اگر ماشین $0+0$ را محاسبه کند
+چه رخ می‌دهد؟
+\end{prob}
+
+\begin{explain}
+در \olref[rep]{ex:doubler} نمونه‌ای از ماشین تورینگ ارائه کردیم که
+دنباله‌ای از~$\TMstroke$ها را ورودی می‌گیرد و با دنباله‌ای دو برابر
+بلندتر از~$\TMstroke$ها روی نوار متوقف می‌شود---ماشین دوبرابرکن.
+اما چون خروجی در چپ بلوک دوبرابرشدهٔ~$\TMstroke$ها تعدادی
+$\TMblank$ دارد، برخلاف آنچه شاید تصور کرده باشید در واقع تابع
+$f(x)=2x$ را محاسبه نمی‌کند. دو راه اصلاح آن را شرح می‌دهیم.
+\end{explain}
+
+\begin{ex}
+ماشین \olref{fig:doubler-disc} تابع $f(x)=2x$ را محاسبه می‌کند. این
+ماشین به‌جای آنکه مانند ماشین \olref[rep]{ex:doubler} به ازای هر
+$\TMstroke$ ورودی، ورودی را پاک کند و دو $\TMstroke$ در انتهای راست
+بنویسد، به ازای هر $\TMstroke$ ورودی یک~$\TMstroke$ به راست می‌افزاید.
+باید محل پایان ورودی را پیگیری کند؛ پس یک~$\TMblank$ میان ورودی و
+خط‌های افزوده باقی می‌گذارد که در پایان با~$\TMstroke$ پر می‌کند.
+همچنین باید جای خود را در ورودی «به یاد بسپاریم»، پس موقتاً یک
+$\TMstroke$ از بلوک ورودی را با~$\TMblank$ جایگزین می‌کنیم.
+  \begin{figure}
+\[
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+                    semithick]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+
+  \node[initial,state] (0)              {$q_0$};
+  \node[state]         (1) [above of=0] {$q_1$};
+  \node[state]         (2) [above of=1] {$q_2$};
+  \node[state]         (3) [right of=2] {$q_3$};
+  \node[state]         (4) [below of=3] {$q_4$};
+  \node[state]         (5) [below of=4] {$q_5$};
+  \node[state]         (6) [above right of=4] {$q_6$};
+  \node[state]         (7) [below of=6] {$q_7$};
+  \node[state]         (8) [below of=7] {$q_8$};
+
+  \path (0) edge node {\TMtrans{\TMstroke}{\TMblank}{\TMright}} (1)
+%    (0) edge node {\TMtrans{\TMblank}{\TMblank}{\TMstay}} (h)
+    (1) edge [loop left] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (1)
+      edge node {\TMtrans{\TMblank}{\TMblank}{\TMright}} (2)
+    (2) edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (2)
+        edge node {\TMtrans{\TMblank}{\TMstroke}{\TMleft}} (3)
+    (3) edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMleft}} (3)
+        edge node[left] {\TMtrans{\TMblank}{\TMblank}{\TMleft}} (4)
+    (4) edge        node[left] {\TMtrans{\TMstroke}{\TMstroke}{\TMleft}} (5)
+    (5) edge [loop below] node {\TMtrans{\TMstroke}{\TMstroke}{\TMleft}} (5)
+        edge              node {\TMtrans{\TMblank}{\TMstroke}{\TMright}} (0)
+    (4) edge      node[sloped] {\TMtrans{\TMblank}{\TMstroke}{\TMright}} (6)
+    (6) edge              node {\TMtrans{\TMblank}{\TMstroke}{\TMright}} (7)
+    (7) edge [loop right] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (7)
+        edge              node {\TMtrans{\TMblank}{\TMblank}{\TMleft}} (8)
+    (8) edge [loop right] node {\TMtrans{\TMstroke}{\TMblank}{\TMstay}} (8);
+    \end{tikzpicture}
+\]
+\caption{ماشینی که $f(x)=2x$ را محاسبه می‌کند}
+\ollabel{fig:doubler-disc}
+\end{figure}
+\end{ex}
+
+\begin{ex}\ollabel{ex:mover}
+راه دوم برای محاسبهٔ $f(x)=2x$ این است که ماشین دوبرابرکن اصلی را
+نگه داریم، اما در پایان حالت‌ها و دستورهایی بیفزاییم که بلوک
+دوبرابرشدهٔ خط‌ها را به انتهای چپ نوار منتقل کنند. ماشین
+\olref{fig:mover} دقیقاً این بخش آخر را انجام می‌دهد: روی نواری متشکل
+از بلوکی از~$\TMblank$ها و سپس بلوکی از~$\TMstroke$ها آغاز می‌کند
+(سر در هر جایی از بلوک~$\TMblank$ها قرار دارد)، $\TMstroke$ها را
+یکی‌یکی پاک می‌کند و آن‌ها را در آغاز نوار می‌نویسد. برای تشخیص زمان
+پایان کار، نخست انتهای بلوک $\TMstroke$ها را با نماد~$\TMendtape$
+علامت می‌زند که در پایان پاک می‌شود. شماره‌گذاری حالت‌ها را از~$q_6$
+آغاز کرده‌ایم تا بتوان آن‌ها را به ماشین دوبرابرکن افزود. تنها به
+دستور اضافی
+$\delta(q_0,\TMblank)=\tuple{q_6,\TMblank,\TMstay}$ نیاز دارید؛ یعنی
+پیکانی از~$q_0$ به~$q_6$ با برچسب
+$\TMtrans{\TMblank}{\TMblank}{\TMstay}$. (یک مشکل ظریف وجود دارد:
+ماشین حاصل برای ورودی~$x=0$ کار نمی‌کند. آن را به‌عنوان تمرین
+می‌گذاریم.)
+\begin{figure}
+  \[
+  \begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+                      semithick]
+    \tikzstyle{every state}=[fill=none,draw=black,text=black]
+    \node[initial,state] (6)              {$q_6$};
+    \node[state]         (7) [right of=6] {$q_7$};
+    \node[state]         (8) [right of=7] {$q_8$};
+    \node[state]         (9) [below of=8] {$q_9$};
+    \node[state]         (10) [left of=9] {$q_{10}$};
+    \node[state]         (11) [left of=10]  {$q_{11}$};
+    \node[state]         (12) [below of=11]  {$q_{12}$};
+    \node[state]         (13) [right of=12] {$q_{13}$};
+    \node[state]         (14) [right of=13] {$q_{14}$};
+    \path
+    (6)  edge node {\TMtrans{\TMblank}{\TMblank}{\TMright}} (7)
+    (7)  edge [loop above] node {\TMtrans{\TMblank}{\TMblank}{\TMright}} (7)
+         edge node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (8)
+    (8)  edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (8)
+         edge node {\TMtrans{\TMblank}{\TMendtape}{\TMleft}} (9)
+    (9)  edge [loop right] node {\TMtrans{\TMstroke}{\TMstroke}{\TMleft}} (9)
+         edge node {\TMtrans{\TMblank}{\TMblank}{\TMright}} (10)
+    (10) edge node[above] {\TMtrans{\TMstroke}{\TMblank}{\TMleft}} (11)
+    (11) edge [loop above] node {\TMtrans{\TMblank}{\TMblank}{\TMleft}} (11)
+         edge node[left] {\begin{tabular}{@{}l@{}}
+          \TMtrans{\TMendtape}{\TMendtape}{\TMright}\\
+          \TMtrans{\TMstroke}{\TMstroke}{\TMright}
+         \end{tabular}} (12)
+    (12) edge node[] {\TMtrans{\TMblank}{\TMstroke}{\TMright}} (13)
+    (13) edge [loop below] node {\TMtrans{\TMblank}{\TMblank}{\TMright}} (13)
+         edge node[sloped] {\TMtrans{\TMstroke}{\TMblank}{\TMleft}} (11)
+    (13) edge node {\TMtrans{\TMendtape}{\TMblank}{\TMstay}} (14);
+  \end{tikzpicture}
+  \]
+  \caption{انتقال بلوکی از $\TMstroke$ها به چپ}
+  \ollabel{fig:mover}
+\end{figure}
+\end{ex}
+
+\begin{prob}
+در \olref[tur][mac][una]{ex:mover} ماشینی مرکب از ماشین دوبرابرکنِ
+\olref[tur][mac][una]{fig:doubler-disc} و ماشین جابه‌جاکنِ
+\olref[tur][mac][una]{fig:mover} توصیف کردیم. اگر این ماشین ترکیبی را
+روی ورودی~$x=0$، یعنی نواری تهی، آغاز کنید چه رخ می‌دهد؟ چگونه ماشین
+را اصلاح می‌کنید تا در این حالت با خروجی~$2x=0$ متوقف شود؟ (باید
+بتوانید با افزودن یک حالت و یک گذار چنین کنید.)
+\end{prob}
+
+\begin{prob}
+\emph{تفریق:} ماشین تورینگی طراحی کنید که با گرفتن دو رشتهٔ ناتهی از
+خط‌ها به طول $n$ و~$m$، که $n>m$، تابع $f(n,m)=n-m$ را محاسبه کند.
+\end{prob}
+
+\begin{prob}
+\emph{برابری:} ماشین تورینگی برای محاسبهٔ تابع زیر طراحی کنید:
+\[
+\fn{equality}(n,m) = 
+\begin{cases}
+  \text{1} & \text{اگر $n = m$} \\
+  \text{0} & \text{اگر $n \neq m$}
+\end{cases}
+\]
+که در آن $n$ و~$m\in\PosInt$.
+\end{prob}
+
+\begin{prob}
+ماشین تورینگی برای محاسبهٔ تابع $\min(x,y)$ طراحی کنید که در آن $x$
+و~$y$ اعداد صحیح مثبت‌اند و روی نوار با رشته‌هایی از $\TMstroke$ که
+یک $\TMblank$ آن‌ها را جدا می‌کند نمایش داده شده‌اند. می‌توانید در
+الفبای ماشین از نمادهای اضافی استفاده کنید.
+
+تابع $\min$ کوچک‌ترین مقدار را از میان آرگومان‌هایش برمی‌گزیند؛ پس
+$\min(3,5)=3$، $\min(20,16)=16$ و $\min(4,4)=4$، و به همین ترتیب.
+\end{prob}
+
+\begin{defn}
+  ماشین تورینگ~$M$ تابع جزئیِ $f\colon\Nat^k\pto\Nat$ را محاسبه
+  می‌کند اگر و تنها اگر
+  \begin{enumerate}
+    \item اگر $f(n_1,\dots,n_k)=m$، آنگاه $M$ روی ورودی
+    $\TMstroke^{n_1}\concat\TMblank\concat
+    \dots\concat\TMblank\concat\TMstroke^{n_k}$ با خروجی
+    $\TMstroke^{m}$ متوقف شود.
+    \item اگر $f(n_1,\dots,n_k)$ تعریف‌نشده باشد، آنگاه $M$ اصلاً
+    متوقف نشود یا با خروجی‌ای متوقف شود که یک بلوک یگانه از
+    $\TMstroke$ها نیست.
+  \end{enumerate}
+\end{defn}
+
+\end{document}

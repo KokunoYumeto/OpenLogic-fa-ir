@@ -1,0 +1,9 @@
+sha256	bytes	path
+# Hashes of private raw build outputs; raw path-bearing receipts are not included in the public bundle.
+A4B7BEAC391B9C8704BA970B9422913D5236E3C6B4E0F123170D74D08771993C	7666348	private-build/open-logic-complete-fa-IR-screen.pdf
+09B8E46F57D1DBBCBC4EDA01D75BB0A1B55E25B72F9539957CECA607C3CE6FB7	223805	private-build/open-logic-complete-fa-IR-screen.log
+FCEC41E6C814FFF602D02FCD3AD328780CBB983F1AE13BF4A53C823136478D3E	387933	private-build/open-logic-complete-fa-IR-screen.fls
+69A1717FD32A0CA58CA28BB639E10DA214490D734809CF4268DBBB836777EEC7	1469	private-build/open-logic-complete-fa-IR-screen.blg
+710116E91278A63C362F523C93F1916458048A2B1B1E5A0E7942DA39840F38C0	1185336	private-build/open-logic-closure-supplement-fa-IR-screen.pdf
+B1D90B84B893E695C86D7E36BE2EC08D0E8E32C2123E26734822A963FD62C6ED	125186	private-build/open-logic-closure-supplement-fa-IR-screen.log
+8980623FE75259782D16E8CAB8C01C5E6946C0EC0227CBE8F6AF0352208C5089	110606	private-build/open-logic-closure-supplement-fa-IR-screen.fls

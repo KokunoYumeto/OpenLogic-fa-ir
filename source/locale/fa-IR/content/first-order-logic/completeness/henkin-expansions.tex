@@ -1,0 +1,215 @@
+% Part: first-order-logic
+% Chapter: completeness
+% Section: henkin-expansion
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{fol}{com}{hen}
+
+\olsection{گسترش هنکینی}
+
+\begin{explain}
+بخشی از دشواری اثبات قضیهٔ تمامیت از اینجا ناشی می‌شود که مدلی که از
+مجموعهٔ کامل و سازگار~$\Gamma$ می‌سازیم باید همهٔ !!{formula}s مسور
+در~$\Gamma$ را صادق سازد. برای تضمین این امر، ترفندی را به کار می‌بریم
+که از لئون هنکین است. در اصل، این ترفند عبارت است از گسترش زبان با
+بی‌نهایت !!{constant} و افزودن فرمولی به صورت زیر برای هر !!{formula}
+با یک !!{variable} آزاد، یعنی $!A(x)$:
+\iftag{prvEx}
+      {$\lexists[x][!A(x)] \lif !A(c)$}
+      {$\lnot\lforall[x][!A(x)] \lif \lnot !A(c)$}،
+که در آن $c$ یکی از !!{constant}s جدید است. هنگامی که
+!!{structure} ارضاکنندهٔ~$\Gamma$ را می‌سازیم، این کار تضمین می‌کند که
+هر
+\iftag{prvEx}
+{!!{sentence} وجودیِ صادق، شاهدی}
+{!!{sentence} کلیِ کاذب، مثال نقضی}
+در میان ثابت‌های جدید داشته باشد.
+\end{explain}
+
+\begin{prop}
+\ollabel{prop:lang-exp}
+اگر $\Gamma$ در~$\Lang L$ سازگار باشد و $\Lang L'$ با افزودن
+!!a{denumerable} مجموعه از !!{constant}s جدید $\Obj d_0$،
+$\Obj d_1$، \dots{} به~$\Lang L$ به دست آید، آنگاه $\Gamma$
+در~$\Lang L'$ سازگار است.
+\end{prop}
+
+\begin{defn}[مجموعهٔ اشباع‌شده]
+مجموعهٔ~$\Gamma$ از !!{formula}s زبان~$\Lang {L}$ را
+\emph{اشباع‌شده} می‌نامیم هرگاه و تنها هرگاه برای هر
+!!{formula}~$!A(x) \in \Frm[L]$ با یک !!{variable} آزاد~$x$،
+!!a{constant}~$c \in \Lang{L}$ وجود داشته باشد چنان‌که
+\iftag{prvEx}
+      {$\lexists[x][!A(x)] \lif !A(c) \in \Gamma$}
+      {$\lnot\lforall[x][!A(x)] \lif \lnot !A(c) \in \Gamma$}.
+\end{defn}
+
+تعریف زیر در اثبات قضیهٔ بعدی به کار خواهد رفت.
+
+\begin{defn}
+\ollabel{defn:henkin-exp}
+فرض کنید $\Lang L'$ مانند \olref{prop:lang-exp} باشد. شمارش
+$!A_0(x_0)$، $!A_1(x_1)$، \dots{} از همهٔ !!{formula}s~$!A_i(x_i)$
+در~$\Lang L'$ را ثابت در نظر بگیرید که در هر یک تنها یک متغیر
+($x_i$) آزاد است. !!{sentence}s~$!D_n$ را با استقرا بر~$n$ تعریف
+می‌کنیم.
+
+بگذارید $c_0$ نخستین !!{constant} در میان $\Obj d_i$هایی باشد که
+به~$\Lang{L}$ افزوده‌ایم و در~$!A_0(x_0)$ رخ نمی‌دهد. با فرض اینکه
+$!D_0$، \dots،~$!D_{n-1}$ پیش‌تر تعریف شده‌اند، بگذارید $c_n$ نخستین
+ثابت در میان !!{constant}s جدید~$\Obj d_i$ باشد که نه در
+$!D_0$، \dots،~$!D_{n-1}$ و نه در~$!A_n(x_n)$ رخ می‌دهد.
+
+اکنون بگذارید $!D_{n}$ عبارت باشد از !!{formula} زیر: \iftag{prvEx}
+{$\lexists[x_{n}][!A_{n}(x_{n})] \lif
+  !A_{n}(c_{n})$}{$\lnot\lforall[x_{n}][!A_{n}(x_{n})] \lif \lnot
+  !A_{n}(c_{n})$}.
+\end{defn}
+
+\begin{lem}
+\ollabel{lem:henkin}
+هر مجموعهٔ سازگار~$\Gamma$ را می‌توان به مجموعهٔ سازگار و
+اشباع‌شدهٔ~$\Gamma'$ گسترش داد.
+\end{lem}
+
+\begin{proof}
+مجموعهٔ سازگارِ جمله‌ها~$\Gamma$ در زبان~$\Lang{L}$ را در نظر بگیرید و
+زبان را با افزودن !!a{denumerable} مجموعه از !!{constant}s جدید گسترش
+دهید تا~$\Lang{L'}$ به دست آید. بنا بر \olref{prop:lang-exp}،
+$\Gamma$ در این زبان غنی‌تر همچنان سازگار است. افزون بر این، بگذارید
+$!D_i$ها مانند \olref{defn:henkin-exp} باشند. بگذارید
+\begin{align*}
+\Gamma_0 & = \Gamma \\
+\Gamma_{n+1} & = \Gamma_n \cup \{!D_n \}
+\end{align*}
+یعنی $\Gamma_{n+1} = \Gamma \cup \{ !D_0, \dots, !D_n \}$، و بگذارید
+$\Gamma' = \bigcup_{n} \Gamma_n$. آشکار است که $\Gamma'$ اشباع‌شده
+است.
+
+اگر $\Gamma'$ ناسازگار می‌بود، آنگاه برای عددی~$n$، مجموعهٔ
+$\Gamma_n$ ناسازگار می‌بود (تمرین: توضیح دهید چرا). پس برای نشان‌دادن
+سازگاری~$\Gamma'$ کافی است با استقرا بر~$n$ نشان دهیم هر
+مجموعهٔ~$\Gamma_n$ سازگار است.
+
+پایهٔ استقرا صرفاً این ادعاست که $\Gamma_0 = \Gamma$ سازگار است، و این
+همان فرض قضیه است. برای گام استقرا، فرض کنید $\Gamma_{n}$ سازگار است،
+اما $\Gamma_{n+1} = \Gamma_n \cup \{!D_n\}$ ناسازگار است. به یاد آورید
+که $!D_n$ عبارت است از
+\iftag{prvEx}
+{$\lexists[x_{n}][!A_{n}(x_n)] \lif !A_{n}(c_{n})$}
+{$\lnot\lforall[x_{n}][!A_{n}(x_n)] \lif \lnot !A_{n}(c_{n})$}،
+که در آن $!A_n(x_n)$ !!a{formula} از~$\Lang{L'}$ است که فقط
+متغیر~$x_n$ در آن آزاد است. بنا بر شیوه‌ای که $c_n$ را برگزیده‌ایم
+(بنگرید به \olref{defn:henkin-exp})، $c_n$ نه در~$!A_n(x_n)$ و نه
+در~$\Gamma_n$ رخ می‌دهد.
+
+اگر $\Gamma_n \cup \{!D_n\}$ ناسازگار باشد، آنگاه
+$\Gamma_n \Proves \lnot !D_n$، و در نتیجه هر دو گزارهٔ زیر برقرارند:
+\iftag{prvEx}{
+\[
+\Gamma_n \Proves \lexists[x_n][!A_n(x_n)]
+\qquad
+\Gamma_n \Proves \lnot !A_n(c_n)
+\]}{
+\[
+\Gamma_n \Proves \lnot\lforall[x_n][!A_n(x_n)]
+\qquad
+\Gamma_n \Proves !A_n(c_n)
+\]}
+چون $c_n$ در~$\Gamma_n$ یا در~$!A_n(x_n)$ رخ نمی‌دهد،
+\tagrefs{prfAX/{fol:axd:qpr:thm:strong-generalization},prfSC/{fol:seq:qpr:thm:strong-generalization},prfND/{fol:ntd:qpr:thm:strong-generalization},prfTab/{fol:tab:qpr:thm:strong-generalization}}
+کاربرد دارد. از \iftag{prvEx}
+{$\Gamma_n \Proves \lnot !A_n(c_n)$}
+{$\Gamma_n \Proves !A_n(c_n)$}،
+به دست می‌آوریم:
+\iftag{prvEx}
+{$\Gamma_n \Proves \lforall[x_n][\lnot !A_n(x_n)]$}
+{$\Gamma_n \Proves \lforall[x_n][!A_n(x_n)]$}.
+پس هر دو مورد زیر را داریم:
+\iftag{prvEx}
+{$\Gamma_n \Proves \lexists[x_n][!A_n(x_n)]$ و
+$\Gamma_n \Proves \lforall[x_n][\lnot !A_n(x_n)]$}
+{$\Gamma_n \Proves \lnot\lforall[x_n][!A_n(x_n)]$ و
+$\Gamma_n \Proves \lforall[x_n][!A_n(x_n)]$}؛
+بنابراین خود~$\Gamma_n$ ناسازگار است.
+\iftag{prvEx}
+{(توجه کنید که
+\iftag{prvEx}
+{$\lforall[x_n][\lnot !A_n(x_n)] \Proves
+  \lnot\lexists[x_n][!A_n(x_n)]$}
+{$\lforall[x_n][\lnot !A_n]$ به صورت
+  $\lnot\lexists[x_n][\lnot\lnot !A_n(x_n)]$ تعریف می‌شود و
+  $\lnot\lexists[x_n][\lnot\lnot !A_n(x_n)] \Proves
+  \lnot\lexists[x_n][!A_n(x_n)]$}.)}{}
+تناقض: بنا بود $\Gamma_n$ سازگار باشد. پس
+$\Gamma_n \cup \{ !D_n\}$ سازگار است.
+\end{proof}
+
+\begin{explain}
+اکنون نشان خواهیم داد مجموعه‌های \emph{کامل} و سازگاری که اشباع‌شده‌اند
+این خاصیت را دارند که \iftag{prvAll}{!!{sentence} کلیِ مسوری را دربر
+  دارند هرگاه و تنها هرگاه همهٔ نمونه‌های آن را دربر داشته باشند}{}
+\iftag{defAll,defEx}{}{ و }\iftag{prvEx}{!!{sentence} وجودیِ مسوری را
+  دربر دارند هرگاه و تنها هرگاه دست‌کم یک نمونهٔ آن را دربر داشته
+  باشند}{}. از این امر استفاده می‌کنیم تا نشان دهیم !!{structure}ای
+که از مجموعه‌ای کامل، سازگار و اشباع‌شده می‌سازیم، همهٔ جمله‌های مسور
+آن را صادق می‌سازد.
+\end{explain}
+
+\begin{prop}\ollabel{prop:saturated-instances}
+فرض کنید $\Gamma$ کامل، سازگار و اشباع‌شده باشد.
+\begin{tagenumerate}{prvEx,prvAll}
+\tagitem{prvEx}{$\lexists[x][!A(x)] \in \Gamma$ هرگاه و تنها هرگاه
+  برای دست‌کم یک ترم بستهٔ~$t$، $!A(t) \in \Gamma$.}{}
+\tagitem{prvAll}{$\lforall[x][!A(x)] \in \Gamma$ هرگاه و تنها هرگاه
+  برای همهٔ ترم‌های بستهٔ~$t$، $!A(t) \in \Gamma$.}{}
+\end{tagenumerate}
+\end{prop}
+
+\begin{proof}
+  \begin{tagenumerate}{prvEx,prvAll}
+  \tagitem{prvEx}{%
+    \iftag{probEx}{تمرین.}{نخست فرض کنید $\lexists[x][!A(x)]
+      \in \Gamma$. چون $\Gamma$ اشباع‌شده است، برای
+      !!{constant}~$c$ای، $(\lexists[x][!A(x)] \lif !A(c)) \in
+      \Gamma$. بنا بر
+      \tagrefs{prfAX/{fol:axd:ppr:prop:provability-lif},prfSC/{fol:seq:ppr:prop:provability-lif},prfND/{fol:ntd:ppr:prop:provability-lif},prfTab/{fol:tab:ppr:prop:provability-lif}}، مورد~(1)،
+      و \olref[ccs]{prop:ccs}\olref[ccs]{prop:ccs-prov-in}،
+      $!A(c) \in \Gamma$.
+
+    در جهت دیگر، اشباع‌بودن لازم نیست: فرض کنید $!A(t) \in \Gamma$.
+    آنگاه بنا بر
+      \tagrefs{prfAX/{fol:axd:qpr:prop:provability-quantifiers},prfSC/{fol:seq:qpr:prop:provability-quantifiers},prfND/{fol:ntd:qpr:prop:provability-quantifiers},prfTab/{fol:tab:qpr:prop:provability-quantifiers}}، مورد~(1)،
+    $\Gamma \Proves \lexists[x][!A(x)]$. بنا بر
+    \olref[ccs]{prop:ccs}\olref[ccs]{prop:ccs-prov-in}،
+    $\lexists[x][!A(x)] \in \Gamma$.}}{}
+  \tagitem{prvAll}{%
+    \iftag{probAll}{تمرین.}{فرض کنید برای همهٔ ترم‌های بستهٔ~$t$،
+      $!A(t) \in \Gamma$. برای رسیدن به تناقض، فرض کنید
+      $\lforall[x][!A(x)] \notin \Gamma$. چون $\Gamma$ کامل است،
+      $\lnot\lforall[x][!A(x)] \in \Gamma$. بنا بر اشباع‌بودن، برای
+      !!{constant}~$c$ای، \iftag{prvEx}{$(\lexists[x][\lnot !A(x)]
+        \lif \lnot !A(c)) \in \Gamma$}{$(\lnot\lforall[x][!A(x)]
+        \lif \lnot !A(c)) \in \Gamma$}. بنا بر فرض، چون $c$ ترمی
+      بسته است، $!A(c) \in \Gamma$. اما این امر $\Gamma$ را ناسازگار
+      می‌کند. (تمرین: !!{derivation}ای را به دست دهید که نشان می‌دهد
+      \[
+      \lnot \lforall[x][!A(x)],
+      \iftag{prvEx}{\lexists[x][\lnot !A(x)] \lif \lnot
+        !A(c)}{\lnot\lforall[x][!A(x)] \lif \lnot
+        !A(c)}, !A(c)
+      \]
+      ناسازگار است.)
+
+      برای جهت عکس، به اشباع‌بودن نیاز نداریم: فرض کنید
+      $\lforall[x][!A(x)] \in \Gamma$. آنگاه بنا بر
+      \tagrefs{prfAX/{fol:axd:qpr:prop:provability-quantifiers},prfSC/{fol:seq:qpr:prop:provability-quantifiers},prfND/{fol:ntd:qpr:prop:provability-quantifiers},prfTab/{fol:tab:qpr:prop:provability-quantifiers}}،
+      مورد~(2)، $\Gamma \Proves !A(t)$. بنا بر
+      \olref[ccs]{prop:ccs}، $!A(t) \in \Gamma$.}}{}
+  \end{tagenumerate}
+\end{proof}
+
+\end{document}

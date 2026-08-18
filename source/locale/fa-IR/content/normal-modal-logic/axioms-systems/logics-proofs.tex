@@ -1,0 +1,93 @@
+% Part: normal-modal-logic
+% Chapter: axioms-systems
+% Section: logics-proofs
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{prf}{prf}
+
+\olsection{\usetoken{P}{derivation} و دستگاه‌های موجهاتی}
+
+نخست تعریف می‌کنیم !!a{derivation} برای منطق‌های موجهات عادی چیست.
+به‌طور تقریبی، !!a{derivation} دنباله‌ای از !!{formula}هاست که هر
+!!{element} آن یا (نمونهٔ جانشینیِ) یکی از چند \emph{اصل} است یا با یکی
+از چند قاعدهٔ استنتاج از !!{element}های پیشین نتیجه می‌شود. برای
+منطق‌های موجهات عادی، همهٔ نمونه‌های همان‌گویی‌ها
+\iftag{prvDiamond}{، \Ax{K} و~\Dual{}}{ و~\Ax{K}} اصل به شمار می‌آیند.
+حاصل دستگاه موجهاتی~$\Log{K}$، یعنی کوچک‌ترین منطق موجهات عادی، است.
+بااین‌حال، ممکن است بخواهیم برای به‌دست‌آوردن دستگاه‌های دیگر اصل‌های
+دیگری بیفزاییم. قواعد همیشه وضع مقدم~\MP{} و ضرورت‌بخشی~\Nec{} هستند.
+
+\begin{defn}
+  با داشتن دستگاه موجهاتی~$\Log{K} !A_1 \dots !A_n$ و
+  !!a{formula}~$!B$، می‌گوییم~$!B$ در~$\Log{K} !A_1 \dots !A_n$
+  \emph{!!{derivable}} است، به نماد
+  $\Log{K} !A_1 \dots !A_n \Proves !B$، اگر و تنها اگر
+  !!{formula}های~$!C_1$، \dots، $!C_k$ وجود داشته باشند چنان‌که
+  $!C_k = !B$ و هر~$!C_i$ یا یک نمونهٔ همان‌گویی، یا نمونه‌ای از یکی
+  از~$\Ax{K}$،\iftag{prvDiamond}{ $\Dual$،}{} $!A_1$، \dots، $!A_n$
+  باشد، یا با قواعد~\MP{} یا~\Nec{} از !!{formula}های پیشین نتیجه شود.
+\end{defn}
+
+گزارهٔ زیر به ما امکان می‌دهد با ارائهٔ یک~$\Sigma$-!!{derivation} از
+$!B$ نشان دهیم~$!B \in \Sigma$.
+
+\begin{prop}
+  $\Log{K} !A_1 \dots !A_n = \Setabs{!B}{\Log{K} !A_1 \dots !A_n \Proves !B}$.
+\end{prop}
+
+\begin{proof}
+  با استقرا بر طول !!{derivation}ها نشان می‌دهیم
+  $\Setabs{!B}{\Log{K} !A_1 \dots !A_n \Proves !B} \subseteq
+  \Log{K} !A_1 \dots !A_n$.
+
+  اگر !!{derivation}~$!B$ طول~$1$ داشته باشد، تنها شامل یک
+  !!{formula} است. آن !!{formula} نمی‌تواند با~\MP{} یا~\Nec{} از
+  فرمول‌های پیشین نتیجه شده باشد؛ پس باید یک نمونهٔ همان‌گویی، نمونه‌ای
+  از~\Ax{K}،\iftag{prvDiamond}{ $\Dual$،}{} یا نمونه‌ای از~$!A_1$،
+  \dots،~$!A_n$ باشد. اما~$\Log{K}!A_1\dots!A_n$ این‌ها را نیز شامل
+  می‌شود؛ پس~$!B \in \Log{K}!A_1 \dots !A_n$.
+
+  اگر !!{derivation}~$!B$ طولی بزرگ‌تر از~$1$ داشته باشد، افزون بر این
+  ممکن است~$!B$ با~\MP{} یا~\Nec{} از !!{formula}هایی به دست آمده باشد
+  که خط آخر !!{derivation} نیستند. اگر~$!B$ با~\MP{} از~$!C$ و
+  $!C \lif !B$ نتیجه شود، بنا بر فرض استقرا~$!C$ و
+  $!C \lif !B \in \Log{K}!A_1 \dots !A_n$. اما هر منطق موجهات تحت وضع
+  مقدم بسته است، پس~$!B \in \Log{K}!A_1 \dots !A_n$. اگر
+  $!B \ident \Box !C$ با~\Nec{} از~$!C$ نتیجه شود، بنا بر فرض استقرا
+  $!C \in \Log{K}!A_1 \dots !A_n$. اما هر منطق موجهات عادی تحت~$\Nec$
+  بسته است؛ پس~$!B \in \Log{K}!A_1\dots!A_n$.
+
+  شمول عکس با نشان‌دادن این امر به دست می‌آید که
+  $\Sigma = \Setabs{!B}{\Log{K} !A_1 \dots !A_n \Proves !B }$ یک منطق
+  موجهات عادی شامل همهٔ نمونه‌های~$!A_1$، \dots، $!A_n$ است و با توجه
+  به اینکه~$\Log{K} !A_1 \dots !A_n$ بنا به تعریف کوچک‌ترین منطق از
+  این نوع است.
+  \begin{enumerate}
+    \item هر همان‌گویی~$!B$ یک نمونهٔ همان‌گویی است؛ پس
+      $\Log{K}!A_1\dots!A_n \Proves !B$، و~$\Sigma$ همهٔ همان‌گویی‌ها
+      را شامل می‌شود.
+    \item اگر~$\Log{K}!A_1\dots!A_n \Proves !C$ و
+      $\Log{K}!A_1\dots!A_n \Proves !C \lif !B$، آنگاه
+      $\Log{K}!A_1\dots!A_n \Proves !B$: !!{derivation}~$!C$ را با
+      اثباتِ~$!C \lif !B$ ترکیب کنید و خط~$!B$ را بیفزایید.
+      خط آخر با~\MP{} توجیه می‌شود. پس~$\Sigma$ تحت وضع مقدم بسته است.
+    \item اگر~$!B$ !!a{derivation} داشته باشد، هر نمونهٔ جانشینی~$!B$
+      نیز !!a{derivation} دارد: جانشینی را بر هر !!{formula} در
+      !!{derivation} اعمال کنید. (تمرین: با استقرا بر طول
+      !!{derivation}ها ثابت کنید نتیجه نیز !!{derivation} درستی است.)
+      پس~$\Sigma$ تحت جانشینی یکنواخت بسته است. (اکنون ثابت کرده‌ایم
+      $\Sigma$ همهٔ شرایط یک منطق موجهات را برآورده می‌کند.)
+    \item داریم~$\Log{K}!A_1\dots!A_n \Proves \Ax{K}$، پس
+      $\Ax{K} \in \Sigma$.
+    \tagitem{prvDiamond}{داریم
+      $\Log{K}!A_1\dots!A_n \Proves \Dual$، پس~$\Dual \in \Sigma$.}{}
+    \item اگر~$\Log{K}!A_1\dots!A_n \Proves !C$، خط اضافی~$\Box !C$
+      با~\Nec{} توجیه می‌شود. بنابراین~$\Sigma$ تحت~\Nec{} بسته است؛
+      پس~$\Sigma$ عادی است.
+  \end{enumerate}
+\end{proof}
+
+\end{document}

@@ -1,0 +1,57 @@
+% Part: second-order-logic
+% Chapter: metatheory
+% Section: loewenheim-skolem
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sol}{met}{lst}
+
+\olsection{شکست قضیهٔ لوونهایم--اسکولم در منطق مرتبهٔ دوم}
+
+\begin{explain}
+قضیهٔ (نزولیِ) لوونهایم--اسکولم می‌گوید هر مجموعه از !!{sentence}s که
+مدلی نامتناهی داشته باشد، مدلی~!!a{enumerable} دارد. این قضیه نیز نتیجهٔ
+قضیهٔ تمامیت است: اثبات تمامیت برای هر مجموعهٔ سازگار از !!{sentence}s
+مدلی می‌سازد و آن مدل !!{enumerable} است. قضیهٔ صعودیِ
+لوونهایم--اسکولم نیز وجود دارد که تضمین می‌کند اگر مجموعه‌ای از
+!!{sentence}s مدلی~!!a{denumerable} داشته باشد، مدلی~!!a{nonenumerable}
+هم دارد. هر دو قضیه در منطق مرتبهٔ دوم شکست می‌خورند.
+\end{explain}
+
+
+\begin{thm}
+\ollabel{thm:sol-no-ls} قضیهٔ لوونهایم--اسکولم در منطق مرتبهٔ دوم شکست
+می‌خورد: !!{sentence}sی وجود دارند که مدل نامتناهی دارند اما هیچ مدل
+!!{enumerable}ی ندارند.
+\end{thm}
+
+\begin{proof}
+به یاد آورید که
+\[
+\fn{Count} \ident \lexists[z][\lexists[u][\lforall[X][((X(z) \land
+      \lforall[x][(X(x) \lif X(u(x)))]) \lif \lforall[x][X(x)])]]]
+\]
+در !!a{structure}ی چون~$\Struct{M}$ صادق است اگر و تنها اگر
+$\Domain{M}$ !!{enumerable} باشد؛ پس~$\lnot\fn{Count}$ در~$\Struct{M}$
+صادق است اگر و تنها اگر~$\Domain{M}$ !!{nonenumerable} باشد. چنین
+!!{structure}sی وجود دارند: هر مجموعهٔ !!{nonenumerable}ی را، برای
+نمونه~$\Pow{\Nat}$ یا~$\Real$، به‌عنوان !!{domain} بگیرید. پس
+$\lnot \fn{Count}$ مدل‌های نامتناهی دارد اما هیچ مدل !!{enumerable}ی
+ندارد.
+\end{proof}
+
+\begin{thm}
+!!{sentence}sی وجود دارند که !!{denumerable} مدل دارند اما هیچ مدل
+!!{nonenumerable}ی ندارند.
+\end{thm}
+
+\begin{proof}
+$\fn{Count} \land \fn{Inf}$ در~$\Nat$ صادق است اما در هیچ
+!!{structure}~$\Struct{M}$ با !!{nonenumerable}بودنِ~$\Domain{M}$
+صادق نیست.
+\end{proof}
+
+
+\end{document}

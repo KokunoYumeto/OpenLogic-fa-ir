@@ -1,0 +1,52 @@
+% part: intuitionistic-logic
+% chapter: semantics
+% section: propositions
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{sem}{pro}
+
+\olsection{گزاره‌ها}
+
+گاهی سودمند است برای مجموعهٔ جهان‌هایی در !!a{relational model}
+~$\mModel{M}$ که !!a{formula}~$!A$ در آن‌ها صادق است نامی داشته باشیم.
+آن را \emph{گزارهٔ} تعریف‌شده به وسیلهٔ~$!A$ می‌نامیم و
+$\Prop{M}{!A}$ می‌نویسیم.
+
+\begin{defn}
+  تابع $V$ را به‌طور استقرایی به نگاشت
+  $!A \mapsto \Prop{M}{!A} \colon \Frm \to \Pow{W}$ چنین گسترش می‌دهیم:
+  \begin{enumerate}
+  \item $\Prop{M}{\lfalse} = \emptyset$.
+  \item $\Prop{M}{p} = V(p)$.
+  \item $\Prop{M}{\lnot !B} = {}$
+    \[
+      \Setabs{w \in W}{\text{برای هر $w'$ که $Rww'$، داریم
+          $w' \notin \Prop{M}{!B}$}}.
+    \]
+  \item $\Prop{M}{!B \land !C} = \Prop{M}{!B} \cap \Prop{M}{!C}$.
+  \item $\Prop{M}{!B \lor !C} = \Prop{M}{!B} \cup \Prop{M}{!C}$.
+  \item $\Prop{M}{!B \lif !C} = {}$
+    \[
+      \Setabs{w \in W}{\text{برای هر $w'$ که $Rww'$، اگر
+          $w' \in \Prop{M}{!B}$ آنگاه $w' \in \Prop{M}{!C}$}}.
+    \]
+  \end{enumerate}
+\end{defn}
+
+\begin{prop}
+  \ollabel{prop:propositions-true}
+  $\mModel{M}{!A}[w]$ اگر و تنها اگر $w \in \Prop{M}{!A}$.
+\end{prop}
+
+\begin{proof}
+  تمرین.
+\end{proof}
+
+\begin{prob}
+  \olref[int][sem][pro]{prop:propositions-true} را اثبات کنید.
+\end{prob}
+
+\end{document}

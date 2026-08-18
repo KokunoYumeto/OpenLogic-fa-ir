@@ -1,0 +1,93 @@
+% Part: turing-machines
+% Chapter: machines-computations
+% Section: disciplined-machines
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{tur}{mac}{dis}
+\olsection{ماشین‌های منضبط}
+
+\begin{explain}
+در بخش \olref[hal]{sec} ماشین‌های تورینگی با یک حالت توقف تعیین‌شدهٔ
+$h$ را بررسی کردیم---چنین ماشین‌هایی تضمین می‌کنند که اگر اصلاً
+متوقف شوند، در حالت~$h$ متوقف شوند. از این جهت ماشین‌های دارای یک
+حالت توقف از آنچه به‌طور کلی برای ماشین‌های تورینگ مجاز می‌دانیم
+«منضبط‌ترند». محدودیت‌های دیگری نیز می‌توان بر رفتار ماشین‌های تورینگ
+تحمیل کرد. برای نمونه، هنوز ماشین‌های تورینگ را از پاک‌کردن نشانگر
+انتهای نوار در خانهٔ~$0$ یا تلاش برای حرکت به چپ از خانهٔ~$0$ منع
+نکرده‌ایم. (تعریف ما می‌گوید سر در این حالت صرفاً در خانهٔ~$0$
+می‌ماند؛ در تعریف‌های دیگر ماشین متوقف می‌شود.) همچنین گاه مطلوب است
+بتوانیم فرض کنیم ماشین تورینگ، اگر اصلاً متوقف شود، در خانهٔ~$1$
+متوقف می‌شود.
+\end{explain}
+
+\begin{defn}\ollabel{defn:disciplined}
+ماشین تورینگ~$M$ \emph{منضبط} است اگر و تنها اگر
+\begin{enumerate}
+    \item یک حالت توقف یگانه و تعیین‌شدهٔ~$h$ داشته باشد؛
+    \item اگر اصلاً متوقف شود، هنگام خواندن خانهٔ~$1$ متوقف شود؛
+    \item هرگز نماد $\TMendtape$ را در خانهٔ~$0$ پاک نکند؛ و
+    \item هرگز برای حرکت به چپ از خانهٔ~$0$ تلاش نکند.
+\end{enumerate}
+\end{defn}
+
+\begin{explain}
+از پیش گفتیم هر ماشین تورینگ را می‌توان به ماشینی با همان رفتار و یک
+حالت توقف تعیین‌شده تبدیل کرد. کافی است حالت تازهٔ~$h$ را بیفزاییم و
+برای هر زوج $\tuple{q,\sigma}$ که $\delta$ اصلی در آن تعریف‌نشده است،
+دستور $\delta(q,\sigma)=\tuple{h,\sigma,\TMstay}$ را اضافه کنیم. درست است،
+گرچه اثباتش ملال‌آور است، که هر ماشین تورینگ~$M$ را می‌توان به ماشین
+تورینگ منضبط~$M'$ای تبدیل کرد که روی همان ورودی‌ها متوقف می‌شود و همان
+خروجی را تولید می‌کند. برای نمونه، اگر ماشین تورینگ متوقف شود و روی
+خانهٔ~$1$ نباشد، می‌توانیم دستورهایی بیفزاییم تا سر به چپ حرکت کند تا
+نشانگر انتهای نوار را بیابد، سپس یک خانه به راست برود و متوقف شود.
+اندیشیدن دربارهٔ چگونگی رسیدگی به شرط‌های دیگر را به شما واگذار
+می‌کنیم.
+\end{explain}
+
+\begin{ex}
+    در \olref{fig:adder-disc} ماشین جمعِ
+    \olref[una]{ex:adder} را به ماشینی منضبط تبدیل می‌کنیم.
+    \begin{figure}\[
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+                    semithick]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+
+  \node[initial,state]         (A)              {$q_0$};
+  \node[state]         (B) [right of=A] {$q_1$};
+  \node[state]         (C) [below right of=B] {$q_2$};
+  \node[state]         (D) [below left of=C] {$q_3$};
+  \node[state]         (H) [left of=D] {$h$};
+
+  \path (A) edge node {\TMtrans{\TMblank}{\TMstroke}{\TMstay}} (B)
+           edge [loop below] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (A)
+        (B) edge [loop below] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (B)
+            edge node {\TMtrans{\TMblank}{\TMblank}{\TMleft}} (C)
+        (C) edge node {\TMtrans{\TMstroke}{\TMblank}{\TMleft}} (D)
+        (D) edge [loop above] node {\TMtrans{\TMstroke}{\TMstroke}{\TMleft}} (D)
+        edge node {\TMtrans{\TMendtape}{\TMendtape}{\TMright}} (H);
+\end{tikzpicture}
+\]\caption{ماشین جمع منضبط}
+\ollabel{fig:adder-disc}
+\end{figure}
+\end{ex}
+
+\begin{prop}\ollabel{prop:disciplined} به ازای هر ماشین تورینگ~$M$،
+ماشین تورینگ منضبط~$M'$ای وجود دارد که اگر $M$ با خروجی~$O$ متوقف شود
+با خروجی~$O$ متوقف می‌شود، و اگر $M$ متوقف نشود متوقف نمی‌شود.
+به‌ویژه، هر تابع $f\colon\Nat^n\to\Nat$ که ماشین تورینگی محاسبه کند
+با ماشین تورینگ منضبطی نیز محاسبه‌پذیر است.
+\end{prop}
+
+\begin{prob}\label{tur:mac:dis:prob:disc-succ}
+ماشین منضبطی به دست دهید که $f(x)=x+1$ را محاسبه کند.
+\end{prob}
+
+\begin{prob}\label{tur:mac:dis:prob:copier}
+ماشین منضبطی بیابید که با آغاز روی ورودی $\TMstroke^n$، خروجی
+$\TMstroke^n\concat\TMblank\concat\TMstroke^n$ را تولید کند.
+\end{prob}
+
+\end{document}

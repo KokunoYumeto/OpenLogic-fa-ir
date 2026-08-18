@@ -1,0 +1,339 @@
+% Part: first-order-logic
+% Chapter: sequent-calculus
+% Section: proving-things
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{seq}{pro}}
+      {\olfileid{pl}{seq}{pro}}
+
+\olsection{نمونه‌هایی از \usetoken{P}{derivation}}
+
+\begin{ex}
+یک $\Log{LK}$-!!{derivation} برای دنبالهٔ
+$!A \land !B \Sequent !A$ به دست دهید.
+
+با نوشتن دنبالهٔ پایانیِ مطلوب در پایین !!{derivation} آغاز می‌کنیم.
+\begin{prooftree}
+\AxiomC{}
+\UnaryInf$!A\land !B \fCenter !A$
+\end{prooftree}
+سپس باید دریابیم چه نوع استنتاجی می‌تواند دنبالهٔ پایینی‌ای به این
+صورت داشته باشد. ممکن است قاعده‌ای ساختاری باشد، اما بهتر است جست‌وجو
+را با یک قاعدهٔ منطقی آغاز کنیم. تنها رابط منطقیِ دنبالهٔ پایینی
+$\land$ است؛ پس در پی قاعده‌ای برای $\land$ هستیم، و چون نماد
+$\land$ در مقدم رخ می‌دهد، قاعدهٔ \LeftR{\land} را بررسی می‌کنیم.
+\begin{prooftree}
+\AxiomC{}
+\RightLabel{\LeftR{\land}}
+\UnaryInf$!A\land !B \fCenter !A$
+\end{prooftree}
+برای دنبالهٔ بالاییِ استنتاج \LeftR{\land} دو امکان وجود دارد:
+دنبالهٔ بالایی می‌تواند $!A \Sequent !A$ یا $!B \Sequent !A$ باشد.
+روشن است که $!A \Sequent !A$ دنباله‌ای آغازین است (و این مطلوب است)،
+درحالی‌که $!B \Sequent !A$ در حالت کلی اشتقاق‌پذیر نیست. دنبالهٔ
+بالایی را درج می‌کنیم:
+\begin{prooftree}
+\Axiom$!A \fCenter !A$
+\RightLabel{\LeftR{\land}}
+\UnaryInf$!A\land !B \fCenter !A$
+\end{prooftree}
+اکنون $\Log{LK}$-!!{derivation} درستی برای دنبالهٔ
+$!A \land !B \Sequent !A$ داریم.
+\end{ex}
+
+\begin{ex}
+یک $\Log{LK}$-!!{derivation} برای دنبالهٔ
+$\lnot !A \lor !B \Sequent !A \lif !B$ به دست دهید.
+
+با نوشتن دنبالهٔ پایانیِ مطلوب در پایین !!{derivation} آغاز کنید.
+\begin{prooftree}
+\AxiomC{}
+\UnaryInf$\lnot !A \lor !B \fCenter !A \lif !B$
+\end{prooftree}
+برای یافتن قاعده‌ای منطقی که بتواند این دنبالهٔ پایانی را به دست دهد،
+به رابط‌های منطقی آن نگاه می‌کنیم: $\lnot$، $\lor$ و $\lif$. اکنون
+فقط $\lor$ و $\lif$ برای ما مهم‌اند، زیرا در دنبالهٔ پایانی نقش
+!!{main operator}s را برای !!{sentence}s دارند؛ اما $\lnot$ در دامنهٔ
+رابط دیگری است و بعداً به آن می‌پردازیم. پس گزینه‌های ما برای قاعدهٔ
+منطقیِ استنتاج نهایی، قاعدهٔ \LeftR{\lor} و قاعدهٔ \RightR{\lif}
+هستند. در واقع هر کدام را می‌توان برگزید، اما قاعدهٔ
+\RightR{\lif} را برمی‌گزینیم (حتی اگر تنها دلیل این باشد که انشعاب
+به دو شاخه را به تعویق می‌اندازد). بنا بر صورت استنتاج‌های
+\RightR{\lif} که می‌توانند دنبالهٔ پایینی را به دست دهند، باید چنین
+داشته باشیم:
+\begin{prooftree}
+\AxiomC{}
+\UnaryInf$ !A, \lnot !A \lor !B \fCenter !B $
+\RightLabel{\RightR{\lif}} \UnaryInf$ \lnot !A \lor !B \fCenter !A \lif !B $
+\end{prooftree}
+
+اگر $\lnot !A \lor !B$ را به بیرونی‌ترین جای مقدم منتقل کنیم، می‌توانیم
+قاعدهٔ \LeftR{\lor} را اعمال کنیم. بنا بر شِما، این کار باید به دو
+دنبالهٔ بالاییِ زیر منشعب شود:
+\begin{prooftree}
+\AxiomC{}
+\UnaryInf$\lnot !A, !A \fCenter !B$
+\AxiomC{}
+\UnaryInf$!B, !A \fCenter !B$
+\RightLabel{\LeftR{\lor}}
+\BinaryInf$ \lnot !A \lor !B, !A \fCenter !B $
+\RightLabel{\LeftR{\Exchange}}
+\UnaryInf$ !A, \lnot !A \lor !B \fCenter !B $
+\RightLabel{\RightR{\lif}}
+\UnaryInf$ \lnot !A \lor !B \fCenter !A \lif !B $
+\end{prooftree}
+به یاد داشته باشید که می‌کوشیم مسیر خود را رو به بالا تا دنباله‌های
+آغازین بیابیم؛ ظاهراً بسیار نزدیک شده‌ایم!{} شاخهٔ راست فقط به یک
+تضعیف و یک تبادل نیاز دارد تا به دنباله‌ای آغازین برسد و کامل شود:
+\begin{prooftree}
+\AxiomC{}
+\UnaryInf$\lnot !A, !A \fCenter !B$
+\Axiom$!B \fCenter !B$
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$!A, !B \fCenter !B$
+\RightLabel{\LeftR{\Exchange}}
+\UnaryInf$!B, !A \fCenter !B$
+\RightLabel{\LeftR{\lor}}
+\BinaryInf$\lnot !A \lor !B, !A \fCenter !B $
+\RightLabel{\LeftR{\Exchange}}
+\UnaryInf$ !A, \lnot !A \lor !B \fCenter !B $
+\RightLabel{\RightR{\lif}}
+\UnaryInf$ \lnot !A \lor !B \fCenter !A \lif !B $
+\end{prooftree}
+
+اکنون به شاخهٔ چپ نگاه می‌کنیم. تنها رابط منطقی در هر !!{sentence}،
+نماد $\lnot$ در !!{sentence}s مقدم است؛ پس با نمونه‌ای از قاعدهٔ
+\LeftR{\lnot} سروکار داریم.
+\begin{prooftree}
+\AxiomC{}
+\UnaryInf$ !A \fCenter !B, !A$
+\RightLabel{\LeftR{\lnot}}
+\UnaryInf$\lnot !A, !A \fCenter !B$
+\Axiom$!B \fCenter !B$
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$!A, !B \fCenter !B$
+\RightLabel{\LeftR{\Exchange}}
+\UnaryInf$!B, !A \fCenter !B$
+\RightLabel{\LeftR{\lor}}
+\BinaryInf$\lnot !A \lor !B, !A \fCenter !B $
+\RightLabel{\LeftR{\Exchange}}
+\UnaryInf$ !A, \lnot !A \lor !B \fCenter !B $
+\RightLabel{\RightR{\lif}}
+\UnaryInf$ \lnot !A \lor !B \fCenter !A \lif !B $
+\end{prooftree}
+همانند تکمیل شاخهٔ راست، برای تکمیل این شاخهٔ چپ نیز فقط یک تضعیف
+و یک تبادل فاصله داریم.
+\begin{prooftree}
+\Axiom$!A \fCenter !A$
+\RightLabel{\RightR{\Weakening}}
+\UnaryInf$ !A \fCenter !A, !B$
+\RightLabel{\RightR{\Exchange}}
+\UnaryInf$ !A \fCenter !B, !A$
+\RightLabel{\LeftR{\lnot}}
+\UnaryInf$\lnot !A, !A \fCenter !B$
+\Axiom$!B \fCenter !B$
+\RightLabel{\LeftR{\Weakening}}
+\UnaryInf$!A, !B \fCenter !B$
+\RightLabel{\LeftR{\Exchange}}
+\UnaryInf$!B, !A \fCenter !B$
+\RightLabel{\LeftR{\lor}}
+\BinaryInf$\lnot !A \lor !B, !A \fCenter !B $
+\RightLabel{\LeftR{\Exchange}}
+\UnaryInf$ !A, \lnot !A \lor !B \fCenter !B $
+\RightLabel{\RightR{\lif}}
+\UnaryInf$ \lnot !A \lor !B \fCenter !A \lif !B $
+\end{prooftree}
+\end{ex}
+
+\begin{ex}
+یک $\Log{LK}$-!!{derivation} برای دنبالهٔ
+$\lnot !A \lor \lnot !B \Sequent \lnot (!A \land !B)$ به دست دهید.
+
+با استفاده از روش‌های بالا، با نوشتن دنبالهٔ پایانیِ مطلوب در پایین
+آغاز می‌کنیم.
+\begin{prooftree}
+\AxiomC{}
+\UnaryInf$ \lnot !A \lor \lnot !B \fCenter \lnot (!A \land !B) $
+\end{prooftree}
+رابط‌های اصلیِ در دسترسِ !!{sentence}s دنبالهٔ پایانی، نماد
+$\lor$ و نماد $\lnot$ هستند. در اینجا اعمال هر یک از قاعدهٔ
+\LeftR{\lor} یا قاعدهٔ \RightR{\lnot} نتیجه می‌دهد، اما با قاعدهٔ
+\RightR{\lnot} آغاز می‌کنیم، زیرا انشعاب به دو شاخه را اندکی به
+تعویق می‌اندازد:
+\begin{prooftree}
+\AxiomC{}
+\UnaryInf$!A \land !B, \lnot !A \lor \lnot !B \fCenter $
+\RightLabel{\RightR{\lnot}}
+\UnaryInf$\lnot !A \lor \lnot !B \fCenter \lnot (!A \land !B)$
+\end{prooftree}
+اکنون میان بررسی قاعدهٔ \LeftR{\land} و قاعدهٔ \LeftR{\lor} حق انتخاب
+داریم. ببینیم با اعمال قاعدهٔ \LeftR{\land} چه رخ می‌دهد: می‌توانیم
+با دنبالهٔ $!A, \lnot !A \lor !B \Sequent \quad$ یا دنبالهٔ
+$!B, \lnot !A \lor !B \Sequent \quad$ آغاز کنیم. چون !!{derivation}
+نسبت به $!A$ و $!B$ متقارن است، مورد نخست را برمی‌گزینیم:
+\begin{prooftree}
+\AxiomC{}
+\UnaryInf$!A, \lnot !A \lor \lnot !B \fCenter $
+\RightLabel{\LeftR{\land}}
+\UnaryInf$!A \land !B, \lnot !A \lor \lnot !B \fCenter $
+\RightLabel{\RightR{\lnot}}
+\UnaryInf$\lnot !A \lor \lnot !B \fCenter \lnot (!A \land !B)$
+\end{prooftree}
+با ادامهٔ پرکردن !!{derivation} می‌بینیم که به مشکلی برمی‌خوریم:
+\begin{prooftree}
+\Axiom$!A \fCenter !A$
+\RightLabel{\LeftR{\lnot}}
+\UnaryInf$ \lnot !A, !A \fCenter$
+\AxiomC{}
+\RightLabel{?}
+\UnaryInf$!A \fCenter !B$
+\RightLabel{\LeftR{\lnot}}
+\UnaryInf$ \lnot !B, !A \fCenter$
+\RightLabel{\LeftR{\lor}}
+\BinaryInf$\lnot !A \lor \lnot !B, !A \fCenter $
+\RightLabel{\LeftR{\Exchange}}
+\UnaryInf$!A, \lnot !A \lor \lnot !B \fCenter $
+\RightLabel{\LeftR{\land}}
+\UnaryInf$!A \land !B, \lnot !A \lor \lnot !B \fCenter $
+\RightLabel{\RightR{\lnot}}
+\UnaryInf$\lnot !A \lor \lnot !B \fCenter \lnot (!A \land !B)$
+\end{prooftree}
+بالای شاخهٔ راست را نمی‌توان بیش از این فروکاست و با استنتاج‌های
+ساختاری نیز نمی‌توان آن را به دنباله‌ای آغازین رساند؛ پس این مسیر
+درستی نیست. بنابراین آشکار است که اعمال قاعدهٔ \LeftR{\land} در بالا
+خطا بود. اگر به مرحلهٔ پیشین بازگردیم و به‌جای آن قاعدهٔ
+\LeftR{\lor} را اعمال کنیم، به عبارت زیر می‌رسیم:
+\begin{prooftree}
+\AxiomC{}
+\UnaryInf$\lnot !A, !A \land !B \fCenter $
+
+\AxiomC{}
+\UnaryInf$\lnot !B, !A \land !B \fCenter $
+
+\RightLabel{\LeftR{\lor}}
+\BinaryInf$\lnot !A \lor \lnot !B, !A \land !B \fCenter $
+\RightLabel{\LeftR{\Exchange}}
+\UnaryInf$!A \land !B, \lnot !A \lor \lnot !B \fCenter $
+\RightLabel{\RightR{\lnot}}
+\UnaryInf$\lnot !A \lor \lnot !B \fCenter \lnot (!A \land !B)$
+\end{prooftree}
+با تکمیل هر شاخه به همان شیوهٔ پیشین، داریم:
+\begin{prooftree}
+\Axiom$ !A \fCenter!A$
+\RightLabel{\LeftR{\land}}
+\UnaryInf$!A \land !B \fCenter !A$
+\RightLabel{\LeftR{\lnot}}
+\UnaryInf$\lnot !A, !A \land !B \fCenter $
+
+\Axiom$ !B \fCenter !B$
+\RightLabel{\LeftR{\land}}
+\UnaryInf$!A \land !B \fCenter !B$
+\RightLabel{\LeftR{\lnot}}
+\UnaryInf$\lnot !B, !A \land !B \fCenter $
+
+\RightLabel{\LeftR{\lor}}
+\BinaryInf$\lnot !A \lor \lnot !B, !A \land !B \fCenter $
+\RightLabel{\LeftR{\Exchange}}
+\UnaryInf$!A \land !B, \lnot !A \lor \lnot !B \fCenter $
+\RightLabel{\RightR{\lnot}}
+\UnaryInf$\lnot !A \lor \lnot !B \fCenter \lnot (!A \land !B)$
+\end{prooftree}
+(در این گام‌ها می‌توانستیم قواعد $\land$ را پایین‌تر از قواعد
+$\lnot$ اعمال کنیم و باز هم !!{derivation} درستی به دست آوریم.)
+\end{ex}
+
+\begin{ex}
+تا اینجا از قاعدهٔ انقباض استفاده نکرده‌ایم، اما گاهی به آن نیاز
+داریم. نمونه‌ای از چنین وضعی را ببینیم. فرض کنید می‌خواهیم
+$\quad \Sequent !A \lor \lnot !A$ را اثبات کنیم. اعمال وارونهٔ
+$\RightR{\lor}$ یکی از !!{derivation}s زیر را به ما می‌دهد:
+\begin{prooftree}
+\AxiomC{}
+\UnaryInf$ \fCenter !A$
+\RightLabel{\RightR{\lor}}
+\UnaryInf$ \fCenter !A \lor \lnot !A$
+\DisplayProof\qquad\bottomAlignProof
+\AxiomC{}
+\UnaryInf$!A \fCenter $
+\RightLabel{\RightR{\lnot}}
+\UnaryInf$ \fCenter \lnot !A$
+\RightLabel{\RightR{\lor}}
+\UnaryInf$ \fCenter !A \lor \lnot !A$
+\end{prooftree}
+البته هیچ‌یک از این دو به دنباله‌ای آغازین ختم نمی‌شود. نکته این است
+که قاعدهٔ انقباض به ما امکان می‌دهد دو نسخه از !!a{sentence} را در
+یکی ادغام کنیم---و هنگامی که در جست‌وجوی برهانیم، یعنی از پایین به
+بالا می‌رویم، می‌توانیم نسخه‌ای از $!A \lor \lnot !A$ را در مقدمه
+نگه داریم؛ برای نمونه:
+\begin{prooftree}
+\AxiomC{}
+\UnaryInf$ \fCenter !A \lor \lnot !A, !A$
+\RightLabel{\RightR{\lor}}
+\UnaryInf$ \fCenter !A \lor \lnot !A, !A \lor \lnot !A$
+\RightLabel{\RightR{\Contraction}}
+\UnaryInf$ \fCenter !A \lor \lnot !A$
+\end{prooftree}
+اکنون می‌توانیم $\RightR{\lor}$ را بار دوم اعمال کنیم و
+~$\lnot !A$ را نیز به دست آوریم؛ این به !!{derivation} کاملی می‌انجامد.
+\begin{prooftree}
+\Axiom$!A \fCenter !A$
+\RightLabel{\RightR{\lnot}}
+\UnaryInf$\fCenter !A, \lnot !A$
+\RightLabel{\RightR{\lor}}
+\UnaryInf$\fCenter !A, !A \lor \lnot !A$
+\RightLabel{\RightR{\Exchange}}
+\UnaryInf$ \fCenter !A \lor \lnot !A, !A$
+\RightLabel{\RightR{\lor}}
+\UnaryInf$ \fCenter !A \lor \lnot !A, !A \lor \lnot !A$
+\RightLabel{\RightR{\Contraction}}
+\UnaryInf$ \fCenter !A \lor \lnot !A$
+\end{prooftree}
+\end{ex}
+
+\begin{prob}
+برای دنباله‌های زیر !!{derivation}sی لازم را به دست دهید:
+\begin{enumerate}
+\item $!A \land (!B \land !C) \Sequent (!A \land !B) \land !C$.
+\item $!A \lor (!B \lor !C) \Sequent (!A \lor !B) \lor !C$.
+\item $!A \lif (!B \lif !C) \Sequent !B \lif (!A \lif !C)$.
+\item $!A \Sequent \lnot\lnot !A$.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+برای دنباله‌های زیر !!{derivation}sی لازم را به دست دهید:
+\begin{enumerate}
+\item $(!A \lor !B) \lif !C \Sequent !A \lif !C$.
+\item $(!A \lif !C) \land (!B \lif !C) \Sequent (!A \lor !B) \lif !C$.
+\item $\Sequent \lnot(!A \land \lnot !A)$.
+\item $!B \lif !A \Sequent \lnot !A \lif \lnot !B$.
+\item $\Sequent (!A \lif \lnot !A) \lif \lnot !A$.
+\item $\Sequent \lnot(!A \lif !B) \lif \lnot !B$.
+\item $!A \lif !C \Sequent \lnot (!A \land \lnot !C)$.
+\item $!A \land \lnot !C \Sequent \lnot (!A \lif !C)$.
+\item $!A \lor !B, \lnot !B \Sequent !A$.
+\item $\lnot !A \lor \lnot !B \Sequent \lnot(!A \land !B)$.
+\item $\Sequent (\lnot !A \land \lnot !B) \lif\lnot(!A \lor !B)$.
+\item $\Sequent \lnot(!A \lor !B) \lif (\lnot !A \land \lnot !B)$.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}
+برای دنباله‌های زیر !!{derivation}sی لازم را به دست دهید:
+\begin{enumerate}
+\item $\lnot(!A \lif !B) \Sequent !A$.
+\item $\lnot(!A \land !B) \Sequent \lnot !A \lor \lnot !B$.
+\item $!A \lif !B \Sequent \lnot !A \lor !B$.
+\item $\Sequent \lnot \lnot !A \lif !A$.
+\item $!A \lif !B, \lnot !A \lif !B \Sequent !B$.
+\item $(!A \land !B) \lif !C \Sequent (!A \lif !C) \lor (!B \lif !C)$.
+\item $(!A \lif !B) \lif !A \Sequent !A$.
+\item $\Sequent (!A \lif !B) \lor (!B \lif !C)$.
+\end{enumerate}
+(همهٔ این موارد به قاعدهٔ~$\RightR{\Contraction}$ نیاز دارند.)
+\end{prob}
+\end{document}

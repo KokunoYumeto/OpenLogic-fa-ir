@@ -5,11 +5,11 @@
   "contributors": [
     {"name": "AI typesetting & translation", "type": "Other"}
   ],
-  "title": "متن منطق باز — نسخهٔ کامل فارسی ایران برای منبع تثبیت‌شده / The Open Logic Text — Complete Iranian Persian Edition of the Frozen Source (OLP-0722)",
-  "version": "OLP-0722-20260818",
+  "title": "متن منطق باز — نسخهٔ کامل فارسی ایران بر پایهٔ منبع تثبیت‌شده؛ پی‌دی‌اف‌های بازچینی‌شده برای مطالعه روی صفحه‌نمایش (OLP-0722) / The Open Logic Text — Complete Iranian Persian Edition with Screen-Retypeset PDFs (OLP-0722)",
+  "version": "OLP-0722-SCREEN-20260818",
   "publication_date": "2026-08-18",
   "access_right": "open",
-  "description": "<p dir=\"rtl\" lang=\"fa\"><strong>نسخهٔ کامل فارسی ایران:</strong> این نسخهٔ مستقل، ترجمهٔ همهٔ ۷۲۲ واحد محتوایی منبع تثبیت‌شده را می‌بندد. خوانشگر پیونددارِ اصلی ۶۴۲ واحد را در ۸۳۹ صفحه در بر می‌گیرد و ضمیمهٔ فنی و مستقلِ بسته‌شدن، ۸۰ واحدِ نگه‌داشته‌شدهٔ بیرون از مسیر خوانشگر را در ۱۲۷ صفحه ثبت می‌کند؛ بنابراین حساب دقیق ۶۴۲ + ۸۰ = ۷۲۲ است.</p><p dir=\"rtl\" lang=\"fa\">مرجع منبع، تعهد <code>9620cc73f9c8e0ad003c514a5d3748f29611c4c0</code> و درخت <code>f67757bb9305b173634082ab4cefd5601a707a34</code> پروژهٔ منطق باز، با مجوز CC BY 4.0 است. DOI مفهومی پایدار <code>10.5281/zenodo.21921852</code> و DOI دقیق این نسخه <code>10.5281/zenodo.21987687</code> است.</p><p dir=\"rtl\" lang=\"fa\">دو PDF برچسب‌گذاری ساختاری ندارند و گواهی PDF/UA یا تأیید دسترس‌پذیری ندارند. استخراج ریاضیات، نیم‌فاصله‌ها و ترتیب برخی مؤلفه‌های راست‌به‌چپ کاملاً مرجع نیست؛ فایل‌های TeX قابل ویرایش مرجع متنی‌اند. هیچ بازبینی انسانی یا بومیِ فارسی‌زبان، تأیید جامعهٔ زبانی یا تأیید رسمی پروژهٔ منطق باز ادعا نمی‌شود.</p><p><strong>English descriptor:</strong> Independent complete Iranian Persian translation closure for all 722 units of the frozen Open Logic source: a 642-unit, 839-page canonical linked reader plus a separate 80-unit, 127-page technical closure supplement. The PDFs are untagged; mathematical, ZWNJ, and RTL extraction is not fully authoritative; editable TeX is authoritative. No Persian-speaking human/native review, community approval, accessibility certification, or Open Logic Project endorsement is claimed.</p>",
+  "description": "<p dir=\"rtl\" lang=\"fa\"><strong>انتشار افزوده برای مطالعه روی صفحه‌نمایش:</strong> این نسخه در کنار دو پی‌دی‌اف چاپیِ پیشین، دو پی‌دی‌اف بازچینی‌شده برای صفحه‌نمایش می‌افزاید. خوانشگر کامل همان ۶۴۲ واحد را اکنون در ۷۴۸ صفحه و ضمیمهٔ فنی همان ۸۰ واحد را در ۱۰۸ صفحه عرضه می‌کند؛ بنابراین دامنهٔ محتوا بدون تغییر ۶۴۲ + ۸۰ = ۷۲۲ واحد است. دارایی‌های چاپی ۰۰ تا ۰۴ بدون تغییر بایتی نگه داشته شده‌اند.</p><p dir=\"rtl\" lang=\"fa\">این پی‌دی‌اف‌ها بازچینیِ ثابت با قلم درشت‌تر، سطح متن گسترده‌تر و نمای آغازینِ متناسب با عرض صفحه‌اند؛ خروجی واکنش‌گرا یا بازروان‌شوندهٔ واقعی نیستند. فایل‌ها برچسب‌گذاری ساختاری و گواهی PDF/UA ندارند. استخراج ریاضیات، نیم‌فاصله‌ها و ترتیب برخی مؤلفه‌های راست‌به‌چپ کاملاً مرجع نیست و فایل‌های TeX قابل ویرایش مرجع متنی‌اند.</p><p dir=\"rtl\" lang=\"fa\">DOI مفهومی پایدار این ویرایش <code>10.5281/zenodo.21921852</code> است. تا هنگام انتشار یک نسخهٔ تازه در Zenodo، برای این انتشار صفحه‌نمایش DOI دقیقِ جداگانه‌ای ادعا نمی‌شود. هیچ بازبینی انسانی یا بومیِ فارسی‌زبان، تأیید جامعهٔ زبانی، گواهی دسترس‌پذیری یا تأیید رسمی پروژهٔ منطق باز ادعا نمی‌شود.</p><p><strong>English descriptor:</strong> Additive GitHub screen release for the complete Iranian Persian edition: the unchanged 722-unit content is retypeset as a 642-unit, 748-page linked reader and an 80-unit, 108-page closure supplement. Existing print assets remain byte-identical. These are fixed-layout, screen-optimized PDFs, not genuinely responsive or reflowable documents; they remain untagged and are not PDF/UA certified. No separate Zenodo version DOI is claimed until a new Zenodo version is actually published.</p>",
   "related_identifiers": [
     {
       "identifier": "https://github.com/OpenLogicProject/OpenLogic/commit/9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
@@ -20,6 +20,11 @@
       "identifier": "https://github.com/KokunoYumeto/OpenLogic-fa-ir",
       "relation": "isSupplementTo",
       "resource_type": "software"
+    },
+    {
+      "identifier": "https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/tag/fa-ir-olp-0722-screen-20260818",
+      "relation": "isSupplementTo",
+      "resource_type": "software"
     }
   ],
   "keywords": [
@@ -28,6 +33,8 @@
     "Iranian Persian",
     "فارسی ایران",
     "Persian",
+    "نسخهٔ صفحه‌نمایش",
+    "screen retypesetting",
     "complete translation",
     "mathematical logic",
     "open textbook"

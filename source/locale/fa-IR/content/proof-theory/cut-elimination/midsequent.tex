@@ -1,0 +1,270 @@
+% Part: proof-theory
+% Chapter: cut-elimination
+% Section: midsequent
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{cut}{mid}
+
+\olsection{قضیهٔ دنبالهٔ میانی و قضیهٔ هربراند}
+
+یکی از پیامدهای مهم قضیهٔ حذف برش، قضیهٔ دنبالهٔ میانی است. این قضیه
+می‌گوید اگر !!a{proof}~$\pi$ برای~$\Gamma \Sequent \Delta$ وجود داشته
+باشد که در آن هر !!{formula} در صورت پیشوندی است، آنگاه !!a{proof}
+~$\pi'$ای وجود دارد که شامل دنبالهٔ
+$S \ident \Pi \Sequent \Lambda$، موسوم به \emph{دنبالهٔ میانی}، است؛
+به‌طوری‌که همهٔ استنتاج‌های بالای~$S$ در~$\pi'$ گزاره‌ای و همهٔ
+استنتاج‌های پایین~$S$ سوردارند. (!!^a{formula}~$!A$
+\emph{پیشوندی}، یا در \emph{صورت پیشوندی}، است اگر به شکل
+\[
+\mathsf{Q}_1x_1\dots\mathsf{Q}_nx_n\,!B(x_1,\dots,x_n)
+\]
+باشد، که هر $\mathsf{Q}_i$ یا $\lforall$ است یا~$\lexists$.)
+یکی از پیامدهای مهم قضیهٔ دنبالهٔ میانی، قضیهٔ هربراند است. بیان حالت
+کلی آن کمی دشوار است، اما در کلی‌ترین صورت می‌گوید: هر مورد
+!!{provable}ی که !!{sentence}~$!A$ از منطق مرتبهٔ اول باشد، همان‌گویی
+گزاره‌ای~$!A'$ای وجود دارد که $!A$ را می‌توان از آن !!{prove} کرد.
+صورت زیر مربوط به !!{sentence}هایی به شکل~$\lexists[x][!B(x)]$ است که
+$!B$ بدون سور است:
+
+\begin{thm}[قضیهٔ هربراند]
+فرض کنید $!B(x)$ بدون سور باشد و
+$\Proves \lexists[x][!B(x)]$. آنگاه ترم‌های
+~$t_1$، \dots، $t_n$ای وجود دارند به‌طوری‌که
+$\Proves !B(t_1) \lor \dots \lor !B(t_n)$.
+\end{thm}
+
+!!{formula}~$!B(t_1) \lor \dots \lor !B(t_n)$ را
+\emph{فصل هربراند} برای~$\lexists[x][!B(x)]$ می‌نامند. چون $!B$ بدون
+سور است، این فصل نیز بدون سور است. پس اگر !!{provable} باشد، با یک
+برهان بدون برش !!{provable} است و در نتیجه !!a{proof}ی دارد که فقط از
+استنتاج‌های گزاره‌ای استفاده می‌کند. بنابراین یک همان‌گویی است.
+
+بخش دشوار قضیهٔ هربراند نشان‌دادن این است که برای هر مورد !!{provable}
+از !!{formula}~$\lexists[x][!B(x)]$، فصلی از هربراند وجود
+دارد. عکس این ادعا، یعنی اینکه اگر $\lexists[x][!B(x)]$ فصل هربراندی
+داشته باشد آنگاه اثبات‌پذیر است، آسان است. در واقع، فصل هربراند
+$\lexists[x][!B(x)]$ را نتیجه می‌دهد. برای نمونه، در حالت $n=2$ این
+!!a{proof} را در~$\Log{G3c}$ داریم:
+\[
+\Axiom$!B(t_1) \fCenter \lexists[x][!B(x)], !B(t_1), !B(t_2)$
+\Axiom$!B(t_2) \fCenter \lexists[x][!B(x)], !B(t_1), !B(t_2)$
+\RightLabel{\LeftR{\lor}}
+\BinaryInf$!B(t_1) \lor !B(t_2) \fCenter
+  \lexists[x][!B(x)], !B(t_1), !B(t_2)$
+\RightLabel{\RightR{\lexists}}
+\UnaryInf$!B(t_1) \lor !B(t_2) \fCenter
+  \lexists[x][!B(x)], !B(t_2)$
+\RightLabel{\RightR{\lexists}}
+\UnaryInf$!B(t_1) \lor !B(t_2) \fCenter \lexists[x][!B(x)]$
+\DisplayProof
+\]
+
+برای استخراج فصل هربراند از !!a{proof}~$\pi$ برای
+~$\Sequent \lexists[x][!B(x)]$، نخست حالتی را در نظر بگیرید که همهٔ
+استنتاج‌های $\RightR{\lexists}$ در !!{proof} بدون برش~$\pi$ در پایان
+قرار دارند:
+\[
+\AxiomC{}
+\RightLabel{$\pi_1$}
+\Deduce$ \fCenter \lexists[x][!B(x)], !B(t_1), \dots, !B(t_n)$
+\RightLabel{\RightR{\lexists}}
+\UnaryInf$ \fCenter \lexists[x][!B(x)], !B(t_2), \dots, !B(t_n)$
+\RightLabel{$(n-1) \times \RightR{\lexists}$}
+\Deduce$ \fCenter \lexists[x][!B(x)]$
+\DisplayProof
+\]
+اگر این‌ها همهٔ استنتاج‌های $\RightR{\lexists}$ در~$\pi$ باشند که
+$\lexists[x][!B(x)]$ در آن‌ها فعال است، هیچ استنتاج سوردار دیگری در
+~$\pi_1$ وجود ندارد. علت این است که $!B(x)$ هیچ سور دیگری ندارد و
+دنبالهٔ پایانی در سمت چپ هیچ !!{formula}ی ندارد. به بیان دیگر،
+\[
+\fCenter \lexists[x][!B(x)], !B(t_1), \dots, !B(t_n)
+\]
+دنبالهٔ میانی~$\pi$ است. افزون بر این، چون بالای دنبالهٔ میانی هیچ
+استنتاج سورداری نیست، همهٔ دنباله‌های بالای آن
+$\lexists[x][!B(x)]$ را در بر دارند و این فرمول نه فعال است و نه
+اصلی. پس می‌توان آن را از !!{proof}~$\pi_1$ حذف کرد و !!a{proof}ی برای
+~$\fCenter !B(t_1), \dots, !B(t_n)$ به دست آورد؛ سپس با $n-1$ بار
+اعمال $\RightR{\lor}$، !!a{proof}ی برای فصل هربراند
+$\Sequent !B(t_1) \lor \dots \lor !B(t_n)$ به دست می‌آید.
+
+مشکل این است که نمی‌توانیم فرض کنیم حتی یک !!{proof} بدون برش برای
+$\Sequent \lexists[x][!B(x)]$ همهٔ استنتاج‌های
+\RightR{\lexists} خود را در یک بلوک پایانی دارد. ممکن است میان این
+استنتاج‌ها، استنتاج‌هایی باشد که در آن‌ها یک $!B(t_i)$ اصلی است. از
+همین رو به قضیهٔ دنبالهٔ میانی نیاز داریم.
+
+\begin{thm}[قضیهٔ دنبالهٔ میانی]\ollabel{thm:midsequent}
+اگر یک \Log{G3c}-!!{proof}~$\pi$ برای $\Gamma \Sequent \Delta$ وجود
+داشته باشد که همهٔ !!{formula}های $\Gamma$ و $\Delta$ پیشوندی‌اند،
+آنگاه !!a{proof}~$\pi'$ای وجود دارد که شامل دنبالهٔ
+$\Pi \Sequent \Lambda$ است، به‌طوری‌که همهٔ استنتاج‌های پایین آن
+سوردار و همهٔ استنتاج‌های بالای آن گزاره‌ای‌اند.
+\end{thm}
+
+\begin{proof}
+\emph{مرتبهٔ} یک استنتاج سوردار در~$\pi$ را شمار استنتاج‌های گزاره‌ای
+زیر آن تعریف کنید، و مرتبهٔ~$o(\pi)$ را مجموع مرتبه‌های همهٔ
+استنتاج‌های سوردار آن بگیرید. اگر $o(\pi)=0$، هیچ استنتاج سورداری یک
+استنتاج گزاره‌ای زیر خود ندارد و کار تمام است: چون همهٔ استنتاج‌های
+سوردار یک مقدمه دارند، یک بالاترین استنتاج سوردار یکتا وجود دارد.
+مقدمهٔ آن دنبالهٔ میانی است.
+
+اگر $o(\pi)>0$، پایین‌ترین استنتاج سوردار با مرتبهٔ~$>0$ را
+برگزینید. چون مرتبهٔ آن مثبت است، باید استنتاجی گزاره‌ای زیر آن باشد.
+چون این استنتاج پایین‌ترینِ نوع خود است، نتیجه‌اش نمی‌تواند مقدمهٔ یک
+استنتاج سوردار باشد؛ وگرنه استنتاج سوردار دوم و پایین‌تر نیز یک
+استنتاج گزاره‌ای زیر خود داشت. برحسب اینکه استنتاج سوردار کدام است و
+استنتاج گزاره‌ای زیر آن چیست، حالت‌های بسیار را جدا می‌کنیم. چون
+دنبالهٔ پایانی فقط از فرمول‌های پیشوندی تشکیل شده است، فرمول اصلی
+استنتاج سوردار نمی‌تواند در استنتاج گزاره‌ای بعدی فعال باشد. وگرنه
+فرمول اصلی آن استنتاج، سوری در دامنهٔ یک رابط گزاره‌ای داشت. بنا بر
+ویژگی زیر-!!{formula}، چنین فرمولی باید زیر-!!{formula} یک
+!!a{formula} در دنبالهٔ پایانی می‌بود. پس !!{formula} اصلی استنتاج
+سوردار !!a{element}ی از بافت استنتاج گزاره‌ای پایین‌تر است.
+
+دو نمونه را بررسی کنیم.
+
+نخست فرض کنید یک $\RightR{\lforall}$ در مقدمهٔ راست
+\LeftR{\lif} پایان می‌یابد. آنگاه زیر-!!{proof} مربوط از~$\pi$ به
+زیر-!!{proof}~$\pi_1$ زیر پایان می‌یابد:
+\[
+\AxiomC{}
+\RightLabel{$\pi_2$}
+\Deduce$\Gamma' \fCenter \Delta', \lforall[x][!A(x)], !B$
+\AxiomC{}
+\RightLabel{$\pi_3$}
+\Deduce$!C, \Gamma' \fCenter \Delta', !A(c)$
+\RightLabel{\RightR{\lforall}}
+\UnaryInf$!C, \Gamma' \fCenter \Delta', \lforall[x][!A(x)]$
+\RightLabel{\LeftR{\lif}}
+\BinaryInf$!B \lif !C, \Gamma' \fCenter
+  \Delta', \lforall[x][!A(x)]$
+\DisplayProof
+\]
+می‌توانیم فرض کنیم $\pi$ منظم است؛ پس متغیر ویژهٔ~$c$ بیرون
+~$\pi_3$ ظاهر نمی‌شود و به‌ویژه در $!B \lif !C$ یا~$\pi_2$ نیست.
+اکنون برهان~$\pi_1'$ را در نظر بگیرید:
+\[
+\AxiomC{}
+\RightLabel{$\pi_2'$}
+\Deduce$\Gamma' \fCenter
+  \Delta', \lforall[x][!A(x)], !A(c), !B$
+\AxiomC{}
+\RightLabel{$\pi_3$}
+\Deduce$!C, \Gamma' \fCenter
+  \Delta', \lforall[x][!A(x)], !A(c)$
+\RightLabel{\LeftR{\lif}}
+\BinaryInf$!B \lif !C, \Gamma' \fCenter
+  \Delta', \lforall[x][!A(x)], !A(c)$
+\RightLabel{\RightR{\lforall}}
+\UnaryInf$!B \lif !C, \Gamma' \fCenter
+  \Delta', \lforall[x][!A(x)], \lforall[x][!A(x)]$
+\DisplayProof
+\]
+در اینجا $\pi_2'$ از تضعیف~$\pi_2$ با~$!A(c)$ در سمت راست به دست
+می‌آید. (این کار هیچ استنتاجی نمی‌افزاید، به‌ویژه هیچ استنتاج سورداری
+که ممکن است بر مرتبه اثر بگذارد. همچنین هیچ شرط متغیر ویژه‌ای را در
+~$\pi_2$ نقض نمی‌کند، زیرا هیچ ثابتی در~$!A(c)$ به‌عنوان متغیر ویژه
+در~$\pi_2$ به کار نرفته است.) شرط متغیر ویژهٔ
+\RightR{\lforall} همچنان برقرار است، زیرا $c$ در~$!B \lif !C$ ظاهر
+نمی‌شود.
+
+با استفاده از پذیرفتنی‌بودن انقباض، !!a{proof}~$\pi_1''$ برای
+$!B \lif !C, \Gamma' \fCenter \Delta', \lforall[x][!A(x)]$ به دست
+می‌آوریم. اثبات پذیرفتنی‌بودن
+$\RightR{\Contraction}$ برای $\lforall[x][!A(x)]$ و اثبات وارون‌پذیری
+\RightR{\lforall} که در آن اثبات به کار رفت، مرتبهٔ هیچ استنتاجی را
+تغییر ندادند؛ در بیشترین حالت فقط استنتاج‌هایی را حذف کردند. بنابراین
+شمار استنتاج‌های سوردار در~$\pi_1''$ از~$\pi_1$ بیشتر نیست و هر
+استنتاج سوردار در~$\pi_1''$ همان شمار استنتاج گزاره‌ای را زیر خود دارد
+که استنتاج متناظر در~$\pi_1$ داشت، جز آخرین \RightR{\lforall}: در
+~$\pi$ یک \LeftR{\lif} زیر آن بود که اکنون در~$\pi_1''$ به بالای آن
+منتقل شده است. $\pi_1$ را در~$\pi$ با~$\pi_1''$ جایگزین کنید.
+!!{proof} حاصل مرتبهٔ کمتری دارد، زیرا دست‌کم مرتبهٔ استنتاج
+$\RightR{\lforall}$ حداقل~$1$ واحد کاهش یافته است. اکنون فرض استقرا
+را اعمال کنید.
+
+حالت‌هایی که استنتاج سوردار \RightR{\lexists} است حتی آسان‌ترند، زیرا
+نه به انقباض نیاز است و نه نگرانی دربارهٔ شرط متغیر ویژه وجود دارد.
+برای نمونه، فرض کنید پس از $\RightR{\lexists}$ یک
+$\RightR{\land}$ بیاید و استنتاج نخست این بار در مقدمهٔ چپ باشد.
+زیر-!!{proof} مربوط~$\pi_1$ است:
+\[
+\AxiomC{}
+\RightLabel{$\pi_2$}
+\Deduce$\Gamma' \fCenter
+  \Delta', \lexists[x][!A(x)], !A(t), !B$
+\RightLabel{\RightR{\lexists}}
+\UnaryInf$\Gamma' \fCenter \Delta', \lexists[x][!A(x)], !B$
+\AxiomC{}
+\RightLabel{$\pi_3$}
+\Deduce$\Gamma' \fCenter \Delta', \lexists[x][!A(x)], !C$
+\RightLabel{\RightR{\land}}
+\BinaryInf$\Gamma' \fCenter
+  \Delta', \lexists[x][!A(x)], !B \land !C$
+\DisplayProof
+\]
+$\pi_1$ را در~$\pi$ با~$\pi_1'$ زیر جایگزین کنید:
+\[
+\AxiomC{}
+\RightLabel{$\pi_2$}
+\Deduce$\Gamma' \fCenter
+  \Delta', \lexists[x][!A(x)], !A(t), !B$
+\AxiomC{}
+\RightLabel{$\pi_3'$}
+\Deduce$\Gamma' \fCenter
+  \Delta', \lexists[x][!A(x)], !A(t), !C$
+\RightLabel{\RightR{\land}}
+\BinaryInf$\Gamma' \fCenter
+  \Delta', \lexists[x][!A(x)], !A(t), !B \land !C$
+\RightLabel{\RightR{\lexists}}
+\UnaryInf$\Gamma' \fCenter
+  \Delta', \lexists[x][!A(x)], !B \land !C$
+\DisplayProof
+\]
+در اینجا $\pi_3'$ از تضعیف~$\pi_3$ با~$!A(t)$ در سمت راست به دست
+می‌آید. این تضعیف فقط $!A(t)$ را به سمت راست هر دنباله در~$\pi_3$
+می‌افزاید و در نتیجه مرتبهٔ هیچ استنتاج سورداری را تغییر نمی‌دهد.
+مرتبهٔ استنتاج‌های سوردار در~$\pi'$ همان مرتبه در~$\pi$ است، جز
+مرتبهٔ استنتاج \RightR{\lexists} که با~\RightR{\land} جابه‌جا شد و
+یک واحد کاهش یافت. فرض استقرا اعمال می‌شود.
+\end{proof}
+
+\begin{prob}
+حالت‌هایی از اثبات \olref{thm:midsequent} را شرح دهید که
+\LeftR{\lexists} در مقدمهٔ~\RightR{\lif} پایان می‌یابد، و
+\LeftR{\lforall} در مقدمهٔ چپ~\LeftR{\lor} پایان می‌یابد.
+\end{prob}
+
+\begin{proof}[اثبات قضیهٔ هربراند]
+فرض کنید $\pi$ به $\Sequent \lexists[x][!B(x)]$ پایان می‌یابد. بنا بر
+\olref{thm:midsequent}، می‌توانیم $\pi$ را به !!a{proof}~$\pi'$ با
+دنبالهٔ میانی~$S$ تبدیل کنیم که باید به صورت زیر باشد:
+\[
+\Sequent \lexists[x][!B(x)], !B(t_1), \dots, !B(t_n).
+\]
+چون همهٔ استنتاج‌های بالای~$S$ گزاره‌ای‌اند،
+$\lexists[x][!B(x)]$ نمی‌تواند در استنتاجی بالای~$S$ اصلی باشد. چون
+اتمی نیست، نمی‌تواند در یک اصل اصلی باشد. چون
+$\lexists[x][!B(x)]$ نمی‌تواند زیر‌فرمول سرهٔ~$!B(t_1)$ باشد
+(به یاد آورید $!B(x)$ بدون سور است)، بالای~$S$ نیز نمی‌تواند فعال
+باشد. بنابراین حذف $\lexists[x][!B(x)]$ از زیر-!!{proof} منتهی
+به~$S$، !!{proof} درستی برای
+$\Sequent !B(t_1), \dots, !B(t_n)$ به دست می‌دهد، و از آن با $n-1$
+استنتاج $\RightR{\lor}$ می‌توان !!a{proof}ی برای
+$\Sequent !B(t_1) \lor \dots \lor !B(t_n)$ به دست آورد.
+\end{proof}
+
+% \begin{prob}
+% Find a Herbrand disjunction of $\lexists[x][\lforall[y][(!A(x) \lif
+% !A(y))]]$ by finding a cut-free !!{proof} of $\Sequent
+% \lexists[x][\lforall[y][(!A(x) \lif !A(y))]]$ and applying the
+% transformation in \olref{thm:midsequent} to find a midsequent (if
+% necessary).
+% \end{prob}
+
+\end{document}

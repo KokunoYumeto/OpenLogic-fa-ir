@@ -1,0 +1,148 @@
+% Part: turing-machines
+% Chapter: undecidability
+% Section: enumerating-tms
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{tur}{und}{enu}
+\olsection{برشمردن ماشین‌های تورینگ}
+
+\begin{explain}
+می‌توانیم نشان دهیم مجموعهٔ همهٔ ماشین‌های تورینگ !!{enumerable} است.
+این از آنجا نتیجه می‌شود که هر ماشین تورینگ را می‌توان به‌طور متناهی
+توصیف کرد. مجموعهٔ حالت‌ها و واژگان نوار مجموعه‌هایی متناهی‌اند. تابع
+گذار تابعی جزئی از~$Q\times\Sigma$ به
+$Q\times\Sigma\times\{\TMleft,\TMright,\TMstay\}$ است و آن را نیز
+می‌توان با فهرست‌کردن مقادیرش برای تعداد متناهی زوج‌آرگومانی که روی
+آن‌ها تعریف شده است مشخص کرد.
+
+این سخن تا همین‌جا درست است، اما تفاوت ظریفی وجود دارد. تعریف
+ماشین‌های تورینگ هیچ محدودیتی بر !!{element}sیی که مجموعهٔ حالت‌ها و
+الفبای نوار می‌توانند داشته باشند نگذاشت. پس، برای نمونه، از نظر فنی
+به ازای هر عدد حقیقی ماشینی تورینگ وجود دارد که آن عدد را به‌عنوان
+حالت به کار می‌برد. بااین‌حال \emph{رفتار} ماشین تورینگ مستقل از این
+است که چه اشیائی نقش حالت‌ها و واژگان را داشته باشند. دو ماشین
+تورینگِ \olref{fig:variants} را در نظر بگیرید.
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+                    semithick]
+  \tikzstyle{every state}=[fill=none,draw=black,text=black]
+
+  \node[initial,state]         (A)              {$q_0$};
+  \node[state]         (B) [right of=A] {$q_1$};
+
+  \path (A) edge [bend left] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (B)
+        (B) edge [loop above] node {\TMtrans{\TMblank}{\TMblank}{\TMright}} (B)
+            edge [bend left] node {\TMtrans{\TMstroke}{\TMstroke}{\TMright}} (A);
+\end{tikzpicture}\\
+\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+  semithick]
+\tikzstyle{every state}=[fill=none,draw=black,text=black]
+
+\node[initial,state]         (A)              {$s$};
+\node[state]         (B) [right of=A] {$h$};
+
+\path (A) edge [bend left] node {\TMtrans{A}{A}{\TMright}} (B)
+(B) edge [loop above] node {\TMtrans{\TMblank}{\TMblank}{\TMright}} (B)
+edge [bend left] node {\TMtrans{A}{A}{\TMright}} (A);
+\end{tikzpicture}
+\end{center}
+\caption{گونه‌های ماشین \emph{زوج}}
+\ollabel{fig:variants}
+\end{figure}
+این دو نمودار با دو ماشین متناظرند: $M$ با الفبای نوار
+$\Sigma=\{\TMendtape,\TMblank,\TMstroke\}$ و مجموعه‌حالت‌های
+$\{q_0,q_1\}$؛ و~$M'$ با الفبای
+$\Sigma'=\{\TMendtape,\TMblank,A\}$ و حالت‌های~$\{s,h\}$. اما
+دستورهایشان از هر جهت دیگر یکسان است: $M$ روی دنباله‌ای از~$n$ نماد
+$\TMstroke$ متوقف می‌شود اگر و تنها اگر $n$ زوج باشد، و~$M'$ روی
+دنباله‌ای از~$n$ نماد~$A$ متوقف می‌شود اگر و تنها اگر $n$ زوج باشد.
+تنها کاری که کرده‌ایم تغییر نام~$\TMstroke$ به~$A$، $q_0$ به~$s$ و
+$q_1$ به~$h$ است. این مثال تعمیم می‌یابد: می‌توانیم ماشین‌های تورینگ
+را تا هنگامی یکسان بدانیم که یکی از دیگری با چنین تغییر نامی در
+نمادها و حالت‌ها حاصل شود. در واقع، می‌توانیم نمادها و حالت‌های یک
+ماشین تورینگ را صرفاً اعداد صحیح مثبت بدانیم: به‌جای~$\sigma_0$ عدد
+$1$، به‌جای~$\sigma_1$ عدد~$2$ و به همین ترتیب؛ $\TMendtape$ عدد~$1$،
+$\TMblank$ عدد~$2$ و مانند آن. بدین شیوه ماشین \emph{زوج} به ماشین
+نشان‌داده‌شده در \olref{fig:standard-even} تبدیل می‌شود.
+\begin{figure}
+\[\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,
+  semithick]
+\tikzstyle{every state}=[fill=none,draw=black,text=black]
+
+\node[initial,state]         (A)              {$1$};
+\node[state]         (B) [right of=A] {$2$};
+
+\path (A) edge [bend left] node {\TMtrans{3}{3}{\TMright}} (B)
+(B) edge [loop above] node {\TMtrans{2}{2}{\TMright}} (B)
+edge [bend left] node {\TMtrans{3}{3}{\TMright}} (A);
+\end{tikzpicture}
+\]
+\caption{یک ماشین \emph{زوج} استاندارد}
+\ollabel{fig:standard-even}
+\end{figure}
+می‌توانیم ماشین تورینگی را که حالت‌ها و نمادهایش اعداد صحیح مثبت‌اند
+ماشین \emph{استاندارد} بنامیم و ازاین‌پس فقط ماشین‌های استاندارد را
+در نظر بگیریم.\footnote{اصطلاح «ماشین استاندارد» استاندارد نیست.}
+
+می‌خواستیم نشان دهیم مجموعهٔ ماشین‌های تورینگ !!{enumerable} است و با
+توجه به ملاحظات بالا کافی است نشان دهیم مجموعهٔ ماشین‌های تورینگ
+استاندارد !!{enumerable} است. فرض کنید ماشین تورینگ استاندارد
+$M=\tuple{Q,\Sigma,q_0,\delta}$ داده شده باشد. چگونه می‌توانیم آن را
+با رشته‌ای متناهی از اعداد صحیح مثبت توصیف کنیم؟ نخست تعداد حالت‌ها،
+خود حالت‌ها، تعداد نمادها، خود نمادها و حالت آغازین را فهرست می‌کنیم.
+(به یاد آورید همهٔ این‌ها اعداد صحیح مثبت‌اند، زیرا $M$ ماشینی
+استاندارد است.) دربارهٔ~$\delta$ چه می‌کنیم؟ مجموعهٔ آرگومان‌های ممکن،
+یعنی زوج‌های~$\tuple{q,\sigma}$، متناهی است زیرا $Q$ و~$\Sigma$
+متناهی‌اند. پس اطلاعات موجود در~$\delta$ صرفاً فهرست متناهی همهٔ
+پنج‌تایی‌های~$\tuple{q,\sigma,q',\sigma',d}$ است که در آن
+$\delta(q,\sigma)=\tuple{q',\sigma',D}$ و~$d$ عددی است که جهت~$D$ را
+رمزگذاری می‌کند (مثلاً $1$ برای~$\TMleft$، $2$ برای~$\TMright$ و~$3$
+برای~$\TMstay$).
+
+بدین شیوه هر ماشین تورینگ استاندارد را می‌توان با فهرستی متناهی از
+اعداد صحیح مثبت، یعنی دنباله‌ای
+$s_M\in(\PosInt)^*$، توصیف کرد. برای نمونه، ماشین \emph{زوج}
+استاندارد با دنبالهٔ زیر رمزگذاری می‌شود:
+\[
+2, \underbrace{1, 2}_Q, 3, \overbrace{1, 2, 3}^\Sigma, 1, \underbrace{1, 3, 2, 3, 2}_{\delta(1,3) = \tuple{2,3,R}},
+\overbrace{2, 2, 2, 2, 2}^{\delta(2,2) = \tuple{2,2,R}},
+\underbrace{2, 3, 1, 3, 2}_{\delta(2,3) = \tuple{1,3,R}}.
+\]
+\end{explain}
+
+\begin{thm}
+توابعی از~$\Nat$ به~$\Nat$ وجود دارند که تورینگ‌محاسبه‌پذیر نیستند.
+\end{thm}
+
+\begin{proof}
+می‌دانیم مجموعهٔ دنباله‌های متناهیِ اعداد صحیح مثبت~$(\PosInt)^*$
+!!{enumerable} است (\cref{sfr:siz:zigzag:prob:posint-star}). ازاین‌رو
+مجموعهٔ توصیف‌های ماشین‌های تورینگ استاندارد نیز، به‌عنوان زیرمجموعه‌ای
+از~$(\PosInt)^*$، برشمردنی است. هر تابع تورینگ‌محاسبه‌پذیر از~$\Nat$
+به~$\Nat$ را یک ماشین تورینگ (در واقع ماشین‌های فراوانی) محاسبه
+می‌کند. با تغییر نام حالت‌ها و نمادهای آن به اعداد صحیح مثبت (به‌ویژه
+$\TMendtape$ به~$1$، $\TMblank$ به~$2$ و~$\TMstroke$ به~$3$) می‌بینیم
+که هر تابع تورینگ‌محاسبه‌پذیر را یک ماشین استاندارد محاسبه می‌کند.
+پس مجموعهٔ همهٔ توابع تورینگ‌محاسبه‌پذیر از~$\Nat$ به~$\Nat$ نیز
+برشمردنی است.
+
+از سوی دیگر، مجموعهٔ همهٔ توابع از~$\Nat$ به~$\Nat$ !!{enumerable}
+نیست (\cref{sfr:siz:red:prob:nat-nat}). اگر همهٔ توابع را ماشینی
+تورینگ محاسبه می‌کرد، می‌توانستیم با فهرست‌کردن همهٔ توصیف‌های
+ماشین‌های تورینگی که آن‌ها را محاسبه می‌کنند مجموعهٔ همهٔ توابع را
+برشماریم. بنابراین توابعی وجود دارند که تورینگ‌محاسبه‌پذیر نیستند.
+\end{proof}
+
+\begin{prob}
+  آیا راهی برای توصیف ماشین‌های تورینگ می‌یابید که نیازی به
+  فهرست‌کردن صریح حالت‌ها و نمادهای الفبا نداشته باشد؟ می‌توانید مفهوم
+  خود را از ماشین «استاندارد» تعریف کنید، اما توضیح دهید چرا هر ماشین
+  تورینگ را ماشینی «استاندارد» در معنای جدید شما می‌تواند شبیه‌سازی
+  کند.
+\end{prob}
+
+\end{document}

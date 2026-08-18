@@ -1,0 +1,50 @@
+% Part: first-order-logic
+% Chapter: model-theory
+% Section: substructures
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{mod}{bas}{sub}
+\olsection{زیر\printtoken{p}{structure}}
+
+ممکن است !!{domain} یک !!a{structure} چون~$\Struct{M}$ زیرمجموعه‌ای از
+دامنهٔ ساختار دیگری چون~$\Struct{M'}$ باشد. اما آشکارا باید
+$\Struct{M}$ را تنها زمانی «بخشی» از~$\Struct{M'}$ بدانیم که نه‌فقط
+$\Domain{M} \subseteq \Domain{M'}$، بلکه $\Struct{M}$ و~$\Struct{M'}$
+در شیوهٔ تفسیر نمادهای زبان، دست‌کم روی بخش مشترک~$\Domain{M}$، با
+یکدیگر «توافق» داشته باشند.
+
+\begin{defn}
+\ollabel{defn:substructure}
+!!{structure}s $\Struct M$ و~$\Struct M'$ را برای زبان یکسان~$\Lang L$
+در نظر بگیرید. می‌گوییم $\Struct M$
+\emph{زیر!!{structure}}~$\Struct M'$، و $\Struct M'$
+\emph{گسترشِ}~$\Struct M$ است، و می‌نویسیم
+$\Struct M \substruct \Struct M'$، هرگاه و تنها هرگاه
+\begin{enumerate}
+\item $\Domain{M} \subseteq \Domain{M'}$،
+\item برای هر ثابت $c \in \Lang L$، $\Assign{c}{M} =
+    \Assign{c}{M'}$؛
+\item برای هر !!{function}~$n$موضعی $f \in \Lang L$،
+  $\Assign{f}{M}(a_1, \dots, a_n) = \Assign{f}{M'}(a_1, \dots, a_n)$
+  برای همهٔ $a_1$، \dots، $a_n \in \Domain{M}$.
+\item برای هر !!{predicate}~$n$موضعی $R \in \Lang L$،
+  $\langle a_1, \dots, a_n\rangle \in \Assign{R}{M}$ هرگاه و تنها
+  هرگاه $\langle a_1, \dots, a_n\rangle \in \Assign{R}{M'}$، برای
+  همهٔ $a_1$، \dots، $a_n \in \Domain{M}$.
+\end{enumerate}
+\end{defn}
+
+\begin{rem}
+\ollabel{rem:substructure}
+اگر زبان هیچ ثابت یا !!{function}s نداشته باشد، آنگاه هر مجموعهٔ ناتهی
+$N \subseteq \Domain{M}$ با قراردادن $\Assign{R}{N} =
+\Assign{R}{M} \cap N^n$، زیر!!{structure}ی چون~$\Struct{N}$ از
+$\Struct M$ با !!{domain}~$\Domain{N} = N$ تعیین می‌کند.
+\end{rem}
+
+% prove something about this? Examples?
+
+\end{document}

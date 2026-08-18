@@ -1,0 +1,138 @@
+% Part:sets-functions-relations
+% Chapter: size-of-sets
+% Section: reduction-alt
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid[fa-IR]{sfr}{siz}{red-alt}
+
+\olsection{کاهش}
+
+\begin{editorial}
+  این بخش ناشمارابودن را از راه کاهش ثابت می‌کند و با نتایجِ
+  \olref[nen-alt]{sec} مطابقت دارد. روایتی جایگزین و اندکی مشروح‌تر که
+  با نتایجِ \olref[nen]{sec} مطابقت دارد، در \olref[red]{sec} آمده است.
+\end{editorial}
+
+با استدلالی قطری ثابت کردیم که $\Bin^\omega$ !!{nonenumerable} است.
+با استدلال قطریِ مشابهی نشان دادیم که $\Pow{\Nat}$ !!{nonenumerable}
+است. اما راه دیگری نیز برای اثبات اینکه $\Pow{\Nat}$
+!!{nonenumerable} است وجود دارد: نشان دهید که \emph{اگر
+$\Pow{\Nat}$ !!{enumerable} باشد، آنگاه $\Bin^\omega$ نیز
+!!{enumerable} است}. چون می‌دانیم $\Bin^\omega$ !!{nonenumerable} است،
+نتیجه می‌شود که $\Pow{\Nat}$ نیز چنین است.
+
+این کار را \emph{کاهش‌دادن} یک مسئله به مسئله‌ای دیگر می‌نامند. در این
+مورد، مسئلهٔ برشمردن $\Bin^\omega$ را به مسئلهٔ برشمردن
+$\Pow{\Nat}$ کاهش می‌دهیم. راه‌حلی برای مسئلهٔ دوم---یعنی برشماریِ
+$\Pow{\Nat}$---راه‌حلی برای مسئلهٔ نخست---یعنی برشماریِ
+$\Bin^\omega$---به دست می‌دهد.
+
+برای کاهش مسئلهٔ برشمردن مجموعهٔ~$B$ به مسئلهٔ برشمردن مجموعهٔ~$A$،
+روشی ارائه می‌کنیم که برشماریِ~$A$ را به برشماریِ~$B$ تبدیل کند.
+آسان‌ترین راه برای این کار تعریف یک !!a{surjection} مانند
+$f\colon A \to B$ است. اگر $x_1$، $x_2$، \dots{} مجموعهٔ~$A$ را
+برشمارد، آنگاه $f(x_1)$، $f(x_2)$، \dots{} مجموعهٔ~$B$ را برمی‌شمارد.
+در مورد ما، در پی یک !!a{surjection} مانند $f\colon \Pow{\Nat}
+\to \Bin^\omega$ هستیم.
+
+\begin{prob}
+نشان دهید اگر یک تابعِ !!{injective} مانند $g\colon B \to A$ وجود داشته
+باشد و $B$~!!{nonenumerable} باشد، آنگاه $A$ نیز چنین است. برای این کار
+نشان دهید چگونه می‌توان با استفاده از~$g$، برشماریِ~$A$ را به برشماریِ~$B$
+تبدیل کرد.
+\end{prob}
+
+\begin{proof}[برهانِ {\olref[nen-alt]{thm:nonenum-pownat}} از راه کاهش]
+برای انجام کاهش، فرض کنید $\Pow{\Nat}$ !!{enumerable} است و بنابراین
+برشماری‌ای از آن به‌صورت $N_{1}$، $N_{2}$، $N_{3}$، \dots وجود دارد.
+
+تابع $f \colon \Pow{\Nat} \to \Bin^\omega$ را با این قرارداد تعریف
+کنید که $f(N)$ رشتهٔ $s_{k}$ باشد، به‌گونه‌ای که $s_{k}(n) = 1$ اگر و تنها
+اگر $n \in N$، و در غیر این صورت $s_k(n) = 0$.
+
+این امر به‌روشنی تابعی را تعریف می‌کند، زیرا هرگاه $N \subseteq \Nat$،
+هر $n \in \Nat$ یا یک !!a{element} از $N$ است یا نیست. برای نمونه،
+مجموعهٔ $2\Nat = \Setabs{2n}{n \in \Nat} = \{0,2, 4, 6,
+\dots\}$ از اعداد طبیعی زوج به رشتهٔ $1010101\dots$ نگاشته می‌شود؛
+$\emptyset$ به $0000\dots$ نگاشته می‌شود و $\Nat$ به
+$1111\dots$.
+
+این نگاشت همچنین !!{surjective} است: هر رشته از $0$ها و $1$ها با
+مجموعه‌ای از اعداد طبیعی متناظر است؛ یعنی مجموعه‌ای که اعضایش آن اعداد
+طبیعی‌اند که با جایگاه‌هایی متناظرند که رشته در آن‌ها $1$ دارد. دقیق‌تر
+بگوییم، اگر $s \in \Bin^\omega$، آنگاه $N
+\subseteq \Nat$ را چنین تعریف کنید:
+\[
+N = \Setabs{n \in \Nat}{s(n) = 1}
+\]
+آنگاه $f(N) = s$؛ این را می‌توان با مراجعه به تعریفِ~$f$ بررسی کرد.
+
+اکنون فهرست زیر را در نظر بگیرید:
+\[
+f(N_1), f(N_2), f(N_3), \dots
+\]
+چون $f$ !!{surjective} است، هر عضوِ $\Bin^\omega$ باید برای ورودی‌ای
+به‌عنوان مقدارِ~$f$ ظاهر شود و بنابراین باید در فهرست بیاید. پس این
+فهرست باید همهٔ~$\Bin^\omega$ را برشمارد.
+
+بنابراین اگر $\Pow{\Nat}$ !!{enumerable} بود، $\Bin^\omega$ نیز
+!!{enumerable} می‌بود. اما $\Bin^\omega$ !!{nonenumerable} است
+(\olref[nen-alt]{thm:nonenum-bin-omega}). پس $\Pow{\Nat}$
+!!{nonenumerable} است.
+\end{proof}
+
+%\begin{explain}
+%It is easy to be confused about the direction the reduction goes in.
+%For instance, !!a{surjective} function $g \colon \Bin^\omega \to X$
+%does \emph{not} establish that $X$ is !!{nonenumerable}.  (Consider $g
+%\colon \Bin^\omega \to \Bin$ defined by $g(s) = s(1)$, the function
+%that maps a sequence of $0$'s and $1$'s to its first !!{element}.  It
+%is surjective, because some sequences start with $0$ and some start
+%with $1$. But $\Bin$ is finite.)  Note also that the function $f$ must
+%be surjective, or otherwise the argument does not go through:
+%$f(x_1)$, $f(x_2)$, \dots{} would then not be guaranteed to include
+%all the !!{element}s of~$Y$. For instance, $h\colon \Nat \to
+%\Bin^\omega$ defined by
+%\[
+%h(n) = \underbrace{000\dots0}_{\text{$n$ $0$'s}}
+%\]
+%is a function, but $\Nat$ is !!{enumerable}.
+%\end{explain}
+
+\begin{prob}\label{sfr:siz:red-alt:prob:nat-nat}
+  با استدلالی کاهشی نشان دهید مجموعهٔ~$X$ از همهٔ توابع
+  $f\colon \Nat \to \Nat$ !!{nonenumerable} است. (راهنمایی: یک نگاشت
+  پوشا از $X$ به~$\Bin^\omega$ بدهید.)
+\end{prob}
+
+\begin{prob}
+با استدلالی کاهشی نشان دهید که مجموعهٔ همهٔ \emph{مجموعه‌های} زوج‌های
+اعداد طبیعی، یعنی $\Pow{\Nat \times \Nat}$، !!{nonenumerable} است.
+\end{prob}
+
+\begin{prob}
+با استدلالی کاهشی نشان دهید که $\Nat^\omega$، یعنی مجموعهٔ دنباله‌های
+نامتناهیِ اعداد طبیعی، !!{nonenumerable} است.
+\end{prob}
+
+%\begin{prob}
+%Let $P$ be the set of functions from $\Nat$ to the set $\{0\}$, and let $Q$ be the set of \emph{partial}
+%functions from the set of positive integers to the set $\{0\}$. Show
+%that $P$~is !!{enumerable} and $Q$~is not. (Hint: reduce the problem
+%of enumerating $\Bin^\omega$ to enumerating~$Q$).
+%\end{prob}
+
+\begin{prob}
+فرض کنید $S$ مجموعهٔ همهٔ !!{surjection}s از $\Nat$ به مجموعهٔ
+$\{0,1\}$ باشد؛ یعنی $S$ از همهٔ !!{surjection}s~$f \colon \Nat
+\to \Bin$ تشکیل می‌شود. نشان دهید $S$ !!{nonenumerable} است.
+\end{prob}
+
+\begin{prob}
+نشان دهید مجموعهٔ~$\Real$ از همهٔ اعداد حقیقی !!{nonenumerable} است.
+\end{prob}
+
+\end{document}

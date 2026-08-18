@@ -1,0 +1,177 @@
+% Part: propositional-logic
+% Chapter: syntax-and-semantics
+% Section: formulas
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pl}{syn}{fml}
+
+\olsection{\usetoken{P}{formula}ی گزاره‌ای}
+
+!!^{formula}sی منطق گزاره‌ای از
+\emph{!!{propositional
+    variable}s}\iftag{prvFalse}{\iftag{prvTrue}{،}{ و} ثابت
+  گزاره‌ایِ~$\lfalse$}{}\iftag{prvTrue}{\iftag{prvFalse}{ و}{ و} ثابت
+  گزاره‌ایِ~$\ltrue$}{} با استفاده از \emph{رابط‌های منطقی} ساخته می‌شوند.
+
+\begin{enumerate}
+\item یک مجموعهٔ !!^a{denumerable} به نام~$\PVar$ از
+  !!{propositional variable}s، یعنی $\Obj p_0$،
+  $\Obj p_1$، \dots
+\tagitem{prvFalse}{ثابت گزاره‌ایِ !!{falsity}~$\lfalse$.}{}
+\tagitem{prvTrue}{ثابت گزاره‌ایِ !!{truth}~$\ltrue$.}{}
+\item رابط‌های منطقی:
+  \startycommalist
+  \iftag{prvNot}{\ycomma $\lnot$ (نفی)}{}%
+  \iftag{prvAnd}{\ycomma $\land$ (عطف)}{}%
+  \iftag{prvOr}{\ycomma $\lor$ (فصل)}{}%
+  \iftag{prvIf}{\ycomma $\lif$ (!!{conditional})}{}%
+  \iftag{prvIff}{\ycomma $\liff$ (!!{biconditional})}{}%
+\item نشانه‌های سجاوندی: ( و )، و نیز ویرگول.
+\end{enumerate}
+
+این زبان منطق گزاره‌ای را با $\Lang L_0$ نشان می‌دهیم.
+
+\iftag{defNot,defOr,defAnd,defIf,defIff,defTrue,defFalse,defEx,defAll}{%
+افزون بر رابط‌های اولیه‌ای که در بالا معرفی شدند، از نمادهای
+\emph{تعریف‌شدهٔ} زیر نیز استفاده می‌کنیم:
+\startycommalist
+  \iftag{defNot}{\ycomma $\lnot$ (نفی)}{}%
+  \iftag{defAnd}{\ycomma $\land$ (عطف)}{}%
+  \iftag{defOr}{\ycomma $\lor$ (فصل)}{}%
+  \iftag{defIf}{\ycomma $\lif$ (!!{conditional})}{}%
+  \iftag{defIff}{\ycomma $\liff$ (!!{biconditional})}{}%
+  \iftag{defFalse}{\ycomma $\lfalse$ (!!{falsity})}{}%
+  \iftag{defTrue}{\ycomma $\ltrue$ (!!{truth})}}{}.
+
+\begin{tagblock}{defNot,defOr,defAnd,defIf,defIff,defTrue,defFalse,defEx,defAll}
+\begin{explain}
+نماد تعریف‌شده رسماً جزئی از زبان نیست، بلکه به‌عنوان اختصاری غیرصوری
+معرفی می‌شود: چنین نمادی به ما امکان می‌دهد فرمول‌هایی را کوتاه کنیم که
+اگر فقط از نمادهای اولیه استفاده می‌کردیم، بسیار طولانی می‌شدند. این مزیت
+آشکار است؛ اما مزیت بزرگ‌تر آن است که برهان‌ها کوتاه‌تر می‌شوند. اگر نمادی
+اولیه باشد، باید در برهان‌ها جداگانه بررسی شود. بنابراین هرچه شمار نمادهای
+اولیه بیشتر باشد، برهان‌های ما طولانی‌تر خواهند بود.
+\end{explain}
+\end{tagblock}
+
+% Alternate symbols
+
+\begin{intro}
+ممکن است با اصطلاح‌ها و نمادهایی متفاوت از آنچه در بالا به کار بردیم آشنا
+باشید. متون منطق (و مدرسان) معمولاً یکی از نمادهای $\sim$، $\neg$ و~!\ را
+برای «نفی»، و یکی از نمادهای $\wedge$، $\cdot$ و $\&$ را برای «عطف» به
+کار می‌برند. نمادهای رایج برای «شرطی» یا «استلزام» عبارت‌اند از
+$\rightarrow$، $\Rightarrow$ و $\supset$.
+\iftag{prvIff,defIff}{نمادهای «دوشرطی»، «استلزام دوسویه» یا «هم‌ارزی
+  (مادی)» عبارت‌اند از $\leftrightarrow$،
+  $\Leftrightarrow$ و $\equiv$.}{}
+\iftag{prvFalse,defFalse}{نماد $\lfalse$ را به نام‌های «کذب»، «فالسوم»،
+  «محال» یا «پایین» نیز می‌خوانند.}{}
+\iftag{prvTrue,defTrue}{نماد $\ltrue$ را به نام‌های «صدق»، «وروم» یا
+  «بالا» نیز می‌خوانند.}{}
+\end{intro}
+
+\begin{defn}[فرمول]
+\ollabel{defn:formulas}
+مجموعهٔ~$\Frm[L_0]$ از \emph{!!{formula}sی} منطق گزاره‌ای به‌صورت استقرایی
+چنین تعریف می‌شود:
+\begin{enumerate}
+\tagitem{prvFalse}{$\lfalse$ یک !!{formula} اتمی است.}{}
+
+\tagitem{prvTrue}{$\ltrue$ یک !!{formula} اتمی است.}{}
+
+\item هر !!{propositional variable}~$\Obj p_i$ یک !!{formula} اتمی است.
+
+\tagitem{prvNot}{اگر $!A$ یک !!a{formula} باشد، آنگاه $\lnot !A$ یک
+  !!a{formula} است.}{}
+
+\tagitem{prvAnd}{اگر $!A$ و $!B$ از !!{formula}s باشند، آنگاه $(!A \land
+  !B)$ یک !!a{formula} است.}{}
+
+\tagitem{prvOr}{اگر $!A$ و $!B$ از !!{formula}s باشند، آنگاه $(!A \lor !B)$
+  یک !!a{formula} است.}{}
+
+\tagitem{prvIf}{اگر $!A$ و $!B$ از !!{formula}s باشند، آنگاه $(!A \lif !B)$
+  یک !!a{formula} است.}{}
+
+\tagitem{prvIff}{اگر $!A$ و $!B$ از !!{formula}s باشند، آنگاه $(!A \liff !B)$
+  یک !!a{formula} است.}{}
+
+\tagitem{limitClause}{هیچ چیز دیگری !!a{formula} نیست.}{}
+\end{enumerate}
+\end{defn}
+
+\begin{explain}
+تعریف !!{formula}s یک \emph{تعریف استقرایی} است. در اصل، مجموعهٔ
+!!{formula}s را در بی‌نهایت مرحله می‌سازیم. در مرحلهٔ آغازین، همهٔ
+فرمول‌های اتمی را فرمول اعلام می‌کنیم؛ این مرحله با چند حالت نخست تعریف،
+یعنی حالت‌های
+\iftag{prvTrue}{$\ltrue$، }{}%
+\iftag{prvFalse}{$\lfalse$، }{}%
+$\Obj p_i$ متناظر است. پس «!!{formula} اتمی» یعنی هر !!{formula}ی که یکی از
+این صورت‌ها را داشته باشد.
+
+حالت‌های دیگر تعریف، قواعدی برای ساختن !!{formula}sی تازه از
+!!{formula}sی پیش‌ترساخته به دست می‌دهند. در مرحلهٔ دوم می‌توانیم
+با آن قواعد !!{formula}s را از !!{formula}sی اتمی بسازیم. در
+مرحلهٔ سوم، فرمول‌های تازه را از فرمول‌های اتمی و فرمول‌های به‌دست‌آمده در
+مرحلهٔ دوم می‌سازیم و همین‌طور ادامه می‌دهیم. اصطلاح «!!{formula}» بر هر
+چیزی اطلاق می‌شود که سرانجام در یکی از این مراحل ساخته شود، و نه هیچ چیز
+دیگر.
+\end{explain}
+
+هنگام نوشتن فرمول $(!B \ast !C)$ که از $!B$ و $!C$ با استفاده از یک رابط
+دوجایگاهی~$\ast$ ساخته شده است، اغلب بیرونی‌ترین جفت پرانتز را حذف می‌کنیم
+و فقط~$!B \ast !C$ می‌نویسیم.
+
+\begin{tagblock}{defNot,defOr,defAnd,defIf,defIff,defTrue,defFalse,defEx,defAll}
+\begin{defn}
+فرمول‌های ساخته‌شده با عملگرهای تعریف‌شده را باید چنین فهمید:
+
+\begin{tagenumerate}{defTrue,defFalse,defNot,defOr,defAnd,defIf,defIff,defEx,defAll}
+
+\tagitem{defTrue}{$\ltrue$ اختصارِ
+  \iftag{prvFalse}{$\lnot\lfalse$}{$(!A \lor \lnot !A)$ برای یک
+    !!{formula} اتمی ثابت~$!A$} است.}{}
+
+\tagitem{defFalse}{$\lfalse$ اختصارِ
+  \iftag{prvTrue}{$\lnot\ltrue$}{$(!A \land \lnot !A)$ برای یک
+    !!{formula} اتمی ثابت~$!A$} است.}{}
+
+\tagitem{defNot}{$\lnot !A$ اختصارِ $!A \lif \lfalse$ است.}{}
+
+\tagitem{defOr}{$!A \lor !B$ اختصارِ
+  \iftag{prvAnd}{$\lnot(\lnot !A \land \lnot !B)$}{$\lnot !A \lif
+    !B$} است.}{}
+
+\tagitem{defAnd}{$!A \land !B$ اختصارِ
+  \iftag{prvOr}{$\lnot(\lnot !A \lor \lnot !B)$}{$\lnot (!A \lif
+    \lnot !B)$} است.}{}
+
+\tagitem{defIf}{$!A \lif !B$ اختصارِ
+  \iftag{prvOr}{$(\lnot !A \lor !B)$}{$\lnot (!A \land \lnot !B)$} است.}{}
+
+\tagitem{defIff}{$!A \liff !B$ اختصارِ $(!A \lif !B) \land (!B
+  \lif !A)$ است.}{}
+\end{tagenumerate}
+\end{defn}
+\end{tagblock}
+
+\begin{defn}[همانی نحوی]
+نماد $\ident$ همانی نحوی میان رشته‌های نمادها را بیان می‌کند؛ یعنی
+$!A \ident !B$ اگر و تنها اگر $!A$ و $!B$ رشته‌هایی از نمادها باشند که
+طول یکسان دارند و در هر جایگاه نماد یکسانی دارند.
+\end{defn}
+
+در دو سوی نماد $\ident$ می‌توان رشته‌هایی را قرار داد که با الحاق به دست
+آمده‌اند. برای نمونه، $!A \ident (!B \lor !C)$ یعنی رشتهٔ نمادهای~$!A$
+همان رشته‌ای است که با الحاق یک پرانتز باز، رشتهٔ $!B$، نماد $\lor$، رشتهٔ
+$!C$ و یک پرانتز بسته، به همین ترتیب، به دست می‌آید. اگر چنین باشد، می‌دانیم
+نخستین نماد $!A$ یک پرانتز باز است، $!A$ رشتهٔ $!B$ را به‌عنوان زیررشته‌ای
+در بر دارد که از نماد دوم آغاز می‌شود، پس از آن زیررشته نماد $\lor$ می‌آید،
+و به همین ترتیب.
+
+\end{document}

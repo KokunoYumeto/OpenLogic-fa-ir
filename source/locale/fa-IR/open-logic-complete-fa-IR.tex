@@ -1,0 +1,169 @@
+% Complete Iranian-Persian reader for the frozen Open Logic Project release.
+% English source authority: OpenLogicProject/OpenLogic
+% 9620cc73f9c8e0ad003c514a5d3748f29611c4c0.
+
+\documentclass[openany]{memoir}
+
+\ifdefined\directlua\else
+  \PackageError{open-logic-complete-fa-IR}{این راه‌انداز به LuaLaTeX نیاز دارد}{LuaLaTeX را روی فایل راه‌انداز اجرا کنید}
+\fi
+
+\newcommand*{\olpath}{../..}
+\newcommand*{\ollangid}{fa-IR}
+
+\usepackage{fontspec}
+\usepackage{gitinfo2}
+\usepackage[
+  english,
+  bidi=basic,
+  layout=sectioning lists contents footnotes captions tabular
+]{babel}
+\babelprovide[import=fa,main,onchar=ids fonts]{persian}
+
+\babelfont{rm}[Ligatures=TeX]{TeX Gyre Pagella}
+\babelfont{sf}[Ligatures=TeX]{TeX Gyre Heros}
+\babelfont{tt}{Latin Modern Mono}
+\babelfont[persian]{rm}[
+  Path=../../../00_control/fonts/scheherazade-2.100/,
+  UprightFont=Scheherazade-Regular.ttf,
+  BoldFont=Scheherazade-Bold.ttf,
+  AutoFakeSlant=0.15,
+  Renderer=HarfBuzz,
+  Scale=1.08
+]{Scheherazade-Regular.ttf}
+\babelfont[persian]{sf}[
+  Path=../../../00_control/fonts/scheherazade-2.100/,
+  UprightFont=Scheherazade-Regular.ttf,
+  BoldFont=Scheherazade-Bold.ttf,
+  AutoFakeSlant=0.15,
+  Renderer=HarfBuzz,
+  Scale=1.08
+]{Scheherazade-Regular.ttf}
+
+\input{\olpath/sty/open-logic.sty}
+\input{\olpath/locale/\ollangid/open-logic-locale.sty}
+\input{\olpath/sty/open-logic-defer.sty}
+
+% Keep Polish names in the Latin font even inside Persian prose. The pinned
+% Scheherazade release intentionally has no L-with-stroke glyphs.
+\DeclareRobustCommand{\OLPolishUpperL}{\foreignlanguage{english}{Ł}}
+\DeclareRobustCommand{\OLPolishLowerL}{\foreignlanguage{english}{ł}}
+\renewcommand*{\L}{\OLPolishUpperL}
+\renewcommand*{\l}{\OLPolishLowerL}
+
+% Avoid the legacy control-slot glyph used by TeX's short bar accent.
+\renewcommand*{\bar}[1]{\overline{#1}}
+
+% Preserve complemented bold theory names visually and in text extraction.
+\ExplSyntaxOn
+\cs_new:Npn \ol_build_theory_bar:n #1
+  { \mathord{\text{\foreignlanguage{english}{\bfseries #1\char"0305}}} }
+\RenewDocumentCommand \Th { m }
+  {
+    \tl_if_head_eq_meaning:nNTF {#1} \bar
+      { \exp_args:No \ol_build_theory_bar:n { \tl_tail:n {#1} } }
+      { \mathbf{#1} }
+  }
+\ExplSyntaxOff
+
+% Every file in this frozen locale tree is an accepted Persian target. The
+% upstream optional per-file locale marker is not consistently populated, so
+% do not end an accepted localized file when that legacy marker is absent.
+\let\OLUnLocalizedHook\relax
+\RenewDocumentCommand{\olpartid}{o m}{\renewcommand*{\theolpart}{#2}}
+
+\makeatletter
+\let\thmtlo@chaptervspacehack\relax
+\makeatother
+
+\AtBeginDocument{\selectlanguage{persian}}
+\hypersetup{
+  unicode=true,
+  pdflang={fa-IR},
+  pdftitle={متن منطق باز — نسخهٔ کامل فارسی ایران برای منبع تثبیت‌شده},
+  pdfauthor={Open Logic Project},
+  pdfsubject={Contributor: AI typesetting \& translation}
+}
+
+% Keep the counter expansion purely numeric.  cleveref stores these tokens in
+% its sorting metadata and cannot parse a bidi wrapper as a counter value.
+\newcommand*{\OLFaChapterCounter}[1]{%
+  \number\value{chapter}.\number\value{#1}}
+\renewcommand*{\thesection}{\OLFaChapterCounter{section}}
+\renewcommand*{\thethm}{\OLFaChapterCounter{thm}}
+\renewcommand*{\theex}{\OLFaChapterCounter{thm}}
+\renewcommand*{\thelem}{\OLFaChapterCounter{thm}}
+\renewcommand*{\theprop}{\OLFaChapterCounter{thm}}
+\renewcommand*{\thecor}{\OLFaChapterCounter{thm}}
+\renewcommand*{\thedefn}{\OLFaChapterCounter{thm}}
+\renewcommand*{\theprob}{\OLFaChapterCounter{prob}}
+\renewcommand*{\thefigure}{\OLFaChapterCounter{figure}}
+
+\newcommand*{\OLReleaseConceptDOI}{10.5281/zenodo.21921852}
+\newcommand*{\OLReleaseVersionDOI}{10.5281/zenodo.21987687}
+\newcommand*{\OLReleaseRepository}{https://github.com/KokunoYumeto/OpenLogic-fa-ir}
+
+\makeatletter
+\renewcommand*{\@gitFootRev}{بازبینی منبع: 9620cc7 (2026-07-12)}
+\makeatother
+\renewcommand*{\ifgitinfo}{\sffamily\footnotesize
+  بازبینی منبع: \babelsublr{\texttt{9620cc7}} (2026-07-12)}
+
+\includeenv{editorial}
+\problemsperchapter
+\let\cleardoublepage\clearpage
+\pagestyle{plain}
+
+\begin{document}
+
+\begin{titlingpage}
+\begin{center}
+\vspace*{2.5cm}
+{\HUGE\bfseries\sffamily متن منطق باز\par}
+\vspace{1.2cm}
+{\huge نسخهٔ کامل فارسی ایران برای منبع تثبیت‌شده\par}
+\vspace{1.5cm}
+{\Large فارسی معیار دانشگاهی ایران — \babelsublr{fa-IR}\par}
+\vspace{1.5cm}
+{\large منبع: پروژهٔ منطق باز، تعهد
+\babelsublr{\texttt{9620cc73f9c8e0ad003c514a5d3748f29611c4c0}}\par}
+\vspace{0.8cm}
+{\large مخزن: \href{\OLReleaseRepository}{\babelsublr{OpenLogic-fa-ir}}\par}
+{\large DOI مفهومی: \babelsublr{\OLReleaseConceptDOI}\par}
+{\large DOI این انتشار: \babelsublr{\OLReleaseVersionDOI}\par}
+\end{center}
+
+\vfill
+
+\noindent
+فایل‌های ترجمهٔ فارسی همهٔ \babelsublr{722} واحدِ مجموعهٔ تثبیت‌شده را
+پوشش می‌دهند. این خوانشگر مسیر قانونی کتاب را نمایش می‌دهد که به
+\babelsublr{642} واحد می‌رسد؛ هشتاد واحدِ نگه‌داشته‌شدهٔ بیرون از مسیر
+خوانشگر در ضمیمهٔ بسته‌شدنِ مستقلی همراه این نسخه گرد آمده‌اند.
+
+\medskip
+\noindent
+این ترجمهٔ تغییریافته با مجوز
+\href{https://creativecommons.org/licenses/by/4.0/}{CC BY 4.0}
+عرضه می‌شود. اثر اصلی به پروژهٔ منطق باز منسوب است و این انتشار به معنای
+تأیید آن پروژه نیست. \foreignlanguage{english}{AI typesetting \& translation}
+با راهبری فلوریس در ترجمه و حروف‌چینی مشارکت داشته است؛ بازبینی انسانیِ
+فارسی انجام نشده است.
+
+\end{titlingpage}
+
+\pagestyle{giheadings}
+
+\subfile{content/open-logic-about}
+
+\tableofcontents*
+
+\subfile{content/content}
+
+\photocredits
+
+\nocite{Frege1953,Peter1967}
+\bibliographystyle{\olpath/bib/natbib-oup}
+\bibliography{\olpath/bib/open-logic}
+
+\end{document}

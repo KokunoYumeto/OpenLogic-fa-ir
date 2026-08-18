@@ -1,0 +1,157 @@
+% Part: proof-theory
+% Chapter: natural-deduction
+% Section: sequents
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{pt}{nat}{seq}
+
+\olsection{استنتاج طبیعی با دنباله‌ها: \Log{N2c} و~\Log{N2i}}
+
+!!^a{proof}~$\delta$ در \Log{N1c} یا \Log{N1i} نشان می‌دهد که
+!!{formula} پایانی آن، یعنی~$!A$، از فرض‌های بازش به دست می‌آید. اگر
+$\Gamma$ مجموعهٔ !!{formula}های~$!B$ باشد که $!B^x$ به‌عنوان فرض باز
+در~$\delta$ ظاهر می‌شود، می‌توانیم این را به صورت
+$\delta\Proves\Gamma\Sequent !A$ بنویسیم. این امر پیشنهاد می‌کند که
+دستگاه استنتاج طبیعی را برای دنباله‌ها نیز صورت‌بندی کنیم. در چنین
+دستگاهی، هر دنباله اطلاعات مربوط به فرض‌های بازی را حمل می‌کند که
+!!{formula} سمت راست به آن‌ها وابسته است؛ یعنی فرض‌هایی که در
+زیر-!!{proof} منتهی به آن دنباله بازند. این دستگاه، استنتاج طبیعی با
+دنباله‌ها یا استنتاج طبیعی «به سبک دنباله‌ای» است و دستگاه‌های حاصل را
+\Log{N2c} و~\Log{N2i} می‌نامیم.
+
+برای نزدیک‌ترکردن تناظر میان \Log{N1} و \Log{N2}، مجموعه‌های~$\Gamma$
+در سمت چپ را متشکل از !!{formula}های برچسب‌دار~$x:!B$ می‌گیریم. چون
+قواعد \Log{N1} فقط بر !!{formula}های مقدمات، یعنی !!{formula}های پایانی
+زیر-!!{proof}های بی‌واسطه، عمل می‌کنند، قواعد \Log{N2} نیز فقط بر تالی
+دنباله عمل می‌کنند. بنابراین می‌توانیم فرمول‌های برچسب‌دار سمت چپ
+دنباله‌ها را صرفاً \emph{بافت} بنامیم.
+
+به جای فرض‌ها، بالاترین دنباله‌های برهان‌های \Log{N2} اصولی به شکل
+\[x:!A \Sequent !A.\]
+هستند. قواعد دقیقاً متناظر با قواعد \Log{N1}اند و در \olref{tab:N2}
+آمده‌اند.
+
+\subfile{rules-N2}
+
+چون باید، همانند \Log{N1c} و \Log{N1i}، اجازه دهیم قواعد
+\Intro{\lif}، \Intro{\lnot}، \Elim{\lor} و \Elim{\lexists} بتوانند
+فرضی را مرخص کنند اما ملزم به آن نباشند، کاربردهای قواعد متناظر در
+\Log{N2c} و~\Log{N2i} را حتی هنگامی درست می‌دانیم که !!{formula}های
+بافتی متناظر~$!A$، $!B$ و~$!A(a)$ در بافت مقدمهٔ مربوط حضور نداشته
+باشند.
+
+\begin{prop}
+اگر $\delta$ !!a{proof}ی در~\Log{N1c} یا \Log{N1i} برای~$!A$ باشد،
+آنگاه در~\Log{N2c} یا به‌ترتیب \Log{N2i}، !!a{proof}~$\delta'$ای برای
+$\Gamma\Sequent !A$ وجود دارد که در آن $\Gamma$ مجموعهٔ همهٔ
+~$x:!B$هایی است که $!B^x$ فرض باز~$\delta$ است.
+\end{prop}
+
+\begin{proof}
+  با استقرا بر $n=\pheight{\delta}$. اگر $n=0$، $\delta$ تنها فرض
+  باز~$!A^x$ است. در این صورت $\Gamma=\{x:!A\}$ و
+  $\Gamma\Sequent !A$ اصلی از \Log{N2c} یا~\Log{N2i} است.
+
+  اگر $n>0$، حالت‌ها را برحسب آخرین استنتاج~$\delta$ جدا می‌کنیم. فقط
+  یک حالت را بررسی می‌کنیم و بقیه را به‌عنوان تمرین می‌گذاریم.
+
+  فرض کنید آخرین استنتاج \Intro{\lif} باشد. آنگاه $\delta$ چنین پایان
+  می‌یابد:
+  \[
+  \AxiomC{$\Discharge{!B}{x}$}
+  \RightLabel{$\delta_1$}
+  \DeduceC{$!C$}
+  \DischargeRule{\Intro{\lif}}{x}
+  \UnaryInfC{$!B \lif !C$}
+  \DisplayProof
+  \]
+  بنا بر فرض استقرا، در~\Log{N2c} یا~\Log{N2i} !!a{proof}~$\delta_1'$
+  برای $\Gamma'\Sequent !C$ وجود دارد که $\Gamma'$ فرض‌های برچسب‌دار
+  باز در~$\delta_1$ هستند. اگر $!B^x$ فرض باز~$\delta_1$ باشد، در
+  استنتاج \Intro{\lif} مرخص می‌شود و فرض‌های باز~$\delta$ برابرند با
+  $\Gamma=\Gamma'\setminus\{x:!B\}$. به بیان دیگر، $\delta_1'$
+  !!a{proof}ی برای~$x:!B,\Gamma\Sequent !C$ است و می‌توانیم $\delta'$
+  را چنین بگیریم:
+  \[
+  \AxiomC{}
+  \RightLabel{$\delta_1'$}
+  \Deduce$x:!B, \Gamma \fCenter !C$
+  \RightLabel{\Intro{\lif}}
+  \UnaryInf$\Gamma \fCenter !B \lif !C$
+  \DisplayProof
+  \]
+  اگر $!B^x$ فرض باز~$\delta_1$ نباشد، \Intro{\lif} هیچ فرضی را مرخص
+  نمی‌کند و فرض‌های باز $\delta$ و~$\delta_1$ یکسان‌اند. چون لازم نیست
+  فرمول بافتی~$x:!B$ در مقدمهٔ \Intro{\lif} در~\Log{N2c} و
+  ~\Log{N2i} حاضر باشد، می‌توانیم $\delta'$ را چنین بگیریم:
+  \[
+  \AxiomC{}
+  \RightLabel{$\delta_1'$}
+  \Deduce$\Gamma \fCenter !C$
+  \RightLabel{\Intro{\lif}}
+  \UnaryInf$\Gamma \fCenter !B \lif !C$
+  \DisplayProof
+  \]
+
+  حالت‌هایی که $\delta$ به قاعده‌ای دیگر پایان می‌یابد مشابه‌اند.
+\end{proof}
+
+\begin{prop}
+اگر $\delta$ !!a{proof}ی در \Log{N2c} یا \Log{N2i} برای
+$\Gamma\Sequent !A$ باشد، آنگاه در \Log{N1c} یا به‌ترتیب \Log{N1i}،
+!!a{proof}~$\delta'$ای با !!{formula} پایانی~$!A$ و فرض باز~$!B^x$
+برای هر $x:!B\in\Gamma$ وجود دارد.
+\end{prop}
+
+\begin{proof}
+  باز با استقرا بر !!{height}~$n$ برهان~$\delta$ پیش می‌رویم. اگر
+  $n=0$، $\delta$ اصل $x:!A\Sequent !A$ است و !!{proof}~$\delta'$ همان
+  فرض~$!A^x$ است.
+
+  اگر $n>0$، حالت‌ها را برحسب آخرین استنتاج~$\delta$ جدا می‌کنیم. برای
+  نمونه، اگر آن استنتاج \Intro{\lif} باشد، $\delta$ به یکی از دو شکل
+  زیر پایان می‌یابد:
+  \[
+  \bottomAlignProof
+  \AxiomC{}
+  \RightLabel{$\delta_1$}
+  \Deduce$x:!B, \Gamma \fCenter !C$
+  \RightLabel{\Intro{\lif}}
+  \UnaryInf$\Gamma \fCenter !B \lif !C$
+  \DisplayProof
+  \quad\text{ یا }\quad
+  \bottomAlignProof
+  \AxiomC{}
+  \RightLabel{$\delta_1$}
+  \Deduce$\Gamma \fCenter !C$
+  \RightLabel{\Intro{\lif}}
+  \UnaryInf$\Gamma \fCenter !B \lif !C$
+  \DisplayProof
+  \]
+  بنا بر فرض استقرا، در~\Log{N1c} یا~\Log{N1i} !!a{proof}
+  ~‌$\delta_1'$ای برای~$!C$ وجود دارد. در حالت نخست $!B^x$ فرض باز
+  ~‌$\delta_1'$ است و در حالت دوم نیست. می‌توانیم !!{proof}~$\delta'$
+  را به‌ترتیب چنین بگیریم:
+  \[
+  \bottomAlignProof
+  \AxiomC{$\Discharge{!B}{x}$}
+  \RightLabel{$\delta_1'$}
+  \DeduceC{$!C$}
+  \DischargeRule{\Intro{\lif}}{x}
+  \UnaryInfC{$!B \lif !C$}
+  \DisplayProof
+  \quad\text{ یا }\quad
+  \bottomAlignProof
+  \AxiomC{}
+  \RightLabel{$\delta_1'$}
+  \DeduceC{$!C$}
+  \RightLabel{\Intro{\lif}}
+  \UnaryInfC{$!B \lif !C$}
+  \DisplayProof
+  \]
+\end{proof}
+
+\end{document}

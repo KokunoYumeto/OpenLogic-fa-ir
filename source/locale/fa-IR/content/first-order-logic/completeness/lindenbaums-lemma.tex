@@ -1,0 +1,100 @@
+% Part: first-order-logic
+% Chapter: completeness
+% Section: lindenbaums-lemma
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\iftag{FOL}
+      {\olfileid{fol}{com}{lin}}
+      {\olfileid{pl}{com}{lin}}
+
+\olsection{لم لیندنباوم}
+
+\begin{explain}
+اکنون لمی را اثبات می‌کنیم که نشان می‌دهد هر مجموعهٔ سازگار از
+!!{sentence}s در مجموعه‌ای از جمله‌ها گنجانده می‌شود که نه‌فقط سازگار،
+بلکه !!{complete} نیز هست. اثبات با افزودن هر بار یک !!{sentence} پیش
+می‌رود و در هر گام تضمین می‌کند که مجموعه سازگار بماند. این کار را چنان
+انجام می‌دهیم که برای هر~$!A$، در مرحله‌ای یا $!A$ افزوده شود یا
+$\lnot !A$. آنگاه اجتماع همهٔ مراحل این ساخت یا $!A$ را دربر دارد یا
+نقیض آن~$\lnot !A$ را، و ازاین‌رو کامل است. این اجتماع همچنین سازگار
+است، زیرا در هر مرحله مراقبیم ناسازگاری‌ای پدید نیاوریم.
+\end{explain}
+
+\begin{lem}[لم لیندنباوم]
+\ollabel{lem:lindenbaum} هر مجموعهٔ سازگار~$\Gamma$ در زبان~$\Lang{L}$
+را می‌توان به !!a{complete} مجموعهٔ سازگار~$\Gamma^*$ گسترش داد.
+\end{lem}
+
+\begin{proof}
+فرض کنید $\Gamma$ سازگار باشد. بگذارید $!A_0$، $!A_1$،
+\dots{} شمارشی از همهٔ !!{sentence}s زبان~$\Lang L$ باشد.
+$\Gamma_0 = \Gamma$ را تعریف کنید، و
+\[
+\Gamma_{n+1} =
+\begin{cases}
+\Gamma_n \cup \{ !A_n \} & \textrm{اگر $\Gamma_n \cup \{!A_n\}$
+  سازگار باشد؛} \\
+\Gamma_n \cup \{ \lnot !A_n \} & \textrm{در غیر این صورت.}
+\end{cases}
+\]
+بگذارید $\Gamma^* = \bigcup_{n \geq 0} \Gamma_n$.
+
+هر $\Gamma_n$ سازگار است: $\Gamma_0$ بنا بر تعریف سازگار است. اگر
+$\Gamma_{n+1} = \Gamma_n \cup \{!A_n\}$، علتش آن است که مجموعهٔ اخیر
+سازگار است. اگر چنین نباشد، $\Gamma_{n+1} = \Gamma_n \cup \{\lnot
+!A_n\}$. باید بررسی کنیم که $\Gamma_n \cup \{\lnot !A_n\}$ سازگار
+است. فرض کنید سازگار نباشد. آنگاه \emph{هر دو} مجموعهٔ
+$\Gamma_n \cup \{!A_n\}$ و $\Gamma_n \cup \{\lnot !A_n\}$ ناسازگار
+هستند. این بدان معناست که بنا بر
+\iftag{FOL}{%
+  \tagrefs{prfAX/{fol:axd:prv:prop:provability-exhaustive},
+    prfSC/{fol:seq:prv:prop:provability-exhaustive},
+    prfND/{fol:ntd:prv:prop:provability-exhaustive},
+    prfTab/{fol:tab:prv:prop:provability-exhaustive}}}{%
+  \tagrefs{prfAX/{pl:axd:prv:prop:provability-exhaustive},
+    prfSC/{pl:seq:prv:prop:provability-exhaustive},
+    prfND/{pl:ntd:prv:prop:provability-exhaustive},
+    prfTab/{pl:tab:prv:prop:provability-exhaustive}}}،
+$\Gamma_n$ ناسازگار می‌بود، برخلاف فرض استقرا.
+
+برای هر~$n$ و هر $i < n$، $\Gamma_i \subseteq \Gamma_n$. این امر با
+استقرایی ساده بر~$n$ نتیجه می‌شود. برای $n=0$ هیچ $i < 0$ای وجود ندارد،
+پس ادعا خودبه‌خود برقرار است. برای گام استقرا، فرض کنید ادعا برای~$n$
+صادق باشد. نشان می‌دهیم اگر $i < n+1$، آنگاه
+$\Gamma_i \subseteq \Gamma_{n+1}$. بنا بر ساخت، یا
+$\Gamma_{n+1} = \Gamma_n \cup \{!A_n\}$ یا
+$= \Gamma_n \cup \{\lnot !A_n\}$. پس
+$\Gamma_n \subseteq \Gamma_{n+1}$. اگر $i < n+1$، آنگاه بنا بر فرض
+استقرا $\Gamma_i \subseteq \Gamma_n$ (اگر $i < n$)، یا بنا بر امر بدیهی
+$\Gamma_n \subseteq \Gamma_n$ (اگر $i = n$). از تعدی~$\subseteq$
+نتیجه می‌گیریم که $\Gamma_i \subseteq \Gamma_{n+1}$.
+
+از این امر نتیجه می‌شود که $\Gamma^*$ سازگار است. دلیل چنین است:
+بگذارید $\Gamma' \subseteq \Gamma^*$ متناهی باشد. اگر این زیرمجموعه
+تهی باشد، سازگار است. در غیر این صورت،
+هر $!B \in \Gamma'$ برای عددی~$i$ در~$\Gamma_i$ نیز هست. بگذارید $n$
+بزرگ‌ترین این اعداد باشد. چون اگر $i \le n$، آنگاه
+$\Gamma_i \subseteq \Gamma_n$، هر $!B \in \Gamma'$ همچنین
+$\in \Gamma_n$ است؛ یعنی $\Gamma' \subseteq \Gamma_n$، و $\Gamma_n$
+سازگار است. پس هر
+زیرمجموعهٔ متناهی $\Gamma' \subseteq \Gamma^*$ سازگار است. بنا بر
+\iftag{FOL}{%
+  \tagrefs{prfAX/{fol:axd:ptn:prop:proves-compact},
+    prfSC/{fol:seq:ptn:prop:proves-compact},
+    prfND/{fol:ntd:ptn:prop:proves-compact},
+    prfTab/{fol:tab:ptn:prop:proves-compact}}}{%
+  \tagrefs{prfAX/{pl:axd:ptn:prop:proves-compact},
+    prfSC/{pl:seq:ptn:prop:proves-compact},
+    prfND/{pl:ntd:ptn:prop:proves-compact},
+    prfTab/{pl:tab:ptn:prop:proves-compact}}}، $\Gamma^*$ سازگار است.
+
+هر !!{sentence} در~$\Frm[L]$ در فهرستی ظاهر می‌شود که برای
+تعریف~$\Gamma^*$ به کار رفت. اگر $!A_n \notin \Gamma^*$، علتش آن است
+که $\Gamma_n \cup \{!A_n\}$ ناسازگار بوده است. اما آنگاه
+$\lnot !A_n \in \Gamma^*$؛ پس $\Gamma^*$ !!{complete} است.
+\end{proof}
+
+\end{document}

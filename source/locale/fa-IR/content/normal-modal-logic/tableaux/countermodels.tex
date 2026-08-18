@@ -1,0 +1,307 @@
+% Part: normal-modal-logic
+% Chapter: tableaux
+% Section: countermodels
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{tab}{cou}
+      
+\olsection{پادمدل‌ها از \usetoken{P}{tableau}ها}
+
+\begin{explain}
+  اثبات قضیهٔ تمامیت تنها نشان نمی‌دهد که اگر~$\Entails !A$، آنگاه
+  $\Proves !A$؛ بلکه اگر~$\Entails/ !A$، روشی نیز برای ساخت پادمدل‌های
+  $!A$ به دست می‌دهد. در مورد~$\Log{K}$، این روش یک \emph{روش
+    تصمیم} است. زیرا فرض کنید~$\Entails/ !A$. آنگاه اثبات
+  \olref[cpl]{prop:complete-tableau} روشی برای ساخت یک !!{tableau}
+  کامل به دست می‌دهد. این روش در واقع همواره پایان می‌یابد. قواعد
+  گزاره‌ای برای~$\Log{K}$ تنها !!{formula}های پیشونددارِ کم‌پیچیده‌تر
+  می‌افزایند؛ یعنی هر قاعدهٔ گزاره‌ای برای هر فرمول نشاندار
+  $\sFmla{S}{!A}[\sigma]$ تنها یک‌بار روی یک شاخه اعمال می‌شود.
+  پیشوندهای تازه تنها به‌وسیلهٔ
+  \iftag{prvBox}{$\TRule{\False}{\Box}$}{}\iftag{notprvBox,notprvDiamond}{}{
+    و }
+  \iftag{prvDiamond}{$\TRule{\True}{\Diamond}$}{}
+  \iftag{notprvBox,notprvDiamond}{تولید می‌شود و آن قاعده نیز}{تولید
+  می‌شوند و آن قواعد نیز} تنها یک‌بار اعمال می‌شود (و یک پیشوند تازه
+  تولید می‌کند).
+  \iftag{prvBox}{$\TRule{\True}{\Box}$}{}\iftag{notprvBox,notprvDiamond}{}{
+    و }
+  \iftag{prvDiamond}{$\TRule{\False}{\Diamond}$}{}
+  \iftag{notprvBox,notprvDiamond}{ممکن است چندبار اعمال شود}{ممکن است
+  چندبار اعمال شوند}، اما برای هر پیشوند تنها یک‌بار، و تنها شمار
+  متناهی‌ای پیشوند تازه تولید می‌شود. پس ساخت پس از شمار متناهی‌ای
+  مرحله یا به شاخه‌ای بسته می‌انجامد یا به شاخه‌ای کامل.
+
+  پس از ساخت تابلویی با شاخه‌ای باز و کامل، اثبات
+  \olref[cpl]{thm:tableau-completeness} مدلی صریح به دست می‌دهد که
+  مجموعهٔ اصلیِ !!{formula}های پیشونددار را ارضا می‌کند. پس نه‌تنها
+  اگر~$\Gamma \Entails !A$، یک !!{tableau} بسته وجود دارد و
+  $\Gamma \Proves !A$؛ بلکه اگر !!{tableau} بسته را به شیوهٔ درست
+  بجوییم و سرانجام !!{tableau}ای «کامل» به دست آوریم، نه‌فقط خواهیم
+  دانست~$\Gamma \Entails/ !A$، بلکه واقعاً می‌توانیم پادمدلی بسازیم.
+\end{explain}
+
+\iftag{prvBox}{
+\begin{ex}
+  می‌دانیم~$\Proves/ \Box(p \lor q) \lif (\Box p \lor \Box q)$.
+  ساخت یک تابلو چنین آغاز می‌شود:
+  \begin{oltableau}
+    [\pFmla{\False}{\Box(p \lor q) \lif (\Box p \lor \Box q)}{1},
+      just = \TAss, checked
+      [\pFmla{\True}{\Box(p \lor q)}{1},
+        just = {\TRule{\False}{\lif}[1]}, 
+        [\pFmla{\False}{\Box p \lor \Box q}{1},
+          just = {\TRule{\False}{\lif}[1]}, checked
+          [\pFmla{\False}{\Box p}{1},
+            just = {\TRule{\False}{\lor}[3]}, checked
+            [\pFmla{\False}{\Box q}{1},
+              just = {\TRule{\False}{\lor}[3]}, checked
+              [\pFmla{\False}{p}{1.1}, 
+                just = {\TRule{\False}{\Box}[4]}, checked
+                [\pFmla{\False}{q}{1.2}, 
+                  just = {\TRule{\False}{\Box}[5]}, checked
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  \end{oltableau}
+  البته !!{tableau} هنوز تمام نشده است. در گام بعد تنها سطر بدون
+  علامت بررسی را در نظر می‌گیریم: !!{formula} پیشونددار
+  $\sFmla{\True}{\Box(p \lor q)}[1]$ در سطر~$2$. ساخت تابلوی کامل
+  حکم می‌کند قاعدهٔ~$\TRule{\True}{\Box}$ را برای هر پیشوند
+  استفاده‌شده روی شاخه، یعنی هم~$1.1$ و هم~$1.2$، اعمال کنیم:
+  \begin{oltableau}
+    [\pFmla{\False}{\Box(p \lor q) \lif (\Box p \lor \Box q)}{1},
+      just = \TAss, checked
+      [\pFmla{\True}{\Box(p \lor q)}{1},
+        just = {\TRule{\False}{\lif}[1]}, 
+        [\pFmla{\False}{\Box p \lor \Box q}{1},
+          just = {\TRule{\False}{\lif}[1]}, checked
+          [\pFmla{\False}{\Box p}{1},
+            just = {\TRule{\False}{\lor}[3]}, checked
+            [\pFmla{\False}{\Box q}{1},
+              just = {\TRule{\False}{\lor}[3]}, checked
+              [\pFmla{\False}{p}{1.1}, 
+                just = {\TRule{\False}{\Box}[4]}, checked
+                [\pFmla{\False}{q}{1.2}, 
+                  just = {\TRule{\False}{\Box}[5]}, checked
+                  [\pFmla{\True}{p \lor q}{1.1}, 
+                    just = {\TRule{\True}{\Box}[2]}
+                    [\pFmla{\True}{p \lor q}{1.2}, 
+                      just = {\TRule{\True}{\Box}[2]}
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  \end{oltableau}
+  اکنون سطرهای~2، 8 و~9 علامت بررسی ندارند. اما هیچ پیشوند تازه‌ای
+  افزوده نشده است؛ پس~$\TRule{\True}{\lor}$ را بر سطرهای~8 و~9، روی
+  همهٔ شاخه‌های حاصل (تا هنگامی که بسته نشوند)، اعمال می‌کنیم:
+  \begin{oltableau}
+    [\pFmla{\False}{\Box(p \lor q) \lif (\Box p \lor \Box q)}{1},
+      just = \TAss, checked
+      [\pFmla{\True}{\Box(p \lor q)}{1},
+        just = {\TRule{\False}{\lif}[1]}, checked
+        [\pFmla{\False}{\Box p \lor \Box q}{1},
+          just = {\TRule{\False}{\lif}[1]}, checked
+          [\pFmla{\False}{\Box p}{1},
+            just = {\TRule{\False}{\lor}[3]}, checked
+            [\pFmla{\False}{\Box q}{1},
+              just = {\TRule{\False}{\lor}[3]}, checked
+              [\pFmla{\False}{p}{1.1}, 
+                just = {\TRule{\False}{\Box}[4]}, checked
+                [\pFmla{\False}{q}{1.2}, 
+                  just = {\TRule{\False}{\Box}[5]}, checked
+                  [\pFmla{\True}{p \lor q}{1.1}, 
+                    just = {\TRule{\True}{\Box}[2]}, checked
+                    [\pFmla{\True}{p \lor q}{1.2}, 
+                      just = {\TRule{\True}{\Box}[2]}, checked
+                      [\pFmla{\True}{p}{1.1},
+                        just = {\TRule{\True}{\lor}[8]}, checked, close
+                      ]
+                      [\pFmla{\True}{q}{1.1},
+                        just = {\TRule{\True}{\lor}[8]}, checked
+                        [\pFmla{\True}{p}{1.2},
+                          just = {\TRule{\True}{\lor}[9]}, checked]
+                        [\pFmla{\True}{q}{1.2},
+                          just = {\TRule{\True}{\lor}[9]}, checked, close]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  \end{oltableau}
+  یک شاخهٔ باز باقی مانده و کامل است. از آن مدلی با جهان‌های
+  $W = \{1, 1.1, 1.2\}$ تعریف می‌کنیم (تنها پیشوندهای ظاهرشونده روی
+  شاخهٔ باز)، با رابطهٔ دسترسی‌پذیری
+  $R = \{\tuple{1, 1.1}, \tuple{1, 1.2}\}$ و تخصیص
+  $V(p) = \{1.2\}$ (زیرا سطر~11 شامل~$\sFmla{\True}{p}[1.2]$ است) و
+  $V(q) = \{1.1\}$ (زیرا سطر~10 شامل
+  $\sFmla{\True}{q}[1.1]$ است). مدل در~\olref{fig:counter-Box} ترسیم
+  شده است و می‌توانید بررسی کنید پادمدلی برای
+  $\Box(p \lor q) \lif (\Box p \lor \Box q)$ است.
+  \begin{figure}
+  \begin{center}
+    \begin{tikzpicture}[modal]
+      \node[world] (w1) [label={[align=right]right:\mFalse{p}\\ \mFalse{q}}]{$1$}; 
+      \node[world] (w2) [label={[align=right]right:\mFalse{p}\\ \mTrue{q}},
+        above left=of w1]{$1.1$}; 
+      \node[world] (w3) [label={[align=right]right:\mTrue{p}\\ \mFalse{q}},
+        above right=of w1] {$1.2$};
+      \draw[->] (w1) to (w2);
+      \draw[->] (w1) to (w3);
+    \end{tikzpicture}
+  \end{center}
+  \caption{پادمدلی برای~$\Box(p \lor q) \lif (\Box p \lor \Box q)$.}
+  \ollabel{fig:counter-Box}
+\end{figure}
+\end{ex}          
+}
+{
+\begin{ex}
+  می‌دانیم~$\Proves/ (\Diamond p \land \Diamond q) \lif \Diamond(p
+  \land q)$. ساخت یک تابلو چنین آغاز می‌شود:
+  \begin{oltableau}
+    [\pFmla{\False}{(\Diamond p \land \Diamond q) \lif \Diamond(p \land q)}{1},
+      just = \TAss, checked
+      [\pFmla{\True}{\Diamond p \land \Diamond q}{1},
+        just = {\TRule{\False}{\lif}[1]}, checked
+        [\pFmla{\False}{\Diamond(p \land q)}{1},
+          just = {\TRule{\False}{\lif}[1]}
+          [\pFmla{\True}{\Diamond p}{1},
+            just = {\TRule{\True}{\land}[2]}, checked
+            [\pFmla{\True}{\Diamond q}{1},
+              just = {\TRule{\True}{\land}[2]}, checked
+              [\pFmla{\True}{p}{1.1}, 
+                just = {\TRule{\True}{\Diamond}[4]}, checked
+                [\pFmla{\True}{q}{1.2}, 
+                  just = {\TRule{\True}{\Diamond}[5]}, checked
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  \end{oltableau}
+  البته !!{tableau} هنوز تمام نشده است. در گام بعد تنها سطر بدون
+  علامت بررسی را در نظر می‌گیریم: !!{formula} پیشونددار
+  $\sFmla{\False}{\Diamond(p \land q)}[1]$ در سطر~$3$. ساخت تابلوی
+  کامل حکم می‌کند قاعدهٔ~$\TRule{\False}{\Diamond}$ را برای هر پیشوند
+  استفاده‌شده روی شاخه، یعنی هم~$1.1$ و هم~$1.2$، اعمال کنیم:
+  \begin{oltableau}
+    [\pFmla{\False}{(\Diamond p \land \Diamond q) \lif \Diamond(p \land q)}{1},
+      just = \TAss, checked
+      [\pFmla{\True}{\Diamond p \land \Diamond q}{1},
+        just = {\TRule{\False}{\lif}[1]}, checked
+        [\pFmla{\False}{\Diamond (p \land q)}{1},
+          just = {\TRule{\False}{\lif}[1]}
+          [\pFmla{\True}{\Diamond p}{1},
+            just = {\TRule{\True}{\land}[2]}, checked
+            [\pFmla{\True}{\Diamond q}{1},
+              just = {\TRule{\True}{\land}[2]}, checked
+              [\pFmla{\True}{p}{1.1}, 
+                just = {\TRule{\True}{\Diamond}[4]}, checked
+                [\pFmla{\True}{q}{1.2}, 
+                  just = {\TRule{\True}{\Diamond}[5]}, checked
+                  [\pFmla{\False}{p \land q}{1.1}, 
+                    just = {\TRule{\False}{\Diamond}[3]}
+                    [\pFmla{\False}{p \land q}{1.2}, 
+                      just = {\TRule{\False}{\Diamond}[3]}
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  \end{oltableau}
+  اکنون سطرهای~3، 8 و~9 علامت بررسی ندارند. اما هیچ پیشوند تازه‌ای
+  افزوده نشده است؛ پس~$\TRule{\False}{\land}$ را بر سطرهای~8 و~9،
+  روی همهٔ شاخه‌های حاصل (تا هنگامی که بسته نشوند)، اعمال می‌کنیم:
+  \begin{oltableau}
+    [\pFmla{\False}{(\Diamond p \land \Diamond q) \lif \Diamond(p \land q)}{1},
+      just = \TAss, checked
+      [\pFmla{\True}{\Diamond p \land \Diamond q}{1},
+        just = {\TRule{\False}{\lif}[1]}, checked
+        [\pFmla{\False}{\Diamond(p \land q)}{1},
+          just = {\TRule{\False}{\lif}[1]}
+          [\pFmla{\True}{\Diamond p}{1},
+            just = {\TRule{\True}{\land}[2]}, checked
+            [\pFmla{\True}{\Diamond q}{1},
+              just = {\TRule{\True}{\land}[2]}, checked
+              [\pFmla{\True}{p}{1.1}, 
+                just = {\TRule{\True}{\Diamond}[4]}, checked
+                [\pFmla{\True}{q}{1.2}, 
+                  just = {\TRule{\True}{\Diamond}[5]}, checked
+                  [\pFmla{\False}{p \land q}{1.1}, 
+                    just = {\TRule{\False}{\Diamond}[3]}, checked
+                    [\pFmla{\False}{p \land q}{1.2}, 
+                      just = {\TRule{\False}{\Diamond}[3]}, checked
+                      [\pFmla{\False}{p}{1.1},
+                        just = {\TRule{\False}{\land}[8]}, checked, close
+                      ]
+                      [\pFmla{\False}{q}{1.1},
+                        just = {\TRule{\False}{\land}[8]}, checked
+                        [\pFmla{\False}{p}{1.2},
+                          just = {\TRule{\False}{\land}[9]}, checked]
+                        [\pFmla{\False}{q}{1.2},
+                          just = {\TRule{\False}{\land}[9]}, checked, close]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  \end{oltableau}
+  یک شاخهٔ باز باقی مانده و کامل است. از آن مدلی با جهان‌های
+  $W = \{1, 1.1, 1.2\}$ تعریف می‌کنیم (تنها پیشوندهای ظاهرشونده روی
+  شاخهٔ باز)، با رابطهٔ دسترسی‌پذیری
+  $R = \{\tuple{1, 1.1}, \tuple{1, 1.2}\}$ و تخصیص
+  $V(p) = \{1.1\}$ (زیرا سطر~6 شامل~$\sFmla{\True}{p}[1.1]$ است) و
+  $V(q) = \{1.2\}$ (زیرا سطر~7 شامل
+  $\sFmla{\True}{q}[1.2]$ است). مدل در~\olref{fig:counter-Diamond}
+  ترسیم شده است و می‌توانید بررسی کنید پادمدلی برای
+  $(\Diamond p \land \Diamond q) \lif \Diamond (p \land q)$ است.
+  \begin{figure}
+  \begin{center}
+    \begin{tikzpicture}[modal]
+      \node[world] (w1) [label={[align=right]right:\mFalse{p}\\ \mFalse{q}}]{$1$}; 
+      \node[world] (w2) [label={[align=right]right:\mTrue{p}\\ \mFalse{q}},
+        above left=of w1]{$1.1$}; 
+      \node[world] (w3) [label={[align=right]right:\mFalse{p}\\ \mTrue{q}},
+        above right=of w1] {$1.2$};
+      \draw[->] (w1) to (w2);
+      \draw[->] (w1) to (w3);
+    \end{tikzpicture}
+  \end{center}
+  \caption{پادمدلی برای~$(\Diamond p \land \Diamond q) \lif
+    \Diamond (p \land q)$.}
+  \ollabel{fig:counter-Diamond}
+\end{figure}
+\end{ex}          
+}
+
+\end{document}

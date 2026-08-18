@@ -1,0 +1,145 @@
+% Part: intuitionistic-logic
+% Chapter: tableaux
+% Section: rules
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{int}{tab}{rul}
+
+\olsection{قواعد منطق شهودگرایانه}
+
+قواعد رابط‌های~$\land$ و~$\lor$ همان قواعد تابلوهای گزاره‌ایِ
+!!{tableau} معمولی‌اند، با این تفاوت که پیشوندها افزوده شده‌اند. در هر
+مورد، قاعده‌ای که بر !!{formula} نشانه‌دار
+$\sFmla{S}{!A}[\sigma]$ اعمال می‌شود، !!{formula}های تازه‌ای پدید
+می‌آورد که آن‌ها نیز پیشوند~$\sigma$ دارند. این امر باید از نظر شهودی
+روشن باشد: مثلاً اگر~$!A \land !B$ در (جهان موسوم به)~$\sigma$ صادق
+باشد، آنگاه~$!A$ و~$!B$ در~$\sigma$ صادق‌اند (نه در جهانی دیگر). قواعد
+$\land$ و~$\lor$ را در~\olref{tab:prop-rules} گرد می‌آوریم.
+
+\begin{table}
+  \[\def\arraystretch{3}\begin{array}{|c|c|}
+    \hline
+    \AxiomC{\sFmla{\True}{!A \land !B}[\sigma]}
+    \RightLabel{\TRule{\True}{\land}}
+    \UnaryInfC{\sFmla{\True}{!A}[\sigma]}
+    \noLine
+    \UnaryInfC{\sFmla{\True}{!B}[\sigma]}
+    \DisplayProof
+    &
+    \AxiomC{\sFmla{\False}{!A \land !B}[\sigma]}
+    \RightLabel{\TRule{\False}{\land}}
+    \UnaryInfC{$\sFmla{\False}{!A}[\sigma] \quad \mid \quad
+      \sFmla{\False}{!B}[\sigma]$}
+    \DisplayProof
+    \\[2ex]
+    \hline
+    \AxiomC{\sFmla{\True}{!A \lor !B}[\sigma]}
+    \RightLabel{\TRule{\True}{\lor}}
+    \UnaryInfC{$\sFmla{\True}{!A}[\sigma] \quad \mid \quad
+      \sFmla{\True}{!B}[\sigma]$}
+    \DisplayProof
+    &
+    \AxiomC{\sFmla{\False}{!A \lor !B}[\sigma]}
+    \RightLabel{\TRule{\False}{\lor}}
+    \UnaryInfC{\sFmla{\False}{!A}[\sigma]}
+    \noLine
+    \UnaryInfC{\sFmla{\False}{!B}[\sigma]}
+    \DisplayProof
+    \\[2ex]
+    \hline
+  \end{array}\]
+  \caption{قواعد !!{tableau} پیشونددار برای~$\land$ و~$\lor$}
+  \ollabel{tab:prop-rules}
+\end{table}
+
+شرط بسته‌شدن شبیه شرط تابلوهای !!{tableau} معمولی است، جز آنکه نه‌تنها
+!!{formula}ها، بلکه پیشوندها نیز باید مطابق باشند. در واقع، می‌توانیم
+اندکی آسان‌گیرتر باشیم: چون در مدل‌های شهودگرایانه !!{formula}ها پس از
+صادق‌شدن صادق می‌مانند، ناممکن است~$!A$ در~$\sigma$ صادق اما در پیشوند
+دسترس‌پذیری~$\sigma.{*}$ کاذب باشد. پس شاخه‌ای بسته است اگر برای
+پیشوندی~$\sigma$ و !!{formula}~$!A$، هر دو مورد زیر را دربرداشته باشد:
+\[
+\sFmla{\True}{!A}[\sigma] \quad\text{و}\quad \sFmla{\False}{!A}[\sigma.{*}]
+\]
+توجه کنید اگر نشانه‌ها معکوس باشند، یعنی شاخه شامل
+\[
+\sFmla{\False}{!A}[\sigma] \quad\text{و}\quad \sFmla{\True}{!A}[\sigma.{*}]
+\]
+باشد، تنها هنگامی بسته است که~$*$ دنبالهٔ تهی باشد.
+
+افزون‌براین، شاخه‌ای که~$\sFmla{\True}{\bot}[\sigma]$ را دربردارد بسته
+است.
+
+قواعد برپاساختن فرض‌ها نیز همان قواعد تابلوهای !!{tableau} معمولی‌اند،
+جز اینکه برای فرض‌ها همواره از پیشوند~$1$ استفاده می‌کنیم. (مهم نیست از
+کدام پیشوند استفاده کنیم، مشروط به اینکه برای همهٔ فرض‌ها یکسان باشد.)
+پس، مثلاً، می‌گوییم
+\[
+!B_1, \dots, !B_n \Proves !A
+\]
+اگر و تنها اگر تابلویی بسته برای فرض‌های زیر وجود داشته باشد:
+\[
+\sFmla{\True}{!B_1}[1], \dots, \sFmla{\True}{!B_n}[1],
+\sFmla{\False}{!A}[1].
+\]
+
+قواعد شرطی~$\lif$ با حالت‌های کلاسیک و موجهاتی متفاوت‌اند. قاعدهٔ
+$\TRule{\True}{\lif}$ شاخه‌ای را که
+$\sFmla{\True}{!A \lif !B}[\sigma]$ دربردارد، در دو شاخهٔ جداگانه با
+$\sFmla{\False}{!A}[\sigma.{*}]$ و
+$\sFmla{\True}{!B}[\sigma.{*}]$ امتداد می‌دهد. این قاعده تنها برای
+پیشوند~$\sigma.{*}$ای قابل اعمال است که \emph{از پیش} در شاخهٔ محل
+اعمال ظاهر شده باشد. چنین پیشوندی را در آن شاخه «به‌کاررفته» می‌نامیم.
+(چون~$\sigma.{*}$ خود~$\sigma$ را نیز دربرمی‌گیرد، قاعده را همواره
+می‌توان با افزودن~$\sFmla{\False}{!A}[\sigma]$ و
+$\sFmla{\True}{!B}[\sigma]$ در شاخه‌های جداگانه اعمال کرد.)
+
+قاعدهٔ~$\TRule{\False}{\lif}$ شاخه‌ای را که
+$\sFmla{\False}{!A \lif !B}[\sigma]$ دربردارد، با هر دو فرمول
+$\sFmla{\True}{!A}[\sigma.n]$ و~$\sFmla{\False}{!B}[\sigma.n]$ در همان
+شاخه امتداد می‌دهد؛ در اینجا~$\sigma.n$ پیشوندی تازه در شاخه است.
+
+قواعد~$\lnot$ به‌طور مشابه تعریف می‌شوند (با استفاده از تعریف
+$\lnot !A$ به‌صورت~$!A \lif \lfalse$).
+
+قواعد در~\olref{tab:rules-lif-lnot} آمده‌اند.
+
+\begin{table}
+  \[\def\arraystretch{3}\begin{array}{|c|c|}
+    \hline
+    \AxiomC{\sFmla{\True}{\lnot !A}[\sigma]}
+    \RightLabel{\TRule{\True}{\lnot}}
+    \UnaryInfC{$\sFmla{\False}{!A}[\sigma.{*}]$}
+    \DisplayProof
+    &
+    \AxiomC{\sFmla{\False}{\lnot !A}[\sigma]}
+    \RightLabel{\TRule{\False}{\lnot}}
+    \UnaryInfC{\sFmla{\True}{!A}[\sigma.n]}
+    \DisplayProof
+    \\[1ex]
+    \text{$\sigma.{*}$ به‌کاررفته است} & \text{$\sigma.n$ تازه است}\\
+    \hline
+    \AxiomC{\sFmla{\True}{!A \lif !B}[\sigma]}
+    \RightLabel{\TRule{\True}{\lif}}
+    \UnaryInfC{$\sFmla{\False}{!A}[\sigma.{*}] \quad \mid \quad
+      \sFmla{\True}{!B}[\sigma.{*}]$}
+    \DisplayProof
+    &
+    \AxiomC{\sFmla{\False}{!A \lif !B}[\sigma]}
+    \RightLabel{\TRule{\False}{\lif}}
+    \UnaryInfC{\sFmla{\True}{!A}[\sigma.n]}
+    \noLine
+    \UnaryInfC{\sFmla{\False}{!B}[\sigma.n]}
+    \DisplayProof
+    \\[1ex]
+    \text{$\sigma.{*}$ به‌کاررفته است} & \text{$\sigma.n$ تازه است}\\
+    \hline
+  \end{array}\]
+  \caption{قواعد !!{tableau} پیشونددار برای~$\lnot$ و~$\lif$}
+  \ollabel{tab:rules-lif-lnot}
+\end{table}
+
+\end{document}

@@ -1,0 +1,210 @@
+% Part: second-order-logic
+% Chapter: syntax-and-semantics
+% Section: satisfaction
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{sol}{syn}{sat}
+
+\olsection{ارضا}
+
+\begin{explain}
+برای تعریف رابطهٔ ارضای~$\Sat{M}{!A}[s]$ برای !!{formula}s مرتبهٔ دوم،
+باید تعریف‌ها را چنان گسترش دهیم که !!{variable}s مرتبهٔ دوم را نیز
+پوشش دهند. مفهوم !!a{structure} در منطق مرتبهٔ دوم همان مفهوم منطق
+مرتبهٔ اول است. تفاوت فقط در تخصیص‌های متغیر~$s$ است: این تخصیص‌ها
+اکنون باید نه‌فقط برای !!{variable}s مرتبهٔ اول، بلکه برای
+!!{variable}s مرتبهٔ دوم نیز ارزش تعیین کنند.
+\end{explain}
+
+\begin{defn}[تخصیص متغیر]
+یک \emph{تخصیص متغیر}~$s$ برای !!a{structure} چون~$\Struct{M}$ تابعی
+است که هر
+\begin{enumerate}
+\item !!{variable} شیئی~$\Obj{v_i}$ را به عنصری از~$\Domain M$ می‌برد؛
+  یعنی~$s(\Obj{v_i}) \in \Domain{M}$؛
+\item متغیر رابطه‌ای $n$-موضعی~$\Obj{V_i^n}$ را به رابطه‌ای $n$-موضعی
+  بر~$\Domain{M}$ می‌برد؛ یعنی~$s(\Obj{V_i^n}) \subseteq \Domain{M}^n$؛
+\item متغیر تابعی $n$-موضعی~$\Obj{u_i^n}$ را به تابعی $n$-موضعی از
+  $\Domain{M}^n$ به~$\Domain{M}$ می‌برد؛ یعنی
+  $s(\Obj{u_i^n})\colon \Domain{M}^n \to \Domain{M}$؛
+\end{enumerate}
+\end{defn}
+
+\begin{explain}
+!!^a{structure} !!a{value} را به هر !!{constant}، تابعی را به هر
+!!{function} و رابطه‌ای را به هر نماد محمولی نسبت می‌دهد؛ یک تخصیص متغیر مرتبهٔ
+دوم نیز به هر متغیر شیئی، تابعی و محمولی، به‌ترتیب شیء، تابع و رابطه
+نسبت می‌دهد. این دو با هم به ما امکان می‌دهند به هر ترم ارزشی نسبت دهیم.
+\end{explain}
+
+\begin{defn}[\usetoken{S}{value} یک ترم]
+اگر~$t$ ترمی از زبان~$\Lang L$، $\Struct M$ !!a{structure}ی برای
+$\Lang L$، و~$s$ !!a{variable} تخصیصی برای~$\Struct M$ باشد،
+\emph{!!{value}}~$\Value{t}{M}[s]$ همانند ترم‌های مرتبهٔ اول، همراه با
+بند زیر، تعریف می‌شود:
+\begin{quote}
+\indcase{t}{\Atom{u}{t_1, \ldots, t_n}}{
+\[
+\Value{\indfrm}{M}[s] = s(u)(\Value{t_1}{M}[s], \ldots,
+\Value{t_n}{M}[s]).
+\]}
+\end{quote}
+\end{defn}
+
+\begin{defn}[واریانتِ~$x$]
+اگر~$s$ !!a{variable} تخصیصی برای !!a{structure} چون~$\Struct M$
+باشد، هر !!{variable} تخصیص~$s'$ برای~$\Struct M$ که با~$s$ حداکثر در آنچه
+به~$x$ نسبت می‌دهد تفاوت داشته باشد، \emph{واریانتِ~$x$} از~$s$
+نامیده می‌شود. اگر~$s'$ واریانتِ~$x$ از~$s$ باشد، می‌نویسیم
+$\varAssign{s'}{s}{x}$. (برای متغیرهای مرتبهٔ دوم~$X$ یا~$u$ نیز به
+همین ترتیب.)
+\end{defn}
+
+\begin{defn}
+  اگر~$s$ !!a{variable} تخصیصی برای !!a{structure} چون~$\Struct M$
+  و~$m \in \Domain{M}$ باشد، آنگاه تخصیص~$\Subst{s}{m}{x}$
+  !!{variable} تخصیصی است که چنین تعریف می‌شود:
+  \[\Subst{s}{m}{x}(y) = \begin{cases}
+    m & \text{اگر } y \ident x\\
+    s(y) & \text{در غیر این صورت},
+  \end{cases}\]
+  اگر~$X$ یک !!{variable} رابطه‌ای $n$-موضعی و~$R \subseteq
+  \Domain{M}^n$ باشد، آنگاه~$\Subst{s}{R}{X}$ !!{variable} تخصیصی است
+  که چنین تعریف می‌شود:
+  \[\Subst{s}{R}{X}(y) = \begin{cases}
+    R & \text{اگر } y \ident X\\
+    s(y) & \text{در غیر این صورت}.
+  \end{cases}\]
+  اگر~$u$ یک !!{variable} تابعی $n$-موضعی و
+  $f\colon \Domain{M}^n \to \Domain{M}$ باشد، آنگاه
+  $\Subst{s}{f}{u}$ !!{variable} تخصیصی است که چنین تعریف می‌شود:
+  \[\Subst{s}{f}{u}(y) = \begin{cases}
+    f & \text{اگر } y \ident u\\
+    s(y) & \text{در غیر این صورت}.
+  \end{cases}\]
+  در هر مورد، $y$ می‌تواند هر !!{variable} مرتبهٔ اول یا مرتبهٔ دوم باشد.
+\end{defn}
+
+\begin{defn}[ارضا]
+برای !!{formula}s مرتبهٔ دوم~$!A$، تعریف ارضا همانند
+\olref[fol][syn][sat]{defn:satisfaction} است، با افزودن موارد زیر:
+\begin{enumerate}
+\item \indcase{!A}{\Atom{X^n}{t_1, \dots, t_n}}{$\Sat{M}{\indfrm}[s]$
+  اگر و تنها اگر~$\langle \Value{t_1}{M}[s], \dots,
+  \Value{t_n}{M}[s] \rangle \in s(X^n)$.}
+\tagitem{prvAll}{%
+  \indcase{!A}{\lforall[X][!B]}{$\Sat{M}{\indfrm}[s]$ اگر و تنها اگر
+  برای هر~$R \subseteq \Domain{M}^n$،
+  $\Sat{M}{!B}[\Subst{s}{R}{X}]$.}}{}
+
+\tagitem{prvEx}{%
+  \indcase{!A}{\lexists[X][!B]}{$\Sat{M}{\indfrm}[s]$ اگر و تنها اگر
+  دست‌کم یک~$R \subseteq \Domain{M}^n$ وجود داشته باشد به‌گونه‌ای که
+  $\Sat{M}{!B}[\Subst{s}{R}{X}]$.}}{}
+
+\tagitem{prvAll}{%
+  \indcase{!A}{\lforall[u][!B]}{$\Sat{M}{\indfrm}[s]$ اگر و تنها اگر
+  برای هر~$f\colon \Domain{M}^n \to \Domain{M}$،
+  $\Sat{M}{!B}[\Subst{s}{f}{u}]$.}}{}
+
+\tagitem{prvEx}{%
+  \indcase{!A}{\lexists[u][!B]}{$\Sat{M}{\indfrm}[s]$ اگر و تنها اگر
+  دست‌کم یک~$f\colon \Domain{M}^n \to \Domain{M}$ وجود داشته باشد
+  به‌گونه‌ای که~$\Sat{M}{!B}[\Subst{s}{f}{u}]$.}}{}
+\end{enumerate}
+\end{defn}
+
+\begin{ex}
+  !!{formula}~$\lforall[z][(\Atom{X}{z} \liff \lnot
+    \Atom{Y}{z})]$ را در نظر بگیرید. این فرمول هیچ سور مرتبهٔ دومی
+  ندارد، اما !!{variable}s مرتبهٔ دوم~$X$ و~$Y$ را در بر می‌گیرد
+  (اینجا آن‌ها را یک‌موضعی می‌گیریم). !!{sentence} مرتبهٔ اول متناظر
+  $\lforall[z][(\Atom{P}{z} \liff \lnot \Atom{R}{z})]$ می‌گوید هرچه
+  در تفسیر~$P$ قرار می‌گیرد در تفسیر~$R$ قرار نمی‌گیرد و برعکس. در
+  !!a{structure}، تفسیر !!a{predicate} چون~$P$ با
+  $\Assign{P}{M}$ داده می‌شود. اما برای !!{variable}s مرتبهٔ دوم چون
+  $X$ و~$Y$، تفسیر را نه خود !!{structure}، بلکه !!a{variable} تخصیص
+  فراهم می‌کند. چون !!{formula} مرتبهٔ دوم !!a{sentence} نیست
+  (!!{variable}s آزاد~$X$ و~$Y$ را دارد)، فقط نسبت به !!a{structure}
+  چون~$\Struct{M}$ همراه با !!a{variable} تخصیص~$s$ ارضا می‌شود.
+
+  $\Sat{M}{\lforall[z][(\Atom{X}{z} \liff \lnot \Atom{Y}{z})]}[s]$
+  هرگاه !!{element}s مجموعهٔ~$s(X)$، !!{element}s مجموعهٔ~$s(Y)$
+  نباشند و برعکس؛ یعنی اگر و تنها اگر~$s(Y) = \Domain{M} \setminus
+  s(X)$. برای نمونه، بگذارید~$\Domain{M} = \{1, 2, 3\}$. چون هیچ
+  !!{predicate}s، !!{function}s یا !!{constant}sی در کار نیست، تنها
+  دامنهٔ~$\Struct{M}$ اهمیت دارد. اکنون برای~$s_1(X) = \{1, 2\}$ و
+  $s_1(Y) = \{3\}$، داریم~$\Sat{M}{\lforall[z][(\Atom{X}{z}
+      \liff \lnot \Atom{Y}{z})]}[s_1]$.
+
+  در مقابل، اگر~$s_2(X) = \{1, 2\}$ و~$s_2(Y) = \{2, 3\}$، آنگاه
+  $\Sat/{M}{\lforall[z][(\Atom{X}{z} \liff \lnot
+      \Atom{Y}{z})]}[s_2]$. زیرا
+  $\Sat{M}{\Atom{X}{z}}[\Subst{s_2}{2}{z}]$ (چون
+  $2 \in \Subst{s_2}{2}{z}(X)$)، اما
+  $\Sat/{M}{\lnot \Atom{Y}{z}}[\Subst{s_2}{2}{z}]$ (چون همچنین
+  $2 \in \Subst{s_2}{2}{z}(Y)$).
+\end{ex}
+
+\begin{ex}
+  $\Sat{M}{\lexists[Y][(\lexists[y][\Atom{Y}{y}] \land
+  \lforall[z][(\Atom{X}{z} \liff \lnot \Atom{Y}{z})])]}[s]$ هرگاه
+  $N \subseteq \Domain{M}$ای وجود داشته باشد که
+  $\Sat{M}{(\lexists[y][\Atom{Y}{y}] \land \lforall[z][(\Atom{X}{z}
+  \liff \lnot \Atom{Y}{z})])}[\Subst{s}{N}{Y}]$. این امر برای هر
+  $N \neq \emptyset$ برقرار است (تا
+  $\Sat{M}{\lexists[y][\Atom{Y}{y}]}[\Subst{s}{N}{Y}]$) و، همانند مثال
+  پیشین، $N = \Domain{M} \setminus s(X)$. به بیان دیگر،
+  $\Sat{M}{\lexists[Y][(\lexists[y][\Atom{Y}{y}] \land
+  \lforall[z][(\Atom{X}{z} \liff \lnot \Atom{Y}{z})])]}[s]$ اگر و
+  تنها اگر~$\Domain{M} \setminus s(X)$ ناتهی باشد، یعنی
+  $s(X) \neq \Domain{M}$. پس !!{formula}، برای نمونه، اگر
+  $\Domain{M} = \{1, 2, 3\}$ و~$s(X) = \{1, 2\}$ ارضا می‌شود، اما اگر
+  $s(X) = \{1, 2, 3\} = \Domain{M}$ باشد ارضا نمی‌شود.
+
+  چون هرگاه~$s(X) = \Domain{M}$، !!{formula} ارضا نمی‌شود،
+  !!{sentence}
+  \[
+  \lforall[X][\lexists[Y][(\lexists[y][\Atom{Y}{y}] \land
+      \lforall[z][(\Atom{X}{z} \liff \lnot \Atom{Y}{z})])]]
+  \]
+  هرگز ارضا نمی‌شود: برای هر !!{structure}~$\Struct{M}$، تخصیص
+  $s(X) = \Domain{M}$ !!{sentence} را کاذب می‌کند. از سوی دیگر، جملهٔ
+  \[
+  \lexists[X][\lexists[Y][(\lexists[y][\Atom{Y}{y}] \land
+      \lforall[z][(\Atom{X}{z} \liff \lnot \Atom{Y}{z})])]]
+  \]
+  نسبت به هر تخصیص~$s$ ارضا می‌شود، زیرا همواره می‌توانیم
+  $N \subseteq \Domain{M}$ای بیابیم که~$N \neq \Domain{M}$ (برای
+  نمونه، $N = \emptyset$).
+\end{ex}
+
+\begin{ex}
+  !!{sentence} مرتبهٔ دوم~$\lforall[X][\lforall[y][X(y)]]$ می‌گوید هر
+  رابطهٔ $1$-موضعی، یعنی هر خاصیت، دربارهٔ هر شیء برقرار است. این سخن
+  آشکارا هرگز صادق نیست، زیرا در هر~$\Struct{M}$، برای تخصیص متغیر~$s$
+  که~$s(X) = \emptyset$ و~$s(y) = a \in \Domain{M}$، داریم
+  $\Sat/{M}{X(y)}[s]$. این بدان معناست که~$!A \lif
+  \lforall[X][\lforall[y][X(y)]]$ در منطق مرتبهٔ دوم با~$\lnot !A$
+  هم‌ارز است؛ یعنی~$\Sat{M}{!A \lif
+  \lforall[X][\lforall[y][X(y)]]}$ اگر و تنها اگر~$\Sat{M}{\lnot !A}$.
+  به بیان دیگر، در منطق مرتبهٔ دوم می‌توانیم~$\lnot$ را با استفاده از
+  $\lforall$ و~$\lif$ تعریف کنیم.
+\end{ex}
+
+\begin{prob}
+  نشان دهید در منطق مرتبهٔ دوم~$\lforall$ و~$\lif$ می‌توانند دیگر
+  ادات را تعریف کنند:
+  \begin{enumerate}
+    \item ثابت کنید در منطق مرتبهٔ دوم~$!A \land !B$ با
+    $\lforall[X][((!A \lif (!B \lif \lforall[x][X(x)])) \lif
+    \lforall[x][X(x)])]$ هم‌ارز است.
+    \item فرمولی مرتبهٔ دوم بیابید که فقط~$\lforall$ و~$\lif$ را به کار
+    ببرد و با~$!A \lor !B$ هم‌ارز باشد.
+  \end{enumerate}
+\end{prob}
+
+\end{document}

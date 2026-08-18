@@ -1,0 +1,51 @@
+% Part: incompleteness
+% Chapter: theories-computability
+% Section: inseparability
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{inc}{tcp}{ins}
+
+\olsection{جمله‌های اثبات‌پذیر و ابطال‌پذیر در~$\Th{Q}$ به‌طور محاسبه‌پذیر
+  جدایی‌ناپذیرند}
+
+
+بگذارید~$\Th{\bar Q}$ مجموعهٔ جمله‌هایی باشد که {\em نقیضشان} در
+$\Th{Q}$ اثبات‌پذیر است؛ یعنی
+$\Th{\bar Q} = \Setabs{!A}{\Th{Q} \Proves \lnot !A}$. به یاد آورید که
+مجموعه‌های مجزای~$A$ و~$B$ را به‌طور محاسبه‌پذیر جدایی‌ناپذیر می‌نامیم
+اگر هیچ مجموعهٔ محاسبه‌پذیر~$C$ای وجود نداشته باشد که
+$A \subseteq C$ و~$B \subseteq \Complement{C}$.
+
+\begin{lem}
+$\Th{Q}$ و~$\Th{\bar Q}$ به‌طور محاسبه‌پذیر جدایی‌ناپذیرند.
+\end{lem}
+
+\begin{proof}
+فرض کنید~$C$ مجموعه‌ای محاسبه‌پذیر باشد به‌گونه‌ای که
+$\Th{Q} \subseteq C$ و~$\Th{\bar Q} \subseteq \Complement{C}$. رابطهٔ
+$R(x,y)$ را چنین تعریف کنید:
+\begin{quote}
+$x$ فرمولی چون~$!D(u)$ را رمزگذاری می‌کند و~$!D(\num y)$ در~$C$ است.
+\end{quote}
+نشان می‌دهیم که~$R(x,y)$ رابطه‌ای محاسبه‌پذیر و جهانی است، و بدین‌سان
+به تناقض می‌رسیم.
+
+فرض کنید~$S(y)$ محاسبه‌پذیر باشد و~$!D_S(u)$ آن را در~$\Th{Q}$
+بازنمایی کند. آنگاه
+\begin{eqnarray*}
+S(n) & \lif & \Th{Q} \Proves !D_S(\num n) \\
+& \lif & !D_S(\num n) \in C
+\end{eqnarray*}
+و
+\begin{eqnarray*}
+\lnot S(n) & \lif & \Th{Q} \Proves \lnot !D_S(\num n) \\
+& \lif & !D_S(\num n) \in \Th{\bar Q} \\
+& \lif & !D_S(\num n) \not\in C
+\end{eqnarray*}
+پس~$S(y)$ با~$R(\#(!D_S(u)),y)$ هم‌ارز است.
+\end{proof}
+
+\end{document}

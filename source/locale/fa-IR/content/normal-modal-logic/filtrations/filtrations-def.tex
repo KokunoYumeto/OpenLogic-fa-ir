@@ -1,0 +1,179 @@
+% Part: normal-modal-logic
+% Chapter: filtrations
+% Section: filtrations-def
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{fil}{fil}
+
+\olsection{تصفیه‌ها}
+
+به‌جای آنکه «تصفیهٔ»~$\mModel{M}$ از رهگذر~$\Gamma$ را تعریف کنیم،
+تعریف می‌کنیم که چه هنگام مدلی چون~$\mModel{M^*}$ تصفیه‌ای از
+~$\mModel{M}$ به شمار می‌آید. همهٔ تصفیه‌ها مجموعه‌جهان‌های~$W^*$ و
+ارزش‌گذاری~$V^*$ یکسانی دارند. اما تصفیه‌های گوناگون ممکن است روابط
+دسترسی~$R^*$ متفاوتی داشته باشند. بااین‌حال، برای آنکه مدلی تصفیه به
+شمار آید، $R^*$ باید چند شرط را برآورده کند. این شرط‌ها دقیقاً همان
+چیزهایی‌اند که برای اثبات نتیجهٔ اصلی نیاز خواهیم داشت؛ یعنی اینکه
+$\mSat{M}{!A}[w]$ اگر و تنها اگر $\mSat{M^*}{!A}[{[w]}]$، مشروط بر
+آنکه $!A \in \Gamma$.
+
+\begin{defn}\ollabel{defn:filtration}
+  فرض کنید $\Gamma$ تحت زیرفرمول‌ها بسته باشد و $\mModel{M} = \tuple{W,
+    R, V}$. یک \emph{تصفیهٔ~$\mModel{M}$ از رهگذر~$\Gamma$} هر مدل
+  $\mModel{M^*} = \tuple{W^*,R^*,V^*}$ است که در آن:
+  \begin{enumerate}
+  \item $W^* = \Setabs{[w]}{w \in W}$؛
+  \item \ollabel{defn:filtration-R}%
+    برای هر $u,v \in W$:
+    \begin{enumerate}
+    \item \ollabel{defn:filtration-R1}%
+      اگر $Ruv$، آنگاه $R^*[u][v]$؛
+    \tagitem{prvBox}{\ollabel{defn:filtration-R2}%
+      اگر $R^*[u][v]$، آنگاه برای هر $\Box !A \in \Gamma$، اگر
+      $\mSat{M}{\Box!A}[u]$، آنگاه $\mSat{M}{!A}[v]$؛}{}
+    \tagitem{prvDiamond}{\ollabel{defn:filtration-R3}%
+      اگر $R^*[u][v]$، آنگاه برای هر $\Diamond !A \in \Gamma$، اگر
+      $\mSat{M}{!A}[v]$، آنگاه $\mSat{M}{\Diamond!A}[u]$.}{}
+    \end{enumerate}
+  \item $V^*(p) = \Setabs{[u]}{u \in V(p)}$.
+  \end{enumerate}
+\end{defn}
+
+اندیشیدن به اینکه $V^*(p)$ چیست سودمند است: مجموعه‌ای متشکل از
+کلاس‌های هم‌ارزی~$[w]$ همهٔ جهان‌های~$w$ که در آنها $p$ در
+~$\mModel{M}$ صادق است. از یک سو، اگر $w \in V(p)$، آنگاه بنا بر این
+تعریف $[w] \in V^*(p)$. اما لزوماً چنین نیست که اگر $[w] \in
+V^*(p)$، آنگاه $w \in V(p)$. اگر $[w] \in V^*(p)$، تنها تضمین داریم
+که برای \emph{یک}~$u \in V(p)$، $[w] = [u]$. البته $[w] = [u]$ یعنی
+$w \equiv u$. پس هنگامی که $[w] \in V^*(p)$، (تنها) می‌توانیم نتیجه
+بگیریم که $w \equiv u$ برای یک $u \in V(p)$.
+
+\begin{thm}\ollabel{thm:filtrations}
+  اگر $\mModel{M^*}$ تصفیه‌ای از $\mModel{M}$ از رهگذر~$\Gamma$ باشد،
+  آنگاه برای هر $!A \in \Gamma$ و $w \in W$، داریم
+  $\mSat{M}{!A}[w]$ اگر و تنها اگر $\mSat{M^*}{!A}[{[w]}]$.
+\end{thm}
+
+\begin{proof}
+  با استقرا بر~$!A$ و با استفاده از این واقعیت که $\Gamma$ تحت
+  زیرفرمول‌ها بسته است. چون $!A \in \Gamma$ و $\Gamma$ تحت
+  زیر-!!{formula}ها بسته است، همهٔ زیر-!!{formula}های~$!A$ نیز $\in
+  \Gamma$ هستند. ازاین‌رو در هر گام استقرا، فرض استقرا بر
+  زیر-!!{formula}های~$!A$ اعمال می‌شود.
+  \begin{enumerate}
+    \tagitem{prvFalse}{\indcase{!A}{\lfalse}{نه
+        $\mSat{M}{\indfrm}[w]$ و نه $\mSat{M^*}{\indfrm}[{[w]}]$.}}{}
+    \tagitem{prvTrue}{\indcase{!A}{\ltrue}{هم
+        $\mSat{M}{\indfrm}[w]$ و هم $\mSat{M^*}{\indfrm}[{[w]}]$.}}{}
+    \item \indcase{!A}{p}{جهت چپ‌به‌راست بی‌درنگ برقرار است، زیرا
+      $\mSat{M}{\indfrm}[w]$ تنها اگر $w \in V(p)$، و این مستلزم
+      $[w] \in V^*(p)$، یعنی $\mSat{M^*}{\indfrm}[{[w]}]$ است. برعکس،
+      فرض کنید $\mSat{M^*}{\indfrm}[{[w]}]$، یعنی $[w] \in
+      V^*(p)$. آنگاه برای یک $v \in V(p)$، $w \equiv v$. البته در
+      این صورت $\mSat{M}{p}[v]$ نیز برقرار است. چون $w \equiv v$،
+      جهان‌های $w$ و $v$ همان !!{formula}های متعلق به~$\Gamma$ را
+      صادق می‌کنند. چون بنا بر فرض $p \in \Gamma$ و
+      $\mSat{M}{p}[v]$، پس $\mSat{M}{\indfrm}[w]$.}
+
+    \tagitem{prvNot}{\iftag{probNot}{تمرین.}{\indcase{!A}{\lnot
+          !B}{$\mSat{M}{\indfrm}[w]$ اگر و تنها اگر
+          $\mSat/{M}{!B}[w]$. بنا بر فرض استقرا، $\mSat/{M}{!B}[w]$
+          اگر و تنها اگر $\mSat/{M^*}{!B}[{[w]}]$. سرانجام،
+          $\mSat/{M^*}{!B}[{[w]}]$ اگر و تنها اگر
+          $\mSat{M^*}{\indfrm}[{[w]}]$.}}}{}
+        
+    \tagitem{prvAnd}{\iftag{probAnd}{تمرین.}{\indcase{!A}{(!B \land
+          !C)}{$\mSat{M}{\indfrm}[w]$ اگر و تنها اگر
+          $\mSat{M}{!B}[w]$ و $\mSat{M}{!C}[w]$. بنا بر فرض استقرا،
+          $\mSat{M}{!B}[w]$ اگر و تنها اگر $\mSat{M^*}{!B}[{[w]}]$،
+          و $\mSat{M}{!C}[w]$ اگر و تنها اگر
+          $\mSat{M^*}{!C}[{[w]}]$. و $\mSat{M^*}{\indfrm}[{[w]}]$
+          اگر و تنها اگر $\mSat{M^*}{!B}[{[w]}]$ و
+          $\mSat{M^*}{!C}[{[w]}]$.}}}{}
+
+    \tagitem{prvOr}{\iftag{probOr}{تمرین.}{\indcase{!A}{(!B \lor
+          !C)}{$\mSat{M}{\indfrm}[w]$ اگر و تنها اگر
+          $\mSat{M}{!B}[w]$ یا $\mSat{M}{!C}[w]$. بنا بر فرض استقرا،
+          $\mSat{M}{!B}[w]$ اگر و تنها اگر $\mSat{M^*}{!B}[{[w]}]$،
+          و $\mSat{M}{!C}[w]$ اگر و تنها اگر
+          $\mSat{M^*}{!C}[{[w]}]$. و $\mSat{M^*}{\indfrm}[{[w]}]$
+          اگر و تنها اگر $\mSat{M^*}{!B}[{[w]}]$ یا
+          $\mSat{M^*}{!C}[{[w]}]$.}}}{}
+
+    \tagitem{prvIf}{\iftag{probIf}{تمرین.}{\indcase{!A}{(!B \lif
+          !C)}{$\mSat{M}{\indfrm}[w]$ اگر و تنها اگر
+          $\mSat/{M}{!B}[w]$ یا $\mSat{M}{!C}[w]$. بنا بر فرض استقرا،
+          $\mSat{M}{!B}[w]$ اگر و تنها اگر $\mSat{M^*}{!B}[{[w]}]$،
+          و $\mSat{M}{!C}[w]$ اگر و تنها اگر
+          $\mSat{M^*}{!C}[{[w]}]$. و $\mSat{M^*}{\indfrm}[{[w]}]$
+          اگر و تنها اگر $\mSat/{M^*}{!B}[{[w]}]$ یا
+          $\mSat{M^*}{!C}[{[w]}]$.}}}{}
+
+    \tagitem{prvIff}{\iftag{probIff}{تمرین.}{\indcase{!A}{(!B \liff
+          !C)}{$\mSat{M}{\indfrm}[w]$ اگر و تنها اگر
+          $\mSat{M}{!B}[w]$ و $\mSat{M}{!C}[w]$، یا
+          $\mSat/{M}{!B}[w]$ و $\mSat/{M}{!C}[w]$. بنا بر فرض استقرا،
+          $\mSat{M}{!B}[w]$ اگر و تنها اگر $\mSat{M^*}{!B}[{[w]}]$،
+          و $\mSat{M}{!C}[w]$ اگر و تنها اگر
+          $\mSat{M^*}{!C}[{[w]}]$. و $\mSat{M^*}{\indfrm}[{[w]}]$
+          اگر و تنها اگر $\mSat{M^*}{!B}[{[w]}]$ و
+          $\mSat{M^*}{!C}[{[w]}]$، یا $\mSat/{M^*}{!B}[{[w]}]$ و
+          $\mSat/{M^*}{!C}[{[w]}]$.}}}{}
+
+    \tagitem{prvBox}{\iftag{probBox}{تمرین.}{\indcase{!A}{\Box
+          !B}{فرض کنید $\mSat{M}{\indfrm}[w]$؛ برای نشان‌دادن
+          $\mSat{M^*}{\indfrm}[{[w]}]$، فرض کنید $v$ چنان باشد که
+          $R^*[w][v]$. از
+          \olref{defn:filtration}\olref{defn:filtration-R2} داریم
+          $\mSat{M}{!B}[v]$، و بنا بر فرض استقرا
+          $\mSat{M^*}{!B}[{[v]}]$. چون $v$ دلخواه بود،
+          $\mSat{M^*}{\indfrm}[{[w]}]$ نتیجه می‌شود.
+
+          برعکس، فرض کنید $\mSat{M^*}{\indfrm}[{[w]}]$ و $v$ را
+          دلخواه بگیرید به‌گونه‌ای که $Rwv$. از
+          \olref{defn:filtration}\olref{defn:filtration-R1} داریم
+          $R^*[w][v]$، پس $\mSat{M^*}{!B}[{[v]}]$؛ بنا بر فرض استقرا
+          $\mSat{M}{!B}[v]$، و چون $v$ دلخواه بود،
+          $\mSat{M}{\indfrm}[w]$.}}}{}
+    
+    \tagitem{prvDiamond}{\iftag{probDiamond}{تمرین.}{\indcase{!A}{\Diamond
+          !B}{فرض کنید $\mSat{M}{\indfrm}[w]$. آنگاه برای یک $v \in W$،
+          $Rwv$ و $\mSat{M}{!B}[v]$. بنا بر فرض استقرا
+          $\mSat{M^*}{!B}[{[v]}]$، و بنا بر
+          \olref{defn:filtration}\olref{defn:filtration-R1}، داریم
+          $R^*[w][v]$. پس $\mSat{M^*}{\indfrm}[{[w]}]$.
+
+          اکنون فرض کنید $\mSat{M^*}{\indfrm}[{[w]}]$. آنگاه برای یک
+          $[v] \in W^*$ با $R^*[w][v]$، $\mSat{M^*}{!B}[{[v]}]$.
+          بنا بر فرض استقرا $\mSat{M}{!B}[v]$. بنا بر
+          \olref{defn:filtration}\olref{defn:filtration-R3}، داریم
+          $\mSat{M}{\indfrm}[w]$.}}}{}
+  \end{enumerate}
+\end{proof}
+
+\begin{prob}
+  اثبات \olref[nml][fil][fil]{thm:filtrations} را کامل کنید.
+\end{prob}
+
+آنچه دربارهٔ صدق در جهان‌های یک مدل برقرار است، دربارهٔ صدق در یک
+مدل و اعتبار در یک رده از مدل‌ها نیز برقرار است.
+
+\begin{cor}
+  فرض کنید $\Gamma$ تحت زیرفرمول‌ها بسته باشد. آنگاه:
+  \begin{enumerate}
+  \item اگر $\mModel{M^*}$ تصفیه‌ای از $\mModel{M}$ از رهگذر
+    $\Gamma$ باشد، آنگاه برای هر $!A \in \Gamma$، $\mSat{M}{!A}$ اگر
+    و تنها اگر $\mSat{M^*}{!A}$.
+  \item اگر $\mClass{C}$ رده‌ای از مدل‌ها و $\Gamma(\mClass{C})$
+    ردهٔ تصفیه‌های~$\Gamma$ایِ مدل‌های~$\mClass{C}$ باشد، آنگاه هر
+    !!{formula}~$!A \in \Gamma$ در $\mClass{C}$ معتبر است اگر و تنها
+    اگر در $\Gamma(\mClass{C})$ معتبر باشد.
+  \end{enumerate}
+\end{cor}
+
+
+
+\end{document}

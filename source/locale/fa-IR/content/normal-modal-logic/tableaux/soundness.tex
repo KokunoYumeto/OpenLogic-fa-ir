@@ -1,0 +1,262 @@
+% Part: normal-modal-logic
+% Chapter: tableaux
+% Section: soundness
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{nml}{tab}{sou}
+
+\olsection{درستی برای~\Log{K}}
+
+\begin{editorial}
+  این اثبات درستی، اثبات درستیِ منطق گزاره‌ای کلاسیک را بازبه‌کار
+  می‌گیرد؛ یعنی همه‌چیز را از آغاز اثبات می‌کند. برای اثباتی
+  خودبسنده مناسب است. اگر درستیِ تابلوی معمول را پیش‌تر دیده باشید،
+  تکراری خواهد بود. در نظر است امکان انتخاب میان نسخهٔ خودبسنده و
+  نسخه‌ای مبتنی بر حالت غیرموجهاتی فراهم شود.
+\end{editorial}
+
+\begin{explain}
+  برای نشان‌دادن درستیِ !!{tableau}های پیشونددار باید نشان دهیم اگر
+  \[
+  \sFmla{\True}{!B_1}[1], \dots, \sFmla{\True}{!B_n}[1], \sFmla{\False}{!A}[1]
+  \]
+  یک !!{tableau} بسته داشته باشد، آنگاه~$!B_1, \dots, !B_n \Entails
+  !A$. اثبات عکس نقیض آسان‌تر است: اگر برای مدل~$\mModel{M}$ و
+  جهان~$w$ای، $\mSat{M}{!B_i}[w]$ برای همهٔ~$i=1$، \dots،~$n$، اما
+  $\mSat/{M}{!A}[w]$، آنگاه هیچ !!{tableau}ای نمی‌تواند بسته شود. چنین
+  پادمدلی نشان می‌دهد فرض‌های آغازین !!{tableau} ارضاپذیرند. راهبرد
+  اثبات این است که نشان دهیم هرگاه همهٔ !!{formula}های پیشونددار روی
+  شاخه‌ای از !!a{tableau} ارضاپذیر باشند، هر اعمال قاعده دست‌کم یک
+  شاخهٔ گسترش‌یافته به دست می‌دهد که آن نیز ارضاپذیر است. چون شاخه‌های
+  بسته ارضاناپذیرند، هر !!{tableau} برای مجموعه‌ای ارضاپذیر از
+  !!{formula}های پیشونددار باید دست‌کم یک شاخهٔ باز داشته باشد.
+
+  برای به‌کارگیری این راهبرد در حالت موجهاتی، باید تعریف «ارضاپذیر» را
+  به مدل‌های موجهاتی و پیشوندها گسترش دهیم. پس از این کار، اثبات
+  سرراست است.
+\end{explain}
+
+\begin{defn}
+  بگذارید~$P$ مجموعه‌ای از پیشوندها باشد؛ یعنی~$P \subseteq
+  (\PosInt)^* \setminus \{\emptyseq\}$، و~$\mModel{M}$ مدلی باشد.
+  تابع~$f\colon P \to W$ یک \emph{تفسیرِ}~$P$ در~$\mModel{M}$ است
+  اگر هرگاه~$\sigma$ و~$\sigma.n$ هر دو در~$P$ باشند، آنگاه
+  $Rf(\sigma)f(\sigma.n)$.
+
+  نسبت به یک تفسیر از پیشوندهای~$P$ می‌توانیم چنین تعریف کنیم:
+  \begin{enumerate}
+  \item $\mModel{M}$، $\sFmla{\True}{!A}[\sigma]$ را ارضا می‌کند اگر
+    و تنها اگر~$\mSat{M}{!A}[f(\sigma)]$.
+  \item $\mModel{M}$، $\sFmla{\False}{!A}[\sigma]$ را ارضا می‌کند
+    اگر و تنها اگر~$\mSat/{M}{!A}[f(\sigma)]$.
+  \end{enumerate}
+\end{defn}
+
+\begin{defn}
+  بگذارید~$\Gamma$ مجموعه‌ای از !!{formula}های پیشونددار باشد و
+  $P(\Gamma)$ مجموعهٔ پیشوندهای ظاهرشونده در آن. اگر~$f$ تفسیری از
+  $P(\Gamma)$ در~$\mModel{M}$ باشد، می‌گوییم~$\mModel{M}$، $\Gamma$
+  را نسبت به~$f$ ارضا می‌کند، $\mSat{M}{\Gamma}[f]$، اگر~$\mModel{M}$
+  هر !!{formula} پیشونددار در~$\Gamma$ را نسبت به~$f$ ارضا کند.
+  $\Gamma$ \emph{ارضاپذیر} است اگر و تنها اگر مدل~$\mModel{M}$ و
+  تفسیر~$f$ از~$P(\Gamma)$ وجود داشته باشند چنان‌که
+  $\mSat{M}{\Gamma}[f]$.
+\end{defn}
+
+\begin{prop}
+  اگر~$\Gamma$، هم~$\sFmla{\True}{!A}[\sigma]$ و هم
+  $\sFmla{\False}{!A}[\sigma]$ را برای یک !!{formula}~$!A$ و
+  پیشوند~$\sigma$ شامل شود، آنگاه~$\Gamma$ ارضاناپذیر است.
+\end{prop}
+
+\begin{proof}
+  هیچ مدل~$\mModel{M}$ و تفسیر~$f$ از~$P(\Gamma)$ نمی‌تواند وجود
+  داشته باشد که هم~$\mSat{M}{!A}[f(\sigma)]$ و هم
+  $\mSat/{M}{!A}[f(\sigma)]$.
+\end{proof}
+
+\begin{thm}[درستی]
+  \ollabel{thm:tableau-soundness}
+  اگر~$\Gamma$ یک !!{tableau} بسته داشته باشد، $\Gamma$ ارضاناپذیر است.
+\end{thm}
+
+\begin{proof}
+شاخه‌ای از !!a{tableau} را ارضاپذیر می‌نامیم اگر و تنها اگر مجموعهٔ
+!!{signed formula}های روی آن ارضاپذیر باشد؛ و !!a{tableau} را ارضاپذیر
+می‌نامیم اگر دست‌کم یک شاخهٔ ارضاپذیر داشته باشد.
+
+نشان می‌دهیم: گسترش یک !!{tableau} ارضاپذیر با یکی از قواعد استنتاج
+همواره !!{tableau}ای ارضاپذیر به دست می‌دهد. این قضیه را ثابت می‌کند:
+هر !!{tableau} بسته با اعمال قواعد استنتاج بر !!{tableau}ای حاصل
+می‌شود که تنها از فرض‌های~$\Gamma$ تشکیل شده است. پس اگر~$\Gamma$
+ارضاپذیر می‌بود، هر !!{tableau} برای آن ارضاپذیر می‌بود. اما یک
+!!{tableau} بسته آشکارا ارضاپذیر نیست، زیرا همهٔ شاخه‌هایش بسته‌اند و
+شاخه‌های بسته ارضاناپذیرند.
+
+فرض کنید یک !!{tableau} ارضاپذیر، یعنی !!a{tableau}ای با دست‌کم یک
+شاخهٔ ارضاپذیر، داریم. اعمال یک قاعدهٔ استنتاج یا !!{signed formula}هایی
+به شاخه می‌افزاید یا شاخه را به دو شاخه می‌شکافد. اگر !!{tableau}
+شاخه‌ای ارضاپذیر داشته باشد که اعمال قاعدهٔ مورد نظر آن را گسترش ندهد،
+آن شاخه در !!{tableau} گسترش‌یافته ارضاپذیر می‌ماند؛ پس تابلوی
+گسترش‌یافته ارضاپذیر است. بنابراین فقط حالتی را بررسی می‌کنیم که قاعده
+بر شاخه‌ای ارضاپذیر اعمال شود.
+
+بگذارید~$\Gamma$ مجموعهٔ !!{signed formula}های روی آن شاخه و
+$\sFmla{S}{!A}[\sigma] \in \Gamma$ همان !!{signed formula}ای باشد که
+قاعده بر آن اعمال می‌شود. اگر قاعده شاخه را نشکند، باید نشان دهیم شاخهٔ
+گسترش‌یافته، یعنی~$\Gamma$ همراه با نتایج قاعده، همچنان ارضاپذیر است.
+اگر قاعده شاخه را بشکند، باید نشان دهیم دست‌کم یکی از دو شاخهٔ حاصل
+ارضاپذیر است.
+نخست استنتاج‌های ممکن با تنها یک مقدمه را بررسی می‌کنیم.
+\begin{enumerate}
+\item شاخه با اعمال~$\TRule{\True}{\lnot}$ بر
+  $\sFmla{\True}{\lnot !B}[\sigma] \in \Gamma$ گسترش می‌یابد. آنگاه
+  شاخهٔ گسترش‌یافته !!{signed formula}های~$\Gamma \cup
+  \{\sFmla{\False}{!B}[\sigma]\}$ را شامل می‌شود. فرض کنید
+  $\mSat{M}{\Gamma}[f]$. به‌ویژه~$\mSat{M}{\lnot !B}[f(\sigma)]$؛ پس
+  $\mSat/{M}{!B}[f(\sigma)]$، یعنی~$\mModel{M}$ نسبت به~$f$،
+  $\sFmla{\False}{!B}[\sigma]$ را ارضا می‌کند.
+\item شاخه با اعمال~$\TRule{\False}{\lnot}$ بر
+  $\sFmla{\False}{\lnot !B}[\sigma] \in \Gamma$ گسترش می‌یابد: تمرین.
+\item شاخه با اعمال~$\TRule{\True}{\land}$ بر
+  $\sFmla{\True}{!B \land !C}[\sigma] \in \Gamma$ گسترش می‌یابد، که
+  دو !!{signed formula} تازه روی شاخه به دست می‌دهد:
+  $\sFmla{\True}{!B}[\sigma]$ و~$\sFmla{\True}{!C}[\sigma]$. فرض کنید
+  $\mSat{M}{\Gamma}[f]$، و به‌ویژه
+  $\mSat{M}{!B \land !C}[f(\sigma)]$. آنگاه
+  $\mSat{M}{!B}[f(\sigma)]$ و~$\mSat{M}{!C}[f(\sigma)]$. یعنی
+  $\mModel{M}$ نسبت به~$f$، هم~$\sFmla{\True}{!B}[\sigma]$ و هم
+  $\sFmla{\True}{!C}[\sigma]$ را ارضا می‌کند.
+\item شاخه با اعمال~$\TRule{\False}{\lor}$ بر
+  $\sFmla{\False}{!B \lor !C}[\sigma] \in \Gamma$ گسترش می‌یابد: تمرین.
+\item شاخه با اعمال~$\TRule{\False}{\lif}$ بر
+  $\sFmla{\False}{!B \lif !C}[\sigma] \in \Gamma$ گسترش می‌یابد. دو
+  !!{signed formula} تازه روی شاخه به دست می‌آید:
+  $\sFmla{\True}{!B}[\sigma]$ و~$\sFmla{\False}{!C}[\sigma]$. فرض کنید
+  $\mSat{M}{\Gamma}[f]$، و به‌ویژه
+  $\mSat/{M}{!B \lif !C}[f(\sigma)]$. آنگاه
+  $\mSat{M}{!B}[f(\sigma)]$ و~$\mSat/{M}{!C}[f(\sigma)]$. یعنی
+  $\mModel{M}, f$ هر دو عبارت~$\sFmla{\True}{!B}[\sigma]$ و
+  $\sFmla{\False}{!C}[\sigma]$ را ارضا می‌کند.
+
+\iftag{prvBox}{%
+\item شاخه با اعمال~$\TRule{\True}{\Box}$ بر
+  $\sFmla{\True}{\Box !B}[\sigma] \in \Gamma$ گسترش می‌یابد:
+  \iftag{probBox}{تمرین.}{این کار !!{signed formula} تازهٔ
+    $\sFmla{\True}{!B}[\sigma.n]$ را برای یک~$\sigma.n \in
+    P(\Gamma)$ روی شاخه به دست می‌دهد (زیرا~$\sigma.n$ باید
+    استفاده‌شده باشد). فرض کنید~$\mSat{M}{\Gamma}[f]$، و به‌ویژه
+    $\mSat{M}{\Box !B}[f(\sigma)]$. چون~$f$ تفسیری از پیشوندهاست و
+    هر دو~$\sigma$ و~$\sigma.n \in P(\Gamma)$، می‌دانیم
+    $Rf(\sigma)f(\sigma.n)$. پس~$\mSat{M}{!B}[f(\sigma.n)]$؛ یعنی
+    $\mModel{M}, f$، $\sFmla{\True}{!B}[\sigma.n]$ را ارضا می‌کند.}
+
+\item شاخه با اعمال~$\TRule{\False}{\Box}$ بر
+  $\sFmla{\False}{\Box !B}[\sigma] \in \Gamma$ گسترش می‌یابد:
+  \iftag{probBox}{تمرین.}{این کار !!{signed formula} تازهٔ
+    $\sFmla{\False}{!B}[\sigma.n]$ را به دست می‌دهد، که~$\sigma.n$
+    پیشوندی تازه روی شاخه است؛ یعنی~$\sigma.n \notin P(\Gamma)$.
+    چون~$\Gamma$ ارضاپذیر است، مدل~$\mModel{M}$ و تفسیر~$f$ از
+    $P(\Gamma)$ وجود دارند چنان‌که~$\mSat{M}{\Gamma}[f]$، و به‌ویژه
+    $\mSat/{M}{\Box !B}[f(\sigma)]$. باید نشان دهیم
+    $\Gamma \cup \{\sFmla{\False}{!B}[\sigma.n]\}$ ارضاپذیر است.
+    برای این کار، تفسیری از~$P(\Gamma) \cup \{\sigma.n\}$ چنین تعریف
+    می‌کنیم:
+
+  چون~$\mSat/{M}{\Box !B}[f(\sigma)]$، جهان~$w \in W$ای وجود دارد که
+  $Rf(\sigma)w$ و~$\mSat/{M}{!B}[w]$. بگذارید~$f'$ مانند~$f$ باشد،
+  جز آنکه~$f'(\sigma.n) = w$. چون~$f'(\sigma) = f(\sigma)$ و
+  $Rf(\sigma)w$، داریم~$Rf'(\sigma)f'(\sigma.n)$؛ پس~$f'$ تفسیری از
+  $P(\Gamma) \cup \{\sigma.n\}$ است. آشکارا
+  $\mSat/{M}{!B}[f'(\sigma.n)]$. چون برای همهٔ پیشوندهای
+  $\sigma' \in P(\Gamma)$، $f(\sigma') = f'(\sigma')$، داریم
+  $\mSat{M}{\Gamma}[f']$. پس~$\mModel{M}, f'$،
+  $\Gamma \cup \{\sFmla{\False}{!B}[\sigma.n]\}$ را ارضا می‌کند.}
+  }{}
+
+\iftag{prvDiamond}{%
+\item شاخه با اعمال~$\TRule{\True}{\Diamond}$ بر
+  $\sFmla{\True}{\Diamond !B}[\sigma] \in \Gamma$ گسترش می‌یابد:
+  \iftag{probDiamond}{تمرین.}{این کار !!{signed formula} تازهٔ
+    $\sFmla{\True}{!B}[\sigma.n]$ را به دست می‌دهد، که~$\sigma.n$
+    پیشوندی تازه روی شاخه است؛ یعنی~$\sigma.n \notin P(\Gamma)$.
+    چون~$\Gamma$ ارضاپذیر است، مدل~$\mModel{M}$ و تفسیر~$f$ از
+    $P(\Gamma)$ وجود دارند چنان‌که~$\mSat{M}{\Gamma}[f]$، و به‌ویژه
+    $\mSat{M}{\Diamond !B}[f(\sigma)]$. باید نشان دهیم
+    $\Gamma \cup \{\sFmla{\True}{!B}[\sigma.n]\}$ ارضاپذیر است.
+    برای این کار، تفسیری از~$P(\Gamma) \cup \{\sigma.n\}$ چنین تعریف
+    می‌کنیم:
+
+  چون~$\mSat{M}{\Diamond !B}[f(\sigma)]$، جهان~$w \in W$ای وجود دارد
+  که~$Rf(\sigma)w$ و~$\mSat{M}{!B}[w]$. بگذارید~$f'$ مانند~$f$ باشد،
+  جز آنکه~$f'(\sigma.n) = w$. چون~$f'(\sigma) = f(\sigma)$ و
+  $Rf(\sigma)w$، داریم~$Rf'(\sigma)f'(\sigma.n)$؛ پس~$f'$ تفسیری از
+  $P(\Gamma) \cup \{\sigma.n\}$ است. آشکارا
+  $\mSat{M}{!B}[f'(\sigma.n)]$. چون برای همهٔ پیشوندهای
+  $\sigma' \in P(\Gamma)$، $f(\sigma') = f'(\sigma')$، داریم
+  $\mSat{M}{\Gamma}[f']$. پس~$\mModel{M}, f'$،
+  $\Gamma \cup \{\sFmla{\True}{!B}[\sigma.n]\}$ را ارضا می‌کند.}
+\item شاخه با اعمال~$\TRule{\False}{\Diamond}$ بر
+  $\sFmla{\False}{\Diamond !B}[\sigma] \in \Gamma$ گسترش می‌یابد:
+  \iftag{probDiamond}{تمرین.}{این کار !!{signed formula} تازهٔ
+    $\sFmla{\False}{!B}[\sigma.n]$ را برای یک~$\sigma.n \in
+    P(\Gamma)$ روی شاخه به دست می‌دهد (زیرا~$\sigma.n$ باید
+    استفاده‌شده باشد). فرض کنید~$\mSat{M}{\Gamma}[f]$، و به‌ویژه
+    $\mSat/{M}{\Diamond !B}[f(\sigma)]$. چون~$f$ تفسیری از پیشوندهاست
+    و هر دو~$\sigma$ و~$\sigma.n \in P(\Gamma)$، می‌دانیم
+    $Rf(\sigma)f(\sigma.n)$. پس~$\mSat/{M}{!B}[f(\sigma.n)]$؛ یعنی
+    $\mModel{M}, f$، $\sFmla{\False}{!B}[\sigma.n]$ را ارضا می‌کند.}
+  }{}
+\end{enumerate}
+اکنون استنتاج‌های ممکن با دو مقدمه را بررسی می‌کنیم.
+\begin{enumerate}
+\item شاخه با اعمال~$\TRule{\False}{\land}$ بر
+  $\sFmla{\False}{!B \land !C}[\sigma] \in \Gamma$ گسترش می‌یابد و
+  دو شاخه به دست می‌دهد: شاخهٔ چپ از
+  $\sFmla{\False}{!B}[\sigma]$ ادامه می‌یابد و شاخهٔ راست از
+  $\sFmla{\False}{!C}[\sigma]$. فرض کنید~$\mSat{M}{\Gamma}[f]$، و
+  به‌ویژه~$\mSat/{M}{!B \land !C}[f(\sigma)]$. آنگاه یا
+  $\mSat/{M}{!B}[f(\sigma)]$ یا~$\mSat/{M}{!C}[f(\sigma)]$. در حالت
+  نخست~$\mModel{M}, f$، $\sFmla{\False}{!B}[\sigma]$ را ارضا می‌کند؛
+  یعنی شاخهٔ چپ ارضاپذیر است. در حالت دوم~$\mModel{M}, f$،
+  $\sFmla{\False}{!C}[\sigma]$ را ارضا می‌کند؛ یعنی شاخهٔ راست
+  ارضاپذیر است.
+\item شاخه با اعمال~$\TRule{\True}{\lor}$ بر
+    $\sFmla{\True}{!B \lor !C}[\sigma] \in \Gamma$ گسترش می‌یابد: تمرین.
+\item شاخه با اعمال~$\TRule{\True}{\lif}$ بر
+    $\sFmla{\True}{!B \lif !C}[\sigma] \in \Gamma$ گسترش می‌یابد: تمرین.
+\end{enumerate}
+\end{proof}
+
+\begin{prob}
+اثبات \olref[nml][tab][sou]{thm:tableau-soundness} را کامل کنید.
+\end{prob}
+
+\begin{cor}
+\ollabel{cor:entailment-soundness}
+اگر~$\Gamma \Proves !A$، آنگاه~$\Gamma \Entails !A$.
+\end{cor}
+
+\begin{proof}
+  اگر~$\Gamma \Proves !A$، آنگاه برای یک~$!B_1$، \dots، $!B_n \in
+  \Gamma$، مجموعهٔ~$\Delta = \{\sFmla{\False}{!A}[1],
+  \sFmla{\True}{!B_1}[1], \dots, \sFmla{\True}{!B_n}[1]\}$ یک
+  !!{tableau} بسته دارد. می‌خواهیم نشان دهیم~$\Gamma \Entails !A$.
+  خلاف آن را فرض کنید؛ پس برای یک~$\mModel{M}$ و~$w$،
+  $\mSat{M}{!B_i}[w]$ برای~$i=1$، \dots،~$n$، اما
+  $\mSat/{M}{!A}[w]$. بگذارید~$f(1) = w$؛ آنگاه~$f$ تفسیری از
+  $P(\Delta)$ در~$\mModel{M}$ است و~$\mModel{M}$، $\Delta$ را نسبت
+  به~$f$ ارضا می‌کند. اما بنا بر \olref{thm:tableau-soundness}،
+  $\Delta$ ارضاناپذیر است، زیرا یک !!{tableau} بسته دارد؛ تناقض. پس
+  سرانجام باید~$\Gamma \Entails !A$.
+\end{proof}
+
+\begin{cor}
+\ollabel{cor:weak-soundness}
+اگر~$\Proves !A$، آنگاه~$!A$ در همهٔ مدل‌ها صادق است.
+\end{cor}
+
+\end{document}
