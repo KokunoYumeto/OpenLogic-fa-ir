@@ -43,7 +43,8 @@
 % Resolve references against the complete-reader job without adding these
 % retained QA units to the canonical reader graph.
 \usepackage{xr-hyper}
-\externaldocument{open-logic-complete-fa-IR}
+\providecommand*{\OLCompleteReaderJob}{open-logic-complete-fa-IR}
+\externaldocument{\OLCompleteReaderJob}
 
 \input{\olpath/sty/open-logic.sty}
 \input{\olpath/locale/\ollangid/open-logic-locale.sty}
@@ -131,10 +132,14 @@
 \makeatother
 
 \AtBeginDocument{\selectlanguage{persian}}
+\providecommand*{\OLSupplementPDFTitle}{متن منطق باز — ضمیمهٔ بسته‌شدن واحدهای بیرون از مسیر خوانشگر}
+\providecommand*{\OLSupplementEditionTitle}{ضمیمهٔ بسته‌شدن برای تضمین کیفیت}
+\providecommand*{\OLSupplementEditionScope}{هشتاد واحدِ بیرون از مسیر خوانشگر}
+\providecommand*{\OLSecondaryEditionSubtitleBlock}{}
 \hypersetup{
   unicode=true,
   pdflang={fa-IR},
-  pdftitle={متن منطق باز — ضمیمهٔ بسته‌شدن واحدهای بیرون از مسیر خوانشگر},
+  pdftitle={\OLSupplementPDFTitle},
   pdfauthor={Open Logic Project},
   pdfsubject={Contributor: AI typesetting \& translation}
 }
@@ -153,8 +158,11 @@
 \renewcommand*{\theprob}{\OLFaChapterCounter{prob}}
 \renewcommand*{\thefigure}{\OLFaChapterCounter{figure}}
 
-\newcommand*{\OLReleaseConceptDOI}{10.5281/zenodo.21921852}
-\newcommand*{\OLReleaseVersionDOI}{10.5281/zenodo.21987687}
+\providecommand*{\OLReleaseConceptDOI}{10.5281/zenodo.21921852}
+\providecommand*{\OLReleaseVersionDOI}{10.5281/zenodo.21987687}
+\providecommand*{\OLReleaseDOIBlock}{%
+  {\large DOI مفهومی پایدار: \babelsublr{\OLReleaseConceptDOI}\par}%
+}
 \newcommand*{\OLReleaseRepository}{https://github.com/KokunoYumeto/OpenLogic-fa-ir}
 
 \makeatletter
@@ -185,16 +193,17 @@
 \vspace*{2.5cm}
 {\HUGE\bfseries\sffamily متن منطق باز\par}
 \vspace{1.2cm}
-{\huge ضمیمهٔ بسته‌شدن برای تضمین کیفیت\par}
+{\huge \OLSupplementEditionTitle\par}
 \vspace{1.2cm}
-{\Large هشتاد واحدِ بیرون از مسیر خوانشگر\par}
+{\Large \OLSupplementEditionScope\par}
+\OLSecondaryEditionSubtitleBlock
 \vspace{1.5cm}
 {\large فارسی معیار دانشگاهی ایران — \babelsublr{fa-IR}\par}
 \vspace{1.5cm}
 {\large منبع: پروژهٔ منطق باز، تعهد
 \babelsublr{\texttt{9620cc73f9c8e0ad003c514a5d3748f29611c4c0}}\par}
 \vspace{0.8cm}
-{\large DOI این انتشار: \babelsublr{\OLReleaseVersionDOI}\par}
+\OLReleaseDOIBlock
 \vspace{0.8cm}
 {\Large\bfseries ضمیمهٔ بسته‌شدن همراه نسخهٔ کامل\par}
 \end{center}

@@ -1,197 +1,56 @@
-% نسخهٔ فارسیِ مناسب خواندن روی صفحه‌نمایش. هندسهٔ نسخهٔ چاپی دست‌نخورده
-% می‌ماند و این راه‌انداز همان منبع را روی صفحه‌ای دقیقاً ۱۶:۹ بازچینی می‌کند.
+% نسخهٔ دانشگاهی فارسی. راه‌انداز چاپی دست‌نخورده می‌ماند و این فایل همان
+% منبع را بر صفحهٔ معیار A4، در یک ستونِ متقارن، از نو حروف‌چینی می‌کند.
 
-\PassOptionsToClass{17pt,oneside}{memoir}
+\PassOptionsToClass{12pt,oneside,openany}{memoir}
 \AddToHook{class/memoir/after}{%
-  \RequirePackage{needspace}%
-  \linespread{1.16}% 17 pt body on approximately 25.5 pt leading.
-  % 960 × 540 PDF points: an exact 16:9 landscape canvas.
-  \setstocksize{540bp}{960bp}%
-  \settrimmedsize{\stockheight}{\stockwidth}{*}%
+  \setstocksize{297mm}{210mm}%
+  \settrimmedsize{297mm}{210mm}{*}%
   \settrims{0pt}{0pt}%
-  % A centered 744 × 468 pt reading block, with real screen-safe margins.
-  \settypeblocksize{468bp}{744bp}{*}%
-  \setlrmarginsandblock{108bp}{108bp}{*}%
-  \setulmarginsandblock{36bp}{36bp}{*}%
-  \setheadfoot{24pt}{24pt}%
-  \setheaderspaces{6pt}{*}{*}%
-  \checkandfixthelayout[fixed]% Preserve the literal screen geometry.
-  \setlength{\emergencystretch}{2.5em}%
-  \raggedbottom
+  \settypeblocksize{257mm}{170mm}{*}%
+  \setlrmarginsandblock{20mm}{20mm}{*}%
+  \setulmarginsandblock{20mm}{20mm}{*}%
+  \setheadfoot{17pt}{24pt}%
+  \setheaderspaces{8pt}{*}{*}%
+  \checkandfixthelayout[fixed]%
+  \linespread{1.20}%
+  \setlength{\parindent}{5mm}%
+  \setlength{\parskip}{0pt}%
+  \setlength{\emergencystretch}{1.5em}%
+  \flushbottom
 }
 
-% The print title page deliberately uses generous fixed skips. Scale only
-% those skips while the screen title page is active; the print driver keeps
-% its original values and behavior.
-\newcommand*{\OLScreenOriginalVspace}{}
-\newcommand*{\OLScreenOriginalVfill}{}
-\NewDocumentCommand{\OLScreenScaledVspace}{s m}{%
-  \IfBooleanTF{#1}%
-    {\OLScreenOriginalVspace*{\glueexpr#2*1/3\relax}}%
-    {\OLScreenOriginalVspace{\glueexpr#2*1/3\relax}}%
-}
-\newcommand*{\OLScreenCompactVfill}{\par\vskip.35\baselineskip\small}
-\AddToHook{env/titlingpage/begin}{%
-  \let\OLScreenOriginalVspace\vspace
-  \let\OLScreenOriginalVfill\vfill
-  \let\vspace\OLScreenScaledVspace
-  \let\vfill\OLScreenCompactVfill
-}
-\AddToHook{env/titlingpage/end}{%
-  \let\vspace\OLScreenOriginalVspace
-  \let\vfill\OLScreenOriginalVfill
-}
-
-% Formal displays may opt into the 852 pt safe live width without widening
-% ordinary prose or nested/list material.
-\newlength{\OLScreenWideOverhang}
-\setlength{\OLScreenWideOverhang}{54bp}
-\newif\ifOLScreenWideActive
-\NewDocumentEnvironment{OLScreenWide}{}{%
-  \par
-  \ifdim\linewidth=\textwidth\relax
-    \OLScreenWideActivetrue
-    \begin{adjustwidth}{-\OLScreenWideOverhang}{-\OLScreenWideOverhang}%
-  \else
-    \OLScreenWideActivefalse
-    \PackageWarning{open-logic-screen}{Nested wide block kept at current linewidth}%
-  \fi
-}{%
-  \ifOLScreenWideActive\par\end{adjustwidth}\fi
-  \par
-}
-
-% Track nested subfiles in a wrapper-local \olfilename so exact imported
-% basenames can receive narrowly scoped screen-only layout profiles.
-\makeatletter
-\newcommand*{\OLScreenInstallSubfileTracking}{%
-  \let\OLScreenOriginalSubfile\subfile
-  \RenewDocumentCommand{\subfile}{m}{%
-    \begingroup
-    \filename@parse{##1}%
-    \edef\olfilename{\filename@base}%
-    \OLScreenOriginalSubfile{##1}%
-    \endgroup
-  }%
-}
-\makeatother
-
-\ExplSyntaxOn
-\NewDocumentCommand{\OLScreenIfExpandedStringTF}{m m m m}
-  {\str_if_eq:eeTF {#1} {#2} {#3} {#4}}
-\ExplSyntaxOff
-
-\newcommand*{\OLScreenUseTableProfile}[2]{%
-  \fontsize{#1}{#2}\selectfont
-}
-\newcommand*{\OLScreenOriginalTabular}{}
-\newcount\OLScreenCorrespondenceTableIndex
-\NewDocumentEnvironment{OLScreenProfiledTabular}{o m}{%
-  \IfNoValueTF{#1}
-    {\OLScreenOriginalTabular{| p{.51\textwidth} || p{.44\textwidth} |}}
-    {\OLScreenOriginalTabular[#1]{| p{.51\textwidth} || p{.44\textwidth} |}}%
-}{%
-  \endOLScreenOriginalTabular
-}
-\newcommand*{\OLScreenApplyCompleteTableProfile}{%
-  \OLScreenIfExpandedStringTF{\theolpart}{nml}{%
-    \OLScreenIfExpandedStringTF{\theolchapter}{tab}{%
-      \OLScreenIfExpandedStringTF{\theolsection}{mru}
-        {\OLScreenUseTableProfile{15pt}{18pt}}{}%
-    }{%
-      \OLScreenIfExpandedStringTF{\theolchapter}{frd}{%
-        \OLScreenIfExpandedStringTF{\theolsection}{acc}{%
-          \OLScreenUseTableProfile{16pt}{19pt}%
-          \global\advance\OLScreenCorrespondenceTableIndex by 1
-          \PackageInfo{open-logic-screen}{Correspondence table index
-            \the\OLScreenCorrespondenceTableIndex}%
-          \ifnum\OLScreenCorrespondenceTableIndex=2
-            \setlength{\tabcolsep}{4pt}%
-            \PackageInfo{open-logic-screen}{Applying audited .51/.44
-              correspondence-table profile}%
-            \let\OLScreenOriginalTabular\tabular
-            \let\endOLScreenOriginalTabular\endtabular
-            \let\tabular\OLScreenProfiledTabular
-            \let\endtabular\endOLScreenProfiledTabular
-          \fi
-        }{}%
-      }{}%
-    }%
-  }{}%
-}
-\newcommand*{\OLScreenInstallTableWrapper}{%
-  \let\OLScreenOriginalTable\table
-  \let\endOLScreenOriginalTable\endtable
-  \RenewDocumentEnvironment{table}{o}{%
-    \IfNoValueTF{##1}
-      {\OLScreenOriginalTable}
-      {\OLScreenOriginalTable[##1]}%
-    \OLScreenApplyCompleteTableProfile
-  }{%
-    \endOLScreenOriginalTable
-  }%
-}
-
-% The print macro reserves only .8 em for a signed-formula prefix. At 17 pt,
-% indexed signs such as S_i exceed that box; the screen edition gives them
-% their natural width instead of accepting an internal overfull box.
-\NewDocumentCommand{\OLScreenSignedFormula}{m m o}{%
-  \ensuremath{%
-    \IfNoValueTF{#3}{}{#3\,}%
-    \hbox to1.05em{\ensuremath{#1}\hfil} #2}%
-}
-\NewDocumentCommand{\OLScreenAsset}{O{\olphotowidth} m}{%
-  \par\noindent
-  \makebox[\linewidth][c]{%
-    \babelsublr{%
-      \IfFileExists{#2}
-        {\includegraphics[width=#1]{#2}}
-        {\includegraphics[width=#1]{\olpath/#2}}}}%
-  \par
-}
-
-\newcommand*{\OLCompletePDFTitle}{متن منطق باز — نسخهٔ فارسی بازچینی‌شده برای خواندن روی صفحه‌نمایش}
-\newcommand*{\OLCompleteEditionSubtitle}{نسخهٔ فارسی بازچینی‌شده برای خواندن روی صفحه‌نمایش}
+\newcommand*{\OLCompletePDFTitle}{متن منطق باز — نسخهٔ دانشگاهی فارسیِ بازچینی‌شده}
+\newcommand*{\OLCompleteEditionSubtitle}{نسخهٔ دانشگاهی فارسیِ بازچینی‌شده}
 \newcommand*{\OLSecondaryEditionSubtitleBlock}{%
-  \vspace{0.55cm}%
-  {\fontsize{15pt}{18pt}\selectfont
-   \foreignlanguage{english}{Screen-Optimized Retypeset Edition}\par}%
+  \vspace{0.35cm}%
+  {\fontsize{10.5pt}{13.5pt}\selectfont
+   \foreignlanguage{english}{Iranian Persian Academic Retypeset Edition}\par}%
 }
 \newcommand*{\OLReleaseDOIBlock}{%
   {\large DOI مفهومی پایدار: \babelsublr{10.5281/zenodo.21921852}\par}%
 }
+
 \AddToHook{begindocument/before}{%
-  \OLScreenInstallSubfileTracking
-  \OLScreenInstallTableWrapper
-  % Compact screen headings, without changing the print driver's defaults.
-  \setlength{\beforechapskip}{14pt}%
-  \setlength{\midchapskip}{4pt}%
-  \setlength{\afterchapskip}{12pt}%
-  \setbeforesecskip{-0.75\onelineskip plus -0.20\onelineskip minus -0.10\onelineskip}%
-  \setaftersecskip{0.35\onelineskip plus 0.10\onelineskip}%
-  \setbeforesubsecskip{-0.60\onelineskip plus -0.15\onelineskip minus -0.08\onelineskip}%
-  \setaftersubsecskip{0.25\onelineskip plus 0.08\onelineskip}%
-  \let\sFmla\OLScreenSignedFormula
-  \let\olasset\OLScreenAsset
-  \allowdisplaybreaks[4]% Reflow long aligned derivations across screens.
-  \BeforeBeginEnvironment{defish}{\Needspace{.55\textheight}}%
-  \AddToHook{env/prooftree/before}{\begin{OLScreenWide}}%
-  \AddToHook{env/prooftree/after}{\end{OLScreenWide}}%
-  \AddToHook{env/oltableau/before}{\begin{OLScreenWide}}%
-  \AddToHook{env/oltableau/after}{\end{OLScreenWide}}%
-  \AddToHook{env/derivation/before}{\begin{OLScreenWide}}%
-  \AddToHook{env/derivation/after}{\end{OLScreenWide}}%
-  % A portrait sideways float is counterproductive on an already-landscape
-  % screen page; retain the float and caption, but suppress the rotation.
-  \renewenvironment{sidewaysfigure}{\begin{figure}[p]}{\end{figure}}%
-  % Keep part and first chapter together instead of spending a screen on an
-  % almost-empty print-style divider.
+  \makepagestyle{olacademic}%
+  \makeevenhead{olacademic}{}{}{}%
+  \makeoddhead{olacademic}{}{}{}%
+  \makeevenfoot{olacademic}{}{\thepage}{}%
+  \makeoddfoot{olacademic}{}{\thepage}{}%
+  \pagestyle{olacademic}%
+  \aliaspagestyle{chapter}{olacademic}%
   \aliaspagestyle{part}{empty}%
-  \renewcommand*{\beforepartskip}{\null\vspace*{8pt}}%
-  \renewcommand*{\midpartskip}{\par\vskip4pt}%
-  \renewcommand*{\afterpartskip}{\par\vskip8pt}%
-  \renewcommand*{\clearforchapter}{\par\Needspace{10\baselineskip}}%
-  \hypersetup{pdfstartview=Fit,pdfpagelayout=OneColumn,pdfpagemode=UseOutlines}%
+  \renewcommand*{\clearforchapter}{\clearpage}%
+  \widowpenalty=7000
+  \clubpenalty=7000
+  \displaywidowpenalty=10000
+  \brokenpenalty=7000
+  \allowdisplaybreaks[3]%
+  \AddToHook{env/table/begin}{\small}%
+  \AddToHook{env/longtable/begin}{\small}%
+  \AddToHook{env/prooftree/before}{\small}%
+  \AddToHook{env/oltableau/before}{\small}%
+  \AddToHook{env/derivation/before}{\small}%
+  \hypersetup{pdfstartview=Fit,pdfpagelayout=SinglePage,pdfpagemode=UseOutlines}%
 }
 
 \input{open-logic-complete-fa-IR.tex}

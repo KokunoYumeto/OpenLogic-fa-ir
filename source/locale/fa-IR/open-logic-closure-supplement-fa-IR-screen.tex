@@ -1,254 +1,58 @@
-% ضمیمهٔ فارسیِ مناسب صفحه‌نمایش؛ ارجاع‌های بیرونی به فایل کمکی نسخهٔ
-% صفحه‌نمایش متصل می‌شوند و صفحه دقیقاً با نسبت ۱۶:۹ بازچینی می‌شود.
+% ضمیمهٔ دانشگاهی فارسی، با همان صفحهٔ متقارن A4 و پیوند بیرونی به نسخهٔ
+% کامل دانشگاهی.
 
-\PassOptionsToClass{17pt,oneside}{memoir}
+\PassOptionsToClass{12pt,oneside,openany}{memoir}
 \AddToHook{class/memoir/after}{%
-  \RequirePackage{needspace}%
-  \RequirePackage{longtable}%
-  \linespread{1.16}% 17 pt body on approximately 25.5 pt leading.
-  % 960 × 540 PDF points: an exact 16:9 landscape canvas.
-  \setstocksize{540bp}{960bp}%
-  \settrimmedsize{\stockheight}{\stockwidth}{*}%
+  \setstocksize{297mm}{210mm}%
+  \settrimmedsize{297mm}{210mm}{*}%
   \settrims{0pt}{0pt}%
-  % A centered 744 × 468 pt reading block, with real screen-safe margins.
-  \settypeblocksize{468bp}{744bp}{*}%
-  \setlrmarginsandblock{108bp}{108bp}{*}%
-  \setulmarginsandblock{36bp}{36bp}{*}%
-  \setheadfoot{24pt}{24pt}%
-  \setheaderspaces{6pt}{*}{*}%
-  \checkandfixthelayout[fixed]% Preserve the literal screen geometry.
-  \setlength{\emergencystretch}{2.5em}%
-  \raggedbottom
-}
-
-% Scale only the print title page's fixed skips while the screen title page
-% is active; the underlying print driver remains untouched.
-\newcommand*{\OLScreenOriginalVspace}{}
-\newcommand*{\OLScreenOriginalVfill}{}
-\NewDocumentCommand{\OLScreenScaledVspace}{s m}{%
-  \IfBooleanTF{#1}%
-    {\OLScreenOriginalVspace*{\glueexpr#2*1/3\relax}}%
-    {\OLScreenOriginalVspace{\glueexpr#2*1/3\relax}}%
-}
-\newcommand*{\OLScreenCompactVfill}{\par\vskip.35\baselineskip\small}
-\AddToHook{env/titlingpage/begin}{%
-  \let\OLScreenOriginalVspace\vspace
-  \let\OLScreenOriginalVfill\vfill
-  \let\vspace\OLScreenScaledVspace
-  \let\vfill\OLScreenCompactVfill
-}
-\AddToHook{env/titlingpage/end}{%
-  \let\vspace\OLScreenOriginalVspace
-  \let\vfill\OLScreenOriginalVfill
-}
-
-\newlength{\OLScreenWideOverhang}
-\setlength{\OLScreenWideOverhang}{54bp}
-\newif\ifOLScreenWideActive
-\NewDocumentEnvironment{OLScreenWide}{}{%
-  \par
-  \ifdim\linewidth=\textwidth\relax
-    \OLScreenWideActivetrue
-    \begin{adjustwidth}{-\OLScreenWideOverhang}{-\OLScreenWideOverhang}%
-  \else
-    \OLScreenWideActivefalse
-    \PackageWarning{open-logic-screen}{Nested wide block kept at current linewidth}%
-  \fi
-}{%
-  \ifOLScreenWideActive\par\end{adjustwidth}\fi
-  \par
-}
-
-% Track nested subfiles in a wrapper-local \olfilename so exact imported
-% basenames can receive narrowly scoped screen-only layout profiles.
-\makeatletter
-\newcommand*{\OLScreenInstallSubfileTracking}{%
-  \let\OLScreenOriginalTable\table
-  \let\endOLScreenOriginalTable\endtable
-  \let\OLScreenOriginalTabular\tabular
-  \let\endOLScreenOriginalTabular\endtabular
-  \let\OLScreenOriginalSubfile\subfile
-  \RenewDocumentCommand{\subfile}{m}{%
-    \begingroup
-    \filename@parse{##1}%
-    \edef\olfilename{\filename@base}%
-    \OLScreenPrepareSubfileLayout
-    \OLScreenOriginalSubfile{##1}%
-    \endgroup
-  }%
-}
-\makeatother
-
-% The retained closure sequence ends with a heading-only Chapter 8 driver
-% immediately followed by the Part II driver.  Memoir normally clears before
-% every part; suppress that one redundant clear so the two retained drivers
-% form one intentional transition screen.  All other part clears are exact
-% memoir behaviour.
-\makeatletter
-\newcommand*{\OLScreenDefaultPartClear}{%
-  \if@openright
-    \cleardoublepage
-  \else
-    \clearpage
-  \fi
-}
-\newcommand*{\OLScreenInstallPartTransition}{%
-  \renewcommand{\@setuppart}{%
-    \ifnum\value{chapter}=8\relax
-      \ifnum\value{part}=1\relax
-        \par
-      \else
-        \OLScreenDefaultPartClear
-      \fi
-    \else
-      \OLScreenDefaultPartClear
-    \fi
-    \thispagestyle{part}%
-    \if@twocolumn
-      \onecolumn
-      \@tempswatrue
-    \else
-      \@tempswafalse
-    \fi
-    \beforepartskip
-  }%
-}
-\makeatother
-
-\ExplSyntaxOn
-\NewDocumentCommand{\OLScreenIfExpandedStringTF}{m m m m}
-  {\str_if_eq:eeTF {#1} {#2} {#3} {#4}}
-\ExplSyntaxOff
-
-\newcount\OLScreenTabularDepth
-% Proof trees use \vss internally.  Infinite-order shrink is harmless in the
-% print tables, but longtable's page splitter quite correctly refuses it when
-% a screen table becomes breakable.  Preserve infinite stretch for vertical
-% centering while giving the splitter a large finite shrink component.  The
-% environment hook is locally scoped by longtable and covers both the nine
-% wrapper-created rule tables and source-native longtables in this supplement.
-\newcommand*{\OLScreenFiniteVss}{\vskip0pt plus 1fil minus 10000pt\relax}
-\AddToHook{env/longtable/begin}{\let\vss\OLScreenFiniteVss}
-\makeatletter
-\NewDocumentEnvironment{OLScreenFlowTable}{o}{%
-  \par
-  \def\@captype{table}%
-  \Needspace{6\baselineskip}%
-}{\par}
-\makeatother
-\NewDocumentEnvironment{OLScreenFlowTabular}{O{} m}{%
-  \advance\OLScreenTabularDepth by 1
-  \ifnum\OLScreenTabularDepth=1
-    \begin{longtable}{#2}%
-  \else
-    \if\relax\detokenize{#1}\relax
-      \OLScreenOriginalTabular{#2}%
-    \else
-      \OLScreenOriginalTabular[#1]{#2}%
-    \fi
-  \fi
-}{%
-  \ifnum\OLScreenTabularDepth=1
-    \end{longtable}%
-  \else
-    \endOLScreenOriginalTabular
-  \fi
-}
-\newcommand*{\OLScreenIfFlowTableFileTF}[2]{%
-  \OLScreenIfExpandedStringTF{\olfilename}{rules-N1}
-    {#1}{%
-  \OLScreenIfExpandedStringTF{\olfilename}{rules-N2}
-    {#1}{%
-  \OLScreenIfExpandedStringTF{\olfilename}{reductions}
-    {#1}{%
-  \OLScreenIfExpandedStringTF{\olfilename}{rules-tN2}
-    {#1}{%
-  \OLScreenIfExpandedStringTF{\olfilename}{rules-tN3}
-    {#1}{%
-  \OLScreenIfExpandedStringTF{\olfilename}{rules-G2c}
-    {#1}{%
-  \OLScreenIfExpandedStringTF{\olfilename}{rules-G1c}
-    {#1}{%
-  \OLScreenIfExpandedStringTF{\olfilename}{rules-G1i}
-    {#1}{%
-  \OLScreenIfExpandedStringTF{\olfilename}{rules-LK}
-    {#1}{#2}%
-  }}}}}}}}%
-}
-\newcommand*{\OLScreenPrepareSubfileLayout}{%
-  \OLScreenIfFlowTableFileTF{%
-    \OLScreenTabularDepth=0
-    \let\table\OLScreenFlowTable
-    \let\endtable\endOLScreenFlowTable
-    \let\tabular\OLScreenFlowTabular
-    \let\endtabular\endOLScreenFlowTabular
-  }{}%
-}
-
-\NewDocumentCommand{\OLScreenSignedFormula}{m m o}{%
-  \ensuremath{%
-    \IfNoValueTF{#3}{}{#3\,}%
-    \hbox to1.05em{\ensuremath{#1}\hfil} #2}%
-}
-\NewDocumentCommand{\OLScreenAsset}{O{\olphotowidth} m}{%
-  \par\noindent
-  \makebox[\linewidth][c]{%
-    \babelsublr{%
-      \IfFileExists{#2}
-        {\includegraphics[width=#1]{#2}}
-        {\includegraphics[width=#1]{\olpath/#2}}}}%
-  \par
+  \settypeblocksize{257mm}{170mm}{*}%
+  \setlrmarginsandblock{20mm}{20mm}{*}%
+  \setulmarginsandblock{20mm}{20mm}{*}%
+  \setheadfoot{17pt}{24pt}%
+  \setheaderspaces{8pt}{*}{*}%
+  \checkandfixthelayout[fixed]%
+  \linespread{1.20}%
+  \setlength{\parindent}{5mm}%
+  \setlength{\parskip}{0pt}%
+  \setlength{\emergencystretch}{1.5em}%
+  \flushbottom
 }
 
 \newcommand*{\OLCompleteReaderJob}{open-logic-complete-fa-IR-screen}
-\newcommand*{\OLSupplementPDFTitle}{متن منطق باز — ضمیمهٔ فارسی بازچینی‌شده برای صفحه‌نمایش}
-\newcommand*{\OLSupplementEditionTitle}{ضمیمهٔ بازچینی‌شده برای صفحه‌نمایش}
+\newcommand*{\OLSupplementPDFTitle}{متن منطق باز — ضمیمهٔ دانشگاهی فارسی}
+\newcommand*{\OLSupplementEditionTitle}{ضمیمهٔ دانشگاهی فارسی}
 \newcommand*{\OLSupplementEditionScope}{هشتاد واحدِ بیرون از مسیر خوانشگر}
 \newcommand*{\OLSecondaryEditionSubtitleBlock}{%
-  \vspace{0.55cm}%
-  {\fontsize{15pt}{18pt}\selectfont
-   \foreignlanguage{english}{Screen-Optimized Closure Supplement}\par}%
+  \vspace{0.35cm}%
+  {\fontsize{10.5pt}{13.5pt}\selectfont
+   \foreignlanguage{english}{Iranian Persian Academic Closure Supplement}\par}%
 }
 \newcommand*{\OLReleaseDOIBlock}{%
   {\large DOI مفهومی پایدار: \babelsublr{10.5281/zenodo.21921852}\par}%
 }
+
 \AddToHook{begindocument/before}{%
-  \OLScreenInstallSubfileTracking
-  \OLScreenInstallPartTransition
-  \setlength{\beforechapskip}{14pt}%
-  \setlength{\midchapskip}{4pt}%
-  \setlength{\afterchapskip}{12pt}%
-  \setbeforesecskip{-0.75\onelineskip plus -0.20\onelineskip minus -0.10\onelineskip}%
-  \setaftersecskip{0.35\onelineskip plus 0.10\onelineskip}%
-  \setbeforesubsecskip{-0.60\onelineskip plus -0.15\onelineskip minus -0.08\onelineskip}%
-  \setaftersubsecskip{0.25\onelineskip plus 0.08\onelineskip}%
-  \let\sFmla\OLScreenSignedFormula
-  \let\olasset\OLScreenAsset
-  \allowdisplaybreaks[4]% Reflow long aligned derivations across screens.
-  \BeforeBeginEnvironment{defish}{\Needspace{.55\textheight}}%
-  \AddToHook{env/prooftree/before}{\begin{OLScreenWide}}%
-  \AddToHook{env/prooftree/after}{\end{OLScreenWide}}%
-  \AddToHook{env/oltableau/before}{\begin{OLScreenWide}}%
-  \AddToHook{env/oltableau/after}{\end{OLScreenWide}}%
-  \AddToHook{env/derivation/before}{\begin{OLScreenWide}}%
-  \AddToHook{env/derivation/after}{\end{OLScreenWide}}%
-  \renewenvironment{sidewaysfigure}{\begin{figure}[p]}{\end{figure}}%
+  \makepagestyle{olacademic}%
+  \makeevenhead{olacademic}{}{}{}%
+  \makeoddhead{olacademic}{}{}{}%
+  \makeevenfoot{olacademic}{}{\thepage}{}%
+  \makeoddfoot{olacademic}{}{\thepage}{}%
+  \pagestyle{olacademic}%
+  \aliaspagestyle{chapter}{olacademic}%
   \aliaspagestyle{part}{empty}%
-  \renewcommand*{\beforepartskip}{\null\vspace*{8pt}}%
-  \renewcommand*{\midpartskip}{\par\vskip4pt}%
-  \renewcommand*{\afterpartskip}{\par\vskip8pt}%
-  % Chapter 8 follows a long Chapter 7 tail whose residual space can hold the
-  % heading but not its Part II introduction.  Move that one transition as a
-  % unit; retain the compact six-line rule for every other replayed QA unit.
-  \renewcommand*{\clearforchapter}{%
-    \par
-    \ifnum\value{chapter}=7\relax
-      \clearpage
-    \else
-      \Needspace{6\baselineskip}%
-    \fi
-  }%
-  \hypersetup{pdfstartview=Fit,pdfpagelayout=OneColumn,pdfpagemode=UseOutlines}%
+  \renewcommand*{\clearforchapter}{\clearpage}%
+  \widowpenalty=7000
+  \clubpenalty=7000
+  \displaywidowpenalty=10000
+  \brokenpenalty=7000
+  \allowdisplaybreaks[3]%
+  \AddToHook{env/table/begin}{\small}%
+  \AddToHook{env/longtable/begin}{\small}%
+  \AddToHook{env/prooftree/before}{\small}%
+  \AddToHook{env/oltableau/before}{\small}%
+  \AddToHook{env/derivation/before}{\small}%
+  \hypersetup{pdfstartview=Fit,pdfpagelayout=SinglePage,pdfpagemode=UseOutlines}%
 }
 
 \input{open-logic-closure-supplement-fa-IR.tex}

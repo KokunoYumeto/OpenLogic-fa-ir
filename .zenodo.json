@@ -1,16 +1,21 @@
 {
   "creators": [
-    {"name": "Open Logic Project"}
+    {
+      "name": "Open Logic Project"
+    }
   ],
   "contributors": [
-    {"name": "AI typesetting & translation", "type": "Other"}
+    {
+      "name": "AI typesetting & translation",
+      "type": "Other"
+    }
   ],
-  "title": "متن منطق باز — نسخهٔ کامل فارسی ایران با بازچینی واقعی ۱۶:۹ برای صفحه‌نمایش (OLP-0722) / The Open Logic Text — Complete Iranian Persian Edition with True 16:9 Screen Reflow (OLP-0722)",
-  "version": "OLP-0722-REFLOW-16X9-20260819",
+  "title": "متن منطق باز — نسخهٔ معیار A4 فارسی ایران (OLP-0722) / The Open Logic Text — Standard A4 Iranian Persian Edition (OLP-0722)",
+  "version": "OLP-0722-A4-STANDARD-20260819",
   "publication_date": "2026-08-19",
   "access_right": "open",
-  "doi": "10.5281/zenodo.22015765",
-  "description": "<p dir='rtl' lang='fa'><strong>دربارهٔ اثر:</strong> <em>متن منطق باز</em> یک کتاب درسی باز و مشارکتی در منطق صوری برای مطالعهٔ دقیق در سطح میانی است. کتاب نظریهٔ سادهٔ مجموعه‌ها، روابط و توابع، نحو و معناشناسی منطق گزاره‌ای و مرتبهٔ اول، دستگاه‌های اثبات، محاسبه‌پذیری، ناتمامیت، منطق موجهات و نظریهٔ اثبات را پوشش می‌دهد.</p><p dir='rtl' lang='fa'><strong>این نسخه:</strong> نسخهٔ کامل فارسی ایران هر ۷۲۲ واحد منبع تثبیت‌شده را در بر می‌گیرد: خوانشگر پیونددار ۶۴۲ واحدی و ضمیمهٔ فنی ۸۰ واحدی. DOI دقیق این نسخه <code>10.5281/zenodo.22015765</code> و DOI مفهومی پایدار ویرایش فارسی <code>10.5281/zenodo.21921852</code> است. تنها پدیدآور فراداده <code>Open Logic Project</code> و تنها مشارکت‌کننده <code>AI typesetting &amp; translation</code> با نوع <code>Other</code> است.</p><p dir='rtl' lang='fa'><strong>یادداشت انتشار:</strong> دو PDF صفحه‌نمایش روی صفحه‌های دقیق ۹۶۰ × ۵۴۰ نقطه (۱۶:۹) و با سطح متن مرکزی بازچینی شده‌اند: خوانشگر ۱۵۷۸ صفحه و ضمیمه ۲۲۲ صفحه. دارایی‌های چاپی ۰۰ تا ۰۴ بدون تغییر بایتی حفظ شده‌اند. PDFها ثابت، بدون برچسب ساختاری و بدون گواهی PDF/UA هستند؛ فایل‌های TeX قابل ویرایش نیز عرضه می‌شوند.</p><p><strong>English descriptor:</strong> <em>The Open Logic Text</em> is a collaborative open textbook in formal logic for rigorous intermediate-level study. It covers naïve set theory, relations and functions, propositional and first-order syntax and semantics, proof systems, computability, incompleteness, modal logic, and proof theory. This is the complete 722-unit Iranian Persian edition: a 642-unit linked reader and an 80-unit technical supplement. Release note: the screen PDFs are reflowed onto centered 960 × 540 pt (16:9) pages; they are fixed-layout, untagged, and not PDF/UA certified. Exact version DOI: <code>10.5281/zenodo.22015765</code>; stable concept DOI shown in the PDFs: <code>10.5281/zenodo.21921852</code>.</p>",
+  "doi": "10.5281/zenodo.21921852",
+  "description": "<p dir='rtl' lang='fa'><strong>دربارهٔ اثر:</strong> <em>متن منطق باز</em> یک کتاب درسی باز و مشارکتی در منطق صوری برای مطالعهٔ دقیق در سطح میانی است. این نسخهٔ کامل فارسی ایران همهٔ ۷۲۲ واحد منبع تثبیت‌شده را در بر می‌گیرد: خوانشگر پیونددار ۶۴۲ واحدی و ضمیمهٔ فنی ۸۰ واحدی.</p><p dir='rtl' lang='fa'><strong>نسخهٔ جاری:</strong> هر دو PDF روی صفحهٔ معیار A4 عمودی ۲۱۰ × ۲۹۷ میلی‌متر حروف‌چینی شده‌اند و با <code>/Fit</code>، <code>/SinglePage</code> و <code>/UseOutlines</code> گشوده می‌شوند. خوانشگر ۷۹۸ صفحه و ضمیمه ۱۱۳ صفحه دارد. دو انتشار صفحه‌نمایش پیشین حفظ شده‌اند اما این انتشار جایگزین آن‌هاست.</p><p dir='rtl' lang='fa'><strong>هویت:</strong> تنها پدیدآور <code>Open Logic Project</code> و تنها مشارکت‌کننده <code>AI typesetting &amp; translation</code> با نوع <code>Other</code> است. ایجاد نسخهٔ تازه در Zenodo با HTTP 403 رد شد؛ بنابراین فقط DOI مفهومی پایدار <code>10.5281/zenodo.21921852</code> ذکر می‌شود و DOI دقیق تازه‌ای ادعا نمی‌شود.</p><p><strong>English descriptor:</strong> Complete 722-unit Iranian Persian edition on standard 210 × 297 mm portrait A4 pages: a 798-page linked reader and a 113-page technical supplement. The PDFs are fixed-layout, untagged, and not PDF/UA certified. The two earlier screen releases are preserved but superseded. Concept DOI only: <code>10.5281/zenodo.21921852</code>.</p>",
   "related_identifiers": [
     {
       "identifier": "https://github.com/OpenLogicProject/OpenLogic/commit/9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
@@ -23,7 +28,7 @@
       "resource_type": "software"
     },
     {
-      "identifier": "https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/tag/fa-ir-olp-0722-reflow-16x9-20260819",
+      "identifier": "https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/tag/fa-ir-olp-0722-a4-standard-20260819",
       "relation": "isIdenticalTo",
       "resource_type": "publication-book"
     }
@@ -34,8 +39,8 @@
     "Iranian Persian",
     "فارسی ایران",
     "Persian",
-    "بازچینی ۱۶:۹",
-    "16:9 screen reflow",
+    "A4",
+    "portrait",
     "complete translation",
     "mathematical logic",
     "open textbook"

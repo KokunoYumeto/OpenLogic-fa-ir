@@ -1,108 +1,95 @@
-# متن منطق باز — نسخهٔ کامل فارسی ایران با بازچینی واقعی ۱۶:۹ برای صفحه‌نمایش
+# متن منطق باز — نسخهٔ معیار A4 فارسی ایران
 
-*متن منطق باز* یک کتاب درسی باز و مشارکتی در منطق صوری است که برای مطالعهٔ
-دقیق در سطح میانی طراحی شده است. این کتاب از نظریهٔ سادهٔ مجموعه‌ها، روابط
-و توابع آغاز می‌کند؛ نحو و معناشناسی منطق گزاره‌ای و منطق مرتبهٔ اول،
-دستگاه‌های اثبات، محاسبه‌پذیری و ناتمامیت را بسط می‌دهد؛ و بخش‌هایی دربارهٔ
-منطق موجهات و نظریهٔ اثبات نیز دارد.
+*متن منطق باز* یک کتاب درسی باز و مشارکتی در منطق صوری برای مطالعهٔ دقیق
+در سطح میانی است. این مخزن نسخهٔ مستقل و کامل فارسی ایران را عرضه می‌کند:
+همهٔ ۷۲۲ واحد منبع تثبیت‌شده، شامل خوانشگر پیونددار ۶۴۲ واحدی و ضمیمهٔ
+فنی ۸۰ واحدی.
 
-این مخزن نسخهٔ مستقل و کامل فارسی ایران را عرضه می‌کند: همهٔ ۷۲۲ واحد منبع
-تثبیت‌شده، شامل خوانشگر اصلی ۶۴۲ واحدی و ضمیمهٔ فنی ۸۰ واحدی. یادداشت این
-انتشار: `OLP-0722-REFLOW-16X9-20260819` دو PDF خوانای ۱۶:۹ با سطح
-متن مرکزی را جایگزین چیدمان صفحه‌نمایش پیشین می‌کند؛ دارایی‌های چاپی ۰۰ تا
-۰۴ بدون تغییر بایتی حفظ شده‌اند.
+نسخهٔ جاری OLP-0722-A4-STANDARD-20260819 است. هر دو PDF روی صفحهٔ
+استاندارد A4 عمودی با ابعاد ۲۱۰ × ۲۹۷ میلی‌متر حروف‌چینی شده‌اند. نمایش
+آغازین /Fit، چیدمان /SinglePage و حالت /UseOutlines است؛ بنابراین صفحهٔ
+کامل عمودی گشوده می‌شود و فهرست نشانک‌ها در دسترس است.
 
 ## هویت انتشار
 
-- DOI دقیق این نسخه: [10.5281/zenodo.22015765](https://doi.org/10.5281/zenodo.22015765)
-- DOI مفهومی پایدار فارسی ایران: [10.5281/zenodo.21921852](https://doi.org/10.5281/zenodo.21921852)
-- انتشار GitHub: [fa-ir-olp-0722-reflow-16x9-20260819](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/tag/fa-ir-olp-0722-reflow-16x9-20260819)
-- نسخه: `OLP-0722-REFLOW-16X9-20260819`
-- زبان: فارسی معیار دانشگاهی ایران (`fa-IR`؛ کد Zenodo: `fas`)
-- تنها نویسنده/پدیدآور در فراداده: `Open Logic Project`
-- تنها مشارکت‌کننده: `AI typesetting & translation` با نوع `Other`؛ بدون شناسه یا وابستگی سازمانی
-- مرجع منبع: تعهد `9620cc73f9c8e0ad003c514a5d3748f29611c4c0`
-- درخت منبع: `f67757bb9305b173634082ab4cefd5601a707a34`
-- مجوز: CC BY 4.0، مگر آنکه یک مؤلفه به‌صراحت خلاف آن را اعلام کند
+- انتشار جاری GitHub:
+  [fa-ir-olp-0722-a4-standard-20260819](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/tag/fa-ir-olp-0722-a4-standard-20260819)
+- نسخه: OLP-0722-A4-STANDARD-20260819
+- DOI مفهومی پایدار فارسی ایران:
+  [10.5281/zenodo.21921852](https://doi.org/10.5281/zenodo.21921852)
+- وضعیت Zenodo برای این اصلاح: ایجاد نسخهٔ تازه مجاز نشد (403 Forbidden)؛
+  در نتیجه DOI دقیق تازه‌ای ادعا یا ثبت نشده و فقط DOI مفهومی به‌کار می‌رود.
+- زبان: فارسی معیار دانشگاهی ایران (fa-IR؛ کد Zenodo: fas)
+- تنها پدیدآور/نویسنده در فراداده: Open Logic Project
+- تنها مشارکت‌کنندهٔ فنی: AI typesetting & translation با نوع Other؛
+  این مشارکت‌کننده نویسنده یا پدیدآور نیست و شناسه یا وابستگی سازمانی ندارد.
+- مرجع منبع: تعهد 9620cc73f9c8e0ad003c514a5d3748f29611c4c0
+- درخت منبع: f67757bb9305b173634082ab4cefd5601a707a34
+- مجوز: CC BY 4.0، مگر آنکه مؤلفه‌ای صریحاً مجوز دیگری داشته باشد.
 
-## دامنهٔ کامل و چیدمان صفحه‌نمایش
+## خروجی‌های معیار A4
 
-محتوا تغییر نکرده است:
+| دارایی | کارکرد |
+|---|---|
+| 00_OPENLOGIC_fa-IR_COMPLETE_LINKED_READER_A4_STANDARD_OLP-0722.pdf | خوانشگر کامل ۶۴۲ واحدی، ۷۹۸ صفحه |
+| 01_OPENLOGIC_fa-IR_CLOSURE_SUPPLEMENT_80_UNITS_A4_STANDARD_OLP-0722.pdf | ضمیمهٔ فنی ۸۰ واحدی، ۱۱۳ صفحه |
+| 02_OPENLOGIC_fa-IR_A4_STANDARD_SOURCES_AND_EVIDENCE_OLP-0722.zip | راه‌اندازها، سازنده، شواهد ساخت، اصلاح پیوند و QA |
+| 03_OPENLOGIC_fa-IR_SHA256_MANIFEST_A4_STANDARD_OLP-0722.txt | اندازه و SHA-256 دارایی‌های ۰۰ تا ۰۲ |
 
-- خوانشگر پیونددار اصلی: ۶۴۲ واحد.
-- ضمیمهٔ فنی مستقل: ۸۰ واحد بیرون از مسیر خوانشگر.
-- حساب کامل: ۶۴۲ + ۸۰ = ۷۲۲ واحد.
+خوانشگر کامل ۷٬۸۴۴٬۳۹۷ بایت و SHA-256
+B7C622A99E6317ADF9F5CCC903138A7BB1264266889A1F1D1C97094D57D2C3E7
+است. ضمیمه ۱٬۲۰۴٬۸۲۴ بایت و SHA-256
+1019D4639FD0F56C17AF618BB877857D4A1BFD2A4EA354D0B164957145D826AB
+است.
 
-هر صفحهٔ نسخهٔ صفحه‌نمایش دقیقاً ۹۶۰ × ۵۴۰ نقطه (نسبت ۱۶:۹ افقی) است و
-هنگام گشودن با نمای `/Fit` کل صفحه را در قاب نمایش می‌دهد. سطح خواندن
-۷۴۴ × ۴۶۸ نقطه است و دقیقاً در مرکز صفحه قرار دارد: حاشیه‌های افقی ۱۰۸
-نقطه و حاشیه‌های عمودی ۳۶ نقطه. متن با کلاس ۱۷ نقطه، قلم Scheherazade با
-اندازهٔ اندازه‌گیری‌شدهٔ حدود ۱۸٫۵۹ نقطه و فاصلهٔ سطر حدود ۲۵٫۴ نقطه
-بازچینی شده است. این طراحی از ستون کوچکِ میانیِ نسخهٔ پیشین پرهیز می‌کند و
-متن را به‌طور پیوسته در ۱۵۷۸ صفحهٔ خوانشگر و ۲۲۲ صفحهٔ ضمیمه جاری می‌سازد.
-
-بازچینی شامل شکستن کنترل‌شدهٔ نه جدول بلند قواعد، نگه‌داشتن عنوان‌ها با متن
-پس از آن‌ها، و مرکزکردن شکل‌ها در پهنای زندهٔ صفحه است. مستطیل‌های پیوند
-راست‌به‌چپ نیز با یک فرایند بسته‌به‌خطا و قابل بازپخش اصلاح شده‌اند؛ مقصدها،
-محتوای صفحه و فراداده تغییر نکرده‌اند.
-
-این‌ها PDFهای ثابت با صفحه‌های ۱۶:۹ هستند، نه سندهای HTML واکنش‌گرا؛ با این
-حال متن در زمان حروف‌چینی از نو و به‌طور پیوسته در اندازهٔ واقعی صفحه جاری
-شده است.
-
-## دارایی‌های انتشار
-
-| شماره | دارایی | کارکرد |
-|---:|---|---|
-| ۰۰ | `00_OPENLOGIC_fa-IR_COMPLETE_LINKED_READER_OLP-0722.pdf` | خوانشگر چاپی کامل، بدون تغییر بایتی |
-| ۰۱ | `01_OPENLOGIC_fa-IR_CLOSURE_SUPPLEMENT_80_UNITS_OLP-0722.pdf` | ضمیمهٔ چاپی، بدون تغییر بایتی |
-| ۰۲ | `02_OPENLOGIC_fa-IR_EDITABLE_SOURCES_OLP-0722.zip` | منابع کامل و قابل ویرایش انتشار پایه |
-| ۰۳ | `03_OPENLOGIC_fa-IR_EVIDENCE_AND_PROVENANCE_OLP-0722.zip` | شواهد و منشأ انتشار پایه |
-| ۰۴ | `04_OPENLOGIC_fa-IR_SHA256_MANIFEST_OLP-0722.txt` | هش‌های دارایی‌های ۰۰ تا ۰۳ |
-| ۰۵ | `05_OPENLOGIC_fa-IR_COMPLETE_LINKED_READER_SCREEN_OLP-0722.pdf` | خوانشگر پیونددار ۱۶:۹، ۱۵۷۸ صفحه |
-| ۰۶ | `06_OPENLOGIC_fa-IR_CLOSURE_SUPPLEMENT_80_UNITS_SCREEN_OLP-0722.pdf` | ضمیمهٔ ۱۶:۹، ۲۲۲ صفحه |
-| ۰۷ | `07_OPENLOGIC_fa-IR_SCREEN_LAYOUT_SOURCES_AND_EVIDENCE_OLP-0722.zip` | راه‌اندازها، سازنده، اصلاح پیوند و شواهد ساخت/QA |
-| ۰۸ | `08_OPENLOGIC_fa-IR_SHA256_MANIFEST_SCREEN_UPDATE_OLP-0722.txt` | هش SHA-256 دارایی‌های ۰۰ تا ۰۷ |
-
-بیانیهٔ ۰۸ خود را هش نمی‌کند. هر سطر آن از ۶۴ رقم شانزدهی بزرگ، دو فاصله و
-نام پایهٔ دارایی تشکیل شده است.
+هندسهٔ همهٔ صفحات دقیقاً A4 عمودی است؛ چرخش صفر است. شمار پیوندها در
+خوانشگر و ضمیمه به‌ترتیب ۲۹۸۶ و ۱۳۷ است و شمار مستطیل‌های پیوند بیرون از
+صفحه پس از اصلاح بسته‌به‌خطا صفر است. محتوای صفحه، مقصدهای پیوند، نشانک‌ها
+و فراداده در اصلاح مستطیل‌های پیوند تغییر نکرده‌اند.
 
 ## ساخت بازتولیدپذیر
 
-ساخت چاپی با `build/BUILD.ps1` و ساخت ۱۶:۹ با
-`build/BUILD_SCREEN.ps1` انجام می‌شود. ساخت صفحه‌نمایش:
+ساخت جاری با این فرمان اجرا می‌شود:
 
-1. خوانشگر را با LuaLaTeX و BibTeX می‌سازد؛
-2. ضمیمه را با AUX همان خوانشگر می‌سازد؛
-3. PDF خام را به هش دقیقِ شناخته‌شده مقید می‌کند؛
-4. تنها مختصات انتهایی مستطیل‌های پیوندِ متورم‌شدهٔ راست‌به‌چپ را با
-   `build/repair_rtl_link_rects_fa.py` اصلاح می‌کند؛
-5. شمار صفحه، هندسهٔ ۹۶۰ × ۵۴۰، هش‌های خام و نهایی و گزارش نگاشت را کنترل
-   می‌کند.
+    pwsh -NoProfile -File .\build\BUILD_A4_STANDARD.ps1 -OutputDirectory <پوشه-پاک-صریح>
 
-جزئیات و نسخه‌های وابستگی در `build/BUILD_SCREEN_REQUIREMENTS.md` آمده
-است. دارایی ۰۷ با `build/BUILD_SCREEN_BUNDLE.ps1` و زمان ثابت ZIP
-ساخته می‌شود.
+فایل‌های راه‌انداز به‌دلیل حفظ پیوندهای داخلی نام تاریخی -screen.tex را
+نگه داشته‌اند، اما محتوای جاری آن‌ها فقط A4 عمودی است. هش راه‌انداز کامل
+5CD40F62DCAD37678CC41E5D660FB1FE0FECF30E9CE3CBEEB466DE4BEA64A9FA
+و هش راه‌انداز ضمیمه
+98459D24BF0BABF26FF86CBD118B290D17FAEBBD4E7DDBFFCCC3C9E75B57077E
+است. جزئیات در
+[build/BUILD_A4_STANDARD_REQUIREMENTS.md](build/BUILD_A4_STANDARD_REQUIREMENTS.md)
+آمده است.
+
+## انتشارهای پیشین
+
+انتشار چاپی
+[fa-ir-olp-0722-20260818](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/tag/fa-ir-olp-0722-20260818)
+و همهٔ دارایی‌های آن بدون تغییر حفظ شده‌اند.
+
+دو انتشار صفحه‌نمایش پیشین نیز برای سابقه و بازتولیدپذیری بدون حذف یا
+بازنویسی دارایی نگه داشته شده‌اند، اما هر دو با انتشار معیار A4 جایگزین
+شده‌اند:
+
+- [fa-ir-olp-0722-screen-20260818](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/tag/fa-ir-olp-0722-screen-20260818)
+- [fa-ir-olp-0722-reflow-16x9-20260819](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/tag/fa-ir-olp-0722-reflow-16x9-20260819)
 
 ## حدود اعلام‌شده
 
 - PDFها برچسب‌گذاری ساختاری و گواهی PDF/UA ندارند.
-- استخراج Unicode ریاضیات، نیم‌فاصله‌ها و ترتیب برخی مؤلفه‌های راست‌به‌چپ کاملاً مرجع نیست؛ فایل‌های TeX قابل ویرایش مرجع متنی‌اند.
-- هیچ بازبینی انسانی یا بومیِ فارسی‌زبان یا تأیید جامعهٔ زبانی ادعا نمی‌شود.
-- این نسخهٔ مستقل به معنای تأیید پروژهٔ منطق باز نیست.
-- DOI دقیق نسخه در فرادادهٔ انتشار ثبت شده است؛ خود PDFها عمداً DOI مفهومی پایدار را نمایش می‌دهند.
+- استخراج Unicode ریاضیات، نیم‌فاصله‌ها و ترتیب برخی مؤلفه‌های راست‌به‌چپ
+  کاملاً مرجع نیست؛ فایل‌های TeX قابل ویرایش مرجع متنی‌اند.
+- هیچ بازبینی انسانی یا بومی فارسی‌زبان، تأیید جامعهٔ زبانی یا تأیید پروژهٔ
+  منطق باز ادعا نمی‌شود.
 
 ## English descriptor
 
-*The Open Logic Text* is a collaborative open textbook in formal logic for
-rigorous intermediate-level study. It covers naïve set theory, relations and
-functions, propositional and first-order syntax and semantics, proof systems,
-computability, incompleteness, modal logic, and proof theory. This repository
-contains the complete 722-unit Iranian Persian edition: the 642-unit linked
-reader and the 80-unit technical supplement.
-
-Release note: `OLP-0722-REFLOW-16X9-20260819` replaces the earlier
-screen layout with centered 960 × 540 pt (16:9) PDFs. The exact version DOI is
-`10.5281/zenodo.22015765`; the PDFs retain concept DOI
-`10.5281/zenodo.21921852`. The PDFs are fixed-layout, untagged, and
-not PDF/UA certified; editable TeX remains available.
+This repository contains the complete 722-unit Iranian Persian edition of
+*The Open Logic Text*: a 642-unit linked reader and an 80-unit technical
+supplement. The current release, OLP-0722-A4-STANDARD-20260819, uses
+standard 210 × 297 mm portrait A4 pages and opens with /Fit, /SinglePage,
+and /UseOutlines. The reader has 798 pages and the supplement 113 pages.
+Both earlier screen releases are preserved but superseded. Zenodo returned
+HTTP 403 for a new-version action, so this correction uses only the stable
+concept DOI 10.5281/zenodo.21921852 and claims no new exact DOI.

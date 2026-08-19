@@ -77,10 +77,13 @@
 \makeatother
 
 \AtBeginDocument{\selectlanguage{persian}}
+\providecommand*{\OLCompletePDFTitle}{متن منطق باز — نسخهٔ کامل فارسی ایران برای منبع تثبیت‌شده}
+\providecommand*{\OLCompleteEditionSubtitle}{نسخهٔ کامل فارسی ایران برای منبع تثبیت‌شده}
+\providecommand*{\OLSecondaryEditionSubtitleBlock}{}
 \hypersetup{
   unicode=true,
   pdflang={fa-IR},
-  pdftitle={متن منطق باز — نسخهٔ کامل فارسی ایران برای منبع تثبیت‌شده},
+  pdftitle={\OLCompletePDFTitle},
   pdfauthor={Open Logic Project},
   pdfsubject={Contributor: AI typesetting \& translation}
 }
@@ -99,8 +102,12 @@
 \renewcommand*{\theprob}{\OLFaChapterCounter{prob}}
 \renewcommand*{\thefigure}{\OLFaChapterCounter{figure}}
 
-\newcommand*{\OLReleaseConceptDOI}{10.5281/zenodo.21921852}
-\newcommand*{\OLReleaseVersionDOI}{10.5281/zenodo.21987687}
+\providecommand*{\OLReleaseConceptDOI}{10.5281/zenodo.21921852}
+\providecommand*{\OLReleaseVersionDOI}{10.5281/zenodo.21987687}
+\providecommand*{\OLReleaseDOIBlock}{%
+  {\large DOI مفهومی: \babelsublr{\OLReleaseConceptDOI}\par}%
+  {\large DOI این انتشار: \babelsublr{\OLReleaseVersionDOI}\par}%
+}
 \newcommand*{\OLReleaseRepository}{https://github.com/KokunoYumeto/OpenLogic-fa-ir}
 
 \makeatletter
@@ -121,7 +128,8 @@
 \vspace*{2.5cm}
 {\HUGE\bfseries\sffamily متن منطق باز\par}
 \vspace{1.2cm}
-{\huge نسخهٔ کامل فارسی ایران برای منبع تثبیت‌شده\par}
+{\huge \OLCompleteEditionSubtitle\par}
+\OLSecondaryEditionSubtitleBlock
 \vspace{1.5cm}
 {\Large فارسی معیار دانشگاهی ایران — \babelsublr{fa-IR}\par}
 \vspace{1.5cm}
@@ -129,8 +137,7 @@
 \babelsublr{\texttt{9620cc73f9c8e0ad003c514a5d3748f29611c4c0}}\par}
 \vspace{0.8cm}
 {\large مخزن: \href{\OLReleaseRepository}{\babelsublr{OpenLogic-fa-ir}}\par}
-{\large DOI مفهومی: \babelsublr{\OLReleaseConceptDOI}\par}
-{\large DOI این انتشار: \babelsublr{\OLReleaseVersionDOI}\par}
+\OLReleaseDOIBlock
 \end{center}
 
 \vfill

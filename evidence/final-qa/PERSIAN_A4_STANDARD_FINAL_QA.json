@@ -1,0 +1,168 @@
+{
+  "schema": "openlogic-fa-ir-a4-standard-final-qa-v1",
+  "status": "PASS",
+  "date": "2026-08-19",
+  "version": "OLP-0722-A4-STANDARD-20260819",
+  "language": {
+    "name_fa": "فارسی ایران",
+    "name_en": "Iranian Persian",
+    "bcp47": "fa-IR",
+    "metadata_language": "fas"
+  },
+  "identity": {
+    "sole_creator": "Open Logic Project",
+    "sole_contributor": {
+      "name": "AI typesetting & translation",
+      "type": "Other",
+      "creator_or_author": false,
+      "identifiers": [],
+      "affiliations": []
+    }
+  },
+  "source_authority": {
+    "repository": "https://github.com/OpenLogicProject/OpenLogic",
+    "commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+    "tree": "f67757bb9305b173634082ab4cefd5601a707a34",
+    "closure_units": 722,
+    "reader_units": 642,
+    "supplement_units": 80,
+    "translation_or_control_edits": 0
+  },
+  "doi": {
+    "concept": "10.5281/zenodo.21921852",
+    "exact_version": null,
+    "zenodo_mutated": false,
+    "zenodo_newversion_http_status": 403
+  },
+  "viewer_profile": {
+    "standard": "ISO 216 A4",
+    "orientation": "portrait",
+    "width_mm": 210,
+    "height_mm": 297,
+    "media_box_pt": [0.0, 0.0, 595.276, 841.89],
+    "crop_box_equals_media_box": true,
+    "rotation": 0,
+    "open_view": "/Fit",
+    "page_layout": "/SinglePage",
+    "page_mode": "/UseOutlines"
+  },
+  "artifacts": {
+    "complete": {
+      "public_name": "00_OPENLOGIC_fa-IR_COMPLETE_LINKED_READER_A4_STANDARD_OLP-0722.pdf",
+      "pages": 798,
+      "links": 2986,
+      "link_overflow": 0,
+      "bytes": 7844397,
+      "sha256": "B7C622A99E6317ADF9F5CCC903138A7BB1264266889A1F1D1C97094D57D2C3E7",
+      "raw_bytes": 7776655,
+      "raw_sha256": "FBD13FA9EE4F77B0626E175D1D911E3FEDE4B2E17B8E72648D57FC3E61E6B78B",
+      "wrapper_bytes": 2154,
+      "wrapper_sha256": "5CD40F62DCAD37678CC41E5D660FB1FE0FECF30E9CE3CBEEB466DE4BEA64A9FA",
+      "log_bytes": 224865,
+      "log_sha256": "48F38976B368BB8D9BEB94CB2D3A122C205E3221B299E3549918E9B75A88D5E9",
+      "fls_bytes": 390263,
+      "fls_sha256": "8C8D156CEB0FE922B9F13CF23C677DBF3218228009787599EE1FA7324C1D0A33",
+      "link_repair_evidence_bytes": 85695,
+      "link_repair_evidence_sha256": "038CCFACD5E29AF7951CBEFB0FAB020BCEE43F874E76E8B3D654E626413D1EAC",
+      "repaired_link_rectangles": 141
+    },
+    "supplement": {
+      "public_name": "01_OPENLOGIC_fa-IR_CLOSURE_SUPPLEMENT_80_UNITS_A4_STANDARD_OLP-0722.pdf",
+      "pages": 113,
+      "links": 137,
+      "link_overflow": 0,
+      "bytes": 1204824,
+      "sha256": "1019D4639FD0F56C17AF618BB877857D4A1BFD2A4EA354D0B164957145D826AB",
+      "raw_bytes": 1199550,
+      "raw_sha256": "AF01DA08D66B46CAD03BC4145BB2C6C0694B1C4B6659B974A96CA6885EA8ED7F",
+      "wrapper_bytes": 2182,
+      "wrapper_sha256": "98459D24BF0BABF26FF86CBD118B290D17FAEBBD4E7DDBFFCCC3C9E75B57077E",
+      "log_bytes": 126266,
+      "log_sha256": "DC111396E0FEF0EC7E21ADA59CE0F677823F34F7C2AA7D846E2DF230ACA961F0",
+      "fls_bytes": 111006,
+      "fls_sha256": "E32FAE3A0FF84862B8FBF0F85462F0C9F7CD05398EECBB40E1BADC78048EAFF3",
+      "link_repair_evidence_bytes": 7064,
+      "link_repair_evidence_sha256": "377362203FE87A5368BC35B1A01428A56D575B9DF2B8F837EF7CEF39E533F703",
+      "repaired_link_rectangles": 9
+    }
+  },
+  "link_repair": {
+    "fail_closed": true,
+    "only_mutation": "/Link /Rect third coordinate (x1)",
+    "decoded_page_content_sha256_equal": true,
+    "link_actions_and_destinations_equal": true,
+    "metadata_equal": true,
+    "non_rect_annotation_fields_equal": true,
+    "outline_equal": true,
+    "page_geometry_equal": true,
+    "per_page_link_counts_equal": true,
+    "final_link_overflow_count": 0,
+    "executed_shared_script_sha256": "B8B8DA9BC077FB07CFF679338AF12018AA8E9F3D9F9F02D8FA9754A72FCDA609",
+    "executed_a4_adapter_sha256": "5B1A8FA36738F0C63616DD58F2EDE1E61094AD0089CD96E7A630F6B527B47A20",
+    "packaged_a4_adapter_sha256": "7E4AC4AE99C664AB3E5FE28416C8A7E24812B463D5D6555D011C9DDA90B98675",
+    "packaged_adapter_difference": "Import path only; loads the same pinned shared implementation from the public build directory."
+  },
+  "log_gates": {
+    "tex_errors": 0,
+    "missing_glyphs": 0,
+    "duplicate_labels": 0,
+    "rerun_requests": 0,
+    "undefined_citations": 0,
+    "undefined_references": 0
+  },
+  "source_replay": {
+    "used_local_inputs": 748,
+    "byte_identical_to_public_source": 744,
+    "layout_driver_successors": 4,
+    "missing_inputs": 0
+  },
+  "visual_qa": {
+    "status": "PASS",
+    "inspection": "Title, representative body, proof/tableau, supplement, and all final overfull loci inspected.",
+    "defects": {
+      "clipping": 0,
+      "overlap": 0,
+      "mirroring": 0,
+      "bidi": 0,
+      "missing_glyph": 0,
+      "unreadable_formula": 0
+    },
+    "images": [
+      {
+        "name": "title-compare.png",
+        "bytes": 459134,
+        "sha256": "8B9EFC39EF035F69FE5E28D4336989FD384D165399BB6EB71B5F3CE2A6E11FF2"
+      },
+      {
+        "name": "body-compare.png",
+        "bytes": 1001193,
+        "sha256": "39F162C0F9822345A0863DCEF1403EA6F9AF86D150D2093A83C96816982E8011"
+      },
+      {
+        "name": "proof-compare.png",
+        "bytes": 301867,
+        "sha256": "7D3C431F5141121B4CBC23F879B0D6040AA12A57A0FA3E63E5F07F7CF5FFCE8E"
+      },
+      {
+        "name": "supplement-final.png",
+        "bytes": 834361,
+        "sha256": "045FE866F73EFBB5403E763F8B393DD0A2E980F0D00088712206885569DE2EEA"
+      },
+      {
+        "name": "overfull-loci-final.png",
+        "bytes": 1698874,
+        "sha256": "E1ED0A2C40DD403FCC31ECDB84E927ECFE1995146297A6667ACEC761CCFA3D25"
+      },
+      {
+        "name": "overfull-proof-loci-final.png",
+        "bytes": 696100,
+        "sha256": "150758F5A019258C7C98C44C94CFB023DF4AED81CF1B94417ED6936AF0746F8F"
+      }
+    ]
+  },
+  "caveats": [
+    "PDFs are untagged and are not claimed to conform to PDF/UA.",
+    "Unicode extraction of mathematics, joining controls, and bidirectional components is not fully authoritative; editable TeX is the text authority.",
+    "No human/native Persian review, language-community approval, or Open Logic Project endorsement is claimed."
+  ]
+}

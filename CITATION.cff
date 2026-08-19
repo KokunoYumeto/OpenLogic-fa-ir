@@ -1,48 +1,44 @@
 cff-version: 1.2.0
-message: "لطفاً هنگام استناد، DOI دقیق این نسخه را به‌کار ببرید؛ DOI مفهومی برای ارجاع پایدار به همهٔ نسخه‌هاست. / Please cite this version DOI; use the concept DOI for the edition as a whole."
-title: "مخزن منبع و ساخت نسخهٔ کامل فارسی ایران از متن منطق باز، با بازچینی واقعی ۱۶:۹ برای صفحه‌نمایش / Source and build repository for the complete Iranian Persian edition with true 16:9 screen reflow"
+message: "لطفاً برای این ویرایش از DOI مفهومی پایدار استفاده کنید؛ DOI دقیق تازه‌ای برای اصلاح A4 ادعا نشده است. / Please cite the stable concept DOI; no new exact DOI is claimed for the A4 correction."
+title: "مخزن منبع و ساخت نسخهٔ معیار A4 فارسی ایران از متن منطق باز / Source and build repository for the standard A4 Iranian Persian edition of The Open Logic Text"
 type: software
 authors:
   - name: "Open Logic Project"
 abstract: >
-  نسخهٔ مستقل و کامل فارسی ایران برای منبع تثبیت‌شده، با دو خروجی ۱۶:۹:
-  خوانشگر پیونددار ۶۴۲ واحدی در ۱۵۷۸ صفحه و ضمیمهٔ فنی ۸۰ واحدی در ۲۲۲
-  صفحه. دارایی‌های چاپی ۰۰ تا ۰۴ بدون تغییر بایتی حفظ شده‌اند. صفحه‌ها دقیقاً
-  ۹۶۰ × ۵۴۰ نقطه و سطح خواندنِ مرکزی ۷۴۴ × ۴۶۸ نقطه است. English descriptor:
-  corrected fixed-layout 16:9 screen reflow of the complete 722-unit Iranian
-  Persian edition; untagged and not PDF/UA certified.
+  نسخهٔ مستقل و کامل فارسی ایران روی صفحات استاندارد A4 عمودی: خوانشگر
+  پیونددار ۶۴۲ واحدی در ۷۹۸ صفحه و ضمیمهٔ فنی ۸۰ واحدی در ۱۱۳ صفحه.
+  تنها مشارکت‌کنندهٔ فنی AI typesetting & translation با نوع Other است و
+  نویسنده یا پدیدآور نیست. English descriptor: complete 722-unit Iranian
+  Persian edition on 210 × 297 mm portrait A4 pages, opening with Fit,
+  SinglePage, and UseOutlines.
 repository-code: "https://github.com/KokunoYumeto/OpenLogic-fa-ir"
-url: "https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/tag/fa-ir-olp-0722-reflow-16x9-20260819"
-version: "OLP-0722-REFLOW-16X9-20260819"
+url: "https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/tag/fa-ir-olp-0722-a4-standard-20260819"
+version: "OLP-0722-A4-STANDARD-20260819"
 date-released: "2026-08-19"
-doi: "10.5281/zenodo.22015765"
+doi: "10.5281/zenodo.21921852"
 identifiers:
-  - type: doi
-    value: "10.5281/zenodo.22015765"
-    description: "DOI دقیق این نسخه / Exact DOI for this version"
   - type: doi
     value: "10.5281/zenodo.21921852"
     description: "DOI مفهومی پایدار نسخهٔ فارسی ایران / Stable Iranian Persian edition concept DOI"
   - type: url
-    value: "https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/tag/fa-ir-olp-0722-reflow-16x9-20260819"
-    description: "انتشار اصلاح‌شدهٔ ۱۶:۹ / Corrected 16:9 release"
+    value: "https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/tag/fa-ir-olp-0722-a4-standard-20260819"
+    description: "انتشار معیار A4 / Standard A4 release"
 license: CC-BY-4.0
 preferred-citation:
   type: book
-  title: "متن منطق باز — نسخهٔ کامل فارسی ایران با بازچینی واقعی ۱۶:۹ برای صفحه‌نمایش"
+  title: "متن منطق باز — نسخهٔ معیار A4 فارسی ایران"
   authors:
     - name: "Open Logic Project"
   languages:
     - fas
-  doi: "10.5281/zenodo.22015765"
+  doi: "10.5281/zenodo.21921852"
   license: CC-BY-4.0
-  version: "OLP-0722-REFLOW-16X9-20260819"
+  version: "OLP-0722-A4-STANDARD-20260819"
   date-released: "2026-08-19"
-  edition: "بازچینی پیوستهٔ ۱۶:۹: خوانشگر ۶۴۲ واحدی و ضمیمهٔ فنی ۸۰ واحدی / True 16:9 reflow: 642-unit reader plus 80-unit supplement"
+  edition: "A4 عمودی: خوانشگر ۶۴۲ واحدی و ضمیمهٔ فنی ۸۰ واحدی / Portrait A4: 642-unit reader plus 80-unit supplement"
   year: 2026
-  url: "https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/tag/fa-ir-olp-0722-reflow-16x9-20260819"
+  url: "https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/tag/fa-ir-olp-0722-a4-standard-20260819"
   abstract: >
-    بازچینی ثابت و خوانای ۱۶:۹ برای نسخهٔ کامل ۷۲۲ واحدی فارسی ایران؛
-    دارایی‌های چاپی پیشین بدون تغییر بایتی حفظ شده‌اند. فایل‌ها برچسب ساختاری
-    و گواهی PDF/UA ندارند. English descriptor: exact 960 × 540 pt screen
-    edition with a centered 744 × 468 pt reading area.
+    نسخهٔ کامل فارسی ایران روی صفحه‌های معیار A4 عمودی؛ خوانشگر ۷۹۸ صفحه
+    و ضمیمه ۱۱۳ صفحه. English descriptor: standard 210 × 297 mm portrait A4
+    edition; fixed-layout, untagged, and not PDF/UA certified.
