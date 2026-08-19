@@ -1,0 +1,85 @@
+{
+  "schema": "fa-IR-public-path-sanitization-v2",
+  "release": "OLP-0722-REFLOW-16X9-20260819",
+  "transformations": [
+    {
+      "description": "full home-root path",
+      "replacement": "<USER_HOME>"
+    },
+    {
+      "description": "generic Windows users root",
+      "replacement": "<USERS_ROOT>"
+    },
+    {
+      "description": "line-wrapped account-name fragment",
+      "replacement": "<USER>"
+    }
+  ],
+  "files": [
+    {
+      "basename": "open-logic-complete-fa-IR-screen.log",
+      "raw_bytes": 237687,
+      "raw_sha256": "AC47573635E2986840DF09D950FD6F08DF6D28ECEDDE1453621AF0AE0FB1CC4B",
+      "public_bytes": 236459,
+      "public_sha256": "2B3A8729803F872782609ABF3FBD70D65354BB9833C207ADF26E5F915672ACFB",
+      "remaining_private_username_tokens": 0
+    },
+    {
+      "basename": "open-logic-complete-fa-IR-screen.fls",
+      "raw_bytes": 388228,
+      "raw_sha256": "EA2ED74C3DA4CEF865E2F13F779131F7F067F461728378F5A12444B5EAB1384A",
+      "public_bytes": 382568,
+      "public_sha256": "C00462AAD4695B091842FA115E98AC00D9107B5E464546FC0AAEB50454696EE5",
+      "remaining_private_username_tokens": 0
+    },
+    {
+      "basename": "open-logic-complete-fa-IR-screen.aux",
+      "raw_bytes": 1260240,
+      "raw_sha256": "A38C6CBE84BDB4CC24E836300369565AC18ABF6406550294EF213C1BEFA3925C",
+      "public_bytes": 1260240,
+      "public_sha256": "A38C6CBE84BDB4CC24E836300369565AC18ABF6406550294EF213C1BEFA3925C",
+      "remaining_private_username_tokens": 0
+    },
+    {
+      "basename": "open-logic-complete-fa-IR-screen.bbl",
+      "raw_bytes": 29217,
+      "raw_sha256": "369B8D0C493CD4CD9ADFC2365C03C9B58384CB7C4535023F4C24E791F2F408F8",
+      "public_bytes": 29217,
+      "public_sha256": "369B8D0C493CD4CD9ADFC2365C03C9B58384CB7C4535023F4C24E791F2F408F8",
+      "remaining_private_username_tokens": 0
+    },
+    {
+      "basename": "open-logic-complete-fa-IR-screen.blg",
+      "raw_bytes": 1477,
+      "raw_sha256": "4D9B0F3E403B7F6BF6B1FFFBB9CE2D790B00871CAF1BE261F28758EB431F8CBB",
+      "public_bytes": 1477,
+      "public_sha256": "4D9B0F3E403B7F6BF6B1FFFBB9CE2D790B00871CAF1BE261F28758EB431F8CBB",
+      "remaining_private_username_tokens": 0
+    },
+    {
+      "basename": "open-logic-closure-supplement-fa-IR-screen.log",
+      "raw_bytes": 126605,
+      "raw_sha256": "CB2637642DFA1C5565B0D4BBB706E3175B42AFA898E1F57CABE3A0DAC0848084",
+      "public_bytes": 125645,
+      "public_sha256": "995F01CC1843D5FCB3E608ED7AB1FC737B5894E4D9633B908A484C1E61A42384",
+      "remaining_private_username_tokens": 0
+    },
+    {
+      "basename": "open-logic-closure-supplement-fa-IR-screen.fls",
+      "raw_bytes": 116106,
+      "raw_sha256": "CD3F7FA3AFCA389E78F8E5E1F15AA07FD8C84EF9940AC8C9DC12A64F6D08CCAA",
+      "public_bytes": 112390,
+      "public_sha256": "4D01BBAD7716FF5F8120634777D7A27DE0A155062D3EE750CDE14F0FDFE5924E",
+      "remaining_private_username_tokens": 0
+    },
+    {
+      "basename": "open-logic-closure-supplement-fa-IR-screen.aux",
+      "raw_bytes": 104943,
+      "raw_sha256": "EF3FA17C608C6DABCBDDF0C357F9811E00E17C20D0329D9ADC7BD45771D6CD60",
+      "public_bytes": 104943,
+      "public_sha256": "EF3FA17C608C6DABCBDDF0C357F9811E00E17C20D0329D9ADC7BD45771D6CD60",
+      "remaining_private_username_tokens": 0
+    }
+  ],
+  "all_checks_passed": true
+}

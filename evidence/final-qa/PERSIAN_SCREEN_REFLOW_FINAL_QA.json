@@ -1,0 +1,166 @@
+{
+  "schema": "fa-IR-screen-reflow-final-qa-v2",
+  "release": "OLP-0722-REFLOW-16X9-20260819",
+  "language": "fa-IR",
+  "publication_date": "2026-08-19",
+  "doi": {
+    "exact_version_metadata": "10.5281/zenodo.22015765",
+    "stable_concept_shown_in_pdfs": "10.5281/zenodo.21921852",
+    "version_doi_embedded_in_pdfs": false
+  },
+  "authorship": {
+    "creators": [
+      {"name": "Open Logic Project"}
+    ],
+    "contributors": [
+      {
+        "name": "AI typesetting & translation",
+        "type": "Other",
+        "identifiers": [],
+        "affiliations": []
+      }
+    ]
+  },
+  "source_replay": {
+    "source_commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+    "source_tree": "f67757bb9305b173634082ab4cefd5601a707a34",
+    "closure_manifest_sha256": "0CCA3735E506581BE93C87542FA1F8236281834B71831C9D767C4B43E5361952",
+    "manifest_targets_checked": 722,
+    "manifest_targets_matching": 722,
+    "main_fls_targets": 642,
+    "supplement_fls_targets": 80,
+    "fls_union_targets": 722,
+    "missing_targets": 0,
+    "locale_style_bytes": 5842,
+    "locale_style_sha256": "976A5628C0F01068345626BB9CCB5A2C7C7844DC41C6099D8EC6FBFBB210484E",
+    "translation_targets_changed": false,
+    "closure_manifest_changed": false,
+    "bindings_changed": false
+  },
+  "layout": {
+    "kind": "fixed-layout true 16:9 continuous reflow",
+    "page_size_points": [960, 540],
+    "all_media_boxes_exact": true,
+    "all_crop_boxes_exact": true,
+    "all_rotations_zero": true,
+    "reading_block_points": [744, 468],
+    "margins_points": {
+      "left": 108,
+      "right": 108,
+      "top": 36,
+      "bottom": 36
+    },
+    "class_font_points": 17,
+    "measured_scheherazade_body_points": 18.59271,
+    "measured_leading_points": 25.4,
+    "line_spread": 1.16,
+    "pdf_open_view": "/Fit",
+    "pdf_page_layout": "/OneColumn",
+    "pdf_page_mode": "/UseOutlines",
+    "tagged": false,
+    "pdf_ua_certified": false
+  },
+  "outputs": {
+    "complete_reader": {
+      "filename": "05_OPENLOGIC_fa-IR_COMPLETE_LINKED_READER_SCREEN_OLP-0722.pdf",
+      "pages": 1578,
+      "bytes": 8939388,
+      "sha256": "C78FAA318DB84095C4447CE64BACB9E790195A7B9557BE179FAFC40EB75984F6",
+      "outline_entries": 755,
+      "links": 2983,
+      "link_rectangles_outside_page": 0,
+      "blank_pages": 0,
+      "replacement_characters": 0,
+      "painted_bound_violations": 0
+    },
+    "closure_supplement": {
+      "filename": "06_OPENLOGIC_fa-IR_CLOSURE_SUPPLEMENT_80_UNITS_SCREEN_OLP-0722.pdf",
+      "pages": 222,
+      "bytes": 1318200,
+      "sha256": "53B155D9942C4DD9AB09053C0B76AEFA0D4AB167CBCF8083A061561B9F0491DB",
+      "outline_entries": 67,
+      "links": 137,
+      "external_links_to_reader": 25,
+      "external_reader_destinations_resolved": 25,
+      "link_rectangles_outside_page": 0,
+      "blank_pages": 0,
+      "replacement_characters": 0,
+      "painted_bound_violations": 0
+    }
+  },
+  "link_rect_repair": {
+    "only_mutation": "/Link /Rect third coordinate (x1)",
+    "fail_closed": true,
+    "complete_raw": {
+      "bytes": 8871460,
+      "sha256": "71FBF902707E833FA6D707DFB2C3D39D9FC134DF33538CA5AE3529F07F530E2E",
+      "links": 2983,
+      "repaired": 137,
+      "automatic": 122,
+      "manual_exact_assertions": 15
+    },
+    "supplement_raw": {
+      "bytes": 1312972,
+      "sha256": "47ABE97A267E94D3759BD42E89E844A9EE01B44E5E1E72D04A5EC00D9341093B",
+      "links": 137,
+      "repaired": 9,
+      "automatic": 9,
+      "manual_exact_assertions": 0
+    },
+    "decoded_page_content_equal": true,
+    "targets_and_actions_equal": true,
+    "non_rect_annotation_fields_equal": true,
+    "geometry_equal": true,
+    "outlines_equal": true,
+    "metadata_equal": true,
+    "second_run_byte_identical": true
+  },
+  "log_gates": {
+    "fatal_or_emergency": 0,
+    "latex_errors": 0,
+    "undefined_control_sequences": 0,
+    "overfull_boxes": 0,
+    "float_too_large": 0,
+    "missing_glyphs": 0,
+    "undefined_references": 0,
+    "undefined_citations": 0,
+    "rerun_requests": 0,
+    "changed_labels": 0,
+    "infinite_glue_shrinkage": 0,
+    "longtable_changed": 0
+  },
+  "visual_qa": {
+    "independent_read_only_pass": true,
+    "complete_cover_and_page_2": "PASS",
+    "complete_corresponding_g_composed_f_figure_page": 96,
+    "complete_corresponding_figure_centered": true,
+    "complete_part_xviii_page": 1561,
+    "supplement_rule_table_page_pairs": [
+      [86, 87],
+      [90, 91],
+      [110, 111],
+      [149, 150],
+      [163, 164],
+      [173, 174],
+      [176, 177],
+      [199, 200],
+      [200, 201]
+    ],
+    "supplement_transition_pages_checked": [218, 219, 220, 221, 222],
+    "supplement_page_218": "Chapter 7 tail; no stranded Chapter 8 heading",
+    "supplement_page_219": "Chapter 8 heading, Part II heading, introduction",
+    "supplement_page_222": "Chapter 9 heading and introduction",
+    "clipping_or_overlap": 0,
+    "result": "PASS"
+  },
+  "determinism": {
+    "clean_build_outputs_bound_to_exact_raw_hashes": true,
+    "repair_replay_outputs_byte_identical": true,
+    "all_final_gates_passed": true
+  },
+  "limitations": [
+    "The PDFs are fixed-layout, untagged, and not PDF/UA certified.",
+    "Mathematical, ZWNJ, and bidirectional text extraction is not fully authoritative; editable TeX is authoritative.",
+    "No Persian-speaking human/native review, community approval, accessibility certification, or Open Logic Project endorsement is claimed."
+  ]
+}

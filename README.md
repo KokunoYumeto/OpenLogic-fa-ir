@@ -1,83 +1,100 @@
-# متن منطق باز — نسخهٔ کامل فارسی ایران با بازچینی افزوده برای صفحه‌نمایش
+# متن منطق باز — نسخهٔ کامل فارسی ایران با بازچینی واقعی ۱۶:۹ برای صفحه‌نمایش
 
-این مخزن نسخهٔ مستقل و کامل فارسی ایران از متن پروژهٔ منطق باز برای منبع
-تثبیت‌شده است. انتشار `OLP-0722-SCREEN-20260818` دو پی‌دی‌اف افزوده برای
-مطالعه روی صفحه‌نمایش فراهم می‌کند و همهٔ دارایی‌های چاپی انتشار
-`OLP-0722-20260818` را بدون تغییر بایتی نگه می‌دارد.
+این مخزن نسخهٔ مستقل و کامل فارسی ایران از *متن منطق باز* را برای منبع
+تثبیت‌شده نگه می‌دارد. انتشار `OLP-0722-REFLOW-16X9-20260819` دو
+پی‌دی‌اف صفحه‌نمایش را با بازچینی پیوسته و خوانا جایگزین می‌کند؛ دارایی‌های
+چاپی ۰۰ تا ۰۴ انتشار پایه بدون هیچ تغییر بایتی حفظ شده‌اند.
 
 ## هویت انتشار
 
+- DOI دقیق این نسخه: [10.5281/zenodo.22015765](https://doi.org/10.5281/zenodo.22015765)
 - DOI مفهومی پایدار فارسی ایران: [10.5281/zenodo.21921852](https://doi.org/10.5281/zenodo.21921852)
-- آخرین DOI دقیقِ منتشرشده در Zenodo پیش از این انتشار صفحه‌نمایش: [10.5281/zenodo.21987687](https://doi.org/10.5281/zenodo.21987687)، ویژهٔ انتشار چاپی `OLP-0722-20260818`
-- انتشار افزودهٔ GitHub: [fa-ir-olp-0722-screen-20260818](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/tag/fa-ir-olp-0722-screen-20260818)
-- نسخه: `OLP-0722-SCREEN-20260818`
+- انتشار GitHub: [fa-ir-olp-0722-reflow-16x9-20260819](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/tag/fa-ir-olp-0722-reflow-16x9-20260819)
+- نسخه: `OLP-0722-REFLOW-16X9-20260819`
 - زبان: فارسی معیار دانشگاهی ایران (`fa-IR`؛ کد Zenodo: `fas`)
-- تنها نویسنده و پدیدآور در فرادادهٔ استناد: `Open Logic Project`
+- تنها نویسنده/پدیدآور در فراداده: `Open Logic Project`
+- تنها مشارکت‌کننده: `AI typesetting & translation` با نوع `Other`؛ بدون شناسه یا وابستگی سازمانی
 - مرجع منبع: تعهد `9620cc73f9c8e0ad003c514a5d3748f29611c4c0`
 - درخت منبع: `f67757bb9305b173634082ab4cefd5601a707a34`
 - مجوز: CC BY 4.0، مگر آنکه یک مؤلفه به‌صراحت خلاف آن را اعلام کند
 
-برای انتشار صفحه‌نمایش هنوز DOI دقیق و جداگانه‌ای در Zenodo ادعا نمی‌شود.
-پروندهٔ `.zenodo.json` فرادادهٔ زبان‌محورِ آماده برای نسخهٔ تازهٔ آینده است؛
-رکوردهای منتشرشدهٔ پیشین Zenodo دست‌کاری نشده‌اند.
+## دامنهٔ کامل و چیدمان صفحه‌نمایش
 
-## دامنه و دو چیدمان
+محتوا تغییر نکرده است:
 
-محتوا در چیدمان چاپی و چیدمان صفحه‌نمایش یکسان است:
+- خوانشگر پیونددار اصلی: ۶۴۲ واحد.
+- ضمیمهٔ فنی مستقل: ۸۰ واحد بیرون از مسیر خوانشگر.
+- حساب کامل: ۶۴۲ + ۸۰ = ۷۲۲ واحد.
 
-- خوانشگر پیونددار اصلی: 642 واحد.
-- ضمیمهٔ فنی مستقل: 80 واحد بیرون از مسیر خوانشگر.
-- حساب کامل: 642 + 80 = 722 واحد.
+هر صفحهٔ نسخهٔ صفحه‌نمایش دقیقاً ۹۶۰ × ۵۴۰ نقطه (نسبت ۱۶:۹ افقی) است و
+هنگام گشودن با نمای `/Fit` کل صفحه را در قاب نمایش می‌دهد. سطح خواندن
+۷۴۴ × ۴۶۸ نقطه است و دقیقاً در مرکز صفحه قرار دارد: حاشیه‌های افقی ۱۰۸
+نقطه و حاشیه‌های عمودی ۳۶ نقطه. متن با کلاس ۱۷ نقطه، قلم Scheherazade با
+اندازهٔ اندازه‌گیری‌شدهٔ حدود ۱۸٫۵۹ نقطه و فاصلهٔ سطر حدود ۲۵٫۴ نقطه
+بازچینی شده است. این طراحی از ستون کوچکِ میانیِ نسخهٔ پیشین پرهیز می‌کند و
+متن را به‌طور پیوسته در ۱۵۷۸ صفحهٔ خوانشگر و ۲۲۲ صفحهٔ ضمیمه جاری می‌سازد.
 
-چیدمان چاپی در 839 و 127 صفحه باقی می‌ماند. بازچینی صفحه‌نمایش همان محتوا را
-با قلم 12 نقطه، سطح متن گسترده‌تر، حاشیه‌های متقارن و نمای آغازین متناسب با
-عرض صفحه، در 748 و 108 صفحه عرضه می‌کند. این خروجی ثابت است؛ سند واکنش‌گرا
-یا بازروان‌شوندهٔ واقعی نیست.
+بازچینی شامل شکستن کنترل‌شدهٔ نه جدول بلند قواعد، نگه‌داشتن عنوان‌ها با متن
+پس از آن‌ها، و مرکزکردن شکل‌ها در پهنای زندهٔ صفحه است. مستطیل‌های پیوند
+راست‌به‌چپ نیز با یک فرایند بسته‌به‌خطا و قابل بازپخش اصلاح شده‌اند؛ مقصدها،
+محتوای صفحه و فراداده تغییر نکرده‌اند.
+
+این‌ها PDFهای ثابت با صفحه‌های ۱۶:۹ هستند، نه سندهای HTML واکنش‌گرا؛ با این
+حال متن در زمان حروف‌چینی از نو و به‌طور پیوسته در اندازهٔ واقعی صفحه جاری
+شده است.
 
 ## دارایی‌های انتشار
 
 | شماره | دارایی | کارکرد |
 |---:|---|---|
-| 00 | `00_OPENLOGIC_fa-IR_COMPLETE_LINKED_READER_OLP-0722.pdf` | خوانشگر چاپی کامل، بدون تغییر بایتی |
-| 01 | `01_OPENLOGIC_fa-IR_CLOSURE_SUPPLEMENT_80_UNITS_OLP-0722.pdf` | ضمیمهٔ چاپی، بدون تغییر بایتی |
-| 02 | `02_OPENLOGIC_fa-IR_EDITABLE_SOURCES_OLP-0722.zip` | منابع کامل و قابل ویرایش انتشار پایه |
-| 03 | `03_OPENLOGIC_fa-IR_EVIDENCE_AND_PROVENANCE_OLP-0722.zip` | شواهد و منشأ انتشار پایه |
-| 04 | `04_OPENLOGIC_fa-IR_SHA256_MANIFEST_OLP-0722.txt` | هش‌های دارایی‌های 00 تا 03 |
-| 05 | `05_OPENLOGIC_fa-IR_COMPLETE_LINKED_READER_SCREEN_OLP-0722.pdf` | خوانشگر بازچینی‌شده برای صفحه‌نمایش، 748 صفحه |
-| 06 | `06_OPENLOGIC_fa-IR_CLOSURE_SUPPLEMENT_80_UNITS_SCREEN_OLP-0722.pdf` | ضمیمهٔ بازچینی‌شده برای صفحه‌نمایش، 108 صفحه |
-| 07 | `07_OPENLOGIC_fa-IR_SCREEN_LAYOUT_SOURCES_AND_EVIDENCE_OLP-0722.zip` | راه‌اندازهای افزوده، دستور ساخت و شواهد ساخت/QA صفحه‌نمایش |
-| 08 | `08_OPENLOGIC_fa-IR_SHA256_MANIFEST_SCREEN_UPDATE_OLP-0722.txt` | هش‌های SHA-256 دارایی‌های 00 تا 07 |
+| ۰۰ | `00_OPENLOGIC_fa-IR_COMPLETE_LINKED_READER_OLP-0722.pdf` | خوانشگر چاپی کامل، بدون تغییر بایتی |
+| ۰۱ | `01_OPENLOGIC_fa-IR_CLOSURE_SUPPLEMENT_80_UNITS_OLP-0722.pdf` | ضمیمهٔ چاپی، بدون تغییر بایتی |
+| ۰۲ | `02_OPENLOGIC_fa-IR_EDITABLE_SOURCES_OLP-0722.zip` | منابع کامل و قابل ویرایش انتشار پایه |
+| ۰۳ | `03_OPENLOGIC_fa-IR_EVIDENCE_AND_PROVENANCE_OLP-0722.zip` | شواهد و منشأ انتشار پایه |
+| ۰۴ | `04_OPENLOGIC_fa-IR_SHA256_MANIFEST_OLP-0722.txt` | هش‌های دارایی‌های ۰۰ تا ۰۳ |
+| ۰۵ | `05_OPENLOGIC_fa-IR_COMPLETE_LINKED_READER_SCREEN_OLP-0722.pdf` | خوانشگر پیونددار ۱۶:۹، ۱۵۷۸ صفحه |
+| ۰۶ | `06_OPENLOGIC_fa-IR_CLOSURE_SUPPLEMENT_80_UNITS_SCREEN_OLP-0722.pdf` | ضمیمهٔ ۱۶:۹، ۲۲۲ صفحه |
+| ۰۷ | `07_OPENLOGIC_fa-IR_SCREEN_LAYOUT_SOURCES_AND_EVIDENCE_OLP-0722.zip` | راه‌اندازها، سازنده، اصلاح پیوند و شواهد ساخت/QA |
+| ۰۸ | `08_OPENLOGIC_fa-IR_SHA256_MANIFEST_SCREEN_UPDATE_OLP-0722.txt` | هش SHA-256 دارایی‌های ۰۰ تا ۰۷ |
 
-بیانیهٔ 08 خود را هش نمی‌کند. هر سطر از 64 رقم شانزدهی بزرگ، دو فاصله و نام
-پایهٔ دارایی تشکیل شده است.
+بیانیهٔ ۰۸ خود را هش نمی‌کند. هر سطر آن از ۶۴ رقم شانزدهی بزرگ، دو فاصله و
+نام پایهٔ دارایی تشکیل شده است.
 
 ## ساخت بازتولیدپذیر
 
-ساخت چاپی با `build/BUILD.ps1` و ساخت صفحه‌نمایش با
-`build/BUILD_SCREEN.ps1` انجام می‌شود. ساخت صفحه‌نمایش ابتدا خوانشگر را با
-LuaLaTeX و BibTeX می‌سازد و سپس ضمیمه را با ارجاع به AUX همان خوانشگر می‌سازد.
-برنامه شمار صفحه، DOI مفهومی، نبود DOI دقیقِ نسخه در راه‌اندازها و هش‌های
-اختیاری را کنترل می‌کند و از بازنویسی هر دارایی انتشار خودداری می‌کند.
+ساخت چاپی با `build/BUILD.ps1` و ساخت ۱۶:۹ با
+`build/BUILD_SCREEN.ps1` انجام می‌شود. ساخت صفحه‌نمایش:
 
-جزئیات در `build/BUILD_REQUIREMENTS.md` و
-`build/BUILD_SCREEN_REQUIREMENTS.md` آمده است.
+1. خوانشگر را با LuaLaTeX و BibTeX می‌سازد؛
+2. ضمیمه را با AUX همان خوانشگر می‌سازد؛
+3. PDF خام را به هش دقیقِ شناخته‌شده مقید می‌کند؛
+4. تنها مختصات انتهایی مستطیل‌های پیوندِ متورم‌شدهٔ راست‌به‌چپ را با
+   `build/repair_rtl_link_rects_fa.py` اصلاح می‌کند؛
+5. شمار صفحه، هندسهٔ ۹۶۰ × ۵۴۰، هش‌های خام و نهایی و گزارش نگاشت را کنترل
+   می‌کند.
+
+جزئیات و نسخه‌های وابستگی در `build/BUILD_SCREEN_REQUIREMENTS.md` آمده
+است. دارایی ۰۷ با `build/BUILD_SCREEN_BUNDLE.ps1` و زمان ثابت ZIP
+ساخته می‌شود.
 
 ## حدود اعلام‌شده
 
-- پی‌دی‌اف‌ها برچسب‌گذاری ساختاری و گواهی PDF/UA یا تأیید دسترس‌پذیری ندارند.
+- PDFها برچسب‌گذاری ساختاری و گواهی PDF/UA ندارند.
 - استخراج Unicode ریاضیات، نیم‌فاصله‌ها و ترتیب برخی مؤلفه‌های راست‌به‌چپ کاملاً مرجع نیست؛ فایل‌های TeX قابل ویرایش مرجع متنی‌اند.
 - هیچ بازبینی انسانی یا بومیِ فارسی‌زبان یا تأیید جامعهٔ زبانی ادعا نمی‌شود.
 - این نسخهٔ مستقل به معنای تأیید پروژهٔ منطق باز نیست.
-- رابطهٔ موردنظر با منبع، اشتقاق/ترجمه از تعهد تثبیت‌شده است؛ برای مجموعهٔ جهانیِ ناموجود رابطهٔ `IsPartOf` ساخته نمی‌شود.
+- DOI دقیق نسخه در فرادادهٔ انتشار ثبت شده است؛ خود PDFها عمداً DOI مفهومی پایدار را نمایش می‌دهند.
 
 ## English descriptor
 
 This repository contains the independently maintained complete Iranian
-Persian edition of *The Open Logic Text*. The additive
-`OLP-0722-SCREEN-20260818` release preserves the existing print assets
-byte-for-byte and adds a 642-unit, 748-page linked reader plus an 80-unit,
-108-page closure supplement retypeset for on-screen reading. These PDFs use a
-fixed Letter page with larger type, a wider text block, symmetric margins, and
-FitH opening behavior; they are not genuinely responsive or reflowable. They
-remain untagged and are not PDF/UA certified. No separate Zenodo version DOI is
-claimed until a new Zenodo version is actually published.
+Persian edition of *The Open Logic Text*. Release
+`OLP-0722-REFLOW-16X9-20260819` preserves print assets 00–04
+byte-for-byte and replaces the prior portrait screen layer with exact
+960 × 540 pt (16:9) PDFs: a 1,578-page linked reader and a 222-page closure
+supplement. The centered reading area is 744 × 468 pt, the class size is
+17 pt (measured Scheherazade body spans are about 18.59 pt), and the opening
+view is `/Fit`. The exact version DOI is
+`10.5281/zenodo.22015765`; the PDFs retain the stable concept DOI
+`10.5281/zenodo.21921852`. The files are fixed-layout, untagged, and
+not PDF/UA certified.

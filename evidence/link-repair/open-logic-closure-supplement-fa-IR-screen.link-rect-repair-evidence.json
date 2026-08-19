@@ -1,0 +1,260 @@
+{
+  "algorithm": {
+    "automatic_rule": "unique hyperlink-colour span in y band with span.x0 - Rect.x0 in [0.30, 1.70] pt",
+    "fail_closed": true,
+    "manual_rule": "exact asserted complementary hyperlink-colour span for wrapped/paired bidi cases",
+    "only_mutation": "/Link /Rect third coordinate (x1)",
+    "right_tolerance_pt": 1.0
+  },
+  "counts": {
+    "all_links": 137,
+    "automatic": 9,
+    "manual": 0,
+    "pages": 222,
+    "repaired": 9
+  },
+  "input_basename": "open-logic-closure-supplement-fa-IR-screen.raw-before-link-repair.pdf",
+  "input_bytes": 1312972,
+  "input_sha256": "47ABE97A267E94D3759BD42E89E844A9EE01B44E5E1E72D04A5EC00D9341093B",
+  "mapping": [
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          648.825317,
+          469.849091,
+          795.955322,
+          488.441803
+        ],
+        "colour_rgb24": "00AEEF",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": " \\u06af\\u0632\\u0627\\u0631\\u0647 \\u0647\\u062719.18"
+      },
+      "new_x1_pt": 796.955322,
+      "old_rect_top_left_pt": [
+        647.809998,
+        470.130981,
+        1349.977051,
+        489.949005
+      ],
+      "page": 12,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "open-logic-complete-fa-IR-screen.pdf#nameddest=prop*.2290",
+      "xref": 393
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          403.55249,
+          93.592087,
+          551.975647,
+          112.184799
+        ],
+        "colour_rgb24": "00AEEF",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": " \\u06af\\u0632\\u0627\\u0631\\u0647 \\u0647\\u062719.21"
+      },
+      "new_x1_pt": 552.975647,
+      "old_rect_top_left_pt": [
+        402.541992,
+        93.859009,
+        1104.708984,
+        113.283997
+      ],
+      "page": 13,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "open-logic-complete-fa-IR-screen.pdf#nameddest=prop*.2299",
+      "xref": 395
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          344.932007,
+          189.580093,
+          388.345978,
+          208.172806
+        ],
+        "colour_rgb24": "00AEEF",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Items 1"
+      },
+      "new_x1_pt": 389.345978,
+      "old_rect_top_left_pt": [
+        343.936005,
+        189.862,
+        1046.103027,
+        209.21701
+      ],
+      "page": 13,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "open-logic-complete-fa-IR-screen.pdf#nameddest=Item*.2304",
+      "xref": 411
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          263.488007,
+          247.000076,
+          294.667969,
+          265.592804
+        ],
+        "colour_rgb24": "00AEEF",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Items"
+      },
+      "new_x1_pt": 295.667969,
+      "old_rect_top_left_pt": [
+        262.492004,
+        247.804993,
+        964.658997,
+        266.638
+      ],
+      "page": 13,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "open-logic-complete-fa-IR-screen.pdf#nameddest=Item*.2305",
+      "xref": 414
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          445.746582,
+          368.413116,
+          591.983093,
+          387.005829
+        ],
+        "colour_rgb24": "00AEEF",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": " \\u06af\\u0632\\u0627\\u0631\\u0647 \\u0647\\u062719.23"
+      },
+      "new_x1_pt": 592.983093,
+      "old_rect_top_left_pt": [
+        444.729004,
+        368.679993,
+        1146.895996,
+        388.049988
+      ],
+      "page": 13,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "open-logic-complete-fa-IR-screen.pdf#nameddest=prop*.2310",
+      "xref": 417
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          702.841003,
+          61.596088,
+          745.67865,
+          80.188797
+        ],
+        "colour_rgb24": "00AEEF",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Items 1"
+      },
+      "new_x1_pt": 746.67865,
+      "old_rect_top_left_pt": [
+        701.844971,
+        61.878998,
+        1404.011963,
+        81.234009
+      ],
+      "page": 14,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "open-logic-complete-fa-IR-screen.pdf#nameddest=Item*.2318",
+      "xref": 422
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          425.015015,
+          152.480087,
+          467.8526,
+          171.0728
+        ],
+        "colour_rgb24": "00AEEF",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Items 2"
+      },
+      "new_x1_pt": 468.8526,
+      "old_rect_top_left_pt": [
+        424.019012,
+        152.763,
+        1126.186035,
+        171.94101
+      ],
+      "page": 14,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "open-logic-complete-fa-IR-screen.pdf#nameddest=Item*.2319",
+      "xref": 438
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          654.582642,
+          331.958099,
+          782.785583,
+          350.550812
+        ],
+        "colour_rgb24": "FF0000",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": " \\u0644\\u0645 \\u0647\\u06276.14"
+      },
+      "new_x1_pt": 783.785583,
+      "old_rect_top_left_pt": [
+        653.583984,
+        332.23999,
+        1398.790039,
+        353.656006
+      ],
+      "page": 33,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "lem*.521",
+      "xref": 632
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          553.987366,
+          87.021103,
+          679.652649,
+          105.613815
+        ],
+        "colour_rgb24": "FF0000",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": " \\u062c\\u062f\\u0648\\u0644 \\u0647\\u06276.6"
+      },
+      "new_x1_pt": 680.652649,
+      "old_rect_top_left_pt": [
+        552.973999,
+        87.825012,
+        1298.178955,
+        108.791992
+      ],
+      "page": 177,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "table.504",
+      "xref": 1616
+    }
+  ],
+  "output_bytes": 1318200,
+  "output_sha256": "53B155D9942C4DD9AB09053C0B76AEFA0D4AB167CBCF8083A061561B9F0491DB",
+  "schema": "fa-IR-rtl-link-rect-repair-v1",
+  "verification": {
+    "changed_rectangles": 9,
+    "decoded_page_content_sha256_equal": true,
+    "final_link_overflow_count": 0,
+    "link_actions_and_destinations_equal": true,
+    "metadata_equal": true,
+    "non_rect_annotation_fields_equal": true,
+    "outline_equal": true,
+    "page_geometry_equal": true,
+    "per_page_link_counts_equal": true
+  }
+}

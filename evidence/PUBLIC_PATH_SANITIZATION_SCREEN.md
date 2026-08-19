@@ -1,19 +1,25 @@
 # پاک‌سازی مسیرهای عمومی
 
-نسخه‌های اصلی FLS و LOG در خروجی خصوصی ساخت باقی مانده‌اند و منتشر نمی‌شوند.
-در نسخه‌های این بسته، همهٔ نمونه‌های نام کاربری و ریشهٔ کاربری ویندوز با
-نشانگرهای `<USER>`، `<USER_HOME>` یا `<USERS>` جایگزین شده‌اند. پس از
-جایگزینی، جست‌وجوی بایتی برای نام کاربری و دو شکل جداکنندهٔ مسیر Windows
-صفر نتیجه داشت.
+گزارش‌های اصلی FLS، LOG، AUX، BBL و BLG در خروجی خصوصی ساخت باقی می‌مانند.
+نسخه‌های عمومیِ این بسته با تبدیل مکانیکی زیر ساخته شده‌اند:
 
-این پاک‌سازی فقط رسیدهای متنی را تغییر می‌دهد. PDFهای 05 و 06، راه‌اندازها
-و فایل‌های هدف ترجمه دست‌نخورده‌اند. هش رسیدهای خام در
-`inventories/RAW_BUILD_EVIDENCE_SHA256.tsv` و هش نسخه‌های عمومی در
-`inventories/SCREEN_BUNDLE_SHA256.tsv` ثبت می‌شود.
+- ریشهٔ کامل پوشهٔ کاربر به `<USER_HOME>`؛
+- ریشهٔ عمومی کاربران ویندوز به `<USERS_ROOT>`؛
+- قطعهٔ نام کاربری که بر اثر شکستن سطر از ریشه جدا شده بود به `<USER>`.
+
+برای هر فایل، بایت و SHA-256 نسخهٔ خام و عمومی در
+`evidence/final-build-screen/PUBLIC_PATH_SANITIZATION_RECEIPT.json`
+ثبت شده است. بررسی بدون حساسیت به بزرگی حروف برای نام حساب خصوصی در همهٔ
+هشت فایل عمومی صفر نتیجه داشت.
+
+این پاک‌سازی فقط رسیدهای متنی را تغییر می‌دهد. PDFهای ۰۵ و ۰۶،
+راه‌اندازها، فایل‌های هدف ترجمه، نگاشت اصلاح پیوند و بیانیهٔ بسته‌شدن
+دست‌نخورده‌اند.
 
 ## English descriptor
 
-Private build paths in published FLS and LOG receipts were replaced with
-public placeholders. Raw receipt hashes are retained separately. No PDF,
-translation source, wrapper, manifest, or binding byte was changed by this
-sanitization.
+Private account and home-directory strings in the published FLS, LOG, AUX,
+BBL, and BLG receipts were replaced with stable public placeholders. The
+machine-readable receipt records raw and public byte counts and SHA-256 values.
+No PDF, translation source, wrapper, closure manifest, or link-repair mapping
+was changed by sanitization.

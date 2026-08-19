@@ -1,0 +1,3460 @@
+{
+  "algorithm": {
+    "automatic_rule": "unique hyperlink-colour span in y band with span.x0 - Rect.x0 in [0.30, 1.70] pt",
+    "fail_closed": true,
+    "manual_rule": "exact asserted complementary hyperlink-colour span for wrapped/paired bidi cases",
+    "only_mutation": "/Link /Rect third coordinate (x1)",
+    "right_tolerance_pt": 1.0
+  },
+  "counts": {
+    "all_links": 2983,
+    "automatic": 122,
+    "manual": 15,
+    "pages": 1578,
+    "repaired": 137
+  },
+  "input_basename": "open-logic-complete-fa-IR-screen.raw-before-link-repair.pdf",
+  "input_bytes": 8871460,
+  "input_sha256": "71FBF902707E833FA6D707DFB2C3D39D9FC134DF33538CA5AE3529F07F530E2E",
+  "mapping": [
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          599.802002,
+          156.866074,
+          638.103027,
+          175.458786
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Cantor"
+      },
+      "new_x1_pt": 639.103027,
+      "old_rect_top_left_pt": [
+        598.804993,
+        157.148987,
+        1344.010986,
+        178.601013
+      ],
+      "page": 122,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Cantor1892",
+      "xref": 4768
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          602.500977,
+          425.500305,
+          625.870911,
+          438.411896
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 12.9116,
+        "text_unicode_escape": "Potter"
+      },
+      "new_x1_pt": 626.870911,
+      "old_rect_top_left_pt": [
+        601.504028,
+        424.235992,
+        1346.709961,
+        440.524994
+      ],
+      "page": 124,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Potter2004",
+      "xref": 4793
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          721.971008,
+          494.156311,
+          754.417847,
+          507.067902
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 12.9116,
+        "text_unicode_escape": "Conway"
+      },
+      "new_x1_pt": 755.417847,
+      "old_rect_top_left_pt": [
+        720.973999,
+        492.891998,
+        1466.180054,
+        509.181
+      ],
+      "page": 143,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Conway2006",
+      "xref": 5028
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          265.048004,
+          442.967102,
+          359.249847,
+          461.559814
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Benacerraf 1965"
+      },
+      "new_x1_pt": 360.249847,
+      "old_rect_top_left_pt": [
+        264.052002,
+        442.572998,
+        1009.257019,
+        463.067993
+      ],
+      "page": 148,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Benacerraf1965",
+      "xref": 5078
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          431.365997,
+          120.117081,
+          575.645508,
+          138.709793
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "O\\u2019Connor and Robertson"
+      },
+      "new_x1_pt": 576.645508,
+      "old_rect_top_left_pt": [
+        430.368988,
+        120.921997,
+        1175.574951,
+        140.217987
+      ],
+      "page": 155,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.OConnorRobertson:RN",
+      "xref": 5132
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          340.330994,
+          353.403107,
+          456.912842,
+          371.995819
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Katz and Katz 2012"
+      },
+      "new_x1_pt": 457.912842,
+      "old_rect_top_left_pt": [
+        339.334991,
+        354.207001,
+        1084.540039,
+        375.083008
+      ],
+      "page": 155,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.KatzKatz2012",
+      "xref": 5140
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          468.529999,
+          179.997086,
+          534.849854,
+          198.589798
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Potter 2004"
+      },
+      "new_x1_pt": 535.849854,
+      "old_rect_top_left_pt": [
+        467.53299,
+        180.802002,
+        1212.739014,
+        200.097992
+      ],
+      "page": 167,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Potter2004",
+      "xref": 5295
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          497.786011,
+          301.135101,
+          552.299927,
+          319.727814
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Dedekind"
+      },
+      "new_x1_pt": 553.299927,
+      "old_rect_top_left_pt": [
+        496.790009,
+        301.940002,
+        1155.917969,
+        322.833984
+      ],
+      "page": 168,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Dedekind1888",
+      "xref": 5308
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          561.63501,
+          438.110321,
+          585.004944,
+          451.021912
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 12.9116,
+        "text_unicode_escape": "Potter"
+      },
+      "new_x1_pt": 586.004944,
+      "old_rect_top_left_pt": [
+        560.638977,
+        436.845001,
+        1305.843994,
+        453.507996
+      ],
+      "page": 169,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Potter2004",
+      "xref": 5320
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          539.370972,
+          172.659103,
+          573.023865,
+          191.251816
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Potter"
+      },
+      "new_x1_pt": 574.023865,
+      "old_rect_top_left_pt": [
+        538.375,
+        174.562012,
+        1283.579956,
+        194.356995
+      ],
+      "page": 170,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Potter2004",
+      "xref": 5329
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          299.157013,
+          251.549088,
+          333.014374,
+          270.141815
+        ],
+        "colour_rgb24": "FF0000",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "11.19"
+      },
+      "new_x1_pt": 334.014374,
+      "old_rect_top_left_pt": [
+        298.161011,
+        252.354004,
+        1000.328003,
+        271.187012
+      ],
+      "page": 313,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "prop*.1352",
+      "xref": 6781
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          310.692993,
+          309.704102,
+          344.550354,
+          328.296814
+        ],
+        "colour_rgb24": "FF0000",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "11.19"
+      },
+      "new_x1_pt": 345.550354,
+      "old_rect_top_left_pt": [
+        309.696014,
+        310.507996,
+        1011.862976,
+        329.34198
+      ],
+      "page": 313,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "prop*.1352",
+      "xref": 6786
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          411.381989,
+          400.588104,
+          445.239349,
+          419.180817
+        ],
+        "colour_rgb24": "FF0000",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "11.20"
+      },
+      "new_x1_pt": 446.239349,
+      "old_rect_top_left_pt": [
+        410.385986,
+        401.812012,
+        1112.552979,
+        420.226013
+      ],
+      "page": 313,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "prop*.1359",
+      "xref": 6791
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          305.893005,
+          458.743103,
+          339.750366,
+          477.335815
+        ],
+        "colour_rgb24": "FF0000",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "11.20"
+      },
+      "new_x1_pt": 340.750366,
+      "old_rect_top_left_pt": [
+        304.895996,
+        459.966003,
+        1007.062988,
+        478.381012
+      ],
+      "page": 313,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "prop*.1359",
+      "xref": 6795
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          517.794006,
+          61.596088,
+          551.651367,
+          80.188797
+        ],
+        "colour_rgb24": "FF0000",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "11.21"
+      },
+      "new_x1_pt": 552.651367,
+      "old_rect_top_left_pt": [
+        516.797974,
+        61.878998,
+        1218.964966,
+        81.287994
+      ],
+      "page": 314,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "prop*.1366",
+      "xref": 6800
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          770.596497,
+          145.175095,
+          809.099365,
+          163.767807
+        ],
+        "colour_rgb24": "FF0000",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": " 12.28"
+      },
+      "new_x1_pt": 810.099365,
+      "old_rect_top_left_pt": [
+        749.353027,
+        146.398987,
+        1451.52002,
+        166.873993
+      ],
+      "page": 314,
+      "selection": "manual-explicit-complementary-run",
+      "target": "prop*.1366",
+      "xref": 6815
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          354.321991,
+          177.905075,
+          388.179352,
+          196.497787
+        ],
+        "colour_rgb24": "FF0000",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "11.21"
+      },
+      "new_x1_pt": 389.179352,
+      "old_rect_top_left_pt": [
+        353.325989,
+        178.709991,
+        1055.491943,
+        198.006012
+      ],
+      "page": 314,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "prop*.1366",
+      "xref": 6820
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          342.131989,
+          224.143082,
+          375.989349,
+          242.735794
+        ],
+        "colour_rgb24": "FF0000",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "11.18"
+      },
+      "new_x1_pt": 376.989349,
+      "old_rect_top_left_pt": [
+        341.135986,
+        224.411011,
+        1086.340942,
+        244.243988
+      ],
+      "page": 315,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "prop*.1348",
+      "xref": 6833
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          813.635498,
+          427.541107,
+          852.138367,
+          446.13382
+        ],
+        "colour_rgb24": "FF0000",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": " 12.18"
+      },
+      "new_x1_pt": 853.138367,
+      "old_rect_top_left_pt": [
+        792.390991,
+        428.910004,
+        1537.597046,
+        446.334991
+      ],
+      "page": 315,
+      "selection": "manual-explicit-complementary-run",
+      "target": "prop*.1316",
+      "xref": 6837
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          382.649994,
+          137.870102,
+          416.507355,
+          156.462814
+        ],
+        "colour_rgb24": "FF0000",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "11.16"
+      },
+      "new_x1_pt": 417.507355,
+      "old_rect_top_left_pt": [
+        381.653992,
+        138.136993,
+        1126.859009,
+        157.971008
+      ],
+      "page": 318,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "prop*.1342",
+      "xref": 6884
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          753.325012,
+          112.445084,
+          787.182373,
+          131.037796
+        ],
+        "colour_rgb24": "FF0000",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "11.26"
+      },
+      "new_x1_pt": 788.182373,
+      "old_rect_top_left_pt": [
+        752.328979,
+        113.863007,
+        1497.534058,
+        132.54599
+      ],
+      "page": 319,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cor*.1385",
+      "xref": 6900
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          288.911011,
+          112.445084,
+          322.768372,
+          131.037796
+        ],
+        "colour_rgb24": "FF0000",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "11.14"
+      },
+      "new_x1_pt": 323.768372,
+      "old_rect_top_left_pt": [
+        287.914001,
+        113.863007,
+        1033.119995,
+        132.54599
+      ],
+      "page": 319,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "prop*.1316",
+      "xref": 6904
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          444.907013,
+          494.156311,
+          464.377716,
+          507.067902
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 12.9116,
+        "text_unicode_escape": "2021"
+      },
+      "new_x1_pt": 465.377716,
+      "old_rect_top_left_pt": [
+        348.776001,
+        492.891998,
+        1093.982056,
+        509.554016
+      ],
+      "page": 323,
+      "selection": "manual-explicit-complementary-run",
+      "target": "cite.Magnus2021",
+      "xref": 6966
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          320.164001,
+          36.171101,
+          373.934143,
+          54.763809
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Smullyan"
+      },
+      "new_x1_pt": 374.934143,
+      "old_rect_top_left_pt": [
+        319.167999,
+        36.976013,
+        1064.373047,
+        56.480988
+      ],
+      "page": 357,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Smullyan1968",
+      "xref": 7308
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          701.89502,
+          61.596088,
+          765.872681,
+          80.188797
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Zuckerman"
+      },
+      "new_x1_pt": 766.872681,
+      "old_rect_top_left_pt": [
+        700.898987,
+        65.052002,
+        1446.104004,
+        80.688995
+      ],
+      "page": 357,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Zuckerman1973",
+      "xref": 7310
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          643.51178,
+          458.923096,
+          792.096497,
+          477.515808
+        ],
+        "colour_rgb24": "FF0000",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": " \\u06af\\u0632\\u0627\\u0631\\u0647 \\u0647\\u062716.22"
+      },
+      "new_x1_pt": 793.096497,
+      "old_rect_top_left_pt": [
+        642.500977,
+        459.205994,
+        1387.707031,
+        480.622009
+      ],
+      "page": 382,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "prop*.1868",
+      "xref": 7634
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          260.443481,
+          63.39809,
+          395.129059,
+          81.990799
+        ],
+        "colour_rgb24": "FF0000",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "\\u06af\\u0632\\u0627\\u0631\\u0647 \\u0647\\u062716.22"
+      },
+      "new_x1_pt": 396.129059,
+      "old_rect_top_left_pt": [
+        259.427002,
+        63.681,
+        1004.632019,
+        85.096985
+      ],
+      "page": 383,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "prop*.1868",
+      "xref": 7636
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          288.55899,
+          68.901077,
+          322.416351,
+          87.49379
+        ],
+        "colour_rgb24": "FF0000",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "21.22"
+      },
+      "new_x1_pt": 323.416351,
+      "old_rect_top_left_pt": [
+        287.562988,
+        69.705994,
+        989.72998,
+        88.539001
+      ],
+      "page": 579,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "prop*.2747",
+      "xref": 9552
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          308.268005,
+          127.056076,
+          342.125366,
+          145.648788
+        ],
+        "colour_rgb24": "FF0000",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "21.22"
+      },
+      "new_x1_pt": 343.125366,
+      "old_rect_top_left_pt": [
+        307.270996,
+        127.859985,
+        1009.437988,
+        146.694
+      ],
+      "page": 579,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "prop*.2747",
+      "xref": 9557
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          430.369995,
+          217.940079,
+          464.227356,
+          236.532791
+        ],
+        "colour_rgb24": "FF0000",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "21.23"
+      },
+      "new_x1_pt": 465.227356,
+      "old_rect_top_left_pt": [
+        429.372986,
+        219.164001,
+        1131.540039,
+        237.578003
+      ],
+      "page": 579,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "prop*.2754",
+      "xref": 9562
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          303.536987,
+          276.095123,
+          337.394348,
+          294.687836
+        ],
+        "colour_rgb24": "FF0000",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "21.23"
+      },
+      "new_x1_pt": 338.394348,
+      "old_rect_top_left_pt": [
+        302.540985,
+        277.317993,
+        1004.708008,
+        295.733002
+      ],
+      "page": 579,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "prop*.2754",
+      "xref": 9566
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          513.020996,
+          366.979095,
+          546.878357,
+          385.571808
+        ],
+        "colour_rgb24": "FF0000",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "21.24"
+      },
+      "new_x1_pt": 547.878357,
+      "old_rect_top_left_pt": [
+        512.025024,
+        367.261993,
+        1214.192017,
+        386.671997
+      ],
+      "page": 579,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "prop*.2761",
+      "xref": 9571
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          770.596497,
+          450.559113,
+          809.099365,
+          469.151825
+        ],
+        "colour_rgb24": "FF0000",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": " 22.32"
+      },
+      "new_x1_pt": 810.099365,
+      "old_rect_top_left_pt": [
+        749.353027,
+        451.781982,
+        1451.52002,
+        472.257019
+      ],
+      "page": 579,
+      "selection": "manual-explicit-complementary-run",
+      "target": "prop*.2761",
+      "xref": 9576
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          351.388,
+          36.171101,
+          385.245361,
+          54.763809
+        ],
+        "colour_rgb24": "FF0000",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "21.24"
+      },
+      "new_x1_pt": 386.245361,
+      "old_rect_top_left_pt": [
+        350.391998,
+        36.976013,
+        1052.55896,
+        56.272003
+      ],
+      "page": 580,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "prop*.2761",
+      "xref": 9581
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          388.509003,
+          36.171101,
+          422.366364,
+          54.763809
+        ],
+        "colour_rgb24": "FF0000",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "21.25"
+      },
+      "new_x1_pt": 423.366364,
+      "old_rect_top_left_pt": [
+        387.513,
+        36.45401,
+        1132.718018,
+        57.942993
+      ],
+      "page": 582,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "thm*.2769",
+      "xref": 9608
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          669.83197,
+          366.881104,
+          703.689331,
+          385.473816
+        ],
+        "colour_rgb24": "FF0000",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "21.24"
+      },
+      "new_x1_pt": 704.689331,
+      "old_rect_top_left_pt": [
+        668.835999,
+        367.164001,
+        1371.003052,
+        386.34198
+      ],
+      "page": 582,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "prop*.2761",
+      "xref": 9621
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          335.122986,
+          112.445084,
+          368.980347,
+          131.037796
+        ],
+        "colour_rgb24": "FF0000",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "21.21"
+      },
+      "new_x1_pt": 369.980347,
+      "old_rect_top_left_pt": [
+        334.127014,
+        112.713013,
+        1079.332031,
+        132.54599
+      ],
+      "page": 584,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "prop*.2743",
+      "xref": 9656
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          813.635498,
+          315.843109,
+          852.138367,
+          334.435822
+        ],
+        "colour_rgb24": "FF0000",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": " 22.21"
+      },
+      "new_x1_pt": 853.138367,
+      "old_rect_top_left_pt": [
+        792.390991,
+        317.212006,
+        1537.597046,
+        334.636993
+      ],
+      "page": 584,
+      "selection": "manual-explicit-complementary-run",
+      "target": "prop*.2706",
+      "xref": 9660
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          309.251007,
+          181.040085,
+          343.108368,
+          199.632797
+        ],
+        "colour_rgb24": "FF0000",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "21.19"
+      },
+      "new_x1_pt": 344.108368,
+      "old_rect_top_left_pt": [
+        308.253998,
+        181.307007,
+        1053.459961,
+        201.140015
+      ],
+      "page": 594,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "prop*.2737",
+      "xref": 9810
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          753.908997,
+          152.115097,
+          787.766357,
+          170.707809
+        ],
+        "colour_rgb24": "FF0000",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "21.31"
+      },
+      "new_x1_pt": 788.766357,
+      "old_rect_top_left_pt": [
+        752.913025,
+        153.532013,
+        1498.118042,
+        172.216003
+      ],
+      "page": 595,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cor*.2791",
+      "xref": 9825
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          286.575012,
+          152.115097,
+          320.432373,
+          170.707809
+        ],
+        "colour_rgb24": "FF0000",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "21.17"
+      },
+      "new_x1_pt": 321.432373,
+      "old_rect_top_left_pt": [
+        285.578003,
+        153.532013,
+        1030.784058,
+        172.216003
+      ],
+      "page": 595,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "prop*.2706",
+      "xref": 9829
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          355.223999,
+          446.163116,
+          389.08136,
+          464.755829
+        ],
+        "colour_rgb24": "FF0000",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "21.31"
+      },
+      "new_x1_pt": 390.08136,
+      "old_rect_top_left_pt": [
+        354.227997,
+        446.791992,
+        1099.43396,
+        466.264008
+      ],
+      "page": 876,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cor*.2791",
+      "xref": 12485
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          235.185699,
+          163.29509,
+          269.04303,
+          181.887802
+        ],
+        "colour_rgb24": "FF0000",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "35.10"
+      },
+      "new_x1_pt": 270.04303,
+      "old_rect_top_left_pt": [
+        234.177002,
+        164.509003,
+        979.382019,
+        185.029999
+      ],
+      "page": 898,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "prop*.4330",
+      "xref": 12742
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          548.270996,
+          377.351105,
+          593.46991,
+          395.943817
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Ramsey"
+      },
+      "new_x1_pt": 594.46991,
+      "old_rect_top_left_pt": [
+        547.275024,
+        379.325989,
+        1206.402954,
+        399.140015
+      ],
+      "page": 1354,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Ramsey1925",
+      "xref": 17920
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          669.322021,
+          471.465302,
+          701.76886,
+          484.376892
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 12.9116,
+        "text_unicode_escape": "Linnebo"
+      },
+      "new_x1_pt": 702.76886,
+      "old_rect_top_left_pt": [
+        668.325989,
+        470.200012,
+        1413.531006,
+        486.489014
+      ],
+      "page": 1355,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Linnebo2010",
+      "xref": 17923
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          578.369019,
+          145.542099,
+          658.540894,
+          164.134811
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "von Neumann"
+      },
+      "new_x1_pt": 659.540894,
+      "old_rect_top_left_pt": [
+        577.372986,
+        146.346008,
+        1322.578003,
+        167.23999
+      ],
+      "page": 1372,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.VonNeumann1925",
+      "xref": 18129
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          635.427979,
+          436.316101,
+          696.951355,
+          454.908813
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Benacerraf"
+      },
+      "new_x1_pt": 697.951355,
+      "old_rect_top_left_pt": [
+        634.432007,
+        435.923004,
+        1379.636963,
+        456.009003
+      ],
+      "page": 1372,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Benacerraf1965",
+      "xref": 18133
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          428.269989,
+          331.958099,
+          471.12619,
+          350.550812
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Skolem"
+      },
+      "new_x1_pt": 472.12619,
+      "old_rect_top_left_pt": [
+        427.27301,
+        335.412994,
+        1172.479004,
+        352.059021
+      ],
+      "page": 1389,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Skolem1922",
+      "xref": 18367
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          568.109985,
+          494.156311,
+          594.462524,
+          507.067902
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 12.9116,
+        "text_unicode_escape": "Button"
+      },
+      "new_x1_pt": 595.462524,
+      "old_rect_top_left_pt": [
+        567.112976,
+        492.891998,
+        1312.31897,
+        509.579987
+      ],
+      "page": 1399,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.ButtonLT1",
+      "xref": 18513
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          350.644928,
+          299.679108,
+          447.723541,
+          318.27182
+        ],
+        "colour_rgb24": "FF0000",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": " \\u0641\\u0635\\u0644 \\u0647\\u062766"
+      },
+      "new_x1_pt": 448.723541,
+      "old_rect_top_left_pt": [
+        349.635986,
+        300.483002,
+        1094.840942,
+        321.377014
+      ],
+      "page": 1408,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "chapter*.7171",
+      "xref": 18647
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          503.411987,
+          452.227112,
+          543.144653,
+          470.819824
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Maddy"
+      },
+      "new_x1_pt": 544.144653,
+      "old_rect_top_left_pt": [
+        502.415985,
+        453.031982,
+        1247.621948,
+        474.016998
+      ],
+      "page": 1408,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Maddy1988a",
+      "xref": 18650
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          602.236023,
+          341.268097,
+          668.566833,
+          359.860809
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Potter 2004"
+      },
+      "new_x1_pt": 669.566833,
+      "old_rect_top_left_pt": [
+        601.23999,
+        342.723022,
+        1346.444946,
+        361.369019
+      ],
+      "page": 1411,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Potter2004",
+      "xref": 18696
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          517.106995,
+          341.268097,
+          587.740845,
+          359.860809
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Button 2021"
+      },
+      "new_x1_pt": 588.740845,
+      "old_rect_top_left_pt": [
+        516.111023,
+        342.723022,
+        1261.31604,
+        361.369019
+      ],
+      "page": 1411,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.ButtonLT1",
+      "xref": 18698
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          661.702026,
+          474.347321,
+          701.198608,
+          487.258911
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 12.9116,
+        "text_unicode_escape": "Montague"
+      },
+      "new_x1_pt": 702.198608,
+      "old_rect_top_left_pt": [
+        660.705994,
+        473.082001,
+        1405.911011,
+        489.720001
+      ],
+      "page": 1411,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Montague1965",
+      "xref": 18688
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          601.96698,
+          474.347321,
+          621.992859,
+          487.258911
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 12.9116,
+        "text_unicode_escape": "Scott"
+      },
+      "new_x1_pt": 622.992859,
+      "old_rect_top_left_pt": [
+        600.971008,
+        473.082001,
+        1346.176025,
+        489.720001
+      ],
+      "page": 1411,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Scott1974",
+      "xref": 18690
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          498.752991,
+          474.347321,
+          522.122986,
+          487.258911
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 12.9116,
+        "text_unicode_escape": "Potter"
+      },
+      "new_x1_pt": 523.122986,
+      "old_rect_top_left_pt": [
+        497.756989,
+        473.082001,
+        1242.962036,
+        489.720001
+      ],
+      "page": 1411,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Potter2004",
+      "xref": 18692
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          672.595764,
+          112.445084,
+          686.614685,
+          131.037796
+        ],
+        "colour_rgb24": "FF0000",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "64"
+      },
+      "new_x1_pt": 687.614685,
+      "old_rect_top_left_pt": [
+        671.583984,
+        113.25,
+        1416.790039,
+        134.234985
+      ],
+      "page": 1413,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "chapter*.6978",
+      "xref": 18714
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          383.531006,
+          188.720078,
+          444.292023,
+          207.31279
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Shoenfield"
+      },
+      "new_x1_pt": 445.292023,
+      "old_rect_top_left_pt": [
+        382.535004,
+        192.174988,
+        1127.73999,
+        210.95401
+      ],
+      "page": 1415,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Shoenfield:AST",
+      "xref": 18736
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          731.890991,
+          36.171101,
+          788.766174,
+          54.763809
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Montague"
+      },
+      "new_x1_pt": 789.766174,
+      "old_rect_top_left_pt": [
+        730.89502,
+        36.976013,
+        1476.099976,
+        57.869995
+      ],
+      "page": 1417,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Montague1961",
+      "xref": 18756
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          646.268005,
+          36.171101,
+          675.068176,
+          54.763809
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "L\\xe9vy"
+      },
+      "new_x1_pt": 676.068176,
+      "old_rect_top_left_pt": [
+        645.271973,
+        36.976013,
+        1390.478027,
+        57.869995
+      ],
+      "page": 1417,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Levy1960",
+      "xref": 18758
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          499.231995,
+          273.497101,
+          556.107178,
+          292.089813
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Montague"
+      },
+      "new_x1_pt": 557.107178,
+      "old_rect_top_left_pt": [
+        498.234985,
+        273.102997,
+        1243.44104,
+        295.195007
+      ],
+      "page": 1419,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Montague1961",
+      "xref": 18801
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          647.278992,
+          298.921112,
+          676.079163,
+          317.513824
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "L\\xe9vy"
+      },
+      "new_x1_pt": 677.079163,
+      "old_rect_top_left_pt": [
+        646.281982,
+        302.503998,
+        1391.488037,
+        319.022003
+      ],
+      "page": 1419,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Levy1960",
+      "xref": 18803
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          365.785004,
+          253.1241,
+          422.660126,
+          271.716827
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Montague"
+      },
+      "new_x1_pt": 423.660126,
+      "old_rect_top_left_pt": [
+        364.789001,
+        253.928986,
+        1109.994995,
+        274.894989
+      ],
+      "page": 1422,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Montague1961",
+      "xref": 18838
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          504.55899,
+          183.718094,
+          538.825378,
+          202.310806
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "G\\xf6del"
+      },
+      "new_x1_pt": 539.825378,
+      "old_rect_top_left_pt": [
+        503.562988,
+        184.522003,
+        1248.767944,
+        205.453003
+      ],
+      "page": 1458,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Godel1938",
+      "xref": 19431
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          752.057983,
+          105.110092,
+          788.667053,
+          123.702805
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Cohen"
+      },
+      "new_x1_pt": 789.667053,
+      "old_rect_top_left_pt": [
+        751.062012,
+        105.915009,
+        1496.267944,
+        125.075012
+      ],
+      "page": 1459,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Cohen1963",
+      "xref": 19440
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          751.25531,
+          222.162094,
+          851.145203,
+          240.754807
+        ],
+        "colour_rgb24": "FF0000",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": " \\u0641\\u0635\\u0644 \\u0647\\u062770"
+      },
+      "new_x1_pt": 852.145203,
+      "old_rect_top_left_pt": [
+        750.245972,
+        224.065002,
+        1495.45105,
+        243.859985
+      ],
+      "page": 1464,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "chapter*.7461",
+      "xref": 19512
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          824.099976,
+          272.924103,
+          852.137817,
+          291.516815
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "1915"
+      },
+      "new_x1_pt": 853.137817,
+      "old_rect_top_left_pt": [
+        818.138,
+        273.729004,
+        1563.343018,
+        292.016998
+      ],
+      "page": 1466,
+      "selection": "manual-explicit-complementary-run",
+      "target": "cite.Hartogs1915",
+      "xref": 19539
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          690.715027,
+          272.872101,
+          745.228943,
+          291.464813
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Dedekind"
+      },
+      "new_x1_pt": 746.228943,
+      "old_rect_top_left_pt": [
+        689.718994,
+        276.326996,
+        1434.92395,
+        294.606995
+      ],
+      "page": 1471,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Dedekind1888",
+      "xref": 19613
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          622.262024,
+          131.442093,
+          735.008362,
+          150.034805
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Feferman and Levy"
+      },
+      "new_x1_pt": 736.008362,
+      "old_rect_top_left_pt": [
+        621.265991,
+        132.760986,
+        1366.470947,
+        153.122009
+      ],
+      "page": 1473,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.FefermanLevy1963",
+      "xref": 19647
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          531.202026,
+          456.438293,
+          568.542358,
+          469.349884
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 12.9116,
+        "text_unicode_escape": "Robinson"
+      },
+      "new_x1_pt": 569.542358,
+      "old_rect_top_left_pt": [
+        530.205994,
+        455.174011,
+        1275.411011,
+        471.875
+      ],
+      "page": 1477,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Robinson1947",
+      "xref": 19711
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          632.156982,
+          484.682312,
+          661.918213,
+          497.593903
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 12.9116,
+        "text_unicode_escape": "Weston"
+      },
+      "new_x1_pt": 662.918213,
+      "old_rect_top_left_pt": [
+        631.161011,
+        483.417999,
+        1376.365967,
+        499.707001
+      ],
+      "page": 1477,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Weston2003",
+      "xref": 19716
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          496.43399,
+          484.682312,
+          591.553711,
+          497.593903
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 12.9116,
+        "text_unicode_escape": "Tomkowicz and Wagon"
+      },
+      "new_x1_pt": 592.553711,
+      "old_rect_top_left_pt": [
+        495.437988,
+        483.417999,
+        1240.642944,
+        499.707001
+      ],
+      "page": 1477,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Wagon2016",
+      "xref": 19718
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          824.099976,
+          182.291092,
+          852.137817,
+          200.883804
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "2003"
+      },
+      "new_x1_pt": 853.137817,
+      "old_rect_top_left_pt": [
+        818.138,
+        183.096008,
+        1563.343018,
+        204.062012
+      ],
+      "page": 1478,
+      "selection": "manual-explicit-complementary-run",
+      "target": "cite.Weston2003",
+      "xref": 19731
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          639.875,
+          442.493317,
+          677.215332,
+          455.404907
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 12.9116,
+        "text_unicode_escape": "Robinson"
+      },
+      "new_x1_pt": 678.215332,
+      "old_rect_top_left_pt": [
+        638.879028,
+        441.229004,
+        1384.083984,
+        456.757019
+      ],
+      "page": 1481,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Robinson1947",
+      "xref": 19781
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          558.328003,
+          61.596088,
+          615.296082,
+          80.188797
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Hausdorff"
+      },
+      "new_x1_pt": 616.296082,
+      "old_rect_top_left_pt": [
+        557.33197,
+        64.860992,
+        1302.536987,
+        83.38501
+      ],
+      "page": 1482,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Hausdorff1914",
+      "xref": 19791
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          824.099976,
+          100.253098,
+          852.137817,
+          118.84581
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "2013"
+      },
+      "new_x1_pt": 853.137817,
+      "old_rect_top_left_pt": [
+        470.351013,
+        103.519012,
+        1215.557007,
+        119.609985
+      ],
+      "page": 1513,
+      "selection": "manual-explicit-complementary-run",
+      "target": "cite.Solow2013",
+      "xref": 20000
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          726.80603,
+          125.678085,
+          754.843872,
+          144.270798
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "2013"
+      },
+      "new_x1_pt": 755.843872,
+      "old_rect_top_left_pt": [
+        569.994995,
+        126.483002,
+        1315.199951,
+        145.778992
+      ],
+      "page": 1513,
+      "selection": "manual-explicit-complementary-run",
+      "target": "cite.Hammack2013",
+      "xref": 20005
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          522.729004,
+          125.678085,
+          550.766846,
+          144.270798
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "2019"
+      },
+      "new_x1_pt": 551.766846,
+      "old_rect_top_left_pt": [
+        305.201996,
+        126.483002,
+        1050.406982,
+        145.778992
+      ],
+      "page": 1513,
+      "selection": "manual-explicit-complementary-run",
+      "target": "cite.Sandstrum2019",
+      "xref": 20008
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          685.21698,
+          151.103104,
+          713.254822,
+          169.695816
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "2018"
+      },
+      "new_x1_pt": 714.254822,
+      "old_rect_top_left_pt": [
+        306.445007,
+        153.07901,
+        1051.651001,
+        171.20401
+      ],
+      "page": 1513,
+      "selection": "manual-explicit-complementary-run",
+      "target": "cite.Steinhart2018",
+      "xref": 20010
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          817.09198,
+          227.37709,
+          845.129822,
+          245.969803
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "2004"
+      },
+      "new_x1_pt": 846.129822,
+      "old_rect_top_left_pt": [
+        641.234985,
+        230.641998,
+        1386.439941,
+        245.953003
+      ],
+      "page": 1513,
+      "selection": "manual-explicit-complementary-run",
+      "target": "cite.Cheng2004",
+      "xref": 20022
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          492.690002,
+          111.135086,
+          536.289917,
+          129.727798
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Dauben"
+      },
+      "new_x1_pt": 537.289917,
+      "old_rect_top_left_pt": [
+        491.692993,
+        112.692993,
+        1236.899048,
+        131.235992
+      ],
+      "page": 1533,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Dauben1990",
+      "xref": 20202
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          334.139008,
+          111.135086,
+          433.200989,
+          129.727798
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Grattan-Guinness"
+      },
+      "new_x1_pt": 434.200989,
+      "old_rect_top_left_pt": [
+        333.141998,
+        112.692993,
+        1078.348022,
+        131.235992
+      ],
+      "page": 1533,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Grattan-Guinness1971",
+      "xref": 20204
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          662.721985,
+          136.560074,
+          690.759827,
+          155.152786
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "2014"
+      },
+      "new_x1_pt": 691.759827,
+      "old_rect_top_left_pt": [
+        402.363007,
+        138.463013,
+        1147.56897,
+        156.661011
+      ],
+      "page": 1533,
+      "selection": "manual-explicit-complementary-run",
+      "target": "cite.Sautoy2014",
+      "xref": 20206
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          697.963989,
+          161.985092,
+          726.020386,
+          180.577805
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Rose"
+      },
+      "new_x1_pt": 727.020386,
+      "old_rect_top_left_pt": [
+        696.968018,
+        165.531006,
+        1442.172974,
+        181.786011
+      ],
+      "page": 1533,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Rose2012",
+      "xref": 20208
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          494.848999,
+          111.135086,
+          546.369446,
+          129.727798
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Enderton"
+      },
+      "new_x1_pt": 547.369446,
+      "old_rect_top_left_pt": [
+        493.852997,
+        112.692993,
+        1239.057983,
+        132.906006
+      ],
+      "page": 1534,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.EndertonND",
+      "xref": 20220
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          740.731995,
+          136.560074,
+          782.138,
+          155.152786
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Church"
+      },
+      "new_x1_pt": 783.138,
+      "old_rect_top_left_pt": [
+        739.736023,
+        138.463013,
+        1484.94104,
+        158.330994
+      ],
+      "page": 1534,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Church1936a",
+      "xref": 20223
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          609.356995,
+          136.560074,
+          649.944946,
+          155.152786
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Aspray"
+      },
+      "new_x1_pt": 650.944946,
+      "old_rect_top_left_pt": [
+        608.361023,
+        138.463013,
+        1353.56604,
+        158.330994
+      ],
+      "page": 1534,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Aspray1984",
+      "xref": 20225
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          824.099976,
+          187.409103,
+          852.137817,
+          206.001816
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "2015"
+      },
+      "new_x1_pt": 853.137817,
+      "old_rect_top_left_pt": [
+        823.104004,
+        190.674011,
+        1568.30896,
+        205.984985
+      ],
+      "page": 1534,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.MacFarlane2015",
+      "xref": 20227
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          460.367004,
+          187.409103,
+          540.055359,
+          206.001816
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Menzler-Trott"
+      },
+      "new_x1_pt": 541.055359,
+      "old_rect_top_left_pt": [
+        459.371002,
+        188.967987,
+        1204.57605,
+        207.51001
+      ],
+      "page": 1535,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Menzler-Trott2007",
+      "xref": 20240
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          594.638,
+          212.834091,
+          625.799438,
+          231.426804
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Segal"
+      },
+      "new_x1_pt": 626.799438,
+      "old_rect_top_left_pt": [
+        593.642029,
+        214.737,
+        1338.847046,
+        234.605011
+      ],
+      "page": 1535,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Segal2014",
+      "xref": 20242
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          807.349976,
+          238.259079,
+          841.616394,
+          256.851807
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "1935a"
+      },
+      "new_x1_pt": 842.616394,
+      "old_rect_top_left_pt": [
+        806.354004,
+        239.063995,
+        1551.560059,
+        258.359985
+      ],
+      "page": 1535,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Gentzen1935b",
+      "xref": 20245
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          529.367981,
+          238.259079,
+          563.634399,
+          256.851807
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Szabo"
+      },
+      "new_x1_pt": 564.634399,
+      "old_rect_top_left_pt": [
+        528.370972,
+        239.063995,
+        1273.577026,
+        258.359985
+      ],
+      "page": 1535,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Gentzen1969",
+      "xref": 20247
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          570.520996,
+          475.012115,
+          604.787415,
+          493.604828
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "G\\xf6del"
+      },
+      "new_x1_pt": 605.787415,
+      "old_rect_top_left_pt": [
+        569.525024,
+        476.988007,
+        1314.730957,
+        496.800995
+      ],
+      "page": 1535,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Godel1929",
+      "xref": 20249
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          751.914978,
+          36.171101,
+          819.190857,
+          54.763809
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "G\\xf6del 1931"
+      },
+      "new_x1_pt": 820.190857,
+      "old_rect_top_left_pt": [
+        750.91803,
+        38.074005,
+        1496.124023,
+        56.272003
+      ],
+      "page": 1536,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Godel1931",
+      "xref": 20251
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          455.053986,
+          314.533112,
+          532.771545,
+          333.125824
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "John Dawson"
+      },
+      "new_x1_pt": 533.771545,
+      "old_rect_top_left_pt": [
+        454.058014,
+        316.091003,
+        1199.264038,
+        336.231995
+      ],
+      "page": 1536,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Dawson1997",
+      "xref": 20265
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          411.519989,
+          339.958099,
+          445.005463,
+          358.550812
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Wang"
+      },
+      "new_x1_pt": 446.005463,
+      "old_rect_top_left_pt": [
+        410.523987,
+        341.860992,
+        1155.729004,
+        359.313995
+      ],
+      "page": 1536,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Takeuti2003",
+      "xref": 20271
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          268.389008,
+          339.958099,
+          354.398895,
+          358.550812
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Sigmund et al."
+      },
+      "new_x1_pt": 355.398895,
+      "old_rect_top_left_pt": [
+        267.391998,
+        341.860992,
+        1012.598022,
+        359.313995
+      ],
+      "page": 1536,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Sigmund2007",
+      "xref": 20273
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          487.471008,
+          365.383087,
+          521.737427,
+          383.9758
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "G\\xf6del"
+      },
+      "new_x1_pt": 522.737427,
+      "old_rect_top_left_pt": [
+        486.475006,
+        367.286011,
+        1231.680054,
+        385.483002
+      ],
+      "page": 1536,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Godel1929",
+      "xref": 20275
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          242.048004,
+          365.383087,
+          276.314392,
+          383.9758
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "G\\xf6del"
+      },
+      "new_x1_pt": 277.314392,
+      "old_rect_top_left_pt": [
+        241.052002,
+        367.286011,
+        986.257019,
+        385.483002
+      ],
+      "page": 1536,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Godel1931",
+      "xref": 20277
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          528.486023,
+          416.232086,
+          562.008728,
+          434.824799
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Smith"
+      },
+      "new_x1_pt": 563.008728,
+      "old_rect_top_left_pt": [
+        527.48999,
+        418.13501,
+        1272.694946,
+        436.333008
+      ],
+      "page": 1536,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Smith2013",
+      "xref": 20282
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          632.135986,
+          441.657104,
+          705.484375,
+          460.249817
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Linsenmayer"
+      },
+      "new_x1_pt": 706.484375,
+      "old_rect_top_left_pt": [
+        631.140015,
+        444.921997,
+        1376.344971,
+        461.348999
+      ],
+      "page": 1536,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Linsenmayer2014",
+      "xref": 20284
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          548.960022,
+          136.560074,
+          576.21698,
+          155.152786
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Dick"
+      },
+      "new_x1_pt": 577.21698,
+      "old_rect_top_left_pt": [
+        547.963989,
+        136.575012,
+        1293.168945,
+        156.661011
+      ],
+      "page": 1538,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Dick1981",
+      "xref": 20308
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          611.890015,
+          161.985092,
+          657.888428,
+          180.577805
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Institute"
+      },
+      "new_x1_pt": 658.888428,
+      "old_rect_top_left_pt": [
+        610.893982,
+        162.0,
+        1356.098999,
+        182.085999
+      ],
+      "page": 1538,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Perimeter2015",
+      "xref": 20310
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          676.719971,
+          187.409103,
+          772.602722,
+          206.001816
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Frey and Wilson"
+      },
+      "new_x1_pt": 773.602722,
+      "old_rect_top_left_pt": [
+        675.723999,
+        189.38501,
+        1420.928955,
+        207.51001
+      ],
+      "page": 1538,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Frey2015",
+      "xref": 20312
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          317.394012,
+          187.409103,
+          368.821442,
+          206.001816
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Jacobson"
+      },
+      "new_x1_pt": 369.821442,
+      "old_rect_top_left_pt": [
+        316.39801,
+        189.38501,
+        1061.604004,
+        207.51001
+      ],
+      "page": 1538,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Noether1983",
+      "xref": 20314
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          293.605011,
+          61.596088,
+          322.572418,
+          80.188797
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "P\\xe9ter"
+      },
+      "new_x1_pt": 323.572418,
+      "old_rect_top_left_pt": [
+        292.609009,
+        63.498993,
+        1037.813965,
+        83.330994
+      ],
+      "page": 1539,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Peter1935a",
+      "xref": 20326
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          690.513,
+          87.021103,
+          719.48053,
+          105.613815
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "P\\xe9ter"
+      },
+      "new_x1_pt": 720.48053,
+      "old_rect_top_left_pt": [
+        689.517029,
+        88.924011,
+        1434.722046,
+        108.718994
+      ],
+      "page": 1539,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Peter1935b",
+      "xref": 20328
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          699.47998,
+          137.870102,
+          728.44751,
+          156.462814
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "P\\xe9ter"
+      },
+      "new_x1_pt": 729.44751,
+      "old_rect_top_left_pt": [
+        698.484009,
+        139.77301,
+        1443.688965,
+        157.971008
+      ],
+      "page": 1539,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Peter1951",
+      "xref": 20330
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          381.85199,
+          365.383087,
+          438.820099,
+          383.9758
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "O\\u2019Connor"
+      },
+      "new_x1_pt": 439.820099,
+      "old_rect_top_left_pt": [
+        380.855988,
+        366.940979,
+        1126.061035,
+        385.483002
+      ],
+      "page": 1539,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Oconnor2014",
+      "xref": 20332
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          263.612,
+          365.383087,
+          318.999664,
+          383.9758
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Andr\\xe1sfai"
+      },
+      "new_x1_pt": 319.999664,
+      "old_rect_top_left_pt": [
+        262.615997,
+        366.940979,
+        1007.820984,
+        385.483002
+      ],
+      "page": 1539,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Andrasfai1986",
+      "xref": 20334
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          747.137024,
+          61.596088,
+          814.740234,
+          80.188797
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Davis et al."
+      },
+      "new_x1_pt": 815.740234,
+      "old_rect_top_left_pt": [
+        746.140991,
+        64.588989,
+        1491.347046,
+        83.38501
+      ],
+      "page": 1541,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.DavisPutnamRobinson1961",
+      "xref": 20358
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          330.984009,
+          238.259079,
+          384.754181,
+          256.851807
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Robinson"
+      },
+      "new_x1_pt": 385.754181,
+      "old_rect_top_left_pt": [
+        329.988007,
+        239.816986,
+        1075.19397,
+        258.359985
+      ],
+      "page": 1541,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Robinson1996",
+      "xref": 20369
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          580.947021,
+          263.684113,
+          634.810181,
+          282.276825
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Feferman"
+      },
+      "new_x1_pt": 635.810181,
+      "old_rect_top_left_pt": [
+        579.950012,
+        265.587006,
+        1325.156006,
+        284.692017
+      ],
+      "page": 1541,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Feferman1994",
+      "xref": 20371
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          765.356995,
+          289.108124,
+          791.851624,
+          307.700836
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Reid"
+      },
+      "new_x1_pt": 792.851624,
+      "old_rect_top_left_pt": [
+        764.361023,
+        291.011993,
+        1509.567017,
+        310.880005
+      ],
+      "page": 1541,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Reid1986",
+      "xref": 20373
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          552.713013,
+          289.108124,
+          579.207642,
+          307.700836
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Reid"
+      },
+      "new_x1_pt": 580.207642,
+      "old_rect_top_left_pt": [
+        551.716003,
+        291.011993,
+        1296.921997,
+        310.880005
+      ],
+      "page": 1541,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Reid1996",
+      "xref": 20375
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          766.04303,
+          314.533112,
+          814.495667,
+          333.125824
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Csicsery"
+      },
+      "new_x1_pt": 815.495667,
+      "old_rect_top_left_pt": [
+        765.046997,
+        314.548004,
+        1510.253052,
+        336.322998
+      ],
+      "page": 1541,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Csicsery2016",
+      "xref": 20377
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          589.539001,
+          365.383087,
+          633.138977,
+          383.9758
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Duncan"
+      },
+      "new_x1_pt": 634.138977,
+      "old_rect_top_left_pt": [
+        588.54303,
+        366.187012,
+        1333.748047,
+        385.483002
+      ],
+      "page": 1542,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Duncan2015",
+      "xref": 20398
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          421.654999,
+          365.383087,
+          449.692841,
+          383.9758
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "1905"
+      },
+      "new_x1_pt": 450.692841,
+      "old_rect_top_left_pt": [
+        289.845001,
+        366.187012,
+        1035.050049,
+        385.483002
+      ],
+      "page": 1542,
+      "selection": "manual-explicit-complementary-run",
+      "target": "cite.Russell1905",
+      "xref": 20400
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          553.987,
+          416.232086,
+          587.602661,
+          434.824799
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Irvine"
+      },
+      "new_x1_pt": 588.602661,
+      "old_rect_top_left_pt": [
+        552.991028,
+        418.13501,
+        1298.197021,
+        436.333008
+      ],
+      "page": 1542,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Irvine2015",
+      "xref": 20402
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          254.287247,
+          441.657104,
+          260.10675,
+          460.249817
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "."
+      },
+      "new_x1_pt": 261.10675,
+      "old_rect_top_left_pt": [
+        253.276993,
+        442.462006,
+        1004.301025,
+        461.757996
+      ],
+      "page": 1542,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.RussellND",
+      "xref": 20404
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          334.926361,
+          467.082092,
+          340.74588,
+          485.674805
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "."
+      },
+      "new_x1_pt": 341.74588,
+      "old_rect_top_left_pt": [
+        333.920013,
+        467.885986,
+        1084.94397,
+        487.182007
+      ],
+      "page": 1542,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.LibriVoxND",
+      "xref": 20406
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          824.099976,
+          426.4711,
+          852.137817,
+          445.063812
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "2004"
+      },
+      "new_x1_pt": 853.137817,
+      "old_rect_top_left_pt": [
+        823.104004,
+        427.276001,
+        1568.30896,
+        446.571991
+      ],
+      "page": 1543,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Feferman2004",
+      "xref": 20422
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          374.388,
+          426.4711,
+          426.819427,
+          445.063812
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Corcoran"
+      },
+      "new_x1_pt": 427.819427,
+      "old_rect_top_left_pt": [
+        373.391998,
+        427.276001,
+        1118.597046,
+        446.571991
+      ],
+      "page": 1543,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Tarski1983",
+      "xref": 20424
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          643.112,
+          451.896088,
+          679.051758,
+          470.4888
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Tarski"
+      },
+      "new_x1_pt": 680.051758,
+      "old_rect_top_left_pt": [
+        642.116028,
+        453.799011,
+        1387.321045,
+        471.261993
+      ],
+      "page": 1543,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Tarski1981",
+      "xref": 20426
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          418.51001,
+          36.171101,
+          461.347626,
+          54.763809
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Hodges"
+      },
+      "new_x1_pt": 462.347626,
+      "old_rect_top_left_pt": [
+        417.513,
+        36.976013,
+        1162.718994,
+        57.906006
+      ],
+      "page": 1545,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Hodges2014",
+      "xref": 20437
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          423.829987,
+          87.021103,
+          468.210815,
+          105.613815
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Tyldum"
+      },
+      "new_x1_pt": 469.210815,
+      "old_rect_top_left_pt": [
+        422.834015,
+        88.588013,
+        1168.040039,
+        107.122009
+      ],
+      "page": 1545,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Imitation2014",
+      "xref": 20439
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          738.211975,
+          112.445084,
+          788.858582,
+          131.037796
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Radiolab"
+      },
+      "new_x1_pt": 789.858582,
+      "old_rect_top_left_pt": [
+        737.215027,
+        113.25,
+        1482.421021,
+        132.54599
+      ],
+      "page": 1545,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Radiolab2012",
+      "xref": 20445
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          532.820984,
+          137.870102,
+          566.325073,
+          156.462814
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Sykes"
+      },
+      "new_x1_pt": 567.325073,
+      "old_rect_top_left_pt": [
+        531.825012,
+        138.674988,
+        1277.030029,
+        160.104004
+      ],
+      "page": 1545,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Theelen2012",
+      "xref": 20449
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          446.332001,
+          188.720078,
+          484.595825,
+          207.31279
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Turing"
+      },
+      "new_x1_pt": 485.595825,
+      "old_rect_top_left_pt": [
+        445.335999,
+        190.286987,
+        1190.541016,
+        210.417999
+      ],
+      "page": 1545,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Turing1937",
+      "xref": 20451
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          449.256012,
+          187.409103,
+          515.464722,
+          206.001816
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Ebbinghaus"
+      },
+      "new_x1_pt": 516.464722,
+      "old_rect_top_left_pt": [
+        448.26001,
+        188.213989,
+        1193.464966,
+        207.51001
+      ],
+      "page": 1546,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Ebbinghaus2015",
+      "xref": 20465
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          708.109985,
+          212.834091,
+          755.744629,
+          231.426804
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Zermelo"
+      },
+      "new_x1_pt": 756.744629,
+      "old_rect_top_left_pt": [
+        707.114014,
+        213.639008,
+        1452.31897,
+        232.934998
+      ],
+      "page": 1546,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Zermelo1908",
+      "xref": 20468
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          667.515015,
+          238.259079,
+          819.454895,
+          256.851807
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Ebbinghaus and Kanamori"
+      },
+      "new_x1_pt": 820.454895,
+      "old_rect_top_left_pt": [
+        666.518005,
+        241.523987,
+        1411.723999,
+        257.35199
+      ],
+      "page": 1546,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Ebbinghaus2013",
+      "xref": 20472
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          488.697998,
+          421.966095,
+          564.978821,
+          440.558807
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Gouv\\xeaa 2011"
+      },
+      "new_x1_pt": 565.978821,
+      "old_rect_top_left_pt": [
+        487.701996,
+        421.571991,
+        1146.829956,
+        441.929993
+      ],
+      "page": 1552,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Gouvea2011",
+      "xref": 20513
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          646.106018,
+          247.4991,
+          689.705994,
+          266.091827
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Gouv\\xeaa"
+      },
+      "new_x1_pt": 690.705994,
+      "old_rect_top_left_pt": [
+        645.109985,
+        248.303986,
+        1390.314941,
+        267.600006
+      ],
+      "page": 1554,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Gouvea2011",
+      "xref": 20536
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          261.721008,
+          112.445084,
+          317.815277,
+          131.037796
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "Giaquinto"
+      },
+      "new_x1_pt": 318.815277,
+      "old_rect_top_left_pt": [
+        260.725006,
+        114.42099,
+        1005.929993,
+        134.144012
+      ],
+      "page": 1555,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Giaquinto2007",
+      "xref": 20546
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          675.828003,
+          494.156311,
+          695.311584,
+          507.067902
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 12.9116,
+        "text_unicode_escape": "Rose"
+      },
+      "new_x1_pt": 696.311584,
+      "old_rect_top_left_pt": [
+        674.83197,
+        492.891998,
+        1420.036987,
+        509.181
+      ],
+      "page": 1557,
+      "selection": "automatic-unique-hyperlink-colour-x0-anchor",
+      "target": "cite.Rose2010",
+      "xref": 20571
+    },
+    {
+      "glyph": {
+        "bbox_top_left_pt": [
+          806.88501,
+          323.435089,
+          834.922852,
+          342.027802
+        ],
+        "colour_rgb24": "00FF00",
+        "font": "Scheherazade-Regular",
+        "size_pt": 18.59271,
+        "text_unicode_escape": "1953"
+      },
+      "new_x1_pt": 835.922852,
+      "old_rect_top_left_pt": [
+        512.179016,
+        326.890991,
+        1240.168945,
+        342.010986
+      ],
+      "page": 1568,
+      "selection": "manual-explicit-complementary-run",
+      "target": "cite.Frege1953",
+      "xref": 20647
+    }
+  ],
+  "output_bytes": 8939388,
+  "output_sha256": "C78FAA318DB84095C4447CE64BACB9E790195A7B9557BE179FAFC40EB75984F6",
+  "schema": "fa-IR-rtl-link-rect-repair-v1",
+  "verification": {
+    "changed_rectangles": 137,
+    "decoded_page_content_sha256_equal": true,
+    "final_link_overflow_count": 0,
+    "link_actions_and_destinations_equal": true,
+    "metadata_equal": true,
+    "non_rect_annotation_fields_equal": true,
+    "outline_equal": true,
+    "page_geometry_equal": true,
+    "per_page_link_counts_equal": true
+  }
+}

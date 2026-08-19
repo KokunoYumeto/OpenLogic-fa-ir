@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.25.7 (MiKTeX 26.5) (format=lualatex 2026.5.26)  12 JUL 2026 00:00
+This is LuaHBTeX, Version 1.25.7 (MiKTeX 26.5) (format=lualatex 2026.5.26)  19 AUG 2026 18:18
  restricted system commands enabled.
  file:line:error style messages enabled.
 **open-logic-closure-supplement-fa-IR-screen.tex
@@ -40,8 +40,10 @@ Inserting `luaotfload.aux.fixup_fontdata' in `luaotfload.patch_font_unsafe'.
 Inserting `luaotfload.aux.set_capheight' in `luaotfload.patch_font'.
 Inserting `luaotfload.aux.set_xheight' in `luaotfload.patch_font'.
 Inserting `luaotfload.rewrite_fontname' in `luaotfload.patch_font'.
-Inserting `tracingstacklevels' in `input_level_string'. (./open-logic-closure-s
-upplement-fa-IR.tex
+Inserting `tracingstacklevels' in `input_level_string'.
+\OLScreenWideOverhang=\skip49
+\OLScreenTabularDepth=\count273
+(./open-logic-closure-supplement-fa-IR.tex
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/memoir/memoir.cls
 Document Class: memoir 2025/11/04 v3.8.4b configurable book, report, article do
 cument class
@@ -52,7 +54,7 @@ Package: expl3 2026-03-20 L3 programming layer (loader)
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/l3backend/l3backend-lu
 atex.def
 File: l3backend-luatex.def 2026-02-18 L3 backend support: PDF output (LuaTeX)
-\l__color_backend_stack_int=\count273
+\l__color_backend_stack_int=\count274
 Inserting `l3color' in `luaotfload.parse_color'.))
 Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
 
@@ -62,110 +64,110 @@ Package: xparse 2025-10-09 L3 Experimental document command parser
 )
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count274
+\etb@tempcnta=\count275
 ))
-\onelineskip=\skip49
-\lxvchars=\skip50
-\xlvchars=\skip51
-\@memcnta=\count275
-\c@@memmarkcntra=\count276
+\onelineskip=\skip50
+\lxvchars=\skip51
+\xlvchars=\skip52
+\@memcnta=\count276
+\c@@memmarkcntra=\count277
  (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/generic/iftex/iftex.sty
 Package: iftex 2024/12/12 v1.0g TeX engine tests
 )
-\trimtop=\skip52
-\trimedge=\skip53
+\trimtop=\skip53
+\trimedge=\skip54
 
-(<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/memoir/mem12.clo
-File: mem12.clo 2022/07/29 v0.5 memoir class 12pt size option
+(<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/memoir/mem17.clo
+File: mem17.clo 2022/07/29 v0.5 memoir class 17pt size option
 luaotfload | db : Font names database loaded from <USER_HOME>/AppData/Local/
 MiKTeX/luatex-cache/generic/names/luaotfload-names.luc.gz)
-\binding=\skip54
-\spinemargin=\skip55
-\foremargin=\skip56
-\uppermargin=\skip57
-\lowermargin=\skip58
-\headdrop=\skip59
-\normalrulethickness=\skip60
-\mem@maxheadheight=\skip61
-\mem@maxfootheight=\skip62
-\headwidth=\skip63
-\c@storedpagenumber=\count277
+\binding=\skip55
+\spinemargin=\skip56
+\foremargin=\skip57
+\uppermargin=\skip58
+\lowermargin=\skip59
+\headdrop=\skip60
+\normalrulethickness=\skip61
+\mem@maxheadheight=\skip62
+\mem@maxfootheight=\skip63
+\headwidth=\skip64
+\c@storedpagenumber=\count278
 \memPD=\dimen149
-\m@mabparskip=\skip64
-\thanksmarkwidth=\skip65
-\thanksmarksep=\skip66
-\droptitle=\skip67
-\c@book=\count278
-\c@part=\count279
-\c@chapter=\count280
-\c@section=\count281
-\c@subsection=\count282
-\c@subsubsection=\count283
-\c@paragraph=\count284
-\c@subparagraph=\count285
-\beforechapskip=\skip68
-\midchapskip=\skip69
-\afterchapskip=\skip70
-\chapindent=\skip71
-\bottomsectionskip=\skip72
-\secindent=\skip73
-\beforesecskip=\skip74
-\aftersecskip=\skip75
-\subsecindent=\skip76
-\beforesubsecskip=\skip77
-\aftersubsecskip=\skip78
-\subsubsecindent=\skip79
-\beforesubsubsecskip=\skip80
-\aftersubsubsecskip=\skip81
-\paraindent=\skip82
-\beforeparaskip=\skip83
-\afterparaskip=\skip84
-\subparaindent=\skip85
-\beforesubparaskip=\skip86
-\aftersubparaskip=\skip87
-\pfbreakskip=\skip88
-\c@@ppsavesec=\count286
-\c@@ppsaveapp=\count287
+\m@mabparskip=\skip65
+\thanksmarkwidth=\skip66
+\thanksmarksep=\skip67
+\droptitle=\skip68
+\c@book=\count279
+\c@part=\count280
+\c@chapter=\count281
+\c@section=\count282
+\c@subsection=\count283
+\c@subsubsection=\count284
+\c@paragraph=\count285
+\c@subparagraph=\count286
+\beforechapskip=\skip69
+\midchapskip=\skip70
+\afterchapskip=\skip71
+\chapindent=\skip72
+\bottomsectionskip=\skip73
+\secindent=\skip74
+\beforesecskip=\skip75
+\aftersecskip=\skip76
+\subsecindent=\skip77
+\beforesubsecskip=\skip78
+\aftersubsecskip=\skip79
+\subsubsecindent=\skip80
+\beforesubsubsecskip=\skip81
+\aftersubsubsecskip=\skip82
+\paraindent=\skip83
+\beforeparaskip=\skip84
+\afterparaskip=\skip85
+\subparaindent=\skip86
+\beforesubparaskip=\skip87
+\aftersubparaskip=\skip88
+\pfbreakskip=\skip89
+\c@@ppsavesec=\count287
+\c@@ppsaveapp=\count288
 \ragrparindent=\dimen150
 \everylistparindent=\dimen151
-\parsepi=\skip89
-\topsepi=\skip90
-\itemsepi=\skip91
-\parsepii=\skip92
-\topsepii=\skip93
-\topsepiii=\skip94
-\itemsepii=\skip95
-\itemsepiii=\skip96
-\partopsepii=\skip97
-\partopsepiii=\skip98
-\m@msavetopsep=\skip99
-\m@msavepartopsep=\skip100
+\parsepi=\skip90
+\topsepi=\skip91
+\itemsepi=\skip92
+\parsepii=\skip93
+\topsepii=\skip94
+\topsepiii=\skip95
+\itemsepii=\skip96
+\itemsepiii=\skip97
+\partopsepii=\skip98
+\partopsepiii=\skip99
+\m@msavetopsep=\skip100
+\m@msavepartopsep=\skip101
 \@enLab=\toks17
-\abstitleskip=\skip101
-\absleftindent=\skip102
+\abstitleskip=\skip102
+\absleftindent=\skip103
 \abs@leftindent=\dimen152
-\absrightindent=\skip103
-\absparindent=\skip104
-\absparsep=\skip105
-\c@vslineno=\count288
-\c@poemline=\count289
-\c@modulo@vs=\count290
-\c@memfvsline=\count291
-\vleftskip=\skip106
-\vrightskip=\skip107
-\stanzaskip=\skip108
-\versewidth=\skip109
-\vgap=\skip110
-\vindent=\skip111
+\absrightindent=\skip104
+\absparindent=\skip105
+\absparsep=\skip106
+\c@vslineno=\count289
+\c@poemline=\count290
+\c@modulo@vs=\count291
+\c@memfvsline=\count292
+\vleftskip=\skip107
+\vrightskip=\skip108
+\stanzaskip=\skip109
+\versewidth=\skip110
+\vgap=\skip111
+\vindent=\skip112
 \vleftmargin=\dimen153
-\c@verse=\count292
-\c@chrsinstr=\count293
-\beforepoemtitleskip=\skip112
-\afterpoemtitleskip=\skip113
-\c@poem=\count294
-\beforePoemTitleskip=\skip114
-\midPoemTitleskip=\skip115
-\afterPoemTitleskip=\skip116
+\c@verse=\count293
+\c@chrsinstr=\count294
+\beforepoemtitleskip=\skip113
+\afterpoemtitleskip=\skip114
+\c@poem=\count295
+\beforePoemTitleskip=\skip115
+\midPoemTitleskip=\skip116
+\afterPoemTitleskip=\skip117
 
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/tools/array.sty
 Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
@@ -173,8 +175,8 @@ Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
 \ar@mcellbox=\box53
 \extrarowheight=\dimen155
 \NC@list=\toks18
-\extratabsurround=\skip117
-\backup@length=\skip118
+\extratabsurround=\skip118
+\backup@length=\skip119
 \ar@cellbox=\box54
 )
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/tools/dcolumn.sty
@@ -190,7 +192,7 @@ Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
 \TX@old@col=\dimen158
 \TX@target=\dimen159
 \TX@delta=\dimen160
-\TX@cols=\count295
+\TX@cols=\count296
 \TX@ftn=\toks19
 )
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/booktabs/booktabs.sty
@@ -205,35 +207,35 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \cmidrulesep=\dimen168
 \cmidrulekern=\dimen169
 \defaultaddspace=\dimen170
-\@cmidla=\count296
-\@cmidlb=\count297
+\@cmidla=\count297
+\@cmidlb=\count298
 \@aboverulesep=\dimen171
 \@belowrulesep=\dimen172
-\@thisruleclass=\count298
-\@lastruleclass=\count299
+\@thisruleclass=\count299
+\@lastruleclass=\count300
 \@thisrulewidth=\dimen173
 )
-\ctableftskip=\skip119
-\ctabrightskip=\skip120
-\abovecolumnspenalty=\count300
-\@linestogo=\count301
-\@cellstogo=\count302
-\@cellsincolumn=\count303
+\ctableftskip=\skip120
+\ctabrightskip=\skip121
+\abovecolumnspenalty=\count301
+\@linestogo=\count302
+\@cellstogo=\count303
+\@cellsincolumn=\count304
 \crtok=\toks20
 \@mincolumnwidth=\dimen174
-\c@newflo@tctr=\count304
+\c@newflo@tctr=\count305
 \mem@margin@floatbox=\box55
-\@contcwidth=\skip121
-\@contindw=\skip122
-\abovecaptionskip=\skip123
-\belowcaptionskip=\skip124
-\subfloattopskip=\skip125
-\subfloatcapskip=\skip126
-\subfloatcaptopadj=\skip127
-\subfloatbottomskip=\skip128
-\subfloatlabelskip=\skip129
+\@contcwidth=\skip122
+\@contindw=\skip123
+\abovecaptionskip=\skip124
+\belowcaptionskip=\skip125
+\subfloattopskip=\skip126
+\subfloatcapskip=\skip127
+\subfloatcaptopadj=\skip128
+\subfloatbottomskip=\skip129
+\subfloatlabelskip=\skip130
 \subfloatcapmargin=\dimen175
-\c@@contsubnum=\count305
+\c@@contsubnum=\count306
 \m@mscap@capbox=\box56
 \m@mscap@fbox=\box57
 \sidecapsep=\dimen176
@@ -243,10 +245,10 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \sidecapraise=\dimen180
 \m@mscapmainwidth=\dimen181
 \m@mscaplkern=\dimen182
-\beforeepigraphskip=\skip130
-\afterepigraphskip=\skip131
-\epigraphwidth=\skip132
-\epigraphrule=\skip133
+\beforeepigraphskip=\skip131
+\afterepigraphskip=\skip132
+\epigraphwidth=\skip133
+\epigraphrule=\skip134
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/nameref.sty
 Package: nameref 2026-01-29 v2.58 Cross-referencing by name of section
 
@@ -275,76 +277,76 @@ Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 y
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 )))
-\c@section@level=\count306
+\c@section@level=\count307
 )
-\tocentryskip=\skip134
-\tocbaseline=\skip135
-\cftparskip=\skip136
-\cftbeforebookskip=\skip137
+\tocentryskip=\skip135
+\tocbaseline=\skip136
+\cftparskip=\skip137
+\cftbeforebookskip=\skip138
 \cftbookindent=\dimen183
 \cftbooknumwidth=\dimen184
-\cftbeforepartskip=\skip138
-\cftpartindent=\skip139
-\cftpartnumwidth=\skip140
-\cftbeforechapterskip=\skip141
-\cftchapterindent=\skip142
-\cftchapternumwidth=\skip143
-\cftbeforesectionskip=\skip144
-\cftsectionindent=\skip145
-\cftsectionnumwidth=\skip146
-\cftbeforesubsectionskip=\skip147
-\cftsubsectionindent=\skip148
-\cftsubsectionnumwidth=\skip149
-\cftbeforesubsubsectionskip=\skip150
-\cftsubsubsectionindent=\skip151
-\cftsubsubsectionnumwidth=\skip152
-\cftbeforeparagraphskip=\skip153
-\cftparagraphindent=\skip154
-\cftparagraphnumwidth=\skip155
-\cftbeforesubparagraphskip=\skip156
-\cftsubparagraphindent=\skip157
-\cftsubparagraphnumwidth=\skip158
+\cftbeforepartskip=\skip139
+\cftpartindent=\skip140
+\cftpartnumwidth=\skip141
+\cftbeforechapterskip=\skip142
+\cftchapterindent=\skip143
+\cftchapternumwidth=\skip144
+\cftbeforesectionskip=\skip145
+\cftsectionindent=\skip146
+\cftsectionnumwidth=\skip147
+\cftbeforesubsectionskip=\skip148
+\cftsubsectionindent=\skip149
+\cftsubsectionnumwidth=\skip150
+\cftbeforesubsubsectionskip=\skip151
+\cftsubsubsectionindent=\skip152
+\cftsubsubsectionnumwidth=\skip153
+\cftbeforeparagraphskip=\skip154
+\cftparagraphindent=\skip155
+\cftparagraphnumwidth=\skip156
+\cftbeforesubparagraphskip=\skip157
+\cftsubparagraphindent=\skip158
+\cftsubparagraphnumwidth=\skip159
 \prechapterprecisshift=\dimen185
-\c@maxsecnumdepth=\count307
+\c@maxsecnumdepth=\count308
 \bibindent=\dimen186
-\bibitemsep=\skip159
-\indexcolsep=\skip160
-\indexrule=\skip161
+\bibitemsep=\skip160
+\indexcolsep=\skip161
+\indexrule=\skip162
 \indexmarkstyle=\toks22
 \@indexbox=\insert252
 LaTeX Info: Redefining \raggedbottom on input line 8095.
 LaTeX Info: Redefining \flushbottom on input line 8099.
 \glossarycolsep=\dimen187
 \glossaryrule=\dimen188
-\sideparvshift=\skip162
+\sideparvshift=\skip163
 \sideins=\insert251
-\sidebartopsep=\skip163
-\sidebarhsep=\skip164
-\sidebarvsep=\skip165
-\sidebarwidth=\skip166
-\footmarkwidth=\skip167
-\footmarksep=\skip168
-\footparindent=\skip169
-\footinsdim=\skip170
+\sidebartopsep=\skip164
+\sidebarhsep=\skip165
+\sidebarvsep=\skip166
+\sidebarwidth=\skip167
+\footmarkwidth=\skip168
+\footmarksep=\skip169
+\footparindent=\skip170
+\footinsdim=\skip171
 \footinsv@r=\insert250
 \@mpfootinsv@r=\insert249
-\m@m@k=\count308
+\m@m@k=\count309
 \m@m@h=\dimen189
-\m@mipn@skip=\skip171
+\m@mipn@skip=\skip172
 \sidefootins=\insert248
-\sidefootadjust=\skip172
-\sidefootheight=\skip173
-\sidefoothsep=\skip174
-\sidefootvsep=\skip175
-\sidefootwidth=\skip176
-\m@mdownsf=\skip177
-\c@sidefootnote=\count309
-\sidefootmarkwidth=\skip178
-\sidefootmarksep=\skip179
-\sidefootparindent=\skip180
-\c@pagenote=\count310
-\c@pagenoteshadow=\count311
-\mem@pn@lastkern=\skip181
+\sidefootadjust=\skip173
+\sidefootheight=\skip174
+\sidefoothsep=\skip175
+\sidefootvsep=\skip176
+\sidefootwidth=\skip177
+\m@mdownsf=\skip178
+\c@sidefootnote=\count310
+\sidefootmarkwidth=\skip179
+\sidefootmarksep=\skip180
+\sidefootparindent=\skip181
+\c@pagenote=\count311
+\c@pagenoteshadow=\count312
+\mem@pn@lastkern=\skip182
 
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/tools/verbatim.sty
 Package: verbatim 2024-01-22 v1.5x LaTeX2e package for verbatim enhancements
@@ -352,46 +354,46 @@ Package: verbatim 2024-01-22 v1.5x LaTeX2e package for verbatim enhancements
 \verbatim@line=\toks24
 \verbatim@in@stream=\read2
 )
-\verbatimindent=\skip182
+\verbatimindent=\skip183
 \verbatim@out=\write3
 
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/base/shortvrb.sty
 Package: shortvrb 2024/12/25 v3.0q Standard LaTeX documentation package V3 (FMi
 )
 )
-\bvboxsep=\skip183
-\c@memfbvline=\count312
-\c@bvlinectr=\count313
-\bvnumlength=\skip184
+\bvboxsep=\skip184
+\c@memfbvline=\count313
+\c@bvlinectr=\count314
+\bvnumlength=\skip185
 \fb@frw=\dimen190
 \fb@frh=\dimen191
 \FrameRule=\dimen192
 \FrameSep=\dimen193
-\c@cp@cntr=\count314
-\c@ism@mctr=\count315
-\c@xsm@mctr=\count316
-\c@csm@mctr=\count317
-\c@ksm@mctr=\count318
-\c@xksm@mctr=\count319
-\c@cksm@mctr=\count320
-\c@msm@mctr=\count321
-\c@xmsm@mctr=\count322
-\c@cmsm@mctr=\count323
-\c@bsm@mctr=\count324
-\c@workm@mctr=\count325
-\c@sheetsequence=\count326
-\c@lastsheet=\count327
-\c@lastpage=\count328
-\c@figure=\count329
-\c@lofdepth=\count330
-\cftbeforefigureskip=\skip185
-\cftfigureindent=\skip186
-\cftfigurenumwidth=\skip187
-\c@table=\count331
-\c@lotdepth=\count332
-\cftbeforetableskip=\skip188
-\cfttableindent=\skip189
-\cfttablenumwidth=\skip190
+\c@cp@cntr=\count315
+\c@ism@mctr=\count316
+\c@xsm@mctr=\count317
+\c@csm@mctr=\count318
+\c@ksm@mctr=\count319
+\c@xksm@mctr=\count320
+\c@cksm@mctr=\count321
+\c@msm@mctr=\count322
+\c@xmsm@mctr=\count323
+\c@cmsm@mctr=\count324
+\c@bsm@mctr=\count325
+\c@workm@mctr=\count326
+\c@sheetsequence=\count327
+\c@lastsheet=\count328
+\c@lastpage=\count329
+\c@figure=\count330
+\c@lofdepth=\count331
+\cftbeforefigureskip=\skip186
+\cftfigureindent=\skip187
+\cftfigurenumwidth=\skip188
+\c@table=\count332
+\c@lotdepth=\count333
+\cftbeforetableskip=\skip189
+\cfttableindent=\skip190
+\cfttablenumwidth=\skip191
 Package abstract [2008/07/23] emulated by memoir.
 Package appendix [2008/07/23] emulated by memoir.
 Package ccaption [2008/07/23] emulated by memoir.
@@ -420,24 +422,43 @@ Package tocloft [2008/07/23] emulated by memoir.
 Package tocvsec2 [2008/07/23] emulated by memoir.
 Package verse [2008/07/23] emulated by memoir.
 )
+(<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/tools/longtable.sty
+Package: longtable 2025-10-13 v4.24 Multi-page Table package (DPC)
+\LTleft=\skip192
+\LTright=\skip193
+\LTpre=\skip194
+\LTpost=\skip195
+\LTchunksize=\count334
+\LTcapwidth=\dimen194
+\LT@head=\box58
+\LT@firsthead=\box59
+\LT@foot=\box60
+\LT@lastfoot=\box61
+\LT@gbox=\box62
+\LT@cols=\count335
+\LT@rows=\count336
+\c@LT@tables=\count337
+\c@LT@chunks=\count338
+\LT@p@ftn=\toks25
+)
 
 ******************************************************
-Stock height and width: 794.96999pt by 614.295pt
+Stock height and width: 542.025pt by 963.59999pt
 Top and edge trims: 0pt and 0pt
-Page height and width: 794.96999pt by 614.295pt
-Text height and width: 693.5pt by 513pt
-Spine and edge margins: 50.58878pt and 50.58878pt
-Upper and lower margins: 54.2025pt and 47.26749pt
-Headheight and headsep: 18pt and 28.2025pt
+Page height and width: 542.025pt by 963.59999pt
+Text height and width: 469.755pt by 746pt
+Spine and edge margins: 108.405pt and 108.405pt
+Upper and lower margins: 36.135pt and 36.135pt
+Headheight and headsep: 24pt and 6.135pt
 Footskip: 24pt
 Columnsep and columnseprule: 10pt and 0pt
-Marginparsep and marginparwidth: 7pt and 36.58878pt
-Sidecapsep and sidecapwidth: 7pt and 50pt
-Sidebarhsep and sidebarwidth: 7pt and 50pt
-Sidebarvsep and sidebartopsep: 14.5pt and 0pt
-Sidebarheight: 546.64995pt
-Sidefoothsep and sidefootwidth: 7pt and 50pt
-Sidefootvsep and sidefootheight: 14.5pt and 546.64995pt
+Marginparsep and marginparwidth: 12.09593pt and 84.21313pt
+Sidecapsep and sidecapwidth: 12.09593pt and 2pt
+Sidebarhsep and sidebarwidth: 12.09593pt and 2pt
+Sidebarvsep and sidebartopsep: 22pt and 0pt
+Sidebarheight: 543.39993pt
+Sidefoothsep and sidefootwidth: 12.09593pt and 2pt
+Sidefootvsep and sidefootheight: 22pt and 543.39993pt
 ******************************************************
 
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/fontspec/fontspec.sty
@@ -447,20 +468,20 @@ Lua module: fontspec 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaTeX
 ex.sty
 Package: fontspec-luatex 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaT
 eX
-\l__fontspec_script_int=\count333
-\l__fontspec_language_int=\count334
-\l__fontspec_strnum_int=\count335
-\l__fontspec_tmp_int=\count336
-\l__fontspec_tmpa_int=\count337
-\l__fontspec_tmpb_int=\count338
-\l__fontspec_tmpc_int=\count339
-\l__fontspec_em_int=\count340
-\l__fontspec_emdef_int=\count341
-\l__fontspec_strong_int=\count342
-\l__fontspec_strongdef_int=\count343
-\l__fontspec_tmpa_dim=\dimen194
-\l__fontspec_tmpb_dim=\dimen195
-\l__fontspec_tmpc_dim=\dimen196
+\l__fontspec_script_int=\count339
+\l__fontspec_language_int=\count340
+\l__fontspec_strnum_int=\count341
+\l__fontspec_tmp_int=\count342
+\l__fontspec_tmpa_int=\count343
+\l__fontspec_tmpb_int=\count344
+\l__fontspec_tmpc_int=\count345
+\l__fontspec_em_int=\count346
+\l__fontspec_emdef_int=\count347
+\l__fontspec_strong_int=\count348
+\l__fontspec_strongdef_int=\count349
+\l__fontspec_tmpa_dim=\dimen195
+\l__fontspec_tmpb_dim=\dimen196
+\l__fontspec_tmpc_dim=\dimen197
 
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/base/fontenc.sty
 Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
@@ -472,14 +493,14 @@ Package: gitinfo2 2015/11/22 v2.0.7 git revision information
 
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/xstring/xstring.sty
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/generic/xstring/xstring.tex
-\xs_counta=\count344
-\xs_countb=\count345
+\xs_counta=\count350
+\xs_countb=\count351
 )
 Package: xstring 2023/08/22 v1.86 String manipulations (CT)
 ) (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/eso-pic/eso-pic.sty
 Package: eso-pic 2025/12/10 v3.0d eso-pic (RN)
-\ESO@tempdima=\dimen197
-\ESO@tempdimb=\dimen198
+\ESO@tempdima=\dimen198
+\ESO@tempdimb=\dimen199
 
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
@@ -596,7 +617,7 @@ Package babel Info: Non-standard hyphenation setup on input line 118.
 \babelcatcodetablenum=\catcodetable14
 \bbl@pattcodes=\catcodetable15
 )
-\babel@savecnt=\count346
+\babel@savecnt=\count352
 LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input li
 ne 2078.
 LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input li
@@ -611,7 +632,7 @@ LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?)
 on input line 2086.
 LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) 
 on input line 2111.
-\U@D=\dimen199
+\U@D=\dimen256
 \l@unhyphenated=\language79
 
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/generic/babel/luababel.def
@@ -624,7 +645,7 @@ Package: luatexbase 2015/10/04 v1.3 luatexbase interface to LuaTeX
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/luatex/ctablestack/ctablesta
 ck.sty
 Package: ctablestack 2015/10/01 v1.0 Catcode table stable support
-\@catcodetablestackcnt=\count347
+\@catcodetablestackcnt=\count353
 )
 \CatcodeTableOther=\catcodetable16
 \CatcodeTableExpl=\catcodetable17
@@ -638,7 +659,7 @@ Inserting `Babel.pre_otfload_h' in `hpack_filter'.
 Inserting `luaotfload.node_processor' in `hpack_filter'.
 Inserting `luaotfload.harf.finalize_hlist' in `hpack_filter'.
 \bbl@attr@dir=\attribute5
-\everyvbox=\toks25
+\everyvbox=\toks26
 )
 Package babel Info: Configuration files are deprecated, as
 (babel)             they can break document portability.
@@ -835,7 +856,7 @@ input line 48.
 (../../sty/open-logic.sty
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2025/07/09 v2.17z AMS math features
-\@mathmargin=\skip191
+\@mathmargin=\skip196
 
 For additional information on amsmath, use the `?' option.
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amstext.sty
@@ -843,61 +864,61 @@ Package: amstext 2024/11/17 v2.01 AMS text
 
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks26
-\ex@=\dimen256
+\@emptytoks=\toks27
+\ex@=\dimen257
 ))
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen257
+\pmbraise@=\dimen258
 )
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count348
+\inf@bad=\count354
 LaTeX Info: Redefining \frac on input line 235.
-\uproot@=\count349
-\leftroot@=\count350
+\uproot@=\count355
+\leftroot@=\count356
 LaTeX Info: Redefining \overline on input line 398.
 LaTeX Info: Redefining \colon on input line 409.
-\classnum@=\count351
-\DOTSCASE@=\count352
+\classnum@=\count357
+\DOTSCASE@=\count358
 LaTeX Info: Redefining \ldots on input line 495.
 LaTeX Info: Redefining \dots on input line 498.
 LaTeX Info: Redefining \cdots on input line 619.
-\Mathstrutbox@=\box58
-\strutbox@=\box59
+\Mathstrutbox@=\box63
+\strutbox@=\box64
 LaTeX Info: Redefining \big on input line 721.
 LaTeX Info: Redefining \Big on input line 722.
 LaTeX Info: Redefining \bigg on input line 723.
 LaTeX Info: Redefining \Bigg on input line 724.
-\big@size=\dimen258
+\big@size=\dimen259
 LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
-\macc@depth=\count353
+\macc@depth=\count359
 LaTeX Info: Redefining \bmod on input line 904.
 LaTeX Info: Redefining \pmod on input line 909.
 LaTeX Info: Redefining \smash on input line 939.
 LaTeX Info: Redefining \relbar on input line 969.
 LaTeX Info: Redefining \Relbar on input line 970.
-\c@MaxMatrixCols=\count354
+\c@MaxMatrixCols=\count360
 \dotsspace@=\muskip17
-\c@parentequation=\count355
-\dspbrk@lvl=\count356
-\tag@help=\toks27
-\row@=\count357
-\column@=\count358
-\maxfields@=\count359
-\andhelp@=\toks28
-\eqnshift@=\dimen259
-\alignsep@=\dimen260
-\tagshift@=\dimen261
-\tagwidth@=\dimen262
-\totwidth@=\dimen263
-\lineht@=\dimen264
-\@envbody=\toks29
-\multlinegap=\skip192
-\multlinetaggap=\skip193
-\mathdisplay@stack=\toks30
+\c@parentequation=\count361
+\dspbrk@lvl=\count362
+\tag@help=\toks28
+\row@=\count363
+\column@=\count364
+\maxfields@=\count365
+\andhelp@=\toks29
+\eqnshift@=\dimen260
+\alignsep@=\dimen261
+\tagshift@=\dimen262
+\tagwidth@=\dimen263
+\totwidth@=\dimen264
+\lineht@=\dimen265
+\@envbody=\toks30
+\multlinegap=\skip197
+\multlinetaggap=\skip198
+\mathdisplay@stack=\toks31
 LaTeX Info: Redefining \[ on input line 2950.
 LaTeX Info: Redefining \] on input line 2951.
 )
@@ -920,8 +941,8 @@ Package: extarrows 2020/03/12 v1.2.0 Some extensible arrows
 y
 Package: mathdots 2014/06/11 v0.9 Improve and add various macros for dots in ma
 th.
-\MDo@unit=\dimen265
-\MDo@dotsbox=\box60
+\MDo@unit=\dimen266
+\MDo@dotsbox=\box65
 \MDoprekern=\muskip18
 \MDopostkern=\muskip19
 \MDodotkern=\muskip20
@@ -975,8 +996,8 @@ LaTeX Font Info:    Overwriting math alphabet `\mathsfit' in version `bold'
 )
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/mfirstuc/mfirstuc.sty
 Package: mfirstuc 2025/04/03 v2.09 (NLCT)
-\@glsmfirst=\toks31
-\@glsmrest=\toks32
+\@glsmfirst=\toks32
+\@glsmrest=\toks33
 ) (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/subfiles/subfiles.st
 y
 Package: subfiles 2020/11/14 v2.2 Multi-file projects (package)
@@ -985,9 +1006,9 @@ Package: import 2020/04/01  v 6.2
 ))
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/framed/framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
-\OuterFrameSep=\skip194
-\fb@frw=\dimen266
-\fb@frh=\dimen267
+\OuterFrameSep=\skip199
+\fb@frw=\dimen267
+\fb@frh=\dimen268
 )
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/graphics/graphicx.sty
 Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
@@ -1004,56 +1025,37 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: luatex.def on input line 106.
 )
-\Gin@req@height=\dimen268
-\Gin@req@width=\dimen269
+\Gin@req@height=\dimen269
+\Gin@req@width=\dimen270
 )
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/multirow/multirow.sty
 Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
-\multirow@colwidth=\skip195
-\multirow@cntb=\count360
-\multirow@dima=\skip196
-\bigstrutjot=\dimen270
-) (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/tools/longtable.sty
-Package: longtable 2025-10-13 v4.24 Multi-page Table package (DPC)
-\LTleft=\skip197
-\LTright=\skip198
-\LTpre=\skip199
-\LTpost=\skip256
-\LTchunksize=\count361
-\LTcapwidth=\dimen271
-\LT@head=\box61
-\LT@firsthead=\box62
-\LT@foot=\box63
-\LT@lastfoot=\box64
-\LT@gbox=\box65
-\LT@cols=\count362
-\LT@rows=\count363
-\c@LT@tables=\count364
-\c@LT@chunks=\count365
-\LT@p@ftn=\toks33
-)
-(<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/units/nicefrac.sty
+\multirow@colwidth=\skip256
+\multirow@cntb=\count366
+\multirow@dima=\skip257
+\bigstrutjot=\dimen271
+) (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/units/nicefrac.sty
 Package: nicefrac 1998/08/04 v0.9b Nice fractions
-\L@UnitsRaiseDisplaystyle=\skip257
-\L@UnitsRaiseTextstyle=\skip258
-\L@UnitsRaiseScriptstyle=\skip259
+\L@UnitsRaiseDisplaystyle=\skip258
+\L@UnitsRaiseTextstyle=\skip259
+\L@UnitsRaiseScriptstyle=\skip260
 
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/base/ifthen.sty
 Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
 ))
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/graphics/rotating.sty
 Package: rotating 2025/01/14 v2.16e rotated objects in LaTeX
-\c@r@tfl@t=\count366
-\rotFPtop=\skip260
-\rotFPbot=\skip261
+\c@r@tfl@t=\count367
+\rotFPtop=\skip261
+\rotFPbot=\skip262
 \rot@float@box=\box66
 \rot@mess@toks=\toks34
 ) (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip262
-\bibsep=\skip263
+\bibhang=\skip263
+\bibsep=\skip264
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count367
+\c@NAT@ctr=\count368
 )
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/pgf/frontendlayer/tikz
 .sty
@@ -1108,14 +1110,14 @@ slibraryfiltered.code.tex
 \pgf@yd=\dimen283
 \w@pgf@writea=\write4
 \r@pgf@reada=\read4
-\c@pgf@counta=\count368
-\c@pgf@countb=\count369
-\c@pgf@countc=\count370
-\c@pgf@countd=\count371
+\c@pgf@counta=\count369
+\c@pgf@countb=\count370
+\c@pgf@countc=\count371
+\c@pgf@countd=\count372
 \t@pgf@toka=\toks39
 \t@pgf@tokb=\toks40
 \t@pgf@tokc=\toks41
-\pgf@sys@id@count=\count372
+\pgf@sys@id@count=\count373
 
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/generic/pgf/systemlayer/pgf.
 cfg
@@ -1134,8 +1136,8 @@ File: pgfsys-common-pdf.def 2025-08-29 v3.1.11a (3.1.11a)
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/generic/pgf/systemlayer/pgfs
 yssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgfsyssoftpath@smallbuffer@items=\count373
-\pgfsyssoftpath@bigbuffer@items=\count374
+\pgfsyssoftpath@smallbuffer@items=\count374
+\pgfsyssoftpath@bigbuffer@items=\count375
 )
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/generic/pgf/systemlayer/pgfs
 ysprotocol.code.tex
@@ -1152,7 +1154,7 @@ e.tex
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathpars
 er.code.tex
 \pgfmath@dimen=\dimen284
-\pgfmath@count=\count375
+\pgfmath@count=\count376
 \pgfmath@box=\box68
 \pgfmath@toks=\toks42
 \pgfmath@stack@operand=\toks43
@@ -1180,7 +1182,7 @@ tions.integerarithmetics.code.tex)
 .code.tex)
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfmathfloa
 t.code.tex
-\c@pgfmathroundto@lastzeros=\count376
+\c@pgfmathroundto@lastzeros=\count377
 ))
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/generic/pgf/math/pgfint.code
 .tex)
@@ -1220,7 +1222,7 @@ File: pgfcorescopes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfpic=\box69
 \pgf@hbox=\box70
 \pgf@layerbox@main=\box71
-\pgf@picture@serial@count=\count377
+\pgf@picture@serial@count=\count378
 )
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfco
 regraphicstate.code.tex
@@ -1255,8 +1257,8 @@ File: pgfcorearrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 reshade.code.tex
 File: pgfcoreshade.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@max=\dimen308
-\pgf@sys@shading@range@num=\count378
-\pgf@shadingcount=\count379
+\pgf@sys@shading@range@num=\count379
+\pgf@shadingcount=\count380
 )
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/generic/pgf/basiclayer/pgfco
 reimage.code.tex
@@ -1326,7 +1328,7 @@ Package: tikz 2025-08-29 v3.1.11a (3.1.11a)
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/generic/pgf/libraries/pgflib
 raryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@plot@mark@count=\count380
+\pgf@plot@mark@count=\count381
 \pgfplotmarksize=\dimen313
 )
 \tikz@lastx=\dimen314
@@ -1341,19 +1343,19 @@ File: pgflibraryplothandlers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \tikz@figbox@bg=\box75
 \tikz@tempbox=\box76
 \tikz@tempbox@bg=\box77
-\tikztreelevel=\count381
-\tikznumberofchildren=\count382
-\tikznumberofcurrentchild=\count383
-\tikz@fig@count=\count384
+\tikztreelevel=\count382
+\tikznumberofchildren=\count383
+\tikznumberofcurrentchild=\count384
+\tikz@fig@count=\count385
 
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/generic/pgf/modules/pgfmodul
 ematrix.code.tex
 File: pgfmodulematrix.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgfmatrixcurrentrow=\count385
-\pgfmatrixcurrentcolumn=\count386
-\pgf@matrix@numberofcolumns=\count387
+\pgfmatrixcurrentrow=\count386
+\pgfmatrixcurrentcolumn=\count387
+\pgf@matrix@numberofcolumns=\count388
 )
-\tikz@expandcount=\count388
+\tikz@expandcount=\count389
 
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/ti
 kz/libraries/tikzlibrarytopaths.code.tex
@@ -1416,7 +1418,7 @@ kz/libraries/tikzlibraryintersections.code.tex
 raryintersections.code.tex
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/generic/pgf/libraries/pgflib
 raryfpu.code.tex)
-\pgf@intersect@solutions=\count389
+\pgf@intersect@solutions=\count390
 ))
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/generic/pgf/frontendlayer/ti
 kz/libraries/tikzlibrarypositioning.code.tex
@@ -1425,8 +1427,8 @@ File: tikzlibrarypositioning.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/bussproofs/bussproofs.
 sty
 Proof Tree (bussproofs) style macros. Version 1.1.
-\theLevel=\count390
-\myMaxLevel=\count391
+\theLevel=\count391
+\myMaxLevel=\count392
 \myBoxA=\box99
 \myBoxB=\box100
 \myBoxC=\box101
@@ -1526,38 +1528,38 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 y
 Package: inlinedef 2008/07/10 v1.0 Inlined expansions within definitions
 \ID@toks=\toks49
-\ID@count=\count392
+\ID@count=\count393
 )
 \ID@usercommands=\toks50
-\safeloop@depth=\count393
-\safeRKloop@depth=\count394
+\safeloop@depth=\count394
+\safeRKloop@depth=\count395
 \forest@temp@dimen=\dimen339
-\forest@temp@count=\count395
-\forest@n=\count396
-\forest@temp@global@count=\count397
+\forest@temp@count=\count396
+\forest@n=\count397
+\forest@temp@global@count=\count398
 \forest@temp@toks=\toks51
-\forest@temparray@M=\count398
-\forest@temparray@N=\count399
-\forest@global@temparray@M=\count400
-\forest@global@temparray@N=\count401
-\forest@isnum@count=\count402
-\forest@isdim@nonintpart=\count403
+\forest@temparray@M=\count399
+\forest@temparray@N=\count400
+\forest@global@temparray@M=\count401
+\forest@global@temparray@N=\count402
+\forest@isnum@count=\count403
+\forest@isdim@nonintpart=\count404
 \forest@isdim@dimen=\dimen340
-\forest@sort@m=\count404
-\forest@sort@k=\count405
-\forest@sort@p=\count406
+\forest@sort@m=\count405
+\forest@sort@k=\count406
+\forest@sort@p=\count407
 \bracket@content=\toks52
 \bracket@afterthought=\toks53
-\forest@node@maxid=\count407
-\forest@process@left@M=\count408
-\forest@process@left@N=\count409
-\forest@process@right@M=\count410
-\forest@process@right@N=\count411
-\forest@process@saved@M=\count412
-\forest@process@saved@N=\count413
-\forest@process@result@M=\count414
-\forest@process@result@N=\count415
-\forest@process@n=\count416
+\forest@node@maxid=\count408
+\forest@process@left@M=\count409
+\forest@process@left@N=\count410
+\forest@process@right@M=\count411
+\forest@process@right@N=\count412
+\forest@process@saved@M=\count413
+\forest@process@saved@N=\count414
+\forest@process@result@M=\count415
+\forest@process@result@N=\count416
+\forest@process@n=\count417
 \forest@nodewalk@branch@toks=\toks54
 \forest@nodewalk@shortsteps@resolution=\toks55
 \forest@do@dynamics=\toks56
@@ -1572,8 +1574,8 @@ Package: inlinedef 2008/07/10 v1.0 Inlined expansions within definitions
 \forest@PIii@toks=\toks60
 \forest@copy@in=\read5
 \forest@copy@out=\write5
-\forest@externalize@max@outer@n=\count417
-\forest@externalize@inner@n=\count418
+\forest@externalize@max@outer@n=\count418
+\forest@externalize@inner@n=\count419
 )
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/forest-ext/forest-lib-
 ext.tagging.sty
@@ -1585,7 +1587,7 @@ Package: forest-lib-ext.utils 2025-12-05 v0.1
 \forestext@toksa=\toks61
 )
 \tagforest@toks=\toks62
-\tagforest@id=\count419
+\tagforest@id=\count420
 
 [Forest ext.utils debug]:: Setting processing order for tag nodes to unique=tre
 e.
@@ -1597,7 +1599,7 @@ tree.
 ) (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/wrapfig/wrapfig.sty
 \wrapoverhang=\dimen345
 \WF@size=\dimen346
-\c@WF@wrappedlines=\count420
+\c@WF@wrappedlines=\count421
 \WF@box=\box106
 \WF@everypar=\toks63
 Package: wrapfig 2003/01/31  v 3.6
@@ -1639,8 +1641,8 @@ Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 )
 )
 \@linkdim=\dimen347
-\Hy@linkcounter=\count421
-\Hy@pagecounter=\count422
+\Hy@linkcounter=\count422
+\Hy@pagecounter=\count423
 
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2026-04-24 v7.01q Hyperref: PDFDocEncoding definition (HO)
@@ -1648,7 +1650,7 @@ File: pd1enc.def 2026-04-24 v7.01q Hyperref: PDFDocEncoding definition (HO)
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count423
+\Hy@SavedSpaceFactor=\count424
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/puenc.def
 File: puenc.def 2026-04-24 v7.01q Hyperref: PDF Unicode definition (HO)
 )
@@ -1659,7 +1661,7 @@ Package hyperref Info: Plain pages OFF on input line 4214.
 Package hyperref Info: Backreferencing OFF on input line 4219.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4466.
-\c@Hy@tempcnt=\count424
+\c@Hy@tempcnt=\count425
 
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty
 \Urlmuskip=\muskip21
@@ -1676,7 +1678,7 @@ c.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count425
+\Fld@menulength=\count426
 \Field@Width=\dimen349
 \Fld@charsize=\dimen350
 Package hyperref Info: Hyper figures OFF on input line 6091.
@@ -1686,16 +1688,16 @@ Package hyperref Info: backreferencing OFF on input line 6106.
 Package hyperref Info: Link coloring OFF on input line 6111.
 Package hyperref Info: Link coloring with OCG OFF on input line 6116.
 Package hyperref Info: PDF/A mode OFF on input line 6121.
-\Hy@abspage=\count426
-\c@Item=\count427
-\c@Hfootnote=\count428
+\Hy@abspage=\count427
+\c@Item=\count428
+\c@Hfootnote=\count429
 )
 Package hyperref Info: Driver (autodetected): hluatex.
 
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/hluatex.def
 File: hluatex.def 2026-04-24 v7.01q Hyperref driver for luaTeX
-\Fld@listcount=\count429
-\c@bookmark@seq@number=\count430
+\Fld@listcount=\count430
+\c@bookmark@seq@number=\count431
 
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/rerunfilecheck/rerunfi
 lecheck.sty
@@ -1708,12 +1710,12 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 84.
 )
-\Hy@SectionHShift=\skip264
+\Hy@SectionHShift=\skip265
 )
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/memoir/memhfixc.sty
 Package: memhfixc 2025/09/16 v1.24 hyperref package fixes for memoir class
-\c@memhycontfloat=\count431
-\c@mem@Hpagenote=\count432
+\c@memhycontfloat=\count432
+\c@mem@Hpagenote=\count433
 )
 Package hyperref Info: Option `hypertexnames' set `false' on input line 70.
 Package hyperref Info: Option `breaklinks' set `true' on input line 70.
@@ -1731,12 +1733,12 @@ Package: ntheorem 2011/08/15 1.33
 \theorem@@style=\toks66
 \theorembodyfont=\toks67
 \theoremnumbering=\toks68
-\theorempreskipamount=\skip265
-\theorempostskipamount=\skip266
-\theoremframepreskipamount=\skip267
-\theoremframepostskipamount=\skip268
-\theoreminframepreskipamount=\skip269
-\theoreminframepostskipamount=\skip270
+\theorempreskipamount=\skip266
+\theorempostskipamount=\skip267
+\theoremframepreskipamount=\skip268
+\theoremframepostskipamount=\skip269
+\theoreminframepreskipamount=\skip270
+\theoreminframepostskipamount=\skip271
 \theorem@preskip=\toks69
 \theorem@postskip=\toks70
 \theorem@framepreskip=\toks71
@@ -1755,25 +1757,25 @@ Package: ntheorem 2011/08/15 1.33
 \qedsymbol=\toks80
 \theoremkeyword=\toks81
 \qedsymbol=\toks82
-\thm@topsep=\skip271
-\thm@topsepadd=\skip272
+\thm@topsep=\skip272
+\thm@topsepadd=\skip273
 Package ntheorem Info: Option `thmmarks' loaded on input line 1175.
-\c@endNonectr=\count433
-\c@currNonectr=\count434
-\mysavskip=\skip273
+\c@endNonectr=\count434
+\c@currNonectr=\count435
+\mysavskip=\skip274
 Package ntheorem Info: option `amsmath' handling for `thmmarks' loaded on input
  line 1175.
 \thm@amstmpdepth=\dimen355
 \tagwidth=\dimen356
 Package ntheorem Info: Option `amsthm' loaded on input line 1175.
-\c@proof=\count435
-\c@currproofctr=\count436
-\c@endproofctr=\count437
+\c@proof=\count436
+\c@currproofctr=\count437
+\c@endproofctr=\count438
 )
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/thmtools/thmtools.sty
 Package: thmtools 2023/05/04 v0.76
 \thmt@toks=\toks83
-\c@thmt@dummyctr=\count438
+\c@thmt@dummyctr=\count439
 
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/thmtools/thm-patch.sty
 Package: thm-patch 2023/05/04 v0.76
@@ -1849,7 +1851,7 @@ Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
 \xpnct@tok=\toks85
 )
-\c@tagnum=\count439
+\c@tagnum=\count440
 ) (../../sty/bussproofs-extra.sty
 
 LaTeX Warning: You have requested file `',
@@ -1885,7 +1887,7 @@ kz/libraries/tikzlibrarylindenmayersystems.code.tex
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/generic/pgf/libraries/pgflib
 rarylindenmayersystems.code.tex
 \pgflsystemstep=\dimen359
-\c@pgf@lsystem@iteration=\count440
+\c@pgf@lsystem@iteration=\count441
 ))
 Package open-logic-tokenize Info: Setting token language to language / language
 s on input line 1357.
@@ -2159,40 +2161,40 @@ Package open-logic-tokenize Info: Setting token parameter to پارامتر /
 پارامترها on input line 73.
 )
 (../../open-logic-envs.sty
-\c@currthmctr=\count441
-\c@endthmctr=\count442
-\c@thm=\count443
-\c@currexctr=\count444
-\c@endexctr=\count445
-\c@currlemctr=\count446
-\c@endlemctr=\count447
-\c@currpropctr=\count448
-\c@endpropctr=\count449
-\c@currcorctr=\count450
-\c@endcorctr=\count451
-\c@currdefnctr=\count452
-\c@enddefnctr=\count453
-\c@currprobctr=\count454
-\c@endprobctr=\count455
-\c@prob=\count456
-\c@currprobdctr=\count457
-\c@endprobdctr=\count458
-\c@probd=\count459
-\c@curraxiomctr=\count460
-\c@endaxiomctr=\count461
-\c@axiom=\count462
-\c@currremctr=\count463
-\c@endremctr=\count464
-\c@rem=\count465
-\c@currnotectr=\count466
-\c@endnotectr=\count467
-\c@note=\count468
-\c@currcasectr=\count469
-\c@endcasectr=\count470
-\c@case=\count471
-\c@currconvctr=\count472
-\c@endconvctr=\count473
-\c@conv=\count474
+\c@currthmctr=\count442
+\c@endthmctr=\count443
+\c@thm=\count444
+\c@currexctr=\count445
+\c@endexctr=\count446
+\c@currlemctr=\count447
+\c@endlemctr=\count448
+\c@currpropctr=\count449
+\c@endpropctr=\count450
+\c@currcorctr=\count451
+\c@endcorctr=\count452
+\c@currdefnctr=\count453
+\c@enddefnctr=\count454
+\c@currprobctr=\count455
+\c@endprobctr=\count456
+\c@prob=\count457
+\c@currprobdctr=\count458
+\c@endprobdctr=\count459
+\c@probd=\count460
+\c@curraxiomctr=\count461
+\c@endaxiomctr=\count462
+\c@axiom=\count463
+\c@currremctr=\count464
+\c@endremctr=\count465
+\c@rem=\count466
+\c@currnotectr=\count467
+\c@endnotectr=\count468
+\c@note=\count469
+\c@currcasectr=\count470
+\c@endcasectr=\count471
+\c@case=\count472
+\c@currconvctr=\count473
+\c@endconvctr=\count474
+\c@conv=\count475
 )
 \gnBoxA=\box109
 \gnCornerHgt=\dimen360
@@ -2214,8 +2216,8 @@ LaTeX Font Info:    Trying to load font information for U+stmry on input line 2
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/stmaryrd/ustmry.fd)
 \gnArgHgt=\dimen361
 \symsymbolsC=\mathgroup7
-\c@pcrdepth=\count475
-\olphotowidth=\skip274
+\c@pcrdepth=\count476
+\olphotowidth=\skip275
 )
 (../../locale/fa-IR/open-logic-locale.sty) (../../sty/open-logic-defer.sty
 File: open-logic-defer.sty 
@@ -2223,8 +2225,8 @@ File: open-logic-defer.sty
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/answers/answers.sty
 Package: answers 2014/08/24 v2.16 Production of solution sheets in LaTeX2e
 )
-\c@probdeferred=\count476
-\c@probdeferredtag=\count477
+\c@probdeferred=\count477
+\c@probdeferredtag=\count478
 
 Output from handle open-logic-closure-supplement-fa-IR-screen going to open-log
 ic-closure-supplement-fa-IR-screen.prb
@@ -2281,7 +2283,7 @@ Slant=0.15,Renderer=HarfBuzz,Scale=1.08].
 ;family=rm;"
 
 LaTeX Font Info:    Font shape `TU/Scheherazade-Regular.ttf(0)/m/n' will be
-(Font)              scaled to size 12.96002pt on input line 189.
+(Font)              scaled to size 18.66243pt on input line 189.
 
 Package fontspec Info: 
 (fontspec)             Language 'Persian' not explicitly supported within font
@@ -2330,12 +2332,12 @@ Slant=0.15,Renderer=HarfBuzz,Scale=1.08].
 ;family=sf;"
 
 LaTeX Font Info:    Font shape `TU/Scheherazade-Regular.ttf(1)/m/n' will be
-(Font)              scaled to size 12.96002pt on input line 189.
-\tikzscale@accuracy=\skip275
+(Font)              scaled to size 18.66243pt on input line 189.
+\tikzscale@accuracy=\skip276
 
 (<USER_HOME>/Documents/interlanguage/03_projects/language_management/arabic
 _persianate_rtl/03_working_translations/openlogic/fa-IR/locale/fa-IR/output-scr
-een-final/open-logic-closure-supplement-fa-IR-screen.aux
+een-16x9-reflow/open-logic-closure-supplement-fa-IR-screen.aux
 
 Package fontspec Info: 
 (fontspec)             Language 'English' not explicitly supported within font
@@ -2566,16 +2568,16 @@ e 189.
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/context/base/mkii/supp-pdf.m
 kii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count478
+\scratchcounter=\count479
 \scratchdimen=\dimen362
 \scratchbox=\box110
-\nofMPsegments=\count479
-\nofMParguments=\count480
+\nofMPsegments=\count480
+\nofMParguments=\count481
 \everyMPshowfont=\toks86
-\MPscratchCnt=\count481
+\MPscratchCnt=\count482
 \MPscratchDim=\dimen363
-\MPnumerator=\count482
-\makeMPintoPDFobject=\count483
+\MPnumerator=\count483
+\makeMPintoPDFobject=\count484
 \everyMPtoPDFconversion=\toks87
 )
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/epstopdf-pkg/epstopdf-
@@ -2601,10 +2603,10 @@ Package hyperref Info: Link coloring ON on input line 189.
 
 (<USER_HOME>/Documents/interlanguage/03_projects/language_management/arabic
 _persianate_rtl/03_working_translations/openlogic/fa-IR/locale/fa-IR/output-scr
-een-final/open-logic-closure-supplement-fa-IR-screen.out)
+een-16x9-reflow/open-logic-closure-supplement-fa-IR-screen.out)
 (<USER_HOME>/Documents/interlanguage/03_projects/language_management/arabic
 _persianate_rtl/03_working_translations/openlogic/fa-IR/locale/fa-IR/output-scr
-een-final/open-logic-closure-supplement-fa-IR-screen.out)
+een-16x9-reflow/open-logic-closure-supplement-fa-IR-screen.out)
 \@outlinefile=\write7
 
 \openout7 = open-logic-closure-supplement-fa-IR-screen.out
@@ -2615,19 +2617,19 @@ LaTeX Font Info:    Font shape `TU/Scheherazade-Regular.ttf(0)/b/n' will be
 LaTeX Font Info:    Font shape `TU/Scheherazade-Regular.ttf(1)/b/n' will be
 (Font)              scaled to size 26.87044pt on input line 194.
 LaTeX Font Info:    Font shape `TU/Scheherazade-Regular.ttf(0)/m/n' will be
-(Font)              scaled to size 18.66243pt on input line 198.
+(Font)              scaled to size 16.20003pt on input line 199.
 LaTeX Font Info:    Font shape `TU/Scheherazade-Regular.ttf(0)/m/n' will be
-(Font)              scaled to size 15.55202pt on input line 201.
-LaTeX Font Info:    Font shape `TU/Scheherazade-Regular.ttf(0)/b/n' will be
-(Font)              scaled to size 18.66243pt on input line 208.
+(Font)              scaled to size 22.39923pt on input line 201.
+LaTeX Font Info:    Font shape `TU/Scheherazade-Regular.ttf(0)/m/n' will be
+(Font)              scaled to size 15.55202pt on input line 211.
  [1
 
 {<USER_HOME>/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
 (./content/first-order-logic/axiomatic-deduction/provability.tex
 LaTeX Font Info:    Font shape `TU/Scheherazade-Regular.ttf(0)/m/it' will be
-(Font)              scaled to size 12.96002pt on input line 18.
+(Font)              scaled to size 18.66243pt on input line 18.
 LaTeX Font Info:    Font shape `TU/Scheherazade-Regular.ttf(0)/b/n' will be
-(Font)              scaled to size 12.96002pt on input line 18.
+(Font)              scaled to size 18.66243pt on input line 18.
 Package hyperref Info: bookmark level for unknown prop defaults to 0 on input l
 ine 18.
 LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 
@@ -2639,37 +2641,79 @@ File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
 Package hyperref Info: bookmark level for unknown proof defaults to 0 on input 
 line 23.
 LaTeX Font Info:    Font shape `TU/Scheherazade-Regular.ttf(0)/m/sl' in size <1
-2> not available
+7.28> not available
 (Font)              Font shape `TU/Scheherazade-Regular.ttf(0)/m/it' tried inst
-ead on input line 135.
+ead on input line 81.
 LaTeX Font Info:    Font shape `TU/Scheherazade-Regular.ttf(0)/m/it' will be
-(Font)              scaled to size 12.96002pt on input line 135.
+(Font)              scaled to size 18.66243pt on input line 81.
 LaTeX Font Info:    Font shape `TU/Scheherazade-Regular.ttf(0)/m/n' will be
-(Font)              scaled to size 8.64001pt on input line 135.
+(Font)              scaled to size 10.80002pt on input line 81.
 LaTeX Font Info:    Font shape `TU/Scheherazade-Regular.ttf(1)/m/n' will be
-(Font)              scaled to size 8.64001pt on input line 135.
+(Font)              scaled to size 10.80002pt on input line 81.
 
 [1
 
-] [2]
+]
+
+Package open-logic-screen Warning: Nested wide block kept at current linewidth 
+on input line 99.
+
+
+Package open-logic-screen Warning: Nested wide block kept at current linewidth 
+on input line 113.
+
+[2]
+
+Package open-logic-screen Warning: Nested wide block kept at current linewidth 
+on input line 128.
+
+
+Package open-logic-screen Warning: Nested wide block kept at current linewidth 
+on input line 157.
+
+[3]
+
+Package open-logic-screen Warning: Nested wide block kept at current linewidth 
+on input line 172.
+
+
+Package open-logic-screen Warning: Nested wide block kept at current linewidth 
+on input line 189.
+
+[4]
+
+Package open-logic-screen Warning: Nested wide block kept at current linewidth 
+on input line 209.
+
+
+Package open-logic-screen Warning: Nested wide block kept at current linewidth 
+on input line 209.
+
+[5]
 Package hyperref Info: bookmark level for unknown thm defaults to 0 on input li
 ne 218.
+ [6]
 Package hyperref Info: bookmark level for unknown lem defaults to 0 on input li
 ne 290.
- [3])
-(./content/first-order-logic/completeness/maximally-consistent-sets.tex
+ [7] [8]
+
+Package open-logic-screen Warning: Nested wide block kept at current linewidth 
+on input line 401.
+
+) (./content/first-order-logic/completeness/maximally-consistent-sets.tex
+[9]
 Package hyperref Info: bookmark level for unknown defn defaults to 0 on input l
 ine 15.
-
-[4] [5]) (./content/first-order-logic/syntax-and-semantics/introduction.tex
+ [10] [11] [12])
+(./content/first-order-logic/syntax-and-semantics/introduction.tex
 LaTeX Font Info:    Trying to load font information for U+euf on input line 43.
 
 
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-))
+)
+[13])
 (./content/first-order-logic/syntax-and-semantics/syntax-and-semantics.tex
-[6]
 \bbl@ensure@persian {فصل} 1.
 Output from handle open-logic-closure-supplement-fa-IR-screen going to open-log
 ic-closure-supplement-fa-IR-screen.prb
@@ -2696,12 +2740,10 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 10.
 
-[7
-
-]
+[14] [15] [16]
 LaTeX Font Info:    Font shape `TU/Scheherazade-Regular.ttf(0)/m/n' will be
-(Font)              scaled to size 6.48001pt on input line 122.
-) (./content/incompleteness/representability-in-q/c.tex [8]
+(Font)              scaled to size 12.96002pt on input line 122.
+ [17]) (./content/incompleteness/representability-in-q/c.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 10.
@@ -2710,20 +2752,21 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 10.
 
-) (./content/intuitionistic-logic/semantics/propositions.tex [9])
-(./content/lambda-calculus/lambda-definability/lists.tex)
+[18] [19]) (./content/intuitionistic-logic/semantics/propositions.tex [20])
+(./content/lambda-calculus/lambda-definability/lists.tex [21])
 (./content/lambda-calculus/syntax/conversion.tex)
 (./content/many-valued-logic/sequent-calculus/proof-theoretic-notions.tex
-[10]
+[22]
 \myBox1=\box111
 \myScoreStart1=\dimen364
 \myCenter1=\dimen365
 \myScoreEnd1=\dimen366
+ [23]
 \myBox2=\box112
 \myScoreStart2=\dimen367
 \myCenter2=\dimen368
 \myScoreEnd2=\dimen369
-) (./content/model-theory/basics/nonstandard-arithmetic.tex [11]
+ [24]) (./content/model-theory/basics/nonstandard-arithmetic.tex
 LaTeX Font Info:    Trying to load font information for OML+cmbr on input line 
 14.
 
@@ -2736,67 +2779,68 @@ LaTeX Font Info:    Trying to load font information for OML+cmbrm on input line
 (<USER_HOME>/AppData/Local/Programs/MiKTeX/tex/latex/cmbright/omlcmbrm.fd
 File: omlcmbrm.fd 2005/04/13 v8.1 (WaS)
 )
+LaTeX Font Info:    Font shape `OML/cmbr/m/it' in size <17.28> not available
+(Font)              Font shape `OML/cmbrm/m/it' tried instead on input line 14.
+
 LaTeX Font Info:    Font shape `OML/cmbr/m/it' in size <12> not available
 (Font)              Font shape `OML/cmbrm/m/it' tried instead on input line 14.
 
-LaTeX Font Info:    Font shape `OML/cmbr/m/it' in size <8> not available
-(Font)              Font shape `OML/cmbrm/m/it' tried instead on input line 14.
-
-LaTeX Font Info:    Font shape `OML/cmbr/m/it' in size <6> not available
+LaTeX Font Info:    Font shape `OML/cmbr/m/it' in size <10> not available
 (Font)              Font shape `OML/cmbrm/m/it' tried instead on input line 14.
 
 
-[12] [13])
+[25] [26] [27] [28] [29])
 (./content/normal-modal-logic/syntax-and-semantics/normal-modal-logics.tex
+[30]
 Package hyperref Info: bookmark level for unknown ex defaults to 0 on input lin
 e 31.
-)
-(./content/proof-theory/cut-elimination/ce-largest.tex [14] [15]
+) (./content/proof-theory/cut-elimination/ce-largest.tex [31] [32] [33]
+[34]
 \myBox3=\box113
 \myScoreStart3=\dimen370
 \myCenter3=\dimen371
 \myScoreEnd3=\dimen372
- [16])
-(./content/proof-theory/cut-elimination/ce-topmost.tex [17] [18] [19] [20]
-[21] [22]) (./content/proof-theory/cut-elimination/cut-elimination.tex [23]
+ [35] [36] [37]) (./content/proof-theory/cut-elimination/ce-topmost.tex
+[38] [39] [40] [41] [42] [43] [44] [45] [46] [47] [48] [49])
+(./content/proof-theory/cut-elimination/cut-elimination.tex [50]
 \bbl@ensure@persian {فصل} 2.
 Output from handle open-logic-closure-supplement-fa-IR-screen going to open-log
 ic-closure-supplement-fa-IR-screen.prb
 
 \openout6 = open-logic-closure-supplement-fa-IR-screen.prb
-) (./content/proof-theory/cut-elimination/interpolation.tex [24
-
-] [25] [26]
-[27] [28] [29]) (./content/proof-theory/cut-elimination/introduction.tex
-[30]) (./content/proof-theory/cut-elimination/intuitionistic.tex [31])
-(./content/proof-theory/cut-elimination/midsequent.tex [32] [33])
-(./content/proof-theory/natural-deduction/grafting.tex
+) (./content/proof-theory/cut-elimination/interpolation.tex [51] [52] [53]
+[54] [55] [56] [57] [58] [59] [60] [61] [62] [63])
+(./content/proof-theory/cut-elimination/introduction.tex [64] [65] [66])
+(./content/proof-theory/cut-elimination/intuitionistic.tex [67])
+(./content/proof-theory/cut-elimination/midsequent.tex [68] [69] [70] [71]
+[72]) (./content/proof-theory/natural-deduction/grafting.tex
 LaTeX Font Info:    Font shape `TU/Scheherazade-Regular.ttf(0)/m/n' will be
-(Font)              scaled to size 9.72002pt on input line 25.
-LaTeX Font Info:    Font shape `OML/cmbr/m/it' in size <9> not available
+(Font)              scaled to size 11.826pt on input line 25.
+LaTeX Font Info:    Font shape `OML/cmbr/m/it' in size <10.95> not available
 (Font)              Font shape `OML/cmbrm/m/it' tried instead on input line 25.
 
-LaTeX Font Info:    Font shape `OML/cmbr/m/it' in size <5> not available
+LaTeX Font Info:    Font shape `OML/cmbr/m/it' in size <8> not available
 (Font)              Font shape `OML/cmbrm/m/it' tried instead on input line 25.
 
- [34])
-(./content/proof-theory/natural-deduction/introduction.tex [35])
-(./content/proof-theory/natural-deduction/natural-deduction.tex [36]
+LaTeX Font Info:    Font shape `OML/cmbr/m/it' in size <6> not available
+(Font)              Font shape `OML/cmbrm/m/it' tried instead on input line 25.
+
+ [73] [74])
+(./content/proof-theory/natural-deduction/introduction.tex [75] [76])
+(./content/proof-theory/natural-deduction/natural-deduction.tex
 \bbl@ensure@persian {فصل} 3.
 Output from handle open-logic-closure-supplement-fa-IR-screen going to open-log
 ic-closure-supplement-fa-IR-screen.prb
 
 \openout6 = open-logic-closure-supplement-fa-IR-screen.prb
-) (./content/proof-theory/natural-deduction/quantifiers.tex [37
-
-] [38])
-(./content/proof-theory/natural-deduction/rules-proofs.tex [39]
-(./content/proof-theory/natural-deduction/rules-N1.tex) [40] [41])
-(./content/proof-theory/natural-deduction/sequents.tex
-LaTeX Font Info:    Font shape `OML/cmbr/m/it' in size <17.28> not available
+) (./content/proof-theory/natural-deduction/quantifiers.tex [77] [78] [79]
+[80] [81]) (./content/proof-theory/natural-deduction/rules-proofs.tex [82]
+[83] [84] (./content/proof-theory/natural-deduction/rules-N1.tex [85] [86])
+[87] [88]) (./content/proof-theory/natural-deduction/sequents.tex
+LaTeX Font Info:    Font shape `OML/cmbr/m/it' in size <24.88> not available
 (Font)              Font shape `OML/cmbrm/m/it' tried instead on input line 11.
 
-LaTeX Font Info:    Font shape `OML/cmbr/m/it' in size <10> not available
+LaTeX Font Info:    Font shape `OML/cmbr/m/it' in size <20.74> not available
 (Font)              Font shape `OML/cmbrm/m/it' tried instead on input line 11.
 
 
@@ -2808,7 +2852,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\Log' on input line 11.
 
-(./content/proof-theory/natural-deduction/rules-N2.tex) [42] [43])
+(./content/proof-theory/natural-deduction/rules-N2.tex [89] [90]) [91] [92])
 (./content/proof-theory/natural-deduction/translation-G2i.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -2818,7 +2862,8 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\Log' on input line 11.
 
-[44] [45]) (./content/proof-theory/natural-deduction/translation-N2i.tex
+[93] [94] [95] [96] [97])
+(./content/proof-theory/natural-deduction/translation-N2i.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\Log' on input line 11.
@@ -2827,43 +2872,43 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\Log' on input line 11.
 
-[46] [47]) (./content/proof-theory/normalization/introduction.tex)
-(./content/proof-theory/normalization/normalization-thm.tex)
-(./content/proof-theory/normalization/normalization.tex [48]
+[98] [99]) (./content/proof-theory/normalization/introduction.tex [100])
+(./content/proof-theory/normalization/normalization-thm.tex [101])
+(./content/proof-theory/normalization/normalization.tex [102]
 \bbl@ensure@persian {فصل} 4.
 Output from handle open-logic-closure-supplement-fa-IR-screen going to open-log
 ic-closure-supplement-fa-IR-screen.prb
 
 \openout6 = open-logic-closure-supplement-fa-IR-screen.prb
-) (./content/proof-theory/normalization/permutations.tex
-LaTeX Font Info:    Font shape `TU/Scheherazade-Regular.ttf(0)/m/n' will be
-(Font)              scaled to size 11.826pt on input line 215.
-LaTeX Font Info:    Font shape `OML/cmbr/m/it' in size <10.95> not available
+) (./content/proof-theory/normalization/permutations.tex [103]
+LaTeX Font Info:    Font shape `OML/cmbr/m/it' in size <14.4> not available
+(Font)              Font shape `OML/cmbrm/m/it' tried instead on input line 217
+.
+LaTeX Font Info:    Font shape `OML/cmbr/m/it' in size <7> not available
 (Font)              Font shape `OML/cmbrm/m/it' tried instead on input line 217
 .
 \myBox4=\box114
 \myScoreStart4=\dimen373
 \myCenter4=\dimen374
 \myScoreEnd4=\dimen375
- [49
-
-] [50])
-(./content/proof-theory/normalization/reductions.tex [51]
+ [104] [105]
+[106]) (./content/proof-theory/normalization/reductions.tex [107] [108]
+[109]
 Underfull \hbox (badness 10000) detected at line 247
- []$[]  []  [][]\OMS/cmsy/m/n/12 !  []  $ 
+ []$[]  []  [][]\OMS/cmsy/m/n/17.28 !  []  $ 
  []
 
 
 Underfull \hbox (badness 10000) detected at line 247
- []$[]    []  [][]\OMS/cmsy/m/n/12 !  [] []  [][]!  []  $ 
+ []$[]    []  [][]\OMS/cmsy/m/n/17.28 !  [] []  [][]!  []  $ 
  []
 
 
 Underfull \hbox (badness 10000) detected at line 247
- []$[][]  [][]\OMS/cmsy/m/n/12 !  []  $    
+ []$[][]  [][]\OMS/cmsy/m/n/17.28 !  []  $    
  []
 
-) (./content/proof-theory/normalization/segments.tex [52] [53])
+[110] [111]) (./content/proof-theory/normalization/segments.tex [112] [113])
 (./content/proof-theory/normalization/translations.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -2875,9 +2920,10 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 Package hyperref Info: bookmark level for unknown cor defaults to 0 on input li
 ne 25.
-[54] [55] [56]) (./content/proof-theory/proof-search/completeness.tex [57]
-[58]) (./content/proof-theory/proof-search/introduction.tex [59])
-(./content/proof-theory/proof-search/proof-search.tex [60]
+[114] [115] [116] [117] [118] [119] [120])
+(./content/proof-theory/proof-search/completeness.tex [121] [122] [123]
+[124]) (./content/proof-theory/proof-search/introduction.tex [125] [126])
+(./content/proof-theory/proof-search/proof-search.tex [127]
 \bbl@ensure@persian {فصل} 5.
 Output from handle open-logic-closure-supplement-fa-IR-screen going to open-log
 ic-closure-supplement-fa-IR-screen.prb
@@ -2888,55 +2934,58 @@ ic-closure-supplement-fa-IR-screen.prb
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\Log' on input line 11.
 
-[61
-
-]) (./content/proof-theory/proof-search/tableaux.tex
-(./content/proof-theory/proof-search/rules-Tc.tex) [62] [63]
+[128] [129] [130]) (./content/proof-theory/proof-search/tableaux.tex
+(./content/proof-theory/proof-search/rules-Tc.tex [131]) [132] [133] [134]
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 173.
 
-) (./content/proof-theory/proof-theory.tex [64] [65
-
-])
+[135]) (./content/proof-theory/proof-theory.tex [136])
 (./content/proof-theory/propositions-as-types/introduction.tex
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 11.
 
-[66]) (./content/proof-theory/propositions-as-types/normalization.tex [67]
-[68]) (./content/proof-theory/propositions-as-types/proof-terms.tex [69]
-(./content/proof-theory/propositions-as-types/rules-tN2.tex))
-(./content/proof-theory/propositions-as-types/proofs-to-terms.tex [70] [71])
-(./content/proof-theory/propositions-as-types/propositions-as-types.tex
-[72]
+[137
+
+] [138] [139])
+(./content/proof-theory/propositions-as-types/normalization.tex [140] [141]
+[142] [143] [144] [145])
+(./content/proof-theory/propositions-as-types/proof-terms.tex [146] [147]
+[148] (./content/proof-theory/propositions-as-types/rules-tN2.tex [149]))
+(./content/proof-theory/propositions-as-types/proofs-to-terms.tex [150]
+[151]) (./content/proof-theory/propositions-as-types/propositions-as-types.tex
 \bbl@ensure@persian {فصل} 6.
 Output from handle open-logic-closure-supplement-fa-IR-screen going to open-log
 ic-closure-supplement-fa-IR-screen.prb
 
 \openout6 = open-logic-closure-supplement-fa-IR-screen.prb
-) (./content/proof-theory/propositions-as-types/reduction.tex [73
-
-])
+) (./content/proof-theory/propositions-as-types/reduction.tex [152] [153]
+[154])
 (./content/proof-theory/propositions-as-types/sequent-natural-deduction.tex
-[74]) (./content/proof-theory/propositions-as-types/terms-to-proofs.tex
-[75]) (./content/proof-theory/propositions-as-types/type-preservation.tex
-[76]) (./content/proof-theory/propositions-as-types/types.tex [77]
-(./content/proof-theory/propositions-as-types/rules-tN3.tex) [78])
-(./content/proof-theory/sequent-calculus/admissible-derivable.tex [79] [80])
-(./content/proof-theory/sequent-calculus/interpretation-rules.tex [81]
-(./content/proof-theory/sequent-calculus/rules-G2c.tex))
-(./content/proof-theory/sequent-calculus/introduction.tex [82]
-(./content/proof-theory/sequent-calculus/rules-G1c.tex)
-(./content/proof-theory/sequent-calculus/rules-G3c.tex) [83])
-(./content/proof-theory/sequent-calculus/invertibility.tex [84] [85] [86]
-[87]) (./content/proof-theory/sequent-calculus/proof-examples.tex [88] [89]
-[90] [91]) (./content/proof-theory/sequent-calculus/quantifiers.tex [92]
-[93]) (./content/proof-theory/sequent-calculus/rules-G1i.tex)
+[155] [156]) (./content/proof-theory/propositions-as-types/terms-to-proofs.tex
+[157] [158])
+(./content/proof-theory/propositions-as-types/type-preservation.tex [159]
+[160]) (./content/proof-theory/propositions-as-types/types.tex [161] [162]
+(./content/proof-theory/propositions-as-types/rules-tN3.tex [163]) [164])
+(./content/proof-theory/sequent-calculus/admissible-derivable.tex [165]
+[166] [167] [168] [169])
+(./content/proof-theory/sequent-calculus/interpretation-rules.tex [170]
+[171] [172] (./content/proof-theory/sequent-calculus/rules-G2c.tex [173]))
+(./content/proof-theory/sequent-calculus/introduction.tex [174]
+(./content/proof-theory/sequent-calculus/rules-G1c.tex [175] [176])
+(./content/proof-theory/sequent-calculus/rules-G3c.tex) [177] [178])
+(./content/proof-theory/sequent-calculus/invertibility.tex [179] [180] [181]
+[182] [183] [184] [185] [186])
+(./content/proof-theory/sequent-calculus/proof-examples.tex [187] [188]
+[189] [190] [191] [192] [193])
+(./content/proof-theory/sequent-calculus/quantifiers.tex [194] [195] [196]
+[197]) (./content/proof-theory/sequent-calculus/rules-G1i.tex [198] [199])
 (./content/proof-theory/sequent-calculus/rules-G3i.tex)
-(./content/proof-theory/sequent-calculus/rules-LK.tex)
+(./content/proof-theory/sequent-calculus/rules-LK.tex [200])
 (./content/proof-theory/sequent-calculus/rules-mG3i.tex)
-(./content/proof-theory/sequent-calculus/rules-proofs.tex [94] [95] [96]
-[97]) (./content/proof-theory/sequent-calculus/sequent-calculus.tex [98]
+(./content/proof-theory/sequent-calculus/rules-proofs.tex [201] [202] [203]
+[204] [205] [206])
+(./content/proof-theory/sequent-calculus/sequent-calculus.tex
 \bbl@ensure@persian {فصل} 7.
 Output from handle open-logic-closure-supplement-fa-IR-screen going to open-log
 ic-closure-supplement-fa-IR-screen.prb
@@ -2951,13 +3000,13 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\Log' on input line 11.
 
-[99
-
-]) (./content/propositional-logic/syntax-and-semantics/completeness.tex
-[100]) (./content/propositional-logic/syntax-and-semantics/soundness.tex)
-(./content/second-order-logic/syntax-and-semantics/language-of-sol.tex)
-(./content/sets-functions-relations/functions/isomorphic-functions.tex [101])
+[207] [208])
+(./content/propositional-logic/syntax-and-semantics/completeness.tex [209]
+[210] [211]) (./content/propositional-logic/syntax-and-semantics/soundness.tex) (./content/second-order-logic/syntax-and-semantics/language-of-sol.tex
+[212]) (./content/sets-functions-relations/functions/isomorphic-functions.tex
+[213])
 (./content/sets-functions-relations/inductive-defs-proofs/introduction.tex
+[214]
 Underfull \hbox (badness 10000) in paragraph at lines 61--63
 
  []
@@ -2967,33 +3016,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 64--66
 
  []
 
-[102]
+[215]
 Underfull \hbox (badness 10000) in paragraph at lines 104--107
 
  []
 
-
+[216]
 Underfull \hbox (badness 10000) in paragraph at lines 126--127
 
  []
 
-) (./content/sets-functions-relations/relations/relations.tex [103]
+) (./content/sets-functions-relations/relations/relations.tex [217]
 \bbl@ensure@persian {فصل} 8.
 Output from handle open-logic-closure-supplement-fa-IR-screen going to open-log
 ic-closure-supplement-fa-IR-screen.prb
 
 \openout6 = open-logic-closure-supplement-fa-IR-screen.prb
-) (./content/sets-functions-relations/sets-functions-relations.tex [104
-
-]
-[105
-
-]) (./content/sets-functions-relations/sets/proofs-about-sets.tex
+) (./content/sets-functions-relations/sets-functions-relations.tex)
+(./content/sets-functions-relations/sets/proofs-about-sets.tex
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 10.
 
-) (./content/sets-functions-relations/size-of-sets/size-of-sets.tex [106]
+[218
+
+] [219]) (./content/sets-functions-relations/size-of-sets/size-of-sets.tex
+[220]
 \bbl@ensure@persian {فصل} 9.
 Output from handle open-logic-closure-supplement-fa-IR-screen going to open-log
 ic-closure-supplement-fa-IR-screen.prb
@@ -3003,12 +3051,10 @@ ic-closure-supplement-fa-IR-screen.prb
 \tf@thm=\write8
 
 \openout8 = open-logic-closure-supplement-fa-IR-screen.thm
- [107
-
-]
+ [221]
 (<USER_HOME>/Documents/interlanguage/03_projects/language_management/arabic
 _persianate_rtl/03_working_translations/openlogic/fa-IR/locale/fa-IR/output-scr
-een-final/open-logic-closure-supplement-fa-IR-screen.aux)
+een-16x9-reflow/open-logic-closure-supplement-fa-IR-screen.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
@@ -3019,48 +3065,42 @@ ut' has not changed.
 ))
 
 Here is how much of LuaTeX's memory you used:
- 65747 strings out of 475900
- 244333,2373549 words of node,token memory allocated
- 32320 words of node memory still in use:
-   24 hlist, 4 vlist, 4 rule, 10 dir, 18 math, 41 glue, 4 kern, 48 glyph, 11293 
-attribute, 204 glue_spec, 3766 attribute_list, 3 write nodes
-   avail lists: 1:16,2:28029,3:1716,4:247,5:1860,6:77,7:10575,8:58,9:2178,10:30,
-11:30
- 85686 multiletter control sequences out of 65536+600000
- 210 fonts using 38393671 bytes
- 371i,19n,309p,1736b,7616s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<<<USER_HOME>\AppData\Local\MiKTeX\fonts/pk/ljfour/public/cmbright/dpi720\cm
-brmi10.pk>><<USER_HOME>/AppData/Local/Programs/MiKTeX/fonts/opentype/public/
-tex-gyre/texgyrepagella-regular.otf><<USER_HOME>/AppData/Local/Programs/MiKT
-eX/fonts/opentype/public/tex-gyre/texgyrepagella-bold.otf><<USER_HOME>/AppDa
-ta/Local/Programs/MiKTeX/fonts/opentype/public/tex-gyre/texgyreheros-regular.otf
-><<USER_HOME>/AppData/Local/Programs/MiKTeX/fonts/opentype/public/lm/lmmono1
-2-regular.otf><<USER_HOME>/AppData/Local/Programs/MiKTeX/fonts/opentype/publ
-ic/tex-gyre/texgyrepagella-regular.otf><../../../00_control/fonts/scheherazade-2
-.100/Scheherazade-Regular.ttf><../../../00_control/fonts/scheherazade-2.100/Sche
-herazade-Bold.ttf><<USER_HOME>/AppData/Local/Programs/MiKTeX/fonts/type1/pub
-lic/amsfonts/cm/cmex10.pfb><<USER_HOME>/AppData/Local/Programs/MiKTeX/fonts/
-type1/public/amsfonts/cm/cmmi10.pfb><<USER_HOME>/AppData/Local/Programs/MiKT
-eX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><<USER_HOME>/AppData/Local/Prog
-rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><<USER_HOME>/AppData/Lo
-cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><<USER_HOME>/Ap
-pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><<USER_HOME>
-loris/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:
-/Users/<USER>/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12
-.pfb><<USER_HOME>/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
-cm/cmr6.pfb><<USER_HOME>/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
-sfonts/cm/cmr8.pfb><<USER_HOME>/AppData/Local/Programs/MiKTeX/fonts/type1/pu
-blic/amsfonts/cm/cmsy10.pfb><<USER_HOME>/AppData/Local/Programs/MiKTeX/fonts
-/type1/public/amsfonts/cm/cmsy6.pfb><<USER_HOME>/AppData/Local/Programs/MiKT
-eX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><<USER_HOME>/AppData/Local/Progr
-ams/MiKTeX/fonts/type1/public/amsfonts/euler/eufm10.pfb><<USER_HOME>/AppData
-/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><<USERS>/
-<USER>/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.
-pfb>
-Output written on open-logic-closure-supplement-fa-IR-screen.pdf (108 pages, 11
-85336 bytes).
+ 66053 strings out of 475900
+ 195346,2373549 words of node,token memory allocated
+ 37645 words of node memory still in use:
+   24 hlist, 4 vlist, 4 rule, 10 dir, 18 math, 41 glue, 4 kern, 48 glyph, 13288 
+attribute, 205 glue_spec, 4431 attribute_list, 3 write nodes
+   avail lists: 1:24,2:15483,3:1645,4:205,5:964,6:48,7:5637,8:60,9:1693,10:30,11
+:34
+ 85864 multiletter control sequences out of 65536+600000
+ 251 fonts using 43979735 bytes
+ 372i,19n,310p,1736b,7724s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<<<USER_HOME>\AppData\Local\MiKTeX\fonts/pk/ljfour/public/cmbright/dpi1037\c
+mbrmi10.pk>><<USER_HOME>/AppData/Local/Programs/MiKTeX/fonts/opentype/public
+/tex-gyre/texgyrepagella-regular.otf><<USER_HOME>/AppData/Local/Programs/MiK
+TeX/fonts/opentype/public/tex-gyre/texgyrepagella-bold.otf><<USER_HOME>/AppD
+ata/Local/Programs/MiKTeX/fonts/opentype/public/tex-gyre/texgyreheros-regular.ot
+f><<USER_HOME>/AppData/Local/Programs/MiKTeX/fonts/opentype/public/lm/lmmono
+12-regular.otf><<USER_HOME>/AppData/Local/Programs/MiKTeX/fonts/opentype/pub
+lic/tex-gyre/texgyrepagella-regular.otf><../../../00_control/fonts/scheherazade-
+2.100/Scheherazade-Regular.ttf><../../../00_control/fonts/scheherazade-2.100/Sch
+eherazade-Bold.ttf><<USER_HOME>/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+blic/amsfonts/cm/cmex10.pfb><<USER_HOME>/AppData/Local/Programs/MiKTeX/fonts
+/type1/public/amsfonts/cm/cmmi10.pfb><<USER_HOME>/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><<USER_HOME>/AppData/Local/Pro
+grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><<USER_HOME>/AppData/L
+ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><<USER_HOME>/A
+ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><<USERS_ROOT>/
+<USER>/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:
+/Users/<USER>/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy1
+0.pfb><<USER_HOME>/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
+/euler/eufm10.pfb><<USER_HOME>/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/amsfonts/symbols/msam10.pfb><<USER_HOME>/AppData/Local/Programs/MiKTeX/f
+onts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on open-logic-closure-supplement-fa-IR-screen.pdf (222 pages, 13
+12972 bytes).
 
-PDF statistics: 1636 PDF objects out of 1728 (max. 8388607)
- 749 named destinations out of 1000 (max. 1048576)
+PDF statistics: 2112 PDF objects out of 2487 (max. 8388607)
+ 871 named destinations out of 1000 (max. 1048576)
  552 words of extra memory for PDF output out of 10000 (max. 100000000)
 

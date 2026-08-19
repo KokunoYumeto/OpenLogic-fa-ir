@@ -1,47 +1,48 @@
 cff-version: 1.2.0
-message: "لطفاً هنگام استناد، DOI مفهومی پایدار و برچسب انتشار صفحه‌نمایش را به‌کار ببرید. / Please cite the stable concept DOI and the screen-release tag."
-title: "مخزن منبع و ساخت نسخهٔ کامل فارسی ایران از متن منطق باز، با پی‌دی‌اف‌های بازچینی‌شده برای صفحه‌نمایش / Source and build repository for the complete Iranian Persian edition with screen-retypeset PDFs"
+message: "لطفاً هنگام استناد، DOI دقیق این نسخه را به‌کار ببرید؛ DOI مفهومی برای ارجاع پایدار به همهٔ نسخه‌هاست. / Please cite this version DOI; use the concept DOI for the edition as a whole."
+title: "مخزن منبع و ساخت نسخهٔ کامل فارسی ایران از متن منطق باز، با بازچینی واقعی ۱۶:۹ برای صفحه‌نمایش / Source and build repository for the complete Iranian Persian edition with true 16:9 screen reflow"
 type: software
 authors:
   - name: "Open Logic Project"
 abstract: >
-  نسخهٔ مستقل و کامل فارسی ایران برای منبع تثبیت‌شده، با دو قالب افزوده برای
-  مطالعه روی صفحه‌نمایش: خوانشگر 642 واحدی در 748 صفحه و ضمیمهٔ فنی 80
-  واحدی در 108 صفحه. دارایی‌های چاپی پیشین بدون تغییر بایتی نگه داشته شده‌اند.
-  پی‌دی‌اف‌های صفحه‌نمایش ثابت و بدون برچسب ساختاری‌اند و خروجی واکنش‌گرا یا
-  PDF/UA نیستند. English descriptor: additive fixed-layout screen retypesetting
-  of the complete 722-unit Iranian Persian edition; no separate Zenodo version
-  DOI is claimed until a new Zenodo version is published.
+  نسخهٔ مستقل و کامل فارسی ایران برای منبع تثبیت‌شده، با دو خروجی ۱۶:۹:
+  خوانشگر پیونددار ۶۴۲ واحدی در ۱۵۷۸ صفحه و ضمیمهٔ فنی ۸۰ واحدی در ۲۲۲
+  صفحه. دارایی‌های چاپی ۰۰ تا ۰۴ بدون تغییر بایتی حفظ شده‌اند. صفحه‌ها دقیقاً
+  ۹۶۰ × ۵۴۰ نقطه و سطح خواندنِ مرکزی ۷۴۴ × ۴۶۸ نقطه است. English descriptor:
+  corrected fixed-layout 16:9 screen reflow of the complete 722-unit Iranian
+  Persian edition; untagged and not PDF/UA certified.
 repository-code: "https://github.com/KokunoYumeto/OpenLogic-fa-ir"
-url: "https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/tag/fa-ir-olp-0722-screen-20260818"
-version: "OLP-0722-SCREEN-20260818"
-date-released: "2026-08-18"
-doi: "10.5281/zenodo.21921852"
+url: "https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/tag/fa-ir-olp-0722-reflow-16x9-20260819"
+version: "OLP-0722-REFLOW-16X9-20260819"
+date-released: "2026-08-19"
+doi: "10.5281/zenodo.22015765"
 identifiers:
+  - type: doi
+    value: "10.5281/zenodo.22015765"
+    description: "DOI دقیق این نسخه / Exact DOI for this version"
   - type: doi
     value: "10.5281/zenodo.21921852"
     description: "DOI مفهومی پایدار نسخهٔ فارسی ایران / Stable Iranian Persian edition concept DOI"
   - type: url
-    value: "https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/tag/fa-ir-olp-0722-screen-20260818"
-    description: "انتشار افزودهٔ صفحه‌نمایش / Additive screen release"
+    value: "https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/tag/fa-ir-olp-0722-reflow-16x9-20260819"
+    description: "انتشار اصلاح‌شدهٔ ۱۶:۹ / Corrected 16:9 release"
 license: CC-BY-4.0
 preferred-citation:
   type: book
-  title: "متن منطق باز — نسخهٔ کامل فارسی ایران بر پایهٔ منبع تثبیت‌شده؛ پی‌دی‌اف‌های بازچینی‌شده برای مطالعه روی صفحه‌نمایش"
+  title: "متن منطق باز — نسخهٔ کامل فارسی ایران با بازچینی واقعی ۱۶:۹ برای صفحه‌نمایش"
   authors:
     - name: "Open Logic Project"
   languages:
     - fas
-  doi: "10.5281/zenodo.21921852"
+  doi: "10.5281/zenodo.22015765"
   license: CC-BY-4.0
-  version: "OLP-0722-SCREEN-20260818"
-  date-released: "2026-08-18"
-  edition: "بازچینی افزوده برای صفحه‌نمایش: خوانشگر 642 واحدی و ضمیمهٔ فنی 80 واحدی / Additive screen retypesetting: 642-unit reader plus 80-unit supplement"
+  version: "OLP-0722-REFLOW-16X9-20260819"
+  date-released: "2026-08-19"
+  edition: "بازچینی پیوستهٔ ۱۶:۹: خوانشگر ۶۴۲ واحدی و ضمیمهٔ فنی ۸۰ واحدی / True 16:9 reflow: 642-unit reader plus 80-unit supplement"
   year: 2026
-  url: "https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/tag/fa-ir-olp-0722-screen-20260818"
+  url: "https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/tag/fa-ir-olp-0722-reflow-16x9-20260819"
   abstract: >
-    بازچینی ثابت و افزوده برای مطالعه روی صفحه‌نمایش از نسخهٔ کامل 722 واحدی
-    فارسی ایران؛ دارایی‌های چاپی پیشین بدون تغییر بایتی حفظ شده‌اند. فایل‌ها
-    برچسب ساختاری و گواهی PDF/UA ندارند. English descriptor: fixed-layout
-    screen-retypeset edition; editable TeX remains authoritative for extraction
-    limitations.
+    بازچینی ثابت و خوانای ۱۶:۹ برای نسخهٔ کامل ۷۲۲ واحدی فارسی ایران؛
+    دارایی‌های چاپی پیشین بدون تغییر بایتی حفظ شده‌اند. فایل‌ها برچسب ساختاری
+    و گواهی PDF/UA ندارند. English descriptor: exact 960 × 540 pt screen
+    edition with a centered 744 × 468 pt reading area.

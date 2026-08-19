@@ -98,13 +98,16 @@ pwsh -NoProfile -File .\build\BUILD.ps1 `
 راست‌به‌چپ کامل نیست؛ موفقیت ساخت ادعای PDF/UA، دسترس‌پذیری یا بازبینی
 انسانی فارسی ایجاد نمی‌کند.
 
-## بازچینی افزوده برای صفحه‌نمایش
+## بازچینی اصلاح‌شدهٔ ۱۶:۹ برای صفحه‌نمایش
 
-این سند ساخت چاپی 839 و 127 صفحه‌ای را ثابت نگه می‌دارد. انتشار افزودهٔ
-صفحه‌نمایش با راه‌اندازهای مستقل و `build/BUILD_SCREEN.ps1` ساخته می‌شود و
-در 748 و 108 صفحه، همان 722 واحد را بازچینی می‌کند. نیازمندی‌ها، هش‌ها و
-دروازه‌های مستقل آن در `build/BUILD_SCREEN_REQUIREMENTS.md` ثبت شده‌اند.
-دارایی‌های چاپی 00 تا 04 در این فرایند بازنویسی نمی‌شوند.
+این سند ساخت چاپی ۸۳۹ و ۱۲۷ صفحه‌ای را ثابت نگه می‌دارد. انتشار
+`OLP-0722-REFLOW-16X9-20260819` با راه‌اندازهای مستقل و
+`build/BUILD_SCREEN.ps1`، همان ۷۲۲ واحد را روی صفحه‌های دقیقاً
+۹۶۰ × ۵۴۰ نقطه بازچینی می‌کند: خوانشگر ۱۵۷۸ صفحه و ضمیمه ۲۲۲ صفحه.
+پس از حروف‌چینی، اصلاح‌گر بسته‌به‌خطا فقط x1 مستطیل‌های پیوند متورم‌شدهٔ
+راست‌به‌چپ را تغییر می‌دهد. نیازمندی‌ها، هش‌های خام و نهایی و دروازه‌های
+مستقل در `build/BUILD_SCREEN_REQUIREMENTS.md` ثبت شده‌اند. دارایی‌های
+چاپی ۰۰ تا ۰۴ در این فرایند بازنویسی نمی‌شوند.
 
 ## English descriptor
 
@@ -112,4 +115,6 @@ Build the 642-unit, 839-page canonical Iranian Persian reader first,
 including BibTeX, then build the separate 80-unit, 127-page closure supplement
 against the reader AUX. Run twice in distinct clean output directories and
 require byte-identical PDFs before release staging. The script performs no Git
-or network operation and refuses to overwrite existing release assets.
+or network operation and refuses to overwrite existing release assets. The
+separate 16:9 builder produces a 1,578-page reader and a 222-page supplement,
+then applies the hash-gated RTL link-rectangle repair.
