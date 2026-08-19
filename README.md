@@ -1,9 +1,16 @@
 # متن منطق باز — نسخهٔ کامل فارسی ایران با بازچینی واقعی ۱۶:۹ برای صفحه‌نمایش
 
-این مخزن نسخهٔ مستقل و کامل فارسی ایران از *متن منطق باز* را برای منبع
-تثبیت‌شده نگه می‌دارد. انتشار `OLP-0722-REFLOW-16X9-20260819` دو
-پی‌دی‌اف صفحه‌نمایش را با بازچینی پیوسته و خوانا جایگزین می‌کند؛ دارایی‌های
-چاپی ۰۰ تا ۰۴ انتشار پایه بدون هیچ تغییر بایتی حفظ شده‌اند.
+*متن منطق باز* یک کتاب درسی باز و مشارکتی در منطق صوری است که برای مطالعهٔ
+دقیق در سطح میانی طراحی شده است. این کتاب از نظریهٔ سادهٔ مجموعه‌ها، روابط
+و توابع آغاز می‌کند؛ نحو و معناشناسی منطق گزاره‌ای و منطق مرتبهٔ اول،
+دستگاه‌های اثبات، محاسبه‌پذیری و ناتمامیت را بسط می‌دهد؛ و بخش‌هایی دربارهٔ
+منطق موجهات و نظریهٔ اثبات نیز دارد.
+
+این مخزن نسخهٔ مستقل و کامل فارسی ایران را عرضه می‌کند: همهٔ ۷۲۲ واحد منبع
+تثبیت‌شده، شامل خوانشگر اصلی ۶۴۲ واحدی و ضمیمهٔ فنی ۸۰ واحدی. یادداشت این
+انتشار: `OLP-0722-REFLOW-16X9-20260819` دو PDF خوانای ۱۶:۹ با سطح
+متن مرکزی را جایگزین چیدمان صفحه‌نمایش پیشین می‌کند؛ دارایی‌های چاپی ۰۰ تا
+۰۴ بدون تغییر بایتی حفظ شده‌اند.
 
 ## هویت انتشار
 
@@ -87,14 +94,15 @@
 
 ## English descriptor
 
-This repository contains the independently maintained complete Iranian
-Persian edition of *The Open Logic Text*. Release
-`OLP-0722-REFLOW-16X9-20260819` preserves print assets 00–04
-byte-for-byte and replaces the prior portrait screen layer with exact
-960 × 540 pt (16:9) PDFs: a 1,578-page linked reader and a 222-page closure
-supplement. The centered reading area is 744 × 468 pt, the class size is
-17 pt (measured Scheherazade body spans are about 18.59 pt), and the opening
-view is `/Fit`. The exact version DOI is
-`10.5281/zenodo.22015765`; the PDFs retain the stable concept DOI
-`10.5281/zenodo.21921852`. The files are fixed-layout, untagged, and
-not PDF/UA certified.
+*The Open Logic Text* is a collaborative open textbook in formal logic for
+rigorous intermediate-level study. It covers naïve set theory, relations and
+functions, propositional and first-order syntax and semantics, proof systems,
+computability, incompleteness, modal logic, and proof theory. This repository
+contains the complete 722-unit Iranian Persian edition: the 642-unit linked
+reader and the 80-unit technical supplement.
+
+Release note: `OLP-0722-REFLOW-16X9-20260819` replaces the earlier
+screen layout with centered 960 × 540 pt (16:9) PDFs. The exact version DOI is
+`10.5281/zenodo.22015765`; the PDFs retain concept DOI
+`10.5281/zenodo.21921852`. The PDFs are fixed-layout, untagged, and
+not PDF/UA certified; editable TeX remains available.
