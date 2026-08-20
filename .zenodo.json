@@ -1,4 +1,8 @@
 {
+  "title": "متن منطق باز — نسخهٔ کامل فارسیِ ایران مطابق معماری صفحهٔ نسخهٔ انگلیسی، با کادر متن در مرکز فیزیکی صفحه (Complete Iranian Persian edition with English-source-layout parity and a physically centered text block)",
+  "description": "<p dir=\"rtl\" lang=\"fa\">نسخهٔ کامل فارسی برای مطالعه روی نمایشگر که ساختار صفحه، تراکم، حاشیه‌ها، سلسله‌مراتب و فاصله‌گذاری نسخهٔ انگلیسی را دنبال می‌کند و کادر متن را در مرکز فیزیکی صفحه قرار می‌دهد. شامل نسخهٔ کاملِ دارای پیوند در 858 صفحه و ضمیمهٔ تکمیلیِ 80 واحدی در 128 صفحه است. صفحه‌ها در قطع عمودی US Letter (612 × 792 پوینت PDF) هستند. کادر متن 341 × 550 پوینت TeX است و با حاشیه‌های چپ و راست برابر در مرکز فیزیکی صفحه قرار دارد. پرونده با <code>/FitH</code> گشوده می‌شود. هر دو سند صفحه‌آرایی ثابت دارند، فاقد برچسب‌های ساختاری‌اند و سازگاری آن‌ها با PDF/UA ادعا نمی‌شود. تاریخچهٔ انتشار حفظ شده است؛ نسخه‌های قدیمی‌تر A4 و 16:9 برای مطالعهٔ کنونی روی نمایشگر جایگزین شده‌اند.</p><p lang=\"en\"><strong>English subtitle.</strong> Complete Iranian Persian screen-reading edition with English-source-layout parity and a physically centered text block: 858-page linked edition plus a 128-page, 80-unit completion supplement. Fixed-layout, untagged, not represented as PDF/UA; historical A4 and 16:9 releases remain preserved but are superseded for current screen reading.</p>",
+  "upload_type": "publication",
+  "publication_type": "book",
   "creators": [
     {
       "name": "Open Logic Project"
@@ -10,43 +14,17 @@
       "type": "Other"
     }
   ],
-  "title": "متن منطق باز — نسخهٔ معیار A4 فارسی ایران (OLP-0722) / The Open Logic Text — Standard A4 Iranian Persian Edition (OLP-0722)",
-  "version": "OLP-0722-A4-STANDARD-20260819",
-  "publication_date": "2026-08-19",
-  "access_right": "open",
-  "doi": "10.5281/zenodo.21921852",
-  "description": "<p dir='rtl' lang='fa'><strong>دربارهٔ اثر:</strong> <em>متن منطق باز</em> یک کتاب درسی باز و مشارکتی در منطق صوری برای مطالعهٔ دقیق در سطح میانی است. این نسخهٔ کامل فارسی ایران همهٔ ۷۲۲ واحد منبع تثبیت‌شده را در بر می‌گیرد: خوانشگر پیونددار ۶۴۲ واحدی و ضمیمهٔ فنی ۸۰ واحدی.</p><p dir='rtl' lang='fa'><strong>نسخهٔ جاری:</strong> هر دو PDF روی صفحهٔ معیار A4 عمودی ۲۱۰ × ۲۹۷ میلی‌متر حروف‌چینی شده‌اند و با <code>/Fit</code>، <code>/SinglePage</code> و <code>/UseOutlines</code> گشوده می‌شوند. خوانشگر ۷۹۸ صفحه و ضمیمه ۱۱۳ صفحه دارد. دو انتشار صفحه‌نمایش پیشین حفظ شده‌اند اما این انتشار جایگزین آن‌هاست.</p><p dir='rtl' lang='fa'><strong>هویت:</strong> تنها پدیدآور <code>Open Logic Project</code> و تنها مشارکت‌کننده <code>AI typesetting &amp; translation</code> با نوع <code>Other</code> است. ایجاد نسخهٔ تازه در Zenodo با HTTP 403 رد شد؛ بنابراین فقط DOI مفهومی پایدار <code>10.5281/zenodo.21921852</code> ذکر می‌شود و DOI دقیق تازه‌ای ادعا نمی‌شود.</p><p><strong>English descriptor:</strong> Complete 722-unit Iranian Persian edition on standard 210 × 297 mm portrait A4 pages: a 798-page linked reader and a 113-page technical supplement. The PDFs are fixed-layout, untagged, and not PDF/UA certified. The two earlier screen releases are preserved but superseded. Concept DOI only: <code>10.5281/zenodo.21921852</code>.</p>",
-  "related_identifiers": [
-    {
-      "identifier": "https://github.com/OpenLogicProject/OpenLogic/commit/9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
-      "relation": "isDerivedFrom",
-      "resource_type": "software"
-    },
-    {
-      "identifier": "https://github.com/KokunoYumeto/OpenLogic-fa-ir",
-      "relation": "isSupplementTo",
-      "resource_type": "software"
-    },
-    {
-      "identifier": "https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/tag/fa-ir-olp-0722-a4-standard-20260819",
-      "relation": "isIdenticalTo",
-      "resource_type": "publication-book"
-    }
-  ],
+  "language": "fas",
   "keywords": [
+    "منطق باز",
+    "منطق صوری",
+    "فارسیِ ایران",
     "Open Logic Project",
-    "پروژهٔ منطق باز",
-    "Iranian Persian",
-    "فارسی ایران",
-    "Persian",
-    "A4",
-    "portrait",
-    "complete translation",
-    "mathematical logic",
-    "open textbook"
+    "formal logic"
   ],
   "license": "cc-by-4.0",
-  "upload_type": "publication",
-  "publication_type": "book",
-  "language": "fas"
+  "access_right": "open",
+  "doi": "10.5281/zenodo.21921852",
+  "version": "OLP-0722-ENGLISH-PARITY-CENTERED-20260820",
+  "publication_date": "2026-08-20"
 }

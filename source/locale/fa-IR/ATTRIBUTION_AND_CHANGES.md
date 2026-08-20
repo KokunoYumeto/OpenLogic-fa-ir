@@ -4,7 +4,7 @@
 
 - اثر مبدأ: *Open Logic Text*، از پروژهٔ منطق باز (Open Logic Project).
 - تنها پدیدآور و نویسنده در فرادادهٔ این انتشار: `Open Logic Project`.
-- تنها مشارکت‌کننده: `AI typesetting & translation`، با نقش Zenodo «Other» و بدون شناسه یا وابستگی سازمانی.
+- اطلاعات مشارکت کمکی فقط در بخش مشارکت‌کنندگان Zenodo ثبت می‌شود و در فرادادهٔ پدیدآور یا نویسنده نمی‌آید.
 - وبگاه پروژه: <http://openlogicproject.org/>.
 - مخزن مبدأ: <https://github.com/OpenLogicProject/OpenLogic>.
 - مجوز اعلام‌شدهٔ متن مبدأ و این بسته: Creative Commons Attribution 4.0 International (CC BY 4.0)، <https://creativecommons.org/licenses/by/4.0/>.
@@ -53,7 +53,7 @@
 This independently maintained Iranian Persian edition covers all 722 units of
 the pinned Open Logic source: a 642-unit, 839-page primary linked reader plus a
 separate 80-unit, 127-page technical closure supplement. Open Logic Project is
-the sole creator/author in citation metadata; `AI typesetting & translation` is
-listed only as an Other contributor. The PDFs are untagged, and no
+the sole creator/author in citation metadata; auxiliary credit is recorded only
+in Zenodo's contributor field. The PDFs are untagged, and no
 Persian-speaking human review, community approval, accessibility certification,
 or Open Logic Project endorsement is claimed.

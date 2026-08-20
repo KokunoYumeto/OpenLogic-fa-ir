@@ -1,44 +1,13 @@
 cff-version: 1.2.0
-message: "لطفاً برای این ویرایش از DOI مفهومی پایدار استفاده کنید؛ DOI دقیق تازه‌ای برای اصلاح A4 ادعا نشده است. / Please cite the stable concept DOI; no new exact DOI is claimed for the A4 correction."
-title: "مخزن منبع و ساخت نسخهٔ معیار A4 فارسی ایران از متن منطق باز / Source and build repository for the standard A4 Iranian Persian edition of The Open Logic Text"
-type: software
+message: "لطفاً برای استناد به این ویرایش از فرادادهٔ زیر استفاده کنید. / Please cite this edition using the metadata below."
+title: "متن منطق باز — نسخهٔ کامل فارسیِ ایران مطابق معماری صفحهٔ نسخهٔ انگلیسی، با کادر متن در مرکز فیزیکی صفحه (Complete Iranian Persian edition with English-source-layout parity and a physically centered text block)"
+type: book
 authors:
   - name: "Open Logic Project"
-abstract: >
-  نسخهٔ مستقل و کامل فارسی ایران روی صفحات استاندارد A4 عمودی: خوانشگر
-  پیونددار ۶۴۲ واحدی در ۷۹۸ صفحه و ضمیمهٔ فنی ۸۰ واحدی در ۱۱۳ صفحه.
-  تنها مشارکت‌کنندهٔ فنی AI typesetting & translation با نوع Other است و
-  نویسنده یا پدیدآور نیست. English descriptor: complete 722-unit Iranian
-  Persian edition on 210 × 297 mm portrait A4 pages, opening with Fit,
-  SinglePage, and UseOutlines.
-repository-code: "https://github.com/KokunoYumeto/OpenLogic-fa-ir"
-url: "https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/tag/fa-ir-olp-0722-a4-standard-20260819"
-version: "OLP-0722-A4-STANDARD-20260819"
-date-released: "2026-08-19"
+version: "OLP-0722-ENGLISH-PARITY-CENTERED-20260820"
 doi: "10.5281/zenodo.21921852"
-identifiers:
-  - type: doi
-    value: "10.5281/zenodo.21921852"
-    description: "DOI مفهومی پایدار نسخهٔ فارسی ایران / Stable Iranian Persian edition concept DOI"
-  - type: url
-    value: "https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/tag/fa-ir-olp-0722-a4-standard-20260819"
-    description: "انتشار معیار A4 / Standard A4 release"
+date-released: 2026-08-20
 license: CC-BY-4.0
-preferred-citation:
-  type: book
-  title: "متن منطق باز — نسخهٔ معیار A4 فارسی ایران"
-  authors:
-    - name: "Open Logic Project"
-  languages:
-    - fas
-  doi: "10.5281/zenodo.21921852"
-  license: CC-BY-4.0
-  version: "OLP-0722-A4-STANDARD-20260819"
-  date-released: "2026-08-19"
-  edition: "A4 عمودی: خوانشگر ۶۴۲ واحدی و ضمیمهٔ فنی ۸۰ واحدی / Portrait A4: 642-unit reader plus 80-unit supplement"
-  year: 2026
-  url: "https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/tag/fa-ir-olp-0722-a4-standard-20260819"
-  abstract: >
-    نسخهٔ کامل فارسی ایران روی صفحه‌های معیار A4 عمودی؛ خوانشگر ۷۹۸ صفحه
-    و ضمیمه ۱۱۳ صفحه. English descriptor: standard 210 × 297 mm portrait A4
-    edition; fixed-layout, untagged, and not PDF/UA certified.
+repository-code: "https://github.com/KokunoYumeto/OpenLogic-fa-ir"
+url: "https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/tag/fa-ir-olp-0722-english-parity-centered-20260820"
+abstract: "نسخهٔ کامل فارسیِ ایران با صفحه‌آرایی ثابت از متن منطق باز که معماری صفحهٔ نسخهٔ انگلیسی را دنبال می‌کند و کادر متن را در مرکز فیزیکی صفحه قرار می‌دهد؛ شامل نسخهٔ کاملِ دارای پیوند در 858 صفحه و ضمیمهٔ تکمیلیِ 80 واحدی در 128 صفحه. / Complete fixed-layout Iranian Persian edition following the English page architecture, with a physically centered text block, an 858-page linked edition, and a 128-page, 80-unit completion supplement."

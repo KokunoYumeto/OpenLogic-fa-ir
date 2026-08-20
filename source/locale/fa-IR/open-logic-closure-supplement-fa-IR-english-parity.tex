@@ -1,0 +1,63 @@
+% Iranian-Persian closure supplement using the English complete edition's
+% page architecture and vertical rhythm.  Keep the English 341 x 550 pt
+% block, but center it on each individually displayed Letter page.  The
+% frozen Persian supplement supplies the hierarchy, content, fonts, and bidi
+% handling.
+
+\newcommand*{\OLSupplementPDFTitle}{متن منطق باز — ضمیمهٔ فارسیِ بسته‌شدن با صفحه‌آرایی مطابق نسخهٔ انگلیسی}
+\newcommand*{\OLSupplementEditionTitle}{ضمیمهٔ فارسیِ بسته‌شدن}
+\newcommand*{\OLSupplementPDFSubject}{ضمیمهٔ فارسیِ بسته‌شدن با صفحه‌آرایی مطابق نسخهٔ انگلیسی}
+\newcommand*{\OLSecondaryEditionSubtitleBlock}{%
+  \vspace{0.6cm}%
+  {\large\foreignlanguage{english}{Iranian Persian closure supplement in the English source layout}\par}%
+}
+\newcommand*{\OLReleaseConceptDOI}{10.5281/zenodo.21921852}
+\newcommand*{\OLReleaseDOIBlock}{%
+  {\large DOI مفهومی پایدار: \babelsublr{\OLReleaseConceptDOI}\par}%
+}
+
+\AddToHook{class/memoir/after}{%
+  \linespread{1.05}% Match the English complete driver's leading.
+  \settypeblocksize{550pt}{341pt}{*}% Exact English typeblock dimensions.
+  \setlrmargins{136.6475pt}{*}{*}% Derive the identical opposite margin.
+  \setulmargins{122.485pt}{*}{*}% Derive the identical opposite margin.
+  \setheadfoot{14pt}{25.29494pt}% Persian-safe header register only.
+  \checkandfixthelayout[fixed]%
+}
+
+\newcommand*{\OLCompleteReaderJob}{open-logic-complete-fa-IR-english-parity}
+
+% Match the English source's LTR graphic-box direction without changing the
+% surrounding Persian bidi flow.
+\makeatletter
+\newcommand*{\OLParityGraphicLTRBefore}{\begingroup\bbl@setdirs\z@}
+\newcommand*{\OLParityGraphicLTRAfter}{\endgroup}
+\newcommand*{\OLParityInstallGraphicDirectionFixes}{%
+  \let\OLParityOriginalAsset\olasset
+  \RenewDocumentCommand{\olasset}{O{\olphotowidth}m}{%
+    \begingroup\bbl@setdirs\z@
+    \OLParityOriginalAsset[##1]{##2}%
+    \endgroup
+  }%
+  \AddToHook{env/tikzpicture/before}{\OLParityGraphicLTRBefore}%
+  \AddToHook{env/tikzpicture/after}{\OLParityGraphicLTRAfter}%
+  \AddToHook{env/sidewaysfigure/before}{\OLParityGraphicLTRBefore}%
+  \AddToHook{env/sidewaysfigure/after}{\OLParityGraphicLTRAfter}%
+}
+\makeatother
+
+\AddToHook{begindocument/before}{%
+  % Empirical PDF rule measurement: Babel RTL reverses this register's
+  % physical motion.  +0.3774pt centers the 339.726bp live typeblock rule at
+  % x=306.000bp on every Letter page.
+  \addtolength{\oddsidemargin}{0.3774pt}%
+  \addtolength{\evensidemargin}{0.3774pt}%
+  \OLParityInstallGraphicDirectionFixes
+  \hypersetup{%
+    pdfstartview=FitH,%
+    pdfpagelayout=OneColumn,%
+    pdfpagemode=UseOutlines%
+  }%
+}
+
+\input{open-logic-closure-supplement-fa-IR.tex}

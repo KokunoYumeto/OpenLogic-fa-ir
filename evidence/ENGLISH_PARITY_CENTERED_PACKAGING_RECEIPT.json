@@ -1,0 +1,46 @@
+{
+  "asset_locale": "fa-IR",
+  "asset_version_token": "OLP-0722",
+  "assets": {
+    "00_OPENLOGIC_fa-IR_COMPLETE_LINKED_READER_CENTERED_ENGLISH_PARITY_OLP-0722.pdf": {
+      "bytes": 7900038,
+      "sha256": "EB55512A5D975D68E3D59B4B12AF6C0E6B5D58EC51A35FD4F884310CFEF781CC"
+    },
+    "01_OPENLOGIC_fa-IR_CLOSURE_SUPPLEMENT_80_UNITS_CENTERED_ENGLISH_PARITY_OLP-0722.pdf": {
+      "bytes": 1248819,
+      "sha256": "B90AEF9C311543324B8B01AAC666CA4403789BC3A04044CF7301D7B0C8A65A3A"
+    },
+    "02_OPENLOGIC_fa-IR_CENTERED_ENGLISH_PARITY_SOURCES_AND_EVIDENCE_OLP-0722.zip": {
+      "bytes": 2747280,
+      "sha256": "60C36D7ACB424E3343B577FA9018659CF2F1DF9544A8B20AB09172243904427F"
+    },
+    "03_OPENLOGIC_fa-IR_SHA256_MANIFEST_CENTERED_ENGLISH_PARITY_OLP-0722.txt": {
+      "bytes": 438,
+      "sha256": "D3B4E8159D9319ADCEB30CF00A5A0C6D4FF841257D147312C743CCA0FCAD9F1D"
+    }
+  },
+  "contributor_absent_from_author_slots": true,
+  "creator": "Open Logic Project",
+  "external_manifest_lf_no_bom": true,
+  "external_manifest_rows": 3,
+  "extra_source_overlays": 1,
+  "fixed_utc": "2026-08-20T00:00:00Z",
+  "live_base_drivers_overlaid": 2,
+  "parity_wrappers_added_or_overlaid": 2,
+  "publication_root_edited": false,
+  "release_version": "OLP-0722-ENGLISH-PARITY-CENTERED-20260820",
+  "sanitized_final_build_evidence_files": 15,
+  "sanitized_repeat_build_evidence_files": 15,
+  "source_files_before_overlay": 751,
+  "zenodo_contributor_slot_validated": true,
+  "zip": {
+    "crc_and_entry_sha256_verified": true,
+    "entries": 798,
+    "sha256": "60C36D7ACB424E3343B577FA9018659CF2F1DF9544A8B20AB09172243904427F",
+    "uncompressed_bytes": 10516949,
+    "unsafe_names": 0,
+    "zip_bytes": 2747280
+  },
+  "zip_builds_byte_identical": true,
+  "zip_second_build_sha256": "60C36D7ACB424E3343B577FA9018659CF2F1DF9544A8B20AB09172243904427F"
+}
