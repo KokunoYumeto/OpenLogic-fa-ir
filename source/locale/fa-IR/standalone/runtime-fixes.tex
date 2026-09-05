@@ -1,0 +1,26 @@
+% Additive integration fixes. Immutable OpenLogic/Babel sources are untouched.
+% Babel's expandable fallback tests math mode too early during alignment-cell
+% lookahead. Delay the unchanged fallback until the cell template has begun.
+\ExplSyntaxOn
+\cs_if_exist:NF \olsa_saved_babel_bang:
+ {
+  \cs_if_exist:cTF {normal@char!}
+   {
+    \cs_new_eq:Nc \olsa_saved_babel_bang: {normal@char!}
+    \cs_set_protected:cpn {normal@char!} {\relax\olsa_saved_babel_bang:}
+    \iow_term:n {OL-STANDALONE-BANG-FALLBACK|guarded}
+   }
+   {\PackageError{standalone-runtime}{Expected~Babel~bang~fallback~missing}{Review~the~loaded~Babel~and~OpenLogic~versions.}}
+ }
+\ExplSyntaxOff
+
+% These are generated reference words, not protected source identifiers.
+\renewcommand*{\crefpairconjunction}{ و }
+\renewcommand*{\crefmiddleconjunction}{، }
+\renewcommand*{\creflastconjunction}{ و }
+\renewcommand*{\crefrangeconjunction}{ تا }
+\renewcommand*{\crefpairgroupconjunction}{ و }
+\renewcommand*{\crefmiddlegroupconjunction}{، }
+\renewcommand*{\creflastgroupconjunction}{ و }
+\crefname{equation}{رابطه}{رابطه‌ها}
+\Crefname{equation}{رابطه}{رابطه‌ها}

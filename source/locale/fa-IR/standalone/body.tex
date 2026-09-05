@@ -1,0 +1,17 @@
+% Single-document body API: load exactly once after the owner's title/front matter.
+% No document class, preamble, external AUX, bibliography, or end-document here.
+\input{standalone/runtime-fixes.tex}
+\input{standalone/link-geometry.tex}
+\input{standalone/runtime.tex}
+\input{standalone/generated-ledger.tex}
+\input{standalone/context.tex}
+\input{standalone/source-corrections.tex}
+\input{standalone/typography.tex}
+\input{standalone/bidi-layout.tex}
+\InputIfFileExists{standalone-errata.tex}{}{}
+\OLSAStart
+\OLSAUnit{OLP-0001}
+\tableofcontents*
+\OLSAUnit{OLP-0002}
+\input{standalone/variants.tex}
+\OLSAVerify

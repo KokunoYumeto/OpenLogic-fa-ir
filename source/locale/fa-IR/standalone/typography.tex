@@ -1,0 +1,232 @@
+% Additive typography only: eighteen exact inline formulas in thirteen immutable units.
+% The original subfiles are still read and executed. No source-path substitute,
+% font reduction, formula expansion, or mathematical-token rewrite is used.
+% Comparison strips whitespace only; output always uses the captured #1 tokens.
+\ExplSyntaxOn
+\prop_new:N \g_olsa_typography_source_prop
+\prop_new:N \g_olsa_typography_formula_prop
+\prop_new:N \g_olsa_typography_punctuation_prop
+\prop_new:N \g_olsa_typography_expected_prop
+\prop_new:N \g_olsa_typography_seen_prop
+\iow_new:N \g_olsa_typography_iow
+\tl_new:N \l_olsa_typography_normal_tl
+\tl_new:N \l_olsa_typography_key_tl
+\tl_new:N \l_olsa_typography_rule_tl
+\tl_new:N \l_olsa_typography_punctuation_tl
+\tl_new:N \l_olsa_typography_count_tl
+\tl_new:N \l_olsa_typography_expected_tl
+\cs_generate_variant:Nn \prop_gput:Nnn {NVV}
+
+\cs_new_protected:Npn \olsa_typography_normalize:n #1
+ {
+  \tl_set:Nx \l_olsa_typography_normal_tl {\tl_to_str:n{#1}}
+  \regex_replace_all:nnN {\s} {} \l_olsa_typography_normal_tl
+ }
+\cs_new_protected:Npn \olsa_typography_declare:nnnn #1#2#3#4
+ {
+  \olsa_typography_normalize:n{#4}
+  \tl_set:Nx \l_olsa_typography_key_tl {#1|\l_olsa_typography_normal_tl}
+  \prop_if_in:NVTF \g_olsa_typography_formula_prop \l_olsa_typography_key_tl
+   {\PackageError{standalone-typography}{Duplicate~formula~registration~#2}{Each~rule~must~have~one~exact~source~formula.}}
+   {\prop_gput:NVn \g_olsa_typography_formula_prop \l_olsa_typography_key_tl {#2}}
+  \prop_gput:Nnn \g_olsa_typography_source_prop {#1}{1}
+  \prop_gput:Nnn \g_olsa_typography_punctuation_prop {#2}{#3}
+  \prop_gput:Nnn \g_olsa_typography_expected_prop {#2}{1}
+ }
+\NewDocumentCommand \OLSADeclareDisplay {m m m +m}
+ {\olsa_typography_declare:nnnn{#1}{#2}{#3}{#4}}
+\NewDocumentCommand \OLSADeclareAtomicInline {m m +m}
+ {\olsa_typography_declare:nnnn{#1}{#2}{atomic}{#3}}
+% An exact payload can legitimately recur within its stable source unit.
+% Every such occurrence is reflowed; the declared total is checked fail-closed.
+\NewDocumentCommand \OLSASetDisplayCount {m m}
+ {
+  \prop_if_in:NnTF \g_olsa_typography_expected_prop {#1}
+   {
+    \int_compare:nNnTF {#2}>{0}
+     {\prop_gput:Nnn \g_olsa_typography_expected_prop {#1}{#2}}
+     {\PackageError{standalone-typography}{Nonpositive~display~count~for~#1}{Use~the~pinned~source~occurrence~count.}}
+   }
+   {\PackageError{standalone-typography}{Unknown~display~rule~#1}{Declare~the~exact~formula~first.}}
+ }
+% The target proof-tree units use bussproofs' dollar-delimited interfaces. The transport
+% helpers below were tokenized with ordinary cat-3 dollars. Their active-dollar
+% entry wrappers (defined at the end) preserve the captured payload and call
+% deep copies of the original macros, including their literal \fCenter delimiter.
+\NewCommandCopy \olsa_typography_original_axiom \Axiom
+\NewCommandCopy \olsa_typography_original_deduce \Deduce
+\NewCommandCopy \olsa_typography_original_unary \UnaryInf
+\NewCommandCopy \olsa_typography_original_binary \BinaryInf
+\cs_new_protected:Npn \OLSATypographyAxiomTransport #1
+ {\olsa_typography_original_axiom $#1$}
+\cs_new_protected:Npn \OLSATypographyDeduceTransport #1
+ {\olsa_typography_original_deduce $#1$}
+\cs_new_protected:Npn \OLSATypographyUnaryTransport #1
+ {\olsa_typography_original_unary $#1$}
+\cs_new_protected:Npn \OLSATypographyBinaryTransport #1
+ {\olsa_typography_original_binary $#1$}
+\NewDocumentCommand \OLSAApplyTypography {}
+ {
+  \tl_set:Nx \l_olsa_typography_key_tl {\OLStandaloneCurrentID}
+  % A proof-tree source can follow the one unit whose dollar interfaces are
+  % bridged below. Restore the deep-copied cat-3 interfaces at every unit
+  % boundary before selecting the exceptional active-dollar wrappers. This is
+  % deliberately local to the dispatcher's per-unit group.
+  \cs_set_eq:NN \Axiom \olsa_typography_original_axiom
+  \cs_set_eq:NN \Deduce \olsa_typography_original_deduce
+  \cs_set_eq:NN \UnaryInf \olsa_typography_original_unary
+  \cs_set_eq:NN \BinaryInf \olsa_typography_original_binary
+  \prop_if_in:NVTF \g_olsa_typography_source_prop \l_olsa_typography_key_tl
+   {
+    \char_set_catcode_active:n {36}
+    \str_if_eq:VnT \l_olsa_typography_key_tl {OLP-0701}
+     {
+      \cs_set_eq:NN \Deduce \OLSATypographyActiveDeduce
+      \cs_set_eq:NN \UnaryInf \OLSATypographyActiveUnary
+      \cs_set_eq:NN \BinaryInf \OLSATypographyActiveBinary
+     }
+    \str_if_eq:VnT \l_olsa_typography_key_tl {OLP-0702}
+     {
+      \cs_set_eq:NN \Axiom \OLSATypographyActiveAxiom
+      \cs_set_eq:NN \Deduce \OLSATypographyActiveDeduce
+      \cs_set_eq:NN \UnaryInf \OLSATypographyActiveUnary
+      \cs_set_eq:NN \BinaryInf \OLSATypographyActiveBinary
+     }
+    \str_if_eq:VnT \l_olsa_typography_key_tl {OLP-0711}
+     {
+      \cs_set_eq:NN \Axiom \OLSATypographyActiveAxiom
+      \cs_set_eq:NN \UnaryInf \OLSATypographyActiveUnary
+      \cs_set_eq:NN \BinaryInf \OLSATypographyActiveBinary
+     }
+   }
+   {\char_set_catcode_math_toggle:n {36}}
+ }
+\NewDocumentCommand \OLSATypographyStart {}
+ {
+  \iow_open:Nn \g_olsa_typography_iow {\jobname.oltypography}
+  \iow_now:Nn \g_olsa_typography_iow {source_id|rule|occurrence}
+ }
+\cs_new_protected:Npn \olsa_typography_display:n #1
+ {
+  \prop_get:NVN \g_olsa_typography_punctuation_prop
+    \l_olsa_typography_rule_tl \l_olsa_typography_punctuation_tl
+  \str_case:VnF \l_olsa_typography_punctuation_tl
+   {
+    {none}{\[#1\]}
+    % A terminal sentence mark must not become a one-character prose line.
+    % Consume exactly the original following mark and retain it in \text.
+    {period}{\peek_meaning_remove:NTF .
+      {\[#1\text{.}\]}
+      {\PackageError{standalone-typography}{Expected~terminal~period}{The~pinned~source~punctuation~changed.}\[#1\]}}
+    {comma}{\peek_meaning_remove:NTF ،
+      {\[#1\text{،}\]}
+      {\PackageError{standalone-typography}{Expected~Persian~comma}{The~pinned~source~punctuation~changed.}\[#1\]}}
+    % Keep a long source formula inline while forbidding a line break inside
+    % it. The captured mathematical payload is emitted without token changes.
+    {atomic}{\mbox{\c_math_toggle_token #1\c_math_toggle_token}}
+   }
+   {\PackageError{standalone-typography}{Unknown~typography~policy}{Check~the~exact~formula~registry.}\[#1\]}
+ }
+\NewDocumentCommand \OLSAProcessInlineMath {+m}
+ {
+  \olsa_typography_normalize:n{#1}
+  \tl_set:Nx \l_olsa_typography_key_tl
+    {\OLStandaloneCurrentID|\l_olsa_typography_normal_tl}
+  \prop_get:NVNTF \g_olsa_typography_formula_prop
+    \l_olsa_typography_key_tl \l_olsa_typography_rule_tl
+   {
+    \prop_get:NVNTF \g_olsa_typography_seen_prop
+      \l_olsa_typography_rule_tl \l_olsa_typography_count_tl
+      {}{\tl_set:Nn\l_olsa_typography_count_tl{0}}
+    \tl_set:Nx \l_olsa_typography_count_tl
+      {\int_eval:n{\l_olsa_typography_count_tl+1}}
+    \prop_gput:NVV \g_olsa_typography_seen_prop
+      \l_olsa_typography_rule_tl \l_olsa_typography_count_tl
+    \prop_get:NVN \g_olsa_typography_expected_prop
+      \l_olsa_typography_rule_tl \l_olsa_typography_expected_tl
+    \int_compare:nNnT {\l_olsa_typography_count_tl}>{\l_olsa_typography_expected_tl}
+      {\PackageError{standalone-typography}{Excess~display~rule~\l_olsa_typography_rule_tl}{Each~pinned~formula~must~have~its~exact~declared~occurrence~count.}}
+    \iow_term:x{OL-STANDALONE-TYPOGRAPHY|\OLStandaloneCurrentID|\l_olsa_typography_rule_tl|\l_olsa_typography_count_tl}
+    \iow_now:Nx\g_olsa_typography_iow{\OLStandaloneCurrentID|\l_olsa_typography_rule_tl|\l_olsa_typography_count_tl}
+    \olsa_typography_display:n{#1}
+   }
+   {
+    % Primitive math-shift tokens, never another active-dollar invocation.
+    % This also preserves nested inline math in proof-tree boxes and \text.
+    \c_math_toggle_token #1\c_math_toggle_token
+   }
+ }
+\NewDocumentCommand \OLSATypographyVerify {}
+ {
+  \prop_map_inline:Nn \g_olsa_typography_expected_prop
+   {
+    \prop_get:NnNTF \g_olsa_typography_seen_prop {##1}\l_olsa_typography_count_tl
+      {}{\tl_set:Nn\l_olsa_typography_count_tl{0}}
+    \int_compare:nNnF {\l_olsa_typography_count_tl}={##2}
+     {\PackageError{standalone-typography}{Wrong~display~count~for~##1:~\l_olsa_typography_count_tl}{Compare~the~runtime~trace~with~the~pinned~formula~manifest.}}
+   }
+  \iow_term:x{OL-STANDALONE-TYPOGRAPHY-COVERAGE|\prop_count:N\g_olsa_typography_seen_prop|\prop_count:N\g_olsa_typography_expected_prop}
+  \iow_close:N\g_olsa_typography_iow
+ }
+
+\OLSADeclareDisplay{OLP-0668}{height-two-premises}{period}
+ {\pheight{\delta}=\max(\pheight{\delta_1},\pheight{\delta_2})+1}
+\OLSADeclareDisplay{OLP-0668}{height-three-premises}{period}
+ {\pheight{\delta}=
+  \max(\pheight{\delta_1},\pheight{\delta_2},\pheight{\delta_3})+1}
+\OLSADeclareDisplay{OLP-0290}{representability-equivalence}{none}
+ {\lforall[y][(!A_f(\num{n_0},\dots,\num{n_k},y)
+  \liff\eq[y][\num{m}])]}
+\OLSADeclareDisplay{OLP-0291}{encoded-formula}{none}
+ {!A_f(\num{n_0},\dots,\num{n_k},\num{(s)_1})}
+\OLSADeclareDisplay{OLP-0369}{substitution-before-expansion}{comma}
+ {\Subst{((\lambd[x][N])Q)}{R}{y} \bredpar
+  \Subst{\Subst{N'}{Q'}{x}}{R'}{y}}
+\OLSADeclareDisplay{OLP-0369}{substitution-after-expansion}{period}
+ {(\lambd[x][\Subst{N}{R}{y}])\Subst{Q}{R}{y} \bredpar
+  \Subst{\Subst{N'}{R'}{y}}{\Subst{Q'}{R'}{y}}{x}}
+% Follow-up from complete primary-page inspection, including the physical
+% page-729 text-block escape in OLP-0298. Page numbers are evidence locators
+% only; dispatch always uses source ID and an exact normalized formula payload.
+\OLSADeclareDisplay{OLP-0163}{valuation-tuple}{comma}
+ {\tuple{\Value{t_1}{M}[s],\Value{t_2}{M}[s]}}
+\OLSADeclareDisplay{OLP-0702}{sequent-depth-binary-case}{period}
+ {\depth{!A}=\max(\depth{!B},\depth{!C})+1}
+\OLSADeclareDisplay{OLP-0711}{sequent-height-two-premises}{period}
+ {\pheight{\pi}=\max(\pheight{\pi_1},\pheight{\pi_2})+1}
+\OLSADeclareDisplay{OLP-0291}{q-provability-m}{comma}
+ {\Th{Q}\Proves !A_f(\num{n_0},\dots,\num{n_k},\num{m})}
+\OLSASetDisplayCount{q-provability-m}{2}
+\OLSADeclareDisplay{OLP-0291}{q-provability-l}{period}
+ {\Th{Q}\Proves !A_f(\num{n_0},\dots,\num{n_k},\num{l})}
+\OLSADeclareDisplay{OLP-0295}{composition-g-formula}{none}
+ {!A_{g_i}(x_0,\dots,x_{l-1},y)}
+\OLSADeclareDisplay{OLP-0298}{relation-formula}{none}
+ {!A_R(x_0,\dots,x_k)}
+\OLSASetDisplayCount{relation-formula}{3}
+\OLSADeclareDisplay{OLP-0298}{relation-characteristic-positive}{comma}
+ {\Char{R}(n_0,\dots,n_k)=1}
+\OLSADeclareDisplay{OLP-0325}{second-order-term-set}{comma}
+ {\TrmSOL[L]}
+\OLSADeclareDisplay{OLP-0556}{ordinal-type-beta}{comma}
+ {\ordtype{B,\lessdot}=\beta}
+\OLSADeclareDisplay{OLP-0588}{union-injection-map}{none}
+ {g \colon
+  \bigcup_{\beta \in \cardfont{a}} X_\beta \to
+  \cardfont{a} \times \cardfont{a}}
+\OLSADeclareAtomicInline{OLP-0701}{invertibility-b-context-sequent}
+ {\Log{G3c} \Proves[n] !B, \Gamma \Sequent \Delta}
+\OLSASetDisplayCount{invertibility-b-context-sequent}{2}
+\ExplSyntaxOff
+
+% A complete pair is scanned, rather than toggling on \ifmmode. The global
+% protected meaning is safe for deferred writes; only thirteen source-reading
+% groups activate its catcode. Ordinary dollar tokens elsewhere remain cat 3.
+\begingroup
+\catcode`\$=13
+\protected\long\gdef$#1${\OLSAProcessInlineMath{#1}}
+\protected\long\gdef\OLSATypographyActiveAxiom$#1${\OLSATypographyAxiomTransport{#1}}
+\protected\long\gdef\OLSATypographyActiveDeduce$#1${\OLSATypographyDeduceTransport{#1}}
+\protected\long\gdef\OLSATypographyActiveUnary$#1${\OLSATypographyUnaryTransport{#1}}
+\protected\long\gdef\OLSATypographyActiveBinary$#1${\OLSATypographyBinaryTransport{#1}}
+\endgroup

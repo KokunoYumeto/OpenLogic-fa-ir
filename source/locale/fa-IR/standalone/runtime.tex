@@ -1,0 +1,293 @@
+% Body-only dispatcher. Baseline files are loaded through subfiles unchanged.
+% The generated signature map is exhaustive; unknown imports fail closed.
+\ExplSyntaxOn
+\prop_new:N \g_olsa_path_prop
+\prop_new:N \g_olsa_namespace_prop
+\prop_new:N \g_olsa_mode_prop
+\prop_new:N \g_olsa_role_prop
+\prop_new:N \g_olsa_edge_prop
+\prop_new:N \g_olsa_label_prop
+\prop_new:N \g_olsa_alias_prop
+\prop_new:N \g_olsa_canonical_anchor_prop
+\prop_new:N \g_olsa_seen_prop
+\prop_new:N \g_olsa_unique_prop
+\seq_new:N \g_olsa_expected_seq
+\int_new:N \g_olsa_occurrence_int
+\iow_new:N \g_olsa_units_iow
+\tl_new:N \l_olsa_path_tl
+\tl_new:N \l_olsa_namespace_tl
+\tl_new:N \l_olsa_mode_tl
+\tl_new:N \l_olsa_context_tl
+\tl_new:N \l_olsa_key_tl
+\tl_new:N \l_olsa_target_tl
+\tl_new:N \l_olsa_anchor_tl
+\tl_new:N \l_olsa_expected_tl
+\tl_new:N \l_olsa_import_path_tl
+\tl_new:N \l_olsa_reference_id_tl
+\tl_new:N \l_olsa_label_key_tl
+\tl_new:N \l_olsa_label_source_tl
+\tl_new:N \l_olsa_label_target_tl
+\tl_new:N \l_olsa_references_tl
+\seq_new:N \l_olsa_references_seq
+\clist_new:N \l_olsa_references_clist
+\bool_new:N \l_olsa_variant_bool
+\bool_new:N \g_olsa_deferred_source_context_installed_bool
+\cs_new:Npn \OLStandaloneCurrentID {body}
+\cs_new:Npn \OLStandaloneCurrentPath {}
+\cs_new:Npn \OLStandaloneCurrentNamespace {canonical}
+\cs_generate_variant:Nn \prop_get:NnN {NVN}
+\cs_generate_variant:Nn \prop_get:NnNTF {NVN}
+\cs_generate_variant:Nn \prop_if_in:NnTF {NV}
+\cs_generate_variant:Nn \prop_gput:Nnn {NVn}
+\cs_generate_variant:Nn \seq_gset_from_clist:Nn {Nx}
+
+% Copy robust/xparse implementations, not just their public dispatcher token.
+% A shallow alias would recurse into the newly installed cref dispatcher.
+\NewCommandCopy \olsa_original_subfile:n \subfile
+\NewCommandCopy \olsa_original_olimport \olimport
+\NewCommandCopy \olsa_original_label \label
+\NewCommandCopy \olsa_original_cref \cref
+\NewCommandCopy \olsa_original_Cref \Cref
+\NewCommandCopy \olsa_original_ref \ref
+\NewCommandCopy \olsa_original_pageref \pageref
+\NewCommandCopy \olsa_original_cpageref \cpageref
+
+\NewDocumentCommand \OLSADeclareUnit {m m m m m}
+ {
+  \prop_gput:Nnn \g_olsa_path_prop {#1}{#2}
+  \prop_gput:Nnn \g_olsa_namespace_prop {#1}{#3}
+  \prop_gput:Nnn \g_olsa_mode_prop {#1}{#4}
+  \prop_gput:Nnn \g_olsa_role_prop {#1}{#5}
+ }
+\NewDocumentCommand \OLSADeclareEdge {m m m m m}
+ {\prop_gput:Nnn \g_olsa_edge_prop {#1|#2|#3|#4}{#5}}
+\NewDocumentCommand \OLSADeclareLabel {m m m}
+ {\prop_gput:Nnn \g_olsa_label_prop {#1|#2}{#3}}
+\NewDocumentCommand \OLSADeclareAlias {m m}
+ {\prop_gput:Nnn \g_olsa_alias_prop {#1}{#2}}
+\NewDocumentCommand \OLSADeclareCanonicalAnchor {m m}
+ {\prop_gput:Nnn \g_olsa_canonical_anchor_prop {#1}{#2}}
+\NewDocumentCommand \OLSADeclareBefore {m +m}
+ {\cs_gset:cpn {olsa_before_#1:}{#2}}
+\NewDocumentCommand \OLSADeclareAfter {m +m}
+ {\cs_gset:cpn {olsa_after_#1:}{#2}}
+\NewDocumentCommand \OLSADeclareSetup {m +m}
+ {
+  \cs_if_exist:cTF {olsa_setup_#1:}
+   {\PackageError{standalone-body}{Duplicate~setup~for~#1}{Compose~all~source-local~behavior~in~one~setup.}}
+   {\cs_gset:cpn {olsa_setup_#1:}{#2}}
+ }
+\NewDocumentCommand \OLSADeclareExpectedOrder {m}
+ {\seq_gset_from_clist:Nn \g_olsa_expected_seq {#1}}
+\NewDocumentCommand \OLSASetReferenceContext {m}
+ {\tl_set:Nn \l_olsa_reference_id_tl {#1}}
+\NewDocumentCommand \OLSAInstallDeferredSourceContext {}
+ {
+  \bool_if:NF \g_olsa_deferred_source_context_installed_bool
+   {
+    % answers.sty writes each problem for later typesetting. Persist the
+    % immutable source-unit identity beside that deferred body so exact
+    % correction and reference dispatch cannot inherit stale ambient state.
+    \appto\olprobsavefileid
+     {\Writetofile{\jobname}{\string\OLSASetReferenceContext{\OLStandaloneCurrentID}}}
+    \bool_gset_true:N \g_olsa_deferred_source_context_installed_bool
+   }
+ }
+\NewDocumentCommand \OLSAInContext {m m}
+ {
+  \str_if_eq:nnTF {#1}{any}{\OLSAUnit{#2}}
+   {\str_if_eq:VnT \l_olsa_context_tl {#1}{\OLSAUnit{#2}}}
+ }
+
+\cs_new_protected:Npn \olsa_map_label:nN #1#2
+ {
+  \tl_set:Nx \l_olsa_label_source_tl {#1}
+  \tl_set:Nx \l_olsa_label_key_tl
+    {\l_olsa_reference_id_tl|\l_olsa_label_source_tl}
+  \prop_get:NVNTF \g_olsa_label_prop \l_olsa_label_key_tl #2 {}
+   {
+    \prop_get:NVNTF \g_olsa_alias_prop \l_olsa_label_source_tl #2 {}
+      {\tl_set_eq:NN #2 \l_olsa_label_source_tl}
+   }
+ }
+\cs_new_protected:Npn \olsa_map_refs:n #1
+ {
+  \clist_set:Nx \l_olsa_references_clist {#1}
+  \seq_clear:N \l_olsa_references_seq
+  \clist_map_inline:Nn \l_olsa_references_clist
+   {
+    \olsa_map_label:nN {##1}\l_olsa_label_target_tl
+    \seq_put_right:NV \l_olsa_references_seq \l_olsa_label_target_tl
+   }
+  \tl_set:Nx \l_olsa_references_tl
+   {\seq_use:Nn \l_olsa_references_seq {,}}
+ }
+\cs_new_protected:Npn \olsa_cref_star:n #1 {\olsa_original_cref*{#1}}
+\cs_new_protected:Npn \olsa_Cref_star:n #1 {\olsa_original_Cref*{#1}}
+\cs_new_protected:Npn \olsa_ref_star:n #1 {\olsa_original_ref*{#1}}
+\cs_new_protected:Npn \olsa_pageref_star:n #1 {\olsa_original_pageref*{#1}}
+\cs_new_protected:Npn \olsa_cpageref_star:n #1 {\olsa_original_cpageref*{#1}}
+\RenewDocumentCommand \label {o m}
+ {
+  % Historical aliases affect references only, never source definitions.
+  \tl_set:Nx\l_olsa_label_source_tl{#2}
+  \tl_set:Nx\l_olsa_label_key_tl{\l_olsa_reference_id_tl|\l_olsa_label_source_tl}
+  \prop_get:NVNTF\g_olsa_label_prop\l_olsa_label_key_tl\l_olsa_label_target_tl{}
+   {\tl_set_eq:NN\l_olsa_label_target_tl\l_olsa_label_source_tl}
+  \IfNoValueTF{#1}
+   {\exp_args:NV \olsa_original_label \l_olsa_label_target_tl}
+   {\use:x{\exp_not:N\olsa_original_label[\exp_not:n{#1}]{\exp_not:V\l_olsa_label_target_tl}}}
+ }
+\RenewDocumentCommand \cref {s m}
+ {\group_begin:\olsa_map_refs:n{#2}\IfBooleanTF{#1}
+   {\exp_args:NV\olsa_cref_star:n\l_olsa_references_tl}
+   {\exp_args:NV\olsa_original_cref\l_olsa_references_tl}\group_end:}
+\RenewDocumentCommand \Cref {s m}
+ {\group_begin:\olsa_map_refs:n{#2}\IfBooleanTF{#1}
+   {\exp_args:NV\olsa_Cref_star:n\l_olsa_references_tl}
+   {\exp_args:NV\olsa_original_Cref\l_olsa_references_tl}\group_end:}
+\RenewDocumentCommand \ref {s m}
+ {\group_begin:\olsa_map_refs:n{#2}\IfBooleanTF{#1}
+   {\exp_args:NV\olsa_ref_star:n\l_olsa_references_tl}
+   {\exp_args:NV\olsa_original_ref\l_olsa_references_tl}\group_end:}
+\RenewDocumentCommand \pageref {s m}
+ {\group_begin:\olsa_map_refs:n{#2}\IfBooleanTF{#1}
+   {\exp_args:NV\olsa_pageref_star:n\l_olsa_references_tl}
+   {\exp_args:NV\olsa_original_pageref\l_olsa_references_tl}\group_end:}
+\RenewDocumentCommand \cpageref {s m}
+ {\group_begin:\olsa_map_refs:n{#2}\IfBooleanTF{#1}
+   {\exp_args:NV\olsa_cpageref_star:n\l_olsa_references_tl}
+   {\exp_args:NV\olsa_original_cpageref\l_olsa_references_tl}\group_end:}
+
+\cs_new_protected:Npn \olsa_dispatch:nnn #1#2#3
+ {
+  \tl_set:Nx \l_olsa_key_tl {\OLStandaloneCurrentID|#1|#2|#3}
+  \prop_get:NVNTF \g_olsa_edge_prop \l_olsa_key_tl \l_olsa_target_tl
+   {
+    \bool_if:NTF \l_olsa_variant_bool
+     {
+      \iow_term:x {OL-STANDALONE-SUPPRESSED-VARIANT-EDGE|\OLStandaloneCurrentID|\l_olsa_target_tl}
+      \prop_get:NVNTF\g_olsa_canonical_anchor_prop\l_olsa_target_tl\l_olsa_anchor_tl{}
+       {\tl_set_eq:NN\l_olsa_anchor_tl\l_olsa_target_tl}
+      \par\noindent
+      \hyperlink{olsa-unit-\l_olsa_anchor_tl-FOL}
+       {\foreignlanguage{english}{\texttt{#3}}}\quad
+      \ensuremath{\leftarrow}\quad
+      \textit{\foreignlanguage{persian}{محل~متن~در~همین~خوانشگر}}\par
+     }
+     {\exp_args:NV \OLSAUnit \l_olsa_target_tl}
+   }
+   {\PackageError{standalone-body}{Unknown~source~import:~\l_olsa_key_tl}{Regenerate~and~verify~the~ledger;~do~not~guess~a~fallback.}}
+ }
+\RenewDocumentCommand \olimport {s o m o}
+ {
+  \group_begin:
+  \IfNoValueTF{#4}{\cs_set:cpn {ol@sectioncs}{section}}
+                  {\cs_set:cpn {ol@sectioncs}{#4}}
+  \cs_set:cpn {olfilename}{#3}
+  % Preserve OpenLogic's olfilebase bookkeeping even though modern subfiles
+  % resolves actual files through import@path. This matches the baseline macro.
+  \IfNoValueF{#2}
+   {\IfBooleanTF{#1}
+     {\cs_set:Npx\olfilebase{\olpath/locale/\ollangid/content/#2/}}
+     {\cs_set:Npx\olfilebase{\olfilebase#2/}}}
+  \IfNoValueTF{#2}
+   {\IfBooleanTF{#1}{\olsa_dispatch:nnn{olimport*}{}{#3}}{\olsa_dispatch:nnn{olimport}{}{#3}}}
+   {\IfBooleanTF{#1}{\olsa_dispatch:nnn{olimport*}{#2}{#3}}{\olsa_dispatch:nnn{olimport}{#2}{#3}}}
+  \group_end:
+ }
+\RenewDocumentCommand \subfile {m}
+ {\olsa_dispatch:nnn{subfile}{}{#1}}
+
+\cs_new_protected:Npn \olsa_variant_headings:
+ {
+  \RenewDocumentCommand\olpart{o m m}
+   {\section{##3}\label{##2:::part}}
+  \RenewDocumentCommand\olchapter{o m m m}
+   {\section{##4}\label{##2:##3::chap}}
+  \cs_set:Npn \OLEndChapterHook {}
+  \cs_set:Npn \OLEndPartHook {}
+ }
+\NewDocumentCommand \OLSAUnit {m}
+ {
+  \group_begin:
+  \iftoggle{FOL}{\tl_set:Nn\l_olsa_context_tl{FOL}}
+                {\tl_set:Nn\l_olsa_context_tl{PL}}
+  \tl_set:Nx \l_olsa_key_tl {#1/\l_olsa_context_tl}
+  \prop_if_in:NVTF \g_olsa_seen_prop \l_olsa_key_tl
+   {\iow_term:x{OL-STANDALONE-SKIP|#1|\l_olsa_context_tl|already-rendered-same-context}}
+   {
+    \prop_get:NnNTF \g_olsa_path_prop {#1}\l_olsa_path_tl {}
+     {\PackageError{standalone-body}{Unregistered~unit~#1}{Regenerate~the~ledger.}}
+    \prop_get:NnN \g_olsa_namespace_prop {#1}\l_olsa_namespace_tl
+    \prop_get:NnN \g_olsa_mode_prop {#1}\l_olsa_mode_tl
+    \cs_set:Npn \OLStandaloneCurrentID {#1}
+    \cs_set:Npx \OLStandaloneCurrentPath {\l_olsa_path_tl}
+    \cs_set:Npx \OLStandaloneCurrentNamespace {\l_olsa_namespace_tl}
+    \OLSASetReferenceContext{#1}
+    \bool_set_false:N \l_olsa_variant_bool
+    \str_if_eq:VnT \l_olsa_mode_tl {variant}
+     {\bool_set_true:N\l_olsa_variant_bool\olsa_variant_headings:}
+    \cs_if_exist:cT {olsa_before_#1:}{\use:c{olsa_before_#1:}}
+    \tl_set:Nx \l_olsa_key_tl {#1/\l_olsa_context_tl}
+    \seq_gpop_left:NN \g_olsa_expected_seq \l_olsa_expected_tl
+    \tl_if_eq:NNF \l_olsa_key_tl \l_olsa_expected_tl
+     {\PackageError{standalone-body}{Unexpected~unit~order:~\l_olsa_key_tl;~expected~\l_olsa_expected_tl}{Check~logical-system~tags~and~the~placement~ledger.}}
+    \prop_gput:NVn \g_olsa_seen_prop \l_olsa_key_tl {1}
+    \prop_gput:Nnn \g_olsa_unique_prop {#1}{1}
+    \int_gincr:N \g_olsa_occurrence_int
+    \iow_term:x{OL-STANDALONE-ENTER|#1|\l_olsa_path_tl|\l_olsa_namespace_tl|\l_olsa_context_tl|1}
+    \iow_now:Nx\g_olsa_units_iow{#1|\l_olsa_path_tl|\l_olsa_namespace_tl|\l_olsa_context_tl|1}
+    \hypertarget{olsa-unit-#1-\l_olsa_context_tl}{}
+    \cs_if_exist:cT {olsa_setup_#1:}{\use:c{olsa_setup_#1:}}
+    % Typography activation changes only the reading catcode for the scoped
+    % original input. The dispatcher and original-source provenance stay intact.
+    \cs_if_exist:NT \OLSAApplyTypography {\OLSAApplyTypography}
+    % import.sty uses a GLOBAL path; save/reset/restore explicitly around each
+    % root-relative baseline subfile, including recursively dispatched children.
+    \tl_set:Nx \l_olsa_import_path_tl {\use:c{import@path}}
+    \cs_gset:cpn {import@path}{}
+    \str_if_eq:VnTF \l_olsa_mode_tl {input}
+     {\exp_args:NV \file_input:n \l_olsa_path_tl}
+     {\exp_args:NV \olsa_original_subfile:n \l_olsa_path_tl}
+    \cs_gset:cpx {import@path}{\l_olsa_import_path_tl}
+    \iow_term:x{OL-STANDALONE-EXIT|#1|\l_olsa_context_tl}
+    \cs_if_exist:cT {olsa_after_#1:}{\use:c{olsa_after_#1:}}
+   }
+  \group_end:
+ }
+
+\NewDocumentCommand \OLSAStart {}
+ {
+  \cs_if_exist:NT \OLSABidiLayoutStart {\OLSABidiLayoutStart}
+  \cs_if_exist:NT \OLSASourceCorrectionsStart {\OLSASourceCorrectionsStart}
+  \cs_if_exist:NT \OLSATypographyStart {\OLSATypographyStart}
+  \int_compare:nNnF{\prop_count:N\g_olsa_path_prop}={722}
+   {\PackageError{standalone-body}{Expected~722~registered~units}{Regenerate~the~ledger.}}
+  \iow_open:Nn \g_olsa_units_iow {\jobname.olunits}
+  \iow_now:Nn \g_olsa_units_iow {id|source_path|namespace|FOL_context|occurrence}
+  % Keep namespaced references and source corrections in deferred exercises
+  % bound to the source unit that wrote them.
+  \OLSAInstallDeferredSourceContext
+ }
+\NewDocumentCommand \OLSAVerify {}
+ {
+  \cs_if_exist:NT \OLSABidiLayoutVerify {\OLSABidiLayoutVerify}
+  \cs_if_exist:NT \OLSASourceCorrectionsVerify {\OLSASourceCorrectionsVerify}
+  \cs_if_exist:NT \OLSATypographyVerify {\OLSATypographyVerify}
+  \seq_if_empty:NF \g_olsa_expected_seq
+   {\PackageError{standalone-body}{Missing~expected~unit~contexts}{Inspect~jobname.olunits~and~the~ledger.}}
+  \int_compare:nNnF{\prop_count:N\g_olsa_unique_prop}={722}
+   {\PackageError{standalone-body}{Unique~source~coverage~is~not~722}{Inspect~the~source-entry~trace.}}
+  \iow_term:x{OL-STANDALONE-COVERAGE|\int_eval:n{\prop_count:N\g_olsa_unique_prop}|\int_use:N\g_olsa_occurrence_int}
+  \iow_close:N\g_olsa_units_iow
+  \RenewCommandCopy\subfile\olsa_original_subfile:n
+  \RenewCommandCopy\olimport\olsa_original_olimport
+  \RenewCommandCopy\label\olsa_original_label
+  \RenewCommandCopy\cref\olsa_original_cref
+  \RenewCommandCopy\Cref\olsa_original_Cref
+  \RenewCommandCopy\ref\olsa_original_ref
+  \RenewCommandCopy\pageref\olsa_original_pageref
+  \RenewCommandCopy\cpageref\olsa_original_cpageref
+ }
+\ExplSyntaxOff

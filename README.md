@@ -1,29 +1,32 @@
-# متن منطق باز — نسخهٔ کامل فارسیِ ایران مطابق معماری صفحهٔ نسخهٔ انگلیسی، با کادر متن در مرکز فیزیکی صفحه
+# متن منطق باز — خوانشگر مستقل و کامل فارسی ایران
 
-> این ویرایش در [فهرست مرکزی ترجمه‌های پروژهٔ منطق باز](https://github.com/KokunoYumeto/OpenLogic-translations) ثبت شده است؛ فهرست میان کامل‌بودن منابع ترجمه‌شده و کامل‌بودن خوانشگر مستقل تمایز می‌گذارد.
+> این ویرایش در [فهرست مرکزی ترجمه‌های پروژهٔ منطق باز](https://github.com/KokunoYumeto/OpenLogic-translations) ثبت شده است.
 
-*Complete Iranian Persian edition with English-source-layout parity and a physically centered text block*
+*Complete standalone Iranian Persian reader of the Open Logic Project*
 
-این نسخه، ویرایش اصلی فارسی برای مطالعهٔ کنونی روی نمایشگر است. ساختار صفحه، تراکم، حاشیه‌ها، سلسله‌مراتب و فاصله‌گذاری نسخهٔ انگلیسی را دنبال می‌کند، اما کادر متن را در مرکز فیزیکی هر صفحه قرار می‌دهد. تغییرها فقط به اندازه‌ای است که قلم فارسی، راست‌به‌چپ‌نویسی و فاصلهٔ سطرها اقتضا می‌کنند.
+نسخهٔ R3 یک خوانشگر مستقل و پیوسته است که هر ۷۲۲ واحد محتواییِ منبع تثبیت‌شده را در یک PDF گرد می‌آورد. در نسخه‌های پیشین، ۶۴۲ واحد در خوانشگر اصلی و ۸۰ واحد در ضمیمهٔ تکمیلی قرار داشت؛ این انتشار برای نخستین بار آن دو بخش را بدون نیاز به ضمیمه در یک سند ۱۲۰۱ صفحه‌ای ارائه می‌کند.
 
-## پرونده‌های انتشار
+## پروندهٔ اصلی
 
-- [نسخهٔ کاملِ دارای پیوند — 858 صفحه](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/download/fa-ir-olp-0722-english-parity-centered-20260820/00_OPENLOGIC_fa-IR_COMPLETE_LINKED_READER_CENTERED_ENGLISH_PARITY_OLP-0722.pdf)
-- [ضمیمهٔ تکمیلیِ 80 واحدی — 128 صفحه](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/download/fa-ir-olp-0722-english-parity-centered-20260820/01_OPENLOGIC_fa-IR_CLOSURE_SUPPLEMENT_80_UNITS_CENTERED_ENGLISH_PARITY_OLP-0722.pdf)
-- [منابع و شواهد ساخت و راستی‌آزمایی](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/download/fa-ir-olp-0722-english-parity-centered-20260820/02_OPENLOGIC_fa-IR_CENTERED_ENGLISH_PARITY_SOURCES_AND_EVIDENCE_OLP-0722.zip)
-- [سیاههٔ SHA-256](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/download/fa-ir-olp-0722-english-parity-centered-20260820/03_OPENLOGIC_fa-IR_SHA256_MANIFEST_CENTERED_ENGLISH_PARITY_OLP-0722.txt)
+- [خوانشگر مستقل کامل فارسی ایران — ۱۲۰۱ صفحه](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/latest)
 
-## هندسهٔ صفحه و شیوهٔ مطالعه
+نام پرونده: `00_OPENLOGIC_fa-IR_STANDALONE_COMPLETE_READER_LETTER_R3_OLP-0722.pdf`
 
-- اندازه: US Letter عمودی، 612 × 792 پوینت PDF.
-- کادر متن: 341 × 550 پوینت TeX، مطابق نسخهٔ انگلیسی و در مرکز فیزیکی هر صفحه، با حاشیه‌های چپ و راست برابر.
-- حالت گشودن: `/FitH` برای هم‌اندازه‌کردن عرض صفحه با پنجرهٔ نمایش‌دهندهٔ PDF.
-- هر دو سند صفحه‌آرایی ثابت دارند، فاقد برچسب‌های ساختاری‌اند و سازگاری آن‌ها با PDF/UA ادعا نمی‌شود.
+## دامنه و راستی‌آزمایی
 
-تاریخچهٔ انتشار حفظ شده و هیچ دارایی تاریخی حذف نشده است. نسخه‌های قدیمی‌تر A4 و 16:9 همچنان برای سابقه در دسترس‌اند، اما برای مطالعهٔ کنونی روی نمایشگر، این نسخه جایگزین و گزینهٔ اصلی است.
+- پوشش: ۷۲۲ از ۷۲۲ واحد منبع، بدون جای‌نگهدار یا حذف.
+- قطع: US Letter عمودی، 612 × 792 پوینت PDF.
+- ساخت تکرارپذیر: PDF اصلی و بازپخش مستقل، هر دو 9,285,597 بایت و از نظر بایتی یکسان‌اند.
+- QA ساختار: ۷۷۴ رخداد زمینه، ۱۵۴۸ مرز، ۴۰ اصلاح منبع، ۲۲ رویداد حروف‌چینی و ۴۶ رویداد چیدمان دوسویه بررسی شده‌اند.
+- QA پیوند: همهٔ ۳۲۳۳ پیوند در همهٔ ۱۲۰۱ صفحه بررسی شده‌اند؛ هیچ مستطیل خارج از صفحه، مقصد داخلی خراب یا URI بدساخت وجود ندارد.
+- QA دیداری: همهٔ ۷۶ برگهٔ تماس، پوشانندهٔ همهٔ ۱۲۰۱ صفحه، و همهٔ ۳۲ صفحهٔ پرچم‌خورده در وضوح اصلی بررسی شده‌اند.
 
-تنها پدیدآور و نویسنده: Open Logic Project. شناسهٔ مفهومی پایدار: [10.5281/zenodo.21921852](https://doi.org/10.5281/zenodo.21921852).
+منابع ساخت، لایه‌های راست‌به‌چپ، اصلاحات مشتق‌شده و رسیدهای QA همراه همین نسخه در شاخه و بستهٔ انتشار حفظ شده‌اند. نسخه‌های تاریخی، از جمله خوانشگر ۶۴۲ واحدی و ضمیمهٔ ۸۰ واحدی، حذف نشده‌اند.
+
+شناسهٔ مفهومی پایدار: [10.5281/zenodo.21921852](https://doi.org/10.5281/zenodo.21921852).
 
 ## English
 
-This is the primary current Iranian Persian screen-reading edition. It uses US Letter portrait pages, the English edition's 341 × 550 TeX-point text block centered with equal physical left/right margins, and `/FitH` opening behavior. The linked reader has 858 pages; the 80-unit closure supplement has 128. These are fixed-layout, untagged PDFs and are not represented as PDF/UA. Older A4 and 16:9 releases remain available as preserved history but are superseded for current screen reading.
+R3 is the first single coherent standalone Iranian Persian reader containing all 722 frozen Open Logic content units. Earlier releases split the edition into a 642-unit main reader and an 80-unit completion supplement. This release unifies them into one 1,201-page US Letter PDF while preserving the historical files and releases.
+
+The primary and independent replay PDFs are byte-identical. Structural, formula, citation, Unicode/RTL, source-correction, link-geometry and complete rendered-page visual checks passed. The PDF is fixed-layout and is not represented as PDF/UA; accessibility infrastructure remains catalogued separately in the internationalization hub.

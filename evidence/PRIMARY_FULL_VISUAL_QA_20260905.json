@@ -1,0 +1,53 @@
+{
+  "schema": "farsi-standard-primary-full-visual-qa-v1",
+  "created_utc": "2026-09-05T13:12:00Z",
+  "status": "PASS_FULL_1201_PAGE_VISUAL_QA_PENDING_PUBLICATION",
+  "source_pdf": {
+    "path": "tmp/pdfs/standalone/20260905T121245261Z-975f45c04bc2418e95d68965829b251c/primary/open-logic-standalone-fa-IR.pdf",
+    "bytes": 9285597,
+    "sha256": "6b7a24d6b39474fd76ea08496c97783bcf5a4c46f10d8f500ed0414a5dd38a08",
+    "page_count": 1201
+  },
+  "render_manifest": {
+    "path": "tmp/pdfs/standalone/20260905T121245261Z-975f45c04bc2418e95d68965829b251c/visual-qa/FULL_VISUAL_RENDER_MANIFEST.json",
+    "bytes": 1524308,
+    "sha256": "941e776f08629ea6e0cb9e592f12b469180ca4279c9eab341b11dec01f92d02c",
+    "page_raster_count": 1201,
+    "page_raster_inventory_sha256": "8bc0c64a796a8590102dc0caf2095b7064748bf21ce51e8dc91787d398414f67",
+    "contact_sheet_count": 76,
+    "contact_sheet_inventory_sha256": "cadd98f1fcd8343dd03eb3e1dadfcc70e26a947c4c6450f51b375998b574d4b8"
+  },
+  "inspection": {
+    "contact_sheets_reviewed": {
+      "first": 1,
+      "last": 76,
+      "count": 76,
+      "physical_pages_covered": [1, 1201],
+      "complete": true
+    },
+    "automatic_flagged_pages_reviewed_at_original_detail": [29, 30, 32, 117, 173, 215, 418, 419, 536, 578, 634, 676, 758, 759, 781, 837, 838, 870, 871, 968, 969, 987, 988, 1021, 1028, 1037, 1075, 1126, 1161, 1181, 1182, 1189],
+    "automatic_flag_disposition": "All 32 sparse-page candidates are intentional part leaves, transition notes, short exercise endings, or appendix openings. None is an empty-output, clipping, overflow, or missing-content defect.",
+    "repaired_page_review": {
+      "physical_page": 729,
+      "render_path": "tmp/pdfs/standalone/20260905T121245261Z-975f45c04bc2418e95d68965829b251c/visual-qa/pages/page-0729.png",
+      "render_bytes": 137961,
+      "render_sha256": "418b0a20044075c59306ada4ba69d5a4707dd76904f2378673d4d90f8b31305c",
+      "observation": "The repaired representability passage remains inside the text block. RTL prose, quantified formulas, overlines, subscripts, punctuation and page furniture are complete and legible; no edge clipping or collision is visible."
+    }
+  },
+  "acceptance_findings": {
+    "systemic_clipping": false,
+    "missing_glyph_blocks": false,
+    "rtl_or_bidi_collapse": false,
+    "broken_or_missing_diagrams": false,
+    "overlapping_text_or_math": false,
+    "unexpected_blank_pages": false,
+    "unreadable_bibliography_or_appendices": false,
+    "deterministic_visual_defects_found": 0
+  },
+  "method": "Every physical page was inspected on no-resize 4x4 contact sheets generated from the exact PDF at 96 dpi. Every automatically flagged page and the repaired physical page 729 were then inspected as individual original-detail PNGs.",
+  "limitations": [
+    "Visual acceptance proves rendered layout integrity, not independent semantic equivalence of every translated sentence.",
+    "Publication identity and public accessibility remain separate gates."
+  ]
+}

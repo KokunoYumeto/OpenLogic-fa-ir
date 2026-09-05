@@ -1,0 +1,96 @@
+% Iranian-Persian reader for comfortable full-page viewing on US Letter.
+% This additive wrapper keeps the frozen locale driver and content intact,
+% while scaling the English edition's measure and hierarchy to a genuinely
+% readable 14 pt single-column page.
+
+\PassOptionsToClass{14pt,oneside,openany}{memoir}
+
+% Persian-first release identity.  Embed only the stable concept DOI so this
+% layout can be superseded without confusing it with a version DOI.
+\newcommand*{\OLCompletePDFTitle}{متن منطق باز: درآمدی جامع بر منطق صوری و فرامنطق}
+\newcommand*{\OLCompleteEditionSubtitle}{درآمدی جامع بر منطق صوری و فرامنطق}
+\newcommand*{\OLCompletePDFSubject}{منطق صوری، فرامنطق و مبانی منطق ریاضی}
+\newcommand*{\OLCompletePDFKeywords}{منطق صوری؛ فرامنطق؛ نظریهٔ مجموعه‌ها؛ رابطه‌ها و تابع‌ها؛ زبان‌های صوری؛ دستگاه‌های استنتاجی؛ معناشناسی صوری؛ درستی و تمامیت؛ محاسبه‌پذیری؛ قضیه‌های ناتمامیت؛ نظریهٔ مدل؛ منطق موجهات؛ منطق چندارزشی}
+\newcommand*{\OLSecondaryEditionSubtitleBlock}{%
+  \vspace{0.6cm}%
+  {\large\foreignlanguage{english}{Complete Iranian Persian edition in formal logic and metalogic}\par}%
+}
+\newcommand*{\OLReleaseConceptDOI}{10.5281/zenodo.21921852}
+\newcommand*{\OLReleaseDOIBlock}{%
+  {\large DOI مفهومی پایدار: \babelsublr{\OLReleaseConceptDOI}\par}%
+}
+
+\AddToHook{class/memoir/after}{%
+  % mem14 supplies 14 pt body type on a 17.5 pt register.  The same 1.05
+  % leading multiplier as the English source yields an 18.375 pt baseline.
+  \linespread{1.05}%
+  \setstocksize{11in}{8.5in}%
+  \settrimmedsize{11in}{8.5in}{*}%
+  \settrims{0pt}{0pt}%
+  \settypeblocksize{650pt}{468pt}{*}%
+  \setlrmargins{73.1475pt}{*}{*}%
+  \setulmargins{72.485pt}{*}{*}%
+  \setheadfoot{18pt}{29pt}%
+  \checkandfixthelayout[fixed]%
+}
+
+% The source's diagrams and sideways derivation must be assembled in an LTR
+% graphic box.  Persian prose and captions remain in their native RTL flow.
+\makeatletter
+\newcommand*{\OLReadableGraphicLTRBefore}{\begingroup\bbl@setdirs\z@}
+\newcommand*{\OLReadableGraphicLTRAfter}{\endgroup}
+\newcommand*{\OLReadableInstallGraphicDirectionFixes}{%
+  \let\OLReadableOriginalAsset\olasset
+  \RenewDocumentCommand{\olasset}{O{\olphotowidth}m}{%
+    \begingroup\bbl@setdirs\z@
+    \OLReadableOriginalAsset[##1]{##2}%
+    \endgroup
+  }%
+  \AddToHook{env/tikzpicture/before}{\OLReadableGraphicLTRBefore}%
+  \AddToHook{env/tikzpicture/after}{\OLReadableGraphicLTRAfter}%
+  \AddToHook{env/sidewaysfigure/before}{\OLReadableGraphicLTRBefore}%
+  \AddToHook{env/sidewaysfigure/after}{\OLReadableGraphicLTRAfter}%
+}
+\makeatother
+
+\AddToHook{begindocument/before}{%
+  % Empirical RTL rule probe: Babel reverses this register's physical motion.
+  % +0.8773pt moves the 466.252bp rule from x=73.748bp to x=72.874bp,
+  % centering it at x=306.000bp on the 612bp Letter page.
+  \addtolength{\oddsidemargin}{0.8773pt}%
+  \addtolength{\evensidemargin}{0.8773pt}%
+  \OLReadableInstallGraphicDirectionFixes
+  % Three source proofs contain unbreakable inline/display formula runs.  Use
+  % the smallest local reduction that keeps each proof inside the page; all
+  % ordinary Persian prose remains at the 14 pt edition size.
+  \AddToHook{env/proof/begin}{%
+    \ifnum\value{chapter}=16\relax
+      \ifnum\value{section}=5\relax\fontsize{12pt}{15pt}\selectfont\fi
+    \fi
+    \ifnum\value{chapter}=23\relax
+      \ifnum\value{section}=7\relax\fontsize{13pt}{16pt}\selectfont\fi
+    \fi
+    \ifnum\value{chapter}=43\relax
+      \ifnum\value{section}=2\relax\fontsize{13.5pt}{17pt}\selectfont\fi
+    \fi
+  }%
+  \hypersetup{%
+    pdfsubject={\OLCompletePDFSubject},%
+    pdfkeywords={\OLCompletePDFKeywords},%
+    pdfstartview=FitH,%
+    pdfpagelayout=OneColumn,%
+    pdfpagemode=UseOutlines%
+  }%
+}
+
+\AtBeginDocument{%
+  \typeout{OL-R2-TEXTWIDTH=\the\textwidth}%
+  \typeout{OL-R2-TEXTHEIGHT=\the\textheight}%
+  \typeout{OL-R2-FONTSIZE=\csname f@size\endcsname pt}%
+  \typeout{OL-R2-BASELINESKIP=\the\baselineskip}%
+  \typeout{OL-R2-ODDSIDEMARGIN=\the\oddsidemargin}%
+  \typeout{OL-R2-EVENSIDEMARGIN=\the\evensidemargin}%
+  \typeout{OL-R2-UPPERMARGIN=\the\uppermargin}%
+}
+
+\input{open-logic-complete-fa-IR.tex}

@@ -1,0 +1,27 @@
+% Source wrappers are documentary alternatives, not duplicated textbook chapters.
+\clearpage
+\newcounter{OLSAVariantSection}
+\begingroup
+% Give this unnumbered documentary appendix its own section counter. Do not
+% reset or increment the canonical chapter/section counters from the corpus.
+\makeatletter
+\let\c@section\c@OLSAVariantSection
+\makeatother
+\renewcommand{\thesection}{A.\arabic{OLSAVariantSection}}
+\renewcommand{\theHsection}{olsa-variant.\arabic{OLSAVariantSection}}
+\chapter*{پیوست: ساختارهای جایگزین منبع}
+\markboth{پیوست: ساختارهای جایگزین منبع}{پیوست: ساختارهای جایگزین منبع}
+\addcontentsline{toc}{chapter}{پیوست: ساختارهای جایگزین منبع}
+\noindent
+چهار راه‌انداز زیر چینش‌های دیگری از مطالب همین کتاب را نشان می‌دهند.
+متن و یادداشت‌های خود آنها حفظ شده‌اند، اما فراخوانی مطالب مشترک
+دوباره اجرا نمی‌شود. پیوند هر فراخوانی به محل یگانهٔ آن در همین
+خوانشگر می‌رود. شناسه‌های این پیوست از شناسه‌های متن اصلی جدا هستند.
+\par\medskip
+\OLSAUnit{OLP-0720}
+\OLSAUnit{OLP-0719}
+\OLSAUnit{OLP-0722}
+\OLSAUnit{OLP-0646}
+% Flush all appendix pages while its numbering and running-mark policy apply.
+\clearpage
+\endgroup

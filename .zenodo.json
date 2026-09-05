@@ -1,30 +1,15 @@
 {
-  "title": "متن منطق باز — نسخهٔ کامل فارسیِ ایران مطابق معماری صفحهٔ نسخهٔ انگلیسی، با کادر متن در مرکز فیزیکی صفحه (Complete Iranian Persian edition with English-source-layout parity and a physically centered text block)",
-  "description": "<p dir=\"rtl\" lang=\"fa\">نسخهٔ کامل فارسی برای مطالعه روی نمایشگر که ساختار صفحه، تراکم، حاشیه‌ها، سلسله‌مراتب و فاصله‌گذاری نسخهٔ انگلیسی را دنبال می‌کند و کادر متن را در مرکز فیزیکی صفحه قرار می‌دهد. شامل نسخهٔ کاملِ دارای پیوند در 858 صفحه و ضمیمهٔ تکمیلیِ 80 واحدی در 128 صفحه است. صفحه‌ها در قطع عمودی US Letter (612 × 792 پوینت PDF) هستند. کادر متن 341 × 550 پوینت TeX است و با حاشیه‌های چپ و راست برابر در مرکز فیزیکی صفحه قرار دارد. پرونده با <code>/FitH</code> گشوده می‌شود. هر دو سند صفحه‌آرایی ثابت دارند، فاقد برچسب‌های ساختاری‌اند و سازگاری آن‌ها با PDF/UA ادعا نمی‌شود. تاریخچهٔ انتشار حفظ شده است؛ نسخه‌های قدیمی‌تر A4 و 16:9 برای مطالعهٔ کنونی روی نمایشگر جایگزین شده‌اند.</p><p lang=\"en\"><strong>English subtitle.</strong> Complete Iranian Persian screen-reading edition with English-source-layout parity and a physically centered text block: 858-page linked edition plus a 128-page, 80-unit completion supplement. Fixed-layout, untagged, not represented as PDF/UA; historical A4 and 16:9 releases remain preserved but are superseded for current screen reading.</p>",
+  "title": "متن منطق باز — خوانشگر مستقل و کامل فارسی ایران (Complete standalone Iranian Persian reader)",
+  "description": "<p dir=\"rtl\" lang=\"fa\">خوانشگر مستقل و پیوستهٔ فارسی ایران، شامل هر ۷۲۲ واحد محتوایی منبع تثبیت‌شده در یک PDF ۱۲۰۱ صفحه‌ای. نسخه‌های پیشین ۶۴۲ واحد را در خوانشگر اصلی و ۸۰ واحد را در ضمیمه‌ای جدا ارائه می‌کردند؛ نسخهٔ R3 آن‌ها را در یک سند کامل گرد می‌آورد. ساخت اصلی و بازپخش مستقل از نظر بایتی یکسان‌اند. پوشش، ساختار، فرمول‌ها، ارجاع‌ها، یونیکد و راست‌به‌چپ، ۳۲۳۳ پیوند و همهٔ ۱۲۰۱ صفحهٔ رندرشده به‌طور قطعی بررسی شده‌اند. نسخه‌های تاریخی حفظ می‌شوند.</p><p lang=\"en\"><strong>English.</strong> R3 is the first single coherent standalone Iranian Persian reader containing all 722 frozen Open Logic content units. The 1,201-page primary and independent replay PDFs are byte-identical. Coverage, structure, formulas, citations, Unicode/RTL, all 3,233 links and every rendered page passed deterministic QA. Historical split-reader releases remain preserved.</p>",
   "upload_type": "publication",
   "publication_type": "book",
-  "creators": [
-    {
-      "name": "Open Logic Project"
-    }
-  ],
-  "contributors": [
-    {
-      "name": "AI typesetting & translation",
-      "type": "Other"
-    }
-  ],
+  "creators": [{"name": "Open Logic Project"}],
+  "contributors": [{"name": "AI typesetting & translation", "type": "Other"}],
   "language": "fas",
-  "keywords": [
-    "منطق باز",
-    "منطق صوری",
-    "فارسیِ ایران",
-    "Open Logic Project",
-    "formal logic"
-  ],
+  "keywords": ["منطق باز", "منطق صوری", "فارسی ایران", "Open Logic Project", "formal logic", "Iranian Persian"],
   "license": "cc-by-4.0",
   "access_right": "open",
   "doi": "10.5281/zenodo.21921852",
-  "version": "OLP-0722-ENGLISH-PARITY-CENTERED-20260820",
-  "publication_date": "2026-08-20"
+  "version": "OLP-0722-STANDALONE-LETTER-R3-20260905",
+  "publication_date": "2026-09-05"
 }

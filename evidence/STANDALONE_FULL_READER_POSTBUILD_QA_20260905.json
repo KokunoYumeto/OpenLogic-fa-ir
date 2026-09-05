@@ -1,0 +1,699 @@
+{
+  "schema": "farsi-standalone-full-reader-postbuild-qa-v2",
+  "status": "PASS_BUILD_AND_REPLAY_NOT_VISUAL_OR_PUBLICATION_QA",
+  "scope": {
+    "build_acceptance_passed": true,
+    "current_full_reader_candidate_accepted": true,
+    "source_and_runtime_trace_acceptance_passed": true,
+    "pdf_parse_and_nonempty_text_extraction_available": true,
+    "clean_searchable_text_extraction_passed": false,
+    "tagged_pdf_accessibility_passed": false,
+    "math_copy_paste_fidelity_passed": false,
+    "rendered_page_visual_qa_passed": false,
+    "link_annotation_geometry_qa_passed": false,
+    "publication_packaging_qa_passed": false,
+    "public_byte_readback_passed": false,
+    "tex_run_by_this_validator": false,
+    "source_edits_by_this_validator": false
+  },
+  "guarded_run": {
+    "receipt": {
+      "path": "tmp/pdfs/standalone/20260905T121245261Z-975f45c04bc2418e95d68965829b251c/BUILD_RECEIPT.json",
+      "bytes": 1240927,
+      "sha256": "4c2dac46ca76c029a49841db1336fd036da7c35aa154366a46d52597da046d0e"
+    },
+    "mode": "Full",
+    "status": "BUILD_AND_REPLAY_PASS_NOT_PUBLICATION_QA",
+    "accepted_build": true,
+    "publication_or_visual_qa_passed": false,
+    "elapsed_guarded_seconds": 1524.9626425,
+    "peak_job_commit_bytes": 1481953280,
+    "mutex": "Global\\InterlanguageTeXSlotV1",
+    "mutex_released_after_confirmed_tree_exit": true,
+    "events": {
+      "events": 39,
+      "worker_trees": 12,
+      "worker_sequence": [
+        "primary-latex-01",
+        "primary-bibtex-01",
+        "primary-latex-02",
+        "primary-bibtex-02",
+        "primary-latex-03",
+        "primary-latex-04",
+        "replay-latex-01",
+        "replay-bibtex-01",
+        "replay-latex-02",
+        "replay-bibtex-02",
+        "replay-latex-03",
+        "replay-latex-04"
+      ],
+      "terminal_events": [
+        "deterministic_replay_match",
+        "source_and_infrastructure_unchanged"
+      ],
+      "peak_job_commit_bytes": 1481953280
+    }
+  },
+  "source_inventory": {
+    "path": "tmp/pdfs/standalone/20260905T121245261Z-975f45c04bc2418e95d68965829b251c/SOURCE_INPUTS_BEFORE.json",
+    "sha256": "e67a17f334bee476a2ae6e105615d36b336bce9eef4a9b8fe0d036619c0d803e",
+    "files": 798,
+    "signature": "6f38e06d11e2f1b7afe53553885f73eea180f1c73139f4e8184709e9d6cd034d"
+  },
+  "source_inventory_current_complete_match": true,
+  "optional_caller_pins": {
+    "source_signature": "6f38e06d11e2f1b7afe53553885f73eea180f1c73139f4e8184709e9d6cd034d",
+    "pdf_sha256": "6b7a24d6b39474fd76ea08496c97783bcf5a4c46f10d8f500ed0414a5dd38a08",
+    "pdf_bytes": 9285597,
+    "page_count": 1201,
+    "transaction_and_replay_binding_enforced_independently": true
+  },
+  "integration": {
+    "ledger": {
+      "path": "evidence/STANDALONE_INTEGRATION_LEDGER.json",
+      "bytes": 859445,
+      "sha256": "0a6cc8b2799117a3216e25ebe84ecd3c0cd3a665ddd9d55d7e7bad2bdda21dea",
+      "independently_reconstructed_exactly": true
+    },
+    "generated_tex_ledger": {
+      "path": "source/locale/fa-IR/standalone/generated-ledger.tex",
+      "bytes": 151359,
+      "sha256": "ca05c3dedf9ec23a32be75c6556e7cdd94fcbe326b5bb3ec3023cdcb5ab1140e",
+      "independently_reconstructed_exactly": true
+    },
+    "unique_source_units": 722,
+    "primary_graph_units": 642,
+    "retained_units": 80,
+    "ordered_context_occurrences": 774,
+    "context_occurrences": {
+      "FOL": 720,
+      "PL": 54
+    },
+    "namespace_occurrences": {
+      "canonical": 769,
+      "retained:OLP-0643": 1,
+      "variant:OLP-0646": 1,
+      "variant:OLP-0719": 1,
+      "variant:OLP-0720": 1,
+      "variant:OLP-0722": 1
+    },
+    "repeated_context_units": 52,
+    "entry_exit_boundary_events": 1548,
+    "all_unit_source_bytes_match_build_inventory": true,
+    "all_unit_sources_present_in_both_recorders": true
+  },
+  "builds": {
+    "primary": {
+      "passes": 4,
+      "postbuild_only_files_excluded_from_build_acceptance": [
+        "FULL_READER_LINK_GEOMETRY_TRACE.json"
+      ],
+      "pass_diagnostic_counts": [
+        {
+          "diagnostics": {
+            "fatal": 0,
+            "duplicate": 0,
+            "unresolved": 1841,
+            "bibliography_warning": 0,
+            "rerun": 3
+          },
+          "overlay_runtime": {
+            "source_correction_events": 40,
+            "typography_events": 22,
+            "bidi_layout_rules": 22,
+            "bidi_layout_events": 44,
+            "toc_replay_events": 0
+          }
+        },
+        {
+          "diagnostics": {
+            "fatal": 0,
+            "duplicate": 0,
+            "unresolved": 205,
+            "bibliography_warning": 0,
+            "rerun": 4
+          },
+          "overlay_runtime": {
+            "source_correction_events": 40,
+            "typography_events": 22,
+            "bidi_layout_rules": 24,
+            "bidi_layout_events": 46,
+            "toc_replay_events": 2
+          }
+        },
+        {
+          "diagnostics": {
+            "fatal": 0,
+            "duplicate": 0,
+            "unresolved": 0,
+            "bibliography_warning": 0,
+            "rerun": 2
+          },
+          "overlay_runtime": {
+            "source_correction_events": 40,
+            "typography_events": 22,
+            "bidi_layout_rules": 24,
+            "bidi_layout_events": 46,
+            "toc_replay_events": 2
+          }
+        },
+        {
+          "diagnostics": {
+            "fatal": 0,
+            "duplicate": 0,
+            "unresolved": 0,
+            "bibliography_warning": 0,
+            "rerun": 0
+          },
+          "overlay_runtime": {
+            "source_correction_events": 40,
+            "typography_events": 22,
+            "bidi_layout_rules": 24,
+            "bidi_layout_events": 46,
+            "toc_replay_events": 2
+          }
+        }
+      ],
+      "final_diagnostics_all_zero": true,
+      "residual_warnings": {
+        "counts": {
+          "formal_tex_warning_starts": 203,
+          "plain_latex_warning_starts": 3,
+          "latex_font_warning_starts": 27,
+          "package_warning_starts": 172,
+          "class_warning_starts": 1,
+          "overfull_hbox": 202,
+          "overfull_vbox": 0,
+          "underfull_hbox": 33,
+          "underfull_vbox": 0
+        },
+        "bound_to_final_log": true,
+        "semantic_or_visual_adjudication_passed": false,
+        "note": "Counts are an exact inventory, not a finding that warnings or box diagnostics are harmless; complete rendered-page QA remains separate."
+      },
+      "final_log_pdf_summary": {
+        "pages": 1201,
+        "bytes": 9285597
+      },
+      "final_log": {
+        "path": "tmp/pdfs/standalone/20260905T121245261Z-975f45c04bc2418e95d68965829b251c/primary/primary-latex-04.tex.log",
+        "sha256": "b31fd28d2716f046972ecc9655b47e0903ebda7f6df27d04dbc74b8c50dd468e"
+      },
+      "recorder": {
+        "path": "tmp/pdfs/standalone/20260905T121245261Z-975f45c04bc2418e95d68965829b251c/primary/open-logic-standalone-fa-IR.fls",
+        "sha256": "532a99b448829f202c71081851b3f11ed1c53b7abf3b4414e1aea7b0f65357a9",
+        "unique_inputs": 1135,
+        "repo_source_inputs": 756,
+        "unique_outputs": 13,
+        "run_directory_outputs": 12,
+        "external_outputs": [
+          {
+            "basename": "m_t_x_t_e_s_t.tmp",
+            "sanitized_location_class": "user-local/MiKTeX",
+            "receipted_build_artifact": false
+          }
+        ]
+      },
+      "pdf": {
+        "path": "tmp/pdfs/standalone/20260905T121245261Z-975f45c04bc2418e95d68965829b251c/primary/open-logic-standalone-fa-IR.pdf",
+        "bytes": 9285597,
+        "sha256": "6b7a24d6b39474fd76ea08496c97783bcf5a4c46f10d8f500ed0414a5dd38a08"
+      },
+      "sidecars": {
+        "units": {
+          "path": "tmp/pdfs/standalone/20260905T121245261Z-975f45c04bc2418e95d68965829b251c/primary/open-logic-standalone-fa-IR.olunits",
+          "bytes": 64500,
+          "sha256": "0b1c33ca391bbef39591d45585cab0f845e7b44772170800184a245172340864",
+          "unique_source_units": 722,
+          "ordered_context_occurrences": 774
+        },
+        "source_corrections": {
+          "path": "tmp/pdfs/standalone/20260905T121245261Z-975f45c04bc2418e95d68965829b251c/primary/open-logic-standalone-fa-IR.olcorrections",
+          "bytes": 1379,
+          "sha256": "02fb555eaa0a76df6fe286493ea365522e28742b6942fa57daf5c4b01bd48b18",
+          "rules": 39,
+          "events": 40
+        },
+        "typography": {
+          "path": "tmp/pdfs/standalone/20260905T121245261Z-975f45c04bc2418e95d68965829b251c/primary/open-logic-standalone-fa-IR.oltypography",
+          "bytes": 762,
+          "sha256": "c8672dabcef7a3522a82f0b672520399857891677ad47afdffbb85eb33d2c8d7",
+          "rules": 18,
+          "events": 22
+        },
+        "bidi_layout": {
+          "path": "tmp/pdfs/standalone/20260905T121245261Z-975f45c04bc2418e95d68965829b251c/primary/open-logic-standalone-fa-IR.olbidilayout",
+          "bytes": 1491,
+          "sha256": "e7c03566b035c779d41e63285e433f5558231d495c71f4aea15c87d5d70c24ae",
+          "rules": 24,
+          "events": 46
+        },
+        "toc_lukasiewicz": {
+          "path": "tmp/pdfs/standalone/20260905T121245261Z-975f45c04bc2418e95d68965829b251c/primary/open-logic-standalone-fa-IR.toc",
+          "bytes": 124186,
+          "sha256": "856e8220d9390ffdd70cd15ab676cead18920bfafe5786308e394bb28e5e4662",
+          "public_whole_surname_renderers": 2,
+          "replay_markers": [
+            "OLP-0394",
+            "OLP-0400"
+          ],
+          "renderer_marker_order": "renderer-0394,marker-0394,renderer-0400,marker-0400",
+          "raw_legacy_expanded_private_or_recording_tokens": 0
+        },
+        "runtime_log": {
+          "layout_markers": [
+            "OL-R2-TEXTWIDTH=468.0pt",
+            "OL-R2-TEXTHEIGHT=650.0pt",
+            "OL-R2-FONTSIZE=14.4pt",
+            "OL-R2-BASELINESKIP=18.37505pt",
+            "OL-R2-ODDSIDEMARGIN=0.8773pt",
+            "OL-R2-EVENSIDEMARGIN=0.8773pt",
+            "OL-R2-UPPERMARGIN=72.485pt"
+          ],
+          "runtime_markers": {
+            "bang": "OL-STANDALONE-BANG-FALLBACK|guarded",
+            "link_geometry_selection": "OL-STANDALONE-LINK-GEOMETRY|native-atomic-v1|toc-and-url-direction-unchanged",
+            "unit_coverage": "OL-STANDALONE-COVERAGE|722|774",
+            "source_correction_coverage": "OL-STANDALONE-SOURCE-CORRECTION-COVERAGE|39|39",
+            "typography_coverage": "OL-STANDALONE-TYPOGRAPHY-COVERAGE|18|18",
+            "bidi_layout_coverage": "OL-STANDALONE-BIDI-LAYOUT-COVERAGE|24|46"
+          },
+          "enter_events": 774,
+          "exit_events": 774,
+          "exact_boundary_events": 1548,
+          "maximum_boundary_depth": 5,
+          "suppressed_variant_edges": 36,
+          "source_correction_rules": 39,
+          "source_correction_events": 40,
+          "typography_rules": 18,
+          "typography_events": 22,
+          "bidi_layout_rules": 24,
+          "bidi_layout_events": 46
+        }
+      }
+    },
+    "replay": {
+      "passes": 4,
+      "postbuild_only_files_excluded_from_build_acceptance": [],
+      "pass_diagnostic_counts": [
+        {
+          "diagnostics": {
+            "fatal": 0,
+            "duplicate": 0,
+            "unresolved": 1841,
+            "bibliography_warning": 0,
+            "rerun": 3
+          },
+          "overlay_runtime": {
+            "source_correction_events": 40,
+            "typography_events": 22,
+            "bidi_layout_rules": 22,
+            "bidi_layout_events": 44,
+            "toc_replay_events": 0
+          }
+        },
+        {
+          "diagnostics": {
+            "fatal": 0,
+            "duplicate": 0,
+            "unresolved": 205,
+            "bibliography_warning": 0,
+            "rerun": 4
+          },
+          "overlay_runtime": {
+            "source_correction_events": 40,
+            "typography_events": 22,
+            "bidi_layout_rules": 24,
+            "bidi_layout_events": 46,
+            "toc_replay_events": 2
+          }
+        },
+        {
+          "diagnostics": {
+            "fatal": 0,
+            "duplicate": 0,
+            "unresolved": 0,
+            "bibliography_warning": 0,
+            "rerun": 2
+          },
+          "overlay_runtime": {
+            "source_correction_events": 40,
+            "typography_events": 22,
+            "bidi_layout_rules": 24,
+            "bidi_layout_events": 46,
+            "toc_replay_events": 2
+          }
+        },
+        {
+          "diagnostics": {
+            "fatal": 0,
+            "duplicate": 0,
+            "unresolved": 0,
+            "bibliography_warning": 0,
+            "rerun": 0
+          },
+          "overlay_runtime": {
+            "source_correction_events": 40,
+            "typography_events": 22,
+            "bidi_layout_rules": 24,
+            "bidi_layout_events": 46,
+            "toc_replay_events": 2
+          }
+        }
+      ],
+      "final_diagnostics_all_zero": true,
+      "residual_warnings": {
+        "counts": {
+          "formal_tex_warning_starts": 203,
+          "plain_latex_warning_starts": 3,
+          "latex_font_warning_starts": 27,
+          "package_warning_starts": 172,
+          "class_warning_starts": 1,
+          "overfull_hbox": 202,
+          "overfull_vbox": 0,
+          "underfull_hbox": 33,
+          "underfull_vbox": 0
+        },
+        "bound_to_final_log": true,
+        "semantic_or_visual_adjudication_passed": false,
+        "note": "Counts are an exact inventory, not a finding that warnings or box diagnostics are harmless; complete rendered-page QA remains separate."
+      },
+      "final_log_pdf_summary": {
+        "pages": 1201,
+        "bytes": 9285597
+      },
+      "final_log": {
+        "path": "tmp/pdfs/standalone/20260905T121245261Z-975f45c04bc2418e95d68965829b251c/replay/replay-latex-04.tex.log",
+        "sha256": "f0f3dc59e7bfc6aac7cafa5020324f4421917a5663f462d3f1d579c8fe954777"
+      },
+      "recorder": {
+        "path": "tmp/pdfs/standalone/20260905T121245261Z-975f45c04bc2418e95d68965829b251c/replay/open-logic-standalone-fa-IR.fls",
+        "sha256": "dc142a24989de538997387bc989d7790316f0fcdf72ed6ac4d4b2a263e9c4a1e",
+        "unique_inputs": 1135,
+        "repo_source_inputs": 756,
+        "unique_outputs": 13,
+        "run_directory_outputs": 12,
+        "external_outputs": [
+          {
+            "basename": "m_t_x_t_e_s_t.tmp",
+            "sanitized_location_class": "user-local/MiKTeX",
+            "receipted_build_artifact": false
+          }
+        ]
+      },
+      "pdf": {
+        "path": "tmp/pdfs/standalone/20260905T121245261Z-975f45c04bc2418e95d68965829b251c/replay/open-logic-standalone-fa-IR.pdf",
+        "bytes": 9285597,
+        "sha256": "6b7a24d6b39474fd76ea08496c97783bcf5a4c46f10d8f500ed0414a5dd38a08"
+      },
+      "sidecars": {
+        "units": {
+          "path": "tmp/pdfs/standalone/20260905T121245261Z-975f45c04bc2418e95d68965829b251c/replay/open-logic-standalone-fa-IR.olunits",
+          "bytes": 64500,
+          "sha256": "0b1c33ca391bbef39591d45585cab0f845e7b44772170800184a245172340864",
+          "unique_source_units": 722,
+          "ordered_context_occurrences": 774
+        },
+        "source_corrections": {
+          "path": "tmp/pdfs/standalone/20260905T121245261Z-975f45c04bc2418e95d68965829b251c/replay/open-logic-standalone-fa-IR.olcorrections",
+          "bytes": 1379,
+          "sha256": "02fb555eaa0a76df6fe286493ea365522e28742b6942fa57daf5c4b01bd48b18",
+          "rules": 39,
+          "events": 40
+        },
+        "typography": {
+          "path": "tmp/pdfs/standalone/20260905T121245261Z-975f45c04bc2418e95d68965829b251c/replay/open-logic-standalone-fa-IR.oltypography",
+          "bytes": 762,
+          "sha256": "c8672dabcef7a3522a82f0b672520399857891677ad47afdffbb85eb33d2c8d7",
+          "rules": 18,
+          "events": 22
+        },
+        "bidi_layout": {
+          "path": "tmp/pdfs/standalone/20260905T121245261Z-975f45c04bc2418e95d68965829b251c/replay/open-logic-standalone-fa-IR.olbidilayout",
+          "bytes": 1491,
+          "sha256": "e7c03566b035c779d41e63285e433f5558231d495c71f4aea15c87d5d70c24ae",
+          "rules": 24,
+          "events": 46
+        },
+        "toc_lukasiewicz": {
+          "path": "tmp/pdfs/standalone/20260905T121245261Z-975f45c04bc2418e95d68965829b251c/replay/open-logic-standalone-fa-IR.toc",
+          "bytes": 124186,
+          "sha256": "856e8220d9390ffdd70cd15ab676cead18920bfafe5786308e394bb28e5e4662",
+          "public_whole_surname_renderers": 2,
+          "replay_markers": [
+            "OLP-0394",
+            "OLP-0400"
+          ],
+          "renderer_marker_order": "renderer-0394,marker-0394,renderer-0400,marker-0400",
+          "raw_legacy_expanded_private_or_recording_tokens": 0
+        },
+        "runtime_log": {
+          "layout_markers": [
+            "OL-R2-TEXTWIDTH=468.0pt",
+            "OL-R2-TEXTHEIGHT=650.0pt",
+            "OL-R2-FONTSIZE=14.4pt",
+            "OL-R2-BASELINESKIP=18.37505pt",
+            "OL-R2-ODDSIDEMARGIN=0.8773pt",
+            "OL-R2-EVENSIDEMARGIN=0.8773pt",
+            "OL-R2-UPPERMARGIN=72.485pt"
+          ],
+          "runtime_markers": {
+            "bang": "OL-STANDALONE-BANG-FALLBACK|guarded",
+            "link_geometry_selection": "OL-STANDALONE-LINK-GEOMETRY|native-atomic-v1|toc-and-url-direction-unchanged",
+            "unit_coverage": "OL-STANDALONE-COVERAGE|722|774",
+            "source_correction_coverage": "OL-STANDALONE-SOURCE-CORRECTION-COVERAGE|39|39",
+            "typography_coverage": "OL-STANDALONE-TYPOGRAPHY-COVERAGE|18|18",
+            "bidi_layout_coverage": "OL-STANDALONE-BIDI-LAYOUT-COVERAGE|24|46"
+          },
+          "enter_events": 774,
+          "exit_events": 774,
+          "exact_boundary_events": 1548,
+          "maximum_boundary_depth": 5,
+          "suppressed_variant_edges": 36,
+          "source_correction_rules": 39,
+          "source_correction_events": 40,
+          "typography_rules": 18,
+          "typography_events": 22,
+          "bidi_layout_rules": 24,
+          "bidi_layout_events": 46
+        }
+      }
+    }
+  },
+  "deterministic_replay": {
+    "pdf_byte_identical": true,
+    "pdf_bytes": 9285597,
+    "pdf_sha256": "6b7a24d6b39474fd76ea08496c97783bcf5a4c46f10d8f500ed0414a5dd38a08",
+    "stable_artifacts_byte_identical": {
+      "aux": {
+        "bytes": 1376743,
+        "sha256": "e6ee03950adef21d1a743c39f07671e7ac709fe11eafd1734d88b807aa847459"
+      },
+      "bbl": {
+        "bytes": 29639,
+        "sha256": "9e546e03a82d6d0ec2712d385e935a99b6f8c1b9ce9680252ba67203d8689609"
+      },
+      "toc": {
+        "bytes": 124186,
+        "sha256": "856e8220d9390ffdd70cd15ab676cead18920bfafe5786308e394bb28e5e4662"
+      },
+      "out": {
+        "bytes": 158282,
+        "sha256": "3052847237618dc758ad18acc405a4da6c84b797953c29805984b768f68dabd7"
+      },
+      "thm": {
+        "bytes": 223410,
+        "sha256": "e72f09b3ef426415a555633bfb8a2de48ccc31ae504e0b60df5db122d98f21db"
+      },
+      "prb": {
+        "bytes": 50,
+        "sha256": "5865db31b71e94aa3f3b950597ea74ec44815d73b43eddf00e583a1875e47608"
+      },
+      "pcr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "olunits": {
+        "bytes": 64500,
+        "sha256": "0b1c33ca391bbef39591d45585cab0f845e7b44772170800184a245172340864"
+      },
+      "olcorrections": {
+        "bytes": 1379,
+        "sha256": "02fb555eaa0a76df6fe286493ea365522e28742b6942fa57daf5c4b01bd48b18"
+      },
+      "oltypography": {
+        "bytes": 762,
+        "sha256": "c8672dabcef7a3522a82f0b672520399857891677ad47afdffbb85eb33d2c8d7"
+      },
+      "olbidilayout": {
+        "bytes": 1491,
+        "sha256": "e7c03566b035c779d41e63285e433f5558231d495c71f4aea15c87d5d70c24ae"
+      },
+      "pdf": {
+        "bytes": 9285597,
+        "sha256": "6b7a24d6b39474fd76ea08496c97783bcf5a4c46f10d8f500ed0414a5dd38a08"
+      }
+    },
+    "normalized_recorder_input_sets_identical": true
+  },
+  "pdf_parse_and_extraction": {
+    "parser": {
+      "name": "PyMuPDF",
+      "version": "1.27.2.3"
+    },
+    "pages": 1201,
+    "page_geometry_points": [
+      0.0,
+      0.0,
+      612.0,
+      792.0
+    ],
+    "rotated_pages": 0,
+    "encrypted": false,
+    "metadata": {
+      "format": "PDF 1.5",
+      "title": "متن منطق باز",
+      "author": "Open Logic Project",
+      "subject": "خوانشگر یکپارچهٔ فارسی معیار؛ منطق صوری، فرامنطق و مبانی منطق ریاضی",
+      "keywords": "منطق صوری؛ فرامنطق؛ نظریهٔ مجموعه‌ها؛ نظریهٔ برهان؛ محاسبه‌پذیری؛ تمامیت؛ ناتمامیت",
+      "creator": "LaTeX with hyperref",
+      "producer": "LuaTeX-1.25.7",
+      "creationDate": "D:20260712163614Z",
+      "modDate": "D:20260712163614Z",
+      "trapped": "",
+      "encryption": null
+    },
+    "text_extraction": {
+      "pages_attempted": 1201,
+      "pages_with_nonempty_text": 1201,
+      "empty_pages": 0,
+      "replacement_character_pages": 0,
+      "total_extracted_characters": 1876188,
+      "arabic_script_characters": 1196638,
+      "minimum_page_characters": 17,
+      "maximum_page_characters": 3542,
+      "c0_control_characters": {
+        "status": "KNOWN_MATH_FONT_TOUNICODE_LIMITATION_NOT_CLEAN_SEARCHABLE_TEXT",
+        "counts": {
+          "U+0006": 8,
+          "U+0007": 8,
+          "U+0000": 4,
+          "U+0001": 4,
+          "U+001B": 2,
+          "U+001A": 1,
+          "U+000C": 24,
+          "U+000E": 2,
+          "U+0012": 1,
+          "U+0013": 1
+        },
+        "pages_by_codepoint": {
+          "U+0000": [
+            378,
+            532,
+            1013
+          ],
+          "U+0001": [
+            378,
+            532,
+            1013
+          ],
+          "U+0006": [
+            86
+          ],
+          "U+0007": [
+            86
+          ],
+          "U+000C": [
+            1103,
+            1104,
+            1106,
+            1118
+          ],
+          "U+000E": [
+            1114,
+            1115
+          ],
+          "U+0012": [
+            1174
+          ],
+          "U+0013": [
+            1174
+          ],
+          "U+001A": [
+            592
+          ],
+          "U+001B": [
+            425,
+            606
+          ]
+        },
+        "affected_pages": [
+          86,
+          378,
+          425,
+          532,
+          592,
+          606,
+          1013,
+          1103,
+          1104,
+          1106,
+          1114,
+          1115,
+          1118,
+          1174
+        ],
+        "total_occurrences": 55,
+        "fonts": [
+          "CMEX10",
+          "MSBM10"
+        ],
+        "clean_text_extraction_passed": false,
+        "tagged_pdf_accessibility_or_math_copy_paste_passed": false
+      }
+    }
+  },
+  "mutation_controls": {
+    "status": "PASS",
+    "validator_controls": [
+      "missing_unit_occurrence_rejected",
+      "reordered_unit_occurrences_rejected",
+      "mismatched_final_boundary_rejected",
+      "duplicate_correction_event_rejected",
+      "wrong_typography_occurrence_rejected",
+      "wrong_bidi_layout_header_rejected",
+      "reordered_bidi_layout_log_events_rejected",
+      "duplicate_bidi_layout_coverage_marker_rejected",
+      "bidi_layout_coverage_prefix_collision_rejected",
+      "wrong_bidi_layout_coverage_count_rejected",
+      "bootstrap_bidi_trace_rejected_as_final",
+      "missing_toc_whole_surname_renderer_rejected",
+      "missing_toc_replay_marker_rejected",
+      "duplicate_toc_replay_marker_rejected",
+      "reversed_toc_replay_markers_rejected",
+      "toc_renderers_before_both_markers_rejected",
+      "unknown_toc_replay_marker_rejected",
+      "raw_toc_source_surname_rejected",
+      "legacy_toc_glyph_renderer_rejected",
+      "expanded_toc_ltr_payload_rejected",
+      "private_toc_helper_rejected",
+      "toc_recording_command_rejected",
+      "duplicate_runtime_marker_rejected",
+      "nonzero_final_diagnostics_rejected",
+      "primary_replay_pdf_hash_mismatch_rejected",
+      "bidi_layout_replay_mismatch_rejected",
+      "source_inventory_mutation_rejected",
+      "missing_pdf_metadata_rejected"
+    ],
+    "validator_negative_controls": 28,
+    "ledger_negative_controls": 4,
+    "total_negative_controls": 32
+  },
+  "remaining_gates": [
+    "complete rendered inspection of every accepted PDF page",
+    "independent full-PDF link-annotation geometry and destination QA",
+    "remediate the recorded Type-1 math-font C0/ToUnicode extraction defect or carry an explicit non-accessible-text limitation",
+    "release-package inventory and license/provenance QA",
+    "publication followed by anonymous byte/hash readback"
+  ]
+}

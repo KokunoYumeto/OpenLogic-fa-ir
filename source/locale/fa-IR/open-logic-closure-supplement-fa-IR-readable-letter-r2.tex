@@ -1,0 +1,82 @@
+% Iranian-Persian closure supplement for comfortable full-page viewing on
+% US Letter.  Geometry, typography, and graphic-direction handling match the
+% readable complete reader wrapper.
+
+\PassOptionsToClass{14pt,oneside,openany}{memoir}
+
+\newcommand*{\OLSupplementPDFTitle}{متن منطق باز: ضمیمهٔ تکمیلی فارسی ایران در منطق صوری و فرامنطق}
+\newcommand*{\OLSupplementEditionTitle}{ضمیمهٔ تکمیلی فارسی ایران در منطق صوری و فرامنطق}
+\newcommand*{\OLSupplementPDFSubject}{ضمیمهٔ تکمیلی منطق صوری و فرامنطق}
+\newcommand*{\OLSupplementPDFKeywords}{منطق صوری؛ فرامنطق؛ نظریهٔ مجموعه‌ها؛ رابطه‌ها و تابع‌ها؛ زبان‌های صوری؛ دستگاه‌های استنتاجی؛ معناشناسی صوری؛ درستی و تمامیت؛ محاسبه‌پذیری؛ قضیه‌های ناتمامیت؛ نظریهٔ مدل؛ منطق موجهات؛ منطق چندارزشی}
+\newcommand*{\OLSecondaryEditionSubtitleBlock}{%
+  \vspace{0.6cm}%
+  {\large\foreignlanguage{english}{Iranian Persian supplementary volume in formal logic and metalogic}\par}%
+}
+\newcommand*{\OLReleaseConceptDOI}{10.5281/zenodo.21921852}
+\newcommand*{\OLReleaseDOIBlock}{%
+  {\large DOI مفهومی پایدار: \babelsublr{\OLReleaseConceptDOI}\par}%
+}
+
+\AddToHook{class/memoir/after}{%
+  \linespread{1.05}%
+  \setstocksize{11in}{8.5in}%
+  \settrimmedsize{11in}{8.5in}{*}%
+  \settrims{0pt}{0pt}%
+  \settypeblocksize{650pt}{468pt}{*}%
+  \setlrmargins{73.1475pt}{*}{*}%
+  \setulmargins{72.485pt}{*}{*}%
+  \setheadfoot{18pt}{29pt}%
+  \checkandfixthelayout[fixed]%
+}
+
+\newcommand*{\OLCompleteReaderJob}{open-logic-complete-fa-IR-readable-letter-r2}
+
+\makeatletter
+\newcommand*{\OLReadableGraphicLTRBefore}{\begingroup\bbl@setdirs\z@}
+\newcommand*{\OLReadableGraphicLTRAfter}{\endgroup}
+\newcommand*{\OLReadableInstallGraphicDirectionFixes}{%
+  \let\OLReadableOriginalAsset\olasset
+  \RenewDocumentCommand{\olasset}{O{\olphotowidth}m}{%
+    \begingroup\bbl@setdirs\z@
+    \OLReadableOriginalAsset[##1]{##2}%
+    \endgroup
+  }%
+  \AddToHook{env/tikzpicture/before}{\OLReadableGraphicLTRBefore}%
+  \AddToHook{env/tikzpicture/after}{\OLReadableGraphicLTRAfter}%
+  \AddToHook{env/sidewaysfigure/before}{\OLReadableGraphicLTRBefore}%
+  \AddToHook{env/sidewaysfigure/after}{\OLReadableGraphicLTRAfter}%
+}
+\makeatother
+
+\AddToHook{begindocument/before}{%
+  % Match the complete reader's empirically centered physical RTL origin.
+  \addtolength{\oddsidemargin}{0.8773pt}%
+  \addtolength{\evensidemargin}{0.8773pt}%
+  \OLReadableInstallGraphicDirectionFixes
+  % The four-clause proof-height definition in 3.2 contains an unbreakable
+  % maximum expression.  Compact only that definition enough to keep it in
+  % the centered live area.
+  \AddToHook{env/defn/begin}{%
+    \ifnum\value{chapter}=3\relax
+      \ifnum\value{section}=2\relax\fontsize{13.5pt}{17pt}\selectfont\fi
+    \fi
+  }%
+  \hypersetup{%
+    pdfkeywords={\OLSupplementPDFKeywords},%
+    pdfstartview=FitH,%
+    pdfpagelayout=OneColumn,%
+    pdfpagemode=UseOutlines%
+  }%
+}
+
+\AtBeginDocument{%
+  \typeout{OL-R2-TEXTWIDTH=\the\textwidth}%
+  \typeout{OL-R2-TEXTHEIGHT=\the\textheight}%
+  \typeout{OL-R2-FONTSIZE=\csname f@size\endcsname pt}%
+  \typeout{OL-R2-BASELINESKIP=\the\baselineskip}%
+  \typeout{OL-R2-ODDSIDEMARGIN=\the\oddsidemargin}%
+  \typeout{OL-R2-EVENSIDEMARGIN=\the\evensidemargin}%
+  \typeout{OL-R2-UPPERMARGIN=\the\uppermargin}%
+}
+
+\input{open-logic-closure-supplement-fa-IR.tex}

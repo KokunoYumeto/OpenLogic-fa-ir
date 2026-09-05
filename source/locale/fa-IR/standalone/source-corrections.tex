@@ -1,0 +1,1364 @@
+% Exact, additive source-correction overlay for the standalone reader.
+% Frozen fa-IR source files remain byte-for-byte unchanged. Each replacement is
+% bound to a source unit, environment kind, and whitespace-normalized full body
+% or exact contextual document-text fragment.
+% Stable audits: OLFUN-20260904 and OLSIZ-20260904.
+% Additive document-text repair families: OLEMPH-20260905 and OLVIS-20260905.
+% The OLVIS residual rules are exact repairs derived from the complete-reader
+% margin audit; the frozen localized sources remain unchanged.
+\ExplSyntaxOn
+\prop_new:N \g_olsa_source_correction_rule_prop
+\prop_new:N \g_olsa_source_correction_replacement_prop
+\prop_new:N \g_olsa_source_correction_document_original_prop
+\prop_new:N \g_olsa_source_correction_expected_prop
+\prop_new:N \g_olsa_source_correction_seen_prop
+\iow_new:N \g_olsa_source_correction_iow
+\tl_new:N \l_olsa_source_correction_normal_tl
+\tl_new:N \l_olsa_source_correction_key_tl
+\tl_new:N \l_olsa_source_correction_rule_tl
+\tl_new:N \l_olsa_source_correction_count_tl
+\tl_new:N \l_olsa_source_correction_expected_tl
+\tl_new:N \l_olsa_source_correction_replacement_tl
+\tl_new:N \l_olsa_source_correction_original_tl
+\tl_new:N \l_olsa_source_correction_applied_rule_tl
+\tl_new:N \g_olsa_source_correction_deferred_applied_rule_tl
+\cs_generate_variant:Nn \prop_gput:Nnn {NVn,NnV,NVV}
+\cs_generate_variant:Nn \seq_gput_right:Nn {cn}
+\cs_generate_variant:Nn \seq_map_inline:Nn {cn}
+
+\cs_new_protected:Npn \olsa_source_correction_normalize:n #1
+ {
+  \tl_set:Nx \l_olsa_source_correction_normal_tl {\tl_to_str:n{#1}}
+  \regex_replace_all:nnN {\s} {} \l_olsa_source_correction_normal_tl
+ }
+
+\NewDocumentCommand \OLSADeclareSourceCorrection {m m m +m +m}
+ {
+  \olsa_source_correction_normalize:n{#4}
+  \tl_set:Nx \l_olsa_source_correction_key_tl
+   {#1|#2|\l_olsa_source_correction_normal_tl}
+  \prop_if_in:NVTF \g_olsa_source_correction_rule_prop
+    \l_olsa_source_correction_key_tl
+   {\PackageError{standalone-source-corrections}{Duplicate~source~body~for~#3}{Each~correction~must~bind~one~exact~body.}}
+   {
+    \prop_gput:NVn \g_olsa_source_correction_rule_prop
+      \l_olsa_source_correction_key_tl {#3}
+    \prop_gput:Nnn \g_olsa_source_correction_replacement_prop {#3}{#5}
+    \prop_gput:Nnn \g_olsa_source_correction_expected_prop {#3}{1}
+   }
+ }
+
+\NewDocumentCommand \OLSADeclareDeferredCorrectionAfter {m +m}
+ {\cs_gset:cpn {olsa_deferred_correction_after_#1:}{#2}}
+
+% Top-level prose is not enclosed by a theorem/discourse environment.  Bind
+% those repairs to a source unit and a unique contextual token fragment.  The
+% exact substitutions are materialized in hash-bound derived physical inputs.
+\NewDocumentCommand \OLSADeclareDocumentTextCorrection {m m +m +m}
+ {
+  \prop_if_in:NnTF \g_olsa_source_correction_replacement_prop {#2}
+   {\PackageError{standalone-source-corrections}{Duplicate~correction~rule~#2}{Each~correction~rule~name~must~be~unique.}}
+   {
+    \olsa_source_correction_normalize:n{#3}
+    \tl_set:Nx \l_olsa_source_correction_key_tl
+     {#1|document-text|\l_olsa_source_correction_normal_tl}
+    \prop_if_in:NVTF \g_olsa_source_correction_rule_prop
+      \l_olsa_source_correction_key_tl
+     {\PackageError{standalone-source-corrections}{Duplicate~document-text~fragment~for~#2}{Each~document-text~correction~must~bind~one~unique~contextual~fragment.}}
+     {
+      \prop_gput:NVn \g_olsa_source_correction_rule_prop
+        \l_olsa_source_correction_key_tl {#2}
+      \prop_gput:Nnn \g_olsa_source_correction_document_original_prop {#2}{#3}
+      \prop_gput:Nnn \g_olsa_source_correction_replacement_prop {#2}{#4}
+      \prop_gput:Nnn \g_olsa_source_correction_expected_prop {#2}{1}
+      \cs_if_exist:cF {g_olsa_source_correction_document_#1_seq}
+       {\seq_new:c {g_olsa_source_correction_document_#1_seq}}
+      \seq_gput_right:cn {g_olsa_source_correction_document_#1_seq}{#2}
+     }
+   }
+ }
+
+% A source unit normally renders once.  A narrowly pinned exception may raise
+% its expected runtime count after declaration; verification remains exact and
+% still fails closed on a missing, duplicate, or excess application.
+\NewDocumentCommand \OLSASetSourceCorrectionExpected {m m}
+ {
+  \prop_if_in:NnTF \g_olsa_source_correction_expected_prop {#1}
+   {
+    \int_compare:nNnTF {#2}>{0}
+      {\prop_gput:Nnn \g_olsa_source_correction_expected_prop {#1}{#2}}
+      {\PackageError{standalone-source-corrections}{Invalid~expected~count~for~#1}{Expected~counts~must~be~positive~integers.}}
+   }
+   {\PackageError{standalone-source-corrections}{Unknown~correction~rule~#1}{Declare~the~correction~before~overriding~its~expected~count.}}
+ }
+
+\cs_new_protected:Npn \olsa_source_correction_body:nnn #1#2#3
+ {
+  \tl_clear:N \l_olsa_source_correction_applied_rule_tl
+  \olsa_source_correction_normalize:n{#3}
+  \tl_set:Nx \l_olsa_source_correction_key_tl
+   {#1|#2|\l_olsa_source_correction_normal_tl}
+  \prop_get:NVNTF \g_olsa_source_correction_rule_prop
+    \l_olsa_source_correction_key_tl \l_olsa_source_correction_rule_tl
+   {
+    \tl_set:NV \l_olsa_source_correction_applied_rule_tl
+      \l_olsa_source_correction_rule_tl
+    \prop_get:NVNTF \g_olsa_source_correction_seen_prop
+      \l_olsa_source_correction_rule_tl \l_olsa_source_correction_count_tl
+      {}{\tl_set:Nn \l_olsa_source_correction_count_tl {0}}
+    \tl_set:Nx \l_olsa_source_correction_count_tl
+      {\int_eval:n{\l_olsa_source_correction_count_tl+1}}
+    \prop_gput:NVV \g_olsa_source_correction_seen_prop
+      \l_olsa_source_correction_rule_tl \l_olsa_source_correction_count_tl
+    \iow_term:x
+      {OL-STANDALONE-SOURCE-CORRECTION|#1|\l_olsa_source_correction_rule_tl|\l_olsa_source_correction_count_tl}
+    \iow_now:Nx \g_olsa_source_correction_iow
+      {#1|#2|\l_olsa_source_correction_rule_tl|\l_olsa_source_correction_count_tl}
+    \prop_get:NVN \g_olsa_source_correction_replacement_prop
+      \l_olsa_source_correction_rule_tl \l_olsa_source_correction_replacement_tl
+    \tl_use:N \l_olsa_source_correction_replacement_tl
+   }
+   {#3}
+ }
+
+\cs_new_protected:Npn \olsa_source_correction_body:nn #1#2
+ {
+  \olsa_source_correction_body:nnn {\OLStandaloneCurrentID}{#1}{#2}
+ }
+
+% Save the actual theorem/discourse environment entry and exit macros before
+% installing unit-local body-capturing wrappers.
+\cs_new_eq:NN \olsa_source_correction_original_ex_begin: \ex
+\cs_new_eq:NN \olsa_source_correction_original_ex_end: \endex
+\cs_new_eq:NN \olsa_source_correction_original_explain_begin: \explain
+\cs_new_eq:NN \olsa_source_correction_original_explain_end: \endexplain
+\cs_new_eq:NN \olsa_source_correction_original_prop_begin: \prop
+\cs_new_eq:NN \olsa_source_correction_original_prop_end: \endprop
+\cs_new_eq:NN \olsa_source_correction_original_proof_begin: \proof
+\cs_new_eq:NN \olsa_source_correction_original_proof_end: \endproof
+\cs_new_eq:NN \olsa_source_correction_original_probdeferred_begin: \probdeferred
+\cs_new_eq:NN \olsa_source_correction_original_probdeferred_end: \endprobdeferred
+
+\cs_new_protected:Npn \olsa_source_correction_install_ex:
+ {
+  \RenewDocumentEnvironment{ex}{o +b}
+   {
+    \IfNoValueTF{##1}
+      {\olsa_source_correction_original_ex_begin:}
+      {\olsa_source_correction_original_ex_begin:[##1]}
+    \olsa_source_correction_body:nn {ex}{##2}
+    \olsa_source_correction_original_ex_end:
+   }{}
+ }
+\cs_new_protected:Npn \olsa_source_correction_install_explain:
+ {
+  \RenewDocumentEnvironment{explain}{+b}
+   {
+    \olsa_source_correction_original_explain_begin:
+    \olsa_source_correction_body:nn {explain}{##1}
+    \olsa_source_correction_original_explain_end:
+   }{}
+ }
+\cs_new_protected:Npn \olsa_source_correction_install_prop:
+ {
+  \RenewDocumentEnvironment{prop}{o +b}
+   {
+    \IfNoValueTF{##1}
+      {\olsa_source_correction_original_prop_begin:}
+      {\olsa_source_correction_original_prop_begin:[##1]}
+    \olsa_source_correction_body:nn {prop}{##2}
+    \olsa_source_correction_original_prop_end:
+   }{}
+ }
+\cs_new_protected:Npn \olsa_source_correction_install_proof:
+ {
+  \RenewDocumentEnvironment{proof}{o +b}
+   {
+    \IfNoValueTF{##1}
+      {\olsa_source_correction_original_proof_begin:}
+      {\olsa_source_correction_original_proof_begin:[##1]}
+    \olsa_source_correction_body:nn {proof}{##2}
+    \olsa_source_correction_original_proof_end:
+   }{}
+ }
+
+% Problems are written verbatim by answers.sty and typeset later as
+% probdeferred.  Match there, using the source-unit context serialized by the
+% standalone runtime; never place an xparse body collector around prob itself.
+\cs_new_protected:Npn \olsa_source_correction_install_probdeferred:
+ {
+  \RenewDocumentEnvironment{probdeferred}{m +b}
+   {
+    \tl_if_blank:VTF \l_olsa_reference_id_tl
+     {
+      \PackageError{standalone-source-corrections}
+       {Missing~source-unit~context~for~deferred~problem}
+       {Install~the~standalone~deferred-context~writer~before~collecting~problems.}
+     }
+     {
+      % The original probdeferred environment closes its own group before an
+      % adjacent audit note can be emitted.  Preserve only the matched rule
+      % name globally across that boundary; clear it before and after every
+      % deferred problem so no prior match can leak into a later problem.
+      \tl_gclear:N \g_olsa_source_correction_deferred_applied_rule_tl
+      \olsa_source_correction_original_probdeferred_begin:{##1}
+      \exp_args:NV \olsa_source_correction_body:nnn
+        \l_olsa_reference_id_tl {prob}{##2}
+      \tl_gset_eq:NN \g_olsa_source_correction_deferred_applied_rule_tl
+        \l_olsa_source_correction_applied_rule_tl
+      \olsa_source_correction_original_probdeferred_end:
+      \tl_if_blank:VF \g_olsa_source_correction_deferred_applied_rule_tl
+       {
+        \cs_if_exist:cT
+          {olsa_deferred_correction_after_\tl_use:N
+            \g_olsa_source_correction_deferred_applied_rule_tl :}
+         {
+          \use:c
+            {olsa_deferred_correction_after_\tl_use:N
+              \g_olsa_source_correction_deferred_applied_rule_tl :}
+         }
+       }
+      \tl_gclear:N \g_olsa_source_correction_deferred_applied_rule_tl
+     }
+   }{}
+ }
+
+\cs_new_protected:Npn \olsa_source_correction_record_document_text:nn #1#2
+ {
+  \prop_get:NnNTF \g_olsa_source_correction_seen_prop {#2}
+    \l_olsa_source_correction_count_tl
+    {}{\tl_set:Nn \l_olsa_source_correction_count_tl {0}}
+  \tl_set:Nx \l_olsa_source_correction_count_tl
+    {\int_eval:n{\l_olsa_source_correction_count_tl+1}}
+  \prop_gput:NnV \g_olsa_source_correction_seen_prop
+    {#2} \l_olsa_source_correction_count_tl
+  \iow_term:x
+    {OL-STANDALONE-SOURCE-CORRECTION|#1|#2|\l_olsa_source_correction_count_tl}
+  \iow_now:Nx \g_olsa_source_correction_iow
+    {#1|document-text|#2|\l_olsa_source_correction_count_tl}
+ }
+
+% Document-level source fragments are materialized into hash-bound derived
+% physical inputs before TeX starts.  This is necessary because collecting a
+% whole source document as an xparse/macro body pre-tokenizes answers.sty's
+% deferred problem bodies and any verbatim-style input under the wrong
+% catcodes.  The generated file is read normally and emits its trace marker
+% immediately before its unchanged terminal \end{document}.
+\NewDocumentCommand \OLSASourceCorrectionRecordDocumentText {m m}
+ {
+  \group_begin:
+  \tl_set:Nn \l_olsa_source_correction_key_tl {#1}
+  \tl_set:Nx \l_olsa_source_correction_normal_tl {\OLStandaloneCurrentID}
+  \tl_if_eq:NNTF
+    \l_olsa_source_correction_key_tl
+    \l_olsa_source_correction_normal_tl
+   {\olsa_source_correction_record_document_text:nn {#1}{#2}}
+   {\PackageError{standalone-source-corrections}{Derived~source~identity~mismatch~#1}{Regenerate~the~hash-bound~derived~source~tree.}}
+  \group_end:
+ }
+
+\cs_new_protected:Npn \olsa_source_correction_install_document_text:
+ {
+  \tl_set:Nx \l_olsa_path_tl
+    {standalone/generated-source-corrections/\OLStandaloneCurrentPath}
+ }
+
+\NewDocumentCommand \OLSASourceCorrectionsStart {}
+ {
+  \iow_open:Nn \g_olsa_source_correction_iow {\jobname.olcorrections}
+  \iow_now:Nn \g_olsa_source_correction_iow
+    {source_id|environment|finding_id|occurrence}
+ }
+\NewDocumentCommand \OLSASourceCorrectionsVerify {}
+ {
+  \prop_map_inline:Nn \g_olsa_source_correction_expected_prop
+   {
+    \prop_get:NnNTF \g_olsa_source_correction_seen_prop {##1}
+      \l_olsa_source_correction_count_tl
+      {}{\tl_set:Nn \l_olsa_source_correction_count_tl {0}}
+    \int_compare:nNnF {\l_olsa_source_correction_count_tl}={##2}
+      {\PackageError{standalone-source-corrections}{Wrong~correction~count~for~##1:~\l_olsa_source_correction_count_tl}{The~pinned~source~body~changed~or~was~not~rendered.}}
+   }
+  \iow_term:x
+    {OL-STANDALONE-SOURCE-CORRECTION-COVERAGE|\prop_count:N\g_olsa_source_correction_seen_prop|\prop_count:N\g_olsa_source_correction_expected_prop}
+  \iow_close:N \g_olsa_source_correction_iow
+ }
+
+% The reviewed source and replacement bodies are prose, not expl3 program
+% text.  Tokenize them with ordinary LaTeX catcodes so literal spaces and
+% active nonbreaking tildes remain identical to bodies collected from the
+% unchanged localized source files.  The command implementation above is
+% already tokenized; resume expl3 only for the internal setup functions below.
+\ExplSyntaxOff
+
+% OLFUN-002: Nat contains zero, so the selected square root is nonnegative.
+\OLSADeclareSourceCorrection{OLP-0021}{ex}{OLFUN-002}
+ {
+  ضرب یک تابع است، زیرا هر ورودی---هر زوج
+  از اعداد طبیعی---را با یک خروجی یگانه جفت می‌کند: $\times \colon \Nat^2 \to
+  \Nat$. در مقابل، نگاشت‌کردن عدد طبیعی~$n$ به عدد حقیقی~$x$ چنان‌که
+  $x^2 = n$، تابع‌وار نیست، زیرا هر عدد صحیح مثبت~$n$ دو
+  ریشهٔ دوم دارد: $\sqrt{n}$ و~$-\sqrt{n}$. می‌توانیم با
+  بازگرداندن تنها ریشهٔ دوم مثبت آن را تابع‌وار کنیم: $\sqrt{\phantom{X}} \colon
+  \Nat \to \Real$.
+ }
+ {
+  ضرب یک تابع است، زیرا هر ورودی---هر زوج
+  از اعداد طبیعی---را با یک خروجی یگانه جفت می‌کند: $\times \colon \Nat^2 \to
+  \Nat$. در مقابل، نگاشت‌کردن عدد طبیعی~$n$ به عدد حقیقی~$x$ چنان‌که
+  $x^2 = n$، تابع‌وار نیست، زیرا هر عدد صحیح مثبت~$n$ دو
+  ریشهٔ دوم دارد: $\sqrt{n}$ و~$-\sqrt{n}$. می‌توانیم با
+  بازگرداندن تنها ریشهٔ دومِ نامنفی، یعنی ریشهٔ اصلی، آن را تابع‌وار کنیم:
+  $\sqrt{\phantom{X}} \colon \Nat \to \Real$.
+ }
+
+% OLFUN-003: use x consistently with g(x) and x+1.
+\OLSADeclareSourceCorrection{OLP-0021}{ex}{OLFUN-003}
+ {
+  \ollabel{examplefunext}
+  فرض کنید $g \colon \Nat \to \Nat$ چنان تعریف شود که $g(x) = x+2-1$. این
+  تعریف به ما می‌گوید که $g$ تابعی است که اعداد طبیعی را ورودی می‌گیرد و
+  اعداد طبیعی خروجی می‌دهد. با داشتن یک عدد طبیعی~$n$، تابع $g$
+  پیشینِ جانشینِ جانشینِ~$x$، یعنی
+  $x+1$، را خروجی خواهد داد.
+ }
+ {
+  \ollabel{examplefunext}
+  فرض کنید $g \colon \Nat \to \Nat$ چنان تعریف شود که $g(x) = x+2-1$. این
+  تعریف به ما می‌گوید که $g$ تابعی است که اعداد طبیعی را ورودی می‌گیرد و
+  اعداد طبیعی خروجی می‌دهد. با داشتن یک عدد طبیعی~$x$، تابع $g$
+  پیشینِ جانشینِ جانشینِ~$x$، یعنی
+  $x+1$، را خروجی خواهد داد.
+ }
+
+% OLFUN-004: the graph is a relation between A and B, contained in A x B.
+\OLSADeclareSourceCorrection{OLP-0023}{explain}{OLFUN-004}
+ {
+  هر تابع $f\colon A \to B$ گرافی دارد؛ یعنی رابطه‌ای روی $A
+  \times B$ که با $f(x) = y$ تعریف می‌شود. از سوی دیگر، هر رابطهٔ~$R
+  \subseteq A \times B$ که ویژگی‌های داده‌شده در
+  \olref{prop:graph-function} را داشته باشد، گراف تابعی~$f \colon A \to
+  B$ است. به‌سبب این پیوند نزدیک میان توابع و
+  گراف‌هایشان، می‌توانیم یک تابع را صرفاً گراف آن در نظر بگیریم. به
+  بیان دیگر، توابع را می‌توان با روابطی معین، یعنی با
+  مجموعه‌هایی معین از چندتایی‌ها، یکی انگاشت. \oliflabeldef{sfr:rel:ref:sec}{بااین‌حال،
+  توجه کنید که روح این «یکی‌انگاری» همان است که در
+  \olref[sfr][rel][ref]{sec} آمده است: این ادعایی دربارهٔ متافیزیک
+  توابع نیست، بلکه مشاهده‌ای است مبنی بر اینکه مناسب است توابع را همچون
+  مجموعه‌هایی معین \emph{در نظر بگیریم}. یکی از دلایل این مناسب‌بودن آن است
+  که اکنون می‌توانیم}{اکنون می‌توانیم} عملیات مشابهی را روی
+  توابع انجام دهیم که روی روابط انجام دادیم (نگاه کنید به
+  \olref[sfr][rel][ops]{sec}). به‌ویژه:
+ }
+ {
+  هر تابع $f\colon A \to B$ گرافی دارد؛ یعنی رابطه‌ای میان $A$ و~$B$
+  که زیرمجموعه‌ای از $A \times B$ است و با $f(x) = y$ تعریف می‌شود. از
+  سوی دیگر، هر رابطهٔ~$R \subseteq A \times B$ که ویژگی‌های داده‌شده در
+  \olref{prop:graph-function} را داشته باشد، گراف تابعی~$f \colon A \to
+  B$ است. به‌سبب این پیوند نزدیک میان توابع و
+  گراف‌هایشان، می‌توانیم یک تابع را صرفاً گراف آن در نظر بگیریم. به
+  بیان دیگر، توابع را می‌توان با روابطی معین، یعنی با
+  مجموعه‌هایی معین از چندتایی‌ها، یکی انگاشت. \oliflabeldef{sfr:rel:ref:sec}{بااین‌حال،
+  توجه کنید که روح این «یکی‌انگاری» همان است که در
+  \olref[sfr][rel][ref]{sec} آمده است: این ادعایی دربارهٔ متافیزیک
+  توابع نیست، بلکه مشاهده‌ای است مبنی بر اینکه مناسب است توابع را همچون
+  مجموعه‌هایی معین \emph{در نظر بگیریم}. یکی از دلایل این مناسب‌بودن آن است
+  که اکنون می‌توانیم}{اکنون می‌توانیم} عملیات مشابهی را روی
+  توابع انجام دهیم که روی روابط انجام دادیم (نگاه کنید به
+  \olref[sfr][rel][ops]{sec}). به‌ویژه:
+ }
+
+% OLFUN-005: function restriction is domain-only, unlike R intersect C^2.
+\OLSADeclareSourceCorrection{OLP-0023}{explain}{OLFUN-005}
+ {
+  از این تعریف‌ها نتیجه می‌شود که $\ran{f} =
+  \funimage{f}{\dom{f}}$ برای هر تابع~$f$ برقرار است.
+  \oliflabeldef{sfr:rel:ops:sec}{این مفاهیم با توجه به تعریف‌های
+  \olref[sfr][rel][ops]{sec} و یکی‌انگاری توابع با روابط، دقیقاً
+  همان‌اند که انتظار می‌رود. اما دو عمل دیگر---وارون‌ها و حاصل‌ضرب‌های نسبی---به
+  جزئیات اندکی بیشتر نیاز دارند. آن جزئیات را در
+  \olref[inv]{sec} و
+  \olref[cmp]{sec} ارائه خواهیم کرد.}{}
+ }
+ {
+  از این تعریف‌ها نتیجه می‌شود که $\ran{f} =
+  \funimage{f}{\dom{f}}$ برای هر تابع~$f$ برقرار است.
+  \oliflabeldef{sfr:rel:ops:sec}{این مفاهیم با توجه به تعریف‌های
+  \olref[sfr][rel][ops]{sec} و یکی‌انگاری توابع با روابط، همانندی‌ای
+  محدود دارند: تحدیدِ تابع فقط ورودی را محدود می‌کند، نه هر دو مختصهٔ
+  رابطه را. اما دو عمل دیگر---وارون‌ها و حاصل‌ضرب‌های نسبی---به
+  جزئیات اندکی بیشتر نیاز دارند. آن جزئیات را در
+  \olref[inv]{sec} و
+  \olref[cmp]{sec} ارائه خواهیم کرد.}{}
+ }
+
+% OLFUN-001: the simple corrected theorem assumes a nonempty domain.
+\OLSADeclareSourceCorrection{OLP-0024}{prop}{OLFUN-001-THEOREM}
+ {
+  اگر $f\colon A \to B$ !!{injective} باشد، آنگاه \emph{وارون
+  چپی} مانند~$g\colon B \to A$ برای~$f$ وجود دارد چنان‌که $g(f(x)) = x$ برای همهٔ $x
+  \in A$.
+ }
+ {
+  اگر $A$ ناتهی باشد و $f\colon A \to B$ !!{injective} باشد، آنگاه
+  \emph{وارون چپی} مانند~$g\colon B \to A$ برای~$f$ وجود دارد چنان‌که
+  $g(f(x)) = x$ برای همهٔ $x \in A$.
+ }
+
+\OLSADeclareSourceCorrection{OLP-0024}{proof}{OLFUN-001-PROOF}
+ {
+  فرض کنید $f\colon A \to B$ !!{injective} باشد. یک $y \in B$ را در نظر بگیرید.
+  اگر $y \in \ran{f}$، یک $x \in A$ وجود دارد چنان‌که $f(x) = y$. چون
+  $f$ !!{injective} است، فقط یک چنین~$x \in A$ای وجود دارد. پس می‌توانیم
+  تعریف کنیم: $g(y) = x$؛ یعنی $g(y)$ «آن» $x \in A$ای است که $f(x)
+  = y$. اگر $y \notin \ran{f}$، می‌توانیم آن را به هر~$a \in A$ای نگاشت کنیم. پس
+  می‌توانیم یک $a \in A$ برگزینیم و $g\colon B \to A$ را به‌صورت زیر تعریف کنیم:
+  \[
+  g(y) = \begin{cases}
+      x & \text{اگر $f(x) = y$}\\
+      a & \text{اگر $y \notin \ran{f}$ باشد.}
+  \end{cases}
+  \]
+  این تابع برای همهٔ $y \in B$ تعریف شده است، زیرا برای هر چنین $y \in \ran{f}$ای
+  دقیقاً یک $x \in A$ وجود دارد چنان‌که $f(x) = y$. بنا بر تعریف، اگر
+  $y = f(x)$، آنگاه $g(y) = x$؛ یعنی $g(f(x)) = x$.
+ }
+ {
+  فرض کنید $A$ ناتهی باشد و $f\colon A \to B$ !!{injective} باشد. عنصری
+  $a \in A$ برگزینید و یک $y \in B$ را در نظر بگیرید. اگر $y \in
+  \ran{f}$، یک $x \in A$ وجود دارد چنان‌که $f(x) = y$. چون $f$
+  !!{injective} است، فقط یک چنین~$x \in A$ای وجود دارد. پس می‌توانیم
+  تعریف کنیم: $g(y) = x$؛ یعنی $g(y)$ «آن» $x \in A$ای است که $f(x)
+  = y$. اگر $y \notin \ran{f}$، آن را به همان~$a$ نگاشت می‌کنیم و
+  $g\colon B \to A$ را به‌صورت زیر تعریف می‌کنیم:
+  \[
+  g(y) = \begin{cases}
+      x & \text{اگر $f(x) = y$}\\
+      a & \text{اگر $y \notin \ran{f}$ باشد.}
+  \end{cases}
+  \]
+  این تابع برای همهٔ $y \in B$ تعریف شده است، زیرا برای هر چنین $y \in \ran{f}$ای
+  دقیقاً یک $x \in A$ وجود دارد چنان‌که $f(x) = y$. بنا بر تعریف، اگر
+  $y = f(x)$، آنگاه $g(y) = x$؛ یعنی $g(f(x)) = x$.
+ }
+
+% OLSIZ-001: restore the omitted value f(7) = -3 in the final table row.
+\OLSADeclareSourceCorrection{OLP-0029}{ex}{OLSIZ-001}
+ {
+  تابع $f(n) = (-1)^{n} \lceil \frac{(n-1)}{2}\rceil$ (که در آن
+  $\lceil x \rceil$ تابع \emph{سقف} را نشان می‌دهد که $x$ را رو به بالا
+  تا نزدیک‌ترین عدد صحیح گرد می‌کند) مجموعهٔ اعداد صحیح~$\Int$ را
+  برمی‌شمارد. توجه کنید که $f$ چگونه مقادیر $\Int$ را با ``جهیدن'' رفت‌وبرگشتی
+  میان اعداد صحیح مثبت و منفی تولید می‌کند:
+  \[
+  \begin{array}{c c c c c c c c}
+  f(1) & f(2) & f(3) & f(4) & f(5) & f(6) & f(7) & \dots \\ \\
+  - \lceil \tfrac{0}{2} \rceil & \lceil \tfrac{1}{2}\rceil & - \lceil \tfrac{2}{2} \rceil & \lceil \tfrac{3}{2} \rceil & - \lceil \tfrac{4}{2} \rceil  & \lceil \tfrac{5}{2}
+  \rceil & - \lceil \tfrac{6}{2} \rceil & \dots \\ \\
+  0 & 1 & -1 & 2 & -2 & 3 & \dots
+  \end{array}
+  \]
+  همچنین می‌توانید $f$ را به‌صورت موردیِ زیر در نظر بگیرید:
+  \[
+  f(n) = \begin{cases}
+    0 & \text{اگر $n = 1$}\\
+    n/2 & \text{اگر $n$ زوج باشد}\\
+    -(n-1)/2 & \text{اگر $n$ فرد و $>1$ باشد}
+    \end{cases}
+  \]
+ }
+ {
+  تابع $f(n) = (-1)^{n} \lceil \frac{(n-1)}{2}\rceil$ (که در آن
+  $\lceil x \rceil$ تابع \emph{سقف} را نشان می‌دهد که $x$ را رو به بالا
+  تا نزدیک‌ترین عدد صحیح گرد می‌کند) مجموعهٔ اعداد صحیح~$\Int$ را
+  برمی‌شمارد. توجه کنید که $f$ چگونه مقادیر $\Int$ را با ``جهیدن'' رفت‌وبرگشتی
+  میان اعداد صحیح مثبت و منفی تولید می‌کند:
+  \[
+  \begin{array}{c c c c c c c c}
+  f(1) & f(2) & f(3) & f(4) & f(5) & f(6) & f(7) & \dots \\ \\
+  - \lceil \tfrac{0}{2} \rceil & \lceil \tfrac{1}{2}\rceil & - \lceil \tfrac{2}{2} \rceil & \lceil \tfrac{3}{2} \rceil & - \lceil \tfrac{4}{2} \rceil  & \lceil \tfrac{5}{2}
+  \rceil & - \lceil \tfrac{6}{2} \rceil & \dots \\ \\
+  0 & 1 & -1 & 2 & -2 & 3 & -3 & \dots
+  \end{array}
+  \]
+  همچنین می‌توانید $f$ را به‌صورت موردیِ زیر در نظر بگیرید:
+  \[
+  f(n) = \begin{cases}
+    0 & \text{اگر $n = 1$}\\
+    n/2 & \text{اگر $n$ زوج باشد}\\
+    -(n-1)/2 & \text{اگر $n$ فرد و $>1$ باشد}
+    \end{cases}
+  \]
+ }
+
+% OLSIZ-002: make the relative complement in Nat explicit.
+\OLSADeclareSourceCorrection{OLP-0031}{prob}{OLSIZ-002}
+ {
+  زیرمجموعه‌ای از $\Nat$ را \emph{هم‌متناهی} می‌نامیم اگر و تنها اگر
+  متممِ یک زیرمجموعهٔ متناهی از~$\Nat$ باشد؛ یعنی $A \subseteq \Nat$
+  هم‌متناهی است اگر و تنها اگر $\Nat\setminus A$ متناهی باشد. فرض کنید
+  $I$ مجموعه‌ای باشد که !!{element}s آن دقیقاً زیرمجموعه‌های متناهی و
+  هم‌متناهیِ $\Nat$ هستند. نشان دهید $I$ !!{enumerable} است.
+ }
+ {
+  زیرمجموعه‌ای از $\Nat$ را \emph{هم‌متناهی} می‌نامیم اگر و تنها اگر
+  متممِ آن نسبت به~$\Nat$ متناهی باشد؛ یعنی $A \subseteq \Nat$
+  هم‌متناهی است اگر و تنها اگر $\Nat\setminus A$ متناهی باشد. فرض کنید
+  $I$ مجموعه‌ای باشد که !!{element}s آن دقیقاً زیرمجموعه‌های متناهی و
+  هم‌متناهیِ $\Nat$ هستند. نشان دهید $I$ !!{enumerable} است.
+ }
+
+% OLSIZ-003: the second successive family is (3,m), not another (2,m).
+\OLSADeclareSourceCorrection{OLP-0032}{explain}{OLSIZ-003}
+ {
+  برشماری‌های دیگری از $\Nat^2$ وجود دارند که یافتن وارونشان را آسان‌تر
+  می‌کنند. یکی از آن‌ها را در اینجا می‌بینیم. به‌جای آنکه برشماری را در
+  یک آرایه مجسم کنید، با فهرستی از اعداد صحیح مثبت آغاز کنید که با
+  جایگاه‌هایی (در ابتدا) تهی متناظرند. تصور کنید این جایگاه‌ها را به‌ترتیب
+  و به‌شکل زیر با زوج‌های $\tuple{n,m}$ پر می‌کنیم. از زوج‌هایی آغاز کنید
+  که در مؤلفهٔ نخستشان~$0$ دارند (یعنی زوج‌های $\tuple{0,m}$): نخستین زوج
+  (یعنی $\tuple{0,0}$) را در نخستین جایگاه تهی بگذارید، سپس یک جایگاه تهی
+  را رد کنید، دومین زوج (یعنی $\tuple{0,2}$) را در جایگاه تهی بعدی بگذارید،
+  دوباره یکی را رد کنید، و به همین ترتیب ادامه دهید. آغازِ (ناکاملِ)
+  برشماری ما اکنون به‌شکل زیر است:
+  \[\small
+  \begin{array}{@{}c c c c c c c c c c c@{}}
+  \mathbf 1 & \mathbf 2 & \mathbf 3 & \mathbf 4 & \mathbf 5 & \mathbf 6 & \mathbf 7 & \mathbf 8 & \mathbf 9 & \mathbf{10} & \dots \\ \\
+  \tuple{0,0} &  & \tuple{0,1} &  & \tuple{0,2} &  & \tuple{0,3} & & \tuple{0,4} &  & \dots \\
+  \end{array}
+  \]
+  این کار را برای جایگاه‌هایی که هنوز خالی مانده‌اند، با زوج‌های
+  $\tuple{1,m}$ تکرار کنید و باز هم یک جایگاه خالی در میان را رد کنید:
+  \[\small
+  \begin{array}{@{}c c c c c c c c c c c@{}}
+  \mathbf 1 & \mathbf 2 & \mathbf 3 & \mathbf 4 & \mathbf 5 & \mathbf 6 & \mathbf 7 & \mathbf 8 & \mathbf 9 & \mathbf{10} & \dots \\ \\
+  \tuple{0,0} & \tuple{1,0} & \tuple{0,1} &  & \tuple{0,2} & \tuple{1,1} &
+  \tuple{0,3} & & \tuple{0,4} &  \tuple{1,2} & \dots \\
+  \end{array}
+  \]
+  زوج‌های $\tuple{2,m}$، $\tuple{2,m}$ و جز آن را نیز به همین شیوه وارد
+  کنید. بنابراین برشماری کامل‌شدهٔ ما چنین آغاز می‌شود:
+  \[\small
+  \begin{array}{@{}cc c c c c c c c c c@{}}
+  \mathbf 1 & \mathbf 2 & \mathbf 3 & \mathbf 4 & \mathbf 5 & \mathbf 6 & \mathbf 7 & \mathbf 8 & \mathbf 9 & \mathbf{10} & \dots \\ \\
+  \tuple{0,0} & \tuple{1,0} & \tuple{0,1} & \tuple{2,0}  & \tuple{0,2} &
+  \tuple{1,1} & \tuple{0,3} & \tuple{3,0}  & \tuple{0,4} &  \tuple{1,2} & \dots \\
+  \end{array}
+  \]
+  اگر خانه‌های آرایهٔ بالا را مطابق این برشماری شماره‌گذاری کنیم، خط
+  زیگزاگ مرتبی نخواهیم یافت، بلکه آرایش زیر را خواهیم داشت:
+  \[
+  \begin{array}{ c | c | c | c | c | c | c | c }
+  & \mathbf 0 & \mathbf 1 & \mathbf 2 & \mathbf 3 & \mathbf 4 & \mathbf 5 & \dots \\
+  \hline
+  \mathbf 0 & 1 & 3 & 5 & 7 & 9 & 11 & \dots \\
+  \hline
+  \mathbf 1 & 2 & 6 & 10 & 14 & 18 & \dots & \dots \\
+  \hline
+  \mathbf 2 & 4 & 12 & 20 & 28 & \dots & \dots & \dots \\
+  \hline
+  \mathbf 3 & 8 & 24 & 40 & \dots & \dots & \dots & \dots \\
+  \hline
+  \mathbf 4 & 16 & 48 & \dots & \dots & \dots & \dots & \dots \\
+  \hline
+  \mathbf 5 & 32 & \dots & \dots & \dots & \dots & \dots & \dots \\
+  \hline
+  \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \ddots\\
+  \end{array}
+  \]
+  می‌بینیم که زوج‌های سطر~$0$ در جایگاه‌های فردشمارهٔ برشماری ما
+  قرار دارند؛ یعنی زوج $\tuple{0,m}$ در جایگاه $2m+1$ است. زوج‌های سطر
+  دوم، یعنی $\tuple{1,m}$، در جایگاه‌هایی قرار دارند که شمارهٔ آن‌ها دو
+  برابر یک عدد فرد، و به‌طور مشخص $2 \cdot (2m+1)$ است. زوج‌های سطر سوم،
+  یعنی $\tuple{2,m}$، در جایگاه‌هایی قرار دارند که شمارهٔ آن‌ها چهار برابر
+  یک عدد فرد، یعنی $4 \cdot (2m+1)$ است؛ و به همین ترتیب. عامل‌های
+  $(2m+1)$ برای هر سطر، یعنی $1$، $2$، $4$، $8$، \dots، دقیقاً توان‌های~$2$
+  هستند: $1= 2^0$، $2 = 2^1$، $4 = 2^2$، $8 = 2^3$، \dots\@ در واقع،
+  نمای مربوط همواره مؤلفهٔ نخست زوج مورد بحث است. پس برای زوج
+  $\tuple{n,m}$، عامل برابر $2^n$ است. این امر فرمول کلی
+  $2^n \cdot (2m+1)$ را به ما می‌دهد. بااین‌حال، این نگاشتی از زوج‌ها به
+  اعداد صحیح \emph{مثبت} است؛ یعنی $\tuple{0,0}$ در جایگاه~$1$ قرار دارد.
+  اگر بخواهیم از جایگاه~$0$ آغاز کنیم، باید~$1$ را از حاصل کم کنیم. پس داریم:
+ }
+ {
+  برشماری‌های دیگری از $\Nat^2$ وجود دارند که یافتن وارونشان را آسان‌تر
+  می‌کنند. یکی از آن‌ها را در اینجا می‌بینیم. به‌جای آنکه برشماری را در
+  یک آرایه مجسم کنید، با فهرستی از اعداد صحیح مثبت آغاز کنید که با
+  جایگاه‌هایی (در ابتدا) تهی متناظرند. تصور کنید این جایگاه‌ها را به‌ترتیب
+  و به‌شکل زیر با زوج‌های $\tuple{n,m}$ پر می‌کنیم. از زوج‌هایی آغاز کنید
+  که در مؤلفهٔ نخستشان~$0$ دارند (یعنی زوج‌های $\tuple{0,m}$): نخستین زوج
+  (یعنی $\tuple{0,0}$) را در نخستین جایگاه تهی بگذارید، سپس یک جایگاه تهی
+  را رد کنید، دومین زوج (یعنی $\tuple{0,2}$) را در جایگاه تهی بعدی بگذارید،
+  دوباره یکی را رد کنید، و به همین ترتیب ادامه دهید. آغازِ (ناکاملِ)
+  برشماری ما اکنون به‌شکل زیر است:
+  \[\small
+  \begin{array}{@{}c c c c c c c c c c c@{}}
+  \mathbf 1 & \mathbf 2 & \mathbf 3 & \mathbf 4 & \mathbf 5 & \mathbf 6 & \mathbf 7 & \mathbf 8 & \mathbf 9 & \mathbf{10} & \dots \\ \\
+  \tuple{0,0} &  & \tuple{0,1} &  & \tuple{0,2} &  & \tuple{0,3} & & \tuple{0,4} &  & \dots \\
+  \end{array}
+  \]
+  این کار را برای جایگاه‌هایی که هنوز خالی مانده‌اند، با زوج‌های
+  $\tuple{1,m}$ تکرار کنید و باز هم یک جایگاه خالی در میان را رد کنید:
+  \[\small
+  \begin{array}{@{}c c c c c c c c c c c@{}}
+  \mathbf 1 & \mathbf 2 & \mathbf 3 & \mathbf 4 & \mathbf 5 & \mathbf 6 & \mathbf 7 & \mathbf 8 & \mathbf 9 & \mathbf{10} & \dots \\ \\
+  \tuple{0,0} & \tuple{1,0} & \tuple{0,1} &  & \tuple{0,2} & \tuple{1,1} &
+  \tuple{0,3} & & \tuple{0,4} &  \tuple{1,2} & \dots \\
+  \end{array}
+  \]
+  زوج‌های $\tuple{2,m}$، $\tuple{3,m}$ و جز آن را نیز به همین شیوه وارد
+  کنید. بنابراین برشماری کامل‌شدهٔ ما چنین آغاز می‌شود:
+  \[\small
+  \begin{array}{@{}cc c c c c c c c c c@{}}
+  \mathbf 1 & \mathbf 2 & \mathbf 3 & \mathbf 4 & \mathbf 5 & \mathbf 6 & \mathbf 7 & \mathbf 8 & \mathbf 9 & \mathbf{10} & \dots \\ \\
+  \tuple{0,0} & \tuple{1,0} & \tuple{0,1} & \tuple{2,0}  & \tuple{0,2} &
+  \tuple{1,1} & \tuple{0,3} & \tuple{3,0}  & \tuple{0,4} &  \tuple{1,2} & \dots \\
+  \end{array}
+  \]
+  اگر خانه‌های آرایهٔ بالا را مطابق این برشماری شماره‌گذاری کنیم، خط
+  زیگزاگ مرتبی نخواهیم یافت، بلکه آرایش زیر را خواهیم داشت:
+  \[
+  \begin{array}{ c | c | c | c | c | c | c | c }
+  & \mathbf 0 & \mathbf 1 & \mathbf 2 & \mathbf 3 & \mathbf 4 & \mathbf 5 & \dots \\
+  \hline
+  \mathbf 0 & 1 & 3 & 5 & 7 & 9 & 11 & \dots \\
+  \hline
+  \mathbf 1 & 2 & 6 & 10 & 14 & 18 & \dots & \dots \\
+  \hline
+  \mathbf 2 & 4 & 12 & 20 & 28 & \dots & \dots & \dots \\
+  \hline
+  \mathbf 3 & 8 & 24 & 40 & \dots & \dots & \dots & \dots \\
+  \hline
+  \mathbf 4 & 16 & 48 & \dots & \dots & \dots & \dots & \dots \\
+  \hline
+  \mathbf 5 & 32 & \dots & \dots & \dots & \dots & \dots & \dots \\
+  \hline
+  \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \ddots\\
+  \end{array}
+  \]
+  می‌بینیم که زوج‌های سطر~$0$ در جایگاه‌های فردشمارهٔ برشماری ما
+  قرار دارند؛ یعنی زوج $\tuple{0,m}$ در جایگاه $2m+1$ است. زوج‌های سطر
+  دوم، یعنی $\tuple{1,m}$، در جایگاه‌هایی قرار دارند که شمارهٔ آن‌ها دو
+  برابر یک عدد فرد، و به‌طور مشخص $2 \cdot (2m+1)$ است. زوج‌های سطر سوم،
+  یعنی $\tuple{2,m}$، در جایگاه‌هایی قرار دارند که شمارهٔ آن‌ها چهار برابر
+  یک عدد فرد، یعنی $4 \cdot (2m+1)$ است؛ و به همین ترتیب. عامل‌های
+  $(2m+1)$ برای هر سطر، یعنی $1$، $2$، $4$، $8$، \dots، دقیقاً توان‌های~$2$
+  هستند: $1= 2^0$، $2 = 2^1$، $4 = 2^2$، $8 = 2^3$، \dots\@ در واقع،
+  نمای مربوط همواره مؤلفهٔ نخست زوج مورد بحث است. پس برای زوج
+  $\tuple{n,m}$، عامل برابر $2^n$ است. این امر فرمول کلی
+  $2^n \cdot (2m+1)$ را به ما می‌دهد. بااین‌حال، این نگاشتی از زوج‌ها به
+  اعداد صحیح \emph{مثبت} است؛ یعنی $\tuple{0,0}$ در جایگاه~$1$ قرار دارد.
+  اگر بخواهیم از جایگاه~$0$ آغاز کنیم، باید~$1$ را از حاصل کم کنیم. پس داریم:
+ }
+
+% OLSIZ-004: name the characteristic-sequence output by one bound name.
+\OLSADeclareSourceCorrection{OLP-0034}{proof}{OLSIZ-004}
+ {
+  فرض کنید $\Pow{\PosInt}$ !!{enumerable} باشد و بنابراین برشماری‌ای از
+  آن به‌صورت $Z_{1}$، $Z_{2}$، $Z_{3}$، \dots وجود داشته باشد.
+
+  تابع $f \colon \Pow{\PosInt} \to \Bin^\omega$ را با قراردادنِ
+  $f(Z)$ برابر دنبالهٔ $s_{k}$ تعریف کنید، به‌گونه‌ای که $s_{k}(n) = 1$ اگر و تنها
+  اگر $n \in Z$، و در غیر این صورت $s_k(n) = 0$. این امر به‌روشنی تابعی
+  تعریف می‌کند، زیرا هرگاه $Z \subseteq \PosInt$، هر $n \in \PosInt$ یا
+  !!a{element}ی از $Z$ است یا نیست. برای نمونه، مجموعهٔ $2\PosInt = \{2,
+  4, 6, \dots\}$ از اعداد صحیح مثبت زوج به دنبالهٔ $010101\dots$ نگاشته
+  می‌شود، مجموعهٔ تهی به $0000\dots$ و خود مجموعهٔ $\PosInt$ به
+  $1111\dots$ نگاشته می‌شود.
+
+  این تابع همچنین !!{surjective} است: هر دنباله از $0$ها و $1$ها با
+  مجموعه‌ای از اعداد صحیح مثبت متناظر است؛ همان مجموعه‌ای که اعضایش
+  اعداد صحیحِ متناظر با جایگاه‌هایی هستند که دنباله در آن‌ها مقدار~$1$
+  دارد. دقیق‌تر بگوییم، فرض کنید $s \in \Bin^\omega$. مجموعهٔ $Z
+  \subseteq \PosInt$ را چنین تعریف کنید:
+  \[
+  Z = \Setabs{n \in \PosInt}{s(n) = 1}
+  \]
+  آنگاه $f(Z) = s$؛ این را می‌توان با مراجعه به تعریفِ~$f$ بررسی کرد.
+
+  اکنون فهرست زیر را در نظر بگیرید:
+  \[
+  f(Z_1), f(Z_2), f(Z_3), \dots
+  \]
+  چون $f$ !!{surjective} است، هر عضوِ $\Bin^\omega$ باید برای ورودی‌ای
+  به‌عنوان مقدارِ~$f$ ظاهر شود و بنابراین باید در فهرست بیاید. پس این
+  فهرست باید همهٔ~$\Bin^\omega$ را برشمارد.
+
+  بنابراین اگر $\Pow{\PosInt}$ !!{enumerable} بود، $\Bin^\omega$ نیز
+  !!{enumerable} می‌بود. اما $\Bin^\omega$ !!{nonenumerable} است
+  (\olref[nen]{thm:nonenum-bin-omega}). پس $\Pow{\PosInt}$
+  !!{nonenumerable} است.
+ }
+ {
+  فرض کنید $\Pow{\PosInt}$ !!{enumerable} باشد و بنابراین برشماری‌ای از
+  آن به‌صورت $Z_{1}$، $Z_{2}$، $Z_{3}$، \dots وجود داشته باشد.
+
+  تابع $f \colon \Pow{\PosInt} \to \Bin^\omega$ را با قراردادنِ
+  $f(Z)$ برابر دنبالهٔ $s$ تعریف کنید، به‌گونه‌ای که $s(n) = 1$ اگر و تنها
+  اگر $n \in Z$، و در غیر این صورت $s(n) = 0$. این امر به‌روشنی تابعی
+  تعریف می‌کند، زیرا هرگاه $Z \subseteq \PosInt$، هر $n \in \PosInt$ یا
+  !!a{element}ی از $Z$ است یا نیست. برای نمونه، مجموعهٔ $2\PosInt = \{2,
+  4, 6, \dots\}$ از اعداد صحیح مثبت زوج به دنبالهٔ $010101\dots$ نگاشته
+  می‌شود، مجموعهٔ تهی به $0000\dots$ و خود مجموعهٔ $\PosInt$ به
+  $1111\dots$ نگاشته می‌شود.
+
+  این تابع همچنین !!{surjective} است: هر دنباله از $0$ها و $1$ها با
+  مجموعه‌ای از اعداد صحیح مثبت متناظر است؛ همان مجموعه‌ای که اعضایش
+  اعداد صحیحِ متناظر با جایگاه‌هایی هستند که دنباله در آن‌ها مقدار~$1$
+  دارد. دقیق‌تر بگوییم، فرض کنید $s \in \Bin^\omega$. مجموعهٔ $Z
+  \subseteq \PosInt$ را چنین تعریف کنید:
+  \[
+  Z = \Setabs{n \in \PosInt}{s(n) = 1}
+  \]
+  آنگاه $f(Z) = s$؛ این را می‌توان با مراجعه به تعریفِ~$f$ بررسی کرد.
+
+  اکنون فهرست زیر را در نظر بگیرید:
+  \[
+  f(Z_1), f(Z_2), f(Z_3), \dots
+  \]
+  چون $f$ !!{surjective} است، هر عضوِ $\Bin^\omega$ باید برای ورودی‌ای
+  به‌عنوان مقدارِ~$f$ ظاهر شود و بنابراین باید در فهرست بیاید. پس این
+  فهرست باید همهٔ~$\Bin^\omega$ را برشمارد.
+
+  بنابراین اگر $\Pow{\PosInt}$ !!{enumerable} بود، $\Bin^\omega$ نیز
+  !!{enumerable} می‌بود. اما $\Bin^\omega$ !!{nonenumerable} است
+  (\olref[nen]{thm:nonenum-bin-omega}). پس $\Pow{\PosInt}$
+  !!{nonenumerable} است.
+ }
+
+% OLSIZ-005: map to an actual infinite binary sequence.
+\OLSADeclareSourceCorrection{OLP-0034}{explain}{OLSIZ-005}
+ {
+  ممکن است جهت کاهش به‌آسانی موجب سردرگمی شود. برای نمونه، تابعی
+  !!a{surjective} مانند $g \colon \Bin^\omega \to B$ \emph{ثابت نمی‌کند}
+  که $B$ !!{nonenumerable} است. (تابع $g
+  \colon \Bin^\omega \to \Bin$ را در نظر بگیرید که با $g(s) = s(1)$
+  تعریف می‌شود و هر دنباله از $0$ها و $1$ها را به نخستین !!{element} آن
+  می‌نگارد. این تابع !!{surjective} است، زیرا بعضی دنباله‌ها با $0$ و
+  بعضی با $1$ آغاز می‌شوند؛ اما $\Bin$ متناهی است.) همچنین توجه کنید که
+  تابع~$f$ باید !!{surjective} باشد، وگرنه استدلال پیش نمی‌رود:
+  فهرستِ $f(x_1)$، $f(x_2)$، \dots{} در آن صورت تضمین نمی‌کند که همهٔ
+  !!{element}s را در~$B$ شامل شود. برای نمونه،
+  \[
+  h(n) = \underbrace{000\dots0}_{\text{$n$ تا $0$}}
+  \]
+  تابعی به‌صورت $h\colon \PosInt \to
+  \Bin^\omega$ تعریف می‌کند، اما $\PosInt$ !!{enumerable} است.
+ }
+ {
+  ممکن است جهت کاهش به‌آسانی موجب سردرگمی شود. برای نمونه، تابعی
+  !!a{surjective} مانند $g \colon \Bin^\omega \to B$ \emph{ثابت نمی‌کند}
+  که $B$ !!{nonenumerable} است. (تابع $g
+  \colon \Bin^\omega \to \Bin$ را در نظر بگیرید که با $g(s) = s(1)$
+  تعریف می‌شود و هر دنباله از $0$ها و $1$ها را به نخستین !!{element} آن
+  می‌نگارد. این تابع !!{surjective} است، زیرا بعضی دنباله‌ها با $0$ و
+  بعضی با $1$ آغاز می‌شوند؛ اما $\Bin$ متناهی است.) همچنین توجه کنید که
+  تابع~$f$ باید !!{surjective} باشد، وگرنه استدلال پیش نمی‌رود:
+  فهرستِ $f(x_1)$، $f(x_2)$، \dots{} در آن صورت تضمین نمی‌کند که همهٔ
+  !!{element}s را در~$B$ شامل شود. برای نمونه،
+  \[
+  h(n) = \underbrace{000\dots0}_{\text{$n$ تا $0$}}111\dots
+  \]
+  تابعی به‌صورت $h\colon \PosInt \to
+  \Bin^\omega$ تعریف می‌کند، اما $\PosInt$ !!{enumerable} است.
+ }
+
+% OLSIZ-006: the bijection in both empty-set branches is f, not g.
+\OLSADeclareSourceCorrection{OLP-0035}{proof}{OLSIZ-006}
+ {
+  فرض کنید $\cardeq{A}{B}$؛ پس یک !!{bijection} به‌صورت $f \colon A
+  \to B$ وجود دارد، و فرض کنید $A$ !!{enumerable} است.
+  \oliflabeldef{sfr:siz:enm:defn:enumerable}{
+    آنگاه یا $A = \emptyset$، یا تابعی !!a{surjective} به‌صورت
+    $g\colon \PosInt \to A$ وجود دارد. اگر $A = \emptyset$، آنگاه $B = \emptyset$
+    نیز (زیرا در غیر این صورت !!a{element}~$y \in B$ وجود می‌داشت،
+    اما هیچ عضوی مانند $x \in
+    A$ با $g(x) = y$ وجود نداشت). از سوی دیگر، اگر $g\colon \PosInt \to A$
+    !!{surjective} باشد، آنگاه $\comp{g}{f} \colon \PosInt \to B$
+    !!{surjective} است. برای دیدن این مطلب، $y \in B$ را در نظر بگیرید.
+    چون $f$ !!{surjective} است، عضوی مانند $x \in A$ وجود دارد که $f(x) = y$.
+    چون $g$ !!{surjective} است، عددی مانند $n \in \PosInt$ وجود دارد که $g(n) =
+    x$. بنابراین
+  \[
+  (\comp{g}{f})(n) = f(g(n)) = f(x) = y
+  \]
+  و در نتیجه $\comp{g}{f}$ !!{surjective} است. پس $\comp{g}{f}$
+  برشماری‌ای از~$B$ است و بنابراین $B$~!!{enumerable} است.}
+  {
+    آنگاه یا $A  = \emptyset$، یا یک !!a{bijection}~$g$ وجود دارد که
+    بردش $A$ و دامنه‌اش یا $\Nat$ یا قطعه‌ای آغازین از اعداد طبیعی
+    است. اگر $A = \emptyset$، آنگاه $B =
+    \emptyset$ نیز (زیرا در غیر این صورت عضوی مانند~$y \in B$ وجود می‌داشت، اما
+    هیچ عضوی مانند $x
+    \in A$ نبود که $g(x) = y$). پس فرض کنید !!{bijection}~$g$ را
+    داریم. آنگاه $\comp{g}{f}$ !!a{bijection} است که بردش~$B$ و دامنه‌اش
+    همان دامنهٔ~$g$ است (یعنی یا $\Nat$ یا قطعه‌ای آغازین از آن)؛ پس
+    $B$ !!{enumerable} است.}
+
+  اگر $B$ !!{enumerable} باشد، نتیجه می‌گیریم که $A$ !!{enumerable} است؛
+  کافی است استدلال را با !!{bijection} $f^{-1}\colon B \to A$ به‌جای~$f$
+  تکرار کنیم.
+ }
+ {
+  فرض کنید $\cardeq{A}{B}$؛ پس یک !!{bijection} به‌صورت $f \colon A
+  \to B$ وجود دارد، و فرض کنید $A$ !!{enumerable} است.
+  \oliflabeldef{sfr:siz:enm:defn:enumerable}{
+    آنگاه یا $A = \emptyset$، یا تابعی !!a{surjective} به‌صورت
+    $g\colon \PosInt \to A$ وجود دارد. اگر $A = \emptyset$، آنگاه $B = \emptyset$
+    نیز (زیرا در غیر این صورت !!a{element}~$y \in B$ وجود می‌داشت،
+    اما هیچ عضوی مانند $x \in
+    A$ با $f(x) = y$ وجود نداشت). از سوی دیگر، اگر $g\colon \PosInt \to A$
+    !!{surjective} باشد، آنگاه $\comp{g}{f} \colon \PosInt \to B$
+    !!{surjective} است. برای دیدن این مطلب، $y \in B$ را در نظر بگیرید.
+    چون $f$ !!{surjective} است، عضوی مانند $x \in A$ وجود دارد که $f(x) = y$.
+    چون $g$ !!{surjective} است، عددی مانند $n \in \PosInt$ وجود دارد که $g(n) =
+    x$. بنابراین
+  \[
+  (\comp{g}{f})(n) = f(g(n)) = f(x) = y
+  \]
+  و در نتیجه $\comp{g}{f}$ !!{surjective} است. پس $\comp{g}{f}$
+  برشماری‌ای از~$B$ است و بنابراین $B$~!!{enumerable} است.}
+  {
+    آنگاه یا $A  = \emptyset$، یا یک !!a{bijection}~$g$ وجود دارد که
+    بردش $A$ و دامنه‌اش یا $\Nat$ یا قطعه‌ای آغازین از اعداد طبیعی
+    است. اگر $A = \emptyset$، آنگاه $B =
+    \emptyset$ نیز (زیرا در غیر این صورت عضوی مانند~$y \in B$ وجود می‌داشت، اما
+    هیچ عضوی مانند $x
+    \in A$ نبود که $f(x) = y$). پس فرض کنید !!{bijection}~$g$ را
+    داریم. آنگاه $\comp{g}{f}$ !!a{bijection} است که بردش~$B$ و دامنه‌اش
+    همان دامنهٔ~$g$ است (یعنی یا $\Nat$ یا قطعه‌ای آغازین از آن)؛ پس
+    $B$ !!{enumerable} است.}
+
+  اگر $B$ !!{enumerable} باشد، نتیجه می‌گیریم که $A$ !!{enumerable} است؛
+  کافی است استدلال را با !!{bijection} $f^{-1}\colon B \to A$ به‌جای~$f$
+  تکرار کنیم.
+ }
+
+% OLSIZ-007: the arbitrary element remains in A throughout the diagonal proof.
+\OLSADeclareSourceCorrection{OLP-0036}{proof}{OLSIZ-007}
+ {
+  نگاشت $f(x) = \{x\}$، !!a{injection} به‌صورت $f \colon A \to \Pow{A}$
+  است، زیرا اگر $x \neq y$، آنگاه بنا بر اصل امتداد،
+  $\{x\} \neq \{y\}$ نیز برقرار است و بنابراین $f(x) \neq f(y)$.
+  پس $\cardle{A}{\Pow{A}}$.
+
+  \begin{editorial}
+  اگر \olref[nen]{sec} موجود باشد برهان تفصیلی را می‌آوریم، وگرنه برهان
+  سریع‌تری را که با \olref[nen-alt]{sec} مطابقت دارد ارائه می‌کنیم.
+  \end{editorial}
+
+  \oliflabeldef{sfr:siz:nen:sec}{%
+    اکنون نشان می‌دهیم که هیچ تابع !!a{surjective} به‌صورت~$g\colon A \to
+    \Pow{A}$ نمی‌تواند وجود داشته باشد، چه رسد به تابعی !!a{bijective}؛
+    و ازاین‌رو $\cardneq{A}{\Pow{A}}$. فرض کنید $g\colon A \to \Pow{A}$.
+    چون $g$ تام است، هر $x \in A$ به زیرمجموعه‌ای مانند $g(x)
+    \subseteq A$ نگاشته می‌شود. می‌توانیم نشان دهیم که $g$ نمی‌تواند
+    پوشا باشد. برای این کار، زیرمجموعه‌ای مانند~$\overline{A} \subseteq A$
+    تعریف می‌کنیم که بنا بر تعریف نمی‌تواند در بردِ~$g$ باشد. بگذارید
+    \[
+    \overline{A} = \Setabs{x \in A}{x \notin g(x)}.
+    \]
+    چون $g(x)$ برای همهٔ $x \in A$ تعریف شده است، $\overline{A}$ به‌روشنی
+    زیرمجموعه‌ای خوش‌تعریف از~$A$ است. اما نمی‌تواند در بردِ~$g$ باشد.
+    $x \in A$ را دلخواه بگیرید؛ نشان می‌دهیم $\overline{A} \neq
+    g(x)$. اگر $x \in g(x)$، آنگاه شرط $x \notin g(x)$ را برآورده
+    نمی‌کند؛ پس بنا بر تعریفِ~$\overline{A}$، داریم $x \notin
+    \overline{A}$. اگر $x \in \overline{A}$، باید ویژگی معرفِ
+    $\overline{A}$ را برآورده کند؛ یعنی $x \in A$ و $x \notin
+    g(x)$. چون $x$ دلخواه بود، این نشان می‌دهد که برای هر $x \in
+    \overline{A}$، $x \in g(x)$ اگر و تنها اگر $x \notin \overline{A}$؛
+    پس $g(x) \neq \overline{A}$. به‌عبارت دیگر، $\overline{A}$ نمی‌تواند
+    در بردِ~$g$ باشد و این با فرض پوشابودنِ~$g$ تناقض دارد.}{هنوز باید
+    نشان دهیم $\cardneq{A}{\Pow{A}}$. به قصد خلف، فرض کنید
+    $\cardeq{A}{\Pow{A}}$؛ یعنی یک !!{bijection} به‌صورت
+    $g \colon A \to \Pow{A}$ وجود دارد. اکنون در نظر بگیرید:
+    \[
+      D = \Setabs{x \in A}{x \notin g(x)}
+    \]
+    توجه کنید که $D \subseteq A$؛ پس $D \in \Pow{A}$. چون $g$
+    !!a{bijection} است، عضوی مانند $y \in A$ وجود دارد که $g(y) = D$. اما اکنون
+    داریم:
+    \[
+      y \in g(y) \text{ اگر و تنها اگر } y \in D \text{ اگر و تنها اگر } y \notin g(y).
+    \]
+    این تناقض است؛ پس $\cardneq{A}{\Pow{A}}$.}{}
+ }
+ {
+  نگاشت $f(x) = \{x\}$، !!a{injection} به‌صورت $f \colon A \to \Pow{A}$
+  است، زیرا اگر $x \neq y$، آنگاه بنا بر اصل امتداد،
+  $\{x\} \neq \{y\}$ نیز برقرار است و بنابراین $f(x) \neq f(y)$.
+  پس $\cardle{A}{\Pow{A}}$.
+
+  \begin{editorial}
+  اگر \olref[nen]{sec} موجود باشد برهان تفصیلی را می‌آوریم، وگرنه برهان
+  سریع‌تری را که با \olref[nen-alt]{sec} مطابقت دارد ارائه می‌کنیم.
+  \end{editorial}
+
+  \oliflabeldef{sfr:siz:nen:sec}{%
+    اکنون نشان می‌دهیم که هیچ تابع !!a{surjective} به‌صورت~$g\colon A \to
+    \Pow{A}$ نمی‌تواند وجود داشته باشد، چه رسد به تابعی !!a{bijective}؛
+    و ازاین‌رو $\cardneq{A}{\Pow{A}}$. فرض کنید $g\colon A \to \Pow{A}$.
+    چون $g$ تام است، هر $x \in A$ به زیرمجموعه‌ای مانند $g(x)
+    \subseteq A$ نگاشته می‌شود. می‌توانیم نشان دهیم که $g$ نمی‌تواند
+    پوشا باشد. برای این کار، زیرمجموعه‌ای مانند~$\overline{A} \subseteq A$
+    تعریف می‌کنیم که بنا بر تعریف نمی‌تواند در بردِ~$g$ باشد. بگذارید
+    \[
+    \overline{A} = \Setabs{x \in A}{x \notin g(x)}.
+    \]
+    چون $g(x)$ برای همهٔ $x \in A$ تعریف شده است، $\overline{A}$ به‌روشنی
+    زیرمجموعه‌ای خوش‌تعریف از~$A$ است. اما نمی‌تواند در بردِ~$g$ باشد.
+    $x \in A$ را دلخواه بگیرید؛ نشان می‌دهیم $\overline{A} \neq
+    g(x)$. اگر $x \in g(x)$، آنگاه شرط $x \notin g(x)$ را برآورده
+    نمی‌کند؛ پس بنا بر تعریفِ~$\overline{A}$، داریم $x \notin
+    \overline{A}$. اگر $x \in \overline{A}$، باید ویژگی معرفِ
+    $\overline{A}$ را برآورده کند؛ یعنی $x \in A$ و $x \notin
+    g(x)$. چون $x$ دلخواه بود، این نشان می‌دهد که برای هر $x \in
+    A$، $x \in g(x)$ اگر و تنها اگر $x \notin \overline{A}$؛
+    پس $g(x) \neq \overline{A}$. به‌عبارت دیگر، $\overline{A}$ نمی‌تواند
+    در بردِ~$g$ باشد و این با فرض پوشابودنِ~$g$ تناقض دارد.}{هنوز باید
+    نشان دهیم $\cardneq{A}{\Pow{A}}$. به قصد خلف، فرض کنید
+    $\cardeq{A}{\Pow{A}}$؛ یعنی یک !!{bijection} به‌صورت
+    $g \colon A \to \Pow{A}$ وجود دارد. اکنون در نظر بگیرید:
+    \[
+      D = \Setabs{x \in A}{x \notin g(x)}
+    \]
+    توجه کنید که $D \subseteq A$؛ پس $D \in \Pow{A}$. چون $g$
+    !!a{bijection} است، عضوی مانند $y \in A$ وجود دارد که $g(y) = D$. اما اکنون
+    داریم:
+    \[
+      y \in g(y) \text{ اگر و تنها اگر } y \in D \text{ اگر و تنها اگر } y \notin g(y).
+    \]
+    این تناقض است؛ پس $\cardneq{A}{\Pow{A}}$.}{}
+ }
+
+% OLSIZ-008+009: repair both prose defects in one atomic proof replacement.
+\OLSADeclareSourceCorrection{OLP-0039}{proof}{OLSIZ-008+009}
+ {
+  هر برشماری از یک زیرمجموعهٔ $\Bin^\omega$ را در نظر بگیرید. پس فهرستی
+  مانند $s_{0}$، $s_{1}$، $s_{2}$، \dots{} داریم که در آن هر $s_n$ رشته‌ای
+  نامتناهی از $0$ها و~$1$هاست. بگذارید $s_n(m)$ رقم $n$اُمِ رشتهٔ $m$اُمِ
+  این فهرست باشد. اکنون می‌توانیم فهرست خود را آرایه‌ای در نظر بگیریم که
+  در آن $s_n(m)$ در سطر $n$اُم و ستون $m$اُم قرار گرفته است:
+  \[
+  \begin{array}{c|c|c|c|c|c}
+  & 0 & 1 & 2 & 3 & \dots \\\hline
+  0 & \mathbf{s_{0}(0)} & s_{0}(1) & s_{0}(2) & s_0(3) & \dots \\\hline
+  1 & s_{1}(0)& \mathbf{s_{1}(1)} & s_1(2) & s_1(3) & \dots \\\hline
+  2 & s_{2}(0)& s_{2}(1) & \mathbf{s_2(2)} & s_2(3) & \dots \\\hline
+  3 & s_{3}(0)& s_{3}(1) & s_3(2) & \mathbf{s_3(3)} & \dots \\\hline
+  \vdots & \vdots & \vdots & \vdots & \vdots & \mathbf{\ddots}
+  \end{array}
+  \]
+  اکنون رشته‌ای نامتناهی، یعنی $d$، از $0$ها و $1$ها می‌سازیم که در این
+  فهرست نیست. این کار را با مشخص‌کردن هریک از درایه‌های آن انجام می‌دهیم؛
+  یعنی $d(n)$ را برای همهٔ $n \in \Nat$ مشخص می‌کنیم. به‌طور شهودی، قطر
+  آرایهٔ بالا را رو به پایین می‌خوانیم (ازاین‌رو نام «روش قطری») و سپس هر
+  $1$ را به $0$ و هر $1$ را به~$0$ تغییر می‌دهیم. به‌بیان انتزاعی‌تر،
+  $d(n)$ را برابر $0$ یا $1$ تعریف می‌کنیم، بسته به اینکه !!{element}
+  $n$اُمِ قطر، یعنی $s_n(n)$، برابر $1$ یا $0$ باشد؛ یعنی:
+  \[
+  d(n) =
+  \begin{cases}
+  1 & \text{اگر $s_{n}(n) = 0$}\\
+  0 & \text{اگر $s_{n}(n) = 1$}
+  \end{cases}
+  \]
+  آشکارا $d \in \Bin^\omega$ است، زیرا رشته‌ای نامتناهی از $0$ها و $1$هاست.
+  اما $d$ را چنان ساخته‌ایم که $d(n) \neq s_n(n)$ برای هر $n \in \Nat$.
+  یعنی $d$ با $s_n$ در درایهٔ $n$اُم تفاوت دارد. پس $d \neq s_n$
+  برای هر $n\in \Nat$. بنابراین $d$ نمی‌تواند در فهرست
+  $s_0$، $s_1$، $s_2$،
+  \dots باشد.
+
+  نشان داده‌ایم که هر برشماریِ دلخواه از زیرمجموعه‌ای از $\Bin^\omega$،
+  یک !!{element} از $\Bin^\omega$ را از قلم می‌اندازد. پس هیچ برشماری‌ای
+  از مجموعهٔ $\Bin^\omega$ وجود ندارد؛ یعنی $\Bin^\omega$
+  !!{nonenumerable} است.
+ }
+ {
+  هر برشماری از یک زیرمجموعهٔ $\Bin^\omega$ را در نظر بگیرید. پس فهرستی
+  مانند $s_{0}$، $s_{1}$، $s_{2}$، \dots{} داریم که در آن هر $s_n$ رشته‌ای
+  نامتناهی از $0$ها و~$1$هاست. بگذارید $s_n(m)$ رقم $m$اُمِ رشتهٔ $n$اُمِ
+  این فهرست باشد. اکنون می‌توانیم فهرست خود را آرایه‌ای در نظر بگیریم که
+  در آن $s_n(m)$ در سطر $n$اُم و ستون $m$اُم قرار گرفته است:
+  \[
+  \begin{array}{c|c|c|c|c|c}
+  & 0 & 1 & 2 & 3 & \dots \\\hline
+  0 & \mathbf{s_{0}(0)} & s_{0}(1) & s_{0}(2) & s_0(3) & \dots \\\hline
+  1 & s_{1}(0)& \mathbf{s_{1}(1)} & s_1(2) & s_1(3) & \dots \\\hline
+  2 & s_{2}(0)& s_{2}(1) & \mathbf{s_2(2)} & s_2(3) & \dots \\\hline
+  3 & s_{3}(0)& s_{3}(1) & s_3(2) & \mathbf{s_3(3)} & \dots \\\hline
+  \vdots & \vdots & \vdots & \vdots & \vdots & \mathbf{\ddots}
+  \end{array}
+  \]
+  اکنون رشته‌ای نامتناهی، یعنی $d$، از $0$ها و $1$ها می‌سازیم که در این
+  فهرست نیست. این کار را با مشخص‌کردن هریک از درایه‌های آن انجام می‌دهیم؛
+  یعنی $d(n)$ را برای همهٔ $n \in \Nat$ مشخص می‌کنیم. به‌طور شهودی، قطر
+  آرایهٔ بالا را رو به پایین می‌خوانیم (ازاین‌رو نام «روش قطری») و سپس هر
+  $1$ را به $0$ و هر $0$ را به~$1$ تغییر می‌دهیم. به‌بیان انتزاعی‌تر،
+  $d(n)$ را برابر $0$ یا $1$ تعریف می‌کنیم، بسته به اینکه !!{element}
+  $n$اُمِ قطر، یعنی $s_n(n)$، برابر $1$ یا $0$ باشد؛ یعنی:
+  \[
+  d(n) =
+  \begin{cases}
+  1 & \text{اگر $s_{n}(n) = 0$}\\
+  0 & \text{اگر $s_{n}(n) = 1$}
+  \end{cases}
+  \]
+  آشکارا $d \in \Bin^\omega$ است، زیرا رشته‌ای نامتناهی از $0$ها و $1$هاست.
+  اما $d$ را چنان ساخته‌ایم که $d(n) \neq s_n(n)$ برای هر $n \in \Nat$.
+  یعنی $d$ با $s_n$ در درایهٔ $n$اُم تفاوت دارد. پس $d \neq s_n$
+  برای هر $n\in \Nat$. بنابراین $d$ نمی‌تواند در فهرست
+  $s_0$، $s_1$، $s_2$،
+  \dots باشد.
+
+  نشان داده‌ایم که هر برشماریِ دلخواه از زیرمجموعه‌ای از $\Bin^\omega$،
+  یک !!{element} از $\Bin^\omega$ را از قلم می‌اندازد. پس هیچ برشماری‌ای
+  از مجموعهٔ $\Bin^\omega$ وجود ندارد؛ یعنی $\Bin^\omega$
+  !!{nonenumerable} است.
+ }
+
+% OLSIZ-010: name the alternate characteristic-sequence output consistently.
+\OLSADeclareSourceCorrection{OLP-0040}{proof}{OLSIZ-010}
+ {
+  برای انجام کاهش، فرض کنید $\Pow{\Nat}$ !!{enumerable} است و بنابراین
+  برشماری‌ای از آن به‌صورت $N_{1}$، $N_{2}$، $N_{3}$، \dots وجود دارد.
+
+  تابع $f \colon \Pow{\Nat} \to \Bin^\omega$ را با این قرارداد تعریف
+  کنید که $f(N)$ رشتهٔ $s_{k}$ باشد، به‌گونه‌ای که $s_{k}(n) = 1$ اگر و تنها
+  اگر $n \in N$، و در غیر این صورت $s_k(n) = 0$.
+
+  این امر به‌روشنی تابعی را تعریف می‌کند، زیرا هرگاه $N \subseteq \Nat$،
+  هر $n \in \Nat$ یا یک !!a{element} از $N$ است یا نیست. برای نمونه،
+  مجموعهٔ $2\Nat = \Setabs{2n}{n \in \Nat} = \{0,2, 4, 6,
+  \dots\}$ از اعداد طبیعی زوج به رشتهٔ $1010101\dots$ نگاشته می‌شود؛
+  $\emptyset$ به $0000\dots$ نگاشته می‌شود و $\Nat$ به
+  $1111\dots$.
+
+  این نگاشت همچنین !!{surjective} است: هر رشته از $0$ها و $1$ها با
+  مجموعه‌ای از اعداد طبیعی متناظر است؛ یعنی مجموعه‌ای که اعضایش آن اعداد
+  طبیعی‌اند که با جایگاه‌هایی متناظرند که رشته در آن‌ها $1$ دارد. دقیق‌تر
+  بگوییم، اگر $s \in \Bin^\omega$، آنگاه $N
+  \subseteq \Nat$ را چنین تعریف کنید:
+  \[
+  N = \Setabs{n \in \Nat}{s(n) = 1}
+  \]
+  آنگاه $f(N) = s$؛ این را می‌توان با مراجعه به تعریفِ~$f$ بررسی کرد.
+
+  اکنون فهرست زیر را در نظر بگیرید:
+  \[
+  f(N_1), f(N_2), f(N_3), \dots
+  \]
+  چون $f$ !!{surjective} است، هر عضوِ $\Bin^\omega$ باید برای ورودی‌ای
+  به‌عنوان مقدارِ~$f$ ظاهر شود و بنابراین باید در فهرست بیاید. پس این
+  فهرست باید همهٔ~$\Bin^\omega$ را برشمارد.
+
+  بنابراین اگر $\Pow{\Nat}$ !!{enumerable} بود، $\Bin^\omega$ نیز
+  !!{enumerable} می‌بود. اما $\Bin^\omega$ !!{nonenumerable} است
+  (\olref[nen-alt]{thm:nonenum-bin-omega}). پس $\Pow{\Nat}$
+  !!{nonenumerable} است.
+ }
+ {
+  برای انجام کاهش، فرض کنید $\Pow{\Nat}$ !!{enumerable} است و بنابراین
+  برشماری‌ای از آن به‌صورت $N_{1}$، $N_{2}$، $N_{3}$، \dots وجود دارد.
+
+  تابع $f \colon \Pow{\Nat} \to \Bin^\omega$ را با این قرارداد تعریف
+  کنید که $f(N)$ رشتهٔ $s$ باشد، به‌گونه‌ای که $s(n) = 1$ اگر و تنها
+  اگر $n \in N$، و در غیر این صورت $s(n) = 0$.
+
+  این امر به‌روشنی تابعی را تعریف می‌کند، زیرا هرگاه $N \subseteq \Nat$،
+  هر $n \in \Nat$ یا یک !!a{element} از $N$ است یا نیست. برای نمونه،
+  مجموعهٔ $2\Nat = \Setabs{2n}{n \in \Nat} = \{0,2, 4, 6,
+  \dots\}$ از اعداد طبیعی زوج به رشتهٔ $1010101\dots$ نگاشته می‌شود؛
+  $\emptyset$ به $0000\dots$ نگاشته می‌شود و $\Nat$ به
+  $1111\dots$.
+
+  این نگاشت همچنین !!{surjective} است: هر رشته از $0$ها و $1$ها با
+  مجموعه‌ای از اعداد طبیعی متناظر است؛ یعنی مجموعه‌ای که اعضایش آن اعداد
+  طبیعی‌اند که با جایگاه‌هایی متناظرند که رشته در آن‌ها $1$ دارد. دقیق‌تر
+  بگوییم، اگر $s \in \Bin^\omega$، آنگاه $N
+  \subseteq \Nat$ را چنین تعریف کنید:
+  \[
+  N = \Setabs{n \in \Nat}{s(n) = 1}
+  \]
+  آنگاه $f(N) = s$؛ این را می‌توان با مراجعه به تعریفِ~$f$ بررسی کرد.
+
+  اکنون فهرست زیر را در نظر بگیرید:
+  \[
+  f(N_1), f(N_2), f(N_3), \dots
+  \]
+  چون $f$ !!{surjective} است، هر عضوِ $\Bin^\omega$ باید برای ورودی‌ای
+  به‌عنوان مقدارِ~$f$ ظاهر شود و بنابراین باید در فهرست بیاید. پس این
+  فهرست باید همهٔ~$\Bin^\omega$ را برشمارد.
+
+  بنابراین اگر $\Pow{\Nat}$ !!{enumerable} بود، $\Bin^\omega$ نیز
+  !!{enumerable} می‌بود. اما $\Bin^\omega$ !!{nonenumerable} است
+  (\olref[nen-alt]{thm:nonenum-bin-omega}). پس $\Pow{\Nat}$
+  !!{nonenumerable} است.
+ }
+
+% OLEMPH-001--003: restore missing control-sequence escapes in OLP-0179.
+\OLSADeclareDocumentTextCorrection{OLP-0179}{OLEMPH-001}{برای~$x$ است که emph{به‌صراحت} داده شده باشد.}{برای~$x$ است که \emph{به‌صراحت} داده شده باشد.}
+\OLSADeclareDocumentTextCorrection{OLP-0179}{OLEMPH-002}{را به توانی emph{گنگ} رساند و نتیجه‌ای گویا}{را به توانی \emph{گنگ} رساند و نتیجه‌ای گویا}
+\OLSADeclareDocumentTextCorrection{OLP-0179}{OLEMPH-003}{که اصول موضوع emph{غیرمنطقی} مناسب برای ریاضیات کلاسیک}{که اصول موضوع \emph{غیرمنطقی} مناسب برای ریاضیات کلاسیک}
+
+% OLEMPH-004--007: restore missing control-sequence escapes in OLP-0180.
+\OLSADeclareDocumentTextCorrection{OLP-0180}{OLEMPH-004}{اگر مقدم صادق emph{می‌بود}، نتیجه نیز صادق}{اگر مقدم صادق \emph{می‌بود}، نتیجه نیز صادق}
+\OLSADeclareDocumentTextCorrection{OLP-0180}{OLEMPH-005}{جهان خاص، emph{ضرورتاً} صادق است.}{جهان خاص، \emph{ضرورتاً} صادق است.}
+\OLSADeclareDocumentTextCorrection{OLP-0180}{OLEMPH-006}{$\Box !A$ می‌گوید $!A$ emph{ضرورتاً} صادق}{$\Box !A$ می‌گوید $!A$ \emph{ضرورتاً} صادق}
+\OLSADeclareDocumentTextCorrection{OLP-0180}{OLEMPH-007}{چنین خواند که $!A$ emph{ممکن است} صادق باشد.}{چنین خواند که $!A$ \emph{ممکن است} صادق باشد.}
+
+% OLVIS-0362: keep the substitution term inside the text block.
+\OLSADeclareDocumentTextCorrection{OLP-0362}{OLVIS-0362}{باشد، $y \notin
+  \FV{N}$، و~$\Subst{N}{y}{x}$ تعریف شده باشد، آنگاه}{باشد، $y \notin
+  \FV{N}$، و\linebreak
+  $\Subst{N}{y}{x}$ تعریف شده باشد، آنگاه}
+
+% OLVIS-0379: break before the long fixed-point display in intertext.
+\OLSADeclareDocumentTextCorrection{OLP-0379}{OLVIS-0379}{\intertext{که در آن~$N$ ممکن است~$g$ و~$x_1$، \dots،~$x_n$ را در بر
+داشته باشد. آنگاه همواره ترمی چون
+$G \ident (Y \lambd[g][\lambd[x_1\dots x_n][N]])$ وجود دارد، به‌طوری‌که}}{\intertext{که در آن~$N$ ممکن است~$g$ و~$x_1$، \dots،~$x_n$ را در بر
+داشته باشد. آنگاه همواره ترمی چون\linebreak
+$G \ident (Y \lambd[g][\lambd[x_1\dots x_n][N]])$ وجود دارد، به‌طوری‌که}}
+
+% OLVIS-0391: break before the truth-value set.
+\OLSADeclareDocumentTextCorrection{OLP-0391}{OLVIS-0391}{مقدار یک تابع صدق برای آرگومان‌های~$\{\True, \False\}$ با توابع صدق
+کلاسیک یکسان است.}{مقدار یک تابع صدق برای آرگومان‌های\linebreak
+$\{\True, \False\}$ با توابع صدق
+کلاسیک یکسان است.}
+
+% OLVIS-0569: break before the limitation-of-size term.
+\OLSADeclareDocumentTextCorrection{OLP-0569}{OLVIS-0569}{کرده‌ایم. بلکه مسئله آن است که~\limofsize{} (با صورت‌بندی کنونی) چندان}{کرده‌ایم. بلکه مسئله آن است که\linebreak
+\limofsize{} (با صورت‌بندی کنونی) چندان}
+
+% OLVIS-0570: break before the absolute-infinity principle.
+\OLSADeclareDocumentTextCorrection{OLP-0570}{OLVIS-0570}{و دست‌کم پذیرفتنی است که
+\stagesinex{} نیز~\stagescofin{} را موجه سازد.}{و دست‌کم پذیرفتنی است که\linebreak
+\stagesinex{} نیز~\stagescofin{} را موجه سازد.}
+
+% OLVIS-0599: break before the Banach--Tarski citation.
+\OLSADeclareDocumentTextCorrection{OLP-0599}{OLVIS-0599}{این ادعا بیشتر به سبب نتیجه‌ای از \cite{BanachTarski1924} است.}{این ادعا بیشتر به سبب نتیجه‌ای از\linebreak
+\cite{BanachTarski1924} است.}
+
+% OLVIS-0091: this frozen paragraph is rendered once in PL and once in FOL.
+\OLSADeclareDocumentTextCorrection{OLP-0091}{OLVIS-0091}{اگر $\Gamma = \{!A_1, !A_2, \ldots, !A_k\}$ مجموعه‌ای متناهی باشد،
+می‌توانیم از نمادگذاری ساده‌شدهٔ
+$!A_1,!A_2,\ldots,!A_k \Proves !B$ برای $\Gamma \Proves !B$ استفاده کنیم؛ به‌ویژه،
+$!A \Proves !B$ به این معناست که $\{!A\} \Proves !B$.}{{\emergencystretch=15pt\relax
+اگر $\Gamma = \{!A_1, !A_2, \ldots, !A_k\}$ مجموعه‌ای متناهی باشد،
+می‌توانیم از نمادگذاری ساده‌شدهٔ
+$!A_1,!A_2,\ldots,!A_k \Proves !B$ برای $\Gamma \Proves !B$ استفاده کنیم؛ به‌ویژه،
+$!A \Proves !B$ به این معناست که $\{!A\} \Proves !B$.\par}}
+\OLSASetSourceCorrectionExpected{OLVIS-0091}{2}
+
+% OLVIS-0133-OVERFLOW: give the concluding sequent its own centered line.
+\OLSADeclareDocumentTextCorrection{OLP-0133}{OLVIS-0133-OVERFLOW}{\item اگر $\Gamma^* \Proves \eq[t][t']$ و
+$\Gamma^* \Proves
+\Atom{R}{t_1,\dots,t_{i-1},t,t_{i+1},\dots,t_n}$، آنگاه
+$\Gamma^* \Proves \Atom{R}{t_1,\dots,t_{i-1},t',t_{i+1},\dots,t_n}$
+برای هر !!{predicate}~$R$ با $n$ موضع و ترم‌های بستهٔ $t_1$، \dots،
+$t_{i-1}$، $t_{i+1}$، \dots،~$t_n$.}{\item اگر $\Gamma^* \Proves \eq[t][t']$ و
+$\Gamma^* \Proves
+\Atom{R}{t_1,\dots,t_{i-1},t,t_{i+1},\dots,t_n}$، آنگاه
+\begin{center}
+$\Gamma^* \Proves \Atom{R}{t_1,\dots,t_{i-1},t',t_{i+1},\dots,t_n}$
+\end{center}
+برای هر !!{predicate}~$R$ با $n$ موضع و ترم‌های بستهٔ $t_1$، \dots،
+$t_{i-1}$، $t_{i+1}$، \dots،~$t_n$.}
+
+% OLVIS-0133-COMMA: remove exactly the duplicated comma in item 4.
+\OLSADeclareDocumentTextCorrection{OLP-0133}{OLVIS-0133-COMMA}{\eq[\Atom{f}{t_1,\dots,t_{i-1},t,t_{i+1},,\dots,t_n}][\Atom{f}{t_1,\dots,t_{i-1},t',t_{i+1},\dots,t_n}]}{\eq[\Atom{f}{t_1,\dots,t_{i-1},t,t_{i+1},\dots,t_n}][\Atom{f}{t_1,\dots,t_{i-1},t',t_{i+1},\dots,t_n}]}
+
+% OLVIS-0164: center the second assignment tuple and carry its semicolon.
+\OLSADeclareDocumentTextCorrection{OLP-0164}{OLVIS-0164}{برای $i = 1$، \dots،~$k$، بنا بر \olref{prop:valindep} داریم
+    $\Value{t_i}{M}[s_1] = \Value{t_i}{M}[s_2]$. پس همچنین
+    $\langle \Value{t_1}{M}[s_2], \ldots, \Value{t_k}{M}[s_2] \rangle
+    \in \Assign{R}{M}$؛ بنابراین $\Sat{M}{\indfrm}[s_2]$.}{برای $i = 1$، \dots،~$k$، بنا بر \olref{prop:valindep} داریم
+    $\Value{t_i}{M}[s_1] = \Value{t_i}{M}[s_2]$. پس همچنین
+    \begin{center}
+    $\langle \Value{t_1}{M}[s_2], \ldots, \Value{t_k}{M}[s_2] \rangle
+    \in \Assign{R}{M}$؛
+    \end{center}
+    بنابراین $\Sat{M}{\indfrm}[s_2]$.}
+
+% OLVIS-0165: center the terminal equality chain with its period.
+\OLSADeclareDocumentTextCorrection{OLP-0165}{OLVIS-0165}{\item اگر $t$ یک ثابت باشد، مثلاً $t\ident c$، آنگاه
+  $\Subst{t}{t'}{x} = c$، و $\Value{c}{M}[s] = \Assign{c}{M} =
+  \Value{c}{M}[\Subst{s}{\Value{t'}{M}[s]}{x}]$.}{\item اگر $t$ یک ثابت باشد، مثلاً $t\ident c$، آنگاه
+  $\Subst{t}{t'}{x} = c$، و
+  \begin{center}
+  $\Value{c}{M}[s] = \Assign{c}{M} =
+  \Value{c}{M}[\Subst{s}{\Value{t'}{M}[s]}{x}]$.
+  \end{center}}
+
+% OLVIS-0193: scope extra paragraph stretch to item 3 only.
+\OLSADeclareDocumentTextCorrection{OLP-0193}{OLVIS-0193}{\item چون $+$ در~$\Struct{N}$ تابع جمع روی~$\Nat$ است،
+  $g(\Assign{+}{N}(n,m)) = g(n+m)$. سپس بنا بر تعریف~$g$،
+  $g(n+m) = \Value{\num{n+m}}{M}$. اما
+  $\Th{Q} \Proves \num{n+m} = (\num{n} + \num{m})$، پس
+  $\Value{\num{n+m}}{M} = \Value{\num{n}+\num{m}}{M}$. بنا بر
+  تعریف تابع ارزش، این عبارت برابر است با
+  $\Assign{+}{M}(\Value{\num{n}}{M},\Value{\num{m}}{M})$. چون
+  $\Value{\num{n}}{M} = g(n)$ و $\Value{\num{m}}{M} = g(m)$، داریم
+  $g(\Assign{+}{N}(n, m)) = \Assign{+}{M}(g(n), g(m))$.}{\item {\emergencystretch=2em\relax
+  چون $+$ در~$\Struct{N}$ تابع جمع روی~$\Nat$ است،
+  $g(\Assign{+}{N}(n,m)) = g(n+m)$. سپس بنا بر تعریف~$g$،
+  $g(n+m) = \Value{\num{n+m}}{M}$. اما
+  $\Th{Q} \Proves \num{n+m} = (\num{n} + \num{m})$، پس
+  $\Value{\num{n+m}}{M} = \Value{\num{n}+\num{m}}{M}$. بنا بر
+  تعریف تابع ارزش، این عبارت برابر است با
+  $\Assign{+}{M}(\Value{\num{n}}{M},\Value{\num{m}}{M})$. چون
+  $\Value{\num{n}}{M} = g(n)$ و $\Value{\num{m}}{M} = g(m)$، داریم
+  $g(\Assign{+}{N}(n, m)) = \Assign{+}{M}(g(n), g(m))$.\par}}
+
+% OLVIS-0220: scope extra stretch to the paragraph before the display.
+\OLSADeclareDocumentTextCorrection{OLP-0220}{OLVIS-0220}{به‌جای نام‌های رسمی توابعی که در بالا تعریف شدند، نمادگذاری
+فشرده‌تری معرفی می‌کنیم. به‌جای~$\fn{element}(s,i)$ از~$(s)_i$ استفاده
+می‌کنیم و $\tuple{s_0,\dots,s_k}$ را اختصاری برای}{{\emergencystretch=1em\relax
+به‌جای نام‌های رسمی توابعی که در بالا تعریف شدند، نمادگذاری
+فشرده‌تری معرفی می‌کنیم. به‌جای~$\fn{element}(s,i)$ از~$(s)_i$ استفاده
+می‌کنیم و $\tuple{s_0,\dots,s_k}$ را اختصاری برای\par}}
+
+% OLVIS-0273: preserve the full problem body and force one break before the
+% long relation assignment.  Materialize this exact source fragment before
+% answers.sty serializes the problem; matching the later probdeferred token
+% stream is not stable across its verbatim write/read boundary.
+\OLSADeclareDocumentTextCorrection{OLP-0273}{OLVIS-0273}
+ {بگذارید $M$ ماشین تورینگی با تنها حالت~$q_0$ و تنها دستور
+    $\delta(q_0,\TMblank)=\tuple{q_0,\TMblank,\TMstay}$ باشد. بگذارید
+    $\Domain{M''}=\{0,1,2\}$،
+    $\Assign{\prime}{M''}(0)=\Assign{\prime}{M''}(1)=1$ و
+    $\Assign{\prime}{M''}(2)=2$، و
+    $\Assign{<}{M''}=\{\tuple{0,1},\tuple{1,1},\tuple{2,2}\}$.
+    $\Assign{\Obj Q_{q_0}}{M''}$،
+    $\Assign{\Obj S_{\TMblank}}{M''}$ و
+    $\Assign{\Obj S_{\TMendtape}}{M''}$ را چنان تعریف کنید که
+    $!T(M,\emptyseq)$ و~$!E(M,\emptyseq)$ صادق شوند و توضیح دهید چرا
+    صادق‌اند. راهنمایی: توجه کنید
+    $\delta(q_0,\TMendtape)$ تعریف‌نشده است. تضمین کنید که
+    \begin{align*}
+    & \Obj Q_{q_0}(\num{1}, \num{n}) \land \Obj S_{\TMendtape}(\num{0}, \num{n})
+      \land
+      \lforall[x][(\num{0} < x \lif \Obj S_\TMblank(x, \num{n}))] \text{\quad برای هر $n \in \Nat$}\\
+    & \lexists[y][(\Obj Q_{q_0}(\num{0}, y) \land \Obj S_{\TMendtape}(\num{0}, y))]
+    \end{align*}
+    هر دو در~$\Struct{M''}$ صادق باشند.}
+ {بگذارید $M$ ماشین تورینگی با تنها حالت~$q_0$ و تنها دستور
+    $\delta(q_0,\TMblank)=\tuple{q_0,\TMblank,\TMstay}$ باشد. بگذارید
+    $\Domain{M''}=\{0,1,2\}$،
+    $\Assign{\prime}{M''}(0)=\Assign{\prime}{M''}(1)=1$ و
+    $\Assign{\prime}{M''}(2)=2$، و\linebreak
+    $\Assign{<}{M''}=\{\tuple{0,1},\tuple{1,1},\tuple{2,2}\}$.
+    $\Assign{\Obj Q_{q_0}}{M''}$،
+    $\Assign{\Obj S_{\TMblank}}{M''}$ و
+    $\Assign{\Obj S_{\TMendtape}}{M''}$ را چنان تعریف کنید که
+    $!T(M,\emptyseq)$ و~$!E(M,\emptyseq)$ صادق شوند و توضیح دهید چرا
+    صادق‌اند. راهنمایی: توجه کنید
+    $\delta(q_0,\TMendtape)$ تعریف‌نشده است. تضمین کنید که
+    \begin{align*}
+    & \Obj Q_{q_0}(\num{1}, \num{n}) \land \Obj S_{\TMendtape}(\num{0}, \num{n})
+      \land
+      \lforall[x][(\num{0} < x \lif \Obj S_\TMblank(x, \num{n}))] \text{\quad برای هر $n \in \Nat$}\\
+    & \lexists[y][(\Obj Q_{q_0}(\num{0}, y) \land \Obj S_{\TMendtape}(\num{0}, y))]
+    \end{align*}
+    هر دو در~$\Struct{M''}$ صادق باشند.}
+
+% OLVIS-0286: scope extra stretch to the definition's opening paragraph.
+\OLSADeclareDocumentTextCorrection{OLP-0286}{OLVIS-0286}{اگر $\Gamma$ دنباله‌ای متناهی از !!{sentence}s باشد،
+$\Gamma=\tuple{!A_1,\dots,!A_n}$، آنگاه
+$\Gn{\Gamma}=\tuple{\Gn{!A_1},\dots,\Gn{!A_n}}$.}{{\emergencystretch=2em\relax
+اگر $\Gamma$ دنباله‌ای متناهی از !!{sentence}s باشد،
+$\Gamma=\tuple{!A_1,\dots,!A_n}$، آنگاه
+$\Gn{\Gamma}=\tuple{\Gn{!A_1},\dots,\Gn{!A_n}}$.\par}}
+
+% OLVIS-0526 and OLVIS-0527: scope stretch to each countermodel paragraph,
+% leaving the adjacent figures and deferred problems untouched.
+\OLSADeclareDocumentTextCorrection{OLP-0526}{OLVIS-0526}{معناشناسی کره‌ای این استنتاج را نامعتبر می‌سازد؛ یعنی
+  $p \cif r \Entails/ (p \land q) \cif r$. مدل
+  $\mModel{M} = \tuple{W, O, V}$ را در نظر بگیرید که در آن
+  $W = \{w, w_1, w_2\}$،
+  $O_w = \{\{w\}, \{w, w_1\}, \{w, w_1, w_2\}\}$،
+  $V(p) = \{w_1, w_2\}$، $V(q) = \{w_2\}$ و~$V(r) = \{w_1\}$.
+  کرهٔ پذیرای~$p$، یعنی~$S = \{w, w_1\}$، وجود دارد و~$p \lif r$ در
+  همهٔ جهان‌های آن صادق است، پس~$\mSat{M}{p \cif r}[w]$. همچنین کرهٔ
+  پذیرای~$(p \land q)$، یعنی~$S' = \{w, w_1, w_2\}$، وجود دارد، اما
+  $\mSat/{M}{(p \land q) \lif r}[w_2]$؛ پس
+  $\mSat/{M}{(p \land q) \cif r}[w]$ (بنگرید به
+  \olref{fig:antecedent-strengthening}).}{{\emergencystretch=12pt\relax
+  معناشناسی کره‌ای این استنتاج را نامعتبر می‌سازد؛ یعنی
+  $p \cif r \Entails/ (p \land q) \cif r$. مدل
+  $\mModel{M} = \tuple{W, O, V}$ را در نظر بگیرید که در آن
+  $W = \{w, w_1, w_2\}$،
+  $O_w = \{\{w\}, \{w, w_1\}, \{w, w_1, w_2\}\}$،
+  $V(p) = \{w_1, w_2\}$، $V(q) = \{w_2\}$ و~$V(r) = \{w_1\}$.
+  کرهٔ پذیرای~$p$، یعنی~$S = \{w, w_1\}$، وجود دارد و~$p \lif r$ در
+  همهٔ جهان‌های آن صادق است، پس~$\mSat{M}{p \cif r}[w]$. همچنین کرهٔ
+  پذیرای~$(p \land q)$، یعنی~$S' = \{w, w_1, w_2\}$، وجود دارد، اما
+  $\mSat/{M}{(p \land q) \lif r}[w_2]$؛ پس
+  $\mSat/{M}{(p \land q) \cif r}[w]$ (بنگرید به
+  \olref{fig:antecedent-strengthening}).\par}}
+
+\OLSADeclareDocumentTextCorrection{OLP-0527}{OLVIS-0527}{معناشناسی کره‌ای این استنتاج را نامعتبر می‌سازد؛ یعنی
+  $p \cif q, q \cif r \Entails/ p \cif r$. مدل
+  $\mModel{M} = \tuple{W, O, V}$ را در نظر بگیرید که در آن
+  $W = \{w, w_1, w_2\}$،
+  $O_w = \{\{w\}, \{w, w_1\}, \{w, w_1, w_2\}\}$،
+  $V(p) = \{w_2\}$، $V(q) = \{w_1, w_2\}$ و~$V(r) = \{w_1\}$.
+  کرهٔ پذیرای~$p$، یعنی~$S = \{w, w_1, w_2\}$، وجود دارد و
+  $p \lif q$ در همهٔ جهان‌های آن صادق است، پس
+  $\mSat{M}{p \cif q}[w]$. همچنین کرهٔ پذیرای~$q$، یعنی
+  $S' = \{w, w_1\}$، وجود دارد و برای هر~$u \in S'$،
+  $\mSat{M}{q \lif r}[u]$؛ پس~$\mSat{M}{q \cif r}[w]$. اما کرهٔ
+  پذیرای~$p$، یعنی~$\{w, w_1, w_2\}$، جهانی به نام~$w_2$ دارد که در
+  آن~$\mSat/{M}{p \lif r}[w_2]$.}{{\emergencystretch=12pt\relax
+  معناشناسی کره‌ای این استنتاج را نامعتبر می‌سازد؛ یعنی
+  $p \cif q, q \cif r \Entails/ p \cif r$. مدل
+  $\mModel{M} = \tuple{W, O, V}$ را در نظر بگیرید که در آن
+  $W = \{w, w_1, w_2\}$،
+  $O_w = \{\{w\}, \{w, w_1\}, \{w, w_1, w_2\}\}$،
+  $V(p) = \{w_2\}$، $V(q) = \{w_1, w_2\}$ و~$V(r) = \{w_1\}$.
+  کرهٔ پذیرای~$p$، یعنی~$S = \{w, w_1, w_2\}$، وجود دارد و
+  $p \lif q$ در همهٔ جهان‌های آن صادق است، پس
+  $\mSat{M}{p \cif q}[w]$. همچنین کرهٔ پذیرای~$q$، یعنی
+  $S' = \{w, w_1\}$، وجود دارد و برای هر~$u \in S'$،
+  $\mSat{M}{q \lif r}[u]$؛ پس~$\mSat{M}{q \cif r}[w]$. اما کرهٔ
+  پذیرای~$p$، یعنی~$\{w, w_1, w_2\}$، جهانی به نام~$w_2$ دارد که در
+  آن~$\mSat/{M}{p \lif r}[w_2]$.\par}}
+
+\ExplSyntaxOn
+\OLSADeclareSetup{OLP-0021}{\olsa_source_correction_install_ex:}
+\OLSADeclareSetup{OLP-0023}{\olsa_source_correction_install_explain:}
+\OLSADeclareSetup{OLP-0024}{%
+ \olsa_source_correction_install_prop:
+ \olsa_source_correction_install_proof:
+}
+\OLSADeclareSetup{OLP-0029}{\olsa_source_correction_install_ex:}
+\OLSADeclareSetup{OLP-0032}{\olsa_source_correction_install_explain:}
+\OLSADeclareSetup{OLP-0034}{%
+ \olsa_source_correction_install_proof:
+ \olsa_source_correction_install_explain:
+}
+\OLSADeclareSetup{OLP-0035}{\olsa_source_correction_install_proof:}
+\OLSADeclareSetup{OLP-0036}{\olsa_source_correction_install_proof:}
+\OLSADeclareSetup{OLP-0039}{\olsa_source_correction_install_proof:}
+\OLSADeclareSetup{OLP-0040}{\olsa_source_correction_install_proof:}
+\OLSADeclareSetup{OLP-0179}{\olsa_source_correction_install_document_text:}
+\OLSADeclareSetup{OLP-0180}{\olsa_source_correction_install_document_text:}
+\OLSADeclareSetup{OLP-0362}{\olsa_source_correction_install_document_text:}
+\OLSADeclareSetup{OLP-0379}{\olsa_source_correction_install_document_text:}
+\OLSADeclareSetup{OLP-0391}{\olsa_source_correction_install_document_text:}
+\OLSADeclareSetup{OLP-0569}{\olsa_source_correction_install_document_text:}
+\OLSADeclareSetup{OLP-0570}{\olsa_source_correction_install_document_text:}
+\OLSADeclareSetup{OLP-0599}{\olsa_source_correction_install_document_text:}
+\OLSADeclareSetup{OLP-0091}{\olsa_source_correction_install_document_text:}
+\OLSADeclareSetup{OLP-0133}{\olsa_source_correction_install_document_text:}
+\OLSADeclareSetup{OLP-0164}{\olsa_source_correction_install_document_text:}
+\OLSADeclareSetup{OLP-0165}{\olsa_source_correction_install_document_text:}
+\OLSADeclareSetup{OLP-0193}{\olsa_source_correction_install_document_text:}
+\OLSADeclareSetup{OLP-0220}{\olsa_source_correction_install_document_text:}
+\OLSADeclareSetup{OLP-0273}{\olsa_source_correction_install_document_text:}
+\OLSADeclareSetup{OLP-0286}{\olsa_source_correction_install_document_text:}
+\OLSADeclareSetup{OLP-0526}{\olsa_source_correction_install_document_text:}
+\OLSADeclareSetup{OLP-0527}{\olsa_source_correction_install_document_text:}
+\olsa_source_correction_install_probdeferred:
+\ExplSyntaxOff

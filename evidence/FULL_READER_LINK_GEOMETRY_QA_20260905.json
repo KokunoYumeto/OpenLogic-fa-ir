@@ -1,0 +1,395 @@
+{
+  "schema": "farsi-standalone-full-reader-link-geometry-qa-v1",
+  "status": "PASS_ALL_3233_LINKS_ON_ALL_1201_PAGES_PENDING_VISUAL_AND_PUBLICATION_QA",
+  "scope": "Accepted deterministic Standard-Farsi build; drawing-level link annotations and resolved destinations only.",
+  "build_disposition": {
+    "status": "DETERMINISTIC_BUILD_ACCEPTED_PENDING_VISUAL_AND_PUBLICATION_QA",
+    "reason": "This guarded build incorporates the source-safe OLP-0298 reflow and passed byte-identical primary/replay acceptance.",
+    "required_next_action": "Complete whole-reader rendered-page visual QA and publication-byte verification."
+  },
+  "pdf": {
+    "path": "tmp/pdfs/standalone/20260905T121245261Z-975f45c04bc2418e95d68965829b251c/primary/open-logic-standalone-fa-IR.pdf",
+    "bytes": 9285597,
+    "sha256": "6b7a24d6b39474fd76ea08496c97783bcf5a4c46f10d8f500ed0414a5dd38a08"
+  },
+  "deterministic_build_binding": {
+    "receipt": {
+      "path": "tmp/pdfs/standalone/20260905T121245261Z-975f45c04bc2418e95d68965829b251c/BUILD_RECEIPT.json",
+      "bytes": 1240927,
+      "sha256": "4c2dac46ca76c029a49841db1336fd036da7c35aa154366a46d52597da046d0e"
+    },
+    "accepted_build": true,
+    "primary": {
+      "path": "tmp/pdfs/standalone/20260905T121245261Z-975f45c04bc2418e95d68965829b251c/primary/open-logic-standalone-fa-IR.pdf",
+      "bytes": 9285597,
+      "sha256": "6b7a24d6b39474fd76ea08496c97783bcf5a4c46f10d8f500ed0414a5dd38a08"
+    },
+    "replay": {
+      "path": "tmp/pdfs/standalone/20260905T121245261Z-975f45c04bc2418e95d68965829b251c/replay/open-logic-standalone-fa-IR.pdf",
+      "bytes": 9285597,
+      "sha256": "6b7a24d6b39474fd76ea08496c97783bcf5a4c46f10d8f500ed0414a5dd38a08"
+    },
+    "primary_equals_replay": true,
+    "mutex_acquired_and_released_after_confirmed_tree_exit": true
+  },
+  "drawing_trace": {
+    "path": "tmp/pdfs/standalone/20260905T121245261Z-975f45c04bc2418e95d68965829b251c/primary/FULL_READER_LINK_GEOMETRY_TRACE.json",
+    "bytes": 9051761,
+    "sha256": "f015ea81d7d6e29101ecdc8079b3ead3c2bb601a2b63cae3448a75b9e63cf5ec"
+  },
+  "dependencies": [
+    {
+      "path": "build/diagnose_standalone_link_geometry.py",
+      "bytes": 4531,
+      "sha256": "e182630480344e9be0f7fb6dc2340aa7a4bd1e280bb299f4cfa9a380d8e6079a"
+    },
+    {
+      "path": "build/validate_full_reader_link_geometry.py",
+      "bytes": 41253,
+      "sha256": "4eba12aa0f04c960458f6ff26684dedf3b4384e9445e80e00e490b6ed8cf7ddb"
+    },
+    {
+      "path": "source/locale/fa-IR/standalone/link-geometry.tex",
+      "bytes": 2001,
+      "sha256": "651b6c12f68a77f540403d6b15855c596207152f4a0f3f27d5162d8a5bc80111"
+    },
+    {
+      "path": "evidence/LINK_GEOMETRY_PRODUCTION_STATIC_QA.json",
+      "bytes": 4115,
+      "sha256": "1c6517838a761470dc6283a837582df0e8a68d25b71aa87af5aacacbfe7fb27c"
+    }
+  ],
+  "runtime": {
+    "pymupdf_version": "1.27.2.3"
+  },
+  "selected_intervention": {
+    "probe_mode": 1,
+    "name": "NATIVE-ATOMIC",
+    "production_layer": {
+      "path": "source/locale/fa-IR/standalone/link-geometry.tex",
+      "bytes": 2001,
+      "sha256": "651b6c12f68a77f540403d6b15855c596207152f4a0f3f27d5162d8a5bc80111"
+    },
+    "static_selection_qa": {
+      "path": "evidence/LINK_GEOMETRY_PRODUCTION_STATIC_QA.json",
+      "bytes": 4115,
+      "sha256": "1c6517838a761470dc6283a837582df0e8a68d25b71aa87af5aacacbfe7fb27c"
+    }
+  },
+  "annotation_audit": {
+    "distribution": {
+      "pages": 1201,
+      "links": 3233,
+      "page_geometry": [
+        {
+          "rect": [
+            0.0,
+            0.0,
+            612.0,
+            792.0
+          ],
+          "rotation": 0,
+          "pages": 1201
+        }
+      ],
+      "source_pages": {
+        "with_links": 553,
+        "first_with_links": 1,
+        "last_with_links": 1201,
+        "maximum_links_on_one_page": 34,
+        "pages_with_maximum": [
+          9,
+          209,
+          386
+        ]
+      },
+      "page_link_count_histogram": {
+        "0": 648,
+        "1": 139,
+        "2": 92,
+        "3": 59,
+        "4": 52,
+        "5": 34,
+        "6": 22,
+        "7": 28,
+        "8": 17,
+        "9": 23,
+        "10": 14,
+        "11": 6,
+        "12": 7,
+        "13": 7,
+        "14": 11,
+        "15": 5,
+        "17": 1,
+        "18": 1,
+        "19": 2,
+        "20": 2,
+        "22": 1,
+        "23": 1,
+        "26": 1,
+        "28": 1,
+        "29": 1,
+        "30": 2,
+        "31": 9,
+        "32": 4,
+        "33": 8,
+        "34": 3
+      },
+      "page_link_sequence_sha256": "5275185fe73691ac2feccb6bbcd6d3cfc7323dea3d945a02c476a1f1a80c4298",
+      "link_kinds": {
+        "external_uri": 76,
+        "internal_named": 3157
+      },
+      "target_classes": {
+        "citation": 377,
+        "external_uri": 76,
+        "internal_reference": 2780
+      },
+      "annotation_actions": {
+        "/GoTo": 3157,
+        "/URI": 76
+      },
+      "annotation_colours": {
+        "0/1/0": 377,
+        "0/1/1": 76,
+        "1/0/0": 2780
+      },
+      "anchor_profile": {
+        "citation": {
+          "1/1/1": 377
+        },
+        "external_uri": {
+          "0/0/1": 29,
+          "1/0/1": 3,
+          "1/1/1": 41,
+          "1/1/4": 1,
+          "1/1/7": 2
+        },
+        "internal_reference": {
+          "1/1/1": 2642,
+          "1/1/10": 1,
+          "1/1/2": 1,
+          "1/1/4": 124,
+          "1/1/5": 3,
+          "1/1/7": 9
+        }
+      },
+      "width_buckets_points": {
+        "citation": {
+          "le_12": 2,
+          "le_192": 7,
+          "le_24": 47,
+          "le_48": 273,
+          "le_96": 48
+        },
+        "external_uri": {
+          "le_12": 1,
+          "le_192": 20,
+          "le_384": 32,
+          "le_459": 8,
+          "le_48": 4,
+          "le_96": 11
+        },
+        "internal_reference": {
+          "le_12": 64,
+          "le_192": 477,
+          "le_24": 237,
+          "le_384": 29,
+          "le_48": 703,
+          "le_96": 1270
+        }
+      },
+      "height_buckets_points": {
+        "citation": {
+          "le_10": 229,
+          "le_12": 92,
+          "le_14": 53,
+          "le_16": 1,
+          "le_18": 2
+        },
+        "external_uri": {
+          "le_10": 2,
+          "le_12": 7,
+          "le_14": 19,
+          "le_16": 24,
+          "le_18": 24
+        },
+        "internal_reference": {
+          "le_10": 225,
+          "le_12": 866,
+          "le_14": 467,
+          "le_16": 1057,
+          "le_18": 138,
+          "le_24": 27
+        }
+      },
+      "targets": {
+        "unique_all": 1909,
+        "unique_internal": 1866,
+        "unique_external": 43,
+        "kind_target_inventory_sha256": "be23ddd0213ee611634146bd6ee841d96e9223c1129d82db6aa141285028ea61"
+      },
+      "destinations": {
+        "internal_links": 3157,
+        "unique_named_destinations": 1866,
+        "target_pages": 880,
+        "first_target_page_one_based": 2,
+        "last_target_page_one_based": 1201,
+        "resolved_inverted_y_coordinate": 3157
+      },
+      "geometry_extrema_points": {
+        "minimum_width": 6.698,
+        "maximum_width": 453.89801,
+        "minimum_height": 7.008,
+        "maximum_height": 21.349
+      }
+    },
+    "safety": {
+      "all_pages_inspected": 1201,
+      "all_annotations_inspected": 3233,
+      "unique_link_xrefs": 3233,
+      "low_level_pdf_link_annotations": 3233,
+      "outside_page_rectangles": 0,
+      "non_finite_rectangles": 0,
+      "zero_or_negative_area_rectangles": 0,
+      "full_width_rectangles": 0,
+      "full_width_rejection_ratio": 0.75,
+      "full_width_threshold_points_for_612_point_page": 459.0,
+      "maximum_observed_width_to_page_ratio": 0.74166342,
+      "zero_enclosed_glyph_groups": 0,
+      "bad_internal_destinations": 0,
+      "malformed_external_uris": 0,
+      "unexpected_annotation_kinds_or_actions": 0,
+      "trace_raw_geometry_or_target_divergences": 0,
+      "both_drawn_edges_anchored": 3201,
+      "both_drawn_edges_anchored_ratio": 0.99010207
+    },
+    "quantiles": {
+      "width_points": {
+        "citation": {
+          "0": 7.833,
+          "0.01": 20.263,
+          "0.05": 20.42499,
+          "0.25": 26.23199,
+          "0.5": 26.23201,
+          "0.75": 37.68601,
+          "0.95": 84.531,
+          "0.99": 111.67501,
+          "1": 128.606
+        },
+        "external_uri": {
+          "0": 9.47199,
+          "0.01": 38.93402,
+          "0.05": 47.218,
+          "0.25": 111.16098,
+          "0.5": 199.48399,
+          "0.75": 295.503,
+          "0.95": 451.90498,
+          "0.99": 453.89801,
+          "1": 453.89801
+        },
+        "internal_reference": {
+          "0": 6.698,
+          "0.01": 6.699,
+          "0.05": 16.32899,
+          "0.25": 43.23101,
+          "0.5": 52.53702,
+          "0.75": 68.20502,
+          "0.95": 145.77304,
+          "0.99": 192.83704,
+          "1": 323.34403
+        }
+      },
+      "height_points": {
+        "citation": {
+          "0": 7.00903,
+          "0.01": 7.021,
+          "0.05": 7.09503,
+          "0.25": 8.703,
+          "0.5": 8.81702,
+          "0.75": 10.26901,
+          "0.95": 12.62201,
+          "0.99": 12.72296,
+          "1": 16.46801
+        },
+        "external_uri": {
+          "0": 8.85199,
+          "0.01": 9.15301,
+          "0.05": 11.14701,
+          "0.25": 13.241,
+          "0.5": 15.23398,
+          "0.75": 16.41201,
+          "0.95": 16.56799,
+          "0.99": 16.798,
+          "1": 16.798
+        },
+        "internal_reference": {
+          "0": 7.008,
+          "0.01": 8.61999,
+          "0.05": 9.39099,
+          "0.25": 11.11701,
+          "0.5": 13.46899,
+          "0.75": 14.83801,
+          "0.95": 16.367,
+          "0.99": 17.82001,
+          "1": 21.349
+        }
+      }
+    }
+  },
+  "mutation_self_test": {
+    "schema": "farsi-full-reader-link-geometry-self-test-v1",
+    "status": "PASS",
+    "positive_synthetic_models": 1,
+    "geometry_negative_controls": [
+      "outside_page_rectangle",
+      "zero_width_rectangle",
+      "zero_height_rectangle",
+      "full_width_rectangle",
+      "non_finite_rectangle",
+      "zero_enclosed_glyphs",
+      "internal_missing_left_anchor",
+      "wrong_annotation_colour",
+      "trace_target_mismatch",
+      "unexpected_link_kind",
+      "destination_page_outside_pdf",
+      "destination_point_outside_page",
+      "resolved_destination_page_mismatch",
+      "resolved_destination_x_mismatch",
+      "resolved_destination_y_mismatch",
+      "missing_named_destination",
+      "malformed_external_uri",
+      "whitespace_external_uri",
+      "wrong_annotation_subtype",
+      "wrong_annotation_action",
+      "duplicate_xref",
+      "trace_width_mismatch",
+      "band_smaller_than_enclosed",
+      "trace_reports_outside",
+      "low_level_link_omission"
+    ],
+    "distribution_negative_controls": 5,
+    "common_primitive_negative_controls": 4,
+    "total_negative_controls": 34
+  },
+  "checks": {
+    "preserved_trace_equals_fresh_recomputation": true,
+    "all_pdf_pages_enumerated": true,
+    "all_link_annotation_xrefs_unique_and_enumerated": true,
+    "low_level_pdf_link_inventory_equals_page_get_links_inventory": true,
+    "all_rectangles_finite_positive_inside_page_and_below_full_width_threshold": true,
+    "every_link_encloses_matching_drawn_glyphs": true,
+    "all_internal_and_citation_links_anchor_both_drawn_edges": true,
+    "all_internal_named_destinations_resolve_inside_target_pages": true,
+    "all_external_uris_are_well_formed_http_or_https": true,
+    "page_kind_colour_anchor_size_and_target_distributions_match_accepted_reader": true,
+    "accepted_primary_and_replay_pdf_bytes_identical": true
+  },
+  "limitations": [
+    "Drawing-level annotation QA does not replace complete rendered-page visual inspection.",
+    "External URI syntax is checked, but network reachability is outside this PDF-geometry gate.",
+    "The incorporated OLP-0298 reflow still requires confirmation in complete rendered-page visual inspection.",
+    "This receipt does not establish release packaging or anonymous public-byte identity.",
+    "This receipt does not claim final full-reader visual QA or publication readiness."
+  ]
+}

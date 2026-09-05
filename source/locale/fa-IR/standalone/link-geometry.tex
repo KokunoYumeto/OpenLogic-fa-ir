@@ -1,0 +1,49 @@
+% Additive RTL link-annotation repair selected by the guarded four-mode probe.
+% Keep the native direction. Make direct links and citation links atomic so
+% LuaTeX/hyperref cannot construct full-text-width or outside-page rectangles.
+% TOC start/end pairs and raw URL direction deliberately remain unchanged.
+\makeatletter
+\ifdefined\OLStandaloneLinkGeometryInstalled
+  \PackageError{standalone-link-geometry}{Link geometry layer loaded twice}{Load standalone/link-geometry.tex exactly once before reader content.}%
+\else
+  \def\OLStandaloneLinkGeometryInstalled{native-atomic-v1}%
+  \@ifundefined{hyper@link}
+    {\PackageError{standalone-link-geometry}{Hyperref internals are unavailable}{Load the OpenLogic/hyperref preamble before the standalone body.}}
+    {}
+  \let\OLSA@original@hyper@link\hyper@link
+  \let\OLSA@original@hyper@linkstart\hyper@linkstart
+  \let\OLSA@original@hyper@linkend\hyper@linkend
+  \let\OLSA@link@cite@end\relax
+  \def\OLSA@link@cite@type{cite}
+  \long\def\OLSA@link@nativebox#1{\leavevmode\hbox{#1}}
+  \def\OLSA@link@citestart#1#2{%
+    \leavevmode\begingroup
+    \let\OLSA@link@cite@end\OLSA@link@citeend
+    \hbox\bgroup\OLSA@original@hyper@linkstart{#1}{#2}%
+  }
+  \def\OLSA@link@citeend{%
+    \OLSA@original@hyper@linkend\egroup\endgroup
+  }
+  \long\def\hyper@link#1#2#3{%
+    \OLSA@link@nativebox{\OLSA@original@hyper@link{#1}{#2}{#3}}%
+  }
+  % Only citation start/end pairs are boxed. Whole TOC entries must retain
+  % their legitimate line-break opportunities.
+  \def\hyper@linkstart#1#2{%
+    \def\OLSA@link@this@type{#1}%
+    \ifx\OLSA@link@this@type\OLSA@link@cite@type
+      \expandafter\OLSA@link@citestart
+    \else
+      \expandafter\OLSA@original@hyper@linkstart
+    \fi{#1}{#2}%
+  }
+  \def\hyper@linkend{%
+    \ifx\OLSA@link@cite@end\relax
+      \expandafter\OLSA@original@hyper@linkend
+    \else
+      \expandafter\OLSA@link@cite@end
+    \fi
+  }
+  \typeout{OL-STANDALONE-LINK-GEOMETRY|native-atomic-v1|toc-and-url-direction-unchanged}%
+\fi
+\makeatother

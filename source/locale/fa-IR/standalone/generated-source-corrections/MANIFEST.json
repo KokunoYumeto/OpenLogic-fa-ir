@@ -1,0 +1,350 @@
+{
+  "checker_path": "build/check_functions_source_corrections.py",
+  "checker_sha256": "08cc941074e016624e891e85349d88741cddd177ca8443fb786639d859569dac",
+  "files": [
+    {
+      "derived_bytes": 9067,
+      "derived_path": "source/locale/fa-IR/standalone/generated-source-corrections/content/computability/recursive-functions/sequences.tex",
+      "derived_sha256": "cad251944b13f53a394293c0e4a8858698efae33e65166a2d260819a8e3fe4af",
+      "rules": [
+        {
+          "finding_id": "OLVIS-0220",
+          "original_sha256": "434bdf5053dd55424f2535b3fe94d404944975fbefdffbcd12788a43cc73201a",
+          "replacement_sha256": "c25a8ba85a976ac69de99805d0a1935036495d16940a0aba0e5f8d02d2c31757"
+        }
+      ],
+      "source_bytes": 8901,
+      "source_id": "OLP-0220",
+      "source_path": "source/locale/fa-IR/content/computability/recursive-functions/sequences.tex",
+      "source_sha256": "bb59145b1e2aaeb2129422762ffcc5695cf46f532b7114049cb555179bdd2ef8",
+      "utf8_bom_preserved": false
+    },
+    {
+      "derived_bytes": 3451,
+      "derived_path": "source/locale/fa-IR/standalone/generated-source-corrections/content/counterfactuals/minimal-change-semantics/antecedent-strengthening.tex",
+      "derived_sha256": "e997372b269efa7db2426aaef202c2fd02d53b90de5a51e6554d9607ea061d6f",
+      "rules": [
+        {
+          "finding_id": "OLVIS-0526",
+          "original_sha256": "51e8518cc302efe34c791ff956f31c0db2906665053a3add5522a4ab74329753",
+          "replacement_sha256": "18be06a38b386739fd97479a04ea6d199ac4237734cf0a1fbfcfbb0e1e7c94f4"
+        }
+      ],
+      "source_bytes": 3282,
+      "source_id": "OLP-0526",
+      "source_path": "source/locale/fa-IR/content/counterfactuals/minimal-change-semantics/antecedent-strengthening.tex",
+      "source_sha256": "9012ee2fdb4513376bf00dab86743b4558f46a59b8234bf8123e7e099285e895",
+      "utf8_bom_preserved": false
+    },
+    {
+      "derived_bytes": 4853,
+      "derived_path": "source/locale/fa-IR/standalone/generated-source-corrections/content/counterfactuals/minimal-change-semantics/transitivity.tex",
+      "derived_sha256": "f40efc0266b654be0d3aaed78cf9f701977cb751874c0522808cf3d2c4e29655",
+      "rules": [
+        {
+          "finding_id": "OLVIS-0527",
+          "original_sha256": "1316cfc5ecdf579603c3ab6926f7439053f2364b8a5ecd4bc729143cc728056a",
+          "replacement_sha256": "fca7dc53971f1c3b13814542ef0d75c918247c5ee32ee334b659a4cd37dc12c6"
+        }
+      ],
+      "source_bytes": 4684,
+      "source_id": "OLP-0527",
+      "source_path": "source/locale/fa-IR/content/counterfactuals/minimal-change-semantics/transitivity.tex",
+      "source_sha256": "0ca04f829161d135bc9501a5213f8fc699faee387130ef9e06fc242e4dea1a59",
+      "utf8_bom_preserved": false
+    },
+    {
+      "derived_bytes": 15953,
+      "derived_path": "source/locale/fa-IR/standalone/generated-source-corrections/content/first-order-logic/beyond/intuitionistic-logic.tex",
+      "derived_sha256": "621bb856f27f950858d8de057019775bab24b3636be0017dac8317f93367a942",
+      "rules": [
+        {
+          "finding_id": "OLEMPH-001",
+          "original_sha256": "f67b9af844d97eca0adca36758ea6efff1f103bae4dce33ebe554c57d81d8d25",
+          "replacement_sha256": "cd0f13c2396876f41a56e8868d3b6defccf60ae01103477adffa4f31a57fc0f2"
+        },
+        {
+          "finding_id": "OLEMPH-002",
+          "original_sha256": "aef2e302e869eb60c1dfd52015a56cd549fac4be2b68b64c69343ae53d265841",
+          "replacement_sha256": "d6a1eea9183026cc4fb2e9991df2917d13e044e3dcfa448f5f26eaac3c61e901"
+        },
+        {
+          "finding_id": "OLEMPH-003",
+          "original_sha256": "29bc9f6623d3668ab6471b7c65f45f2a5d821b948a8e608cdf9f7dcbef2942da",
+          "replacement_sha256": "948cf6c2a666916df9e1f18e6ed112450cf1b82ea3651aa41476e5addf0e69ad"
+        }
+      ],
+      "source_bytes": 15694,
+      "source_id": "OLP-0179",
+      "source_path": "source/locale/fa-IR/content/first-order-logic/beyond/intuitionistic-logic.tex",
+      "source_sha256": "ff0733f6aa24eebeb90981c6c6a4ccbd878fc197c2abb79649adb5b082824f91",
+      "utf8_bom_preserved": false
+    },
+    {
+      "derived_bytes": 6572,
+      "derived_path": "source/locale/fa-IR/standalone/generated-source-corrections/content/first-order-logic/beyond/modal-logics.tex",
+      "derived_sha256": "956868c555d87f6f178e009ddeea1e1c58a337da5827c6ef98ee518e84bc6ffb",
+      "rules": [
+        {
+          "finding_id": "OLEMPH-004",
+          "original_sha256": "76d734c2a490718b2b425a6b9143ed233c859fce114a4c9c730ce4d2d687c4a9",
+          "replacement_sha256": "3ab96f5b1db9180735def5503e6b68b1ae7845eb57a0f11ecc7d2e2daa73d2f6"
+        },
+        {
+          "finding_id": "OLEMPH-005",
+          "original_sha256": "83265dd87d954be19fbb3d1d58c74db26adbaec6fb70518c71a2ab82323752ea",
+          "replacement_sha256": "b09b24fce1f7da1f077dc880e14048c510e25d9cdc5fe186716254d9486331e2"
+        },
+        {
+          "finding_id": "OLEMPH-006",
+          "original_sha256": "01acb6caddc64db9d2d7f75f76e740765e897d207e2e531034c3d1434cdc2977",
+          "replacement_sha256": "672c5844bc3e6ea65b58c4b07a4b00ecd34fdb612a1c4515d890bef8a50770d1"
+        },
+        {
+          "finding_id": "OLEMPH-007",
+          "original_sha256": "dd99846b689cf8c5af2759be0edbb0c0580871e2d779cc561e73cd8e97bd81f9",
+          "replacement_sha256": "1f173df44d339d47d6375294d4aed57ca795d01dab34d38bee07e147951b60e3"
+        }
+      ],
+      "source_bytes": 6250,
+      "source_id": "OLP-0180",
+      "source_path": "source/locale/fa-IR/content/first-order-logic/beyond/modal-logics.tex",
+      "source_sha256": "47b263bcf4da43c9f390b7e5a8c8c285f5ebb7b91e17b4e7fdb92db62f9a8929",
+      "utf8_bom_preserved": false
+    },
+    {
+      "derived_bytes": 10009,
+      "derived_path": "source/locale/fa-IR/standalone/generated-source-corrections/content/first-order-logic/completeness/identity.tex",
+      "derived_sha256": "b5198c64dcf890c06368ef79064128fb301ae5a3de95d082e9321539c35bedb9",
+      "rules": [
+        {
+          "finding_id": "OLVIS-0133-OVERFLOW",
+          "original_sha256": "286bce5090791507da648522d27ccf9afc34bc0125b9d045c16f83c832953624",
+          "replacement_sha256": "b60e1f971754b5c7d2635198e61b7f5ec5155ea4fd6971a55d2fa76e8976f5e7"
+        },
+        {
+          "finding_id": "OLVIS-0133-COMMA",
+          "original_sha256": "429d89668a21629211a50c9518407c406de6adcf12b1d158f1ca2a625cd2ca0f",
+          "replacement_sha256": "1e9e8131976bcdf017d7661eac1dc25a9a802b3b0eb63d876832429ce0283971"
+        }
+      ],
+      "source_bytes": 9773,
+      "source_id": "OLP-0133",
+      "source_path": "source/locale/fa-IR/content/first-order-logic/completeness/identity.tex",
+      "source_sha256": "c3731eeaf405d2703c54d6ec9d8ce460404dc07f4ea814a0e9e264f9f4bd2fee",
+      "utf8_bom_preserved": false
+    },
+    {
+      "derived_bytes": 6602,
+      "derived_path": "source/locale/fa-IR/standalone/generated-source-corrections/content/first-order-logic/natural-deduction/proof-theoretic-notions.tex",
+      "derived_sha256": "f2a8e75bf7de57e7eecfae04d0c2c8667b2fe8027fbaf614344925dc558e4952",
+      "rules": [
+        {
+          "finding_id": "OLVIS-0091",
+          "original_sha256": "29bcc9e6e38220c5b75c90b53f341cdedbf62bea6b6a80d01439abb07820e498",
+          "replacement_sha256": "a4f664fdb7574555f01246865c42d08d8c16b61efb089d3c2863549f82b2464f"
+        }
+      ],
+      "source_bytes": 6435,
+      "source_id": "OLP-0091",
+      "source_path": "source/locale/fa-IR/content/first-order-logic/natural-deduction/proof-theoretic-notions.tex",
+      "source_sha256": "462e7eae7f7167718d48dbeaa322f31d2d13a0372b71ea169812a9f284dca178",
+      "utf8_bom_preserved": false
+    },
+    {
+      "derived_bytes": 17773,
+      "derived_path": "source/locale/fa-IR/standalone/generated-source-corrections/content/first-order-logic/syntax-and-semantics/assignments.tex",
+      "derived_sha256": "942fd3b03a2810b20f9e7c6194c7b55b03fe7f31c1db273de9114deea981be76",
+      "rules": [
+        {
+          "finding_id": "OLVIS-0164",
+          "original_sha256": "197dd8b2663a7682f9017c48aa24c9117026240f85b2306e80e74c3ebf7659ce",
+          "replacement_sha256": "006615b3a50462d13f5a5c2da97c1dcc8a067dd81fe7620357f934a1936a27b8"
+        }
+      ],
+      "source_bytes": 17601,
+      "source_id": "OLP-0164",
+      "source_path": "source/locale/fa-IR/content/first-order-logic/syntax-and-semantics/assignments.tex",
+      "source_sha256": "b177da8800cbd10172d1174075c55a2f5ecd68b6231451ca4847f785b8f4dea7",
+      "utf8_bom_preserved": false
+    },
+    {
+      "derived_bytes": 6589,
+      "derived_path": "source/locale/fa-IR/standalone/generated-source-corrections/content/first-order-logic/syntax-and-semantics/extensionality.tex",
+      "derived_sha256": "cd67b8c8c37ae868815aa32ad6eabfe3b7091b020614ca69be72b2c5cda3f5a3",
+      "rules": [
+        {
+          "finding_id": "OLVIS-0165",
+          "original_sha256": "3b1168190c9e85e906bf0d98de9a84dd05b5869189a777a5a2dad61e7d9b98f4",
+          "replacement_sha256": "bae983030f9e5116434e66acc32e9609f68542c7f89d78628f624f5f5b44b540"
+        }
+      ],
+      "source_bytes": 6423,
+      "source_id": "OLP-0165",
+      "source_path": "source/locale/fa-IR/content/first-order-logic/syntax-and-semantics/extensionality.tex",
+      "source_sha256": "d74041167152da05317cb088d33aafb03d596909d59147bc747951ebed3a5f81",
+      "utf8_bom_preserved": false
+    },
+    {
+      "derived_bytes": 14238,
+      "derived_path": "source/locale/fa-IR/standalone/generated-source-corrections/content/incompleteness/arithmetization-syntax/proofs-in-lk.tex",
+      "derived_sha256": "1d21daddc60589ed2593fa71d5c2bc1ea445dd50600e2b9b17d81ceea5acf5b4",
+      "rules": [
+        {
+          "finding_id": "OLVIS-0286",
+          "original_sha256": "29fc444a20701acd426706a7c0e5da37696bffa66fde3a8257e4befc20c9ca8d",
+          "replacement_sha256": "168fec467df8e97425245cb786145f56bf5982e12897f83b2ae2fdc109d00a23"
+        }
+      ],
+      "source_bytes": 14072,
+      "source_id": "OLP-0286",
+      "source_path": "source/locale/fa-IR/content/incompleteness/arithmetization-syntax/proofs-in-lk.tex",
+      "source_sha256": "4823606ada159ffd5e68e9b9680761b0674fec0a79cf3570fb2d58dea3c6d7cd",
+      "utf8_bom_preserved": false
+    },
+    {
+      "derived_bytes": 9235,
+      "derived_path": "source/locale/fa-IR/standalone/generated-source-corrections/content/lambda-calculus/lambda-definability/fixpoints.tex",
+      "derived_sha256": "4eeb8d92bd67c9ecfa18ff0353701466406d573d7af8e9c581ba84eb3b700703",
+      "rules": [
+        {
+          "finding_id": "OLVIS-0379",
+          "original_sha256": "2f42bffe0b4aaf2b5ef5ad7d8c33928e16803e24778adc396a5fa7cefa763ef2",
+          "replacement_sha256": "71b68b45f78fbc18c83267ee2228dd44e10457faac7e25998397061b84c5c8d2"
+        }
+      ],
+      "source_bytes": 9093,
+      "source_id": "OLP-0379",
+      "source_path": "source/locale/fa-IR/content/lambda-calculus/lambda-definability/fixpoints.tex",
+      "source_sha256": "11298b621b02ac40e7e3f3962fc57bfa690f21daf6f7e5feb9a57078991428c7",
+      "utf8_bom_preserved": false
+    },
+    {
+      "derived_bytes": 13027,
+      "derived_path": "source/locale/fa-IR/standalone/generated-source-corrections/content/lambda-calculus/syntax/alpha.tex",
+      "derived_sha256": "9e0a5802a442e06db4620d4d116c81fb71912d6df7a773c262ced2486d90f362",
+      "rules": [
+        {
+          "finding_id": "OLVIS-0362",
+          "original_sha256": "19f24e676c6eeac4f45bc104f4184fda1bc5cad593740f83e5e7c40ef4565745",
+          "replacement_sha256": "53161fafc5e7dfc40dd01afaa8daf5ba3507c190007e8b206d2e20bce6ed1531"
+        }
+      ],
+      "source_bytes": 12883,
+      "source_id": "OLP-0362",
+      "source_path": "source/locale/fa-IR/content/lambda-calculus/syntax/alpha.tex",
+      "source_sha256": "7dd420912e869e9aa49c71d390c687ab7270025b8b1069a6b292547aa6ec638b",
+      "utf8_bom_preserved": false
+    },
+    {
+      "derived_bytes": 4988,
+      "derived_path": "source/locale/fa-IR/standalone/generated-source-corrections/content/many-valued-logic/syntax-and-semantics/sublogics.tex",
+      "derived_sha256": "0d3092222d910c38f073e2555320e2e5e5f0beb7d100d9021eaec3ebd00da7b0",
+      "rules": [
+        {
+          "finding_id": "OLVIS-0391",
+          "original_sha256": "a5a1f79a562c1bed64123a7490dc4ea0b3a9f7f8b708ada141175f7167472a1d",
+          "replacement_sha256": "34d721f1c50b780796fbb69f211e6ec01e58e7f91021d4c44ce6d982f7e8e47d"
+        }
+      ],
+      "source_bytes": 4846,
+      "source_id": "OLP-0391",
+      "source_path": "source/locale/fa-IR/content/many-valued-logic/syntax-and-semantics/sublogics.tex",
+      "source_sha256": "3517f9bbafcb11b51143fb2c6ad4977004cbf838c50b20e7b74aa3a30491fa92",
+      "utf8_bom_preserved": false
+    },
+    {
+      "derived_bytes": 10093,
+      "derived_path": "source/locale/fa-IR/standalone/generated-source-corrections/content/model-theory/models-of-arithmetic/standard-models.tex",
+      "derived_sha256": "a2d3da485d8954248d1c24fe5f1e95aaf767fc3ce14afaec1c405c921ddc7169",
+      "rules": [
+        {
+          "finding_id": "OLVIS-0193",
+          "original_sha256": "a08f09d7c9121735b6fd23ca9bf79313f6244a5a806b61e2c3a3f4e8f1e35309",
+          "replacement_sha256": "1da5a31dc7440df7818395a0206e0cfa00010c2aa5a260d82991a5706a37fff0"
+        }
+      ],
+      "source_bytes": 9925,
+      "source_id": "OLP-0193",
+      "source_path": "source/locale/fa-IR/content/model-theory/models-of-arithmetic/standard-models.tex",
+      "source_sha256": "f5d94a2dff491cc5f6d8a6bb3869ea96e1abe7ac5b3a8125461e482a1feee039",
+      "utf8_bom_preserved": false
+    },
+    {
+      "derived_bytes": 6320,
+      "derived_path": "source/locale/fa-IR/standalone/generated-source-corrections/content/set-theory/choice/banach.tex",
+      "derived_sha256": "bc3d6e56c3fad56f361cf94b04049ef4bae4a6a2039361c250c9eac73a629c7d",
+      "rules": [
+        {
+          "finding_id": "OLVIS-0599",
+          "original_sha256": "a0166c7f0eda02a9b5bea4c944a68f047447da8a2ec33d02c186d376b65903d4",
+          "replacement_sha256": "846ae52c1ed7e78a18d5a5779e77bec3358d62e849e36caa9c4ef6f321d16046"
+        }
+      ],
+      "source_bytes": 6178,
+      "source_id": "OLP-0599",
+      "source_path": "source/locale/fa-IR/content/set-theory/choice/banach.tex",
+      "source_sha256": "73d279e7d0ac690b685d232aa5817aa5bae2934c70f8d7dc83a6a488298dc421",
+      "utf8_bom_preserved": false
+    },
+    {
+      "derived_bytes": 8858,
+      "derived_path": "source/locale/fa-IR/standalone/generated-source-corrections/content/set-theory/replacement/absinf.tex",
+      "derived_sha256": "1e8ef4712c80773eeee4295b1f91f92eba8c3d3fd61b2743c067175195121e7a",
+      "rules": [
+        {
+          "finding_id": "OLVIS-0570",
+          "original_sha256": "2bf1aa7d70ad601e0af0f23ac2c6ac5de8f22e12d92549a2a0335731e16f588a",
+          "replacement_sha256": "06a52661c47161df91752826be89afba5669e304555c694fb6eb72d7d7520315"
+        }
+      ],
+      "source_bytes": 8716,
+      "source_id": "OLP-0570",
+      "source_path": "source/locale/fa-IR/content/set-theory/replacement/absinf.tex",
+      "source_sha256": "ad0f7d5272b418c04a6be416df53aab0a10df5922c5c041bc77c3500dd63fcff",
+      "utf8_bom_preserved": false
+    },
+    {
+      "derived_bytes": 5053,
+      "derived_path": "source/locale/fa-IR/standalone/generated-source-corrections/content/set-theory/replacement/limofsize.tex",
+      "derived_sha256": "7c211fd5d451e6b5b5afc99fd370bb047e399d7639f710d1763566709c3793e4",
+      "rules": [
+        {
+          "finding_id": "OLVIS-0569",
+          "original_sha256": "db4d78da2fc0e1dd1f7fb2730f6ee9b298bea134537a8985a757cc6f1e9012ed",
+          "replacement_sha256": "9007b1631da301da2537b28b32b65a5c50c21c7fc762e4b9c06bd67a8ff5da1a"
+        }
+      ],
+      "source_bytes": 4911,
+      "source_id": "OLP-0569",
+      "source_path": "source/locale/fa-IR/content/set-theory/replacement/limofsize.tex",
+      "source_sha256": "6f6adeca73424069e15ef08d01fd6c53152859c5b50df348a3196c434888cab2",
+      "utf8_bom_preserved": false
+    },
+    {
+      "derived_bytes": 14485,
+      "derived_path": "source/locale/fa-IR/standalone/generated-source-corrections/content/turing-machines/undecidability/trakhtenbrot.tex",
+      "derived_sha256": "7de6fffd411153130adbeacdde76daae2d1b568d3c08cdb393b815df64e86a17",
+      "rules": [
+        {
+          "finding_id": "OLVIS-0273",
+          "original_sha256": "2fe07f85c39a9165272b4c0699c1188b8ee8fe560a153eac8e49d730545c7fa3",
+          "replacement_sha256": "d3f8cad77a3fe620cfbb59811e1de9bed887d9d9d9492df584dee63377912fe1"
+        }
+      ],
+      "source_bytes": 14343,
+      "source_id": "OLP-0273",
+      "source_path": "source/locale/fa-IR/content/turing-machines/undecidability/trakhtenbrot.tex",
+      "source_sha256": "842bdfb7b060d3b09c37a16db8580825097d00d76e5c37c3ba56ed14b20ea1ac",
+      "utf8_bom_preserved": false
+    }
+  ],
+  "generator_path": "build/generate_source_correction_overlays.py",
+  "generator_sha256": "142f98e3f89b615e7cb308692a18688ebbbcbd40da569844b92bee851938c2bd",
+  "overlay_path": "source/locale/fa-IR/standalone/source-corrections.tex",
+  "overlay_sha256": "31aa63c81c38709d90ee68302f391548098094f5d1a26757bb6b3dfd3d0ea410",
+  "physical_correction_events": 24,
+  "policy": "Frozen localized sources are untouched; exact hash-pinned substitutions are materialized before TeX tokenization.",
+  "schema": "farsi-standalone-derived-source-corrections/1.0.0",
+  "source_files": 18
+}

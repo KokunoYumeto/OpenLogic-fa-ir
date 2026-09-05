@@ -1,0 +1,89 @@
+% Shared regression fixture. Build ONLY through the machine-wide TeX guard.
+\documentclass[14pt,oneside,openany]{memoir}
+\usepackage{fontspec}
+\usepackage[english,bidi=basic,layout=sectioning lists contents footnotes captions tabular]{babel}
+\babelprovide[import=fa,main,onchar=ids fonts]{persian}
+\babelfont{rm}[Ligatures=TeX]{TeX Gyre Pagella}
+\babelfont{sf}{TeX Gyre Heros}
+\babelfont{tt}{Latin Modern Mono}
+\babelfont[persian]{rm}[
+  Path=C:/interlanguage-production/openlogic-farsi-standalone/repo/00_control/fonts/scheherazade-2.100/,
+  UprightFont=Scheherazade-Regular.ttf,BoldFont=Scheherazade-Bold.ttf,
+  AutoFakeSlant=0.15,Renderer=HarfBuzz,Scale=1.08]{Scheherazade-Regular.ttf}
+\usepackage[authoryear]{natbib}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=red,citecolor=green,urlcolor=darkgray]{hyperref}
+\setstocksize{11in}{8.5in}
+\settrimmedsize{11in}{8.5in}{*}
+\settypeblocksize{650pt}{468pt}{*}
+\setlrmargins{73.1475pt}{*}{*}
+\setulmargins{72.485pt}{*}{*}
+\checkandfixthelayout[fixed]
+\input{C:/interlanguage-production/openlogic-farsi-standalone/repo/build/probes/link-geometry/link-geometry-intervention.tex}
+\newcommand{\GRef}[1]{\hyperlink{fixture.n#1}{#1}}
+\newcommand{\GNamedRef}[1]{\hyperlink{fixture.n#1}{گزارهٔ #1}}
+\newcommand{\GList}{\GNamedRef{9.21}، \GRef{10.19}، \GRef{11.19} و \GRef{12.26}}
+\newcommand{\GSample}[1]{%
+  \par\noindent\begin{minipage}{#1}\raggedleft
+  این نتیجه از \GList{} به دست می‌آید. برای توضیح بیشتر به \GNamedRef{41.10}،
+  \GRef{41.13}، \GRef{41.15} و \GRef{41.17} نگاه کنید.
+  \end{minipage}\par\medskip}
+% Seed the same public natbib interface normally read from AUX so this probe
+% has resolved author-year labels even in one guarded Diagnostic pass.
+\AtBeginDocument{%
+  \bibcite{Cantor1892}{{1}{1892}{{Cantor}}{{}}}%
+  \bibcite{Frege1884}{{2}{1884}{{Frege}}{{}}}%
+  \bibcite{Benacerraf1965}{{3}{1965}{{Benacerraf}}{{}}}%
+  \bibcite{Magnus2021}{{4}{2021}{{Magnus et al.}}{{}}}%
+  \bibcite{Solow2013}{{5}{2013}{{Solow}}{{}}}%
+  \bibcite{Hammack2013}{{6}{2013}{{Hammack}}{{}}}%
+}
+\begin{document}
+\chapter*{آزمون هندسهٔ پیوندها}
+\noindent\babelsublr{MODE \OLLinkProbeMode}\par
+\GSample{468pt}\GSample{350pt}\GSample{260pt}\GSample{190pt}
+\noindent این جمله نیز برای آزمون پاورقی است\footnote{متن پاورقی و \GNamedRef{11.19}.}
+و در فرمول \(A_{\text{\GRef{11.19}}}\) شماره نباید تغییر کند.
+\newpage
+\chapter*{آزمون استنادها و پیوندهای برون‌متنی}
+\noindent\begin{minipage}{468pt}\raggedleft
+این دیدگاه را \citet{Cantor1892} بیان کرده است؛ برای توضیح بیشتر
+\citep{Frege1884,Benacerraf1965,Magnus2021} را ببینید.
+در این جمله نیز به \citet{Solow2013} و \citet{Hammack2013} ارجاع می‌دهیم.
+\end{minipage}\par\medskip
+\noindent\begin{minipage}{190pt}\raggedleft
+این دیدگاه را \citet{Cantor1892} بیان کرده است؛ برای توضیح بیشتر
+\citep{Frege1884,Benacerraf1965,Magnus2021} را ببینید.
+\end{minipage}\par\bigskip
+\noindent\begin{minipage}{260pt}\raggedleft
+نشانی خام:
+\url{https://example.org/logic/sets/relations/a-very-long-reference-name?edition=persian&mode=standalone}
+\par عنوان انگلیسی:
+\href{https://example.org/book-of-proof}{Book of Proof and Mathematical Reasoning: A Long Linked Title}
+\par عنوان انگلیسی در جهت صریح:
+\foreignlanguage{english}{\href{https://example.org/explicit-ltr-title}{Book of Proof and Mathematical Reasoning: A Long Linked Title}}
+\par عنوان فارسی:
+\href{https://example.org/persian-title}{این عنوان فارسی برای آزمون شکستن پیوند بلند در چند سطر نوشته شده است.}
+\end{minipage}
+\newpage
+\chapter*{مقصدهای آزمون}
+\hypertarget{fixture.n9.21}{گزارهٔ 9.21}\par
+\hypertarget{fixture.n10.19}{گزارهٔ 10.19}\par
+\hypertarget{fixture.n11.19}{گزارهٔ 11.19}\par
+\hypertarget{fixture.n12.26}{گزارهٔ 12.26}\par
+\hypertarget{fixture.n41.10}{گزارهٔ 41.10}\par
+\hypertarget{fixture.n41.13}{گزارهٔ 41.13}\par
+\hypertarget{fixture.n41.15}{گزارهٔ 41.15}\par
+\hypertarget{fixture.n41.17}{گزارهٔ 41.17}\par
+\begin{otherlanguage}{english}
+\begin{thebibliography}{9}
+\bibitem[Cantor(1892)]{Cantor1892} Cantor. 1892. Fixture bibliography entry.
+\bibitem[Frege(1884)]{Frege1884} Frege. 1884. Fixture bibliography entry.
+\bibitem[Benacerraf(1965)]{Benacerraf1965} Benacerraf. 1965. Fixture bibliography entry.
+\bibitem[Magnus et al.(2021)]{Magnus2021} Magnus et al. 2021. Fixture bibliography entry.
+\bibitem[Solow(2013)]{Solow2013} Solow. 2013. Fixture bibliography entry.
+\bibitem[Hammack(2013)]{Hammack2013} Hammack. 2013. Fixture bibliography entry.
+\end{thebibliography}
+\end{otherlanguage}
+\end{document}

@@ -1,0 +1,399 @@
+% Additive, source-unit-scoped BiDi/layout corrections for the standalone reader.
+% Frozen localized sources and the shared Open Logic configuration remain exact.
+% Every intervention is installed only inside its dispatcher's per-unit group and
+% is counted in a dedicated fail-closed runtime trace.
+\ExplSyntaxOn
+\prop_new:N \g_olsa_bidi_layout_expected_prop
+\prop_new:N \g_olsa_bidi_layout_seen_prop
+\seq_new:N \g_olsa_bidi_layout_expected_order_seq
+\iow_new:N \g_olsa_bidi_layout_iow
+\int_new:N \g_olsa_bidi_layout_expected_total_int
+\int_new:N \g_olsa_bidi_layout_proof_target_int
+\bool_new:N \g_olsa_bidi_layout_started_bool
+\bool_new:N \g_olsa_bidi_layout_verified_bool
+\tl_new:N \l_olsa_bidi_layout_key_tl
+\tl_new:N \l_olsa_bidi_layout_expected_tl
+\tl_new:N \l_olsa_bidi_layout_seen_tl
+\tl_new:N \l_olsa_bidi_layout_toc_tl
+\tl_new:N \l_olsa_bidi_layout_deferred_namespace_tl
+\int_new:N \l_olsa_bidi_layout_toc_total_int
+\int_new:N \l_olsa_bidi_layout_toc_first_int
+\int_new:N \l_olsa_bidi_layout_toc_second_int
+\cs_generate_variant:Nn \prop_gput:Nnn {NVV}
+\cs_generate_variant:Nn \seq_gput_right:Nn {NV}
+\cs_generate_variant:Nn \regex_count:nnN {nVN}
+\cs_generate_variant:Nn \regex_match:nnTF {nV}
+
+\NewDocumentCommand \OLSABidiLayoutExpect {m m m}
+ {
+  \tl_set:Nx \l_olsa_bidi_layout_key_tl {#1|#2}
+  \prop_if_in:NVTF \g_olsa_bidi_layout_expected_prop
+    \l_olsa_bidi_layout_key_tl
+   {\PackageError{standalone-bidi-layout}{Duplicate~event~registration~\l_olsa_bidi_layout_key_tl}{Each~layout~event~must~have~one~exact~source-scoped~contract.}}
+   {
+    \int_compare:nNnTF {#3}>{0}
+     {
+      \prop_gput:NVn \g_olsa_bidi_layout_expected_prop
+        \l_olsa_bidi_layout_key_tl {#3}
+      \seq_gput_right:NV \g_olsa_bidi_layout_expected_order_seq
+        \l_olsa_bidi_layout_key_tl
+      \int_gadd:Nn \g_olsa_bidi_layout_expected_total_int {#3}
+     }
+     {\PackageError{standalone-bidi-layout}{Nonpositive~event~count~for~\l_olsa_bidi_layout_key_tl}{Use~the~pinned~source~occurrence~count.}}
+   }
+ }
+
+\cs_new_protected:Npn \olsa_bidi_layout_record:nn #1#2
+ {
+  \bool_if:NF \g_olsa_bidi_layout_started_bool
+   {\PackageError{standalone-bidi-layout}{Event~before~trace~start}{Call~OLSABidiLayoutStart~from~the~standalone~runtime.}}
+  \tl_set:Nx \l_olsa_bidi_layout_key_tl {#1|#2}
+  \prop_get:NVNTF \g_olsa_bidi_layout_expected_prop
+    \l_olsa_bidi_layout_key_tl \l_olsa_bidi_layout_expected_tl
+   {
+    \prop_get:NVNTF \g_olsa_bidi_layout_seen_prop
+      \l_olsa_bidi_layout_key_tl \l_olsa_bidi_layout_seen_tl
+      {}{\tl_set:Nn \l_olsa_bidi_layout_seen_tl {0}}
+    \tl_set:Nx \l_olsa_bidi_layout_seen_tl
+      {\int_eval:n{\l_olsa_bidi_layout_seen_tl+1}}
+    \prop_gput:NVV \g_olsa_bidi_layout_seen_prop
+      \l_olsa_bidi_layout_key_tl \l_olsa_bidi_layout_seen_tl
+    \int_compare:nNnT
+      {\l_olsa_bidi_layout_seen_tl}>{\l_olsa_bidi_layout_expected_tl}
+     {\PackageError{standalone-bidi-layout}{Excess~event~\l_olsa_bidi_layout_key_tl}{The~pinned~layout~trigger~repeated~or~escaped~its~source~unit.}}
+    \iow_term:x
+      {OL-STANDALONE-BIDI-LAYOUT|#1|#2|\l_olsa_bidi_layout_seen_tl}
+    \iow_now:Nx \g_olsa_bidi_layout_iow
+      {#1|#2|\l_olsa_bidi_layout_seen_tl}
+   }
+   {\PackageError{standalone-bidi-layout}{Unexpected~event~\l_olsa_bidi_layout_key_tl}{A~layout~wrapper~ran~outside~its~exact~source~contract.}}
+ }
+
+\NewDocumentCommand \OLSABidiLayoutRecord {m}
+ {\olsa_bidi_layout_record:nn{\OLStandaloneCurrentID}{#1}}
+
+% Inspect the preexisting TOC before trace start.  A clean/legacy first pass
+% may contain neither marker and therefore has 22 rules/44 events.  A final
+% replay must contain exactly one marker for each heading, in source order; it
+% dynamically registers the two additional contracts for 24 rules/46 events.
+% Any partial, duplicate, reversed, unknown or malformed inventory fails closed.
+\cs_new_protected:Npn \olsa_bidi_layout_register_toc_contract:
+ {
+  \file_if_exist:nTF {\jobname.toc}
+   {\file_get:nnN {\jobname.toc} {\cctab_select:N \c_str_cctab} \l_olsa_bidi_layout_toc_tl}
+   {\tl_clear:N \l_olsa_bidi_layout_toc_tl}
+  \regex_count:nVN {OLSABidiLayoutTOCReplay}
+    \l_olsa_bidi_layout_toc_tl \l_olsa_bidi_layout_toc_total_int
+  \regex_count:nVN
+    {OLSABidiLayoutTOCReplay\s*\{OLP-0394\}}
+    \l_olsa_bidi_layout_toc_tl \l_olsa_bidi_layout_toc_first_int
+  \regex_count:nVN
+    {OLSABidiLayoutTOCReplay\s*\{OLP-0400\}}
+    \l_olsa_bidi_layout_toc_tl \l_olsa_bidi_layout_toc_second_int
+  \int_compare:nNnTF {\l_olsa_bidi_layout_toc_total_int}={0}
+   {}
+   {
+    \int_compare:nNnTF {\l_olsa_bidi_layout_toc_total_int}={2}
+     {
+      \int_compare:nNnTF {\l_olsa_bidi_layout_toc_first_int}={1}
+       {
+        \int_compare:nNnTF {\l_olsa_bidi_layout_toc_second_int}={1}
+         {
+          \regex_match:nVTF
+            {OLSABidiLayoutTOCReplay\s*\{OLP-0394\}.*OLSABidiLayoutTOCReplay\s*\{OLP-0400\}}
+            \l_olsa_bidi_layout_toc_tl
+           {
+            \OLSABidiLayoutExpect{OLP-0394}{lukasiewicz-name-toc-ltr}{1}
+            \OLSABidiLayoutExpect{OLP-0400}{lukasiewicz-name-toc-ltr}{1}
+           }
+           {\PackageError{standalone-bidi-layout}{Reversed~Lukasiewicz~TOC~markers}{The~two~pinned~markers~must~occur~once~in~OLP-0394,~OLP-0400~order.}}
+         }
+         {\PackageError{standalone-bidi-layout}{Malformed~Lukasiewicz~TOC~marker~inventory}{Discard~the~stale~TOC~and~run~the~owner-managed~multi-pass~build.}}
+       }
+       {\PackageError{standalone-bidi-layout}{Malformed~Lukasiewicz~TOC~marker~inventory}{Discard~the~stale~TOC~and~run~the~owner-managed~multi-pass~build.}}
+     }
+     {\PackageError{standalone-bidi-layout}{Malformed~Lukasiewicz~TOC~marker~inventory}{Discard~the~stale~TOC~and~run~the~owner-managed~multi-pass~build.}}
+   }
+ }
+
+% This robust, record-free renderer is safe in section titles, marks and the
+% serialized TOC.  Source occurrences and the two TOC replays are traced by
+% their separate exact mechanisms instead of by moving-title expansion.
+\NewDocumentCommand \OLSABidiLayoutLukasiewiczName {}
+ {\olFaLTR{Łukasiewicz}}
+
+\NewDocumentCommand \OLSABidiLayoutTOCReplay {m}
+ {
+  \str_case:nnF {#1}
+   {
+    {OLP-0394}
+      {\olsa_bidi_layout_record:nn{OLP-0394}{lukasiewicz-name-toc-ltr}}
+    {OLP-0400}
+      {\olsa_bidi_layout_record:nn{OLP-0400}{lukasiewicz-name-toc-ltr}}
+   }
+   {\PackageError{standalone-bidi-layout}{Unexpected~Lukasiewicz~TOC~marker~#1}{Only~the~two~pinned~heading~units~may~write~this~marker.}}
+ }
+
+\NewDocumentCommand \OLSABidiLayoutStart {}
+ {
+  \bool_if:NTF \g_olsa_bidi_layout_started_bool
+   {\PackageError{standalone-bidi-layout}{Trace~started~twice}{The~standalone~body~must~start~layout~QA~once.}}
+   {
+    \olsa_bidi_layout_register_toc_contract:
+    \bool_gset_true:N \g_olsa_bidi_layout_started_bool
+    \iow_open:Nn \g_olsa_bidi_layout_iow {\jobname.olbidilayout}
+    \iow_now:Nn \g_olsa_bidi_layout_iow {source_id|event|occurrence}
+   }
+ }
+
+\NewDocumentCommand \OLSABidiLayoutVerify {}
+ {
+  \bool_if:NTF \g_olsa_bidi_layout_verified_bool
+   {\PackageError{standalone-bidi-layout}{Trace~verified~twice}{The~standalone~body~must~verify~layout~QA~once.}}
+   {
+    \bool_gset_true:N \g_olsa_bidi_layout_verified_bool
+    \seq_map_inline:Nn \g_olsa_bidi_layout_expected_order_seq
+     {
+      \prop_get:NnN \g_olsa_bidi_layout_expected_prop {##1}
+        \l_olsa_bidi_layout_expected_tl
+      \prop_get:NnNTF \g_olsa_bidi_layout_seen_prop {##1}
+        \l_olsa_bidi_layout_seen_tl
+        {}{\tl_set:Nn \l_olsa_bidi_layout_seen_tl {0}}
+      \int_compare:nNnF
+        {\l_olsa_bidi_layout_seen_tl}={\l_olsa_bidi_layout_expected_tl}
+       {\PackageError{standalone-bidi-layout}{Wrong~event~count~for~##1:~\l_olsa_bidi_layout_seen_tl}{The~pinned~source~or~a~one-shot~hook~changed.}}
+     }
+    \iow_term:x
+     {OL-STANDALONE-BIDI-LAYOUT-COVERAGE|\int_eval:n{\prop_count:N\g_olsa_bidi_layout_expected_prop}|\int_use:N\g_olsa_bidi_layout_expected_total_int}
+    \iow_close:N \g_olsa_bidi_layout_iow
+   }
+ }
+
+% Preserve a deep copy of the native display closer.  The OLP-0429 wrapper
+% consumes only its one exact following U+061B and places that same token inside
+% display math; every other display closer delegates unchanged.
+\NewCommandCopy \olsa_bidi_layout_original_display_end: \]
+\NewCommandCopy \olsa_bidi_layout_original_proof: \proof
+\NewCommandCopy \olsa_bidi_layout_original_olsection: \olsection
+\NewCommandCopy \olsa_bidi_layout_original_l: \L
+\cs_new_protected:Npn \olsa_bidi_layout_display_end:
+ {
+  \peek_meaning_remove:NTF ؛
+   {
+    \OLSABidiLayoutRecord{native-display-semicolon}
+    \text{؛}\olsa_bidi_layout_original_display_end:
+   }
+   {\olsa_bidi_layout_original_display_end:}
+ }
+
+\cs_new_protected:Npn \olsa_bidi_layout_dual:
+ {
+  \OLSABidiLayoutRecordUnlessMeasuring{dual-ltr}
+  {\olFaLTR{\textsc{dual}}}
+ }
+\cs_new_protected:Npn \olsa_bidi_layout_rk:
+ {
+  \OLSABidiLayoutRecord{rk-ltr}
+  {\olFaLTR{\textsc{rk}}}\peek_catcode:NTF a {\space}{}
+ }
+
+% OLP-0371's overflowing paragraph is in its second proof.  Count proof-entry
+% calls globally because each proof environment creates a nested group; the
+% replacement of \proof itself remains local to the dispatcher unit group.
+% The 16pt assignment is therefore scoped to that one proof environment.
+\cs_new_protected:Npn \olsa_bidi_layout_proof_target:
+ {
+  \int_gincr:N \g_olsa_bidi_layout_proof_target_int
+  \int_compare:nNnT {\g_olsa_bidi_layout_proof_target_int}={2}
+   {
+    \OLSABidiLayoutRecord{second-proof-emergency-stretch}
+    \emergencystretch=16pt\relax
+   }
+  \olsa_bidi_layout_original_proof:
+ }
+
+% Consume the complete frozen source spelling after \L and emit the whole
+% Polish surname as one English/LTR span.  A changed spelling no longer matches
+% this delimited macro and consequently fails the exact runtime event contract.
+\cs_new:Npn \olsa_bidi_layout_lukasiewicz: ukasiewicz
+ {
+  \OLSABidiLayoutRecord{lukasiewicz-name-source-ltr}
+  \OLSABidiLayoutLukasiewiczName
+ }
+% The shared \LogLuk symbol expands through the original Polish-letter \L.
+% Dispatch only the exact frozen surname spelling to the whole-name renderer;
+% every other use delegates to the preserved command without consuming input.
+\cs_new_protected:Npn \olsa_bidi_layout_lukasiewicz_or_original:
+ {
+  \peek_meaning:NTF u
+   {\olsa_bidi_layout_lukasiewicz:}
+   {\olsa_bidi_layout_original_l:}
+ }
+% answers.sty serializes problem bodies and renders them only at chapter end,
+% after the source-unit group has closed.  The deferred file restores the
+% source semantic namespace before each problem.  Reinstall the same exact
+% dispatcher only for the one OLP-0394 problem carrying this surname, and
+% record it against its originating stable unit rather than ambient context.
+\cs_new:Npn \olsa_bidi_layout_lukasiewicz_deferred: ukasiewicz
+ {
+  \olsa_bidi_layout_record:nn{OLP-0394}{lukasiewicz-name-source-ltr}
+  \OLSABidiLayoutLukasiewiczName
+ }
+\cs_new_protected:Npn \olsa_bidi_layout_lukasiewicz_deferred_or_original:
+ {
+  \peek_meaning:NTF u
+   {\olsa_bidi_layout_lukasiewicz_deferred:}
+   {\olsa_bidi_layout_original_l:}
+ }
+\cs_new_protected:Npn \olsa_bidi_layout_deferred_problem_setup:
+ {
+  \tl_set:Nx \l_olsa_bidi_layout_deferred_namespace_tl
+    {\theolpart :\theolchapter :\theolsection}
+  \tl_if_eq:VnT \l_olsa_bidi_layout_deferred_namespace_tl {mvl:thr:luk}
+   {\cs_set_eq:NN \L \olsa_bidi_layout_lukasiewicz_deferred_or_original:}
+ }
+\AddToHook{env/probd/begin}{\olsa_bidi_layout_deferred_problem_setup:}
+
+% The two section occurrences are moving arguments.  Validate and consume the
+% exact frozen title, count that source occurrence once, and give the original
+% section command record-free robust long and short titles.  Thus the complete
+% LTR name, not the unit-local \L replacement, is serialized into the TOC.
+\cs_new_protected:Npn \olsa_bidi_layout_lukasiewicz_section:nnn #1#2#3
+ {
+  \IfNoValueTF{#2}
+   {
+    \tl_if_eq:nnTF {#3}{منطق~\L ukasiewicz}
+     {
+      \olsa_bidi_layout_record:nn{#1}{lukasiewicz-name-source-ltr}
+      \olsa_bidi_layout_original_olsection:
+        [منطق~\OLSABidiLayoutLukasiewiczName]
+        {منطق~\OLSABidiLayoutLukasiewiczName}
+      \addtocontents{toc}{\protect\OLSABidiLayoutTOCReplay{#1}}
+     }
+     {
+      \PackageError{standalone-bidi-layout}{Changed~Lukasiewicz~heading~in~#1}{The~pinned~heading~must~be~updated~together~with~its~TOC-safe~wrapper.}
+     }
+   }
+   {
+   \PackageError{standalone-bidi-layout}{Unexpected~optional~Lukasiewicz~heading~in~#1}{The~pinned~source~heading~has~no~optional~title.}
+   }
+ }
+\NewDocumentCommand \olsa_bidi_layout_section_first: {o m}
+ {\olsa_bidi_layout_lukasiewicz_section:nnn{OLP-0394}{#1}{#2}}
+\NewDocumentCommand \olsa_bidi_layout_section_second: {o m}
+ {\olsa_bidi_layout_lukasiewicz_section:nnn{OLP-0400}{#1}{#2}}
+
+\cs_new_protected:Npn \olsa_bidi_layout_setup_church_rosser:
+ {
+  \OLSABidiLayoutRecord{setup}
+  \int_gzero:N \g_olsa_bidi_layout_proof_target_int
+  \cs_set_eq:NN \proof \olsa_bidi_layout_proof_target:
+  \AddToHookNext{env/align/before}{\OLSAAlignLTRBefore}
+  \AddToHookNext{env/align/after}{\OLSAAlignLTRAfter}
+ }
+\cs_new_protected:Npn \olsa_bidi_layout_setup_lukasiewicz_finite:
+ {
+  \OLSABidiLayoutRecord{setup}
+  \cs_set_eq:NN \L \olsa_bidi_layout_lukasiewicz_or_original:
+  \cs_set_eq:NN \olsection \olsa_bidi_layout_section_first:
+ }
+\cs_new_protected:Npn \olsa_bidi_layout_setup_goedel:
+ {
+  \OLSABidiLayoutRecord{setup}
+  \cs_set_eq:NN \L \olsa_bidi_layout_lukasiewicz_or_original:
+ }
+\cs_new_protected:Npn \olsa_bidi_layout_setup_multiple_designation:
+ {
+  \OLSABidiLayoutRecord{setup}
+  \cs_set_eq:NN \L \olsa_bidi_layout_lukasiewicz_or_original:
+ }
+\cs_new_protected:Npn \olsa_bidi_layout_setup_lukasiewicz_infinite:
+ {
+  \OLSABidiLayoutRecord{setup}
+  \cs_set_eq:NN \L \olsa_bidi_layout_lukasiewicz_or_original:
+  \cs_set_eq:NN \olsection \olsa_bidi_layout_section_second:
+ }
+\cs_new_protected:Npn \olsa_bidi_layout_setup_sequent_rules:
+ {
+  \OLSABidiLayoutRecord{setup}
+  \cs_set_eq:NN \L \olsa_bidi_layout_lukasiewicz_or_original:
+ }
+\cs_new_protected:Npn \olsa_bidi_layout_setup_propositional_rules:
+ {
+  \OLSABidiLayoutRecord{setup}
+  \cs_set_eq:NN \L \olsa_bidi_layout_lukasiewicz_or_original:
+ }
+\cs_new_protected:Npn \olsa_bidi_layout_setup_normal_logics:
+ {
+  \OLSABidiLayoutRecord{setup}
+  \cs_set_eq:NN \] \olsa_bidi_layout_display_end:
+  \OLSABidiLayoutInstallTagForm
+  \cs_set_eq:NN \Dual \olsa_bidi_layout_dual:
+  \cs_set_eq:NN \RK \olsa_bidi_layout_rk:
+  \AddToHookNext{env/proof/begin}{\OLSABidiLayoutFirstProofLeftQED}
+ }
+\ExplSyntaxOff
+
+% Hyperref must not expand the visual LTR machinery while deriving PDF
+% strings.  The printed heading/TOC retains the exact Polish spelling.
+\pdfstringdefDisableCommands{%
+  \def\OLSABidiLayoutLukasiewiczName{Łukasiewicz}}
+
+% Tokenize Babel and amsmath internals with @ as a letter.  The align hooks
+% form one outer LTR island around OLP-0371's sole align.  The tag wrapper puts
+% both neutral parentheses and their complete payload in one LTR span.
+\makeatletter
+\newcommand*{\OLSAAlignLTRBefore}{%
+  \begingroup\bbl@setdirs\z@\OLSABidiLayoutRecord{align-ltr-before}}
+\newcommand*{\OLSAAlignLTRAfter}{%
+  \OLSABidiLayoutRecord{align-ltr-after}\endgroup}
+\newcommand*{\OLSABidiLayoutRecordUnlessMeasuring}[1]{%
+  \ifmeasuring@\else\OLSABidiLayoutRecord{#1}\fi}
+\newcommand*{\OLSABidiLayoutTagForm}[1]{%
+  \OLSABidiLayoutRecordUnlessMeasuring{tag-ltr}%
+  \maketag@@@{\olFaLTR{(\ignorespaces#1\unskip\@@italiccorr)}}}
+\newcommand*{\OLSABidiLayoutInstallTagForm}{%
+  \let\tagform@\OLSABidiLayoutTagForm}
+\newcommand*{\OLSABidiLayoutFirstProofLeftQED}{%
+  \OLSABidiLayoutRecord{first-proof-left-qed}\tagsleft@true}
+\makeatother
+
+\ExplSyntaxOn
+% Twenty-two unconditional source-scoped contracts and forty-four source
+% events.  The exact Start-time TOC scan conditionally registers two replay
+% contracts/events, producing the required final-pass 24/46 coverage.
+\OLSABidiLayoutExpect{OLP-0371}{setup}{1}
+\OLSABidiLayoutExpect{OLP-0371}{align-ltr-before}{1}
+\OLSABidiLayoutExpect{OLP-0371}{align-ltr-after}{1}
+\OLSABidiLayoutExpect{OLP-0371}{second-proof-emergency-stretch}{1}
+\OLSABidiLayoutExpect{OLP-0394}{setup}{1}
+\OLSABidiLayoutExpect{OLP-0394}{lukasiewicz-name-source-ltr}{11}
+\OLSABidiLayoutExpect{OLP-0396}{setup}{1}
+\OLSABidiLayoutExpect{OLP-0396}{lukasiewicz-name-source-ltr}{3}
+\OLSABidiLayoutExpect{OLP-0397}{setup}{1}
+\OLSABidiLayoutExpect{OLP-0397}{lukasiewicz-name-source-ltr}{1}
+\OLSABidiLayoutExpect{OLP-0400}{setup}{1}
+\OLSABidiLayoutExpect{OLP-0400}{lukasiewicz-name-source-ltr}{5}
+\OLSABidiLayoutExpect{OLP-0404}{setup}{1}
+\OLSABidiLayoutExpect{OLP-0404}{lukasiewicz-name-source-ltr}{1}
+\OLSABidiLayoutExpect{OLP-0406}{setup}{1}
+\OLSABidiLayoutExpect{OLP-0406}{lukasiewicz-name-source-ltr}{4}
+\OLSABidiLayoutExpect{OLP-0429}{setup}{1}
+\OLSABidiLayoutExpect{OLP-0429}{native-display-semicolon}{1}
+\OLSABidiLayoutExpect{OLP-0429}{tag-ltr}{2}
+\OLSABidiLayoutExpect{OLP-0429}{dual-ltr}{2}
+\OLSABidiLayoutExpect{OLP-0429}{rk-ltr}{2}
+\OLSABidiLayoutExpect{OLP-0429}{first-proof-left-qed}{1}
+
+% Declare exactly one setup per target unit.  OLP-0429 intentionally composes
+% all five local behaviors in a single setup; OLSADeclareSetup rejects any
+% earlier or later duplicate registration.
+\OLSADeclareSetup{OLP-0371}{\olsa_bidi_layout_setup_church_rosser:}
+\OLSADeclareSetup{OLP-0394}{\olsa_bidi_layout_setup_lukasiewicz_finite:}
+\OLSADeclareSetup{OLP-0396}{\olsa_bidi_layout_setup_goedel:}
+\OLSADeclareSetup{OLP-0397}{\olsa_bidi_layout_setup_multiple_designation:}
+\OLSADeclareSetup{OLP-0400}{\olsa_bidi_layout_setup_lukasiewicz_infinite:}
+\OLSADeclareSetup{OLP-0404}{\olsa_bidi_layout_setup_sequent_rules:}
+\OLSADeclareSetup{OLP-0406}{\olsa_bidi_layout_setup_propositional_rules:}
+\OLSADeclareSetup{OLP-0429}{\olsa_bidi_layout_setup_normal_logics:}
+\ExplSyntaxOff

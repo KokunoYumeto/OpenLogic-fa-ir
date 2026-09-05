@@ -1,0 +1,83 @@
+% EXPERIMENTAL PROBE ONLY. Not installed in the reader.
+% Mode 0: installed behavior. Mode 1: atomic native-direction links.
+% Mode 2: TLT boundaries around an atomic native-direction content box.
+% Mode 3: mode 2 plus LTR-only raw URL display (not arbitrary href titles).
+\makeatletter
+\ifdefined\OLLinkProbeMode\else\def\OLLinkProbeMode{0}\fi
+\newcount\OLLG@savedtextdir
+\let\OLLG@original@link\hyper@link
+\let\OLLG@original@linkstart\hyper@linkstart
+\let\OLLG@original@linkend\hyper@linkend
+\let\OLLG@original@url\url@
+\let\OLLG@cite@end\relax
+\def\OLLG@cite@type{cite}
+\long\def\OLLG@nativebox#1{\leavevmode\hbox{#1}}
+\long\def\OLLG@isolatedlink#1#2#3{%
+  \leavevmode\begingroup
+  \OLLG@savedtextdir=\bbl@thetextdir\relax
+  \hbox bdir\z@{%
+    \bbl@textdir\z@
+    \OLLG@original@link{#1}{#2}{%
+      \hbox bdir\ifcase\OLLG@savedtextdir\z@\else\@ne\fi{%
+        \bbl@textdir\OLLG@savedtextdir #3}}}%
+  \endgroup
+}
+\def\OLLG@nativecitestart#1#2{%
+  \leavevmode\begingroup
+  \let\OLLG@cite@end\OLLG@nativeciteend
+  \hbox\bgroup\OLLG@original@linkstart{#1}{#2}%
+}
+\def\OLLG@nativeciteend{%
+  \OLLG@original@linkend\egroup\endgroup
+}
+\def\OLLG@isolatedcitestart#1#2{%
+  \leavevmode\begingroup
+  \OLLG@savedtextdir=\bbl@thetextdir\relax
+  \let\OLLG@cite@end\OLLG@isolatedciteend
+  \hbox bdir\z@\bgroup
+    \bbl@textdir\z@
+    \OLLG@original@linkstart{#1}{#2}%
+    \hbox bdir\ifcase\OLLG@savedtextdir\z@\else\@ne\fi\bgroup
+      \bbl@textdir\OLLG@savedtextdir
+}
+\def\OLLG@isolatedciteend{%
+  \egroup\OLLG@original@linkend\egroup\endgroup
+}
+\newcommand*{\OLLinkGeometryInstall}[1]{%
+\def\OLLinkProbeMode{#1}%
+\ifnum\OLLinkProbeMode>0
+  \ifnum\OLLinkProbeMode=1
+    \long\def\hyper@link##1##2##3{%
+      \OLLG@nativebox{\OLLG@original@link{##1}{##2}{##3}}}%
+    \let\OLLG@citestart\OLLG@nativecitestart
+  \else
+    \let\hyper@link\OLLG@isolatedlink
+    \let\OLLG@citestart\OLLG@isolatedcitestart
+  \fi
+  % Only citation start/end pairs are boxed. TOC start/end pairs remain raw:
+  % whole-entry boxing would disable legitimate title wrapping.
+  \def\hyper@linkstart##1##2{%
+    \def\OLLG@this@type{##1}%
+    \ifx\OLLG@this@type\OLLG@cite@type
+      \expandafter\OLLG@citestart
+    \else
+      \expandafter\OLLG@original@linkstart
+    \fi{##1}{##2}%
+  }
+  \def\hyper@linkend{%
+    \ifx\OLLG@cite@end\relax
+      \expandafter\OLLG@original@linkend
+    \else
+      \expandafter\OLLG@cite@end
+    \fi
+  }
+\fi
+\ifnum\OLLinkProbeMode>2
+  % hyperref.sty url@ receives already-normalized URL tokens. Preserve Hurl
+  % break opportunities; do not force arbitrary Persian href text into LTR.
+  \def\url@##1{\begingroup\bbl@textdir\z@\OLLG@original@url{##1}\endgroup}
+\fi
+\typeout{OL-LINK-GEOMETRY-PROBE-MODE=\OLLinkProbeMode}
+}
+\expandafter\OLLinkGeometryInstall\expandafter{\OLLinkProbeMode}
+\makeatother
