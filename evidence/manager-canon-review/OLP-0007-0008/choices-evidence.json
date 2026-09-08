@@ -1,0 +1,1666 @@
+{
+  "schema": "public-openlogic-fa-batch-review/1",
+  "identities": [
+    {
+      "unit": "OLP-0007",
+      "source_commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+      "source_path": "content/sets-functions-relations/sets/important-sets.tex",
+      "source_git_LF_sha256": "ec2115fa48ea6c6684a65bdf2f504102ca0a74b40cf88293dfc12f4ab97ada02",
+      "source_ledger_CRLF_sha256": "b1b998cad3fa5aef48670f755245f86efe00b239d332a50e764147602405fb32",
+      "published_target_sha256": "cdc437750fe229d26db7e8fd8651350549906375b0af744b4058af1b4eaf9f84",
+      "candidate_sha256": "cdc437750fe229d26db7e8fd8651350549906375b0af744b4058af1b4eaf9f84",
+      "published_target_bytes": 3736,
+      "candidate_bytes": 3736,
+      "R3_member": "source/locale/fa-IR/content/sets-functions-relations/sets/important-sets.tex",
+      "R3_archive_sha256": "ef32f359fe7813d0ffef11f3936fb1498f2f3cdcc176ab2acb56b969360c9e59",
+      "locale_config_sha256": "c8df8c39abbd1ab36dbac380490b72e9b3c565bbd1ec3d1f1be88bdc300abd0b",
+      "math_spans": 26,
+      "aligned_choices": 9,
+      "math_text_pairs": [
+        {
+          "math_span": 0,
+          "source": "the set of natural numbers",
+          "target": "مجموعهٔ اعداد طبیعی",
+          "review": "Exact wording reviewed in the aligned choice, not accepted by token masking alone"
+        },
+        {
+          "math_span": 0,
+          "source": "the set of integers",
+          "target": "مجموعهٔ اعداد صحیح",
+          "review": "Exact wording reviewed in the aligned choice, not accepted by token masking alone"
+        },
+        {
+          "math_span": 0,
+          "source": " and ",
+          "target": " و ",
+          "review": "Exact wording reviewed in the aligned choice, not accepted by token masking alone"
+        },
+        {
+          "math_span": 0,
+          "source": "the set of rationals",
+          "target": "مجموعهٔ اعداد گویا",
+          "review": "Exact wording reviewed in the aligned choice, not accepted by token masking alone"
+        },
+        {
+          "math_span": 0,
+          "source": "the set of real numbers (the continuum)",
+          "target": "مجموعهٔ اعداد حقیقی (پیوستار)",
+          "review": "Exact wording reviewed in the aligned choice, not accepted by token masking alone"
+        }
+      ]
+    },
+    {
+      "unit": "OLP-0008",
+      "source_commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+      "source_path": "content/sets-functions-relations/sets/unions-and-intersections.tex",
+      "source_git_LF_sha256": "e556ac6add69b1e6d41123eb05be4adb15f2dc120a3782a721caeab42dbc4529",
+      "source_ledger_CRLF_sha256": "2ad0eec70308ceeff2a4158b2dee60e59a9b1cf9268fc95c4bb1da05f65ad60d",
+      "published_target_sha256": "1015c403db83903e04890fe7cb9b28abf3ac2e2a4a32e652bce62224c0a1ead5",
+      "candidate_sha256": "3a91917ec9b63562d9d2094be8bebd7dc742a8ba96c1318328c69aa6efb3609b",
+      "published_target_bytes": 8242,
+      "candidate_bytes": 8947,
+      "R3_member": "source/locale/fa-IR/content/sets-functions-relations/sets/unions-and-intersections.tex",
+      "R3_archive_sha256": "ef32f359fe7813d0ffef11f3936fb1498f2f3cdcc176ab2acb56b969360c9e59",
+      "locale_config_sha256": "c8df8c39abbd1ab36dbac380490b72e9b3c565bbd1ec3d1f1be88bdc300abd0b",
+      "math_spans": 72,
+      "aligned_choices": 19,
+      "math_text_pairs": [
+        {
+          "math_span": 43,
+          "source": " belongs to !!a{element} of ",
+          "target": " متعلق به !!a{element}ی از ",
+          "review": "Exact wording reviewed in the aligned choice, not accepted by token masking alone"
+        },
+        {
+          "math_span": 43,
+          "source": " i.e.,",
+          "target": " یعنی",
+          "review": "Exact wording reviewed in the aligned choice, not accepted by token masking alone"
+        },
+        {
+          "math_span": 43,
+          "source": "there is a ",
+          "target": "یک ",
+          "review": "Exact wording reviewed in the aligned choice, not accepted by token masking alone"
+        },
+        {
+          "math_span": 43,
+          "source": " so that ",
+          "target": " وجود دارد به‌طوری‌که ",
+          "review": "Exact wording reviewed in the aligned choice, not accepted by token masking alone"
+        },
+        {
+          "math_span": 47,
+          "source": " belongs to every !!{element} of ",
+          "target": " متعلق به هر !!{element} از ",
+          "review": "Exact wording reviewed in the aligned choice, not accepted by token masking alone"
+        },
+        {
+          "math_span": 47,
+          "source": " i.e.,",
+          "target": " یعنی",
+          "review": "Exact wording reviewed in the aligned choice, not accepted by token masking alone"
+        },
+        {
+          "math_span": 47,
+          "source": "for all ",
+          "target": "برای هر ",
+          "review": "Exact wording reviewed in the aligned choice, not accepted by token masking alone"
+        },
+        {
+          "math_span": 56,
+          "source": " belongs to one of the ",
+          "target": " متعلق به یکی از مجموعه‌های ",
+          "review": "Exact wording reviewed in the aligned choice, not accepted by token masking alone"
+        },
+        {
+          "math_span": 56,
+          "source": " belongs to every ",
+          "target": " متعلق به همهٔ مجموعه‌های ",
+          "review": "Exact wording reviewed in the aligned choice, not accepted by token masking alone"
+        },
+        {
+          "math_span": 69,
+          "source": " and ",
+          "target": " و ",
+          "review": "Exact wording reviewed in the aligned choice, not accepted by token masking alone"
+        }
+      ]
+    }
+  ],
+  "canon": {
+    "documents": [
+      {
+        "document_id": "FA-OL-CANON-0003",
+        "title_fa": "نظریهٔ مجموعه‌ها",
+        "title_en": "Set Theory",
+        "authors": [
+          "محسن خانی",
+          "افشین زارعی"
+        ],
+        "institution": "دانشگاه صنعتی اصفهان",
+        "date_statement": "۱۸ خرداد ۱۴۰۰",
+        "source_url": "https://khani.iut.ac.ir/sites/khani.iut.ac.ir/files//u145/jozve-kamel.pdf",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+        "pdf_bytes": 413763,
+        "licence_status": "No explicit redistribution licence identified; retain locally and cite only."
+      },
+      {
+        "document_id": "FA-OL-CANON-0001",
+        "title_fa": "منطق ریاضی",
+        "title_en": "Mathematical Logic",
+        "authors": [
+          "محسن خانی"
+        ],
+        "institution": "دانشگاه صنعتی اصفهان",
+        "date_statement": "۳۰ دی ۱۴۰۲",
+        "source_url": "https://khani.iut.ac.ir/sites/khani.iut.ac.ir/files//u145/chapter2_0.pdf",
+        "pdf_sha256": "0f3fb75ed1fcb0cbc669c04493acf520888e1ebfd62795bb28fc510bc41c7e79",
+        "pdf_bytes": 759905,
+        "licence_status": "No explicit redistribution licence identified; retain locally and cite only."
+      },
+      {
+        "document_id": "FA-OL-CANON-0005",
+        "title_fa": "مبانی منطق و نظریهٔ مجموعه‌ها",
+        "title_en": "Foundations of Logic and Set Theory",
+        "authors": [
+          "محسن خانی"
+        ],
+        "institution": "دانشگاه صنعتی اصفهان",
+        "date_statement": "نیمسال اول ۱۳۹۷–۱۳۹۸",
+        "source_url": "https://mohsen-khani.github.io/logic97-1/jozve/logic-full.pdf",
+        "pdf_sha256": "565558b76701858236844f19663de27ee10a8d72fd8b007e69b85159ac49f86d",
+        "pdf_bytes": 1514008,
+        "licence_status": "Public repository contains no top-level licence file; retain locally and cite only."
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "FA-OL-CANON-0003:P0010",
+        "pdf_page_1based": 10,
+        "printed_page": 9,
+        "location": "Bottom clauses (a)-(b), and Russell statement above",
+        "short_attestation": "اجتماع",
+        "relevance_and_limits": "Membership implication defines inclusion and disjunction defines union. Arbitrary abstraction defines a class, not necessarily a set.",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+        "normalized_search_page_sha256": "6bc413af43ba6573a6f3086f8533c9b19a05f7f46ad5d0b450880075a20bd529",
+        "visual_page_read": true,
+        "render_sha256": "c444f91ccbcb38bdd36590c618e0db68ef462074fc729c1023614617025001a7"
+      },
+      {
+        "passage_id": "FA-OL-CANON-0003:P0011",
+        "pdf_page_1based": 11,
+        "printed_page": 10,
+        "location": "Clauses (c)-(h), specification axiom and consequence 8",
+        "short_attestation": "اشتراک",
+        "relevance_and_limits": "Conjunction defines intersection; membership/nonmembership defines difference. Family union uses existential membership, family intersection universal implication. These are class definitions. Intersection of a set with a class is a set; V is not a set.",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+        "normalized_search_page_sha256": "8a8d5671fd2458be1f5fa53a6ad2d0c53718e0e5d8a81d1f74274e451b9af220",
+        "visual_page_read": true,
+        "render_sha256": "34460ba2c567c804c0838a27811c2181f2d11834150d07c0ec6cb033c6cad4d0"
+      },
+      {
+        "passage_id": "FA-OL-CANON-0003:P0024",
+        "pdf_page_1based": 24,
+        "printed_page": 23,
+        "location": "Middle paragraph before definition 3",
+        "short_attestation": "هیچ عنصری",
+        "relevance_and_limits": "Actual scholarly no-element syntax uses a singular indefinite noun. Supports local هیچ عضو مشترکی without changing the edition-wide vocabulary.",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+        "normalized_search_page_sha256": "96362f367446b7f7f217e3b52119a02579200eff2d201a4ba3b68365c93057ab",
+        "visual_page_read": true,
+        "render_sha256": "09dbe50bfcc589fd916d17795cca51f2b2fa15f35e8d2661d2d5f174e914b585"
+      },
+      {
+        "passage_id": "FA-OL-CANON-0003:P0046",
+        "pdf_page_1based": 46,
+        "printed_page": 45,
+        "location": "Peano theorem 36 and bottom definition 38",
+        "short_attestation": "دنباله‌ی متناهی",
+        "relevance_and_limits": "Naturals include zero. A sequence is omega-indexed; a finite sequence has a natural-number domain. Does not attest رشته or رشته تهی.",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+        "normalized_search_page_sha256": "1d2a2c92f26245c9b555195655e39af1aa6ef8a5f7d415cfbfcb17b982eea6c8",
+        "visual_page_read": true,
+        "render_sha256": "a134eaff311964b754104738c18bccb948ccbd1312a763581e5ef0674cfa7e85"
+      },
+      {
+        "passage_id": "FA-OL-CANON-0003:P0054",
+        "pdf_page_1based": 54,
+        "printed_page": 53,
+        "location": "Opening CH paragraph and section 5.2",
+        "short_attestation": "فرضیه‌ی پیوستار",
+        "relevance_and_limits": "Attests پیوستار in continuum hypothesis and uses indexed unions/cardinal operations. Does not directly attest the parenthetical name of R or مجموعهٔ اندیس.",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+        "normalized_search_page_sha256": "0c7cbe6021803db2864b400b1b1997b9b8a015abcac205b88621554f34a5c894",
+        "visual_page_read": true,
+        "render_sha256": "416c195bd9502477d06a98d7af84060cf1a163e1cbe5b0a5ab12d7aabbc12922"
+      },
+      {
+        "passage_id": "FA-OL-CANON-0001:P0004",
+        "pdf_page_1based": 4,
+        "printed_page": 3,
+        "location": "Grammar introduction and first-order-language section",
+        "short_attestation": "الفبا",
+        "relevance_and_limits": "Letters form words under rules, then sentences. Supports alphabet and letter vocabulary, not an exact string-term attestation.",
+        "pdf_sha256": "0f3fb75ed1fcb0cbc669c04493acf520888e1ebfd62795bb28fc510bc41c7e79",
+        "normalized_search_page_sha256": "70b166185131decf3302ed3be676b4ca4b8d7f2f123bfa5c2248f84c1287f103",
+        "visual_page_read": true,
+        "render_sha256": "2f1769ef65f2a3825a8a4b0cf6955ef8c7436d34edee2a7452265fc6b57c297d"
+      },
+      {
+        "passage_id": "FA-OL-CANON-0001:P0013",
+        "pdf_page_1based": 13,
+        "printed_page": 12,
+        "location": "Examples 19-20 and exercises 21-22",
+        "short_attestation": "مجموعه اعداد گویا",
+        "relevance_and_limits": "Native integer-group, rational, natural and real domains and mathematical expository register.",
+        "pdf_sha256": "0f3fb75ed1fcb0cbc669c04493acf520888e1ebfd62795bb28fc510bc41c7e79",
+        "normalized_search_page_sha256": "2ee676b55e202533816647d7022bf630a61dc8dcd9764f40a7ef0d21bad40789",
+        "visual_page_read": true,
+        "render_sha256": "37088a2feefb564593d74a3a9d621ab56ba12b69fb433a40782bfb54179d7998"
+      },
+      {
+        "passage_id": "FA-OL-CANON-0005:P0084",
+        "pdf_page_1based": 84,
+        "printed_page": 84,
+        "location": "Opening integer/rational construction and definition 200",
+        "short_attestation": "اعداد صحیح",
+        "relevance_and_limits": "Number-family vocabulary and عضو/عنصر set exposition. Do not adopt the informal real-as-Cauchy-sequence sentence: it suppresses equivalence classes.",
+        "pdf_sha256": "565558b76701858236844f19663de27ee10a8d72fd8b007e69b85159ac49f86d",
+        "normalized_search_page_sha256": "b94f38d22b17d76ce358de055b1c12eb5fd9653c1c9178bb0c0a55d68c14d0fb",
+        "visual_page_read": true,
+        "render_sha256": "9ef0046cfeb56400d054b7296ddc1c23d652222c72c30e7f8b0427a3908a5ee2"
+      }
+    ]
+  },
+  "choices": [
+    {
+      "topic": "Heading and mathematical objects",
+      "canon": [
+        "FA-OL-CANON-0005:P0084",
+        "FA-OL-CANON-0001:P0013"
+      ],
+      "rationale": "The descriptive heading and سروکار داشتن retain adult exposition. همهٔ اعضا has plural scope. The canon itself uses both عضو and عنصر; no global term substitution is justified.",
+      "alternatives": "Do not force عنصر everywhere or replace the full sentence with word-by-word equivalents.",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Source meaning and the cited native mathematical construction agree.",
+      "id": "FA-0007-C01",
+      "unit": "OLP-0007",
+      "source": {
+        "char_start": 182,
+        "char_end_exclusive": 367,
+        "line_start": 10,
+        "line_end": 16,
+        "text": "\\olsection{Some Important Sets}\n\n\\begin{ex}\nWe will mostly be dealing with sets whose !!{element}s are\nmathematical objects. Four such sets are important enough to have\nspecific names:\n",
+        "sha256": "22e0bbff00a16688681867e51235a6cd84e121d74d2f4f02e02663026dbea788"
+      },
+      "target_before": {
+        "char_start": 189,
+        "char_end_exclusive": 384,
+        "line_start": 10,
+        "line_end": 16,
+        "text": "\\olsection{برخی مجموعه‌های مهم}\n\n\\begin{ex}\nبیشتر با مجموعه‌هایی سروکار خواهیم داشت که در آن‌ها همهٔ\n!!{element}s اشیای ریاضی‌اند. چهار مجموعه از این دست آن‌قدر مهم‌اند که\nنام‌های ویژه‌ای دارند:\n",
+        "sha256": "ced8f90dea130b82b229197c5e7f357e857ca2a6dc785d887f401af85fc0d4fe"
+      },
+      "target_after": {
+        "char_start": 189,
+        "char_end_exclusive": 384,
+        "line_start": 10,
+        "line_end": 16,
+        "text": "\\olsection{برخی مجموعه‌های مهم}\n\n\\begin{ex}\nبیشتر با مجموعه‌هایی سروکار خواهیم داشت که در آن‌ها همهٔ\n!!{element}s اشیای ریاضی‌اند. چهار مجموعه از این دست آن‌قدر مهم‌اند که\nنام‌های ویژه‌ای دارند:\n",
+        "sha256": "ced8f90dea130b82b229197c5e7f357e857ca2a6dc785d887f401af85fc0d4fe"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\olsection{برخی مجموعه‌های مهم}\n\n\\begin{ex}\nبیشتر با مجموعه‌هایی سروکار خواهیم داشت که در آن‌ها همهٔ\nاعضا اشیای ریاضی‌اند. چهار مجموعه از این دست آن‌قدر مهم‌اند که\nنام‌های ویژه‌ای دارند:\n",
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 101,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        }
+      ]
+    },
+    {
+      "topic": "The four number families",
+      "canon": [
+        "FA-OL-CANON-0001:P0013",
+        "FA-OL-CANON-0005:P0084",
+        "FA-OL-CANON-0003:P0046",
+        "FA-OL-CANON-0003:P0054"
+      ],
+      "rationale": "Natural numbers include zero; integers include both signs; rationals have integer numerator and nonzero integer denominator. و preserves conjunction. The real line and all labels retain source meaning.",
+      "alternatives": "اعداد کسری risks blurring the exact rational definition. More numbers later does not mean larger cardinality.",
+      "question": "پیوستار is attested within CH; its exact standalone use as the parenthetical name of R is only indirectly supported.",
+      "confidence": 2,
+      "confidence_reason": "Source meaning is checked; the specific usage limitation remains.",
+      "id": "FA-0007-C02",
+      "unit": "OLP-0007",
+      "source": {
+        "char_start": 367,
+        "char_end_exclusive": 826,
+        "line_start": 16,
+        "line_end": 26,
+        "text": "\\begin{multline*}\n    \\Nat = \\{0, 1, 2, 3, \\ldots\\} \\\\\n    \\shoveright{\\text{the set of natural numbers}}\\\\\n    \\shoveleft{\\Int = \\{\\ldots, -2, -1, 0, 1, 2, \\ldots\\}} \\\\\n    \\shoveright{\\text{the set of integers}}\\\\\n    \\shoveleft{\\Rat = \\Setabs{\\nicefrac{m}{n}}{m, n \\in \\Int\\text{ and }n \\neq 0}}\\\\\n    \\shoveright{\\text{the set of rationals}}\\\\\n    \\shoveleft{\\Real = (-\\infty, \\infty)}\\\\\n    \\text{the set of real numbers (the continuum)}\n\\end{multline*}\n",
+        "sha256": "208442876fe422611b4add6e658d5f83601e20185c05d1790a6e3f2e0ddc4ffc"
+      },
+      "target_before": {
+        "char_start": 384,
+        "char_end_exclusive": 821,
+        "line_start": 16,
+        "line_end": 26,
+        "text": "\\begin{multline*}\n    \\Nat = \\{0, 1, 2, 3, \\ldots\\} \\\\\n    \\shoveright{\\text{مجموعهٔ اعداد طبیعی}}\\\\\n    \\shoveleft{\\Int = \\{\\ldots, -2, -1, 0, 1, 2, \\ldots\\}} \\\\\n    \\shoveright{\\text{مجموعهٔ اعداد صحیح}}\\\\\n    \\shoveleft{\\Rat = \\Setabs{\\nicefrac{m}{n}}{m, n \\in \\Int\\text{ و }n \\neq 0}}\\\\\n    \\shoveright{\\text{مجموعهٔ اعداد گویا}}\\\\\n    \\shoveleft{\\Real = (-\\infty, \\infty)}\\\\\n    \\text{مجموعهٔ اعداد حقیقی (پیوستار)}\n\\end{multline*}\n",
+        "sha256": "899b313c114df01d173fa4d22cc5d32302a734590cf30fc718dbf94a24d164e6"
+      },
+      "target_after": {
+        "char_start": 384,
+        "char_end_exclusive": 821,
+        "line_start": 16,
+        "line_end": 26,
+        "text": "\\begin{multline*}\n    \\Nat = \\{0, 1, 2, 3, \\ldots\\} \\\\\n    \\shoveright{\\text{مجموعهٔ اعداد طبیعی}}\\\\\n    \\shoveleft{\\Int = \\{\\ldots, -2, -1, 0, 1, 2, \\ldots\\}} \\\\\n    \\shoveright{\\text{مجموعهٔ اعداد صحیح}}\\\\\n    \\shoveleft{\\Rat = \\Setabs{\\nicefrac{m}{n}}{m, n \\in \\Int\\text{ و }n \\neq 0}}\\\\\n    \\shoveright{\\text{مجموعهٔ اعداد گویا}}\\\\\n    \\shoveleft{\\Real = (-\\infty, \\infty)}\\\\\n    \\text{مجموعهٔ اعداد حقیقی (پیوستار)}\n\\end{multline*}\n",
+        "sha256": "899b313c114df01d173fa4d22cc5d32302a734590cf30fc718dbf94a24d164e6"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{multline*}\n    \\Nat = \\{0, 1, 2, 3, \\ldots\\} \\\\\n    \\shoveright{\\text{مجموعهٔ اعداد طبیعی}}\\\\\n    \\shoveleft{\\Int = \\{\\ldots, -2, -1, 0, 1, 2, \\ldots\\}} \\\\\n    \\shoveright{\\text{مجموعهٔ اعداد صحیح}}\\\\\n    \\shoveleft{\\Rat = \\Setabs{\\nicefrac{m}{n}}{m, n \\in \\Int\\text{ و }n \\neq 0}}\\\\\n    \\shoveright{\\text{مجموعهٔ اعداد گویا}}\\\\\n    \\shoveleft{\\Real = (-\\infty, \\infty)}\\\\\n    \\text{مجموعهٔ اعداد حقیقی (پیوستار)}\n\\end{multline*}\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Infinity",
+      "canon": [
+        "FA-OL-CANON-0003:P0046",
+        "FA-OL-CANON-0003:P0054"
+      ],
+      "rationale": "نامتناهی applies to each set and its number of members, not to a new claim that successive countable sets have different cardinalities.",
+      "alternatives": "بی‌نهایت is possible ordinary wording; نامتناهی fits this technical register.",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Source meaning and the cited native mathematical construction agree.",
+      "id": "FA-0007-C03",
+      "unit": "OLP-0007",
+      "source": {
+        "char_start": 826,
+        "char_end_exclusive": 917,
+        "line_start": 26,
+        "line_end": 29,
+        "text": "These are all \\emph{infinite} sets, that is, they each have\ninfinitely many !!{element}s.\n\n",
+        "sha256": "e34beee9c9a5548bd095dffb9852fdef5ea3800d90482841814f3cb21ec4f241"
+      },
+      "target_before": {
+        "char_start": 821,
+        "char_end_exclusive": 914,
+        "line_start": 26,
+        "line_end": 29,
+        "text": "اینها همگی مجموعه‌هایی \\emph{نامتناهی} هستند؛ یعنی شمار !!{element}s\nدر هر یک نامتناهی است.\n\n",
+        "sha256": "da6da11b3c83426f045d3333994e4fe56d90192526c0d4c5ff36523b416d4073"
+      },
+      "target_after": {
+        "char_start": 821,
+        "char_end_exclusive": 914,
+        "line_start": 26,
+        "line_end": 29,
+        "text": "اینها همگی مجموعه‌هایی \\emph{نامتناهی} هستند؛ یعنی شمار !!{element}s\nدر هر یک نامتناهی است.\n\n",
+        "sha256": "da6da11b3c83426f045d3333994e4fe56d90192526c0d4c5ff36523b416d4073"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "اینها همگی مجموعه‌هایی \\emph{نامتناهی} هستند؛ یعنی شمار اعضا\nدر هر یک نامتناهی است.\n\n",
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 56,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        }
+      ]
+    },
+    {
+      "topic": "Inclusion chain, strict witnesses and reference",
+      "canon": [
+        "FA-OL-CANON-0003:P0010",
+        "FA-OL-CANON-0001:P0013"
+      ],
+      "rationale": "Every natural is an integer, every integer rational and every rational real. Strictness witnesses -1 and 1/2 remain exact. بیشتری means additional elements. The less-obvious real/rational strictness keeps the same conditional realline cross-reference.",
+      "alternatives": "Do not render more as cardinally larger, or silently delete the conditional reference.",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Source meaning and the cited native mathematical construction agree.",
+      "id": "FA-0007-C04",
+      "unit": "OLP-0007",
+      "source": {
+        "char_start": 917,
+        "char_end_exclusive": 1578,
+        "line_start": 29,
+        "line_end": 40,
+        "text": "As we move through these sets, we are adding \\emph{more} numbers to\nour stock. Indeed, it should be clear that $\\Nat \\subseteq \\Int\n\\subseteq \\Rat \\subseteq \\Real$: after all, every natural number is an\ninteger; every integer is a rational; and every rational is a real.\nEqually, it should be clear that $\\Nat \\subsetneq \\Int \\subsetneq\n\\Rat$, since $-1$ is an integer but not a natural number, and\n$\\nicefrac{1}{2}$ is rational but not integer. It is less obvious\nthat $\\Rat \\subsetneq \\Real$, i.e., that there are some real numbers\nwhich are not rational\\oliflabeldef{sfr:arith:real:realline}{, but we'll\nreturn to this in \\olref[arith][real]{realline}}{}. \n\n",
+        "sha256": "524f25450f1df30d83382260faece984d3a2093044b0220e86053c0bc01e386b"
+      },
+      "target_before": {
+        "char_start": 914,
+        "char_end_exclusive": 1536,
+        "line_start": 29,
+        "line_end": 40,
+        "text": "با گذر از هر یک از این مجموعه‌ها به مجموعهٔ بعدی، اعداد \\emph{بیشتری}\nبه ذخیرهٔ خود می‌افزاییم. در واقع، باید روشن باشد که $\\Nat \\subseteq \\Int\n\\subseteq \\Rat \\subseteq \\Real$؛ زیرا هر عدد طبیعی یک عدد صحیح، هر\nعدد صحیح یک عدد گویا، و هر عدد گویا یک عدد حقیقی است. همچنین باید روشن\nباشد که $\\Nat \\subsetneq \\Int \\subsetneq\n\\Rat$، زیرا $-1$ عددی صحیح است اما طبیعی نیست و\n$\\nicefrac{1}{2}$ عددی گویاست اما صحیح نیست. این نکته کمتر آشکار است\nکه $\\Rat \\subsetneq \\Real$؛ یعنی عددهای حقیقی‌ای وجود دارند\nکه گویا نیستند\\oliflabeldef{sfr:arith:real:realline}{؛ اما در\n\\olref[arith][real]{realline} به این موضوع بازمی‌گردیم}{}.\n\n",
+        "sha256": "e08e04c3ae536b3f88bf16fc9e5d158bbb04d9e6e2995888c9e8829d068db550"
+      },
+      "target_after": {
+        "char_start": 914,
+        "char_end_exclusive": 1536,
+        "line_start": 29,
+        "line_end": 40,
+        "text": "با گذر از هر یک از این مجموعه‌ها به مجموعهٔ بعدی، اعداد \\emph{بیشتری}\nبه ذخیرهٔ خود می‌افزاییم. در واقع، باید روشن باشد که $\\Nat \\subseteq \\Int\n\\subseteq \\Rat \\subseteq \\Real$؛ زیرا هر عدد طبیعی یک عدد صحیح، هر\nعدد صحیح یک عدد گویا، و هر عدد گویا یک عدد حقیقی است. همچنین باید روشن\nباشد که $\\Nat \\subsetneq \\Int \\subsetneq\n\\Rat$، زیرا $-1$ عددی صحیح است اما طبیعی نیست و\n$\\nicefrac{1}{2}$ عددی گویاست اما صحیح نیست. این نکته کمتر آشکار است\nکه $\\Rat \\subsetneq \\Real$؛ یعنی عددهای حقیقی‌ای وجود دارند\nکه گویا نیستند\\oliflabeldef{sfr:arith:real:realline}{؛ اما در\n\\olref[arith][real]{realline} به این موضوع بازمی‌گردیم}{}.\n\n",
+        "sha256": "e08e04c3ae536b3f88bf16fc9e5d158bbb04d9e6e2995888c9e8829d068db550"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "با گذر از هر یک از این مجموعه‌ها به مجموعهٔ بعدی، اعداد \\emph{بیشتری}\nبه ذخیرهٔ خود می‌افزاییم. در واقع، باید روشن باشد که $\\Nat \\subseteq \\Int\n\\subseteq \\Rat \\subseteq \\Real$؛ زیرا هر عدد طبیعی یک عدد صحیح، هر\nعدد صحیح یک عدد گویا، و هر عدد گویا یک عدد حقیقی است. همچنین باید روشن\nباشد که $\\Nat \\subsetneq \\Int \\subsetneq\n\\Rat$، زیرا $-1$ عددی صحیح است اما طبیعی نیست و\n$\\nicefrac{1}{2}$ عددی گویاست اما صحیح نیست. این نکته کمتر آشکار است\nکه $\\Rat \\subsetneq \\Real$؛ یعنی عددهای حقیقی‌ای وجود دارند\nکه گویا نیستند\\oliflabeldef{sfr:arith:real:realline}{؛ اما در\n\\olref[arith][real]{realline} به این موضوع بازمی‌گردیم}{}.\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Positive integers and binary alphabet",
+      "canon": [
+        "FA-OL-CANON-0003:P0046",
+        "FA-OL-CANON-0001:P0013"
+      ],
+      "rationale": "مثبت excludes zero in PosInt. نخست respects the displayed convention that 0 and 1 are the first naturals. Both explicit sets are unchanged.",
+      "alternatives": "Nonnegative is not interchangeable with positive.",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Source meaning and the cited native mathematical construction agree.",
+      "id": "FA-0007-C05",
+      "unit": "OLP-0007",
+      "source": {
+        "char_start": 1578,
+        "char_end_exclusive": 1776,
+        "line_start": 40,
+        "line_end": 46,
+        "text": "We'll sometimes also use the set of positive integers $\\PosInt = \\{1,\n2, 3, \\dots\\}$ and the set containing just the first two natural\nnumbers $\\Bin = \\{0, 1\\}$.\n\\end{ex}\n\n\\begin{tagblock}{compsci}\n",
+        "sha256": "d33d074308e92324ec343356146e893e7e7f996b8871877a9426dff3df8a00b1"
+      },
+      "target_before": {
+        "char_start": 1536,
+        "char_end_exclusive": 1736,
+        "line_start": 40,
+        "line_end": 46,
+        "text": "گاهی از مجموعهٔ اعداد صحیح مثبت $\\PosInt = \\{1,\n2, 3, \\dots\\}$ و مجموعه‌ای که تنها دو عدد طبیعی نخست را در بر دارد،\nیعنی $\\Bin = \\{0, 1\\}$، نیز استفاده خواهیم کرد.\n\\end{ex}\n\n\\begin{tagblock}{compsci}\n",
+        "sha256": "30d5cd515459f3fbbc0fbb40244cfe66304487891f6d5f51c941a9a1d2838694"
+      },
+      "target_after": {
+        "char_start": 1536,
+        "char_end_exclusive": 1736,
+        "line_start": 40,
+        "line_end": 46,
+        "text": "گاهی از مجموعهٔ اعداد صحیح مثبت $\\PosInt = \\{1,\n2, 3, \\dots\\}$ و مجموعه‌ای که تنها دو عدد طبیعی نخست را در بر دارد،\nیعنی $\\Bin = \\{0, 1\\}$، نیز استفاده خواهیم کرد.\n\\end{ex}\n\n\\begin{tagblock}{compsci}\n",
+        "sha256": "30d5cd515459f3fbbc0fbb40244cfe66304487891f6d5f51c941a9a1d2838694"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "گاهی از مجموعهٔ اعداد صحیح مثبت $\\PosInt = \\{1,\n2, 3, \\dots\\}$ و مجموعه‌ای که تنها دو عدد طبیعی نخست را در بر دارد،\nیعنی $\\Bin = \\{0, 1\\}$، نیز استفاده خواهیم کرد.\n\\end{ex}\n\n\\begin{tagblock}{compsci}\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Finite strings and empty string",
+      "canon": [
+        "FA-OL-CANON-0001:P0004",
+        "FA-OL-CANON-0003:P0046"
+      ],
+      "rationale": "A string is a finite sequence of alphabet elements; the empty string belongs for every alphabet, including the empty alphabet. The selected native canon was actually consulted for alphabet and sequence concepts, but does not establish an exact رشته witness. Retention is explicitly provisional.",
+      "alternatives": "واژه is a meaningful alternative; do not invent an attestation for it. Empty string must not become empty set.",
+      "question": "Exact scholarly رشته/واژه and رشتهٔ تهی attestations remain to be bound by a later targeted corpus comparison; no human response is a gate.",
+      "confidence": 2,
+      "confidence_reason": "Source meaning is checked; the specific usage limitation remains.",
+      "id": "FA-0007-C06",
+      "unit": "OLP-0007",
+      "source": {
+        "char_start": 1776,
+        "char_end_exclusive": 2064,
+        "line_start": 46,
+        "line_end": 51,
+        "text": "\\begin{ex}[Strings] \nAnother interesting example  is the set $A^{*}$ of \\emph{finite\nstrings} over an alphabet $A$: any finite sequence of elements of~$A$\nis a string over $A$. We include the \\emph{empty string $\\Lambda$}\namong the strings over~$A$, for every alphabet~$A$. For instance,\n",
+        "sha256": "ea5fea919015c2547d1855339346009b165b7aeb329ee37f319ddb4a50fc465e"
+      },
+      "target_before": {
+        "char_start": 1736,
+        "char_end_exclusive": 1987,
+        "line_start": 46,
+        "line_end": 51,
+        "text": "\\begin{ex}[رشته‌ها]\nنمونهٔ جالب دیگر، مجموعهٔ $A^{*}$ از \\emph{رشته‌های متناهی}\nبر الفبای $A$ است: هر دنبالهٔ متناهی از عناصر~$A$ رشته‌ای بر $A$\nاست. \\emph{رشتهٔ تهی $\\Lambda$} را نیز در شمار رشته‌های بر~$A$، برای\nهر الفبای~$A$، می‌آوریم. برای نمونه،\n",
+        "sha256": "73ec88a4fdbb2dbef6aa1e93b945577799b783ab974672258faf368dd7acee3f"
+      },
+      "target_after": {
+        "char_start": 1736,
+        "char_end_exclusive": 1987,
+        "line_start": 46,
+        "line_end": 51,
+        "text": "\\begin{ex}[رشته‌ها]\nنمونهٔ جالب دیگر، مجموعهٔ $A^{*}$ از \\emph{رشته‌های متناهی}\nبر الفبای $A$ است: هر دنبالهٔ متناهی از عناصر~$A$ رشته‌ای بر $A$\nاست. \\emph{رشتهٔ تهی $\\Lambda$} را نیز در شمار رشته‌های بر~$A$، برای\nهر الفبای~$A$، می‌آوریم. برای نمونه،\n",
+        "sha256": "73ec88a4fdbb2dbef6aa1e93b945577799b783ab974672258faf368dd7acee3f"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{ex}[رشته‌ها]\nنمونهٔ جالب دیگر، مجموعهٔ $A^{*}$ از \\emph{رشته‌های متناهی}\nبر الفبای $A$ است: هر دنبالهٔ متناهی از عناصر~$A$ رشته‌ای بر $A$\nاست. \\emph{رشتهٔ تهی $\\Lambda$} را نیز در شمار رشته‌های بر~$A$، برای\nهر الفبای~$A$، می‌آوریم. برای نمونه،\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Binary-string enumeration",
+      "canon": [
+        "FA-OL-CANON-0001:P0004",
+        "FA-OL-CANON-0003:P0046"
+      ],
+      "rationale": "Lambda, lengths one through three and the start of length four are identical. Order and repeated letters matter within a string.",
+      "alternatives": "Do not treat leading zeroes as a number or deduplicate repeated letters.",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Source meaning and the cited native mathematical construction agree.",
+      "id": "FA-0007-C07",
+      "unit": "OLP-0007",
+      "source": {
+        "char_start": 2064,
+        "char_end_exclusive": 2182,
+        "line_start": 51,
+        "line_end": 56,
+        "text": "\\begin{multline*}\n\\Bin^*\n=\\{\\Lambda,0,1,00,01,10,11,\\\\\n000,001,010,011,100,101,110,111,0000,\\ldots\\}.\n\\end{multline*}\n",
+        "sha256": "25f9f7fb905b66239a8f24ed1b29aabf55e766e0129092c931a37a75f63a3db3"
+      },
+      "target_before": {
+        "char_start": 1987,
+        "char_end_exclusive": 2105,
+        "line_start": 51,
+        "line_end": 56,
+        "text": "\\begin{multline*}\n\\Bin^*\n=\\{\\Lambda,0,1,00,01,10,11,\\\\\n000,001,010,011,100,101,110,111,0000,\\ldots\\}.\n\\end{multline*}\n",
+        "sha256": "25f9f7fb905b66239a8f24ed1b29aabf55e766e0129092c931a37a75f63a3db3"
+      },
+      "target_after": {
+        "char_start": 1987,
+        "char_end_exclusive": 2105,
+        "line_start": 51,
+        "line_end": 56,
+        "text": "\\begin{multline*}\n\\Bin^*\n=\\{\\Lambda,0,1,00,01,10,11,\\\\\n000,001,010,011,100,101,110,111,0000,\\ldots\\}.\n\\end{multline*}\n",
+        "sha256": "25f9f7fb905b66239a8f24ed1b29aabf55e766e0129092c931a37a75f63a3db3"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{multline*}\n\\Bin^*\n=\\{\\Lambda,0,1,00,01,10,11,\\\\\n000,001,010,011,100,101,110,111,0000,\\ldots\\}.\n\\end{multline*}\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Length and indexed letters",
+      "canon": [
+        "FA-OL-CANON-0001:P0004",
+        "FA-OL-CANON-0003:P0046"
+      ],
+      "rationale": "Quoted حرف allows formal alphabet elements, not just human-language letters. طول counts the n positions, including zero; len and subscripts are preserved. The missing English space before is is not inherited.",
+      "alternatives": "اندازه risks confusing string length with set size.",
+      "question": "The selected pages support the finite-sequence construction, not the exact compound طول رشته.",
+      "confidence": 2,
+      "confidence_reason": "Source meaning is checked; the specific usage limitation remains.",
+      "id": "FA-0007-C08",
+      "unit": "OLP-0007",
+      "source": {
+        "char_start": 2182,
+        "char_end_exclusive": 2362,
+        "line_start": 56,
+        "line_end": 62,
+        "text": "If $x=x_{1}\\ldots x_{n}\\in A^{*}$is a string consisting of $n$\n``letters'' from $A$, then we say \\emph{length} of the string is~$n$\nand write $\\len{x}=n$.\n\\end{ex}\n\\end{tagblock}\n\n",
+        "sha256": "29a897cd57ec6aed775e766b4ec8377e3e2a46a89ffb22bdbc2148abbadbc4cd"
+      },
+      "target_before": {
+        "char_start": 2105,
+        "char_end_exclusive": 2271,
+        "line_start": 56,
+        "line_end": 62,
+        "text": "اگر $x=x_{1}\\ldots x_{n}\\in A^{*}$ رشته‌ای متشکل از $n$\n``حرف'' از $A$ باشد، می‌گوییم \\emph{طول} رشته برابر~$n$ است\nو می‌نویسیم $\\len{x}=n$.\n\\end{ex}\n\\end{tagblock}\n\n",
+        "sha256": "8585d417d0552739833545840b787c698f85c5f67dcfb58f377a463a5a6216f8"
+      },
+      "target_after": {
+        "char_start": 2105,
+        "char_end_exclusive": 2271,
+        "line_start": 56,
+        "line_end": 62,
+        "text": "اگر $x=x_{1}\\ldots x_{n}\\in A^{*}$ رشته‌ای متشکل از $n$\n``حرف'' از $A$ باشد، می‌گوییم \\emph{طول} رشته برابر~$n$ است\nو می‌نویسیم $\\len{x}=n$.\n\\end{ex}\n\\end{tagblock}\n\n",
+        "sha256": "8585d417d0552739833545840b787c698f85c5f67dcfb58f377a463a5a6216f8"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "اگر $x=x_{1}\\ldots x_{n}\\in A^{*}$ رشته‌ای متشکل از $n$\n``حرف'' از $A$ باشد، می‌گوییم \\emph{طول} رشته برابر~$n$ است\nو می‌نویسیم $\\len{x}=n$.\n\\end{ex}\n\\end{tagblock}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "One-way infinite sequences",
+      "canon": [
+        "FA-OL-CANON-0003:P0046"
+      ],
+      "rationale": "دنباله‌های نامتناهی and یک‌سویه preserve an omega-indexed list, not a bilateral or uncountably indexed family. Each entry belongs to A. This does not promise such a sequence when A is empty.",
+      "alternatives": "A two-sided sequence or an unordered infinite set changes the source.",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Source meaning and the cited native mathematical construction agree.",
+      "id": "FA-0007-C09",
+      "unit": "OLP-0007",
+      "source": {
+        "char_start": 2362,
+        "char_end_exclusive": 2636,
+        "line_start": 62,
+        "line_end": 69,
+        "text": "\\begin{ex}[Infinite sequences]\nFor any set $A$ we may also consider the set~$A^\\omega$ of infinite\nsequences of !!{element}s of~$A$. An infinite sequence\n$a_1a_2a_3a_4\\dots$ consists of a one-way infinite list of objects,\neach one of which is !!a{element} of~$A$.\n\\end{ex}\n\n",
+        "sha256": "149e21cf862619dd2be6a8069770e91b308f2b510ebf49f40555d447c1a4cc0f"
+      },
+      "target_before": {
+        "char_start": 2271,
+        "char_end_exclusive": 2609,
+        "line_start": 62,
+        "line_end": 70,
+        "text": "\\begin{ex}[دنباله‌های نامتناهی]\nبرای هر مجموعهٔ $A$ می‌توانیم مجموعهٔ~$A^\\omega$ از دنباله‌های\nنامتناهی را نیز در نظر بگیریم؛ دنباله‌هایی که از !!{element}s تشکیل\nمی‌شوند و این اعضا به~$A$ تعلق دارند. دنبالهٔ نامتناهی $a_1a_2a_3a_4\\dots$\nاز فهرستی نامتناهی و یک‌سویه از اشیا تشکیل شده است که هر یک\n!!a{element} مجموعهٔ~$A$ است.\n\\end{ex}\n\n",
+        "sha256": "0f5781b05c109dda5a5ba7375907043056383167474c3a3e52e7885a5d660280"
+      },
+      "target_after": {
+        "char_start": 2271,
+        "char_end_exclusive": 2609,
+        "line_start": 62,
+        "line_end": 70,
+        "text": "\\begin{ex}[دنباله‌های نامتناهی]\nبرای هر مجموعهٔ $A$ می‌توانیم مجموعهٔ~$A^\\omega$ از دنباله‌های\nنامتناهی را نیز در نظر بگیریم؛ دنباله‌هایی که از !!{element}s تشکیل\nمی‌شوند و این اعضا به~$A$ تعلق دارند. دنبالهٔ نامتناهی $a_1a_2a_3a_4\\dots$\nاز فهرستی نامتناهی و یک‌سویه از اشیا تشکیل شده است که هر یک\n!!a{element} مجموعهٔ~$A$ است.\n\\end{ex}\n\n",
+        "sha256": "0f5781b05c109dda5a5ba7375907043056383167474c3a3e52e7885a5d660280"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{ex}[دنباله‌های نامتناهی]\nبرای هر مجموعهٔ $A$ می‌توانیم مجموعهٔ~$A^\\omega$ از دنباله‌های\nنامتناهی را نیز در نظر بگیریم؛ دنباله‌هایی که از اعضا تشکیل\nمی‌شوند و این اعضا به~$A$ تعلق دارند. دنبالهٔ نامتناهی $a_1a_2a_3a_4\\dots$\nاز فهرستی نامتناهی و یک‌سویه از اشیا تشکیل شده است که هر یک\nعضو مجموعهٔ~$A$ است.\n\\end{ex}\n\n",
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 144,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        },
+        {
+          "character_offset_in_segment": 298,
+          "token": "!!a{element}",
+          "realization": "عضو"
+        }
+      ]
+    },
+    {
+      "topic": "Abstraction and inclusive union",
+      "canon": [
+        "FA-OL-CANON-0003:P0010",
+        "FA-OL-CANON-0003:P0011"
+      ],
+      "rationale": "Abstraction, the previous-section reference and inclusive disjunction remain intact. Defined sets, their members and the property are distinguished. These particular operations yield sets; arbitrary abstraction is not asserted to do so.",
+      "alternatives": "Exclusive either-or is wrong. تجرید follows the preceding reviewed section, not an unexamined isolated word replacement.",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Source meaning and the cited native mathematical construction agree.",
+      "id": "FA-0008-C01",
+      "unit": "OLP-0008",
+      "source": {
+        "char_start": 192,
+        "char_end_exclusive": 842,
+        "line_start": 10,
+        "line_end": 23,
+        "text": "\\olsection{Unions and Intersections}\n\n\\begin{explain}\nIn \\olref[sfr][set][bas]{sec}, we introduced definitions of sets by\nabstraction, i.e., definitions of the form $\\Setabs{x}{\\phi(x)}$.\nHere, we invoke some property~$\\phi$, and this property can mention\nsets we've already defined. So for instance, if $A$ and~$B$ are sets,\nthe set $\\Setabs{x}{x \\in A \\lor x \\in B}$ consists of all those\nobjects which are !!{element}s of either $A$ or~$B$, i.e., it's the\nset that combines the !!{element}s of $A$ and~$B$. We can visualize\nthis as in \\olref{fig:union}, where the highlighted area indicates the\n!!{element}s of the two sets $A$ and~$B$ together.\n\n",
+        "sha256": "fe84c4066f020477ff36f906eac3a3058a0be034759470e07d8a37d5089bdacd"
+      },
+      "target_before": {
+        "char_start": 199,
+        "char_end_exclusive": 859,
+        "line_start": 10,
+        "line_end": 23,
+        "text": "\\olsection{اجتماع‌ها و اشتراک‌ها}\n\n\\begin{explain}\nدر \\olref[sfr][set][bas]{sec}، تعریف مجموعه‌ها به روش تجرید، یعنی\nتعریف‌هایی به‌صورت $\\Setabs{x}{\\phi(x)}$، را معرفی کردیم. در این روش\nویژگی~$\\phi$ را به کار می‌بریم و این ویژگی می‌تواند به مجموعه‌هایی که\nپیش‌تر تعریف کرده‌ایم اشاره کند. بنابراین، برای نمونه، اگر $A$ و~$B$\nمجموعه باشند، مجموعهٔ $\\Setabs{x}{x \\in A \\lor x \\in B}$ از همهٔ\nاشیایی تشکیل شده است که در شمار !!{element}s $A$ یا~$B$ هستند؛ یعنی\nمجموعه‌ای است که !!{element}s $A$ و~$B$ را با هم گرد می‌آورد.\nمی‌توان این وضعیت را مانند \\olref{fig:union} مجسم کرد؛ در آنجا ناحیهٔ\nبرجسته، !!{element}s دو مجموعهٔ $A$ و~$B$ را در کنار هم نشان می‌دهد.\n\n",
+        "sha256": "b61b925650f54a66de313cf39f611903964f4aafade12f3275aca897b0a8aeab"
+      },
+      "target_after": {
+        "char_start": 199,
+        "char_end_exclusive": 859,
+        "line_start": 10,
+        "line_end": 23,
+        "text": "\\olsection{اجتماع‌ها و اشتراک‌ها}\n\n\\begin{explain}\nدر \\olref[sfr][set][bas]{sec}، تعریف مجموعه‌ها به روش تجرید، یعنی\nتعریف‌هایی به‌صورت $\\Setabs{x}{\\phi(x)}$، را معرفی کردیم. در این روش\nویژگی~$\\phi$ را به کار می‌بریم و این ویژگی می‌تواند به مجموعه‌هایی که\nپیش‌تر تعریف کرده‌ایم اشاره کند. بنابراین، برای نمونه، اگر $A$ و~$B$\nمجموعه باشند، مجموعهٔ $\\Setabs{x}{x \\in A \\lor x \\in B}$ از همهٔ\nاشیایی تشکیل شده است که در شمار !!{element}s $A$ یا~$B$ هستند؛ یعنی\nمجموعه‌ای است که !!{element}s $A$ و~$B$ را با هم گرد می‌آورد.\nمی‌توان این وضعیت را مانند \\olref{fig:union} مجسم کرد؛ در آنجا ناحیهٔ\nبرجسته، !!{element}s دو مجموعهٔ $A$ و~$B$ را در کنار هم نشان می‌دهد.\n\n",
+        "sha256": "b61b925650f54a66de313cf39f611903964f4aafade12f3275aca897b0a8aeab"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\olsection{اجتماع‌ها و اشتراک‌ها}\n\n\\begin{explain}\nدر \\olref[sfr][set][bas]{sec}، تعریف مجموعه‌ها به روش تجرید، یعنی\nتعریف‌هایی به‌صورت $\\Setabs{x}{\\phi(x)}$، را معرفی کردیم. در این روش\nویژگی~$\\phi$ را به کار می‌بریم و این ویژگی می‌تواند به مجموعه‌هایی که\nپیش‌تر تعریف کرده‌ایم اشاره کند. بنابراین، برای نمونه، اگر $A$ و~$B$\nمجموعه باشند، مجموعهٔ $\\Setabs{x}{x \\in A \\lor x \\in B}$ از همهٔ\nاشیایی تشکیل شده است که در شمار اعضا $A$ یا~$B$ هستند؛ یعنی\nمجموعه‌ای است که اعضا $A$ و~$B$ را با هم گرد می‌آورد.\nمی‌توان این وضعیت را مانند \\olref{fig:union} مجسم کرد؛ در آنجا ناحیهٔ\nبرجسته، اعضا دو مجموعهٔ $A$ و~$B$ را در کنار هم نشان می‌دهد.\n\n",
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 422,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        },
+        {
+          "character_offset_in_segment": 475,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        },
+        {
+          "character_offset_in_segment": 598,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        }
+      ]
+    },
+    {
+      "topic": "Union caption and operation naming",
+      "canon": [
+        "FA-OL-CANON-0003:P0010"
+      ],
+      "rationale": "The caption combines members of either set, including shared members. اجتماع is the attested set operation, not arithmetic addition. Figure/label paths remain exact.",
+      "alternatives": "جمع would suggest a different operation. Asset identity checks are not a fresh rendered-reader visual certification.",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Source meaning and the cited native mathematical construction agree.",
+      "id": "FA-0008-C02",
+      "unit": "OLP-0008",
+      "source": {
+        "char_start": 842,
+        "char_end_exclusive": 1170,
+        "line_start": 23,
+        "line_end": 34,
+        "text": "\\begin{figure}\n  \\olasset{assets/diagrams/union.tikz}\n  \\caption{The union $A \\cup B$ of two sets is set of !!{element}s of\n   $A$ together with those of~$B$.}\n  \\ollabel{fig:union} \n\\end{figure}\n\nThis operation on sets---combining them---is very useful and common,\nand so we give it a formal name and a symbol. \n\\end{explain}\n\n",
+        "sha256": "8fcf9700b8a9d62c561314f6a24246358c0ae664a04635119531ffb5cdefae89"
+      },
+      "target_before": {
+        "char_start": 859,
+        "char_end_exclusive": 1179,
+        "line_start": 23,
+        "line_end": 34,
+        "text": "\\begin{figure}\n  \\olasset{assets/diagrams/union.tikz}\n  \\caption{اجتماع $A \\cup B$ دو مجموعه، مجموعهٔ !!{element}s\n   $A$ همراه با اعضای~$B$ است.}\n  \\ollabel{fig:union}\n\\end{figure}\n\nاین عمل روی مجموعه‌ها---یعنی باهم‌ترکیب‌کردن آنها---بسیار سودمند و\nپرکاربرد است؛ ازاین‌رو نام و نمادی صوری به آن می‌دهیم.\n\\end{explain}\n\n",
+        "sha256": "330233c32968ed2035e88a968896188f1b47d0d096c04d9ba96ccbf2efff4811"
+      },
+      "target_after": {
+        "char_start": 859,
+        "char_end_exclusive": 1179,
+        "line_start": 23,
+        "line_end": 34,
+        "text": "\\begin{figure}\n  \\olasset{assets/diagrams/union.tikz}\n  \\caption{اجتماع $A \\cup B$ دو مجموعه، مجموعهٔ !!{element}s\n   $A$ همراه با اعضای~$B$ است.}\n  \\ollabel{fig:union}\n\\end{figure}\n\nاین عمل روی مجموعه‌ها---یعنی باهم‌ترکیب‌کردن آنها---بسیار سودمند و\nپرکاربرد است؛ ازاین‌رو نام و نمادی صوری به آن می‌دهیم.\n\\end{explain}\n\n",
+        "sha256": "330233c32968ed2035e88a968896188f1b47d0d096c04d9ba96ccbf2efff4811"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{figure}\n  \\olasset{assets/diagrams/union.tikz}\n  \\caption{اجتماع $A \\cup B$ دو مجموعه، مجموعهٔ اعضا\n   $A$ همراه با اعضای~$B$ است.}\n  \\ollabel{fig:union}\n\\end{figure}\n\nاین عمل روی مجموعه‌ها---یعنی باهم‌ترکیب‌کردن آنها---بسیار سودمند و\nپرکاربرد است؛ ازاین‌رو نام و نمادی صوری به آن می‌دهیم.\n\\end{explain}\n\n",
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 102,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        }
+      ]
+    },
+    {
+      "topic": "Union definition",
+      "canon": [
+        "FA-OL-CANON-0003:P0010"
+      ],
+      "rationale": "یا هر دو explicitly preserves inclusive disjunction; prose and membership formula agree.",
+      "alternatives": "Disjoint union is a different construction.",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Source meaning and the cited native mathematical construction agree.",
+      "id": "FA-0008-C03",
+      "unit": "OLP-0008",
+      "source": {
+        "char_start": 1170,
+        "char_end_exclusive": 1384,
+        "line_start": 34,
+        "line_end": 42,
+        "text": "\\begin{defn}[Union]\nThe \\emph{union} of two sets $A$ and $B$, written $A \\cup B$, is the\nset of all things which are !!{element}s of $A$, $B$, or both.\n\\[\nA \\cup B = \\Setabs{x}{x \\in A \\lor x \\in B}\n\\]\n\\end{defn}\n\n",
+        "sha256": "64abf00727a285c303d8fb62fe536d70b0a967ab54b6b075dcbfec061962ad1e"
+      },
+      "target_before": {
+        "char_start": 1179,
+        "char_end_exclusive": 1403,
+        "line_start": 34,
+        "line_end": 42,
+        "text": "\\begin{defn}[اجتماع]\n\\emph{اجتماع} دو مجموعهٔ $A$ و $B$ که آن را $A \\cup B$ می‌نویسیم،\nمجموعهٔ همهٔ اشیایی است که در شمار !!{element}s $A$ یا $B$ یا هر دو هستند.\n\\[\nA \\cup B = \\Setabs{x}{x \\in A \\lor x \\in B}\n\\]\n\\end{defn}\n\n",
+        "sha256": "45bd34d9227e2ca10e7730bb618327f2a8de2a2ef19bc0f20e586450f5fba40b"
+      },
+      "target_after": {
+        "char_start": 1179,
+        "char_end_exclusive": 1403,
+        "line_start": 34,
+        "line_end": 42,
+        "text": "\\begin{defn}[اجتماع]\n\\emph{اجتماع} دو مجموعهٔ $A$ و $B$ که آن را $A \\cup B$ می‌نویسیم،\nمجموعهٔ همهٔ اشیایی است که در شمار !!{element}s $A$ یا $B$ یا هر دو هستند.\n\\[\nA \\cup B = \\Setabs{x}{x \\in A \\lor x \\in B}\n\\]\n\\end{defn}\n\n",
+        "sha256": "45bd34d9227e2ca10e7730bb618327f2a8de2a2ef19bc0f20e586450f5fba40b"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{defn}[اجتماع]\n\\emph{اجتماع} دو مجموعهٔ $A$ و $B$ که آن را $A \\cup B$ می‌نویسیم،\nمجموعهٔ همهٔ اشیایی است که در شمار اعضا $A$ یا $B$ یا هر دو هستند.\n\\[\nA \\cup B = \\Setabs{x}{x \\in A \\lor x \\in B}\n\\]\n\\end{defn}\n\n",
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 122,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        }
+      ]
+    },
+    {
+      "topic": "Multiplicity and three union examples",
+      "canon": [
+        "FA-OL-CANON-0005:P0084",
+        "FA-OL-CANON-0003:P0010"
+      ],
+      "rationale": "A shared member occurs once, union with a subset gives the larger set, and union with the empty set is unchanged. Example labels keep the source convention of distinct objects.",
+      "alternatives": "Do not import multiset or list-concatenation semantics.",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Source meaning and the cited native mathematical construction agree.",
+      "id": "FA-0008-C04",
+      "unit": "OLP-0008",
+      "source": {
+        "char_start": 1384,
+        "char_end_exclusive": 1832,
+        "line_start": 42,
+        "line_end": 54,
+        "text": "\\begin{ex}\nSince the multiplicity of !!{element}s doesn't matter, the union of two\nsets which have !!a{element} in common contains that !!{element} only once,\ne.g., $\\{ a, b, c\\} \\cup \\{ a, 0, 1\\} = \\{a, b, c, 0, 1\\}$.\n\nThe union of a set and one of its subsets is just the bigger set: $\\{a,\nb, c \\} \\cup \\{a \\} = \\{a, b, c\\}$.\n\nThe union of a set with the empty set is identical to the set: $\\{a,\nb, c \\} \\cup \\emptyset = \\{a, b, c \\}$.\n\\end{ex}\n\n",
+        "sha256": "0f794bd9d19fbcdb98dd6d5ca9523e7f06a527e3602f2bbddc0c742e5e3ddede"
+      },
+      "target_before": {
+        "char_start": 1403,
+        "char_end_exclusive": 1836,
+        "line_start": 42,
+        "line_end": 54,
+        "text": "\\begin{ex}\nازآنجاکه تعداد تکرار !!{element}s اهمیتی ندارد، اجتماع دو مجموعه که\n!!a{element} مشترک دارند، آن !!{element} را تنها یک بار در بر می‌گیرد؛\nبرای نمونه، $\\{ a, b, c\\} \\cup \\{ a, 0, 1\\} = \\{a, b, c, 0, 1\\}$.\n\nاجتماع یک مجموعه با یکی از زیرمجموعه‌هایش همان مجموعهٔ بزرگ‌تر است:\n$\\{a, b, c \\} \\cup \\{a \\} = \\{a, b, c\\}$.\n\nاجتماع یک مجموعه با مجموعهٔ تهی همان مجموعه است: $\\{a,\nb, c \\} \\cup \\emptyset = \\{a, b, c \\}$.\n\\end{ex}\n\n",
+        "sha256": "a174543879566f0abe55e71afc3c79f98b1386765b9069e92d31fcb7eb158c05"
+      },
+      "target_after": {
+        "char_start": 1403,
+        "char_end_exclusive": 1836,
+        "line_start": 42,
+        "line_end": 54,
+        "text": "\\begin{ex}\nازآنجاکه تعداد تکرار !!{element}s اهمیتی ندارد، اجتماع دو مجموعه که\n!!a{element} مشترک دارند، آن !!{element} را تنها یک بار در بر می‌گیرد؛\nبرای نمونه، $\\{ a, b, c\\} \\cup \\{ a, 0, 1\\} = \\{a, b, c, 0, 1\\}$.\n\nاجتماع یک مجموعه با یکی از زیرمجموعه‌هایش همان مجموعهٔ بزرگ‌تر است:\n$\\{a, b, c \\} \\cup \\{a \\} = \\{a, b, c\\}$.\n\nاجتماع یک مجموعه با مجموعهٔ تهی همان مجموعه است: $\\{a,\nb, c \\} \\cup \\emptyset = \\{a, b, c \\}$.\n\\end{ex}\n\n",
+        "sha256": "a174543879566f0abe55e71afc3c79f98b1386765b9069e92d31fcb7eb158c05"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{ex}\nازآنجاکه تعداد تکرار اعضا اهمیتی ندارد، اجتماع دو مجموعه که\nعضو مشترک دارند، آن عضو را تنها یک بار در بر می‌گیرد؛\nبرای نمونه، $\\{ a, b, c\\} \\cup \\{ a, 0, 1\\} = \\{a, b, c, 0, 1\\}$.\n\nاجتماع یک مجموعه با یکی از زیرمجموعه‌هایش همان مجموعهٔ بزرگ‌تر است:\n$\\{a, b, c \\} \\cup \\{a \\} = \\{a, b, c\\}$.\n\nاجتماع یک مجموعه با مجموعهٔ تهی همان مجموعه است: $\\{a,\nb, c \\} \\cup \\emptyset = \\{a, b, c \\}$.\n\\end{ex}\n\n",
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 32,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        },
+        {
+          "character_offset_in_segment": 79,
+          "token": "!!a{element}",
+          "realization": "عضو"
+        },
+        {
+          "character_offset_in_segment": 108,
+          "token": "!!{element}",
+          "realization": "عضو"
+        }
+      ]
+    },
+    {
+      "topic": "Union inclusion exercise",
+      "canon": [
+        "FA-OL-CANON-0003:P0010"
+      ],
+      "rationale": "Proof instruction, subset hypothesis and equality conclusion are all retained. It remains an exercise, not an abridged worked answer.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Source meaning and the cited native mathematical construction agree.",
+      "id": "FA-0008-C05",
+      "unit": "OLP-0008",
+      "source": {
+        "char_start": 1832,
+        "char_end_exclusive": 1909,
+        "line_start": 54,
+        "line_end": 58,
+        "text": "\\begin{prob}\nProve that if $A \\subseteq B$, then $A \\cup B = B$.\n\\end{prob}\n\n",
+        "sha256": "1ec8d73739ce5805b6ca6a9e05d2d200a8c837f030d01acb621f7a0e0a429f55"
+      },
+      "target_before": {
+        "char_start": 1836,
+        "char_end_exclusive": 1914,
+        "line_start": 54,
+        "line_end": 58,
+        "text": "\\begin{prob}\nثابت کنید اگر $A \\subseteq B$، آنگاه $A \\cup B = B$.\n\\end{prob}\n\n",
+        "sha256": "1adb8fc3fa3d8db5d2802d053a8b4237a2c601b8e1d28ef5e7f0894284940188"
+      },
+      "target_after": {
+        "char_start": 1836,
+        "char_end_exclusive": 1914,
+        "line_start": 54,
+        "line_end": 58,
+        "text": "\\begin{prob}\nثابت کنید اگر $A \\subseteq B$، آنگاه $A \\cup B = B$.\n\\end{prob}\n\n",
+        "sha256": "1adb8fc3fa3d8db5d2802d053a8b4237a2c601b8e1d28ef5e7f0894284940188"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{prob}\nثابت کنید اگر $A \\subseteq B$، آنگاه $A \\cup B = B$.\n\\end{prob}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Dual construction and intersection caption",
+      "canon": [
+        "FA-OL-CANON-0003:P0010",
+        "FA-OL-CANON-0003:P0011"
+      ],
+      "rationale": "Membership in both sets is conjunction. دوگان remains a quoted informal comparison; the caption is common membership.",
+      "alternatives": "Do not inflate this into a formal duality theorem.",
+      "question": "The cited pages demonstrate the connective relationship, not exact دوگان wording.",
+      "confidence": 2,
+      "confidence_reason": "Source meaning is checked; the specific usage limitation remains.",
+      "id": "FA-0008-C06",
+      "unit": "OLP-0008",
+      "source": {
+        "char_start": 1909,
+        "char_end_exclusive": 2422,
+        "line_start": 58,
+        "line_end": 71,
+        "text": "\\begin{explain}\nWe can also consider a ``dual'' operation to union. This is the\noperation that forms the set of all !!{element}s that are !!{element}s\nof~$A$ and are also !!{element}s of~$B$. This operation is called \n\\emph{intersection}, and can be depicted as in \\olref{fig:intersection}.\n\\begin{figure}\n  \\olasset{assets/diagrams/intersection.tikz}\n  \\caption{The intersection $A \\cap B$ of two sets is the set of\n    !!{element}s they have in common.}\n  \\ollabel{fig:intersection}\n\\end{figure}\n\\end{explain}\n\n",
+        "sha256": "28abad67b7f7c370843e59f056a96590aa54a903a880366875acb6806666a2bb"
+      },
+      "target_before": {
+        "char_start": 1914,
+        "char_end_exclusive": 2392,
+        "line_start": 58,
+        "line_end": 71,
+        "text": "\\begin{explain}\nمی‌توانیم عملی ``دوگان'' با اجتماع را نیز در نظر بگیریم. این عمل\nمجموعهٔ همهٔ !!{element}s را تشکیل می‌دهد که هم در شمار !!{element}s~$A$\nو هم در شمار !!{element}s~$B$ هستند. این عمل \\emph{اشتراک} نام دارد و می‌توان\nآن را مانند \\olref{fig:intersection} نمایش داد.\n\\begin{figure}\n  \\olasset{assets/diagrams/intersection.tikz}\n  \\caption{اشتراک $A \\cap B$ دو مجموعه، مجموعهٔ\n    !!{element}s مشترک آنهاست.}\n  \\ollabel{fig:intersection}\n\\end{figure}\n\\end{explain}\n\n",
+        "sha256": "92f1be031720ae6199b80d446342726a8728a906582c792cfc7eddff275fd720"
+      },
+      "target_after": {
+        "char_start": 1914,
+        "char_end_exclusive": 2392,
+        "line_start": 58,
+        "line_end": 71,
+        "text": "\\begin{explain}\nمی‌توانیم عملی ``دوگان'' با اجتماع را نیز در نظر بگیریم. این عمل\nمجموعهٔ همهٔ !!{element}s را تشکیل می‌دهد که هم در شمار !!{element}s~$A$\nو هم در شمار !!{element}s~$B$ هستند. این عمل \\emph{اشتراک} نام دارد و می‌توان\nآن را مانند \\olref{fig:intersection} نمایش داد.\n\\begin{figure}\n  \\olasset{assets/diagrams/intersection.tikz}\n  \\caption{اشتراک $A \\cap B$ دو مجموعه، مجموعهٔ\n    !!{element}s مشترک آنهاست.}\n  \\ollabel{fig:intersection}\n\\end{figure}\n\\end{explain}\n\n",
+        "sha256": "92f1be031720ae6199b80d446342726a8728a906582c792cfc7eddff275fd720"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{explain}\nمی‌توانیم عملی ``دوگان'' با اجتماع را نیز در نظر بگیریم. این عمل\nمجموعهٔ همهٔ اعضا را تشکیل می‌دهد که هم در شمار اعضا~$A$\nو هم در شمار اعضا~$B$ هستند. این عمل \\emph{اشتراک} نام دارد و می‌توان\nآن را مانند \\olref{fig:intersection} نمایش داد.\n\\begin{figure}\n  \\olasset{assets/diagrams/intersection.tikz}\n  \\caption{اشتراک $A \\cap B$ دو مجموعه، مجموعهٔ\n    اعضا مشترک آنهاست.}\n  \\ollabel{fig:intersection}\n\\end{figure}\n\\end{explain}\n\n",
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 94,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        },
+        {
+          "character_offset_in_segment": 137,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        },
+        {
+          "character_offset_in_segment": 167,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        },
+        {
+          "character_offset_in_segment": 393,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        }
+      ]
+    },
+    {
+      "topic": "Intersection and disjointness",
+      "canon": [
+        "FA-OL-CANON-0003:P0011",
+        "FA-OL-CANON-0003:P0024"
+      ],
+      "rationale": "Both membership conditions must hold. جدا از هم is defined by empty intersection, not spatial distance. Removing the English plural suffix after هیچ gives هیچ عضو مشترکی, following the observed singular indefinite construction.",
+      "alternatives": "Do not change all اعضا tokens; other contexts are genuinely plural.",
+      "question": "Exact جدا از هم terminology is not attested on these pages; its displayed definition is precise.",
+      "confidence": 2,
+      "confidence_reason": "Source meaning is checked; the specific usage limitation remains.",
+      "id": "FA-0008-C07",
+      "unit": "OLP-0008",
+      "source": {
+        "char_start": 2422,
+        "char_end_exclusive": 2766,
+        "line_start": 71,
+        "line_end": 81,
+        "text": "\\begin{defn}[Intersection]\nThe \\emph{intersection} of two sets $A$ and $B$, written $A \\cap B$, is\nthe set of all things which are !!{element}s of both $A$ and~$B$.\n\\[\nA \\cap B = \\Setabs{x}{x \\in A \\land x \\in B}\n\\]\nTwo sets are called \\emph{disjoint} if their intersection is\nempty. This means they have no !!{element}s in common.\n\\end{defn}\n\n",
+        "sha256": "113a98f72cb3f94817026a15f6afd8af960fd9a2ffc0c7ff1ed5564c301309af"
+      },
+      "target_before": {
+        "char_start": 2392,
+        "char_end_exclusive": 2729,
+        "line_start": 71,
+        "line_end": 81,
+        "text": "\\begin{defn}[اشتراک]\n\\emph{اشتراک} دو مجموعهٔ $A$ و $B$ که آن را $A \\cap B$ می‌نویسیم،\nمجموعهٔ همهٔ اشیایی است که در شمار !!{element}s هر دو مجموعهٔ $A$ و~$B$ هستند.\n\\[\nA \\cap B = \\Setabs{x}{x \\in A \\land x \\in B}\n\\]\nدو مجموعه را \\emph{جدا از هم} می‌نامیم هرگاه اشتراکشان تهی باشد؛ یعنی\nهیچ !!{element}s مشترکی نداشته باشند.\n\\end{defn}\n\n",
+        "sha256": "b28792b9256524526c5287919f3136f87098547e935bb01438218140426f443c"
+      },
+      "target_after": {
+        "char_start": 2392,
+        "char_end_exclusive": 2728,
+        "line_start": 71,
+        "line_end": 81,
+        "text": "\\begin{defn}[اشتراک]\n\\emph{اشتراک} دو مجموعهٔ $A$ و $B$ که آن را $A \\cap B$ می‌نویسیم،\nمجموعهٔ همهٔ اشیایی است که در شمار !!{element}s هر دو مجموعهٔ $A$ و~$B$ هستند.\n\\[\nA \\cap B = \\Setabs{x}{x \\in A \\land x \\in B}\n\\]\nدو مجموعه را \\emph{جدا از هم} می‌نامیم هرگاه اشتراکشان تهی باشد؛ یعنی\nهیچ !!{element} مشترکی نداشته باشند.\n\\end{defn}\n\n",
+        "sha256": "f5b49f8e1d29acd26fca6ab87ea2b63a5581889fc2ca748f75c8cb29873783c1"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{defn}[اشتراک]\n\\emph{اشتراک} دو مجموعهٔ $A$ و $B$ که آن را $A \\cap B$ می‌نویسیم،\nمجموعهٔ همهٔ اشیایی است که در شمار اعضا هر دو مجموعهٔ $A$ و~$B$ هستند.\n\\[\nA \\cap B = \\Setabs{x}{x \\in A \\land x \\in B}\n\\]\nدو مجموعه را \\emph{جدا از هم} می‌نامیم هرگاه اشتراکشان تهی باشد؛ یعنی\nهیچ عضو مشترکی نداشته باشند.\n\\end{defn}\n\n",
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 122,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        },
+        {
+          "character_offset_in_segment": 291,
+          "token": "!!{element}",
+          "realization": "عضو"
+        }
+      ]
+    },
+    {
+      "topic": "Four intersection examples",
+      "canon": [
+        "FA-OL-CANON-0003:P0011",
+        "FA-OL-CANON-0003:P0024"
+      ],
+      "rationale": "The no-common-member, common-member, subset and empty-set cases stay distinct. Only the no-member singular inflection changes; the remaining plural common-member constructions are correct.",
+      "alternatives": "Do not change all-members intersection to at-least-one union.",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Source meaning and the cited native mathematical construction agree.",
+      "id": "FA-0008-C08",
+      "unit": "OLP-0008",
+      "source": {
+        "char_start": 2766,
+        "char_end_exclusive": 3254,
+        "line_start": 81,
+        "line_end": 95,
+        "text": "\\begin{ex}\nIf two sets have no !!{element}s in common, their intersection is empty:\n$\\{ a, b, c\\} \\cap \\{ 0, 1\\} = \\emptyset$.\n\nIf two sets do have !!{element}s in common, their intersection is the set of\nall those: $\\{a, b, c \\} \\cap \\{a, b, d \\} = \\{a, b\\}$.\n\nThe intersection of a set with one of its subsets is just the smaller\nset: $\\{a, b, c\\} \\cap \\{a, b\\} = \\{a, b\\}$.\n\nThe intersection of any set with the empty set is empty: $\\{a, b, c \\}\n\\cap \\emptyset = \\emptyset$.\n\\end{ex}\n\n",
+        "sha256": "68eedf2b530b770386b598760f2fa4e30505fdb3ec01ff23bdfc8e0cab63cbff"
+      },
+      "target_before": {
+        "char_start": 2729,
+        "char_end_exclusive": 3185,
+        "line_start": 81,
+        "line_end": 95,
+        "text": "\\begin{ex}\nاگر دو مجموعه هیچ !!{element}s مشترکی نداشته باشند، اشتراکشان تهی است:\n$\\{ a, b, c\\} \\cap \\{ 0, 1\\} = \\emptyset$.\n\nاگر دو مجموعه !!{element}s مشترک داشته باشند، اشتراکشان مجموعهٔ همهٔ\nآن اعضاست: $\\{a, b, c \\} \\cap \\{a, b, d \\} = \\{a, b\\}$.\n\nاشتراک یک مجموعه با یکی از زیرمجموعه‌هایش همان مجموعهٔ کوچک‌تر است:\n$\\{a, b, c\\} \\cap \\{a, b\\} = \\{a, b\\}$.\n\nاشتراک هر مجموعه با مجموعهٔ تهی، تهی است: $\\{a, b, c \\}\n\\cap \\emptyset = \\emptyset$.\n\\end{ex}\n\n",
+        "sha256": "d84d671a7dfe6f85ca9353aa00b463f0db499aa484c5c17ec3c1ffef43698561"
+      },
+      "target_after": {
+        "char_start": 2728,
+        "char_end_exclusive": 3183,
+        "line_start": 81,
+        "line_end": 95,
+        "text": "\\begin{ex}\nاگر دو مجموعه هیچ !!{element} مشترکی نداشته باشند، اشتراکشان تهی است:\n$\\{ a, b, c\\} \\cap \\{ 0, 1\\} = \\emptyset$.\n\nاگر دو مجموعه !!{element}s مشترک داشته باشند، اشتراکشان مجموعهٔ همهٔ\nآن اعضاست: $\\{a, b, c \\} \\cap \\{a, b, d \\} = \\{a, b\\}$.\n\nاشتراک یک مجموعه با یکی از زیرمجموعه‌هایش همان مجموعهٔ کوچک‌تر است:\n$\\{a, b, c\\} \\cap \\{a, b\\} = \\{a, b\\}$.\n\nاشتراک هر مجموعه با مجموعهٔ تهی، تهی است: $\\{a, b, c \\}\n\\cap \\emptyset = \\emptyset$.\n\\end{ex}\n\n",
+        "sha256": "3e650c5877af10ab500dc02981a3835de5d66a9f67e3abada38bbff039e36eba"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{ex}\nاگر دو مجموعه هیچ عضو مشترکی نداشته باشند، اشتراکشان تهی است:\n$\\{ a, b, c\\} \\cap \\{ 0, 1\\} = \\emptyset$.\n\nاگر دو مجموعه اعضا مشترک داشته باشند، اشتراکشان مجموعهٔ همهٔ\nآن اعضاست: $\\{a, b, c \\} \\cap \\{a, b, d \\} = \\{a, b\\}$.\n\nاشتراک یک مجموعه با یکی از زیرمجموعه‌هایش همان مجموعهٔ کوچک‌تر است:\n$\\{a, b, c\\} \\cap \\{a, b\\} = \\{a, b\\}$.\n\nاشتراک هر مجموعه با مجموعهٔ تهی، تهی است: $\\{a, b, c \\}\n\\cap \\emptyset = \\emptyset$.\n\\end{ex}\n\n",
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 29,
+          "token": "!!{element}",
+          "realization": "عضو"
+        },
+        {
+          "character_offset_in_segment": 139,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        }
+      ]
+    },
+    {
+      "topic": "Rigorous intersection exercise",
+      "canon": [
+        "FA-OL-CANON-0003:P0010",
+        "FA-OL-CANON-0003:P0011"
+      ],
+      "rationale": "به‌دقت ثابت کنید retains the request for a rigorous proof and every hypothesis/conclusion.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Source meaning and the cited native mathematical construction agree.",
+      "id": "FA-0008-C09",
+      "unit": "OLP-0008",
+      "source": {
+        "char_start": 3254,
+        "char_end_exclusive": 3342,
+        "line_start": 95,
+        "line_end": 99,
+        "text": "\\begin{prob}\nProve rigorously that if $A \\subseteq B$, then $A \\cap B = A$.\n\\end{prob}\n\n",
+        "sha256": "d39e851c6b89e80b100ed0878aa1e1fb3f705616cb444e3ef8860249d670525b"
+      },
+      "target_before": {
+        "char_start": 3185,
+        "char_end_exclusive": 3270,
+        "line_start": 95,
+        "line_end": 99,
+        "text": "\\begin{prob}\nبه‌دقت ثابت کنید اگر $A \\subseteq B$، آنگاه $A \\cap B = A$.\n\\end{prob}\n\n",
+        "sha256": "7c066cd8a1cd453b634cd3ad69642c174ac61d617d3eadcced6098e461bc9254"
+      },
+      "target_after": {
+        "char_start": 3183,
+        "char_end_exclusive": 3268,
+        "line_start": 95,
+        "line_end": 99,
+        "text": "\\begin{prob}\nبه‌دقت ثابت کنید اگر $A \\subseteq B$، آنگاه $A \\cap B = A$.\n\\end{prob}\n\n",
+        "sha256": "7c066cd8a1cd453b634cd3ad69642c174ac61d617d3eadcced6098e461bc9254"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{prob}\nبه‌دقت ثابت کنید اگر $A \\subseteq B$، آنگاه $A \\cap B = A$.\n\\end{prob}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "A family of sets",
+      "canon": [
+        "FA-OL-CANON-0003:P0011"
+      ],
+      "rationale": "The family contains sets; objects belong to at least one or every member-set. The labelled note qualifies generalized intersections, not unions.",
+      "alternatives": "Do not collapse the two levels of membership.",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Source meaning and the cited native mathematical construction agree.",
+      "id": "FA-0008-C10",
+      "unit": "OLP-0008",
+      "source": {
+        "char_start": 3342,
+        "char_end_exclusive": 3843,
+        "line_start": 99,
+        "line_end": 110,
+        "text": "\\begin{explain}\nWe can also form the union or intersection of more than two\nsets. An elegant way of dealing with this in general is the\nfollowing: suppose you collect all the sets you want to form the union\n(or intersection) of into a single set. Then we can define the union\nof all our original sets as the set of all objects which belong to at\nleast one !!{element} of the set, and the intersection as the set of\nall objects which belong to every !!{element} of the set.\n\\end{explain}\n\n\\begin{defn}\n",
+        "sha256": "d99431455a4e706123b1bd3b5baf7f81ca8d40c4e56c1de66f7171f1fb150d14"
+      },
+      "target_before": {
+        "char_start": 3270,
+        "char_end_exclusive": 3728,
+        "line_start": 99,
+        "line_end": 109,
+        "text": "\\begin{explain}\nمی‌توانیم اجتماع یا اشتراک بیش از دو مجموعه را نیز تشکیل دهیم. راهی\nظریف برای بررسی حالت کلی چنین است: فرض کنید همهٔ مجموعه‌هایی را که\nمی‌خواهید اجتماع (یا اشتراک) آنها را تشکیل دهید، در یک مجموعه گرد\nآورید. سپس می‌توانیم اجتماع همهٔ مجموعه‌های نخستین را مجموعهٔ همهٔ\nاشیایی تعریف کنیم که دست‌کم به یک !!{element} از آن مجموعه تعلق دارند،\nو اشتراک را مجموعهٔ همهٔ اشیایی که به هر !!{element} آن مجموعه تعلق دارند.\n\\end{explain}\n\n\\begin{defn}\n",
+        "sha256": "cccf73a280b419a00e26129307d95c8065ee5d09d87b5c8afbc3e93510fdb34e"
+      },
+      "target_after": {
+        "char_start": 3268,
+        "char_end_exclusive": 3726,
+        "line_start": 99,
+        "line_end": 109,
+        "text": "\\begin{explain}\nمی‌توانیم اجتماع یا اشتراک بیش از دو مجموعه را نیز تشکیل دهیم. راهی\nظریف برای بررسی حالت کلی چنین است: فرض کنید همهٔ مجموعه‌هایی را که\nمی‌خواهید اجتماع (یا اشتراک) آنها را تشکیل دهید، در یک مجموعه گرد\nآورید. سپس می‌توانیم اجتماع همهٔ مجموعه‌های نخستین را مجموعهٔ همهٔ\nاشیایی تعریف کنیم که دست‌کم به یک !!{element} از آن مجموعه تعلق دارند،\nو اشتراک را مجموعهٔ همهٔ اشیایی که به هر !!{element} آن مجموعه تعلق دارند.\n\\end{explain}\n\n\\begin{defn}\n",
+        "sha256": "cccf73a280b419a00e26129307d95c8065ee5d09d87b5c8afbc3e93510fdb34e"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{explain}\nمی‌توانیم اجتماع یا اشتراک بیش از دو مجموعه را نیز تشکیل دهیم. راهی\nظریف برای بررسی حالت کلی چنین است: فرض کنید همهٔ مجموعه‌هایی را که\nمی‌خواهید اجتماع (یا اشتراک) آنها را تشکیل دهید، در یک مجموعه گرد\nآورید. سپس می‌توانیم اجتماع همهٔ مجموعه‌های نخستین را مجموعهٔ همهٔ\nاشیایی تعریف کنیم که دست‌کم به یک عضو از آن مجموعه تعلق دارند،\nو اشتراک را مجموعهٔ همهٔ اشیایی که به هر عضو آن مجموعه تعلق دارند.\n\\end{explain}\n\n\\begin{defn}\n",
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 318,
+          "token": "!!{element}",
+          "realization": "عضو"
+        },
+        {
+          "character_offset_in_segment": 396,
+          "token": "!!{element}",
+          "realization": "عضو"
+        }
+      ]
+    },
+    {
+      "topic": "Generalized union",
+      "canon": [
+        "FA-OL-CANON-0003:P0011"
+      ],
+      "rationale": "The prose and aligned display express existence of a member-set B. !!a{element}ی realizes عضوی correctly. Empty-family union remains valid and empty.",
+      "alternatives": "Adding a nonempty restriction to union is unnecessary.",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Source meaning and the cited native mathematical construction agree.",
+      "id": "FA-0008-C11",
+      "unit": "OLP-0008",
+      "source": {
+        "char_start": 3843,
+        "char_end_exclusive": 4142,
+        "line_start": 110,
+        "line_end": 121,
+        "text": "If $A$ is a set of sets, then $\\bigcup A$ is the set of !!{element}s of\n!!{element}s of~$A$:\n\\begin{align*}\n\\bigcup A & = \\Setabs{x}{x \\text{ belongs to !!a{element} of } A},\n\\text{ i.e.,}\\\\\n& = \\Setabs{x}{\\text{there is a } B \\in A\n  \\text{ so that } x \\in B}\n\\end{align*}\n\\end{defn}\n\n\\begin{defn}\n",
+        "sha256": "8ccaad764664c56702c259ed5e080a415ed2bdd1ee05d8c6ded1d20ba4dc45a8"
+      },
+      "target_before": {
+        "char_start": 3728,
+        "char_end_exclusive": 4065,
+        "line_start": 109,
+        "line_end": 120,
+        "text": "اگر $A$ مجموعه‌ای از مجموعه‌ها باشد، آنگاه $\\bigcup A$ مجموعهٔ همهٔ\nاشیایی است که در شمار !!{element}sِ !!{element}s~$A$ هستند:\n\\begin{align*}\n\\bigcup A & = \\Setabs{x}{x \\text{ متعلق به !!a{element}ی از } A},\n\\text{ یعنی}\\\\\n& = \\Setabs{x}{\\text{یک } B \\in A\n  \\text{ وجود دارد به‌طوری‌که } x \\in B}\n\\end{align*}\n\\end{defn}\n\n\\begin{defn}\n",
+        "sha256": "08ae42fc752d4752e6dbd882db4295a03d1b6b66aae9c7efb35357acfb4d1c9d"
+      },
+      "target_after": {
+        "char_start": 3726,
+        "char_end_exclusive": 4063,
+        "line_start": 109,
+        "line_end": 120,
+        "text": "اگر $A$ مجموعه‌ای از مجموعه‌ها باشد، آنگاه $\\bigcup A$ مجموعهٔ همهٔ\nاشیایی است که در شمار !!{element}sِ !!{element}s~$A$ هستند:\n\\begin{align*}\n\\bigcup A & = \\Setabs{x}{x \\text{ متعلق به !!a{element}ی از } A},\n\\text{ یعنی}\\\\\n& = \\Setabs{x}{\\text{یک } B \\in A\n  \\text{ وجود دارد به‌طوری‌که } x \\in B}\n\\end{align*}\n\\end{defn}\n\n\\begin{defn}\n",
+        "sha256": "08ae42fc752d4752e6dbd882db4295a03d1b6b66aae9c7efb35357acfb4d1c9d"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "اگر $A$ مجموعه‌ای از مجموعه‌ها باشد، آنگاه $\\bigcup A$ مجموعهٔ همهٔ\nاشیایی است که در شمار اعضاِ اعضا~$A$ هستند:\n\\begin{align*}\n\\bigcup A & = \\Setabs{x}{x \\text{ متعلق به عضوی از } A},\n\\text{ یعنی}\\\\\n& = \\Setabs{x}{\\text{یک } B \\in A\n  \\text{ وجود دارد به‌طوری‌که } x \\in B}\n\\end{align*}\n\\end{defn}\n\n\\begin{defn}\n",
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 90,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        },
+        {
+          "character_offset_in_segment": 104,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        },
+        {
+          "character_offset_in_segment": 186,
+          "token": "!!a{element}",
+          "realization": "عضو"
+        }
+      ]
+    },
+    {
+      "topic": "Generalized intersection: membership direction and domain",
+      "canon": [
+        "FA-OL-CANON-0003:P0011"
+      ],
+      "rationale": "The old sentence confusingly placed family members inside shared objects. The candidate says each object belongs to every member-set. A visible editorial note discloses the source’s omitted nonempty-family condition. The unrestricted empty-family predicate defines the universal class, not a set. For a nonempty family choose a member B0: its intersection is a class contained in B0, hence a set by specification. A fixed ambient-set convention for an empty family is separately allowed. Original formulas stay exact.",
+      "alternatives": "Do not silently add a hypothesis. Do not arbitrarily declare the unrestricted empty intersection empty. This is a source qualification, not evidence of a transcription mistake.",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Source meaning and the cited native mathematical construction agree.",
+      "id": "FA-0008-C12",
+      "unit": "OLP-0008",
+      "source": {
+        "char_start": 4142,
+        "char_end_exclusive": 4426,
+        "line_start": 121,
+        "line_end": 130,
+        "text": "If $A$ is a set of sets, then $\\bigcap A$ is the set of objects which\nall elements of~$A$ have in common:\n\\begin{align*}\n\\bigcap A & = \\Setabs{x}{x \\text{ belongs to every !!{element} of } A},\n\\text{ i.e.,}\\\\\n & = \\Setabs{x}{\\text{for all } B \\in A, x \\in B}\n\\end{align*}\n\\end{defn}\n\n",
+        "sha256": "f24cd2c8fbf9a7342b02adad4b44ffa9bbf31722ea8d9a3a1405101dc3aebf00"
+      },
+      "target_before": {
+        "char_start": 4065,
+        "char_end_exclusive": 4348,
+        "line_start": 120,
+        "line_end": 129,
+        "text": "اگر $A$ مجموعه‌ای از مجموعه‌ها باشد، آنگاه $\\bigcap A$ مجموعهٔ اشیایی\nاست که همهٔ اعضای~$A$ در آنها مشترک‌اند:\n\\begin{align*}\n\\bigcap A & = \\Setabs{x}{x \\text{ متعلق به هر !!{element} از } A},\n\\text{ یعنی}\\\\\n & = \\Setabs{x}{\\text{برای هر } B \\in A, x \\in B}\n\\end{align*}\n\\end{defn}\n\n",
+        "sha256": "6acca184752627f7463714de8a30f7db71f44e5692481472180e84179895051c"
+      },
+      "target_after": {
+        "char_start": 4063,
+        "char_end_exclusive": 4735,
+        "line_start": 120,
+        "line_end": 129,
+        "text": "اگر $A$ مجموعه‌ای ناتهی از مجموعه‌ها باشد، آنگاه $\\bigcap A$\nمجموعهٔ همهٔ اشیایی است که به هر یک از مجموعه‌های عضوِ~$A$ تعلق دارند\\footnote{یادداشت ویراستاری: در اینجا، برای اشتراک یک خانوادهٔ دلخواه از مجموعه‌ها فرض می‌کنیم خانواده ناتهی است؛ در حالت اندیس‌دار نیز همین شرط برقرار است. برای خانوادهٔ تهی، شرط «عضویت در همهٔ مجموعه‌های خانواده» به‌تنهایی مجموعه‌ای معین نمی‌کند. اگر از پیش یک مجموعهٔ مرجع ثابت شده باشد، می‌توان اشتراک خانوادهٔ تهی را نسبت به آن مرجع، خودِ مجموعهٔ مرجع تعریف کرد.}:\n\\begin{align*}\n\\bigcap A & = \\Setabs{x}{x \\text{ متعلق به هر !!{element} از } A},\n\\text{ یعنی}\\\\\n & = \\Setabs{x}{\\text{برای هر } B \\in A, x \\in B}\n\\end{align*}\n\\end{defn}\n\n",
+        "sha256": "11f74062c5b0d96dc9892ef910949bc7bcf65b249b1f5e9734808c83bcba8e75"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "اگر $A$ مجموعه‌ای ناتهی از مجموعه‌ها باشد، آنگاه $\\bigcap A$\nمجموعهٔ همهٔ اشیایی است که به هر یک از مجموعه‌های عضوِ~$A$ تعلق دارند\\footnote{یادداشت ویراستاری: در اینجا، برای اشتراک یک خانوادهٔ دلخواه از مجموعه‌ها فرض می‌کنیم خانواده ناتهی است؛ در حالت اندیس‌دار نیز همین شرط برقرار است. برای خانوادهٔ تهی، شرط «عضویت در همهٔ مجموعه‌های خانواده» به‌تنهایی مجموعه‌ای معین نمی‌کند. اگر از پیش یک مجموعهٔ مرجع ثابت شده باشد، می‌توان اشتراک خانوادهٔ تهی را نسبت به آن مرجع، خودِ مجموعهٔ مرجع تعریف کرد.}:\n\\begin{align*}\n\\bigcap A & = \\Setabs{x}{x \\text{ متعلق به هر عضو از } A},\n\\text{ یعنی}\\\\\n & = \\Setabs{x}{\\text{برای هر } B \\in A, x \\in B}\n\\end{align*}\n\\end{defn}\n\n",
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 561,
+          "token": "!!{element}",
+          "realization": "عضو"
+        }
+      ]
+    },
+    {
+      "topic": "Three-set family example",
+      "canon": [
+        "FA-OL-CANON-0003:P0011"
+      ],
+      "rationale": "All three member-sets and both answers are preserved. The union has four displayed labels, the intersection only a; the family is nonempty.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Source meaning and the cited native mathematical construction agree.",
+      "id": "FA-0008-C13",
+      "unit": "OLP-0008",
+      "source": {
+        "char_start": 4426,
+        "char_end_exclusive": 4568,
+        "line_start": 130,
+        "line_end": 134,
+        "text": "\\begin{ex}\nSuppose $A = \\{ \\{ a, b \\}, \\{ a, d, e \\}, \\{ a, d \\} \\}$.\nThen $\\bigcup A = \\{ a, b, d, e \\}$ and $\\bigcap A = \\{ a \\}$.\n\\end{ex}\n",
+        "sha256": "930576e1f7cd951a6f383cc7fcbecd6fb53c7c77fd783519c1b515fad9f1d605"
+      },
+      "target_before": {
+        "char_start": 4348,
+        "char_end_exclusive": 4490,
+        "line_start": 129,
+        "line_end": 133,
+        "text": "\\begin{ex}\nفرض کنید $A = \\{ \\{ a, b \\}, \\{ a, d, e \\}, \\{ a, d \\} \\}$.\nآنگاه $\\bigcup A = \\{ a, b, d, e \\}$ و $\\bigcap A = \\{ a \\}$.\n\\end{ex}\n",
+        "sha256": "0564ca787ef94e2e58d6f0d005ebf8b89771bd42ada5940fd314406872563aa8"
+      },
+      "target_after": {
+        "char_start": 4735,
+        "char_end_exclusive": 4877,
+        "line_start": 129,
+        "line_end": 133,
+        "text": "\\begin{ex}\nفرض کنید $A = \\{ \\{ a, b \\}, \\{ a, d, e \\}, \\{ a, d \\} \\}$.\nآنگاه $\\bigcup A = \\{ a, b, d, e \\}$ و $\\bigcap A = \\{ a \\}$.\n\\end{ex}\n",
+        "sha256": "0564ca787ef94e2e58d6f0d005ebf8b89771bd42ada5940fd314406872563aa8"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{ex}\nفرض کنید $A = \\{ \\{ a, b \\}, \\{ a, d, e \\}, \\{ a, d \\} \\}$.\nآنگاه $\\bigcup A = \\{ a, b, d, e \\}$ و $\\bigcap A = \\{ a \\}$.\n\\end{ex}\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Membership versus inclusion exercise",
+      "canon": [
+        "FA-OL-CANON-0003:P0010",
+        "FA-OL-CANON-0003:P0011"
+      ],
+      "rationale": "A belongs to B, whereas A is a subset of the union of B. The two relations stay distinct.",
+      "alternatives": "Changing A in B to A subset B changes the problem.",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Source meaning and the cited native mathematical construction agree.",
+      "id": "FA-0008-C14",
+      "unit": "OLP-0008",
+      "source": {
+        "char_start": 4568,
+        "char_end_exclusive": 4665,
+        "line_start": 134,
+        "line_end": 138,
+        "text": "\\begin{prob}\n\tShow that if $A$ is a set and $A \\in B$, then $A \\subseteq \\bigcup B$.\n\\end{prob}\n\n",
+        "sha256": "8836850118ca20009d789cf09f5cc6a788d765194182119733ce23f476b892d8"
+      },
+      "target_before": {
+        "char_start": 4490,
+        "char_end_exclusive": 4593,
+        "line_start": 133,
+        "line_end": 137,
+        "text": "\\begin{prob}\n\tنشان دهید اگر $A$ یک مجموعه و $A \\in B$ باشد، آنگاه $A \\subseteq \\bigcup B$.\n\\end{prob}\n\n",
+        "sha256": "ad5109637bc27534ef0957929d27aed86742624c2cdc67c5ef7bef562f475a5d"
+      },
+      "target_after": {
+        "char_start": 4877,
+        "char_end_exclusive": 4980,
+        "line_start": 133,
+        "line_end": 137,
+        "text": "\\begin{prob}\n\tنشان دهید اگر $A$ یک مجموعه و $A \\in B$ باشد، آنگاه $A \\subseteq \\bigcup B$.\n\\end{prob}\n\n",
+        "sha256": "ad5109637bc27534ef0957929d27aed86742624c2cdc67c5ef7bef562f475a5d"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{prob}\n\tنشان دهید اگر $A$ یک مجموعه و $A \\in B$ باشد، آنگاه $A \\subseteq \\bigcup B$.\n\\end{prob}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Sequence-indexed operations",
+      "canon": [
+        "FA-OL-CANON-0003:P0046",
+        "FA-OL-CANON-0003:P0011"
+      ],
+      "rationale": "A1,A2,... is a nonempty sequence. یکی is existential at-least-one here; همهٔ is universal. No uniqueness condition is introduced.",
+      "alternatives": "Exactly one or almost all would change the quantifier.",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Source meaning and the cited native mathematical construction agree.",
+      "id": "FA-0008-C15",
+      "unit": "OLP-0008",
+      "source": {
+        "char_start": 4665,
+        "char_end_exclusive": 4895,
+        "line_start": 138,
+        "line_end": 144,
+        "text": "We could also do the same for a sequence of sets $A_1$, $A_2$, \\dots\n\\begin{align*}\n\\bigcup_i A_i & = \\Setabs{x}{x \\text{ belongs to one of the } A_i}\\\\\n\\bigcap_i A_i & = \\Setabs{x}{x \\text{ belongs to every } A_i}.\n\\end{align*}\n\n",
+        "sha256": "6c5f14e2953cb1f018501416480ce5dafb13b2d8e701150ffd42eba10f7c723c"
+      },
+      "target_before": {
+        "char_start": 4593,
+        "char_end_exclusive": 4856,
+        "line_start": 137,
+        "line_end": 144,
+        "text": "می‌توان همین کار را برای دنباله‌ای از مجموعه‌ها مانند $A_1$، $A_2$، \\dots\nنیز انجام داد:\n\\begin{align*}\n\\bigcup_i A_i & = \\Setabs{x}{x \\text{ متعلق به یکی از مجموعه‌های } A_i}\\\\\n\\bigcap_i A_i & = \\Setabs{x}{x \\text{ متعلق به همهٔ مجموعه‌های } A_i}.\n\\end{align*}\n\n",
+        "sha256": "5e3df6d5b74ba2ce767bec70d50c4646fc2f05b1a6687ec3dbfc85df1dc7b45e"
+      },
+      "target_after": {
+        "char_start": 4980,
+        "char_end_exclusive": 5243,
+        "line_start": 137,
+        "line_end": 144,
+        "text": "می‌توان همین کار را برای دنباله‌ای از مجموعه‌ها مانند $A_1$، $A_2$، \\dots\nنیز انجام داد:\n\\begin{align*}\n\\bigcup_i A_i & = \\Setabs{x}{x \\text{ متعلق به یکی از مجموعه‌های } A_i}\\\\\n\\bigcap_i A_i & = \\Setabs{x}{x \\text{ متعلق به همهٔ مجموعه‌های } A_i}.\n\\end{align*}\n\n",
+        "sha256": "5e3df6d5b74ba2ce767bec70d50c4646fc2f05b1a6687ec3dbfc85df1dc7b45e"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "می‌توان همین کار را برای دنباله‌ای از مجموعه‌ها مانند $A_1$، $A_2$، \\dots\nنیز انجام داد:\n\\begin{align*}\n\\bigcup_i A_i & = \\Setabs{x}{x \\text{ متعلق به یکی از مجموعه‌های } A_i}\\\\\n\\bigcap_i A_i & = \\Setabs{x}{x \\text{ متعلق به همهٔ مجموعه‌های } A_i}.\n\\end{align*}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "General index set",
+      "canon": [
+        "FA-OL-CANON-0003:P0054",
+        "FA-OL-CANON-0003:P0011"
+      ],
+      "rationale": "مجموعهٔ اندیس states the source explanation that I indexes Ai. Both abbreviation formulas retain i in I. The visible note also covers empty indexed intersections.",
+      "alternatives": "An index set is not one subscript value.",
+      "question": "The canon uses indexed unions/اندیس, but the exact compound مجموعهٔ اندیس is not directly attested here.",
+      "confidence": 2,
+      "confidence_reason": "Source meaning is checked; the specific usage limitation remains.",
+      "id": "FA-0008-C16",
+      "unit": "OLP-0008",
+      "source": {
+        "char_start": 4895,
+        "char_end_exclusive": 5189,
+        "line_start": 144,
+        "line_end": 152,
+        "text": "When we have an \\emph{index} of sets, i.e., some set $I$ such that we\nare considering $A_i$ for each $i \\in I$, we may also use these\nabbreviations:\n\\begin{align*}\n\t\\bigcup_{i \\in I} A_i & = \\bigcup \\Setabs{A_i }{i \\in I}\\\\\n\t\\bigcap_{i \\in I} A_i & = \\bigcap\\Setabs{A_i}{i \\in I}\n\\end{align*}\n\n",
+        "sha256": "18f2f76930d561a16d8be0176271edcd171d7a7e552a1ac8b0fa132dbfcc299a"
+      },
+      "target_before": {
+        "char_start": 4856,
+        "char_end_exclusive": 5215,
+        "line_start": 144,
+        "line_end": 153,
+        "text": "هنگامی که یک \\emph{مجموعهٔ اندیس} مانند $I$ داریم و مجموعه‌های مورد\nنظر را با $A_i$ نشان می‌دهیم، به‌گونه‌ای که برای هر $i \\in I$ یک\nمجموعه در نظر گرفته شده است، می‌توانیم از صورت‌های اختصاری زیر نیز\nاستفاده کنیم:\n\\begin{align*}\n\t\\bigcup_{i \\in I} A_i & = \\bigcup \\Setabs{A_i }{i \\in I}\\\\\n\t\\bigcap_{i \\in I} A_i & = \\bigcap\\Setabs{A_i}{i \\in I}\n\\end{align*}\n\n",
+        "sha256": "9632cc852c3e671ed9042250593ad41023a1f7c6d4a5f69add3b33f947af09c5"
+      },
+      "target_after": {
+        "char_start": 5243,
+        "char_end_exclusive": 5602,
+        "line_start": 144,
+        "line_end": 153,
+        "text": "هنگامی که یک \\emph{مجموعهٔ اندیس} مانند $I$ داریم و مجموعه‌های مورد\nنظر را با $A_i$ نشان می‌دهیم، به‌گونه‌ای که برای هر $i \\in I$ یک\nمجموعه در نظر گرفته شده است، می‌توانیم از صورت‌های اختصاری زیر نیز\nاستفاده کنیم:\n\\begin{align*}\n\t\\bigcup_{i \\in I} A_i & = \\bigcup \\Setabs{A_i }{i \\in I}\\\\\n\t\\bigcap_{i \\in I} A_i & = \\bigcap\\Setabs{A_i}{i \\in I}\n\\end{align*}\n\n",
+        "sha256": "9632cc852c3e671ed9042250593ad41023a1f7c6d4a5f69add3b33f947af09c5"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "هنگامی که یک \\emph{مجموعهٔ اندیس} مانند $I$ داریم و مجموعه‌های مورد\nنظر را با $A_i$ نشان می‌دهیم، به‌گونه‌ای که برای هر $i \\in I$ یک\nمجموعه در نظر گرفته شده است، می‌توانیم از صورت‌های اختصاری زیر نیز\nاستفاده کنیم:\n\\begin{align*}\n\t\\bigcup_{i \\in I} A_i & = \\bigcup \\Setabs{A_i }{i \\in I}\\\\\n\t\\bigcap_{i \\in I} A_i & = \\bigcap\\Setabs{A_i}{i \\in I}\n\\end{align*}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Difference explanation and caption",
+      "canon": [
+        "FA-OL-CANON-0003:P0011"
+      ],
+      "rationale": "Membership is in A and not B; the caption and diagram path preserve the direction of subtraction.",
+      "alternatives": "Symmetric difference or B minus A is not equivalent.",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Source meaning and the cited native mathematical construction agree.",
+      "id": "FA-0008-C17",
+      "unit": "OLP-0008",
+      "source": {
+        "char_start": 5189,
+        "char_end_exclusive": 5563,
+        "line_start": 152,
+        "line_end": 162,
+        "text": "Finally, we may want to think about the set of all !!{element}s in~$A$\nwhich are not in~$B$. We can depict this as in \\olref{difference}.\n\n\\begin{figure}\n  \\olasset{assets/diagrams/difference.tikz}\n  \\caption{The difference $A \\setminus B$ of two sets is the set of\n    those !!{element}s of~$A$ which are not also !!{element}s of~$B$.}\n  \\ollabel{difference}\n\\end{figure}\n\n",
+        "sha256": "a36b6818e16719aae80a55b65614337d9133e1bc72972d3574fee00347a7d99b"
+      },
+      "target_before": {
+        "char_start": 5215,
+        "char_end_exclusive": 5559,
+        "line_start": 153,
+        "line_end": 163,
+        "text": "سرانجام، ممکن است بخواهیم مجموعهٔ همهٔ !!{element}s~$A$ را در نظر\nبگیریم که در~$B$ نیستند. می‌توان آن را مانند \\olref{difference} نمایش داد.\n\n\\begin{figure}\n  \\olasset{assets/diagrams/difference.tikz}\n  \\caption{تفاضل $A \\setminus B$ دو مجموعه، مجموعهٔ\n    !!{element}s~$A$ است که !!{element}s~$B$ نیستند.}\n  \\ollabel{difference}\n\\end{figure}\n\n",
+        "sha256": "4102aee9d0bd893993da4ae45e3d5e391a80ceca963636aa92d7c0d5ef967cde"
+      },
+      "target_after": {
+        "char_start": 5602,
+        "char_end_exclusive": 5946,
+        "line_start": 153,
+        "line_end": 163,
+        "text": "سرانجام، ممکن است بخواهیم مجموعهٔ همهٔ !!{element}s~$A$ را در نظر\nبگیریم که در~$B$ نیستند. می‌توان آن را مانند \\olref{difference} نمایش داد.\n\n\\begin{figure}\n  \\olasset{assets/diagrams/difference.tikz}\n  \\caption{تفاضل $A \\setminus B$ دو مجموعه، مجموعهٔ\n    !!{element}s~$A$ است که !!{element}s~$B$ نیستند.}\n  \\ollabel{difference}\n\\end{figure}\n\n",
+        "sha256": "4102aee9d0bd893993da4ae45e3d5e391a80ceca963636aa92d7c0d5ef967cde"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "سرانجام، ممکن است بخواهیم مجموعهٔ همهٔ اعضا~$A$ را در نظر\nبگیریم که در~$B$ نیستند. می‌توان آن را مانند \\olref{difference} نمایش داد.\n\n\\begin{figure}\n  \\olasset{assets/diagrams/difference.tikz}\n  \\caption{تفاضل $A \\setminus B$ دو مجموعه، مجموعهٔ\n    اعضا~$A$ است که اعضا~$B$ نیستند.}\n  \\ollabel{difference}\n\\end{figure}\n\n",
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 39,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        },
+        {
+          "character_offset_in_segment": 257,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        },
+        {
+          "character_offset_in_segment": 281,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        }
+      ]
+    },
+    {
+      "topic": "Difference definition",
+      "canon": [
+        "FA-OL-CANON-0003:P0011"
+      ],
+      "rationale": "تفاضل is directly attested. مجموعه‌ای clarifies its domain. و preserves conjunction with nonmembership in the display.",
+      "alternatives": "Complement requires an ambient set and is not a synonym for this binary operation.",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Source meaning and the cited native mathematical construction agree.",
+      "id": "FA-0008-C18",
+      "unit": "OLP-0008",
+      "source": {
+        "char_start": 5563,
+        "char_end_exclusive": 5791,
+        "line_start": 162,
+        "line_end": 170,
+        "text": "\\begin{defn}[Difference]\nThe \\emph{set difference}~$A \\setminus B$ is the set of all !!{element}s of\n$A$ which are not also !!{element}s of~$B$, i.e.,\n\\[\nA\\setminus B = \\Setabs{x}{x\\in A \\text{ and } x \\notin B}.\n\\]\n\\end{defn}\n\n",
+        "sha256": "8535bddf0259fba9360baeed0316ac127ceb6540ac8d0bc1f4dab1e0643b393b"
+      },
+      "target_before": {
+        "char_start": 5559,
+        "char_end_exclusive": 5768,
+        "line_start": 163,
+        "line_end": 171,
+        "text": "\\begin{defn}[تفاضل]\n\\emph{تفاضل مجموعه‌ای}~$A \\setminus B$ مجموعهٔ همهٔ !!{element}s\n$A$ است که در شمار !!{element}s~$B$ نیستند؛ یعنی\n\\[\nA\\setminus B = \\Setabs{x}{x\\in A \\text{ و } x \\notin B}.\n\\]\n\\end{defn}\n\n",
+        "sha256": "64eb1ecde761018aaf0e3adaa39a99d7c63c84fcc998fd2c1cc55d2adb25cf44"
+      },
+      "target_after": {
+        "char_start": 5946,
+        "char_end_exclusive": 6155,
+        "line_start": 163,
+        "line_end": 171,
+        "text": "\\begin{defn}[تفاضل]\n\\emph{تفاضل مجموعه‌ای}~$A \\setminus B$ مجموعهٔ همهٔ !!{element}s\n$A$ است که در شمار !!{element}s~$B$ نیستند؛ یعنی\n\\[\nA\\setminus B = \\Setabs{x}{x\\in A \\text{ و } x \\notin B}.\n\\]\n\\end{defn}\n\n",
+        "sha256": "64eb1ecde761018aaf0e3adaa39a99d7c63c84fcc998fd2c1cc55d2adb25cf44"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{defn}[تفاضل]\n\\emph{تفاضل مجموعه‌ای}~$A \\setminus B$ مجموعهٔ همهٔ اعضا\n$A$ است که در شمار اعضا~$B$ نیستند؛ یعنی\n\\[\nA\\setminus B = \\Setabs{x}{x\\in A \\text{ و } x \\notin B}.\n\\]\n\\end{defn}\n\n",
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 72,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        },
+        {
+          "character_offset_in_segment": 104,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        }
+      ]
+    },
+    {
+      "topic": "Proper-subset difference exercise",
+      "canon": [
+        "FA-OL-CANON-0003:P0010",
+        "FA-OL-CANON-0003:P0011"
+      ],
+      "rationale": "Strict inclusion guarantees an element in B not A. The operands B minus A and the nonempty conclusion remain exact.",
+      "alternatives": "Weak inclusion allows empty difference and changes the theorem.",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Source meaning and the cited native mathematical construction agree.",
+      "id": "FA-0008-C19",
+      "unit": "OLP-0008",
+      "source": {
+        "char_start": 5791,
+        "char_end_exclusive": 5886,
+        "line_start": 170,
+        "line_end": 174,
+        "text": "\\begin{prob}\n\tProve that if $A \\subsetneq B$, then $B \\setminus A \\neq \\emptyset$.\n\\end{prob}\n\n",
+        "sha256": "e29b95101abacd90d078248703e93e5db1cbccace24c6b5293be776697e96a00"
+      },
+      "target_before": {
+        "char_start": 5768,
+        "char_end_exclusive": 5864,
+        "line_start": 171,
+        "line_end": 175,
+        "text": "\\begin{prob}\n\tثابت کنید اگر $A \\subsetneq B$، آنگاه $B \\setminus A \\neq \\emptyset$.\n\\end{prob}\n\n",
+        "sha256": "928c602905730ddfb378cd8b02b54c0efe250800f049c7f872a243c6bdc3a2a5"
+      },
+      "target_after": {
+        "char_start": 6155,
+        "char_end_exclusive": 6251,
+        "line_start": 171,
+        "line_end": 175,
+        "text": "\\begin{prob}\n\tثابت کنید اگر $A \\subsetneq B$، آنگاه $B \\setminus A \\neq \\emptyset$.\n\\end{prob}\n\n",
+        "sha256": "928c602905730ddfb378cd8b02b54c0efe250800f049c7f872a243c6bdc3a2a5"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{prob}\n\tثابت کنید اگر $A \\subsetneq B$، آنگاه $B \\setminus A \\neq \\emptyset$.\n\\end{prob}\n\n",
+      "member_occurrences": []
+    }
+  ],
+  "corrections": [
+    {
+      "unit": "OLP-0008",
+      "id": "FA0008-NONE-001",
+      "before": "هیچ !!{element}s مشترکی نداشته باشند.",
+      "after": "هیچ !!{element} مشترکی نداشته باشند."
+    },
+    {
+      "unit": "OLP-0008",
+      "id": "FA0008-NONE-002",
+      "before": "اگر دو مجموعه هیچ !!{element}s مشترکی نداشته باشند،",
+      "after": "اگر دو مجموعه هیچ !!{element} مشترکی نداشته باشند،"
+    },
+    {
+      "unit": "OLP-0008",
+      "id": "FA0008-INTER-003",
+      "before": "اگر $A$ مجموعه‌ای از مجموعه‌ها باشد، آنگاه $\\bigcap A$ مجموعهٔ اشیایی\nاست که همهٔ اعضای~$A$ در آنها مشترک‌اند:",
+      "after": "اگر $A$ مجموعه‌ای ناتهی از مجموعه‌ها باشد، آنگاه $\\bigcap A$\nمجموعهٔ همهٔ اشیایی است که به هر یک از مجموعه‌های عضوِ~$A$ تعلق دارند\\footnote{یادداشت ویراستاری: در اینجا، برای اشتراک یک خانوادهٔ دلخواه از مجموعه‌ها فرض می‌کنیم خانواده ناتهی است؛ در حالت اندیس‌دار نیز همین شرط برقرار است. برای خانوادهٔ تهی، شرط «عضویت در همهٔ مجموعه‌های خانواده» به‌تنهایی مجموعه‌ای معین نمی‌کند. اگر از پیش یک مجموعهٔ مرجع ثابت شده باشد، می‌توان اشتراک خانوادهٔ تهی را نسبت به آن مرجع، خودِ مجموعهٔ مرجع تعریف کرد.}:"
+    }
+  ],
+  "human_review_gate": false,
+  "reader_release": false
+}
