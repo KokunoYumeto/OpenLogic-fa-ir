@@ -1,0 +1,825 @@
+{
+  "schema": "public-openlogic-fa-review/1",
+  "unit": "OLP-0006",
+  "identities": {
+    "source_commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+    "source_path": "content/sets-functions-relations/sets/subsets.tex",
+    "source_git_lf_sha256": "63d819c246577b3bfd8ba2a933f114b58c6549bdc4fa6ea8ffa8ab07c7fed4b7",
+    "source_unit_ledger_CRLF_sha256": "5d982f62c40325cf75da4517add45ca073e23fb9463cfb3adfb9aafbb8582e46",
+    "target_before_sha256": "b8755941afb97fc801c6ff9f03b54522ae64ac4d321df207d77c1ce85ac1b4f4",
+    "target_candidate_sha256": "0214dd2090e43026551a6a6e0308c8abd4e63eac4833811588e8920c691b6749",
+    "target_bytes_before": 5160,
+    "target_bytes_after": 5158,
+    "locale_config_sha256": "c8df8c39abbd1ab36dbac380490b72e9b3c565bbd1ec3d1f1be88bdc300abd0b",
+    "frozen_R3_archive_sha256": "ef32f359fe7813d0ffef11f3936fb1498f2f3cdcc176ab2acb56b969360c9e59",
+    "frozen_R3_member": "source/locale/fa-IR/content/sets-functions-relations/sets/subsets.tex"
+  },
+  "canon": {
+    "document": {
+      "document_id": "FA-OL-CANON-0003",
+      "title_fa": "نظریهٔ مجموعه‌ها",
+      "title_en": "Set Theory",
+      "authors": [
+        "محسن خانی",
+        "افشین زارعی"
+      ],
+      "institution": "دانشگاه صنعتی اصفهان",
+      "date_statement": "۱۸ خرداد ۱۴۰۰",
+      "source_url": "https://khani.iut.ac.ir/sites/khani.iut.ac.ir/files//u145/jozve-kamel.pdf",
+      "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+      "pdf_bytes": 413763,
+      "licence_status": "No explicit redistribution licence identified; retain locally and cite only."
+    },
+    "pages": [
+      {
+        "passage_id": "FA-OL-CANON-0003:P0007",
+        "pdf_page_1based": 7,
+        "printed_page": 6,
+        "location": "Bounded-quantifier notation immediately before section1.2.1",
+        "short_attestation": "کوتاه‌نوشت",
+        "relevance_and_limits": "The two expansions use implication for universal and conjunction for existential restriction.",
+        "visual_page_read": true,
+        "normalized_search_page_sha256": "eced43d3f4712706b165fad253828659eb82eb9de9f8b10f478c4c9c78f21b9f",
+        "local_render_sha256": "ebefd6341951d5f544689c5daa6420b7b5af813575d1f843869e9e8c128fabc2",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04"
+      },
+      {
+        "passage_id": "FA-OL-CANON-0003:P0010",
+        "pdf_page_1based": 10,
+        "printed_page": 9,
+        "location": "Bottom third, membership-based inclusion definition for classes",
+        "short_attestation": "اگر و تنها اگر",
+        "relevance_and_limits": "Class inclusion supplies the membership condition; it does not assert arbitrary set existence.",
+        "visual_page_read": true,
+        "normalized_search_page_sha256": "6bc413af43ba6573a6f3086f8533c9b19a05f7f46ad5d0b450880075a20bd529",
+        "local_render_sha256": "c444f91ccbcb38bdd36590c618e0db68ef462074fc729c1023614617025001a7",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04"
+      },
+      {
+        "passage_id": "FA-OL-CANON-0003:P0019",
+        "pdf_page_1based": 19,
+        "printed_page": 18,
+        "location": "Section1.4, axiom1",
+        "short_attestation": "اصل گسترش",
+        "relevance_and_limits": "The extensionality formula fixes equality by identical membership.",
+        "visual_page_read": true,
+        "normalized_search_page_sha256": "52368460ec7d30a6308469691dedbd7e504b1ab6801a085e5f231b0557a1f20c",
+        "local_render_sha256": "d54eb51d1626476000d1d47976429f35f6f89392992817c8169f75f5c778d47d",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04"
+      },
+      {
+        "passage_id": "FA-OL-CANON-0003:P0020",
+        "pdf_page_1based": 20,
+        "printed_page": 19,
+        "location": "First paragraph, axiom6",
+        "short_attestation": "مجموعه‌ی توان",
+        "relevance_and_limits": "Every subset is included in the collection which the axiom asserts is a set; the exact adjectival توانی is not attested here.",
+        "visual_page_read": true,
+        "normalized_search_page_sha256": "f80dc034a229bddeee1d7730ea959f9ffa98d1c0e1a958db00ca04c5a62d3b90",
+        "local_render_sha256": "fb018f133adfa89bc7d850dfc132fa71371678460ce39f8da9ee40112c41de2d",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04"
+      },
+      {
+        "passage_id": "FA-OL-CANON-0003:P0024",
+        "pdf_page_1based": 24,
+        "printed_page": 23,
+        "location": "Definition5 near the bottom",
+        "short_attestation": "هر دو عنصر",
+        "relevance_and_limits": "Actual native counted-noun syntax; not a general published grammar theorem.",
+        "visual_page_read": true,
+        "normalized_search_page_sha256": "96362f367446b7f7f217e3b52119a02579200eff2d201a4ba3b68365c93057ab",
+        "local_render_sha256": "09dbe50bfcc589fd916d17795cca51f2b2fa15f35e8d2661d2d5f174e914b585",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04"
+      },
+      {
+        "passage_id": "FA-OL-CANON-0003:P0027",
+        "pdf_page_1based": 27,
+        "printed_page": 26,
+        "location": "Proof of lemma14, proper-inclusion contradiction",
+        "short_attestation": "زیرمجموعه‌ی سره‌ای",
+        "relevance_and_limits": "Properness is witnessed by an outside element; do not import its well-ordering hypotheses into the elementary definition.",
+        "visual_page_read": true,
+        "normalized_search_page_sha256": "98f41d0e428030b0f5e7dcb9262cf382acaea6ca0215e0ec65fa413d807e24ef",
+        "local_render_sha256": "ca653ad72541f130c7e961b419b0224e0b27a53bdb031192d477fe486c31b0af",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04"
+      },
+      {
+        "passage_id": "FA-OL-CANON-0003:P0062",
+        "pdf_page_1based": 62,
+        "printed_page": 61,
+        "location": "Section6.1, paragraph introducing [A]^n",
+        "short_attestation": "n عضوی",
+        "relevance_and_limits": "Counted-set terminology is explicitly tied to |b|=n; supports the contextual counted-member decision.",
+        "visual_page_read": true,
+        "normalized_search_page_sha256": "b79be2af98f68ccb0d2c7f7b239cccc87dfcca288699a3cdc0054db73c1ca1ea",
+        "local_render_sha256": "68a45548954f225f4d074fff73b3ec844c6ee05548646e056e148bc30cd9af0f",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04"
+      }
+    ]
+  },
+  "choices": [
+    {
+      "id": "FA-0006-C01",
+      "topic": "Section heading",
+      "canon": [
+        "FA-OL-CANON-0003:P0020",
+        "FA-OL-CANON-0003:P0027"
+      ],
+      "confidence": 2,
+      "rationale": "Page20 directly attests مجموعه‌ی توان and all subsets; page27 directly attests زیرمجموعه‌ی سره. The plural adjectival heading مجموعه‌های توانی is a supported contextual editorial choice, not an exact phrase established by the cited canon. Preserve it provisionally because meaning is clear and no contrary requirement was found; do not claim additional unattested usage.",
+      "alternatives": [],
+      "question": "Register preference: the selected witness uses مجموعه‌ی توان rather than the exact adjectival توانی. Consider consistency with further attested disciplinary usage when available; this is not a human-dependent gate.",
+      "unit": "OLP-0006",
+      "source": {
+        "char_start": 175,
+        "char_end_exclusive": 209,
+        "line_start": 10,
+        "line_end": 10,
+        "text": "\\olsection{Subsets and Power Sets}",
+        "sha256": "c2af5292aea438fd699cf4cb52d9b964761c7353b73e96a20a9e7f932fd72425"
+      },
+      "target_before": {
+        "char_start": 182,
+        "char_end_exclusive": 225,
+        "line_start": 10,
+        "line_end": 10,
+        "text": "\\olsection{زیرمجموعه‌ها و مجموعه‌های توانی}",
+        "sha256": "929d82bc34643b66674dc4eb2a391c729807615929c0abe842a192721b7f0811"
+      },
+      "target_after": {
+        "char_start": 182,
+        "char_end_exclusive": 225,
+        "line_start": 10,
+        "line_end": 10,
+        "text": "\\olsection{زیرمجموعه‌ها و مجموعه‌های توانی}",
+        "sha256": "929d82bc34643b66674dc4eb2a391c729807615929c0abe842a192721b7f0811"
+      },
+      "target_after_member_tokens_realized": "\\olsection{زیرمجموعه‌ها و مجموعه‌های توانی}",
+      "action": "retain_after_fresh_review",
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false
+    },
+    {
+      "id": "FA-0006-C02",
+      "topic": "Membership comparison introduction",
+      "canon": [
+        "FA-OL-CANON-0003:P0010"
+      ],
+      "confidence": 2,
+      "rationale": "The Persian sentence expresses every object in the first set being in the other, with no reversal or equality claim. The introduction's adult prose motivates the notation without deleting content. Canon's membership-based inclusion formula supports the mathematical construction; ordinary linking phrases are editorial applications, not falsely claimed quotations.",
+      "alternatives": [],
+      "question": null,
+      "unit": "OLP-0006",
+      "source": {
+        "char_start": 211,
+        "char_end_exclusive": 471,
+        "line_start": 12,
+        "line_end": 17,
+        "text": "\\begin{explain}\nWe will often want to compare sets. And one obvious kind of comparison\none might make is as follows: \\emph{everything in one set is in the\nother too}. This situation is sufficiently important for us to\nintroduce some new notation.\n\\end{explain}",
+        "sha256": "adadd7cebbbfac416da01f008e820efed59957fe8ce8bc3d73cc4a0d16944ad3"
+      },
+      "target_before": {
+        "char_start": 227,
+        "char_end_exclusive": 468,
+        "line_start": 12,
+        "line_end": 17,
+        "text": "\\begin{explain}\nاغلب می‌خواهیم مجموعه‌ها را با یکدیگر مقایسه کنیم. یک مقایسهٔ آشکار\nمی‌تواند چنین باشد: \\emph{هر آنچه در یک مجموعه است، در مجموعهٔ دیگر\nنیز هست}. این وضعیت آن‌قدر مهم است که برای آن نمادگذاری تازه‌ای\nمعرفی کنیم.\n\\end{explain}",
+        "sha256": "254f89f1f2b692124450ec51a11a494fe65db3403b6f5b8bd88e0ec215153862"
+      },
+      "target_after": {
+        "char_start": 227,
+        "char_end_exclusive": 468,
+        "line_start": 12,
+        "line_end": 17,
+        "text": "\\begin{explain}\nاغلب می‌خواهیم مجموعه‌ها را با یکدیگر مقایسه کنیم. یک مقایسهٔ آشکار\nمی‌تواند چنین باشد: \\emph{هر آنچه در یک مجموعه است، در مجموعهٔ دیگر\nنیز هست}. این وضعیت آن‌قدر مهم است که برای آن نمادگذاری تازه‌ای\nمعرفی کنیم.\n\\end{explain}",
+        "sha256": "254f89f1f2b692124450ec51a11a494fe65db3403b6f5b8bd88e0ec215153862"
+      },
+      "target_after_member_tokens_realized": "\\begin{explain}\nاغلب می‌خواهیم مجموعه‌ها را با یکدیگر مقایسه کنیم. یک مقایسهٔ آشکار\nمی‌تواند چنین باشد: \\emph{هر آنچه در یک مجموعه است، در مجموعهٔ دیگر\nنیز هست}. این وضعیت آن‌قدر مهم است که برای آن نمادگذاری تازه‌ای\nمعرفی کنیم.\n\\end{explain}",
+      "action": "retain_after_fresh_review",
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false
+    },
+    {
+      "id": "FA-0006-C03",
+      "topic": "Subset, negation and proper subset definition",
+      "canon": [
+        "FA-OL-CANON-0003:P0010",
+        "FA-OL-CANON-0003:P0027"
+      ],
+      "confidence": 3,
+      "rationale": "All three cases remain: inclusion, failure of inclusion, and inclusion together with inequality. زیرمجموعهٔ سره is directly attested on page27 in a context where properness is witnessed by an element outside the subset. Page10's inclusion formula is presented for classes; its membership condition applies to sets without importing class-comprehension or existence assumptions. Target symbols ⊆, not⊆ and ⊊ remain distinct.",
+      "alternatives": [
+        "عضو would confuse subsethood with membership.",
+        "Dropping A≠B would turn proper subset into non-strict inclusion."
+      ],
+      "question": null,
+      "unit": "OLP-0006",
+      "source": {
+        "char_start": 473,
+        "char_end_exclusive": 814,
+        "line_start": 19,
+        "line_end": 25,
+        "text": "\\begin{defn}[Subset]\nIf every !!{element} of a set $A$ is also !!a{element} of~$B$, then we\nsay that $A$ is a \\emph{subset} of~$B$, and write $A \\subseteq B$. If\n$A$ is not a subset of~$B$ we write $A \\not\\subseteq B$.\nIf $A \\subseteq B$ but $A \\neq B$, we write $A \\subsetneq B$ and say\nthat $A$ is a \\emph{proper subset} of $B$.\n\\end{defn}",
+        "sha256": "ad4f24f04bc88a3f2e02dc77428aabb4c9a8932ee1a3d1f3047764260a6b29ae"
+      },
+      "target_before": {
+        "char_start": 470,
+        "char_end_exclusive": 810,
+        "line_start": 19,
+        "line_end": 25,
+        "text": "\\begin{defn}[زیرمجموعه]\nاگر هر !!{element} مجموعهٔ $A$، !!a{element} مجموعهٔ~$B$ نیز باشد،\nمی‌گوییم $A$ \\emph{زیرمجموعهٔ}~$B$ است و می‌نویسیم $A \\subseteq B$.\nاگر $A$ زیرمجموعهٔ~$B$ نباشد، می‌نویسیم $A \\not\\subseteq B$.\nاگر $A \\subseteq B$ اما $A \\neq B$، می‌نویسیم $A \\subsetneq B$ و\nمی‌گوییم $A$ \\emph{زیرمجموعهٔ سرهٔ} $B$ است.\n\\end{defn}",
+        "sha256": "ed5403e1adf827201bf2edbd9c37d620f4e8728afe6c80db138b11a11079052d"
+      },
+      "target_after": {
+        "char_start": 470,
+        "char_end_exclusive": 810,
+        "line_start": 19,
+        "line_end": 25,
+        "text": "\\begin{defn}[زیرمجموعه]\nاگر هر !!{element} مجموعهٔ $A$، !!a{element} مجموعهٔ~$B$ نیز باشد،\nمی‌گوییم $A$ \\emph{زیرمجموعهٔ}~$B$ است و می‌نویسیم $A \\subseteq B$.\nاگر $A$ زیرمجموعهٔ~$B$ نباشد، می‌نویسیم $A \\not\\subseteq B$.\nاگر $A \\subseteq B$ اما $A \\neq B$، می‌نویسیم $A \\subsetneq B$ و\nمی‌گوییم $A$ \\emph{زیرمجموعهٔ سرهٔ} $B$ است.\n\\end{defn}",
+        "sha256": "ed5403e1adf827201bf2edbd9c37d620f4e8728afe6c80db138b11a11079052d"
+      },
+      "target_after_member_tokens_realized": "\\begin{defn}[زیرمجموعه]\nاگر هر عضو مجموعهٔ $A$، عضو مجموعهٔ~$B$ نیز باشد،\nمی‌گوییم $A$ \\emph{زیرمجموعهٔ}~$B$ است و می‌نویسیم $A \\subseteq B$.\nاگر $A$ زیرمجموعهٔ~$B$ نباشد، می‌نویسیم $A \\not\\subseteq B$.\nاگر $A \\subseteq B$ اما $A \\neq B$، می‌نویسیم $A \\subsetneq B$ و\nمی‌گوییم $A$ \\emph{زیرمجموعهٔ سرهٔ} $B$ است.\n\\end{defn}",
+      "action": "retain_after_fresh_review",
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false
+    },
+    {
+      "id": "FA-0006-C04",
+      "topic": "Reflexive, empty and finite subset examples",
+      "canon": [
+        "FA-OL-CANON-0003:P0010",
+        "FA-OL-CANON-0003:P0027"
+      ],
+      "confidence": 2,
+      "rationale": "Self-inclusion, empty-set inclusion and the natural-even example are retained. Literal element lists match. The final non-inclusion example presumes e is distinct from a,b,c; the English source leaves the ordinary distinct-label convention implicit too. No translation error is alleged and no source transcription report is warranted.",
+      "alternatives": [],
+      "question": "Optional editorial note if a later consistency pass chooses to spell out the distinct-label convention across all finite-set examples. The current convention is recorded, not mistaken for a universal statement under arbitrary assignments.",
+      "unit": "OLP-0006",
+      "source": {
+        "char_start": 827,
+        "char_end_exclusive": 1076,
+        "line_start": 28,
+        "line_end": 31,
+        "text": "Every set is a subset of itself, and $\\emptyset$ is a subset of every\nset. The set of natural even numbers is a subset of the set of natural\nnumbers. Also, $\\{ a, b \\} \\subseteq \\{ a, b, c \\}$. But $\\{ a, b, e\n\\}$ is not a subset of $\\{ a, b, c \\}$.",
+        "sha256": "e0babe4ad4322efe3eccb084a5a278cd70a8c1a293e47f338c77739ea61017a1"
+      },
+      "target_before": {
+        "char_start": 823,
+        "char_end_exclusive": 1050,
+        "line_start": 28,
+        "line_end": 31,
+        "text": "هر مجموعه زیرمجموعهٔ خودش است و $\\emptyset$ زیرمجموعهٔ هر مجموعه است.\nمجموعهٔ اعداد طبیعی زوج زیرمجموعهٔ مجموعهٔ اعداد طبیعی است. همچنین\n$\\{ a, b \\} \\subseteq \\{ a, b, c \\}$. اما $\\{ a, b, e\n\\}$ زیرمجموعهٔ $\\{ a, b, c \\}$ نیست.",
+        "sha256": "625708d9df9b6d41990678c1ed1d8a63842baeadff58a32eb5edbb08465ea5b2"
+      },
+      "target_after": {
+        "char_start": 823,
+        "char_end_exclusive": 1050,
+        "line_start": 28,
+        "line_end": 31,
+        "text": "هر مجموعه زیرمجموعهٔ خودش است و $\\emptyset$ زیرمجموعهٔ هر مجموعه است.\nمجموعهٔ اعداد طبیعی زوج زیرمجموعهٔ مجموعهٔ اعداد طبیعی است. همچنین\n$\\{ a, b \\} \\subseteq \\{ a, b, c \\}$. اما $\\{ a, b, e\n\\}$ زیرمجموعهٔ $\\{ a, b, c \\}$ نیست.",
+        "sha256": "625708d9df9b6d41990678c1ed1d8a63842baeadff58a32eb5edbb08465ea5b2"
+      },
+      "target_after_member_tokens_realized": "هر مجموعه زیرمجموعهٔ خودش است و $\\emptyset$ زیرمجموعهٔ هر مجموعه است.\nمجموعهٔ اعداد طبیعی زوج زیرمجموعهٔ مجموعهٔ اعداد طبیعی است. همچنین\n$\\{ a, b \\} \\subseteq \\{ a, b, c \\}$. اما $\\{ a, b, e\n\\}$ زیرمجموعهٔ $\\{ a, b, c \\}$ نیست.",
+      "action": "retain_after_fresh_review",
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false
+    },
+    {
+      "id": "FA-0006-C05",
+      "topic": "Membership versus subsethood and nested sets",
+      "canon": [
+        "FA-OL-CANON-0003:P0010",
+        "FA-OL-CANON-0003:P0020"
+      ],
+      "confidence": 3,
+      "rationale": "The number2 is a member while the set of even integers is a subset. The nested example says {0} can be both a member and a subset of {0,{0}}. Both distinctions and both displayed relations survive. The source membership/inclusion definitions justify the contextual interpretation; the specific nested example is checked against source, not claimed as a canon quotation.",
+      "alternatives": [
+        "Rendering both relations as membership would erase the teaching point."
+      ],
+      "question": null,
+      "unit": "OLP-0006",
+      "source": {
+        "char_start": 1098,
+        "char_end_exclusive": 1383,
+        "line_start": 35,
+        "line_end": 39,
+        "text": "The number $2$ is an !!{element} of the set of integers, whereas the\nset of even numbers is a subset of the set of integers. However, a set\nmay happen to \\emph{both} be !!a{element} and a subset of some other\nset, e.g., $\\{0\\} \\in \\{0, \\{0\\}\\}$ and also $\\{0\\} \\subseteq \\{0,\n\\{0\\}\\}$.",
+        "sha256": "e07aab32b7829a41fb523a788a47927f616deae9934badedc7204caa363ce323"
+      },
+      "target_before": {
+        "char_start": 1072,
+        "char_end_exclusive": 1346,
+        "line_start": 35,
+        "line_end": 39,
+        "text": "عدد $2$ یک !!{element} مجموعهٔ اعداد صحیح است، درحالی‌که مجموعهٔ\nاعداد زوج زیرمجموعهٔ مجموعهٔ اعداد صحیح است. بااین‌حال، ممکن است\nمجموعه‌ای \\emph{هم} !!a{element} و هم زیرمجموعهٔ مجموعه‌ای دیگر باشد؛\nبرای نمونه، $\\{0\\} \\in \\{0, \\{0\\}\\}$ و نیز $\\{0\\} \\subseteq \\{0,\n\\{0\\}\\}$.",
+        "sha256": "26bd5c6b4632399929b0526a0eda301c83e36c8c04fbe97e6fca84841f163a51"
+      },
+      "target_after": {
+        "char_start": 1072,
+        "char_end_exclusive": 1346,
+        "line_start": 35,
+        "line_end": 39,
+        "text": "عدد $2$ یک !!{element} مجموعهٔ اعداد صحیح است، درحالی‌که مجموعهٔ\nاعداد زوج زیرمجموعهٔ مجموعهٔ اعداد صحیح است. بااین‌حال، ممکن است\nمجموعه‌ای \\emph{هم} !!a{element} و هم زیرمجموعهٔ مجموعه‌ای دیگر باشد؛\nبرای نمونه، $\\{0\\} \\in \\{0, \\{0\\}\\}$ و نیز $\\{0\\} \\subseteq \\{0,\n\\{0\\}\\}$.",
+        "sha256": "26bd5c6b4632399929b0526a0eda301c83e36c8c04fbe97e6fca84841f163a51"
+      },
+      "target_after_member_tokens_realized": "عدد $2$ یک عضو مجموعهٔ اعداد صحیح است، درحالی‌که مجموعهٔ\nاعداد زوج زیرمجموعهٔ مجموعهٔ اعداد صحیح است. بااین‌حال، ممکن است\nمجموعه‌ای \\emph{هم} عضو و هم زیرمجموعهٔ مجموعه‌ای دیگر باشد؛\nبرای نمونه، $\\{0\\} \\in \\{0, \\{0\\}\\}$ و نیز $\\{0\\} \\subseteq \\{0,\n\\{0\\}\\}$.",
+      "action": "retain_after_fresh_review",
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false
+    },
+    {
+      "id": "FA-0006-C06",
+      "topic": "Extensionality and the two halves of equality",
+      "canon": [
+        "FA-OL-CANON-0003:P0010",
+        "FA-OL-CANON-0003:P0019"
+      ],
+      "confidence": 3,
+      "rationale": "The target preserves first A⊆B and then B⊆A, the swap of variables, and iff. No existential inference from extensionality is made here, unlike the earlier opening clarification. Page19 supplies the extensionality formula; page10 supplies inclusion. ملاک/یکسانی expresses the source's criterion of identity, not an identity-function or bijection claim.",
+      "alternatives": [],
+      "question": null,
+      "unit": "OLP-0006",
+      "source": {
+        "char_start": 1394,
+        "char_end_exclusive": 1999,
+        "line_start": 42,
+        "line_end": 50,
+        "text": "Extensionality gives a criterion of identity for sets: $A = B$ iff\nevery !!{element} of~$A$ is also !!a{element} of~$B$ and vice versa.\nThe definition of ``subset'' defines $A \\subseteq B$ precisely as the\nfirst half of this criterion: every !!{element} of~$A$ is also\n!!a{element} of~$B$. Of course the definition also applies if we\nswitch $A$ and $B$: that is, $B \\subseteq A$ iff every !!{element}\nof~$B$ is also !!a{element} of~$A$. And that, in turn, is exactly the\n``vice versa'' part of extensionality. In other words, extensionality\nentails that sets are equal iff they are subsets of one another.",
+        "sha256": "2e75907e57836259c06bd4f9b854fdf7fa7590050c53a61b383852759be3bfd8"
+      },
+      "target_before": {
+        "char_start": 1357,
+        "char_end_exclusive": 1972,
+        "line_start": 42,
+        "line_end": 50,
+        "text": "اصل گسترش ملاکی برای یکسانی مجموعه‌ها به دست می‌دهد: $A = B$ اگر و\nتنها اگر هر !!{element} مجموعهٔ~$A$، !!a{element} مجموعهٔ~$B$ نیز باشد\nو برعکس. تعریف «زیرمجموعه» عبارت $A \\subseteq B$ را دقیقاً به‌منزلهٔ\nنیمهٔ نخست این ملاک تعریف می‌کند: هر !!{element} مجموعهٔ~$A$،\n!!a{element} مجموعهٔ~$B$ نیز هست. البته اگر جای $A$ و $B$ را عوض کنیم،\nاین تعریف همچنان برقرار است؛ یعنی $B \\subseteq A$ اگر و تنها اگر هر\n!!{element} مجموعهٔ~$B$، !!a{element} مجموعهٔ~$A$ نیز باشد. این نیز\nدقیقاً بخش «و برعکس» در اصل گسترش است. به بیان دیگر، از اصل گسترش\nنتیجه می‌شود که دو مجموعه برابرند اگر و تنها اگر زیرمجموعهٔ یکدیگر باشند.",
+        "sha256": "24bb2069ce8d96d3fa3c2623543a6458a16c9e34b4595fee84f8fa43257db42d"
+      },
+      "target_after": {
+        "char_start": 1357,
+        "char_end_exclusive": 1972,
+        "line_start": 42,
+        "line_end": 50,
+        "text": "اصل گسترش ملاکی برای یکسانی مجموعه‌ها به دست می‌دهد: $A = B$ اگر و\nتنها اگر هر !!{element} مجموعهٔ~$A$، !!a{element} مجموعهٔ~$B$ نیز باشد\nو برعکس. تعریف «زیرمجموعه» عبارت $A \\subseteq B$ را دقیقاً به‌منزلهٔ\nنیمهٔ نخست این ملاک تعریف می‌کند: هر !!{element} مجموعهٔ~$A$،\n!!a{element} مجموعهٔ~$B$ نیز هست. البته اگر جای $A$ و $B$ را عوض کنیم،\nاین تعریف همچنان برقرار است؛ یعنی $B \\subseteq A$ اگر و تنها اگر هر\n!!{element} مجموعهٔ~$B$، !!a{element} مجموعهٔ~$A$ نیز باشد. این نیز\nدقیقاً بخش «و برعکس» در اصل گسترش است. به بیان دیگر، از اصل گسترش\nنتیجه می‌شود که دو مجموعه برابرند اگر و تنها اگر زیرمجموعهٔ یکدیگر باشند.",
+        "sha256": "24bb2069ce8d96d3fa3c2623543a6458a16c9e34b4595fee84f8fa43257db42d"
+      },
+      "target_after_member_tokens_realized": "اصل گسترش ملاکی برای یکسانی مجموعه‌ها به دست می‌دهد: $A = B$ اگر و\nتنها اگر هر عضو مجموعهٔ~$A$، عضو مجموعهٔ~$B$ نیز باشد\nو برعکس. تعریف «زیرمجموعه» عبارت $A \\subseteq B$ را دقیقاً به‌منزلهٔ\nنیمهٔ نخست این ملاک تعریف می‌کند: هر عضو مجموعهٔ~$A$،\nعضو مجموعهٔ~$B$ نیز هست. البته اگر جای $A$ و $B$ را عوض کنیم،\nاین تعریف همچنان برقرار است؛ یعنی $B \\subseteq A$ اگر و تنها اگر هر\nعضو مجموعهٔ~$B$، عضو مجموعهٔ~$A$ نیز باشد. این نیز\nدقیقاً بخش «و برعکس» در اصل گسترش است. به بیان دیگر، از اصل گسترش\nنتیجه می‌شود که دو مجموعه برابرند اگر و تنها اگر زیرمجموعهٔ یکدیگر باشند.",
+      "action": "retain_after_fresh_review",
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false
+    },
+    {
+      "id": "FA-0006-C07",
+      "topic": "Mutual-inclusion proposition",
+      "canon": [
+        "FA-OL-CANON-0003:P0010",
+        "FA-OL-CANON-0003:P0019"
+      ],
+      "confidence": 3,
+      "rationale": "Both inclusions are connected by هم ... و هم and the biconditional remains. Equality is equivalent to mutual inclusion, not either inclusion alone. The same justified rule as C06 is contextually applied to the proposition.",
+      "alternatives": [
+        "یا instead of و would make the proposition false."
+      ],
+      "question": null,
+      "unit": "OLP-0006",
+      "source": {
+        "char_start": 2001,
+        "char_end_exclusive": 2078,
+        "line_start": 52,
+        "line_end": 54,
+        "text": "\\begin{prop}\n$A = B$ iff both $A \\subseteq B$ and $B \\subseteq A$.\n\\end{prop}",
+        "sha256": "919c257c455753942acb398eecb96f027c34f1de47fc5914479a201705c2aa58"
+      },
+      "target_before": {
+        "char_start": 1974,
+        "char_end_exclusive": 2061,
+        "line_start": 52,
+        "line_end": 54,
+        "text": "\\begin{prop}\n$A = B$ اگر و تنها اگر هم $A \\subseteq B$ و هم $B \\subseteq A$.\n\\end{prop}",
+        "sha256": "82fb62709b1b13635f43a46033918468443810dc968f3346d257d70737308aef"
+      },
+      "target_after": {
+        "char_start": 1974,
+        "char_end_exclusive": 2061,
+        "line_start": 52,
+        "line_end": 54,
+        "text": "\\begin{prop}\n$A = B$ اگر و تنها اگر هم $A \\subseteq B$ و هم $B \\subseteq A$.\n\\end{prop}",
+        "sha256": "82fb62709b1b13635f43a46033918468443810dc968f3346d257d70737308aef"
+      },
+      "target_after_member_tokens_realized": "\\begin{prop}\n$A = B$ اگر و تنها اگر هم $A \\subseteq B$ و هم $B \\subseteq A$.\n\\end{prop}",
+      "action": "retain_after_fresh_review",
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false
+    },
+    {
+      "id": "FA-0006-C08",
+      "topic": "Preparing bounded-quantifier notation",
+      "canon": [
+        "FA-OL-CANON-0003:P0007"
+      ],
+      "confidence": 2,
+      "rationale": "The target explains filling an expression pattern and calls it ساختار عبارت, avoiding literal shape as a geometric notion. Page7 explains the same shortcut-notation practice for bounded quantification. The source's ellipsis is mentioned as notation, not an omitted translated clause.",
+      "alternatives": [
+        "Treating the quoted dots as a placeholder would misclassify intentionally explained notation."
+      ],
+      "question": null,
+      "unit": "OLP-0006",
+      "source": {
+        "char_start": 2080,
+        "char_end_exclusive": 2430,
+        "line_start": 56,
+        "line_end": 61,
+        "text": "Now is also a good opportunity to introduce some further bits of\nhelpful notation. In defining when $A$ is a subset of~$B$ we said that\n``every !!{element} of~$A$ is \\dots,'' and filled the ``$\\dots$'' with\n``!!a{element} of $B$''. But this is such a common \\emph{shape} of\nexpression that it will be helpful to introduce some formal notation\nfor it.",
+        "sha256": "b0271879f8c09fa85b2098195d14a2a69aada536ea884a8fe4284260a1090864"
+      },
+      "target_before": {
+        "char_start": 2063,
+        "char_end_exclusive": 2356,
+        "line_start": 56,
+        "line_end": 60,
+        "text": "اکنون فرصت مناسبی است تا چند نماد سودمند دیگر نیز معرفی کنیم. در تعریف\nزیرمجموعه‌بودن $A$ از~$B$ گفتیم «هر !!{element} مجموعهٔ~$A$، \\dots»\nو جای «$\\dots$» را با «!!a{element} مجموعهٔ $B$» پر کردیم. اما این\n\\emph{ساختار} عبارت چنان پرکاربرد است که بهتر است نمادگذاری صوری‌ای\nبرای آن معرفی کنیم.",
+        "sha256": "60f1efa0056f0eefbc4bb1d8f8505a3295adf8f60d81129b32a72d2fc78a1c91"
+      },
+      "target_after": {
+        "char_start": 2063,
+        "char_end_exclusive": 2356,
+        "line_start": 56,
+        "line_end": 60,
+        "text": "اکنون فرصت مناسبی است تا چند نماد سودمند دیگر نیز معرفی کنیم. در تعریف\nزیرمجموعه‌بودن $A$ از~$B$ گفتیم «هر !!{element} مجموعهٔ~$A$، \\dots»\nو جای «$\\dots$» را با «!!a{element} مجموعهٔ $B$» پر کردیم. اما این\n\\emph{ساختار} عبارت چنان پرکاربرد است که بهتر است نمادگذاری صوری‌ای\nبرای آن معرفی کنیم.",
+        "sha256": "60f1efa0056f0eefbc4bb1d8f8505a3295adf8f60d81129b32a72d2fc78a1c91"
+      },
+      "target_after_member_tokens_realized": "اکنون فرصت مناسبی است تا چند نماد سودمند دیگر نیز معرفی کنیم. در تعریف\nزیرمجموعه‌بودن $A$ از~$B$ گفتیم «هر عضو مجموعهٔ~$A$، \\dots»\nو جای «$\\dots$» را با «عضو مجموعهٔ $B$» پر کردیم. اما این\n\\emph{ساختار} عبارت چنان پرکاربرد است که بهتر است نمادگذاری صوری‌ای\nبرای آن معرفی کنیم.",
+      "action": "retain_after_fresh_review",
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false
+    },
+    {
+      "id": "FA-0006-C09",
+      "topic": "Universal and existential restricted quantifiers",
+      "canon": [
+        "FA-OL-CANON-0003:P0007"
+      ],
+      "confidence": 3,
+      "rationale": "The native canon explicitly expands the universal restriction with implication and existential restriction with conjunction. The target keeps exactly these two different connectives, variable binding, phi scope and the forallxina label. صورت اختصاری expresses an abbreviation, not an extra logical axiom. In particular empty-domain universal truth is preserved.",
+      "alternatives": [
+        "Using conjunction under ∀ or implication under ∃ would change the semantics."
+      ],
+      "question": null,
+      "unit": "OLP-0006",
+      "source": {
+        "char_start": 2432,
+        "char_end_exclusive": 2624,
+        "line_start": 63,
+        "line_end": 67,
+        "text": "\\begin{defn}\\ollabel{forallxina}\n$(\\forall x \\in A)\\phi$ abbreviates $\\forall x(x \\in A \\lif\n\\phi)$. Similarly, $(\\exists x \\in A)\\phi$ abbreviates $\\exists x(x\n\\in A \\land \\phi)$. \n\\end{defn}",
+        "sha256": "b735077f654271b6072bec9a344e9287e1960da133490dde74dc2e0c7ddfaea9"
+      },
+      "target_before": {
+        "char_start": 2358,
+        "char_end_exclusive": 2565,
+        "line_start": 62,
+        "line_end": 66,
+        "text": "\\begin{defn}\\ollabel{forallxina}\n$(\\forall x \\in A)\\phi$ صورت اختصاریِ $\\forall x(x \\in A \\lif\n\\phi)$ است. به همین ترتیب، $(\\exists x \\in A)\\phi$ صورت اختصاریِ\n$\\exists x(x \\in A \\land \\phi)$ است.\n\\end{defn}",
+        "sha256": "21cdf5f1735da7577abbd0de43defa306ff0498ff3af0569a055e54b136f009a"
+      },
+      "target_after": {
+        "char_start": 2358,
+        "char_end_exclusive": 2565,
+        "line_start": 62,
+        "line_end": 66,
+        "text": "\\begin{defn}\\ollabel{forallxina}\n$(\\forall x \\in A)\\phi$ صورت اختصاریِ $\\forall x(x \\in A \\lif\n\\phi)$ است. به همین ترتیب، $(\\exists x \\in A)\\phi$ صورت اختصاریِ\n$\\exists x(x \\in A \\land \\phi)$ است.\n\\end{defn}",
+        "sha256": "21cdf5f1735da7577abbd0de43defa306ff0498ff3af0569a055e54b136f009a"
+      },
+      "target_after_member_tokens_realized": "\\begin{defn}\\ollabel{forallxina}\n$(\\forall x \\in A)\\phi$ صورت اختصاریِ $\\forall x(x \\in A \\lif\n\\phi)$ است. به همین ترتیب، $(\\exists x \\in A)\\phi$ صورت اختصاریِ\n$\\exists x(x \\in A \\land \\phi)$ است.\n\\end{defn}",
+      "action": "retain_after_fresh_review",
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false
+    },
+    {
+      "id": "FA-0006-C10",
+      "topic": "Subset abbreviation using restricted forall",
+      "canon": [
+        "FA-OL-CANON-0003:P0007",
+        "FA-OL-CANON-0003:P0010"
+      ],
+      "confidence": 3,
+      "rationale": "This is precisely C03's membership condition expressed with C09's abbreviation. The target uses iff and quantifies over the smaller setA. Whitespace differs inside the formula but symbol order and meaning do not.",
+      "alternatives": [],
+      "question": null,
+      "unit": "OLP-0006",
+      "source": {
+        "char_start": 2626,
+        "char_end_exclusive": 2711,
+        "line_start": 69,
+        "line_end": 70,
+        "text": "Using this notation, we can say that $A \\subseteq B$ iff $(\\forall\nx \\in A)x \\in B$. ",
+        "sha256": "c9a4624b93b5f708252c3e5e9afbaf7a0749bca66c5236264989b397159e592f"
+      },
+      "target_before": {
+        "char_start": 2567,
+        "char_end_exclusive": 2659,
+        "line_start": 68,
+        "line_end": 69,
+        "text": "با این نمادگذاری می‌توانیم بگوییم $A \\subseteq B$ اگر و تنها اگر\n$(\\forall x \\in A)x \\in B$.",
+        "sha256": "2c4e247de4f662cd2ef2a388b8cc749361d3928dd0510e30b548ad4b05c2756b"
+      },
+      "target_after": {
+        "char_start": 2567,
+        "char_end_exclusive": 2659,
+        "line_start": 68,
+        "line_end": 69,
+        "text": "با این نمادگذاری می‌توانیم بگوییم $A \\subseteq B$ اگر و تنها اگر\n$(\\forall x \\in A)x \\in B$.",
+        "sha256": "2c4e247de4f662cd2ef2a388b8cc749361d3928dd0510e30b548ad4b05c2756b"
+      },
+      "target_after_member_tokens_realized": "با این نمادگذاری می‌توانیم بگوییم $A \\subseteq B$ اگر و تنها اگر\n$(\\forall x \\in A)x \\in B$.",
+      "action": "retain_after_fresh_review",
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false
+    },
+    {
+      "id": "FA-0006-C11",
+      "topic": "Transition to the set of subsets",
+      "canon": [
+        "FA-OL-CANON-0003:P0020"
+      ],
+      "confidence": 3,
+      "rationale": "The target preserves all subsets of a specified set and does not change subsets into elements. The native power-set statement provides exactly this construction. مجموعهٔ داده‌شده is a contextual mathematical expression, not an assertion that the set is algorithmically computable.",
+      "alternatives": [],
+      "question": null,
+      "unit": "OLP-0006",
+      "source": {
+        "char_start": 2713,
+        "char_end_exclusive": 2805,
+        "line_start": 72,
+        "line_end": 73,
+        "text": "Now we move on to considering a certain kind of set: the set of all\nsubsets of a given set. ",
+        "sha256": "c974926594ac230675602084287cdb26a784d11d5c92e9c960fc0d72ff3b4030"
+      },
+      "target_before": {
+        "char_start": 2661,
+        "char_end_exclusive": 2754,
+        "line_start": 71,
+        "line_end": 72,
+        "text": "اکنون به بررسی نوع خاصی از مجموعه می‌پردازیم: مجموعهٔ همهٔ\nزیرمجموعه‌های یک مجموعهٔ داده‌شده.",
+        "sha256": "16b121cef55a9fbd94b5dd79ecbdbe0690761f9870bfb07b8adf503047a9f186"
+      },
+      "target_after": {
+        "char_start": 2661,
+        "char_end_exclusive": 2754,
+        "line_start": 71,
+        "line_end": 72,
+        "text": "اکنون به بررسی نوع خاصی از مجموعه می‌پردازیم: مجموعهٔ همهٔ\nزیرمجموعه‌های یک مجموعهٔ داده‌شده.",
+        "sha256": "16b121cef55a9fbd94b5dd79ecbdbe0690761f9870bfb07b8adf503047a9f186"
+      },
+      "target_after_member_tokens_realized": "اکنون به بررسی نوع خاصی از مجموعه می‌پردازیم: مجموعهٔ همهٔ\nزیرمجموعه‌های یک مجموعهٔ داده‌شده.",
+      "action": "retain_after_fresh_review",
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false
+    },
+    {
+      "id": "FA-0006-C12",
+      "topic": "Power-set definition",
+      "canon": [
+        "FA-OL-CANON-0003:P0020"
+      ],
+      "confidence": 2,
+      "rationale": "The native power-set axiom defines a set of all subsets, and OLP supplies the exact Pow/Setabs notation. The meaning and variable scope are preserved. The selected native witness attests مجموعه‌ی توان, not the exact adjectival form مجموعهٔ توانی; retain the intelligible current form as an explicitly documented editorial variant, linked to C01, without inventing an exact attestation.",
+      "alternatives": [],
+      "question": "Shared with C01: exact nominal versus adjectival power-set terminology remains a documented register choice, not a mathematical uncertainty.",
+      "unit": "OLP-0006",
+      "source": {
+        "char_start": 2807,
+        "char_end_exclusive": 2997,
+        "line_start": 75,
+        "line_end": 81,
+        "text": "\\begin{defn}[Power Set]\nThe set consisting of all subsets of a set~$A$ is called the\n\\emph{power set of}~$A$, written $\\Pow{A}$.\n  \\[\n    \\Pow{A} = \\Setabs{B}{B \\subseteq A} \n  \\]\n\\end{defn}",
+        "sha256": "31d7df0cd163437537e3a37124ad151935c52a4f875ec5c6b4b474c4b51c40b7"
+      },
+      "target_before": {
+        "char_start": 2756,
+        "char_end_exclusive": 2970,
+        "line_start": 74,
+        "line_end": 80,
+        "text": "\\begin{defn}[مجموعهٔ توانی]\nمجموعه‌ای که از همهٔ زیرمجموعه‌های مجموعهٔ~$A$ تشکیل شده است،\n\\emph{مجموعهٔ توانیِ}~$A$ نام دارد و آن را $\\Pow{A}$ می‌نویسند.\n  \\[\n    \\Pow{A} = \\Setabs{B}{B \\subseteq A}\n  \\]\n\\end{defn}",
+        "sha256": "74f014abfbc25c573c99436d82aa41968d574b6139c3e3c3beefe1f7948126d5"
+      },
+      "target_after": {
+        "char_start": 2756,
+        "char_end_exclusive": 2970,
+        "line_start": 74,
+        "line_end": 80,
+        "text": "\\begin{defn}[مجموعهٔ توانی]\nمجموعه‌ای که از همهٔ زیرمجموعه‌های مجموعهٔ~$A$ تشکیل شده است،\n\\emph{مجموعهٔ توانیِ}~$A$ نام دارد و آن را $\\Pow{A}$ می‌نویسند.\n  \\[\n    \\Pow{A} = \\Setabs{B}{B \\subseteq A}\n  \\]\n\\end{defn}",
+        "sha256": "74f014abfbc25c573c99436d82aa41968d574b6139c3e3c3beefe1f7948126d5"
+      },
+      "target_after_member_tokens_realized": "\\begin{defn}[مجموعهٔ توانی]\nمجموعه‌ای که از همهٔ زیرمجموعه‌های مجموعهٔ~$A$ تشکیل شده است،\n\\emph{مجموعهٔ توانیِ}~$A$ نام دارد و آن را $\\Pow{A}$ می‌نویسند.\n  \\[\n    \\Pow{A} = \\Setabs{B}{B \\subseteq A}\n  \\]\n\\end{defn}",
+      "action": "retain_after_fresh_review",
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false
+    },
+    {
+      "id": "FA-0006-C13",
+      "topic": "Eight subsets of a three-element set",
+      "canon": [
+        "FA-OL-CANON-0003:P0020"
+      ],
+      "confidence": 3,
+      "rationale": "Both the prose list and display contain exactly the empty set, three singletons, three pairs and full set. The pair order differs between prose/display in both languages and is immaterial for sets. All symbols preserved. The mathematical check assumes a,b,c distinct as the source convention does; finite enumeration supplies a contextual check, not a substitute for source reading.",
+      "alternatives": [],
+      "question": null,
+      "unit": "OLP-0006",
+      "source": {
+        "char_start": 3010,
+        "char_end_exclusive": 3323,
+        "line_start": 84,
+        "line_end": 91,
+        "text": "What are all the possible subsets of $\\{ a, b, c \\}$? They are:\n$\\emptyset$, $\\{a \\}$, $\\{b\\}$, $\\{c\\}$, $\\{a, b\\}$, $\\{a, c\\}$, $\\{b,\nc\\}$, $\\{a, b, c\\}$. The set of all these subsets is\n$\\Pow{\\{a,b,c\\}}$:\n\\[\n\\Pow{\\{ a, b, c \\}} = \\{\\emptyset, \\{a \\}, \\{b\\}, \\{c\\}, \\{a, b\\},\n\\{b, c\\}, \\{a, c\\}, \\{a, b, c\\}\\}\n\\]",
+        "sha256": "8de6fe23af125a5a51264bce03db341538919da9617ff33c02088959e0cace59"
+      },
+      "target_before": {
+        "char_start": 2983,
+        "char_end_exclusive": 3316,
+        "line_start": 83,
+        "line_end": 91,
+        "text": "همهٔ زیرمجموعه‌های ممکنِ $\\{ a, b, c \\}$ کدام‌اند؟ این زیرمجموعه‌ها\nعبارت‌اند از: $\\emptyset$، $\\{a \\}$، $\\{b\\}$، $\\{c\\}$، $\\{a, b\\}$،\n$\\{a, c\\}$، $\\{b,\nc\\}$، $\\{a, b, c\\}$. مجموعهٔ همهٔ این زیرمجموعه‌ها\n$\\Pow{\\{a,b,c\\}}$ است:\n\\[\n\\Pow{\\{ a, b, c \\}} = \\{\\emptyset, \\{a \\}, \\{b\\}, \\{c\\}, \\{a, b\\},\n\\{b, c\\}, \\{a, c\\}, \\{a, b, c\\}\\}\n\\]",
+        "sha256": "8ee0466ab3a8a87a28867d01531d97382d6a176a2624a95da6ddec2e6ac586c7"
+      },
+      "target_after": {
+        "char_start": 2983,
+        "char_end_exclusive": 3316,
+        "line_start": 83,
+        "line_end": 91,
+        "text": "همهٔ زیرمجموعه‌های ممکنِ $\\{ a, b, c \\}$ کدام‌اند؟ این زیرمجموعه‌ها\nعبارت‌اند از: $\\emptyset$، $\\{a \\}$، $\\{b\\}$، $\\{c\\}$، $\\{a, b\\}$،\n$\\{a, c\\}$، $\\{b,\nc\\}$، $\\{a, b, c\\}$. مجموعهٔ همهٔ این زیرمجموعه‌ها\n$\\Pow{\\{a,b,c\\}}$ است:\n\\[\n\\Pow{\\{ a, b, c \\}} = \\{\\emptyset, \\{a \\}, \\{b\\}, \\{c\\}, \\{a, b\\},\n\\{b, c\\}, \\{a, c\\}, \\{a, b, c\\}\\}\n\\]",
+        "sha256": "8ee0466ab3a8a87a28867d01531d97382d6a176a2624a95da6ddec2e6ac586c7"
+      },
+      "target_after_member_tokens_realized": "همهٔ زیرمجموعه‌های ممکنِ $\\{ a, b, c \\}$ کدام‌اند؟ این زیرمجموعه‌ها\nعبارت‌اند از: $\\emptyset$، $\\{a \\}$، $\\{b\\}$، $\\{c\\}$، $\\{a, b\\}$،\n$\\{a, c\\}$، $\\{b,\nc\\}$، $\\{a, b, c\\}$. مجموعهٔ همهٔ این زیرمجموعه‌ها\n$\\Pow{\\{a,b,c\\}}$ است:\n\\[\n\\Pow{\\{ a, b, c \\}} = \\{\\emptyset, \\{a \\}, \\{b\\}, \\{c\\}, \\{a, b\\},\n\\{b, c\\}, \\{a, c\\}, \\{a, b, c\\}\\}\n\\]",
+      "action": "retain_after_fresh_review",
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false
+    },
+    {
+      "id": "FA-0006-C14",
+      "topic": "Four-element enumeration exercise",
+      "canon": [
+        "FA-OL-CANON-0003:P0020"
+      ],
+      "confidence": 3,
+      "rationale": "The imperative فهرست کنید asks for listing all subsets, not proving existence or selecting only proper subsets. The four source labels and the universal all remain. No exercise or answer is omitted or supplied in place of the requested exercise.",
+      "alternatives": [],
+      "question": null,
+      "unit": "OLP-0006",
+      "source": {
+        "char_start": 3347,
+        "char_end_exclusive": 3384,
+        "line_start": 95,
+        "line_end": 95,
+        "text": "List all subsets of $\\{a, b, c, d\\}$.",
+        "sha256": "3537e7f9671c20c7684bc2013f91f35caa044de360262fe283ae1e6868dc6117"
+      },
+      "target_before": {
+        "char_start": 3340,
+        "char_end_exclusive": 3390,
+        "line_start": 95,
+        "line_end": 95,
+        "text": "همهٔ زیرمجموعه‌های $\\{a, b, c, d\\}$ را فهرست کنید.",
+        "sha256": "54c06e5a8c5eab00545e2b85a9f3eb4baba3ee3d66b781ced5839441c52ee82c"
+      },
+      "target_after": {
+        "char_start": 3340,
+        "char_end_exclusive": 3390,
+        "line_start": 95,
+        "line_end": 95,
+        "text": "همهٔ زیرمجموعه‌های $\\{a, b, c, d\\}$ را فهرست کنید.",
+        "sha256": "54c06e5a8c5eab00545e2b85a9f3eb4baba3ee3d66b781ced5839441c52ee82c"
+      },
+      "target_after_member_tokens_realized": "همهٔ زیرمجموعه‌های $\\{a, b, c, d\\}$ را فهرست کنید.",
+      "action": "retain_after_fresh_review",
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false
+    },
+    {
+      "id": "FA-0006-C15",
+      "topic": "Finite power-set cardinality exercise",
+      "canon": [
+        "FA-OL-CANON-0003:P0020",
+        "FA-OL-CANON-0003:P0024",
+        "FA-OL-CANON-0003:P0062"
+      ],
+      "confidence": 2,
+      "rationale": "The source proof task and n-to-2^n conclusion are correct. Reading the actual locale configuration reveals that the two English plural markers realize as اعضا, yielding دارای n اعضا and دارای 2^n اعضا. Use the singular token عضو after each explicit count, without changing the shared plural definition, the numbers or the mathematics. Page24 supplies actual دو عنصر counted-noun syntax; page62 supplies mathematical n عضوی terminology and binds it to |b|=n. These are usage witnesses supporting the contextual inflection decision, not a quoted general grammar rule nor a claim that the exact corrected sentence appears there. The unchanged ordinary plural اعضا remains appropriate when no explicit cardinal count governs it.",
+      "alternatives": [
+        "Keep the plural markers: carries English grammatical number into this Persian counted expression.",
+        "Change the global element plural to عضو: would break correctly plural contexts elsewhere.",
+        "Rewrite using مجموعه‌ای nعضوی: source-faithful and attested construction, but unnecessary for this two-token inflection repair."
+      ],
+      "question": "Editorial confidence2/3: source mathematics is unambiguous; counted-noun inflection is justified from native disciplinary usage. Later reviewers may prefer an nعضوی construction. No response is required before normal owner integration.",
+      "action": "correct_counted_noun_inflection",
+      "unit": "OLP-0006",
+      "source": {
+        "char_start": 3410,
+        "char_end_exclusive": 3487,
+        "line_start": 99,
+        "line_end": 100,
+        "text": "Show that if $A$ has $n$ !!{element}s, then $\\Pow{A}$ has $2^n$\n!!{element}s.",
+        "sha256": "56eca36773339c43099a13a9aad87106ea9b2d875426d0fce6b153b57f39a57b"
+      },
+      "target_before": {
+        "char_start": 3416,
+        "char_end_exclusive": 3508,
+        "line_start": 99,
+        "line_end": 100,
+        "text": "نشان دهید اگر $A$ دارای $n$ !!{element}s باشد، آنگاه $\\Pow{A}$ دارای\n$2^n$ !!{element}s است.",
+        "sha256": "c997129f31f60f67a5580380b0381d5711e206dff9b8d0d4c424dcda5ad172fc"
+      },
+      "target_after": {
+        "char_start": 3416,
+        "char_end_exclusive": 3506,
+        "line_start": 99,
+        "line_end": 100,
+        "text": "نشان دهید اگر $A$ دارای $n$ !!{element} باشد، آنگاه $\\Pow{A}$ دارای\n$2^n$ !!{element} است.",
+        "sha256": "6ba4832eb65910f398d2cdae6c8f8724a99fca84d0f23a65b9da6bf2c2aee378"
+      },
+      "target_after_member_tokens_realized": "نشان دهید اگر $A$ دارای $n$ عضو باشد، آنگاه $\\Pow{A}$ دارای\n$2^n$ عضو است.",
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false
+    }
+  ],
+  "validation": {
+    "schema": "openlogic-fa-section-validation/1",
+    "observed_utc": "2026-09-08T03:59:37.644575+00:00",
+    "unit": "OLP-0006",
+    "status": "PASS",
+    "checks": {
+      "target_precondition": true,
+      "one_exact_correction": true,
+      "source_commit_and_path": true,
+      "ledger_exact_CRLF_identity": true,
+      "one_frozen_release_member": true,
+      "live_target_is_frozen_R3_member": true,
+      "actual_member_token_definition": true,
+      "actual_indefinite_article_suppressed": true,
+      "only_two_counted_plural_suffixes_removed": true,
+      "correct_counted_nouns": true,
+      "all_math_unchanged_by_repair": true,
+      "English_Persian_math_sequence": true,
+      "environment_sequence": true,
+      "links_citations_labels": true,
+      "original_English_Persian_marker_parity": true,
+      "marker_delta_is_only_C15_count_inflection": true,
+      "no_bad_encoding_or_bidi_controls": true,
+      "no_presentation_forms": true,
+      "no_placeholders": true,
+      "language_identity_retained": true,
+      "braces_balanced": true,
+      "canon_original_hash": true,
+      "seven_actual_canon_page_bindings": true,
+      "FA-0006-C01_canon_exists": true,
+      "FA-0006-C02_canon_exists": true,
+      "FA-0006-C03_canon_exists": true,
+      "FA-0006-C04_canon_exists": true,
+      "FA-0006-C05_canon_exists": true,
+      "FA-0006-C06_canon_exists": true,
+      "FA-0006-C07_canon_exists": true,
+      "FA-0006-C08_canon_exists": true,
+      "FA-0006-C09_canon_exists": true,
+      "FA-0006-C10_canon_exists": true,
+      "FA-0006-C11_canon_exists": true,
+      "FA-0006-C12_canon_exists": true,
+      "FA-0006-C13_canon_exists": true,
+      "FA-0006-C14_canon_exists": true,
+      "FA-0006-C15_canon_exists": true,
+      "fifteen_distinct_choices": true,
+      "English_all_substantive_text_covered": true,
+      "Persian_before_all_substantive_text_covered": true,
+      "Persian_after_all_substantive_text_covered": true,
+      "finite_mutual_inclusion_64_cases": true,
+      "bounded_forall_64_cases": true,
+      "bounded_exists_64_cases": true,
+      "wrong_connectives_detectable": true,
+      "three_element_eight_subsets": true,
+      "four_element_sixteen_subsets": true,
+      "finite_examples_n0_through6": true,
+      "source_and_locale_unchanged": true
+    },
+    "math_spans": 65,
+    "choices": 15,
+    "canon_pages": 7,
+    "changed_substantive_choices": 1,
+    "changed_inflections": 2,
+    "identities": {
+      "source_commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+      "source_path": "content/sets-functions-relations/sets/subsets.tex",
+      "source_git_lf_sha256": "63d819c246577b3bfd8ba2a933f114b58c6549bdc4fa6ea8ffa8ab07c7fed4b7",
+      "source_unit_ledger_CRLF_sha256": "5d982f62c40325cf75da4517add45ca073e23fb9463cfb3adfb9aafbb8582e46",
+      "target_before_sha256": "b8755941afb97fc801c6ff9f03b54522ae64ac4d321df207d77c1ce85ac1b4f4",
+      "target_candidate_sha256": "0214dd2090e43026551a6a6e0308c8abd4e63eac4833811588e8920c691b6749",
+      "target_bytes_before": 5160,
+      "target_bytes_after": 5158,
+      "locale_config_sha256": "c8df8c39abbd1ab36dbac380490b72e9b3c565bbd1ec3d1f1be88bdc300abd0b",
+      "frozen_R3_archive_sha256": "ef32f359fe7813d0ffef11f3936fb1498f2f3cdcc176ab2acb56b969360c9e59",
+      "frozen_R3_member": "source/locale/fa-IR/content/sets-functions-relations/sets/subsets.tex"
+    },
+    "scope": "Full source/target section text and seven canon pages read. Finite semantic checks support the manual review, not a universal formal proof. No new PDF was built or visually certified; owner production and reader are unchanged."
+  },
+  "human_review_gate": false,
+  "reader_release": false
+}
