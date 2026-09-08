@@ -1,0 +1,22 @@
+{
+  "schema": "openlogic-source-finding/1",
+  "id": "OLP-0009-WORD-LENGTH-COLLISION",
+  "source_commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "source_path": "content/sets-functions-relations/sets/pairs-and-products.tex",
+  "location": "Final example: arbitrary set alphabet, length-one raw symbols and empty-set length-zero code; displayed A-star union.",
+  "claim": "Literal raw encodings do not preserve word length for arbitrary set alphabets.",
+  "counterexamples": [
+    "Alphabet {empty set}: the empty word and one-letter empty-set word receive the same raw code.",
+    "Alphabet containing empty set and its self-pair: a one-letter symbol and a two-letter word receive the same raw code."
+  ],
+  "resolution": "Finite functions on natural-number initial segments, or an equivalent explicitly length-disjoint encoding. Preserve old formula only as a disclosed mnemonic, not an unconditional raw-code identity.",
+  "finite_function_canon": [
+    "FA-OL-CANON-0003:P0046",
+    "FA-OL-CANON-0005:P0090"
+  ],
+  "high_confidence_mathematical_reason": true,
+  "scan_transcription_error_claim": false,
+  "public_upstream_issue_sent": false,
+  "prior_duplicate_check": "No matching entry found in the bounded manager source-errata and source-audits directories; owner-side records may contain an earlier finding.",
+  "corrected_target": "OLP-0009/candidate.fa-IR.tex"
+}

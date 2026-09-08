@@ -1,0 +1,887 @@
+{
+  "schema": "public-openlogic-fa-batch-review/1",
+  "identities": [
+    {
+      "unit": "OLP-0009",
+      "source_commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+      "source_path": "content/sets-functions-relations/sets/pairs-and-products.tex",
+      "source_git_LF_sha256": "935f1e0e90dc783a1d5cb3298a38aa8df49af8b424e7282b27dc2ab4e9d85610",
+      "source_ledger_CRLF_sha256": "3db7f0241d387b49488f70e78062c24192b813873618f761565d97bd7249431c",
+      "published_target_sha256": "9474699c22d159d4f715b48e49b727e9bead8ae93f3bebbd62c1cbd186c92bc5",
+      "candidate_sha256": "756a32a942ad05265a8ca0fb1c6733e496f340e64ff4e1036e255ddacf7976f8",
+      "published_target_bytes": 6374,
+      "candidate_bytes": 7880,
+      "R3_member": "source/locale/fa-IR/content/sets-functions-relations/sets/pairs-and-products.tex",
+      "R3_archive_sha256": "ef32f359fe7813d0ffef11f3936fb1498f2f3cdcc176ab2acb56b969360c9e59",
+      "locale_config_sha256": "c8df8c39abbd1ab36dbac380490b72e9b3c565bbd1ec3d1f1be88bdc300abd0b",
+      "math_spans": 78,
+      "aligned_choices": 14,
+      "math_text_pairs": [
+        {
+          "math_span": 5,
+          "source": " iff both ",
+          "target": " اگر و تنها اگر هم ",
+          "review": "Exact wording reviewed in the aligned choice, not accepted by token masking alone"
+        },
+        {
+          "math_span": 5,
+          "source": " and ",
+          "target": " و هم ",
+          "review": "Exact wording reviewed in the aligned choice, not accepted by token masking alone"
+        },
+        {
+          "math_span": 22,
+          "source": " and ",
+          "target": " و ",
+          "review": "Exact wording reviewed in the aligned choice, not accepted by token masking alone"
+        }
+      ]
+    }
+  ],
+  "canon": {
+    "documents": [
+      {
+        "document_id": "FA-OL-CANON-0003",
+        "title_fa": "نظریهٔ مجموعه‌ها",
+        "title_en": "Set Theory",
+        "authors": [
+          "محسن خانی",
+          "افشین زارعی"
+        ],
+        "institution": "دانشگاه صنعتی اصفهان",
+        "date_statement": "۱۸ خرداد ۱۴۰۰",
+        "source_url": "https://khani.iut.ac.ir/sites/khani.iut.ac.ir/files//u145/jozve-kamel.pdf",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+        "pdf_bytes": 413763,
+        "licence_status": "No explicit redistribution licence identified; retain locally and cite only."
+      },
+      {
+        "document_id": "FA-OL-CANON-0005",
+        "title_fa": "مبانی منطق و نظریهٔ مجموعه‌ها",
+        "title_en": "Foundations of Logic and Set Theory",
+        "authors": [
+          "محسن خانی"
+        ],
+        "institution": "دانشگاه صنعتی اصفهان",
+        "date_statement": "نیمسال اول ۱۳۹۷–۱۳۹۸",
+        "source_url": "https://mohsen-khani.github.io/logic97-1/jozve/logic-full.pdf",
+        "pdf_sha256": "565558b76701858236844f19663de27ee10a8d72fd8b007e69b85159ac49f86d",
+        "pdf_bytes": 1514008,
+        "licence_status": "Public repository contains no top-level licence file; retain locally and cite only."
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "FA-OL-CANON-0003:P0014",
+        "pdf_page_1based": 14,
+        "printed_page": 13,
+        "location": "Definition17, lemma18 and definition19",
+        "short_attestation": "زوج کوراتوفسکی",
+        "relevance_and_limits": "Exact set encoding of an ordered pair, coordinatewise equality, product membership and مؤلفه usage. The spelling کوراتوفسکی is directly present; no historical priority claim follows.",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+        "normalized_search_page_sha256": "2d953e0347f243815f7743b5f5b1023455fee7b35b60b650349fdaae0d16d686",
+        "visual_page_read": true,
+        "render_sha256": "a4453708697a9b2ca138e7fa14dd21e46f141e43b5d3f74ef3b0a458dccce648"
+      },
+      {
+        "passage_id": "FA-OL-CANON-0005:P0089",
+        "pdf_page_1based": 89,
+        "printed_page": 89,
+        "location": "Definitions206-207 and lemma208; pairing discussion",
+        "short_attestation": "زوج مرتب",
+        "relevance_and_limits": "Same ordered-pair encoding and coordinatewise equality; extensionality identifies repeated set entries. Its footnote presents a slightly different proper-name spelling, so the chosen form is house consistency, not the sole permissible spelling.",
+        "pdf_sha256": "565558b76701858236844f19663de27ee10a8d72fd8b007e69b85159ac49f86d",
+        "normalized_search_page_sha256": "3cc1c95a9ef959e15d0e22c8bee6c98ccabfdde122e8450faff1223eeaf26aa8",
+        "visual_page_read": true,
+        "render_sha256": "4fb12797aab98d843eb25fe7d4993b3df8278bf555910a1f9a9c928ad68000c0"
+      },
+      {
+        "passage_id": "FA-OL-CANON-0005:P0090",
+        "pdf_page_1based": 90,
+        "printed_page": 90,
+        "location": "Definition211, existence proof and bottom function definition",
+        "short_attestation": "حاصلضرب",
+        "relevance_and_limits": "Product membership uses an ordered pair with its first coordinate in a and second in b. The product is a subset of a double power set, giving existence. Higher products and graph-based functions are explicitly discussed.",
+        "pdf_sha256": "565558b76701858236844f19663de27ee10a8d72fd8b007e69b85159ac49f86d",
+        "normalized_search_page_sha256": "ba93acfc04be54240f825521ffd7f654b7b03546aa0447d6f4210f4c694e1193",
+        "visual_page_read": true,
+        "render_sha256": "1bb7b6e35e5d48386462d27c8a53d545d31e21f02a1e7c58f97a00c5debd4f52"
+      },
+      {
+        "passage_id": "FA-OL-CANON-0005:P0116",
+        "pdf_page_1based": 116,
+        "printed_page": 116,
+        "location": "Theorem264 and its opening explanation",
+        "short_attestation": "حاصلضرب دکارتی",
+        "relevance_and_limits": "Direct attestation of the full Cartesian-product term; ordered-pair coordinate comparison in the proof. Its infinite-cardinal theorem is not imported into the finite counting argument.",
+        "pdf_sha256": "565558b76701858236844f19663de27ee10a8d72fd8b007e69b85159ac49f86d",
+        "normalized_search_page_sha256": "69776197b33d90ac17d66aac27438fad31fba91afe37da358e897fdbb4fea0a5",
+        "visual_page_read": true,
+        "render_sha256": "17fdccc0bbefd25c14caab3ed737da91a91a2b8bc344ae61172925f58910b78b"
+      },
+      {
+        "passage_id": "FA-OL-CANON-0003:P0024",
+        "pdf_page_1based": 24,
+        "printed_page": 23,
+        "location": "Definition5 at bottom and no-successor paragraph above",
+        "short_attestation": "هر دو عنصر",
+        "relevance_and_limits": "Attests singular noun after a count, as well as هیچ عنصری. Supports contextual counted-member grammar, not a global ban on plurals.",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+        "normalized_search_page_sha256": "96362f367446b7f7f217e3b52119a02579200eff2d201a4ba3b68365c93057ab",
+        "visual_page_read": true,
+        "render_sha256": "09dbe50bfcc589fd916d17795cca51f2b2fa15f35e8d2661d2d5f174e914b585"
+      },
+      {
+        "passage_id": "FA-OL-CANON-0003:P0062",
+        "pdf_page_1based": 62,
+        "printed_page": 61,
+        "location": "Opening section and definition of n-element subsets",
+        "short_attestation": "n عضوی",
+        "relevance_and_limits": "Native counted-set syntax explicitly tied to cardinality n. The Ramsey theorem is not used as authority for the elementary product theorem.",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+        "normalized_search_page_sha256": "b79be2af98f68ccb0d2c7f7b239cccc87dfcca288699a3cdc0054db73c1ca1ea",
+        "visual_page_read": true,
+        "render_sha256": "68a45548954f225f4d074fff73b3ec844c6ee05548646e056e148bc30cd9af0f"
+      },
+      {
+        "passage_id": "FA-OL-CANON-0003:P0046",
+        "pdf_page_1based": 46,
+        "printed_page": 45,
+        "location": "Definition38 at bottom; Peano discussion above",
+        "short_attestation": "دنباله‌ی متناهی",
+        "relevance_and_limits": "Sequences are functions; finite sequences have a natural-number domain. This supplies a length-aware rigorous representation for arbitrary alphabets. It does not directly attest the term واژه.",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+        "normalized_search_page_sha256": "1d2a2c92f26245c9b555195655e39af1aa6ef8a5f7d415cfbfcb17b982eea6c8",
+        "visual_page_read": true,
+        "render_sha256": "a134eaff311964b754104738c18bccb948ccbd1312a763581e5ef0674cfa7e85"
+      }
+    ]
+  },
+  "choices": [
+    {
+      "topic": "Heading, unstructured sets and ordering",
+      "canon": [
+        "FA-OL-CANON-0003:P0014",
+        "FA-OL-CANON-0005:P0089",
+        "FA-OL-CANON-0005:P0116"
+      ],
+      "rationale": "The expanded heading faithfully identifies ordered pairs and products. The first sentence is clarified: membership alone does not specify order; sets may still be equipped with an ordering. The unordered-pair equality and the conditional ordered-pair inequality are unchanged. No distinctness is assumed when x equals y.",
+      "alternatives": "Saying sets cannot be ordered would be false. چندتایی is retained with explicit n-tuple examples rather than given a fabricated attestation.",
+      "question": "The viewed pages attest ordered pairs and higher products, not the exact general heading word چندتایی.",
+      "confidence": 2,
+      "confidence_reason": "Mathematical content is checked; the exact-register limitation is stated.",
+      "id": "FA-0009-C01",
+      "unit": "OLP-0009",
+      "source": {
+        "char_start": 186,
+        "char_end_exclusive": 568,
+        "line_start": 10,
+        "line_end": 19,
+        "text": "\\olsection{Pairs, Tuples, Cartesian Products}\n\n\\begin{explain}\nIt follows from extensionality that sets have no order to their\nelements. So if we want to represent order, we use \\emph{ordered\npairs} $\\tuple{x, y}$. In an unordered pair $\\{x, y\\}$, the order does\nnot matter: $\\{x, y\\} = \\{y, x\\}$. In an ordered pair, it does: if $x\n\\neq y$, then $\\tuple{x, y} \\neq \\tuple{y, x}$.\n\n",
+        "sha256": "a9c2e06277d169d87b9cc88c71019f029bfba8e1b97bb2424016a7068903ab97"
+      },
+      "target_before": {
+        "char_start": 193,
+        "char_end_exclusive": 572,
+        "line_start": 10,
+        "line_end": 19,
+        "text": "\\olsection{زوج‌های مرتب، چندتایی‌ها و ضرب‌های دکارتی}\n\n\\begin{explain}\nاز اصل گسترش نتیجه می‌شود که اعضای یک مجموعه ترتیبی ندارند.\nپس اگر بخواهیم ترتیب را بازنمایی کنیم، از \\emph{زوج‌های مرتب}\n$\\tuple{x, y}$ استفاده می‌کنیم. در زوج نامرتب $\\{x, y\\}$، ترتیب\nاهمیتی ندارد: $\\{x, y\\} = \\{y, x\\}$. اما در زوج مرتب اهمیت دارد:\nاگر $x \\neq y$، آنگاه $\\tuple{x, y} \\neq \\tuple{y, x}$.\n\n",
+        "sha256": "1be715051c226ff97526b11f9e365fa123b023e7bf3035f6566bf360041e904f"
+      },
+      "target_after": {
+        "char_start": 193,
+        "char_end_exclusive": 587,
+        "line_start": 10,
+        "line_end": 19,
+        "text": "\\olsection{زوج‌های مرتب، چندتایی‌ها و ضرب‌های دکارتی}\n\n\\begin{explain}\nاز اصل گسترش نتیجه می‌شود که خودِ مجموعه ترتیبی برای اعضایش تعیین نمی‌کند.\nپس اگر بخواهیم ترتیب را بازنمایی کنیم، از \\emph{زوج‌های مرتب}\n$\\tuple{x, y}$ استفاده می‌کنیم. در زوج نامرتب $\\{x, y\\}$، ترتیب\nاهمیتی ندارد: $\\{x, y\\} = \\{y, x\\}$. اما در زوج مرتب اهمیت دارد:\nاگر $x \\neq y$، آنگاه $\\tuple{x, y} \\neq \\tuple{y, x}$.\n\n",
+        "sha256": "bb33ac9d78aec45d625c30223c9541b57de2a82b42dec68765b8addd8884abb9"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\olsection{زوج‌های مرتب، چندتایی‌ها و ضرب‌های دکارتی}\n\n\\begin{explain}\nاز اصل گسترش نتیجه می‌شود که خودِ مجموعه ترتیبی برای اعضایش تعیین نمی‌کند.\nپس اگر بخواهیم ترتیب را بازنمایی کنیم، از \\emph{زوج‌های مرتب}\n$\\tuple{x, y}$ استفاده می‌کنیم. در زوج نامرتب $\\{x, y\\}$، ترتیب\nاهمیتی ندارد: $\\{x, y\\} = \\{y, x\\}$. اما در زوج مرتب اهمیت دارد:\nاگر $x \\neq y$، آنگاه $\\tuple{x, y} \\neq \\tuple{y, x}$.\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Coordinatewise equality and proper name",
+      "canon": [
+        "FA-OL-CANON-0003:P0014",
+        "FA-OL-CANON-0005:P0089"
+      ],
+      "rationale": "مؤلفهٔ نخست/دوم names positions, not set membership. اگر و تنها اگر هم ... و هم preserves both directions and conjunction. Proper-name spelling follows the selected set-theory definition کوراتوفسکی; Wiener is retained from the English attribution, and the stable wienerkuratowski identifier is not altered.",
+      "alternatives": "Do not turn iff into only if or swap coordinate order. The other canon spelling is a legitimate variant, not evidence of mathematical error.",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Direct source comparison and actual canon construction agree.",
+      "id": "FA-0009-C02",
+      "unit": "OLP-0009",
+      "source": {
+        "char_start": 568,
+        "char_end_exclusive": 947,
+        "line_start": 19,
+        "line_end": 29,
+        "text": "How should we think about ordered pairs in set theory? Crucially, we\nwant to preserve the idea that ordered pairs are identical iff they\nshare the same first element and share the same second element, i.e.:\n\\[\n  \\tuple{a, b}= \\tuple{c, d}\\text{ iff both }a = c \\text{ and }b=d.\n\\]\nWe can define ordered pairs in set theory using the Wiener--Kuratowski\ndefinition.\n\\end{explain}\n\n",
+        "sha256": "15d3f17c464d33a8c39dcba40a474c1fcb9d57c2ac14bb7284b540d7569c12de"
+      },
+      "target_before": {
+        "char_start": 572,
+        "char_end_exclusive": 968,
+        "line_start": 19,
+        "line_end": 30,
+        "text": "در نظریهٔ مجموعه‌ها چگونه باید به زوج‌های مرتب بیندیشیم؟ نکتهٔ اساسی\nاین است که می‌خواهیم این اندیشه را حفظ کنیم که دو زوج مرتب یکسان‌اند\nاگر و تنها اگر مؤلفهٔ نخستشان یکسان و مؤلفهٔ دومشان نیز یکسان باشد؛ یعنی:\n\\[\n  \\tuple{a, b}= \\tuple{c, d}\\text{ اگر و تنها اگر هم }a = c\n  \\text{ و هم }b=d.\n\\]\nمی‌توانیم زوج‌های مرتب را در نظریهٔ مجموعه‌ها با تعریف\nوینر--کوراتفسکی تعریف کنیم.\n\\end{explain}\n\n",
+        "sha256": "ddb0f3553ab17205a15662fbe197ec8c410b0f0568eae0e4067f92b1895bff70"
+      },
+      "target_after": {
+        "char_start": 587,
+        "char_end_exclusive": 984,
+        "line_start": 19,
+        "line_end": 30,
+        "text": "در نظریهٔ مجموعه‌ها چگونه باید به زوج‌های مرتب بیندیشیم؟ نکتهٔ اساسی\nاین است که می‌خواهیم این اندیشه را حفظ کنیم که دو زوج مرتب یکسان‌اند\nاگر و تنها اگر مؤلفهٔ نخستشان یکسان و مؤلفهٔ دومشان نیز یکسان باشد؛ یعنی:\n\\[\n  \\tuple{a, b}= \\tuple{c, d}\\text{ اگر و تنها اگر هم }a = c\n  \\text{ و هم }b=d.\n\\]\nمی‌توانیم زوج‌های مرتب را در نظریهٔ مجموعه‌ها با تعریف\nوینر--کوراتوفسکی تعریف کنیم.\n\\end{explain}\n\n",
+        "sha256": "4bd6f671a2ce88e9763850a3698b068c927f150b43415c976c20e29fda056958"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "در نظریهٔ مجموعه‌ها چگونه باید به زوج‌های مرتب بیندیشیم؟ نکتهٔ اساسی\nاین است که می‌خواهیم این اندیشه را حفظ کنیم که دو زوج مرتب یکسان‌اند\nاگر و تنها اگر مؤلفهٔ نخستشان یکسان و مؤلفهٔ دومشان نیز یکسان باشد؛ یعنی:\n\\[\n  \\tuple{a, b}= \\tuple{c, d}\\text{ اگر و تنها اگر هم }a = c\n  \\text{ و هم }b=d.\n\\]\nمی‌توانیم زوج‌های مرتب را در نظریهٔ مجموعه‌ها با تعریف\nوینر--کوراتوفسکی تعریف کنیم.\n\\end{explain}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Ordered-pair set encoding",
+      "canon": [
+        "FA-OL-CANON-0003:P0014",
+        "FA-OL-CANON-0005:P0089"
+      ],
+      "rationale": "The exact nested singletons/unordered pair encoding is retained, including the degenerate a=b case. The scholarly sources give the same construction and its existence from pairing.",
+      "alternatives": "A plain unordered pair or a right/left swapped encoding is not equivalent notation here.",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Direct source comparison and actual canon construction agree.",
+      "id": "FA-0009-C03",
+      "unit": "OLP-0009",
+      "source": {
+        "char_start": 947,
+        "char_end_exclusive": 1051,
+        "line_start": 29,
+        "line_end": 33,
+        "text": "\\begin{defn}[Ordered pair]\\ollabel{wienerkuratowski}\n\t$\\tuple{a, b} = \\{\\{a\\}, \\{a, b\\}\\}$.\n\\end{defn}\n\n",
+        "sha256": "08e90328f5d91e1956d9cf079107fe386477d76a58a894a4da7e68f473e2b14c"
+      },
+      "target_before": {
+        "char_start": 968,
+        "char_end_exclusive": 1068,
+        "line_start": 30,
+        "line_end": 34,
+        "text": "\\begin{defn}[زوج مرتب]\\ollabel{wienerkuratowski}\n\t$\\tuple{a, b} = \\{\\{a\\}, \\{a, b\\}\\}$.\n\\end{defn}\n\n",
+        "sha256": "3aaa4f0699f29515ad81a4b39c9e1e321ca9bad6181e95a66291c3a317b584d1"
+      },
+      "target_after": {
+        "char_start": 984,
+        "char_end_exclusive": 1084,
+        "line_start": 30,
+        "line_end": 34,
+        "text": "\\begin{defn}[زوج مرتب]\\ollabel{wienerkuratowski}\n\t$\\tuple{a, b} = \\{\\{a\\}, \\{a, b\\}\\}$.\n\\end{defn}\n\n",
+        "sha256": "3aaa4f0699f29515ad81a4b39c9e1e321ca9bad6181e95a66291c3a317b584d1"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{defn}[زوج مرتب]\\ollabel{wienerkuratowski}\n\t$\\tuple{a, b} = \\{\\{a\\}, \\{a, b\\}\\}$.\n\\end{defn}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Equality-characterization exercise",
+      "canon": [
+        "FA-OL-CANON-0003:P0014",
+        "FA-OL-CANON-0005:P0089"
+      ],
+      "rationale": "The original exercise, named definition reference and both coordinate equalities remain. The learner is still asked to prove the characterization, not merely read its statement.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Direct source comparison and actual canon construction agree.",
+      "id": "FA-0009-C04",
+      "unit": "OLP-0009",
+      "source": {
+        "char_start": 1051,
+        "char_end_exclusive": 1193,
+        "line_start": 33,
+        "line_end": 38,
+        "text": "\\begin{prob}\n\tUsing \\olref[sfr][set][pai]{wienerkuratowski}, prove that $\\tuple{a,\n\tb}= \\tuple{c, d}$ iff both $a = c$ and $b=d$.\n\\end{prob}\n\n",
+        "sha256": "a6eddffe969267718349dabf36026c1b68a0e5b2932f6335c2c2de8ec5f4fbd7"
+      },
+      "target_before": {
+        "char_start": 1068,
+        "char_end_exclusive": 1226,
+        "line_start": 34,
+        "line_end": 39,
+        "text": "\\begin{prob}\n\tبا استفاده از \\olref[sfr][set][pai]{wienerkuratowski} ثابت کنید\n\t$\\tuple{a, b}= \\tuple{c, d}$ اگر و تنها اگر هم $a = c$ و هم $b=d$.\n\\end{prob}\n\n",
+        "sha256": "5a82159463d0d309b51a265414c0181af1dc16ebfd9b9100bf4a303962f47aa7"
+      },
+      "target_after": {
+        "char_start": 1084,
+        "char_end_exclusive": 1242,
+        "line_start": 34,
+        "line_end": 39,
+        "text": "\\begin{prob}\n\tبا استفاده از \\olref[sfr][set][pai]{wienerkuratowski} ثابت کنید\n\t$\\tuple{a, b}= \\tuple{c, d}$ اگر و تنها اگر هم $a = c$ و هم $b=d$.\n\\end{prob}\n\n",
+        "sha256": "5a82159463d0d309b51a265414c0181af1dc16ebfd9b9100bf4a303962f47aa7"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{prob}\n\tبا استفاده از \\olref[sfr][set][pai]{wienerkuratowski} ثابت کنید\n\t$\\tuple{a, b}= \\tuple{c, d}$ اگر و تنها اگر هم $a = c$ و هم $b=d$.\n\\end{prob}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Nested triples, quadruples and n-tuples",
+      "canon": [
+        "FA-OL-CANON-0003:P0014",
+        "FA-OL-CANON-0005:P0090"
+      ],
+      "rationale": "The first coordinate is itself a pair: nesting is left-associated exactly as in the source. سه‌تایی and چهارتایی identify fixed arities and the explicit examples anchor their meaning. General ordered n-tuples are not unordered n-element subsets.",
+      "alternatives": "Do not silently use right-associated tuples or treat arbitrary nested pair codes as length-separated words.",
+      "question": "The exact tuple-family naming is only indirectly supported by the consulted higher-product and ordered-pair passages.",
+      "confidence": 2,
+      "confidence_reason": "Mathematical content is checked; the exact-register limitation is stated.",
+      "id": "FA-0009-C05",
+      "unit": "OLP-0009",
+      "source": {
+        "char_start": 1193,
+        "char_end_exclusive": 1881,
+        "line_start": 38,
+        "line_end": 52,
+        "text": "\\begin{explain}\nHaving fixed a definition of an ordered pair, we can use it to define\nfurther sets. For example, sometimes we also want ordered sequences of\nmore than two objects, e.g., \\emph{triples} $\\tuple{x, y, z}$,\n\\emph{quadruples} $\\tuple{x, y, z, u}$, and so on.  We can think of\ntriples as special ordered pairs, where the first element is itself an\nordered pair: $\\tuple{x, y, z}$ is $\\tuple{\\tuple{x, y},z}$. The same\nis true for quadruples: $\\tuple{x,y,z,u}$ is\n$\\tuple{\\tuple{\\tuple{x,y},z},u}$, and so on. In general, we talk of\n\\emph{ordered $n$-tuples} $\\tuple{x_1, \\dots, x_n}$.\n\nCertain sets of ordered pairs, or other ordered $n$-tuples, will be useful.\n\\end{explain}\n\n",
+        "sha256": "3d98e2fbf78999290f86790a35e428018c193edff337f379929081a0de9db74e"
+      },
+      "target_before": {
+        "char_start": 1226,
+        "char_end_exclusive": 1949,
+        "line_start": 39,
+        "line_end": 54,
+        "text": "\\begin{explain}\nاکنون که تعریفی برای زوج مرتب تثبیت کرده‌ایم، می‌توانیم آن را برای\nتعریف مجموعه‌های دیگری به کار بریم. برای نمونه، گاهی دنباله‌های مرتبِ\nبیش از دو شیء را نیز می‌خواهیم، مانند \\emph{سه‌تایی‌ها}\n$\\tuple{x, y, z}$، \\emph{چهارتایی‌ها} $\\tuple{x, y, z, u}$ و\nهمین‌طور ادامه. می‌توانیم سه‌تایی‌ها را زوج‌های مرتب خاصی بدانیم که\nمؤلفهٔ نخستشان خود یک زوج مرتب است: $\\tuple{x, y, z}$ همان\n$\\tuple{\\tuple{x, y},z}$ است. دربارهٔ چهارتایی‌ها نیز چنین است:\n$\\tuple{x,y,z,u}$ همان $\\tuple{\\tuple{\\tuple{x,y},z},u}$ است و\nبه همین ترتیب ادامه می‌یابد. به‌طور کلی، از \\emph{$n$-تایی‌های مرتب}\n$\\tuple{x_1, \\dots, x_n}$ سخن می‌گوییم.\n\nبرخی مجموعه‌های زوج‌های مرتب یا دیگر $n$-تایی‌های مرتب سودمند خواهند بود.\n\\end{explain}\n\n",
+        "sha256": "7aea2d2088bde8fc21e085b4b2a3352aa91ee011adc2afcde97d4c5f90725c26"
+      },
+      "target_after": {
+        "char_start": 1242,
+        "char_end_exclusive": 1965,
+        "line_start": 39,
+        "line_end": 54,
+        "text": "\\begin{explain}\nاکنون که تعریفی برای زوج مرتب تثبیت کرده‌ایم، می‌توانیم آن را برای\nتعریف مجموعه‌های دیگری به کار بریم. برای نمونه، گاهی دنباله‌های مرتبِ\nبیش از دو شیء را نیز می‌خواهیم، مانند \\emph{سه‌تایی‌ها}\n$\\tuple{x, y, z}$، \\emph{چهارتایی‌ها} $\\tuple{x, y, z, u}$ و\nهمین‌طور ادامه. می‌توانیم سه‌تایی‌ها را زوج‌های مرتب خاصی بدانیم که\nمؤلفهٔ نخستشان خود یک زوج مرتب است: $\\tuple{x, y, z}$ همان\n$\\tuple{\\tuple{x, y},z}$ است. دربارهٔ چهارتایی‌ها نیز چنین است:\n$\\tuple{x,y,z,u}$ همان $\\tuple{\\tuple{\\tuple{x,y},z},u}$ است و\nبه همین ترتیب ادامه می‌یابد. به‌طور کلی، از \\emph{$n$-تایی‌های مرتب}\n$\\tuple{x_1, \\dots, x_n}$ سخن می‌گوییم.\n\nبرخی مجموعه‌های زوج‌های مرتب یا دیگر $n$-تایی‌های مرتب سودمند خواهند بود.\n\\end{explain}\n\n",
+        "sha256": "7aea2d2088bde8fc21e085b4b2a3352aa91ee011adc2afcde97d4c5f90725c26"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{explain}\nاکنون که تعریفی برای زوج مرتب تثبیت کرده‌ایم، می‌توانیم آن را برای\nتعریف مجموعه‌های دیگری به کار بریم. برای نمونه، گاهی دنباله‌های مرتبِ\nبیش از دو شیء را نیز می‌خواهیم، مانند \\emph{سه‌تایی‌ها}\n$\\tuple{x, y, z}$، \\emph{چهارتایی‌ها} $\\tuple{x, y, z, u}$ و\nهمین‌طور ادامه. می‌توانیم سه‌تایی‌ها را زوج‌های مرتب خاصی بدانیم که\nمؤلفهٔ نخستشان خود یک زوج مرتب است: $\\tuple{x, y, z}$ همان\n$\\tuple{\\tuple{x, y},z}$ است. دربارهٔ چهارتایی‌ها نیز چنین است:\n$\\tuple{x,y,z,u}$ همان $\\tuple{\\tuple{\\tuple{x,y},z},u}$ است و\nبه همین ترتیب ادامه می‌یابد. به‌طور کلی، از \\emph{$n$-تایی‌های مرتب}\n$\\tuple{x_1, \\dots, x_n}$ سخن می‌گوییم.\n\nبرخی مجموعه‌های زوج‌های مرتب یا دیگر $n$-تایی‌های مرتب سودمند خواهند بود.\n\\end{explain}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Cartesian-product definition",
+      "canon": [
+        "FA-OL-CANON-0003:P0014",
+        "FA-OL-CANON-0005:P0090",
+        "FA-OL-CANON-0005:P0116"
+      ],
+      "rationale": "ضرب دکارتی is a shorter form of the directly attested حاصلضرب دکارتی, with the same set construction and explicit formula. The first coordinate belongs to A, second to B; و is conjunction. Product existence is licensed by the canon construction, not unrestricted comprehension.",
+      "alternatives": "Ordinary numerical multiplication, unordered pairs, or coordinates in A union B do not convey this definition.",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Direct source comparison and actual canon construction agree.",
+      "id": "FA-0009-C06",
+      "unit": "OLP-0009",
+      "source": {
+        "char_start": 1881,
+        "char_end_exclusive": 2081,
+        "line_start": 52,
+        "line_end": 60,
+        "text": "\\begin{defn}[Cartesian product]\nGiven sets $A$ and $B$, their \\emph{Cartesian product} $A \\times B$ is\ndefined by\n\\[\n  A \\times B = \\Setabs{\\tuple{x, y}}{x \\in A \\text{ and } y \\in B}.\n\\]\n\\end{defn}\n\n",
+        "sha256": "993dacae90970dc54aca6c867f0aeef1a3d4af0ab7b01d252dfe28bbc52ce95e"
+      },
+      "target_before": {
+        "char_start": 1949,
+        "char_end_exclusive": 2143,
+        "line_start": 54,
+        "line_end": 62,
+        "text": "\\begin{defn}[ضرب دکارتی]\nبرای مجموعه‌های $A$ و $B$، \\emph{ضرب دکارتیِ} آنها، $A \\times B$،\nچنین تعریف می‌شود:\n\\[\n  A \\times B = \\Setabs{\\tuple{x, y}}{x \\in A \\text{ و } y \\in B}.\n\\]\n\\end{defn}\n\n",
+        "sha256": "dcc187d7faa0dc930145b0a01127a353073531b5c3b3d7cf3e5ebf53d5a1c1eb"
+      },
+      "target_after": {
+        "char_start": 1965,
+        "char_end_exclusive": 2159,
+        "line_start": 54,
+        "line_end": 62,
+        "text": "\\begin{defn}[ضرب دکارتی]\nبرای مجموعه‌های $A$ و $B$، \\emph{ضرب دکارتیِ} آنها، $A \\times B$،\nچنین تعریف می‌شود:\n\\[\n  A \\times B = \\Setabs{\\tuple{x, y}}{x \\in A \\text{ و } y \\in B}.\n\\]\n\\end{defn}\n\n",
+        "sha256": "dcc187d7faa0dc930145b0a01127a353073531b5c3b3d7cf3e5ebf53d5a1c1eb"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{defn}[ضرب دکارتی]\nبرای مجموعه‌های $A$ و $B$، \\emph{ضرب دکارتیِ} آنها، $A \\times B$،\nچنین تعریف می‌شود:\n\\[\n  A \\times B = \\Setabs{\\tuple{x, y}}{x \\in A \\text{ و } y \\in B}.\n\\]\n\\end{defn}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Six-pair example",
+      "canon": [
+        "FA-OL-CANON-0005:P0090"
+      ],
+      "rationale": "All six displayed ordered pairs and their row/coordinate order remain. The source treats 1,a,b as distinct labels; with that convention the finite enumeration is correct.",
+      "alternatives": "Do not deduplicate pairs that merely share one coordinate.",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Direct source comparison and actual canon construction agree.",
+      "id": "FA-0009-C07",
+      "unit": "OLP-0009",
+      "source": {
+        "char_start": 2081,
+        "char_end_exclusive": 2279,
+        "line_start": 60,
+        "line_end": 68,
+        "text": "\\begin{ex}\nIf $A = \\{0, 1\\}$, and $B = \\{1, a, b\\}$, then their product is\n\\[\nA \\times B = \\{ \\tuple{0, 1}, \\tuple{0, a}, \\tuple{0, b},\n    \\tuple{1, 1}, \\tuple{1, a}, \\tuple{1, b} \\}.\n\\]\n\\end{ex}\n\n",
+        "sha256": "57a3b302f70dabe4b3a4e9c523c05191e3fb98633f2d2133052cf40f9a3de13a"
+      },
+      "target_before": {
+        "char_start": 2143,
+        "char_end_exclusive": 2345,
+        "line_start": 62,
+        "line_end": 70,
+        "text": "\\begin{ex}\nاگر $A = \\{0, 1\\}$ و $B = \\{1, a, b\\}$ باشند، ضرب آنها برابر است با\n\\[\nA \\times B = \\{ \\tuple{0, 1}, \\tuple{0, a}, \\tuple{0, b},\n    \\tuple{1, 1}, \\tuple{1, a}, \\tuple{1, b} \\}.\n\\]\n\\end{ex}\n\n",
+        "sha256": "b897831f8440baa82100f97ff0039301855420f1a74dc31de6a168508dcea0f0"
+      },
+      "target_after": {
+        "char_start": 2159,
+        "char_end_exclusive": 2361,
+        "line_start": 62,
+        "line_end": 70,
+        "text": "\\begin{ex}\nاگر $A = \\{0, 1\\}$ و $B = \\{1, a, b\\}$ باشند، ضرب آنها برابر است با\n\\[\nA \\times B = \\{ \\tuple{0, 1}, \\tuple{0, a}, \\tuple{0, b},\n    \\tuple{1, 1}, \\tuple{1, a}, \\tuple{1, b} \\}.\n\\]\n\\end{ex}\n\n",
+        "sha256": "b897831f8440baa82100f97ff0039301855420f1a74dc31de6a168508dcea0f0"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{ex}\nاگر $A = \\{0, 1\\}$ و $B = \\{1, a, b\\}$ باشند، ضرب آنها برابر است با\n\\[\nA \\times B = \\{ \\tuple{0, 1}, \\tuple{0, a}, \\tuple{0, b},\n    \\tuple{1, 1}, \\tuple{1, a}, \\tuple{1, b} \\}.\n\\]\n\\end{ex}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Powers and recursive arity",
+      "canon": [
+        "FA-OL-CANON-0003:P0014",
+        "FA-OL-CANON-0005:P0090"
+      ],
+      "rationale": "The recurrence starts at A to the first power and forms the next power by multiplying on the right by A. همهٔ includes every pair or triple. بازگشتی indicates the recursive definition, not a proof by induction. Powers are fixed-arity code sets; they are not asserted disjoint for different arities.",
+      "alternatives": "Do not silently set A to power zero here or replace recursion by numerical exponentiation.",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Direct source comparison and actual canon construction agree.",
+      "id": "FA-0009-C08",
+      "unit": "OLP-0009",
+      "source": {
+        "char_start": 2279,
+        "char_end_exclusive": 2621,
+        "line_start": 68,
+        "line_end": 79,
+        "text": "\\begin{ex}\nIf $A$ is a set, the product of $A$ with itself, $A \\times A$, is also\nwritten~$A^2$. It is the set of \\emph{all} pairs $\\tuple{x, y}$ with\n$x, y \\in A$. The set of all triples $\\tuple{x, y, z}$ is $A^3$, and\nso on. We can give a recursive definition:\n\\begin{align*}\n  A^1 & = A\\\\\n  A^{k+1} & = A^k \\times A\n\\end{align*}\n\\end{ex}\n\n",
+        "sha256": "c0cef538165c4def9822972bd449e72ee61ac1b51369d0ec0b58eeff074aa865"
+      },
+      "target_before": {
+        "char_start": 2345,
+        "char_end_exclusive": 2710,
+        "line_start": 70,
+        "line_end": 82,
+        "text": "\\begin{ex}\nاگر $A$ مجموعه‌ای باشد، ضرب $A$ در خودش، $A \\times A$، را\n$A^2$ نیز می‌نویسیم. این مجموعهٔ \\emph{همهٔ} زوج‌های $\\tuple{x, y}$\nبا $x, y \\in A$ است. مجموعهٔ همهٔ سه‌تایی‌های $\\tuple{x, y, z}$\nبرابر $A^3$ است و به همین ترتیب ادامه می‌یابد. می‌توانیم تعریفی\nبازگشتی به دست دهیم:\n\\begin{align*}\n  A^1 & = A\\\\\n  A^{k+1} & = A^k \\times A\n\\end{align*}\n\\end{ex}\n\n",
+        "sha256": "926838178238761058f42ea8de74038fc53a72f2ca7c0c08fb42221a06037405"
+      },
+      "target_after": {
+        "char_start": 2361,
+        "char_end_exclusive": 2726,
+        "line_start": 70,
+        "line_end": 82,
+        "text": "\\begin{ex}\nاگر $A$ مجموعه‌ای باشد، ضرب $A$ در خودش، $A \\times A$، را\n$A^2$ نیز می‌نویسیم. این مجموعهٔ \\emph{همهٔ} زوج‌های $\\tuple{x, y}$\nبا $x, y \\in A$ است. مجموعهٔ همهٔ سه‌تایی‌های $\\tuple{x, y, z}$\nبرابر $A^3$ است و به همین ترتیب ادامه می‌یابد. می‌توانیم تعریفی\nبازگشتی به دست دهیم:\n\\begin{align*}\n  A^1 & = A\\\\\n  A^{k+1} & = A^k \\times A\n\\end{align*}\n\\end{ex}\n\n",
+        "sha256": "926838178238761058f42ea8de74038fc53a72f2ca7c0c08fb42221a06037405"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{ex}\nاگر $A$ مجموعه‌ای باشد، ضرب $A$ در خودش، $A \\times A$، را\n$A^2$ نیز می‌نویسیم. این مجموعهٔ \\emph{همهٔ} زوج‌های $\\tuple{x, y}$\nبا $x, y \\in A$ است. مجموعهٔ همهٔ سه‌تایی‌های $\\tuple{x, y, z}$\nبرابر $A^3$ است و به همین ترتیب ادامه می‌یابد. می‌توانیم تعریفی\nبازگشتی به دست دهیم:\n\\begin{align*}\n  A^1 & = A\\\\\n  A^{k+1} & = A^k \\times A\n\\end{align*}\n\\end{ex}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Twenty-seven-triple exercise",
+      "canon": [
+        "FA-OL-CANON-0005:P0090",
+        "FA-OL-CANON-0003:P0062"
+      ],
+      "rationale": "Every element of the third Cartesian power is requested. The plural token is correct after همهٔ and is retained. This has 27 ordered triples, not the one unordered three-element subset.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Direct source comparison and actual canon construction agree.",
+      "id": "FA-0009-C09",
+      "unit": "OLP-0009",
+      "source": {
+        "char_start": 2621,
+        "char_end_exclusive": 2688,
+        "line_start": 79,
+        "line_end": 83,
+        "text": "\\begin{prob}\nList all !!{element}s of $\\{1, 2, 3\\}^3$.\n\\end{prob}\n\n",
+        "sha256": "9934774cb425a20865c1844943ccec9ee8d7391cb571d07b8130a6df92bde2da"
+      },
+      "target_before": {
+        "char_start": 2710,
+        "char_end_exclusive": 2784,
+        "line_start": 82,
+        "line_end": 86,
+        "text": "\\begin{prob}\nهمهٔ !!{element}s $\\{1, 2, 3\\}^3$ را فهرست کنید.\n\\end{prob}\n\n",
+        "sha256": "c60c515f5f10da46d58c2a7b7a0fedb5d9cf88e615ce949c7ef02f1357f8bc9d"
+      },
+      "target_after": {
+        "char_start": 2726,
+        "char_end_exclusive": 2800,
+        "line_start": 82,
+        "line_end": 86,
+        "text": "\\begin{prob}\nهمهٔ !!{element}s $\\{1, 2, 3\\}^3$ را فهرست کنید.\n\\end{prob}\n\n",
+        "sha256": "c60c515f5f10da46d58c2a7b7a0fedb5d9cf88e615ce949c7ef02f1357f8bc9d"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{prob}\nهمهٔ اعضا $\\{1, 2, 3\\}^3$ را فهرست کنید.\n\\end{prob}\n\n",
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 18,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        }
+      ]
+    },
+    {
+      "topic": "Finite product cardinality",
+      "canon": [
+        "FA-OL-CANON-0003:P0024",
+        "FA-OL-CANON-0003:P0062",
+        "FA-OL-CANON-0005:P0090"
+      ],
+      "rationale": "The n and m member nouns are singular in native counted syntax. Correct both English plural suffixes locally; the already singular n times m conclusion remains. The theorem includes zero cardinalities.",
+      "alternatives": "Do not narrow n,m to positive numbers merely to match the drawn nonempty grid.",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Direct source comparison and actual canon construction agree.",
+      "id": "FA-0009-C10",
+      "unit": "OLP-0009",
+      "source": {
+        "char_start": 2688,
+        "char_end_exclusive": 2834,
+        "line_start": 83,
+        "line_end": 88,
+        "text": "\\begin{prop}\\ollabel{cardnmprod}\nIf $A$ has $n$ !!{element}s and $B$ has $m$ !!{element}s, then $A\n\\times B$ has $n\\cdot m$ elements.\n\\end{prop}\n\n",
+        "sha256": "ed4da72cfbf24127a050e56c48ac8267539a1cc827edf894c2c37191106343c4"
+      },
+      "target_before": {
+        "char_start": 2784,
+        "char_end_exclusive": 2940,
+        "line_start": 86,
+        "line_end": 91,
+        "text": "\\begin{prop}\\ollabel{cardnmprod}\nاگر $A$ دارای $n$ !!{element}s و $B$ دارای $m$ !!{element}s باشد،\nآنگاه $A \\times B$ دارای $n\\cdot m$ عضو است.\n\\end{prop}\n\n",
+        "sha256": "cdbdbb942fca3143a35603f34bcc2d732cc94b35b9294c0f45a3a85e6f8df340"
+      },
+      "target_after": {
+        "char_start": 2800,
+        "char_end_exclusive": 2954,
+        "line_start": 86,
+        "line_end": 91,
+        "text": "\\begin{prop}\\ollabel{cardnmprod}\nاگر $A$ دارای $n$ !!{element} و $B$ دارای $m$ !!{element} باشد،\nآنگاه $A \\times B$ دارای $n\\cdot m$ عضو است.\n\\end{prop}\n\n",
+        "sha256": "050c1a8edd12e074fab7693bfe8ca9101916a300ed6c05ae6d805e5d04e992ec"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{prop}\\ollabel{cardnmprod}\nاگر $A$ دارای $n$ عضو و $B$ دارای $m$ عضو باشد،\nآنگاه $A \\times B$ دارای $n\\cdot m$ عضو است.\n\\end{prop}\n\n",
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 51,
+          "token": "!!{element}",
+          "realization": "عضو"
+        },
+        {
+          "character_offset_in_segment": 79,
+          "token": "!!{element}",
+          "realization": "عضو"
+        }
+      ]
+    },
+    {
+      "topic": "Disjoint rows proof",
+      "canon": [
+        "FA-OL-CANON-0003:P0014",
+        "FA-OL-CANON-0005:P0090",
+        "FA-OL-CANON-0003:P0062"
+      ],
+      "rationale": "Each fixed-first-coordinate row contains m elements, rows with unequal first coordinates are disjoint by the established full coordinatewise equality lemma, and their union is the product. The displayed same-y inequality is a witness, while the earlier lemma justifies disjointness even for different second coordinates. Correct counted m and n times m nouns; retain genuinely plural members elsewhere. Empty-factor cases give an empty product and zero rows or columns.",
+      "alternatives": "No equal-x or equal-y premise may be added to all pairs. The row disjointness is not based solely on a same-y inequality.",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Direct source comparison and actual canon construction agree.",
+      "id": "FA-0009-C11",
+      "unit": "OLP-0009",
+      "source": {
+        "char_start": 2834,
+        "char_end_exclusive": 3227,
+        "line_start": 88,
+        "line_end": 96,
+        "text": "\\begin{proof}\nFor every !!{element}~$x$ in~$A$, there are $m$ !!{element}s of the\nform $\\tuple{x, y} \\in A \\times B$. Let $B_x = \\Setabs{\\tuple{x, y}}{y\n  \\in B}$. Since whenever $x_1 \\neq x_2$, $\\tuple{x_1, y} \\neq\n\\tuple{x_2, y}$, $B_{x_1} \\cap B_{x_2} = \\emptyset$. But if $A = \\{x_1,\n\\dots, x_n\\}$, then $A \\times B = B_{x_1} \\cup \\dots \\cup B_{x_n}$, and so has\n$n\\cdot m$ !!{element}s.\n\n",
+        "sha256": "b3a3d18a417b1efd0590ee2d180f9b1508e3f1d4412952e85510d44e18601793"
+      },
+      "target_before": {
+        "char_start": 2940,
+        "char_end_exclusive": 3347,
+        "line_start": 91,
+        "line_end": 101,
+        "text": "\\begin{proof}\nبرای هر !!{element}~$x$ در~$A$، تعداد $m$ !!{element}s به صورت\n$\\tuple{x, y} \\in A \\times B$ وجود دارد. بگذارید\n$B_x = \\Setabs{\\tuple{x, y}}{y \\in B}$. چون هرگاه $x_1 \\neq x_2$،\n$\\tuple{x_1, y} \\neq \\tuple{x_2, y}$، داریم\n$B_{x_1} \\cap B_{x_2} = \\emptyset$. اما اگر\n$A = \\{x_1, \\dots, x_n\\}$، آنگاه\n$A \\times B = B_{x_1} \\cup \\dots \\cup B_{x_n}$ و در نتیجه دارای\n$n\\cdot m$ !!{element}s است.\n\n",
+        "sha256": "67c48100401f407b4a6f0c7dbc7eee67cfab010d8dd8eed74eeeadc8e73d9071"
+      },
+      "target_after": {
+        "char_start": 2954,
+        "char_end_exclusive": 3359,
+        "line_start": 91,
+        "line_end": 101,
+        "text": "\\begin{proof}\nبرای هر !!{element}~$x$ در~$A$، تعداد $m$ !!{element} به صورت\n$\\tuple{x, y} \\in A \\times B$ وجود دارد. بگذارید\n$B_x = \\Setabs{\\tuple{x, y}}{y \\in B}$. چون هرگاه $x_1 \\neq x_2$،\n$\\tuple{x_1, y} \\neq \\tuple{x_2, y}$، داریم\n$B_{x_1} \\cap B_{x_2} = \\emptyset$. اما اگر\n$A = \\{x_1, \\dots, x_n\\}$، آنگاه\n$A \\times B = B_{x_1} \\cup \\dots \\cup B_{x_n}$ و در نتیجه دارای\n$n\\cdot m$ !!{element} است.\n\n",
+        "sha256": "82f48f6b29e007088f538e2ceb3e1dbfb05d654334898dacc30ca460266c886e"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{proof}\nبرای هر عضو~$x$ در~$A$، تعداد $m$ عضو به صورت\n$\\tuple{x, y} \\in A \\times B$ وجود دارد. بگذارید\n$B_x = \\Setabs{\\tuple{x, y}}{y \\in B}$. چون هرگاه $x_1 \\neq x_2$،\n$\\tuple{x_1, y} \\neq \\tuple{x_2, y}$، داریم\n$B_{x_1} \\cap B_{x_2} = \\emptyset$. اما اگر\n$A = \\{x_1, \\dots, x_n\\}$، آنگاه\n$A \\times B = B_{x_1} \\cup \\dots \\cup B_{x_n}$ و در نتیجه دارای\n$n\\cdot m$ عضو است.\n\n",
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 22,
+          "token": "!!{element}",
+          "realization": "عضو"
+        },
+        {
+          "character_offset_in_segment": 56,
+          "token": "!!{element}",
+          "realization": "عضو"
+        },
+        {
+          "character_offset_in_segment": 387,
+          "token": "!!{element}",
+          "realization": "عضو"
+        }
+      ]
+    },
+    {
+      "topic": "Grid and count conclusion",
+      "canon": [
+        "FA-OL-CANON-0003:P0014",
+        "FA-OL-CANON-0003:P0062",
+        "FA-OL-CANON-0005:P0090"
+      ],
+      "rationale": "All array cells, row names and first/second coordinate indices match the source. Since each row and column label is distinct, no two table entries coincide; the final count is n times m. هیچ دو زوجی correctly uses a singular counted noun.",
+      "alternatives": "Do not confuse visually arranged rows with an intrinsic order on the product set.",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Direct source comparison and actual canon construction agree.",
+      "id": "FA-0009-C12",
+      "unit": "OLP-0009",
+      "source": {
+        "char_start": 3227,
+        "char_end_exclusive": 3768,
+        "line_start": 96,
+        "line_end": 110,
+        "text": "To visualize this, arrange the !!{element}s of~$A \\times B$ in a grid:\n\\[\n\\begin{array}{rcccc}\n  B_{x_1} = & \\{\\tuple{x_1, y_1} & \\tuple{x_1, y_2} & \\dots & \\tuple{x_1, y_m}\\}\\\\\n  B_{x_2} = & \\{\\tuple{x_2, y_1} & \\tuple{x_2, y_2} & \\dots & \\tuple{x_2, y_m}\\}\\\\\n  \\vdots & & \\vdots\\\\\n  B_{x_n} = & \\{\\tuple{x_n, y_1} & \\tuple{x_n, y_2} & \\dots & \\tuple{x_n, y_m}\\}\n\\end{array}\n\\]\nSince the $x_i$ are all different, and the $y_j$ are all different, no\ntwo of the pairs in this grid are the same, and there are $n\\cdot m$\nof them.\n\\end{proof}\n\n",
+        "sha256": "848f1286290b2e8fa191a83431345ca672da14d36c3a4269650d736293f48f6d"
+      },
+      "target_before": {
+        "char_start": 3347,
+        "char_end_exclusive": 3868,
+        "line_start": 101,
+        "line_end": 114,
+        "text": "برای تجسم این مطلب، !!{element}s~$A \\times B$ را در جدولی بچینید:\n\\[\n\\begin{array}{rcccc}\n  B_{x_1} = & \\{\\tuple{x_1, y_1} & \\tuple{x_1, y_2} & \\dots & \\tuple{x_1, y_m}\\}\\\\\n  B_{x_2} = & \\{\\tuple{x_2, y_1} & \\tuple{x_2, y_2} & \\dots & \\tuple{x_2, y_m}\\}\\\\\n  \\vdots & & \\vdots\\\\\n  B_{x_n} = & \\{\\tuple{x_n, y_1} & \\tuple{x_n, y_2} & \\dots & \\tuple{x_n, y_m}\\}\n\\end{array}\n\\]\nازآنجاکه همهٔ $x_i$ها با یکدیگر و همهٔ $y_j$ها با یکدیگر متفاوت‌اند،\nهیچ دو زوجی در این جدول یکسان نیستند و شمار آنها $n\\cdot m$ است.\n\\end{proof}\n\n",
+        "sha256": "dc3e5b1f7ce8b2792cae7e6b78bbd6b5c29e1a538c6cf330b4fb5379d2f85a68"
+      },
+      "target_after": {
+        "char_start": 3359,
+        "char_end_exclusive": 3880,
+        "line_start": 101,
+        "line_end": 114,
+        "text": "برای تجسم این مطلب، !!{element}s~$A \\times B$ را در جدولی بچینید:\n\\[\n\\begin{array}{rcccc}\n  B_{x_1} = & \\{\\tuple{x_1, y_1} & \\tuple{x_1, y_2} & \\dots & \\tuple{x_1, y_m}\\}\\\\\n  B_{x_2} = & \\{\\tuple{x_2, y_1} & \\tuple{x_2, y_2} & \\dots & \\tuple{x_2, y_m}\\}\\\\\n  \\vdots & & \\vdots\\\\\n  B_{x_n} = & \\{\\tuple{x_n, y_1} & \\tuple{x_n, y_2} & \\dots & \\tuple{x_n, y_m}\\}\n\\end{array}\n\\]\nازآنجاکه همهٔ $x_i$ها با یکدیگر و همهٔ $y_j$ها با یکدیگر متفاوت‌اند،\nهیچ دو زوجی در این جدول یکسان نیستند و شمار آنها $n\\cdot m$ است.\n\\end{proof}\n\n",
+        "sha256": "dc3e5b1f7ce8b2792cae7e6b78bbd6b5c29e1a538c6cf330b4fb5379d2f85a68"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "برای تجسم این مطلب، اعضا~$A \\times B$ را در جدولی بچینید:\n\\[\n\\begin{array}{rcccc}\n  B_{x_1} = & \\{\\tuple{x_1, y_1} & \\tuple{x_1, y_2} & \\dots & \\tuple{x_1, y_m}\\}\\\\\n  B_{x_2} = & \\{\\tuple{x_2, y_1} & \\tuple{x_2, y_2} & \\dots & \\tuple{x_2, y_m}\\}\\\\\n  \\vdots & & \\vdots\\\\\n  B_{x_n} = & \\{\\tuple{x_n, y_1} & \\tuple{x_n, y_2} & \\dots & \\tuple{x_n, y_m}\\}\n\\end{array}\n\\]\nازآنجاکه همهٔ $x_i$ها با یکدیگر و همهٔ $y_j$ها با یکدیگر متفاوت‌اند،\nهیچ دو زوجی در این جدول یکسان نیستند و شمار آنها $n\\cdot m$ است.\n\\end{proof}\n\n",
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 20,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        }
+      ]
+    },
+    {
+      "topic": "Power-cardinality induction exercise",
+      "canon": [
+        "FA-OL-CANON-0003:P0062",
+        "FA-OL-CANON-0005:P0090"
+      ],
+      "rationale": "استقرا is the proof method, with k at least one and every indicated exponent unchanged. Correct both counted nouns after n and n to power k. For an empty A and positive k the count is zero; the excluded k=0 ambiguity is not imported.",
+      "alternatives": "Do not weaken the quantified k bound or replace ordered powers with power sets.",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Direct source comparison and actual canon construction agree.",
+      "id": "FA-0009-C13",
+      "unit": "OLP-0009",
+      "source": {
+        "char_start": 3768,
+        "char_end_exclusive": 3908,
+        "line_start": 110,
+        "line_end": 115,
+        "text": "\\begin{prob}\nShow, by induction on~$k$, that for all $k \\ge 1$, if $A$ has $n$\n!!{element}s, then $A^k$ has $n^k$ !!{element}s.\n\\end{prob}\n\n",
+        "sha256": "166579c33eb3ea47b2ec8f96288dac03da3e370d864269c8677fa2c0b974043b"
+      },
+      "target_before": {
+        "char_start": 3868,
+        "char_end_exclusive": 4022,
+        "line_start": 114,
+        "line_end": 119,
+        "text": "\\begin{prob}\nبا استقرا روی~$k$ نشان دهید که برای هر $k \\ge 1$، اگر $A$ دارای\n$n$ !!{element}s باشد، آنگاه $A^k$ دارای $n^k$ !!{element}s است.\n\\end{prob}\n\n",
+        "sha256": "73a9196572b9564dfad286eb22fca54548fb594f41b1f3ba238b04f725b6065f"
+      },
+      "target_after": {
+        "char_start": 3880,
+        "char_end_exclusive": 4032,
+        "line_start": 114,
+        "line_end": 119,
+        "text": "\\begin{prob}\nبا استقرا روی~$k$ نشان دهید که برای هر $k \\ge 1$، اگر $A$ دارای\n$n$ !!{element} باشد، آنگاه $A^k$ دارای $n^k$ !!{element} است.\n\\end{prob}\n\n",
+        "sha256": "66026d9f3b2e57b1c93d667ec3e64b1d468592f9fbb354cfb7536464741f578a"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{prob}\nبا استقرا روی~$k$ نشان دهید که برای هر $k \\ge 1$، اگر $A$ دارای\n$n$ عضو باشد، آنگاه $A^k$ دارای $n^k$ عضو است.\n\\end{prob}\n\n",
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 81,
+          "token": "!!{element}",
+          "realization": "عضو"
+        },
+        {
+          "character_offset_in_segment": 123,
+          "token": "!!{element}",
+          "realization": "عضو"
+        }
+      ]
+    },
+    {
+      "topic": "Finite words, length and representational collision",
+      "canon": [
+        "FA-OL-CANON-0003:P0046",
+        "FA-OL-CANON-0005:P0090",
+        "FA-OL-CANON-0003:P0014"
+      ],
+      "rationale": "The definition is explicitly finite, as its n-tuple examples and A-star enumeration require. واژه preserves the source word/string distinction while acknowledging the synonym relationship to the earlier string section. The source’s untagged codes can collide across lengths for arbitrary set alphabets. The displayed formula is preserved as an explicitly qualified representational shorthand, not endorsed as a literal unconditional equality of those raw code sets. A visible editorial note supplies the rigorous finite-function representation: domain is the finite initial natural-number segment, which distinguishes lengths, including empty word versus the one-letter word whose symbol is empty set.",
+      "alternatives": "Do not solve the collision by excluding the empty alphabet or the empty-set symbol. Do not silently replace source formulas or claim the old raw union is a disjoint union.",
+      "question": "Exact واژه terminology remains provisionally justified by definition and disciplinary context; the finite-function construction itself is directly supported by the canon.",
+      "confidence": 2,
+      "confidence_reason": "Mathematical content is checked; the exact-register limitation is stated.",
+      "id": "FA-0009-C14",
+      "unit": "OLP-0009",
+      "source": {
+        "char_start": 3908,
+        "char_end_exclusive": 4501,
+        "line_start": 115,
+        "line_end": 129,
+        "text": "\\begin{ex}\nIf $A$ is a set, a \\emph{word} over~$A$ is any sequence of\n!!{element}s of~$A$. A sequence can be thought of as an $n$-tuple of\n!!{element}s of~$A$. For instance, if $A = \\{a, b, c\\}$, then the\nsequence ``$bac$'' can be thought of as the triple~$\\tuple{b, a, c}$.\nWords, i.e., sequences of symbols, are of crucial importance in\ncomputer science. By convention, we count !!{element}s of~$A$ as\nsequences of length~$1$, and $\\emptyset$ as the sequence of length~$0$.\nThe set of \\emph{all} words over~$A$ then is\n\\[\nA^* = \\{\\emptyset\\} \\cup A \\cup A^2 \\cup A^3 \\cup \\dots\n\\]\n\\end{ex}\n\n",
+        "sha256": "4f03182b1838e8ccd7ad0716fd68d74a939fbc315aaa8429b6145134136e5a48"
+      },
+      "target_before": {
+        "char_start": 4022,
+        "char_end_exclusive": 4584,
+        "line_start": 119,
+        "line_end": 133,
+        "text": "\\begin{ex}\nاگر $A$ مجموعه‌ای باشد، \\emph{واژه‌ای} بر روی~$A$ هر دنباله‌ای از\n!!{element}s~$A$ است. می‌توان یک دنباله را $n$-تایی‌ای از\n!!{element}s~$A$ دانست. برای نمونه، اگر $A = \\{a, b, c\\}$، آنگاه\nدنبالهٔ ``$bac$'' را می‌توان سه‌تایی~$\\tuple{b, a, c}$ دانست.\nواژه‌ها، یعنی دنباله‌های نمادها، در علوم رایانه اهمیتی اساسی دارند.\nطبق قرارداد، !!{element}s~$A$ را دنباله‌هایی به طول~$1$ و\n$\\emptyset$ را دنباله‌ای به طول~$0$ می‌شماریم. پس مجموعهٔ\n\\emph{همهٔ} واژه‌ها بر روی~$A$ برابر است با\n\\[\nA^* = \\{\\emptyset\\} \\cup A \\cup A^2 \\cup A^3 \\cup \\dots\n\\]\n\\end{ex}\n\n",
+        "sha256": "4c39814c8e3b97dbad51f5c3f3cc92961ea9457a6319646023ee828acef9a8f9"
+      },
+      "target_after": {
+        "char_start": 4032,
+        "char_end_exclusive": 5410,
+        "line_start": 119,
+        "line_end": 133,
+        "text": "\\begin{ex}\nاگر $A$ مجموعه‌ای باشد، \\emph{واژه‌ای} بر روی~$A$ هر دنبالهٔ متناهی از\n!!{element}s~$A$ است. می‌توان یک دنباله را $n$-تایی‌ای از\n!!{element}s~$A$ دانست. برای نمونه، اگر $A = \\{a, b, c\\}$، آنگاه\nدنبالهٔ ``$bac$'' را می‌توان سه‌تایی~$\\tuple{b, a, c}$ دانست.\nواژه‌ها، یعنی دنباله‌های نمادها، در علوم رایانه اهمیتی اساسی دارند.\nطبق قرارداد، !!{element}s~$A$ را دنباله‌هایی به طول~$1$ و\n$\\emptyset$ را دنباله‌ای به طول~$0$ می‌شماریم. با این قراردادِ نمایشی، مجموعهٔ\n\\emph{همهٔ} واژه‌ها بر روی~$A$ را چنین می‌نویسیم\\footnote{یادداشت ویراستاری: در این مثال، دنباله‌ها متناهی‌اند و طول، بخشی از مشخصات هر واژه است. فرمول زیر را باید اختصاری برای گردآوردن واژه‌های همهٔ طول‌ها دانست، نه تساویِ بی‌قیدوشرط میان کدهای مجموعه‌ایِ معرفی‌شده در بالا. برای الفبای دلخواه، برخوردِ کدها ممکن است رخ دهد: اگر مجموعهٔ تهی حرفی از الفبا باشد، کدِ واژهٔ تهی و کدِ واژهٔ تک‌حرفیِ آن یکسان است. همچنین اگر کدِ زوج مرتبِ دو حرف از الفبا نیز در الفبا باشد، کدِ واژهٔ تک‌حرفیِ آن زوج با کدِ واژهٔ دوحرفیِ متناظر یکسان است؛ آن دو حرف لازم نیست متمایز باشند. در تعریف دقیق، هر واژه را تابعی از یک قطعهٔ آغازینِ متناهی از اعداد طبیعی به الفبا می‌گیریم. دامنهٔ تابع طول را مشخص می‌کند؛ واژهٔ تهی تابعِ تهی است و با واژهٔ تک‌حرفی‌ای که حرف آن مجموعهٔ تهی است، تفاوت دارد. این همان قراردادِ طول‌دار برای رشته‌های متناهی است.}:\n\\[\nA^* = \\{\\emptyset\\} \\cup A \\cup A^2 \\cup A^3 \\cup \\dots\n\\]\n\\end{ex}\n\n",
+        "sha256": "c7166a686115025dcc4a3bd79c9c8b9c6927532d887b4929ba30ca126d241e78"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{ex}\nاگر $A$ مجموعه‌ای باشد، \\emph{واژه‌ای} بر روی~$A$ هر دنبالهٔ متناهی از\nاعضا~$A$ است. می‌توان یک دنباله را $n$-تایی‌ای از\nاعضا~$A$ دانست. برای نمونه، اگر $A = \\{a, b, c\\}$، آنگاه\nدنبالهٔ ``$bac$'' را می‌توان سه‌تایی~$\\tuple{b, a, c}$ دانست.\nواژه‌ها، یعنی دنباله‌های نمادها، در علوم رایانه اهمیتی اساسی دارند.\nطبق قرارداد، اعضا~$A$ را دنباله‌هایی به طول~$1$ و\n$\\emptyset$ را دنباله‌ای به طول~$0$ می‌شماریم. با این قراردادِ نمایشی، مجموعهٔ\n\\emph{همهٔ} واژه‌ها بر روی~$A$ را چنین می‌نویسیم\\footnote{یادداشت ویراستاری: در این مثال، دنباله‌ها متناهی‌اند و طول، بخشی از مشخصات هر واژه است. فرمول زیر را باید اختصاری برای گردآوردن واژه‌های همهٔ طول‌ها دانست، نه تساویِ بی‌قیدوشرط میان کدهای مجموعه‌ایِ معرفی‌شده در بالا. برای الفبای دلخواه، برخوردِ کدها ممکن است رخ دهد: اگر مجموعهٔ تهی حرفی از الفبا باشد، کدِ واژهٔ تهی و کدِ واژهٔ تک‌حرفیِ آن یکسان است. همچنین اگر کدِ زوج مرتبِ دو حرف از الفبا نیز در الفبا باشد، کدِ واژهٔ تک‌حرفیِ آن زوج با کدِ واژهٔ دوحرفیِ متناظر یکسان است؛ آن دو حرف لازم نیست متمایز باشند. در تعریف دقیق، هر واژه را تابعی از یک قطعهٔ آغازینِ متناهی از اعداد طبیعی به الفبا می‌گیریم. دامنهٔ تابع طول را مشخص می‌کند؛ واژهٔ تهی تابعِ تهی است و با واژهٔ تک‌حرفی‌ای که حرف آن مجموعهٔ تهی است، تفاوت دارد. این همان قراردادِ طول‌دار برای رشته‌های متناهی است.}:\n\\[\nA^* = \\{\\emptyset\\} \\cup A \\cup A^2 \\cup A^3 \\cup \\dots\n\\]\n\\end{ex}\n\n",
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 82,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        },
+        {
+          "character_offset_in_segment": 140,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        },
+        {
+          "character_offset_in_segment": 348,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        }
+      ]
+    }
+  ],
+  "corrections": [
+    {
+      "unit": "OLP-0009",
+      "id": "FA0009-ORDER-001",
+      "before": "از اصل گسترش نتیجه می‌شود که اعضای یک مجموعه ترتیبی ندارند.",
+      "after": "از اصل گسترش نتیجه می‌شود که خودِ مجموعه ترتیبی برای اعضایش تعیین نمی‌کند."
+    },
+    {
+      "unit": "OLP-0009",
+      "id": "FA0009-NAME-002",
+      "before": "وینر--کوراتفسکی",
+      "after": "وینر--کوراتوفسکی"
+    },
+    {
+      "unit": "OLP-0009",
+      "id": "FA0009-COUNT-003",
+      "before": "اگر $A$ دارای $n$ !!{element}s و $B$ دارای $m$ !!{element}s باشد،",
+      "after": "اگر $A$ دارای $n$ !!{element} و $B$ دارای $m$ !!{element} باشد،"
+    },
+    {
+      "unit": "OLP-0009",
+      "id": "FA0009-COUNT-004",
+      "before": "تعداد $m$ !!{element}s به صورت",
+      "after": "تعداد $m$ !!{element} به صورت"
+    },
+    {
+      "unit": "OLP-0009",
+      "id": "FA0009-COUNT-005",
+      "before": "$n\\cdot m$ !!{element}s است.",
+      "after": "$n\\cdot m$ !!{element} است."
+    },
+    {
+      "unit": "OLP-0009",
+      "id": "FA0009-COUNT-006",
+      "before": "$n$ !!{element}s باشد، آنگاه $A^k$ دارای $n^k$ !!{element}s است.",
+      "after": "$n$ !!{element} باشد، آنگاه $A^k$ دارای $n^k$ !!{element} است."
+    },
+    {
+      "unit": "OLP-0009",
+      "id": "FA0009-FINITE-007",
+      "before": "اگر $A$ مجموعه‌ای باشد، \\emph{واژه‌ای} بر روی~$A$ هر دنباله‌ای از",
+      "after": "اگر $A$ مجموعه‌ای باشد، \\emph{واژه‌ای} بر روی~$A$ هر دنبالهٔ متناهی از"
+    },
+    {
+      "unit": "OLP-0009",
+      "id": "FA0009-WORD-008",
+      "before": "پس مجموعهٔ\n\\emph{همهٔ} واژه‌ها بر روی~$A$ برابر است با",
+      "after": "با این قراردادِ نمایشی، مجموعهٔ\n\\emph{همهٔ} واژه‌ها بر روی~$A$ را چنین می‌نویسیم\\footnote{یادداشت ویراستاری: در این مثال، دنباله‌ها متناهی‌اند و طول، بخشی از مشخصات هر واژه است. فرمول زیر را باید اختصاری برای گردآوردن واژه‌های همهٔ طول‌ها دانست، نه تساویِ بی‌قیدوشرط میان کدهای مجموعه‌ایِ معرفی‌شده در بالا. برای الفبای دلخواه، برخوردِ کدها ممکن است رخ دهد: اگر مجموعهٔ تهی حرفی از الفبا باشد، کدِ واژهٔ تهی و کدِ واژهٔ تک‌حرفیِ آن یکسان است. همچنین اگر کدِ زوج مرتبِ دو حرف از الفبا نیز در الفبا باشد، کدِ واژهٔ تک‌حرفیِ آن زوج با کدِ واژهٔ دوحرفیِ متناظر یکسان است؛ آن دو حرف لازم نیست متمایز باشند. در تعریف دقیق، هر واژه را تابعی از یک قطعهٔ آغازینِ متناهی از اعداد طبیعی به الفبا می‌گیریم. دامنهٔ تابع طول را مشخص می‌کند؛ واژهٔ تهی تابعِ تهی است و با واژهٔ تک‌حرفی‌ای که حرف آن مجموعهٔ تهی است، تفاوت دارد. این همان قراردادِ طول‌دار برای رشته‌های متناهی است.}:"
+    }
+  ],
+  "human_review_gate": false,
+  "reader_release": false
+}
