@@ -1,0 +1,809 @@
+{
+  "schema": "openlogic-fa-reviewed-correction/1",
+  "unit": "OLP-0005",
+  "status": "REVIEWED_SOURCE_CORRECTION_CANDIDATE_NOT_A_REBUILT_READER",
+  "ai_authored": true,
+  "human_expert_certification": false,
+  "source_path": "source/locale/fa-IR/content/sets-functions-relations/sets/basics.tex",
+  "expected_before_sha256": "129320e9eea66762b41c28c6970dbac6a87d84433aec529a18bde8ae903f849c",
+  "candidate_sha256": "1b49c4395400b3eac555d349aed2f673dcb75731ec9b609654e43767e61b54c0",
+  "source_commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "candidate_bytes": 6390,
+  "choices": [
+    {
+      "id": "FA-0005-C01",
+      "topic": "Section title and principle name",
+      "canon": [
+        "FA-OL-CANON-0003:P0008",
+        "FA-OL-CANON-0005:P0084"
+      ],
+      "decision": "retain",
+      "confidence": 3,
+      "rationale": "Both inspected Persian mathematical witnesses use اصل گسترش and print the same-members-implies-equality formula. Retain this attested term, including the definition heading and subsequent occurrences; do not replace it by a literal model-generated equivalent.",
+      "occurrence_rule": "Every اصل گسترش in this file denotes this same principle; checked in title, definition, examples, uniqueness and equality-proof instructions.",
+      "rejected_alternatives": [],
+      "expert_question": null,
+      "unit": "OLP-0005",
+      "source": {
+        "commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+        "path": "content/sets-functions-relations/sets/basics.tex",
+        "file_sha256": "232ff51f51e74fcfee836650f3c597b54bf10ba5363c648a0c05fe8222e4a865",
+        "start_byte": 174,
+        "end_byte_exclusive": 200,
+        "start_line": 10,
+        "end_line": 10,
+        "text": "\\olsection{Extensionality}",
+        "sha256": "6d124fe748e9989c625b76115c537b339ad6aa9ca66e06ed31ff06c2b7b52b22"
+      },
+      "target_before": {
+        "file_sha256": "129320e9eea66762b41c28c6970dbac6a87d84433aec529a18bde8ae903f849c",
+        "start_byte": 181,
+        "end_byte_exclusive": 210,
+        "start_line": 10,
+        "end_line": 10,
+        "text": "\\olsection{اصل گسترش}",
+        "sha256": "055054f6ce75ae315695490c4e94823854fbf495d2a8c93da3ab9012d430a9e8"
+      },
+      "target_candidate": {
+        "start_byte": 181,
+        "end_byte_exclusive": 210,
+        "start_line": 10,
+        "end_line": 10,
+        "text": "\\olsection{اصل گسترش}",
+        "sha256": "055054f6ce75ae315695490c4e94823854fbf495d2a8c93da3ab9012d430a9e8",
+        "file_sha256": "1b49c4395400b3eac555d349aed2f673dcb75731ec9b609654e43767e61b54c0"
+      },
+      "consultation_mode": "retrospective visual canon comparison on 2026-09-08; no claim of original translation-time consultation",
+      "confidence_scale": "0-3 editorial scale: 0 unsupported, 1 provisional, 2 supported with stated limitations, 3 strong direct evidence. Not calibrated probabilities.",
+      "human_response_gate": false,
+      "previous_record_sha256": "ea792487f1323add1dfe0fe9c79a7e74e50b31391bad265646f77e1f0124efd9",
+      "audit_version": "OLP-0005-v2"
+    },
+    {
+      "id": "FA-0005-C02",
+      "topic": "Set, element/member and empty-set introduction",
+      "canon": [
+        "FA-OL-CANON-0005:P0084",
+        "FA-OL-CANON-0003:P0010",
+        "FA-OL-CANON-0003:P0019"
+      ],
+      "decision": "retain",
+      "confidence": 3,
+      "rationale": "Definition200 on foundations page84 connects مجموعه, عناصر and اعضای with a collection of objects. Membership notation agrees. A focused additional inspection of set-theory PDF page19 (printed18) resolves both initial lexical gaps: the paragraph immediately above axiom3 uses گردایه‌ای for a collection, and axiom3 explicitly names وجود مجموعه‌ی تهی and states its existence. Retain the target's orthographic form مجموعهٔ تهی. The collection/class example attests the word, not a claim that every collection is a set. Page10's empty-class statement alone would not have established the set phrase; the additional page does.",
+      "rejected_alternatives": [],
+      "expert_question": null,
+      "unit": "OLP-0005",
+      "source": {
+        "commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+        "path": "content/sets-functions-relations/sets/basics.tex",
+        "file_sha256": "232ff51f51e74fcfee836650f3c597b54bf10ba5363c648a0c05fe8222e4a865",
+        "start_byte": 202,
+        "end_byte_exclusive": 544,
+        "start_line": 12,
+        "end_line": 17,
+        "text": "A \\emph{set} is a collection of objects, considered {as} a single\nobject. The objects making up the set are called \\emph{elements} or\n\\emph{members} of the set. If $x$ is !!a{element} of a set~$A$, we\nwrite $x \\in A$; if not, we write $x \\notin A$. The set which has no\n!!{element}s is called the \\emph{empty} set and\ndenoted~``$\\emptyset$''.",
+        "sha256": "8be7b263f22f821d3c0ff7c1d5520477d0851f94b5f0f55914083ee2af14af56"
+      },
+      "target_before": {
+        "file_sha256": "129320e9eea66762b41c28c6970dbac6a87d84433aec529a18bde8ae903f849c",
+        "start_byte": 212,
+        "end_byte_exclusive": 786,
+        "start_line": 12,
+        "end_line": 17,
+        "text": "یک \\emph{مجموعه} گردایه‌ای از اشیاست که {به‌منزلهٔ} شیئی واحد در\nنظر گرفته می‌شود. اشیای سازندهٔ مجموعه را \\emph{عناصر} یا\n\\emph{اعضای} آن می‌نامند. اگر $x$ !!a{element} مجموعهٔ~$A$ باشد،\nمی‌نویسیم $x \\in A$؛ و اگر چنین نباشد، می‌نویسیم $x \\notin A$.\nمجموعه‌ای را که فاقد !!{element}s است، \\emph{مجموعهٔ تهی} می‌نامند و\nآن را با~``$\\emptyset$'' نشان می‌دهند.",
+        "sha256": "15686b23888c581d1e2027de6a3822050946804d8bb3b65ec49c99682b81f661"
+      },
+      "target_candidate": {
+        "start_byte": 212,
+        "end_byte_exclusive": 786,
+        "start_line": 12,
+        "end_line": 17,
+        "text": "یک \\emph{مجموعه} گردایه‌ای از اشیاست که {به‌منزلهٔ} شیئی واحد در\nنظر گرفته می‌شود. اشیای سازندهٔ مجموعه را \\emph{عناصر} یا\n\\emph{اعضای} آن می‌نامند. اگر $x$ !!a{element} مجموعهٔ~$A$ باشد،\nمی‌نویسیم $x \\in A$؛ و اگر چنین نباشد، می‌نویسیم $x \\notin A$.\nمجموعه‌ای را که فاقد !!{element}s است، \\emph{مجموعهٔ تهی} می‌نامند و\nآن را با~``$\\emptyset$'' نشان می‌دهند.",
+        "sha256": "15686b23888c581d1e2027de6a3822050946804d8bb3b65ec49c99682b81f661",
+        "file_sha256": "1b49c4395400b3eac555d349aed2f673dcb75731ec9b609654e43767e61b54c0"
+      },
+      "consultation_mode": "retrospective visual canon comparison on 2026-09-08; no claim of original translation-time consultation",
+      "confidence_scale": "0-3 editorial scale: 0 unsupported, 1 provisional, 2 supported with stated limitations, 3 strong direct evidence. Not calibrated probabilities.",
+      "human_response_gate": false,
+      "previous_record_sha256": "35b2195d1e31d3f449d18f49f99c81db2fa84131e61e5cabd1bb2879cf7814c8",
+      "audit_version": "OLP-0005-v2"
+    },
+    {
+      "id": "FA-0005-C03",
+      "topic": "Specification, order and multiplicity",
+      "canon": [
+        "FA-OL-CANON-0003:P0008",
+        "FA-OL-CANON-0005:P0084"
+      ],
+      "decision": "retain",
+      "confidence": 2,
+      "rationale": "Same members determine equality, so order and repeated listings do not create new sets. The target enumerates all three source contrasts without dropping multiplicity. Canon supports the mathematical register and principle; it is not a verbatim witness for every explanatory construction.",
+      "rejected_alternatives": [],
+      "expert_question": null,
+      "unit": "OLP-0005",
+      "source": {
+        "commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+        "path": "content/sets-functions-relations/sets/basics.tex",
+        "file_sha256": "232ff51f51e74fcfee836650f3c597b54bf10ba5363c648a0c05fe8222e4a865",
+        "start_byte": 562,
+        "end_byte_exclusive": 802,
+        "start_line": 20,
+        "end_line": 23,
+        "text": "It does not matter how we \\emph{specify} the set, or how we\n\\emph{order} its !!{element}s, or indeed how \\emph{many times} we\ncount its !!{element}s. All that matters are what its !!{element}s\nare. We codify this in the following principle.",
+        "sha256": "9ade7bb3d632a11f597faac995ba4ea927fdaa91ba6213f1b844eaddf7756f44"
+      },
+      "target_before": {
+        "file_sha256": "129320e9eea66762b41c28c6970dbac6a87d84433aec529a18bde8ae903f849c",
+        "start_byte": 804,
+        "end_byte_exclusive": 1218,
+        "start_line": 20,
+        "end_line": 23,
+        "text": "شیوهٔ \\emph{مشخص‌کردن} مجموعه، \\emph{ترتیب} !!{element}s آن، و حتی\nاینکه در شمارش !!{element}s آن هر کدام را \\emph{چند بار} بشماریم،\nهیچ‌یک اهمیتی ندارد. آنچه اهمیت دارد این است که !!{element}s آن چه\nچیزهایی‌اند. این نکته را در اصل زیر صورت‌بندی می‌کنیم.",
+        "sha256": "2109c041dafe8a7de701b262c3cda927c959167d14b5c33678dcbb0e6ba55b1c"
+      },
+      "target_candidate": {
+        "start_byte": 804,
+        "end_byte_exclusive": 1218,
+        "start_line": 20,
+        "end_line": 23,
+        "text": "شیوهٔ \\emph{مشخص‌کردن} مجموعه، \\emph{ترتیب} !!{element}s آن، و حتی\nاینکه در شمارش !!{element}s آن هر کدام را \\emph{چند بار} بشماریم،\nهیچ‌یک اهمیتی ندارد. آنچه اهمیت دارد این است که !!{element}s آن چه\nچیزهایی‌اند. این نکته را در اصل زیر صورت‌بندی می‌کنیم.",
+        "sha256": "2109c041dafe8a7de701b262c3cda927c959167d14b5c33678dcbb0e6ba55b1c",
+        "file_sha256": "1b49c4395400b3eac555d349aed2f673dcb75731ec9b609654e43767e61b54c0"
+      },
+      "consultation_mode": "retrospective visual canon comparison on 2026-09-08; no claim of original translation-time consultation",
+      "confidence_scale": "0-3 editorial scale: 0 unsupported, 1 provisional, 2 supported with stated limitations, 3 strong direct evidence. Not calibrated probabilities.",
+      "human_response_gate": false,
+      "previous_record_sha256": "49aa6d97b056fca10fb466437199ec19ebbacdcef14a3a3374022c23956cecc5",
+      "audit_version": "OLP-0005-v2"
+    },
+    {
+      "id": "FA-0005-C04",
+      "topic": "Biconditional definition",
+      "canon": [
+        "FA-OL-CANON-0003:P0008",
+        "FA-OL-CANON-0003:P0010"
+      ],
+      "decision": "retain",
+      "confidence": 3,
+      "rationale": "اگر و تنها اگر is attested in the inspected set-theory proof exposition (page10, proposition6). The target retains both directions, every member, and the explicit assumption that A and B are sets. Extensionality supplies the nontrivial direction; identity supplies the reverse. No existence axiom is introduced here.",
+      "rejected_alternatives": [
+        "Replacing iff with اگر would omit one direction."
+      ],
+      "expert_question": null,
+      "unit": "OLP-0005",
+      "source": {
+        "commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+        "path": "content/sets-functions-relations/sets/basics.tex",
+        "file_sha256": "232ff51f51e74fcfee836650f3c597b54bf10ba5363c648a0c05fe8222e4a865",
+        "start_byte": 818,
+        "end_byte_exclusive": 975,
+        "start_line": 26,
+        "end_line": 30,
+        "text": "\\begin{defn}[Extensionality]\n  If $A$ and $B$ are sets, then $A = B$ iff\n  every !!{element} of~$A$ is also !!a{element} of~$B$, and vice\n  versa.\n\\end{defn}",
+        "sha256": "e11052d2c0bf7cbc8a4f5a8ba67c1a51676dec652e3b9a0e73b06a25711d8da5"
+      },
+      "target_before": {
+        "file_sha256": "129320e9eea66762b41c28c6970dbac6a87d84433aec529a18bde8ae903f849c",
+        "start_byte": 1234,
+        "end_byte_exclusive": 1474,
+        "start_line": 26,
+        "end_line": 30,
+        "text": "\\begin{defn}[اصل گسترش]\n  اگر $A$ و $B$ مجموعه باشند، آنگاه $A = B$ اگر و تنها اگر\n  هر !!{element} مجموعهٔ~$A$، !!a{element} مجموعهٔ~$B$ نیز باشد، و\n  برعکس.\n\\end{defn}",
+        "sha256": "31857074484ec704a0b0d154d5536c19360ab3ad81018cf48dcc4939fff87099"
+      },
+      "target_candidate": {
+        "start_byte": 1234,
+        "end_byte_exclusive": 1474,
+        "start_line": 26,
+        "end_line": 30,
+        "text": "\\begin{defn}[اصل گسترش]\n  اگر $A$ و $B$ مجموعه باشند، آنگاه $A = B$ اگر و تنها اگر\n  هر !!{element} مجموعهٔ~$A$، !!a{element} مجموعهٔ~$B$ نیز باشد، و\n  برعکس.\n\\end{defn}",
+        "sha256": "31857074484ec704a0b0d154d5536c19360ab3ad81018cf48dcc4939fff87099",
+        "file_sha256": "1b49c4395400b3eac555d349aed2f673dcb75731ec9b609654e43767e61b54c0"
+      },
+      "consultation_mode": "retrospective visual canon comparison on 2026-09-08; no claim of original translation-time consultation",
+      "confidence_scale": "0-3 editorial scale: 0 unsupported, 1 provisional, 2 supported with stated limitations, 3 strong direct evidence. Not calibrated probabilities.",
+      "human_response_gate": false,
+      "previous_record_sha256": "210cc04568b2abe58a225fe5bff24ea12fba5fc86f75086bf99978041c72f288",
+      "audit_version": "OLP-0005-v2"
+    },
+    {
+      "id": "FA-0005-C05",
+      "topic": "Finite roster notation and uniqueness emphasis",
+      "canon": [
+        "FA-OL-CANON-0003:P0008",
+        "FA-OL-CANON-0005:P0084"
+      ],
+      "decision": "retain_with_scope_note",
+      "confidence": 2,
+      "rationale": "یگانه expresses the emphasized definite article rather than mechanically translating English the. The subsequent sentence correctly says only one such set can exist. Finite collection formation is part of this source's naive exposition, not a theorem derived from extensionality alone. The revised later paragraph makes that boundary explicit.",
+      "rejected_alternatives": [
+        "Omitting یگانه would lose the source's deliberate uniqueness emphasis."
+      ],
+      "expert_question": "Check whether the finite-roster introduction also needs the short existence proviso on a later whole-chapter edit; do not replace the source's naive exposition with an unrequested axiomatic course.",
+      "unit": "OLP-0005",
+      "source": {
+        "commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+        "path": "content/sets-functions-relations/sets/basics.tex",
+        "file_sha256": "232ff51f51e74fcfee836650f3c597b54bf10ba5363c648a0c05fe8222e4a865",
+        "start_byte": 977,
+        "end_byte_exclusive": 1530,
+        "start_line": 32,
+        "end_line": 43,
+        "text": "Extensionality licenses some notation. In general, when we have some\nobjects $a_{1}$, \\dots, $a_{n}$, then $\\{a_{1}, \\dots, a_{n}\\}$ is\n\\emph{the} set whose !!{element}s are $a_1, \\ldots, a_n$. We emphasise\nthe word ``\\emph{the}'', since extensionality tells us that there can\nbe only \\emph{one} such set. Indeed, extensionality also licenses the\nfollowing:\n  \\[\n    \\{a, a, b\\} = \\{a, b\\} = \\{b,a\\}.\n  \\] \nThis delivers on the point that, when we consider sets, we don't care\nabout the order of their !!{element}s, or how many times they are\nspecified.",
+        "sha256": "b5d013669b63f3ed661db66c9fb21ba6deed1d13d92f99221e9f10011d9923fd"
+      },
+      "target_before": {
+        "file_sha256": "129320e9eea66762b41c28c6970dbac6a87d84433aec529a18bde8ae903f849c",
+        "start_byte": 1476,
+        "end_byte_exclusive": 2429,
+        "start_line": 32,
+        "end_line": 42,
+        "text": "اصل گسترش به ما اجازه می‌دهد از برخی نمادگذاری‌ها استفاده کنیم.\nبه‌طور کلی، اگر اشیایی چون $a_{1}$، \\dots، $a_{n}$ داشته باشیم، آنگاه\n$\\{a_{1}, \\dots, a_{n}\\}$ \\emph{یگانه} مجموعه‌ای است که !!{element}s آن\n$a_1, \\ldots, a_n$ هستند. بر واژهٔ ``\\emph{یگانه}'' تأکید می‌کنیم،\nزیرا اصل گسترش می‌گوید تنها \\emph{یک} چنین مجموعه‌ای می‌تواند وجود\nداشته باشد. در واقع، اصل گسترش برابری‌های زیر را نیز مجاز می‌سازد:\n  \\[\n    \\{a, a, b\\} = \\{a, b\\} = \\{b,a\\}.\n  \\]\nاین برابری‌ها همان نکته را بیان می‌کنند که هنگام بررسی مجموعه‌ها،\nترتیب !!{element}s آنها یا تعداد دفعاتی که مشخص شده‌اند، اهمیتی ندارد.",
+        "sha256": "7bf600619444d76d180af41c0fd32555d8d5f61a285c10b3393f3c10067ec4e4"
+      },
+      "target_candidate": {
+        "start_byte": 1476,
+        "end_byte_exclusive": 2429,
+        "start_line": 32,
+        "end_line": 42,
+        "text": "اصل گسترش به ما اجازه می‌دهد از برخی نمادگذاری‌ها استفاده کنیم.\nبه‌طور کلی، اگر اشیایی چون $a_{1}$، \\dots، $a_{n}$ داشته باشیم، آنگاه\n$\\{a_{1}, \\dots, a_{n}\\}$ \\emph{یگانه} مجموعه‌ای است که !!{element}s آن\n$a_1, \\ldots, a_n$ هستند. بر واژهٔ ``\\emph{یگانه}'' تأکید می‌کنیم،\nزیرا اصل گسترش می‌گوید تنها \\emph{یک} چنین مجموعه‌ای می‌تواند وجود\nداشته باشد. در واقع، اصل گسترش برابری‌های زیر را نیز مجاز می‌سازد:\n  \\[\n    \\{a, a, b\\} = \\{a, b\\} = \\{b,a\\}.\n  \\]\nاین برابری‌ها همان نکته را بیان می‌کنند که هنگام بررسی مجموعه‌ها،\nترتیب !!{element}s آنها یا تعداد دفعاتی که مشخص شده‌اند، اهمیتی ندارد.",
+        "sha256": "7bf600619444d76d180af41c0fd32555d8d5f61a285c10b3393f3c10067ec4e4",
+        "file_sha256": "1b49c4395400b3eac555d349aed2f673dcb75731ec9b609654e43767e61b54c0"
+      },
+      "consultation_mode": "retrospective visual canon comparison on 2026-09-08; no claim of original translation-time consultation",
+      "confidence_scale": "0-3 editorial scale: 0 unsupported, 1 provisional, 2 supported with stated limitations, 3 strong direct evidence. Not calibrated probabilities.",
+      "human_response_gate": false,
+      "previous_record_sha256": "6ee816c0888f725351ebe08ae8fa58c0cdb4452d056cb534ab6b10a10466441b",
+      "audit_version": "OLP-0005-v2"
+    },
+    {
+      "id": "FA-0005-C06",
+      "topic": "Sibling and repeated-roster examples",
+      "canon": [
+        "FA-OL-CANON-0003:P0008",
+        "FA-OL-CANON-0005:P0084"
+      ],
+      "decision": "retain",
+      "confidence": 2,
+      "rationale": "The membership/equality rule applies correctly to all three roster permutations and repeated entries. Richard/Ruth are kept as ریچارد/روث; they are characters in the source, not a replacement with the user's name. The kinship paraphrase includes both brothers and sisters. These ordinary-language choices are source-checked editorial choices, not falsely attested by a mathematical glossary.",
+      "rejected_alternatives": [
+        "برادر alone would narrow sibling to male siblings."
+      ],
+      "expert_question": null,
+      "unit": "OLP-0005",
+      "source": {
+        "commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+        "path": "content/sets-functions-relations/sets/basics.tex",
+        "file_sha256": "232ff51f51e74fcfee836650f3c597b54bf10ba5363c648a0c05fe8222e4a865",
+        "start_byte": 1568,
+        "end_byte_exclusive": 2080,
+        "start_line": 47,
+        "end_line": 54,
+        "text": "Whenever you have a bunch of objects, you can collect them together in\na set. The set of Richard's siblings, for instance, is a set that\ncontains one person, and we could write it as $S=\\{\\textrm{Ruth}\\}$.\nThe set of positive integers less than $4$ is $\\{1, 2, 3\\}$, but it\ncan also be written as $\\{3, 2, 1\\}$ or even as $\\{1, 2, 1, 2, 3\\}$.\nThese are all the same set, by extensionality. For every !!{element}\nof $\\{1, 2, 3\\}$ is also !!a{element} of $\\{3, 2, 1\\}$ (and of $\\{1,\n2, 1, 2, 3\\}$), and vice versa.",
+        "sha256": "4d7b7338ee452935d5096fadf5075ed4b034d2dc8fd0a1a73ddef2aef5b85a1e"
+      },
+      "target_before": {
+        "file_sha256": "129320e9eea66762b41c28c6970dbac6a87d84433aec529a18bde8ae903f849c",
+        "start_byte": 2467,
+        "end_byte_exclusive": 3252,
+        "start_line": 46,
+        "end_line": 53,
+        "text": "هرگاه تعدادی شیء داشته باشید، می‌توانید آنها را در یک مجموعه گرد آورید.\nبرای نمونه، مجموعهٔ خواهران و برادران ریچارد مجموعه‌ای است که یک نفر را\nدر بر می‌گیرد و می‌توان آن را به‌صورت $S=\\{\\textrm{روث}\\}$ نوشت.\nمجموعهٔ اعداد صحیح مثبت کوچک‌تر از $4$ برابر $\\{1, 2, 3\\}$ است، اما\nمی‌توان آن را به‌صورت $\\{3, 2, 1\\}$ یا حتی $\\{1, 2, 1, 2, 3\\}$ نیز نوشت.\nاینها بنا بر اصل گسترش همگی یک مجموعه‌اند. زیرا هر !!{element}\n$\\{1, 2, 3\\}$، !!a{element} $\\{3, 2, 1\\}$ (و $\\{1,\n2, 1, 2, 3\\}$) نیز هست، و برعکس.",
+        "sha256": "4e2e0e5a1f50c9792e4195b9934d6f0b8388c7ae67768e615bef9fa019a8af57"
+      },
+      "target_candidate": {
+        "start_byte": 2467,
+        "end_byte_exclusive": 3252,
+        "start_line": 46,
+        "end_line": 53,
+        "text": "هرگاه تعدادی شیء داشته باشید، می‌توانید آنها را در یک مجموعه گرد آورید.\nبرای نمونه، مجموعهٔ خواهران و برادران ریچارد مجموعه‌ای است که یک نفر را\nدر بر می‌گیرد و می‌توان آن را به‌صورت $S=\\{\\textrm{روث}\\}$ نوشت.\nمجموعهٔ اعداد صحیح مثبت کوچک‌تر از $4$ برابر $\\{1, 2, 3\\}$ است، اما\nمی‌توان آن را به‌صورت $\\{3, 2, 1\\}$ یا حتی $\\{1, 2, 1, 2, 3\\}$ نیز نوشت.\nاینها بنا بر اصل گسترش همگی یک مجموعه‌اند. زیرا هر !!{element}\n$\\{1, 2, 3\\}$، !!a{element} $\\{3, 2, 1\\}$ (و $\\{1,\n2, 1, 2, 3\\}$) نیز هست، و برعکس.",
+        "sha256": "4e2e0e5a1f50c9792e4195b9934d6f0b8388c7ae67768e615bef9fa019a8af57",
+        "file_sha256": "1b49c4395400b3eac555d349aed2f673dcb75731ec9b609654e43767e61b54c0"
+      },
+      "consultation_mode": "retrospective visual canon comparison on 2026-09-08; no claim of original translation-time consultation",
+      "confidence_scale": "0-3 editorial scale: 0 unsupported, 1 provisional, 2 supported with stated limitations, 3 strong direct evidence. Not calibrated probabilities.",
+      "human_response_gate": false,
+      "previous_record_sha256": "8ca789c10a3348bf26d56f1b3234cdd16f7862f39794625eddab7fa89a3d5beb",
+      "audit_version": "OLP-0005-v2"
+    },
+    {
+      "id": "FA-0005-C07",
+      "topic": "Property-based set notation",
+      "canon": [
+        "FA-OL-CANON-0003:P0008",
+        "FA-OL-CANON-0005:P0085"
+      ],
+      "decision": "retain_with_scope_note",
+      "confidence": 3,
+      "rationale": "The inspected canon uses ویژگی for a defining property and the set-builder form with a variable and formula. The existing-set context is retained; the notation itself is not a warrant for unrestricted comprehension. The visible corrected passage below supplies the existence qualification.",
+      "rejected_alternatives": [],
+      "expert_question": null,
+      "unit": "OLP-0005",
+      "source": {
+        "commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+        "path": "content/sets-functions-relations/sets/basics.tex",
+        "file_sha256": "232ff51f51e74fcfee836650f3c597b54bf10ba5363c648a0c05fe8222e4a865",
+        "start_byte": 2107,
+        "end_byte_exclusive": 2383,
+        "start_line": 58,
+        "end_line": 62,
+        "text": "Frequently we'll specify a set by some property that its !!{element}s\nshare. We'll use the following shorthand notation for that:\n$\\Setabs{x}{\\phi(x)}$, where the $\\phi(x)$ stands for the property\nthat~$x$ has to have in order to be counted among the !!{element}s of\nthe set. ",
+        "sha256": "f4d53107af14866c8bdac86897a32ddbe7c77f037fe2bd6df946688fe7077e84"
+      },
+      "target_before": {
+        "file_sha256": "129320e9eea66762b41c28c6970dbac6a87d84433aec529a18bde8ae903f849c",
+        "start_byte": 3278,
+        "end_byte_exclusive": 3691,
+        "start_line": 57,
+        "end_line": 60,
+        "text": "اغلب مجموعه‌ای را به‌وسیلهٔ ویژگی مشترک !!{element}s آن مشخص می‌کنیم.\nبرای این کار از نمادگذاری اختصاری زیر استفاده می‌کنیم:\n$\\Setabs{x}{\\phi(x)}$، که در آن $\\phi(x)$ نمایانگر ویژگی‌ای است\nکه~$x$ باید داشته باشد تا در شمار !!{element}s مجموعه قرار گیرد.",
+        "sha256": "6733e1ab7158b328f7ff727bb65fca587ec481cabe30e779c2c17b8b28edda58"
+      },
+      "target_candidate": {
+        "start_byte": 3278,
+        "end_byte_exclusive": 3691,
+        "start_line": 57,
+        "end_line": 60,
+        "text": "اغلب مجموعه‌ای را به‌وسیلهٔ ویژگی مشترک !!{element}s آن مشخص می‌کنیم.\nبرای این کار از نمادگذاری اختصاری زیر استفاده می‌کنیم:\n$\\Setabs{x}{\\phi(x)}$، که در آن $\\phi(x)$ نمایانگر ویژگی‌ای است\nکه~$x$ باید داشته باشد تا در شمار !!{element}s مجموعه قرار گیرد.",
+        "sha256": "6733e1ab7158b328f7ff727bb65fca587ec481cabe30e779c2c17b8b28edda58",
+        "file_sha256": "1b49c4395400b3eac555d349aed2f673dcb75731ec9b609654e43767e61b54c0"
+      },
+      "consultation_mode": "retrospective visual canon comparison on 2026-09-08; no claim of original translation-time consultation",
+      "confidence_scale": "0-3 editorial scale: 0 unsupported, 1 provisional, 2 supported with stated limitations, 3 strong direct evidence. Not calibrated probabilities.",
+      "human_response_gate": false,
+      "previous_record_sha256": "91ae14003909dcc167e92c7faf26078ae1cd83e5c91bc6e3083ff67d2621289f",
+      "audit_version": "OLP-0005-v2"
+    },
+    {
+      "id": "FA-0005-C08",
+      "topic": "Sibling predicate inside a formula",
+      "canon": [
+        "FA-OL-CANON-0003:P0008"
+      ],
+      "decision": "retain",
+      "confidence": 3,
+      "rationale": "The source property, variable, set name and set-builder operator remain unchanged in meaning. The text atom translates sibling inclusively as خواهر یا برادر. This is a contextual application of the consulted defining-property rule, not a claim that the canon mentions this family example.",
+      "rejected_alternatives": [
+        "Leaving the English sentence inside the displayed formula would leave reader-facing prose untranslated."
+      ],
+      "expert_question": null,
+      "unit": "OLP-0005",
+      "source": {
+        "commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+        "path": "content/sets-functions-relations/sets/basics.tex",
+        "file_sha256": "232ff51f51e74fcfee836650f3c597b54bf10ba5363c648a0c05fe8222e4a865",
+        "start_byte": 2421,
+        "end_byte_exclusive": 2529,
+        "start_line": 66,
+        "end_line": 69,
+        "text": "In our example, we could have specified $S$ also as\n\\[\nS = \\Setabs{x}{x \\text{ is a sibling of Richard}}.\n\\]",
+        "sha256": "51ba9f0fca7656d0e3ae9f7ab761683ee86611de30fac11989e78453b78c3219"
+      },
+      "target_before": {
+        "file_sha256": "129320e9eea66762b41c28c6970dbac6a87d84433aec529a18bde8ae903f849c",
+        "start_byte": 3729,
+        "end_byte_exclusive": 3895,
+        "start_line": 64,
+        "end_line": 67,
+        "text": "در مثال ما می‌شد $S$ را به‌صورت زیر نیز مشخص کرد:\n\\[\nS = \\Setabs{x}{x \\text{ خواهر یا برادر ریچارد است}}.\n\\]",
+        "sha256": "d1f39c8510437cda7c4f2b3ebc7b42b5cfb4c2f0c29980874b51b53b4774e900"
+      },
+      "target_candidate": {
+        "start_byte": 3729,
+        "end_byte_exclusive": 3895,
+        "start_line": 64,
+        "end_line": 67,
+        "text": "در مثال ما می‌شد $S$ را به‌صورت زیر نیز مشخص کرد:\n\\[\nS = \\Setabs{x}{x \\text{ خواهر یا برادر ریچارد است}}.\n\\]",
+        "sha256": "d1f39c8510437cda7c4f2b3ebc7b42b5cfb4c2f0c29980874b51b53b4774e900",
+        "file_sha256": "1b49c4395400b3eac555d349aed2f673dcb75731ec9b609654e43767e61b54c0"
+      },
+      "consultation_mode": "retrospective visual canon comparison on 2026-09-08; no claim of original translation-time consultation",
+      "confidence_scale": "0-3 editorial scale: 0 unsupported, 1 provisional, 2 supported with stated limitations, 3 strong direct evidence. Not calibrated probabilities.",
+      "human_response_gate": false,
+      "previous_record_sha256": "b242ab63ba4ae6936c8d2dddda86d34a840624d0329a10a7eceb10506299a1f7",
+      "audit_version": "OLP-0005-v2"
+    },
+    {
+      "id": "FA-0005-C09",
+      "topic": "Perfect number and proper divisors",
+      "canon": [
+        "FA-OL-NT-0001:P0067",
+        "FA-OL-NT-0001:P0068",
+        "FA-OL-NT-0002:P0001",
+        "FA-OL-CANON-0005:P0084"
+      ],
+      "decision": "correct_positive_domain_retain_attested_terms",
+      "confidence": 3,
+      "rationale": "The visually inspected Iranian-authored academic programming text uses تام/کامل and the smaller-divisor explanation. The professional-association exercise directly attests مقسوم‌علیه‌های سره مثبت and its explicit gloss. Retain کامل and سره, add positive integer and positive divisors in the definition and6 example. The source itself later refers to positive integers; the new text makes that domain explicit instead of letting0 qualify through an empty-sum reading. These are narrow usage witnesses, not a number-theory-monograph or whole-source-quality claim.",
+      "rejected_alternatives": [
+        "Changing کامل to تام is unnecessary; both are attested and the existing title/occurrences use کامل.",
+        "Retaining unqualified divisors allows negative divisors and obscures the example.",
+        "A test based solely on equality with the divisor sum would classify0 incorrectly unless the positive domain is included."
+      ],
+      "expert_question": "Optional later stylistic preference between the attested سره phrase and the textbook smaller-divisor paraphrase; no unsupported terminology remains in this bounded choice and no human-response gate.",
+      "unit": "OLP-0005",
+      "source": {
+        "commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+        "path": "content/sets-functions-relations/sets/basics.tex",
+        "file_sha256": "232ff51f51e74fcfee836650f3c597b54bf10ba5363c648a0c05fe8222e4a865",
+        "start_byte": 2589,
+        "end_byte_exclusive": 2959,
+        "start_line": 75,
+        "end_line": 80,
+        "text": "A number is called \\emph{perfect} iff it is equal to the sum of its\nproper divisors (i.e., numbers that evenly divide it but aren't\nidentical to the number). For instance, $6$ is perfect because its\nproper divisors are $1$, $2$, and~$3$, and $6 = 1 + 2 + 3$. In fact,\n$6$ is the only positive integer less than $10$ that is perfect. So,\nusing extensionality, we can say:",
+        "sha256": "e67117d43d3c2f9133110becdfea353fb1cd8ffa12520c1156b6cd5568dd602f"
+      },
+      "target_before": {
+        "file_sha256": "129320e9eea66762b41c28c6970dbac6a87d84433aec529a18bde8ae903f849c",
+        "start_byte": 3955,
+        "end_byte_exclusive": 4613,
+        "start_line": 73,
+        "end_line": 78,
+        "text": "عددی را \\emph{کامل} می‌نامیم اگر و تنها اگر با مجموع مقسوم‌علیه‌های\nسرهٔ خود برابر باشد (یعنی عددهایی که آن را بدون باقیمانده تقسیم می‌کنند\nاما با خود آن عدد برابر نیستند). برای نمونه، $6$ کامل است زیرا\nمقسوم‌علیه‌های سرهٔ آن $1$، $2$ و~$3$ هستند و $6 = 1 + 2 + 3$.\nدر واقع، $6$ تنها عدد صحیح مثبت کوچک‌تر از $10$ است که کامل است.\nازاین‌رو، با استفاده از اصل گسترش می‌توانیم بگوییم:",
+        "sha256": "e1a8d420fcec2ed978e3ec7c05719bc7f6512cc12d09b22bc8bba8ef79a29fcf"
+      },
+      "target_candidate": {
+        "start_byte": 3955,
+        "end_byte_exclusive": 4667,
+        "start_line": 73,
+        "end_line": 78,
+        "text": "عدد صحیح مثبتی را \\emph{کامل} می‌نامیم اگر و تنها اگر با مجموع مقسوم‌علیه‌های\nسرهٔ مثبت خود برابر باشد (یعنی عددهای صحیح مثبتی که آن را بدون باقیمانده تقسیم می‌کنند\nاما با خود آن عدد برابر نیستند). برای نمونه، $6$ کامل است زیرا\nمقسوم‌علیه‌های سرهٔ مثبت آن $1$، $2$ و~$3$ هستند و $6 = 1 + 2 + 3$.\nدر واقع، $6$ تنها عدد صحیح مثبت کوچک‌تر از $10$ است که کامل است.\nازاین‌رو، با استفاده از اصل گسترش می‌توانیم بگوییم:",
+        "sha256": "b81c95f85f329f90a415e41bd3eee1baa5e1234bbb7f7941f2a2fda4eb2f498e",
+        "file_sha256": "1b49c4395400b3eac555d349aed2f673dcb75731ec9b609654e43767e61b54c0"
+      },
+      "consultation_mode": "Fresh prospective consultation for the v2 correction; earlier missing-evidence status remains preserved in the v1 ledger.",
+      "confidence_scale": "0-3 editorial scale: 0 unsupported, 1 provisional, 2 supported with stated limitations, 3 strong direct evidence. Not calibrated probabilities.",
+      "human_response_gate": false,
+      "previous_record_sha256": "3a14ba8634ff3964caafd33aa23cba3ce1f2f3470949dd1e0a21483f9be8f17c",
+      "audit_version": "OLP-0005-v2"
+    },
+    {
+      "id": "FA-0005-C10",
+      "topic": "Perfect-number set display and its reading",
+      "canon": [
+        "FA-OL-CANON-0003:P0008",
+        "FA-OL-NT-0001:P0067",
+        "FA-OL-NT-0002:P0001"
+      ],
+      "decision": "retain_with_domain_now_explicit",
+      "confidence": 3,
+      "rationale": "The displayed0<=x<=10 is unchanged. The now-explicit positive-integer definition excludes0 and singles out6, verified by the divisor-sum check. Native mathematical terminology is supported by C09 witnesses and applied consistently to this formula text atom and its prose reading.",
+      "rejected_alternatives": [
+        "Silently changing 0<=x<=10 to a different displayed range is unnecessary; define the number-theoretic domain correctly instead."
+      ],
+      "expert_question": null,
+      "unit": "OLP-0005",
+      "source": {
+        "commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+        "path": "content/sets-functions-relations/sets/basics.tex",
+        "file_sha256": "232ff51f51e74fcfee836650f3c597b54bf10ba5363c648a0c05fe8222e4a865",
+        "start_byte": 2960,
+        "end_byte_exclusive": 3234,
+        "start_line": 81,
+        "end_line": 86,
+        "text": "\\[\n\t\\{6\\} = \\Setabs{x}{x\\text{ is perfect and }0 \\leq x \\leq 10}\n\\]\nWe read the notation on the right as ``the set of $x$'s such that $x$\nis perfect and $0 \\leq x \\leq 10$''. The identity here confirms that,\nwhen we consider sets, we don't care about how they are specified.",
+        "sha256": "216acb80f17630c903a41d5a7859de1e2c2fad03c42fbacf77332088c0702ad9"
+      },
+      "target_before": {
+        "file_sha256": "129320e9eea66762b41c28c6970dbac6a87d84433aec529a18bde8ae903f849c",
+        "start_byte": 4614,
+        "end_byte_exclusive": 5011,
+        "start_line": 79,
+        "end_line": 84,
+        "text": "\\[\n\t\\{6\\} = \\Setabs{x}{x\\text{ کامل است و }0 \\leq x \\leq 10}\n\\]\nنماد سمت راست را چنین می‌خوانیم: ``مجموعهٔ $x$هایی که $x$\nکامل است و $0 \\leq x \\leq 10$''. این همانی تأیید می‌کند که هنگام\nبررسی مجموعه‌ها، شیوهٔ مشخص‌کردن آنها اهمیتی ندارد. به‌طور کلی‌تر،",
+        "sha256": "e416c98d014c43e99ebf85d90ff3aabe622e4cf3739f866e39c84a362daf16f4"
+      },
+      "target_candidate": {
+        "start_byte": 4668,
+        "end_byte_exclusive": 5065,
+        "start_line": 79,
+        "end_line": 84,
+        "text": "\\[\n\t\\{6\\} = \\Setabs{x}{x\\text{ کامل است و }0 \\leq x \\leq 10}\n\\]\nنماد سمت راست را چنین می‌خوانیم: ``مجموعهٔ $x$هایی که $x$\nکامل است و $0 \\leq x \\leq 10$''. این همانی تأیید می‌کند که هنگام\nبررسی مجموعه‌ها، شیوهٔ مشخص‌کردن آنها اهمیتی ندارد. به‌طور کلی‌تر،",
+        "sha256": "e416c98d014c43e99ebf85d90ff3aabe622e4cf3739f866e39c84a362daf16f4",
+        "file_sha256": "1b49c4395400b3eac555d349aed2f673dcb75731ec9b609654e43767e61b54c0"
+      },
+      "consultation_mode": "retrospective visual canon comparison on 2026-09-08; no claim of original translation-time consultation",
+      "confidence_scale": "0-3 editorial scale: 0 unsupported, 1 provisional, 2 supported with stated limitations, 3 strong direct evidence. Not calibrated probabilities.",
+      "human_response_gate": false,
+      "previous_record_sha256": "3f82f6373e55ff5ea2a0a2a483353dc09304cc39feea052a23e5c92c6c6bf748",
+      "audit_version": "OLP-0005-v2"
+    },
+    {
+      "id": "FA-0005-C11",
+      "topic": "Uniqueness versus existence",
+      "canon": [
+        "FA-OL-CANON-0003:P0008",
+        "FA-OL-CANON-0005:P0085",
+        "FA-OL-CANON-0005:P0086"
+      ],
+      "decision": "correct_source_aware_clarification",
+      "confidence": 3,
+      "rationale": "The old wording همواره تنها یک ... وجود دارد can assert existence. Extensionality proves at most one, conditional on existence. The English source later explicitly makes exactly this qualification in russells-paradox.tex, so this is a disclosed early clarification of a pedagogically delayed distinction, not a newly discovered source transcription error. Use حداکثر یک and اگر چنین مجموعه‌ای وجود داشته باشد; add a visible editorial note. The same visible editorial note now also discloses the positive-domain/divisor clarification; the already reviewed existence correction is unchanged.",
+      "rejected_alternatives": [
+        "Retaining همواره alone leaves the existential reading available.",
+        "Changing every property into a set by fiat recreates unrestricted comprehension.",
+        "Silently claiming a transcription error ignores the source's later explicit qualification."
+      ],
+      "expert_question": "Check the placement/readability of the short editorial footnote in the next normal reader build; mathematical correction does not wait for a human answer.",
+      "unit": "OLP-0005",
+      "source": {
+        "commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+        "path": "content/sets-functions-relations/sets/basics.tex",
+        "file_sha256": "232ff51f51e74fcfee836650f3c597b54bf10ba5363c648a0c05fe8222e4a865",
+        "start_byte": 3235,
+        "end_byte_exclusive": 3450,
+        "start_line": 87,
+        "end_line": 90,
+        "text": "And, more generally, extensionality guarantees that there is always\nonly one set of $x$'s such that $\\phi(x)$.\nSo, extensionality justifies calling \n$\\Setabs{x}{\\phi(x)}$ \\emph{the} set of $x$'s such that~$\\phi(x)$.",
+        "sha256": "bf9b303270b294545d6dea2edf4c30e6e2830cd5d42c2455875aa4eb34889d93"
+      },
+      "target_before": {
+        "file_sha256": "129320e9eea66762b41c28c6970dbac6a87d84433aec529a18bde8ae903f849c",
+        "start_byte": 5012,
+        "end_byte_exclusive": 5373,
+        "start_line": 85,
+        "end_line": 88,
+        "text": "اصل گسترش تضمین می‌کند که همواره تنها یک مجموعه از $x$هایی وجود دارد\nکه $\\phi(x)$ درباره‌شان صادق است. پس اصل گسترش مجوز می‌دهد\n$\\Setabs{x}{\\phi(x)}$ را \\emph{یگانه} مجموعهٔ $x$هایی بنامیم\nکه~$\\phi(x)$ درباره‌شان صادق است.",
+        "sha256": "16f2a8984b78d315edb670831a8c1e8092dd2c4b8fe9726a7e7274f61271ff45"
+      },
+      "target_candidate": {
+        "start_byte": 5066,
+        "end_byte_exclusive": 5839,
+        "start_line": 85,
+        "end_line": 88,
+        "text": "اصل گسترش تضمین می‌کند که حداکثر یک مجموعه از $x$هایی وجود دارد\nکه $\\phi(x)$ درباره‌شان صادق است. پس، اگر چنین مجموعه‌ای وجود داشته باشد،\nاصل گسترش مجوز می‌دهد $\\Setabs{x}{\\phi(x)}$ را\n\\emph{یگانه} مجموعهٔ $x$هایی بنامیم که~$\\phi(x)$ درباره‌شان صادق است.\\footnote{یادداشت ویراستاری: در مثال عدد کامل، مثبت‌بودن عدد و مقسوم‌علیه‌ها تصریح شده است. همچنین شرط وجود مجموعه در بیان اصل گسترش تصریح شده است؛ این اصل به‌تنهایی وجود مجموعه را تضمین نمی‌کند.}",
+        "sha256": "7bb81973a2a22f5944af7fd86026e1ca63cb905c880edeb6fcc8e9abd0d41efe",
+        "file_sha256": "1b49c4395400b3eac555d349aed2f673dcb75731ec9b609654e43767e61b54c0"
+      },
+      "consultation_mode": "retrospective visual canon comparison on 2026-09-08; no claim of original translation-time consultation",
+      "confidence_scale": "0-3 editorial scale: 0 unsupported, 1 provisional, 2 supported with stated limitations, 3 strong direct evidence. Not calibrated probabilities.",
+      "human_response_gate": false,
+      "previous_record_sha256": "901fff516a417ac17910ccfa567bb1a21facbd9f827cc19e05d0de5ce52c614b",
+      "audit_version": "OLP-0005-v2"
+    },
+    {
+      "id": "FA-0005-C12",
+      "topic": "Two inclusions prove equality",
+      "canon": [
+        "FA-OL-CANON-0003:P0008",
+        "FA-OL-CANON-0003:P0010"
+      ],
+      "decision": "retain",
+      "confidence": 3,
+      "rationale": "The first implication goes A to B; the second B to A. Variables x and y are retained rather than accidentally identifying or reversing them. Page10's subset abbreviation and page8 extensionality support this proof instruction. No additional existence is claimed.",
+      "rejected_alternatives": [
+        "Keeping only one inclusion would prove subsethood, not equality."
+      ],
+      "expert_question": null,
+      "unit": "OLP-0005",
+      "source": {
+        "commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+        "path": "content/sets-functions-relations/sets/basics.tex",
+        "file_sha256": "232ff51f51e74fcfee836650f3c597b54bf10ba5363c648a0c05fe8222e4a865",
+        "start_byte": 3476,
+        "end_byte_exclusive": 3658,
+        "start_line": 94,
+        "end_line": 96,
+        "text": "Extensionality gives us a way for showing that sets are identical: to\nshow that $A = B$, show that whenever $x \\in A$ then also $x \\in B$,\nand whenever $y \\in B$ then also $y \\in A$.",
+        "sha256": "28184c7ab892cd4bc67dd80b4e4e387a63f01cbb3f5167c57b5c396e63c1b574"
+      },
+      "target_before": {
+        "file_sha256": "129320e9eea66762b41c28c6970dbac6a87d84433aec529a18bde8ae903f849c",
+        "start_byte": 5399,
+        "end_byte_exclusive": 5680,
+        "start_line": 92,
+        "end_line": 94,
+        "text": "اصل گسترش راهی برای اثبات یکسان‌بودن مجموعه‌ها به دست می‌دهد: برای\nاثبات $A = B$، نشان دهید هرگاه $x \\in A$ باشد، $x \\in B$ نیز هست،\nو هرگاه $y \\in B$ باشد، $y \\in A$ نیز هست.",
+        "sha256": "5602f93be1199cb0185a0ce2a8ae871c5a1fafac61fbd2da1d6903c59cff716a"
+      },
+      "target_candidate": {
+        "start_byte": 5865,
+        "end_byte_exclusive": 6146,
+        "start_line": 92,
+        "end_line": 94,
+        "text": "اصل گسترش راهی برای اثبات یکسان‌بودن مجموعه‌ها به دست می‌دهد: برای\nاثبات $A = B$، نشان دهید هرگاه $x \\in A$ باشد، $x \\in B$ نیز هست،\nو هرگاه $y \\in B$ باشد، $y \\in A$ نیز هست.",
+        "sha256": "5602f93be1199cb0185a0ce2a8ae871c5a1fafac61fbd2da1d6903c59cff716a",
+        "file_sha256": "1b49c4395400b3eac555d349aed2f673dcb75731ec9b609654e43767e61b54c0"
+      },
+      "consultation_mode": "retrospective visual canon comparison on 2026-09-08; no claim of original translation-time consultation",
+      "confidence_scale": "0-3 editorial scale: 0 unsupported, 1 provisional, 2 supported with stated limitations, 3 strong direct evidence. Not calibrated probabilities.",
+      "human_response_gate": false,
+      "previous_record_sha256": "d495d90a6098fe76ed5dfcecf2cab6e277c86e7e1305ceaf9400abd2d3144bc2",
+      "audit_version": "OLP-0005-v2"
+    },
+    {
+      "id": "FA-0005-C13",
+      "topic": "Empty-set uniqueness exercise",
+      "canon": [
+        "FA-OL-CANON-0003:P0008",
+        "FA-OL-CANON-0003:P0010",
+        "FA-OL-CANON-0003:P0019"
+      ],
+      "decision": "retain",
+      "confidence": 3,
+      "rationale": "The existing target already uses حداکثر یک, the same uniqueness form now used in C11. It retains the source's conditional A,B assumption and does not turn the problem into an existence proof. The semantics follows directly from extensionality; the additional visually inspected page19 resolves the exact empty-set terminology question in C02. Its separate existence axiom is not imported into this uniqueness exercise.",
+      "rejected_alternatives": [
+        "Replacing حداکثر یک by دقیقاً یک would strengthen the exercise to existence plus uniqueness."
+      ],
+      "expert_question": null,
+      "unit": "OLP-0005",
+      "source": {
+        "commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+        "path": "content/sets-functions-relations/sets/basics.tex",
+        "file_sha256": "232ff51f51e74fcfee836650f3c597b54bf10ba5363c648a0c05fe8222e4a865",
+        "start_byte": 3673,
+        "end_byte_exclusive": 3791,
+        "start_line": 99,
+        "end_line": 100,
+        "text": "Prove that there is at most one empty set, i.e., show that if $A$ and $B$\nare sets without !!{element}s, then $A = B$.",
+        "sha256": "012aea7cac4703ae4800bf01c1d3d939b6a330ec5423fc07a77f1673659e44c9"
+      },
+      "target_before": {
+        "file_sha256": "129320e9eea66762b41c28c6970dbac6a87d84433aec529a18bde8ae903f849c",
+        "start_byte": 5695,
+        "end_byte_exclusive": 5896,
+        "start_line": 97,
+        "end_line": 98,
+        "text": "ثابت کنید حداکثر یک مجموعهٔ تهی وجود دارد؛ یعنی نشان دهید اگر $A$ و $B$\nمجموعه‌هایی فاقد !!{element}s باشند، آنگاه $A = B$.",
+        "sha256": "c4110b1a0bfe88f5d4edb25f6ca144017d705ff6b82d944df5e179392eabca0d"
+      },
+      "target_candidate": {
+        "start_byte": 6161,
+        "end_byte_exclusive": 6362,
+        "start_line": 97,
+        "end_line": 98,
+        "text": "ثابت کنید حداکثر یک مجموعهٔ تهی وجود دارد؛ یعنی نشان دهید اگر $A$ و $B$\nمجموعه‌هایی فاقد !!{element}s باشند، آنگاه $A = B$.",
+        "sha256": "c4110b1a0bfe88f5d4edb25f6ca144017d705ff6b82d944df5e179392eabca0d",
+        "file_sha256": "1b49c4395400b3eac555d349aed2f673dcb75731ec9b609654e43767e61b54c0"
+      },
+      "consultation_mode": "retrospective visual canon comparison on 2026-09-08; no claim of original translation-time consultation",
+      "confidence_scale": "0-3 editorial scale: 0 unsupported, 1 provisional, 2 supported with stated limitations, 3 strong direct evidence. Not calibrated probabilities.",
+      "human_response_gate": false,
+      "previous_record_sha256": "d660c41cd0badadef28b2684b4d2d2d2220a32deab8fa10af4ce8f11c981a72e",
+      "audit_version": "OLP-0005-v2"
+    }
+  ],
+  "canon": [
+    {
+      "id": "FA-OL-CANON-0003:P0008",
+      "title": "نظریهٔ مجموعه‌ها",
+      "url": "https://khani.iut.ac.ir/sites/khani.iut.ac.ir/files//u145/jozve-kamel.pdf",
+      "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+      "pdf_page": 8,
+      "printed_page": 7,
+      "consulted_scope": "Section1.2.1, extensionality and naive comprehension; separate uniqueness/existence explanations, followed by Russell contradiction."
+    },
+    {
+      "id": "FA-OL-CANON-0003:P0010",
+      "title": "نظریهٔ مجموعه‌ها",
+      "url": "https://khani.iut.ac.ir/sites/khani.iut.ac.ir/files//u145/jozve-kamel.pdf",
+      "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+      "pdf_page": 10,
+      "printed_page": 9,
+      "consulted_scope": "Empty class, proposition6 iff usage, proper-class Russell theorem, subset and union abbreviations. Class context must not be silently imported as set existence."
+    },
+    {
+      "id": "FA-OL-CANON-0003:P0019",
+      "title": "نظریهٔ مجموعه‌ها",
+      "url": "https://khani.iut.ac.ir/sites/khani.iut.ac.ir/files//u145/jozve-kamel.pdf",
+      "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+      "pdf_page": 19,
+      "printed_page": 18,
+      "consulted_scope": "ZFC axioms: explicit empty-set phrase and separate existence axiom3. The immediately preceding paragraph attests گردایه‌ای as collection. This resolves the two initial C02 lexical gaps without confusing collections, classes and sets."
+    },
+    {
+      "id": "FA-OL-CANON-0005:P0084",
+      "title": "مبانی منطق و نظریهٔ مجموعه‌ها",
+      "url": "https://mohsen-khani.github.io/logic97-1/jozve/logic-full.pdf",
+      "pdf_sha256": "565558b76701858236844f19663de27ee10a8d72fd8b007e69b85159ac49f86d",
+      "pdf_page": 84,
+      "printed_page": 84,
+      "consulted_scope": "Definition200: set, elements and members; extensionality name and displayed axiom."
+    },
+    {
+      "id": "FA-OL-CANON-0005:P0085",
+      "title": "مبانی منطق و نظریهٔ مجموعه‌ها",
+      "url": "https://mohsen-khani.github.io/logic97-1/jozve/logic-full.pdf",
+      "pdf_sha256": "565558b76701858236844f19663de27ee10a8d72fd8b007e69b85159ac49f86d",
+      "pdf_page": 85,
+      "printed_page": 85,
+      "consulted_scope": "Extensionality separately from unrestricted comprehension; theorem201 begins inconsistency proof."
+    },
+    {
+      "id": "FA-OL-CANON-0005:P0086",
+      "title": "مبانی منطق و نظریهٔ مجموعه‌ها",
+      "url": "https://mohsen-khani.github.io/logic97-1/jozve/logic-full.pdf",
+      "pdf_sha256": "565558b76701858236844f19663de27ee10a8d72fd8b007e69b85159ac49f86d",
+      "pdf_page": 86,
+      "printed_page": 86,
+      "consulted_scope": "Russell contradiction completed; distinction between naive axioms and ZFC exposition."
+    },
+    {
+      "id": "FA-OL-NT-0001",
+      "title": "آموزش گام به گام برنامه نویسی پایتون",
+      "url": "https://library.knu.edu.af/opac/temp/14518.pdf",
+      "sha256": "626858b0c812a300086fc9d788f7183636f802fefcf492f8fd6ddd158e056286",
+      "source_kind": "Iranian-authored academic programming textbook; university-library-hosted excerpt",
+      "scope": "Technical usage for an elementary divisor/perfect-number example; not a number-theory monograph or book-wide quality certificate",
+      "pages_consulted": [
+        2,
+        4,
+        67,
+        68
+      ]
+    },
+    {
+      "id": "FA-OL-NT-0002",
+      "title": "اعداد کامل (تا پایان جلسه دوم)",
+      "url": "https://javacup.ir/complete-numbers-session-2/",
+      "sha256": "020c76bd6fa611b49cc0b7870079029045f740c59b35b0631419a6229c916eb4",
+      "source_kind": "Original professional-association programming exercise; supplementary native technical-register evidence, not peer-reviewed mathematical scholarship",
+      "scope": "Exact usage of عدد کامل and مقسوم‌علیه‌های سره مثبت with an explicit positive-divisor gloss and6 example",
+      "pages_consulted": [
+        "opening definition and6 example"
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "id": "SF-0005-PERFECT-DOMAIN",
+      "unit": "OLP-0005",
+      "environment": "document-text",
+      "relative": "sets-functions-relations/sets/basics.tex",
+      "before_sha256": "a0eab85c6b93ae3773f7cde6ec0c08afda4042e4bf2a83d69a82d6ff832e9efa",
+      "after_sha256": "483a8d31e4f79972726d354dfed3127f1c442075a568c2d4dfcbc15069852db4",
+      "expected_executions": 1
+    },
+    {
+      "id": "SF-0005-EXTENSIONALITY-EXISTENCE",
+      "unit": "OLP-0005",
+      "environment": "document-text",
+      "relative": "sets-functions-relations/sets/basics.tex",
+      "before_sha256": "16f2a8984b78d315edb670831a8c1e8092dd2c4b8fe9726a7e7274f61271ff45",
+      "after_sha256": "7bb81973a2a22f5944af7fd86026e1ca63cb905c880edeb6fcc8e9abd0d41efe",
+      "expected_executions": 1
+    }
+  ],
+  "checks": {
+    "prior_candidate_identity": true,
+    "owner_target_precondition": true,
+    "unique_replacement_0": true,
+    "unique_replacement_1": true,
+    "unique_replacement_2": true,
+    "unique_replacement_3": true,
+    "exact_authored_changes_only": true,
+    "all52_math_spans_unchanged": true,
+    "structural_and_language_macro_sequences_preserved": true,
+    "no_bidi_controls_or_replacement_character": true,
+    "one_visible_editorial_note": true,
+    "positive_domain_and_divisors_explicit": true,
+    "balanced_braces": true,
+    "acquired_source_hash_FA-OL-NT-0001": true,
+    "acquired_source_hash_FA-OL-NT-0002": true,
+    "number_theory_terms_attested": true,
+    "13_unique_updated_choice_records": true,
+    "no_unverified_choice_status_left_in_this_13_record_batch": true,
+    "domain_and_examples": true,
+    "exact_display_set": true,
+    "generated_overlay_reproduces_candidate": true,
+    "actual_unit_execution_contexts": [
+      "OLP-0005/FOL"
+    ]
+  },
+  "integration": {
+    "frozen_original_preserved": true,
+    "current_readers_unchanged": true,
+    "existing_generator": "build/generate_source_correction_overlays.py",
+    "existing_checker": "build/check_functions_source_corrections.py",
+    "required_steps": [
+      "Add the two declarations/source identity and expected event counts to the existing checker/overlay.",
+      "Register OLP-0005 document-text setup using the supplied declaration.",
+      "Generate hash-bound derived input, retaining the original source.",
+      "Integrate into the normal bounded owner correction batch; run existing deterministic tests and guarded build/replay and visual QA.",
+      "Publish the resulting reader in the existing lineage with exact anonymous readback."
+    ],
+    "tex_run_performed": false,
+    "human_response_gate": false,
+    "full_722_unit_canon_certified": false
+  }
+}
