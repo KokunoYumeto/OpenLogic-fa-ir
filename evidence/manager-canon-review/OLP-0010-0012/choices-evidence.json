@@ -1,0 +1,1436 @@
+{
+  "schema": "public-openlogic-fa-batch-review/1",
+  "identities": [
+    {
+      "unit": "OLP-0010",
+      "source_commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+      "source_path": "content/sets-functions-relations/sets/russells-paradox.tex",
+      "source_git_LF_sha256": "aa8e94675f56112d8952b81d17968545b54c33393bfc466745edcaca30f4453a",
+      "source_ledger_CRLF_sha256": "9a76315cd0d9cf89d27e90a9b87138b1c95aea98e0d26de3fe12d897b8c4d10d",
+      "published_target_sha256": "040b0431da0d24ce6cfc12bdfcbd1b0970e8fd9397a4a6fb3d8ef36b93287886",
+      "candidate_sha256": "5a84be204128ee94aa252b1f16a9fd99287f53fa3cdbc693fb508d1bd53b02e3",
+      "published_target_bytes": 6142,
+      "candidate_bytes": 6132,
+      "R3_member": "source/locale/fa-IR/content/sets-functions-relations/sets/russells-paradox.tex",
+      "R3_archive_sha256": "ef32f359fe7813d0ffef11f3936fb1498f2f3cdcc176ab2acb56b969360c9e59",
+      "locale_config_sha256": "c8df8c39abbd1ab36dbac380490b72e9b3c565bbd1ec3d1f1be88bdc300abd0b",
+      "math_spans": 34,
+      "aligned_choices": 11,
+      "math_text_pairs": []
+    },
+    {
+      "unit": "OLP-0011",
+      "source_commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+      "source_path": "content/sets-functions-relations/relations/relations-complete.tex",
+      "source_git_LF_sha256": "9720780fcf56a05f8f18c26234d7bebc24024116bb6549a151e0905845b41ef5",
+      "source_ledger_CRLF_sha256": "7e1363f3e757004246334478742e4199101dbb2551fac272462454cd40161e23",
+      "published_target_sha256": "3fe8611344f06a83f8cdadf3e96b4867f06511e551e9770602a14475ffa291e6",
+      "candidate_sha256": "3fe8611344f06a83f8cdadf3e96b4867f06511e551e9770602a14475ffa291e6",
+      "published_target_bytes": 411,
+      "candidate_bytes": 411,
+      "R3_member": "source/locale/fa-IR/content/sets-functions-relations/relations/relations-complete.tex",
+      "R3_archive_sha256": "ef32f359fe7813d0ffef11f3936fb1498f2f3cdcc176ab2acb56b969360c9e59",
+      "locale_config_sha256": "c8df8c39abbd1ab36dbac380490b72e9b3c565bbd1ec3d1f1be88bdc300abd0b",
+      "math_spans": 0,
+      "aligned_choices": 1,
+      "math_text_pairs": []
+    },
+    {
+      "unit": "OLP-0012",
+      "source_commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+      "source_path": "content/sets-functions-relations/relations/relations-as-sets.tex",
+      "source_git_LF_sha256": "2a67c6fb4846155e8e7cd8172fd1fb8214db96d508ceae5d70dec95d5dfcc1ff",
+      "source_ledger_CRLF_sha256": "412c6fa44ead94f076dfea7cd23f9e3cd748b08c1882dcb129b15f8efcf5c29c",
+      "published_target_sha256": "481c3bbc5ebd8758ead1c7570a6436f67f15413207e281a07ec98f344aa95f0e",
+      "candidate_sha256": "efc78e214fc192fce8c42359aaed6857f1c1837477627e858ca631fc8c7cd475",
+      "published_target_bytes": 7387,
+      "candidate_bytes": 7714,
+      "R3_member": "source/locale/fa-IR/content/sets-functions-relations/relations/relations-as-sets.tex",
+      "R3_archive_sha256": "ef32f359fe7813d0ffef11f3936fb1498f2f3cdcc176ab2acb56b969360c9e59",
+      "locale_config_sha256": "c8df8c39abbd1ab36dbac380490b72e9b3c565bbd1ec3d1f1be88bdc300abd0b",
+      "math_spans": 83,
+      "aligned_choices": 14,
+      "math_text_pairs": [
+        {
+          "math_span": 23,
+          "source": " and ",
+          "target": " و ",
+          "review": "Exact wording reviewed in the aligned choice, not accepted by token masking alone"
+        },
+        {
+          "math_span": 28,
+          "source": " iff ",
+          "target": " اگر و تنها اگر ",
+          "review": "Exact wording reviewed in the aligned choice, not accepted by token masking alone"
+        },
+        {
+          "math_span": 80,
+          "source": " or ",
+          "target": " یا ",
+          "review": "Exact wording reviewed in the aligned choice, not accepted by token masking alone"
+        }
+      ]
+    }
+  ],
+  "canon": {
+    "documents": [
+      {
+        "document_id": "FA-OL-CANON-0003",
+        "title_fa": "نظریهٔ مجموعه‌ها",
+        "title_en": "Set Theory",
+        "authors": [
+          "محسن خانی",
+          "افشین زارعی"
+        ],
+        "institution": "دانشگاه صنعتی اصفهان",
+        "date_statement": "۱۸ خرداد ۱۴۰۰",
+        "source_url": "https://khani.iut.ac.ir/sites/khani.iut.ac.ir/files//u145/jozve-kamel.pdf",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+        "pdf_bytes": 413763,
+        "licence_status": "No explicit redistribution licence identified; retain locally and cite only."
+      },
+      {
+        "document_id": "FA-OL-CANON-0005",
+        "title_fa": "مبانی منطق و نظریهٔ مجموعه‌ها",
+        "title_en": "Foundations of Logic and Set Theory",
+        "authors": [
+          "محسن خانی"
+        ],
+        "institution": "دانشگاه صنعتی اصفهان",
+        "date_statement": "نیمسال اول ۱۳۹۷–۱۳۹۸",
+        "source_url": "https://mohsen-khani.github.io/logic97-1/jozve/logic-full.pdf",
+        "pdf_sha256": "565558b76701858236844f19663de27ee10a8d72fd8b007e69b85159ac49f86d",
+        "pdf_bytes": 1514008,
+        "licence_status": "Public repository contains no top-level licence file; retain locally and cite only."
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "FA-OL-CANON-0003:P0007",
+        "pdf_page_1based": 7,
+        "printed_page": 6,
+        "location": "Section 1.2 and definition 3, with naive footnote",
+        "short_attestation": "نظریه‌ی ساده‌انگارانه‌ی مجموعه‌ها",
+        "relevance_and_limits": "Exact disciplinary naive label and گردایه are visible. Retain the source register; do not replace the attested term with an imagined synonym. Bounded-quantifier notation on this page also clarifies all/only scope.",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+        "normalized_search_page_sha256": "eced43d3f4712706b165fad253828659eb82eb9de9f8b10f478c4c9c78f21b9f",
+        "visual_page_read": true,
+        "render_sha256": "8b2666f92788004945f42611b3d5c18860feae09e03a8a6467facdbf4ca45798"
+      },
+      {
+        "passage_id": "FA-OL-CANON-0003:P0008",
+        "pdf_page_1based": 8,
+        "printed_page": 7,
+        "location": "Section 1.2.1, extensionality/comprehension and Russell argument",
+        "short_attestation": "اصل گسترش؛ اصل ادراک؛ پارادوکس راسل",
+        "relevance_and_limits": "Extensionality is conditional equality; unrestricted comprehension yields self-membership contradiction. The author explicitly discusses repairing axioms. Canon term اصل ادراک is not the only Persian designation; compare F85.",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+        "normalized_search_page_sha256": "9e2d1c51a7f812d15cbe390e3046708944f893119a90fb377e4ffedb132422d8",
+        "visual_page_read": true,
+        "render_sha256": "b1b4fabdc3c440dbf52fcb6cf35555a919085707e4d583d8880af1df2d982ebf"
+      },
+      {
+        "passage_id": "FA-OL-CANON-0003:P0010",
+        "pdf_page_1based": 10,
+        "printed_page": 9,
+        "location": "Theorem 7 and its proof; inclusion and binary union definitions",
+        "short_attestation": "قضیه‌ی راسل؛ کلاس سره",
+        "relevance_and_limits": "Corroborates the diagonal contradiction and universal membership criterion. The class-theory conclusion is proper class, not a replacement for the OLP theorem denying a set.",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+        "normalized_search_page_sha256": "6bc413af43ba6573a6f3086f8533c9b19a05f7f46ad5d0b450880075a20bd529",
+        "visual_page_read": true,
+        "render_sha256": "c444f91ccbcb38bdd36590c618e0db68ef462074fc729c1023614617025001a7"
+      },
+      {
+        "passage_id": "FA-OL-CANON-0003:P0014",
+        "pdf_page_1based": 14,
+        "printed_page": 13,
+        "location": "Definitions 17/19 and lemma 18",
+        "short_attestation": "زوج مرتب؛ مؤلفه؛ رابطه‌ی تساوی",
+        "relevance_and_limits": "Coordinates determine ordered-pair equality; relation represented by pairs and aRb by membership. This canon allows proper-class relations; OLP’s definition stays restricted to a set square.",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+        "normalized_search_page_sha256": "2d953e0347f243815f7743b5f5b1023455fee7b35b60b650349fdaae0d16d686",
+        "visual_page_read": true,
+        "render_sha256": "a4453708697a9b2ca138e7fa14dd21e46f141e43b5d3f74ef3b0a458dccce648"
+      },
+      {
+        "passage_id": "FA-OL-CANON-0003:P0023",
+        "pdf_page_1based": 23,
+        "printed_page": 22,
+        "location": "Definition 1, first two bullets",
+        "short_attestation": "پادبازتابی؛ متعدی",
+        "relevance_and_limits": "پادبازتابی occurs beside forall x not xrx. This is stronger than merely not reflexive. This canon starts with strict orders; OLP also calls weak orders orders, so retain OLP’s classification.",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+        "normalized_search_page_sha256": "bc4c398faee5e94a040c24c8db275701d1fa89a36af6ef0321ddea80eeb8c92a",
+        "visual_page_read": true,
+        "render_sha256": "fc77a4cdd498dd83a52d0937709923dcbc0e16f5c771a6dc0dd1d6b2a215df9c"
+      },
+      {
+        "passage_id": "FA-OL-CANON-0005:P0085",
+        "pdf_page_1based": 85,
+        "printed_page": 85,
+        "location": "Axioms 1/2 and lemma 201",
+        "short_attestation": "اصل شمول؛ اصول ساده‌انگارانه‌ی نظریه‌ی مجموعه‌ها",
+        "relevance_and_limits": "Second native witness for naive label; comprehension called اصل شمول rather than اصل ادراک. The lemma begins the explicit inconsistent instance. No claim of one exclusive translation for comprehension.",
+        "pdf_sha256": "565558b76701858236844f19663de27ee10a8d72fd8b007e69b85159ac49f86d",
+        "normalized_search_page_sha256": "d892a5f3e56ddfb56dd2d382f7eb283b6bc810bdaed48aad45df066aa9b2ba26",
+        "visual_page_read": true,
+        "render_sha256": "94e95184e075c50f1dba847813a2299c858e6acbf109d2750db5f098ec195c77"
+      },
+      {
+        "passage_id": "FA-OL-CANON-0005:P0086",
+        "pdf_page_1based": 86,
+        "printed_page": 86,
+        "location": "Continuation of lemma 201 and transition to ZFC",
+        "short_attestation": "پارادوکس راسل؛ تناقض‌آمیز",
+        "relevance_and_limits": "Explicit z in z iff z notin z, then model-based alternative and motivation for restricted axioms. OLP’s elementary proof does not acquire a completeness-theorem prerequisite.",
+        "pdf_sha256": "565558b76701858236844f19663de27ee10a8d72fd8b007e69b85159ac49f86d",
+        "normalized_search_page_sha256": "149752bf3bc4df013fbd0edabab7f555bf7adc065f265bae9fe631b643f22f8e",
+        "visual_page_read": true,
+        "render_sha256": "18c086de3a804a191b8300653ddc66ddda654f690c4f9c6c3f40b0c52f9ccda7"
+      },
+      {
+        "passage_id": "FA-OL-CANON-0005:P0090",
+        "pdf_page_1based": 90,
+        "printed_page": 90,
+        "location": "Definition 211 and binary relation paragraph",
+        "short_attestation": "رابطه‌ی دوموضعی",
+        "relevance_and_limits": "Set product membership and exact binary-relation term. Canon defines relations from a to b; specializing a=b yields the source’s on-A definition. Function uniqueness conditions later on this page are not imposed on arbitrary relations.",
+        "pdf_sha256": "565558b76701858236844f19663de27ee10a8d72fd8b007e69b85159ac49f86d",
+        "normalized_search_page_sha256": "ba93acfc04be54240f825521ffd7f654b7b03546aa0447d6f4210f4c694e1193",
+        "visual_page_read": true,
+        "render_sha256": "1bb7b6e35e5d48386462d27c8a53d545d31e21f02a1e7c58f97a00c5debd4f52"
+      }
+    ]
+  },
+  "choices": [
+    {
+      "topic": "Title: Russell’s paradox",
+      "canon": [
+        "FA-OL-CANON-0003:P0008",
+        "FA-OL-CANON-0005:P0086"
+      ],
+      "rationale": "پارادوکس راسل is directly attested, including the same diagonal argument. Retain the title and file identity. The canon also uses تناقض راسل or قضیه‌ی راسل in different contexts, not a reason to rename this section.",
+      "alternatives": "تناقض راسل is a witnessed variant; قضیه‌ی راسل belongs to the proper-class formulation, not this heading.",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The exact source content and relevant native mathematical passage were compared; remaining limitations are stated in the rationale.",
+      "id": "FA-0010-C01",
+      "unit": "OLP-0010",
+      "source": {
+        "char_start": 185,
+        "char_end_exclusive": 216,
+        "line_start": 11,
+        "line_end": 13,
+        "text": "\\olsection{Russell's Paradox}\n\n",
+        "sha256": "fd78cf7ba5d9ddbb3ca38a5035c7f77c1d719d05c7be3258ce7c208197b9022a"
+      },
+      "target_before": {
+        "char_start": 192,
+        "char_end_exclusive": 219,
+        "line_start": 11,
+        "line_end": 13,
+        "text": "\\olsection{پارادوکس راسل}\n\n",
+        "sha256": "af10b44c4a87fbd28425ced8c7278d9e7c8dda39b2df538a29184dde878dafcf"
+      },
+      "target_after": {
+        "char_start": 192,
+        "char_end_exclusive": 219,
+        "line_start": 11,
+        "line_end": 13,
+        "text": "\\olsection{پارادوکس راسل}\n\n",
+        "sha256": "af10b44c4a87fbd28425ced8c7278d9e7c8dda39b2df538a29184dde878dafcf"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\olsection{پارادوکس راسل}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Extensionality: uniqueness only if existence is granted",
+      "canon": [
+        "FA-OL-CANON-0003:P0008",
+        "FA-OL-CANON-0005:P0085"
+      ],
+      "rationale": "The definite-description emphasis, all-and-only membership, fixed property and both explicit existence conditionals remain. C8 gives equality from equal extensions and discusses uniqueness after comprehension. Replace the English-shaped phrase licensing a thought with تضمین می‌کند applied only to the following conditional proposition; do not claim extensionality proves existence.",
+      "alternatives": "The original مجاز می‌سازد ... اندیشه is understandable but an unnecessary syntactic calque. Unconditional وجود دارد would be mathematically wrong.",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The exact source content and relevant native mathematical passage were compared; remaining limitations are stated in the rationale.",
+      "id": "FA-0010-C02",
+      "unit": "OLP-0010",
+      "source": {
+        "char_start": 216,
+        "char_end_exclusive": 621,
+        "line_start": 13,
+        "line_end": 21,
+        "text": "Extensionality licenses the notation $\\Setabs{x}{\\phi(x)}$, for\n\\emph{the} set of $x$'s such that~$\\phi(x)$. However, all that\nextensionality \\emph{really} licenses is the following thought.\n\\emph{If} there is a set whose members are all and only the $\\phi$'s,\n\\emph{then} there is only one such set. Otherwise put: having fixed\nsome~$\\phi$, the set $\\Setabs{x}{\\phi(x)}$ is unique, \\emph{if it\nexists}.\n\n",
+        "sha256": "07c5c90de445c061cf609c479bd20b742911adec7187878b0c2fc0f0027a43be"
+      },
+      "target_before": {
+        "char_start": 219,
+        "char_end_exclusive": 689,
+        "line_start": 13,
+        "line_end": 21,
+        "text": "اصل گسترش به ما اجازه می‌دهد نماد $\\Setabs{x}{\\phi(x)}$ را برای\n\\emph{آن} مجموعه از $x$ها به کار ببریم که~$\\phi(x)$ درباره‌شان صادق\nاست. بااین‌حال، تمام آنچه اصل گسترش \\emph{در واقع} مجاز می‌سازد، فقط\nاندیشهٔ زیر است. \\emph{اگر} مجموعه‌ای وجود داشته باشد که اعضایش دقیقاً\nهمان اشیایی باشند که ویژگیِ $\\phi$ را دارند، \\emph{آنگاه} تنها یک چنین\nمجموعه‌ای وجود دارد. به بیان دیگر: پس از تثبیت یک~$\\phi$، مجموعهٔ\n$\\Setabs{x}{\\phi(x)}$ یکتا است، \\emph{اگر وجود داشته باشد}.\n\n",
+        "sha256": "99e009db74980c1ec2a57a95c0aff6737d6f818b37a0821f6e2754f250153804"
+      },
+      "target_after": {
+        "char_start": 219,
+        "char_end_exclusive": 676,
+        "line_start": 13,
+        "line_end": 21,
+        "text": "اصل گسترش به ما اجازه می‌دهد نماد $\\Setabs{x}{\\phi(x)}$ را برای\n\\emph{آن} مجموعه از $x$ها به کار ببریم که~$\\phi(x)$ درباره‌شان صادق\nاست. بااین‌حال، اصل گسترش \\emph{در واقع} فقط گزارهٔ زیر را\nتضمین می‌کند. \\emph{اگر} مجموعه‌ای وجود داشته باشد که اعضایش دقیقاً\nهمان اشیایی باشند که ویژگیِ $\\phi$ را دارند، \\emph{آنگاه} تنها یک چنین\nمجموعه‌ای وجود دارد. به بیان دیگر: پس از تثبیت یک~$\\phi$، مجموعهٔ\n$\\Setabs{x}{\\phi(x)}$ یکتا است، \\emph{اگر وجود داشته باشد}.\n\n",
+        "sha256": "e2363bf7cfdea3c90ceee6dd247b7ce0d24e2421f74cdef91b2bb3b90e678c48"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "اصل گسترش به ما اجازه می‌دهد نماد $\\Setabs{x}{\\phi(x)}$ را برای\n\\emph{آن} مجموعه از $x$ها به کار ببریم که~$\\phi(x)$ درباره‌شان صادق\nاست. بااین‌حال، اصل گسترش \\emph{در واقع} فقط گزارهٔ زیر را\nتضمین می‌کند. \\emph{اگر} مجموعه‌ای وجود داشته باشد که اعضایش دقیقاً\nهمان اشیایی باشند که ویژگیِ $\\phi$ را دارند، \\emph{آنگاه} تنها یک چنین\nمجموعه‌ای وجود دارد. به بیان دیگر: پس از تثبیت یک~$\\phi$، مجموعهٔ\n$\\Setabs{x}{\\phi(x)}$ یکتا است، \\emph{اگر وجود داشته باشد}.\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Comprehension is not available for every property",
+      "canon": [
+        "FA-OL-CANON-0003:P0008",
+        "FA-OL-CANON-0005:P0085"
+      ],
+      "rationale": "Retain the descriptive مجموعه‌سازی in this introductory paragraph: the very next sentence explains that not every property defines a set. The exact noun is not attested in these pages; C8 uses اصل ادراک and F85 اصل شمول for the schema. We do not label this descriptive wording the exclusive scholarly term or replace it with an unexplained axiom name.",
+      "alternatives": "اصل ادراک and اصل شمول are genuinely attested but name the schema; either needs context if substituted for the present process description.",
+      "question": "Should a later corpus glossary add a parenthetical attested schema name here? The current explanatory wording is mathematically faithful but not directly term-attested.",
+      "confidence": 2,
+      "confidence_reason": "Meaning is fully explained by source and canon; the exact descriptive noun has not been found on the consulted pages.",
+      "id": "FA-0010-C03",
+      "unit": "OLP-0010",
+      "source": {
+        "char_start": 621,
+        "char_end_exclusive": 899,
+        "line_start": 21,
+        "line_end": 27,
+        "text": "But this conditional is important!{} Crucially, not every property\nlends itself to \\emph{comprehension}. That is, some  properties do\n\\emph{not} define sets. If they all did, then we would run into\noutright contradictions. The most famous example of this is Russell's\nParadox.\n\n",
+        "sha256": "20ce729810f157b0c48f64bb452c1d14d16846119af717a58e65bcce9b724839"
+      },
+      "target_before": {
+        "char_start": 689,
+        "char_end_exclusive": 979,
+        "line_start": 21,
+        "line_end": 27,
+        "text": "اما این گزارهٔ شرطی مهم است!{} نکتهٔ اساسی آن است که هر ویژگی‌ای امکان\n\\emph{مجموعه‌سازی} را به دست نمی‌دهد. یعنی برخی ویژگی‌ها مجموعه‌ای را\n\\emph{تعریف نمی‌کنند}. اگر همهٔ ویژگی‌ها مجموعه تعریف می‌کردند، با\nناسازگاری‌های آشکار روبه‌رو می‌شدیم. مشهورترین نمونهٔ این امر پارادوکس\nراسل است.\n\n",
+        "sha256": "902ff7aea03560714c867646bf85021981b2ce54981645b3cd918a4ad117d2f2"
+      },
+      "target_after": {
+        "char_start": 676,
+        "char_end_exclusive": 966,
+        "line_start": 21,
+        "line_end": 27,
+        "text": "اما این گزارهٔ شرطی مهم است!{} نکتهٔ اساسی آن است که هر ویژگی‌ای امکان\n\\emph{مجموعه‌سازی} را به دست نمی‌دهد. یعنی برخی ویژگی‌ها مجموعه‌ای را\n\\emph{تعریف نمی‌کنند}. اگر همهٔ ویژگی‌ها مجموعه تعریف می‌کردند، با\nناسازگاری‌های آشکار روبه‌رو می‌شدیم. مشهورترین نمونهٔ این امر پارادوکس\nراسل است.\n\n",
+        "sha256": "902ff7aea03560714c867646bf85021981b2ce54981645b3cd918a4ad117d2f2"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "اما این گزارهٔ شرطی مهم است!{} نکتهٔ اساسی آن است که هر ویژگی‌ای امکان\n\\emph{مجموعه‌سازی} را به دست نمی‌دهد. یعنی برخی ویژگی‌ها مجموعه‌ای را\n\\emph{تعریف نمی‌کنند}. اگر همهٔ ویژگی‌ها مجموعه تعریف می‌کردند، با\nناسازگاری‌های آشکار روبه‌رو می‌شدیم. مشهورترین نمونهٔ این امر پارادوکس\nراسل است.\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Self-membership as a question under naive assumptions",
+      "canon": [
+        "FA-OL-CANON-0003:P0007",
+        "FA-OL-CANON-0003:P0008",
+        "FA-OL-CANON-0005:P0090"
+      ],
+      "rationale": "Retain actual plural member macros for sets that are members of other sets, the power-set example, and the hypothetical all-sets collection. گردایه is attested in C7. The source says self-membership seems not ruled out by the informal idea, not that Foundation permits it. Preserve ظاهراً and the conditional; do not import a later axiom.",
+      "alternatives": "Replacing the hypothetical with a categorical ban on self-membership would change the exposition and its assumptions. The exact adjective توانی is a transparent retained locale variant; F90 names اصل توان.",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The exact source content and relevant native mathematical passage were compared; remaining limitations are stated in the rationale.",
+      "id": "FA-0010-C04",
+      "unit": "OLP-0010",
+      "source": {
+        "char_start": 899,
+        "char_end_exclusive": 1397,
+        "line_start": 27,
+        "line_end": 36,
+        "text": "Sets may be !!{element}s of other sets---for instance, the power set\nof a set~$A$ is made up of sets. And so it makes sense to ask or\ninvestigate whether a set is !!a{element} of another set. Can a set be\na member of itself?  Nothing about the idea of a set seems to rule\nthis out. For instance, if \\emph{all} sets form a collection of\nobjects, one might think that they can be collected into a single\nset---the set of all sets. And it, being a set, would be !!a{element}\nof the set of all sets. \n\n",
+        "sha256": "606e75d9eda3aec9784cb3264475c56d0e3eaa6342acd4d75ec38bfa50366ca1"
+      },
+      "target_before": {
+        "char_start": 979,
+        "char_end_exclusive": 1531,
+        "line_start": 27,
+        "line_end": 37,
+        "text": "مجموعه‌ها می‌توانند !!{element}s مجموعه‌های دیگر باشند---برای نمونه،\nمجموعهٔ توانیِ مجموعهٔ~$A$ از مجموعه‌ها تشکیل شده است. بنابراین\nپرسیدن یا بررسی اینکه آیا مجموعه‌ای !!a{element} مجموعه‌ای دیگر است،\nمعنا دارد. آیا یک مجموعه می‌تواند عضو خودش باشد؟ ظاهراً هیچ‌چیز در\nمفهوم مجموعه این امکان را منتفی نمی‌کند. برای نمونه، اگر \\emph{همهٔ}\nمجموعه‌ها گردایه‌ای از اشیا را تشکیل دهند، ممکن است گمان کنیم که\nمی‌توان آنها را در یک مجموعه گرد آورد---مجموعهٔ همهٔ مجموعه‌ها. و این\nمجموعه، چون خود یک مجموعه است، !!a{element} مجموعهٔ همهٔ مجموعه‌ها\nخواهد بود.\n\n",
+        "sha256": "45ea049e2eb146194fe48f83500c1af30e03134f8e6cb39cdec4c0c85182bdf8"
+      },
+      "target_after": {
+        "char_start": 966,
+        "char_end_exclusive": 1518,
+        "line_start": 27,
+        "line_end": 37,
+        "text": "مجموعه‌ها می‌توانند !!{element}s مجموعه‌های دیگر باشند---برای نمونه،\nمجموعهٔ توانیِ مجموعهٔ~$A$ از مجموعه‌ها تشکیل شده است. بنابراین\nپرسیدن یا بررسی اینکه آیا مجموعه‌ای !!a{element} مجموعه‌ای دیگر است،\nمعنا دارد. آیا یک مجموعه می‌تواند عضو خودش باشد؟ ظاهراً هیچ‌چیز در\nمفهوم مجموعه این امکان را منتفی نمی‌کند. برای نمونه، اگر \\emph{همهٔ}\nمجموعه‌ها گردایه‌ای از اشیا را تشکیل دهند، ممکن است گمان کنیم که\nمی‌توان آنها را در یک مجموعه گرد آورد---مجموعهٔ همهٔ مجموعه‌ها. و این\nمجموعه، چون خود یک مجموعه است، !!a{element} مجموعهٔ همهٔ مجموعه‌ها\nخواهد بود.\n\n",
+        "sha256": "45ea049e2eb146194fe48f83500c1af30e03134f8e6cb39cdec4c0c85182bdf8"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "مجموعه‌ها می‌توانند اعضا مجموعه‌های دیگر باشند---برای نمونه،\nمجموعهٔ توانیِ مجموعهٔ~$A$ از مجموعه‌ها تشکیل شده است. بنابراین\nپرسیدن یا بررسی اینکه آیا مجموعه‌ای عضو مجموعه‌ای دیگر است،\nمعنا دارد. آیا یک مجموعه می‌تواند عضو خودش باشد؟ ظاهراً هیچ‌چیز در\nمفهوم مجموعه این امکان را منتفی نمی‌کند. برای نمونه، اگر \\emph{همهٔ}\nمجموعه‌ها گردایه‌ای از اشیا را تشکیل دهند، ممکن است گمان کنیم که\nمی‌توان آنها را در یک مجموعه گرد آورد---مجموعهٔ همهٔ مجموعه‌ها. و این\nمجموعه، چون خود یک مجموعه است، عضو مجموعهٔ همهٔ مجموعه‌ها\nخواهد بود.\n\n",
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 20,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        },
+        {
+          "character_offset_in_segment": 169,
+          "token": "!!a{element}",
+          "realization": "عضو"
+        },
+        {
+          "character_offset_in_segment": 504,
+          "token": "!!a{element}",
+          "realization": "عضو"
+        }
+      ]
+    },
+    {
+      "topic": "Non-self-membered sets and the proposed Russell set",
+      "canon": [
+        "FA-OL-CANON-0003:P0008",
+        "FA-OL-CANON-0005:P0086"
+      ],
+      "rationale": "Both the property and the existential question are retained, with the display unchanged. عضو خود نبودن directly unpacks non-self-membered without implying ordinary disjointness or absence of all members. The brief repetition maps the source’s descriptive clause and emphasized name.",
+      "alternatives": "تهی or a set having no members would describe a different property.",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The exact source content and relevant native mathematical passage were compared; remaining limitations are stated in the rationale.",
+      "id": "FA-0010-C05",
+      "unit": "OLP-0010",
+      "source": {
+        "char_start": 1397,
+        "char_end_exclusive": 1716,
+        "line_start": 36,
+        "line_end": 45,
+        "text": "Russell's Paradox arises when we consider the property of not having\nitself as !!a{element}, of being \\emph{non-self-membered}. What if we\nsuppose that there is a set of all sets that do not have themselves as\n!!a{element}? Does\n\\[\nR = \\Setabs{x}{x \\notin x}\n\\]\nexist? It turns out that we can prove that it does not.\n\n",
+        "sha256": "cc22c88a783804c3aea5ecb7772368e3cd87118671979f5bb5593358de97691f"
+      },
+      "target_before": {
+        "char_start": 1531,
+        "char_end_exclusive": 1843,
+        "line_start": 37,
+        "line_end": 45,
+        "text": "پارادوکس راسل هنگامی پدید می‌آید که ویژگیِ !!a{element} خود نبودن، یعنی\n\\emph{عضو خود نبودن}، را در نظر بگیریم. اگر فرض کنیم مجموعه‌ای از همهٔ\nمجموعه‌هایی وجود دارد که !!a{element} خودشان نیستند، چه؟ آیا\n\\[\nR = \\Setabs{x}{x \\notin x}\n\\]\nوجود دارد؟ معلوم می‌شود که می‌توانیم ثابت کنیم چنین مجموعه‌ای وجود ندارد.\n\n",
+        "sha256": "215e201853b4d35b50e88720ff16ee330e521947b37658d18d98a0aa4334decf"
+      },
+      "target_after": {
+        "char_start": 1518,
+        "char_end_exclusive": 1830,
+        "line_start": 37,
+        "line_end": 45,
+        "text": "پارادوکس راسل هنگامی پدید می‌آید که ویژگیِ !!a{element} خود نبودن، یعنی\n\\emph{عضو خود نبودن}، را در نظر بگیریم. اگر فرض کنیم مجموعه‌ای از همهٔ\nمجموعه‌هایی وجود دارد که !!a{element} خودشان نیستند، چه؟ آیا\n\\[\nR = \\Setabs{x}{x \\notin x}\n\\]\nوجود دارد؟ معلوم می‌شود که می‌توانیم ثابت کنیم چنین مجموعه‌ای وجود ندارد.\n\n",
+        "sha256": "215e201853b4d35b50e88720ff16ee330e521947b37658d18d98a0aa4334decf"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "پارادوکس راسل هنگامی پدید می‌آید که ویژگیِ عضو خود نبودن، یعنی\n\\emph{عضو خود نبودن}، را در نظر بگیریم. اگر فرض کنیم مجموعه‌ای از همهٔ\nمجموعه‌هایی وجود دارد که عضو خودشان نیستند، چه؟ آیا\n\\[\nR = \\Setabs{x}{x \\notin x}\n\\]\nوجود دارد؟ معلوم می‌شود که می‌توانیم ثابت کنیم چنین مجموعه‌ای وجود ندارد.\n\n",
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 43,
+          "token": "!!a{element}",
+          "realization": "عضو"
+        },
+        {
+          "character_offset_in_segment": 168,
+          "token": "!!a{element}",
+          "realization": "عضو"
+        }
+      ]
+    },
+    {
+      "topic": "The theorem denies existence, not emptiness",
+      "canon": [
+        "FA-OL-CANON-0003:P0008",
+        "FA-OL-CANON-0003:P0010"
+      ],
+      "rationale": "Add به صورت to make the Persian noun phrase grammatical; the exact R equation and theorem label are unchanged. The conclusion is that no set with that specification exists, not that R is empty. C10 calls the analogous class proper; it is not imported as the OLP theorem statement.",
+      "alternatives": "R is empty is false as a replacement for nonexistence.",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The exact source content and relevant native mathematical passage were compared; remaining limitations are stated in the rationale.",
+      "id": "FA-0010-C06",
+      "unit": "OLP-0010",
+      "source": {
+        "char_start": 1716,
+        "char_end_exclusive": 1835,
+        "line_start": 45,
+        "line_end": 49,
+        "text": "\\begin{thm}[Russell's Paradox]\\ollabel{thm:russells-paradox}\n\tThere is no set $R = \\Setabs{x}{x \\notin x}$.\n\\end{thm}\n\n",
+        "sha256": "7d629214ae14a4df4e33f5d7f8ecfe015b6e4e90adeabaee923d9947fd81179d"
+      },
+      "target_before": {
+        "char_start": 1843,
+        "char_end_exclusive": 1967,
+        "line_start": 45,
+        "line_end": 49,
+        "text": "\\begin{thm}[پارادوکس راسل]\\ollabel{thm:russells-paradox}\n\tهیچ مجموعه‌ای $R = \\Setabs{x}{x \\notin x}$ وجود ندارد.\n\\end{thm}\n\n",
+        "sha256": "e3d33dc3e481e9acdef1c5c51d4bd3541d5340495fef2ab2b9df68130eb8dee1"
+      },
+      "target_after": {
+        "char_start": 1830,
+        "char_end_exclusive": 1962,
+        "line_start": 45,
+        "line_end": 49,
+        "text": "\\begin{thm}[پارادوکس راسل]\\ollabel{thm:russells-paradox}\n\tهیچ مجموعه‌ای به صورت $R = \\Setabs{x}{x \\notin x}$ وجود ندارد.\n\\end{thm}\n\n",
+        "sha256": "d159136ca201916f2f9d0db738d6144c44c461eff9d647347c2710cc251d3f29"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{thm}[پارادوکس راسل]\\ollabel{thm:russells-paradox}\n\tهیچ مجموعه‌ای به صورت $R = \\Setabs{x}{x \\notin x}$ وجود ندارد.\n\\end{thm}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Short proof: contradictory biconditional",
+      "canon": [
+        "FA-OL-CANON-0003:P0008",
+        "FA-OL-CANON-0005:P0086"
+      ],
+      "rationale": "Preserve the existence assumption, R in R iff R notin R, and contradiction. اگر و تنها اگر directly matches the canon’s biconditional use. No appeal to Foundation, Cantor’s theorem or completeness is added.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The exact source content and relevant native mathematical passage were compared; remaining limitations are stated in the rationale.",
+      "id": "FA-0010-C07",
+      "unit": "OLP-0010",
+      "source": {
+        "char_start": 1835,
+        "char_end_exclusive": 1961,
+        "line_start": 49,
+        "line_end": 54,
+        "text": "\\begin{proof}\nIf $R = \\Setabs{x}{x \\notin x}$ exists, then\n$R \\in R$ iff $R \\notin R$, which is a contradiction.\n\\end{proof}\n\n",
+        "sha256": "470f2741befd1e6f9512ded93663114152794747ef9c38a061a55f029c15ed19"
+      },
+      "target_before": {
+        "char_start": 1967,
+        "char_end_exclusive": 2109,
+        "line_start": 49,
+        "line_end": 54,
+        "text": "\\begin{proof}\nاگر $R = \\Setabs{x}{x \\notin x}$ وجود داشته باشد، آنگاه\n$R \\in R$ اگر و تنها اگر $R \\notin R$؛ و این یک تناقض است.\n\\end{proof}\n\n",
+        "sha256": "b9618e4930ab89b594ad70ba9de5b88fa06efdf578b4927efc601344730650ab"
+      },
+      "target_after": {
+        "char_start": 1962,
+        "char_end_exclusive": 2104,
+        "line_start": 49,
+        "line_end": 54,
+        "text": "\\begin{proof}\nاگر $R = \\Setabs{x}{x \\notin x}$ وجود داشته باشد، آنگاه\n$R \\in R$ اگر و تنها اگر $R \\notin R$؛ و این یک تناقض است.\n\\end{proof}\n\n",
+        "sha256": "b9618e4930ab89b594ad70ba9de5b88fa06efdf578b4927efc601344730650ab"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{proof}\nاگر $R = \\Setabs{x}{x \\notin x}$ وجود داشته باشد، آنگاه\n$R \\in R$ اگر و تنها اگر $R \\notin R$؛ و این یک تناقض است.\n\\end{proof}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Expanded proof: first membership branch",
+      "canon": [
+        "FA-OL-CANON-0003:P0008",
+        "FA-OL-CANON-0005:P0086"
+      ],
+      "rationale": "The novice wrapper is inherited source structure, not newly simplified content. Under the existence assumption, supposing membership forces failure of the defining property and hence nonmembership. All occurrences of R and membership statements in this span were read in order; actual plural themselves is distributive and is not a counted-noun suffix defect.",
+      "alternatives": "Turning همهٔ مجموعه‌هایی ... اعضای خودشان نیستند into a claim of no members would be wrong.",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The exact source content and relevant native mathematical passage were compared; remaining limitations are stated in the rationale.",
+      "id": "FA-0010-C08",
+      "unit": "OLP-0010",
+      "source": {
+        "char_start": 1961,
+        "char_end_exclusive": 2491,
+        "line_start": 54,
+        "line_end": 64,
+        "text": "\\begin{tagblock}{novice}\n\\begin{explain}\nLet's run through this proof more slowly. If $R$ exists, it makes sense to ask whether $R \\in\nR$ or not. Suppose that indeed $R \\in R$. Now, $R$~was defined as the set of all\nsets that are not !!{element}s of themselves. So, if $R \\in R$,\nthen $R$ does not itself have $R$'s defining property. But only sets\nthat have this property are in~$R$, hence, $R$ cannot be !!a{element}\nof~$R$, i.e., $R \\notin R$. But $R$ can't both be and not be\n!!a{element} of~$R$, so we have a contradiction.\n\n",
+        "sha256": "9a7a37ef02d2a78cb79b1066ca0498508ee708d93c4346404b55b1b6a64f3bfb"
+      },
+      "target_before": {
+        "char_start": 2109,
+        "char_end_exclusive": 2649,
+        "line_start": 54,
+        "line_end": 65,
+        "text": "\\begin{tagblock}{novice}\n\\begin{explain}\nبیایید این برهان را آهسته‌تر مرور کنیم. اگر $R$ وجود داشته باشد، پرسیدن\nاینکه آیا $R \\in\nR$ است یا نه معنا دارد. فرض کنید واقعاً $R \\in R$. اکنون، $R$ به‌صورت\nمجموعهٔ همهٔ مجموعه‌هایی تعریف شده بود که !!{element}s خودشان نیستند. پس\nاگر $R \\in R$، خودِ $R$ ویژگیِ تعریف‌کنندهٔ $R$ را ندارد. اما فقط\nمجموعه‌هایی که این ویژگی را دارند در~$R$ هستند؛ ازاین‌رو $R$ نمی‌تواند\n!!a{element}~$R$ باشد، یعنی $R \\notin R$. ولی $R$ نمی‌تواند نسبت\nبه~$R$، هم !!a{element} باشد و هم نباشد؛ پس به تناقض رسیده‌ایم.\n\n",
+        "sha256": "98290de4a3522be50f19eacd383169eaf1490cf3fdfd21d353768f823d0b8158"
+      },
+      "target_after": {
+        "char_start": 2104,
+        "char_end_exclusive": 2644,
+        "line_start": 54,
+        "line_end": 65,
+        "text": "\\begin{tagblock}{novice}\n\\begin{explain}\nبیایید این برهان را آهسته‌تر مرور کنیم. اگر $R$ وجود داشته باشد، پرسیدن\nاینکه آیا $R \\in\nR$ است یا نه معنا دارد. فرض کنید واقعاً $R \\in R$. اکنون، $R$ به‌صورت\nمجموعهٔ همهٔ مجموعه‌هایی تعریف شده بود که !!{element}s خودشان نیستند. پس\nاگر $R \\in R$، خودِ $R$ ویژگیِ تعریف‌کنندهٔ $R$ را ندارد. اما فقط\nمجموعه‌هایی که این ویژگی را دارند در~$R$ هستند؛ ازاین‌رو $R$ نمی‌تواند\n!!a{element}~$R$ باشد، یعنی $R \\notin R$. ولی $R$ نمی‌تواند نسبت\nبه~$R$، هم !!a{element} باشد و هم نباشد؛ پس به تناقض رسیده‌ایم.\n\n",
+        "sha256": "98290de4a3522be50f19eacd383169eaf1490cf3fdfd21d353768f823d0b8158"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{tagblock}{novice}\n\\begin{explain}\nبیایید این برهان را آهسته‌تر مرور کنیم. اگر $R$ وجود داشته باشد، پرسیدن\nاینکه آیا $R \\in\nR$ است یا نه معنا دارد. فرض کنید واقعاً $R \\in R$. اکنون، $R$ به‌صورت\nمجموعهٔ همهٔ مجموعه‌هایی تعریف شده بود که اعضا خودشان نیستند. پس\nاگر $R \\in R$، خودِ $R$ ویژگیِ تعریف‌کنندهٔ $R$ را ندارد. اما فقط\nمجموعه‌هایی که این ویژگی را دارند در~$R$ هستند؛ ازاین‌رو $R$ نمی‌تواند\nعضو~$R$ باشد، یعنی $R \\notin R$. ولی $R$ نمی‌تواند نسبت\nبه~$R$، هم عضو باشد و هم نباشد؛ پس به تناقض رسیده‌ایم.\n\n",
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 242,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        },
+        {
+          "character_offset_in_segment": 410,
+          "token": "!!a{element}",
+          "realization": "عضو"
+        },
+        {
+          "character_offset_in_segment": 486,
+          "token": "!!a{element}",
+          "realization": "عضو"
+        }
+      ]
+    },
+    {
+      "topic": "Expanded proof: nonmembership branch",
+      "canon": [
+        "FA-OL-CANON-0003:P0008",
+        "FA-OL-CANON-0005:P0086"
+      ],
+      "rationale": "The preceding contradiction gives nonmembership only within the assumed existence context. Then the defining property forces membership again. Retain the second contradiction and both closure environments. The final conclusion remains rejection of existence, not selection of one truth value.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The exact source content and relevant native mathematical passage were compared; remaining limitations are stated in the rationale.",
+      "id": "FA-0010-C09",
+      "unit": "OLP-0010",
+      "source": {
+        "char_start": 2491,
+        "char_end_exclusive": 2867,
+        "line_start": 64,
+        "line_end": 72,
+        "text": "Since the assumption that $R \\in R$ leads to a contradiction, we have\n$R \\notin R$. But this also leads to a contradiction!{} For if $R\n\\notin R$, then $R$ itself does have $R$'s defining property, and so $R$ would be\n!!a{element} of $R$ just like all the other non-self-membered sets.\nAnd again, it can't both not be and be !!a{element} of~$R$.\n\\end{explain}\n\\end{tagblock}\n\n",
+        "sha256": "ab0553d5d8fcd742a9680d569cd84c4d136186291ae44df0b0a2fa4cede55567"
+      },
+      "target_before": {
+        "char_start": 2649,
+        "char_end_exclusive": 3007,
+        "line_start": 65,
+        "line_end": 74,
+        "text": "چون فرضِ $R \\in R$ به تناقض می‌انجامد، داریم $R \\notin R$. اما این نیز\nبه تناقض می‌انجامد!{} زیرا اگر $R\n\\notin R$، آنگاه خودِ $R$ ویژگیِ تعریف‌کنندهٔ $R$ را دارد، و بنابراین\n$R$ نیز درست مانند همهٔ مجموعه‌های دیگری که عضو خود نیستند، !!a{element}\n$R$ خواهد بود. و باز هم نمی‌تواند نسبت به~$R$، هم !!a{element} نباشد و\nهم باشد.\n\\end{explain}\n\\end{tagblock}\n\n",
+        "sha256": "60fca1fb1a57b023c9752130dea5974da9787c4dc973ba3356ce337d7fdc780a"
+      },
+      "target_after": {
+        "char_start": 2644,
+        "char_end_exclusive": 3002,
+        "line_start": 65,
+        "line_end": 74,
+        "text": "چون فرضِ $R \\in R$ به تناقض می‌انجامد، داریم $R \\notin R$. اما این نیز\nبه تناقض می‌انجامد!{} زیرا اگر $R\n\\notin R$، آنگاه خودِ $R$ ویژگیِ تعریف‌کنندهٔ $R$ را دارد، و بنابراین\n$R$ نیز درست مانند همهٔ مجموعه‌های دیگری که عضو خود نیستند، !!a{element}\n$R$ خواهد بود. و باز هم نمی‌تواند نسبت به~$R$، هم !!a{element} نباشد و\nهم باشد.\n\\end{explain}\n\\end{tagblock}\n\n",
+        "sha256": "60fca1fb1a57b023c9752130dea5974da9787c4dc973ba3356ce337d7fdc780a"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "چون فرضِ $R \\in R$ به تناقض می‌انجامد، داریم $R \\notin R$. اما این نیز\nبه تناقض می‌انجامد!{} زیرا اگر $R\n\\notin R$، آنگاه خودِ $R$ ویژگیِ تعریف‌کنندهٔ $R$ را دارد، و بنابراین\n$R$ نیز درست مانند همهٔ مجموعه‌های دیگری که عضو خود نیستند، عضو\n$R$ خواهد بود. و باز هم نمی‌تواند نسبت به~$R$، هم عضو نباشد و\nهم باشد.\n\\end{explain}\n\\end{tagblock}\n\n",
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 235,
+          "token": "!!a{element}",
+          "realization": "عضو"
+        },
+        {
+          "character_offset_in_segment": 298,
+          "token": "!!a{element}",
+          "realization": "عضو"
+        }
+      ]
+    },
+    {
+      "topic": "Precise existence axioms avoid the paradox",
+      "canon": [
+        "FA-OL-CANON-0003:P0008",
+        "FA-OL-CANON-0005:P0086"
+      ],
+      "rationale": "The digression asks for precise conditions on existence and nonexistence. اصول موضوعی and ناسازگار preserve the mathematical register of the canon. Do not claim arbitrary additional axioms automatically give a consistency proof.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The exact source content and relevant native mathematical passage were compared; remaining limitations are stated in the rationale.",
+      "id": "FA-0010-C10",
+      "unit": "OLP-0010",
+      "source": {
+        "char_start": 2867,
+        "char_end_exclusive": 3187,
+        "line_start": 72,
+        "line_end": 79,
+        "text": "\\begin{digress}\nHow do we set up a set theory which avoids falling into\nRussell's Paradox, i.e., which avoids making the \\emph{inconsistent}\nclaim that $R = \\Setabs{x}{x \\notin x}$ exists? Well, we would need to\nlay down axioms which give us very precise conditions for stating when\nsets exist (and when they don't). \n\t\n",
+        "sha256": "46fb480ba97869f8d51df9f3ca17a134f70ce56b477493d9885dd7195b34b9c2"
+      },
+      "target_before": {
+        "char_start": 3007,
+        "char_end_exclusive": 3314,
+        "line_start": 74,
+        "line_end": 81,
+        "text": "\\begin{digress}\nچگونه نظریه‌ای برای مجموعه‌ها بنا کنیم که به پارادوکس راسل گرفتار نشود؛\nیعنی ادعای \\emph{ناسازگارِ} وجود مجموعهٔ\n$R = \\Setabs{x}{x \\notin x}$ را مطرح نکند؟ باید اصول موضوعی‌ای وضع کنیم\nکه شرایط بسیار دقیقی برای بیان اینکه مجموعه‌ها چه هنگام وجود دارند (و چه\nهنگام وجود ندارند) به دست دهند.\n\n",
+        "sha256": "8fd82d54ccf23a995f93daead79bd4162e542768dc261eabcdc7744dd7506f9b"
+      },
+      "target_after": {
+        "char_start": 3002,
+        "char_end_exclusive": 3309,
+        "line_start": 74,
+        "line_end": 81,
+        "text": "\\begin{digress}\nچگونه نظریه‌ای برای مجموعه‌ها بنا کنیم که به پارادوکس راسل گرفتار نشود؛\nیعنی ادعای \\emph{ناسازگارِ} وجود مجموعهٔ\n$R = \\Setabs{x}{x \\notin x}$ را مطرح نکند؟ باید اصول موضوعی‌ای وضع کنیم\nکه شرایط بسیار دقیقی برای بیان اینکه مجموعه‌ها چه هنگام وجود دارند (و چه\nهنگام وجود ندارند) به دست دهند.\n\n",
+        "sha256": "8fd82d54ccf23a995f93daead79bd4162e542768dc261eabcdc7744dd7506f9b"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{digress}\nچگونه نظریه‌ای برای مجموعه‌ها بنا کنیم که به پارادوکس راسل گرفتار نشود؛\nیعنی ادعای \\emph{ناسازگارِ} وجود مجموعهٔ\n$R = \\Setabs{x}{x \\notin x}$ را مطرح نکند؟ باید اصول موضوعی‌ای وضع کنیم\nکه شرایط بسیار دقیقی برای بیان اینکه مجموعه‌ها چه هنگام وجود دارند (و چه\nهنگام وجود ندارند) به دست دهند.\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Naive theory and conditional continuation",
+      "canon": [
+        "FA-OL-CANON-0003:P0007",
+        "FA-OL-CANON-0003:P0008",
+        "FA-OL-CANON-0005:P0085"
+      ],
+      "rationale": "Retain both ساده‌انگارانه occurrences: C7’s naive footnote, C8’s heading and F85’s alternative name are direct disciplinary witnesses. A preliminary concern about pejorative calquing is resolved by actual canon reading. The same paragraph retains extensionality, conditional operations, future rigor and the complete cumul conditional link; no new prerequisite is added.",
+      "alternatives": "شهودی was considered as a possible informal equivalent but is not the directly attested name on these pages; do not replace witnessed terminology on intuition alone.",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The exact source content and relevant native mathematical passage were compared; remaining limitations are stated in the rationale.",
+      "id": "FA-0010-C11",
+      "unit": "OLP-0010",
+      "source": {
+        "char_start": 3187,
+        "char_end_exclusive": 3657,
+        "line_start": 79,
+        "line_end": 89,
+        "text": "The set theory sketched in this chapter doesn't do this. It's\n\\emph{genuinely na\\\"ive}. It tells you only that sets obey\nextensionality and that, if you have some sets, you can form their\nunion, intersection, etc. It is possible to develop set theory more\nrigorously than this. \\oliflabeldef{cumul:::part}{That rigour will be\nreserved for Part \\olref[cumul][][]{part}. For now, we will proceed\nna\\\"ively, and carefully try to sidestep contradictions.}{}\n\\end{digress}\n\n\n",
+        "sha256": "8f303108bbcbb01e0987bdacc78cb9b9b481582ff6e5c2549719acbf720b4dcd"
+      },
+      "target_before": {
+        "char_start": 3314,
+        "char_end_exclusive": 3800,
+        "line_start": 81,
+        "line_end": 92,
+        "text": "نظریهٔ مجموعه‌هایی که در این فصل طرح شده چنین کاری نمی‌کند. این نظریه\n\\emph{به‌راستی ساده‌انگارانه} است. فقط می‌گوید مجموعه‌ها از اصل گسترش\nپیروی می‌کنند و اگر چند مجموعه\nداشته باشیم، می‌توانیم اجتماع، اشتراک و مانند آن را تشکیل دهیم. می‌توان\nنظریهٔ مجموعه‌ها را به‌صورتی دقیق‌تر از این بسط داد.\n\\oliflabeldef{cumul:::part}{آن دقت را برای بخش\n\\olref[cumul][][]{part} نگه می‌داریم. فعلاً ساده‌انگارانه، اما با احتیاط،\nپیش می‌رویم و می‌کوشیم از ناسازگاری‌ها دوری کنیم.}{}\n\\end{digress}\n\n\n",
+        "sha256": "bd5e1796475cbcfa41127750b608aabed98f4614a49e68af2ad1fd57cefaee1c"
+      },
+      "target_after": {
+        "char_start": 3309,
+        "char_end_exclusive": 3795,
+        "line_start": 81,
+        "line_end": 92,
+        "text": "نظریهٔ مجموعه‌هایی که در این فصل طرح شده چنین کاری نمی‌کند. این نظریه\n\\emph{به‌راستی ساده‌انگارانه} است. فقط می‌گوید مجموعه‌ها از اصل گسترش\nپیروی می‌کنند و اگر چند مجموعه\nداشته باشیم، می‌توانیم اجتماع، اشتراک و مانند آن را تشکیل دهیم. می‌توان\nنظریهٔ مجموعه‌ها را به‌صورتی دقیق‌تر از این بسط داد.\n\\oliflabeldef{cumul:::part}{آن دقت را برای بخش\n\\olref[cumul][][]{part} نگه می‌داریم. فعلاً ساده‌انگارانه، اما با احتیاط،\nپیش می‌رویم و می‌کوشیم از ناسازگاری‌ها دوری کنیم.}{}\n\\end{digress}\n\n\n",
+        "sha256": "bd5e1796475cbcfa41127750b608aabed98f4614a49e68af2ad1fd57cefaee1c"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "نظریهٔ مجموعه‌هایی که در این فصل طرح شده چنین کاری نمی‌کند. این نظریه\n\\emph{به‌راستی ساده‌انگارانه} است. فقط می‌گوید مجموعه‌ها از اصل گسترش\nپیروی می‌کنند و اگر چند مجموعه\nداشته باشیم، می‌توانیم اجتماع، اشتراک و مانند آن را تشکیل دهیم. می‌توان\nنظریهٔ مجموعه‌ها را به‌صورتی دقیق‌تر از این بسط داد.\n\\oliflabeldef{cumul:::part}{آن دقت را برای بخش\n\\olref[cumul][][]{part} نگه می‌داریم. فعلاً ساده‌انگارانه، اما با احتیاط،\nپیش می‌رویم و می‌کوشیم از ناسازگاری‌ها دوری کنیم.}{}\n\\end{digress}\n\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Relations chapter title and all eight imports",
+      "canon": [
+        "FA-OL-CANON-0003:P0014",
+        "FA-OL-CANON-0005:P0090"
+      ],
+      "rationale": "روابط is the plural of the attested mathematical رابطه. Retain it. All eight ordered imports and OLEndChapterHook are unchanged. This record reviews the driver’s title and assembly instructions only; it does not certify the imported sections not reviewed in this batch.",
+      "alternatives": "No alternative chapter architecture or independent translated-book claim is introduced.",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The exact source content and relevant native mathematical passage were compared; remaining limitations are stated in the rationale.",
+      "id": "FA-0011-C01",
+      "unit": "OLP-0011",
+      "source": {
+        "char_start": 145,
+        "char_end_exclusive": 395,
+        "line_start": 8,
+        "line_end": 28,
+        "text": "\\olchapter{sfr}{rel}{Relations}\n\n\\olimport{relations-as-sets}\n\n\\olimport{reflections}\n\n\\olimport{special-properties}\n\n\\olimport{equivalence-relations}\n\n\\olimport{orders}\n\n\\olimport{graphs}\n\n\\olimport{trees}\n\n\\olimport{operations}\n\n\\OLEndChapterHook\n\n",
+        "sha256": "d8906b165bced9572c6ab40824023e2b2374e6cc41d3987dbb906a253be85f65"
+      },
+      "target_before": {
+        "char_start": 145,
+        "char_end_exclusive": 391,
+        "line_start": 8,
+        "line_end": 28,
+        "text": "\\olchapter{sfr}{rel}{روابط}\n\n\\olimport{relations-as-sets}\n\n\\olimport{reflections}\n\n\\olimport{special-properties}\n\n\\olimport{equivalence-relations}\n\n\\olimport{orders}\n\n\\olimport{graphs}\n\n\\olimport{trees}\n\n\\olimport{operations}\n\n\\OLEndChapterHook\n\n",
+        "sha256": "0b154120869cc2aa9ca094ef7046425356a4c0f4a9cbc3872616cee6fbcd7d09"
+      },
+      "target_after": {
+        "char_start": 145,
+        "char_end_exclusive": 391,
+        "line_start": 8,
+        "line_end": 28,
+        "text": "\\olchapter{sfr}{rel}{روابط}\n\n\\olimport{relations-as-sets}\n\n\\olimport{reflections}\n\n\\olimport{special-properties}\n\n\\olimport{equivalence-relations}\n\n\\olimport{orders}\n\n\\olimport{graphs}\n\n\\olimport{trees}\n\n\\olimport{operations}\n\n\\OLEndChapterHook\n\n",
+        "sha256": "0b154120869cc2aa9ca094ef7046425356a4c0f4a9cbc3872616cee6fbcd7d09"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\olchapter{sfr}{rel}{روابط}\n\n\\olimport{relations-as-sets}\n\n\\olimport{reflections}\n\n\\olimport{special-properties}\n\n\\olimport{equivalence-relations}\n\n\\olimport{orders}\n\n\\olimport{graphs}\n\n\\olimport{trees}\n\n\\olimport{operations}\n\n\\OLEndChapterHook\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Relations represented as sets",
+      "canon": [
+        "FA-OL-CANON-0003:P0014",
+        "FA-OL-CANON-0005:P0090"
+      ],
+      "rationale": "The title روابط به‌مثابه مجموعه‌ها accurately announces representation of relations as sets. The exact connective به‌مثابه is an editorial syntax choice, not claimed as a quotation. F90 provides the set-level construction and C14 the broader class analogue.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The exact source content and relevant native mathematical passage were compared; remaining limitations are stated in the rationale.",
+      "id": "FA-0012-C01",
+      "unit": "OLP-0012",
+      "source": {
+        "char_start": 190,
+        "char_end_exclusive": 221,
+        "line_start": 10,
+        "line_end": 12,
+        "text": "\\olsection{Relations as Sets}\n\n",
+        "sha256": "d7efb0988e8ff241af12e449ea8608315958d15c91aa8abf33a1351f7f4082a4"
+      },
+      "target_before": {
+        "char_start": 197,
+        "char_end_exclusive": 235,
+        "line_start": 10,
+        "line_end": 12,
+        "text": "\\olsection{روابط به‌مثابه مجموعه‌ها}\n\n",
+        "sha256": "dbc806f130330c1290c06aec64259f800b39194efa1f64249efc6a30ab2c38d0"
+      },
+      "target_after": {
+        "char_start": 197,
+        "char_end_exclusive": 235,
+        "line_start": 10,
+        "line_end": 12,
+        "text": "\\olsection{روابط به‌مثابه مجموعه‌ها}\n\n",
+        "sha256": "dbc806f130330c1290c06aec64259f800b39194efa1f64249efc6a30ab2c38d0"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\olsection{روابط به‌مثابه مجموعه‌ها}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Familiar orders and identity",
+      "canon": [
+        "FA-OL-CANON-0003:P0014",
+        "FA-OL-CANON-0003:P0023"
+      ],
+      "rationale": "Retain the references and four number systems, ordinary order relations and self-only identity. C14 explicitly defines equality relation by equal coordinates; C23 uses the familiar less-than analogy for order. با یکدیگر یکسان‌بودن means identity here, not merely similarity, as the next clause restricts it to the same object.",
+      "alternatives": "رابطه‌ی تساوی is the exact canon variant; رابطهٔ همانی later names the diagonal. Keep the descriptive opening and expose the lexical relation rather than inventing a difference of mathematical objects.",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The exact source content and relevant native mathematical passage were compared; remaining limitations are stated in the rationale.",
+      "id": "FA-0012-C02",
+      "unit": "OLP-0012",
+      "source": {
+        "char_start": 221,
+        "char_end_exclusive": 854,
+        "line_start": 12,
+        "line_end": 23,
+        "text": "\\begin{explain}\nIn \\olref[sfr][set][imp]{sec}, we mentioned some important sets:\n$\\Nat$, $\\Int$, $\\Rat$, $\\Real$. You will no doubt remember some\ninteresting relations between the !!{element}s of some of these sets.\nFor instance, each of these sets has a completely standard \\emph{order\nrelation} on it.  There is also the relation \\emph{is identical with}\nthat every object bears to itself and to no other thing. There are\nmany more interesting relations that we'll encounter, and even more\npossible relations. Before we review them, though, we will start by\npointing out that we can look at relations as a special sort of set. \n  \n",
+        "sha256": "b558e2a1c6d32bf8da70daa957b76c93eb7c5b133a34d722b453d3746baa7cdd"
+      },
+      "target_before": {
+        "char_start": 235,
+        "char_end_exclusive": 803,
+        "line_start": 12,
+        "line_end": 23,
+        "text": "\\begin{explain}\nدر \\olref[sfr][set][imp]{sec}، از چند مجموعهٔ مهم یاد کردیم:\n$\\Nat$، $\\Int$، $\\Rat$ و $\\Real$. بی‌گمان برخی روابط جالب میان\n!!{element}s بعضی از این مجموعه‌ها را به خاطر دارید. برای نمونه، بر\nهر یک از این مجموعه‌ها یک \\emph{رابطهٔ ترتیب} کاملاً استاندارد وجود\nدارد. رابطه‌ای نیز هست با معنای \\emph{با یکدیگر یکسان‌بودن}؛ هر شیء\nاین رابطه را با خودش، و با هیچ چیز دیگری، دارد. روابط جالب دیگری نیز\nهستند که با آنها روبه‌رو خواهیم شد، و روابط ممکن از این هم بیشترند.\nاما پیش از مرور آنها، نخست نشان می‌دهیم که می‌توان روابط را نوع خاصی\nاز مجموعه دانست.\n\n",
+        "sha256": "59fa23a77c30e2d4df5a4e20f611edd3680d509af878bcf55a81b95333cb6103"
+      },
+      "target_after": {
+        "char_start": 235,
+        "char_end_exclusive": 803,
+        "line_start": 12,
+        "line_end": 23,
+        "text": "\\begin{explain}\nدر \\olref[sfr][set][imp]{sec}، از چند مجموعهٔ مهم یاد کردیم:\n$\\Nat$، $\\Int$، $\\Rat$ و $\\Real$. بی‌گمان برخی روابط جالب میان\n!!{element}s بعضی از این مجموعه‌ها را به خاطر دارید. برای نمونه، بر\nهر یک از این مجموعه‌ها یک \\emph{رابطهٔ ترتیب} کاملاً استاندارد وجود\nدارد. رابطه‌ای نیز هست با معنای \\emph{با یکدیگر یکسان‌بودن}؛ هر شیء\nاین رابطه را با خودش، و با هیچ چیز دیگری، دارد. روابط جالب دیگری نیز\nهستند که با آنها روبه‌رو خواهیم شد، و روابط ممکن از این هم بیشترند.\nاما پیش از مرور آنها، نخست نشان می‌دهیم که می‌توان روابط را نوع خاصی\nاز مجموعه دانست.\n\n",
+        "sha256": "59fa23a77c30e2d4df5a4e20f611edd3680d509af878bcf55a81b95333cb6103"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{explain}\nدر \\olref[sfr][set][imp]{sec}، از چند مجموعهٔ مهم یاد کردیم:\n$\\Nat$، $\\Int$، $\\Rat$ و $\\Real$. بی‌گمان برخی روابط جالب میان\nاعضا بعضی از این مجموعه‌ها را به خاطر دارید. برای نمونه، بر\nهر یک از این مجموعه‌ها یک \\emph{رابطهٔ ترتیب} کاملاً استاندارد وجود\nدارد. رابطه‌ای نیز هست با معنای \\emph{با یکدیگر یکسان‌بودن}؛ هر شیء\nاین رابطه را با خودش، و با هیچ چیز دیگری، دارد. روابط جالب دیگری نیز\nهستند که با آنها روبه‌رو خواهیم شد، و روابط ممکن از این هم بیشترند.\nاما پیش از مرور آنها، نخست نشان می‌دهیم که می‌توان روابط را نوع خاصی\nاز مجموعه دانست.\n\n",
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 140,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        }
+      ]
+    },
+    {
+      "topic": "Ordered-pair coordinates and Cartesian product",
+      "canon": [
+        "FA-OL-CANON-0003:P0014",
+        "FA-OL-CANON-0005:P0090"
+      ],
+      "rationale": "Replace اعضا with مؤلفه‌ها for the ordered positions, directly witnessed in C14. This prevents confusing order of coordinates with ordering members of a set representation. Preserve the unequal-coordinate antecedent, reverse-pair inequality, unordered-pair contrast, both product factors and A squared. The local preceding a != b condition supplies the two-element contrast; no claim that every unordered pair has size two is added.",
+      "alternatives": "اعضا mirrors the English loosely; مؤلفه‌ها is more precise for pair positions. ضرب دکارتی is retained from the prior section; these pages attest the product construction and حاصلضرب, not an exclusive compound spelling.",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The exact source content and relevant native mathematical passage were compared; remaining limitations are stated in the rationale.",
+      "id": "FA-0012-C03",
+      "unit": "OLP-0012",
+      "source": {
+        "char_start": 854,
+        "char_end_exclusive": 1478,
+        "line_start": 23,
+        "line_end": 34,
+        "text": "For this, recall two things from \\olref[sfr][set][pai]{sec}. First,\nrecall the notion of an \\emph{ordered pair}: given $a$ and $b$, we can\nform~$\\tuple{a, b}$. Importantly, the order of elements \\emph{does}\nmatter here. So if $a \\neq b$ then $\\tuple{a, b} \\neq \\tuple{b, a}$.\n(Contrast this with unordered pairs, i.e., $2$-element sets, where\n$\\{a, b\\}=\\{b, a\\}$.) Second, recall the notion of a \\emph{Cartesian\nproduct}: if $A$ and $B$ are sets, then we can form~$A \\times B$, the\nset of all pairs $\\tuple{x, y}$ with $x \\in A$ and $y \\in B$. In\nparticular, $A^{2}= A \\times A$ is the set of all ordered pairs\nfrom~$A$.\n  \n",
+        "sha256": "f60ae547e3b820a0c04f134c59aa0b31d550baf556a1abdc9255067daf5e36b1"
+      },
+      "target_before": {
+        "char_start": 803,
+        "char_end_exclusive": 1458,
+        "line_start": 23,
+        "line_end": 34,
+        "text": "برای این منظور، دو مطلب را از \\olref[sfr][set][pai]{sec} به یاد آورید.\nنخست، مفهوم \\emph{زوج مرتب} را یادآوری کنید: با داشتن $a$ و $b$،\nمی‌توانیم~$\\tuple{a, b}$ را تشکیل دهیم. نکتهٔ مهم این است که ترتیب\nاعضا در اینجا \\emph{واقعاً} اهمیت دارد. پس اگر $a \\neq b$، آنگاه\n$\\tuple{a, b} \\neq \\tuple{b, a}$. (این را با زوج‌های نامرتب، یعنی\nمجموعه‌های $2$-عضوی، مقایسه کنید که در آنها\n$\\{a, b\\}=\\{b, a\\}$.) دوم، مفهوم \\emph{ضرب دکارتی} را به یاد آورید:\nاگر $A$ و $B$ مجموعه باشند، می‌توانیم~$A \\times B$، یعنی مجموعهٔ همهٔ\nزوج‌های $\\tuple{x, y}$ را تشکیل دهیم که در آنها $x \\in A$ و $y \\in B$.\nبه‌ویژه، $A^{2}= A \\times A$ مجموعهٔ همهٔ زوج‌های مرتب از~$A$ است.\n\n",
+        "sha256": "044b824748b19ccd3470e956575f7a4e7e0972a90198db3c18e242c61b7f56a0"
+      },
+      "target_after": {
+        "char_start": 803,
+        "char_end_exclusive": 1462,
+        "line_start": 23,
+        "line_end": 34,
+        "text": "برای این منظور، دو مطلب را از \\olref[sfr][set][pai]{sec} به یاد آورید.\nنخست، مفهوم \\emph{زوج مرتب} را یادآوری کنید: با داشتن $a$ و $b$،\nمی‌توانیم~$\\tuple{a, b}$ را تشکیل دهیم. نکتهٔ مهم این است که ترتیب\nمؤلفه‌ها در اینجا \\emph{واقعاً} اهمیت دارد. پس اگر $a \\neq b$، آنگاه\n$\\tuple{a, b} \\neq \\tuple{b, a}$. (این را با زوج‌های نامرتب، یعنی\nمجموعه‌های $2$-عضوی، مقایسه کنید که در آنها\n$\\{a, b\\}=\\{b, a\\}$.) دوم، مفهوم \\emph{ضرب دکارتی} را به یاد آورید:\nاگر $A$ و $B$ مجموعه باشند، می‌توانیم~$A \\times B$، یعنی مجموعهٔ همهٔ\nزوج‌های $\\tuple{x, y}$ را تشکیل دهیم که در آنها $x \\in A$ و $y \\in B$.\nبه‌ویژه، $A^{2}= A \\times A$ مجموعهٔ همهٔ زوج‌های مرتب از~$A$ است.\n\n",
+        "sha256": "65f5ca3a95e12a064306b2f94425fb87e5e8d517ea5c80480b2ae452a1a7b7ab"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "برای این منظور، دو مطلب را از \\olref[sfr][set][pai]{sec} به یاد آورید.\nنخست، مفهوم \\emph{زوج مرتب} را یادآوری کنید: با داشتن $a$ و $b$،\nمی‌توانیم~$\\tuple{a, b}$ را تشکیل دهیم. نکتهٔ مهم این است که ترتیب\nمؤلفه‌ها در اینجا \\emph{واقعاً} اهمیت دارد. پس اگر $a \\neq b$، آنگاه\n$\\tuple{a, b} \\neq \\tuple{b, a}$. (این را با زوج‌های نامرتب، یعنی\nمجموعه‌های $2$-عضوی، مقایسه کنید که در آنها\n$\\{a, b\\}=\\{b, a\\}$.) دوم، مفهوم \\emph{ضرب دکارتی} را به یاد آورید:\nاگر $A$ و $B$ مجموعه باشند، می‌توانیم~$A \\times B$، یعنی مجموعهٔ همهٔ\nزوج‌های $\\tuple{x, y}$ را تشکیل دهیم که در آنها $x \\in A$ و $y \\in B$.\nبه‌ویژه، $A^{2}= A \\times A$ مجموعهٔ همهٔ زوج‌های مرتب از~$A$ است.\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Less-than graph and biconditional",
+      "canon": [
+        "FA-OL-CANON-0003:P0014",
+        "FA-OL-CANON-0005:P0090",
+        "FA-OL-CANON-0003:P0023"
+      ],
+      "rationale": "The set-builder conjunction و is and, not or. اگر و تنها اگر is iff, not implication. Both formulas, n/m order and Nat domain remain exact; representing a binary predicate by its extension loses no information once that domain is fixed.",
+      "alternatives": "Reading ordered pairs in reverse would represent greater-than instead.",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The exact source content and relevant native mathematical passage were compared; remaining limitations are stated in the rationale.",
+      "id": "FA-0012-C04",
+      "unit": "OLP-0012",
+      "source": {
+        "char_start": 1478,
+        "char_end_exclusive": 2005,
+        "line_start": 34,
+        "line_end": 48,
+        "text": "Now we will consider a particular relation on a set: the $<$-relation\non the set~$\\Nat$ of natural numbers. Consider the set of all pairs of\nnumbers $\\tuple{n, m}$ where $n<m$, i.e.,\n\\[\n  R=\\Setabs{\\tuple{n, m}}{n, m \\in \\Nat \\text{ and } n<m}.\n\\]\nThere is a close connection between $n$ being less than $m$, and the\npair $\\tuple{n, m}$ being a member of $R$, namely:\n\\[\n      n<m\\text{ iff }\\tuple{n, m} \\in R.\n\\]\nIndeed, without any loss of information, we can consider the set $R$\nto \\emph{be} the $<$-relation on $\\Nat$. \n\n",
+        "sha256": "ff8acf37d44ee094a010ad185df44272b9ef5b240ed30274d3deb27be4263223"
+      },
+      "target_before": {
+        "char_start": 1458,
+        "char_end_exclusive": 1975,
+        "line_start": 34,
+        "line_end": 48,
+        "text": "اکنون رابطه‌ای خاص روی یک مجموعه را در نظر می‌گیریم: رابطهٔ $<$ روی\nمجموعهٔ~$\\Nat$ از اعداد طبیعی. مجموعهٔ همهٔ زوج‌های عددی\n$\\tuple{n, m}$ را در نظر بگیرید که در آنها $n<m$، یعنی\n\\[\n  R=\\Setabs{\\tuple{n, m}}{n, m \\in \\Nat \\text{ و } n<m}.\n\\]\nمیان کوچک‌تر بودن $n$ از $m$ و عضو بودن زوج $\\tuple{n, m}$ در $R$\nپیوند نزدیکی وجود دارد؛ دقیقاً:\n\\[\n      n<m\\text{ اگر و تنها اگر }\\tuple{n, m} \\in R.\n\\]\nدر واقع، بی‌آنکه هیچ اطلاعاتی از دست برود، می‌توانیم مجموعهٔ $R$ را\n\\emph{همان} رابطهٔ $<$ روی $\\Nat$ در نظر بگیریم.\n\n",
+        "sha256": "aa4534bb96096f3dec8d360c93deefd237ce73875dd2ab5d38a80f799072d1c8"
+      },
+      "target_after": {
+        "char_start": 1462,
+        "char_end_exclusive": 1979,
+        "line_start": 34,
+        "line_end": 48,
+        "text": "اکنون رابطه‌ای خاص روی یک مجموعه را در نظر می‌گیریم: رابطهٔ $<$ روی\nمجموعهٔ~$\\Nat$ از اعداد طبیعی. مجموعهٔ همهٔ زوج‌های عددی\n$\\tuple{n, m}$ را در نظر بگیرید که در آنها $n<m$، یعنی\n\\[\n  R=\\Setabs{\\tuple{n, m}}{n, m \\in \\Nat \\text{ و } n<m}.\n\\]\nمیان کوچک‌تر بودن $n$ از $m$ و عضو بودن زوج $\\tuple{n, m}$ در $R$\nپیوند نزدیکی وجود دارد؛ دقیقاً:\n\\[\n      n<m\\text{ اگر و تنها اگر }\\tuple{n, m} \\in R.\n\\]\nدر واقع، بی‌آنکه هیچ اطلاعاتی از دست برود، می‌توانیم مجموعهٔ $R$ را\n\\emph{همان} رابطهٔ $<$ روی $\\Nat$ در نظر بگیریم.\n\n",
+        "sha256": "aa4534bb96096f3dec8d360c93deefd237ce73875dd2ab5d38a80f799072d1c8"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "اکنون رابطه‌ای خاص روی یک مجموعه را در نظر می‌گیریم: رابطهٔ $<$ روی\nمجموعهٔ~$\\Nat$ از اعداد طبیعی. مجموعهٔ همهٔ زوج‌های عددی\n$\\tuple{n, m}$ را در نظر بگیرید که در آنها $n<m$، یعنی\n\\[\n  R=\\Setabs{\\tuple{n, m}}{n, m \\in \\Nat \\text{ و } n<m}.\n\\]\nمیان کوچک‌تر بودن $n$ از $m$ و عضو بودن زوج $\\tuple{n, m}$ در $R$\nپیوند نزدیکی وجود دارد؛ دقیقاً:\n\\[\n      n<m\\text{ اگر و تنها اگر }\\tuple{n, m} \\in R.\n\\]\nدر واقع، بی‌آنکه هیچ اطلاعاتی از دست برود، می‌توانیم مجموعهٔ $R$ را\n\\emph{همان} رابطهٔ $<$ روی $\\Nat$ در نظر بگیریم.\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Conversely, every subset gives a relation",
+      "canon": [
+        "FA-OL-CANON-0003:P0014",
+        "FA-OL-CANON-0005:P0090"
+      ],
+      "rationale": "Both directions of the graph correspondence remain, with S subset Nat squared and pair membership iff the relation. No definability restriction is added: the source explicitly quantifies over any subset.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The exact source content and relevant native mathematical passage were compared; remaining limitations are stated in the rationale.",
+      "id": "FA-0012-C05",
+      "unit": "OLP-0012",
+      "source": {
+        "char_start": 2005,
+        "char_end_exclusive": 2353,
+        "line_start": 48,
+        "line_end": 55,
+        "text": "In the same way we can construct a subset of $\\Nat^{2}$ for any\nrelation between numbers. Conversely, given any set of pairs of\nnumbers $S \\subseteq \\Nat^{2}$, there is a corresponding relation\nbetween numbers, namely, the relationship $n$ bears to $m$ if and only\nif $\\tuple{n, m} \\in S$. This justifies the following definition:\n\\end{explain}\n  \n",
+        "sha256": "4363d8e2153a32e487b34be4d9c76accb5a445754e6d40bfafd6982bf61a6e18"
+      },
+      "target_before": {
+        "char_start": 1975,
+        "char_end_exclusive": 2293,
+        "line_start": 48,
+        "line_end": 55,
+        "text": "به همین شیوه می‌توانیم برای هر رابطه‌ای میان اعداد، زیرمجموعه‌ای از\n$\\Nat^{2}$ بسازیم. برعکس، با داشتن هر مجموعهٔ $S \\subseteq \\Nat^{2}$\nاز زوج‌های عددی، رابطه‌ای متناظر میان اعداد وجود دارد: رابطه‌ای که\nمیان $n$ و $m$ برقرار است اگر و تنها اگر $\\tuple{n, m} \\in S$. این نکته تعریف\nزیر را توجیه می‌کند:\n\\end{explain}\n\n",
+        "sha256": "e2ef44582db446046f1838ba02763e8818584050a42f11fdad63416db891cdba"
+      },
+      "target_after": {
+        "char_start": 1979,
+        "char_end_exclusive": 2297,
+        "line_start": 48,
+        "line_end": 55,
+        "text": "به همین شیوه می‌توانیم برای هر رابطه‌ای میان اعداد، زیرمجموعه‌ای از\n$\\Nat^{2}$ بسازیم. برعکس، با داشتن هر مجموعهٔ $S \\subseteq \\Nat^{2}$\nاز زوج‌های عددی، رابطه‌ای متناظر میان اعداد وجود دارد: رابطه‌ای که\nمیان $n$ و $m$ برقرار است اگر و تنها اگر $\\tuple{n, m} \\in S$. این نکته تعریف\nزیر را توجیه می‌کند:\n\\end{explain}\n\n",
+        "sha256": "e2ef44582db446046f1838ba02763e8818584050a42f11fdad63416db891cdba"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "به همین شیوه می‌توانیم برای هر رابطه‌ای میان اعداد، زیرمجموعه‌ای از\n$\\Nat^{2}$ بسازیم. برعکس، با داشتن هر مجموعهٔ $S \\subseteq \\Nat^{2}$\nاز زوج‌های عددی، رابطه‌ای متناظر میان اعداد وجود دارد: رابطه‌ای که\nمیان $n$ و $m$ برقرار است اگر و تنها اگر $\\tuple{n, m} \\in S$. این نکته تعریف\nزیر را توجیه می‌کند:\n\\end{explain}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Binary relation terminology and notation",
+      "canon": [
+        "FA-OL-CANON-0005:P0090",
+        "FA-OL-CANON-0003:P0014"
+      ],
+      "rationale": "Replace all three دوتایی occurrences within this definition by the exactly attested دوموضعی. F90 defines a binary relation from a to b as a subset of a product; here both domains are A. Preserve Rxy, xRy and ordered-pair membership, and do not add the function uniqueness condition from F90.",
+      "alternatives": "دوتایی is a transparent prior variant, not a proved mathematical error. دوموضعی is chosen for direct disciplinary attestation. دوگانی risks confusion with duality.",
+      "question": "This is a bounded definition-level terminology update; future occurrences of binary relation must be checked in context against this rule, not mass-replaced.",
+      "confidence": 3,
+      "confidence_reason": "Exact native binary-relation term and its set-product definition agree with the source specialization.",
+      "id": "FA-0012-C06",
+      "unit": "OLP-0012",
+      "source": {
+        "char_start": 2353,
+        "char_end_exclusive": 2591,
+        "line_start": 55,
+        "line_end": 61,
+        "text": "\\begin{defn}[Binary relation] \nA \\emph{binary relation} on a set $A$ is a subset of~$A^{2}$. If $R\n\\subseteq A^{2}$ is a binary relation on~$A$ and $x, y \\in A$, we\nsometimes write $Rxy$ (or $xRy$) for $\\tuple{x, y} \\in R$.\n\\end{defn}\n  \n",
+        "sha256": "5377d4302e7eb478bc9d399b3c70c11b146f7105e434f6cff3dc9c8aa8bc3427"
+      },
+      "target_before": {
+        "char_start": 2293,
+        "char_end_exclusive": 2535,
+        "line_start": 55,
+        "line_end": 61,
+        "text": "\\begin{defn}[رابطهٔ دوتایی]\nیک \\emph{رابطهٔ دوتایی} روی مجموعهٔ $A$، زیرمجموعه‌ای از~$A^{2}$ است.\nاگر $R \\subseteq A^{2}$ رابطه‌ای دوتایی روی~$A$ باشد و $x, y \\in A$،\nگاه $Rxy$ (یا $xRy$) را به جای $\\tuple{x, y} \\in R$ می‌نویسیم.\n\\end{defn}\n\n",
+        "sha256": "229801c59c89b86ab88ffae8f789252e73cd4290115979828f96c2060f9059bc"
+      },
+      "target_after": {
+        "char_start": 2297,
+        "char_end_exclusive": 2542,
+        "line_start": 55,
+        "line_end": 61,
+        "text": "\\begin{defn}[رابطهٔ دوموضعی]\nیک \\emph{رابطهٔ دوموضعی} روی مجموعهٔ $A$، زیرمجموعه‌ای از~$A^{2}$ است.\nاگر $R \\subseteq A^{2}$ رابطه‌ای دوموضعی روی~$A$ باشد و $x, y \\in A$،\nگاه $Rxy$ (یا $xRy$) را به جای $\\tuple{x, y} \\in R$ می‌نویسیم.\n\\end{defn}\n\n",
+        "sha256": "208ccdf802b47c8c9e259e1c8717b4ac4c787c1a5c9165502fc45ede96feb635"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{defn}[رابطهٔ دوموضعی]\nیک \\emph{رابطهٔ دوموضعی} روی مجموعهٔ $A$، زیرمجموعه‌ای از~$A^{2}$ است.\nاگر $R \\subseteq A^{2}$ رابطه‌ای دوموضعی روی~$A$ باشد و $x, y \\in A$،\nگاه $Rxy$ (یا $xRy$) را به جای $\\tuple{x, y} \\in R$ می‌نویسیم.\n\\end{defn}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Natural-number matrix",
+      "canon": [
+        "FA-OL-CANON-0003:P0014",
+        "FA-OL-CANON-0005:P0090"
+      ],
+      "rationale": "Read the complete array: first coordinate is row, second is column; diagonal entries are bold, all ellipses preserved and zero included. The formula checker protects all array tokens. This checks the mathematical layout specification, not a new RTL PDF rendering.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The exact source content and relevant native mathematical passage were compared; remaining limitations are stated in the rationale.",
+      "id": "FA-0012-C07",
+      "unit": "OLP-0012",
+      "source": {
+        "char_start": 2591,
+        "char_end_exclusive": 3171,
+        "line_start": 61,
+        "line_end": 78,
+        "text": "\\begin{ex}\n  \\ollabel{relations}\nThe set $\\Nat^{2}$ of pairs of natural numbers can be listed in a\n2-dimensional matrix like this:\n\\[\n  \\begin{array}{ccccc}\n  \\mathbf{\\tuple{ 0,0 }} & \\tuple{ 0,1 } &\n    \\tuple{ 0,2 } & \\tuple{ 0,3 } & \\ldots\\\\\n  \\tuple{ 1,0 } & \\mathbf{\\tuple{ 1,1 }} &\n    \\tuple{ 1,2 } & \\tuple{ 1,3 } & \\ldots\\\\\n  \\tuple{ 2,0 } & \\tuple{ 2,1 } &\n    \\mathbf{\\tuple{ 2,2 }} & \\tuple{ 2,3 } & \\ldots\\\\\n  \\tuple{ 3,0 } & \\tuple{ 3,1 } & \\tuple{ 3,2 } &\n    \\mathbf{\\tuple{ 3,3 }} & \\ldots\\\\\n  \\vdots & \\vdots & \\vdots & \\vdots & \\mathbf{\\ddots}\n  \\end{array}\n\\]\n",
+        "sha256": "80db6b50535c0d9a70065f2f9133c4712011c772b5078ff9a5d9ac0a6c498974"
+      },
+      "target_before": {
+        "char_start": 2535,
+        "char_end_exclusive": 3106,
+        "line_start": 61,
+        "line_end": 78,
+        "text": "\\begin{ex}\n  \\ollabel{relations}\nمجموعهٔ $\\Nat^{2}$ از زوج‌های اعداد طبیعی را می‌توان در یک ماتریس\nدوبعدی چنین فهرست کرد:\n\\[\n  \\begin{array}{ccccc}\n  \\mathbf{\\tuple{ 0,0 }} & \\tuple{ 0,1 } &\n    \\tuple{ 0,2 } & \\tuple{ 0,3 } & \\ldots\\\\\n  \\tuple{ 1,0 } & \\mathbf{\\tuple{ 1,1 }} &\n    \\tuple{ 1,2 } & \\tuple{ 1,3 } & \\ldots\\\\\n  \\tuple{ 2,0 } & \\tuple{ 2,1 } &\n    \\mathbf{\\tuple{ 2,2 }} & \\tuple{ 2,3 } & \\ldots\\\\\n  \\tuple{ 3,0 } & \\tuple{ 3,1 } & \\tuple{ 3,2 } &\n    \\mathbf{\\tuple{ 3,3 }} & \\ldots\\\\\n  \\vdots & \\vdots & \\vdots & \\vdots & \\mathbf{\\ddots}\n  \\end{array}\n\\]\n",
+        "sha256": "faf7456c5227628f7f4314e3c2f6ac509b64748fc820ca17fb2863f76c14a67d"
+      },
+      "target_after": {
+        "char_start": 2542,
+        "char_end_exclusive": 3113,
+        "line_start": 61,
+        "line_end": 78,
+        "text": "\\begin{ex}\n  \\ollabel{relations}\nمجموعهٔ $\\Nat^{2}$ از زوج‌های اعداد طبیعی را می‌توان در یک ماتریس\nدوبعدی چنین فهرست کرد:\n\\[\n  \\begin{array}{ccccc}\n  \\mathbf{\\tuple{ 0,0 }} & \\tuple{ 0,1 } &\n    \\tuple{ 0,2 } & \\tuple{ 0,3 } & \\ldots\\\\\n  \\tuple{ 1,0 } & \\mathbf{\\tuple{ 1,1 }} &\n    \\tuple{ 1,2 } & \\tuple{ 1,3 } & \\ldots\\\\\n  \\tuple{ 2,0 } & \\tuple{ 2,1 } &\n    \\mathbf{\\tuple{ 2,2 }} & \\tuple{ 2,3 } & \\ldots\\\\\n  \\tuple{ 3,0 } & \\tuple{ 3,1 } & \\tuple{ 3,2 } &\n    \\mathbf{\\tuple{ 3,3 }} & \\ldots\\\\\n  \\vdots & \\vdots & \\vdots & \\vdots & \\mathbf{\\ddots}\n  \\end{array}\n\\]\n",
+        "sha256": "faf7456c5227628f7f4314e3c2f6ac509b64748fc820ca17fb2863f76c14a67d"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{ex}\n  \\ollabel{relations}\nمجموعهٔ $\\Nat^{2}$ از زوج‌های اعداد طبیعی را می‌توان در یک ماتریس\nدوبعدی چنین فهرست کرد:\n\\[\n  \\begin{array}{ccccc}\n  \\mathbf{\\tuple{ 0,0 }} & \\tuple{ 0,1 } &\n    \\tuple{ 0,2 } & \\tuple{ 0,3 } & \\ldots\\\\\n  \\tuple{ 1,0 } & \\mathbf{\\tuple{ 1,1 }} &\n    \\tuple{ 1,2 } & \\tuple{ 1,3 } & \\ldots\\\\\n  \\tuple{ 2,0 } & \\tuple{ 2,1 } &\n    \\mathbf{\\tuple{ 2,2 }} & \\tuple{ 2,3 } & \\ldots\\\\\n  \\tuple{ 3,0 } & \\tuple{ 3,1 } & \\tuple{ 3,2 } &\n    \\mathbf{\\tuple{ 3,3 }} & \\ldots\\\\\n  \\vdots & \\vdots & \\vdots & \\vdots & \\mathbf{\\ddots}\n  \\end{array}\n\\]\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Diagonal identity and general identity notation",
+      "canon": [
+        "FA-OL-CANON-0003:P0014",
+        "FA-OL-CANON-0005:P0090"
+      ],
+      "rationale": "The diagonal is exactly equality of the two coordinates; the listed pairs and general Id(A) formula remain unchanged. رابطهٔ همانی is retained as a descriptive established-edition variant, while the consulted C14 page explicitly says رابطه‌ی تساوی. No identity function with a separate codomain structure is imposed.",
+      "alternatives": "رابطه‌ی تساوی is directly witnessed; the exact compound همانی is not attested on the selected pages.",
+      "question": "Keep the glossary distinction between a diagonal relation and an identity function clear when later function sections are reviewed.",
+      "confidence": 2,
+      "confidence_reason": "The mathematical object is exact; the selected pages attest the equality-relation variant rather than the precise noun همانی.",
+      "id": "FA-0012-C08",
+      "unit": "OLP-0012",
+      "source": {
+        "char_start": 3171,
+        "char_end_exclusive": 3515,
+        "line_start": 78,
+        "line_end": 85,
+        "text": "We have put the diagonal, here, in bold, since the subset of $\\Nat^2$\nconsisting of the pairs lying on the diagonal, i.e.,\n\\[\n  \\{\\tuple{0,0 }, \\tuple{ 1,1 }, \\tuple{ 2,2 }, \\dots\\},\n  \\]\nis the \\emph{identity relation on}~$\\Nat$. (Since the identity\nrelation is popular, let's define $\\Id{A}=\\Setabs{\\tuple{ x,x }}{x \\in\nA}$ for any set $A$.) ",
+        "sha256": "3ad4bbfdd5d45e63058e0e6989f79e73cc1411cc1c50826d92bb6d73bd2f6161"
+      },
+      "target_before": {
+        "char_start": 3106,
+        "char_end_exclusive": 3426,
+        "line_start": 78,
+        "line_end": 85,
+        "text": "در اینجا درایه‌های روی قطر را پررنگ نوشته‌ایم، زیرا زیرمجموعهٔ\n$\\Nat^2$ متشکل از زوج‌های روی قطر، یعنی\n\\[\n  \\{\\tuple{0,0 }, \\tuple{ 1,1 }, \\tuple{ 2,2 }, \\dots\\},\n  \\]\n\\emph{رابطهٔ همانی روی}~$\\Nat$ است. (از آنجا که رابطهٔ همانی\nپرکاربرد است، تعریف می‌کنیم $\\Id{A}=\\Setabs{\\tuple{ x,x }}{x \\in A}$\nبرای هر مجموعهٔ $A$.) ",
+        "sha256": "ef06d80465585603c38638a5efa2bbf8b72f6c80861ea04f3049f0c0b2ba0646"
+      },
+      "target_after": {
+        "char_start": 3113,
+        "char_end_exclusive": 3433,
+        "line_start": 78,
+        "line_end": 85,
+        "text": "در اینجا درایه‌های روی قطر را پررنگ نوشته‌ایم، زیرا زیرمجموعهٔ\n$\\Nat^2$ متشکل از زوج‌های روی قطر، یعنی\n\\[\n  \\{\\tuple{0,0 }, \\tuple{ 1,1 }, \\tuple{ 2,2 }, \\dots\\},\n  \\]\n\\emph{رابطهٔ همانی روی}~$\\Nat$ است. (از آنجا که رابطهٔ همانی\nپرکاربرد است، تعریف می‌کنیم $\\Id{A}=\\Setabs{\\tuple{ x,x }}{x \\in A}$\nبرای هر مجموعهٔ $A$.) ",
+        "sha256": "ef06d80465585603c38638a5efa2bbf8b72f6c80861ea04f3049f0c0b2ba0646"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "در اینجا درایه‌های روی قطر را پررنگ نوشته‌ایم، زیرا زیرمجموعهٔ\n$\\Nat^2$ متشکل از زوج‌های روی قطر، یعنی\n\\[\n  \\{\\tuple{0,0 }, \\tuple{ 1,1 }, \\tuple{ 2,2 }, \\dots\\},\n  \\]\n\\emph{رابطهٔ همانی روی}~$\\Nat$ است. (از آنجا که رابطهٔ همانی\nپرکاربرد است، تعریف می‌کنیم $\\Id{A}=\\Setabs{\\tuple{ x,x }}{x \\in A}$\nبرای هر مجموعهٔ $A$.) ",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Above-diagonal strict less-than",
+      "canon": [
+        "FA-OL-CANON-0003:P0023",
+        "FA-OL-CANON-0005:P0090"
+      ],
+      "rationale": "For the printed matrix, above-diagonal positions have row n less than column m. Every explicit L pair satisfies that criterion. کوچک‌تر از preserves the direction and strict inequality. No RTL mirroring of the mathematical array is authorized.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The exact source content and relevant native mathematical passage were compared; remaining limitations are stated in the rationale.",
+      "id": "FA-0012-C09",
+      "unit": "OLP-0012",
+      "source": {
+        "char_start": 3515,
+        "char_end_exclusive": 3755,
+        "line_start": 85,
+        "line_end": 91,
+        "text": "The subset of all pairs lying above the\ndiagonal, i.e.,\n\\[\n  L = \\{\\tuple{ 0,1 },\\tuple{ 0,2 },\\ldots,\\tuple{ 1,2 },\n  \\tuple{ 1,3 }, \\dots, \\tuple{ 2,3 }, \\tuple{ 2,4 },\\ldots\\},\n\\]\nis the \\emph{less than} relation, i.e., $Lnm$ iff $n<m$. ",
+        "sha256": "6c2c7caf39aaaa6a3e19d38c060fd6df8c1f7baba1bfec4ec08579fc87d85717"
+      },
+      "target_before": {
+        "char_start": 3426,
+        "char_end_exclusive": 3656,
+        "line_start": 85,
+        "line_end": 92,
+        "text": "زیرمجموعهٔ همهٔ زوج‌های\nبالای قطر، یعنی\n\\[\n  L = \\{\\tuple{ 0,1 },\\tuple{ 0,2 },\\ldots,\\tuple{ 1,2 },\n  \\tuple{ 1,3 }, \\dots, \\tuple{ 2,3 }, \\tuple{ 2,4 },\\ldots\\},\n\\]\nرابطهٔ \\emph{کوچک‌تر از} است؛ یعنی $Lnm$ اگر و تنها اگر $n<m$.\n",
+        "sha256": "399c5d1f62ae07ed089172bf94335d08fb18cd298513bb6874dff1288c5f238e"
+      },
+      "target_after": {
+        "char_start": 3433,
+        "char_end_exclusive": 3663,
+        "line_start": 85,
+        "line_end": 92,
+        "text": "زیرمجموعهٔ همهٔ زوج‌های\nبالای قطر، یعنی\n\\[\n  L = \\{\\tuple{ 0,1 },\\tuple{ 0,2 },\\ldots,\\tuple{ 1,2 },\n  \\tuple{ 1,3 }, \\dots, \\tuple{ 2,3 }, \\tuple{ 2,4 },\\ldots\\},\n\\]\nرابطهٔ \\emph{کوچک‌تر از} است؛ یعنی $Lnm$ اگر و تنها اگر $n<m$.\n",
+        "sha256": "399c5d1f62ae07ed089172bf94335d08fb18cd298513bb6874dff1288c5f238e"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "زیرمجموعهٔ همهٔ زوج‌های\nبالای قطر، یعنی\n\\[\n  L = \\{\\tuple{ 0,1 },\\tuple{ 0,2 },\\ldots,\\tuple{ 1,2 },\n  \\tuple{ 1,3 }, \\dots, \\tuple{ 2,3 }, \\tuple{ 2,4 },\\ldots\\},\n\\]\nرابطهٔ \\emph{کوچک‌تر از} است؛ یعنی $Lnm$ اگر و تنها اگر $n<m$.\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Below-diagonal strict greater-than",
+      "canon": [
+        "FA-OL-CANON-0003:P0023",
+        "FA-OL-CANON-0005:P0090"
+      ],
+      "rationale": "Every explicit G pair has first coordinate greater than second. The Persian بزرگ‌تر از and the Gnm iff n>m clause match. Above and below refer to the unchanged array, not text flow.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The exact source content and relevant native mathematical passage were compared; remaining limitations are stated in the rationale.",
+      "id": "FA-0012-C10",
+      "unit": "OLP-0012",
+      "source": {
+        "char_start": 3755,
+        "char_end_exclusive": 3973,
+        "line_start": 91,
+        "line_end": 97,
+        "text": "The subset of\npairs below the diagonal, i.e.,\n\\[\n  G=\\{ \\tuple{ 1,0 },\\tuple{ 2,0 },\\tuple{\n    2,1 }, \\tuple{ 3,0 },\\tuple{ 3,1 },\\tuple{ 3,2 }, \\dots\\},\n\\]\nis the \\emph{greater than} relation, i.e., $Gnm$ iff $n>m$. ",
+        "sha256": "f4089984db0b4677b2b18c46b52f7e3917b4fea23f4720ac3c79a7b840424038"
+      },
+      "target_before": {
+        "char_start": 3656,
+        "char_end_exclusive": 3866,
+        "line_start": 92,
+        "line_end": 98,
+        "text": "زیرمجموعهٔ زوج‌های پایین قطر، یعنی\n\\[\n  G=\\{ \\tuple{ 1,0 },\\tuple{ 2,0 },\\tuple{\n    2,1 }, \\tuple{ 3,0 },\\tuple{ 3,1 },\\tuple{ 3,2 }, \\dots\\},\n\\]\nرابطهٔ \\emph{بزرگ‌تر از} است؛ یعنی $Gnm$ اگر و تنها اگر $n>m$.\n",
+        "sha256": "b8ed6402fb6a2b4708e883028d3bee95b120f05b6bc5b3d480551b1f78e780f8"
+      },
+      "target_after": {
+        "char_start": 3663,
+        "char_end_exclusive": 3873,
+        "line_start": 92,
+        "line_end": 98,
+        "text": "زیرمجموعهٔ زوج‌های پایین قطر، یعنی\n\\[\n  G=\\{ \\tuple{ 1,0 },\\tuple{ 2,0 },\\tuple{\n    2,1 }, \\tuple{ 3,0 },\\tuple{ 3,1 },\\tuple{ 3,2 }, \\dots\\},\n\\]\nرابطهٔ \\emph{بزرگ‌تر از} است؛ یعنی $Gnm$ اگر و تنها اگر $n>m$.\n",
+        "sha256": "b8ed6402fb6a2b4708e883028d3bee95b120f05b6bc5b3d480551b1f78e780f8"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "زیرمجموعهٔ زوج‌های پایین قطر، یعنی\n\\[\n  G=\\{ \\tuple{ 1,0 },\\tuple{ 2,0 },\\tuple{\n    2,1 }, \\tuple{ 3,0 },\\tuple{ 3,1 },\\tuple{ 3,2 }, \\dots\\},\n\\]\nرابطهٔ \\emph{بزرگ‌تر از} است؛ یعنی $Gnm$ اگر و تنها اگر $n>m$.\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Weak orders: disclose what I denotes",
+      "canon": [
+        "FA-OL-CANON-0003:P0014",
+        "FA-OL-CANON-0003:P0023",
+        "FA-OL-CANON-0005:P0090"
+      ],
+      "rationale": "The frozen source defines the diagonal and Id(A) but then uses bare I in two unions without explicitly assigning that name. Add a visibly labelled editorial footnote at its first occurrence: I is that same natural-number diagonal identity relation. Keep all original formulas, including K=L union I and H=G union I, in the same order. This is notation clarification, not a claimed transcription error or a source silently rewritten.",
+      "alternatives": "Leaving I wholly implicit obscures the example. Replacing every I by Id(Nat) would alter the frozen formulas; the annotation preserves them.",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The exact source content and relevant native mathematical passage were compared; remaining limitations are stated in the rationale.",
+      "id": "FA-0012-C11",
+      "unit": "OLP-0012",
+      "source": {
+        "char_start": 3973,
+        "char_end_exclusive": 4173,
+        "line_start": 97,
+        "line_end": 100,
+        "text": "The union\nof $L$ with $I$, which we might call $K=L\\cup I$, is the \\emph{less\nthan or equal to} relation: $Knm$ iff $n \\le m$. Similarly, $H=G \\cup\nI$ is the \\emph{greater than or equal to relation.} ",
+        "sha256": "1a3203cd2231adcb77a83d8fced9a267f5203cf2ec052e41fac15caadf7598ac"
+      },
+      "target_before": {
+        "char_start": 3866,
+        "char_end_exclusive": 4063,
+        "line_start": 98,
+        "line_end": 100,
+        "text": "اجتماع $L$ با $I$ را که می‌توانیم آن را $K=L\\cup I$ بنامیم، رابطهٔ\n\\emph{کوچک‌تر یا مساوی} می‌نامیم: $Knm$ اگر و تنها اگر $n \\le m$.\nبه همین ترتیب، $H=G \\cup I$ \\emph{رابطهٔ بزرگ‌تر یا مساوی} است. ",
+        "sha256": "02e2e048275782e0e13998e0067c818025698d9d3455dbf6e4931a962ad633b0"
+      },
+      "target_after": {
+        "char_start": 3873,
+        "char_end_exclusive": 4246,
+        "line_start": 98,
+        "line_end": 100,
+        "text": "اجتماع $L$ با $I$\\footnote{یادداشت ویراستاری: منظور از این نماد، همان رابطهٔ همانی روی اعداد طبیعی است که از زوج‌های روی قطر تشکیل می‌شود؛ متن مبدأ در این مثال این نام‌گذاری را صریح نکرده است.} را که می‌توانیم آن را $K=L\\cup I$ بنامیم، رابطهٔ\n\\emph{کوچک‌تر یا مساوی} می‌نامیم: $Knm$ اگر و تنها اگر $n \\le m$.\nبه همین ترتیب، $H=G \\cup I$ \\emph{رابطهٔ بزرگ‌تر یا مساوی} است. ",
+        "sha256": "47501c50667aa5755e985f8dc4c983bca34967293889527254e2a0e6a8f867b9"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "اجتماع $L$ با $I$\\footnote{یادداشت ویراستاری: منظور از این نماد، همان رابطهٔ همانی روی اعداد طبیعی است که از زوج‌های روی قطر تشکیل می‌شود؛ متن مبدأ در این مثال این نام‌گذاری را صریح نکرده است.} را که می‌توانیم آن را $K=L\\cup I$ بنامیم، رابطهٔ\n\\emph{کوچک‌تر یا مساوی} می‌نامیم: $Knm$ اگر و تنها اگر $n \\le m$.\nبه همین ترتیب، $H=G \\cup I$ \\emph{رابطهٔ بزرگ‌تر یا مساوی} است. ",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Irreflexive versus not reflexive; strict orders",
+      "canon": [
+        "FA-OL-CANON-0003:P0023"
+      ],
+      "rationale": "Keep the broader OLP orders category for L,G,K,H even though C23 initially defines orders strictly. Change غیربازتابی to پادبازتابی, attested beside forall x not xrx. The source says no number bears the relation to itself, not merely that at least one number lacks a loop. ترتیب اکید is a transparent retained edition term for the strict case; the exact compound is not on this canon page.",
+      "alternatives": "Merely not reflexive means existence of a missing diagonal pair; a relation with one present and one absent loop is not reflexive but is not irreflexive.",
+      "question": "Future property definitions should use the same پادبازتابی distinction; verify exact اکید usage in the later order canon rather than inventing an attestation.",
+      "confidence": 3,
+      "confidence_reason": "The native term and its explicit universal formula exactly match the source; the retained strict-order compound has a separately disclosed lexical limit.",
+      "id": "FA-0012-C12",
+      "unit": "OLP-0012",
+      "source": {
+        "char_start": 4173,
+        "char_end_exclusive": 4530,
+        "line_start": 100,
+        "line_end": 108,
+        "text": "These relations\n$L$, $G$, $K$, and $H$ are special kinds of relations called\n\\emph{orders}. $L$ and $G$ have the property that no number bears $L$\nor $G$ to itself (i.e., for all $n$, neither $Lnn$ nor $Gnn$).\nRelations with this property are called \\emph{irreflexive}, and, if\nthey also happen to be orders, they are called \\emph{strict orders.}\n\\end{ex}\n\n",
+        "sha256": "9e8a8d8962fdf2db64fd04a38134478a21b54408772301b8058dd84f88dff1a2"
+      },
+      "target_before": {
+        "char_start": 4063,
+        "char_end_exclusive": 4403,
+        "line_start": 100,
+        "line_end": 108,
+        "text": "این\nروابط $L$، $G$، $K$ و $H$ انواع خاصی از روابط‌اند که \\emph{ترتیب}\nنامیده می‌شوند. $L$ و $G$ این ویژگی را دارند که هیچ عددی با خودش در\nرابطهٔ $L$ یا $G$ نیست (یعنی برای هر $n$، نه $Lnn$ برقرار است و نه\n$Gnn$). روابط دارای این ویژگی \\emph{غیربازتابی} نامیده می‌شوند و اگر\nدرعین‌حال ترتیب نیز باشند، \\emph{ترتیب اکید} نام دارند.\n\\end{ex}\n\n",
+        "sha256": "05864739173302d05a5ba7341ed8c22de4119c1e653ee2c9ce889d102bee9a34"
+      },
+      "target_after": {
+        "char_start": 4246,
+        "char_end_exclusive": 4586,
+        "line_start": 100,
+        "line_end": 108,
+        "text": "این\nروابط $L$، $G$، $K$ و $H$ انواع خاصی از روابط‌اند که \\emph{ترتیب}\nنامیده می‌شوند. $L$ و $G$ این ویژگی را دارند که هیچ عددی با خودش در\nرابطهٔ $L$ یا $G$ نیست (یعنی برای هر $n$، نه $Lnn$ برقرار است و نه\n$Gnn$). روابط دارای این ویژگی \\emph{پادبازتابی} نامیده می‌شوند و اگر\nدرعین‌حال ترتیب نیز باشند، \\emph{ترتیب اکید} نام دارند.\n\\end{ex}\n\n",
+        "sha256": "aca7ff21309ad647fab32cca0dd86c1eed01c96330c8067fe8597bf770e5a47b"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "این\nروابط $L$، $G$، $K$ و $H$ انواع خاصی از روابط‌اند که \\emph{ترتیب}\nنامیده می‌شوند. $L$ و $G$ این ویژگی را دارند که هیچ عددی با خودش در\nرابطهٔ $L$ یا $G$ نیست (یعنی برای هر $n$، نه $Lnn$ برقرار است و نه\n$Gnn$). روابط دارای این ویژگی \\emph{پادبازتابی} نامیده می‌شوند و اگر\nدرعین‌حال ترتیب نیز باشند، \\emph{ترتیب اکید} نام دارند.\n\\end{ex}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Arbitrary, empty and universal relations",
+      "canon": [
+        "FA-OL-CANON-0003:P0014",
+        "FA-OL-CANON-0005:P0090",
+        "FA-OL-CANON-0003:P0023"
+      ],
+      "rationale": "The definition permits every subset, not just natural-looking or definable relations. Empty relation contains no ordered pairs; universal relation contains every pair of A elements. Preserve the final contrived number-relation formula and its disjunction یا. Its n,m inherit the number-example context; no new all-sets domain is asserted. The exact compounds رابطهٔ تهی and رابطهٔ جهان‌شمول are descriptive retained variants not attested on these selected pages.",
+      "alternatives": "Conflating the universal relation with an all-sets membership relation would be wrong.",
+      "question": "A fuller relation-specific terminology canon may supply exact empty/universal compounds. Keep these semantic matches provisional without claiming exact lexical attestation.",
+      "confidence": 2,
+      "confidence_reason": "Definitions and domain scope are exact; the selected scholarly passages do not directly witness all three compound labels.",
+      "id": "FA-0012-C13",
+      "unit": "OLP-0012",
+      "source": {
+        "char_start": 4530,
+        "char_end_exclusive": 5125,
+        "line_start": 108,
+        "line_end": 120,
+        "text": "\\begin{explain}\nAlthough orders and identity are important and natural relations, it\nshould be emphasized that according to our definition \\emph{any}\nsubset of $A^{2}$ is a relation on~$A$, regardless of how unnatural or\ncontrived it seems. In particular, $\\emptyset$ is a relation on any\nset (the \\emph{empty relation}, which no pair of elements bears), and\n$A^{2}$~itself is a relation on~$A$ as well (one which every pair\nbears), called the \\emph{universal relation}. But also something like\n$E=\\Setabs{\\tuple{n, m}}{n>5 \\text{ or } m \\times n \\ge 34}$ counts as\na relation.\n\\end{explain}\n  \n",
+        "sha256": "3dbe64d55d46b5dca714afb6196d02e74570967c5445309b13f0556666406761"
+      },
+      "target_before": {
+        "char_start": 4403,
+        "char_end_exclusive": 4929,
+        "line_start": 108,
+        "line_end": 119,
+        "text": "\\begin{explain}\nگرچه ترتیب‌ها و رابطهٔ همانی روابطی مهم و طبیعی‌اند، باید تأکید کرد\nکه بنا بر تعریف ما، \\emph{هر} زیرمجموعهٔ $A^{2}$ رابطه‌ای روی~$A$ است،\nهرقدر هم غیرطبیعی یا ساختگی به نظر برسد. به‌ویژه، $\\emptyset$ روی هر\nمجموعه‌ای یک رابطه است (\\emph{رابطهٔ تهی} که هیچ زوجی آن را ندارد)،\nو خودِ~$A^{2}$ نیز رابطه‌ای روی~$A$ است (رابطه‌ای که هر زوجی آن را\nدارد) و \\emph{رابطهٔ جهان‌شمول} نامیده می‌شود. حتی چیزی مانند\n$E=\\Setabs{\\tuple{n, m}}{n>5 \\text{ یا } m \\times n \\ge 34}$ نیز یک\nرابطه به شمار می‌آید.\n\\end{explain}\n\n",
+        "sha256": "ce945d5c98254237fd1f4c18578637e0efbfd9f46bad9d44a6a7ca9c5cad6814"
+      },
+      "target_after": {
+        "char_start": 4586,
+        "char_end_exclusive": 5112,
+        "line_start": 108,
+        "line_end": 119,
+        "text": "\\begin{explain}\nگرچه ترتیب‌ها و رابطهٔ همانی روابطی مهم و طبیعی‌اند، باید تأکید کرد\nکه بنا بر تعریف ما، \\emph{هر} زیرمجموعهٔ $A^{2}$ رابطه‌ای روی~$A$ است،\nهرقدر هم غیرطبیعی یا ساختگی به نظر برسد. به‌ویژه، $\\emptyset$ روی هر\nمجموعه‌ای یک رابطه است (\\emph{رابطهٔ تهی} که هیچ زوجی آن را ندارد)،\nو خودِ~$A^{2}$ نیز رابطه‌ای روی~$A$ است (رابطه‌ای که هر زوجی آن را\nدارد) و \\emph{رابطهٔ جهان‌شمول} نامیده می‌شود. حتی چیزی مانند\n$E=\\Setabs{\\tuple{n, m}}{n>5 \\text{ یا } m \\times n \\ge 34}$ نیز یک\nرابطه به شمار می‌آید.\n\\end{explain}\n\n",
+        "sha256": "ce945d5c98254237fd1f4c18578637e0efbfd9f46bad9d44a6a7ca9c5cad6814"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{explain}\nگرچه ترتیب‌ها و رابطهٔ همانی روابطی مهم و طبیعی‌اند، باید تأکید کرد\nکه بنا بر تعریف ما، \\emph{هر} زیرمجموعهٔ $A^{2}$ رابطه‌ای روی~$A$ است،\nهرقدر هم غیرطبیعی یا ساختگی به نظر برسد. به‌ویژه، $\\emptyset$ روی هر\nمجموعه‌ای یک رابطه است (\\emph{رابطهٔ تهی} که هیچ زوجی آن را ندارد)،\nو خودِ~$A^{2}$ نیز رابطه‌ای روی~$A$ است (رابطه‌ای که هر زوجی آن را\nدارد) و \\emph{رابطهٔ جهان‌شمول} نامیده می‌شود. حتی چیزی مانند\n$E=\\Setabs{\\tuple{n, m}}{n>5 \\text{ یا } m \\times n \\ge 34}$ نیز یک\nرابطه به شمار می‌آید.\n\\end{explain}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Power-set inclusion exercise",
+      "canon": [
+        "FA-OL-CANON-0003:P0010",
+        "FA-OL-CANON-0005:P0090"
+      ],
+      "rationale": "Retain the exercise, inclusive subset relation and full power-set argument. Its elements are ordered pairs of subsets, not simply the three alphabet objects. C10 supplies subset direction and F90 supplies products/power sets. The private deterministic check obtains 27 qualifying pairs for three distinct symbols; this does not insert a solution into the reader.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The exact source content and relevant native mathematical passage were compared; remaining limitations are stated in the rationale.",
+      "id": "FA-0012-C14",
+      "unit": "OLP-0012",
+      "source": {
+        "char_start": 5125,
+        "char_end_exclusive": 5236,
+        "line_start": 120,
+        "line_end": 125,
+        "text": "\\begin{prob}\n  List the !!{element}s of the relation $\\subseteq$ on the set\n  $\\Pow{\\{a, b, c\\}}$.\n\\end{prob}\n\n",
+        "sha256": "a3328d1437c57b5edbd0edbdcbd34269bd6b12226934d671d0f4a050f3e721e0"
+      },
+      "target_before": {
+        "char_start": 4929,
+        "char_end_exclusive": 5037,
+        "line_start": 119,
+        "line_end": 124,
+        "text": "\\begin{prob}\n  !!{element}s رابطهٔ $\\subseteq$ روی مجموعهٔ\n  $\\Pow{\\{a, b, c\\}}$ را فهرست کنید.\n\\end{prob}\n\n",
+        "sha256": "7c8dfe6667f8fdf708b4d494e9132bcd702b4b4aac8ac2bf3082c5c34c9df408"
+      },
+      "target_after": {
+        "char_start": 5112,
+        "char_end_exclusive": 5220,
+        "line_start": 119,
+        "line_end": 124,
+        "text": "\\begin{prob}\n  !!{element}s رابطهٔ $\\subseteq$ روی مجموعهٔ\n  $\\Pow{\\{a, b, c\\}}$ را فهرست کنید.\n\\end{prob}\n\n",
+        "sha256": "7c8dfe6667f8fdf708b4d494e9132bcd702b4b4aac8ac2bf3082c5c34c9df408"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{prob}\n  اعضا رابطهٔ $\\subseteq$ روی مجموعهٔ\n  $\\Pow{\\{a, b, c\\}}$ را فهرست کنید.\n\\end{prob}\n\n",
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 15,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        }
+      ]
+    }
+  ],
+  "corrections": [
+    {
+      "unit": "OLP-0010",
+      "id": "FA0010-EXTENSIONALITY-PROSE",
+      "before": "بااین‌حال، تمام آنچه اصل گسترش \\emph{در واقع} مجاز می‌سازد، فقط\nاندیشهٔ زیر است.",
+      "after": "بااین‌حال، اصل گسترش \\emph{در واقع} فقط گزارهٔ زیر را\nتضمین می‌کند."
+    },
+    {
+      "unit": "OLP-0010",
+      "id": "FA0010-THEOREM-SYNTAX",
+      "before": "هیچ مجموعه‌ای $R = \\Setabs{x}{x \\notin x}$ وجود ندارد.",
+      "after": "هیچ مجموعه‌ای به صورت $R = \\Setabs{x}{x \\notin x}$ وجود ندارد."
+    },
+    {
+      "unit": "OLP-0012",
+      "id": "FA0012-PAIR-COORDINATES",
+      "before": "ترتیب\nاعضا در اینجا",
+      "after": "ترتیب\nمؤلفه‌ها در اینجا"
+    },
+    {
+      "unit": "OLP-0012",
+      "id": "FA0012-BINARY-CANON",
+      "before": "\\begin{defn}[رابطهٔ دوتایی]\nیک \\emph{رابطهٔ دوتایی} روی مجموعهٔ $A$، زیرمجموعه‌ای از~$A^{2}$ است.\nاگر $R \\subseteq A^{2}$ رابطه‌ای دوتایی روی~$A$ باشد",
+      "after": "\\begin{defn}[رابطهٔ دوموضعی]\nیک \\emph{رابطهٔ دوموضعی} روی مجموعهٔ $A$، زیرمجموعه‌ای از~$A^{2}$ است.\nاگر $R \\subseteq A^{2}$ رابطه‌ای دوموضعی روی~$A$ باشد"
+    },
+    {
+      "unit": "OLP-0012",
+      "id": "FA0012-IDENTITY-BINDING",
+      "before": "اجتماع $L$ با $I$ را که می‌توانیم آن را $K=L\\cup I$ بنامیم، رابطهٔ",
+      "after": "اجتماع $L$ با $I$\\footnote{یادداشت ویراستاری: منظور از این نماد، همان رابطهٔ همانی روی اعداد طبیعی است که از زوج‌های روی قطر تشکیل می‌شود؛ متن مبدأ در این مثال این نام‌گذاری را صریح نکرده است.} را که می‌توانیم آن را $K=L\\cup I$ بنامیم، رابطهٔ"
+    },
+    {
+      "unit": "OLP-0012",
+      "id": "FA0012-IRREFLEXIVE",
+      "before": "\\emph{غیربازتابی}",
+      "after": "\\emph{پادبازتابی}"
+    }
+  ],
+  "human_review_gate": false,
+  "reader_release": false
+}

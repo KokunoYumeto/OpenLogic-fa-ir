@@ -1,0 +1,22 @@
+{
+  "schema": "openlogic-source-clarification/1",
+  "id": "OLP-0012-IMPLICIT-IDENTITY",
+  "source_commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "source_path": "content/sets-functions-relations/relations/relations-as-sets.tex",
+  "source_bytes": 5251,
+  "source_sha256": "2a67c6fb4846155e8e7cd8172fd1fb8214db96d508ceae5d70dec95d5dfcc1ff",
+  "config": {
+    "path": "open-logic-config.sty",
+    "bytes": 50435,
+    "sha256": "76af3674c68139572b71de9908d690700cd7e324d221d649930ecda020935724",
+    "line_1based": 1006,
+    "declaration": "\\DeclareDocumentCommand \\Id { m } {\\mathord{\\mathrm{Id}_{#1}}}"
+  },
+  "finding": "In this frozen example, bare I is not explicitly named as the natural-number diagonal before its use in the weak-order unions. Id(A) expands to roman Id with subscript A, not bare I. This is a locally implicit notation transition, not a claim of a false theorem or scan-transcription error.",
+  "proof": "Let D be the diagonal. L union I = L union D implies D subset I subset L union D. G union I = G union D also implies I subset G union D. Intersecting gives I=D because L and G are disjoint off the diagonal. Either union alone does not uniquely determine I.",
+  "remedy": "Visible Persian editorial footnote after first I identifying that same diagonal. Scope explicitly limited to this example; all source formulas preserved.",
+  "independent_review": "A bounded independent source/semantic review confirmed the prospective note and negative controls; manager separately verified this configuration declaration and actual final candidate formulas.",
+  "upstream_issue_sent": false,
+  "transcription_error_claim": false,
+  "whole_corpus_audited": false
+}
