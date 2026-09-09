@@ -1,0 +1,40 @@
+{
+  "scope": "All relations on domains of size 0 to 3; residues modulo 1 to 8. Finite checks support written arguments, not universal proof or linguistic certification.",
+  "finite_cases": [
+    {
+      "domain_size": 0,
+      "relations": 1,
+      "equivalence_relations": 1
+    },
+    {
+      "domain_size": 1,
+      "relations": 2,
+      "equivalence_relations": 1
+    },
+    {
+      "domain_size": 2,
+      "relations": 16,
+      "equivalence_relations": 2
+    },
+    {
+      "domain_size": 3,
+      "relations": 512,
+      "equivalence_relations": 5
+    }
+  ],
+  "context_checks": {
+    "irreflexive-heading": true,
+    "irreflexive-definition": true,
+    "no-inconsistent-irreflexive-term": true,
+    "no-discretionary-Persian-hyphenation": true,
+    "connectivity-explanation": true,
+    "mixed-diagonal-domain-qualification": true,
+    "second-existence-condition-independent": true,
+    "scope-additions-explicit": true,
+    "no-text-mode-variable-hack": true,
+    "two-counted-element-variables": true,
+    "singular-counted-noun": true,
+    "no-n-plus-plural": true,
+    "modulus-positive-and-domain-disclosed": true
+  }
+}

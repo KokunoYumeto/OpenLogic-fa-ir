@@ -1,0 +1,11 @@
+{
+  "schema": "openlogic-manager-review-supersession/1",
+  "status": "superseded",
+  "superseded_review_commit": "1f2ed7ef4bf4fa18836aac0e96a2e3b8bbdc650a",
+  "superseded_review_path": "evidence/manager-canon-review/OLP-0013-0015",
+  "replacement_review_path": "evidence/manager-canon-review/OLP-0013-0015-r2",
+  "instruction": "Use the corrected successor's complete candidate overlay, not the original five declarations. The original review and its PASS are retained as historical evidence, not current semantic acceptance.",
+  "reason": "The manager review contained inconsistent irreflexivity wording, overstated canon attestation, incorrect counted-noun handling, undisclosed scope changes and a vacuous semantic check.",
+  "reader_release_changed": false,
+  "public_access_reduced": false
+}

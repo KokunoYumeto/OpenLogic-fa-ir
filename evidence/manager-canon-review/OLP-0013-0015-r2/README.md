@@ -1,8 +1,6 @@
-> **Superseded manager review.** Its original PASS did not justify all claims. Do not apply this version's overlay: use the [corrected review and integration candidates](../OLP-0013-0015-r2/README.md). The original evidence below is preserved for provenance. Existing reader editions were not changed.
-
 # Persian OpenLogic: philosophical reflections and relation properties
 
-Retrospective full source/canon review of OLP-0013, OLP-0014 and OLP-0015. Generated candidates are additive review evidence, not a new reader. Original translation-time consultation is not asserted.
+Corrected retrospective source/canon review of OLP-0013 through OLP-0015. Supersedes the defective manager review at 1f2ed7ef4bf4fa18836aac0e96a2e3b8bbdc650a, not an owner reader. In particular, the old PASS did not establish linguistic correctness: its irreflexivity change was inconsistent, the connectivity attestation was false, and one test was vacuous. These are additive integration candidates; all original-translation consultation and whole-edition certification remain unclaimed. Exact attestations, contextual inferences and provisional choices are distinguished below.
 
 ## Review priorities
 
@@ -14,10 +12,16 @@ Retrospective full source/canon review of OLP-0013, OLP-0014 and OLP-0015. Gener
 
 ## Scholarly pages actually consulted
 
-- FA-PH-QOM-P006, PDF 6, printed 78: Section 2, object/function and sentence-value discussion. The page uses عین (object) in a discussion of sentence content and contrasts concepts/functions with objects. It supports philosophical research register, not a complete universal glossary of singular terms.
+- نظریهٔ مجموعه‌ها; محسن خانی, افشین زارعی; دانشگاه صنعتی اصفهان. [Source](https://khani.iut.ac.ir/sites/khani.iut.ac.ir/files//u145/jozve-kamel.pdf). PDF SHA-256: dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04. Canon PDFs are privately retained, not redistributed.
+- ریاضیات گسسته و کاربردها; علیرضا غفاری حدیقه, مگردیچ تومانیان; مؤسسه چاپ و انتشارات دانشگاه جامع امام حسین (ع). [Source](https://hadigheha.github.io/books/teaching/Textbooks/Tarkibiyat.pdf). PDF SHA-256: 8f79c45a926c1cea819c4fefa86383f2a65ae23b1d526baaf99cf2506bb9f317. Canon PDFs are privately retained, not redistributed.
+- تفسیر هستی‌شناختی از عینیت اندیشه نزد فرگه; محمدرضا قربانی, موسی اکرمی; University of Qom, Philosophical-Theological Research 14(1). [Source](https://pfk.qom.ac.ir/article_83_cd0efb6a18ff24d85acdc8842cba1f3d.pdf). PDF SHA-256: 9c5648cbdee48e823469dea0320d0da5422284c78cac9eb506c43b5222e2bcf4. Canon PDFs are privately retained, not redistributed.
+- FA-OL-CANON-0003:P0023, PDF 23, printed 22: Chapter 2 definition 1, strict orders and comparability. The explicit universal not-xrx formula attests irreflexivity. Strict-order terminology here must not replace the nonstrict partial-order convention in the other canon.
+- FA-OL-CANON-0003:P0024, PDF 24, printed 23: Definition 5, isomorphism. Counted noun after two is singular; element labels x and y do not imply distinctness without a separate distinctness condition.
+- FA-OL-CANON-0003:P0062, PDF 62, printed 61: Ramsey chapter introduction. Cardinality constructions use a singular noun stem. This supports contextual singular عضو after n, not deleting genuine uncounted plurals.
+- FA-PH-QOM-P006, PDF 6, printed 78: Section 2, object/function and sentence-value discussion. The page contrasts naming an object with making a judgment and uses محمول near the bottom. It supports name/judgment/predicate distinctions; a function/object contrast belongs to page 7, not this passage.
 - FA-PH-QOM-P007, PDF 7, printed 79: Section 3 opening, proper names and concepts. The page explicitly calls Socrates a proper name and discusses removing a proper name to obtain a function/concept; it supports the target’s predicate/singular-term discussion without proving that every target phrase is a fixed technical term.
 - FA-PH-QOM-P009, PDF 9, printed 81: Object, sense and reference discussion. The page distinguishes sentence meaning/content and reference in Persian philosophical prose. It supports the target’s careful separation of relation representation from identity claims; it is not a general metaphysical identity theory.
-- FA-PH-QOM-P020, PDF 20, printed 92: Section 3, mathematical objects and objectivity. The page discusses mathematical objects and objectivity in a research register. It supports the conceptual framing of the target’s final discussion; it does not attest Benacerraf’s specific set-theoretic reduction argument.
+- FA-PH-QOM-P020, PDF 20, printed 92: Section 3, mathematical objects and objectivity. The page discusses mathematical objects (عین‌های ریاضی) and objectivity in a research register. It supports the conceptual framing of the target’s final discussion; it does not attest Benacerraf’s specific set-theoretic reduction argument.
 - FA-REL-P054, PDF 54, printed 44: Inverse relations and composition. Direct visual attestation of relation-operation exposition. It supports register and notation around relations, not the later property labels.
 - FA-REL-P055, PDF 55, printed 45: Binary relation properties and partial orders. Direct visual definitions give Rxx for reflexivity, Rxy and Ryz imply Rxz for transitivity, Rxy implies Ryx for symmetry, and both directions imply x=y for antisymmetry. The page uses تراگذری and پادمتقارن; it distinguishes partial order and comparability.
 - FA-REL-P056, PDF 56, printed 46: Equivalence relation definition and congruence example. Direct visual definition and modular-congruence example. It supports the exact equivalence terminology and the distinction among the three properties.
@@ -59,10 +63,10 @@ n < m}$ است که در \olref[set]{sec} تعریف کردیم.
 
 Alternatives: No material alternative recorded; none invented.
 
-## FA-0013-C02: Metaphysical identity of an order relation
+## FA-0013-C02: Three-reason transition
 
-Action: retain_after_fresh_review; confidence 3/3: The frozen source, existing Persian target and directly read Persian canon passage were compared; limits are stated explicitly.
-Canon: FA-PH-QOM-P009, FA-PH-QOM-P020.
+Action: retain_after_fresh_review; confidence 2/3: Direct source meaning and ordinary Persian explanatory syntax; contextual register evidence only.
+Canon: FA-PH-QOM-P009.
 
 Source:
 ```latex
@@ -76,7 +80,7 @@ Reviewed Persian:
 برای این تردید می‌آوریم.
 ```
 
-The target preserves the distinction between a representational set and a metaphysical identity claim. The philosophical canon supports this research register and the object/meaning discussion but does not establish a mathematical identity theorem.
+The transition announces the same three reasons for the preceding doubt. Page 9 supplies examples of connected scholarly argument; it does not directly attest this exact transition. The preceding identity discussion belongs to the previous segment, not this one.
 
 Alternatives: No material alternative recorded; none invented.
 
@@ -263,7 +267,7 @@ Reviewed Persian:
 روابطی (معین) را \emph{همچون} مجموعه‌هایی معین در نظر بگیریم.
 ```
 
-The ending says relations may be treated as sets in contexts without claiming metaphysical identity. This is the source’s conceptual conclusion, and the canon supports careful object/meaning framing. The transparent phrase روح حاکم بر این سخن remains a register choice, not a source-attested technical term.
+The ending says relations may be treated as sets in contexts without claiming metaphysical identity. This is the source’s conceptual conclusion; the canon supplies objectivity/register context, not an attestation of each metaphor. The transparent phrase روح حاکم بر این سخن remains a register choice, not a source-attested technical term.
 
 Alternatives: No material alternative recorded; none invented.
 
@@ -451,8 +455,8 @@ Alternatives: No material alternative recorded; none invented.
 
 ## FA-0014-C07: Connectivity/comparability
 
-Action: retain_after_fresh_review; confidence 3/3: The frozen source, existing Persian target and directly read Persian canon passage were compared; limits are stated explicitly.
-Canon: FA-REL-P055.
+Action: correct; confidence 2/3: The defining condition is exact; the selected canon supports the explanation, not the existing heading.
+Canon: FA-REL-P055, FA-OL-CANON-0003:P0023.
 
 Source:
 ```latex
@@ -467,12 +471,15 @@ Reviewed Persian:
 \begin{defn}[همبندی]
 رابطهٔ $R \subseteq A^2$ \emph{همبند} است اگر برای همهٔ $x,y\in
 A$، اگر $x \neq y$، آنگاه دست‌کم یکی از $Rxy$ و~$Ryx$ برقرار است.
+به بیان دیگر، هر دو عضو متمایز در دامنه با این رابطه مقایسه‌پذیرند.
 \end{defn}
 ```
 
-همبند is directly attested for comparability-style relation behavior. Preserve x neq y and at least one directed pair; do not import graph-path connectivity.
+Neither cited page attests همبند as the exact relation label. Page 55 uses مقایسه‌پذیر and page 23 قابل مقایسه in order contexts. Retain the existing label provisionally and add an explicit explanation: every two distinct elements are comparable in at least one direction. The condition is pairwise comparability, not a graph-path condition; do not import reflexivity or transitivity from the canon examples.
 
-Alternatives: No material alternative recorded; none invented.
+Alternatives: مقایسه‌پذیری is directly supported for the property; replacing the heading globally requires the later whole-lane terminology decision, not an unlogged substitution here.
+
+Expert-review question: Is همبندی with an explicit pairwise-comparability explanation appropriate as a local label, or should all occurrences adopt مقایسه‌پذیری?
 
 ## FA-0014-C08: Exercise domain restriction
 
@@ -506,7 +513,7 @@ Alternatives: No material alternative recorded; none invented.
 ## FA-0014-C09: Irreflexivity distinction
 
 Action: correct; confidence 3/3: The frozen source, existing Persian target and directly read Persian canon passage were compared; limits are stated explicitly.
-Canon: FA-REL-P055, FA-REL-P056.
+Canon: FA-OL-CANON-0003:P0023, FA-REL-P055.
 
 Source:
 ```latex
@@ -519,14 +526,14 @@ A$, not $Rxx$.
 Reviewed Persian:
 ```latex
 \begin{defn}[پادبازتابی‌بودن]
-رابطهٔ $R \subseteq A^2$ \emph{غیربازتابی} نامیده می‌شود اگر برای هر $x \in
+رابطهٔ $R \subseteq A^2$ \emph{پادبازتابی} نامیده می‌شود اگر برای هر $x \in
 A$، نه $Rxx$.
 \end{defn}
 ```
 
-The older Persian canon directly supports پادبازتابی for the universal not-Rxx condition; the new book confirms the surrounding property vocabulary but does not print this label. Replace the target’s غیربازتابی with پادبازتابی consistently.
+Khani/Zarei PDF 23 explicitly pairs پادبازتابی with universal not-xrx. Apply that term in the heading, definition and final paragraph. Its universal condition differs from merely failing reflexivity. Page 55 provides surrounding nonstrict relation labels, not this term.
 
-Alternatives: No material alternative recorded; none invented.
+Alternatives: غیربازتابی can be read as not reflexive; reject that ambiguity here. پادبازتابی is directly attested with the required universal formula.
 
 ## FA-0014-C10: Asymmetry
 
@@ -555,8 +562,8 @@ Alternatives: No material alternative recorded; none invented.
 
 ## FA-0014-C11: Final existence scope
 
-Action: correct; confidence 3/3: The frozen source, existing Persian target and directly read Persian canon passage were compared; limits are stated explicitly.
-Canon: FA-REL-P055.
+Action: correct; confidence 3/3: Definitions and the singleton counterexample establish the distinction; exhaustive finite checks test all relations on domains of size 0 through 3.
+Canon: FA-REL-P055, FA-OL-CANON-0003:P0023.
 
 Source:
 ```latex
@@ -571,14 +578,18 @@ Reviewed Persian:
 ```latex
 توجه کنید که اگر $A \neq \emptyset$، آنگاه هیچ رابطهٔ پادبازتابی
 روی~$A$ بازتابی نیست و هر رابطهٔ نامتقارن روی~$A$ پادمتقارن نیز هست.
-بااین‌حال، اگر مجموعهٔ A دست‌کم دو عضو داشته باشد، روابطی $R \subseteq A^2$
-وجود دارند که نه بازتابی‌اند و نه پادبازتابی، و روابط پادمتقارنی نیز
-وجود دارند که نامتقارن نیستند.
+بااین‌حال، اگر دامنه دست‌کم دو عضو داشته باشد، روابطی $R \subseteq A^2$
+وجود دارند که نه بازتابی‌اند و نه پادبازتابی. همچنین، روی هر دامنهٔ
+ناتهی رابطه‌ای پادمتقارن وجود دارد که نامتقارن نیست.
+\emph{یادداشت ویراستاری:} قید اندازهٔ دامنه برای روشن‌کردن ادعای متن مبدأ
+افزوده شده است؛ روی دامنهٔ تک‌عضوی هر رابطه یا بازتابی است یا پادبازتابی.
 ```
 
-The target corrects a local scope error: a relation that is neither reflexive nor irreflexive requires a domain with at least two elements; nonempty suffices only for the first two implications. The formulas and remaining claims are preserved. This is a mathematical/editorial correction, not an upstream transcription report.
+For a fixed singleton domain every relation is either reflexive or irreflexive. A mixed diagonal requires at least two elements, and choosing one diagonal pair supplies a witness on any such domain. Antisymmetric-but-not-asymmetric relations already exist on every nonempty domain (identity). Separate these two existence conditions and label the first qualification as an editorial addition; do not silently strengthen both claims.
 
-Alternatives: No material alternative recorded; none invented.
+Alternatives: A single common at-least-two-elements qualifier is mathematically sufficient but unnecessarily restricts the second claim. Bare text-mode A was introduced merely to satisfy a span test; replace it with the unambiguous phrase دامنه while retaining the original mathematical spans.
+
+Expert-review question: The editorial note is an explicit source-scope clarification, not a transcription correction; retain it when integrating.
 
 ## FA-0015-C01: Opening identity relation
 
@@ -609,7 +620,7 @@ Alternatives: No material alternative recorded; none invented.
 ## FA-0015-C02: Definition and singular element token
 
 Action: correct; confidence 3/3: The frozen source, existing Persian target and directly read Persian canon passage were compared; limits are stated explicitly.
-Canon: FA-REL-P056.
+Canon: FA-REL-P056, FA-OL-CANON-0003:P0024.
 
 Source:
 ```latex
@@ -624,18 +635,18 @@ Reviewed Persian:
 ```latex
 \begin{defn}[رابطهٔ هم‌ارزی]
 رابطهٔ $R \subseteq A^2$ که بازتابی، متقارن و تراگذری باشد
-\emph{رابطهٔ هم‌ارزی} نامیده می‌شود. گفته می‌شود !!{element} $x$
+\emph{رابطهٔ هم‌ارزی} نامیده می‌شود. گفته می‌شود دو !!{element} $x$
 و $y$ از~$A$ \emph{نسبت به $R$ هم‌ارزند} اگر~$Rxy$.
 \end{defn}
 ```
 
-رابطه هم‌ارزی is directly printed. The target correction realizes the counted noun as singular for x and y while preserving the source token and formula.
+The canon directly attests رابطه هم‌ارزی and دو عنصر. Write دو عضو for the two element variables and preserve the shared element token; the first review incorrectly removed the plural suffix without supplying دو. No claim that x and y are distinct is added.
 
-Alternatives: No material alternative recorded; none invented.
+Alternatives: An uncounted plural with correct Persian ezafe is possible, but the explicit دو عضو construction follows the directly read mathematical usage.
 
 ## FA-0015-C03: Classes and partition
 
-Action: retain_after_fresh_review; confidence 3/3: The frozen source, existing Persian target and directly read Persian canon passage were compared; limits are stated explicitly.
+Action: retain_after_fresh_review; confidence 2/3: Class/partition meaning is directly supported; the exact retained Persian class label is not attested on this selected page.
 Canon: FA-REL-P057.
 
 Source:
@@ -658,13 +669,15 @@ Reviewed Persian:
 \emph{مستقیماً} سخن بگوییم. برای این منظور، تعریف زیر را معرفی می‌کنیم:
 ```
 
-The target preserves the conceptual distinction between each equivalence class and the partition of the domain; the selected page directly uses classes/quotient/partition terminology.
+The inherited target distinguishes each class from the partition of the domain. The English informally calls individual blocks partitions; the next definition and the canon support the target’s contextual disambiguation. The page directly prints کلاس‌های هم‌ارزی, مجموعه خارج قسمت and افرازها, not the target’s exact ردهٔ هم‌ارزی wording. Retain that existing class label as a provisional lexical choice with the same explicit definition, without claiming direct attestation.
 
-Alternatives: No material alternative recorded; none invented.
+Alternatives: کلاس هم‌ارزی is directly attested on this page. Do not silently change the established lane-wide رده label from this local review.
+
+Expert-review question: Check the lane-wide evidence for ردهٔ هم‌ارزی; the present page directly attests کلاس هم‌ارزی instead.
 
 ## FA-0015-C04: Equivalence-class definition
 
-Action: retain_after_fresh_review; confidence 3/3: The frozen source, existing Persian target and directly read Persian canon passage were compared; limits are stated explicitly.
+Action: retain_after_fresh_review; confidence 2/3: The formula and conceptual equivalence are exact; no direct attestation of the target’s رده compound is claimed.
 Canon: FA-REL-P057.
 
 Source:
@@ -696,7 +709,7 @@ $\equivclass{A}{R} = \Setabs{\equivrep{x}{R}}{x \in A}$، یعنی مجموعه�
 هستند، تعریف ردهٔ هم‌ارزی را موجه می‌سازد:
 ```
 
-The class representative, quotient set and exact set-builder formulas remain intact. The canon supports the terms but the frozen mathematical definitions govern.
+The class representative, quotient set and exact set-builder formulas remain intact. The canon directly supports the quotient terminology and class concept, using کلاس rather than رده; that lexical limit is recorded in the preceding choice. Frozen mathematical definitions govern.
 
 Alternatives: No material alternative recorded; none invented.
 
@@ -760,7 +773,7 @@ Alternatives: No material alternative recorded; none invented.
 
 ## FA-0015-C06: Modular congruence scope
 
-Action: correct; confidence 3/3: The target’s later quotient explicitly uses Nat; the revised Persian sentence makes the minimal coherent scope explicit while preserving every formula.
+Action: correct; confidence 2/3: The mathematical extension is exact; the intended scope of the source wording remains an editorial interpretation.
 Canon: FA-REL-P056, FA-REL-P058.
 
 Source:
@@ -778,7 +791,7 @@ generated by~$\equiv_n$; that is, $\equivclass{\Nat}{\equiv_n}$ has
 Reviewed Persian:
 ```latex
 \begin{ex}
-نمونه‌ای خوب از روابط هم‌ارزی از حساب پیمانه‌ای به دست می‌آید. برای دو عدد طبیعی $a$، $b$ و هر $n \in \PosInt$، می‌گوییم $a \equiv_n b$ اگر و تنها اگر
+نمونه‌ای خوب از روابط هم‌ارزی از حساب پیمانه‌ای به دست می‌آید. برای هر دو عدد طبیعی $a$، $b$ و هر $n \in \PosInt$، می‌گوییم $a \equiv_n b$ اگر و تنها اگر
 تقسیم $a$ بر~$n$ همان باقی‌مانده‌ای را بدهد که تقسیم $b$ بر~$n$ می‌دهد.
 (به‌صورتی نمادین‌تر: $a \equiv_n b$ اگر و تنها اگر یک $k \in
 \Int$ وجود داشته باشد که $a - b = kn$.) اکنون، $\equiv_n$ برای
@@ -786,14 +799,16 @@ Reviewed Persian:
 به‌وسیلهٔ~$\equiv_n$ پدید می‌آیند؛ یعنی $\equivclass{\Nat}{\equiv_n}$
 ```
 
-The same example later takes the quotient of Nat, so a and b are translated as natural numbers while n remains positive. This is a disclosed local scope repair; all displayed arithmetic formulas and congruence semantics remain exact.
+The source phrase a, b, and n in PosInt is ambiguous against its later quotient of Nat and zero representative. Retain the natural-number a,b clarification with positive n, but visibly disclose the extension to zero in an editorial note. The canon uses congruence on integers, so it supports arithmetic and vocabulary, not the exact source-domain choice.
 
-Alternatives: No material alternative recorded; none invented.
+Alternatives: Keeping all three variables strictly positive conflicts with the subsequent zero representative. Extending to all integers is mathematically possible but broader than the Nat quotient needed here.
+
+Expert-review question: Source-scope clarification: zero is included for a and b to agree with the quotient and its listed representatives.
 
 ## FA-0015-C07: Residue classes and counted element
 
-Action: retain_after_fresh_review; confidence 3/3: The frozen source, existing Persian target and directly read Persian canon passage were compared; limits are stated explicitly.
-Canon: FA-REL-P057, FA-REL-P058.
+Action: correct; confidence 3/3: The frozen source, existing Persian target and directly read Persian canon passage were compared; limits are stated explicitly.
+Canon: FA-REL-P057, FA-REL-P058, FA-OL-CANON-0003:P0062.
 
 Source:
 ```latex
@@ -812,11 +827,12 @@ Show that $\equiv_n$ is an equivalence relation, for any $n \in
 
 Reviewed Persian:
 ```latex
-دارای $n$ !!{element}s است. این رده‌ها عبارت‌اند از: مجموعهٔ اعدادی که
+دارای $n$ !!{element} است. این رده‌ها عبارت‌اند از: مجموعهٔ اعدادی که
 بر $n$ بدون باقی‌مانده بخش‌پذیرند، یعنی $\equivrep{0}{\equiv_n}$؛
 مجموعهٔ اعدادی که تقسیمشان بر $n$ باقی‌ماندهٔ~$1$ می‌دهد، یعنی
 $\equivrep{1}{\equiv_n}$؛ \ldots؛ و مجموعهٔ اعدادی که تقسیمشان بر~$n$
 باقی‌ماندهٔ~$n-1$ می‌دهد، یعنی~$\equivrep{n-1}{\equiv_n}$.
+\emph{یادداشت ویراستاری:} در این مثال، صفر نیز برای دو عدد نخست مجاز دانسته شده است تا دامنه با خارج‌قسمت اعداد طبیعی و نمایندهٔ صفر در ادامه سازگار باشد؛ پیمانه همچنان مثبت است.
 \end{ex}
 
 \begin{prob}
@@ -826,9 +842,9 @@ $\equivclass{\Nat}{\equiv_n}$ دقیقاً $n$ عضو دارد.
 \end{prob}
 ```
 
-The target retains exactly n distinct equivalence classes and the complete residue-class enumeration. The singular/plural element macro is checked against the locale and the counted noun is plural here.
+Change the counted noun after n to singular عضو, consistent with n عضوی in Khani/Zarei and with the final exercise already saying دقیقاً n عضو دارد. The previous review wrongly retained English plural morphology here. Preserve every residue representative and all n distinct classes.
 
-Alternatives: No material alternative recorded; none invented.
+Alternatives: Retaining اعضا after a numerical cardinality is rejected in this construction; uncounted اعضا elsewhere is unaffected.
 
 ## Validation boundary
 
