@@ -1,0 +1,1303 @@
+{
+  "schema": "public-openlogic-fa-batch-review/1",
+  "identities": [
+    {
+      "unit": "OLP-0013",
+      "source_commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+      "source_path": "content/sets-functions-relations/relations/reflections.tex",
+      "source_git_LF_sha256": "75047e8806a58c0a0c07ae2e55554d9ad2affb9d5297b1d5585ebe0b2f3de651",
+      "source_ledger_CRLF_sha256": "1f94c1032eaedb73b1de69e6f010b8e0c7437fe240ab280583ff358896fa4b27",
+      "published_target_sha256": "8e9f418e34a61ec9aa779fa87caf6243faa13a8f5421693c677b281369858539",
+      "candidate_sha256": "8e9f418e34a61ec9aa779fa87caf6243faa13a8f5421693c677b281369858539",
+      "published_target_bytes": 6005,
+      "candidate_bytes": 6005,
+      "R3_member": "source/locale/fa-IR/content/sets-functions-relations/relations/reflections.tex",
+      "R3_archive_sha256": "ef32f359fe7813d0ffef11f3936fb1498f2f3cdcc176ab2acb56b969360c9e59",
+      "locale_config_sha256": "c8df8c39abbd1ab36dbac380490b72e9b3c565bbd1ec3d1f1be88bdc300abd0b",
+      "math_spans": 25,
+      "aligned_choices": 7,
+      "math_text_pairs": [
+        {
+          "math_span": 1,
+          "source": " and ",
+          "target": " و ",
+          "review": "Exact wording reviewed in the aligned choice, not accepted by token masking alone"
+        },
+        {
+          "math_span": 8,
+          "source": " and ",
+          "target": " و ",
+          "review": "Exact wording reviewed in the aligned choice, not accepted by token masking alone"
+        },
+        {
+          "math_span": 8,
+          "source": " and ",
+          "target": " و ",
+          "review": "Exact wording reviewed in the aligned choice, not accepted by token masking alone"
+        }
+      ]
+    },
+    {
+      "unit": "OLP-0014",
+      "source_commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+      "source_path": "content/sets-functions-relations/relations/special-properties.tex",
+      "source_git_LF_sha256": "006f2ea0d65e5069ef1509de94dd35a477ea835c19962da22f4bef48caffbee7",
+      "source_ledger_CRLF_sha256": "f9bdfcb4c680ea58fdb209f0347c2f8055de96558caf69a26ec3ce8e1e7ce6a1",
+      "published_target_sha256": "abdec2ae02ffa0668b36ef0cd4bd521bc5357c9c6a7acb5465589196e7c28d7c",
+      "candidate_sha256": "fae0cbe592af164d5679cb7b42aa9a5e7461b3b55bfd5db5a37c31c04600925f",
+      "published_target_bytes": 4626,
+      "candidate_bytes": 4694,
+      "R3_member": "source/locale/fa-IR/content/sets-functions-relations/relations/special-properties.tex",
+      "R3_archive_sha256": "ef32f359fe7813d0ffef11f3936fb1498f2f3cdcc176ab2acb56b969360c9e59",
+      "locale_config_sha256": "c8df8c39abbd1ab36dbac380490b72e9b3c565bbd1ec3d1f1be88bdc300abd0b",
+      "math_spans": 47,
+      "aligned_choices": 11,
+      "math_text_pairs": []
+    },
+    {
+      "unit": "OLP-0015",
+      "source_commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+      "source_path": "content/sets-functions-relations/relations/equivalence-relations.tex",
+      "source_git_LF_sha256": "d9531aa5cd774c12090fbd5c9fb289181e93cf7e9a96ecf7d4fd3fcdf5d250c7",
+      "source_ledger_CRLF_sha256": "0b2167d0a9633938fd173d396f9e92b795826821471ff111483f7c7088a4be46",
+      "published_target_sha256": "b1fdaac070c36b48ccda7e5de03fdc338d049a35a7d57791174e74019ecf40ab",
+      "candidate_sha256": "2e631d39f1e6818f6cdcbbda4be76e550b6c723d5014c9fb5291868f9e6c5091",
+      "published_target_bytes": 4814,
+      "candidate_bytes": 4805,
+      "R3_member": "source/locale/fa-IR/content/sets-functions-relations/relations/equivalence-relations.tex",
+      "R3_archive_sha256": "ef32f359fe7813d0ffef11f3936fb1498f2f3cdcc176ab2acb56b969360c9e59",
+      "locale_config_sha256": "c8df8c39abbd1ab36dbac380490b72e9b3c565bbd1ec3d1f1be88bdc300abd0b",
+      "math_spans": 70,
+      "aligned_choices": 7,
+      "math_text_pairs": []
+    }
+  ],
+  "canon": {
+    "documents": [],
+    "passages": [
+      {
+        "passage_id": "FA-PH-QOM-P006",
+        "pdf_page_1based": 6,
+        "printed_page": 78,
+        "location": "Section 2, object/function and sentence-value discussion",
+        "short_attestation": "عین؛ جمله؛ محمول/مفهوم distinction in context",
+        "relevance_and_limits": "The page uses عین (object) in a discussion of sentence content and contrasts concepts/functions with objects. It supports philosophical research register, not a complete universal glossary of singular terms.",
+        "pdf_sha256": "9c5648cbdee48e823469dea0320d0da5422284c78cac9eb506c43b5222e2bcf4",
+        "normalized_search_page_sha256": null,
+        "visual_page_read": true,
+        "render_sha256": "ddb248197b430af46857738fea73cbe1d1036ce01b1fe4e573a2f88d33d15fe9"
+      },
+      {
+        "passage_id": "FA-PH-QOM-P007",
+        "pdf_page_1based": 7,
+        "printed_page": 79,
+        "location": "Section 3 opening, proper names and concepts",
+        "short_attestation": "سقراط اسم خاص است؛ اشباع‌نشده",
+        "relevance_and_limits": "The page explicitly calls Socrates a proper name and discusses removing a proper name to obtain a function/concept; it supports the target’s predicate/singular-term discussion without proving that every target phrase is a fixed technical term.",
+        "pdf_sha256": "9c5648cbdee48e823469dea0320d0da5422284c78cac9eb506c43b5222e2bcf4",
+        "normalized_search_page_sha256": null,
+        "visual_page_read": true,
+        "render_sha256": "ff2c2042ff8f027e7f6e46aa34d7a2b8fe8f2b26a81e4d1884faeb1a3e0d9ac3"
+      },
+      {
+        "passage_id": "FA-PH-QOM-P009",
+        "pdf_page_1based": 9,
+        "printed_page": 81,
+        "location": "Object, sense and reference discussion",
+        "short_attestation": "مدلول؛ معنا؛ عین",
+        "relevance_and_limits": "The page distinguishes sentence meaning/content and reference in Persian philosophical prose. It supports the target’s careful separation of relation representation from identity claims; it is not a general metaphysical identity theory.",
+        "pdf_sha256": "9c5648cbdee48e823469dea0320d0da5422284c78cac9eb506c43b5222e2bcf4",
+        "normalized_search_page_sha256": null,
+        "visual_page_read": true,
+        "render_sha256": "66785756c75190b979138a484d9cea87ec0c2b1df0c051a6d1193b263a6540cf"
+      },
+      {
+        "passage_id": "FA-PH-QOM-P020",
+        "pdf_page_1based": 20,
+        "printed_page": 92,
+        "location": "Section 3, mathematical objects and objectivity",
+        "short_attestation": "اشیای ریاضی؛ امر عینی",
+        "relevance_and_limits": "The page discusses mathematical objects and objectivity in a research register. It supports the conceptual framing of the target’s final discussion; it does not attest Benacerraf’s specific set-theoretic reduction argument.",
+        "pdf_sha256": "9c5648cbdee48e823469dea0320d0da5422284c78cac9eb506c43b5222e2bcf4",
+        "normalized_search_page_sha256": null,
+        "visual_page_read": true,
+        "render_sha256": "e030b1af49dd8c69ddc68f4b087f7e4cdfd99c98b566264d6f444c1a5af00340"
+      },
+      {
+        "passage_id": "FA-REL-P054",
+        "pdf_page_1based": 54,
+        "printed_page": 44,
+        "location": "Inverse relations and composition",
+        "short_attestation": "رابطهٔ معکوس؛ ترکیب رابطه‌ها",
+        "relevance_and_limits": "Direct visual attestation of relation-operation exposition. It supports register and notation around relations, not the later property labels.",
+        "pdf_sha256": "8f79c45a926c1cea819c4fefa86383f2a65ae23b1d526baaf99cf2506bb9f317",
+        "normalized_search_page_sha256": null,
+        "visual_page_read": true,
+        "render_sha256": "17f5c688d48e50ad924ca27addc71f9ab0e638d832258ce6791bdbeb790110ec"
+      },
+      {
+        "passage_id": "FA-REL-P055",
+        "pdf_page_1based": 55,
+        "printed_page": 45,
+        "location": "Binary relation properties and partial orders",
+        "short_attestation": "رابطه‌های دودویی؛ بازتابی؛ تراگذری؛ متقارن؛ پادمتقارن؛ ترتیب جزئی؛ مقایسه‌پذیر",
+        "relevance_and_limits": "Direct visual definitions give Rxx for reflexivity, Rxy and Ryz imply Rxz for transitivity, Rxy implies Ryx for symmetry, and both directions imply x=y for antisymmetry. The page uses تراگذری and پادمتقارن; it distinguishes partial order and comparability.",
+        "pdf_sha256": "8f79c45a926c1cea819c4fefa86383f2a65ae23b1d526baaf99cf2506bb9f317",
+        "normalized_search_page_sha256": null,
+        "visual_page_read": true,
+        "render_sha256": "2da1f1c1ef86abef843c5ad5872de82dcb28cf74015556d2a44465563d769f63"
+      },
+      {
+        "passage_id": "FA-REL-P056",
+        "pdf_page_1based": 56,
+        "printed_page": 46,
+        "location": "Equivalence relation definition and congruence example",
+        "short_attestation": "رابطه هم‌ارزی؛ بازتابی؛ متقارن؛ تراگذری",
+        "relevance_and_limits": "Direct visual definition and modular-congruence example. It supports the exact equivalence terminology and the distinction among the three properties.",
+        "pdf_sha256": "8f79c45a926c1cea819c4fefa86383f2a65ae23b1d526baaf99cf2506bb9f317",
+        "normalized_search_page_sha256": null,
+        "visual_page_read": true,
+        "render_sha256": "47de3bbad8a4d60717e3835d7300d10fa2374b078c9fdb8552841c4b819a1dcb"
+      },
+      {
+        "passage_id": "FA-REL-P057",
+        "pdf_page_1based": 57,
+        "printed_page": 47,
+        "location": "Equivalence classes, quotient set and partitions",
+        "short_attestation": "کلاس‌های هم‌ارزی؛ مجموعه خارج قسمت؛ افرازها",
+        "relevance_and_limits": "Direct visual usage of quotient set, equivalence classes and partition language. The surrounding explanation distinguishes the partition as a whole from its classes; preserve that distinction in OLP-0015.",
+        "pdf_sha256": "8f79c45a926c1cea819c4fefa86383f2a65ae23b1d526baaf99cf2506bb9f317",
+        "normalized_search_page_sha256": null,
+        "visual_page_read": true,
+        "render_sha256": "46277eb8b6538d3e6810ec3086e33be084727d5b34924d44178d3abf0720b1b8"
+      },
+      {
+        "passage_id": "FA-REL-P058",
+        "pdf_page_1based": 58,
+        "printed_page": 48,
+        "location": "Congruence, equivalence classes and relation exercises",
+        "short_attestation": "هم‌نهشتی؛ رابطه هم‌ارزی؛ تراگذری؛ ترتیب جزئی",
+        "relevance_and_limits": "Direct visual usage of congruence modulo m, equivalence classes, transitivity and partial-order exercises. The pages do not attest asymmetric or irreflexive labels.",
+        "pdf_sha256": "8f79c45a926c1cea819c4fefa86383f2a65ae23b1d526baaf99cf2506bb9f317",
+        "normalized_search_page_sha256": null,
+        "visual_page_read": true,
+        "render_sha256": "8a67b1b6ccaa9bf38ff1ec7c04e8da462319636414edae189f6577433940c80d"
+      }
+    ]
+  },
+  "choices": [
+    {
+      "topic": "Section title and relation representation",
+      "canon": [
+        "FA-PH-QOM-P006",
+        "FA-PH-QOM-P009"
+      ],
+      "rationale": "تأملات فلسفی is a faithful section title. The opening defines relations extensionally as sets but immediately asks what this representation does; preserve the philosophical question rather than turning it into a theorem.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The frozen source, existing Persian target and directly read Persian canon passage were compared; limits are stated explicitly.",
+      "id": "FA-0013-C01",
+      "unit": "OLP-0013",
+      "source": {
+        "char_start": 185,
+        "char_end_exclusive": 673,
+        "line_start": 10,
+        "line_end": 18,
+        "text": "\\olsection{Philosophical Reflections}\n\nIn \\olref[set]{sec}, we defined relations as certain sets. We should\npause and ask a quick philosophical question: what is such a\ndefinition \\emph{doing}? It is extremely doubtful that we should want\nto say that we have \\emph{discovered} some metaphysical identity\nfacts; that, for example, the order relation on $\\Nat$ \\emph{turned\nout} to be the set $R=  \\Setabs{\\tuple{n,m}}{n, m \\in \\Nat\\text{ and }\nn < m}$ that we defined in \\olref[set]{sec}. ",
+        "sha256": "6bfc5c55b22be24a532cd1be81a17081d58a81c4d4f0f5c46c7fd199dbc51539"
+      },
+      "target_before": {
+        "char_start": 192,
+        "char_end_exclusive": 628,
+        "line_start": 10,
+        "line_end": 18,
+        "text": "\\olsection{تأملات فلسفی}\n\nدر \\olref[set]{sec}، روابط را مجموعه‌هایی معین تعریف کردیم. شایسته است\nدرنگ کنیم و پرسشی فلسفی و کوتاه بپرسیم: چنین تعریفی چه\n\\emph{می‌کند}؟ بسیار بعید است بخواهیم بگوییم برخی واقعیت‌های متافیزیکیِ\nاین‌همانی را \\emph{کشف کرده‌ایم}؛ مثلاً اینکه رابطهٔ ترتیب روی $\\Nat$،\nچنان‌که \\emph{معلوم شده است}، همان مجموعهٔ\n$R=  \\Setabs{\\tuple{n,m}}{n, m \\in \\Nat\\text{ و }\nn < m}$ است که در \\olref[set]{sec} تعریف کردیم. ",
+        "sha256": "f16c938a07b1cd7eb8dbb149b5de16e44f24ecf39187da9193ccea6a0ab88d5c"
+      },
+      "target_after": {
+        "char_start": 192,
+        "char_end_exclusive": 628,
+        "line_start": 10,
+        "line_end": 18,
+        "text": "\\olsection{تأملات فلسفی}\n\nدر \\olref[set]{sec}، روابط را مجموعه‌هایی معین تعریف کردیم. شایسته است\nدرنگ کنیم و پرسشی فلسفی و کوتاه بپرسیم: چنین تعریفی چه\n\\emph{می‌کند}؟ بسیار بعید است بخواهیم بگوییم برخی واقعیت‌های متافیزیکیِ\nاین‌همانی را \\emph{کشف کرده‌ایم}؛ مثلاً اینکه رابطهٔ ترتیب روی $\\Nat$،\nچنان‌که \\emph{معلوم شده است}، همان مجموعهٔ\n$R=  \\Setabs{\\tuple{n,m}}{n, m \\in \\Nat\\text{ و }\nn < m}$ است که در \\olref[set]{sec} تعریف کردیم. ",
+        "sha256": "f16c938a07b1cd7eb8dbb149b5de16e44f24ecf39187da9193ccea6a0ab88d5c"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\olsection{تأملات فلسفی}\n\nدر \\olref[set]{sec}، روابط را مجموعه‌هایی معین تعریف کردیم. شایسته است\nدرنگ کنیم و پرسشی فلسفی و کوتاه بپرسیم: چنین تعریفی چه\n\\emph{می‌کند}؟ بسیار بعید است بخواهیم بگوییم برخی واقعیت‌های متافیزیکیِ\nاین‌همانی را \\emph{کشف کرده‌ایم}؛ مثلاً اینکه رابطهٔ ترتیب روی $\\Nat$،\nچنان‌که \\emph{معلوم شده است}، همان مجموعهٔ\n$R=  \\Setabs{\\tuple{n,m}}{n, m \\in \\Nat\\text{ و }\nn < m}$ است که در \\olref[set]{sec} تعریف کردیم. ",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Metaphysical identity of an order relation",
+      "canon": [
+        "FA-PH-QOM-P009",
+        "FA-PH-QOM-P020"
+      ],
+      "rationale": "The target preserves the distinction between a representational set and a metaphysical identity claim. The philosophical canon supports this research register and the object/meaning discussion but does not establish a mathematical identity theorem.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The frozen source, existing Persian target and directly read Persian canon passage were compared; limits are stated explicitly.",
+      "id": "FA-0013-C02",
+      "unit": "OLP-0013",
+      "source": {
+        "char_start": 673,
+        "char_end_exclusive": 703,
+        "line_start": 18,
+        "line_end": 21,
+        "text": "Here are three\nreasons why. \n\n",
+        "sha256": "deb2d4f293c5dccf5fbd1062a923e57e4413644699f3987dd8a4a43d62b37337"
+      },
+      "target_before": {
+        "char_start": 628,
+        "char_end_exclusive": 671,
+        "line_start": 18,
+        "line_end": 21,
+        "text": "در ادامه سه دلیل\nبرای این تردید می‌آوریم.\n\n",
+        "sha256": "8ce687c01bf3eb3ed0a369a8b18efe3f48566fdf326ff04e4e1dc7d6d123d8df"
+      },
+      "target_after": {
+        "char_start": 628,
+        "char_end_exclusive": 671,
+        "line_start": 18,
+        "line_end": 21,
+        "text": "در ادامه سه دلیل\nبرای این تردید می‌آوریم.\n\n",
+        "sha256": "8ce687c01bf3eb3ed0a369a8b18efe3f48566fdf326ff04e4e1dc7d6d123d8df"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "در ادامه سه دلیل\nبرای این تردید می‌آوریم.\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Kuratowski and reverse ordered-pair coding",
+      "canon": [
+        "FA-REL-P054",
+        "FA-PH-QOM-P007"
+      ],
+      "rationale": "Both pair codings, inequality under a neq b, and the two candidate relation sets remain explicit. The relation canon supports ordered-pair/composition register; the philosophy canon supports the conceptual function/object contrast.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The frozen source, existing Persian target and directly read Persian canon passage were compared; limits are stated explicitly.",
+      "id": "FA-0013-C03",
+      "unit": "OLP-0013",
+      "source": {
+        "char_start": 703,
+        "char_end_exclusive": 1385,
+        "line_start": 21,
+        "line_end": 33,
+        "text": "First: in \\olref[set][pai]{wienerkuratowski}, we defined $\\tuple{a, b} =\n\\{\\{a\\}, \\{a, b\\}\\}$. Consider instead the definition $\\lVert a,\nb\\rVert = \\{\\{b\\}, \\{a, b\\}\\} = \\tuple{b,a}$. When $a \\neq b$, we have\nthat $\\tuple{a, b} \\neq \\lVert a,b\\rVert$. But we could equally have\nregarded $\\lVert a,b\\rVert$ as our definition of an ordered pair,\nrather than $\\tuple{a,b}$. Both definitions would have worked equally\nwell. So now we have two equally good candidates to ``be'' the order\nrelation on the natural numbers, namely:\n\\begin{align*}\n\t\tR &= \\Setabs{\\tuple{n,m}}{n, m \\in \\Nat \\text{ and }n < m}\\\\\n\t\tS &= \\Setabs{\\lVert n,m\\rVert}{n, m \\in \\Nat \\text{ and }n < m}.\n\\end{align*}\n",
+        "sha256": "3f8863cf7a93eb45d1bfb23db56ae18b750b8c657dd13221bf8359b7be5dc584"
+      },
+      "target_before": {
+        "char_start": 671,
+        "char_end_exclusive": 1326,
+        "line_start": 21,
+        "line_end": 33,
+        "text": "نخست: در \\olref[set][pai]{wienerkuratowski}، تعریف کردیم $\\tuple{a, b} =\n\\{\\{a\\}, \\{a, b\\}\\}$. در عوض، تعریف $\\lVert a,\nb\\rVert = \\{\\{b\\}, \\{a, b\\}\\} = \\tuple{b,a}$ را در نظر بگیرید. وقتی\n$a \\neq b$، داریم $\\tuple{a, b} \\neq \\lVert a,b\\rVert$. اما به همان\nاندازه می‌توانستیم $\\lVert a,b\\rVert$ را تعریف خود از زوج مرتب قرار\nدهیم، نه $\\tuple{a,b}$ را. هر دو تعریف به یک اندازه کار می‌کردند. پس\nاکنون دو نامزدِ به یک اندازه شایسته داریم که هر یک می‌تواند «خودِ»\nرابطهٔ ترتیب روی اعداد طبیعی باشد، یعنی:\n\\begin{align*}\n\t\tR &= \\Setabs{\\tuple{n,m}}{n, m \\in \\Nat \\text{ و }n < m}\\\\\n\t\tS &= \\Setabs{\\lVert n,m\\rVert}{n, m \\in \\Nat \\text{ و }n < m}.\n\\end{align*}\n",
+        "sha256": "6fddf34a04ffad2791b356cd9bd1788e4869f6fbf1e9a1bce95da2b4c13a7c4f"
+      },
+      "target_after": {
+        "char_start": 671,
+        "char_end_exclusive": 1326,
+        "line_start": 21,
+        "line_end": 33,
+        "text": "نخست: در \\olref[set][pai]{wienerkuratowski}، تعریف کردیم $\\tuple{a, b} =\n\\{\\{a\\}, \\{a, b\\}\\}$. در عوض، تعریف $\\lVert a,\nb\\rVert = \\{\\{b\\}, \\{a, b\\}\\} = \\tuple{b,a}$ را در نظر بگیرید. وقتی\n$a \\neq b$، داریم $\\tuple{a, b} \\neq \\lVert a,b\\rVert$. اما به همان\nاندازه می‌توانستیم $\\lVert a,b\\rVert$ را تعریف خود از زوج مرتب قرار\nدهیم، نه $\\tuple{a,b}$ را. هر دو تعریف به یک اندازه کار می‌کردند. پس\nاکنون دو نامزدِ به یک اندازه شایسته داریم که هر یک می‌تواند «خودِ»\nرابطهٔ ترتیب روی اعداد طبیعی باشد، یعنی:\n\\begin{align*}\n\t\tR &= \\Setabs{\\tuple{n,m}}{n, m \\in \\Nat \\text{ و }n < m}\\\\\n\t\tS &= \\Setabs{\\lVert n,m\\rVert}{n, m \\in \\Nat \\text{ و }n < m}.\n\\end{align*}\n",
+        "sha256": "6fddf34a04ffad2791b356cd9bd1788e4869f6fbf1e9a1bce95da2b4c13a7c4f"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "نخست: در \\olref[set][pai]{wienerkuratowski}، تعریف کردیم $\\tuple{a, b} =\n\\{\\{a\\}, \\{a, b\\}\\}$. در عوض، تعریف $\\lVert a,\nb\\rVert = \\{\\{b\\}, \\{a, b\\}\\} = \\tuple{b,a}$ را در نظر بگیرید. وقتی\n$a \\neq b$، داریم $\\tuple{a, b} \\neq \\lVert a,b\\rVert$. اما به همان\nاندازه می‌توانستیم $\\lVert a,b\\rVert$ را تعریف خود از زوج مرتب قرار\nدهیم، نه $\\tuple{a,b}$ را. هر دو تعریف به یک اندازه کار می‌کردند. پس\nاکنون دو نامزدِ به یک اندازه شایسته داریم که هر یک می‌تواند «خودِ»\nرابطهٔ ترتیب روی اعداد طبیعی باشد، یعنی:\n\\begin{align*}\n\t\tR &= \\Setabs{\\tuple{n,m}}{n, m \\in \\Nat \\text{ و }n < m}\\\\\n\t\tS &= \\Setabs{\\lVert n,m\\rVert}{n, m \\in \\Nat \\text{ و }n < m}.\n\\end{align*}\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Benacerraf attribution and alternatives",
+      "canon": [
+        "FA-PH-QOM-P009",
+        "FA-PH-QOM-P020"
+      ],
+      "rationale": "The target retains extensionality, R neq S, arbitrariness of choosing R or S, and the Benacerraf1965 citation. The cited Persian article is not used as evidence for Benacerraf’s argument; it only supports native scholarly prose and identity/meaning distinctions.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The frozen source, existing Persian target and directly read Persian canon passage were compared; limits are stated explicitly.",
+      "id": "FA-0013-C04",
+      "unit": "OLP-0013",
+      "source": {
+        "char_start": 1385,
+        "char_end_exclusive": 1852,
+        "line_start": 33,
+        "line_end": 41,
+        "text": "Since $R \\neq S$, by extensionality, it is clear that they cannot\n\\emph{both} be identical to the order relation on~$\\Nat$. But it would\njust be arbitrary, and hence a bit embarrassing, to claim that $R$\nrather than $S$ (or vice versa) \\emph{is} the ordering relation, as a\nmatter of fact. (This is a very simple instance of an argument against\nset-theoretic reductionism which Benacerraf made famous in\n\\citeyear{Benacerraf1965}. We will revisit it several times.)\n\n",
+        "sha256": "35c49a262e380d95c15ffcbf4917f2ac884cfd2656734af5c695778f84a85ef6"
+      },
+      "target_before": {
+        "char_start": 1326,
+        "char_end_exclusive": 1748,
+        "line_start": 33,
+        "line_end": 40,
+        "text": "از آنجا که بنا بر اصل گسترش $R \\neq S$، روشن است که نمی‌توانند\n\\emph{هر دو} با رابطهٔ ترتیب روی~$\\Nat$ این‌همان باشند. اما ادعای اینکه\nبنا بر واقعیت امر، $R$، و نه $S$ (یا برعکس)، \\emph{همان} رابطهٔ ترتیب\nاست، صرفاً دل‌بخواهی و ازاین‌رو اندکی شرم‌آور خواهد بود. (این نمونه‌ای بسیار ساده\nاز استدلالی علیه تقلیل‌گرایی مجموعه‌شناختی است که بناسراف در\n\\citeyear{Benacerraf1965} مشهور ساخت. چند بار دیگر به آن بازخواهیم گشت.)\n\n",
+        "sha256": "b2c583d7c32bca04be883521484c7f561915991e3df0f572db296c2f744c35fb"
+      },
+      "target_after": {
+        "char_start": 1326,
+        "char_end_exclusive": 1748,
+        "line_start": 33,
+        "line_end": 40,
+        "text": "از آنجا که بنا بر اصل گسترش $R \\neq S$، روشن است که نمی‌توانند\n\\emph{هر دو} با رابطهٔ ترتیب روی~$\\Nat$ این‌همان باشند. اما ادعای اینکه\nبنا بر واقعیت امر، $R$، و نه $S$ (یا برعکس)، \\emph{همان} رابطهٔ ترتیب\nاست، صرفاً دل‌بخواهی و ازاین‌رو اندکی شرم‌آور خواهد بود. (این نمونه‌ای بسیار ساده\nاز استدلالی علیه تقلیل‌گرایی مجموعه‌شناختی است که بناسراف در\n\\citeyear{Benacerraf1965} مشهور ساخت. چند بار دیگر به آن بازخواهیم گشت.)\n\n",
+        "sha256": "b2c583d7c32bca04be883521484c7f561915991e3df0f572db296c2f744c35fb"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "از آنجا که بنا بر اصل گسترش $R \\neq S$، روشن است که نمی‌توانند\n\\emph{هر دو} با رابطهٔ ترتیب روی~$\\Nat$ این‌همان باشند. اما ادعای اینکه\nبنا بر واقعیت امر، $R$، و نه $S$ (یا برعکس)، \\emph{همان} رابطهٔ ترتیب\nاست، صرفاً دل‌بخواهی و ازاین‌رو اندکی شرم‌آور خواهد بود. (این نمونه‌ای بسیار ساده\nاز استدلالی علیه تقلیل‌گرایی مجموعه‌شناختی است که بناسراف در\n\\citeyear{Benacerraf1965} مشهور ساخت. چند بار دیگر به آن بازخواهیم گشت.)\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Membership relation and universal-set contradiction",
+      "canon": [
+        "FA-REL-P054",
+        "FA-PH-QOM-P020"
+      ],
+      "rationale": "The target preserves the conditional membership relation, its set-builder, the nontrivial existence question, both label-definition branches and the footnote deriving a universal set contradiction. No metaphysical identity is asserted.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The frozen source, existing Persian target and directly read Persian canon passage were compared; limits are stated explicitly.",
+      "id": "FA-0013-C05",
+      "unit": "OLP-0013",
+      "source": {
+        "char_start": 1852,
+        "char_end_exclusive": 2788,
+        "line_start": 41,
+        "line_end": 57,
+        "text": "Second: if we think that \\emph{every} relation should be identified\nwith a set, then the relation of set-membership itself, $\\in$, should\nbe a particular set. Indeed, it would have to be the set\n$\\Setabs{\\tuple{x,y}}{x \\in y}$. But does this set exist? Given\nRussell's Paradox, it is a non-trivial claim that such a set exists.\nIn fact, \\oliflabeldef{cumul:::part}{the theory of sets which we develop in\n\\olref[cumul][][]{part} will \\emph{deny} the existence of this\nset.\\footnote{Skipping ahead, here is why. For reductio, suppose $I =\n\\Setabs{\\tuple{x,y}}{x \\in y}$ exists. Then $\\bigcup \\bigcup I$ is the\nuniversal set, contradicting\n\\olref[sfr][z][sep]{thm:NoUniversalSet}.}}{it is possible to\ndevelop set theory in a rigorous way as an axiomatic theory, and that \ntheory will indeed deny the existence of this set.}\nSo, even if some relations can be treated as sets, the relation of\nset-membership will have to be a special case.\n\n",
+        "sha256": "35a8a34cc10df3122e1e6d4e28d5181d2ee6ec5176551d8b0dc891fb23e316e6"
+      },
+      "target_before": {
+        "char_start": 1748,
+        "char_end_exclusive": 2675,
+        "line_start": 40,
+        "line_end": 57,
+        "text": "دوم: اگر گمان کنیم \\emph{هر} رابطه‌ای باید با مجموعه‌ای یکی انگاشته\nشود، آنگاه خودِ رابطهٔ عضویت در مجموعه، یعنی $\\in$، نیز باید مجموعه‌ای\nمعین باشد. در واقع، باید مجموعهٔ $\\Setabs{\\tuple{x,y}}{x \\in y}$ باشد.\nاما آیا این مجموعه وجود دارد؟ با توجه به پارادوکس راسل، وجود چنین\nمجموعه‌ای ادعایی نابدیهی است. در حقیقت،\n\\oliflabeldef{cumul:::part}{نظریهٔ مجموعه‌ها که آن را در\n\\olref[cumul][][]{part} بسط می‌دهیم، وجود این مجموعه را \\emph{انکار}\nخواهد کرد.\\footnote{اگر قدری جلوتر برویم، دلیل چنین است. برای برهان\nخلف، فرض کنید $I =\n\\Setabs{\\tuple{x,y}}{x \\in y}$ وجود دارد. آنگاه $\\bigcup \\bigcup I$\nمجموعهٔ جهان‌شمول است، و این با\n\\olref[sfr][z][sep]{thm:NoUniversalSet} تناقض دارد.}}{می‌توان نظریهٔ\nمجموعه‌ها را به شیوه‌ای دقیق و در قالب نظریه‌ای اصل‌موضوعی بسط داد، و\nآن نظریه واقعاً وجود این مجموعه را انکار خواهد کرد.}\nپس حتی اگر بتوان برخی روابط را همچون مجموعه‌ها در نظر گرفت، رابطهٔ\nعضویت در مجموعه باید حالتی ویژه باشد.\n\n",
+        "sha256": "cb55991f4929e45963c85690dbb56f3f1e441e9a72243f3acf720d36c851fe8f"
+      },
+      "target_after": {
+        "char_start": 1748,
+        "char_end_exclusive": 2675,
+        "line_start": 40,
+        "line_end": 57,
+        "text": "دوم: اگر گمان کنیم \\emph{هر} رابطه‌ای باید با مجموعه‌ای یکی انگاشته\nشود، آنگاه خودِ رابطهٔ عضویت در مجموعه، یعنی $\\in$، نیز باید مجموعه‌ای\nمعین باشد. در واقع، باید مجموعهٔ $\\Setabs{\\tuple{x,y}}{x \\in y}$ باشد.\nاما آیا این مجموعه وجود دارد؟ با توجه به پارادوکس راسل، وجود چنین\nمجموعه‌ای ادعایی نابدیهی است. در حقیقت،\n\\oliflabeldef{cumul:::part}{نظریهٔ مجموعه‌ها که آن را در\n\\olref[cumul][][]{part} بسط می‌دهیم، وجود این مجموعه را \\emph{انکار}\nخواهد کرد.\\footnote{اگر قدری جلوتر برویم، دلیل چنین است. برای برهان\nخلف، فرض کنید $I =\n\\Setabs{\\tuple{x,y}}{x \\in y}$ وجود دارد. آنگاه $\\bigcup \\bigcup I$\nمجموعهٔ جهان‌شمول است، و این با\n\\olref[sfr][z][sep]{thm:NoUniversalSet} تناقض دارد.}}{می‌توان نظریهٔ\nمجموعه‌ها را به شیوه‌ای دقیق و در قالب نظریه‌ای اصل‌موضوعی بسط داد، و\nآن نظریه واقعاً وجود این مجموعه را انکار خواهد کرد.}\nپس حتی اگر بتوان برخی روابط را همچون مجموعه‌ها در نظر گرفت، رابطهٔ\nعضویت در مجموعه باید حالتی ویژه باشد.\n\n",
+        "sha256": "cb55991f4929e45963c85690dbb56f3f1e441e9a72243f3acf720d36c851fe8f"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "دوم: اگر گمان کنیم \\emph{هر} رابطه‌ای باید با مجموعه‌ای یکی انگاشته\nشود، آنگاه خودِ رابطهٔ عضویت در مجموعه، یعنی $\\in$، نیز باید مجموعه‌ای\nمعین باشد. در واقع، باید مجموعهٔ $\\Setabs{\\tuple{x,y}}{x \\in y}$ باشد.\nاما آیا این مجموعه وجود دارد؟ با توجه به پارادوکس راسل، وجود چنین\nمجموعه‌ای ادعایی نابدیهی است. در حقیقت،\n\\oliflabeldef{cumul:::part}{نظریهٔ مجموعه‌ها که آن را در\n\\olref[cumul][][]{part} بسط می‌دهیم، وجود این مجموعه را \\emph{انکار}\nخواهد کرد.\\footnote{اگر قدری جلوتر برویم، دلیل چنین است. برای برهان\nخلف، فرض کنید $I =\n\\Setabs{\\tuple{x,y}}{x \\in y}$ وجود دارد. آنگاه $\\bigcup \\bigcup I$\nمجموعهٔ جهان‌شمول است، و این با\n\\olref[sfr][z][sep]{thm:NoUniversalSet} تناقض دارد.}}{می‌توان نظریهٔ\nمجموعه‌ها را به شیوه‌ای دقیق و در قالب نظریه‌ای اصل‌موضوعی بسط داد، و\nآن نظریه واقعاً وجود این مجموعه را انکار خواهد کرد.}\nپس حتی اگر بتوان برخی روابط را همچون مجموعه‌ها در نظر گرفت، رابطهٔ\nعضویت در مجموعه باید حالتی ویژه باشد.\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Predicates versus three singular terms",
+      "canon": [
+        "FA-PH-QOM-P006",
+        "FA-PH-QOM-P007"
+      ],
+      "rationale": "The target keeps the predicate/singular-term contrast, the three terms, the deliberately nonsentential cup-penholder-table string, and the Frege/Wittgenstein attributions. The article directly supports proper-name/function/object vocabulary but not a universal term for every singular term; that limit is retained.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The frozen source, existing Persian target and directly read Persian canon passage were compared; limits are stated explicitly.",
+      "id": "FA-0013-C06",
+      "unit": "OLP-0013",
+      "source": {
+        "char_start": 2788,
+        "char_end_exclusive": 3616,
+        "line_start": 57,
+        "line_end": 70,
+        "text": "Third: when we ``identify'' relations with sets, we said that we would\nallow ourselves to write $Rxy$ for $\\tuple{x,y} \\in R$. This is fine,\nprovided that the membership relation, ``$\\in$'', is treated \\emph{as}\na predicate. But if we think that ``$\\in$'' stands for a certain kind\nof set, then the expression ``$\\tuple{x,y} \\in R$'' just consists of\nthree singular terms which stand for sets: ``$\\tuple{x,y}$'',\n``$\\in$'', and ``$R$''. And such a list of names is no more capable of\nexpressing a proposition than the nonsense string: ``the cup penholder\nthe table''. Again, even if some relations can be treated as sets, the\nrelation of set-membership must be a special case. (This rolls\ntogether a simple version of Frege's concept \\emph{horse} paradox, and\na famous objection that Wittgenstein once raised against Russell.)\n\n",
+        "sha256": "6d16b8f0a65d2988cc2fcf2898ffeac3575d5831e6c8eddc7247cd4c794352ac"
+      },
+      "target_before": {
+        "char_start": 2675,
+        "char_end_exclusive": 3441,
+        "line_start": 57,
+        "line_end": 69,
+        "text": "سوم: وقتی روابط را با مجموعه‌ها «یکی می‌انگاریم»، گفتیم به خود اجازه\nمی‌دهیم $Rxy$ را به جای $\\tuple{x,y} \\in R$ بنویسیم. این کار بی‌اشکال\nاست، به شرط آنکه رابطهٔ عضویت، یعنی «$\\in$»، \\emph{به‌منزلهٔ} یک محمول\nدر نظر گرفته شود. اما اگر گمان کنیم «$\\in$» بر نوع معینی از مجموعه\nدلالت دارد، آنگاه عبارت «$\\tuple{x,y} \\in R$» فقط از سه حد مفرد تشکیل\nشده است که بر مجموعه‌ها دلالت می‌کنند: «$\\tuple{x,y}$»، «$\\in$» و\n«$R$». چنین فهرستی از نام‌ها، درست مانند رشتهٔ بی‌معنای «فنجان جاقلمی\nمیز»، توان بیان یک گزاره را ندارد. باز هم، حتی اگر بتوان برخی روابط را همچون\nمجموعه‌ها در نظر گرفت، رابطهٔ عضویت در مجموعه باید حالتی ویژه باشد.\n(این استدلال صورت ساده‌ای از پارادوکس «مفهوم \\emph{اسب}» فرگه را با\nاعتراض مشهوری درهم می‌آمیزد که ویتگنشتاین زمانی علیه راسل مطرح کرد.)\n\n",
+        "sha256": "712a2bdd72ffa66693e2558c0d1d0545273b085d10f55d55286619b295b09e1b"
+      },
+      "target_after": {
+        "char_start": 2675,
+        "char_end_exclusive": 3441,
+        "line_start": 57,
+        "line_end": 69,
+        "text": "سوم: وقتی روابط را با مجموعه‌ها «یکی می‌انگاریم»، گفتیم به خود اجازه\nمی‌دهیم $Rxy$ را به جای $\\tuple{x,y} \\in R$ بنویسیم. این کار بی‌اشکال\nاست، به شرط آنکه رابطهٔ عضویت، یعنی «$\\in$»، \\emph{به‌منزلهٔ} یک محمول\nدر نظر گرفته شود. اما اگر گمان کنیم «$\\in$» بر نوع معینی از مجموعه\nدلالت دارد، آنگاه عبارت «$\\tuple{x,y} \\in R$» فقط از سه حد مفرد تشکیل\nشده است که بر مجموعه‌ها دلالت می‌کنند: «$\\tuple{x,y}$»، «$\\in$» و\n«$R$». چنین فهرستی از نام‌ها، درست مانند رشتهٔ بی‌معنای «فنجان جاقلمی\nمیز»، توان بیان یک گزاره را ندارد. باز هم، حتی اگر بتوان برخی روابط را همچون\nمجموعه‌ها در نظر گرفت، رابطهٔ عضویت در مجموعه باید حالتی ویژه باشد.\n(این استدلال صورت ساده‌ای از پارادوکس «مفهوم \\emph{اسب}» فرگه را با\nاعتراض مشهوری درهم می‌آمیزد که ویتگنشتاین زمانی علیه راسل مطرح کرد.)\n\n",
+        "sha256": "712a2bdd72ffa66693e2558c0d1d0545273b085d10f55d55286619b295b09e1b"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "سوم: وقتی روابط را با مجموعه‌ها «یکی می‌انگاریم»، گفتیم به خود اجازه\nمی‌دهیم $Rxy$ را به جای $\\tuple{x,y} \\in R$ بنویسیم. این کار بی‌اشکال\nاست، به شرط آنکه رابطهٔ عضویت، یعنی «$\\in$»، \\emph{به‌منزلهٔ} یک محمول\nدر نظر گرفته شود. اما اگر گمان کنیم «$\\in$» بر نوع معینی از مجموعه\nدلالت دارد، آنگاه عبارت «$\\tuple{x,y} \\in R$» فقط از سه حد مفرد تشکیل\nشده است که بر مجموعه‌ها دلالت می‌کنند: «$\\tuple{x,y}$»، «$\\in$» و\n«$R$». چنین فهرستی از نام‌ها، درست مانند رشتهٔ بی‌معنای «فنجان جاقلمی\nمیز»، توان بیان یک گزاره را ندارد. باز هم، حتی اگر بتوان برخی روابط را همچون\nمجموعه‌ها در نظر گرفت، رابطهٔ عضویت در مجموعه باید حالتی ویژه باشد.\n(این استدلال صورت ساده‌ای از پارادوکس «مفهوم \\emph{اسب}» فرگه را با\nاعتراض مشهوری درهم می‌آمیزد که ویتگنشتاین زمانی علیه راسل مطرح کرد.)\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Conceptual conclusion",
+      "canon": [
+        "FA-PH-QOM-P009",
+        "FA-PH-QOM-P020"
+      ],
+      "rationale": "The ending says relations may be treated as sets in contexts without claiming metaphysical identity. This is the source’s conceptual conclusion, and the canon supports careful object/meaning framing. The transparent phrase روح حاکم بر این سخن remains a register choice, not a source-attested technical term.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 2,
+      "confidence_reason": "Mathematical and conceptual meaning is explicit; the exact idiomatic phrase is not directly attested in the selected article pages.",
+      "id": "FA-0013-C07",
+      "unit": "OLP-0013",
+      "source": {
+        "char_start": 3616,
+        "char_end_exclusive": 3975,
+        "line_start": 70,
+        "line_end": 77,
+        "text": "So where does this leave us? Well, there is nothing \\emph{wrong} with\nour saying that the relations on the numbers are sets. We just have to\nunderstand the spirit in which that remark is made. We are not stating\na metaphysical identity fact. We are simply noting that, in certain\ncontexts, we can (and will) \\emph{treat} (certain) relations as\ncertain sets.\n\n",
+        "sha256": "0adebb03835608fadaefef6394b39768ef1828dceb95bc218868959c2c57bc86"
+      },
+      "target_before": {
+        "char_start": 3441,
+        "char_end_exclusive": 3775,
+        "line_start": 69,
+        "line_end": 75,
+        "text": "پس این بحث ما را به کجا می‌رساند؟ خب، اینکه بگوییم روابط روی اعداد\nمجموعه‌اند هیچ \\emph{اشکالی} ندارد. فقط باید روح حاکم بر این سخن را\nدریابیم. ما واقعیتی متافیزیکی دربارهٔ این‌همانی بیان نمی‌کنیم؛ صرفاً\nخاطرنشان می‌کنیم که در برخی زمینه‌ها می‌توانیم (و چنین خواهیم کرد)\nروابطی (معین) را \\emph{همچون} مجموعه‌هایی معین در نظر بگیریم.\n\n",
+        "sha256": "516dd6c7da62d6c8a8365022d6b0cca3989e5f8106b589bdcee0fcf1f4b3f00d"
+      },
+      "target_after": {
+        "char_start": 3441,
+        "char_end_exclusive": 3775,
+        "line_start": 69,
+        "line_end": 75,
+        "text": "پس این بحث ما را به کجا می‌رساند؟ خب، اینکه بگوییم روابط روی اعداد\nمجموعه‌اند هیچ \\emph{اشکالی} ندارد. فقط باید روح حاکم بر این سخن را\nدریابیم. ما واقعیتی متافیزیکی دربارهٔ این‌همانی بیان نمی‌کنیم؛ صرفاً\nخاطرنشان می‌کنیم که در برخی زمینه‌ها می‌توانیم (و چنین خواهیم کرد)\nروابطی (معین) را \\emph{همچون} مجموعه‌هایی معین در نظر بگیریم.\n\n",
+        "sha256": "516dd6c7da62d6c8a8365022d6b0cca3989e5f8106b589bdcee0fcf1f4b3f00d"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "پس این بحث ما را به کجا می‌رساند؟ خب، اینکه بگوییم روابط روی اعداد\nمجموعه‌اند هیچ \\emph{اشکالی} ندارد. فقط باید روح حاکم بر این سخن را\nدریابیم. ما واقعیتی متافیزیکی دربارهٔ این‌همانی بیان نمی‌کنیم؛ صرفاً\nخاطرنشان می‌کنیم که در برخی زمینه‌ها می‌توانیم (و چنین خواهیم کرد)\nروابطی (معین) را \\emph{همچون} مجموعه‌هایی معین در نظر بگیریم.\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Title and motivating relation examples",
+      "canon": [
+        "FA-REL-P055",
+        "FA-REL-P056"
+      ],
+      "rationale": "The title and introduction preserve the Nat/Pow(A) examples and the reason for classifying properties; the directly read book uses the same relation-property exposition and equivalence/partial-order framing.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The frozen source, existing Persian target and directly read Persian canon passage were compared; limits are stated explicitly.",
+      "id": "FA-0014-C01",
+      "unit": "OLP-0014",
+      "source": {
+        "char_start": 191,
+        "char_end_exclusive": 804,
+        "line_start": 10,
+        "line_end": 23,
+        "text": "\\olsection{Special Properties of Relations}\n\n\\begin{intro}\nSome kinds of relations turn out to be so common that they have been\ngiven special names.  For instance, $\\le$ and~$\\subseteq$ both relate\ntheir respective domains (say, $\\Nat$ in the case of~$\\le$ and\n$\\Pow{A}$ in the case of~$\\subseteq$) in similar ways.  To get at\nexactly how these relations are similar, and how they differ, we\ncategorize them according to some special properties that relations\ncan have.  It turns out that (combinations of) some of these special\nproperties are especially important: orders and equivalence relations.\n\\end{intro}\n\n",
+        "sha256": "1792c84d5f8236b82619a4d7ea850dfd67e2ad1bdf0f68d8fc693d387ae2f91e"
+      },
+      "target_before": {
+        "char_start": 198,
+        "char_end_exclusive": 764,
+        "line_start": 10,
+        "line_end": 23,
+        "text": "\\olsection{ویژگی‌های خاص روابط}\n\n\\begin{intro}\nبرخی گونه‌های روابط چنان رایج‌اند که نام‌هایی خاص به آنها داده‌اند.\nبرای نمونه، $\\le$ و~$\\subseteq$ هر دو اعضای دامنه‌های مربوط به خود را\n(مثلاً $\\Nat$ در مورد~$\\le$ و $\\Pow{A}$ در مورد~$\\subseteq$) به\nشیوه‌هایی مشابه به هم مرتبط می‌کنند. برای آنکه دقیقاً دریابیم این روابط\nاز چه جهت مشابه و از چه جهت متفاوت‌اند، آنها را بر پایهٔ برخی ویژگی‌های\nخاصی که روابط می‌توانند داشته باشند دسته‌بندی می‌کنیم. معلوم می‌شود که\n(ترکیب‌هایی از) بعضی از این ویژگی‌های خاص اهمیت ویژه‌ای دارند: ترتیب‌ها\nو روابط هم‌ارزی.\n\\end{intro}\n\n",
+        "sha256": "e91854980c04ca4e965a6cb512d9dacd86f772919800e319ce72d06914207727"
+      },
+      "target_after": {
+        "char_start": 198,
+        "char_end_exclusive": 764,
+        "line_start": 10,
+        "line_end": 23,
+        "text": "\\olsection{ویژگی‌های خاص روابط}\n\n\\begin{intro}\nبرخی گونه‌های روابط چنان رایج‌اند که نام‌هایی خاص به آنها داده‌اند.\nبرای نمونه، $\\le$ و~$\\subseteq$ هر دو اعضای دامنه‌های مربوط به خود را\n(مثلاً $\\Nat$ در مورد~$\\le$ و $\\Pow{A}$ در مورد~$\\subseteq$) به\nشیوه‌هایی مشابه به هم مرتبط می‌کنند. برای آنکه دقیقاً دریابیم این روابط\nاز چه جهت مشابه و از چه جهت متفاوت‌اند، آنها را بر پایهٔ برخی ویژگی‌های\nخاصی که روابط می‌توانند داشته باشند دسته‌بندی می‌کنیم. معلوم می‌شود که\n(ترکیب‌هایی از) بعضی از این ویژگی‌های خاص اهمیت ویژه‌ای دارند: ترتیب‌ها\nو روابط هم‌ارزی.\n\\end{intro}\n\n",
+        "sha256": "e91854980c04ca4e965a6cb512d9dacd86f772919800e319ce72d06914207727"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\olsection{ویژگی‌های خاص روابط}\n\n\\begin{intro}\nبرخی گونه‌های روابط چنان رایج‌اند که نام‌هایی خاص به آنها داده‌اند.\nبرای نمونه، $\\le$ و~$\\subseteq$ هر دو اعضای دامنه‌های مربوط به خود را\n(مثلاً $\\Nat$ در مورد~$\\le$ و $\\Pow{A}$ در مورد~$\\subseteq$) به\nشیوه‌هایی مشابه به هم مرتبط می‌کنند. برای آنکه دقیقاً دریابیم این روابط\nاز چه جهت مشابه و از چه جهت متفاوت‌اند، آنها را بر پایهٔ برخی ویژگی‌های\nخاصی که روابط می‌توانند داشته باشند دسته‌بندی می‌کنیم. معلوم می‌شود که\n(ترکیب‌هایی از) بعضی از این ویژگی‌های خاص اهمیت ویژه‌ای دارند: ترتیب‌ها\nو روابط هم‌ارزی.\n\\end{intro}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Reflexivity",
+      "canon": [
+        "FA-REL-P055"
+      ],
+      "rationale": "بازتابی is directly printed beside the universal Rxx condition. The target’s بازتابی‌بودن heading and prose preserve that definition.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The frozen source, existing Persian target and directly read Persian canon passage were compared; limits are stated explicitly.",
+      "id": "FA-0014-C02",
+      "unit": "OLP-0014",
+      "source": {
+        "char_start": 804,
+        "char_end_exclusive": 924,
+        "line_start": 23,
+        "line_end": 28,
+        "text": "\\begin{defn}[Reflexivity]\nA relation $R \\subseteq A^2$ is \\emph{reflexive} iff, for every $x \\in\nA$, $Rxx$.\n\\end{defn}\n\n",
+        "sha256": "0fe954849684ea27f5541660be7f68f4c290c0a57db0ea3606fba01fd8a6ff9c"
+      },
+      "target_before": {
+        "char_start": 764,
+        "char_end_exclusive": 888,
+        "line_start": 23,
+        "line_end": 28,
+        "text": "\\begin{defn}[بازتابی‌بودن]\nرابطهٔ $R \\subseteq A^2$ \\emph{بازتابی} است اگر و تنها اگر برای هر $x \\in\nA$، $Rxx$.\n\\end{defn}\n\n",
+        "sha256": "627e25138239320dca727854f07292f304a17249b7f59b61d102cbf1e338d0bd"
+      },
+      "target_after": {
+        "char_start": 764,
+        "char_end_exclusive": 888,
+        "line_start": 23,
+        "line_end": 28,
+        "text": "\\begin{defn}[بازتابی‌بودن]\nرابطهٔ $R \\subseteq A^2$ \\emph{بازتابی} است اگر و تنها اگر برای هر $x \\in\nA$، $Rxx$.\n\\end{defn}\n\n",
+        "sha256": "627e25138239320dca727854f07292f304a17249b7f59b61d102cbf1e338d0bd"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{defn}[بازتابی‌بودن]\nرابطهٔ $R \\subseteq A^2$ \\emph{بازتابی} است اگر و تنها اگر برای هر $x \\in\nA$، $Rxx$.\n\\end{defn}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Transitivity",
+      "canon": [
+        "FA-REL-P055",
+        "FA-REL-P056"
+      ],
+      "rationale": "تراگذری is directly printed with the Rxy,Ryz to Rxz condition. Preserve the source’s implication and the target’s formula; the label is not replaced by an unattested synonym.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The frozen source, existing Persian target and directly read Persian canon passage were compared; limits are stated explicitly.",
+      "id": "FA-0014-C03",
+      "unit": "OLP-0014",
+      "source": {
+        "char_start": 924,
+        "char_end_exclusive": 1061,
+        "line_start": 28,
+        "line_end": 33,
+        "text": "\\begin{defn}[Transitivity]\nA relation $R \\subseteq A^2$ is \\emph{transitive} iff, whenever $Rxy$\nand $Ryz$, then also $Rxz$.\n\\end{defn}\n\n",
+        "sha256": "4eb7a62b1b108d1f2333ea662449b3349dca529ef52c89ee8e8c0dd4f47cee88"
+      },
+      "target_before": {
+        "char_start": 888,
+        "char_end_exclusive": 1019,
+        "line_start": 28,
+        "line_end": 33,
+        "text": "\\begin{defn}[تراگذری]\nرابطهٔ $R \\subseteq A^2$ \\emph{تراگذری} است اگر و تنها اگر هرگاه $Rxy$\nو $Ryz$، آنگاه $Rxz$ نیز.\n\\end{defn}\n\n",
+        "sha256": "9c7e72c7b851b913a0fb30197164700308226b666d889a5def283ce9cc5122cc"
+      },
+      "target_after": {
+        "char_start": 888,
+        "char_end_exclusive": 1019,
+        "line_start": 28,
+        "line_end": 33,
+        "text": "\\begin{defn}[تراگذری]\nرابطهٔ $R \\subseteq A^2$ \\emph{تراگذری} است اگر و تنها اگر هرگاه $Rxy$\nو $Ryz$، آنگاه $Rxz$ نیز.\n\\end{defn}\n\n",
+        "sha256": "9c7e72c7b851b913a0fb30197164700308226b666d889a5def283ce9cc5122cc"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{defn}[تراگذری]\nرابطهٔ $R \\subseteq A^2$ \\emph{تراگذری} است اگر و تنها اگر هرگاه $Rxy$\nو $Ryz$، آنگاه $Rxz$ نیز.\n\\end{defn}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Symmetry",
+      "canon": [
+        "FA-REL-P055",
+        "FA-REL-P056"
+      ],
+      "rationale": "متقارن is directly printed with Rxy implying Ryx. The target heading تقارن and prose preserve the source definition.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The frozen source, existing Persian target and directly read Persian canon passage were compared; limits are stated explicitly.",
+      "id": "FA-0014-C04",
+      "unit": "OLP-0014",
+      "source": {
+        "char_start": 1061,
+        "char_end_exclusive": 1183,
+        "line_start": 33,
+        "line_end": 38,
+        "text": "\\begin{defn}[Symmetry]\nA relation~$R \\subseteq A^2$ is \\emph{symmetric} iff, whenever\n$Rxy$, then also~$Ryx$.\n\\end{defn}\n\n",
+        "sha256": "5f0bd05b02c8bc931293f9d0e8e158e1905f354817459bd48fcdd7bb6695ca7c"
+      },
+      "target_before": {
+        "char_start": 1019,
+        "char_end_exclusive": 1139,
+        "line_start": 33,
+        "line_end": 38,
+        "text": "\\begin{defn}[تقارن]\nرابطهٔ~$R \\subseteq A^2$ \\emph{متقارن} است اگر و تنها اگر هرگاه\n$Rxy$، آنگاه~$Ryx$ نیز.\n\\end{defn}\n\n",
+        "sha256": "f17d66d5021ffa072c046cfac53e7c1cc91b693822c9b2af8814709d0f067cbc"
+      },
+      "target_after": {
+        "char_start": 1019,
+        "char_end_exclusive": 1139,
+        "line_start": 33,
+        "line_end": 38,
+        "text": "\\begin{defn}[تقارن]\nرابطهٔ~$R \\subseteq A^2$ \\emph{متقارن} است اگر و تنها اگر هرگاه\n$Rxy$، آنگاه~$Ryx$ نیز.\n\\end{defn}\n\n",
+        "sha256": "f17d66d5021ffa072c046cfac53e7c1cc91b693822c9b2af8814709d0f067cbc"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{defn}[تقارن]\nرابطهٔ~$R \\subseteq A^2$ \\emph{متقارن} است اگر و تنها اگر هرگاه\n$Rxy$، آنگاه~$Ryx$ نیز.\n\\end{defn}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Antisymmetry and hyphenation repair",
+      "canon": [
+        "FA-REL-P055"
+      ],
+      "rationale": "پادمتقارن is directly printed in the canon. The target’s discretionary TeX hyphenation is removed as a presentation artifact while the meaning and formula remain unchanged.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The frozen source, existing Persian target and directly read Persian canon passage were compared; limits are stated explicitly.",
+      "id": "FA-0014-C05",
+      "unit": "OLP-0014",
+      "source": {
+        "char_start": 1183,
+        "char_end_exclusive": 1403,
+        "line_start": 38,
+        "line_end": 44,
+        "text": "\\begin{defn}[Anti-symmetry]\nA relation~$R \\subseteq A^2$ is \\emph{anti-sym\\-met\\-ric} iff, whenever both\n$Rxy$ and $Ryx$, then $x=y$ (or, in other words: if $x\\neq y$ then\neither $\\lnot Rxy$ or $\\lnot Ryx$).\n\\end{defn}\n\n",
+        "sha256": "1d5b1997dd5349086e7e4964151c9901761a48efc26245387648e235ec4db479"
+      },
+      "target_before": {
+        "char_start": 1139,
+        "char_end_exclusive": 1385,
+        "line_start": 38,
+        "line_end": 44,
+        "text": "\\begin{defn}[پادتقارنی]\nرابطهٔ~$R \\subseteq A^2$ \\emph{پاد\\-مت\\-قارن} است اگر و تنها اگر هرگاه هر دو\n$Rxy$ و $Ryx$ برقرار باشند، آنگاه $x=y$ (یا به بیان دیگر: اگر $x\\neq y$،\nآنگاه دست‌کم یکی از $\\lnot Rxy$ یا $\\lnot Ryx$ برقرار است).\n\\end{defn}\n\n",
+        "sha256": "acbecd397663e64e84fb79c874765d9ec64217712926f0c99b70a063ad4f21da"
+      },
+      "target_after": {
+        "char_start": 1139,
+        "char_end_exclusive": 1381,
+        "line_start": 38,
+        "line_end": 44,
+        "text": "\\begin{defn}[پادتقارنی]\nرابطهٔ~$R \\subseteq A^2$ \\emph{پادمتقارن} است اگر و تنها اگر هرگاه هر دو\n$Rxy$ و $Ryx$ برقرار باشند، آنگاه $x=y$ (یا به بیان دیگر: اگر $x\\neq y$،\nآنگاه دست‌کم یکی از $\\lnot Rxy$ یا $\\lnot Ryx$ برقرار است).\n\\end{defn}\n\n",
+        "sha256": "4f45a68563fb4d7f6b3fafc53d05783c3f75106bd0ee4ab9e1d80043270289e8"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{defn}[پادتقارنی]\nرابطهٔ~$R \\subseteq A^2$ \\emph{پادمتقارن} است اگر و تنها اگر هرگاه هر دو\n$Rxy$ و $Ryx$ برقرار باشند، آنگاه $x=y$ (یا به بیان دیگر: اگر $x\\neq y$،\nآنگاه دست‌کم یکی از $\\lnot Rxy$ یا $\\lnot Ryx$ برقرار است).\n\\end{defn}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Antisymmetry is not non-symmetry",
+      "canon": [
+        "FA-REL-P055"
+      ],
+      "rationale": "The target preserves the crucial distinction: antisymmetry permits both directions when x=y, does not require diagonal pairs, and differs from merely not symmetric. The identity relation remains the example.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The frozen source, existing Persian target and directly read Persian canon passage were compared; limits are stated explicitly.",
+      "id": "FA-0014-C06",
+      "unit": "OLP-0014",
+      "source": {
+        "char_start": 1403,
+        "char_end_exclusive": 2051,
+        "line_start": 44,
+        "line_end": 57,
+        "text": "\\begin{explain}\nIn a symmetric relation, $Rxy$ and $Ryx$ always hold together, or\nneither holds.  In an anti-symmetric relation, the only way for $Rxy$\nand $Ryx$ to hold together is if $x = y$.  Note that this does not\n\\emph{require} that $Rxy$ and $Ryx$ holds when $x = y$, only that it\nisn't ruled out.  So an anti-symmetric relation can be reflexive, but\nit is not the case that every anti-symmetric relation is\nreflexive.  Also note that being anti-symmetric and merely not being\nsymmetric are different conditions.  In fact, a relation can be both\nsymmetric and anti-symmetric at the same time (e.g., the identity\nrelation is).\n\\end{explain}\n\n",
+        "sha256": "bfaa84a4c93fe38408f46dd8cbb6fe600e543b391ec6beef80507da0b63bb040"
+      },
+      "target_before": {
+        "char_start": 1385,
+        "char_end_exclusive": 1975,
+        "line_start": 44,
+        "line_end": 55,
+        "text": "\\begin{explain}\nدر رابطه‌ای متقارن، $Rxy$ و $Ryx$ همیشه با هم برقرارند یا هیچ‌یک برقرار\nنیست. در رابطه‌ای پادمتقارن، تنها در صورتی ممکن است $Rxy$ و $Ryx$ با هم\nبرقرار باشند که $x = y$. توجه کنید که این امر \\emph{ایجاب نمی‌کند} که\n$Rxy$ و $Ryx$ وقتی $x = y$ است برقرار باشند؛ فقط برقرار بودنشان را منتفی\nنمی‌کند. پس یک رابطهٔ پادمتقارن می‌تواند بازتابی باشد، اما هر رابطهٔ\nپادمتقارنی بازتابی نیست. همچنین توجه کنید که پادمتقارن‌بودن با صرفاً\nمتقارن‌نبودن دو شرط متفاوت‌اند. در واقع، یک رابطه می‌تواند هم‌زمان هم\nمتقارن و هم پادمتقارن باشد (برای نمونه، رابطهٔ همانی چنین است).\n\\end{explain}\n\n",
+        "sha256": "03384f17126e33c40ec969f9a64620bdea7c125150989e3a80d56065517f128f"
+      },
+      "target_after": {
+        "char_start": 1381,
+        "char_end_exclusive": 1971,
+        "line_start": 44,
+        "line_end": 55,
+        "text": "\\begin{explain}\nدر رابطه‌ای متقارن، $Rxy$ و $Ryx$ همیشه با هم برقرارند یا هیچ‌یک برقرار\nنیست. در رابطه‌ای پادمتقارن، تنها در صورتی ممکن است $Rxy$ و $Ryx$ با هم\nبرقرار باشند که $x = y$. توجه کنید که این امر \\emph{ایجاب نمی‌کند} که\n$Rxy$ و $Ryx$ وقتی $x = y$ است برقرار باشند؛ فقط برقرار بودنشان را منتفی\nنمی‌کند. پس یک رابطهٔ پادمتقارن می‌تواند بازتابی باشد، اما هر رابطهٔ\nپادمتقارنی بازتابی نیست. همچنین توجه کنید که پادمتقارن‌بودن با صرفاً\nمتقارن‌نبودن دو شرط متفاوت‌اند. در واقع، یک رابطه می‌تواند هم‌زمان هم\nمتقارن و هم پادمتقارن باشد (برای نمونه، رابطهٔ همانی چنین است).\n\\end{explain}\n\n",
+        "sha256": "03384f17126e33c40ec969f9a64620bdea7c125150989e3a80d56065517f128f"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{explain}\nدر رابطه‌ای متقارن، $Rxy$ و $Ryx$ همیشه با هم برقرارند یا هیچ‌یک برقرار\nنیست. در رابطه‌ای پادمتقارن، تنها در صورتی ممکن است $Rxy$ و $Ryx$ با هم\nبرقرار باشند که $x = y$. توجه کنید که این امر \\emph{ایجاب نمی‌کند} که\n$Rxy$ و $Ryx$ وقتی $x = y$ است برقرار باشند؛ فقط برقرار بودنشان را منتفی\nنمی‌کند. پس یک رابطهٔ پادمتقارن می‌تواند بازتابی باشد، اما هر رابطهٔ\nپادمتقارنی بازتابی نیست. همچنین توجه کنید که پادمتقارن‌بودن با صرفاً\nمتقارن‌نبودن دو شرط متفاوت‌اند. در واقع، یک رابطه می‌تواند هم‌زمان هم\nمتقارن و هم پادمتقارن باشد (برای نمونه، رابطهٔ همانی چنین است).\n\\end{explain}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Connectivity/comparability",
+      "canon": [
+        "FA-REL-P055"
+      ],
+      "rationale": "همبند is directly attested for comparability-style relation behavior. Preserve x neq y and at least one directed pair; do not import graph-path connectivity.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The frozen source, existing Persian target and directly read Persian canon passage were compared; limits are stated explicitly.",
+      "id": "FA-0014-C07",
+      "unit": "OLP-0014",
+      "source": {
+        "char_start": 2051,
+        "char_end_exclusive": 2205,
+        "line_start": 57,
+        "line_end": 62,
+        "text": "\\begin{defn}[Connectivity]\nA relation $R \\subseteq A^2$ is \\emph{connected} if for all $x,y\\in\nA$, if $x \\neq y$, then either $Rxy$ or~$Ryx$.\n\\end{defn}\n\n",
+        "sha256": "2edb855cf7892b1be455dc55fc3968a48db17ce14f94f0460d5367d23afa133f"
+      },
+      "target_before": {
+        "char_start": 1975,
+        "char_end_exclusive": 2138,
+        "line_start": 55,
+        "line_end": 60,
+        "text": "\\begin{defn}[همبندی]\nرابطهٔ $R \\subseteq A^2$ \\emph{همبند} است اگر برای همهٔ $x,y\\in\nA$، اگر $x \\neq y$، آنگاه دست‌کم یکی از $Rxy$ و~$Ryx$ برقرار است.\n\\end{defn}\n\n",
+        "sha256": "5e80c8968f5017b38a7a4e2beb948bf849963b1151ddd8360c4791432ef6ed1c"
+      },
+      "target_after": {
+        "char_start": 1971,
+        "char_end_exclusive": 2134,
+        "line_start": 55,
+        "line_end": 60,
+        "text": "\\begin{defn}[همبندی]\nرابطهٔ $R \\subseteq A^2$ \\emph{همبند} است اگر برای همهٔ $x,y\\in\nA$، اگر $x \\neq y$، آنگاه دست‌کم یکی از $Rxy$ و~$Ryx$ برقرار است.\n\\end{defn}\n\n",
+        "sha256": "5e80c8968f5017b38a7a4e2beb948bf849963b1151ddd8360c4791432ef6ed1c"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{defn}[همبندی]\nرابطهٔ $R \\subseteq A^2$ \\emph{همبند} است اگر برای همهٔ $x,y\\in\nA$، اگر $x \\neq y$، آنگاه دست‌کم یکی از $Rxy$ و~$Ryx$ برقرار است.\n\\end{defn}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Exercise domain restriction",
+      "canon": [
+        "FA-REL-P055"
+      ],
+      "rationale": "Preserve all four property combinations and the explicit prohibition on relations over numbers or sets. The canon provides labels, not exercise solutions.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The frozen source, existing Persian target and directly read Persian canon passage were compared; limits are stated explicitly.",
+      "id": "FA-0014-C08",
+      "unit": "OLP-0014",
+      "source": {
+        "char_start": 2205,
+        "char_end_exclusive": 2489,
+        "line_start": 62,
+        "line_end": 69,
+        "text": "\\begin{prob}\nGive examples of relations that are (a) reflexive and symmetric but\nnot transitive, (b) reflexive and anti-symmetric, (c) anti-symmetric,\ntransitive, but not reflexive, and (d) reflexive, symmetric, and\ntransitive.  Do not use relations on numbers or sets.\n\\end{prob} \n \n",
+        "sha256": "5c2aa55bf34021482f21b488cbdaa5728d7b32ec51b7f79c4190e7c2da5ccbaf"
+      },
+      "target_before": {
+        "char_start": 2138,
+        "char_end_exclusive": 2401,
+        "line_start": 60,
+        "line_end": 67,
+        "text": "\\begin{prob}\nنمونه‌هایی از روابطی به دست دهید که (a) بازتابی و متقارن ولی\nتراگذری نیستند، (b) بازتابی و پادمتقارن‌اند، (c) پادمتقارن و تراگذری‌اند\nولی بازتابی نیستند، و (d) بازتابی، متقارن و تراگذری‌اند. از روابط روی اعداد\nیا مجموعه‌ها استفاده نکنید.\n\\end{prob}\n\n",
+        "sha256": "88f4444837904678d306c960bc99a71e5a9ddf787788fd770a235d86015cbcbb"
+      },
+      "target_after": {
+        "char_start": 2134,
+        "char_end_exclusive": 2397,
+        "line_start": 60,
+        "line_end": 67,
+        "text": "\\begin{prob}\nنمونه‌هایی از روابطی به دست دهید که (a) بازتابی و متقارن ولی\nتراگذری نیستند، (b) بازتابی و پادمتقارن‌اند، (c) پادمتقارن و تراگذری‌اند\nولی بازتابی نیستند، و (d) بازتابی، متقارن و تراگذری‌اند. از روابط روی اعداد\nیا مجموعه‌ها استفاده نکنید.\n\\end{prob}\n\n",
+        "sha256": "88f4444837904678d306c960bc99a71e5a9ddf787788fd770a235d86015cbcbb"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{prob}\nنمونه‌هایی از روابطی به دست دهید که (a) بازتابی و متقارن ولی\nتراگذری نیستند، (b) بازتابی و پادمتقارن‌اند، (c) پادمتقارن و تراگذری‌اند\nولی بازتابی نیستند، و (d) بازتابی، متقارن و تراگذری‌اند. از روابط روی اعداد\nیا مجموعه‌ها استفاده نکنید.\n\\end{prob}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Irreflexivity distinction",
+      "canon": [
+        "FA-REL-P055",
+        "FA-REL-P056"
+      ],
+      "rationale": "The older Persian canon directly supports پادبازتابی for the universal not-Rxx condition; the new book confirms the surrounding property vocabulary but does not print this label. Replace the target’s غیربازتابی with پادبازتابی consistently.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The frozen source, existing Persian target and directly read Persian canon passage were compared; limits are stated explicitly.",
+      "id": "FA-0014-C09",
+      "unit": "OLP-0014",
+      "source": {
+        "char_start": 2489,
+        "char_end_exclusive": 2622,
+        "line_start": 69,
+        "line_end": 74,
+        "text": "\\begin{defn}[Irreflexivity]\nA relation $R \\subseteq A^2$ is called \\emph{irreflexive} if, for all $x \\in\nA$, not $Rxx$. \n\\end{defn}\n\n",
+        "sha256": "bf7f903125af16746f9a1605e123fe553f3f1e1a151ade3bc448111ced849f2a"
+      },
+      "target_before": {
+        "char_start": 2401,
+        "char_end_exclusive": 2533,
+        "line_start": 67,
+        "line_end": 72,
+        "text": "\\begin{defn}[غیربازتابی‌بودن]\nرابطهٔ $R \\subseteq A^2$ \\emph{غیربازتابی} نامیده می‌شود اگر برای هر $x \\in\nA$، نه $Rxx$.\n\\end{defn}\n\n",
+        "sha256": "046b6d0f166ff9be2c8bf7aadd0a7fbf985eb1c5ead7c5b3d32eac4a212deda8"
+      },
+      "target_after": {
+        "char_start": 2397,
+        "char_end_exclusive": 2529,
+        "line_start": 67,
+        "line_end": 72,
+        "text": "\\begin{defn}[پادبازتابی‌بودن]\nرابطهٔ $R \\subseteq A^2$ \\emph{غیربازتابی} نامیده می‌شود اگر برای هر $x \\in\nA$، نه $Rxx$.\n\\end{defn}\n\n",
+        "sha256": "31faba00e29f578f22ab10652a0c495b68f8301d779591f11bdaad98394fac56"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{defn}[پادبازتابی‌بودن]\nرابطهٔ $R \\subseteq A^2$ \\emph{غیربازتابی} نامیده می‌شود اگر برای هر $x \\in\nA$، نه $Rxx$.\n\\end{defn}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Asymmetry",
+      "canon": [
+        "FA-REL-P055",
+        "FA-REL-P056"
+      ],
+      "rationale": "The source requires no pair with both directions. The selected pages do not attest نامتقارن directly, so retain it as a transparent provisional form and explicitly disclose that gap rather than conflating it with not-symmetric or antisymmetric.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 2,
+      "confidence_reason": "The formal distinction is exact, but the selected pages do not directly attest the exact نامتقارن compound.",
+      "id": "FA-0014-C10",
+      "unit": "OLP-0014",
+      "source": {
+        "char_start": 2622,
+        "char_end_exclusive": 2772,
+        "line_start": 74,
+        "line_end": 79,
+        "text": "\\begin{defn}[Asymmetry]\nA relation $R \\subseteq A^2$ is called \\emph{asymmetric} if for no pair $x,y\\in\nA$ we have both $Rxy$ and~$Ryx$. \n\\end{defn}\n\n",
+        "sha256": "c268badb0424cf75f0649d10980d42ee11451d5ebdc6e2f226407c7a27141a95"
+      },
+      "target_before": {
+        "char_start": 2533,
+        "char_end_exclusive": 2701,
+        "line_start": 72,
+        "line_end": 77,
+        "text": "\\begin{defn}[نامتقارنی]\nرابطهٔ $R \\subseteq A^2$ \\emph{نامتقارن} نامیده می‌شود اگر هیچ زوج $x,y\\in\nA$ وجود نداشته باشد که هر دو $Rxy$ و~$Ryx$ برقرار باشند.\n\\end{defn}\n\n",
+        "sha256": "2d139c60ee72081b6a1735d9ee6bd50a43a9ad4fd57d659e204922b81d8a5b87"
+      },
+      "target_after": {
+        "char_start": 2529,
+        "char_end_exclusive": 2697,
+        "line_start": 72,
+        "line_end": 77,
+        "text": "\\begin{defn}[نامتقارنی]\nرابطهٔ $R \\subseteq A^2$ \\emph{نامتقارن} نامیده می‌شود اگر هیچ زوج $x,y\\in\nA$ وجود نداشته باشد که هر دو $Rxy$ و~$Ryx$ برقرار باشند.\n\\end{defn}\n\n",
+        "sha256": "2d139c60ee72081b6a1735d9ee6bd50a43a9ad4fd57d659e204922b81d8a5b87"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{defn}[نامتقارنی]\nرابطهٔ $R \\subseteq A^2$ \\emph{نامتقارن} نامیده می‌شود اگر هیچ زوج $x,y\\in\nA$ وجود نداشته باشد که هر دو $Rxy$ و~$Ryx$ برقرار باشند.\n\\end{defn}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Final existence scope",
+      "canon": [
+        "FA-REL-P055"
+      ],
+      "rationale": "The target corrects a local scope error: a relation that is neither reflexive nor irreflexive requires a domain with at least two elements; nonempty suffices only for the first two implications. The formulas and remaining claims are preserved. This is a mathematical/editorial correction, not an upstream transcription report.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The frozen source, existing Persian target and directly read Persian canon passage were compared; limits are stated explicitly.",
+      "id": "FA-0014-C11",
+      "unit": "OLP-0014",
+      "source": {
+        "char_start": 2772,
+        "char_end_exclusive": 3067,
+        "line_start": 79,
+        "line_end": 85,
+        "text": "Note that if $A \\neq \\emptyset$, then no irreflexive relation on~$A$\nis reflexive and every asymmetric relation on~$A$ is also\nanti-symmetric. However, there are $R \\subseteq A^2$ that are not\nreflexive and also not irreflexive, and there are anti-symmetric\nrelations that are not asymmetric. \n\n",
+        "sha256": "d2677298c84bb68d98f5c909402582792e6b3270996bd3d70f7f923c50dcfaf6"
+      },
+      "target_before": {
+        "char_start": 2701,
+        "char_end_exclusive": 2972,
+        "line_start": 77,
+        "line_end": 82,
+        "text": "توجه کنید که اگر $A \\neq \\emptyset$، آنگاه هیچ رابطهٔ غیربازتابی\nروی~$A$ بازتابی نیست و هر رابطهٔ نامتقارن روی~$A$ پادمتقارن نیز هست.\nبااین‌حال، روابطی $R \\subseteq A^2$ وجود دارند که نه بازتابی‌اند و نه\nغیربازتابی، و روابط پادمتقارنی نیز وجود دارند که نامتقارن نیستند.\n\n",
+        "sha256": "84d685e69fe95576668c83f2a3b8dff2925b35cc0b123592675f7054c2041a36"
+      },
+      "target_after": {
+        "char_start": 2697,
+        "char_end_exclusive": 3008,
+        "line_start": 77,
+        "line_end": 83,
+        "text": "توجه کنید که اگر $A \\neq \\emptyset$، آنگاه هیچ رابطهٔ پادبازتابی\nروی~$A$ بازتابی نیست و هر رابطهٔ نامتقارن روی~$A$ پادمتقارن نیز هست.\nبااین‌حال، اگر مجموعهٔ A دست‌کم دو عضو داشته باشد، روابطی $R \\subseteq A^2$\nوجود دارند که نه بازتابی‌اند و نه پادبازتابی، و روابط پادمتقارنی نیز\nوجود دارند که نامتقارن نیستند.\n\n",
+        "sha256": "c3ff633965315770afde5eafab019363157734a915ac64b18fb03fe8e9d2ead5"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "توجه کنید که اگر $A \\neq \\emptyset$، آنگاه هیچ رابطهٔ پادبازتابی\nروی~$A$ بازتابی نیست و هر رابطهٔ نامتقارن روی~$A$ پادمتقارن نیز هست.\nبااین‌حال، اگر مجموعهٔ A دست‌کم دو عضو داشته باشد، روابطی $R \\subseteq A^2$\nوجود دارند که نه بازتابی‌اند و نه پادبازتابی، و روابط پادمتقارنی نیز\nوجود دارند که نامتقارن نیستند.\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Opening identity relation",
+      "canon": [
+        "FA-REL-P055",
+        "FA-REL-P056"
+      ],
+      "rationale": "The target states the identity relation is reflexive, symmetric and transitive and introduces the equivalence section without changing the three properties.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The frozen source, existing Persian target and directly read Persian canon passage were compared; limits are stated explicitly.",
+      "id": "FA-0015-C01",
+      "unit": "OLP-0015",
+      "source": {
+        "char_start": 195,
+        "char_end_exclusive": 374,
+        "line_start": 11,
+        "line_end": 17,
+        "text": "\\olsection{Equivalence Relations}\n\nThe identity relation on a set is reflexive, symmetric, and\ntransitive. Relations~$R$ that have all three of these properties are very\ncommon.\n\n",
+        "sha256": "aa5427e71766970d3d82207be429416a3d29a5c4f431226ecc988a9ec57e9f81"
+      },
+      "target_before": {
+        "char_start": 202,
+        "char_end_exclusive": 356,
+        "line_start": 11,
+        "line_end": 16,
+        "text": "\\olsection{روابط هم‌ارزی}\n\nرابطهٔ همانی روی هر مجموعه، رابطه‌ای بازتابی، متقارن و تراگذری است. روابط~$R$\nکه هر سهٔ این ویژگی‌ها را دارند بسیار رایج‌اند.\n\n",
+        "sha256": "14fb6c4289df8c1a3f0376296ddc6b07c6474c234bf36a28a8f505108d5da76c"
+      },
+      "target_after": {
+        "char_start": 202,
+        "char_end_exclusive": 356,
+        "line_start": 11,
+        "line_end": 16,
+        "text": "\\olsection{روابط هم‌ارزی}\n\nرابطهٔ همانی روی هر مجموعه، رابطه‌ای بازتابی، متقارن و تراگذری است. روابط~$R$\nکه هر سهٔ این ویژگی‌ها را دارند بسیار رایج‌اند.\n\n",
+        "sha256": "14fb6c4289df8c1a3f0376296ddc6b07c6474c234bf36a28a8f505108d5da76c"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\olsection{روابط هم‌ارزی}\n\nرابطهٔ همانی روی هر مجموعه، رابطه‌ای بازتابی، متقارن و تراگذری است. روابط~$R$\nکه هر سهٔ این ویژگی‌ها را دارند بسیار رایج‌اند.\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Definition and singular element token",
+      "canon": [
+        "FA-REL-P056"
+      ],
+      "rationale": "رابطه هم‌ارزی is directly printed. The target correction realizes the counted noun as singular for x and y while preserving the source token and formula.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The frozen source, existing Persian target and directly read Persian canon passage were compared; limits are stated explicitly.",
+      "id": "FA-0015-C02",
+      "unit": "OLP-0015",
+      "source": {
+        "char_start": 374,
+        "char_end_exclusive": 618,
+        "line_start": 17,
+        "line_end": 23,
+        "text": "\\begin{defn}[Equivalence relation] \nA relation $R \\subseteq A^2$ that is reflexive, symmetric, and\ntransitive is called an \\emph{equivalence relation}. !!^{element}s $x$\nand $y$ of~$A$ are said to be \\emph{$R$-equivalent} if~$Rxy$.\n\\end{defn}\n\n",
+        "sha256": "98e49f14910a16c0827abc58e0e7c8c8a9b2a809f1a9409151934d733496b4d1"
+      },
+      "target_before": {
+        "char_start": 356,
+        "char_end_exclusive": 575,
+        "line_start": 16,
+        "line_end": 22,
+        "text": "\\begin{defn}[رابطهٔ هم‌ارزی]\nرابطهٔ $R \\subseteq A^2$ که بازتابی، متقارن و تراگذری باشد\n\\emph{رابطهٔ هم‌ارزی} نامیده می‌شود. گفته می‌شود !!^{element}s $x$\nو $y$ از~$A$ \\emph{نسبت به $R$ هم‌ارزند} اگر~$Rxy$.\n\\end{defn}\n\n",
+        "sha256": "3cb862e2e859cd8177c1cca8eee1bff3e47597b2189c403a44379e05d8e8d6cb"
+      },
+      "target_after": {
+        "char_start": 356,
+        "char_end_exclusive": 573,
+        "line_start": 16,
+        "line_end": 22,
+        "text": "\\begin{defn}[رابطهٔ هم‌ارزی]\nرابطهٔ $R \\subseteq A^2$ که بازتابی، متقارن و تراگذری باشد\n\\emph{رابطهٔ هم‌ارزی} نامیده می‌شود. گفته می‌شود !!{element} $x$\nو $y$ از~$A$ \\emph{نسبت به $R$ هم‌ارزند} اگر~$Rxy$.\n\\end{defn}\n\n",
+        "sha256": "d7cc30729eca3f1f506cd84c992fc8abc8818df4955126806dfe9d0e6d198ce1"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{defn}[رابطهٔ هم‌ارزی]\nرابطهٔ $R \\subseteq A^2$ که بازتابی، متقارن و تراگذری باشد\n\\emph{رابطهٔ هم‌ارزی} نامیده می‌شود. گفته می‌شود عضو $x$\nو $y$ از~$A$ \\emph{نسبت به $R$ هم‌ارزند} اگر~$Rxy$.\n\\end{defn}\n\n",
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 137,
+          "token": "!!{element}",
+          "realization": "عضو"
+        }
+      ]
+    },
+    {
+      "topic": "Classes and partition",
+      "canon": [
+        "FA-REL-P057"
+      ],
+      "rationale": "The target preserves the conceptual distinction between each equivalence class and the partition of the domain; the selected page directly uses classes/quotient/partition terminology.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The frozen source, existing Persian target and directly read Persian canon passage were compared; limits are stated explicitly.",
+      "id": "FA-0015-C03",
+      "unit": "OLP-0015",
+      "source": {
+        "char_start": 618,
+        "char_end_exclusive": 1021,
+        "line_start": 23,
+        "line_end": 31,
+        "text": "Equivalence relations give rise to the notion of an \\emph{equivalence\nclass}. An equivalence relation ``chunks up'' the domain into\ndifferent partitions. Within each partition, all the objects are\nrelated to one another; and no objects from different partitions\nrelate to one another. Sometimes, it's helpful just to talk about\nthese partitions \\emph{directly}. To that end, we introduce a\ndefinition:\n\n",
+        "sha256": "bbb262ccb1bdb01d4a8b0ce52461dcb66e51f5ae39cbd746e4af400ddf79ac0f"
+      },
+      "target_before": {
+        "char_start": 575,
+        "char_end_exclusive": 928,
+        "line_start": 22,
+        "line_end": 28,
+        "text": "روابط هم‌ارزی مفهوم \\emph{ردهٔ هم‌ارزی} را پدید می‌آورند. یک رابطهٔ\nهم‌ارزی دامنه را به رده‌های متفاوتِ یک افراز «تکه‌تکه می‌کند». درون هر\nرده، همهٔ اشیا با یکدیگر در رابطه‌اند؛ و هیچ دو شیئی از رده‌های متفاوت\nبا یکدیگر در رابطه نیستند. گاهی سودمند است که دربارهٔ خودِ این رده‌ها\n\\emph{مستقیماً} سخن بگوییم. برای این منظور، تعریف زیر را معرفی می‌کنیم:\n\n",
+        "sha256": "bfb01ad218935a45c1f4031d9de5dd3d6161144f8275492755abd7b0ff55d0f6"
+      },
+      "target_after": {
+        "char_start": 573,
+        "char_end_exclusive": 926,
+        "line_start": 22,
+        "line_end": 28,
+        "text": "روابط هم‌ارزی مفهوم \\emph{ردهٔ هم‌ارزی} را پدید می‌آورند. یک رابطهٔ\nهم‌ارزی دامنه را به رده‌های متفاوتِ یک افراز «تکه‌تکه می‌کند». درون هر\nرده، همهٔ اشیا با یکدیگر در رابطه‌اند؛ و هیچ دو شیئی از رده‌های متفاوت\nبا یکدیگر در رابطه نیستند. گاهی سودمند است که دربارهٔ خودِ این رده‌ها\n\\emph{مستقیماً} سخن بگوییم. برای این منظور، تعریف زیر را معرفی می‌کنیم:\n\n",
+        "sha256": "bfb01ad218935a45c1f4031d9de5dd3d6161144f8275492755abd7b0ff55d0f6"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "روابط هم‌ارزی مفهوم \\emph{ردهٔ هم‌ارزی} را پدید می‌آورند. یک رابطهٔ\nهم‌ارزی دامنه را به رده‌های متفاوتِ یک افراز «تکه‌تکه می‌کند». درون هر\nرده، همهٔ اشیا با یکدیگر در رابطه‌اند؛ و هیچ دو شیئی از رده‌های متفاوت\nبا یکدیگر در رابطه نیستند. گاهی سودمند است که دربارهٔ خودِ این رده‌ها\n\\emph{مستقیماً} سخن بگوییم. برای این منظور، تعریف زیر را معرفی می‌کنیم:\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Equivalence-class definition",
+      "canon": [
+        "FA-REL-P057"
+      ],
+      "rationale": "The class representative, quotient set and exact set-builder formulas remain intact. The canon supports the terms but the frozen mathematical definitions govern.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The frozen source, existing Persian target and directly read Persian canon passage were compared; limits are stated explicitly.",
+      "id": "FA-0015-C04",
+      "unit": "OLP-0015",
+      "source": {
+        "char_start": 1021,
+        "char_end_exclusive": 1527,
+        "line_start": 31,
+        "line_end": 42,
+        "text": "\\begin{defn}\\ollabel{def:equivalenceclass}\nLet $R \\subseteq A^2$ be an equivalence relation. For each $x \\in A$,\nthe \\emph{equivalence class} of $x$ in~$A$ is the set $\\equivrep{x}{R}\n= \\Setabs{y \\in A}{Rxy}$. The \\emph{quotient} of $A$ under~$R$ is\n$\\equivclass{A}{R} = \\Setabs{\\equivrep{x}{R}}{x \\in A}$, i.e., the set\nof these equivalence classes. \n\\end{defn}\n\nThe next result vindicates the definition of an equivalence class, in\nproving that the equivalence classes are indeed the partitions of~$A$:\n\n",
+        "sha256": "e26b3ed6a6906d66f75f4c866e3e5c478b45c98fdf8fa0b8aeb643acda70e9e4"
+      },
+      "target_before": {
+        "char_start": 928,
+        "char_end_exclusive": 1405,
+        "line_start": 28,
+        "line_end": 40,
+        "text": "\\begin{defn}\\ollabel{def:equivalenceclass}\nفرض کنید $R \\subseteq A^2$ رابطه‌ای هم‌ارزی باشد. برای هر $x \\in A$،\n\\emph{ردهٔ هم‌ارزیِ} $x$ در~$A$ مجموعهٔ $\\equivrep{x}{R}\n= \\Setabs{y \\in A}{Rxy}$ است. \\emph{مجموعهٔ خارج‌قسمتِ} $A$ نسبت\nبه~$R$ عبارت است از\n$\\equivclass{A}{R} = \\Setabs{\\equivrep{x}{R}}{x \\in A}$، یعنی مجموعهٔ\nاین رده‌های هم‌ارزی.\n\\end{defn}\n\nنتیجهٔ بعدی با اثبات اینکه رده‌های هم‌ارزی به‌راستی بخش‌های یک افراز از~$A$\nهستند، تعریف ردهٔ هم‌ارزی را موجه می‌سازد:\n\n",
+        "sha256": "2f8dea2f36b03a74a0d2fb88de747e01861f95aa79ede804526ce4731900e0cb"
+      },
+      "target_after": {
+        "char_start": 926,
+        "char_end_exclusive": 1403,
+        "line_start": 28,
+        "line_end": 40,
+        "text": "\\begin{defn}\\ollabel{def:equivalenceclass}\nفرض کنید $R \\subseteq A^2$ رابطه‌ای هم‌ارزی باشد. برای هر $x \\in A$،\n\\emph{ردهٔ هم‌ارزیِ} $x$ در~$A$ مجموعهٔ $\\equivrep{x}{R}\n= \\Setabs{y \\in A}{Rxy}$ است. \\emph{مجموعهٔ خارج‌قسمتِ} $A$ نسبت\nبه~$R$ عبارت است از\n$\\equivclass{A}{R} = \\Setabs{\\equivrep{x}{R}}{x \\in A}$، یعنی مجموعهٔ\nاین رده‌های هم‌ارزی.\n\\end{defn}\n\nنتیجهٔ بعدی با اثبات اینکه رده‌های هم‌ارزی به‌راستی بخش‌های یک افراز از~$A$\nهستند، تعریف ردهٔ هم‌ارزی را موجه می‌سازد:\n\n",
+        "sha256": "2f8dea2f36b03a74a0d2fb88de747e01861f95aa79ede804526ce4731900e0cb"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{defn}\\ollabel{def:equivalenceclass}\nفرض کنید $R \\subseteq A^2$ رابطه‌ای هم‌ارزی باشد. برای هر $x \\in A$،\n\\emph{ردهٔ هم‌ارزیِ} $x$ در~$A$ مجموعهٔ $\\equivrep{x}{R}\n= \\Setabs{y \\in A}{Rxy}$ است. \\emph{مجموعهٔ خارج‌قسمتِ} $A$ نسبت\nبه~$R$ عبارت است از\n$\\equivclass{A}{R} = \\Setabs{\\equivrep{x}{R}}{x \\in A}$، یعنی مجموعهٔ\nاین رده‌های هم‌ارزی.\n\\end{defn}\n\nنتیجهٔ بعدی با اثبات اینکه رده‌های هم‌ارزی به‌راستی بخش‌های یک افراز از~$A$\nهستند، تعریف ردهٔ هم‌ارزی را موجه می‌سازد:\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Class equality proposition and proof",
+      "canon": [
+        "FA-REL-P055",
+        "FA-REL-P056",
+        "FA-REL-P057"
+      ],
+      "rationale": "Every proof direction remains: symmetry plus transitivity for the left-to-right inclusion, extensionality for equality, and reflexivity for the right-to-left direction. No proof step is omitted.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The frozen source, existing Persian target and directly read Persian canon passage were compared; limits are stated explicitly.",
+      "id": "FA-0015-C05",
+      "unit": "OLP-0015",
+      "source": {
+        "char_start": 1527,
+        "char_end_exclusive": 2406,
+        "line_start": 42,
+        "line_end": 63,
+        "text": "\\begin{prop}\nIf $R \\subseteq A^2$ is an equivalence relation, then $Rxy$ iff\n$\\equivrep{x}{R} = \\equivrep{y}{R}$.\n\\end{prop}\n\n\\begin{proof}\nFor the left-to-right direction, suppose $Rxy$, and let $z \\in\n\\equivrep{x}{R}$. By definition, then, $Rxz$. Since $R$ is an\nequivalence relation, $Ryz$. (Spelling this out: as $Rxy$ and~$R$ is\nsymmetric we have $Ryx$, and as $Rxz$ and~$R$ is transitive we\nhave~$Ryz$.) So $z \\in \\equivrep{y}{R}$. Generalising,\n$\\equivrep{x}{R} \\subseteq \\equivrep{y}{R}$. But exactly similarly,\n$\\equivrep{y}{R} \\subseteq \\equivrep{x}{R}$. So $\\equivrep{x}{R} =\n\\equivrep{y}{R}$, by extensionality.\n\nFor the right-to-left direction, suppose $\\equivrep{x}{R} =\n\\equivrep{y}{R}$. Since $R$ is reflexive, $Ryy$, so $y \\in\n\\equivrep{y}{R}$. Thus also $y \\in \\equivrep{x}{R}$ by the assumption\nthat $\\equivrep{x}{R} = \\equivrep{y}{R}$. So $Rxy$.\n\\end{proof}\n\n",
+        "sha256": "c9e17a75230ed589220df2e81b78a659ef93121db28659c0535bf16fe40bfacc"
+      },
+      "target_before": {
+        "char_start": 1405,
+        "char_end_exclusive": 2274,
+        "line_start": 40,
+        "line_end": 62,
+        "text": "\\begin{prop}\nاگر $R \\subseteq A^2$ رابطه‌ای هم‌ارزی باشد، آنگاه $Rxy$ اگر و تنها اگر\n$\\equivrep{x}{R} = \\equivrep{y}{R}$.\n\\end{prop}\n\n\\begin{proof}\nبرای جهت چپ به راست، فرض کنید $Rxy$ و بگذارید $z \\in\n\\equivrep{x}{R}$. بنا بر تعریف، آنگاه $Rxz$. چون $R$ رابطه‌ای هم‌ارزی\nاست، $Ryz$. (با شرح جزئیات: چون $Rxy$ برقرار است و~$R$ متقارن است، $Ryx$؛\nو چون $Rxz$ برقرار است و~$R$ تراگذری است، داریم~$Ryz$.) پس\n$z \\in \\equivrep{y}{R}$. با تعمیم\nاین استدلال، $\\equivrep{x}{R} \\subseteq \\equivrep{y}{R}$. اما درست به\nهمین ترتیب، $\\equivrep{y}{R} \\subseteq \\equivrep{x}{R}$. بنابراین بنا\nبر اصل گسترش، $\\equivrep{x}{R} =\n\\equivrep{y}{R}$.\n\nبرای جهت راست به چپ، فرض کنید $\\equivrep{x}{R} =\n\\equivrep{y}{R}$. چون $R$ بازتابی است، $Ryy$، پس $y \\in\n\\equivrep{y}{R}$. پس $y \\in \\equivrep{x}{R}$ نیز، بنا بر این فرض که\n$\\equivrep{x}{R} = \\equivrep{y}{R}$. بنابراین $Rxy$.\n\\end{proof}\n\n",
+        "sha256": "940db50ae0fede5c8d85f62c90ca864bf4d6c72b2289f4be98dad28dcb19cb97"
+      },
+      "target_after": {
+        "char_start": 1403,
+        "char_end_exclusive": 2272,
+        "line_start": 40,
+        "line_end": 62,
+        "text": "\\begin{prop}\nاگر $R \\subseteq A^2$ رابطه‌ای هم‌ارزی باشد، آنگاه $Rxy$ اگر و تنها اگر\n$\\equivrep{x}{R} = \\equivrep{y}{R}$.\n\\end{prop}\n\n\\begin{proof}\nبرای جهت چپ به راست، فرض کنید $Rxy$ و بگذارید $z \\in\n\\equivrep{x}{R}$. بنا بر تعریف، آنگاه $Rxz$. چون $R$ رابطه‌ای هم‌ارزی\nاست، $Ryz$. (با شرح جزئیات: چون $Rxy$ برقرار است و~$R$ متقارن است، $Ryx$؛\nو چون $Rxz$ برقرار است و~$R$ تراگذری است، داریم~$Ryz$.) پس\n$z \\in \\equivrep{y}{R}$. با تعمیم\nاین استدلال، $\\equivrep{x}{R} \\subseteq \\equivrep{y}{R}$. اما درست به\nهمین ترتیب، $\\equivrep{y}{R} \\subseteq \\equivrep{x}{R}$. بنابراین بنا\nبر اصل گسترش، $\\equivrep{x}{R} =\n\\equivrep{y}{R}$.\n\nبرای جهت راست به چپ، فرض کنید $\\equivrep{x}{R} =\n\\equivrep{y}{R}$. چون $R$ بازتابی است، $Ryy$، پس $y \\in\n\\equivrep{y}{R}$. پس $y \\in \\equivrep{x}{R}$ نیز، بنا بر این فرض که\n$\\equivrep{x}{R} = \\equivrep{y}{R}$. بنابراین $Rxy$.\n\\end{proof}\n\n",
+        "sha256": "940db50ae0fede5c8d85f62c90ca864bf4d6c72b2289f4be98dad28dcb19cb97"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{prop}\nاگر $R \\subseteq A^2$ رابطه‌ای هم‌ارزی باشد، آنگاه $Rxy$ اگر و تنها اگر\n$\\equivrep{x}{R} = \\equivrep{y}{R}$.\n\\end{prop}\n\n\\begin{proof}\nبرای جهت چپ به راست، فرض کنید $Rxy$ و بگذارید $z \\in\n\\equivrep{x}{R}$. بنا بر تعریف، آنگاه $Rxz$. چون $R$ رابطه‌ای هم‌ارزی\nاست، $Ryz$. (با شرح جزئیات: چون $Rxy$ برقرار است و~$R$ متقارن است، $Ryx$؛\nو چون $Rxz$ برقرار است و~$R$ تراگذری است، داریم~$Ryz$.) پس\n$z \\in \\equivrep{y}{R}$. با تعمیم\nاین استدلال، $\\equivrep{x}{R} \\subseteq \\equivrep{y}{R}$. اما درست به\nهمین ترتیب، $\\equivrep{y}{R} \\subseteq \\equivrep{x}{R}$. بنابراین بنا\nبر اصل گسترش، $\\equivrep{x}{R} =\n\\equivrep{y}{R}$.\n\nبرای جهت راست به چپ، فرض کنید $\\equivrep{x}{R} =\n\\equivrep{y}{R}$. چون $R$ بازتابی است، $Ryy$، پس $y \\in\n\\equivrep{y}{R}$. پس $y \\in \\equivrep{x}{R}$ نیز، بنا بر این فرض که\n$\\equivrep{x}{R} = \\equivrep{y}{R}$. بنابراین $Rxy$.\n\\end{proof}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Modular congruence scope",
+      "canon": [
+        "FA-REL-P056",
+        "FA-REL-P058"
+      ],
+      "rationale": "The same example later takes the quotient of Nat, so a and b are translated as natural numbers while n remains positive. This is a disclosed local scope repair; all displayed arithmetic formulas and congruence semantics remain exact.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The target’s later quotient explicitly uses Nat; the revised Persian sentence makes the minimal coherent scope explicit while preserving every formula.",
+      "id": "FA-0015-C06",
+      "unit": "OLP-0015",
+      "source": {
+        "char_start": 2406,
+        "char_end_exclusive": 2891,
+        "line_start": 63,
+        "line_end": 71,
+        "text": "\\begin{ex}\nA nice example of equivalence relations comes from modular arithmetic.\nFor any $a$, $b$, and $n \\in \\PosInt$, say that $a \\equiv_n b$ iff\ndividing $a$ by~$n$ gives the same remainder as dividing $b$ by~$n$.\n(Somewhat more symbolically: $a \\equiv_n b$ iff, for some $k \\in\n\\Int$, $a - b = kn$.) Now, $\\equiv_n$ is an equivalence relation, for\nany~$n$. And there are exactly $n$ distinct equivalence classes\ngenerated by~$\\equiv_n$; that is, $\\equivclass{\\Nat}{\\equiv_n}$ has\n",
+        "sha256": "e819eeb2983ce7cfd007c59d834da35ed0796855474a65d3f91f4819aa48cc9a"
+      },
+      "target_before": {
+        "char_start": 2274,
+        "char_end_exclusive": 2769,
+        "line_start": 62,
+        "line_end": 70,
+        "text": "\\begin{ex}\nنمونه‌ای خوب از روابط هم‌ارزی از حساب پیمانه‌ای به دست می‌آید. برای هر\nسه عدد صحیح مثبت $a$، $b$ و $n \\in \\PosInt$، می‌گوییم $a \\equiv_n b$ اگر و تنها اگر\nتقسیم $a$ بر~$n$ همان باقی‌مانده‌ای را بدهد که تقسیم $b$ بر~$n$ می‌دهد.\n(به‌صورتی نمادین‌تر: $a \\equiv_n b$ اگر و تنها اگر یک $k \\in\n\\Int$ وجود داشته باشد که $a - b = kn$.) اکنون، $\\equiv_n$ برای\nهر~$n$ رابطه‌ای هم‌ارزی است. و دقیقاً $n$ ردهٔ هم‌ارزیِ متمایز\nبه‌وسیلهٔ~$\\equiv_n$ پدید می‌آیند؛ یعنی $\\equivclass{\\Nat}{\\equiv_n}$\n",
+        "sha256": "3b5bae118629ad2eaeadb47c151016472a87fcc6d3d9fb5259e8318a616901ea"
+      },
+      "target_after": {
+        "char_start": 2272,
+        "char_end_exclusive": 2763,
+        "line_start": 62,
+        "line_end": 69,
+        "text": "\\begin{ex}\nنمونه‌ای خوب از روابط هم‌ارزی از حساب پیمانه‌ای به دست می‌آید. برای دو عدد طبیعی $a$، $b$ و هر $n \\in \\PosInt$، می‌گوییم $a \\equiv_n b$ اگر و تنها اگر\nتقسیم $a$ بر~$n$ همان باقی‌مانده‌ای را بدهد که تقسیم $b$ بر~$n$ می‌دهد.\n(به‌صورتی نمادین‌تر: $a \\equiv_n b$ اگر و تنها اگر یک $k \\in\n\\Int$ وجود داشته باشد که $a - b = kn$.) اکنون، $\\equiv_n$ برای\nهر~$n$ رابطه‌ای هم‌ارزی است. و دقیقاً $n$ ردهٔ هم‌ارزیِ متمایز\nبه‌وسیلهٔ~$\\equiv_n$ پدید می‌آیند؛ یعنی $\\equivclass{\\Nat}{\\equiv_n}$\n",
+        "sha256": "3fe12c113828b54d983b5fea9dd39e1651c1fdae5aec2cdf0c9086f78d5c0e72"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{ex}\nنمونه‌ای خوب از روابط هم‌ارزی از حساب پیمانه‌ای به دست می‌آید. برای دو عدد طبیعی $a$، $b$ و هر $n \\in \\PosInt$، می‌گوییم $a \\equiv_n b$ اگر و تنها اگر\nتقسیم $a$ بر~$n$ همان باقی‌مانده‌ای را بدهد که تقسیم $b$ بر~$n$ می‌دهد.\n(به‌صورتی نمادین‌تر: $a \\equiv_n b$ اگر و تنها اگر یک $k \\in\n\\Int$ وجود داشته باشد که $a - b = kn$.) اکنون، $\\equiv_n$ برای\nهر~$n$ رابطه‌ای هم‌ارزی است. و دقیقاً $n$ ردهٔ هم‌ارزیِ متمایز\nبه‌وسیلهٔ~$\\equiv_n$ پدید می‌آیند؛ یعنی $\\equivclass{\\Nat}{\\equiv_n}$\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Residue classes and counted element",
+      "canon": [
+        "FA-REL-P057",
+        "FA-REL-P058"
+      ],
+      "rationale": "The target retains exactly n distinct equivalence classes and the complete residue-class enumeration. The singular/plural element macro is checked against the locale and the counted noun is plural here.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The frozen source, existing Persian target and directly read Persian canon passage were compared; limits are stated explicitly.",
+      "id": "FA-0015-C07",
+      "unit": "OLP-0015",
+      "source": {
+        "char_start": 2891,
+        "char_end_exclusive": 3372,
+        "line_start": 71,
+        "line_end": 83,
+        "text": "$n$ !!{element}s. These are: the set of numbers divisible by $n$\nwithout remainder, i.e., $\\equivrep{0}{\\equiv_n}$; the set of numbers\ndivisible by $n$ with remainder~$1$, i.e., $\\equivrep{1}{\\equiv_n}$;\n\\ldots; and the set of numbers divisible by~$n$ with remainder~$n-1$,\ni.e.,~$\\equivrep{n-1}{\\equiv_n}$.\n\\end{ex}\n\n\\begin{prob}\nShow that $\\equiv_n$ is an equivalence relation, for any $n \\in\n\\PosInt$, and that $\\equivclass{\\Nat}{\\equiv_n}$ has exactly $n$ members.\n\\end{prob}\n\n",
+        "sha256": "cba58bacf0e287399d698fb6d482a879730185fef33ddc4597c7268ae321b95a"
+      },
+      "target_before": {
+        "char_start": 2769,
+        "char_end_exclusive": 3255,
+        "line_start": 70,
+        "line_end": 83,
+        "text": "دارای $n$ !!{element}s است. این رده‌ها عبارت‌اند از: مجموعهٔ اعدادی که\nبر $n$ بدون باقی‌مانده بخش‌پذیرند، یعنی $\\equivrep{0}{\\equiv_n}$؛\nمجموعهٔ اعدادی که تقسیمشان بر $n$ باقی‌ماندهٔ~$1$ می‌دهد، یعنی\n$\\equivrep{1}{\\equiv_n}$؛ \\ldots؛ و مجموعهٔ اعدادی که تقسیمشان بر~$n$\nباقی‌ماندهٔ~$n-1$ می‌دهد، یعنی~$\\equivrep{n-1}{\\equiv_n}$.\n\\end{ex}\n\n\\begin{prob}\nنشان دهید که $\\equiv_n$ برای هر $n \\in\n\\PosInt$ رابطه‌ای هم‌ارزی است و\n$\\equivclass{\\Nat}{\\equiv_n}$ دقیقاً $n$ عضو دارد.\n\\end{prob}\n\n",
+        "sha256": "850c2edb1dcff3690cf2ee9f2cee18ee661b37d1baa8cffc8038da1f2437b542"
+      },
+      "target_after": {
+        "char_start": 2763,
+        "char_end_exclusive": 3249,
+        "line_start": 69,
+        "line_end": 82,
+        "text": "دارای $n$ !!{element}s است. این رده‌ها عبارت‌اند از: مجموعهٔ اعدادی که\nبر $n$ بدون باقی‌مانده بخش‌پذیرند، یعنی $\\equivrep{0}{\\equiv_n}$؛\nمجموعهٔ اعدادی که تقسیمشان بر $n$ باقی‌ماندهٔ~$1$ می‌دهد، یعنی\n$\\equivrep{1}{\\equiv_n}$؛ \\ldots؛ و مجموعهٔ اعدادی که تقسیمشان بر~$n$\nباقی‌ماندهٔ~$n-1$ می‌دهد، یعنی~$\\equivrep{n-1}{\\equiv_n}$.\n\\end{ex}\n\n\\begin{prob}\nنشان دهید که $\\equiv_n$ برای هر $n \\in\n\\PosInt$ رابطه‌ای هم‌ارزی است و\n$\\equivclass{\\Nat}{\\equiv_n}$ دقیقاً $n$ عضو دارد.\n\\end{prob}\n\n",
+        "sha256": "850c2edb1dcff3690cf2ee9f2cee18ee661b37d1baa8cffc8038da1f2437b542"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "دارای $n$ اعضا است. این رده‌ها عبارت‌اند از: مجموعهٔ اعدادی که\nبر $n$ بدون باقی‌مانده بخش‌پذیرند، یعنی $\\equivrep{0}{\\equiv_n}$؛\nمجموعهٔ اعدادی که تقسیمشان بر $n$ باقی‌ماندهٔ~$1$ می‌دهد، یعنی\n$\\equivrep{1}{\\equiv_n}$؛ \\ldots؛ و مجموعهٔ اعدادی که تقسیمشان بر~$n$\nباقی‌ماندهٔ~$n-1$ می‌دهد، یعنی~$\\equivrep{n-1}{\\equiv_n}$.\n\\end{ex}\n\n\\begin{prob}\nنشان دهید که $\\equiv_n$ برای هر $n \\in\n\\PosInt$ رابطه‌ای هم‌ارزی است و\n$\\equivclass{\\Nat}{\\equiv_n}$ دقیقاً $n$ عضو دارد.\n\\end{prob}\n\n",
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 10,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        }
+      ]
+    }
+  ],
+  "corrections": [
+    {
+      "unit": "OLP-0014",
+      "id": "FA0014-HYPHENATION",
+      "before": "\\emph{پاد\\-مت\\-قارن}",
+      "after": "\\emph{پادمتقارن}"
+    },
+    {
+      "unit": "OLP-0014",
+      "id": "FA0014-IRREFLEXIVE-HEADING",
+      "before": "\\begin{defn}[غیربازتابی‌بودن]",
+      "after": "\\begin{defn}[پادبازتابی‌بودن]"
+    },
+    {
+      "unit": "OLP-0014",
+      "id": "FA0014-IRREFLEXIVE-PARAGRAPH",
+      "before": "توجه کنید که اگر $A \\neq \\emptyset$، آنگاه هیچ رابطهٔ غیربازتابی\nروی~$A$ بازتابی نیست و هر رابطهٔ نامتقارن روی~$A$ پادمتقارن نیز هست.\nبااین‌حال، روابطی $R \\subseteq A^2$ وجود دارند که نه بازتابی‌اند و نه\nغیربازتابی، و روابط پادمتقارنی نیز وجود دارند که نامتقارن نیستند.",
+      "after": "توجه کنید که اگر $A \\neq \\emptyset$، آنگاه هیچ رابطهٔ پادبازتابی\nروی~$A$ بازتابی نیست و هر رابطهٔ نامتقارن روی~$A$ پادمتقارن نیز هست.\nبااین‌حال، اگر مجموعهٔ A دست‌کم دو عضو داشته باشد، روابطی $R \\subseteq A^2$\nوجود دارند که نه بازتابی‌اند و نه پادبازتابی، و روابط پادمتقارنی نیز\nوجود دارند که نامتقارن نیستند."
+    },
+    {
+      "unit": "OLP-0015",
+      "id": "FA0015-SINGULAR-ELEMENT",
+      "before": "گفته می‌شود !!^{element}s $x$\nو $y$",
+      "after": "گفته می‌شود !!{element} $x$\nو $y$"
+    },
+    {
+      "unit": "OLP-0015",
+      "id": "FA0015-MODULAR-SCOPE",
+      "before": "برای هر\nسه عدد صحیح مثبت $a$، $b$ و $n \\in \\PosInt$",
+      "after": "برای دو عدد طبیعی $a$، $b$ و هر $n \\in \\PosInt$"
+    }
+  ],
+  "human_review_gate": false,
+  "reader_release": false
+}
