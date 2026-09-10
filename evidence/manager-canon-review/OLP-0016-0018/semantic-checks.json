@@ -1,0 +1,51 @@
+{
+  "finite_order_tables": [
+    {
+      "domain": 0,
+      "relations": 1,
+      "strict_orders": 1,
+      "partial_orders": 1,
+      "strict_linear_orders": 1
+    },
+    {
+      "domain": 1,
+      "relations": 2,
+      "strict_orders": 1,
+      "partial_orders": 1,
+      "strict_linear_orders": 1
+    },
+    {
+      "domain": 2,
+      "relations": 16,
+      "strict_orders": 3,
+      "partial_orders": 3,
+      "strict_linear_orders": 2
+    },
+    {
+      "domain": 3,
+      "relations": 512,
+      "strict_orders": 19,
+      "partial_orders": 19,
+      "strict_linear_orders": 6
+    }
+  ],
+  "scope": "Exhaustive finite relations on domains0--3 and explicit negative controls; not a universal formal proof or linguistic certificate.",
+  "source_findings": [
+    {
+      "unit": "OLP-0016",
+      "kind": "missing alphabet-size qualification",
+      "remedy": "nonlinearity only when alphabet has at least two elements"
+    },
+    {
+      "unit": "OLP-0018",
+      "kind": "undefined source domain X",
+      "remedy": "replace with declared tree carrier A"
+    },
+    {
+      "unit": "OLP-0018",
+      "kind": "empty prefix-closed set has no root",
+      "remedy": "explicit nonempty qualification"
+    }
+  ],
+  "unbounded_argument": "Every finite n below omega has n+1 between n and omega. Thus the omega node in the rooted chain omega+1 has no immediate predecessor; at most one must not become exactly one."
+}

@@ -1,0 +1,2112 @@
+{
+  "schema": "public-openlogic-fa-batch-review/1",
+  "identities": [
+    {
+      "unit": "OLP-0016",
+      "source_commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+      "source_path": "content/sets-functions-relations/relations/orders.tex",
+      "source_git_LF_sha256": "79593789022fef31c0609b9c94856e2aef5cd5e88e92864e782bb6e6e5f4bce4",
+      "source_ledger_CRLF_sha256": "c6b7f7f49379f9cac28d844270639eae141152978ef8ad68065d0cfd83ccbd38",
+      "published_target_sha256": "0b3dc4c4959237688268faee51b97b33ee9574e1e89e8ce564ea1d6c1e811168",
+      "candidate_sha256": "db775a8b66b6144197ceb46569c7576554fafdb972adad78fe70313715b54cb2",
+      "published_target_bytes": 9131,
+      "candidate_bytes": 9557,
+      "R3_member": "source/locale/fa-IR/content/sets-functions-relations/relations/orders.tex",
+      "R3_archive_sha256": "ef32f359fe7813d0ffef11f3936fb1498f2f3cdcc176ab2acb56b969360c9e59",
+      "locale_config_sha256": "c8df8c39abbd1ab36dbac380490b72e9b3c565bbd1ec3d1f1be88bdc300abd0b",
+      "math_spans": 117,
+      "aligned_choices": 22,
+      "math_text_pairs": []
+    },
+    {
+      "unit": "OLP-0017",
+      "source_commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+      "source_path": "content/sets-functions-relations/relations/graphs.tex",
+      "source_git_LF_sha256": "dec624ef4e71903b72a9f0b5fcc6a15a2e0f897f9ebe881dd9c9e21333aeee75",
+      "source_ledger_CRLF_sha256": "a538018608ce97d0b371a392912c3d6825d8f3b17719bceca5744a77ace26351",
+      "published_target_sha256": "ecc7c9249ea6e996e46de7788780925a8ec7cd0768ce24ab91876d3acc9e9bf9",
+      "candidate_sha256": "b2e5c39d1ab9106f6d773a5967a5e5d36396fc9b1618b80b61603e66699724fc",
+      "published_target_bytes": 4082,
+      "candidate_bytes": 4179,
+      "R3_member": "source/locale/fa-IR/content/sets-functions-relations/relations/graphs.tex",
+      "R3_archive_sha256": "ef32f359fe7813d0ffef11f3936fb1498f2f3cdcc176ab2acb56b969360c9e59",
+      "locale_config_sha256": "c8df8c39abbd1ab36dbac380490b72e9b3c565bbd1ec3d1f1be88bdc300abd0b",
+      "math_spans": 18,
+      "aligned_choices": 5,
+      "math_text_pairs": [
+        {
+          "math_span": 15,
+          "source": "This is a different graph than $\\tuple{V', E}$ with $V' =\n  \\{1, 2, 3\\}$, which looks like this:",
+          "target": "این گراف با گراف $\\tuple{V', E}$ با $V' =\n  \\{1, 2, 3\\}$ متفاوت است؛ گراف دوم چنین شکلی دارد:",
+          "review": "Exact wording reviewed in the aligned choice, not accepted by token masking alone"
+        }
+      ]
+    },
+    {
+      "unit": "OLP-0018",
+      "source_commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+      "source_path": "content/sets-functions-relations/relations/trees.tex",
+      "source_git_LF_sha256": "a158f1ce5b84c8c3f681dd6347b22491d1b67a91e110138b9cb6833e3d9dc23c",
+      "source_ledger_CRLF_sha256": "57cc56ee55506aa19e7be6129d2cad6b8635fd2d6407399d4f774782f2cdd588",
+      "published_target_sha256": "15a3ccad1e07ee0fcf9508e1b5a806b9140961b048af5c30717c4d8717b3f111",
+      "candidate_sha256": "3d6703ac05b23c1d8de0bfe07348ba5d97ac6f23c6fbc8318c6fa7a6e293a14b",
+      "published_target_bytes": 7435,
+      "candidate_bytes": 7959,
+      "R3_member": "source/locale/fa-IR/content/sets-functions-relations/relations/trees.tex",
+      "R3_archive_sha256": "ef32f359fe7813d0ffef11f3936fb1498f2f3cdcc176ab2acb56b969360c9e59",
+      "locale_config_sha256": "c8df8c39abbd1ab36dbac380490b72e9b3c565bbd1ec3d1f1be88bdc300abd0b",
+      "math_spans": 109,
+      "aligned_choices": 15,
+      "math_text_pairs": []
+    }
+  ],
+  "canon": {
+    "documents": [
+      {
+        "document_id": "FA-OL-CANON-0003",
+        "title_fa": "نظریهٔ مجموعه‌ها",
+        "title_en": "Set Theory",
+        "authors": [
+          "محسن خانی",
+          "افشین زارعی"
+        ],
+        "institution": "دانشگاه صنعتی اصفهان",
+        "date_statement": "۱۸ خرداد ۱۴۰۰",
+        "source_url": "https://khani.iut.ac.ir/sites/khani.iut.ac.ir/files//u145/jozve-kamel.pdf",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+        "pdf_bytes": 413763,
+        "licence_status": "No explicit redistribution licence identified; retain locally and cite only."
+      },
+      {
+        "document_id": "FA-REL-C001",
+        "title_fa": "ریاضیات گسسته و کاربردها",
+        "title_en": "Discrete Mathematics and Applications",
+        "authors": [
+          "علیرضا غفاری حدیقه",
+          "مگردیچ تومانیان"
+        ],
+        "institution": "مؤسسه چاپ و انتشارات دانشگاه جامع امام حسین (ع)",
+        "date_statement": "Edition date not newly established in this batch; author-hosted textbook witness",
+        "source_url": "https://hadigheha.github.io/books/teaching/Textbooks/Tarkibiyat.pdf",
+        "pdf_bytes": 1713264,
+        "pdf_sha256": "8f79c45a926c1cea819c4fefa86383f2a65ae23b1d526baaf99cf2506bb9f317",
+        "licence_status": "No compatible redistribution licence established; local consultation only, not redistributed."
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "FA-OL-CANON-0003:P0023",
+        "pdf_page_1based": 23,
+        "printed_page": 22,
+        "location": "Chapter2 definition1: strict order, linear comparability and well-ordering",
+        "short_attestation": "پادبازتابی؛ قابل مقایسه؛ خوش‌ترتیبی",
+        "relevance_and_limits": "Direct universal non-diagonal formula supports پادبازتابی. The notes use a strict-order convention and متعدی, whereas OpenLogic also defines reflexive preorders and partial orders. Do not copy the canon definition over the source.",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+        "normalized_search_page_sha256": "bc4c398faee5e94a040c24c8db275701d1fa89a36af6ef0321ddea80eeb8c92a",
+        "visual_page_read": true,
+        "render_sha256": "20003a6ffe319452bbd5af43255bb1204df32e838c0c265a35563b3b933a0097"
+      },
+      {
+        "passage_id": "FA-OL-CANON-0003:P0024",
+        "pdf_page_1based": 24,
+        "printed_page": 23,
+        "location": "Observation2 and definition3: successors, initial parts and well-ordered sets",
+        "short_attestation": "بخش ابتدایی؛ تالی",
+        "relevance_and_limits": "Context for initial segments and immediate-successor vocabulary in well-orders. بخش ابتدایی and تالی are printed; the target compounds قطعهٔ آغازین and جانشین are not claimed verbatim attestations. Well-orders need not give every noninitial element an immediate predecessor.",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+        "normalized_search_page_sha256": "96362f367446b7f7f217e3b52119a02579200eff2d201a4ba3b68365c93057ab",
+        "visual_page_read": true,
+        "render_sha256": "50d5b4e0b94ce6148c3032f1fdda679c40f52eac2d52f484a811302ec3177965"
+      },
+      {
+        "passage_id": "FA-OL-CANON-0003:P0064",
+        "pdf_page_1based": 64,
+        "printed_page": 63,
+        "location": "Definition5, example6 and tree/subtree/branch definitions",
+        "short_attestation": "درخت؛ زیردرخت؛ شاخه",
+        "relevance_and_limits": "Direct tree/subtree/branch vocabulary. This canon allows an arbitrary well-ordered chain as a branch and does not require a single root. OpenLogic requires a root and maximal chains. Preserve the latter definitions, explicitly resisting terminology-induced mathematical drift.",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+        "normalized_search_page_sha256": "be263a776a30a4a62843df1808bdcb65a2bc9b8ec200f59e5e18029aeece0ad9",
+        "visual_page_read": true,
+        "render_sha256": "7cf37ee402f773184cf841eef26ad04c1300c241880d9aa33a49d0b2165d3ab8"
+      },
+      {
+        "passage_id": "FA-OL-CANON-0003:P0065",
+        "pdf_page_1based": 65,
+        "printed_page": 64,
+        "location": "Remark3 and lemma7: infinite height and branching",
+        "short_attestation": "ارتفاع؛ شاخه‌زننده",
+        "relevance_and_limits": "Contextual set-theoretic register for infinite height and branching. The remark distinguishes height omega from a node at height omega, and lemma7 concerns cardinal bounds. It is not a statement or proof of König’s lemma, and it does not directly attest با انشعاب متناهی.",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+        "normalized_search_page_sha256": "b6f4a9fc609aee7f6038add6330523a7732e2b0189b1925ae1f1ff5b2d104134",
+        "visual_page_read": true,
+        "render_sha256": "d74cb37c9bdc90cc28b1149f97dcde70911238d692d828741e1ce9053c980c24"
+      },
+      {
+        "passage_id": "FA-REL-P053",
+        "pdf_page_1based": 53,
+        "printed_page": 43,
+        "location": "Binary relations and arrow diagrams",
+        "short_attestation": "گراف جهت‌دار؛ نمودار پیکانی",
+        "relevance_and_limits": "Directly describes an arrow x to y as x related to y, and uses a pair for carrier plus relation. Supports orientation, graph/relation connection and diagram prose, not a new definition of all graph types.",
+        "pdf_sha256": "8f79c45a926c1cea819c4fefa86383f2a65ae23b1d526baaf99cf2506bb9f317",
+        "normalized_search_page_sha256": "3ebb68f0ba57f62166cc1fa0149e8e813284f1c3ad07680b705edbbb2eb3b531",
+        "visual_page_read": true,
+        "render_sha256": "c1a20059a563ef314474a0890cd46504ab0e097cbc4296af4ba9c6874b2d217f"
+      },
+      {
+        "passage_id": "FA-REL-P055",
+        "pdf_page_1based": 55,
+        "printed_page": 45,
+        "location": "Relation properties, partial orders and comparability",
+        "short_attestation": "تراگذری؛ پادمتقارن؛ ترتیب جزئی؛ مقایسه‌پذیر",
+        "relevance_and_limits": "Direct nonstrict partial-order definition and linear/total comparability, with divisibility and subset examples. It uses ترتیب کلی or خطی; the target synonym تام is retained provisionally. It does not establish همبند as an order-specific technical label.",
+        "pdf_sha256": "8f79c45a926c1cea819c4fefa86383f2a65ae23b1d526baaf99cf2506bb9f317",
+        "normalized_search_page_sha256": "0cd67853374452ffd3380665ee004989c1c1c86b1f079f339f770b2ed563d9da",
+        "visual_page_read": true,
+        "render_sha256": "2da1f1c1ef86abef843c5ad5872de82dcb28cf74015556d2a44465563d769f63"
+      },
+      {
+        "passage_id": "FA-REL-P101",
+        "pdf_page_1based": 101,
+        "printed_page": 91,
+        "location": "Chapter4 definitions and directed-graph example",
+        "short_attestation": "گراف؛ رأس؛ یال؛ جهت‌دار",
+        "relevance_and_limits": "Direct carrier/edge-pair definition and direction convention. Supports the core Persian graph terms and G=(V,E). The book’s undirected convention is not imported into OpenLogic’s directed definition.",
+        "pdf_sha256": "8f79c45a926c1cea819c4fefa86383f2a65ae23b1d526baaf99cf2506bb9f317",
+        "normalized_search_page_sha256": "68520a4abb5622f14eafbcc52977d5570fc174541f088a9555b9cf85b4b7a971",
+        "visual_page_read": true,
+        "render_sha256": "5a6cdac49d1d864a7a27b7b705b3eaa6c3a19d7ba5466e6dc687a95ba38798f9"
+      },
+      {
+        "passage_id": "FA-REL-P102",
+        "pdf_page_1based": 102,
+        "printed_page": 92,
+        "location": "Graph diagrams, loops, parallel edges and isolated vertex",
+        "short_attestation": "یال‌های موازی؛ طوقه؛ منفرد",
+        "relevance_and_limits": "Direct graph presentation and isolated-vertex concept; the drawing includes a loop and an isolated vertex. منفرد is directly printed, while the target منزوی is a provisional synonymous label. The descriptive source discussion permits varied conventions; its later directed definition still uses an edge set, not a multiset.",
+        "pdf_sha256": "8f79c45a926c1cea819c4fefa86383f2a65ae23b1d526baaf99cf2506bb9f317",
+        "normalized_search_page_sha256": "00611ec80d383e16dbf759e5688274a624e38b10f8e3e85d3f54b0a95f565017",
+        "visual_page_read": true,
+        "render_sha256": "15781681ce5eadf0bace58b65ce916784bef10eeb4e940697281302d3dab3c11"
+      },
+      {
+        "passage_id": "FA-REL-P113",
+        "pdf_page_1based": 113,
+        "printed_page": 103,
+        "location": "Connected and disconnected graph diagrams",
+        "short_attestation": "گراف همبند؛ گراف ناهمبند",
+        "relevance_and_limits": "Directly attests graph connectedness, not pairwise order comparability. Used as a contrast witness so OLP0016’s homographic همبند is explained in the order sense rather than misread as reachability by paths.",
+        "pdf_sha256": "8f79c45a926c1cea819c4fefa86383f2a65ae23b1d526baaf99cf2506bb9f317",
+        "normalized_search_page_sha256": "6a3f0636500053227fc56de3ee6083af7811741b73a1932ff4801d34766b5e23",
+        "visual_page_read": true,
+        "render_sha256": "4cc3f19b1a53609a28fce980ed59bfbcdc5a7c3a733e7a1d5c155a97910f0855"
+      }
+    ]
+  },
+  "choices": [
+    {
+      "topic": "Title and classification motivation",
+      "canon": [
+        "FA-REL-P055",
+        "FA-OL-CANON-0003:P0023"
+      ],
+      "rationale": "ترتیب‌ها and the comparison-based motivation fit both canon expositions. The source distinguishes equality-inclusive and strict comparisons and comparability requirements; all remain. The existing متضمن آن‌اند is formal Persian rather than the clearest ordinary-adult paraphrase, but this is the scholarly register lane, and no separate plain-Persian certification is claimed.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 2,
+      "confidence_reason": "Conceptual contrast and terminology are attested; this precise introductory syntax is a contextual scholarly-register judgement.",
+      "id": "FA-0016-C01",
+      "unit": "OLP-0016",
+      "source": {
+        "char_start": 179,
+        "char_end_exclusive": 654,
+        "line_start": 10,
+        "line_end": 22,
+        "text": "\\olsection{Orders}\n\n\\begin{explain}\nMany of our comparisons involve describing some objects as being\n``less than'', ``equal to'', or ``greater than'' other objects, in a\ncertain respect. These involve \\emph{order} relations. But there are\ndifferent kinds of order relations. For instance, some require that\nany two objects be comparable, others don't. Some include identity\n(like~$\\le$) and some exclude it (like~$<$). It will help us to have a\ntaxonomy here.\n\\end{explain}\n\n",
+        "sha256": "80a86c90c741565c651d6bf678956e336100421647e0d3678008ab5119f8cd5d"
+      },
+      "target_before": {
+        "char_start": 186,
+        "char_end_exclusive": 692,
+        "line_start": 10,
+        "line_end": 22,
+        "text": "\\olsection{ترتیب‌ها}\n\n\\begin{explain}\nبسیاری از مقایسه‌های ما متضمن آن‌اند که اشیایی را، از جهتی معین،\n«کوچک‌تر از»، «برابر با» یا «بزرگ‌تر از» اشیای دیگر وصف کنیم. این\nمقایسه‌ها با روابط \\emph{ترتیب} سروکار دارند. اما روابط ترتیب گونه‌های\nمتفاوتی دارند. برای نمونه، برخی ایجاب می‌کنند که هر دو شیءِ دلخواه با\nیکدیگر مقایسه‌پذیر باشند و برخی چنین ایجابی ندارند. برخی همانی را در بر می‌گیرند\n(مانند~$\\le$) و برخی آن را کنار می‌گذارند (مانند~$<$). داشتن یک\nرده‌بندی در اینجا سودمند خواهد بود.\n\\end{explain}\n\n",
+        "sha256": "c9e1f8b4649c4c8f161e4ad3c89f5fff360705c7329ee53db604a6aa08c3f179"
+      },
+      "target_after": {
+        "char_start": 186,
+        "char_end_exclusive": 692,
+        "line_start": 10,
+        "line_end": 22,
+        "text": "\\olsection{ترتیب‌ها}\n\n\\begin{explain}\nبسیاری از مقایسه‌های ما متضمن آن‌اند که اشیایی را، از جهتی معین،\n«کوچک‌تر از»، «برابر با» یا «بزرگ‌تر از» اشیای دیگر وصف کنیم. این\nمقایسه‌ها با روابط \\emph{ترتیب} سروکار دارند. اما روابط ترتیب گونه‌های\nمتفاوتی دارند. برای نمونه، برخی ایجاب می‌کنند که هر دو شیءِ دلخواه با\nیکدیگر مقایسه‌پذیر باشند و برخی چنین ایجابی ندارند. برخی همانی را در بر می‌گیرند\n(مانند~$\\le$) و برخی آن را کنار می‌گذارند (مانند~$<$). داشتن یک\nرده‌بندی در اینجا سودمند خواهد بود.\n\\end{explain}\n\n",
+        "sha256": "c9e1f8b4649c4c8f161e4ad3c89f5fff360705c7329ee53db604a6aa08c3f179"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\olsection{ترتیب‌ها}\n\n\\begin{explain}\nبسیاری از مقایسه‌های ما متضمن آن‌اند که اشیایی را، از جهتی معین،\n«کوچک‌تر از»، «برابر با» یا «بزرگ‌تر از» اشیای دیگر وصف کنیم. این\nمقایسه‌ها با روابط \\emph{ترتیب} سروکار دارند. اما روابط ترتیب گونه‌های\nمتفاوتی دارند. برای نمونه، برخی ایجاب می‌کنند که هر دو شیءِ دلخواه با\nیکدیگر مقایسه‌پذیر باشند و برخی چنین ایجابی ندارند. برخی همانی را در بر می‌گیرند\n(مانند~$\\le$) و برخی آن را کنار می‌گذارند (مانند~$<$). داشتن یک\nرده‌بندی در اینجا سودمند خواهد بود.\n\\end{explain}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Preorder",
+      "canon": [
+        "FA-REL-P055",
+        "FA-OL-CANON-0003:P0023"
+      ],
+      "rationale": "The two and only two requirements are reflexivity and transitivity. Retain پیش‌ترتیب as a transparent, explicitly defined compound. Neither selected page directly names preorders; do not import antisymmetry from the partial-order canon.",
+      "alternatives": "",
+      "question": "Locate further target-language attestation for پیش‌ترتیب; the present pages support its ingredients, not the compound.",
+      "confidence": 2,
+      "confidence_reason": "Exact definition preserved; lexical attestation gap exposed.",
+      "id": "FA-0016-C02",
+      "unit": "OLP-0016",
+      "source": {
+        "char_start": 654,
+        "char_end_exclusive": 770,
+        "line_start": 22,
+        "line_end": 27,
+        "text": "\\begin{defn}[Preorder]\nA relation which is both reflexive and transitive is called a\n\\emph{preorder.}  \n\\end{defn}\n\n",
+        "sha256": "102d5da6da50f8f336783cdc33f93f312ac1023d40f45c5079aba6f55ccf18f2"
+      },
+      "target_before": {
+        "char_start": 692,
+        "char_end_exclusive": 801,
+        "line_start": 22,
+        "line_end": 27,
+        "text": "\\begin{defn}[پیش‌ترتیب]\nرابطه‌ای که هم بازتابی و هم تراگذری باشد \\emph{پیش‌ترتیب} نامیده\nمی‌شود.\n\\end{defn}\n\n",
+        "sha256": "727e6a467bceffb91a4ff7592aba3fd9928462ef618befe5ef0d95f451d9a47d"
+      },
+      "target_after": {
+        "char_start": 692,
+        "char_end_exclusive": 801,
+        "line_start": 22,
+        "line_end": 27,
+        "text": "\\begin{defn}[پیش‌ترتیب]\nرابطه‌ای که هم بازتابی و هم تراگذری باشد \\emph{پیش‌ترتیب} نامیده\nمی‌شود.\n\\end{defn}\n\n",
+        "sha256": "727e6a467bceffb91a4ff7592aba3fd9928462ef618befe5ef0d95f451d9a47d"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{defn}[پیش‌ترتیب]\nرابطه‌ای که هم بازتابی و هم تراگذری باشد \\emph{پیش‌ترتیب} نامیده\nمی‌شود.\n\\end{defn}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Partial order",
+      "canon": [
+        "FA-REL-P055"
+      ],
+      "rationale": "ترتیب جزئی and پادمتقارن are directly attested. Combined with the preceding preorder, the target has exactly the canon’s three nonstrict requirements.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Exact source/target meaning was compared with the cited Persian passage; direct attestations and contextual inferences are distinguished.",
+      "id": "FA-0016-C03",
+      "unit": "OLP-0016",
+      "source": {
+        "char_start": 770,
+        "char_end_exclusive": 884,
+        "line_start": 27,
+        "line_end": 32,
+        "text": "\\begin{defn}[Partial order]\nA preorder which is also anti-symmetric is called a\n\\emph{partial order}.\n\\end{defn}\n\n",
+        "sha256": "39695c957329c068b4e7b2079006e19163f1d872c355141c16909c63e91b6e4a"
+      },
+      "target_before": {
+        "char_start": 801,
+        "char_end_exclusive": 904,
+        "line_start": 27,
+        "line_end": 31,
+        "text": "\\begin{defn}[ترتیب جزئی]\nپیش‌ترتیبی که پادمتقارن نیز باشد \\emph{ترتیب جزئی} نامیده می‌شود.\n\\end{defn}\n\n",
+        "sha256": "9287b52d2bbbfa1f111ebffb1e362dc8340a200e0afd03ccb2b5735c2014c2b7"
+      },
+      "target_after": {
+        "char_start": 801,
+        "char_end_exclusive": 904,
+        "line_start": 27,
+        "line_end": 31,
+        "text": "\\begin{defn}[ترتیب جزئی]\nپیش‌ترتیبی که پادمتقارن نیز باشد \\emph{ترتیب جزئی} نامیده می‌شود.\n\\end{defn}\n\n",
+        "sha256": "9287b52d2bbbfa1f111ebffb1e362dc8340a200e0afd03ccb2b5735c2014c2b7"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{defn}[ترتیب جزئی]\nپیش‌ترتیبی که پادمتقارن نیز باشد \\emph{ترتیب جزئی} نامیده می‌شود.\n\\end{defn}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Linear order and comparability",
+      "canon": [
+        "FA-REL-P055",
+        "FA-OL-CANON-0003:P0023",
+        "FA-REL-P113"
+      ],
+      "rationale": "Replace bare همبند with its exact local defining condition, every two distinct elements comparable, while retaining همبند in parentheses for consistency. The graph page attests a different connectivity concept and is a warning against semantic conflation. خطی is direct; تام remains an explicit synonym with provisional lexical support.",
+      "alternatives": "ترتیب کلی is directly attested; retaining source-aligned تام avoids an isolated global terminology change.",
+      "question": "Whole-lane choice between کلی and تام; current definition is unambiguous.",
+      "confidence": 2,
+      "confidence_reason": "Exact comparability and linear-order term attested; تام and order-specific همبند are not attested on these pages.",
+      "id": "FA-0016-C04",
+      "unit": "OLP-0016",
+      "source": {
+        "char_start": 884,
+        "char_end_exclusive": 1043,
+        "line_start": 32,
+        "line_end": 37,
+        "text": "\\begin{defn}[Linear order]\\ollabel{def:linearorder}\nA partial order which is also connected is called a\n\\emph{total order} or \\emph{linear order.}\n\\end{defn}\n\n",
+        "sha256": "41a116a1aad8604509cec7babc27a86d48be20b1ab9550b87df3bac5274acb56"
+      },
+      "target_before": {
+        "char_start": 904,
+        "char_end_exclusive": 1049,
+        "line_start": 31,
+        "line_end": 36,
+        "text": "\\begin{defn}[ترتیب خطی]\\ollabel{def:linearorder}\nترتیب جزئی‌ای که همبند نیز باشد \\emph{ترتیب تام} یا\n\\emph{ترتیب خطی} نامیده می‌شود.\n\\end{defn}\n\n",
+        "sha256": "320d52867428a4fbe1dbb431f8e9fee51f79495594ae462c1f1532d7134e95a0"
+      },
+      "target_after": {
+        "char_start": 904,
+        "char_end_exclusive": 1090,
+        "line_start": 31,
+        "line_end": 36,
+        "text": "\\begin{defn}[ترتیب خطی]\\ollabel{def:linearorder}\nترتیب جزئی‌ای که هر دو عضو متمایز آن مقایسه‌پذیر باشند (یعنی همبند باشد) \\emph{ترتیب تام} یا\n\\emph{ترتیب خطی} نامیده می‌شود.\n\\end{defn}\n\n",
+        "sha256": "b0515b40a53c60cd5d62fb69a17fad296487d9764d5ab7a9a99ecd9571b67ad4"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{defn}[ترتیب خطی]\\ollabel{def:linearorder}\nترتیب جزئی‌ای که هر دو عضو متمایز آن مقایسه‌پذیر باشند (یعنی همبند باشد) \\emph{ترتیب تام} یا\n\\emph{ترتیب خطی} نامیده می‌شود.\n\\end{defn}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Universal-relation counterexample",
+      "canon": [
+        "FA-REL-P055"
+      ],
+      "rationale": "Retain the hierarchy and its nonconverses. The universal relation fails antisymmetry only when the carrier has more than one element, exactly the source qualification. The element token remains governed by the existing Persian locale.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Exact source/target meaning was compared with the cited Persian passage; direct attestations and contextual inferences are distinguished.",
+      "id": "FA-0016-C05",
+      "unit": "OLP-0016",
+      "source": {
+        "char_start": 1043,
+        "char_end_exclusive": 1393,
+        "line_start": 37,
+        "line_end": 46,
+        "text": "\\begin{ex}\nEvery linear order is also a partial order, and every partial order is\nalso a preorder, but the converses don't hold. The universal relation\non~$A$ is a preorder, since it is reflexive and transitive. But, if\n$A$ has more than one !!{element}, the universal relation is not\nanti-symmetric, and so not a partial order.\n\\end{ex}\n\n\\begin{ex}\n",
+        "sha256": "1d5a2665b3a6502cfda866abb4f5abb088295f7228e33253ffbba14f889b7130"
+      },
+      "target_before": {
+        "char_start": 1049,
+        "char_end_exclusive": 1366,
+        "line_start": 36,
+        "line_end": 45,
+        "text": "\\begin{ex}\nهر ترتیب خطی یک ترتیب جزئی نیز هست، و هر ترتیب جزئی یک پیش‌ترتیب نیز\nهست، اما عکس این گزاره‌ها برقرار نیست. رابطهٔ جهان‌شمول روی~$A$ یک\nپیش‌ترتیب است، زیرا بازتابی و تراگذری است. اما اگر $A$ بیش از یک\n!!{element} داشته باشد، رابطهٔ جهان‌شمول پادمتقارن نیست و بنابراین\nترتیب جزئی نیست.\n\\end{ex}\n\n\\begin{ex}\n",
+        "sha256": "d9bbb915025b009f91cdd34d3be0afff2248480dd981359c406a3a93b7646488"
+      },
+      "target_after": {
+        "char_start": 1090,
+        "char_end_exclusive": 1407,
+        "line_start": 36,
+        "line_end": 45,
+        "text": "\\begin{ex}\nهر ترتیب خطی یک ترتیب جزئی نیز هست، و هر ترتیب جزئی یک پیش‌ترتیب نیز\nهست، اما عکس این گزاره‌ها برقرار نیست. رابطهٔ جهان‌شمول روی~$A$ یک\nپیش‌ترتیب است، زیرا بازتابی و تراگذری است. اما اگر $A$ بیش از یک\n!!{element} داشته باشد، رابطهٔ جهان‌شمول پادمتقارن نیست و بنابراین\nترتیب جزئی نیست.\n\\end{ex}\n\n\\begin{ex}\n",
+        "sha256": "d9bbb915025b009f91cdd34d3be0afff2248480dd981359c406a3a93b7646488"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{ex}\nهر ترتیب خطی یک ترتیب جزئی نیز هست، و هر ترتیب جزئی یک پیش‌ترتیب نیز\nهست، اما عکس این گزاره‌ها برقرار نیست. رابطهٔ جهان‌شمول روی~$A$ یک\nپیش‌ترتیب است، زیرا بازتابی و تراگذری است. اما اگر $A$ بیش از یک\nعضو داشته باشد، رابطهٔ جهان‌شمول پادمتقارن نیست و بنابراین\nترتیب جزئی نیست.\n\\end{ex}\n\n\\begin{ex}\n",
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 212,
+          "token": "!!{element}",
+          "realization": "عضو"
+        }
+      ]
+    },
+    {
+      "topic": "Length preorder on binary words",
+      "canon": [
+        "FA-REL-P055",
+        "FA-OL-CANON-0003:P0024"
+      ],
+      "rationale": "The explanatory label طولانی‌تر نبودن conveys length at most, not prefix extension. Preserve the iff, transitivity/reflexivity, comparability and the equal-length unequal strings01 and10. Canon support is relation/register context, not attestation of a standard name for this deliberately defined example.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 2,
+      "confidence_reason": "Source-specific descriptive label, with exact formulas and counterexample retained.",
+      "id": "FA-0016-C06",
+      "unit": "OLP-0016",
+      "source": {
+        "char_start": 1393,
+        "char_end_exclusive": 1735,
+        "line_start": 46,
+        "line_end": 54,
+        "text": "Consider the \\emph{no longer than} relation $\\preccurlyeq$\non~$\\Bin^*$: $x \\preccurlyeq y$ iff $\\len{x} \\le \\len{y}$. This is a\npreorder (reflexive and transitive), and even connected, but not a\npartial order, since it is not anti-symmetric. For instance, $01\n\\preccurlyeq 10$ and $10 \\preccurlyeq 01$, but $01 \\neq 10$.\n\\end{ex}\n\n\\begin{ex}\n",
+        "sha256": "d837e83f06aa339d69355b1a16c3c3df52d0061442054b802289237b3915d6de"
+      },
+      "target_before": {
+        "char_start": 1366,
+        "char_end_exclusive": 1697,
+        "line_start": 45,
+        "line_end": 53,
+        "text": "رابطهٔ \\emph{طولانی‌تر نبودن} $\\preccurlyeq$ را روی~$\\Bin^*$ در نظر\nبگیرید: $x \\preccurlyeq y$ اگر و تنها اگر $\\len{x} \\le \\len{y}$. این\nرابطه یک پیش‌ترتیب (بازتابی و تراگذری) و حتی همبند است، اما ترتیب جزئی\nنیست، زیرا پادمتقارن نیست. برای نمونه، $01\n\\preccurlyeq 10$ و $10 \\preccurlyeq 01$، اما $01 \\neq 10$.\n\\end{ex}\n\n\\begin{ex}\n",
+        "sha256": "b711e4c979e44d785b29f347c453b7bee1fa4fa61d2ca3ab4d20e9a80a3ca014"
+      },
+      "target_after": {
+        "char_start": 1407,
+        "char_end_exclusive": 1738,
+        "line_start": 45,
+        "line_end": 53,
+        "text": "رابطهٔ \\emph{طولانی‌تر نبودن} $\\preccurlyeq$ را روی~$\\Bin^*$ در نظر\nبگیرید: $x \\preccurlyeq y$ اگر و تنها اگر $\\len{x} \\le \\len{y}$. این\nرابطه یک پیش‌ترتیب (بازتابی و تراگذری) و حتی همبند است، اما ترتیب جزئی\nنیست، زیرا پادمتقارن نیست. برای نمونه، $01\n\\preccurlyeq 10$ و $10 \\preccurlyeq 01$، اما $01 \\neq 10$.\n\\end{ex}\n\n\\begin{ex}\n",
+        "sha256": "b711e4c979e44d785b29f347c453b7bee1fa4fa61d2ca3ab4d20e9a80a3ca014"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "رابطهٔ \\emph{طولانی‌تر نبودن} $\\preccurlyeq$ را روی~$\\Bin^*$ در نظر\nبگیرید: $x \\preccurlyeq y$ اگر و تنها اگر $\\len{x} \\le \\len{y}$. این\nرابطه یک پیش‌ترتیب (بازتابی و تراگذری) و حتی همبند است، اما ترتیب جزئی\nنیست، زیرا پادمتقارن نیست. برای نمونه، $01\n\\preccurlyeq 10$ و $10 \\preccurlyeq 01$، اما $01 \\neq 10$.\n\\end{ex}\n\n\\begin{ex}\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Subset partial order",
+      "canon": [
+        "FA-REL-P055"
+      ],
+      "rationale": "The canon gives subset inclusion as a partial order. Preserve every powerset member and both failed inclusions with distinct a,b; do not strengthen the source’s not-in-general qualification.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Exact source/target meaning was compared with the cited Persian passage; direct attestations and contextual inferences are distinguished.",
+      "id": "FA-0016-C07",
+      "unit": "OLP-0016",
+      "source": {
+        "char_start": 1735,
+        "char_end_exclusive": 2051,
+        "line_start": 54,
+        "line_end": 62,
+        "text": "An important partial order is the relation $\\subseteq$ on a set of\nsets. This is not in general a linear order, since if $a \\neq b$ and\nwe consider $\\Pow{\\{a, b\\}} = \\{\\emptyset, \\{a\\}, \\{b\\}, \\{a,b\\}\\}$,\nwe see that $\\{a\\} \\nsubseteq \\{b\\}$ and $\\{a\\} \\neq \\{b\\}$ and $\\{b\\}\n\\nsubseteq \\{a\\}$.\n\\end{ex}\n\n\\begin{ex}\n",
+        "sha256": "6f0f015d0cb869d296c6274ced5ec3fa86c6b122db300694ad612ef2782f18c9"
+      },
+      "target_before": {
+        "char_start": 1697,
+        "char_end_exclusive": 2014,
+        "line_start": 53,
+        "line_end": 62,
+        "text": "یکی از ترتیب‌های جزئی مهم، رابطهٔ $\\subseteq$ روی مجموعه‌ای از\nمجموعه‌هاست. این رابطه در حالت کلی ترتیب خطی نیست، زیرا اگر $a \\neq b$\nو $\\Pow{\\{a, b\\}} = \\{\\emptyset, \\{a\\}, \\{b\\}, \\{a,b\\}\\}$ را در نظر\nبگیریم، می‌بینیم که $\\{a\\} \\nsubseteq \\{b\\}$ و\n$\\{a\\} \\neq \\{b\\}$ و $\\{b\\}\n\\nsubseteq \\{a\\}$.\n\\end{ex}\n\n\\begin{ex}\n",
+        "sha256": "8ea7f1b311fd0b74c34287f91817b272dfe2a2269ada70f15766247c7a864d82"
+      },
+      "target_after": {
+        "char_start": 1738,
+        "char_end_exclusive": 2055,
+        "line_start": 53,
+        "line_end": 62,
+        "text": "یکی از ترتیب‌های جزئی مهم، رابطهٔ $\\subseteq$ روی مجموعه‌ای از\nمجموعه‌هاست. این رابطه در حالت کلی ترتیب خطی نیست، زیرا اگر $a \\neq b$\nو $\\Pow{\\{a, b\\}} = \\{\\emptyset, \\{a\\}, \\{b\\}, \\{a,b\\}\\}$ را در نظر\nبگیریم، می‌بینیم که $\\{a\\} \\nsubseteq \\{b\\}$ و\n$\\{a\\} \\neq \\{b\\}$ و $\\{b\\}\n\\nsubseteq \\{a\\}$.\n\\end{ex}\n\n\\begin{ex}\n",
+        "sha256": "8ea7f1b311fd0b74c34287f91817b272dfe2a2269ada70f15766247c7a864d82"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "یکی از ترتیب‌های جزئی مهم، رابطهٔ $\\subseteq$ روی مجموعه‌ای از\nمجموعه‌هاست. این رابطه در حالت کلی ترتیب خطی نیست، زیرا اگر $a \\neq b$\nو $\\Pow{\\{a, b\\}} = \\{\\emptyset, \\{a\\}, \\{b\\}, \\{a,b\\}\\}$ را در نظر\nبگیریم، می‌بینیم که $\\{a\\} \\nsubseteq \\{b\\}$ و\n$\\{a\\} \\neq \\{b\\}$ و $\\{b\\}\n\\nsubseteq \\{a\\}$.\n\\end{ex}\n\n\\begin{ex}\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Divisibility on naturals and integers",
+      "canon": [
+        "FA-REL-P055"
+      ],
+      "rationale": "Direct بخش‌پذیری example supports the idiom and order classification. Source Nat may include zero, unlike the positive-integer canon example; retain the source domain and integer multiplier. Negative associates on Int make antisymmetry fail, while2 and3 witness nonlinearity on Nat.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Exact source/target meaning was compared with the cited Persian passage; direct attestations and contextual inferences are distinguished.",
+      "id": "FA-0016-C08",
+      "unit": "OLP-0016",
+      "source": {
+        "char_start": 2051,
+        "char_end_exclusive": 2566,
+        "line_start": 62,
+        "line_end": 73,
+        "text": "The relation of \\emph{divisibility without remainder} gives us a\npartial order which isn't a linear order. For integers $n$ and~$m$, we\nwrite $n \\mid m$ to mean $n$ (evenly) divides $m$, i.e., iff there is\nsome integer~$k$ so that $m = kn$. On~$\\Nat$, this is a partial order,\nbut not a linear order: for instance, $2 \\nmid 3$ and also $3 \\nmid\n2$. Considered as a relation on $\\Int$, divisibility is only a\npreorder since it is not anti-symmetric: $1 \\mid -1$ and $-1 \\mid 1$\nbut $1 \\neq -1$.\n\\end{ex}\n\n\\begin{ex}\n",
+        "sha256": "ac3da2dc72457f1b04ca3e83564ea5ad88a698e3b8c02bcfd9c215d8f13e5b35"
+      },
+      "target_before": {
+        "char_start": 2014,
+        "char_end_exclusive": 2553,
+        "line_start": 62,
+        "line_end": 74,
+        "text": "رابطهٔ \\emph{بخش‌پذیری بی‌باقی‌مانده} ترتیب جزئی‌ای به دست می‌دهد که\nترتیب خطی نیست. برای اعداد صحیح $n$ و~$m$، $n \\mid m$ را به این معنا\nمی‌نویسیم که $n$، $m$ را (بی‌باقی‌مانده) تقسیم می‌کند؛ یعنی این رابطه\nبرقرار است اگر و تنها اگر عدد صحیحی~$k$ وجود داشته باشد که $m = kn$. این رابطه روی~$\\Nat$\nترتیبی جزئی است، اما ترتیبی خطی نیست: برای نمونه، $2 \\nmid 3$ و نیز\n$3 \\nmid\n2$. اگر بخش‌پذیری را رابطه‌ای روی $\\Int$ در نظر بگیریم، فقط یک\nپیش‌ترتیب است، زیرا پادمتقارن نیست: $1 \\mid -1$ و $-1 \\mid 1$، اما\n$1 \\neq -1$.\n\\end{ex}\n\n\\begin{ex}\n",
+        "sha256": "cdd7b8db560b53ef739072f7a69fcd92e457660bcf1398edee384e67c3668596"
+      },
+      "target_after": {
+        "char_start": 2055,
+        "char_end_exclusive": 2594,
+        "line_start": 62,
+        "line_end": 74,
+        "text": "رابطهٔ \\emph{بخش‌پذیری بی‌باقی‌مانده} ترتیب جزئی‌ای به دست می‌دهد که\nترتیب خطی نیست. برای اعداد صحیح $n$ و~$m$، $n \\mid m$ را به این معنا\nمی‌نویسیم که $n$، $m$ را (بی‌باقی‌مانده) تقسیم می‌کند؛ یعنی این رابطه\nبرقرار است اگر و تنها اگر عدد صحیحی~$k$ وجود داشته باشد که $m = kn$. این رابطه روی~$\\Nat$\nترتیبی جزئی است، اما ترتیبی خطی نیست: برای نمونه، $2 \\nmid 3$ و نیز\n$3 \\nmid\n2$. اگر بخش‌پذیری را رابطه‌ای روی $\\Int$ در نظر بگیریم، فقط یک\nپیش‌ترتیب است، زیرا پادمتقارن نیست: $1 \\mid -1$ و $-1 \\mid 1$، اما\n$1 \\neq -1$.\n\\end{ex}\n\n\\begin{ex}\n",
+        "sha256": "cdd7b8db560b53ef739072f7a69fcd92e457660bcf1398edee384e67c3668596"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "رابطهٔ \\emph{بخش‌پذیری بی‌باقی‌مانده} ترتیب جزئی‌ای به دست می‌دهد که\nترتیب خطی نیست. برای اعداد صحیح $n$ و~$m$، $n \\mid m$ را به این معنا\nمی‌نویسیم که $n$، $m$ را (بی‌باقی‌مانده) تقسیم می‌کند؛ یعنی این رابطه\nبرقرار است اگر و تنها اگر عدد صحیحی~$k$ وجود داشته باشد که $m = kn$. این رابطه روی~$\\Nat$\nترتیبی جزئی است، اما ترتیبی خطی نیست: برای نمونه، $2 \\nmid 3$ و نیز\n$3 \\nmid\n2$. اگر بخش‌پذیری را رابطه‌ای روی $\\Int$ در نظر بگیریم، فقط یک\nپیش‌ترتیب است، زیرا پادمتقارن نیست: $1 \\mid -1$ و $-1 \\mid 1$، اما\n$1 \\neq -1$.\n\\end{ex}\n\n\\begin{ex}\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Prefix extension and missing alphabet qualification",
+      "canon": [
+        "FA-OL-CANON-0003:P0024",
+        "FA-OL-CANON-0003:P0064",
+        "FA-REL-P055"
+      ],
+      "rationale": "Preserve the empty, equal and proper-prefix clauses and the direction s prefix of sprime. Initial-part canon supports the concept, not exact قطعهٔ آغازین or امتداد terminology. Explicitly qualify the nonlinearity claim by alphabet size at least two and disclose the source correction: the empty alphabet has only the empty word, while a singleton alphabet orders words by length.",
+      "alternatives": "بخش ابتدایی is directly printed in the well-order canon. قطعهٔ آغازین remains the existing clearly defined lane term.",
+      "question": "Confirm lane-wide preference for قطعهٔ آغازین versus بخش ابتدایی; do not change extension direction.",
+      "confidence": 2,
+      "confidence_reason": "Mathematical correction established by counterexamples and definition; lexical choices are contextual rather than verbatim attestations.",
+      "id": "FA-0016-C09",
+      "unit": "OLP-0016",
+      "source": {
+        "char_start": 2566,
+        "char_end_exclusive": 3048,
+        "line_start": 73,
+        "line_end": 82,
+        "text": "The \\emph{extension} relation on a set of sequences~$A^*$ is the\nfollowing: $s \\sqsubseteq s'$ iff $s = \\emptyseq$ (the empty\nsequence), $s = s'$, or $s = \\tuple{s_1, \\dots, s_n}$ and $s' =\n\\tuple{s_1, \\dots, s_n, s_{n+1}, \\dots, s_m}$. If $s \\sqsubseteq s'$\nwe also say that $s$ is an \\emph{initial segment} of~$s'$. The\nextension relation on $A^*$ is a partial order but not a linear order,\ne.g., if $a \\neq b$, then $ab \\not\\sqsubseteq ba$ and $ba \\not\\sqsubseteq ab$.\n\\end{ex}\n\n",
+        "sha256": "e02c876c715b947be0c34fe912944ea43b52a4b736742d2285dca9922ae0a833"
+      },
+      "target_before": {
+        "char_start": 2553,
+        "char_end_exclusive": 3014,
+        "line_start": 74,
+        "line_end": 83,
+        "text": "رابطهٔ \\emph{امتداد} روی مجموعه‌ای از دنباله‌های~$A^*$ چنین است:\n$s \\sqsubseteq s'$ اگر و تنها اگر $s = \\emptyseq$ (دنبالهٔ تهی)،\n$s = s'$، یا $s = \\tuple{s_1, \\dots, s_n}$ و $s' =\n\\tuple{s_1, \\dots, s_n, s_{n+1}, \\dots, s_m}$. اگر $s \\sqsubseteq s'$\nباشد، می‌گوییم $s$ یک \\emph{قطعهٔ آغازینِ}~$s'$ است. رابطهٔ امتداد\nروی $A^*$ ترتیبی جزئی است، اما ترتیبی خطی نیست؛ برای نمونه، اگر\n$a \\neq b$، آنگاه $ab \\not\\sqsubseteq ba$ و $ba \\not\\sqsubseteq ab$.\n\\end{ex}\n\n",
+        "sha256": "ebe0e0ffd2da6c2064ec24af39295b891b1baba0ba3084cefbb075be40ebf515"
+      },
+      "target_after": {
+        "char_start": 2594,
+        "char_end_exclusive": 3211,
+        "line_start": 74,
+        "line_end": 84,
+        "text": "رابطهٔ \\emph{امتداد} روی مجموعه‌ای از دنباله‌های~$A^*$ چنین است:\n$s \\sqsubseteq s'$ اگر و تنها اگر $s = \\emptyseq$ (دنبالهٔ تهی)،\n$s = s'$، یا $s = \\tuple{s_1, \\dots, s_n}$ و $s' =\n\\tuple{s_1, \\dots, s_n, s_{n+1}, \\dots, s_m}$. اگر $s \\sqsubseteq s'$\nباشد، می‌گوییم $s$ یک \\emph{قطعهٔ آغازینِ}~$s'$ است. رابطهٔ امتداد\nروی $A^*$ ترتیبی جزئی است؛ اگر الفبا دست‌کم دو عضو داشته باشد، ترتیبی خطی نیست. برای نمونه، اگر\n$a \\neq b$، آنگاه $ab \\not\\sqsubseteq ba$ و $ba \\not\\sqsubseteq ab$.\n\\emph{یادداشت ویراستاری:} قید اندازهٔ الفبا به ادعای متن مبدأ افزوده شد؛ برای الفبای تهی یا تک‌عضوی، رابطهٔ امتداد خطی است.\n\\end{ex}\n\n",
+        "sha256": "c2e154655a255dd46b16195bfaae98a0b977edbe72217da139eab2bc92a2e127"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "رابطهٔ \\emph{امتداد} روی مجموعه‌ای از دنباله‌های~$A^*$ چنین است:\n$s \\sqsubseteq s'$ اگر و تنها اگر $s = \\emptyseq$ (دنبالهٔ تهی)،\n$s = s'$، یا $s = \\tuple{s_1, \\dots, s_n}$ و $s' =\n\\tuple{s_1, \\dots, s_n, s_{n+1}, \\dots, s_m}$. اگر $s \\sqsubseteq s'$\nباشد، می‌گوییم $s$ یک \\emph{قطعهٔ آغازینِ}~$s'$ است. رابطهٔ امتداد\nروی $A^*$ ترتیبی جزئی است؛ اگر الفبا دست‌کم دو عضو داشته باشد، ترتیبی خطی نیست. برای نمونه، اگر\n$a \\neq b$، آنگاه $ab \\not\\sqsubseteq ba$ و $ba \\not\\sqsubseteq ab$.\n\\emph{یادداشت ویراستاری:} قید اندازهٔ الفبا به ادعای متن مبدأ افزوده شد؛ برای الفبای تهی یا تک‌عضوی، رابطهٔ امتداد خطی است.\n\\end{ex}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Strict order definition",
+      "canon": [
+        "FA-OL-CANON-0003:P0023",
+        "FA-REL-P055"
+      ],
+      "rationale": "Use directly attested پادبازتابی instead of ambiguous غیربازتابی, retaining asymmetry and transitivity even though one condition is logically redundant. This is universal failure of self-relatedness, not merely failure of reflexivity. اکید is directly used with strict inequality on the relation-property page. نامتقارن is a transparent existing label whose exact compound is not attested here.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 2,
+      "confidence_reason": "Irreflexivity and order contrast are direct; asymmetry label remains provisional with exact defining condition inherited from prior section.",
+      "id": "FA-0016-C10",
+      "unit": "OLP-0016",
+      "source": {
+        "char_start": 3048,
+        "char_end_exclusive": 3173,
+        "line_start": 82,
+        "line_end": 87,
+        "text": "\\begin{defn}[Strict order]\nA \\emph{strict order} is a relation which is irreflexive, asymmetric,\nand transitive.\n\\end{defn}\n\n",
+        "sha256": "0311e1ce3db307955c9dc492d795fe06c8fbc4472576a7939da82b6bc643056d"
+      },
+      "target_before": {
+        "char_start": 3014,
+        "char_end_exclusive": 3122,
+        "line_start": 83,
+        "line_end": 87,
+        "text": "\\begin{defn}[ترتیب اکید]\n\\emph{ترتیب اکید} رابطه‌ای است که غیربازتابی، نامتقارن و تراگذری باشد.\n\\end{defn}\n\n",
+        "sha256": "6ef3787720338fe2370a05c082c84d8f8c36cce6f31b1d530dce5f05f120c9f4"
+      },
+      "target_after": {
+        "char_start": 3211,
+        "char_end_exclusive": 3319,
+        "line_start": 84,
+        "line_end": 88,
+        "text": "\\begin{defn}[ترتیب اکید]\n\\emph{ترتیب اکید} رابطه‌ای است که پادبازتابی، نامتقارن و تراگذری باشد.\n\\end{defn}\n\n",
+        "sha256": "1527ab47f5ca17f4b653a312dcc12d4e9c086931c58a7db65a5390700879acf1"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{defn}[ترتیب اکید]\n\\emph{ترتیب اکید} رابطه‌ای است که پادبازتابی، نامتقارن و تراگذری باشد.\n\\end{defn}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Strict linear order",
+      "canon": [
+        "FA-OL-CANON-0003:P0023",
+        "FA-REL-P055",
+        "FA-REL-P113"
+      ],
+      "rationale": "State the pairwise comparability condition explicitly as for nonstrict linear order. The target keeps both source synonyms and label, without requiring diagonal pairs in a strict relation.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 2,
+      "confidence_reason": "Formal condition and خطی/اکید usage are direct; تام synonym remains provisional.",
+      "id": "FA-0016-C11",
+      "unit": "OLP-0016",
+      "source": {
+        "char_start": 3173,
+        "char_end_exclusive": 3370,
+        "line_start": 87,
+        "line_end": 93,
+        "text": "\\begin{defn}[Strict linear order]\\ollabel{def:strictlinearorder}\nA strict order which is also connected is called a \n\\emph{strict total order} or \\emph{strict linear order.}\n\\end{defn}\n\n\\begin{ex}\n",
+        "sha256": "f540636a67748460d2c68572c64c8344c318cdfcecae46c96794b5608f60cf9c"
+      },
+      "target_before": {
+        "char_start": 3122,
+        "char_end_exclusive": 3297,
+        "line_start": 87,
+        "line_end": 93,
+        "text": "\\begin{defn}[ترتیب خطی اکید]\\ollabel{def:strictlinearorder}\nترتیب اکیدی که همبند نیز باشد \\emph{ترتیب تام اکید} یا\n\\emph{ترتیب خطی اکید} نامیده می‌شود.\n\\end{defn}\n\n\\begin{ex}\n",
+        "sha256": "a33932fe1d61dc54302d6142c4b8ccf3fd673c2daa637e6291d323fbc1d1a6df"
+      },
+      "target_after": {
+        "char_start": 3319,
+        "char_end_exclusive": 3535,
+        "line_start": 88,
+        "line_end": 94,
+        "text": "\\begin{defn}[ترتیب خطی اکید]\\ollabel{def:strictlinearorder}\nترتیب اکیدی که هر دو عضو متمایز آن مقایسه‌پذیر باشند (یعنی همبند باشد) \\emph{ترتیب تام اکید} یا\n\\emph{ترتیب خطی اکید} نامیده می‌شود.\n\\end{defn}\n\n\\begin{ex}\n",
+        "sha256": "488b6d46c36757f6ca21d73d91d55b3a6082ce0f5749cbf081db366366bebb48"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{defn}[ترتیب خطی اکید]\\ollabel{def:strictlinearorder}\nترتیب اکیدی که هر دو عضو متمایز آن مقایسه‌پذیر باشند (یعنی همبند باشد) \\emph{ترتیب تام اکید} یا\n\\emph{ترتیب خطی اکید} نامیده می‌شود.\n\\end{defn}\n\n\\begin{ex}\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Examples of nonstrict/strict pairs",
+      "canon": [
+        "FA-REL-P055",
+        "FA-OL-CANON-0003:P0023"
+      ],
+      "rationale": "Keep le versus lt, subseteq versus subsetneq, and the corresponding linear/partial labels. Canon strict and nonstrict examples help check no inequality direction was swapped.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Exact source/target meaning was compared with the cited Persian passage; direct attestations and contextual inferences are distinguished.",
+      "id": "FA-0016-C12",
+      "unit": "OLP-0016",
+      "source": {
+        "char_start": 3370,
+        "char_end_exclusive": 3533,
+        "line_start": 93,
+        "line_end": 98,
+        "text": "$\\le$ is the linear order corresponding to the strict linear\norder~$<$. $\\subseteq$ is the partial order corresponding to the\nstrict order~$\\subsetneq$.\n\\end{ex}\n\n",
+        "sha256": "567f169cf51e766f845decd52c4a9ac3b491ab608fe749881b05fe006f75c0e3"
+      },
+      "target_before": {
+        "char_start": 3297,
+        "char_end_exclusive": 3421,
+        "line_start": 93,
+        "line_end": 97,
+        "text": "$\\le$ ترتیب خطیِ متناظر با ترتیب خطی اکید~$<$ است. $\\subseteq$ ترتیب\nجزئیِ متناظر با ترتیب اکید~$\\subsetneq$ است.\n\\end{ex}\n\n",
+        "sha256": "e518175c7d15f0588261b909677a2eb3eaea37a45039f5661327634056893793"
+      },
+      "target_after": {
+        "char_start": 3535,
+        "char_end_exclusive": 3659,
+        "line_start": 94,
+        "line_end": 98,
+        "text": "$\\le$ ترتیب خطیِ متناظر با ترتیب خطی اکید~$<$ است. $\\subseteq$ ترتیب\nجزئیِ متناظر با ترتیب اکید~$\\subsetneq$ است.\n\\end{ex}\n\n",
+        "sha256": "e518175c7d15f0588261b909677a2eb3eaea37a45039f5661327634056893793"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "$\\le$ ترتیب خطیِ متناظر با ترتیب خطی اکید~$<$ است. $\\subseteq$ ترتیب\nجزئیِ متناظر با ترتیب اکید~$\\subsetneq$ است.\n\\end{ex}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Reflexive closure construction",
+      "canon": [
+        "FA-REL-P055",
+        "FA-OL-CANON-0003:P0023"
+      ],
+      "rationale": "Adding diagonal pairs gives the reflexive closure; removing them recovers a strict order. Preserve both directions. بستار بازتابی is descriptive lane terminology, not directly printed in these pages; its entire construction is explicit.",
+      "alternatives": "",
+      "question": "Further attestation of بستار بازتابی is desirable; the operation is unambiguously specified.",
+      "confidence": 2,
+      "confidence_reason": "Construction mathematically exact; lexical compound supported contextually only.",
+      "id": "FA-0016-C13",
+      "unit": "OLP-0016",
+      "source": {
+        "char_start": 3533,
+        "char_end_exclusive": 3862,
+        "line_start": 98,
+        "line_end": 104,
+        "text": "Any strict order $R$ on~$A$ can be turned into a partial order by\nadding the diagonal $\\Id{A}$, i.e., adding all the pairs~$\\tuple{x,\nx}$.  (This is called the \\emph{reflexive closure} of~$R$.)\nConversely, starting from a partial order, one can get a strict order\nby removing~$\\Id{A}$. These next two results make this precise.\n\n",
+        "sha256": "4a0d8535ac49604aaf194de4ae8cbf8d42e29bffb02af46bb330b59cae7bf02f"
+      },
+      "target_before": {
+        "char_start": 3421,
+        "char_end_exclusive": 3739,
+        "line_start": 97,
+        "line_end": 104,
+        "text": "هر ترتیب اکید $R$ روی~$A$ را می‌توان با افزودن قطر $\\Id{A}$، یعنی با\nافزودن همهٔ زوج‌های~$\\tuple{x,\nx}$، به یک ترتیب جزئی تبدیل کرد. (این عمل \\emph{بستار بازتابیِ}~$R$\nنامیده می‌شود.) برعکس، با آغاز از یک ترتیب جزئی می‌توان از راه حذف\nکردن~$\\Id{A}$ یک ترتیب اکید به دست آورد. دو نتیجهٔ بعدی این مطلب را\nدقیق می‌کنند.\n\n",
+        "sha256": "a38fa4315a5945897253d2662caa1ce30f3c0c8007e6cdcf9346bcee350ed11b"
+      },
+      "target_after": {
+        "char_start": 3659,
+        "char_end_exclusive": 3977,
+        "line_start": 98,
+        "line_end": 105,
+        "text": "هر ترتیب اکید $R$ روی~$A$ را می‌توان با افزودن قطر $\\Id{A}$، یعنی با\nافزودن همهٔ زوج‌های~$\\tuple{x,\nx}$، به یک ترتیب جزئی تبدیل کرد. (این عمل \\emph{بستار بازتابیِ}~$R$\nنامیده می‌شود.) برعکس، با آغاز از یک ترتیب جزئی می‌توان از راه حذف\nکردن~$\\Id{A}$ یک ترتیب اکید به دست آورد. دو نتیجهٔ بعدی این مطلب را\nدقیق می‌کنند.\n\n",
+        "sha256": "a38fa4315a5945897253d2662caa1ce30f3c0c8007e6cdcf9346bcee350ed11b"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "هر ترتیب اکید $R$ روی~$A$ را می‌توان با افزودن قطر $\\Id{A}$، یعنی با\nافزودن همهٔ زوج‌های~$\\tuple{x,\nx}$، به یک ترتیب جزئی تبدیل کرد. (این عمل \\emph{بستار بازتابیِ}~$R$\nنامیده می‌شود.) برعکس، با آغاز از یک ترتیب جزئی می‌توان از راه حذف\nکردن~$\\Id{A}$ یک ترتیب اکید به دست آورد. دو نتیجهٔ بعدی این مطلب را\nدقیق می‌کنند.\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Strict-to-partial proposition",
+      "canon": [
+        "FA-REL-P055",
+        "FA-OL-CANON-0003:P0023"
+      ],
+      "rationale": "Preserve carrier, union with identity, partial-order conclusion and additional linearity clause.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Exact source/target meaning was compared with the cited Persian passage; direct attestations and contextual inferences are distinguished.",
+      "id": "FA-0016-C14",
+      "unit": "OLP-0016",
+      "source": {
+        "char_start": 3862,
+        "char_end_exclusive": 4071,
+        "line_start": 104,
+        "line_end": 110,
+        "text": "\\begin{prop}\\ollabel{prop:stricttopartial}\nIf $R$ is a strict order on~$A$, then $R^+ = R \\cup \\Id{A}$ is a\npartial order. Moreover, if $R$ is a strict linear order, then $R^+$ is \na linear order.\n\\end{prop}\n\n",
+        "sha256": "b1ba2d9b6f624977d81056291be15b34c2adf921aa4c73001d43dd05c1cf5963"
+      },
+      "target_before": {
+        "char_start": 3739,
+        "char_end_exclusive": 3945,
+        "line_start": 104,
+        "line_end": 110,
+        "text": "\\begin{prop}\\ollabel{prop:stricttopartial}\nاگر $R$ ترتیبی اکید روی~$A$ باشد، آنگاه $R^+ = R \\cup \\Id{A}$ ترتیبی\nجزئی است. افزون بر این، اگر $R$ ترتیبی خطی اکید باشد، آنگاه $R^+$\nترتیبی خطی است.\n\\end{prop}\n\n",
+        "sha256": "126bd696ff91b89c8e91a830d0d915e770ec2dc2649a310f160cdc28a3bafdff"
+      },
+      "target_after": {
+        "char_start": 3977,
+        "char_end_exclusive": 4183,
+        "line_start": 105,
+        "line_end": 111,
+        "text": "\\begin{prop}\\ollabel{prop:stricttopartial}\nاگر $R$ ترتیبی اکید روی~$A$ باشد، آنگاه $R^+ = R \\cup \\Id{A}$ ترتیبی\nجزئی است. افزون بر این، اگر $R$ ترتیبی خطی اکید باشد، آنگاه $R^+$\nترتیبی خطی است.\n\\end{prop}\n\n",
+        "sha256": "126bd696ff91b89c8e91a830d0d915e770ec2dc2649a310f160cdc28a3bafdff"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{prop}\\ollabel{prop:stricttopartial}\nاگر $R$ ترتیبی اکید روی~$A$ باشد، آنگاه $R^+ = R \\cup \\Id{A}$ ترتیبی\nجزئی است. افزون بر این، اگر $R$ ترتیبی خطی اکید باشد، آنگاه $R^+$\nترتیبی خطی است.\n\\end{prop}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Proof assumptions and targets",
+      "canon": [
+        "FA-REL-P055",
+        "FA-OL-CANON-0003:P0023"
+      ],
+      "rationale": "Correct the same irreflexivity term here; retain all assumptions and exactly the three properties to be proved.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Exact source/target meaning was compared with the cited Persian passage; direct attestations and contextual inferences are distinguished.",
+      "id": "FA-0016-C15",
+      "unit": "OLP-0016",
+      "source": {
+        "char_start": 4071,
+        "char_end_exclusive": 4293,
+        "line_start": 110,
+        "line_end": 115,
+        "text": "\\begin{proof}\nSuppose $R$ is a strict order, i.e., $R \\subseteq A^2$ and $R$ is\nirreflexive, asymmetric, and transitive. Let $R^+ = R \\cup \\Id{A}$. We\nhave to show that $R^+$ is reflexive, anti-symmetric, and transitive.\n\n",
+        "sha256": "20620b4055faf129f29a57409711a39bbe7a989f6a6ad5751445ed18d702259e"
+      },
+      "target_before": {
+        "char_start": 3945,
+        "char_end_exclusive": 4146,
+        "line_start": 110,
+        "line_end": 115,
+        "text": "\\begin{proof}\nفرض کنید $R$ ترتیبی اکید باشد؛ یعنی $R \\subseteq A^2$ و $R$\nغیربازتابی، نامتقارن و تراگذری باشد. بگذارید $R^+ = R \\cup \\Id{A}$.\nباید نشان دهیم که $R^+$ بازتابی، پادمتقارن و تراگذری است.\n\n",
+        "sha256": "33a53363d7d4fc49db1258fde5635fc35dad1a76cb90f77265c75a4c3d683497"
+      },
+      "target_after": {
+        "char_start": 4183,
+        "char_end_exclusive": 4384,
+        "line_start": 111,
+        "line_end": 116,
+        "text": "\\begin{proof}\nفرض کنید $R$ ترتیبی اکید باشد؛ یعنی $R \\subseteq A^2$ و $R$\nپادبازتابی، نامتقارن و تراگذری باشد. بگذارید $R^+ = R \\cup \\Id{A}$.\nباید نشان دهیم که $R^+$ بازتابی، پادمتقارن و تراگذری است.\n\n",
+        "sha256": "70870fd78a029b44a95370467ee79a75690d6af5282eeede582d09c55601ca95"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{proof}\nفرض کنید $R$ ترتیبی اکید باشد؛ یعنی $R \\subseteq A^2$ و $R$\nپادبازتابی، نامتقارن و تراگذری باشد. بگذارید $R^+ = R \\cup \\Id{A}$.\nباید نشان دهیم که $R^+$ بازتابی، پادمتقارن و تراگذری است.\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Reflexivity proof",
+      "canon": [
+        "FA-REL-P055"
+      ],
+      "rationale": "The universal diagonal inclusion proves reflexivity; the target preserves for every x in A, not just an example.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Exact source/target meaning was compared with the cited Persian passage; direct attestations and contextual inferences are distinguished.",
+      "id": "FA-0016-C16",
+      "unit": "OLP-0016",
+      "source": {
+        "char_start": 4293,
+        "char_end_exclusive": 4388,
+        "line_start": 115,
+        "line_end": 118,
+        "text": "$R^+$ is clearly reflexive, since $\\tuple{x, x} \\in \\Id{A} \\subseteq\nR^+$ for all $x \\in A$. \n\n",
+        "sha256": "371d4fb1cc765335a8e4b1c8c0a63e6f15e4738c6beb78a48cf0f74696567220"
+      },
+      "target_before": {
+        "char_start": 4146,
+        "char_end_exclusive": 4237,
+        "line_start": 115,
+        "line_end": 118,
+        "text": "$R^+$ آشکارا بازتابی است، زیرا $\\tuple{x, x} \\in \\Id{A} \\subseteq\nR^+$ برای هر $x \\in A$.\n\n",
+        "sha256": "15e811e94423b9c05cdd2da840dc5f8ab9aec8cfb5ef93c2079ca09d26abf4e5"
+      },
+      "target_after": {
+        "char_start": 4384,
+        "char_end_exclusive": 4475,
+        "line_start": 116,
+        "line_end": 119,
+        "text": "$R^+$ آشکارا بازتابی است، زیرا $\\tuple{x, x} \\in \\Id{A} \\subseteq\nR^+$ برای هر $x \\in A$.\n\n",
+        "sha256": "15e811e94423b9c05cdd2da840dc5f8ab9aec8cfb5ef93c2079ca09d26abf4e5"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "$R^+$ آشکارا بازتابی است، زیرا $\\tuple{x, x} \\in \\Id{A} \\subseteq\nR^+$ برای هر $x \\in A$.\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Antisymmetry proof",
+      "canon": [
+        "FA-REL-P055",
+        "FA-OL-CANON-0003:P0023"
+      ],
+      "rationale": "Both non-diagonal pairs must belong to R; this contradicts asymmetry. The inequality assumption and reductio are preserved. Do not substitute symmetry or irreflexivity for the contradiction actually used.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Exact source/target meaning was compared with the cited Persian passage; direct attestations and contextual inferences are distinguished.",
+      "id": "FA-0016-C17",
+      "unit": "OLP-0016",
+      "source": {
+        "char_start": 4388,
+        "char_end_exclusive": 4683,
+        "line_start": 118,
+        "line_end": 124,
+        "text": "To show $R^+$ is anti-symmetric, suppose for reductio that $R^+xy$ and\n$R^+yx$ but $x \\neq y$. Since $\\tuple{x,y} \\in R \\cup \\Id{A}$, but\n$\\tuple{x, y} \\notin \\Id{A}$, we must have $\\tuple{x, y} \\in R$, i.e.,\n$Rxy$. Similarly,~$Ryx$. But this contradicts the assumption\nthat $R$ is asymmetric.\n\n",
+        "sha256": "ef23c8f6916f73c84cd61ae3c4b30c799c1621e65cc2e4c6041ef59bfac444ed"
+      },
+      "target_before": {
+        "char_start": 4237,
+        "char_end_exclusive": 4509,
+        "line_start": 118,
+        "line_end": 124,
+        "text": "برای نشان‌دادن پادمتقارن‌بودن $R^+$، به برهان خلف فرض کنید $R^+xy$ و\n$R^+yx$، اما $x \\neq y$. چون $\\tuple{x,y} \\in R \\cup \\Id{A}$، ولی\n$\\tuple{x, y} \\notin \\Id{A}$، باید $\\tuple{x, y} \\in R$، یعنی\n$Rxy$. به همین ترتیب،~$Ryx$. اما این با فرض نامتقارن‌بودن $R$ تناقض\nدارد.\n\n",
+        "sha256": "429e1b45dc10c7dcbba8c783c7850cb9b0852bfd8c0b5f70e8d1245d4fe0b11e"
+      },
+      "target_after": {
+        "char_start": 4475,
+        "char_end_exclusive": 4747,
+        "line_start": 119,
+        "line_end": 125,
+        "text": "برای نشان‌دادن پادمتقارن‌بودن $R^+$، به برهان خلف فرض کنید $R^+xy$ و\n$R^+yx$، اما $x \\neq y$. چون $\\tuple{x,y} \\in R \\cup \\Id{A}$، ولی\n$\\tuple{x, y} \\notin \\Id{A}$، باید $\\tuple{x, y} \\in R$، یعنی\n$Rxy$. به همین ترتیب،~$Ryx$. اما این با فرض نامتقارن‌بودن $R$ تناقض\nدارد.\n\n",
+        "sha256": "429e1b45dc10c7dcbba8c783c7850cb9b0852bfd8c0b5f70e8d1245d4fe0b11e"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "برای نشان‌دادن پادمتقارن‌بودن $R^+$، به برهان خلف فرض کنید $R^+xy$ و\n$R^+yx$، اما $x \\neq y$. چون $\\tuple{x,y} \\in R \\cup \\Id{A}$، ولی\n$\\tuple{x, y} \\notin \\Id{A}$، باید $\\tuple{x, y} \\in R$، یعنی\n$Rxy$. به همین ترتیب،~$Ryx$. اما این با فرض نامتقارن‌بودن $R$ تناقض\nدارد.\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Transitivity proof case split",
+      "canon": [
+        "FA-REL-P055"
+      ],
+      "rationale": "Retain the both-in-R case and either-diagonal case. Persian دست‌کم یکی prevents an exclusive-or reading; equality substitution in each case preserves the source proof. No omitted case is supplied as a disguised new theorem.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Exact source/target meaning was compared with the cited Persian passage; direct attestations and contextual inferences are distinguished.",
+      "id": "FA-0016-C18",
+      "unit": "OLP-0016",
+      "source": {
+        "char_start": 4683,
+        "char_end_exclusive": 5121,
+        "line_start": 124,
+        "line_end": 132,
+        "text": "To establish transitivity, suppose that $R^+xy$ and $R^+yz$. If both\n$\\tuple{x, y} \\in R$ and $\\tuple{y,z} \\in R$, then $\\tuple{x, z} \\in\nR$ since $R$~is transitive. Otherwise, either $\\tuple{x, y} \\in\n\\Id{A}$, i.e., $x = y$, or $\\tuple{y, z} \\in \\Id{A}$, i.e., $y = z$.\nIn the first case, we have that $R^+yz$ by assumption, $x = y$, hence\n$R^+xz$. Similarly in the second case. In either case, $R^+xz$, thus,\n$R^+$ is also transitive.\n\n",
+        "sha256": "82859cfcfcee9da6dd06b3c29d830cbe8be325cfdc188b25891339b1d528c089"
+      },
+      "target_before": {
+        "char_start": 4509,
+        "char_end_exclusive": 4963,
+        "line_start": 124,
+        "line_end": 133,
+        "text": "برای اثبات تراگذری، فرض کنید $R^+xy$ و $R^+yz$. اگر هر دو\n$\\tuple{x, y} \\in R$ و $\\tuple{y,z} \\in R$ برقرار باشند، آنگاه $\\tuple{x, z} \\in\nR$، زیرا $R$~تراگذری است. در غیر این صورت، یا $\\tuple{x, y} \\in\n\\Id{A}$، یعنی $x = y$، یا $\\tuple{y, z} \\in \\Id{A}$، یعنی $y = z$؛\nدست‌کم یکی از این دو حالت برقرار است.\nدر حالت نخست، بنا بر فرض $R^+yz$ را داریم و $x = y$؛ پس $R^+xz$. حالت\nدوم نیز مشابه است. در هر دو حالت، $R^+xz$؛ بنابراین $R^+$ نیز تراگذری\nاست.\n\n",
+        "sha256": "44d0c8c550f9068b92f4741359e4460fca12f3da72072c964c2f22d52d2787c8"
+      },
+      "target_after": {
+        "char_start": 4747,
+        "char_end_exclusive": 5201,
+        "line_start": 125,
+        "line_end": 134,
+        "text": "برای اثبات تراگذری، فرض کنید $R^+xy$ و $R^+yz$. اگر هر دو\n$\\tuple{x, y} \\in R$ و $\\tuple{y,z} \\in R$ برقرار باشند، آنگاه $\\tuple{x, z} \\in\nR$، زیرا $R$~تراگذری است. در غیر این صورت، یا $\\tuple{x, y} \\in\n\\Id{A}$، یعنی $x = y$، یا $\\tuple{y, z} \\in \\Id{A}$، یعنی $y = z$؛\nدست‌کم یکی از این دو حالت برقرار است.\nدر حالت نخست، بنا بر فرض $R^+yz$ را داریم و $x = y$؛ پس $R^+xz$. حالت\nدوم نیز مشابه است. در هر دو حالت، $R^+xz$؛ بنابراین $R^+$ نیز تراگذری\nاست.\n\n",
+        "sha256": "44d0c8c550f9068b92f4741359e4460fca12f3da72072c964c2f22d52d2787c8"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "برای اثبات تراگذری، فرض کنید $R^+xy$ و $R^+yz$. اگر هر دو\n$\\tuple{x, y} \\in R$ و $\\tuple{y,z} \\in R$ برقرار باشند، آنگاه $\\tuple{x, z} \\in\nR$، زیرا $R$~تراگذری است. در غیر این صورت، یا $\\tuple{x, y} \\in\n\\Id{A}$، یعنی $x = y$، یا $\\tuple{y, z} \\in \\Id{A}$، یعنی $y = z$؛\nدست‌کم یکی از این دو حالت برقرار است.\nدر حالت نخست، بنا بر فرض $R^+yz$ را داریم و $x = y$؛ پس $R^+xz$. حالت\nدوم نیز مشابه است. در هر دو حالت، $R^+xz$؛ بنابراین $R^+$ نیز تراگذری\nاست.\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Linearity extension clause",
+      "canon": [
+        "FA-REL-P055",
+        "FA-OL-CANON-0003:P0023"
+      ],
+      "rationale": "Every distinct pair is related in one direction already in R and hence in its superset. The target retains the inclusive alternatives and does not assert graph-path connectivity.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Exact source/target meaning was compared with the cited Persian passage; direct attestations and contextual inferences are distinguished.",
+      "id": "FA-0016-C19",
+      "unit": "OLP-0016",
+      "source": {
+        "char_start": 5121,
+        "char_end_exclusive": 5398,
+        "line_start": 132,
+        "line_end": 138,
+        "text": "Concerning the ``moreover'' clause, suppose that $R$ is also connected. \nSo for all $x \\neq y$, either $Rxy$ or~$Ryx$, i.e., either \n$\\tuple{x, y} \\in R$ or $\\tuple{y, x} \\in R$. Since $R \\subseteq R^+$, \nthis remains true of $R^+$, so $R^+$ is connected as well.\n\\end{proof}\n\n",
+        "sha256": "03eef1ef8d7f9142028b4a699a443886556b38b96f147f1457e2164a8ee95153"
+      },
+      "target_before": {
+        "char_start": 4963,
+        "char_end_exclusive": 5263,
+        "line_start": 133,
+        "line_end": 139,
+        "text": "دربارهٔ بند «افزون بر این»، فرض کنید $R$ همبند نیز باشد. پس برای هر\n$x \\neq y$، دست‌کم یکی از $Rxy$ و~$Ryx$ برقرار است؛ یعنی دست‌کم یکی از\n$\\tuple{x, y} \\in R$ و $\\tuple{y, x} \\in R$ برقرار است. چون $R \\subseteq R^+$، این امر دربارهٔ $R^+$\nنیز همچنان برقرار است؛ پس $R^+$ نیز همبند است.\n\\end{proof}\n\n",
+        "sha256": "c222e5b2363222925bbb379a570cee30f14789fd99c9c261d316d8c8e6bfe154"
+      },
+      "target_after": {
+        "char_start": 5201,
+        "char_end_exclusive": 5501,
+        "line_start": 134,
+        "line_end": 140,
+        "text": "دربارهٔ بند «افزون بر این»، فرض کنید $R$ همبند نیز باشد. پس برای هر\n$x \\neq y$، دست‌کم یکی از $Rxy$ و~$Ryx$ برقرار است؛ یعنی دست‌کم یکی از\n$\\tuple{x, y} \\in R$ و $\\tuple{y, x} \\in R$ برقرار است. چون $R \\subseteq R^+$، این امر دربارهٔ $R^+$\nنیز همچنان برقرار است؛ پس $R^+$ نیز همبند است.\n\\end{proof}\n\n",
+        "sha256": "c222e5b2363222925bbb379a570cee30f14789fd99c9c261d316d8c8e6bfe154"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "دربارهٔ بند «افزون بر این»، فرض کنید $R$ همبند نیز باشد. پس برای هر\n$x \\neq y$، دست‌کم یکی از $Rxy$ و~$Ryx$ برقرار است؛ یعنی دست‌کم یکی از\n$\\tuple{x, y} \\in R$ و $\\tuple{y, x} \\in R$ برقرار است. چون $R \\subseteq R^+$، این امر دربارهٔ $R^+$\nنیز همچنان برقرار است؛ پس $R^+$ نیز همبند است.\n\\end{proof}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Partial-to-strict proposition and exercise",
+      "canon": [
+        "FA-REL-P055",
+        "FA-OL-CANON-0003:P0023"
+      ],
+      "rationale": "Remove exactly the identity diagonal. The optional linear clause remains. The proof remains assigned as an exercise, and the separate exercise points to the exact proposition label; no solution is inserted.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Exact source/target meaning was compared with the cited Persian passage; direct attestations and contextual inferences are distinguished.",
+      "id": "FA-0016-C20",
+      "unit": "OLP-0016",
+      "source": {
+        "char_start": 5398,
+        "char_end_exclusive": 5755,
+        "line_start": 138,
+        "line_end": 152,
+        "text": "\\begin{prop}\\ollabel{prop:partialtostrict}\nIf $R$ is a partial order on~$A$, then $R^- = R \\setminus \\Id{A}$ is a\nstrict order. Moreover, if $R$ is a linear order, then $R^-$ is a strict \nlinear order.\n\\end{prop}\n\n\\begin{proof}\nThis is left as an exercise.\n\\end{proof}\n\n\\begin{prob}\nGive a proof of \\olref[sfr][rel][ord]{prop:partialtostrict}. \n\\end{prob}\n\n",
+        "sha256": "151b4a208a4909ea637b9fde32866b1df7cee1bdc85d2d795a5eb16e34845453"
+      },
+      "target_before": {
+        "char_start": 5263,
+        "char_end_exclusive": 5641,
+        "line_start": 139,
+        "line_end": 153,
+        "text": "\\begin{prop}\\ollabel{prop:partialtostrict}\nاگر $R$ ترتیبی جزئی روی~$A$ باشد، آنگاه $R^- = R \\setminus \\Id{A}$\nترتیبی اکید است. افزون بر این، اگر $R$ ترتیبی خطی باشد، آنگاه $R^-$\nترتیبی خطی اکید است.\n\\end{prop}\n\n\\begin{proof}\nاثبات این گزاره به‌عنوان تمرین واگذار می‌شود.\n\\end{proof}\n\n\\begin{prob}\nبرهانی برای \\olref[sfr][rel][ord]{prop:partialtostrict} به دست دهید.\n\\end{prob}\n\n",
+        "sha256": "b9fc5a36012b56c6db7789dc47264cc15465bf82fd2935404302a310a3e18999"
+      },
+      "target_after": {
+        "char_start": 5501,
+        "char_end_exclusive": 5879,
+        "line_start": 140,
+        "line_end": 154,
+        "text": "\\begin{prop}\\ollabel{prop:partialtostrict}\nاگر $R$ ترتیبی جزئی روی~$A$ باشد، آنگاه $R^- = R \\setminus \\Id{A}$\nترتیبی اکید است. افزون بر این، اگر $R$ ترتیبی خطی باشد، آنگاه $R^-$\nترتیبی خطی اکید است.\n\\end{prop}\n\n\\begin{proof}\nاثبات این گزاره به‌عنوان تمرین واگذار می‌شود.\n\\end{proof}\n\n\\begin{prob}\nبرهانی برای \\olref[sfr][rel][ord]{prop:partialtostrict} به دست دهید.\n\\end{prob}\n\n",
+        "sha256": "b9fc5a36012b56c6db7789dc47264cc15465bf82fd2935404302a310a3e18999"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{prop}\\ollabel{prop:partialtostrict}\nاگر $R$ ترتیبی جزئی روی~$A$ باشد، آنگاه $R^- = R \\setminus \\Id{A}$\nترتیبی اکید است. افزون بر این، اگر $R$ ترتیبی خطی باشد، آنگاه $R^-$\nترتیبی خطی اکید است.\n\\end{prop}\n\n\\begin{proof}\nاثبات این گزاره به‌عنوان تمرین واگذار می‌شود.\n\\end{proof}\n\n\\begin{prob}\nبرهانی برای \\olref[sfr][rel][ord]{prop:partialtostrict} به دست دهید.\n\\end{prob}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Extensionality-like claim",
+      "canon": [
+        "FA-OL-CANON-0003:P0023",
+        "FA-REL-P055"
+      ],
+      "rationale": "The claim concerns equality from identical strict lower sets, with all quantifiers and biconditional unchanged. اصل گسترش is retained as the lane’s earlier extensionality label; the selected pages support order context, not this exact axiom name.",
+      "alternatives": "",
+      "question": "Lane-wide evidence for the extensionality label remains with the set-theory opening review.",
+      "confidence": 2,
+      "confidence_reason": "Formal theorem exact; precise extensionality label not newly attested here.",
+      "id": "FA-0016-C21",
+      "unit": "OLP-0016",
+      "source": {
+        "char_start": 5755,
+        "char_end_exclusive": 6075,
+        "line_start": 152,
+        "line_end": 163,
+        "text": "The following simple result establishes that strict linear orders\nsatisfy an extensionality-like property:\n\n\\begin{prop}\\ollabel{prop:extensionality-strictlinearorders}\nIf $<$ is a strict linear order on $A$, then:\n\\[\n  (\\forall a, b \\in A)((\\forall x \\in A)(x < a \\liff x < b) \\lif a = b).\n\\]\n\\end{prop}\n\n\\begin{proof}\n",
+        "sha256": "d9eb20e6741b25fb6a898256c21e07b6fda4f55902fd3374df97e9172f0a09c5"
+      },
+      "target_before": {
+        "char_start": 5641,
+        "char_end_exclusive": 5933,
+        "line_start": 153,
+        "line_end": 164,
+        "text": "نتیجهٔ سادهٔ زیر نشان می‌دهد که ترتیب‌های خطی اکید خاصیتی شبیه اصل\nگسترش دارند:\n\n\\begin{prop}\\ollabel{prop:extensionality-strictlinearorders}\nاگر $<$ ترتیبی خطی اکید روی $A$ باشد، آنگاه:\n\\[\n  (\\forall a, b \\in A)((\\forall x \\in A)(x < a \\liff x < b) \\lif a = b).\n\\]\n\\end{prop}\n\n\\begin{proof}\n",
+        "sha256": "9c5dd373cf5a3a1473aebe61a730426c448b57246865c1a2ebdcf3021160467d"
+      },
+      "target_after": {
+        "char_start": 5879,
+        "char_end_exclusive": 6171,
+        "line_start": 154,
+        "line_end": 165,
+        "text": "نتیجهٔ سادهٔ زیر نشان می‌دهد که ترتیب‌های خطی اکید خاصیتی شبیه اصل\nگسترش دارند:\n\n\\begin{prop}\\ollabel{prop:extensionality-strictlinearorders}\nاگر $<$ ترتیبی خطی اکید روی $A$ باشد، آنگاه:\n\\[\n  (\\forall a, b \\in A)((\\forall x \\in A)(x < a \\liff x < b) \\lif a = b).\n\\]\n\\end{prop}\n\n\\begin{proof}\n",
+        "sha256": "9c5dd373cf5a3a1473aebe61a730426c448b57246865c1a2ebdcf3021160467d"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "نتیجهٔ سادهٔ زیر نشان می‌دهد که ترتیب‌های خطی اکید خاصیتی شبیه اصل\nگسترش دارند:\n\n\\begin{prop}\\ollabel{prop:extensionality-strictlinearorders}\nاگر $<$ ترتیبی خطی اکید روی $A$ باشد، آنگاه:\n\\[\n  (\\forall a, b \\in A)((\\forall x \\in A)(x < a \\liff x < b) \\lif a = b).\n\\]\n\\end{prop}\n\n\\begin{proof}\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Final irreflexivity and comparability proof",
+      "canon": [
+        "FA-OL-CANON-0003:P0023",
+        "FA-REL-P055"
+      ],
+      "rationale": "The first hypothesis gives a<a if a<b; irreflexivity excludes it. The symmetric argument excludes b<a, and comparability yields equality. Correct پادبازتابی here as well, preserving the whole argument rather than only the heading.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Exact source/target meaning was compared with the cited Persian passage; direct attestations and contextual inferences are distinguished.",
+      "id": "FA-0016-C22",
+      "unit": "OLP-0016",
+      "source": {
+        "char_start": 6075,
+        "char_end_exclusive": 6293,
+        "line_start": 163,
+        "line_end": 168,
+        "text": "Suppose $(\\forall x \\in A)(x < a \\liff x < b)$. If $a < b$, then $a <\na$, contradicting the fact that $<$ is irreflexive; so $a \\nless b$.\nExactly similarly, $b \\nless a$. So $a = b$, as $<$ is connected.\n\\end{proof}\n\n",
+        "sha256": "de5d94a59a8c28eb12d8eafff253286ce8f066d5b3762f6d6ecdfd662c4588b1"
+      },
+      "target_before": {
+        "char_start": 5933,
+        "char_end_exclusive": 6144,
+        "line_start": 164,
+        "line_end": 170,
+        "text": "فرض کنید $(\\forall x \\in A)(x < a \\liff x < b)$. اگر $a < b$، آنگاه\n$a <\na$، که با غیربازتابی‌بودن $<$ تناقض دارد؛ پس $a \\nless b$. درست به\nهمین ترتیب، $b \\nless a$. پس $a = b$، زیرا $<$ همبند است.\n\\end{proof}\n\n",
+        "sha256": "74a8f5d111b6bb05ad8726bab920c201e83bf1900778c78fb587293e2091a618"
+      },
+      "target_after": {
+        "char_start": 6171,
+        "char_end_exclusive": 6382,
+        "line_start": 165,
+        "line_end": 171,
+        "text": "فرض کنید $(\\forall x \\in A)(x < a \\liff x < b)$. اگر $a < b$، آنگاه\n$a <\na$، که با پادبازتابی‌بودن $<$ تناقض دارد؛ پس $a \\nless b$. درست به\nهمین ترتیب، $b \\nless a$. پس $a = b$، زیرا $<$ همبند است.\n\\end{proof}\n\n",
+        "sha256": "137b9b510762f24221cb00a04a7b190857f68bedc88d157140f8e9a8b4b1d5c7"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "فرض کنید $(\\forall x \\in A)(x < a \\liff x < b)$. اگر $a < b$، آنگاه\n$a <\na$، که با پادبازتابی‌بودن $<$ تناقض دارد؛ پس $a \\nless b$. درست به\nهمین ترتیب، $b \\nless a$. پس $a = b$، زیرا $<$ همبند است.\n\\end{proof}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Title, graph roles and convention diversity",
+      "canon": [
+        "FA-REL-P101",
+        "FA-REL-P102",
+        "FA-REL-P053"
+      ],
+      "rationale": "گراف، رأس and یال are directly attested in the mathematical exposition. The introductory applications and different edge conventions are retained. Restore the omitted English lexical note that vertices is the plural of vertex; keep it visibly about English, not Persian morphology. بسیار سودمندند expresses incredibly useful idiomatically without the stiff به‌طرزی چشمگیر. گره is retained as an explicit synonym for the already defined point, not claimed directly attested on these pages.",
+      "alternatives": "رأس throughout is directly supported, but deleting the source’s second synonym would lose information.",
+      "question": null,
+      "confidence": 2,
+      "confidence_reason": "Core terminology is direct; the synonym and idiomatic intensity are contextual choices.",
+      "id": "FA-0017-C01",
+      "unit": "OLP-0017",
+      "source": {
+        "char_start": 179,
+        "char_end_exclusive": 937,
+        "line_start": 10,
+        "line_end": 24,
+        "text": "\\olsection{Graphs}\n\nA \\emph{graph} is a diagram in which points---called ``nodes'' or\n``vertices'' (plural of ``vertex'')---are connected by edges.  Graphs\nare a ubiquitous tool in discrete mathematics and in computer science.\nThey are incredibly useful for representing, and visualizing,\nrelationships and structures, from concrete things like networks of\nvarious kinds to abstract structures such as the possible outcomes of\ndecisions.  There are many different kinds of graphs in the literature\nwhich differ, e.g., according to whether the edges are directed or\nnot, have labels or not, whether there can be edges from a node to the\nsame node, multiple edges between the same nodes, etc.  \\emph{Directed\n  graphs} have a special connection to relations.\n\n",
+        "sha256": "79bea43745578681201349c440126fd3f7cb4d32c085e20d9d2c6f382132e3a5"
+      },
+      "target_before": {
+        "char_start": 186,
+        "char_end_exclusive": 867,
+        "line_start": 10,
+        "line_end": 23,
+        "text": "\\olsection{گراف‌ها}\n\n\\emph{گراف} نموداری است که در آن نقطه‌هایی---که «گره» یا «رأس» نامیده\nمی‌شوند---با یال‌ها به هم متصل‌اند. گراف‌ها ابزاری فراگیر در\nریاضیات گسسته و علوم رایانه‌اند. آنها برای بازنمایی و تجسم روابط و\nساختارها به‌طرزی چشمگیر سودمندند؛ از چیزهای عینی، مانند انواع گوناگون\nشبکه‌ها، تا ساختارهای انتزاعی، مانند پیامدهای ممکن تصمیم‌ها. در منابع،\nگونه‌های متفاوت بسیاری از گراف‌ها وجود دارند که، برای نمونه، از این\nجهت‌ها با هم فرق می‌کنند: یال‌ها جهت‌دارند یا نه، برچسب دارند یا نه،\nممکن است یالی از یک گره به همان گره وجود داشته باشد یا نه، ممکن است\nمیان همان دو گره چند یال وجود داشته باشد یا نه، و مانند اینها.\n\\emph{گراف‌های جهت‌دار} پیوندی ویژه با روابط دارند.\n\n",
+        "sha256": "847ae3c628b01075673457da4171d77c8c3ffd55478bec57d88598db1e8765bd"
+      },
+      "target_after": {
+        "char_start": 186,
+        "char_end_exclusive": 954,
+        "line_start": 10,
+        "line_end": 23,
+        "text": "\\olsection{گراف‌ها}\n\n\\emph{گراف} نموداری است که در آن نقطه‌هایی---که «گره» یا «رأس» نامیده\nمی‌شوند---با یال‌ها به هم متصل‌اند. (واژهٔ انگلیسی \\foreignlanguage{english}{vertices} جمعِ \\foreignlanguage{english}{vertex} است.) گراف‌ها ابزاری فراگیر در\nریاضیات گسسته و علوم رایانه‌اند. آنها برای بازنمایی و تجسم روابط و\nساختارها بسیار سودمندند؛ از چیزهای عینی، مانند انواع گوناگون\nشبکه‌ها، تا ساختارهای انتزاعی، مانند پیامدهای ممکن تصمیم‌ها. در منابع،\nگونه‌های متفاوت بسیاری از گراف‌ها وجود دارند که، برای نمونه، از این\nجهت‌ها با هم فرق می‌کنند: یال‌ها جهت‌دارند یا نه، برچسب دارند یا نه،\nممکن است یالی از یک گره به همان گره وجود داشته باشد یا نه، ممکن است\nمیان همان دو گره چند یال وجود داشته باشد یا نه، و مانند اینها.\n\\emph{گراف‌های جهت‌دار} پیوندی ویژه با روابط دارند.\n\n",
+        "sha256": "7f3987ea4cf074e164cb6a4bd15c0de3c4c1a8216ae59d8ea3411d369282ad28"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\olsection{گراف‌ها}\n\n\\emph{گراف} نموداری است که در آن نقطه‌هایی---که «گره» یا «رأس» نامیده\nمی‌شوند---با یال‌ها به هم متصل‌اند. (واژهٔ انگلیسی \\foreignlanguage{english}{vertices} جمعِ \\foreignlanguage{english}{vertex} است.) گراف‌ها ابزاری فراگیر در\nریاضیات گسسته و علوم رایانه‌اند. آنها برای بازنمایی و تجسم روابط و\nساختارها بسیار سودمندند؛ از چیزهای عینی، مانند انواع گوناگون\nشبکه‌ها، تا ساختارهای انتزاعی، مانند پیامدهای ممکن تصمیم‌ها. در منابع،\nگونه‌های متفاوت بسیاری از گراف‌ها وجود دارند که، برای نمونه، از این\nجهت‌ها با هم فرق می‌کنند: یال‌ها جهت‌دارند یا نه، برچسب دارند یا نه،\nممکن است یالی از یک گره به همان گره وجود داشته باشد یا نه، ممکن است\nمیان همان دو گره چند یال وجود داشته باشد یا نه، و مانند اینها.\n\\emph{گراف‌های جهت‌دار} پیوندی ویژه با روابط دارند.\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Directed graph definition",
+      "canon": [
+        "FA-REL-P101",
+        "FA-REL-P053"
+      ],
+      "rationale": "Keep G=(V,E), vertex carrier V and edge set subset V squared. This definition permits loops and isolated vertices but not duplicate elements of a set; the broader introductory discussion of other conventions does not alter it.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Exact source/target meaning was compared with the cited Persian passage; direct attestations and contextual inferences are distinguished.",
+      "id": "FA-0017-C02",
+      "unit": "OLP-0017",
+      "source": {
+        "char_start": 937,
+        "char_end_exclusive": 1098,
+        "line_start": 24,
+        "line_end": 29,
+        "text": "\\begin{defn}[Directed graph]\nA \\emph{directed graph} $G = \\tuple{V, E}$ is a set of\n\\emph{vertices}~$V$ and a set of \\emph{edges}~$E \\subseteq V^2$.\n\\end{defn}\n\n",
+        "sha256": "e3ca2c9c2786b0267107bee453507af8d4191d1f26681bec5fb598c394f2042e"
+      },
+      "target_before": {
+        "char_start": 867,
+        "char_end_exclusive": 1043,
+        "line_start": 23,
+        "line_end": 29,
+        "text": "\\begin{defn}[گراف جهت‌دار]\nیک \\emph{گراف جهت‌دار} $G = \\tuple{V, E}$ از مجموعه‌ای از\n\\emph{رأس‌ها}~$V$ و مجموعه‌ای از \\emph{یال‌ها}~$E \\subseteq V^2$\nتشکیل می‌شود.\n\\end{defn}\n\n",
+        "sha256": "d1704e09c9da5655d76034023f0a074c62986afe05671fdd1f8352e1816c6ac2"
+      },
+      "target_after": {
+        "char_start": 954,
+        "char_end_exclusive": 1130,
+        "line_start": 23,
+        "line_end": 29,
+        "text": "\\begin{defn}[گراف جهت‌دار]\nیک \\emph{گراف جهت‌دار} $G = \\tuple{V, E}$ از مجموعه‌ای از\n\\emph{رأس‌ها}~$V$ و مجموعه‌ای از \\emph{یال‌ها}~$E \\subseteq V^2$\nتشکیل می‌شود.\n\\end{defn}\n\n",
+        "sha256": "d1704e09c9da5655d76034023f0a074c62986afe05671fdd1f8352e1816c6ac2"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{defn}[گراف جهت‌دار]\nیک \\emph{گراف جهت‌دار} $G = \\tuple{V, E}$ از مجموعه‌ای از\n\\emph{رأس‌ها}~$V$ و مجموعه‌ای از \\emph{یال‌ها}~$E \\subseteq V^2$\nتشکیل می‌شود.\n\\end{defn}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Relations, arrows and explicit carrier",
+      "canon": [
+        "FA-REL-P053",
+        "FA-REL-P101",
+        "FA-REL-P102"
+      ],
+      "rationale": "Arrow direction is v1 to v2 iff ordered pair(v1,v2) is in E. Preserve the explicit carrier and the possibility of isolated vertices, as well as both relation-to-graph and graph-to-relation directions. The canon calls an isolated vertex منفرد; existing منزوی is understandable but is not a direct attestation.",
+      "alternatives": "",
+      "question": "Consider a future lane-wide choice between رأس منفرد and رأس منزوی; no graph property changes.",
+      "confidence": 2,
+      "confidence_reason": "Definition and direction direct; one vertex adjective is provisional.",
+      "id": "FA-0017-C03",
+      "unit": "OLP-0017",
+      "source": {
+        "char_start": 1098,
+        "char_end_exclusive": 1829,
+        "line_start": 29,
+        "line_end": 43,
+        "text": "\\begin{explain}\nAccording to our definition, a graph just is a set together with a\nrelation on that set.  Of course, when talking about graphs, it's only\nnatural to expect that they are graphically represented: we can draw a\ngraph by connecting two vertices~$v_1$ and $v_2$ by an arrow iff\n$\\tuple{v_1, v_2} \\in E$.  The only difference between a relation by\nitself and a graph is that a graph specifies the set of vertices,\ni.e., a graph may have isolated vertices. The important point,\nhowever, is that every relation~$R$ on a set~$X$ can be seen as a\ndirected graph $\\tuple{X, R}$, and conversely, a directed\ngraph~$\\tuple{V, E}$ can be seen as a relation $E \\subseteq V^2$ with\nthe set $V$ explicitly specified.\n\\end{explain}\n\n",
+        "sha256": "69525b8548eeeade7e172500c9bd51345d1bf8b55447c79b581e9d175d76a590"
+      },
+      "target_before": {
+        "char_start": 1043,
+        "char_end_exclusive": 1745,
+        "line_start": 29,
+        "line_end": 42,
+        "text": "\\begin{explain}\nبنا بر تعریف ما، گراف چیزی جز یک مجموعه به‌همراه رابطه‌ای روی آن\nمجموعه نیست. البته وقتی از گراف‌ها سخن می‌گوییم، طبیعی است انتظار داشته\nباشیم که آنها را به‌صورت تصویری بازنمایی کنند: می‌توانیم گراف را با\nکشیدن پیکانی از رأس~$v_1$ به رأس $v_2$ رسم کنیم، اگر و تنها\nاگر $\\tuple{v_1, v_2} \\in E$. تنها تفاوت میان یک رابطه به‌خودی‌خود و\nیک گراف این است که گراف مجموعهٔ رأس‌ها را مشخص می‌کند؛ یعنی گراف ممکن\nاست رأس‌های منزوی داشته باشد. بااین‌حال، نکتهٔ مهم این است که هر\nرابطهٔ~$R$ روی مجموعهٔ~$X$ را می‌توان گراف جهت‌دار $\\tuple{X, R}$ در\nنظر گرفت؛ و برعکس، گراف جهت‌دار~$\\tuple{V, E}$ را می‌توان رابطهٔ\n$E \\subseteq V^2$ دانست که مجموعهٔ $V$ در آن به‌صراحت مشخص شده است.\n\\end{explain}\n\n",
+        "sha256": "c8442b20ffb6be3f520001737b08e25c7ac78d1ef2cbb7208b22b8534bcf8a1e"
+      },
+      "target_after": {
+        "char_start": 1130,
+        "char_end_exclusive": 1832,
+        "line_start": 29,
+        "line_end": 42,
+        "text": "\\begin{explain}\nبنا بر تعریف ما، گراف چیزی جز یک مجموعه به‌همراه رابطه‌ای روی آن\nمجموعه نیست. البته وقتی از گراف‌ها سخن می‌گوییم، طبیعی است انتظار داشته\nباشیم که آنها را به‌صورت تصویری بازنمایی کنند: می‌توانیم گراف را با\nکشیدن پیکانی از رأس~$v_1$ به رأس $v_2$ رسم کنیم، اگر و تنها\nاگر $\\tuple{v_1, v_2} \\in E$. تنها تفاوت میان یک رابطه به‌خودی‌خود و\nیک گراف این است که گراف مجموعهٔ رأس‌ها را مشخص می‌کند؛ یعنی گراف ممکن\nاست رأس‌های منزوی داشته باشد. بااین‌حال، نکتهٔ مهم این است که هر\nرابطهٔ~$R$ روی مجموعهٔ~$X$ را می‌توان گراف جهت‌دار $\\tuple{X, R}$ در\nنظر گرفت؛ و برعکس، گراف جهت‌دار~$\\tuple{V, E}$ را می‌توان رابطهٔ\n$E \\subseteq V^2$ دانست که مجموعهٔ $V$ در آن به‌صراحت مشخص شده است.\n\\end{explain}\n\n",
+        "sha256": "c8442b20ffb6be3f520001737b08e25c7ac78d1ef2cbb7208b22b8534bcf8a1e"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{explain}\nبنا بر تعریف ما، گراف چیزی جز یک مجموعه به‌همراه رابطه‌ای روی آن\nمجموعه نیست. البته وقتی از گراف‌ها سخن می‌گوییم، طبیعی است انتظار داشته\nباشیم که آنها را به‌صورت تصویری بازنمایی کنند: می‌توانیم گراف را با\nکشیدن پیکانی از رأس~$v_1$ به رأس $v_2$ رسم کنیم، اگر و تنها\nاگر $\\tuple{v_1, v_2} \\in E$. تنها تفاوت میان یک رابطه به‌خودی‌خود و\nیک گراف این است که گراف مجموعهٔ رأس‌ها را مشخص می‌کند؛ یعنی گراف ممکن\nاست رأس‌های منزوی داشته باشد. بااین‌حال، نکتهٔ مهم این است که هر\nرابطهٔ~$R$ روی مجموعهٔ~$X$ را می‌توان گراف جهت‌دار $\\tuple{X, R}$ در\nنظر گرفت؛ و برعکس، گراف جهت‌دار~$\\tuple{V, E}$ را می‌توان رابطهٔ\n$E \\subseteq V^2$ دانست که مجموعهٔ $V$ در آن به‌صراحت مشخص شده است.\n\\end{explain}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Two graphs and isolated vertex contrast",
+      "canon": [
+        "FA-REL-P101",
+        "FA-REL-P102"
+      ],
+      "rationale": "Both TikZ diagrams and their edge/vertex labels are preserved byte-for-byte. The second graph has the same E but omits vertex4; the Persian intertext correctly calls it a different graph. All math within intertext is separately compared, so translating prose cannot hide a changed Vprime or edge set.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Exact source/target meaning was compared with the cited Persian passage; direct attestations and contextual inferences are distinguished.",
+      "id": "FA-0017-C04",
+      "unit": "OLP-0017",
+      "source": {
+        "char_start": 1829,
+        "char_end_exclusive": 2770,
+        "line_start": 43,
+        "line_end": 72,
+        "text": "\\begin{ex}\nThe graph $\\tuple{V, E}$ with $V = \\{1, 2, 3, 4\\}$ and $E =\n\\{\\tuple{1,1}, \\allowbreak \\tuple{1, 2}, \\allowbreak \\tuple{1, 3},\n\\allowbreak \\tuple{2, 3}\\}$ looks like this:\n\\begin{align*}\n& \\begin{tikzpicture}[->,node distance=2cm]\n  \\node[draw,circle] (A) {$1$};\n  \\node[draw,circle] (B) [right of=A] {$2$};\n  \\node[draw,circle] (C) [below of=B] {$3$};\n  \\node[draw,circle] (D) [right of=B] {$4$};\n  \\draw (A) to [loop above]  (A);\n  \\draw (A) to  (B);\n  \\draw (A) to  (C);\n  \\draw (B) to  (C);\n  \\end{tikzpicture}\n\\intertext{This is a different graph than $\\tuple{V', E}$ with $V' =\n  \\{1, 2, 3\\}$, which looks like this:}\n& \\begin{tikzpicture}[->,node distance=2cm]\n  \\node[draw,circle] (A) {$1$};\n  \\node[draw,circle] (B) [right of=A] {$2$};\n  \\node[draw,circle] (C) [below of=B] {$3$};\n  \\draw (A) to [loop above]  (A);\n  \\draw (A) to  (B);\n  \\draw (A) to  (C);\n  \\draw (B) to  (C);\n  \\end{tikzpicture}\n\\end{align*}\n\\end{ex}\n\n",
+        "sha256": "b3469c60617bccf2e058baa1e1722c250eb0caefd9666dd7ae4706a627b6fc88"
+      },
+      "target_before": {
+        "char_start": 1745,
+        "char_end_exclusive": 2673,
+        "line_start": 42,
+        "line_end": 71,
+        "text": "\\begin{ex}\nگراف $\\tuple{V, E}$ با $V = \\{1, 2, 3, 4\\}$ و $E =\n\\{\\tuple{1,1}, \\allowbreak \\tuple{1, 2}, \\allowbreak \\tuple{1, 3},\n\\allowbreak \\tuple{2, 3}\\}$ چنین شکلی دارد:\n\\begin{align*}\n& \\begin{tikzpicture}[->,node distance=2cm]\n  \\node[draw,circle] (A) {$1$};\n  \\node[draw,circle] (B) [right of=A] {$2$};\n  \\node[draw,circle] (C) [below of=B] {$3$};\n  \\node[draw,circle] (D) [right of=B] {$4$};\n  \\draw (A) to [loop above]  (A);\n  \\draw (A) to  (B);\n  \\draw (A) to  (C);\n  \\draw (B) to  (C);\n  \\end{tikzpicture}\n\\intertext{این گراف با گراف $\\tuple{V', E}$ با $V' =\n  \\{1, 2, 3\\}$ متفاوت است؛ گراف دوم چنین شکلی دارد:}\n& \\begin{tikzpicture}[->,node distance=2cm]\n  \\node[draw,circle] (A) {$1$};\n  \\node[draw,circle] (B) [right of=A] {$2$};\n  \\node[draw,circle] (C) [below of=B] {$3$};\n  \\draw (A) to [loop above]  (A);\n  \\draw (A) to  (B);\n  \\draw (A) to  (C);\n  \\draw (B) to  (C);\n  \\end{tikzpicture}\n\\end{align*}\n\\end{ex}\n\n",
+        "sha256": "da00392e1910b97a3e9016dba74fcde3f03184a98931fd9b8c284e32beb1dfb7"
+      },
+      "target_after": {
+        "char_start": 1832,
+        "char_end_exclusive": 2760,
+        "line_start": 42,
+        "line_end": 71,
+        "text": "\\begin{ex}\nگراف $\\tuple{V, E}$ با $V = \\{1, 2, 3, 4\\}$ و $E =\n\\{\\tuple{1,1}, \\allowbreak \\tuple{1, 2}, \\allowbreak \\tuple{1, 3},\n\\allowbreak \\tuple{2, 3}\\}$ چنین شکلی دارد:\n\\begin{align*}\n& \\begin{tikzpicture}[->,node distance=2cm]\n  \\node[draw,circle] (A) {$1$};\n  \\node[draw,circle] (B) [right of=A] {$2$};\n  \\node[draw,circle] (C) [below of=B] {$3$};\n  \\node[draw,circle] (D) [right of=B] {$4$};\n  \\draw (A) to [loop above]  (A);\n  \\draw (A) to  (B);\n  \\draw (A) to  (C);\n  \\draw (B) to  (C);\n  \\end{tikzpicture}\n\\intertext{این گراف با گراف $\\tuple{V', E}$ با $V' =\n  \\{1, 2, 3\\}$ متفاوت است؛ گراف دوم چنین شکلی دارد:}\n& \\begin{tikzpicture}[->,node distance=2cm]\n  \\node[draw,circle] (A) {$1$};\n  \\node[draw,circle] (B) [right of=A] {$2$};\n  \\node[draw,circle] (C) [below of=B] {$3$};\n  \\draw (A) to [loop above]  (A);\n  \\draw (A) to  (B);\n  \\draw (A) to  (C);\n  \\draw (B) to  (C);\n  \\end{tikzpicture}\n\\end{align*}\n\\end{ex}\n\n",
+        "sha256": "da00392e1910b97a3e9016dba74fcde3f03184a98931fd9b8c284e32beb1dfb7"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{ex}\nگراف $\\tuple{V, E}$ با $V = \\{1, 2, 3, 4\\}$ و $E =\n\\{\\tuple{1,1}, \\allowbreak \\tuple{1, 2}, \\allowbreak \\tuple{1, 3},\n\\allowbreak \\tuple{2, 3}\\}$ چنین شکلی دارد:\n\\begin{align*}\n& \\begin{tikzpicture}[->,node distance=2cm]\n  \\node[draw,circle] (A) {$1$};\n  \\node[draw,circle] (B) [right of=A] {$2$};\n  \\node[draw,circle] (C) [below of=B] {$3$};\n  \\node[draw,circle] (D) [right of=B] {$4$};\n  \\draw (A) to [loop above]  (A);\n  \\draw (A) to  (B);\n  \\draw (A) to  (C);\n  \\draw (B) to  (C);\n  \\end{tikzpicture}\n\\intertext{این گراف با گراف $\\tuple{V', E}$ با $V' =\n  \\{1, 2, 3\\}$ متفاوت است؛ گراف دوم چنین شکلی دارد:}\n& \\begin{tikzpicture}[->,node distance=2cm]\n  \\node[draw,circle] (A) {$1$};\n  \\node[draw,circle] (B) [right of=A] {$2$};\n  \\node[draw,circle] (C) [below of=B] {$3$};\n  \\draw (A) to [loop above]  (A);\n  \\draw (A) to  (B);\n  \\draw (A) to  (C);\n  \\draw (B) to  (C);\n  \\end{tikzpicture}\n\\end{align*}\n\\end{ex}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Drawing exercise",
+      "canon": [
+        "FA-REL-P053",
+        "FA-REL-P101"
+      ],
+      "rationale": "The exercise still asks the reader to draw the less-than-or-equal relation on1,2,3,4, not the strict relation used in the Persian canon’s example. Retain the four-element carrier and do not supply the solution.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Exact source/target meaning was compared with the cited Persian passage; direct attestations and contextual inferences are distinguished.",
+      "id": "FA-0017-C05",
+      "unit": "OLP-0017",
+      "source": {
+        "char_start": 2770,
+        "char_end_exclusive": 2924,
+        "line_start": 72,
+        "line_end": 77,
+        "text": "\\begin{prob}\n  Consider the less-than-or-equal-to relation~$\\le$ on the set $\\{1,\n  2, 3, 4\\}$ as a graph and draw the corresponding diagram.\n\\end{prob}\n\n",
+        "sha256": "2c98e0f67f1fce06a9931b9233428734640929f71e04339e3dcda50e0af79de0"
+      },
+      "target_before": {
+        "char_start": 2673,
+        "char_end_exclusive": 2823,
+        "line_start": 71,
+        "line_end": 76,
+        "text": "\\begin{prob}\n  رابطهٔ کوچک‌تر یا مساوی~$\\le$ روی مجموعهٔ $\\{1,\n  2, 3, 4\\}$ را به‌صورت یک گراف در نظر بگیرید و نمودار متناظر را رسم کنید.\n\\end{prob}\n\n",
+        "sha256": "4d424c13820da321107c1d1ccfec9aa65dad49340f34cc6dc9bd315abdf14fc9"
+      },
+      "target_after": {
+        "char_start": 2760,
+        "char_end_exclusive": 2910,
+        "line_start": 71,
+        "line_end": 76,
+        "text": "\\begin{prob}\n  رابطهٔ کوچک‌تر یا مساوی~$\\le$ روی مجموعهٔ $\\{1,\n  2, 3, 4\\}$ را به‌صورت یک گراف در نظر بگیرید و نمودار متناظر را رسم کنید.\n\\end{prob}\n\n",
+        "sha256": "4d424c13820da321107c1d1ccfec9aa65dad49340f34cc6dc9bd315abdf14fc9"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{prob}\n  رابطهٔ کوچک‌تر یا مساوی~$\\le$ روی مجموعهٔ $\\{1,\n  2, 3, 4\\}$ را به‌صورت یک گراف در نظر بگیرید و نمودار متناظر را رسم کنید.\n\\end{prob}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Title and logical applications",
+      "canon": [
+        "FA-OL-CANON-0003:P0064",
+        "FA-OL-CANON-0003:P0065"
+      ],
+      "rationale": "درخت is directly attested in set-theoretic scholarship. Preserve finite syntax/derivation-tree applications and the appearance of infinite trees in propositional and first-order completeness. The source-controlled formula/derivation tokens remain untouched. درخت نحوی and the proof-system vocabulary are contextual existing terms, not direct attestations from these particular tree pages.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 2,
+      "confidence_reason": "Tree concept and register direct; application-specific compounds require the wider logic canon.",
+      "id": "FA-0018-C01",
+      "unit": "OLP-0018",
+      "source": {
+        "char_start": 178,
+        "char_end_exclusive": 696,
+        "line_start": 10,
+        "line_end": 22,
+        "text": "\\olsection{Trees}\n\nA particular kind of partial order which plays an important role in\nall parts of logic is a \\emph{tree}. Finite trees occur in elementary\nparts of logic: for example, !!{formula}s can be understood in terms\nof their decomposition into a syntax tree, while !!{derivation}s in\nmany !!{derivation} systems also take the form of finite trees.\n%\nInfinite trees appear already in the proof of the completeness\ntheorems for propositional and first-order logic, and are used\nthroughout mathematical logic.\n\n",
+        "sha256": "106c547ac1cc88c6d9c7185789b505a916688b6b1ee7a45a8b3754d35a92accd"
+      },
+      "target_before": {
+        "char_start": 185,
+        "char_end_exclusive": 653,
+        "line_start": 10,
+        "line_end": 21,
+        "text": "\\olsection{درخت‌ها}\n\nنوع خاصی از ترتیب جزئی که در همهٔ بخش‌های منطق نقشی مهم ایفا می‌کند\n\\emph{درخت} است. درخت‌های متناهی در بخش‌های مقدماتی منطق پدیدار می‌شوند:\nبرای نمونه، !!{formula}s را می‌توان بر حسب تجزیه‌شان به یک درخت نحوی\nفهمید، و !!{derivation}s در بسیاری از دستگاه‌های !!{derivation} نیز\nصورت درخت‌های متناهی دارند.\n%\nدرخت‌های نامتناهی از همان اثبات قضیه‌های تمامیت برای منطق گزاره‌ای و\nمنطق مرتبهٔ اول پدیدار می‌شوند و در سراسر منطق ریاضی به کار می‌روند.\n\n",
+        "sha256": "351e614a72e9f2169bba335ede5efb14eb96046f593ea2b0f44e6cd0a7b6cbe1"
+      },
+      "target_after": {
+        "char_start": 185,
+        "char_end_exclusive": 653,
+        "line_start": 10,
+        "line_end": 21,
+        "text": "\\olsection{درخت‌ها}\n\nنوع خاصی از ترتیب جزئی که در همهٔ بخش‌های منطق نقشی مهم ایفا می‌کند\n\\emph{درخت} است. درخت‌های متناهی در بخش‌های مقدماتی منطق پدیدار می‌شوند:\nبرای نمونه، !!{formula}s را می‌توان بر حسب تجزیه‌شان به یک درخت نحوی\nفهمید، و !!{derivation}s در بسیاری از دستگاه‌های !!{derivation} نیز\nصورت درخت‌های متناهی دارند.\n%\nدرخت‌های نامتناهی از همان اثبات قضیه‌های تمامیت برای منطق گزاره‌ای و\nمنطق مرتبهٔ اول پدیدار می‌شوند و در سراسر منطق ریاضی به کار می‌روند.\n\n",
+        "sha256": "351e614a72e9f2169bba335ede5efb14eb96046f593ea2b0f44e6cd0a7b6cbe1"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\olsection{درخت‌ها}\n\nنوع خاصی از ترتیب جزئی که در همهٔ بخش‌های منطق نقشی مهم ایفا می‌کند\n\\emph{درخت} است. درخت‌های متناهی در بخش‌های مقدماتی منطق پدیدار می‌شوند:\nبرای نمونه، !!{formula}s را می‌توان بر حسب تجزیه‌شان به یک درخت نحوی\nفهمید، و !!{derivation}s در بسیاری از دستگاه‌های !!{derivation} نیز\nصورت درخت‌های متناهی دارند.\n%\nدرخت‌های نامتناهی از همان اثبات قضیه‌های تمامیت برای منطق گزاره‌ای و\nمنطق مرتبهٔ اول پدیدار می‌شوند و در سراسر منطق ریاضی به کار می‌روند.\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Finite tree diagram and graph relation",
+      "canon": [
+        "FA-OL-CANON-0003:P0064",
+        "FA-REL-P101",
+        "FA-REL-P102"
+      ],
+      "rationale": "Preserve the distinction between set-theoretic and graph-theoretic notions. Exact TikZ nodes and edges are unchanged; the source diagram is a finite rooted tree.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Exact source/target meaning was compared with the cited Persian passage; direct attestations and contextual inferences are distinguished.",
+      "id": "FA-0018-C02",
+      "unit": "OLP-0018",
+      "source": {
+        "char_start": 696,
+        "char_end_exclusive": 1088,
+        "line_start": 22,
+        "line_end": 37,
+        "text": "The set-theoretic concept of a tree is closely related to the notion\nof a tree in graph theory. Here is a picture of a (finite) tree:\n\n\\begin{center}\n\\begin{tikzpicture}[nodes={draw, circle}, -]\n\\node{$r$} [grow'=up]\n    child { node {$a$} \n        child { node {$c$} }\n        child { node {$d$} }\n        child { node {$e$} }\n    }\n    child { node {$b$} };\n\\end{tikzpicture}\n\\end{center}\n\n",
+        "sha256": "04f40e437e2b61674e69c0a187032f547fce90d98b34d1c13b6ecc7c5fb9f4bc"
+      },
+      "target_before": {
+        "char_start": 653,
+        "char_end_exclusive": 1028,
+        "line_start": 21,
+        "line_end": 36,
+        "text": "مفهوم مجموعه‌شناختی درخت پیوند نزدیکی با مفهوم درخت در نظریهٔ گراف\nدارد. در زیر تصویری از یک درخت (متناهی) آمده است:\n\n\\begin{center}\n\\begin{tikzpicture}[nodes={draw, circle}, -]\n\\node{$r$} [grow'=up]\n    child { node {$a$} \n        child { node {$c$} }\n        child { node {$d$} }\n        child { node {$e$} }\n    }\n    child { node {$b$} };\n\\end{tikzpicture}\n\\end{center}\n\n",
+        "sha256": "e614ae81ce86cdc5fcdd0ecff644f9a0ea8a48d3e1454af90a45780b84f1a9f9"
+      },
+      "target_after": {
+        "char_start": 653,
+        "char_end_exclusive": 1028,
+        "line_start": 21,
+        "line_end": 36,
+        "text": "مفهوم مجموعه‌شناختی درخت پیوند نزدیکی با مفهوم درخت در نظریهٔ گراف\nدارد. در زیر تصویری از یک درخت (متناهی) آمده است:\n\n\\begin{center}\n\\begin{tikzpicture}[nodes={draw, circle}, -]\n\\node{$r$} [grow'=up]\n    child { node {$a$} \n        child { node {$c$} }\n        child { node {$d$} }\n        child { node {$e$} }\n    }\n    child { node {$b$} };\n\\end{tikzpicture}\n\\end{center}\n\n",
+        "sha256": "e614ae81ce86cdc5fcdd0ecff644f9a0ea8a48d3e1454af90a45780b84f1a9f9"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "مفهوم مجموعه‌شناختی درخت پیوند نزدیکی با مفهوم درخت در نظریهٔ گراف\nدارد. در زیر تصویری از یک درخت (متناهی) آمده است:\n\n\\begin{center}\n\\begin{tikzpicture}[nodes={draw, circle}, -]\n\\node{$r$} [grow'=up]\n    child { node {$a$} \n        child { node {$c$} }\n        child { node {$d$} }\n        child { node {$e$} }\n    }\n    child { node {$b$} };\n\\end{tikzpicture}\n\\end{center}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Root, parent and ancestry in pictured finite tree",
+      "canon": [
+        "FA-OL-CANON-0003:P0064",
+        "FA-OL-CANON-0003:P0024"
+      ],
+      "rationale": "The statement exactly one parent applies to the displayed finite tree, not arbitrary limit-height nodes. Preserve upward edge direction and x ancestor of y. ریشه، والد and نیا remain transparent explanatory labels; these exact compounds are not directly attested in the selected set-theory tree definition, which does not require a common root.",
+      "alternatives": "",
+      "question": "Seek wider Persian graph/tree attestation for the familial labels; preserve their explicit source definitions meanwhile.",
+      "confidence": 2,
+      "confidence_reason": "Diagram and direction checked; lexical compounds provisional.",
+      "id": "FA-0018-C03",
+      "unit": "OLP-0018",
+      "source": {
+        "char_start": 1088,
+        "char_end_exclusive": 1364,
+        "line_start": 37,
+        "line_end": 42,
+        "text": "The lowermost node~$r$ is the root. Every node other than $r$ has\nexactly one parent node immediately below it. We can think of the relation\na node~$x$ stands in to a node~$y$ if $y$ can be reached from~$x$ by\nfollowing edges upwards as $x$ being an \\emph{ancestor} of~$y$. \n\n",
+        "sha256": "77986c59d4cd89ce3feec79226f786b14d76223b54068038264df6b7d163eea9"
+      },
+      "target_before": {
+        "char_start": 1028,
+        "char_end_exclusive": 1285,
+        "line_start": 36,
+        "line_end": 41,
+        "text": "پایین‌ترین گره، یعنی~$r$، ریشه است. هر گره به‌جز $r$ دقیقاً یک گرهٔ\nوالد بلافاصله زیر خود دارد. رابطه‌ای را که گره~$x$ با گره~$y$ دارد،\nهرگاه بتوان به $y$ با دنبال‌کردن یال‌ها رو به بالا از~$x$ رسید، می‌توان\nچنین در نظر گرفت که $x$ یک \\emph{نیای}~$y$ است.\n\n",
+        "sha256": "0e263d1c60db9e2b900ac11cf7af9c7ee67faf538c10c94c6d49a04275b0b2cc"
+      },
+      "target_after": {
+        "char_start": 1028,
+        "char_end_exclusive": 1285,
+        "line_start": 36,
+        "line_end": 41,
+        "text": "پایین‌ترین گره، یعنی~$r$، ریشه است. هر گره به‌جز $r$ دقیقاً یک گرهٔ\nوالد بلافاصله زیر خود دارد. رابطه‌ای را که گره~$x$ با گره~$y$ دارد،\nهرگاه بتوان به $y$ با دنبال‌کردن یال‌ها رو به بالا از~$x$ رسید، می‌توان\nچنین در نظر گرفت که $x$ یک \\emph{نیای}~$y$ است.\n\n",
+        "sha256": "0e263d1c60db9e2b900ac11cf7af9c7ee67faf538c10c94c6d49a04275b0b2cc"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "پایین‌ترین گره، یعنی~$r$، ریشه است. هر گره به‌جز $r$ دقیقاً یک گرهٔ\nوالد بلافاصله زیر خود دارد. رابطه‌ای را که گره~$x$ با گره~$y$ دارد،\nهرگاه بتوان به $y$ با دنبال‌کردن یال‌ها رو به بالا از~$x$ رسید، می‌توان\nچنین در نظر گرفت که $x$ یک \\emph{نیای}~$y$ است.\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Least element and well-ordering",
+      "canon": [
+        "FA-OL-CANON-0003:P0023",
+        "FA-OL-CANON-0003:P0024",
+        "FA-OL-CANON-0003:P0064"
+      ],
+      "rationale": "Preserve ancestor as a strict partial order, least element as below every carrier element, and well-ordering as a least element for every nonempty subset. خوش‌ترتیب is directly supported; the text uses کوچک‌ترین عضو to explicate the canon’s عنصر ابتدا, rather than confusing least with merely minimal.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 2,
+      "confidence_reason": "Conditions direct; exact least-element compound is an explanatory lexical choice.",
+      "id": "FA-0018-C04",
+      "unit": "OLP-0018",
+      "source": {
+        "char_start": 1364,
+        "char_end_exclusive": 1741,
+        "line_start": 42,
+        "line_end": 49,
+        "text": "The ancestor relation in a tree is a strict partial order. This\nmotivates the set-theoretic definition. To state it we need two\nconcepts. A \\emph{least element} in a set~$A$ partially ordered\nby~$\\le$ is !!a{element} $x \\in A$ such that for all $y \\in A$ we have\nthat~$x \\le y$. A set is \\emph{well-ordered} by~$\\le$ if every one of\nits non-empty subsets has a least element.\n\n",
+        "sha256": "d34d3f8736cab679f87d1aa8212e56263f93b8079234cf68536a037d1887e7d3"
+      },
+      "target_before": {
+        "char_start": 1285,
+        "char_end_exclusive": 1677,
+        "line_start": 41,
+        "line_end": 48,
+        "text": "رابطهٔ نیا در یک درخت، یک ترتیب جزئیِ اکید است. این نکته انگیزهٔ تعریف\nمجموعه‌شناختی را فراهم می‌کند. برای بیان آن به دو مفهوم نیاز داریم.\nیک \\emph{کوچک‌ترین عضو} در مجموعهٔ~$A$ که با~$\\le$ به‌طور جزئی مرتب\nشده، !!a{element} $x \\in A$ است چنان‌که برای هر $y \\in A$ داشته باشیم\nکه~$x \\le y$. یک مجموعه \\emph{خوش‌ترتیب} به‌وسیلهٔ~$\\le$ است اگر هر\nزیرمجموعهٔ ناتهی آن کوچک‌ترین عضو داشته باشد.\n\n",
+        "sha256": "0de4df830498d591cb4d6bc53babc3709b47dc117e9ba8b2ff69ccf41ca4afd8"
+      },
+      "target_after": {
+        "char_start": 1285,
+        "char_end_exclusive": 1677,
+        "line_start": 41,
+        "line_end": 48,
+        "text": "رابطهٔ نیا در یک درخت، یک ترتیب جزئیِ اکید است. این نکته انگیزهٔ تعریف\nمجموعه‌شناختی را فراهم می‌کند. برای بیان آن به دو مفهوم نیاز داریم.\nیک \\emph{کوچک‌ترین عضو} در مجموعهٔ~$A$ که با~$\\le$ به‌طور جزئی مرتب\nشده، !!a{element} $x \\in A$ است چنان‌که برای هر $y \\in A$ داشته باشیم\nکه~$x \\le y$. یک مجموعه \\emph{خوش‌ترتیب} به‌وسیلهٔ~$\\le$ است اگر هر\nزیرمجموعهٔ ناتهی آن کوچک‌ترین عضو داشته باشد.\n\n",
+        "sha256": "0de4df830498d591cb4d6bc53babc3709b47dc117e9ba8b2ff69ccf41ca4afd8"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "رابطهٔ نیا در یک درخت، یک ترتیب جزئیِ اکید است. این نکته انگیزهٔ تعریف\nمجموعه‌شناختی را فراهم می‌کند. برای بیان آن به دو مفهوم نیاز داریم.\nیک \\emph{کوچک‌ترین عضو} در مجموعهٔ~$A$ که با~$\\le$ به‌طور جزئی مرتب\nشده، عضو $x \\in A$ است چنان‌که برای هر $y \\in A$ داشته باشیم\nکه~$x \\le y$. یک مجموعه \\emph{خوش‌ترتیب} به‌وسیلهٔ~$\\le$ است اگر هر\nزیرمجموعهٔ ناتهی آن کوچک‌ترین عضو داشته باشد.\n\n",
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 212,
+          "token": "!!a{element}",
+          "realization": "عضو"
+        }
+      ]
+    },
+    {
+      "topic": "Rooted tree definition",
+      "canon": [
+        "FA-OL-CANON-0003:P0064",
+        "FA-OL-CANON-0003:P0023"
+      ],
+      "rationale": "OpenLogic requires a unique least root and every inclusive lower set to be well-ordered. Retain both, even though Khani/Zarei define the strict predecessor set and omit a global root requirement. No mathematical assumption may be silently imported or removed merely because the Persian canon differs.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Exact source/target meaning was compared with the cited Persian passage; direct attestations and contextual inferences are distinguished.",
+      "id": "FA-0018-C05",
+      "unit": "OLP-0018",
+      "source": {
+        "char_start": 1741,
+        "char_end_exclusive": 2024,
+        "line_start": 49,
+        "line_end": 56,
+        "text": "\\begin{defn}[Tree]\nA \\emph{tree} is a pair $T = \\tuple{A, \\le}$ such that $A$ is a set\nand $\\le$ is a partial order on~$A$ with a unique least element\n$r \\in A$ (called the \\emph{root}) such that for all $x \\in A$,\nthe set $\\Setabs{y}{y \\le x}$ is well-ordered by~$\\le$.\n\\end{defn}\n\n",
+        "sha256": "a06ba5b2615ffe3a481f7f1769242590dfa4f9d3b794cd561ccadc97eb16bd2b"
+      },
+      "target_before": {
+        "char_start": 1677,
+        "char_end_exclusive": 1968,
+        "line_start": 48,
+        "line_end": 55,
+        "text": "\\begin{defn}[درخت]\nیک \\emph{درخت} زوج $T = \\tuple{A, \\le}$ است، به‌طوری‌که $A$ مجموعه‌ای\nاست و $\\le$ ترتیبی جزئی روی~$A$ است که یک کوچک‌ترین عضو یکتا\n$r \\in A$ دارد (که \\emph{ریشه} نامیده می‌شود)، و برای هر $x \\in A$،\nمجموعهٔ $\\Setabs{y}{y \\le x}$ به‌وسیلهٔ~$\\le$ خوش‌ترتیب است.\n\\end{defn}\n\n",
+        "sha256": "d79005dc11c5db0a8f33fe4efcf7e58565e0fb79eca5ea87a19b719b042d3c6b"
+      },
+      "target_after": {
+        "char_start": 1677,
+        "char_end_exclusive": 1968,
+        "line_start": 48,
+        "line_end": 55,
+        "text": "\\begin{defn}[درخت]\nیک \\emph{درخت} زوج $T = \\tuple{A, \\le}$ است، به‌طوری‌که $A$ مجموعه‌ای\nاست و $\\le$ ترتیبی جزئی روی~$A$ است که یک کوچک‌ترین عضو یکتا\n$r \\in A$ دارد (که \\emph{ریشه} نامیده می‌شود)، و برای هر $x \\in A$،\nمجموعهٔ $\\Setabs{y}{y \\le x}$ به‌وسیلهٔ~$\\le$ خوش‌ترتیب است.\n\\end{defn}\n\n",
+        "sha256": "d79005dc11c5db0a8f33fe4efcf7e58565e0fb79eca5ea87a19b719b042d3c6b"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{defn}[درخت]\nیک \\emph{درخت} زوج $T = \\tuple{A, \\le}$ است، به‌طوری‌که $A$ مجموعه‌ای\nاست و $\\le$ ترتیبی جزئی روی~$A$ است که یک کوچک‌ترین عضو یکتا\n$r \\in A$ دارد (که \\emph{ریشه} نامیده می‌شود)، و برای هر $x \\in A$،\nمجموعهٔ $\\Setabs{y}{y \\le x}$ به‌وسیلهٔ~$\\le$ خوش‌ترتیب است.\n\\end{defn}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Immediate successors",
+      "canon": [
+        "FA-OL-CANON-0003:P0024",
+        "FA-OL-CANON-0003:P0064"
+      ],
+      "rationale": "Retain x<y and absence of any intermediate z. جانشین here means immediate successor in the tree, not numerical addition by1. The canon uses تالی in well-order discussion; retain the existing explicitly defined label with that attestation limit.",
+      "alternatives": "تالی is attested but a global synonym switch is not needed to preserve the exact immediate-successor definition.",
+      "question": null,
+      "confidence": 2,
+      "confidence_reason": "Concept directly supported; exact target label provisional.",
+      "id": "FA-0018-C06",
+      "unit": "OLP-0018",
+      "source": {
+        "char_start": 2024,
+        "char_end_exclusive": 2226,
+        "line_start": 56,
+        "line_end": 62,
+        "text": "\\begin{defn}[Successors]\nSuppose $T = \\tuple{A, \\le}$ is a tree.\nIf $x,y \\in A$, $x < y$, and there is no $z \\in A$ such that\n$x < z < y$, then we say that $y$ is a \\emph{successor} of~$x$.\n\\end{defn}\n\n",
+        "sha256": "1d841ac550bba465699a835a1ebc957f5bc4bdbb53e859aa512ce902a9d36203"
+      },
+      "target_before": {
+        "char_start": 1968,
+        "char_end_exclusive": 2171,
+        "line_start": 55,
+        "line_end": 61,
+        "text": "\\begin{defn}[جانشین‌ها]\nفرض کنید $T = \\tuple{A, \\le}$ یک درخت باشد.\nاگر $x,y \\in A$، $x < y$، و هیچ $z \\in A$ای وجود نداشته باشد که\n$x < z < y$، آنگاه می‌گوییم $y$ یک \\emph{جانشینِ}~$x$ است.\n\\end{defn}\n\n",
+        "sha256": "528d91b856d6f1da5bee660c523361796c4bc6dc6c1fe7c2927a140e98703e55"
+      },
+      "target_after": {
+        "char_start": 1968,
+        "char_end_exclusive": 2171,
+        "line_start": 55,
+        "line_end": 61,
+        "text": "\\begin{defn}[جانشین‌ها]\nفرض کنید $T = \\tuple{A, \\le}$ یک درخت باشد.\nاگر $x,y \\in A$، $x < y$، و هیچ $z \\in A$ای وجود نداشته باشد که\n$x < z < y$، آنگاه می‌گوییم $y$ یک \\emph{جانشینِ}~$x$ است.\n\\end{defn}\n\n",
+        "sha256": "528d91b856d6f1da5bee660c523361796c4bc6dc6c1fe7c2927a140e98703e55"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{defn}[جانشین‌ها]\nفرض کنید $T = \\tuple{A, \\le}$ یک درخت باشد.\nاگر $x,y \\in A$، $x < y$، و هیچ $z \\in A$ای وجود نداشته باشد که\n$x < z < y$، آنگاه می‌گوییم $y$ یک \\emph{جانشینِ}~$x$ است.\n\\end{defn}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Children, predecessor and parent",
+      "canon": [
+        "FA-OL-CANON-0003:P0024",
+        "FA-OL-CANON-0003:P0064"
+      ],
+      "rationale": "Retain the source synonym mapping children=successors and parent=predecessor with direction x predecessor of y when y succeeds x. These family metaphors are source content, not a new pedagogical companion.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 2,
+      "confidence_reason": "Direction exact; selected pages do not directly attest all familial compounds.",
+      "id": "FA-0018-C07",
+      "unit": "OLP-0018",
+      "source": {
+        "char_start": 2226,
+        "char_end_exclusive": 2387,
+        "line_start": 62,
+        "line_end": 66,
+        "text": "The successors of $x \\in A$ are also called its \\emph{children}. If\n$y$ is a successor of~$x$, then we call $x$ the \\emph{predecessor} or\n\\emph{parent} of~$y$.\n\n",
+        "sha256": "80c833c21cf853c6e3f5e3ce2816e2798c282573c938377e3b4179c33a993bfc"
+      },
+      "target_before": {
+        "char_start": 2171,
+        "char_end_exclusive": 2313,
+        "line_start": 61,
+        "line_end": 65,
+        "text": "جانشین‌های $x \\in A$، \\emph{فرزندان} آن نیز نامیده می‌شوند. اگر\n$y$ جانشین~$x$ باشد، آنگاه $x$ را \\emph{پیشین} یا \\emph{والدِ}~$y$\nمی‌نامیم.\n\n",
+        "sha256": "e3c1e4f5be3abc17d3945d6070f1c33edaed7ea20810b3d683153a02e18c08e0"
+      },
+      "target_after": {
+        "char_start": 2171,
+        "char_end_exclusive": 2313,
+        "line_start": 61,
+        "line_end": 65,
+        "text": "جانشین‌های $x \\in A$، \\emph{فرزندان} آن نیز نامیده می‌شوند. اگر\n$y$ جانشین~$x$ باشد، آنگاه $x$ را \\emph{پیشین} یا \\emph{والدِ}~$y$\nمی‌نامیم.\n\n",
+        "sha256": "e3c1e4f5be3abc17d3945d6070f1c33edaed7ea20810b3d683153a02e18c08e0"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "جانشین‌های $x \\in A$، \\emph{فرزندان} آن نیز نامیده می‌شوند. اگر\n$y$ جانشین~$x$ باشد، آنگاه $x$ را \\emph{پیشین} یا \\emph{والدِ}~$y$\nمی‌نامیم.\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "At most one predecessor",
+      "canon": [
+        "FA-OL-CANON-0003:P0023",
+        "FA-OL-CANON-0003:P0024",
+        "FA-OL-CANON-0003:P0064"
+      ],
+      "rationale": "Preserve حداکثر یک rather than دقیقاً یک for an arbitrary nonroot node. A well-ordered chain of type omega+1 has a nonroot limit node with no immediate predecessor. The finite picture must not override the general proposition.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Exact source/target meaning was compared with the cited Persian passage; direct attestations and contextual inferences are distinguished.",
+      "id": "FA-0018-C08",
+      "unit": "OLP-0018",
+      "source": {
+        "char_start": 2387,
+        "char_end_exclusive": 2512,
+        "line_start": 66,
+        "line_end": 71,
+        "text": "\\begin{prop}\nIf $\\tuple{A,\\le}$ is a tree, then every $x \\in A$ other than the root\nhas at most one predecessor.\n\\end{prop}\n\n",
+        "sha256": "b8518ddb4c7e41af50e520b0cc0fd6c6ce556cc6e95b6b29477243d0bf717e6a"
+      },
+      "target_before": {
+        "char_start": 2313,
+        "char_end_exclusive": 2425,
+        "line_start": 65,
+        "line_end": 70,
+        "text": "\\begin{prop}\nاگر $\\tuple{A,\\le}$ یک درخت باشد، آنگاه هر $x \\in A$ به‌جز ریشه،\nحداکثر یک پیشین دارد.\n\\end{prop}\n\n",
+        "sha256": "ba2effdb5f3f206a8692198a688cee59a9ed17e3eb15c5c00a33cc74d9d39a6e"
+      },
+      "target_after": {
+        "char_start": 2313,
+        "char_end_exclusive": 2425,
+        "line_start": 65,
+        "line_end": 70,
+        "text": "\\begin{prop}\nاگر $\\tuple{A,\\le}$ یک درخت باشد، آنگاه هر $x \\in A$ به‌جز ریشه،\nحداکثر یک پیشین دارد.\n\\end{prop}\n\n",
+        "sha256": "ba2effdb5f3f206a8692198a688cee59a9ed17e3eb15c5c00a33cc74d9d39a6e"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{prop}\nاگر $\\tuple{A,\\le}$ یک درخت باشد، آنگاه هر $x \\in A$ به‌جز ریشه،\nحداکثر یک پیشین دارد.\n\\end{prop}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Predecessor proof",
+      "canon": [
+        "FA-OL-CANON-0003:P0023",
+        "FA-OL-CANON-0003:P0064"
+      ],
+      "rationale": "Retain least element of the two-element lower-set subset, comparability of y1,y2, strictness from their inequality, and the resulting intervening node. The conclusion is they cannot both be immediate predecessors; it does not prove that a predecessor always exists.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Exact source/target meaning was compared with the cited Persian passage; direct attestations and contextual inferences are distinguished.",
+      "id": "FA-0018-C09",
+      "unit": "OLP-0018",
+      "source": {
+        "char_start": 2512,
+        "char_end_exclusive": 3091,
+        "line_start": 71,
+        "line_end": 83,
+        "text": "\\begin{proof}\n  Suppose $y_1 < x$ and $y_2 < x$ and $y_1 \\neq y_2$. Then $\\{y_1,\n  y_2\\} \\subseteq \\Setabs{z}{z<x}$. Since $\\Setabs{z}{z<x}$ is\n  well-ordered by~$\\le$, its subset $\\{y_1, y_2\\}$ has a least\n  element, which obviously must be either $y_1$ or~$y_2$. So either\n  $y_1 \\le y_2$ or $y_2 \\le y_1$. We assumed that $y_1 \\neq y_2$, so\n  actually either $y_1 < y_2$ or $y_2 < y_1$. Since we assumed that\n  $y_1 < x$ and $y_2 < x$, we furthermore have that either $y_1 < y_2\n  < x$ or $y_2 < y_1 < x$. So $y_1$ and $y_2$ cannot both be\n  predecessors of~$x$.\n\\end{proof}\n\n",
+        "sha256": "6678145a845d2237499cf539a708165b5603f4d42ef2f79f34ec0fa4bc24605d"
+      },
+      "target_before": {
+        "char_start": 2425,
+        "char_end_exclusive": 2969,
+        "line_start": 70,
+        "line_end": 82,
+        "text": "\\begin{proof}\n  فرض کنید $y_1 < x$ و $y_2 < x$ و $y_1 \\neq y_2$. آنگاه $\\{y_1,\n  y_2\\} \\subseteq \\Setabs{z}{z<x}$. چون $\\Setabs{z}{z<x}$\n  به‌وسیلهٔ~$\\le$ خوش‌ترتیب است، زیرمجموعهٔ $\\{y_1, y_2\\}$ از آن یک\n  کوچک‌ترین عضو دارد که آشکارا باید یا $y_1$ یا~$y_2$ باشد. پس یا\n  $y_1 \\le y_2$ یا $y_2 \\le y_1$. فرض کردیم $y_1 \\neq y_2$؛ بنابراین\n  در واقع یا $y_1 < y_2$ یا $y_2 < y_1$. چون فرض کردیم $y_1 < x$ و\n  $y_2 < x$، افزون بر این یا $y_1 < y_2\n  < x$ یا $y_2 < y_1 < x$. پس $y_1$ و $y_2$ نمی‌توانند هر دو\n  پیشین‌های~$x$ باشند.\n\\end{proof}\n\n",
+        "sha256": "572b6bb9753ef5ba7ef0c420fe2531f1115f7fa6cecfca3cce63c141575ff803"
+      },
+      "target_after": {
+        "char_start": 2425,
+        "char_end_exclusive": 2969,
+        "line_start": 70,
+        "line_end": 82,
+        "text": "\\begin{proof}\n  فرض کنید $y_1 < x$ و $y_2 < x$ و $y_1 \\neq y_2$. آنگاه $\\{y_1,\n  y_2\\} \\subseteq \\Setabs{z}{z<x}$. چون $\\Setabs{z}{z<x}$\n  به‌وسیلهٔ~$\\le$ خوش‌ترتیب است، زیرمجموعهٔ $\\{y_1, y_2\\}$ از آن یک\n  کوچک‌ترین عضو دارد که آشکارا باید یا $y_1$ یا~$y_2$ باشد. پس یا\n  $y_1 \\le y_2$ یا $y_2 \\le y_1$. فرض کردیم $y_1 \\neq y_2$؛ بنابراین\n  در واقع یا $y_1 < y_2$ یا $y_2 < y_1$. چون فرض کردیم $y_1 < x$ و\n  $y_2 < x$، افزون بر این یا $y_1 < y_2\n  < x$ یا $y_2 < y_1 < x$. پس $y_1$ و $y_2$ نمی‌توانند هر دو\n  پیشین‌های~$x$ باشند.\n\\end{proof}\n\n",
+        "sha256": "572b6bb9753ef5ba7ef0c420fe2531f1115f7fa6cecfca3cce63c141575ff803"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{proof}\n  فرض کنید $y_1 < x$ و $y_2 < x$ و $y_1 \\neq y_2$. آنگاه $\\{y_1,\n  y_2\\} \\subseteq \\Setabs{z}{z<x}$. چون $\\Setabs{z}{z<x}$\n  به‌وسیلهٔ~$\\le$ خوش‌ترتیب است، زیرمجموعهٔ $\\{y_1, y_2\\}$ از آن یک\n  کوچک‌ترین عضو دارد که آشکارا باید یا $y_1$ یا~$y_2$ باشد. پس یا\n  $y_1 \\le y_2$ یا $y_2 \\le y_1$. فرض کردیم $y_1 \\neq y_2$؛ بنابراین\n  در واقع یا $y_1 < y_2$ یا $y_2 < y_1$. چون فرض کردیم $y_1 < x$ و\n  $y_2 < x$، افزون بر این یا $y_1 < y_2\n  < x$ یا $y_2 < y_1 < x$. پس $y_1$ و $y_2$ نمی‌توانند هر دو\n  پیشین‌های~$x$ باشند.\n\\end{proof}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Finite, infinite and finite branching",
+      "canon": [
+        "FA-OL-CANON-0003:P0064",
+        "FA-OL-CANON-0003:P0065"
+      ],
+      "rationale": "Finite/infinite refers to carrier cardinality; finitely branching means finitely many immediate successors at each node, not finite height, finitely many branches or a uniform global numerical bound. با انشعاب متناهی is a transparent compound with contextual branching evidence, not a verbatim attestation.",
+      "alternatives": "",
+      "question": "Further native attestation for با انشعاب متناهی is desirable; the local definition prevents ambiguity.",
+      "confidence": 2,
+      "confidence_reason": "Definition exact; compound provisional.",
+      "id": "FA-0018-C10",
+      "unit": "OLP-0018",
+      "source": {
+        "char_start": 3091,
+        "char_end_exclusive": 3352,
+        "line_start": 83,
+        "line_end": 90,
+        "text": "\\begin{defn}\nA tree $T = \\tuple{A, \\le}$ is said to be \\emph{infinite} if $A$ is an\ninfinite set, and \\emph{finite} otherwise. If $T$ is such that every\n$x \\in A$ has only finitely many successors, then we say that $T$ is\n\\emph{finitely branching}.\n\\end{defn}\n\n",
+        "sha256": "7ab9ca0c4230b5df4433061e7fea52d8975f53bd3ff39f2f6cfe78c58e0c2af2"
+      },
+      "target_before": {
+        "char_start": 2969,
+        "char_end_exclusive": 3249,
+        "line_start": 82,
+        "line_end": 89,
+        "text": "\\begin{defn}\nگفته می‌شود درخت $T = \\tuple{A, \\le}$ \\emph{نامتناهی} است اگر $A$ یک\nمجموعهٔ نامتناهی باشد، و در غیر این صورت \\emph{متناهی} است. اگر $T$\nچنان باشد که هر $x \\in A$ فقط شمار متناهی‌ای از جانشین‌ها داشته باشد، آنگاه\nمی‌گوییم $T$ \\emph{با انشعاب متناهی} است.\n\\end{defn}\n\n",
+        "sha256": "b203e883c5054b4926bb0ccfb038c8bd1d87f0c988abcb1b61a1e7ab4970e6a1"
+      },
+      "target_after": {
+        "char_start": 2969,
+        "char_end_exclusive": 3249,
+        "line_start": 82,
+        "line_end": 89,
+        "text": "\\begin{defn}\nگفته می‌شود درخت $T = \\tuple{A, \\le}$ \\emph{نامتناهی} است اگر $A$ یک\nمجموعهٔ نامتناهی باشد، و در غیر این صورت \\emph{متناهی} است. اگر $T$\nچنان باشد که هر $x \\in A$ فقط شمار متناهی‌ای از جانشین‌ها داشته باشد، آنگاه\nمی‌گوییم $T$ \\emph{با انشعاب متناهی} است.\n\\end{defn}\n\n",
+        "sha256": "b203e883c5054b4926bb0ccfb038c8bd1d87f0c988abcb1b61a1e7ab4970e6a1"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{defn}\nگفته می‌شود درخت $T = \\tuple{A, \\le}$ \\emph{نامتناهی} است اگر $A$ یک\nمجموعهٔ نامتناهی باشد، و در غیر این صورت \\emph{متناهی} است. اگر $T$\nچنان باشد که هر $x \\in A$ فقط شمار متناهی‌ای از جانشین‌ها داشته باشد، آنگاه\nمی‌گوییم $T$ \\emph{با انشعاب متناهی} است.\n\\end{defn}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Maximal branches and domain-symbol correction",
+      "canon": [
+        "FA-OL-CANON-0003:P0064",
+        "FA-REL-P055"
+      ],
+      "rationale": "Preserve maximal chain, not any well-ordered subchain as in the cited Persian notes. The outsider must range over A minus B, the declared tree carrier; frozen X is undefined here. Correct just that symbol and visibly disclose the editorial intervention. Retain both incomparability directions and all-branches notation. Maximal is بیشینه, not a largest unique branch.",
+      "alternatives": "",
+      "question": "High-confidence source typo: undefined X replaced by declared A. Reviewable without an expert-dependent stop.",
+      "confidence": 3,
+      "confidence_reason": "Exact source/target meaning was compared with the cited Persian passage; direct attestations and contextual inferences are distinguished.",
+      "id": "FA-0018-C11",
+      "unit": "OLP-0018",
+      "source": {
+        "char_start": 3352,
+        "char_end_exclusive": 3719,
+        "line_start": 90,
+        "line_end": 100,
+        "text": "\\begin{defn}[Branches]\nGiven a tree $T = \\tuple{A, \\le}$, a \\emph{branch} of~$T$ is a\nmaximal chain in~$T$, i.e., a set $B \\subseteq A$ such that\nfor any $x, y \\in B$ either $x \\le y$ or $y \\le x$, and for any\n$z \\in X \\setminus B$ there exists $u \\in B$ such that neither\n$z \\le u$ nor $u \\le z$.\n%\nWe use $[T]$ to denote the set of all branches of $T$.\n\\end{defn}\n\n",
+        "sha256": "632bb02c00bf9c9a0fe1da20df91fe9217bef89e716af1d077415dde35b5933f"
+      },
+      "target_before": {
+        "char_start": 3249,
+        "char_end_exclusive": 3613,
+        "line_start": 89,
+        "line_end": 99,
+        "text": "\\begin{defn}[شاخه‌ها]\nبا داشتن درخت $T = \\tuple{A, \\le}$، یک \\emph{شاخه} از~$T$ زنجیری\nبیشینه در~$T$ است؛ یعنی مجموعه‌ای $B \\subseteq A$ چنان‌که برای هر\n$x, y \\in B$، یا $x \\le y$ یا $y \\le x$، و برای هر\n$z \\in X \\setminus B$، یک $u \\in B$ وجود دارد چنان‌که نه\n$z \\le u$ و نه $u \\le z$.\n%\nاز $[T]$ برای نمایش مجموعهٔ همهٔ شاخه‌های $T$ استفاده می‌کنیم.\n\\end{defn}\n\n",
+        "sha256": "9910a7db8708107a338a194c44cbb636e3ed8ec9965695e8beef050f6dffcfc8"
+      },
+      "target_after": {
+        "char_start": 3249,
+        "char_end_exclusive": 3718,
+        "line_start": 89,
+        "line_end": 100,
+        "text": "\\begin{defn}[شاخه‌ها]\nبا داشتن درخت $T = \\tuple{A, \\le}$، یک \\emph{شاخه} از~$T$ زنجیری\nبیشینه در~$T$ است؛ یعنی مجموعه‌ای $B \\subseteq A$ چنان‌که برای هر\n$x, y \\in B$، یا $x \\le y$ یا $y \\le x$، و برای هر\n$z \\in A \\setminus B$، یک $u \\in B$ وجود دارد چنان‌که نه\n$z \\le u$ و نه $u \\le z$.\n%\nاز $[T]$ برای نمایش مجموعهٔ همهٔ شاخه‌های $T$ استفاده می‌کنیم.\n\\emph{یادداشت ویراستاری:} در شرط بیشینگی، نماد تعریف‌نشدهٔ متن مبدأ با نماد دامنهٔ درخت جایگزین شده است.\n\\end{defn}\n\n",
+        "sha256": "e187744258c3d324c630a484d262f20cd6e304448194abb16d4d8562ee6de5e2"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{defn}[شاخه‌ها]\nبا داشتن درخت $T = \\tuple{A, \\le}$، یک \\emph{شاخه} از~$T$ زنجیری\nبیشینه در~$T$ است؛ یعنی مجموعه‌ای $B \\subseteq A$ چنان‌که برای هر\n$x, y \\in B$، یا $x \\le y$ یا $y \\le x$، و برای هر\n$z \\in A \\setminus B$، یک $u \\in B$ وجود دارد چنان‌که نه\n$z \\le u$ و نه $u \\le z$.\n%\nاز $[T]$ برای نمایش مجموعهٔ همهٔ شاخه‌های $T$ استفاده می‌کنیم.\n\\emph{یادداشت ویراستاری:} در شرط بیشینگی، نماد تعریف‌نشدهٔ متن مبدأ با نماد دامنهٔ درخت جایگزین شده است.\n\\end{defn}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Infinite binary tree",
+      "canon": [
+        "FA-OL-CANON-0003:P0064",
+        "FA-OL-CANON-0003:P0024"
+      ],
+      "rationale": "Finite binary sequences ordered by prefix give a finitely branching but infinite tree; every word has exactly two immediate successors s0 and s1 and the empty word is its root. Retain exact strings and labels. The source definition, not the canon’s transfinite generalization, governs this example.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Exact source/target meaning was compared with the cited Persian passage; direct attestations and contextual inferences are distinguished.",
+      "id": "FA-0018-C12",
+      "unit": "OLP-0018",
+      "source": {
+        "char_start": 3719,
+        "char_end_exclusive": 4230,
+        "line_start": 100,
+        "line_end": 111,
+        "text": "\\begin{ex}\nA classic example of a finitely branching tree is the\n\\emph{infinite binary tree} of finite sequences of $0$s and~$1$s,\nsometimes denoted $\\{0,1\\}^*$ or~$\\Bin^*$, ordered by the extension\nrelation $\\sqsubseteq$ (e.g., $101 \\sqsubseteq 101101$).\nSince any binary string can always be extended by adding\na $0$ or a $1$ on the end, this tree contains infinitely\nmany elements: every element~$s$ has exactly two successors, $s0$ and~$s1$. Its root is the empty sequence $\\emptyseq$.\n\\end{ex}\n\n\\begin{ex}\n",
+        "sha256": "870d5ef6b97e856ccf518f44ce71a2f3eed4765d7bdb754dadf220b276daf6a5"
+      },
+      "target_before": {
+        "char_start": 3613,
+        "char_end_exclusive": 4100,
+        "line_start": 99,
+        "line_end": 111,
+        "text": "\\begin{ex}\nیک نمونهٔ کلاسیک از درختی با انشعاب متناهی، \\emph{درخت دودویی\nنامتناهیِ} دنباله‌های متناهی از $0$ و~$1$ است که گاهی\n$\\{0,1\\}^*$ یا~$\\Bin^*$ نوشته می‌شود و با رابطهٔ امتداد $\\sqsubseteq$\nمرتب شده است (برای نمونه، $101 \\sqsubseteq 101101$).\nاز آنجا که هر رشتهٔ دودویی را همواره می‌توان با افزودن\nیک $0$ یا یک $1$ به انتهای آن امتداد داد، این درخت بی‌نهایت\nعضو دارد: هر عضو~$s$ دقیقاً دو جانشین، یعنی $s0$ و~$s1$، دارد. ریشهٔ آن\nدنبالهٔ تهی $\\emptyseq$ است.\n\\end{ex}\n\n\\begin{ex}\n",
+        "sha256": "fce8614dc0f0a195b006c2658105bb235a8ea81ec0ffe22c4ba49fcbb7a96fad"
+      },
+      "target_after": {
+        "char_start": 3718,
+        "char_end_exclusive": 4205,
+        "line_start": 100,
+        "line_end": 112,
+        "text": "\\begin{ex}\nیک نمونهٔ کلاسیک از درختی با انشعاب متناهی، \\emph{درخت دودویی\nنامتناهیِ} دنباله‌های متناهی از $0$ و~$1$ است که گاهی\n$\\{0,1\\}^*$ یا~$\\Bin^*$ نوشته می‌شود و با رابطهٔ امتداد $\\sqsubseteq$\nمرتب شده است (برای نمونه، $101 \\sqsubseteq 101101$).\nاز آنجا که هر رشتهٔ دودویی را همواره می‌توان با افزودن\nیک $0$ یا یک $1$ به انتهای آن امتداد داد، این درخت بی‌نهایت\nعضو دارد: هر عضو~$s$ دقیقاً دو جانشین، یعنی $s0$ و~$s1$، دارد. ریشهٔ آن\nدنبالهٔ تهی $\\emptyseq$ است.\n\\end{ex}\n\n\\begin{ex}\n",
+        "sha256": "fce8614dc0f0a195b006c2658105bb235a8ea81ec0ffe22c4ba49fcbb7a96fad"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{ex}\nیک نمونهٔ کلاسیک از درختی با انشعاب متناهی، \\emph{درخت دودویی\nنامتناهیِ} دنباله‌های متناهی از $0$ و~$1$ است که گاهی\n$\\{0,1\\}^*$ یا~$\\Bin^*$ نوشته می‌شود و با رابطهٔ امتداد $\\sqsubseteq$\nمرتب شده است (برای نمونه، $101 \\sqsubseteq 101101$).\nاز آنجا که هر رشتهٔ دودویی را همواره می‌توان با افزودن\nیک $0$ یا یک $1$ به انتهای آن امتداد داد، این درخت بی‌نهایت\nعضو دارد: هر عضو~$s$ دقیقاً دو جانشین، یعنی $s0$ و~$s1$، دارد. ریشهٔ آن\nدنبالهٔ تهی $\\emptyseq$ است.\n\\end{ex}\n\n\\begin{ex}\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Natural-number sequence tree and nonempty subtrees",
+      "canon": [
+        "FA-OL-CANON-0003:P0064",
+        "FA-OL-CANON-0003:P0065",
+        "FA-OL-CANON-0003:P0024"
+      ],
+      "rationale": "Every word in Nat-star has one successor for each natural n, hence infinitely many. Prefix closure is downward closure, not closure under extensions. Add nonempty to the proposed subtree carrier and disclose why: the empty set is prefix-closed but cannot have the root required by the source definition. Preserve that all finite source-defined rooted trees can be represented here.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Exact source/target meaning was compared with the cited Persian passage; direct attestations and contextual inferences are distinguished.",
+      "id": "FA-0018-C13",
+      "unit": "OLP-0018",
+      "source": {
+        "char_start": 4230,
+        "char_end_exclusive": 4756,
+        "line_start": 111,
+        "line_end": 121,
+        "text": "Slightly more generally, the set of finite sequences of natural\nnumbers~$\\Nat^*$ with the extension relation~$\\sqsubseteq$ is also a\ntree. It is obviously not finitely branching: every $s \\in \\Nat^*$ has\ninfinitely many successors~$sn$, one for every $n \\in \\Nat$. Every $A\n\\subseteq \\Nat^*$ which is closed under~$\\sqsubseteq$ is a\n\\emph{subtree} of~$\\Nat^*$. (That is, $A$ is such that if $s \\in A$\nand $s' \\sqsubseteq s$, then also $s' \\in A$.) All finite trees can be\nrepresented as finite subtrees of~$\\Nat^*$.\n\\end{ex}\n\n",
+        "sha256": "0a18dd50b91d6e9568ff4fa864fda8812a03dd123281c21fa57c803cae50da40"
+      },
+      "target_before": {
+        "char_start": 4100,
+        "char_end_exclusive": 4578,
+        "line_start": 111,
+        "line_end": 121,
+        "text": "کمی کلی‌تر، مجموعهٔ دنباله‌های متناهی از اعداد طبیعی~$\\Nat^*$ با\nرابطهٔ امتداد~$\\sqsubseteq$ نیز یک درخت است. آشکارا با انشعاب متناهی\nنیست: هر $s \\in \\Nat^*$ بی‌نهایت جانشین~$sn$ دارد، یکی برای هر\n$n \\in \\Nat$. هر $A\n\\subseteq \\Nat^*$ که نسبت به~$\\sqsubseteq$ بسته باشد، یک\n\\emph{زیردرختِ}~$\\Nat^*$ است. (یعنی $A$ چنان است که اگر $s \\in A$\nو $s' \\sqsubseteq s$، آنگاه $s' \\in A$ نیز.) همهٔ درخت‌های متناهی را\nمی‌توان به‌صورت زیردرخت‌های متناهیِ~$\\Nat^*$ بازنمایی کرد.\n\\end{ex}\n\n",
+        "sha256": "2e9f5b9b292adda1199b7eed0abfb05fdbcfdedeebac911b70f591e78ab22d10"
+      },
+      "target_after": {
+        "char_start": 4205,
+        "char_end_exclusive": 4872,
+        "line_start": 112,
+        "line_end": 123,
+        "text": "کمی کلی‌تر، مجموعهٔ دنباله‌های متناهی از اعداد طبیعی~$\\Nat^*$ با\nرابطهٔ امتداد~$\\sqsubseteq$ نیز یک درخت است. آشکارا با انشعاب متناهی\nنیست: هر $s \\in \\Nat^*$ بی‌نهایت جانشین~$sn$ دارد، یکی برای هر\n$n \\in \\Nat$. هر زیرمجموعهٔ ناتهی $A\n\\subseteq \\Nat^*$ که نسبت به~$\\sqsubseteq$ بسته باشد، یک\n\\emph{زیردرختِ}~$\\Nat^*$ است. (یعنی $A$ چنان است که اگر $s \\in A$\nو $s' \\sqsubseteq s$، آنگاه $s' \\in A$ نیز.) همهٔ درخت‌های متناهی را\nمی‌توان به‌صورت زیردرخت‌های متناهیِ~$\\Nat^*$ بازنمایی کرد.\n\\emph{یادداشت ویراستاری:} قید ناتهی افزوده شده است، زیرا در تعریف این متن هر درخت باید ریشه داشته باشد؛ مجموعهٔ تهی نسبت به گرفتن قطعه‌های آغازین بسته است، اما ریشه ندارد.\n\\end{ex}\n\n",
+        "sha256": "c7956f1c722e1cf54119c4e7ef8b7d340d9cc816dbcead7bc8ca8c234bc0661f"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "کمی کلی‌تر، مجموعهٔ دنباله‌های متناهی از اعداد طبیعی~$\\Nat^*$ با\nرابطهٔ امتداد~$\\sqsubseteq$ نیز یک درخت است. آشکارا با انشعاب متناهی\nنیست: هر $s \\in \\Nat^*$ بی‌نهایت جانشین~$sn$ دارد، یکی برای هر\n$n \\in \\Nat$. هر زیرمجموعهٔ ناتهی $A\n\\subseteq \\Nat^*$ که نسبت به~$\\sqsubseteq$ بسته باشد، یک\n\\emph{زیردرختِ}~$\\Nat^*$ است. (یعنی $A$ چنان است که اگر $s \\in A$\nو $s' \\sqsubseteq s$، آنگاه $s' \\in A$ نیز.) همهٔ درخت‌های متناهی را\nمی‌توان به‌صورت زیردرخت‌های متناهیِ~$\\Nat^*$ بازنمایی کرد.\n\\emph{یادداشت ویراستاری:} قید ناتهی افزوده شده است، زیرا در تعریف این متن هر درخت باید ریشه داشته باشد؛ مجموعهٔ تهی نسبت به گرفتن قطعه‌های آغازین بسته است، اما ریشه ندارد.\n\\end{ex}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "König lemma",
+      "canon": [
+        "FA-OL-CANON-0003:P0064",
+        "FA-OL-CANON-0003:P0065"
+      ],
+      "rationale": "Retain both finitely branching and infinite hypotheses and the infinite-branch conclusion. The selected canon supports surrounding tree register but does not state this lemma; no such attestation is asserted. Retain the original Latin spelling inside the existing language switch rather than invent a Persian transliteration.",
+      "alternatives": "",
+      "question": "A direct Persian source for the eponym and lemma register would strengthen this retained naming decision.",
+      "confidence": 2,
+      "confidence_reason": "Source proposition preserved exactly; lemma-specific target attestation absent in selected pages.",
+      "id": "FA-0018-C14",
+      "unit": "OLP-0018",
+      "source": {
+        "char_start": 4756,
+        "char_end_exclusive": 4895,
+        "line_start": 121,
+        "line_end": 126,
+        "text": "\\begin{prop}[K\\H{o}nig's lemma]\nIf $T = \\tuple{A,\\le}$ is a finitely branching infinite tree,\nthen $T$ has an infinite branch.\n\\end{prop}\n\n",
+        "sha256": "33ec691cbb81fb1d279be80eb172e1f040320860cd05bf5b52f1b5c3fff24d69"
+      },
+      "target_before": {
+        "char_start": 4578,
+        "char_end_exclusive": 4740,
+        "line_start": 121,
+        "line_end": 126,
+        "text": "\\begin{prop}[لم \\foreignlanguage{english}{K\\H{o}nig}]\nاگر $T = \\tuple{A,\\le}$ درختی نامتناهی با انشعاب متناهی باشد،\nآنگاه $T$ یک شاخهٔ نامتناهی دارد.\n\\end{prop}\n\n",
+        "sha256": "c69e93f07a671633f939797a992df0447ded2ee1a0c6188eaf356063ad9e8fea"
+      },
+      "target_after": {
+        "char_start": 4872,
+        "char_end_exclusive": 5034,
+        "line_start": 123,
+        "line_end": 128,
+        "text": "\\begin{prop}[لم \\foreignlanguage{english}{K\\H{o}nig}]\nاگر $T = \\tuple{A,\\le}$ درختی نامتناهی با انشعاب متناهی باشد،\nآنگاه $T$ یک شاخهٔ نامتناهی دارد.\n\\end{prop}\n\n",
+        "sha256": "c69e93f07a671633f939797a992df0447ded2ee1a0c6188eaf356063ad9e8fea"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{prop}[لم \\foreignlanguage{english}{K\\H{o}nig}]\nاگر $T = \\tuple{A,\\le}$ درختی نامتناهی با انشعاب متناهی باشد،\nآنگاه $T$ یک شاخهٔ نامتناهی دارد.\n\\end{prop}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Weak König lemma",
+      "canon": [
+        "FA-OL-CANON-0003:P0064",
+        "FA-OL-CANON-0003:P0065"
+      ],
+      "rationale": "Keep the restriction to infinite subtrees of the binary sequence tree and the infinite-branch conclusion, plus its use in computability. Weak names the special statement; it does not weaken infinite to arbitrarily long finite branches. The eponym and adjective are explicit source-aligned naming choices, not certified conventional Persian terminology.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 2,
+      "confidence_reason": "Formal and conceptual content exact; naming/register attestation remains provisional.",
+      "id": "FA-0018-C15",
+      "unit": "OLP-0018",
+      "source": {
+        "char_start": 4895,
+        "char_end_exclusive": 5087,
+        "line_start": 126,
+        "line_end": 130,
+        "text": "A special case of K\\H{o}nig's lemma widely used in computability\ntheory, known as \\emph{weak K\\H{o}nig's lemma}, is the following: any\ninfinite subtree of $\\{0,1\\}^*$ has an infinite branch.\n\n",
+        "sha256": "ea0e531e609215b40a7aacac749016e308984d2fc485fc21ed358e8fb045d296"
+      },
+      "target_before": {
+        "char_start": 4740,
+        "char_end_exclusive": 4981,
+        "line_start": 126,
+        "line_end": 130,
+        "text": "حالت خاصی از لم \\foreignlanguage{english}{K\\H{o}nig} که به‌طور گسترده در نظریهٔ محاسبه‌پذیری به\nکار می‌رود و \\emph{لم ضعیف \\foreignlanguage{english}{K\\H{o}nig}} نام دارد، چنین است: هر زیردرخت\nنامتناهی از $\\{0,1\\}^*$ یک شاخهٔ نامتناهی دارد.\n\n",
+        "sha256": "65e82de8c2e383381ee8054103674c0b1a76f222a04c6709e229fd38010ad7a9"
+      },
+      "target_after": {
+        "char_start": 5034,
+        "char_end_exclusive": 5275,
+        "line_start": 128,
+        "line_end": 132,
+        "text": "حالت خاصی از لم \\foreignlanguage{english}{K\\H{o}nig} که به‌طور گسترده در نظریهٔ محاسبه‌پذیری به\nکار می‌رود و \\emph{لم ضعیف \\foreignlanguage{english}{K\\H{o}nig}} نام دارد، چنین است: هر زیردرخت\nنامتناهی از $\\{0,1\\}^*$ یک شاخهٔ نامتناهی دارد.\n\n",
+        "sha256": "65e82de8c2e383381ee8054103674c0b1a76f222a04c6709e229fd38010ad7a9"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "حالت خاصی از لم \\foreignlanguage{english}{K\\H{o}nig} که به‌طور گسترده در نظریهٔ محاسبه‌پذیری به\nکار می‌رود و \\emph{لم ضعیف \\foreignlanguage{english}{K\\H{o}nig}} نام دارد، چنین است: هر زیردرخت\nنامتناهی از $\\{0,1\\}^*$ یک شاخهٔ نامتناهی دارد.\n\n",
+      "member_occurrences": []
+    }
+  ],
+  "corrections": [
+    {
+      "unit": "OLP-0016",
+      "id": "FA0016-IRREFLEXIVE-DEF",
+      "before": "رابطه‌ای است که غیربازتابی، نامتقارن",
+      "after": "رابطه‌ای است که پادبازتابی، نامتقارن"
+    },
+    {
+      "unit": "OLP-0016",
+      "id": "FA0016-IRREFLEXIVE-PROOF",
+      "before": "غیربازتابی، نامتقارن و تراگذری باشد. بگذارید",
+      "after": "پادبازتابی، نامتقارن و تراگذری باشد. بگذارید"
+    },
+    {
+      "unit": "OLP-0016",
+      "id": "FA0016-IRREFLEXIVE-EXT",
+      "before": "با غیربازتابی‌بودن",
+      "after": "با پادبازتابی‌بودن"
+    },
+    {
+      "unit": "OLP-0016",
+      "id": "FA0016-LINEAR-COMPARABILITY",
+      "before": "ترتیب جزئی‌ای که همبند نیز باشد",
+      "after": "ترتیب جزئی‌ای که هر دو عضو متمایز آن مقایسه‌پذیر باشند (یعنی همبند باشد)"
+    },
+    {
+      "unit": "OLP-0016",
+      "id": "FA0016-STRICT-COMPARABILITY",
+      "before": "ترتیب اکیدی که همبند نیز باشد",
+      "after": "ترتیب اکیدی که هر دو عضو متمایز آن مقایسه‌پذیر باشند (یعنی همبند باشد)"
+    },
+    {
+      "unit": "OLP-0016",
+      "id": "FA0016-PREFIX-SCOPE",
+      "before": "روی $A^*$ ترتیبی جزئی است، اما ترتیبی خطی نیست؛ برای نمونه، اگر",
+      "after": "روی $A^*$ ترتیبی جزئی است؛ اگر الفبا دست‌کم دو عضو داشته باشد، ترتیبی خطی نیست. برای نمونه، اگر"
+    },
+    {
+      "unit": "OLP-0016",
+      "id": "FA0016-PREFIX-NOTE",
+      "before": "$a \\neq b$، آنگاه $ab \\not\\sqsubseteq ba$ و $ba \\not\\sqsubseteq ab$.",
+      "after": "$a \\neq b$، آنگاه $ab \\not\\sqsubseteq ba$ و $ba \\not\\sqsubseteq ab$.\n\\emph{یادداشت ویراستاری:} قید اندازهٔ الفبا به ادعای متن مبدأ افزوده شد؛ برای الفبای تهی یا تک‌عضوی، رابطهٔ امتداد خطی است."
+    },
+    {
+      "unit": "OLP-0017",
+      "id": "FA0017-VERTEX-PLURAL-NOTE",
+      "before": "می‌شوند---با یال‌ها به هم متصل‌اند.",
+      "after": "می‌شوند---با یال‌ها به هم متصل‌اند. (واژهٔ انگلیسی \\foreignlanguage{english}{vertices} جمعِ \\foreignlanguage{english}{vertex} است.)"
+    },
+    {
+      "unit": "OLP-0017",
+      "id": "FA0017-IDIOM",
+      "before": "ساختارها به‌طرزی چشمگیر سودمندند؛",
+      "after": "ساختارها بسیار سودمندند؛"
+    },
+    {
+      "unit": "OLP-0018",
+      "id": "FA0018-BRANCH-DOMAIN",
+      "before": "$z \\in X \\setminus B$",
+      "after": "$z \\in A \\setminus B$"
+    },
+    {
+      "unit": "OLP-0018",
+      "id": "FA0018-BRANCH-NOTE",
+      "before": "از $[T]$ برای نمایش مجموعهٔ همهٔ شاخه‌های $T$ استفاده می‌کنیم.",
+      "after": "از $[T]$ برای نمایش مجموعهٔ همهٔ شاخه‌های $T$ استفاده می‌کنیم.\n\\emph{یادداشت ویراستاری:} در شرط بیشینگی، نماد تعریف‌نشدهٔ متن مبدأ با نماد دامنهٔ درخت جایگزین شده است."
+    },
+    {
+      "unit": "OLP-0018",
+      "id": "FA0018-NONEMPTY-SUBTREE",
+      "before": "هر $A\n\\subseteq \\Nat^*$",
+      "after": "هر زیرمجموعهٔ ناتهی $A\n\\subseteq \\Nat^*$"
+    },
+    {
+      "unit": "OLP-0018",
+      "id": "FA0018-SUBTREE-NOTE",
+      "before": "می‌توان به‌صورت زیردرخت‌های متناهیِ~$\\Nat^*$ بازنمایی کرد.",
+      "after": "می‌توان به‌صورت زیردرخت‌های متناهیِ~$\\Nat^*$ بازنمایی کرد.\n\\emph{یادداشت ویراستاری:} قید ناتهی افزوده شده است، زیرا در تعریف این متن هر درخت باید ریشه داشته باشد؛ مجموعهٔ تهی نسبت به گرفتن قطعه‌های آغازین بسته است، اما ریشه ندارد."
+    }
+  ],
+  "human_review_gate": false,
+  "reader_release": false
+}

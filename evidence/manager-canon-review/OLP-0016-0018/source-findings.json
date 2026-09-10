@@ -1,0 +1,41 @@
+{
+  "schema": "openlogic-source-findings/1",
+  "source_commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "review_root": "persian-openlogic/orders-graphs-trees-20260910",
+  "original_source_bytes_unchanged": true,
+  "public_upstream_issue_authorized_here": false,
+  "german_noether_authority_applicable": false,
+  "findings": [
+    {
+      "unit": "OLP-0016",
+      "path": "content/sets-functions-relations/relations/orders.tex",
+      "source_lf_sha256": "79593789022fef31c0609b9c94856e2aef5cd5e88e92864e782bb6e6e5f4bce4",
+      "kind": "missing scope qualification",
+      "anchor": "The extension relation on A^* is a partial order but not a linear order",
+      "evidence": "Empty alphabet gives the single empty sequence; singleton alphabet orders sequences by length. Both prefix orders are linear. Two distinct letters provide the stated incomparable-word example.",
+      "remedy": "Qualify nonlinearity by at least two alphabet elements; retain the unconditional partial-order claim and disclose the qualification.",
+      "confidence": "high: definition and explicit counterexamples"
+    },
+    {
+      "unit": "OLP-0018",
+      "path": "content/sets-functions-relations/relations/trees.tex",
+      "source_lf_sha256": "a158f1ce5b84c8c3f681dd6347b22491d1b67a91e110138b9cb6833e3d9dc23c",
+      "kind": "undefined domain symbol",
+      "anchor": "$z \\in X \\setminus B$",
+      "evidence": "The enclosing definition declares T=(A,le), B subset A and no X. Maximality tests outsiders in the tree carrier A minus B.",
+      "remedy": "Replace X with A at this one formula occurrence and disclose it; all other formula tokens stay fixed.",
+      "confidence": "high: local binding and maximal-chain definition"
+    },
+    {
+      "unit": "OLP-0018",
+      "path": "content/sets-functions-relations/relations/trees.tex",
+      "source_lf_sha256": "a158f1ce5b84c8c3f681dd6347b22491d1b67a91e110138b9cb6833e3d9dc23c",
+      "kind": "missing nonempty qualification",
+      "anchor": "Every A subset Nat^* which is closed under sqsubseteq is a subtree",
+      "evidence": "The empty subset is prefix-closed but has no least root, required by the source tree definition. Any nonempty prefix-closed subset contains the empty sequence as its root.",
+      "remedy": "Add nonempty and a visible editorial note. Do not change prefix closure into closure under arbitrary extensions.",
+      "confidence": "high: explicit empty-set counterexample and root condition"
+    }
+  ],
+  "not_errors": ["An arbitrary nonroot node has at most one immediate predecessor, not necessarily exactly one.", "The Persian set-theory canon uses branches without maximality and does not require one root; those conventions do not override the OpenLogic definitions.", "Graphs with the same edge set but different carriers can differ by an isolated vertex."]
+}
