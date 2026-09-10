@@ -1,0 +1,45 @@
+{
+  "schema": "openlogic-internal-source-findings/1",
+  "date": "2026-09-10",
+  "source_commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "source_path": "content/sets-functions-relations/functions/function-basics.tex",
+  "source_git_LF_sha256": "d1fa0923e303fc49a88d4e476c319d6e91a8088de44c232dcfba5878325faea3",
+  "unit": "OLP-0021",
+  "findings": [
+    {
+      "id": "OLP0021-SQRT-ZERO",
+      "classification": "mathematical boundary-condition wording error",
+      "source_lines": [
+        69,
+        70,
+        71,
+        96,
+        97,
+        98,
+        99
+      ],
+      "source_excerpt": "only returning the positive square root",
+      "counterexample": "The declared domain is Nat, and the same section explicitly includes0 in Nat. At0 the unique real square root is0, which is not positive. The stated selection rule therefore fails to provide a value for this domain member.",
+      "repair": "Select the nonnegative square root; retain Nat-to-Real and all displayed notation. The Persian candidate uses ریشهٔ دوم نامنفی and explicitly discloses the source correction.",
+      "confidence": "High: exact source domain and elementary boundary counterexample. This is not a calibrated probability."
+    },
+    {
+      "id": "OLP0021-G-INPUT-NAME",
+      "classification": "editorial variable-name inconsistency, not an invalid displayed equation",
+      "source_lines": [
+        103,
+        104,
+        105,
+        106,
+        107
+      ],
+      "source_excerpt": "Given a natural number~$n$, $g$ will output",
+      "evidence": "The example defines g(x)=x+2-1 and then describes predecessors and successors of x. Its one input reference n is inconsistent with that narrative.",
+      "repair": "Change only that input reference n to x. It is math-span49 in the full-section matcher; the candidate and public choice evidence disclose the exact span repair.",
+      "confidence": "High for editorial consistency; no claim that the equation itself was false."
+    }
+  ],
+  "upstream_novelty": "unverified; internal deduplication intake only",
+  "upstream_submitted": false,
+  "source_modified": false
+}

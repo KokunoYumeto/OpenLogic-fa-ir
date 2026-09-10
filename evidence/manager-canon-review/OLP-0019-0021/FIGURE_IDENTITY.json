@@ -1,0 +1,11 @@
+{
+  "asset": "assets/diagrams/function.tikz",
+  "source_commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "source_bytes": 9766,
+  "source_sha256": "0f9ad6d025a743c8b90509d7507bd88bfc6934e555175adc29d36c8ce93a04c9",
+  "owner_bytes": 9944,
+  "owner_sha256": "cb994564115f1e1f2be0e184abb7614989fd9d89c94ce9b99fc74a614a58260d",
+  "equal_after_line_ending_normalization": true,
+  "new_reader_render": false,
+  "scope": "Unchanged figure source and positive x-scale verified. This does not certify the future RTL compiled reader layout."
+}

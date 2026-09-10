@@ -1,0 +1,1708 @@
+{
+  "schema": "public-openlogic-fa-batch-review/1",
+  "identities": [
+    {
+      "unit": "OLP-0019",
+      "source_commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+      "source_path": "content/sets-functions-relations/relations/operations.tex",
+      "source_git_LF_sha256": "73c8bdb301aca93f687a06a045533d75d30088ae711f5e1dfd577b7864f8d3d5",
+      "source_ledger_CRLF_sha256": "5e6f57e9ddf53e1624955adabd594ea3855ad787c1074ba12421b0025b432372",
+      "published_target_sha256": "e856c2a5169b4a7827113178d7a2574436668d2dc570dc99ec0c5db4ffb95058",
+      "candidate_sha256": "f05c0ce5e8d2d3d663afd8ed0dfab16cdce62e04087280bf3ae35acfc46fae1c",
+      "published_target_bytes": 3054,
+      "candidate_bytes": 3244,
+      "R3_member": "source/locale/fa-IR/content/sets-functions-relations/relations/operations.tex",
+      "R3_archive_sha256": "ef32f359fe7813d0ffef11f3936fb1498f2f3cdcc176ab2acb56b969360c9e59",
+      "locale_config_sha256": "c8df8c39abbd1ab36dbac380490b72e9b3c565bbd1ec3d1f1be88bdc300abd0b",
+      "math_spans": 48,
+      "aligned_choices": 15,
+      "math_text_pairs": [],
+      "formal_repairs": []
+    },
+    {
+      "unit": "OLP-0020",
+      "source_commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+      "source_path": "content/sets-functions-relations/functions/functions.tex",
+      "source_git_LF_sha256": "d68bba27e593df2c17e2dc93b34256d829361b04134b4a962b997d5f4a230a59",
+      "source_ledger_CRLF_sha256": "ce481e97a8f301c749d1461326b4ee3d0792b4adc15a1fceb7c6ed3b58ceca54",
+      "published_target_sha256": "d788ebf360b902a4ee9b4ee92e6ea1b59499edb8aeb6de00e88b0fdad0144964",
+      "candidate_sha256": "d788ebf360b902a4ee9b4ee92e6ea1b59499edb8aeb6de00e88b0fdad0144964",
+      "published_target_bytes": 400,
+      "candidate_bytes": 400,
+      "R3_member": "source/locale/fa-IR/content/sets-functions-relations/functions/functions.tex",
+      "R3_archive_sha256": "ef32f359fe7813d0ffef11f3936fb1498f2f3cdcc176ab2acb56b969360c9e59",
+      "locale_config_sha256": "c8df8c39abbd1ab36dbac380490b72e9b3c565bbd1ec3d1f1be88bdc300abd0b",
+      "math_spans": 0,
+      "aligned_choices": 1,
+      "math_text_pairs": [],
+      "formal_repairs": []
+    },
+    {
+      "unit": "OLP-0021",
+      "source_commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+      "source_path": "content/sets-functions-relations/functions/function-basics.tex",
+      "source_git_LF_sha256": "d1fa0923e303fc49a88d4e476c319d6e91a8088de44c232dcfba5878325faea3",
+      "source_ledger_CRLF_sha256": "f01a58d84a175f42d8c233ef0e7d41c23d406b54e8f11475c14514b64eca3dc7",
+      "published_target_sha256": "d66599bdc39e09d80bcd3d02c257aef308a2589e8b6f23c7791cb938e1f0ec83",
+      "candidate_sha256": "a44c6e55fd27145a8be8c497f482b8022ae33cecf9a70cab1ce871869718af6f",
+      "published_target_bytes": 7916,
+      "candidate_bytes": 8319,
+      "R3_member": "source/locale/fa-IR/content/sets-functions-relations/functions/function-basics.tex",
+      "R3_archive_sha256": "ef32f359fe7813d0ffef11f3936fb1498f2f3cdcc176ab2acb56b969360c9e59",
+      "locale_config_sha256": "c8df8c39abbd1ab36dbac380490b72e9b3c565bbd1ec3d1f1be88bdc300abd0b",
+      "math_spans": 64,
+      "aligned_choices": 16,
+      "math_text_pairs": [
+        {
+          "math_span": 59,
+          "source": "if ",
+          "target": "اگر ",
+          "review": "Exact wording reviewed in the aligned choice, not accepted by token masking alone"
+        },
+        {
+          "math_span": 59,
+          "source": ", then ",
+          "target": "، آنگاه ",
+          "review": "Exact wording reviewed in the aligned choice, not accepted by token masking alone"
+        },
+        {
+          "math_span": 63,
+          "source": "if $x$ is even",
+          "target": "اگر $x$ زوج باشد",
+          "review": "Exact wording reviewed in the aligned choice, not accepted by token masking alone"
+        },
+        {
+          "math_span": 63,
+          "source": "if $x$ is odd.",
+          "target": "اگر $x$ فرد باشد.",
+          "review": "Exact wording reviewed in the aligned choice, not accepted by token masking alone"
+        }
+      ],
+      "formal_repairs": [
+        {
+          "id": "INPUT-N-TO-X",
+          "span_index": 49,
+          "before": "$n$",
+          "after": "$x$",
+          "reason": "The g(x) example names the input n and then computes with x. Align that input name with the displayed definition; disclose the source repair."
+        }
+      ]
+    }
+  ],
+  "canon": {
+    "documents": [
+      {
+        "document_id": "FA-OL-CANON-0003",
+        "title_fa": "نظریهٔ مجموعه‌ها",
+        "title_en": "Set Theory",
+        "authors": [
+          "محسن خانی",
+          "افشین زارعی"
+        ],
+        "institution": "دانشگاه صنعتی اصفهان",
+        "date_statement": "۱۸ خرداد ۱۴۰۰",
+        "source_url": "https://khani.iut.ac.ir/sites/khani.iut.ac.ir/files//u145/jozve-kamel.pdf",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+        "pdf_bytes": 413763,
+        "licence_status": "No explicit redistribution licence identified; retain locally and cite only."
+      },
+      {
+        "document_id": "FA-REL-C001",
+        "title_fa": "ریاضیات گسسته و کاربردها",
+        "title_en": "Discrete Mathematics and Applications",
+        "authors": [
+          "علیرضا غفاری حدیقه",
+          "مگردیچ تومانیان"
+        ],
+        "institution": "مؤسسه چاپ و انتشارات دانشگاه جامع امام حسین (ع)",
+        "date_statement": "Edition date not newly established in this batch; author-hosted textbook witness",
+        "source_url": "https://hadigheha.github.io/books/teaching/Textbooks/Tarkibiyat.pdf",
+        "pdf_bytes": 1713264,
+        "pdf_sha256": "8f79c45a926c1cea819c4fefa86383f2a65ae23b1d526baaf99cf2506bb9f317",
+        "licence_status": "No compatible redistribution licence established; private consultation only, not redistributed."
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "FA-OL-CANON-0003:P0008",
+        "pdf_page_1based": 8,
+        "printed_page": 7,
+        "location": "Naive set theory: first axiom and footnote2",
+        "short_attestation": "اصل گسترش",
+        "relevance_and_limits": "Directly pairs اصل گسترش with extensionality. Its set-theoretic equality-by-membership is a lexical and structural witness, not a theorem about arbitrary codomain-sensitive functions. Preserve the OpenLogic function statement and its hypotheses.",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+        "normalized_search_page_sha256": "9e2d1c51a7f812d15cbe390e3046708944f893119a90fb377e4ffedb132422d8",
+        "visual_page_read": true,
+        "render_sha256": "2610944f88779e1a6d6ab17e64ac316cc7a31248941a98d415362db94b1bdf41"
+      },
+      {
+        "passage_id": "FA-OL-CANON-0003:P0014",
+        "pdf_page_1based": 14,
+        "printed_page": 13,
+        "location": "Definition19: products, relations, restriction and domain",
+        "short_attestation": "زوج مرتب؛ حاصل‌ضرب؛ تحدید؛ دامنه",
+        "relevance_and_limits": "Direct relation-as-ordered-pair-set and restriction terminology. IMPORTANT CONVENTION CONFLICT: the canon restricts the first coordinate only, R intersect (A times V); OpenLogic here uses R intersect A squared. Use the vocabulary, not the differing definition.",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+        "normalized_search_page_sha256": "2d953e0347f243815f7743b5f5b1023455fee7b35b60b650349fdaae0d16d686",
+        "visual_page_read": true,
+        "render_sha256": "a4453708697a9b2ca138e7fa14dd21e46f141e43b5d3f74ef3b0a458dccce648"
+      },
+      {
+        "passage_id": "FA-OL-CANON-0003:P0015",
+        "pdf_page_1based": 15,
+        "printed_page": 14,
+        "location": "Image class; functional relation; composition; inverse",
+        "short_attestation": "تصویر؛ ترکیب؛ رابطهٔ معکوس",
+        "relevance_and_limits": "Direct image, composition and converse definitions. Q composed with R means first R then Q; this matches OLP R|S as S composed with R. The canon distinguishes functional classes from set functions; do not transfer class-theoretic scope to OLP. وارون and حاصل‌ضرب نسبی are not verbatim labels here.",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+        "normalized_search_page_sha256": "689727e3d79f07a4f313ba0ed8066b8088383bfb7e9cba49425c6b56b24452a4",
+        "visual_page_read": true,
+        "render_sha256": "e6d46a34cb6f8935aaa9d2987e780699deb950e43ba6cd9ce8c72b198e259d50"
+      },
+      {
+        "passage_id": "FA-REL-P044",
+        "pdf_page_1based": 44,
+        "printed_page": 34,
+        "location": "Section2.2: definition, domain/codomain/range and square-root correspondence",
+        "short_attestation": "تابع یا نگاشت؛ دقیقاً یک عضو؛ هم‌دامنه؛ برد",
+        "relevance_and_limits": "Direct function vocabulary, uniqueness and assignment syntax; square-root correspondence includes zero. Its box labelled بسط prints only equality implies equal values: do NOT substitute that direction for OLP extensionality. The source square-root example has real codomain, unlike the canon integer correspondence.",
+        "pdf_sha256": "8f79c45a926c1cea819c4fefa86383f2a65ae23b1d526baaf99cf2506bb9f317",
+        "normalized_search_page_sha256": "8fd6caf3fd9321e226b51858a43d1135ea5e06965c429fe971b14c7b8b2f155e",
+        "visual_page_read": true,
+        "render_sha256": "b6a5a73187ccda878ebc6612d9cca9108836b0082c151ba2f8b52da48483baa2"
+      },
+      {
+        "passage_id": "FA-REL-P045",
+        "pdf_page_1based": 45,
+        "printed_page": 35,
+        "location": "Examples of numerical functions, graph and restriction",
+        "short_attestation": "ضابطه؛ نمودار تابع؛ تحدید",
+        "relevance_and_limits": "Supports mathematical example register and function graph/restriction terminology. The restriction again acts on inputs only. Do not import the page’s floor/ceiling prose (which lacks the greatest/least qualifier), its modulus-at-zero ambiguity, or its different natural-number convention.",
+        "pdf_sha256": "8f79c45a926c1cea819c4fefa86383f2a65ae23b1d526baaf99cf2506bb9f317",
+        "normalized_search_page_sha256": "1c0940b6ad05cf6260202df13afb0ed8b52dd083dd931090d3055ca4860fc8bc",
+        "visual_page_read": true,
+        "render_sha256": "02b4f8579d4b1a5ad79d3fcd7a264837b438baf4cf13327819af890ebd07eb5a"
+      },
+      {
+        "passage_id": "FA-REL-P052",
+        "pdf_page_1based": 52,
+        "printed_page": 42,
+        "location": "Exercises9-13 and relations introduction",
+        "short_attestation": "ضابطه و دامنه؛ در غیر این صورت؛ رابطه",
+        "relevance_and_limits": "Direct piecewise formulas and composition exercises support case-based presentation and ordinary mathematical instructions. The relationships example supplies contextual relational prose, not evidence about actual student grades or family structure. Its literal marriage-example variables are not copied.",
+        "pdf_sha256": "8f79c45a926c1cea819c4fefa86383f2a65ae23b1d526baaf99cf2506bb9f317",
+        "normalized_search_page_sha256": "d18fd1f93f2e05f19271c894603eeb2c76bcdaa5ced37cf5e096803f792c6474",
+        "visual_page_read": true,
+        "render_sha256": "41d6448732dea746d7cba3f82c5a4d0b3c6156f1a859ef6e121e57e72c69105b"
+      },
+      {
+        "passage_id": "FA-REL-P055",
+        "pdf_page_1based": 55,
+        "printed_page": 45,
+        "location": "Properties of binary relations and composition continuation",
+        "short_attestation": "بازتابی؛ تراگذری؛ رابطه‌های دودویی",
+        "relevance_and_limits": "Direct definitions and Persian logical connective register for reflexivity and transitivity. The compounds بستار تراگذری and بستار بازتابی و تراگذری are not directly attested on these pages and remain explicitly provisional descriptive labels.",
+        "pdf_sha256": "8f79c45a926c1cea819c4fefa86383f2a65ae23b1d526baaf99cf2506bb9f317",
+        "normalized_search_page_sha256": "0cd67853374452ffd3380665ee004989c1c1c86b1f079f339f770b2ed563d9da",
+        "visual_page_read": true,
+        "render_sha256": "4d3206875e453f9bbe1c716734ffad22422a12fe0b2a7b8b713e1bb05c8b4238"
+      }
+    ]
+  },
+  "choices": [
+    {
+      "topic": "Operations heading and earlier constructions",
+      "canon": [
+        "FA-OL-CANON-0003:P0014",
+        "FA-OL-CANON-0003:P0015",
+        "FA-REL-P055"
+      ],
+      "rationale": "Retain عملیات روی روابط and the distinction between ordinary union and relative difference of sets of pairs. The two cross-references retain their exact order-conversion labels; relations are not treated as pointwise numerical functions.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Meaning and the stated formula were checked against the source and the cited Persian usage; attestation does not imply a reader study or calibrated probability.",
+      "id": "FA-0019-C01",
+      "unit": "OLP-0019",
+      "source": {
+        "char_start": 183,
+        "char_end_exclusive": 606,
+        "line_start": 10,
+        "line_end": 19,
+        "text": "\\olsection{Operations on Relations}\n\nIt is often useful to modify or combine relations. In\n\\olref[sfr][rel][ord]{prop:stricttopartial}, we considered the \\emph{union}\nof relations, which is just the union of two relations considered as\nsets of pairs. Similarly, in \\olref[sfr][rel][ord]{prop:partialtostrict},\nwe considered the relative difference of relations. Here are some\nother operations we can perform on relations.\n\n",
+        "sha256": "acc1a349c6fa0f52509ea3e53c5b9aa928651b28177efc3b64479931052f578b"
+      },
+      "target_before": {
+        "char_start": 190,
+        "char_end_exclusive": 616,
+        "line_start": 10,
+        "line_end": 19,
+        "text": "\\olsection{عملیات روی روابط}\n\nاغلب مفید است که روابط را تغییر دهیم یا با هم ترکیب کنیم. در\n\\olref[sfr][rel][ord]{prop:stricttopartial}، \\emph{اجتماعِ}\nروابط را بررسی کردیم، که صرفاً اجتماع دو رابطه است وقتی آن دو را\nبه‌منزلهٔ مجموعه‌هایی از زوج‌ها در نظر بگیریم. به همین ترتیب، در\n\\olref[sfr][rel][ord]{prop:partialtostrict}، تفاضل نسبی روابط را\nبررسی کردیم. در اینجا چند عمل دیگر آمده است که می‌توانیم روی روابط انجام دهیم.\n\n",
+        "sha256": "2fb6bde2797a1b634706b9bba94c2d6bbf70bd8cb60b165b44e230491aebb6bb"
+      },
+      "target_after": {
+        "char_start": 190,
+        "char_end_exclusive": 616,
+        "line_start": 10,
+        "line_end": 19,
+        "text": "\\olsection{عملیات روی روابط}\n\nاغلب مفید است که روابط را تغییر دهیم یا با هم ترکیب کنیم. در\n\\olref[sfr][rel][ord]{prop:stricttopartial}، \\emph{اجتماعِ}\nروابط را بررسی کردیم، که صرفاً اجتماع دو رابطه است وقتی آن دو را\nبه‌منزلهٔ مجموعه‌هایی از زوج‌ها در نظر بگیریم. به همین ترتیب، در\n\\olref[sfr][rel][ord]{prop:partialtostrict}، تفاضل نسبی روابط را\nبررسی کردیم. در اینجا چند عمل دیگر آمده است که می‌توانیم روی روابط انجام دهیم.\n\n",
+        "sha256": "2fb6bde2797a1b634706b9bba94c2d6bbf70bd8cb60b165b44e230491aebb6bb"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\olsection{عملیات روی روابط}\n\nاغلب مفید است که روابط را تغییر دهیم یا با هم ترکیب کنیم. در\n\\olref[sfr][rel][ord]{prop:stricttopartial}، \\emph{اجتماعِ}\nروابط را بررسی کردیم، که صرفاً اجتماع دو رابطه است وقتی آن دو را\nبه‌منزلهٔ مجموعه‌هایی از زوج‌ها در نظر بگیریم. به همین ترتیب، در\n\\olref[sfr][rel][ord]{prop:partialtostrict}، تفاضل نسبی روابط را\nبررسی کردیم. در اینجا چند عمل دیگر آمده است که می‌توانیم روی روابط انجام دهیم.\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Ambient data for the four operations",
+      "canon": [
+        "FA-OL-CANON-0003:P0014",
+        "FA-OL-CANON-0003:P0015"
+      ],
+      "rationale": "Preserve two arbitrary relations and any set A. No common-carrier or function hypothesis is inserted merely because the later example has one.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Meaning and the stated formula were checked against the source and the cited Persian usage; attestation does not imply a reader study or calibrated probability.",
+      "id": "FA-0019-C02",
+      "unit": "OLP-0019",
+      "source": {
+        "char_start": 606,
+        "char_end_exclusive": 697,
+        "line_start": 19,
+        "line_end": 22,
+        "text": "\\begin{defn}\\ollabel{relationoperations} \nLet $R$, $S$ be relations, and $A$ be any set. \n\n",
+        "sha256": "797905f138914e50f80509b6989ff1b6151b5d2dc3da1afec02704392af5e157"
+      },
+      "target_before": {
+        "char_start": 616,
+        "char_end_exclusive": 718,
+        "line_start": 19,
+        "line_end": 22,
+        "text": "\\begin{defn}\\ollabel{relationoperations}\nفرض کنید $R$ و $S$ رابطه باشند و $A$ مجموعه‌ای دلخواه باشد.\n\n",
+        "sha256": "e674a4d22a76ebf1f5fff8ea1dd53f0bdb409523577d91d1a32f1534c16ff6ce"
+      },
+      "target_after": {
+        "char_start": 616,
+        "char_end_exclusive": 718,
+        "line_start": 19,
+        "line_end": 22,
+        "text": "\\begin{defn}\\ollabel{relationoperations}\nفرض کنید $R$ و $S$ رابطه باشند و $A$ مجموعه‌ای دلخواه باشد.\n\n",
+        "sha256": "e674a4d22a76ebf1f5fff8ea1dd53f0bdb409523577d91d1a32f1534c16ff6ce"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{defn}\\ollabel{relationoperations}\nفرض کنید $R$ و $S$ رابطه باشند و $A$ مجموعه‌ای دلخواه باشد.\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Inverse relation",
+      "canon": [
+        "FA-OL-CANON-0003:P0015"
+      ],
+      "rationale": "The coordinates are reversed and every original pair contributes a converse pair. This is inverse relation, not reciprocal arithmetic and not an assertion of function invertibility.",
+      "alternatives": "رابطهٔ معکوس is directly attested in the canon; وارون remains the existing transparent label with its exact defining formula.",
+      "question": "Review lane-wide وارون versus معکوس terminology; keep converse available for nonfunctional relations.",
+      "confidence": 2,
+      "confidence_reason": "Exact operation is attested; the chosen synonymous label is not printed on the consulted page.",
+      "id": "FA-0019-C03",
+      "unit": "OLP-0019",
+      "source": {
+        "char_start": 697,
+        "char_end_exclusive": 785,
+        "line_start": 22,
+        "line_end": 25,
+        "text": "The \\emph{inverse} of $R$ is $R^{-1} = \\Setabs{\\tuple{y, x}}{\\tuple{x,\n    y} \\in R}$.\n\n",
+        "sha256": "4a0df56d7a6fdc7ef27f683cb7d65ed81c82ebb3fce1e93fced5fd565d4919b0"
+      },
+      "target_before": {
+        "char_start": 718,
+        "char_end_exclusive": 807,
+        "line_start": 22,
+        "line_end": 25,
+        "text": "\\emph{وارون} $R$ برابر است با $R^{-1} = \\Setabs{\\tuple{y, x}}{\\tuple{x,\n    y} \\in R}$.\n\n",
+        "sha256": "d69211357fc6e46adcc9faecca600c1a534955bd9ea21d5e8718c312e0f04678"
+      },
+      "target_after": {
+        "char_start": 718,
+        "char_end_exclusive": 807,
+        "line_start": 22,
+        "line_end": 25,
+        "text": "\\emph{وارون} $R$ برابر است با $R^{-1} = \\Setabs{\\tuple{y, x}}{\\tuple{x,\n    y} \\in R}$.\n\n",
+        "sha256": "d69211357fc6e46adcc9faecca600c1a534955bd9ea21d5e8718c312e0f04678"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\emph{وارون} $R$ برابر است با $R^{-1} = \\Setabs{\\tuple{y, x}}{\\tuple{x,\n    y} \\in R}$.\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Relative product and order",
+      "canon": [
+        "FA-OL-CANON-0003:P0014",
+        "FA-OL-CANON-0003:P0015",
+        "FA-REL-P055"
+      ],
+      "rationale": "Keep the existential intermediate y and the order Rxy then Syz. The canon composition Q after R has the same order. Do not reverse it by visually matching R|S to R composed with S.",
+      "alternatives": "ترکیب is canon-attested; retain حاصل‌ضرب نسبی to preserve the source naming and expose its definition.",
+      "question": "Is a parenthetic ترکیب in this lane desirable? The present exact formula removes orientation ambiguity without renaming the operation.",
+      "confidence": 2,
+      "confidence_reason": "Composition is directly attested; the relative-product compound is provisional.",
+      "id": "FA-0019-C04",
+      "unit": "OLP-0019",
+      "source": {
+        "char_start": 785,
+        "char_end_exclusive": 892,
+        "line_start": 25,
+        "line_end": 28,
+        "text": "The \\emph{relative product} of $R$ and $S$ is $(R \\mid S) =\n\\{\\tuple{x, z} : \\exists y(Rxy \\land Syz)\\}$.\n\n",
+        "sha256": "26a30c0a030476548893a78fba0cd0e08d1e4b4889fc9823b46d5bbf17f9abed"
+      },
+      "target_before": {
+        "char_start": 807,
+        "char_end_exclusive": 912,
+        "line_start": 25,
+        "line_end": 28,
+        "text": "\\emph{حاصل‌ضرب نسبی} $R$ و $S$ برابر است با $(R \\mid S) =\n\\{\\tuple{x, z} : \\exists y(Rxy \\land Syz)\\}$.\n\n",
+        "sha256": "480c911fa647bbb7fe5927826a3cb366d87d11feaa296770dfc4104cc357b35b"
+      },
+      "target_after": {
+        "char_start": 807,
+        "char_end_exclusive": 912,
+        "line_start": 25,
+        "line_end": 28,
+        "text": "\\emph{حاصل‌ضرب نسبی} $R$ و $S$ برابر است با $(R \\mid S) =\n\\{\\tuple{x, z} : \\exists y(Rxy \\land Syz)\\}$.\n\n",
+        "sha256": "480c911fa647bbb7fe5927826a3cb366d87d11feaa296770dfc4104cc357b35b"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\emph{حاصل‌ضرب نسبی} $R$ و $S$ برابر است با $(R \\mid S) =\n\\{\\tuple{x, z} : \\exists y(Rxy \\land Syz)\\}$.\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Restriction: both coordinates",
+      "canon": [
+        "FA-OL-CANON-0003:P0014",
+        "FA-REL-P045"
+      ],
+      "rationale": "Retain the directly attested تحدید, but explicitly unpack the source A-squared condition into both coordinates lying in A. Canon R intersect(A times V) and function restriction are different conventions; the explanation adds no hypothesis and changes no formula.",
+      "alternatives": "",
+      "question": "Keep this convention distinction visible when later function restriction is introduced; never normalize both operations to one formula.",
+      "confidence": 3,
+      "confidence_reason": "Meaning and the stated formula were checked against the source and the cited Persian usage; attestation does not imply a reader study or calibrated probability.",
+      "id": "FA-0019-C05",
+      "unit": "OLP-0019",
+      "source": {
+        "char_start": 892,
+        "char_end_exclusive": 972,
+        "line_start": 28,
+        "line_end": 31,
+        "text": "The \\emph{restriction} of $R$ to $A$ is $\\funrestrictionto{R}{A}= R\n\\cap A^2$.\n\n",
+        "sha256": "e411806a3d291a2405b529a633f9027b3ecc8de6f1ee0c44744365f3bee0091d"
+      },
+      "target_before": {
+        "char_start": 912,
+        "char_end_exclusive": 989,
+        "line_start": 28,
+        "line_end": 31,
+        "text": "\\emph{تحدید} $R$ به $A$ برابر است با $\\funrestrictionto{R}{A}= R\n\\cap A^2$.\n\n",
+        "sha256": "8a36ba528b964060a9f4fd8e89888749a3d195f12c2b212f3f411e00cd82adfa"
+      },
+      "target_after": {
+        "char_start": 912,
+        "char_end_exclusive": 1057,
+        "line_start": 28,
+        "line_end": 31,
+        "text": "\\emph{تحدید} $R$ به $A$ برابر است با $\\funrestrictionto{R}{A}= R\n\\cap A^2$؛ در این تعریف، هر دو مؤلفهٔ زوج مرتب باید در مجموعهٔ داده‌شده باشند.\n\n",
+        "sha256": "7350b08e0cd76a86e686ada616d7dadf8e73d183b3c013bbbd062f843528ba83"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\emph{تحدید} $R$ به $A$ برابر است با $\\funrestrictionto{R}{A}= R\n\\cap A^2$؛ در این تعریف، هر دو مؤلفهٔ زوج مرتب باید در مجموعهٔ داده‌شده باشند.\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Application as relation image",
+      "canon": [
+        "FA-OL-CANON-0003:P0015",
+        "FA-REL-P044"
+      ],
+      "rationale": "Add the explanatory image wording from the canon while retaining the source operation label اعمال. Existentially selected outputs, not pairs, form R[A]; y need not belong to A.",
+      "alternatives": "تصویر is directly attested. A complete replacement of the source-named application label is unnecessary.",
+      "question": null,
+      "confidence": 2,
+      "confidence_reason": "Image concept and syntax are direct; اعمال is a descriptive label retained from the edition.",
+      "id": "FA-0019-C06",
+      "unit": "OLP-0019",
+      "source": {
+        "char_start": 972,
+        "char_end_exclusive": 1073,
+        "line_start": 31,
+        "line_end": 35,
+        "text": "The \\emph{application} of $R$ to $A$ is $\\funimage{R}{A} = \\{y :\n(\\exists x \\in A)Rxy\\}$\n\\end{defn}\n\n",
+        "sha256": "54ebd843077c749d6e5d414d1a60fec7d62629f2a3c92e9488e7ee38a65b73fd"
+      },
+      "target_before": {
+        "char_start": 989,
+        "char_end_exclusive": 1087,
+        "line_start": 31,
+        "line_end": 35,
+        "text": "\\emph{اعمال} $R$ بر $A$ برابر است با $\\funimage{R}{A} = \\{y :\n(\\exists x \\in A)Rxy\\}$\n\\end{defn}\n\n",
+        "sha256": "0b0a7e75c2a74a6da5df3e68b02f4d8c8d037b4c888fab6a5bb8b36444d681e8"
+      },
+      "target_after": {
+        "char_start": 1057,
+        "char_end_exclusive": 1191,
+        "line_start": 31,
+        "line_end": 35,
+        "text": "\\emph{اعمال} $R$ بر $A$، یعنی گرفتن تصویر مجموعه تحت رابطه، برابر است با $\\funimage{R}{A} = \\{y :\n(\\exists x \\in A)Rxy\\}$\n\\end{defn}\n\n",
+        "sha256": "bbb1d67b283685d794c5c98196e33f4d57043bc23db83cb7b8fc700c407725f9"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\emph{اعمال} $R$ بر $A$، یعنی گرفتن تصویر مجموعه تحت رابطه، برابر است با $\\funimage{R}{A} = \\{y :\n(\\exists x \\in A)Rxy\\}$\n\\end{defn}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Integer successor example",
+      "canon": [
+        "FA-REL-P044",
+        "FA-OL-CANON-0003:P0015"
+      ],
+      "rationale": "Keep Int-squared, x+1=y and iff. جانشینی denotes the explicitly defined immediate integer successor, not set-theoretic replacement; canon numerical-function presentation supports the exposition.",
+      "alternatives": "",
+      "question": "جانشینی is contextual here; its relation-label compound is not directly attested on the selected pages.",
+      "confidence": 2,
+      "confidence_reason": "Definition is exact; successor wording is contextual rather than directly attested.",
+      "id": "FA-0019-C07",
+      "unit": "OLP-0019",
+      "source": {
+        "char_start": 1073,
+        "char_end_exclusive": 1235,
+        "line_start": 35,
+        "line_end": 39,
+        "text": "\\begin{ex}\nLet $S \\subseteq \\Int^2$ be the successor relation on~$\\Int$, i.e.,\n$S = \\Setabs{\\tuple{x, y} \\in \\Int^2}{x + 1 = y}$, so that $Sxy$ iff $x + 1 = y$.\n\n",
+        "sha256": "93aa463f0d4603ab2c2aad3d54a4d701a4f4b617a60355f381ef8cf2268f7a42"
+      },
+      "target_before": {
+        "char_start": 1087,
+        "char_end_exclusive": 1262,
+        "line_start": 35,
+        "line_end": 39,
+        "text": "\\begin{ex}\nفرض کنید $S \\subseteq \\Int^2$ رابطهٔ جانشینی روی~$\\Int$ باشد؛ یعنی\n$S = \\Setabs{\\tuple{x, y} \\in \\Int^2}{x + 1 = y}$، به‌طوری‌که $Sxy$ اگر و تنها اگر $x + 1 = y$.\n\n",
+        "sha256": "01fa671725b8f4614f98a4f4cbda2ecfe61db0211d5c706e5b0e368f73f1e4b3"
+      },
+      "target_after": {
+        "char_start": 1191,
+        "char_end_exclusive": 1366,
+        "line_start": 35,
+        "line_end": 39,
+        "text": "\\begin{ex}\nفرض کنید $S \\subseteq \\Int^2$ رابطهٔ جانشینی روی~$\\Int$ باشد؛ یعنی\n$S = \\Setabs{\\tuple{x, y} \\in \\Int^2}{x + 1 = y}$، به‌طوری‌که $Sxy$ اگر و تنها اگر $x + 1 = y$.\n\n",
+        "sha256": "01fa671725b8f4614f98a4f4cbda2ecfe61db0211d5c706e5b0e368f73f1e4b3"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{ex}\nفرض کنید $S \\subseteq \\Int^2$ رابطهٔ جانشینی روی~$\\Int$ باشد؛ یعنی\n$S = \\Setabs{\\tuple{x, y} \\in \\Int^2}{x + 1 = y}$، به‌طوری‌که $Sxy$ اگر و تنها اگر $x + 1 = y$.\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Integer predecessor",
+      "canon": [
+        "FA-OL-CANON-0003:P0015",
+        "FA-REL-P044"
+      ],
+      "rationale": "Reverse the successor relation: x-1=y. Keep the integer carrier, which avoids a missing predecessor at the natural-number boundary.",
+      "alternatives": "پیشین versus سلف remains a register preference; no alternate attestation is invented.",
+      "question": null,
+      "confidence": 2,
+      "confidence_reason": "Inverse operation direct; پیشینی label contextual.",
+      "id": "FA-0019-C08",
+      "unit": "OLP-0019",
+      "source": {
+        "char_start": 1235,
+        "char_end_exclusive": 1332,
+        "line_start": 39,
+        "line_end": 42,
+        "text": "$S^{-1}$ is the predecessor relation on $\\Int$, i.e.,\n$\\Setabs{\\tuple{x,y}\\in\\Int^2}{x -1 =y}$.\n\n",
+        "sha256": "be22a24332f9f36a5b99625023bce505590264a5b5d3b58b5e5d975b3556734b"
+      },
+      "target_before": {
+        "char_start": 1262,
+        "char_end_exclusive": 1349,
+        "line_start": 39,
+        "line_end": 42,
+        "text": "$S^{-1}$ رابطهٔ پیشینی روی $\\Int$ است؛ یعنی\n$\\Setabs{\\tuple{x,y}\\in\\Int^2}{x -1 =y}$.\n\n",
+        "sha256": "6c4fa74e3c4ef047bc2bfb926d1fb05219e45ea9de08d3c78754673568a981bd"
+      },
+      "target_after": {
+        "char_start": 1366,
+        "char_end_exclusive": 1453,
+        "line_start": 39,
+        "line_end": 42,
+        "text": "$S^{-1}$ رابطهٔ پیشینی روی $\\Int$ است؛ یعنی\n$\\Setabs{\\tuple{x,y}\\in\\Int^2}{x -1 =y}$.\n\n",
+        "sha256": "6c4fa74e3c4ef047bc2bfb926d1fb05219e45ea9de08d3c78754673568a981bd"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "$S^{-1}$ رابطهٔ پیشینی روی $\\Int$ است؛ یعنی\n$\\Setabs{\\tuple{x,y}\\in\\Int^2}{x -1 =y}$.\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Two successor steps",
+      "canon": [
+        "FA-OL-CANON-0003:P0015",
+        "FA-REL-P044"
+      ],
+      "rationale": "Two consecutive successor steps produce x+2=y. Preserve the relative-product symbol and ordered pairs.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Meaning and the stated formula were checked against the source and the cited Persian usage; attestation does not imply a reader study or calibrated probability.",
+      "id": "FA-0019-C09",
+      "unit": "OLP-0019",
+      "source": {
+        "char_start": 1332,
+        "char_end_exclusive": 1390,
+        "line_start": 42,
+        "line_end": 45,
+        "text": "$S\\mid S$ is \n$ \\Setabs{\\tuple{x,y}\\in\\Int^2}{x + 2 =y}$\n\n",
+        "sha256": "e00b0b145de3c279e9b0a6b0a2c08b9a53a58d00a8a8815df703519235f91377"
+      },
+      "target_before": {
+        "char_start": 1349,
+        "char_end_exclusive": 1416,
+        "line_start": 42,
+        "line_end": 45,
+        "text": "$S\\mid S$ برابر است با\n$ \\Setabs{\\tuple{x,y}\\in\\Int^2}{x + 2 =y}$\n\n",
+        "sha256": "494317d099af45f3fb309c32a7da89e402f78e43c736aea7c63826c2d0900425"
+      },
+      "target_after": {
+        "char_start": 1453,
+        "char_end_exclusive": 1520,
+        "line_start": 42,
+        "line_end": 45,
+        "text": "$S\\mid S$ برابر است با\n$ \\Setabs{\\tuple{x,y}\\in\\Int^2}{x + 2 =y}$\n\n",
+        "sha256": "494317d099af45f3fb309c32a7da89e402f78e43c736aea7c63826c2d0900425"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "$S\\mid S$ برابر است با\n$ \\Setabs{\\tuple{x,y}\\in\\Int^2}{x + 2 =y}$\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Natural-number restriction",
+      "canon": [
+        "FA-OL-CANON-0003:P0014",
+        "FA-REL-P045"
+      ],
+      "rationale": "Restrict both coordinates to Nat under the local OLP definition. The result is still natural successor; do not use this example to erase the general distinction from domain-only restriction.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Meaning and the stated formula were checked against the source and the cited Persian usage; attestation does not imply a reader study or calibrated probability.",
+      "id": "FA-0019-C10",
+      "unit": "OLP-0019",
+      "source": {
+        "char_start": 1390,
+        "char_end_exclusive": 1457,
+        "line_start": 45,
+        "line_end": 47,
+        "text": "$\\funrestrictionto{S}{\\Nat}$ is the successor relation on~$\\Nat$.\n\n",
+        "sha256": "98d9006b4bc1558928df13353a0d0a6ba13714ec0b0257c1f84b1ad516dab035"
+      },
+      "target_before": {
+        "char_start": 1416,
+        "char_end_exclusive": 1477,
+        "line_start": 45,
+        "line_end": 47,
+        "text": "$\\funrestrictionto{S}{\\Nat}$ رابطهٔ جانشینی روی~$\\Nat$ است.\n\n",
+        "sha256": "140cd3d81d8bbcf9868e194f078afc897f43e8984b50a5ba96e72b6d9f1850b3"
+      },
+      "target_after": {
+        "char_start": 1520,
+        "char_end_exclusive": 1581,
+        "line_start": 45,
+        "line_end": 47,
+        "text": "$\\funrestrictionto{S}{\\Nat}$ رابطهٔ جانشینی روی~$\\Nat$ است.\n\n",
+        "sha256": "140cd3d81d8bbcf9868e194f078afc897f43e8984b50a5ba96e72b6d9f1850b3"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "$\\funrestrictionto{S}{\\Nat}$ رابطهٔ جانشینی روی~$\\Nat$ است.\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Finite image example",
+      "canon": [
+        "FA-OL-CANON-0003:P0015",
+        "FA-REL-P044"
+      ],
+      "rationale": "The image consists of2,3,4. Preserve braces, order and the external output4, which also prevents confusing R[A] with restriction.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Meaning and the stated formula were checked against the source and the cited Persian usage; attestation does not imply a reader study or calibrated probability.",
+      "id": "FA-0019-C11",
+      "unit": "OLP-0019",
+      "source": {
+        "char_start": 1457,
+        "char_end_exclusive": 1511,
+        "line_start": 47,
+        "line_end": 50,
+        "text": "$\\funimage{S}{\\{1,2,3\\}}$ is $\\{2, 3, 4\\}$.\n\\end{ex}\n\n",
+        "sha256": "ae7bfd06d74e75e0b7cb4023b1c9f3645a1fedae3a8cb0363fffaa90d6fc1300"
+      },
+      "target_before": {
+        "char_start": 1477,
+        "char_end_exclusive": 1541,
+        "line_start": 47,
+        "line_end": 50,
+        "text": "$\\funimage{S}{\\{1,2,3\\}}$ برابر است با $\\{2, 3, 4\\}$.\n\\end{ex}\n\n",
+        "sha256": "6359207f03538a4e10fc0aeed1241b514b4eee1dc1a34d29987c2a171990a161"
+      },
+      "target_after": {
+        "char_start": 1581,
+        "char_end_exclusive": 1645,
+        "line_start": 47,
+        "line_end": 50,
+        "text": "$\\funimage{S}{\\{1,2,3\\}}$ برابر است با $\\{2, 3, 4\\}$.\n\\end{ex}\n\n",
+        "sha256": "6359207f03538a4e10fc0aeed1241b514b4eee1dc1a34d29987c2a171990a161"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "$\\funimage{S}{\\{1,2,3\\}}$ برابر است با $\\{2, 3, 4\\}$.\n\\end{ex}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Positive-power transitive closure",
+      "canon": [
+        "FA-REL-P055",
+        "FA-OL-CANON-0003:P0015"
+      ],
+      "rationale": "Keep positive powers only, R1=R and recursion R(n+1)=Rn|R. The source reuses R+ locally; its earlier reflexive-closure use must not override this explicit definition. بستار تراگذری is retained as a transparent compound with its exact full construction.",
+      "alternatives": "",
+      "question": "Further direct attestation of بستار تراگذری is desirable. Do not falsely claim these pages contain that compound or a closure theorem.",
+      "confidence": 2,
+      "confidence_reason": "Transitivity and composition directly attested; closure compound and recursion wording contextual.",
+      "id": "FA-0019-C12",
+      "unit": "OLP-0019",
+      "source": {
+        "char_start": 1511,
+        "char_end_exclusive": 1735,
+        "line_start": 50,
+        "line_end": 56,
+        "text": "\\begin{defn}[Transitive closure]Let $R \\subseteq A^2$ be a binary relation. \n\t\nThe \\emph{transitive closure} of~$R$ is $R^+ = \\bigcup_{0 < n \\in\n\\Nat} R^n$, where we recursively define $R^1 = R$ and $R^{n+1} = R^n\n\\mid R$.\n\n",
+        "sha256": "18e729da42f67619c1be97a4e9204f4f7feed508c7c29f58a9efdfdeb5d070fe"
+      },
+      "target_before": {
+        "char_start": 1541,
+        "char_end_exclusive": 1775,
+        "line_start": 50,
+        "line_end": 56,
+        "text": "\\begin{defn}[بستار تراگذری]فرض کنید $R \\subseteq A^2$ یک رابطهٔ دوتایی باشد.\n\n\\emph{بستار تراگذریِ}~$R$ برابر است با $R^+ = \\bigcup_{0 < n \\in\n\\Nat} R^n$، که در آن به‌صورت بازگشتی $R^1 = R$ و $R^{n+1} = R^n\n\\mid R$ را تعریف می‌کنیم.\n\n",
+        "sha256": "f0fa9f3c3ae2592bf0594fc63987bfde1cc47bd06fbe6fa9cc4cb8ce055f84d7"
+      },
+      "target_after": {
+        "char_start": 1645,
+        "char_end_exclusive": 1879,
+        "line_start": 50,
+        "line_end": 56,
+        "text": "\\begin{defn}[بستار تراگذری]فرض کنید $R \\subseteq A^2$ یک رابطهٔ دوتایی باشد.\n\n\\emph{بستار تراگذریِ}~$R$ برابر است با $R^+ = \\bigcup_{0 < n \\in\n\\Nat} R^n$، که در آن به‌صورت بازگشتی $R^1 = R$ و $R^{n+1} = R^n\n\\mid R$ را تعریف می‌کنیم.\n\n",
+        "sha256": "f0fa9f3c3ae2592bf0594fc63987bfde1cc47bd06fbe6fa9cc4cb8ce055f84d7"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{defn}[بستار تراگذری]فرض کنید $R \\subseteq A^2$ یک رابطهٔ دوتایی باشد.\n\n\\emph{بستار تراگذریِ}~$R$ برابر است با $R^+ = \\bigcup_{0 < n \\in\n\\Nat} R^n$، که در آن به‌صورت بازگشتی $R^1 = R$ و $R^{n+1} = R^n\n\\mid R$ را تعریف می‌کنیم.\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Reflexive transitive closure",
+      "canon": [
+        "FA-REL-P055",
+        "FA-OL-CANON-0003:P0015"
+      ],
+      "rationale": "Union with the identity on A includes every diagonal pair, even for isolated elements. Keep R-star distinct from R-plus. Conjoined Persian adjectives do not mean two alternative closures.",
+      "alternatives": "",
+      "question": "Review preferred spelling of the combined closure compound; the definition and two required properties are fixed.",
+      "confidence": 2,
+      "confidence_reason": "Properties attested, compound provisional.",
+      "id": "FA-0019-C13",
+      "unit": "OLP-0019",
+      "source": {
+        "char_start": 1735,
+        "char_end_exclusive": 1822,
+        "line_start": 56,
+        "line_end": 60,
+        "text": "The \\emph{reflexive transitive closure} of $R$ is $R^* = R^+ \\cup\n\\Id{A}$.\n\\end{defn}\n\n",
+        "sha256": "7e4c2f7f54df40bcf0907d478b8434717ac2e2ad8efeb7fd7550be2acd98e364"
+      },
+      "target_before": {
+        "char_start": 1775,
+        "char_end_exclusive": 1861,
+        "line_start": 56,
+        "line_end": 60,
+        "text": "\\emph{بستار بازتابی و تراگذریِ} $R$ برابر است با $R^* = R^+ \\cup\n\\Id{A}$.\n\\end{defn}\n\n",
+        "sha256": "1680b9ca7d46f5e4be8b180a11a998d4995875912e749b432e74534ae7333c9b"
+      },
+      "target_after": {
+        "char_start": 1879,
+        "char_end_exclusive": 1965,
+        "line_start": 56,
+        "line_end": 60,
+        "text": "\\emph{بستار بازتابی و تراگذریِ} $R$ برابر است با $R^* = R^+ \\cup\n\\Id{A}$.\n\\end{defn}\n\n",
+        "sha256": "1680b9ca7d46f5e4be8b180a11a998d4995875912e749b432e74534ae7333c9b"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\emph{بستار بازتابی و تراگذریِ} $R$ برابر است با $R^* = R^+ \\cup\n\\Id{A}$.\n\\end{defn}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Reachability for integer successor",
+      "canon": [
+        "FA-REL-P055",
+        "FA-OL-CANON-0003:P0015",
+        "FA-REL-P044"
+      ],
+      "rationale": "Retain powers two and three, some n at least one, strict less-than for R-plus and less-or-equal for R-star. The quantifier must not become all n; no bounded-integer truncation is asserted in the mathematics.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Meaning and the stated formula were checked against the source and the cited Persian usage; attestation does not imply a reader study or calibrated probability.",
+      "id": "FA-0019-C14",
+      "unit": "OLP-0019",
+      "source": {
+        "char_start": 1822,
+        "char_end_exclusive": 2060,
+        "line_start": 60,
+        "line_end": 67,
+        "text": "\\begin{ex}\nTake the successor relation $S \\subseteq \\Int^2$. $S^2xy$ iff $x + 2 =\ny$, $S^3xy$ iff $x + 3 = y$, etc. So $S^+xy$ iff $x + n = y$ for some\n$n \\geq 1$. In other words, $S^+xy$ iff $x < y$, and $S^*xy$ iff $x \\le\ny$.\n\\end{ex}\n\n",
+        "sha256": "b8b7224446fe746869ceade0ae5d6448b5d1d2c4fcf7cf699e5eb31bc2b4f580"
+      },
+      "target_before": {
+        "char_start": 1861,
+        "char_end_exclusive": 2180,
+        "line_start": 60,
+        "line_end": 67,
+        "text": "\\begin{ex}\nرابطهٔ جانشینی $S \\subseteq \\Int^2$ را در نظر بگیرید. $S^2xy$ اگر و تنها اگر $x + 2 =\ny$، و $S^3xy$ اگر و تنها اگر $x + 3 = y$، و به همین ترتیب. پس $S^+xy$ اگر و تنها اگر $x + n = y$ برای یک\n$n \\geq 1$ برقرار باشد. به عبارت دیگر، $S^+xy$ اگر و تنها اگر $x < y$، و $S^*xy$ اگر و تنها اگر $x \\le\ny$.\n\\end{ex}\n\n",
+        "sha256": "bb3385a3974b3a63a958ae185ad5e970046dce4f80ae8ad07cb5aadc4d7c6123"
+      },
+      "target_after": {
+        "char_start": 1965,
+        "char_end_exclusive": 2284,
+        "line_start": 60,
+        "line_end": 67,
+        "text": "\\begin{ex}\nرابطهٔ جانشینی $S \\subseteq \\Int^2$ را در نظر بگیرید. $S^2xy$ اگر و تنها اگر $x + 2 =\ny$، و $S^3xy$ اگر و تنها اگر $x + 3 = y$، و به همین ترتیب. پس $S^+xy$ اگر و تنها اگر $x + n = y$ برای یک\n$n \\geq 1$ برقرار باشد. به عبارت دیگر، $S^+xy$ اگر و تنها اگر $x < y$، و $S^*xy$ اگر و تنها اگر $x \\le\ny$.\n\\end{ex}\n\n",
+        "sha256": "bb3385a3974b3a63a958ae185ad5e970046dce4f80ae8ad07cb5aadc4d7c6123"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{ex}\nرابطهٔ جانشینی $S \\subseteq \\Int^2$ را در نظر بگیرید. $S^2xy$ اگر و تنها اگر $x + 2 =\ny$، و $S^3xy$ اگر و تنها اگر $x + 3 = y$، و به همین ترتیب. پس $S^+xy$ اگر و تنها اگر $x + n = y$ برای یک\n$n \\geq 1$ برقرار باشد. به عبارت دیگر، $S^+xy$ اگر و تنها اگر $x < y$، و $S^*xy$ اگر و تنها اگر $x \\le\ny$.\n\\end{ex}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Unsolved closure exercise",
+      "canon": [
+        "FA-REL-P055",
+        "FA-REL-P052"
+      ],
+      "rationale": "Keep the imperative نشان دهید and transitivity obligation. Do not insert the validation proof into the exercise or change it into a mere numerical example.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Meaning and the stated formula were checked against the source and the cited Persian usage; attestation does not imply a reader study or calibrated probability.",
+      "id": "FA-0019-C15",
+      "unit": "OLP-0019",
+      "source": {
+        "char_start": 2060,
+        "char_end_exclusive": 2148,
+        "line_start": 67,
+        "line_end": 71,
+        "text": "\\begin{prob}\nShow that the transitive closure of $R$ is in fact transitive.\n\\end{prob}\n\n",
+        "sha256": "e1b169098da83255710cecf201dd2f1a806200ccf9c5854ea18520fea752643a"
+      },
+      "target_before": {
+        "char_start": 2180,
+        "char_end_exclusive": 2258,
+        "line_start": 67,
+        "line_end": 71,
+        "text": "\\begin{prob}\nنشان دهید که بستار تراگذریِ $R$ در واقع تراگذری است.\n\\end{prob}\n\n",
+        "sha256": "bc405c64ee23cf6f2fb474435cb39683474235aa3c50c60e02dcdf8a877e51dc"
+      },
+      "target_after": {
+        "char_start": 2284,
+        "char_end_exclusive": 2362,
+        "line_start": 67,
+        "line_end": 71,
+        "text": "\\begin{prob}\nنشان دهید که بستار تراگذریِ $R$ در واقع تراگذری است.\n\\end{prob}\n\n",
+        "sha256": "bc405c64ee23cf6f2fb474435cb39683474235aa3c50c60e02dcdf8a877e51dc"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{prob}\nنشان دهید که بستار تراگذریِ $R$ در واقع تراگذری است.\n\\end{prob}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Functions title and chapter imports only",
+      "canon": [
+        "FA-REL-P044",
+        "FA-OL-CANON-0003:P0015"
+      ],
+      "rationale": "توابع is the ordinary scholarly plural of تابع. Preserve all six active imports, the inactive isomorphic-functions comment and the chapter hook. This is a title/structure-only source unit, not the content of the imported sections.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Meaning and the stated formula were checked against the source and the cited Persian usage; attestation does not imply a reader study or calibrated probability.",
+      "id": "FA-0020-C01",
+      "unit": "OLP-0020",
+      "source": {
+        "char_start": 136,
+        "char_end_exclusive": 384,
+        "line_start": 8,
+        "line_end": 26,
+        "text": "\\olchapter{sfr}{fun}{Functions}\n\n\\olimport{function-basics}\n\n\\olimport{function-kinds}\n\n\\olimport{functions-relations}\n\n\\olimport{inverses}\n\n\\olimport{composition}\n\n%\\olimport{isomorphic-functions}\n\n\\olimport{partial-functions}\n\n\\OLEndChapterHook\n\n",
+        "sha256": "05bc9c1738a1a3f7af4520ca0fc0387e86587dcb32742c3712410b77fa5d3fea"
+      },
+      "target_before": {
+        "char_start": 136,
+        "char_end_exclusive": 380,
+        "line_start": 8,
+        "line_end": 26,
+        "text": "\\olchapter{sfr}{fun}{توابع}\n\n\\olimport{function-basics}\n\n\\olimport{function-kinds}\n\n\\olimport{functions-relations}\n\n\\olimport{inverses}\n\n\\olimport{composition}\n\n%\\olimport{isomorphic-functions}\n\n\\olimport{partial-functions}\n\n\\OLEndChapterHook\n\n",
+        "sha256": "77642837511c50e95fde8da309947e34b2e2ecc3544a08c732951c332f10c404"
+      },
+      "target_after": {
+        "char_start": 136,
+        "char_end_exclusive": 380,
+        "line_start": 8,
+        "line_end": 26,
+        "text": "\\olchapter{sfr}{fun}{توابع}\n\n\\olimport{function-basics}\n\n\\olimport{function-kinds}\n\n\\olimport{functions-relations}\n\n\\olimport{inverses}\n\n\\olimport{composition}\n\n%\\olimport{isomorphic-functions}\n\n\\olimport{partial-functions}\n\n\\OLEndChapterHook\n\n",
+        "sha256": "77642837511c50e95fde8da309947e34b2e2ecc3544a08c732951c332f10c404"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\olchapter{sfr}{fun}{توابع}\n\n\\olimport{function-basics}\n\n\\olimport{function-kinds}\n\n\\olimport{functions-relations}\n\n\\olimport{inverses}\n\n\\olimport{composition}\n\n%\\olimport{isomorphic-functions}\n\n\\olimport{partial-functions}\n\n\\OLEndChapterHook\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Basics heading and mapping intuition",
+      "canon": [
+        "FA-REL-P044"
+      ],
+      "rationale": "Retain مبانی and نگاشت, with each given input assigned a specific output. The successor illustration remains n to n+1. A source parenthesis allows the two sets to coincide; do not require distinct sets.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Meaning and the stated formula were checked against the source and the cited Persian usage; attestation does not imply a reader study or calibrated probability.",
+      "id": "FA-0021-C01",
+      "unit": "OLP-0021",
+      "source": {
+        "char_start": 179,
+        "char_end_exclusive": 457,
+        "line_start": 10,
+        "line_end": 18,
+        "text": "\\olsection{Basics}\n\n\\begin{explain}\nA \\emph{function} is a map which sends each !!{element} of a given set\nto a specific !!{element} in some (other) given set. For instance, the\noperation of adding~$1$ defines a function: each number~$n$ is mapped\nto a unique number~$n+1$. \n  \n",
+        "sha256": "1f658e4a253db83216c26986dc35d046f114151d8d37fc75f51f352d4ddb03ad"
+      },
+      "target_before": {
+        "char_start": 186,
+        "char_end_exclusive": 443,
+        "line_start": 10,
+        "line_end": 18,
+        "text": "\\olsection{مبانی}\n\n\\begin{explain}\nیک \\emph{تابع} نگاشتی است که هر !!{element} از یک مجموعهٔ معین را\nبه یک !!{element} معین در یک مجموعهٔ معینِ (دیگر) می‌فرستد. برای نمونه،\nعمل افزودن~$1$ تابعی را تعریف می‌کند: هر عدد~$n$ به\nعدد یکتای~$n+1$ نگاشته می‌شود.\n\n",
+        "sha256": "1dda65c0481dcda0ac870678c9e45ee3f213b2443f0c647fc1a5c6cd6016da66"
+      },
+      "target_after": {
+        "char_start": 186,
+        "char_end_exclusive": 443,
+        "line_start": 10,
+        "line_end": 18,
+        "text": "\\olsection{مبانی}\n\n\\begin{explain}\nیک \\emph{تابع} نگاشتی است که هر !!{element} از یک مجموعهٔ معین را\nبه یک !!{element} معین در یک مجموعهٔ معینِ (دیگر) می‌فرستد. برای نمونه،\nعمل افزودن~$1$ تابعی را تعریف می‌کند: هر عدد~$n$ به\nعدد یکتای~$n+1$ نگاشته می‌شود.\n\n",
+        "sha256": "1dda65c0481dcda0ac870678c9e45ee3f213b2443f0c647fc1a5c6cd6016da66"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\olsection{مبانی}\n\n\\begin{explain}\nیک \\emph{تابع} نگاشتی است که هر عضو از یک مجموعهٔ معین را\nبه یک عضو معین در یک مجموعهٔ معینِ (دیگر) می‌فرستد. برای نمونه،\nعمل افزودن~$1$ تابعی را تعریف می‌کند: هر عدد~$n$ به\nعدد یکتای~$n+1$ نگاشته می‌شود.\n\n",
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 67,
+          "token": "!!{element}",
+          "realization": "عضو"
+        },
+        {
+          "character_offset_in_segment": 107,
+          "token": "!!{element}",
+          "realization": "عضو"
+        }
+      ]
+    },
+    {
+      "topic": "Pairs and higher-arity inputs",
+      "canon": [
+        "FA-REL-P044",
+        "FA-REL-P045"
+      ],
+      "rationale": "Preserve pairs, triples and the arithmetic examples: addition and multiplication take two inputs and return one output. ورودی and خروجی are explanatory register choices, not claims of algorithmic computability.",
+      "alternatives": "",
+      "question": "ورودی/خروجی are contextual explanatory labels, not verbatim labels on the selected pages.",
+      "confidence": 2,
+      "confidence_reason": "Numerical function register attested; precise input/output wording contextual.",
+      "id": "FA-0021-C02",
+      "unit": "OLP-0021",
+      "source": {
+        "char_start": 457,
+        "char_end_exclusive": 716,
+        "line_start": 18,
+        "line_end": 23,
+        "text": "More generally, functions may take pairs, triples, etc., as inputs and\nreturn some kind of output. Many functions are familiar to us from\nbasic arithmetic. For instance, addition and multiplication are\nfunctions. They take in two numbers and return a third.\n\n",
+        "sha256": "19ffcf3dc3193cb73399fedd842b760140aafa2b738cf2ee6b504792f4d7ed70"
+      },
+      "target_before": {
+        "char_start": 443,
+        "char_end_exclusive": 683,
+        "line_start": 18,
+        "line_end": 23,
+        "text": "به‌طور کلی‌تر، توابع ممکن است زوج‌ها، سه‌تایی‌ها و مانند آن‌ها را ورودی بگیرند و\nنوعی خروجی بازگردانند. بسیاری از توابع را از\nحساب مقدماتی می‌شناسیم. برای نمونه، جمع و ضرب\nتابع‌اند. آن‌ها دو عدد را ورودی می‌گیرند و عدد سومی بازمی‌گردانند.\n\n",
+        "sha256": "72aabc12ead5bef9b5c636c532bb89765a5391f132eb8c53daf863471b674843"
+      },
+      "target_after": {
+        "char_start": 443,
+        "char_end_exclusive": 683,
+        "line_start": 18,
+        "line_end": 23,
+        "text": "به‌طور کلی‌تر، توابع ممکن است زوج‌ها، سه‌تایی‌ها و مانند آن‌ها را ورودی بگیرند و\nنوعی خروجی بازگردانند. بسیاری از توابع را از\nحساب مقدماتی می‌شناسیم. برای نمونه، جمع و ضرب\nتابع‌اند. آن‌ها دو عدد را ورودی می‌گیرند و عدد سومی بازمی‌گردانند.\n\n",
+        "sha256": "72aabc12ead5bef9b5c636c532bb89765a5391f132eb8c53daf863471b674843"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "به‌طور کلی‌تر، توابع ممکن است زوج‌ها، سه‌تایی‌ها و مانند آن‌ها را ورودی بگیرند و\nنوعی خروجی بازگردانند. بسیاری از توابع را از\nحساب مقدماتی می‌شناسیم. برای نمونه، جمع و ضرب\nتابع‌اند. آن‌ها دو عدد را ورودی می‌گیرند و عدد سومی بازمی‌گردانند.\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Black-box abstraction",
+      "canon": [
+        "FA-REL-P044",
+        "FA-OL-CANON-0003:P0008"
+      ],
+      "rationale": "Retain the source black-box metaphor and its immediately explicit meaning: output/input association matters, calculation method does not. This is source content, not a newly inserted analogy or a computability promise.",
+      "alternatives": "",
+      "question": "جعبهٔ سیاه is a transparent source metaphor; the consulted mathematical pages do not attest the phrase itself.",
+      "confidence": 2,
+      "confidence_reason": "Extensional interpretation source-grounded; metaphor label provisional.",
+      "id": "FA-0021-C03",
+      "unit": "OLP-0021",
+      "source": {
+        "char_start": 716,
+        "char_end_exclusive": 906,
+        "line_start": 23,
+        "line_end": 28,
+        "text": "In this mathematical, abstract sense, a function is a \\emph{black\nbox}: what matters is only what output is paired with what input, not\nthe method for calculating the output.\n\\end{explain}\n\n",
+        "sha256": "3440064cc31eeb76457a09f45d0f28fe9cd8b932c24ae9765c6e5d69cd107801"
+      },
+      "target_before": {
+        "char_start": 683,
+        "char_end_exclusive": 838,
+        "line_start": 23,
+        "line_end": 28,
+        "text": "در این معنای ریاضی و انتزاعی، تابع یک \\emph{جعبهٔ\nسیاه} است: تنها این مهم است که کدام خروجی با کدام ورودی جفت می‌شود، نه\nروش محاسبهٔ خروجی.\n\\end{explain}\n\n",
+        "sha256": "06df3e67c9b5215db5916325cf1357602ae25b82f51ed4af6875c55fefa2d989"
+      },
+      "target_after": {
+        "char_start": 683,
+        "char_end_exclusive": 838,
+        "line_start": 23,
+        "line_end": 28,
+        "text": "در این معنای ریاضی و انتزاعی، تابع یک \\emph{جعبهٔ\nسیاه} است: تنها این مهم است که کدام خروجی با کدام ورودی جفت می‌شود، نه\nروش محاسبهٔ خروجی.\n\\end{explain}\n\n",
+        "sha256": "06df3e67c9b5215db5916325cf1357602ae25b82f51ed4af6875c55fefa2d989"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "در این معنای ریاضی و انتزاعی، تابع یک \\emph{جعبهٔ\nسیاه} است: تنها این مهم است که کدام خروجی با کدام ورودی جفت می‌شود، نه\nروش محاسبهٔ خروجی.\n\\end{explain}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Function definition: assignment and uniqueness",
+      "canon": [
+        "FA-REL-P044",
+        "FA-OL-CANON-0003:P0015"
+      ],
+      "rationale": "Replace the calqued نگاشتی از هر عضو ... به یک عضو with the directly attested Persian assignment construction به هر ... دقیقاً یک ... نسبت می‌دهد. It preserves the source’s unique-value meaning, also stated in the introduction and later definition instructions.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Meaning and the stated formula were checked against the source and the cited Persian usage; attestation does not imply a reader study or calibrated probability.",
+      "id": "FA-0021-C04",
+      "unit": "OLP-0021",
+      "source": {
+        "char_start": 906,
+        "char_end_exclusive": 1033,
+        "line_start": 28,
+        "line_end": 32,
+        "text": "\\begin{defn}[Function]\nA \\emph{function} $f \\colon A \\to B$ is a mapping of each !!{element}\nof~$A$ to an !!{element} of~$B$.\n\n",
+        "sha256": "eb636a99cab9e2f236ec44c34628ef379ccc97e99813a23b8de957dcff5e2273"
+      },
+      "target_before": {
+        "char_start": 838,
+        "char_end_exclusive": 954,
+        "line_start": 28,
+        "line_end": 32,
+        "text": "\\begin{defn}[تابع]\nیک \\emph{تابع} $f \\colon A \\to B$ نگاشتی از هر !!{element}\nاز~$A$ به یک !!{element} از~$B$ است.\n\n",
+        "sha256": "39e91e87b7d11412ed86a97f5b5ee19a943c07a234178e6df818c9a3564ecc3d"
+      },
+      "target_after": {
+        "char_start": 838,
+        "char_end_exclusive": 959,
+        "line_start": 28,
+        "line_end": 32,
+        "text": "\\begin{defn}[تابع]\nیک \\emph{تابع} $f \\colon A \\to B$ به هر !!{element}\nاز~$A$ دقیقاً یک !!{element} از~$B$ نسبت می‌دهد.\n\n",
+        "sha256": "d871331444f8ee26076fcbcf63051a71e0b9b608ac42dfaf58113b4819bf5dd5"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{defn}[تابع]\nیک \\emph{تابع} $f \\colon A \\to B$ به هر عضو\nاز~$A$ دقیقاً یک عضو از~$B$ نسبت می‌دهد.\n\n",
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 59,
+          "token": "!!{element}",
+          "realization": "عضو"
+        },
+        {
+          "character_offset_in_segment": 88,
+          "token": "!!{element}",
+          "realization": "عضو"
+        }
+      ]
+    },
+    {
+      "topic": "Domain, codomain, arguments and value",
+      "canon": [
+        "FA-REL-P044",
+        "FA-OL-CANON-0003:P0015"
+      ],
+      "rationale": "Keep دامنه, هم‌دامنه and مقدار distinct. Repair اعضا از to اعضای and insert آن before the unique selected member of B. آرگومان remains explained by ورودی rather than being mistaken for a proof argument. Preserve f(x).",
+      "alternatives": "شناسه can collide with identifiers; no canon evidence here supports replacing آرگومان by it.",
+      "question": "The chosen argument synonym is contextual; confirm preferred lane terminology without changing argument/value direction.",
+      "confidence": 2,
+      "confidence_reason": "Core domain/codomain/value distinction directly attested; آرگومان/ورودی register contextual.",
+      "id": "FA-0021-C05",
+      "unit": "OLP-0021",
+      "source": {
+        "char_start": 1033,
+        "char_end_exclusive": 1316,
+        "line_start": 32,
+        "line_end": 38,
+        "text": "We call $A$ the \\emph{domain} of~$f$ and $B$ the \\emph{codomain}\nof~$f$.  The !!{element}s of~$A$ are called inputs or \\emph{arguments}\nof~$f$, and the !!{element} of~$B$ that is paired with an argument~$x$\nby~$f$ is called the \\emph{value of~$f$} for argument~$x$,\nwritten~$f(x)$.\n\n",
+        "sha256": "be424ea8019ac42baae4cc0f6a4b31e581129c647c0eef06659271f7e8cbb403"
+      },
+      "target_before": {
+        "char_start": 954,
+        "char_end_exclusive": 1233,
+        "line_start": 32,
+        "line_end": 38,
+        "text": "$A$ را \\emph{دامنهٔ}~$f$ و $B$ را \\emph{هم‌دامنهٔ}\n~$f$ می‌نامیم. !!{element}s از~$A$، ورودی‌ها یا \\emph{آرگومان‌های}\n~$f$ نامیده می‌شوند، و !!{element} از~$B$ که با آرگومان~$x$\nبه‌وسیلهٔ~$f$ جفت می‌شود، \\emph{مقدار~$f$} برای آرگومان~$x$ نام دارد و\nبه‌صورت~$f(x)$ نوشته می‌شود.\n\n",
+        "sha256": "51fe17871c0c7ecd69b8deb304e9e32d364d886fa28eac7c718267fcad7aa31c"
+      },
+      "target_after": {
+        "char_start": 959,
+        "char_end_exclusive": 1231,
+        "line_start": 32,
+        "line_end": 38,
+        "text": "$A$ را \\emph{دامنهٔ}~$f$ و $B$ را \\emph{هم‌دامنهٔ}\n~$f$ می‌نامیم. اعضای~$A$، ورودی‌ها یا \\emph{آرگومان‌های}\n~$f$ نامیده می‌شوند، و آن !!{element} از~$B$ که با آرگومان~$x$\nبه‌وسیلهٔ~$f$ جفت می‌شود، \\emph{مقدار~$f$} برای آرگومان~$x$ نام دارد و\nبه‌صورت~$f(x)$ نوشته می‌شود.\n\n",
+        "sha256": "4c9fe951e74cf157c8515c9f79d1d0eade523edc46efc9b6bb4ddbbbc336ed3a"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "$A$ را \\emph{دامنهٔ}~$f$ و $B$ را \\emph{هم‌دامنهٔ}\n~$f$ می‌نامیم. اعضای~$A$، ورودی‌ها یا \\emph{آرگومان‌های}\n~$f$ نامیده می‌شوند، و آن عضو از~$B$ که با آرگومان~$x$\nبه‌وسیلهٔ~$f$ جفت می‌شود، \\emph{مقدار~$f$} برای آرگومان~$x$ نام دارد و\nبه‌صورت~$f(x)$ نوشته می‌شود.\n\n",
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 134,
+          "token": "!!{element}",
+          "realization": "عضو"
+        }
+      ]
+    },
+    {
+      "topic": "Range is the attained subset",
+      "canon": [
+        "FA-REL-P044",
+        "FA-OL-CANON-0003:P0015"
+      ],
+      "rationale": "Retain برد and subset of codomain. Replace the potentially subset-suggesting برخی آرگومان‌ها with all values for arguments in the domain, as in the canon’s تمامی تصاویر. This is the same image set, not all members of the codomain; no surjectivity is implied.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Meaning and the stated formula were checked against the source and the cited Persian usage; attestation does not imply a reader study or calibrated probability.",
+      "id": "FA-0021-C06",
+      "unit": "OLP-0021",
+      "source": {
+        "char_start": 1316,
+        "char_end_exclusive": 1479,
+        "line_start": 38,
+        "line_end": 43,
+        "text": "The \\emph{range} $\\ran{f}$ of~$f$ is the subset of the codomain\nconsisting of the values of~$f$ for some argument; $\\ran{f} =\n\\Setabs{f(x)}{x \\in A}$.\n\\end{defn}\n\n",
+        "sha256": "e73f13a05c95572f468951c4a2fd0ecd25f8f7106ee058060e2a2de58004d9f3"
+      },
+      "target_before": {
+        "char_start": 1233,
+        "char_end_exclusive": 1392,
+        "line_start": 38,
+        "line_end": 43,
+        "text": "\\emph{برد} $\\ran{f}$ تابع~$f$ زیرمجموعه‌ای از هم‌دامنه است\nکه از مقادیر~$f$ برای برخی آرگومان‌ها تشکیل می‌شود؛ $\\ran{f} =\n\\Setabs{f(x)}{x \\in A}$.\n\\end{defn}\n\n",
+        "sha256": "2f63012494110c907983fd72f7ee91610f41a7fabff3a4d8bd2ae1b566989348"
+      },
+      "target_after": {
+        "char_start": 1231,
+        "char_end_exclusive": 1397,
+        "line_start": 38,
+        "line_end": 43,
+        "text": "\\emph{برد} $\\ran{f}$ تابع~$f$ زیرمجموعه‌ای از هم‌دامنه است\nکه از همهٔ مقادیر~$f$ برای آرگومان‌های دامنه تشکیل می‌شود؛ $\\ran{f} =\n\\Setabs{f(x)}{x \\in A}$.\n\\end{defn}\n\n",
+        "sha256": "4ba133a71a25ce949e758083098a1cb1d81ec5019a0d35691d153b8608097f31"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\emph{برد} $\\ran{f}$ تابع~$f$ زیرمجموعه‌ای از هم‌دامنه است\nکه از همهٔ مقادیر~$f$ برای آرگومان‌های دامنه تشکیل می‌شود؛ $\\ran{f} =\n\\Setabs{f(x)}{x \\in A}$.\n\\end{defn}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Arrow-diagram explanation",
+      "canon": [
+        "FA-REL-P044",
+        "FA-REL-P045"
+      ],
+      "rationale": "Keep left domain, right codomain and arrows from argument to value exactly as the source asset. RTL prose is not permission to mirror the mathematical diagram. The graphic asset itself is separately checked unchanged.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Meaning and the stated formula were checked against the source and the cited Persian usage; attestation does not imply a reader study or calibrated probability.",
+      "id": "FA-0021-C07",
+      "unit": "OLP-0021",
+      "source": {
+        "char_start": 1479,
+        "char_end_exclusive": 1793,
+        "line_start": 43,
+        "line_end": 49,
+        "text": "The diagram in \\olref{fig:function} may help to think about functions. The ellipse\non the left represents the function's \\emph{domain}; the ellipse on\nthe right represents the function's \\emph{codomain}; and an arrow\npoints from an \\emph{argument} in the domain to the corresponding\n\\emph{value} in the codomain.\n\n",
+        "sha256": "a6511c48197a795a6d77173a5344814d41f2c252f40d0c44065f580f25573934"
+      },
+      "target_before": {
+        "char_start": 1392,
+        "char_end_exclusive": 1648,
+        "line_start": 43,
+        "line_end": 49,
+        "text": "نمودارِ \\olref{fig:function} می‌تواند به فهم توابع کمک کند. بیضی\nسمت چپ \\emph{دامنهٔ} تابع را بازنمایی می‌کند؛ بیضی سمت\nراست \\emph{هم‌دامنهٔ} تابع را بازنمایی می‌کند؛ و پیکانی\nاز یک \\emph{آرگومان} در دامنه به\n\\emph{مقدار} متناظر در هم‌دامنه اشاره می‌کند.\n\n",
+        "sha256": "0a6c60578e28b627158ee1f9b08c1ec1cdaef6be1dc55543d09f323acaca06c4"
+      },
+      "target_after": {
+        "char_start": 1397,
+        "char_end_exclusive": 1653,
+        "line_start": 43,
+        "line_end": 49,
+        "text": "نمودارِ \\olref{fig:function} می‌تواند به فهم توابع کمک کند. بیضی\nسمت چپ \\emph{دامنهٔ} تابع را بازنمایی می‌کند؛ بیضی سمت\nراست \\emph{هم‌دامنهٔ} تابع را بازنمایی می‌کند؛ و پیکانی\nاز یک \\emph{آرگومان} در دامنه به\n\\emph{مقدار} متناظر در هم‌دامنه اشاره می‌کند.\n\n",
+        "sha256": "0a6c60578e28b627158ee1f9b08c1ec1cdaef6be1dc55543d09f323acaca06c4"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "نمودارِ \\olref{fig:function} می‌تواند به فهم توابع کمک کند. بیضی\nسمت چپ \\emph{دامنهٔ} تابع را بازنمایی می‌کند؛ بیضی سمت\nراست \\emph{هم‌دامنهٔ} تابع را بازنمایی می‌کند؛ و پیکانی\nاز یک \\emph{آرگومان} در دامنه به\n\\emph{مقدار} متناظر در هم‌دامنه اشاره می‌کند.\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Figure caption and indefinite member",
+      "canon": [
+        "FA-REL-P044",
+        "FA-REL-P045"
+      ],
+      "rationale": "Use the active assignment construction هر عضو را ... می‌فرستد in place of the calqued نگاشتی از هر عضو از. The locale indefinite token expands to nothing, so also restore یک before the target member. Retain figure identity, the diagram asset and input-to-output direction; no new mathematical caption content.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Meaning and the stated formula were checked against the source and the cited Persian usage; attestation does not imply a reader study or calibrated probability.",
+      "id": "FA-0021-C08",
+      "unit": "OLP-0021",
+      "source": {
+        "char_start": 1793,
+        "char_end_exclusive": 2083,
+        "line_start": 49,
+        "line_end": 57,
+        "text": "\\begin{figure}\n  \\olasset{assets/diagrams/function.tikz}\n  \\caption{A function is a mapping of each !!{element} of one set to\n    !!a{element} of another. An arrow points from an argument in the\n    domain to the corresponding value in the codomain.}\n  \\ollabel{fig:function}\n\\end{figure}\n\n",
+        "sha256": "838fdd6abeba00ce0347235b730f8ea4183746f0e0a268e0786f0d2693a6af5e"
+      },
+      "target_before": {
+        "char_start": 1648,
+        "char_end_exclusive": 1921,
+        "line_start": 49,
+        "line_end": 57,
+        "text": "\\begin{figure}\n  \\olasset{assets/diagrams/function.tikz}\n  \\caption{یک تابع نگاشتی از هر !!{element} از یک مجموعه به\n    !!a{element} از مجموعه‌ای دیگر است. پیکانی از یک آرگومان در\n    دامنه به مقدار متناظر در هم‌دامنه اشاره می‌کند.}\n  \\ollabel{fig:function}\n\\end{figure}\n\n",
+        "sha256": "26ec7fa18ced715e3a5dac85fbf230ba9e91e865f4090645b5ff7f1f0c2f04d1"
+      },
+      "target_after": {
+        "char_start": 1653,
+        "char_end_exclusive": 1926,
+        "line_start": 49,
+        "line_end": 57,
+        "text": "\\begin{figure}\n  \\olasset{assets/diagrams/function.tikz}\n  \\caption{یک تابع هر !!{element} از یک مجموعه را به\n    یک !!{element} از مجموعه‌ای دیگر می‌فرستد. پیکانی از یک آرگومان در\n    دامنه به مقدار متناظر در هم‌دامنه اشاره می‌کند.}\n  \\ollabel{fig:function}\n\\end{figure}\n\n",
+        "sha256": "18942703bd0119b6396a5a09cbcc730d12dd3d9115c10144f359f3cd3a88691a"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{figure}\n  \\olasset{assets/diagrams/function.tikz}\n  \\caption{یک تابع هر عضو از یک مجموعه را به\n    یک عضو از مجموعه‌ای دیگر می‌فرستد. پیکانی از یک آرگومان در\n    دامنه به مقدار متناظر در هم‌دامنه اشاره می‌کند.}\n  \\ollabel{fig:function}\n\\end{figure}\n\n",
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 79,
+          "token": "!!{element}",
+          "realization": "عضو"
+        },
+        {
+          "character_offset_in_segment": 117,
+          "token": "!!{element}",
+          "realization": "عضو"
+        }
+      ]
+    },
+    {
+      "topic": "Multiplication domain, codomain and range",
+      "canon": [
+        "FA-REL-P044",
+        "FA-REL-P045"
+      ],
+      "rationale": "Keep Nat times Nat as domain and Nat as codomain/range. The n times1 example works for zero too. Preserve the distinction between an ordered pair as one input and a natural number as output.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Meaning and the stated formula were checked against the source and the cited Persian usage; attestation does not imply a reader study or calibrated probability.",
+      "id": "FA-0021-C09",
+      "unit": "OLP-0021",
+      "source": {
+        "char_start": 2083,
+        "char_end_exclusive": 2361,
+        "line_start": 57,
+        "line_end": 64,
+        "text": "\\begin{ex}\nMultiplication takes pairs of natural numbers as inputs and maps them\nto natural numbers as outputs, so goes from $\\Nat \\times \\Nat$ (the\ndomain) to $\\Nat$ (the codomain). As it turns out, the range is also\n$\\Nat$, since every $n \\in \\Nat$ is $n \\times 1$.\n\\end{ex}\n\n",
+        "sha256": "c7135504e88c2eeaf127bba4ff31f8bb0d68fd465fe324ca8536ed8c4e1af4e2"
+      },
+      "target_before": {
+        "char_start": 1921,
+        "char_end_exclusive": 2189,
+        "line_start": 57,
+        "line_end": 64,
+        "text": "\\begin{ex}\nضرب، زوج‌های اعداد طبیعی را ورودی می‌گیرد و آن‌ها را\nبه اعداد طبیعی به‌عنوان خروجی نگاشت می‌کند؛ پس از $\\Nat \\times \\Nat$ (\nدامنه) به $\\Nat$ (هم‌دامنه) می‌رود. چنان‌که معلوم می‌شود، برد نیز\n$\\Nat$ است، زیرا هر $n \\in \\Nat$ برابر $n \\times 1$ است.\n\\end{ex}\n\n",
+        "sha256": "ad5e0b1f254a080ccc555c7fa44fd67393a3237390316dea40e191bb09eba643"
+      },
+      "target_after": {
+        "char_start": 1926,
+        "char_end_exclusive": 2194,
+        "line_start": 57,
+        "line_end": 64,
+        "text": "\\begin{ex}\nضرب، زوج‌های اعداد طبیعی را ورودی می‌گیرد و آن‌ها را\nبه اعداد طبیعی به‌عنوان خروجی نگاشت می‌کند؛ پس از $\\Nat \\times \\Nat$ (\nدامنه) به $\\Nat$ (هم‌دامنه) می‌رود. چنان‌که معلوم می‌شود، برد نیز\n$\\Nat$ است، زیرا هر $n \\in \\Nat$ برابر $n \\times 1$ است.\n\\end{ex}\n\n",
+        "sha256": "ad5e0b1f254a080ccc555c7fa44fd67393a3237390316dea40e191bb09eba643"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{ex}\nضرب، زوج‌های اعداد طبیعی را ورودی می‌گیرد و آن‌ها را\nبه اعداد طبیعی به‌عنوان خروجی نگاشت می‌کند؛ پس از $\\Nat \\times \\Nat$ (\nدامنه) به $\\Nat$ (هم‌دامنه) می‌رود. چنان‌که معلوم می‌شود، برد نیز\n$\\Nat$ است، زیرا هر $n \\in \\Nat$ برابر $n \\times 1$ است.\n\\end{ex}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Single-valuedness and the square-root boundary",
+      "canon": [
+        "FA-REL-P044",
+        "FA-OL-CANON-0003:P0015"
+      ],
+      "rationale": "Use تابع تعریف نمی‌کند instead of the awkward تابع‌وار نیست, while retaining two real square roots for positive inputs. Correct positive to nonnegative in the chosen-root function because OLP includes zero in Nat. The Persian editorial note explicitly identifies this source repair. Do not change the codomain to integers as in the canon example.",
+      "alternatives": "",
+      "question": "Source repair is high-confidence: at zero the positive-root rule supplies no output. The entire real-square-root existence statement remains source mathematics, not a finite-test theorem.",
+      "confidence": 3,
+      "confidence_reason": "Meaning and the stated formula were checked against the source and the cited Persian usage; attestation does not imply a reader study or calibrated probability.",
+      "id": "FA-0021-C10",
+      "unit": "OLP-0021",
+      "source": {
+        "char_start": 2361,
+        "char_end_exclusive": 2819,
+        "line_start": 64,
+        "line_end": 74,
+        "text": "\\begin{ex}\nMultiplication is a function because it pairs each input---each pair\nof natural numbers---with a single output: $\\times \\colon \\Nat^2 \\to\n\\Nat$. By contrast, mapping a natural number~$n$ to a real~$x$ such\nthat $x^2 = n$ is not functional, since each positive integer~$n$ has two\nsquare roots: $\\sqrt{n}$ and~$-\\sqrt{n}$. We can make it functional by\nonly returning the positive square root: $\\sqrt{\\phantom{X}} \\colon\n\\Nat \\to \\Real$. \n\\end{ex}\n\n",
+        "sha256": "2f80e2d0032a0f198f788d2053c2736bf3b6da8280cf0e90823aa8942656ac6f"
+      },
+      "target_before": {
+        "char_start": 2189,
+        "char_end_exclusive": 2599,
+        "line_start": 64,
+        "line_end": 74,
+        "text": "\\begin{ex}\nضرب یک تابع است، زیرا هر ورودی---هر زوج\nاز اعداد طبیعی---را با یک خروجی یگانه جفت می‌کند: $\\times \\colon \\Nat^2 \\to\n\\Nat$. در مقابل، نگاشت‌کردن عدد طبیعی~$n$ به عدد حقیقی~$x$ چنان‌که\n$x^2 = n$، تابع‌وار نیست، زیرا هر عدد صحیح مثبت~$n$ دو\nریشهٔ دوم دارد: $\\sqrt{n}$ و~$-\\sqrt{n}$. می‌توانیم با\nبازگرداندن تنها ریشهٔ دوم مثبت آن را تابع‌وار کنیم: $\\sqrt{\\phantom{X}} \\colon\n\\Nat \\to \\Real$.\n\\end{ex}\n\n",
+        "sha256": "57ca2d47db11f48cf160e1a60d7435618a87519799f9f0943f403de8b87ede57"
+      },
+      "target_after": {
+        "char_start": 2194,
+        "char_end_exclusive": 2728,
+        "line_start": 64,
+        "line_end": 75,
+        "text": "\\begin{ex}\nضرب یک تابع است، زیرا هر ورودی---هر زوج\nاز اعداد طبیعی---را با یک خروجی یگانه جفت می‌کند: $\\times \\colon \\Nat^2 \\to\n\\Nat$. در مقابل، نگاشت‌کردن عدد طبیعی~$n$ به عدد حقیقی~$x$ چنان‌که\n$x^2 = n$، تابع تعریف نمی‌کند، زیرا هر عدد صحیح مثبت~$n$ دو\nریشهٔ دوم دارد: $\\sqrt{n}$ و~$-\\sqrt{n}$. می‌توانیم با\nبازگرداندن تنها ریشهٔ دوم نامنفی، یک تابع تعریف کنیم: $\\sqrt{\\phantom{X}} \\colon\n\\Nat \\to \\Real$.\n\\emph{یادداشت ویراستاری:} در متن مبدأ «مثبت» آمده است؛ چون دامنه صفر را هم دربر می‌گیرد، در اینجا «نامنفی» لازم است.\n\\end{ex}\n\n",
+        "sha256": "0475b7e031a83590e5de54889e90bdce6164324742d73cf5406d03bc1ff935fa"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{ex}\nضرب یک تابع است، زیرا هر ورودی---هر زوج\nاز اعداد طبیعی---را با یک خروجی یگانه جفت می‌کند: $\\times \\colon \\Nat^2 \\to\n\\Nat$. در مقابل، نگاشت‌کردن عدد طبیعی~$n$ به عدد حقیقی~$x$ چنان‌که\n$x^2 = n$، تابع تعریف نمی‌کند، زیرا هر عدد صحیح مثبت~$n$ دو\nریشهٔ دوم دارد: $\\sqrt{n}$ و~$-\\sqrt{n}$. می‌توانیم با\nبازگرداندن تنها ریشهٔ دوم نامنفی، یک تابع تعریف کنیم: $\\sqrt{\\phantom{X}} \\colon\n\\Nat \\to \\Real$.\n\\emph{یادداشت ویراستاری:} در متن مبدأ «مثبت» آمده است؛ چون دامنه صفر را هم دربر می‌گیرد، در اینجا «نامنفی» لازم است.\n\\end{ex}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Student grades and parents example",
+      "canon": [
+        "FA-REL-P044",
+        "FA-REL-P052"
+      ],
+      "rationale": "Retain the complete original social example, including zero/two/more parents, without imposing a biological-parent-only interpretation. The grade example assumes every student receives a final grade; uniqueness alone would not establish a total function. No new empirical claim about students is inferred from the canon.",
+      "alternatives": "",
+      "question": "The source leaves universal grade assignment implicit. A future editorial clarification could state it, but the existing example is not rewritten into a different social claim.",
+      "confidence": 2,
+      "confidence_reason": "Mathematical interpretation clear; source assumptions and everyday example boundaries are explicit.",
+      "id": "FA-0021-C11",
+      "unit": "OLP-0021",
+      "source": {
+        "char_start": 2819,
+        "char_end_exclusive": 3127,
+        "line_start": 74,
+        "line_end": 82,
+        "text": "\\begin{ex}\nThe relation that pairs each student in a class with their final grade\nis a function---no student can get two different final grades in the\nsame class. The relation that pairs each student in a class with their\nparents is not a function: students can have zero, or two, or more\nparents.\n\\end{ex}\n\n",
+        "sha256": "12dc79c2fa339490b77dfd0b3d300b083c0389a242cd5a2747c5dd283bf0e337"
+      },
+      "target_before": {
+        "char_start": 2599,
+        "char_end_exclusive": 2897,
+        "line_start": 74,
+        "line_end": 82,
+        "text": "\\begin{ex}\nرابطه‌ای که هر دانش‌آموز یک کلاس را با نمرهٔ نهایی او جفت می‌کند،\nتابع است---هیچ دانش‌آموزی نمی‌تواند در همان\nکلاس دو نمرهٔ نهایی متفاوت بگیرد. رابطه‌ای که هر دانش‌آموز یک کلاس را با\nوالدین او جفت می‌کند تابع نیست: دانش‌آموزان می‌توانند صفر، دو، یا بیش از\nدو والد داشته باشند.\n\\end{ex}\n\n",
+        "sha256": "8a31d7de58c680fcf0e978c98358fc87a30aa1c138b9045b75c35c29d00bea75"
+      },
+      "target_after": {
+        "char_start": 2728,
+        "char_end_exclusive": 3026,
+        "line_start": 75,
+        "line_end": 83,
+        "text": "\\begin{ex}\nرابطه‌ای که هر دانش‌آموز یک کلاس را با نمرهٔ نهایی او جفت می‌کند،\nتابع است---هیچ دانش‌آموزی نمی‌تواند در همان\nکلاس دو نمرهٔ نهایی متفاوت بگیرد. رابطه‌ای که هر دانش‌آموز یک کلاس را با\nوالدین او جفت می‌کند تابع نیست: دانش‌آموزان می‌توانند صفر، دو، یا بیش از\nدو والد داشته باشند.\n\\end{ex}\n\n",
+        "sha256": "8a31d7de58c680fcf0e978c98358fc87a30aa1c138b9045b75c35c29d00bea75"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{ex}\nرابطه‌ای که هر دانش‌آموز یک کلاس را با نمرهٔ نهایی او جفت می‌کند،\nتابع است---هیچ دانش‌آموزی نمی‌تواند در همان\nکلاس دو نمرهٔ نهایی متفاوت بگیرد. رابطه‌ای که هر دانش‌آموز یک کلاس را با\nوالدین او جفت می‌کند تابع نیست: دانش‌آموزان می‌توانند صفر، دو، یا بیش از\nدو والد داشته باشند.\n\\end{ex}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Ways to specify a function",
+      "canon": [
+        "FA-REL-P044",
+        "FA-REL-P045",
+        "FA-REL-P052"
+      ],
+      "rationale": "Retain formula, computation description and table of values as alternative ways of specifying an association. Each possible argument must have exactly one value. Do not add a requirement that every function have an effective algorithm.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Meaning and the stated formula were checked against the source and the cited Persian usage; attestation does not imply a reader study or calibrated probability.",
+      "id": "FA-0021-C12",
+      "unit": "OLP-0021",
+      "source": {
+        "char_start": 3127,
+        "char_end_exclusive": 3529,
+        "line_start": 82,
+        "line_end": 92,
+        "text": "\\begin{explain}\nWe can define functions by specifying in some precise way what the\nvalue of the function is for every possible argument. Different ways of\ndoing this are by giving a formula, describing a method for computing\nthe value, or listing the values for each argument. However functions\nare defined, we must make sure that for each argument we specify one,\nand only one, value.\n\\end{explain}\n\n\n",
+        "sha256": "93cca947315fee6a1f22f5c539b3b9b82ec23b51c7a0ec19955302d99c57d64b"
+      },
+      "target_before": {
+        "char_start": 2897,
+        "char_end_exclusive": 3241,
+        "line_start": 82,
+        "line_end": 92,
+        "text": "\\begin{explain}\nمی‌توانیم توابع را با تعیین دقیق مقدار تابع برای\nهر آرگومان ممکن تعریف کنیم. روش‌های گوناگون این کار عبارت‌اند از\nارائهٔ یک فرمول، توصیف روشی برای محاسبهٔ\nمقدار، یا فهرست‌کردن مقادیر برای هر آرگومان. توابع را به هر شیوه‌ای که\nتعریف کنیم، باید اطمینان یابیم که برای هر آرگومان یک،\nو تنها یک، مقدار تعیین می‌کنیم.\n\\end{explain}\n\n\n",
+        "sha256": "26f51f7839d6b47ee3b8adea2da439bb3720c637a2020755b539c306cd1e6dcf"
+      },
+      "target_after": {
+        "char_start": 3026,
+        "char_end_exclusive": 3370,
+        "line_start": 83,
+        "line_end": 93,
+        "text": "\\begin{explain}\nمی‌توانیم توابع را با تعیین دقیق مقدار تابع برای\nهر آرگومان ممکن تعریف کنیم. روش‌های گوناگون این کار عبارت‌اند از\nارائهٔ یک فرمول، توصیف روشی برای محاسبهٔ\nمقدار، یا فهرست‌کردن مقادیر برای هر آرگومان. توابع را به هر شیوه‌ای که\nتعریف کنیم، باید اطمینان یابیم که برای هر آرگومان یک،\nو تنها یک، مقدار تعیین می‌کنیم.\n\\end{explain}\n\n\n",
+        "sha256": "26f51f7839d6b47ee3b8adea2da439bb3720c637a2020755b539c306cd1e6dcf"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{explain}\nمی‌توانیم توابع را با تعیین دقیق مقدار تابع برای\nهر آرگومان ممکن تعریف کنیم. روش‌های گوناگون این کار عبارت‌اند از\nارائهٔ یک فرمول، توصیف روشی برای محاسبهٔ\nمقدار، یا فهرست‌کردن مقادیر برای هر آرگومان. توابع را به هر شیوه‌ای که\nتعریف کنیم، باید اطمینان یابیم که برای هر آرگومان یک،\nو تنها یک، مقدار تعیین می‌کنیم.\n\\end{explain}\n\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Successor range excludes zero",
+      "canon": [
+        "FA-REL-P044",
+        "FA-OL-CANON-0003:P0015"
+      ],
+      "rationale": "Keep f from Nat to Nat, x+1, zero not attained and positive integers as range. This paragraph independently fixes OLP’s inclusion of zero in Nat and establishes the square-root correction boundary.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Meaning and the stated formula were checked against the source and the cited Persian usage; attestation does not imply a reader study or calibrated probability.",
+      "id": "FA-0021-C13",
+      "unit": "OLP-0021",
+      "source": {
+        "char_start": 3529,
+        "char_end_exclusive": 4009,
+        "line_start": 92,
+        "line_end": 102,
+        "text": "\\begin{ex}\nLet $f \\colon \\Nat \\to \\Nat$ be defined such that $f(x) = x+1$. This\nis a definition that specifies $f$ as a function which takes in\nnatural numbers and outputs natural numbers. It tells us that, given a\nnatural number~$x$, $f$ will output its successor~$x+1$.\nIn this case, the codomain $\\Nat$ is not the range of~$f$, since the\nnatural number~$0$ is not the successor of any natural number. The\nrange of~$f$ is the set of all positive integers, $\\Int^{+}$.\n\\end{ex}\n\n",
+        "sha256": "8d9a9c996240bc86972824b76646ddc0342e5d829a9da50a8cc7e41d07e1fe90"
+      },
+      "target_before": {
+        "char_start": 3241,
+        "char_end_exclusive": 3687,
+        "line_start": 92,
+        "line_end": 102,
+        "text": "\\begin{ex}\nفرض کنید $f \\colon \\Nat \\to \\Nat$ چنان تعریف شود که $f(x) = x+1$. این\nتعریف، $f$ را به‌صورت تابعی مشخص می‌کند که\nاعداد طبیعی را ورودی می‌گیرد و اعداد طبیعی خروجی می‌دهد. این تعریف می‌گوید که با داشتن یک\nعدد طبیعی~$x$، تابع $f$ جانشین آن، یعنی~$x+1$، را خروجی خواهد داد.\nدر این مورد، هم‌دامنهٔ $\\Nat$ بردِ~$f$ نیست، زیرا\nعدد طبیعی~$0$ جانشین هیچ عدد طبیعی‌ای نیست.\nبردِ~$f$ مجموعهٔ همهٔ اعداد صحیح مثبت، یعنی $\\Int^{+}$، است.\n\\end{ex}\n\n",
+        "sha256": "6b08589eafcda325dc0566afa6472663ac813a977d1be696a5b7151ba087690f"
+      },
+      "target_after": {
+        "char_start": 3370,
+        "char_end_exclusive": 3816,
+        "line_start": 93,
+        "line_end": 103,
+        "text": "\\begin{ex}\nفرض کنید $f \\colon \\Nat \\to \\Nat$ چنان تعریف شود که $f(x) = x+1$. این\nتعریف، $f$ را به‌صورت تابعی مشخص می‌کند که\nاعداد طبیعی را ورودی می‌گیرد و اعداد طبیعی خروجی می‌دهد. این تعریف می‌گوید که با داشتن یک\nعدد طبیعی~$x$، تابع $f$ جانشین آن، یعنی~$x+1$، را خروجی خواهد داد.\nدر این مورد، هم‌دامنهٔ $\\Nat$ بردِ~$f$ نیست، زیرا\nعدد طبیعی~$0$ جانشین هیچ عدد طبیعی‌ای نیست.\nبردِ~$f$ مجموعهٔ همهٔ اعداد صحیح مثبت، یعنی $\\Int^{+}$، است.\n\\end{ex}\n\n",
+        "sha256": "6b08589eafcda325dc0566afa6472663ac813a977d1be696a5b7151ba087690f"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{ex}\nفرض کنید $f \\colon \\Nat \\to \\Nat$ چنان تعریف شود که $f(x) = x+1$. این\nتعریف، $f$ را به‌صورت تابعی مشخص می‌کند که\nاعداد طبیعی را ورودی می‌گیرد و اعداد طبیعی خروجی می‌دهد. این تعریف می‌گوید که با داشتن یک\nعدد طبیعی~$x$، تابع $f$ جانشین آن، یعنی~$x+1$، را خروجی خواهد داد.\nدر این مورد، هم‌دامنهٔ $\\Nat$ بردِ~$f$ نیست، زیرا\nعدد طبیعی~$0$ جانشین هیچ عدد طبیعی‌ای نیست.\nبردِ~$f$ مجموعهٔ همهٔ اعداد صحیح مثبت، یعنی $\\Int^{+}$، است.\n\\end{ex}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Equivalent definition and input-variable correction",
+      "canon": [
+        "FA-REL-P044",
+        "FA-OL-CANON-0003:P0008"
+      ],
+      "rationale": "Correct the source input name n to x in this one sentence, so g(x)=x+2-1 and the predecessor-of-successor-of-successor narrative refer to the same input. Preserve every other symbol and disclose the change in a Persian editorial note.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Meaning and the stated formula were checked against the source and the cited Persian usage; attestation does not imply a reader study or calibrated probability.",
+      "id": "FA-0021-C14",
+      "unit": "OLP-0021",
+      "source": {
+        "char_start": 4009,
+        "char_end_exclusive": 4331,
+        "line_start": 102,
+        "line_end": 110,
+        "text": "\\begin{ex}\\ollabel{examplefunext}\nLet $g \\colon \\Nat \\to \\Nat$ be defined such that $g(x) = x+2-1$. This\ntells us that $g$ is a function which takes in natural numbers and\noutputs natural numbers. Given a natural number~$n$, $g$ will output\nthe predecessor of the successor of the successor of~$x$, i.e.,\n$x+1$.\n\\end{ex}\n\n",
+        "sha256": "74a5a60ab5a2df57e20c91a6e1c6f0e0bbbe13702eb0e2baec79d602db1e2e86"
+      },
+      "target_before": {
+        "char_start": 3687,
+        "char_end_exclusive": 3996,
+        "line_start": 102,
+        "line_end": 110,
+        "text": "\\begin{ex}\\ollabel{examplefunext}\nفرض کنید $g \\colon \\Nat \\to \\Nat$ چنان تعریف شود که $g(x) = x+2-1$. این\nتعریف به ما می‌گوید که $g$ تابعی است که اعداد طبیعی را ورودی می‌گیرد و\nاعداد طبیعی خروجی می‌دهد. با داشتن یک عدد طبیعی~$n$، تابع $g$\nپیشینِ جانشینِ جانشینِ~$x$، یعنی\n$x+1$، را خروجی خواهد داد.\n\\end{ex}\n\n",
+        "sha256": "fa38632fd504521e7edf7d16b59e01bae57c65ae918f0ebb1c2307471f34b4be"
+      },
+      "target_after": {
+        "char_start": 3816,
+        "char_end_exclusive": 4217,
+        "line_start": 103,
+        "line_end": 112,
+        "text": "\\begin{ex}\\ollabel{examplefunext}\nفرض کنید $g \\colon \\Nat \\to \\Nat$ چنان تعریف شود که $g(x) = x+2-1$. این\nتعریف به ما می‌گوید که $g$ تابعی است که اعداد طبیعی را ورودی می‌گیرد و\nاعداد طبیعی خروجی می‌دهد. با داشتن یک عدد طبیعی~$x$، تابع $g$\nپیشینِ جانشینِ جانشینِ~$x$، یعنی\n$x+1$، را خروجی خواهد داد.\n\\emph{یادداشت ویراستاری:} نماد ورودی در این جمله با نماد به‌کاررفته در تعریف تابع یکسان شد.\n\\end{ex}\n\n",
+        "sha256": "af4fe4f476f19d2634d7857bac6a1f1bf270d384ffd1928d7a559a4d54b87cb6"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{ex}\\ollabel{examplefunext}\nفرض کنید $g \\colon \\Nat \\to \\Nat$ چنان تعریف شود که $g(x) = x+2-1$. این\nتعریف به ما می‌گوید که $g$ تابعی است که اعداد طبیعی را ورودی می‌گیرد و\nاعداد طبیعی خروجی می‌دهد. با داشتن یک عدد طبیعی~$x$، تابع $g$\nپیشینِ جانشینِ جانشینِ~$x$، یعنی\n$x+1$، را خروجی خواهد داد.\n\\emph{یادداشت ویراستاری:} نماد ورودی در این جمله با نماد به‌کاررفته در تعریف تابع یکسان شد.\n\\end{ex}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Function extensionality with qualifications",
+      "canon": [
+        "FA-OL-CANON-0003:P0008",
+        "FA-REL-P044",
+        "FA-OL-CANON-0003:P0015"
+      ],
+      "rationale": "Retain اصل گسترش, directly paired with extensionality in Khani. Preserve the equality chain, forall then implication direction, and same domain AND codomain qualification. The discrete-text box prints the reverse implication under بسط; that does not authorize reversing OLP. Keep f/g definitions distinct from their shared function.",
+      "alternatives": "اصل بسط is printed in the second canon but with a differently directed statement. اصل گسترش is already supported and avoids an unnecessary terminology switch.",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Meaning and the stated formula were checked against the source and the cited Persian usage; attestation does not imply a reader study or calibrated probability.",
+      "id": "FA-0021-C15",
+      "unit": "OLP-0021",
+      "source": {
+        "char_start": 4331,
+        "char_end_exclusive": 4883,
+        "line_start": 110,
+        "line_end": 123,
+        "text": "\\begin{explain}\nWe just considered two functions, $f$ and $g$, with different\n\\emph{definitions}. However, these are the \\emph{same function}. After\nall, for any natural number~$n$, we have that $f(n) = n+1 = n+2-1 =\ng(n)$. Otherwise put: our  definitions for $f$ and~$g$ specify the\nsame mapping by means of different equations. Implicitly, then, we are\nrelying upon a principle of extensionality for functions, \n\\[\n  \\text{if }\\forall x\\, f(x) = g(x)\\text{, then }f = g\n\\]\nprovided that $f$ and~$g$ share the same domain and codomain.\n\\end{explain}\n\n",
+        "sha256": "a9f98569b708d0243ed7e0e536fda208f7662fde18da61308332527f2c96010f"
+      },
+      "target_before": {
+        "char_start": 3996,
+        "char_end_exclusive": 4476,
+        "line_start": 110,
+        "line_end": 123,
+        "text": "\\begin{explain}\nاکنون دو تابع $f$ و $g$ را با \\emph{تعریف‌های} متفاوت بررسی کردیم.\nبااین‌حال، این‌ها \\emph{همان تابع} هستند. چراکه\nبرای هر عدد طبیعی~$n$ داریم $f(n) = n+1 = n+2-1 =\ng(n)$. به بیان دیگر، تعریف‌های ما برای $f$ و~$g$ یک\nنگاشت واحد را به‌وسیلهٔ معادلات متفاوت مشخص می‌کنند. پس به‌طور ضمنی\nبر اصل گسترش برای توابع تکیه می‌کنیم،\n\\[\n  \\text{اگر }\\forall x\\, f(x) = g(x)\\text{، آنگاه }f = g\n\\]\nمشروط بر اینکه $f$ و~$g$ دامنه و هم‌دامنهٔ یکسانی داشته باشند.\n\\end{explain}\n\n",
+        "sha256": "6ca5cfbaeee384ef5720fc01cfea0f2edce98f30b90ec75594d4139df6653225"
+      },
+      "target_after": {
+        "char_start": 4217,
+        "char_end_exclusive": 4697,
+        "line_start": 112,
+        "line_end": 125,
+        "text": "\\begin{explain}\nاکنون دو تابع $f$ و $g$ را با \\emph{تعریف‌های} متفاوت بررسی کردیم.\nبااین‌حال، این‌ها \\emph{همان تابع} هستند. چراکه\nبرای هر عدد طبیعی~$n$ داریم $f(n) = n+1 = n+2-1 =\ng(n)$. به بیان دیگر، تعریف‌های ما برای $f$ و~$g$ یک\nنگاشت واحد را به‌وسیلهٔ معادلات متفاوت مشخص می‌کنند. پس به‌طور ضمنی\nبر اصل گسترش برای توابع تکیه می‌کنیم،\n\\[\n  \\text{اگر }\\forall x\\, f(x) = g(x)\\text{، آنگاه }f = g\n\\]\nمشروط بر اینکه $f$ و~$g$ دامنه و هم‌دامنهٔ یکسانی داشته باشند.\n\\end{explain}\n\n",
+        "sha256": "6ca5cfbaeee384ef5720fc01cfea0f2edce98f30b90ec75594d4139df6653225"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{explain}\nاکنون دو تابع $f$ و $g$ را با \\emph{تعریف‌های} متفاوت بررسی کردیم.\nبااین‌حال، این‌ها \\emph{همان تابع} هستند. چراکه\nبرای هر عدد طبیعی~$n$ داریم $f(n) = n+1 = n+2-1 =\ng(n)$. به بیان دیگر، تعریف‌های ما برای $f$ و~$g$ یک\nنگاشت واحد را به‌وسیلهٔ معادلات متفاوت مشخص می‌کنند. پس به‌طور ضمنی\nبر اصل گسترش برای توابع تکیه می‌کنیم،\n\\[\n  \\text{اگر }\\forall x\\, f(x) = g(x)\\text{، آنگاه }f = g\n\\]\nمشروط بر اینکه $f$ و~$g$ دامنه و هم‌دامنهٔ یکسانی داشته باشند.\n\\end{explain}\n\n",
+      "member_occurrences": []
+    },
+    {
+      "topic": "Definition by exhaustive exclusive cases",
+      "canon": [
+        "FA-REL-P052",
+        "FA-REL-P044"
+      ],
+      "rationale": "Preserve both branches, even/odd tests, denominator2 and natural codomain. جامع and دوبه‌دو ناسازگار unpack exhaustive and exclusive without dropping either requirement. The source uses a sufficient disjoint-case rule; we do not replace it by the more general compatible-overlap criterion.",
+      "alternatives": "",
+      "question": "جامع و دوبه‌دو ناسازگار is a semantically precise rendering; those exact paired words are not printed in the consulted example.",
+      "confidence": 2,
+      "confidence_reason": "Piecewise mathematical presentation directly attested; paired explanatory labels contextual.",
+      "id": "FA-0021-C16",
+      "unit": "OLP-0021",
+      "source": {
+        "char_start": 4883,
+        "char_end_exclusive": 5428,
+        "line_start": 123,
+        "line_end": 140,
+        "text": "\\begin{ex}\nWe can also define functions by cases. For instance, we could define\n$h \\colon \\Nat \\to \\Nat$  by\n\\[\nh(x) =\n\\begin{cases}\n  \\frac{x}{2} & \\text{if $x$ is even} \\\\\n  \\frac{x+1}{2} & \\text{if $x$ is odd.}\n\\end{cases}\n\\]\nSince every natural number is either even or odd, the output of this\nfunction will always be a natural number. Just remember that if you\ndefine a function by cases, every possible input must fall into\nexactly one case.  In some cases, this will require a proof that the\ncases are exhaustive and exclusive.\n\\end{ex}\n\n",
+        "sha256": "ea8f6e5ba11fc534a61fe28752143755686b84d882fc5524c8c559178c021a67"
+      },
+      "target_before": {
+        "char_start": 4476,
+        "char_end_exclusive": 5015,
+        "line_start": 123,
+        "line_end": 140,
+        "text": "\\begin{ex}\nتوابع را می‌توانیم به‌صورت موردی نیز تعریف کنیم. برای نمونه، می‌توانیم\n$h \\colon \\Nat \\to \\Nat$ را چنین تعریف کنیم:\n\\[\nh(x) =\n\\begin{cases}\n  \\frac{x}{2} & \\text{اگر $x$ زوج باشد} \\\\\n  \\frac{x+1}{2} & \\text{اگر $x$ فرد باشد.}\n\\end{cases}\n\\]\nچون هر عدد طبیعی یا زوج است یا فرد، خروجی این\nتابع همواره عددی طبیعی خواهد بود. فقط به یاد داشته باشید که اگر\nتابعی را به‌صورت موردی تعریف می‌کنید، هر ورودی ممکن باید در\nدقیقاً یک حالت قرار گیرد. در برخی موارد، این امر مستلزم اثبات آن است که\nحالت‌ها جامع و دوبه‌دو ناسازگارند.\n\\end{ex}\n\n",
+        "sha256": "d080faaa699e0f0a40b680614b016b357716ef768811927c7f8e4c1b3d85596d"
+      },
+      "target_after": {
+        "char_start": 4697,
+        "char_end_exclusive": 5236,
+        "line_start": 125,
+        "line_end": 142,
+        "text": "\\begin{ex}\nتوابع را می‌توانیم به‌صورت موردی نیز تعریف کنیم. برای نمونه، می‌توانیم\n$h \\colon \\Nat \\to \\Nat$ را چنین تعریف کنیم:\n\\[\nh(x) =\n\\begin{cases}\n  \\frac{x}{2} & \\text{اگر $x$ زوج باشد} \\\\\n  \\frac{x+1}{2} & \\text{اگر $x$ فرد باشد.}\n\\end{cases}\n\\]\nچون هر عدد طبیعی یا زوج است یا فرد، خروجی این\nتابع همواره عددی طبیعی خواهد بود. فقط به یاد داشته باشید که اگر\nتابعی را به‌صورت موردی تعریف می‌کنید، هر ورودی ممکن باید در\nدقیقاً یک حالت قرار گیرد. در برخی موارد، این امر مستلزم اثبات آن است که\nحالت‌ها جامع و دوبه‌دو ناسازگارند.\n\\end{ex}\n\n",
+        "sha256": "d080faaa699e0f0a40b680614b016b357716ef768811927c7f8e4c1b3d85596d"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{ex}\nتوابع را می‌توانیم به‌صورت موردی نیز تعریف کنیم. برای نمونه، می‌توانیم\n$h \\colon \\Nat \\to \\Nat$ را چنین تعریف کنیم:\n\\[\nh(x) =\n\\begin{cases}\n  \\frac{x}{2} & \\text{اگر $x$ زوج باشد} \\\\\n  \\frac{x+1}{2} & \\text{اگر $x$ فرد باشد.}\n\\end{cases}\n\\]\nچون هر عدد طبیعی یا زوج است یا فرد، خروجی این\nتابع همواره عددی طبیعی خواهد بود. فقط به یاد داشته باشید که اگر\nتابعی را به‌صورت موردی تعریف می‌کنید، هر ورودی ممکن باید در\nدقیقاً یک حالت قرار گیرد. در برخی موارد، این امر مستلزم اثبات آن است که\nحالت‌ها جامع و دوبه‌دو ناسازگارند.\n\\end{ex}\n\n",
+      "member_occurrences": []
+    }
+  ],
+  "corrections": [
+    {
+      "unit": "OLP-0019",
+      "id": "FA0019-RESTRICTION-CONVENTION",
+      "before": "\\cap A^2$.",
+      "after": "\\cap A^2$؛ در این تعریف، هر دو مؤلفهٔ زوج مرتب باید در مجموعهٔ داده‌شده باشند."
+    },
+    {
+      "unit": "OLP-0019",
+      "id": "FA0019-APPLICATION-IMAGE",
+      "before": "\\emph{اعمال} $R$ بر $A$ برابر است با",
+      "after": "\\emph{اعمال} $R$ بر $A$، یعنی گرفتن تصویر مجموعه تحت رابطه، برابر است با"
+    },
+    {
+      "unit": "OLP-0021",
+      "id": "FA0021-FUNCTION-ASSIGNMENT",
+      "before": "یک \\emph{تابع} $f \\colon A \\to B$ نگاشتی از هر !!{element}\nاز~$A$ به یک !!{element} از~$B$ است.",
+      "after": "یک \\emph{تابع} $f \\colon A \\to B$ به هر !!{element}\nاز~$A$ دقیقاً یک !!{element} از~$B$ نسبت می‌دهد."
+    },
+    {
+      "unit": "OLP-0021",
+      "id": "FA0021-MEMBERS-IDIOM",
+      "before": "!!{element}s از~$A$، ورودی‌ها",
+      "after": "اعضای~$A$، ورودی‌ها"
+    },
+    {
+      "unit": "OLP-0021",
+      "id": "FA0021-DEFINITE-VALUE",
+      "before": "نامیده می‌شوند، و !!{element} از~$B$",
+      "after": "نامیده می‌شوند، و آن !!{element} از~$B$"
+    },
+    {
+      "unit": "OLP-0021",
+      "id": "FA0021-CAPTION-ARTICLE",
+      "before": "\\caption{یک تابع نگاشتی از هر !!{element} از یک مجموعه به\n    !!a{element} از مجموعه‌ای دیگر است.",
+      "after": "\\caption{یک تابع هر !!{element} از یک مجموعه را به\n    یک !!{element} از مجموعه‌ای دیگر می‌فرستد."
+    },
+    {
+      "unit": "OLP-0021",
+      "id": "FA0021-RANGE-ALL-VALUES",
+      "before": "که از مقادیر~$f$ برای برخی آرگومان‌ها تشکیل می‌شود؛",
+      "after": "که از همهٔ مقادیر~$f$ برای آرگومان‌های دامنه تشکیل می‌شود؛"
+    },
+    {
+      "unit": "OLP-0021",
+      "id": "FA0021-NOT-FUNCTIONAL-IDIOM",
+      "before": "تابع‌وار نیست، زیرا",
+      "after": "تابع تعریف نمی‌کند، زیرا"
+    },
+    {
+      "unit": "OLP-0021",
+      "id": "FA0021-SQRT-NONNEGATIVE",
+      "before": "بازگرداندن تنها ریشهٔ دوم مثبت آن را تابع‌وار کنیم:",
+      "after": "بازگرداندن تنها ریشهٔ دوم نامنفی، یک تابع تعریف کنیم:"
+    },
+    {
+      "unit": "OLP-0021",
+      "id": "FA0021-SQRT-SOURCE-NOTE",
+      "before": "\\Nat \\to \\Real$.",
+      "after": "\\Nat \\to \\Real$.\n\\emph{یادداشت ویراستاری:} در متن مبدأ «مثبت» آمده است؛ چون دامنه صفر را هم دربر می‌گیرد، در اینجا «نامنفی» لازم است."
+    },
+    {
+      "unit": "OLP-0021",
+      "id": "FA0021-INPUT-VARIABLE",
+      "before": "با داشتن یک عدد طبیعی~$n$، تابع $g$",
+      "after": "با داشتن یک عدد طبیعی~$x$، تابع $g$"
+    },
+    {
+      "unit": "OLP-0021",
+      "id": "FA0021-INPUT-SOURCE-NOTE",
+      "before": "$x+1$، را خروجی خواهد داد.\n\\end{ex}",
+      "after": "$x+1$، را خروجی خواهد داد.\n\\emph{یادداشت ویراستاری:} نماد ورودی در این جمله با نماد به‌کاررفته در تعریف تابع یکسان شد.\n\\end{ex}"
+    }
+  ],
+  "human_review_gate": false,
+  "reader_release": false
+}
