@@ -1,0 +1,18 @@
+{
+  "id": "FREGE1884-S70",
+  "title": "Die Grundlagen der Arithmetik",
+  "author": "Gottlob Frege",
+  "original_year": 1884,
+  "edition": "Project Gutenberg48312 German transcription, not a facsimile inspection",
+  "source_url": "https://www.gutenberg.org/cache/epub/48312/pg48312-images.html",
+  "bytes": 350070,
+  "sha256": "4c93e640726bc6c7b9d12782814547d3c147b856aa0a3307aafbb2a607af976a",
+  "locator": "Section70, printed pages81–82, waiter/knife/plate paragraph",
+  "fragment_html_character_start": 216891,
+  "fragment_html_character_end_exclusive": 217337,
+  "fragment_sha256": "6d45dfa18879d3d276eab13de3a5c59522a2758b3b373961282a2a623a59bc20",
+  "extracted_passage": "Wenn ein Kellner sicher sein will, dass er ebensoviele Messer als Teller auf den Tisch legt, braucht er weder diese noch jene zu zählen,[82] wenn er nur rechts neben jeden Teller ein Messer legt, sodass jedes Messer auf dem Tische sich rechts neben einem Teller befindet. Die Teller und Messer sind so beiderseits eindeutig einander zugeordnet und zwar durch das gleiche Lagenverhältniss.",
+  "extract_sha256": "005475ff9b4d9d9c1b5dbbf9813abae783a9f803bbb6295d0153ff3864264d05",
+  "rights": "1884 source text is public domain; retain Gutenberg wrapper/licence with the private acquired HTML. No full HTML redistribution in review packet.",
+  "use": "Check the embedded English quotation against its cited German primary text; not a Persian target-register attestation."
+}

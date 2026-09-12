@@ -1,0 +1,2153 @@
+{
+  "schema": "public-openlogic-fa-batch-review/1",
+  "identities": [
+    {
+      "unit": "OLP-0035",
+      "source_commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+      "source_path": "content/sets-functions-relations/size-of-sets/equinumerous-sets.tex",
+      "source_git_LF_sha256": "025a3fc368d6873825effcb07631913762edbf2d3f9a0711d57dcd9575361251",
+      "source_ledger_CRLF_sha256": "7b0444e3293b300b72b7a6d49638913a778f5131fd94650dd64a5f11040c91f2",
+      "published_target_sha256": "f85f4365af77482af7a5d3891c76cb845c57fe59b6cc0de3aee945638df159f2",
+      "candidate_sha256": "3d5f0c01fee2c7fc911ecfbae3505f1f24fc10a8e761001e7f64d499d6b14740",
+      "published_target_bytes": 5822,
+      "candidate_bytes": 6234,
+      "R3_member": "source/locale/fa-IR/content/sets-functions-relations/size-of-sets/equinumerous-sets.tex",
+      "R3_archive_sha256": "ef32f359fe7813d0ffef11f3936fb1498f2f3cdcc176ab2acb56b969360c9e59",
+      "locale_config_sha256": "c8df8c39abbd1ab36dbac380490b72e9b3c565bbd1ec3d1f1be88bdc300abd0b",
+      "math_spans": 74,
+      "aligned_choices": 18,
+      "math_text_pairs": [],
+      "formal_repairs": [
+        {
+          "id": "EMPTY-F-NORMAL",
+          "span_index": 34,
+          "before": "g(x) = y",
+          "after": "f(x) = y"
+        },
+        {
+          "id": "EMPTY-F-ALT",
+          "span_index": 57,
+          "before": "g(x) = y",
+          "after": "f(x) = y"
+        }
+      ]
+    },
+    {
+      "unit": "OLP-0036",
+      "source_commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+      "source_path": "content/sets-functions-relations/size-of-sets/comparing-size.tex",
+      "source_git_LF_sha256": "075810b1cf1c8b54266518523d4665d3deae4a4937f4e19a66a09cc0e1aaebf7",
+      "source_ledger_CRLF_sha256": "cb92c7e6df9529ced700d708ad8c6efda9a0d8c3f8e69d08bcb4d614c6f5041b",
+      "published_target_sha256": "d933078b0271a7f13cf0aa98131ae75d6cedaf83f47952d3697ceeb070ba7759",
+      "candidate_sha256": "e145f2f0c53b65daac23a376d93e911993e6c2090d20a368ad6ff78a00556428",
+      "published_target_bytes": 9945,
+      "candidate_bytes": 10932,
+      "R3_member": "source/locale/fa-IR/content/sets-functions-relations/size-of-sets/comparing-size.tex",
+      "R3_archive_sha256": "ef32f359fe7813d0ffef11f3936fb1498f2f3cdcc176ab2acb56b969360c9e59",
+      "locale_config_sha256": "c8df8c39abbd1ab36dbac380490b72e9b3c565bbd1ec3d1f1be88bdc300abd0b",
+      "math_spans": 116,
+      "aligned_choices": 16,
+      "math_text_pairs": [
+        {
+          "math_span": 67,
+          "source": " iff ",
+          "target": " اگر و تنها اگر ",
+          "review": "Exact wording reviewed in the aligned choice, not accepted by token masking alone"
+        },
+        {
+          "math_span": 67,
+          "source": " iff ",
+          "target": " اگر و تنها اگر ",
+          "review": "Exact wording reviewed in the aligned choice, not accepted by token masking alone"
+        },
+        {
+          "math_span": 113,
+          "source": " and\n  ",
+          "target": " و\n  ",
+          "review": "Exact wording reviewed in the aligned choice, not accepted by token masking alone"
+        }
+      ],
+      "formal_repairs": [
+        {
+          "id": "DIAGONAL-ALL-INPUTS",
+          "span_index": 51,
+          "before": "\\overline{A}",
+          "after": "A"
+        }
+      ]
+    }
+  ],
+  "canon": {
+    "documents": [
+      {
+        "document_id": "FA-OL-CANON-0003",
+        "title_fa": "نظریهٔ مجموعه‌ها",
+        "title_en": "Set Theory",
+        "authors": [
+          "محسن خانی",
+          "افشین زارعی"
+        ],
+        "institution": "دانشگاه صنعتی اصفهان",
+        "date_statement": "۱۸ خرداد ۱۴۰۰",
+        "source_url": "https://khani.iut.ac.ir/sites/khani.iut.ac.ir/files//u145/jozve-kamel.pdf",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+        "pdf_bytes": 413763,
+        "licence_status": "No explicit redistribution licence identified; retain locally and cite only."
+      },
+      {
+        "document_id": "FA-OL-CANON-0005",
+        "title_fa": "مبانی منطق و نظریهٔ مجموعه‌ها",
+        "title_en": "Foundations of Logic and Set Theory",
+        "authors": [
+          "محسن خانی"
+        ],
+        "institution": "دانشگاه صنعتی اصفهان",
+        "date_statement": "نیمسال اول ۱۳۹۷–۱۳۹۸",
+        "source_url": "https://mohsen-khani.github.io/logic97-1/jozve/logic-full.pdf",
+        "pdf_sha256": "565558b76701858236844f19663de27ee10a8d72fd8b007e69b85159ac49f86d",
+        "pdf_bytes": 1514008,
+        "licence_status": "Public repository contains no top-level licence file; retain locally and cite only."
+      },
+      {
+        "document_id": "FA-REL-C001",
+        "title_fa": "ریاضیات گسسته و کاربردها",
+        "title_en": "Discrete Mathematics and Applications",
+        "authors": [
+          "علیرضا غفاری حدیقه",
+          "مگردیچ تومانیان"
+        ],
+        "institution": "مؤسسه چاپ و انتشارات دانشگاه جامع امام حسین (ع)",
+        "date_statement": "Author-hosted textbook; edition date not newly established",
+        "source_url": "https://hadigheha.github.io/books/teaching/Textbooks/Tarkibiyat.pdf",
+        "pdf_bytes": 1713264,
+        "pdf_sha256": "8f79c45a926c1cea819c4fefa86383f2a65ae23b1d526baaf99cf2506bb9f317",
+        "licence_status": "Private scholarly consultation; full PDF/renders/extracts not redistributed."
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "FA-OL-CANON-0003:P0008",
+        "pdf_page_1based": 8,
+        "printed_page": 7,
+        "location": "First axiom, explicit English footnote extensionality",
+        "short_attestation": "اصل گسترش",
+        "relevance_and_limits": "Direct name and equality-by-identical-membership statement. The page then discusses naive comprehension and Russell; do not import unrestricted comprehension as a sound axiom.",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+        "normalized_search_page_sha256": "9e2d1c51a7f812d15cbe390e3046708944f893119a90fb377e4ffedb132422d8",
+        "visual_page_read": true,
+        "render_sha256": "2610944f88779e1a6d6ab17e64ac316cc7a31248941a98d415362db94b1bdf41"
+      },
+      {
+        "passage_id": "FA-OL-CANON-0003:P0023",
+        "pdf_page_1based": 23,
+        "printed_page": 22,
+        "location": "Ordering definitions with quantified irreflexivity",
+        "short_attestation": "پادبازتابی؛ متعدی",
+        "relevance_and_limits": "Direct irreflexive condition forall x not xRx, distinct from negation of reflexivity. Page introduces well-ordering as equivalent to Choice. Its strict-order convention is not silently substituted for the discrete textbook’s non-strict convention.",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+        "normalized_search_page_sha256": "bc4c398faee5e94a040c24c8db275701d1fa89a36af6ef0321ddea80eeb8c92a",
+        "visual_page_read": true,
+        "render_sha256": "deb1a515753192d72692ce2ef2ac2ae0994326ed9159f68a44350c96d88051e9"
+      },
+      {
+        "passage_id": "FA-OL-CANON-0003:P0051",
+        "pdf_page_1based": 51,
+        "printed_page": 50,
+        "location": "Equinumerosity/cardinal comparison and empty exception",
+        "short_attestation": "هم‌توان؛ هم‌اندازه؛ یک‌به‌یک؛ پوشا",
+        "relevance_and_limits": "Direct cardinal comparison/inverse constructions and explicit empty alternative. General reverse preimage selection invokes Choice, but a unique inverse and least occurrence in Nat do not. Visible unrelated notation slips are not copied.",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+        "normalized_search_page_sha256": "c9cb6d220f6d4b26576dcce76e02cd3e62bd19fc15104b2020ed4b7fa15f8270",
+        "visual_page_read": true,
+        "render_sha256": "67a940e92fee081fb08ddc849c222c8523bc4a5f083d46cb0669e724dbe7d85a"
+      },
+      {
+        "passage_id": "FA-OL-CANON-0003:P0053",
+        "pdf_page_1based": 53,
+        "printed_page": 52,
+        "location": "Definition10 and Cantor theorem13",
+        "short_attestation": "شمارا؛ شمارش؛ قضیهٔ کانتور",
+        "relevance_and_limits": "Direct infinite enumeration and general Cantor diagonal argument. This page reserves شمارا for cardinality omega; retain the already disclosed OLP inclusive finite/empty convention.",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+        "normalized_search_page_sha256": "becce54ede43c880d9d6cb9113d047f3d80f60b5bd55a113b2f57d0491566cdd",
+        "visual_page_read": true,
+        "render_sha256": "0daa8a5edd7341ff10e2733feb93929882b168d92d94116aaa807b6c5c831747"
+      },
+      {
+        "passage_id": "FA-OL-CANON-0005:P0114",
+        "pdf_page_1based": 114,
+        "printed_page": 114,
+        "location": "Cardinal comparison and finite/countably-infinite distinction",
+        "short_attestation": "اعداد اصلی؛ شمارای نامتناهی؛ ناشمارا",
+        "relevance_and_limits": "Direct cardinal comparison through injections, with well-ordering/Choice background. The source convention governs inclusive enumerable; a general infinite-set comparison must not be passed off as a Choice-free definition.",
+        "pdf_sha256": "565558b76701858236844f19663de27ee10a8d72fd8b007e69b85159ac49f86d",
+        "normalized_search_page_sha256": "3d28dacaae32bc92f2e4bf1835c1bd2d4208cc6b97ef973591c5d079b6e8d6bc",
+        "visual_page_read": true,
+        "render_sha256": "c8a345b31ab57ddb4d134a484c8ec3562cebc72359f339cd5bb4534ce146c64d"
+      },
+      {
+        "passage_id": "FA-OL-CANON-0005:P0115",
+        "pdf_page_1based": 115,
+        "printed_page": 115,
+        "location": "Cantor theorem263 and diagonal contradiction",
+        "short_attestation": "زیرمجموعه؛ پوشا",
+        "relevance_and_limits": "Direct singleton injection, diagonal nonmembership and the missing-power-set-image argument. Applies to arbitrary A; Choice is not needed for this theorem.",
+        "pdf_sha256": "565558b76701858236844f19663de27ee10a8d72fd8b007e69b85159ac49f86d",
+        "normalized_search_page_sha256": "4b17fdce664e399267f83ae8e22b216f8dba6c34352b01e9981b4e6a1391cc08",
+        "visual_page_read": true,
+        "render_sha256": "e53b4e8ed27722e69c39730e3206941e3ac919e6bc3df652a8fed34d5ec0ec68"
+      },
+      {
+        "passage_id": "FA-REL-P050",
+        "pdf_page_1based": 50,
+        "printed_page": 40,
+        "location": "Composition, inverse, identity",
+        "short_attestation": "تابع معکوس؛ ترکیب توابع",
+        "relevance_and_limits": "Direct inverse of a bijection and composition conventions. Retain source macro argument order, which its own displayed equation fixes.",
+        "pdf_sha256": "8f79c45a926c1cea819c4fefa86383f2a65ae23b1d526baaf99cf2506bb9f317",
+        "normalized_search_page_sha256": "25419bc271e8d6ed82a86f4725f0ba7443efc63ec8a80876a2f5076ed88f0500",
+        "visual_page_read": true,
+        "render_sha256": "db64923aec7f422faa1c700d2b5f94cec1b7d6c2990830d2803bf5f0c470b334"
+      },
+      {
+        "passage_id": "FA-REL-P055",
+        "pdf_page_1based": 55,
+        "printed_page": 45,
+        "location": "Properties of binary relations",
+        "short_attestation": "بازتابی؛ تراگذری؛ متقارن",
+        "relevance_and_limits": "Direct property names and quantified definitions. Retain تراگذری in this edition rather than mechanically replacing it with the other canon’s متعدی. Non-symmetry is not asymmetry.",
+        "pdf_sha256": "8f79c45a926c1cea819c4fefa86383f2a65ae23b1d526baaf99cf2506bb9f317",
+        "normalized_search_page_sha256": "0cd67853374452ffd3380665ee004989c1c1c86b1f079f339f770b2ed563d9da",
+        "visual_page_read": true,
+        "render_sha256": "2da1f1c1ef86abef843c5ad5872de82dcb28cf74015556d2a44465563d769f63"
+      },
+      {
+        "passage_id": "FA-REL-P056",
+        "pdf_page_1based": 56,
+        "printed_page": 46,
+        "location": "Equivalence relation definition",
+        "short_attestation": "رابطهٔ هم‌ارزی",
+        "relevance_and_limits": "Direct three-property equivalence definition; equality and congruence examples do not identify equinumerosity with literal set equality.",
+        "pdf_sha256": "8f79c45a926c1cea819c4fefa86383f2a65ae23b1d526baaf99cf2506bb9f317",
+        "normalized_search_page_sha256": "251c1107af9617a405a67a5618ba52a2e864ed73995aa8334adba489ee7eb465",
+        "visual_page_read": true,
+        "render_sha256": "47de3bbad8a4d60717e3835d7300d10fa2374b078c9fdb8552841c4b819a1dcb"
+      }
+    ]
+  },
+  "choices": [
+    {
+      "topic": "Equinumerosity heading",
+      "canon": [
+        "FA-OL-CANON-0003:P0051",
+        "FA-OL-CANON-0005:P0114"
+      ],
+      "rationale": "هم‌توانی follows directly from the canon’s هم‌توان and هم‌اندازه. It means same cardinality, not literal equality or being related by any map.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source meaning and directly relevant scholarly construction checked.",
+      "id": "FA-0035-C01",
+      "unit": "OLP-0035",
+      "source": {
+        "char_start": 193,
+        "char_end_exclusive": 221,
+        "line_start": 11,
+        "line_end": 13,
+        "text": "\\olsection{Equinumerosity}\n\n",
+        "sha256": "b44e8fca14e8202f82d2cf04d1eacd034ebe87fb7f97d70b47b8b963a6955967"
+      },
+      "target_before": {
+        "char_start": 200,
+        "char_end_exclusive": 222,
+        "line_start": 11,
+        "line_end": 13,
+        "text": "\\olsection{هم‌توانی}\n\n",
+        "sha256": "9d23ad12fb573bae2eed2547ee9b1d24c555384e043ebca43ca918a021b7ffaf"
+      },
+      "target_after": {
+        "char_start": 200,
+        "char_end_exclusive": 222,
+        "line_start": 11,
+        "line_end": 13,
+        "text": "\\olsection{هم‌توانی}\n\n",
+        "sha256": "9d23ad12fb573bae2eed2547ee9b1d24c555384e043ebca43ca918a021b7ffaf"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\olsection{هم‌توانی}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Intuitive size to arbitrary-set comparison",
+      "canon": [
+        "FA-OL-CANON-0003:P0051",
+        "FA-OL-CANON-0005:P0114"
+      ],
+      "rationale": "Retain finite/infinite contrast and arbitrary sizes. The following historical illustration already belongs to the source; no new analogy companion is inserted.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source meaning and directly relevant scholarly construction checked.",
+      "id": "FA-0035-C02",
+      "unit": "OLP-0035",
+      "source": {
+        "char_start": 221,
+        "char_end_exclusive": 512,
+        "line_start": 13,
+        "line_end": 18,
+        "text": "We have an intuitive notion of ``size'' of sets, which works fine for\nfinite sets. But what about infinite sets? If we want to come up with\na formal way of comparing the sizes of two sets of \\emph{any} size, it\nis a good idea to start by defining when sets are the same size. Here\nis Frege:\n",
+        "sha256": "f7019f4214c06531508b798ce983df833b674480831295862601b07fd4342d31"
+      },
+      "target_before": {
+        "char_start": 222,
+        "char_end_exclusive": 536,
+        "line_start": 13,
+        "line_end": 19,
+        "text": "تصوری شهودی از «اندازه» مجموعه‌ها داریم که برای مجموعه‌های متناهی به‌خوبی\nکار می‌کند. اما مجموعه‌های نامتناهی چه؟ اگر بخواهیم روشی صوری برای\nمقایسهٔ اندازهٔ دو مجموعه، با \\emph{هر} اندازه‌ای که داشته باشند، به\nدست دهیم، بهتر\nاست کار را با تعریف اینکه چه هنگام دو مجموعه هم‌اندازه‌اند آغاز کنیم.\nفرگه چنین می‌گوید:\n",
+        "sha256": "faa97332fb0821531c2c744d0d0ed16b5b1a7a5fb70d3afa71e057e2a02ba5ac"
+      },
+      "target_after": {
+        "char_start": 222,
+        "char_end_exclusive": 536,
+        "line_start": 13,
+        "line_end": 19,
+        "text": "تصوری شهودی از «اندازه» مجموعه‌ها داریم که برای مجموعه‌های متناهی به‌خوبی\nکار می‌کند. اما مجموعه‌های نامتناهی چه؟ اگر بخواهیم روشی صوری برای\nمقایسهٔ اندازهٔ دو مجموعه، با \\emph{هر} اندازه‌ای که داشته باشند، به\nدست دهیم، بهتر\nاست کار را با تعریف اینکه چه هنگام دو مجموعه هم‌اندازه‌اند آغاز کنیم.\nفرگه چنین می‌گوید:\n",
+        "sha256": "faa97332fb0821531c2c744d0d0ed16b5b1a7a5fb70d3afa71e057e2a02ba5ac"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "تصوری شهودی از «اندازه» مجموعه‌ها داریم که برای مجموعه‌های متناهی به‌خوبی\nکار می‌کند. اما مجموعه‌های نامتناهی چه؟ اگر بخواهیم روشی صوری برای\nمقایسهٔ اندازهٔ دو مجموعه، با \\emph{هر} اندازه‌ای که داشته باشند، به\nدست دهیم، بهتر\nاست کار را با تعریف اینکه چه هنگام دو مجموعه هم‌اندازه‌اند آغاز کنیم.\nفرگه چنین می‌گوید:\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Frege quotation",
+      "canon": [
+        "FA-REL-P050",
+        "FA-OL-CANON-0003:P0051"
+      ],
+      "rationale": "Compared the cited German §70 transcription as ORIGINAL_QUOTATION_PROVENANCE.json. Make uniquely correlated explicitly two-sided, as beiderseits eindeutig states. Preserve waiter, knives, plates, right-side relation and citation key/section. Persian mathematical register uses the canon’s bijective correspondence, not new attribution.",
+      "question": "Primary text was checked through a German transcription, not a scanned facsimile. The Persian wording is an editorial translation of the embedded quotation, not an established published Persian translation.",
+      "confidence": 2,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source meaning checked; the stated convention or historical-evidence limit remains.",
+      "id": "FA-0035-C03",
+      "unit": "OLP-0035",
+      "source": {
+        "char_start": 512,
+        "char_end_exclusive": 946,
+        "line_start": 18,
+        "line_end": 26,
+        "text": "\\begin{quote}\n  If a waiter wants to be sure that he has laid exactly as many knives\n  as plates on the table, he does not need to count either of them, if\n  he simply lays a knife to the right of each plate, so that every\n  knife on the table lies to the right of some plate. The plates and\n  knives are thus uniquely correlated to each other, and indeed\n  through that same spatial relationship. \\citep[\\S70]{Frege1884}\n\\end{quote}\n",
+        "sha256": "1a8a7ad4a6a6348a52cc031be7392b3fca201119096d93280e6ebbdf1b08b4dc"
+      },
+      "target_before": {
+        "char_start": 536,
+        "char_end_exclusive": 928,
+        "line_start": 19,
+        "line_end": 27,
+        "text": "\\begin{quote}\n  اگر پیشخدمتی بخواهد مطمئن شود که روی میز دقیقاً به تعداد بشقاب‌ها\n  چاقو چیده است، لازم نیست هیچ‌یک را بشمارد؛ کافی است در سمت راست هر\n  بشقاب یک چاقو بگذارد، به‌گونه‌ای که هر چاقوی روی میز در سمت راست\n  یکی از بشقاب‌ها قرار گیرد. به این ترتیب، بشقاب‌ها و چاقوها به‌طور\n  یکتا با یکدیگر متناظر می‌شوند، آن هم به‌واسطهٔ همان رابطهٔ مکانی.\n  \\citep[\\S70]{Frege1884}\n\\end{quote}\n",
+        "sha256": "446650e35741deffbaaf0036fd832dbf5c3bb5934ac6f551a481012e892e552c"
+      },
+      "target_after": {
+        "char_start": 536,
+        "char_end_exclusive": 941,
+        "line_start": 19,
+        "line_end": 27,
+        "text": "\\begin{quote}\n  اگر پیشخدمتی بخواهد مطمئن شود که روی میز دقیقاً به تعداد بشقاب‌ها\n  چاقو چیده است، لازم نیست هیچ‌یک را بشمارد؛ کافی است در سمت راست هر\n  بشقاب یک چاقو بگذارد، به‌گونه‌ای که هر چاقوی روی میز در سمت راست\n  یکی از بشقاب‌ها قرار گیرد. به این ترتیب، بشقاب‌ها و چاقوها از هر دو طرف به‌طور\n  یکتا با یکدیگر متناظر می‌شوند، آن هم به‌واسطهٔ همان رابطهٔ مکانی.\n  \\citep[\\S70]{Frege1884}\n\\end{quote}\n",
+        "sha256": "d017d42d5fe70b7585f19ea2b02df3c64cf2e96af365b80e927a86ad58f4060c"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{quote}\n  اگر پیشخدمتی بخواهد مطمئن شود که روی میز دقیقاً به تعداد بشقاب‌ها\n  چاقو چیده است، لازم نیست هیچ‌یک را بشمارد؛ کافی است در سمت راست هر\n  بشقاب یک چاقو بگذارد، به‌گونه‌ای که هر چاقوی روی میز در سمت راست\n  یکی از بشقاب‌ها قرار گیرد. به این ترتیب، بشقاب‌ها و چاقوها از هر دو طرف به‌طور\n  یکتا با یکدیگر متناظر می‌شوند، آن هم به‌واسطهٔ همان رابطهٔ مکانی.\n  \\citep[\\S70]{Frege1884}\n\\end{quote}\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "From illustration to definition",
+      "canon": [
+        "FA-OL-CANON-0003:P0051",
+        "FA-OL-CANON-0005:P0114"
+      ],
+      "rationale": "Use direct Persian نکتهٔ این عبارت rather than the literal بینش این قطعه. Preserve the function of the sentence: introduce the formal definition.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source meaning and directly relevant scholarly construction checked.",
+      "id": "FA-0035-C04",
+      "unit": "OLP-0035",
+      "source": {
+        "char_start": 946,
+        "char_end_exclusive": 1023,
+        "line_start": 26,
+        "line_end": 29,
+        "text": "The insight of this passage can be brought out through a formal\ndefinition:\n\n",
+        "sha256": "95e53cc4d6c6a10d423b810146b8acb213b0d6d9cf2f643dfe539ff04c9908e4"
+      },
+      "target_before": {
+        "char_start": 928,
+        "char_end_exclusive": 980,
+        "line_start": 27,
+        "line_end": 29,
+        "text": "بینش این قطعه را می‌توان با تعریفی صوری آشکار کرد:\n\n",
+        "sha256": "f9f07c062d24ad8715a4e7a59e62280c5f738ff2028e3b05af3b5aa3b6cbcba9"
+      },
+      "target_after": {
+        "char_start": 941,
+        "char_end_exclusive": 999,
+        "line_start": 27,
+        "line_end": 29,
+        "text": "نکتهٔ این عبارت را می‌توان در قالب تعریفی صوری بیان کرد:\n\n",
+        "sha256": "203e36732d6c0292c52345b6a17bf880c6cce25881d633a65b5b6db1afb091d6"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "نکتهٔ این عبارت را می‌توان در قالب تعریفی صوری بیان کرد:\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Definition of equinumerosity",
+      "canon": [
+        "FA-OL-CANON-0003:P0051",
+        "FA-OL-CANON-0005:P0114",
+        "FA-REL-P050"
+      ],
+      "rationale": "Bijection A→B is equivalent to cardeq, with if and only if. Preserve the label and formula; existence of one bijection is sufficient, no canonical bijection required.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source meaning and directly relevant scholarly construction checked.",
+      "id": "FA-0035-C05",
+      "unit": "OLP-0035",
+      "source": {
+        "char_start": 1023,
+        "char_end_exclusive": 1186,
+        "line_start": 29,
+        "line_end": 34,
+        "text": "\\begin{defn}\\ollabel{comparisondef}\n  $A$ is \\emph{equinumerous} with $B$, written $\\cardeq{A}{B}$, iff\n  there is !!a{bijection} $f \\colon A \\to B$. \n\\end{defn}\n\n",
+        "sha256": "b70eced1ec9c9ccc149971b75733c026bd4dbb518a8301f8faa8405fb05a92a3"
+      },
+      "target_before": {
+        "char_start": 980,
+        "char_end_exclusive": 1186,
+        "line_start": 29,
+        "line_end": 35,
+        "text": "\\begin{defn}\\ollabel{comparisondef}\n  مجموعهٔ $A$ با $B$ \\emph{هم‌توان} است، که آن را با $\\cardeq{A}{B}$\n  می‌نویسیم، اگر و تنها اگر !!a{bijection} به‌صورت\n  $f \\colon A \\to B$ وجود داشته باشد.\n\\end{defn}\n\n",
+        "sha256": "236fffd69f9de19fd1eee1ba64c9715b1e01b967565e2520b3fd8fd3285da79a"
+      },
+      "target_after": {
+        "char_start": 999,
+        "char_end_exclusive": 1205,
+        "line_start": 29,
+        "line_end": 35,
+        "text": "\\begin{defn}\\ollabel{comparisondef}\n  مجموعهٔ $A$ با $B$ \\emph{هم‌توان} است، که آن را با $\\cardeq{A}{B}$\n  می‌نویسیم، اگر و تنها اگر !!a{bijection} به‌صورت\n  $f \\colon A \\to B$ وجود داشته باشد.\n\\end{defn}\n\n",
+        "sha256": "236fffd69f9de19fd1eee1ba64c9715b1e01b967565e2520b3fd8fd3285da79a"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{defn}\\ollabel{comparisondef}\n  مجموعهٔ $A$ با $B$ \\emph{هم‌توان} است، که آن را با $\\cardeq{A}{B}$\n  می‌نویسیم، اگر و تنها اگر تناظر دوسویی به‌صورت\n  $f \\colon A \\to B$ وجود داشته باشد.\n\\end{defn}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 133,
+          "token": "!!a{bijection}",
+          "realization": "تناظر دوسویی"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Equivalence proposition",
+      "canon": [
+        "FA-REL-P056",
+        "FA-OL-CANON-0003:P0051"
+      ],
+      "rationale": "Same three-property equivalence relation as in the actual discrete-mathematics definition; no antisymmetry or literal equality condition.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source meaning and directly relevant scholarly construction checked.",
+      "id": "FA-0035-C06",
+      "unit": "OLP-0035",
+      "source": {
+        "char_start": 1186,
+        "char_end_exclusive": 1284,
+        "line_start": 34,
+        "line_end": 38,
+        "text": "\\begin{prop}\\ollabel{equinumerosityisequi}\nEquinumerosity is an equivalence relation.\n\\end{prop}\n\n",
+        "sha256": "63ecb7330b8cbb884021de6a0bbc7aef2b02bcf6e8461a823a601780fe2cd6f7"
+      },
+      "target_before": {
+        "char_start": 1186,
+        "char_end_exclusive": 1273,
+        "line_start": 35,
+        "line_end": 39,
+        "text": "\\begin{prop}\\ollabel{equinumerosityisequi}\nهم‌توانی یک رابطهٔ هم‌ارزی است.\n\\end{prop}\n\n",
+        "sha256": "45a34c6a8715b8e173e5dbda76a4263eee9adbacaf62b8d6aba2e749c9ffde86"
+      },
+      "target_after": {
+        "char_start": 1205,
+        "char_end_exclusive": 1292,
+        "line_start": 35,
+        "line_end": 39,
+        "text": "\\begin{prop}\\ollabel{equinumerosityisequi}\nهم‌توانی یک رابطهٔ هم‌ارزی است.\n\\end{prop}\n\n",
+        "sha256": "45a34c6a8715b8e173e5dbda76a4263eee9adbacaf62b8d6aba2e749c9ffde86"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{prop}\\ollabel{equinumerosityisequi}\nهم‌توانی یک رابطهٔ هم‌ارزی است.\n\\end{prop}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Three proof obligations",
+      "canon": [
+        "FA-REL-P055",
+        "FA-REL-P056"
+      ],
+      "rationale": "Retain reflexive, symmetric and transitive as three distinct requirements. تراگذری is directly attested; do not replace it merely because another canon uses متعدی.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "متعدی is another consulted canon’s term, but retaining the directly attested تراگذری maintains the existing register.",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source meaning and directly relevant scholarly construction checked.",
+      "id": "FA-0035-C07",
+      "unit": "OLP-0035",
+      "source": {
+        "char_start": 1284,
+        "char_end_exclusive": 1403,
+        "line_start": 38,
+        "line_end": 42,
+        "text": "\\begin{proof} \nWe must show that equinumerosity is reflexive, symmetric, and\ntransitive. Let $A, B$, and $C$ be sets.\n\n",
+        "sha256": "7112e9594f80793d02d1a03dd8952846ba38814dc72905415bb745d4b2947000"
+      },
+      "target_before": {
+        "char_start": 1273,
+        "char_end_exclusive": 1382,
+        "line_start": 39,
+        "line_end": 43,
+        "text": "\\begin{proof}\nباید نشان دهیم که هم‌توانی بازتابی، متقارن و تراگذری است. فرض کنید\n$A, B$ و $C$ مجموعه باشند.\n\n",
+        "sha256": "faac620c21d79db17958b5659bd8db8d9fd0ed66bc72dab3e681c3446c2f44bb"
+      },
+      "target_after": {
+        "char_start": 1292,
+        "char_end_exclusive": 1401,
+        "line_start": 39,
+        "line_end": 43,
+        "text": "\\begin{proof}\nباید نشان دهیم که هم‌توانی بازتابی، متقارن و تراگذری است. فرض کنید\n$A, B$ و $C$ مجموعه باشند.\n\n",
+        "sha256": "faac620c21d79db17958b5659bd8db8d9fd0ed66bc72dab3e681c3446c2f44bb"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{proof}\nباید نشان دهیم که هم‌توانی بازتابی، متقارن و تراگذری است. فرض کنید\n$A, B$ و $C$ مجموعه باشند.\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Reflexivity by identity",
+      "canon": [
+        "FA-REL-P050",
+        "FA-REL-P055"
+      ],
+      "rationale": "Identity map is a bijection even on empty A. Preserve universal x and both occurrences of A.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source meaning and directly relevant scholarly construction checked.",
+      "id": "FA-0035-C08",
+      "unit": "OLP-0035",
+      "source": {
+        "char_start": 1403,
+        "char_end_exclusive": 1547,
+        "line_start": 42,
+        "line_end": 46,
+        "text": "\\emph{Reflexivity.} The identity map $\\Id{A} \\colon A \\to A$, where\n$\\Id{A} (x) = x$ for all $x \\in A$, is !!a{bijection}. So\n$\\cardeq{A}{A}$.\n\n",
+        "sha256": "5b8572e4a2347e20c3a63d45f1d8c55bb44bd53c6da9ea2777a51d8d6dd8b288"
+      },
+      "target_before": {
+        "char_start": 1382,
+        "char_end_exclusive": 1527,
+        "line_start": 43,
+        "line_end": 47,
+        "text": "\\emph{بازتابی‌بودن.} نگاشت همانیِ $\\Id{A} \\colon A \\to A$، که در آن\n$\\Id{A} (x) = x$ برای هر $x \\in A$، !!a{bijection} است. پس\n$\\cardeq{A}{A}$.\n\n",
+        "sha256": "427461d8a24dc2ef9a0429af007c13ef7d9bcc260818fa2125f03d6207727859"
+      },
+      "target_after": {
+        "char_start": 1401,
+        "char_end_exclusive": 1546,
+        "line_start": 43,
+        "line_end": 47,
+        "text": "\\emph{بازتابی‌بودن.} نگاشت همانیِ $\\Id{A} \\colon A \\to A$، که در آن\n$\\Id{A} (x) = x$ برای هر $x \\in A$، !!a{bijection} است. پس\n$\\cardeq{A}{A}$.\n\n",
+        "sha256": "427461d8a24dc2ef9a0429af007c13ef7d9bcc260818fa2125f03d6207727859"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\emph{بازتابی‌بودن.} نگاشت همانیِ $\\Id{A} \\colon A \\to A$، که در آن\n$\\Id{A} (x) = x$ برای هر $x \\in A$، تناظر دوسویی است. پس\n$\\cardeq{A}{A}$.\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 104,
+          "token": "!!a{bijection}",
+          "realization": "تناظر دوسویی"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Symmetry by inverse",
+      "canon": [
+        "FA-REL-P050",
+        "FA-REL-P055"
+      ],
+      "rationale": "Use معکوس consistently with the read function canon. Inverse of bijection is total on B and bijective onto A; no inversion of a merely injective map is assumed.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source meaning and directly relevant scholarly construction checked.",
+      "id": "FA-0035-C09",
+      "unit": "OLP-0035",
+      "source": {
+        "char_start": 1547,
+        "char_end_exclusive": 1791,
+        "line_start": 46,
+        "line_end": 51,
+        "text": "\\emph{Symmetry.} Suppose $\\cardeq{A}{B}$, i.e., there is\n!!a{bijection} $f\\colon A \\to B$. Since $f$ is !!{bijective}, its\ninverse $f^{-1}$ exists and is also !!{bijective}. Hence,\n$f^{-1}\\colon B \\to A$ is !!a{bijection}, so $\\cardeq{B}{A}$.\n\n",
+        "sha256": "94df79fb5f08f4cf51d5d05e0251e8539f934b0585671028ae08a3f0f7aed0eb"
+      },
+      "target_before": {
+        "char_start": 1527,
+        "char_end_exclusive": 1780,
+        "line_start": 47,
+        "line_end": 52,
+        "text": "\\emph{تقارن.} فرض کنید $\\cardeq{A}{B}$؛ یعنی !!a{bijection} به‌صورت\n$f\\colon A \\to B$ وجود دارد. چون $f$ !!{bijective} است، وارون آن\n$f^{-1}$ وجود دارد و آن نیز !!{bijective} است. بنابراین\n$f^{-1}\\colon B \\to A$ !!a{bijection} است؛ پس $\\cardeq{B}{A}$.\n\n",
+        "sha256": "ed8bf0f6ef59d412192f72976d8a83415fcb5cc2f163401f9de83b41c4887d5d"
+      },
+      "target_after": {
+        "char_start": 1546,
+        "char_end_exclusive": 1799,
+        "line_start": 47,
+        "line_end": 52,
+        "text": "\\emph{تقارن.} فرض کنید $\\cardeq{A}{B}$؛ یعنی !!a{bijection} به‌صورت\n$f\\colon A \\to B$ وجود دارد. چون $f$ !!{bijective} است، معکوس آن\n$f^{-1}$ وجود دارد و آن نیز !!{bijective} است. بنابراین\n$f^{-1}\\colon B \\to A$ !!a{bijection} است؛ پس $\\cardeq{B}{A}$.\n\n",
+        "sha256": "297c01a18daaceaf165dbea6bf95f895bf57a048cb5ed0d5d24c1e457d335afc"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\emph{تقارن.} فرض کنید $\\cardeq{A}{B}$؛ یعنی تناظر دوسویی به‌صورت\n$f\\colon A \\to B$ وجود دارد. چون $f$ دوسویی است، معکوس آن\n$f^{-1}$ وجود دارد و آن نیز دوسویی است. بنابراین\n$f^{-1}\\colon B \\to A$ تناظر دوسویی است؛ پس $\\cardeq{B}{A}$.\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 45,
+          "token": "!!a{bijection}",
+          "realization": "تناظر دوسویی"
+        },
+        {
+          "character_offset_in_segment": 105,
+          "token": "!!{bijective}",
+          "realization": "دوسویی"
+        },
+        {
+          "character_offset_in_segment": 161,
+          "token": "!!{bijective}",
+          "realization": "دوسویی"
+        },
+        {
+          "character_offset_in_segment": 212,
+          "token": "!!a{bijection}",
+          "realization": "تناظر دوسویی"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Transitivity by composition",
+      "canon": [
+        "FA-REL-P050",
+        "FA-REL-P055"
+      ],
+      "rationale": "Keep f:A→B,g:B→C and source comp(f,g) macro order, consistent with comp(g,f)(n)=f(g(n)) later. Composition of bijections is bijective; empty cases included.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source meaning and directly relevant scholarly construction checked.",
+      "id": "FA-0035-C10",
+      "unit": "OLP-0035",
+      "source": {
+        "char_start": 1791,
+        "char_end_exclusive": 2039,
+        "line_start": 51,
+        "line_end": 57,
+        "text": "\\emph{Transitivity.} Suppose that $\\cardeq{A}{B}$ and $\\cardeq{B}{C}$,\ni.e., there are !!{bijection}s $f\\colon A \\to B$ and $g\\colon B \\to\nC$. Then the composition $\\comp{f}{g}\\colon A \\to C$ is !!{bijective},\nso that $\\cardeq{A}{C}$.\n\\end{proof}\n\n",
+        "sha256": "fede767d1c6231259b0f28e9b70f2bb9dae2e9f65cf12f3fb7ab47101a5ccca1"
+      },
+      "target_before": {
+        "char_start": 1780,
+        "char_end_exclusive": 2007,
+        "line_start": 52,
+        "line_end": 58,
+        "text": "\\emph{تراگذری.} فرض کنید $\\cardeq{A}{B}$ و $\\cardeq{B}{C}$؛ یعنی\n!!{bijection}s زیر وجود دارند: $f\\colon A \\to B$ و $g\\colon B \\to\nC$. آنگاه ترکیب $\\comp{f}{g}\\colon A \\to C$ !!{bijective}\nاست؛ پس $\\cardeq{A}{C}$.\n\\end{proof}\n\n",
+        "sha256": "0026c3bacd9066fe58254cec8125eb6b10c754c611ea3f24075add4ac21fe09d"
+      },
+      "target_after": {
+        "char_start": 1799,
+        "char_end_exclusive": 2026,
+        "line_start": 52,
+        "line_end": 58,
+        "text": "\\emph{تراگذری.} فرض کنید $\\cardeq{A}{B}$ و $\\cardeq{B}{C}$؛ یعنی\n!!{bijection}s زیر وجود دارند: $f\\colon A \\to B$ و $g\\colon B \\to\nC$. آنگاه ترکیب $\\comp{f}{g}\\colon A \\to C$ !!{bijective}\nاست؛ پس $\\cardeq{A}{C}$.\n\\end{proof}\n\n",
+        "sha256": "0026c3bacd9066fe58254cec8125eb6b10c754c611ea3f24075add4ac21fe09d"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\emph{تراگذری.} فرض کنید $\\cardeq{A}{B}$ و $\\cardeq{B}{C}$؛ یعنی\nتناظرهای دوسویی زیر وجود دارند: $f\\colon A \\to B$ و $g\\colon B \\to\nC$. آنگاه ترکیب $\\comp{f}{g}\\colon A \\to C$ دوسویی\nاست؛ پس $\\cardeq{A}{C}$.\n\\end{proof}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 65,
+          "token": "!!{bijection}s",
+          "realization": "تناظرهای دوسویی"
+        },
+        {
+          "character_offset_in_segment": 175,
+          "token": "!!{bijective}",
+          "realization": "دوسویی"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Enumeration invariant proposition",
+      "canon": [
+        "FA-OL-CANON-0003:P0051",
+        "FA-OL-CANON-0003:P0053"
+      ],
+      "rationale": "Enumerable iff the equinumerous set is enumerable. Inclusive finite/empty OLP meaning retained, not only countably infinite.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source meaning and directly relevant scholarly construction checked.",
+      "id": "FA-0035-C11",
+      "unit": "OLP-0035",
+      "source": {
+        "char_start": 2039,
+        "char_end_exclusive": 2134,
+        "line_start": 57,
+        "line_end": 62,
+        "text": "\\begin{prop}\nIf $\\cardeq{A}{B}$, then $A$ is !!{enumerable} if\nand only if $B$ is.\n\\end{prop}\n\n",
+        "sha256": "2710cf242a00c87e2e26357f295482fd5f5955bcf4a4bd17e81fa022f758ecea"
+      },
+      "target_before": {
+        "char_start": 2007,
+        "char_end_exclusive": 2112,
+        "line_start": 58,
+        "line_end": 63,
+        "text": "\\begin{prop}\nاگر $\\cardeq{A}{B}$، آنگاه $A$ !!{enumerable} است اگر\nو تنها اگر $B$ چنین باشد.\n\\end{prop}\n\n",
+        "sha256": "56cdb8b133631abd0afdc224b9b1880e4cc617dd628e6dfadfcfa5f92d666db5"
+      },
+      "target_after": {
+        "char_start": 2026,
+        "char_end_exclusive": 2131,
+        "line_start": 58,
+        "line_end": 63,
+        "text": "\\begin{prop}\nاگر $\\cardeq{A}{B}$، آنگاه $A$ !!{enumerable} است اگر\nو تنها اگر $B$ چنین باشد.\n\\end{prop}\n\n",
+        "sha256": "56cdb8b133631abd0afdc224b9b1880e4cc617dd628e6dfadfcfa5f92d666db5"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{prop}\nاگر $\\cardeq{A}{B}$، آنگاه $A$ شمارا است اگر\nو تنها اگر $B$ چنین باشد.\n\\end{prop}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 44,
+          "token": "!!{enumerable}",
+          "realization": "شمارا"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Conditional definition selection",
+      "canon": [
+        "FA-OL-CANON-0003:P0053"
+      ],
+      "rationale": "Retain both definition references and the exact section-availability conditional. Reader selection is not permission to omit alternative source content.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source meaning and directly relevant scholarly construction checked.",
+      "id": "FA-0035-C12",
+      "unit": "OLP-0035",
+      "source": {
+        "char_start": 2134,
+        "char_end_exclusive": 2303,
+        "line_start": 62,
+        "line_end": 68,
+        "text": "\\begin{editorial}\nThe following proof uses \\olref[enm]{defn:enumerable} if\n\\olref[enm]{sec} is included and \\olref[enm-alt]{defn:enumerable}\notherwise.\n\\end{editorial}\n\n",
+        "sha256": "07068114c41797e3997f9c1ead7f70b938c0944faa379e1391e95047db878975"
+      },
+      "target_before": {
+        "char_start": 2112,
+        "char_end_exclusive": 2299,
+        "line_start": 63,
+        "line_end": 69,
+        "text": "\\begin{editorial}\nبرهان زیر از \\olref[enm]{defn:enumerable} استفاده می‌کند، اگر\n\\olref[enm]{sec} گنجانده شده باشد، و در غیر این صورت از\n\\olref[enm-alt]{defn:enumerable}.\n\\end{editorial}\n\n",
+        "sha256": "0e26998d71ac251be4c2c73f1c4d951fce58deb62c4d0ad5f0d644bcf1bd0593"
+      },
+      "target_after": {
+        "char_start": 2131,
+        "char_end_exclusive": 2318,
+        "line_start": 63,
+        "line_end": 69,
+        "text": "\\begin{editorial}\nبرهان زیر از \\olref[enm]{defn:enumerable} استفاده می‌کند، اگر\n\\olref[enm]{sec} گنجانده شده باشد، و در غیر این صورت از\n\\olref[enm-alt]{defn:enumerable}.\n\\end{editorial}\n\n",
+        "sha256": "0e26998d71ac251be4c2c73f1c4d951fce58deb62c4d0ad5f0d644bcf1bd0593"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{editorial}\nبرهان زیر از \\olref[enm]{defn:enumerable} استفاده می‌کند، اگر\n\\olref[enm]{sec} گنجانده شده باشد، و در غیر این صورت از\n\\olref[enm-alt]{defn:enumerable}.\n\\end{editorial}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Fixed bijection and repair disclosure",
+      "canon": [
+        "FA-OL-CANON-0003:P0051",
+        "FA-REL-P050"
+      ],
+      "rationale": "f is fixed before either empty/enumeration case. Explain the two wrong g references as source slips, not a flaw in the proposition; preserve all formal assumptions.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source meaning and directly relevant scholarly construction checked.",
+      "id": "FA-0035-C13",
+      "unit": "OLP-0035",
+      "source": {
+        "char_start": 2303,
+        "char_end_exclusive": 2479,
+        "line_start": 68,
+        "line_end": 72,
+        "text": "\\begin{proof}\nSuppose $\\cardeq{A}{B}$, so there is some !!{bijection} $f \\colon A\n\\to B$, and suppose that $A$ is !!{enumerable}.\n\\oliflabeldef{sfr:siz:enm:defn:enumerable}{\n  ",
+        "sha256": "0dc1f398b8c3c2b66aec14e119ee2679b61e37a89aed9143babb0c64dd6584ff"
+      },
+      "target_before": {
+        "char_start": 2299,
+        "char_end_exclusive": 2478,
+        "line_start": 69,
+        "line_end": 73,
+        "text": "\\begin{proof}\nفرض کنید $\\cardeq{A}{B}$؛ پس یک !!{bijection} به‌صورت $f \\colon A\n\\to B$ وجود دارد، و فرض کنید $A$ !!{enumerable} است.\n\\oliflabeldef{sfr:siz:enm:defn:enumerable}{\n  ",
+        "sha256": "3cb7c0c4b811e2ca4a4f07aebbd6cf3086cf3cc8239f69a550f19e07a29cdcaa"
+      },
+      "target_after": {
+        "char_start": 2318,
+        "char_end_exclusive": 2711,
+        "line_start": 69,
+        "line_end": 76,
+        "text": "\\begin{proof}\nفرض کنید $\\cardeq{A}{B}$؛ پس یک !!{bijection} به‌صورت $f \\colon A\n\\to B$ وجود دارد، و فرض کنید $A$ !!{enumerable} است.\n\\emph{یادداشت ویراستاری:} در حالت تهی، هر دو نسخهٔ برهان در متن مبدأ به‌اشتباه\nبه تابع برشماری اشاره می‌کردند که در آن حالت معرفی نشده است. نام تابع در\nهر دو مورد اصلاح شده تا به تناظر دوسوییِ همین جمله اشاره کند.\n\\oliflabeldef{sfr:siz:enm:defn:enumerable}{\n  ",
+        "sha256": "85705a2988a9d376acf2427630ee02a7a4f0ecf893502ed1a52fb483c27beaf0"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{proof}\nفرض کنید $\\cardeq{A}{B}$؛ پس یک تناظر دوسویی به‌صورت $f \\colon A\n\\to B$ وجود دارد، و فرض کنید $A$ شمارا است.\n\\emph{یادداشت ویراستاری:} در حالت تهی، هر دو نسخهٔ برهان در متن مبدأ به‌اشتباه\nبه تابع برشماری اشاره می‌کردند که در آن حالت معرفی نشده است. نام تابع در\nهر دو مورد اصلاح شده تا به تناظر دوسوییِ همین جمله اشاره کند.\n\\oliflabeldef{sfr:siz:enm:defn:enumerable}{\n  ",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 46,
+          "token": "!!{bijection}",
+          "realization": "تناظر دوسویی"
+        },
+        {
+          "character_offset_in_segment": 113,
+          "token": "!!{enumerable}",
+          "realization": "شمارا"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Surjective enumeration branch",
+      "canon": [
+        "FA-OL-CANON-0003:P0051",
+        "FA-OL-CANON-0003:P0053",
+        "FA-REL-P050"
+      ],
+      "rationale": "Fix only premature g(x)=y to f(x)=y; add missing Persian copula. Empty maps to empty. In nonempty branch retain g:PosInt→A, output witness chain and exact composition equation; no Choice required.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source meaning and directly relevant scholarly construction checked.",
+      "id": "FA-0035-C14",
+      "unit": "OLP-0035",
+      "source": {
+        "char_start": 2479,
+        "char_end_exclusive": 3201,
+        "line_start": 72,
+        "line_end": 87,
+        "text": "Then either $A = \\emptyset$ or there is !!a{surjective} function\n  $g\\colon \\PosInt \\to A$. If $A = \\emptyset$, then $B = \\emptyset$\n  also (otherwise there would be !!a{element}~$y \\in B$ but no $x \\in\n  A$ with $g(x) = y$). If, on the other hand, $g\\colon \\PosInt \\to A$\n  is !!{surjective}, then $\\comp{g}{f} \\colon \\PosInt \\to B$ is\n  !!{surjective}. To see this, let $y \\in B$. Since $f$ is\n  !!{surjective}, there is an $x \\in A$ such that $f(x) = y$. Since\n  $g$ is !!{surjective}, there is an $n \\in \\PosInt$ such that $g(n) =\n  x$. Hence,\n\\[\n(\\comp{g}{f})(n) = f(g(n)) = f(x) = y\n\\]\nand thus $\\comp{g}{f}$ is !!{surjective}. We have that $\\comp{g}{f}$\nis an enumeration of~$B$, and so $B$~is !!{enumerable}.}\n{\n  ",
+        "sha256": "df9c4e4bd53eebb1863ae8a9a5b58df73d67977ac4d5ab4345f8f21f0225e587"
+      },
+      "target_before": {
+        "char_start": 2478,
+        "char_end_exclusive": 3254,
+        "line_start": 73,
+        "line_end": 89,
+        "text": "آنگاه یا $A = \\emptyset$، یا تابعی !!a{surjective} به‌صورت\n  $g\\colon \\PosInt \\to A$ وجود دارد. اگر $A = \\emptyset$، آنگاه $B = \\emptyset$\n  نیز (زیرا در غیر این صورت !!a{element}~$y \\in B$ وجود می‌داشت،\n  اما هیچ عضوی مانند $x \\in\n  A$ با $g(x) = y$ وجود نداشت). از سوی دیگر، اگر $g\\colon \\PosInt \\to A$\n  !!{surjective} باشد، آنگاه $\\comp{g}{f} \\colon \\PosInt \\to B$\n  !!{surjective} است. برای دیدن این مطلب، $y \\in B$ را در نظر بگیرید.\n  چون $f$ !!{surjective} است، عضوی مانند $x \\in A$ وجود دارد که $f(x) = y$.\n  چون $g$ !!{surjective} است، عددی مانند $n \\in \\PosInt$ وجود دارد که $g(n) =\n  x$. بنابراین\n\\[\n(\\comp{g}{f})(n) = f(g(n)) = f(x) = y\n\\]\nو در نتیجه $\\comp{g}{f}$ !!{surjective} است. پس $\\comp{g}{f}$\nبرشماری‌ای از~$B$ است و بنابراین $B$~!!{enumerable} است.}\n{\n  ",
+        "sha256": "34f5a17df286d9e56498fdaa232fab2d379ff28eb01d85ec2b230cf91f82592a"
+      },
+      "target_after": {
+        "char_start": 2711,
+        "char_end_exclusive": 3487,
+        "line_start": 76,
+        "line_end": 92,
+        "text": "آنگاه یا $A = \\emptyset$، یا تابعی !!a{surjective} به‌صورت\n  $g\\colon \\PosInt \\to A$ وجود دارد. اگر $A = \\emptyset$، آنگاه $B = \\emptyset$\n  است (زیرا در غیر این صورت !!a{element}~$y \\in B$ وجود می‌داشت،\n  اما هیچ عضوی مانند $x \\in\n  A$ با $f(x) = y$ وجود نداشت). از سوی دیگر، اگر $g\\colon \\PosInt \\to A$\n  !!{surjective} باشد، آنگاه $\\comp{g}{f} \\colon \\PosInt \\to B$\n  !!{surjective} است. برای دیدن این مطلب، $y \\in B$ را در نظر بگیرید.\n  چون $f$ !!{surjective} است، عضوی مانند $x \\in A$ وجود دارد که $f(x) = y$.\n  چون $g$ !!{surjective} است، عددی مانند $n \\in \\PosInt$ وجود دارد که $g(n) =\n  x$. بنابراین\n\\[\n(\\comp{g}{f})(n) = f(g(n)) = f(x) = y\n\\]\nو در نتیجه $\\comp{g}{f}$ !!{surjective} است. پس $\\comp{g}{f}$\nبرشماری‌ای از~$B$ است و بنابراین $B$~!!{enumerable} است.}\n{\n  ",
+        "sha256": "c0e5207f71e4e4b0ba67da934eafc3cc69c9fe682e3ab640782860febab8c0a7"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "آنگاه یا $A = \\emptyset$، یا تابعی پوشا به‌صورت\n  $g\\colon \\PosInt \\to A$ وجود دارد. اگر $A = \\emptyset$، آنگاه $B = \\emptyset$\n  است (زیرا در غیر این صورت عضو~$y \\in B$ وجود می‌داشت،\n  اما هیچ عضوی مانند $x \\in\n  A$ با $f(x) = y$ وجود نداشت). از سوی دیگر، اگر $g\\colon \\PosInt \\to A$\n  پوشا باشد، آنگاه $\\comp{g}{f} \\colon \\PosInt \\to B$\n  پوشا است. برای دیدن این مطلب، $y \\in B$ را در نظر بگیرید.\n  چون $f$ پوشا است، عضوی مانند $x \\in A$ وجود دارد که $f(x) = y$.\n  چون $g$ پوشا است، عددی مانند $n \\in \\PosInt$ وجود دارد که $g(n) =\n  x$. بنابراین\n\\[\n(\\comp{g}{f})(n) = f(g(n)) = f(x) = y\n\\]\nو در نتیجه $\\comp{g}{f}$ پوشا است. پس $\\comp{g}{f}$\nبرشماری‌ای از~$B$ است و بنابراین $B$~شمارا است.}\n{\n  ",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 35,
+          "token": "!!a{surjective}",
+          "realization": "پوشا"
+        },
+        {
+          "character_offset_in_segment": 167,
+          "token": "!!a{element}",
+          "realization": "عضو"
+        },
+        {
+          "character_offset_in_segment": 307,
+          "token": "!!{surjective}",
+          "realization": "پوشا"
+        },
+        {
+          "character_offset_in_segment": 371,
+          "token": "!!{surjective}",
+          "realization": "پوشا"
+        },
+        {
+          "character_offset_in_segment": 449,
+          "token": "!!{surjective}",
+          "realization": "پوشا"
+        },
+        {
+          "character_offset_in_segment": 525,
+          "token": "!!{surjective}",
+          "realization": "پوشا"
+        },
+        {
+          "character_offset_in_segment": 677,
+          "token": "!!{surjective}",
+          "realization": "پوشا"
+        },
+        {
+          "character_offset_in_segment": 751,
+          "token": "!!{enumerable}",
+          "realization": "شمارا"
+        }
+      ],
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 167,
+          "token": "!!a{element}",
+          "realization": "عضو"
+        }
+      ]
+    },
+    {
+      "topic": "Alternative finite-or-Nat bijection branch",
+      "canon": [
+        "FA-OL-CANON-0003:P0051",
+        "FA-OL-CANON-0003:P0053",
+        "FA-REL-P050"
+      ],
+      "rationale": "Fix the second premature g(x)=y to f(x)=y. Preserve the finite initial segment/Nat alternatives and the identical domain of the composed bijection; empty branch remains explicit.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source meaning and directly relevant scholarly construction checked.",
+      "id": "FA-0035-C15",
+      "unit": "OLP-0035",
+      "source": {
+        "char_start": 3201,
+        "char_end_exclusive": 3712,
+        "line_start": 87,
+        "line_end": 96,
+        "text": "Then either $A  = \\emptyset$ or there is !!a{bijection}~$g$ whose\n  range is $A$ and whose domain is either $\\Nat$ or an initial\n  sequence of natural numbers. If $A = \\emptyset$, then $B =\n  \\emptyset$ also (otherwise there would be some~$y \\in B$ with no $x\n  \\in A$ such that $g(x) = y$). So suppose we have our\n  !!{bijection}~$g$. Then $\\comp{g}{f}$ is !!a{bijection} with\n  range~$B$ and domain the same as that of~$g$ (i.e., either $\\Nat$ or\n  an initial segment of it), so that $B$ is !!{enumerable}.}\n\n",
+        "sha256": "f14f3b5e049c89ad2d2ac3ff4d598db16bbd6953acc4fcffa0a38371b98e6295"
+      },
+      "target_before": {
+        "char_start": 3254,
+        "char_end_exclusive": 3750,
+        "line_start": 89,
+        "line_end": 99,
+        "text": "آنگاه یا $A  = \\emptyset$، یا یک !!a{bijection}~$g$ وجود دارد که\n  بردش $A$ و دامنه‌اش یا $\\Nat$ یا قطعه‌ای آغازین از اعداد طبیعی\n  است. اگر $A = \\emptyset$، آنگاه $B =\n  \\emptyset$ نیز (زیرا در غیر این صورت عضوی مانند~$y \\in B$ وجود می‌داشت، اما\n  هیچ عضوی مانند $x\n  \\in A$ نبود که $g(x) = y$). پس فرض کنید !!{bijection}~$g$ را\n  داریم. آنگاه $\\comp{g}{f}$ !!a{bijection} است که بردش~$B$ و دامنه‌اش\n  همان دامنهٔ~$g$ است (یعنی یا $\\Nat$ یا قطعه‌ای آغازین از آن)؛ پس\n  $B$ !!{enumerable} است.}\n\n",
+        "sha256": "70003d902b7de6f2dc9f7aab85ac61fb505a75fe641e9531fd93f69cc395de6a"
+      },
+      "target_after": {
+        "char_start": 3487,
+        "char_end_exclusive": 3983,
+        "line_start": 92,
+        "line_end": 102,
+        "text": "آنگاه یا $A  = \\emptyset$، یا یک !!a{bijection}~$g$ وجود دارد که\n  بردش $A$ و دامنه‌اش یا $\\Nat$ یا قطعه‌ای آغازین از اعداد طبیعی\n  است. اگر $A = \\emptyset$، آنگاه $B =\n  \\emptyset$ است (زیرا در غیر این صورت عضوی مانند~$y \\in B$ وجود می‌داشت، اما\n  هیچ عضوی مانند $x\n  \\in A$ نبود که $f(x) = y$). پس فرض کنید !!{bijection}~$g$ را\n  داریم. آنگاه $\\comp{g}{f}$ !!a{bijection} است که بردش~$B$ و دامنه‌اش\n  همان دامنهٔ~$g$ است (یعنی یا $\\Nat$ یا قطعه‌ای آغازین از آن)؛ پس\n  $B$ !!{enumerable} است.}\n\n",
+        "sha256": "5fc6f44cbdd147528b3895e5f48773029746817da5bf2da629d75fa3068d5e14"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "آنگاه یا $A  = \\emptyset$، یا یک تناظر دوسویی~$g$ وجود دارد که\n  بردش $A$ و دامنه‌اش یا $\\Nat$ یا قطعه‌ای آغازین از اعداد طبیعی\n  است. اگر $A = \\emptyset$، آنگاه $B =\n  \\emptyset$ است (زیرا در غیر این صورت عضوی مانند~$y \\in B$ وجود می‌داشت، اما\n  هیچ عضوی مانند $x\n  \\in A$ نبود که $f(x) = y$). پس فرض کنید تناظر دوسویی~$g$ را\n  داریم. آنگاه $\\comp{g}{f}$ تناظر دوسویی است که بردش~$B$ و دامنه‌اش\n  همان دامنهٔ~$g$ است (یعنی یا $\\Nat$ یا قطعه‌ای آغازین از آن)؛ پس\n  $B$ شمارا است.}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 33,
+          "token": "!!a{bijection}",
+          "realization": "تناظر دوسویی"
+        },
+        {
+          "character_offset_in_segment": 309,
+          "token": "!!{bijection}",
+          "realization": "تناظر دوسویی"
+        },
+        {
+          "character_offset_in_segment": 359,
+          "token": "!!a{bijection}",
+          "realization": "تناظر دوسویی"
+        },
+        {
+          "character_offset_in_segment": 474,
+          "token": "!!{enumerable}",
+          "realization": "شمارا"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Reverse implication",
+      "canon": [
+        "FA-REL-P050",
+        "FA-OL-CANON-0003:P0051"
+      ],
+      "rationale": "Apply exactly the same argument to f inverse:B→A. Preserve if direction and no additional nonempty hypothesis.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source meaning and directly relevant scholarly construction checked.",
+      "id": "FA-0035-C16",
+      "unit": "OLP-0035",
+      "source": {
+        "char_start": 3712,
+        "char_end_exclusive": 3877,
+        "line_start": 96,
+        "line_end": 101,
+        "text": "If $B$ is !!{enumerable}, we obtain that $A$ is !!{enumerable} by\nrepeating the argument with the !!{bijection} $f^{-1}\\colon B \\to A$\ninstead of~$f$. \n\\end{proof}\n\n",
+        "sha256": "e1713d0ea720305a5f541d92eb388edd3af1fcdcb9c211f1cc0b97fc2d05c703"
+      },
+      "target_before": {
+        "char_start": 3750,
+        "char_end_exclusive": 3917,
+        "line_start": 99,
+        "line_end": 104,
+        "text": "اگر $B$ !!{enumerable} باشد، نتیجه می‌گیریم که $A$ !!{enumerable} است؛\nکافی است استدلال را با !!{bijection} $f^{-1}\\colon B \\to A$ به‌جای~$f$\nتکرار کنیم.\n\\end{proof}\n\n",
+        "sha256": "c89f5a508a5202c86d837732e84e167d6924a7d725a145539e6b3309b22cdabd"
+      },
+      "target_after": {
+        "char_start": 3983,
+        "char_end_exclusive": 4150,
+        "line_start": 102,
+        "line_end": 107,
+        "text": "اگر $B$ !!{enumerable} باشد، نتیجه می‌گیریم که $A$ !!{enumerable} است؛\nکافی است استدلال را با !!{bijection} $f^{-1}\\colon B \\to A$ به‌جای~$f$\nتکرار کنیم.\n\\end{proof}\n\n",
+        "sha256": "c89f5a508a5202c86d837732e84e167d6924a7d725a145539e6b3309b22cdabd"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "اگر $B$ شمارا باشد، نتیجه می‌گیریم که $A$ شمارا است؛\nکافی است استدلال را با تناظر دوسویی $f^{-1}\\colon B \\to A$ به‌جای~$f$\nتکرار کنیم.\n\\end{proof}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 8,
+          "token": "!!{enumerable}",
+          "realization": "شمارا"
+        },
+        {
+          "character_offset_in_segment": 51,
+          "token": "!!{enumerable}",
+          "realization": "شمارا"
+        },
+        {
+          "character_offset_in_segment": 94,
+          "token": "!!{bijection}",
+          "realization": "تناظر دوسویی"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Disjoint union exercise",
+      "canon": [
+        "FA-OL-CANON-0003:P0051",
+        "FA-REL-P050"
+      ],
+      "rationale": "Preserve both disjointness assumptions A∩B=empty and C∩D=empty and both given bijections. The combined bijection is well-defined, injective and onto; no solution inserted.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source meaning and directly relevant scholarly construction checked.",
+      "id": "FA-0035-C17",
+      "unit": "OLP-0035",
+      "source": {
+        "char_start": 3877,
+        "char_end_exclusive": 4027,
+        "line_start": 101,
+        "line_end": 106,
+        "text": "\\begin{prob}\nShow that if $\\cardeq{A}{C}$ and $\\cardeq{B}{D}$, and $A \\cap B =\nC \\cap D = \\emptyset$, then $\\cardeq{A \\cup B}{C \\cup D}$.\n\\end{prob}\n\n",
+        "sha256": "e34f95d010570262f184b6c1435b61d4daeb7f42e8b9772fb4f3db650274f32e"
+      },
+      "target_before": {
+        "char_start": 3917,
+        "char_end_exclusive": 4064,
+        "line_start": 104,
+        "line_end": 109,
+        "text": "\\begin{prob}\nنشان دهید اگر $\\cardeq{A}{C}$ و $\\cardeq{B}{D}$ و $A \\cap B =\nC \\cap D = \\emptyset$، آنگاه $\\cardeq{A \\cup B}{C \\cup D}$.\n\\end{prob}\n\n",
+        "sha256": "8bc7068c9409234c8bbef1d85c05d116a6e44ac31172b13cf702f369797f4af2"
+      },
+      "target_after": {
+        "char_start": 4150,
+        "char_end_exclusive": 4297,
+        "line_start": 107,
+        "line_end": 112,
+        "text": "\\begin{prob}\nنشان دهید اگر $\\cardeq{A}{C}$ و $\\cardeq{B}{D}$ و $A \\cap B =\nC \\cap D = \\emptyset$، آنگاه $\\cardeq{A \\cup B}{C \\cup D}$.\n\\end{prob}\n\n",
+        "sha256": "8bc7068c9409234c8bbef1d85c05d116a6e44ac31172b13cf702f369797f4af2"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{prob}\nنشان دهید اگر $\\cardeq{A}{C}$ و $\\cardeq{B}{D}$ و $A \\cap B =\nC \\cap D = \\emptyset$، آنگاه $\\cardeq{A \\cup B}{C \\cup D}$.\n\\end{prob}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Infinite enumerable means equinumerous with Nat",
+      "canon": [
+        "FA-OL-CANON-0003:P0053",
+        "FA-OL-CANON-0005:P0114"
+      ],
+      "rationale": "Retain infinite qualifier. Least first-occurrence indices give a bijection without an effective-enumeration assumption or Choice family. Exercise remains unsolved.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source meaning and directly relevant scholarly construction checked.",
+      "id": "FA-0035-C18",
+      "unit": "OLP-0035",
+      "source": {
+        "char_start": 4027,
+        "char_end_exclusive": 4126,
+        "line_start": 106,
+        "line_end": 111,
+        "text": "\\begin{prob}\nShow that if $A$ is infinite and !!{enumerable}, then\n$\\cardeq{A}{\\Nat}$.\n\\end{prob}\n\n",
+        "sha256": "6e1f0d0b3122554e57829a4eb40ed5905b3b3f0450303c05ca2f4bc9446f99e7"
+      },
+      "target_before": {
+        "char_start": 4064,
+        "char_end_exclusive": 4165,
+        "line_start": 109,
+        "line_end": 114,
+        "text": "\\begin{prob}\nنشان دهید اگر $A$ نامتناهی و !!{enumerable} باشد، آنگاه\n$\\cardeq{A}{\\Nat}$.\n\\end{prob}\n\n",
+        "sha256": "c40ad41c6ef076da6613b8efb31cba2abde7053db90e119f4b32a16874ffddc4"
+      },
+      "target_after": {
+        "char_start": 4297,
+        "char_end_exclusive": 4398,
+        "line_start": 112,
+        "line_end": 117,
+        "text": "\\begin{prob}\nنشان دهید اگر $A$ نامتناهی و !!{enumerable} باشد، آنگاه\n$\\cardeq{A}{\\Nat}$.\n\\end{prob}\n\n",
+        "sha256": "c40ad41c6ef076da6613b8efb31cba2abde7053db90e119f4b32a16874ffddc4"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{prob}\nنشان دهید اگر $A$ نامتناهی و شمارا باشد، آنگاه\n$\\cardeq{A}{\\Nat}$.\n\\end{prob}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 42,
+          "token": "!!{enumerable}",
+          "realization": "شمارا"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Different sizes and Cantor heading",
+      "canon": [
+        "FA-OL-CANON-0005:P0114",
+        "FA-OL-CANON-0005:P0115"
+      ],
+      "rationale": "Preserve distinct sizes and named theorem; not just inequivalent notation.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source meaning and directly relevant scholarly construction checked.",
+      "id": "FA-0036-C01",
+      "unit": "OLP-0036",
+      "source": {
+        "char_start": 191,
+        "char_end_exclusive": 250,
+        "line_start": 11,
+        "line_end": 13,
+        "text": "\\olsection{Sets of Different Sizes, and Cantor's Theorem}\n\n",
+        "sha256": "af245081a58af5313f34d26230f8463a211c50c86fd8f69c27aa5f26f501160c"
+      },
+      "target_before": {
+        "char_start": 198,
+        "char_end_exclusive": 259,
+        "line_start": 11,
+        "line_end": 13,
+        "text": "\\olsection{مجموعه‌هایی با اندازه‌های متفاوت و قضیهٔ کانتور}\n\n",
+        "sha256": "c71fd355e5dc5a78a44c4c8028675bbaa53518f850b64f6f80848dcb21a7f0a6"
+      },
+      "target_after": {
+        "char_start": 198,
+        "char_end_exclusive": 259,
+        "line_start": 11,
+        "line_end": 13,
+        "text": "\\olsection{مجموعه‌هایی با اندازه‌های متفاوت و قضیهٔ کانتور}\n\n",
+        "sha256": "c71fd355e5dc5a78a44c4c8028675bbaa53518f850b64f6f80848dcb21a7f0a6"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\olsection{مجموعه‌هایی با اندازه‌های متفاوت و قضیهٔ کانتور}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Injection comparison intuition",
+      "canon": [
+        "FA-OL-CANON-0003:P0051",
+        "FA-OL-CANON-0005:P0114"
+      ],
+      "rationale": "Injection compares source to target and distinct source elements cannot collide. Replace clumsy “two cases of elements” with “two distinct elements”. Domain and actual image are equinumerous; weaker source at-least wording is true, not a defect.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source meaning and directly relevant scholarly construction checked.",
+      "id": "FA-0036-C02",
+      "unit": "OLP-0036",
+      "source": {
+        "char_start": 250,
+        "char_end_exclusive": 941,
+        "line_start": 13,
+        "line_end": 26,
+        "text": "\\begin{explain}\nWe have offered a precise statement of the idea that two sets have the\nsame size. We can also offer a precise statement of the idea that one\nset is smaller than another. Our definition of ``is smaller than (or\nequinumerous)'' will require, instead of !!a{bijection} between the\nsets, !!a{injection} from the first set to the second. If such a\nfunction exists, the size of the first set is less than or equal to\nthe size of the second. Intuitively, !!a{injection} from one set to\nanother guarantees that the range of the function has at least as many\n!!{element}s as the domain, since no two !!{element}s of the domain\nmap to the same !!{element} of the range.\n\\end{explain}\n\n",
+        "sha256": "0767ff79535e9d2a10822290354ac6ff45cc23c15927190be18b98337ca99d13"
+      },
+      "target_before": {
+        "char_start": 259,
+        "char_end_exclusive": 925,
+        "line_start": 13,
+        "line_end": 26,
+        "text": "\\begin{explain}\nبیان دقیقی از این اندیشه به دست دادیم که دو مجموعه اندازه‌ای یکسان\nدارند. همچنین می‌توانیم این اندیشه را که یک مجموعه از دیگری کوچک‌تر\nاست به‌دقت بیان کنیم. تعریف ما از «کوچک‌تر از (یا هم‌توان با)» به‌جای\n!!a{bijection} میان مجموعه‌ها، به !!a{injection} از مجموعهٔ نخست به\nمجموعهٔ دوم نیاز دارد. اگر چنین تابعی وجود داشته باشد، اندازهٔ مجموعهٔ\nنخست کوچک‌تر یا مساوی اندازهٔ مجموعهٔ دوم است. به‌طور شهودی، وجود\n!!a{injection} از یک مجموعه به مجموعه‌ای دیگر تضمین می‌کند که تعدادِ\n!!{element}s در برد تابع دست‌کم برابر با تعداد آن‌ها در دامنه است، زیرا\nهیچ دو مورد از !!{element}s واقع در دامنه به یک !!{element} در برد\nنگاشته نمی‌شوند.\n\\end{explain}\n\n",
+        "sha256": "850dd6a6176aa2bdf875871c62a6062960ea521b7bdb5d94985f003ff6a32483"
+      },
+      "target_after": {
+        "char_start": 259,
+        "char_end_exclusive": 910,
+        "line_start": 13,
+        "line_end": 26,
+        "text": "\\begin{explain}\nبیان دقیقی از این اندیشه به دست دادیم که دو مجموعه اندازه‌ای یکسان\nدارند. همچنین می‌توانیم این اندیشه را که یک مجموعه از دیگری کوچک‌تر\nاست به‌دقت بیان کنیم. تعریف ما از «کوچک‌تر از (یا هم‌توان با)» به‌جای\n!!a{bijection} میان مجموعه‌ها، به !!a{injection} از مجموعهٔ نخست به\nمجموعهٔ دوم نیاز دارد. اگر چنین تابعی وجود داشته باشد، اندازهٔ مجموعهٔ\nنخست کوچک‌تر یا مساوی اندازهٔ مجموعهٔ دوم است. به‌طور شهودی، وجود\n!!a{injection} از یک مجموعه به مجموعه‌ای دیگر تضمین می‌کند که تعدادِ\n!!{element}s در برد تابع دست‌کم برابر با تعداد آن‌ها در دامنه است، زیرا\nهیچ دو عضو متمایز در دامنه به یک !!{element} در برد\nنگاشته نمی‌شوند.\n\\end{explain}\n\n",
+        "sha256": "27e4c7f46759ea15eeeb1660249e05198101c20e94f4fa84453d4a28362b6c5a"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{explain}\nبیان دقیقی از این اندیشه به دست دادیم که دو مجموعه اندازه‌ای یکسان\nدارند. همچنین می‌توانیم این اندیشه را که یک مجموعه از دیگری کوچک‌تر\nاست به‌دقت بیان کنیم. تعریف ما از «کوچک‌تر از (یا هم‌توان با)» به‌جای\nتناظر دوسویی میان مجموعه‌ها، به نگاشت یک‌به‌یک از مجموعهٔ نخست به\nمجموعهٔ دوم نیاز دارد. اگر چنین تابعی وجود داشته باشد، اندازهٔ مجموعهٔ\nنخست کوچک‌تر یا مساوی اندازهٔ مجموعهٔ دوم است. به‌طور شهودی، وجود\nنگاشت یک‌به‌یک از یک مجموعه به مجموعه‌ای دیگر تضمین می‌کند که تعدادِ\nاعضا در برد تابع دست‌کم برابر با تعداد آن‌ها در دامنه است، زیرا\nهیچ دو عضو متمایز در دامنه به یک عضو در برد\nنگاشته نمی‌شوند.\n\\end{explain}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 221,
+          "token": "!!a{bijection}",
+          "realization": "تناظر دوسویی"
+        },
+        {
+          "character_offset_in_segment": 255,
+          "token": "!!a{injection}",
+          "realization": "نگاشت یک‌به‌یک"
+        },
+        {
+          "character_offset_in_segment": 426,
+          "token": "!!a{injection}",
+          "realization": "نگاشت یک‌به‌یک"
+        },
+        {
+          "character_offset_in_segment": 495,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        },
+        {
+          "character_offset_in_segment": 600,
+          "token": "!!{element}",
+          "realization": "عضو"
+        }
+      ],
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 495,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        },
+        {
+          "character_offset_in_segment": 600,
+          "token": "!!{element}",
+          "realization": "عضو"
+        }
+      ]
+    },
+    {
+      "topic": "No larger than definition",
+      "canon": [
+        "FA-OL-CANON-0003:P0051",
+        "FA-OL-CANON-0005:P0114"
+      ],
+      "rationale": "Preserve A≤B by injection A→B and iff; no subset or total order assertion.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source meaning and directly relevant scholarly construction checked.",
+      "id": "FA-0036-C03",
+      "unit": "OLP-0036",
+      "source": {
+        "char_start": 941,
+        "char_end_exclusive": 1073,
+        "line_start": 26,
+        "line_end": 31,
+        "text": "\\begin{defn}\n$A$ is \\emph{no larger than}~$B$, written $\\cardle{A}{B}$, iff there\nis !!a{injection} $f \\colon A \\to B$.\n\\end{defn}\n\n",
+        "sha256": "026241b1d8aefb21aad42e56380c0760dc5d992b56839f73769aaf6742bd26b1"
+      },
+      "target_before": {
+        "char_start": 925,
+        "char_end_exclusive": 1103,
+        "line_start": 26,
+        "line_end": 32,
+        "text": "\\begin{defn}\nمجموعهٔ $A$ از~$B$ \\emph{بزرگ‌تر نیست}، که آن را با $\\cardle{A}{B}$\nمی‌نویسیم، اگر و تنها اگر !!a{injection} به‌صورت $f \\colon A \\to B$\nوجود داشته باشد.\n\\end{defn}\n\n",
+        "sha256": "8abe406460967039f7b85af08adacf494ae7b21f5f9c8cf0a6dac7f0661c9ca5"
+      },
+      "target_after": {
+        "char_start": 910,
+        "char_end_exclusive": 1088,
+        "line_start": 26,
+        "line_end": 32,
+        "text": "\\begin{defn}\nمجموعهٔ $A$ از~$B$ \\emph{بزرگ‌تر نیست}، که آن را با $\\cardle{A}{B}$\nمی‌نویسیم، اگر و تنها اگر !!a{injection} به‌صورت $f \\colon A \\to B$\nوجود داشته باشد.\n\\end{defn}\n\n",
+        "sha256": "8abe406460967039f7b85af08adacf494ae7b21f5f9c8cf0a6dac7f0661c9ca5"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{defn}\nمجموعهٔ $A$ از~$B$ \\emph{بزرگ‌تر نیست}، که آن را با $\\cardle{A}{B}$\nمی‌نویسیم، اگر و تنها اگر نگاشت یک‌به‌یک به‌صورت $f \\colon A \\to B$\nوجود داشته باشد.\n\\end{defn}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 107,
+          "token": "!!a{injection}",
+          "realization": "نگاشت یک‌به‌یک"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Preorder properties",
+      "canon": [
+        "FA-REL-P055",
+        "FA-REL-P056"
+      ],
+      "rationale": "Reflexive and transitive but not symmetric. Do not translate not symmetric as asymmetric; paired equal-size distinct sets remain related both ways.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source meaning and directly relevant scholarly construction checked.",
+      "id": "FA-0036-C04",
+      "unit": "OLP-0036",
+      "source": {
+        "char_start": 1073,
+        "char_end_exclusive": 1291,
+        "line_start": 31,
+        "line_end": 36,
+        "text": "It is clear that this is a reflexive and transitive relation, but that\nit is not symmetric (this is left as an exercise). We can also\nintroduce a notion, which states that one set is (strictly) smaller\nthan another. \n\n",
+        "sha256": "fad57b1181416cda492e9097be69d57d3c74eb4d934b91b45f59bf8e24011779"
+      },
+      "target_before": {
+        "char_start": 1103,
+        "char_end_exclusive": 1303,
+        "line_start": 32,
+        "line_end": 36,
+        "text": "آشکار است که این رابطه بازتابی و تراگذری است، اما متقارن نیست (اثبات\nاین مطلب به‌عنوان تمرین واگذار می‌شود). همچنین می‌توانیم مفهومی معرفی\nکنیم که می‌گوید یک مجموعه به‌طور اکید از دیگری کوچک‌تر است.\n\n",
+        "sha256": "00dc23f976d8a7c521fbcc22f4d2b8e885c748bd85ef4c6433abf59754db6e10"
+      },
+      "target_after": {
+        "char_start": 1088,
+        "char_end_exclusive": 1288,
+        "line_start": 32,
+        "line_end": 36,
+        "text": "آشکار است که این رابطه بازتابی و تراگذری است، اما متقارن نیست (اثبات\nاین مطلب به‌عنوان تمرین واگذار می‌شود). همچنین می‌توانیم مفهومی معرفی\nکنیم که می‌گوید یک مجموعه به‌طور اکید از دیگری کوچک‌تر است.\n\n",
+        "sha256": "00dc23f976d8a7c521fbcc22f4d2b8e885c748bd85ef4c6433abf59754db6e10"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "آشکار است که این رابطه بازتابی و تراگذری است، اما متقارن نیست (اثبات\nاین مطلب به‌عنوان تمرین واگذار می‌شود). همچنین می‌توانیم مفهومی معرفی\nکنیم که می‌گوید یک مجموعه به‌طور اکید از دیگری کوچک‌تر است.\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Strict comparison definition",
+      "canon": [
+        "FA-OL-CANON-0003:P0051",
+        "FA-OL-CANON-0005:P0114"
+      ],
+      "rationale": "Injection exists and no bijection exists. Preserve conjunction and non-equivalence notation, not absence of every reverse injection asserted without justification.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source meaning and directly relevant scholarly construction checked.",
+      "id": "FA-0036-C05",
+      "unit": "OLP-0036",
+      "source": {
+        "char_start": 1291,
+        "char_end_exclusive": 1505,
+        "line_start": 36,
+        "line_end": 42,
+        "text": "\\begin{defn}\n$A$ is \\emph{smaller than}~$B$, written $\\cardless{A}{B}$, iff there\nis !!a{injection}~$f\\colon A \\to B$ but no !!{bijection}~$g\\colon A\n\\to B$, i.e., $\\cardle{A}{B}$ and $\\cardneq{A}{B}$.\n\\end{defn}\n\n",
+        "sha256": "261d1491a38ade7f977553d4b5dd74568183c86d41c0ad0b49a8079b9eccedb5"
+      },
+      "target_before": {
+        "char_start": 1303,
+        "char_end_exclusive": 1572,
+        "line_start": 36,
+        "line_end": 43,
+        "text": "\\begin{defn}\nمجموعهٔ $A$ از~$B$ \\emph{کوچک‌تر است}، که آن را با $\\cardless{A}{B}$\nمی‌نویسیم، اگر و تنها اگر !!a{injection}~$f\\colon A \\to B$ وجود داشته\nباشد، اما هیچ !!{bijection}~$g\\colon A\n\\to B$ وجود نداشته باشد؛ یعنی $\\cardle{A}{B}$ و $\\cardneq{A}{B}$.\n\\end{defn}\n\n",
+        "sha256": "0a72116fc8dfee34696ea71ce610a4d430f40a3f9e7d10efd0f8b876899d200c"
+      },
+      "target_after": {
+        "char_start": 1288,
+        "char_end_exclusive": 1557,
+        "line_start": 36,
+        "line_end": 43,
+        "text": "\\begin{defn}\nمجموعهٔ $A$ از~$B$ \\emph{کوچک‌تر است}، که آن را با $\\cardless{A}{B}$\nمی‌نویسیم، اگر و تنها اگر !!a{injection}~$f\\colon A \\to B$ وجود داشته\nباشد، اما هیچ !!{bijection}~$g\\colon A\n\\to B$ وجود نداشته باشد؛ یعنی $\\cardle{A}{B}$ و $\\cardneq{A}{B}$.\n\\end{defn}\n\n",
+        "sha256": "0a72116fc8dfee34696ea71ce610a4d430f40a3f9e7d10efd0f8b876899d200c"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{defn}\nمجموعهٔ $A$ از~$B$ \\emph{کوچک‌تر است}، که آن را با $\\cardless{A}{B}$\nمی‌نویسیم، اگر و تنها اگر نگاشت یک‌به‌یک~$f\\colon A \\to B$ وجود داشته\nباشد، اما هیچ تناظر دوسویی~$g\\colon A\n\\to B$ وجود نداشته باشد؛ یعنی $\\cardle{A}{B}$ و $\\cardneq{A}{B}$.\n\\end{defn}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 108,
+          "token": "!!a{injection}",
+          "realization": "نگاشت یک‌به‌یک"
+        },
+        {
+          "character_offset_in_segment": 166,
+          "token": "!!{bijection}",
+          "realization": "تناظر دوسویی"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Irreflexivity and comparison convention",
+      "canon": [
+        "FA-OL-CANON-0003:P0023",
+        "FA-REL-P055",
+        "FA-OL-CANON-0003:P0053",
+        "FA-OL-CANON-0005:P0114"
+      ],
+      "rationale": "Replace ambiguous غیربازتابی by directly attested پادبازتابی, explaining no set is strictly smaller than itself. This explanation defines irreflexivity only, not transitivity. Keep transitivity and exercises. Enumerable iff injection into Nat is Choice-free; attach the explicit Choice background only to the subsequent nonenumerability iff Nat<A statement.",
+      "question": "The source leaves its Choice background implicit. The candidate discloses a sufficient standard assumption; it does not claim full Choice is the weakest necessary principle. Review this editorial convention without weakening either original equivalence or Cantor’s theorem.",
+      "confidence": 2,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source meaning checked; the stated convention or historical-evidence limit remains.",
+      "id": "FA-0036-C06",
+      "unit": "OLP-0036",
+      "source": {
+        "char_start": 1505,
+        "char_end_exclusive": 1773,
+        "line_start": 42,
+        "line_end": 47,
+        "text": "It is clear that this relation is irreflexive\nand transitive. (This is left as an exercise.) Using this notation, we\ncan say that a set $A$ is !!{enumerable} iff $\\cardle{A}{\\Nat}$, and\nthat $A$ is !!{nonenumerable} iff $\\cardless{\\Nat}{A}$. This allows us\nto restate\n",
+        "sha256": "ca8f5c9de56a0c5b833d8875c22790e5123cfdd29dd52ad2b68926ec87faab86"
+      },
+      "target_before": {
+        "char_start": 1572,
+        "char_end_exclusive": 1866,
+        "line_start": 43,
+        "line_end": 48,
+        "text": "آشکار است که این رابطه غیربازتابی و تراگذری است. (اثبات این مطلب\nبه‌عنوان تمرین واگذار می‌شود.) با این نمادگذاری می‌توانیم بگوییم\nمجموعهٔ $A$ !!{enumerable} است اگر و تنها اگر $\\cardle{A}{\\Nat}$، و\n$A$ !!{nonenumerable} است اگر و تنها اگر $\\cardless{\\Nat}{A}$. این\nنمادگذاری به ما اجازه می‌دهد\n",
+        "sha256": "3fc629c909d363ef4867829e0a4489aae9340c706824d7941a8b4b0eb68afbe0"
+      },
+      "target_after": {
+        "char_start": 1557,
+        "char_end_exclusive": 2169,
+        "line_start": 43,
+        "line_end": 52,
+        "text": "آشکار است که این رابطه پادبازتابی و تراگذری است. پادبازتابی یعنی هیچ مجموعه‌ای به‌طور اکید از خودش کوچک‌تر نیست. (اثبات این مطلب\nبه‌عنوان تمرین واگذار می‌شود.) با این نمادگذاری می‌توانیم بگوییم\nمجموعهٔ $A$ !!{enumerable} است اگر و تنها اگر $\\cardle{A}{\\Nat}$، و\n$A$ !!{nonenumerable} است اگر و تنها اگر $\\cardless{\\Nat}{A}$.\n\\emph{یادداشت دربارهٔ فرض‌ها:} هم‌ارزیِ دوم، دربارهٔ ناشمارایی، در اینجا با\nفرض اصل انتخاب بیان می‌شود: تحت این فرض، هر مجموعهٔ نامتناهی زیرمجموعه‌ای\nشمارای نامتناهی دارد. هم‌ارزیِ نخست، دربارهٔ شمارابودن، و قضیهٔ کانتور در\nادامه به این فرض نیاز ندارند.\nاین نمادگذاری به ما اجازه می‌دهد\n",
+        "sha256": "ed50afc8b3633d0745e68560fd208694d8f7e2b645e62c318ebfd2f099a26abc"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "آشکار است که این رابطه پادبازتابی و تراگذری است. پادبازتابی یعنی هیچ مجموعه‌ای به‌طور اکید از خودش کوچک‌تر نیست. (اثبات این مطلب\nبه‌عنوان تمرین واگذار می‌شود.) با این نمادگذاری می‌توانیم بگوییم\nمجموعهٔ $A$ شمارا است اگر و تنها اگر $\\cardle{A}{\\Nat}$، و\n$A$ ناشمارا است اگر و تنها اگر $\\cardless{\\Nat}{A}$.\n\\emph{یادداشت دربارهٔ فرض‌ها:} هم‌ارزیِ دوم، دربارهٔ ناشمارایی، در اینجا با\nفرض اصل انتخاب بیان می‌شود: تحت این فرض، هر مجموعهٔ نامتناهی زیرمجموعه‌ای\nشمارای نامتناهی دارد. هم‌ارزیِ نخست، دربارهٔ شمارابودن، و قضیهٔ کانتور در\nادامه به این فرض نیاز ندارند.\nاین نمادگذاری به ما اجازه می‌دهد\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 206,
+          "token": "!!{enumerable}",
+          "realization": "شمارا"
+        },
+        {
+          "character_offset_in_segment": 266,
+          "token": "!!{nonenumerable}",
+          "realization": "ناشمارا"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Alternative restatements and Cantor attribution",
+      "canon": [
+        "FA-OL-CANON-0003:P0053",
+        "FA-OL-CANON-0005:P0115"
+      ],
+      "rationale": "Preserve both conditional Nat/PosInt theorem restatements and Cantor1892 citation. Generality is checked mathematically for arbitrary A.",
+      "question": "The mathematical theorem is checked against both Persian canon and source proof; the precise Cantor1892 bibliographic date is retained from source, not newly verified from its original journal printing.",
+      "confidence": 2,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source meaning checked; the stated convention or historical-evidence limit remains.",
+      "id": "FA-0036-C07",
+      "unit": "OLP-0036",
+      "source": {
+        "char_start": 1773,
+        "char_end_exclusive": 2118,
+        "line_start": 47,
+        "line_end": 56,
+        "text": "\\oliflabeldef{sfr:siz:nen-alt:thm:nonenum-pownat}{%\n\\olref[sfr][siz][nen-alt]{thm:nonenum-pownat}\nas the observation that\n$\\cardless{\\Nat}{\\Pow{\\Nat}}$}{%\n\\olref[sfr][siz][nen]{thm:nonenum-pownat}\nas the observation that $\\cardless{\\PosInt}{\\Pow{\\PosInt}}$}. In fact,\n\\citet{Cantor1892} proved that this last point is \\emph{perfectly\ngeneral}:\n\n",
+        "sha256": "377a3278489de151ba76c566b3ed2fa10058291c362c9d6219639f3ad22e552d"
+      },
+      "target_before": {
+        "char_start": 1866,
+        "char_end_exclusive": 2210,
+        "line_start": 48,
+        "line_end": 56,
+        "text": "\\oliflabeldef{sfr:siz:nen-alt:thm:nonenum-pownat}{%\n\\olref[sfr][siz][nen-alt]{thm:nonenum-pownat}\nرا به‌صورت مشاهدهٔ\n$\\cardless{\\Nat}{\\Pow{\\Nat}}$ بازگو کنیم}{%\n\\olref[sfr][siz][nen]{thm:nonenum-pownat}\nرا به‌صورت مشاهدهٔ $\\cardless{\\PosInt}{\\Pow{\\PosInt}}$ بازگو کنیم}. در واقع،\n\\citet{Cantor1892} ثابت کرد که این نکته \\emph{کاملاً کلی} است:\n\n",
+        "sha256": "277ac9931e0cf36a1823a59779cbcf634f3a2792b9484a67ed4d48272b4056dc"
+      },
+      "target_after": {
+        "char_start": 2169,
+        "char_end_exclusive": 2513,
+        "line_start": 52,
+        "line_end": 60,
+        "text": "\\oliflabeldef{sfr:siz:nen-alt:thm:nonenum-pownat}{%\n\\olref[sfr][siz][nen-alt]{thm:nonenum-pownat}\nرا به‌صورت مشاهدهٔ\n$\\cardless{\\Nat}{\\Pow{\\Nat}}$ بازگو کنیم}{%\n\\olref[sfr][siz][nen]{thm:nonenum-pownat}\nرا به‌صورت مشاهدهٔ $\\cardless{\\PosInt}{\\Pow{\\PosInt}}$ بازگو کنیم}. در واقع،\n\\citet{Cantor1892} ثابت کرد که این نکته \\emph{کاملاً کلی} است:\n\n",
+        "sha256": "277ac9931e0cf36a1823a59779cbcf634f3a2792b9484a67ed4d48272b4056dc"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\oliflabeldef{sfr:siz:nen-alt:thm:nonenum-pownat}{%\n\\olref[sfr][siz][nen-alt]{thm:nonenum-pownat}\nرا به‌صورت مشاهدهٔ\n$\\cardless{\\Nat}{\\Pow{\\Nat}}$ بازگو کنیم}{%\n\\olref[sfr][siz][nen]{thm:nonenum-pownat}\nرا به‌صورت مشاهدهٔ $\\cardless{\\PosInt}{\\Pow{\\PosInt}}$ بازگو کنیم}. در واقع،\n\\citet{Cantor1892} ثابت کرد که این نکته \\emph{کاملاً کلی} است:\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Cantor theorem includes every set",
+      "canon": [
+        "FA-OL-CANON-0003:P0053",
+        "FA-OL-CANON-0005:P0115"
+      ],
+      "rationale": "Strict inequality A<Pow(A) for all sets including empty. The preceding Choice note must not narrow this theorem.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source meaning and directly relevant scholarly construction checked.",
+      "id": "FA-0036-C08",
+      "unit": "OLP-0036",
+      "source": {
+        "char_start": 2118,
+        "char_end_exclusive": 2211,
+        "line_start": 56,
+        "line_end": 60,
+        "text": "\\begin{thm}[Cantor]\\ollabel{thm:cantor}\n$\\cardless{A}{\\Pow{A}}$, for any set $A$.\n\\end{thm}\n\n",
+        "sha256": "3be966c4cb87765c03e32d9bfae6c92587cebf99419f9fe3a170f22c17743ee3"
+      },
+      "target_before": {
+        "char_start": 2210,
+        "char_end_exclusive": 2317,
+        "line_start": 56,
+        "line_end": 60,
+        "text": "\\begin{thm}[کانتور]\\ollabel{thm:cantor}\n$\\cardless{A}{\\Pow{A}}$ برای هر مجموعهٔ $A$ برقرار است.\n\\end{thm}\n\n",
+        "sha256": "a5b1b8b0037106a78fb0178b87effcd27dbe19922b991d2bf077d193fb3e528c"
+      },
+      "target_after": {
+        "char_start": 2513,
+        "char_end_exclusive": 2620,
+        "line_start": 60,
+        "line_end": 64,
+        "text": "\\begin{thm}[کانتور]\\ollabel{thm:cantor}\n$\\cardless{A}{\\Pow{A}}$ برای هر مجموعهٔ $A$ برقرار است.\n\\end{thm}\n\n",
+        "sha256": "a5b1b8b0037106a78fb0178b87effcd27dbe19922b991d2bf077d193fb3e528c"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{thm}[کانتور]\\ollabel{thm:cantor}\n$\\cardless{A}{\\Pow{A}}$ برای هر مجموعهٔ $A$ برقرار است.\n\\end{thm}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Singleton injection and extensionality",
+      "canon": [
+        "FA-OL-CANON-0003:P0008",
+        "FA-OL-CANON-0003:P0053",
+        "FA-OL-CANON-0005:P0115"
+      ],
+      "rationale": "Correct اصل امتداد to directly attested اصل گسترش with English extensionality footnote in canon. Distinct singleton sets and injection formula unchanged.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source meaning and directly relevant scholarly construction checked.",
+      "id": "FA-0036-C09",
+      "unit": "OLP-0036",
+      "source": {
+        "char_start": 2211,
+        "char_end_exclusive": 2427,
+        "line_start": 60,
+        "line_end": 65,
+        "text": "\\begin{proof}\nThe map $f(x) = \\{x\\}$ is !!a{injection} $f \\colon A \\to \\Pow{A}$,\nsince if $x \\neq y$, then also $\\{x\\} \\neq \\{y\\}$ by extensionality,\nand so $f(x) \\neq f(y)$. So we have that $\\cardle{A}{\\Pow{A}}$. \n\n",
+        "sha256": "6e760d0bcb7aa3c30e9a7ad54a9fa9e1e7f22e28c581c22d1894e4a584ac65a1"
+      },
+      "target_before": {
+        "char_start": 2317,
+        "char_end_exclusive": 2542,
+        "line_start": 60,
+        "line_end": 66,
+        "text": "\\begin{proof}\nنگاشت $f(x) = \\{x\\}$، !!a{injection} به‌صورت $f \\colon A \\to \\Pow{A}$\nاست، زیرا اگر $x \\neq y$، آنگاه بنا بر اصل امتداد،\n$\\{x\\} \\neq \\{y\\}$ نیز برقرار است و بنابراین $f(x) \\neq f(y)$.\nپس $\\cardle{A}{\\Pow{A}}$.\n\n",
+        "sha256": "006c7add82da346ed7616333e7a1f0e9d0b251a9ade38984d6dfd02dd09a5625"
+      },
+      "target_after": {
+        "char_start": 2620,
+        "char_end_exclusive": 2844,
+        "line_start": 64,
+        "line_end": 70,
+        "text": "\\begin{proof}\nنگاشت $f(x) = \\{x\\}$، !!a{injection} به‌صورت $f \\colon A \\to \\Pow{A}$\nاست، زیرا اگر $x \\neq y$، آنگاه بنا بر اصل گسترش،\n$\\{x\\} \\neq \\{y\\}$ نیز برقرار است و بنابراین $f(x) \\neq f(y)$.\nپس $\\cardle{A}{\\Pow{A}}$.\n\n",
+        "sha256": "3278c7662606ac55e43049baf2e85b45451a9cb1434410c8bcff297000054bd7"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{proof}\nنگاشت $f(x) = \\{x\\}$، نگاشت یک‌به‌یک به‌صورت $f \\colon A \\to \\Pow{A}$\nاست، زیرا اگر $x \\neq y$، آنگاه بنا بر اصل گسترش،\n$\\{x\\} \\neq \\{y\\}$ نیز برقرار است و بنابراین $f(x) \\neq f(y)$.\nپس $\\cardle{A}{\\Pow{A}}$.\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 36,
+          "token": "!!a{injection}",
+          "realization": "نگاشت یک‌به‌یک"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Proof variant editorial",
+      "canon": [
+        "FA-OL-CANON-0003:P0053",
+        "FA-OL-CANON-0005:P0115"
+      ],
+      "rationale": "Preserve availability-controlled detailed/short proof alternatives and both section links.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source meaning and directly relevant scholarly construction checked.",
+      "id": "FA-0036-C10",
+      "unit": "OLP-0036",
+      "source": {
+        "char_start": 2427,
+        "char_end_exclusive": 2576,
+        "line_start": 65,
+        "line_end": 70,
+        "text": "\\begin{editorial}\nWe present the slow proof if \\olref[nen]{sec} is\npresent, otherwise a faster proof matching \\olref[nen-alt]{sec}.\n\\end{editorial}\n\n",
+        "sha256": "62ace95f1e9efc0ba1893a0fd786e2416fc5905152bc0973cdb4c2a14062f74f"
+      },
+      "target_before": {
+        "char_start": 2542,
+        "char_end_exclusive": 2713,
+        "line_start": 66,
+        "line_end": 71,
+        "text": "\\begin{editorial}\nاگر \\olref[nen]{sec} موجود باشد برهان تفصیلی را می‌آوریم، وگرنه برهان\nسریع‌تری را که با \\olref[nen-alt]{sec} مطابقت دارد ارائه می‌کنیم.\n\\end{editorial}\n\n",
+        "sha256": "a7c18ff34359f577769aee64f1908e392e3002b942f0554cdd4e9073a98f8ace"
+      },
+      "target_after": {
+        "char_start": 2844,
+        "char_end_exclusive": 3015,
+        "line_start": 70,
+        "line_end": 75,
+        "text": "\\begin{editorial}\nاگر \\olref[nen]{sec} موجود باشد برهان تفصیلی را می‌آوریم، وگرنه برهان\nسریع‌تری را که با \\olref[nen-alt]{sec} مطابقت دارد ارائه می‌کنیم.\n\\end{editorial}\n\n",
+        "sha256": "a7c18ff34359f577769aee64f1908e392e3002b942f0554cdd4e9073a98f8ace"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{editorial}\nاگر \\olref[nen]{sec} موجود باشد برهان تفصیلی را می‌آوریم، وگرنه برهان\nسریع‌تری را که با \\olref[nen-alt]{sec} مطابقت دارد ارائه می‌کنیم.\n\\end{editorial}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Detailed diagonal proof",
+      "canon": [
+        "FA-OL-CANON-0003:P0008",
+        "FA-OL-CANON-0003:P0053",
+        "FA-OL-CANON-0005:P0115"
+      ],
+      "rationale": "Unpack total as defined at every input. Keep diagonal definition and all membership directions. Repair the conclusion from x in diagonal subset to arbitrary x in A; explicitly invoke the definition for the iff rather than pretend the preceding two incompatibility statements alone prove it. Source finding OLSIZ-007 is disclosed; theorem unchanged.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source meaning and directly relevant scholarly construction checked.",
+      "id": "FA-0036-C11",
+      "unit": "OLP-0036",
+      "source": {
+        "char_start": 2576,
+        "char_end_exclusive": 3873,
+        "line_start": 70,
+        "line_end": 92,
+        "text": "\\oliflabeldef{sfr:siz:nen:sec}{% \n  We will now show that there cannot be !!a{surjective} function~$g\\colon A \\to\n  \\Pow{A}$, let alone !!a{bijective} one, and hence that\n  $\\cardneq{A}{\\Pow{A}}$. For suppose that $g\\colon A \\to \\Pow{A}$.\n  Since $g$ is total, every $x \\in A$ is mapped to a subset $g(x)\n  \\subseteq A$. We can show that $g$ cannot be surjective. To do this, we\n  define a subset~$\\overline{A} \\subseteq A$ which by definition cannot be in the\n  range of~$g$. Let\n  \\[\n  \\overline{A} = \\Setabs{x \\in A}{x \\notin g(x)}.\n  \\]\n  Since $g(x)$ is defined for all $x \\in A$, $\\overline{A}$ is clearly\n  a well-defined subset of~$A$.  But, it cannot be in the range\n  of~$g$. Let $x \\in A$ be arbitrary, we will show that $\\overline{A} \\neq\n  g(x)$.  If $x \\in g(x)$, then it does not satisfy $x \\notin g(x)$,\n  and so by the definition of~$\\overline{A}$, we have $x \\notin\n  \\overline{A}$.  If $x \\in \\overline{A}$, it must satisfy the\n  defining property of~$\\overline{A}$, i.e., $x \\in A$ and $x \\notin\n  g(x)$. Since $x$ was arbitrary, this shows that for each $x \\in\n  \\overline{A}$, $x \\in g(x)$ iff $x \\notin \\overline{A}$, and so\n  $g(x) \\neq \\overline{A}$.  In other words, $\\overline{A}$ cannot be\n  in the range of~$g$, contradicting the assumption that~$g$ is\n  surjective.}{",
+        "sha256": "37d147ffd32941f0d9bdc77a928428038262185d1a4f92fdb8e8fa1746378f3a"
+      },
+      "target_before": {
+        "char_start": 2713,
+        "char_end_exclusive": 3997,
+        "line_start": 71,
+        "line_end": 92,
+        "text": "\\oliflabeldef{sfr:siz:nen:sec}{%\n  اکنون نشان می‌دهیم که هیچ تابع !!a{surjective} به‌صورت~$g\\colon A \\to\n  \\Pow{A}$ نمی‌تواند وجود داشته باشد، چه رسد به تابعی !!a{bijective}؛\n  و ازاین‌رو $\\cardneq{A}{\\Pow{A}}$. فرض کنید $g\\colon A \\to \\Pow{A}$.\n  چون $g$ تام است، هر $x \\in A$ به زیرمجموعه‌ای مانند $g(x)\n  \\subseteq A$ نگاشته می‌شود. می‌توانیم نشان دهیم که $g$ نمی‌تواند\n  پوشا باشد. برای این کار، زیرمجموعه‌ای مانند~$\\overline{A} \\subseteq A$\n  تعریف می‌کنیم که بنا بر تعریف نمی‌تواند در بردِ~$g$ باشد. بگذارید\n  \\[\n  \\overline{A} = \\Setabs{x \\in A}{x \\notin g(x)}.\n  \\]\n  چون $g(x)$ برای همهٔ $x \\in A$ تعریف شده است، $\\overline{A}$ به‌روشنی\n  زیرمجموعه‌ای خوش‌تعریف از~$A$ است. اما نمی‌تواند در بردِ~$g$ باشد.\n  $x \\in A$ را دلخواه بگیرید؛ نشان می‌دهیم $\\overline{A} \\neq\n  g(x)$. اگر $x \\in g(x)$، آنگاه شرط $x \\notin g(x)$ را برآورده\n  نمی‌کند؛ پس بنا بر تعریفِ~$\\overline{A}$، داریم $x \\notin\n  \\overline{A}$. اگر $x \\in \\overline{A}$، باید ویژگی معرفِ\n  $\\overline{A}$ را برآورده کند؛ یعنی $x \\in A$ و $x \\notin\n  g(x)$. چون $x$ دلخواه بود، این نشان می‌دهد که برای هر $x \\in\n  \\overline{A}$، $x \\in g(x)$ اگر و تنها اگر $x \\notin \\overline{A}$؛\n  پس $g(x) \\neq \\overline{A}$. به‌عبارت دیگر، $\\overline{A}$ نمی‌تواند\n  در بردِ~$g$ باشد و این با فرض پوشابودنِ~$g$ تناقض دارد.}{",
+        "sha256": "140d72ade8b0a6be3a13a804700e62e598be54570ac02554d5e0016e2a0a0b51"
+      },
+      "target_after": {
+        "char_start": 3015,
+        "char_end_exclusive": 4521,
+        "line_start": 75,
+        "line_end": 99,
+        "text": "\\oliflabeldef{sfr:siz:nen:sec}{%\n  اکنون نشان می‌دهیم که هیچ تابع !!a{surjective} به‌صورت~$g\\colon A \\to\n  \\Pow{A}$ نمی‌تواند وجود داشته باشد، چه رسد به تابعی !!a{bijective}؛\n  و ازاین‌رو $\\cardneq{A}{\\Pow{A}}$. فرض کنید $g\\colon A \\to \\Pow{A}$.\n  چون $g$ در همهٔ دامنه‌اش تعریف شده است، هر $x \\in A$ به زیرمجموعه‌ای مانند $g(x)\n  \\subseteq A$ نگاشته می‌شود. می‌توانیم نشان دهیم که $g$ نمی‌تواند\n  پوشا باشد. برای این کار، زیرمجموعه‌ای مانند~$\\overline{A} \\subseteq A$\n  تعریف می‌کنیم که بنا بر تعریف نمی‌تواند در بردِ~$g$ باشد. بگذارید\n  \\[\n  \\overline{A} = \\Setabs{x \\in A}{x \\notin g(x)}.\n  \\]\n  چون $g(x)$ برای همهٔ $x \\in A$ تعریف شده است، $\\overline{A}$ به‌روشنی\n  زیرمجموعه‌ای خوش‌تعریف از~$A$ است. اما نمی‌تواند در بردِ~$g$ باشد.\n  $x \\in A$ را دلخواه بگیرید؛ نشان می‌دهیم $\\overline{A} \\neq\n  g(x)$. اگر $x \\in g(x)$، آنگاه شرط $x \\notin g(x)$ را برآورده\n  نمی‌کند؛ پس بنا بر تعریفِ~$\\overline{A}$، داریم $x \\notin\n  \\overline{A}$. اگر $x \\in \\overline{A}$، باید ویژگی معرفِ\n  $\\overline{A}$ را برآورده کند؛ یعنی $x \\in A$ و $x \\notin\n  g(x)$. با توجه به تعریفِ مجموعه و دلخواه‌بودنِ $x$، برای هر $x \\in\n  A$، $x \\in g(x)$ اگر و تنها اگر $x \\notin \\overline{A}$؛\n  پس $g(x) \\neq \\overline{A}$. به‌عبارت دیگر، $\\overline{A}$ نمی‌تواند\n  در بردِ~$g$ باشد و این با فرض پوشابودنِ~$g$ تناقض دارد.\n  \\emph{یادداشت ویراستاری:} در نتیجه‌گیریِ متن مبدأ، متغیر به‌اشتباه فقط بر\n  مجموعهٔ قطری کمیت‌گذاری شده بود. نتیجه باید برای همهٔ ورودی‌های تابع\n  برقرار باشد؛ دامنهٔ کمیت‌گذاری در اینجا اصلاح شده است.}{",
+        "sha256": "ef678a3310ade1c03e50aa9388069785a51a6d2830d4deeaab93fa2769d2b2d8"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\oliflabeldef{sfr:siz:nen:sec}{%\n  اکنون نشان می‌دهیم که هیچ تابع پوشا به‌صورت~$g\\colon A \\to\n  \\Pow{A}$ نمی‌تواند وجود داشته باشد، چه رسد به تابعی دوسویی؛\n  و ازاین‌رو $\\cardneq{A}{\\Pow{A}}$. فرض کنید $g\\colon A \\to \\Pow{A}$.\n  چون $g$ در همهٔ دامنه‌اش تعریف شده است، هر $x \\in A$ به زیرمجموعه‌ای مانند $g(x)\n  \\subseteq A$ نگاشته می‌شود. می‌توانیم نشان دهیم که $g$ نمی‌تواند\n  پوشا باشد. برای این کار، زیرمجموعه‌ای مانند~$\\overline{A} \\subseteq A$\n  تعریف می‌کنیم که بنا بر تعریف نمی‌تواند در بردِ~$g$ باشد. بگذارید\n  \\[\n  \\overline{A} = \\Setabs{x \\in A}{x \\notin g(x)}.\n  \\]\n  چون $g(x)$ برای همهٔ $x \\in A$ تعریف شده است، $\\overline{A}$ به‌روشنی\n  زیرمجموعه‌ای خوش‌تعریف از~$A$ است. اما نمی‌تواند در بردِ~$g$ باشد.\n  $x \\in A$ را دلخواه بگیرید؛ نشان می‌دهیم $\\overline{A} \\neq\n  g(x)$. اگر $x \\in g(x)$، آنگاه شرط $x \\notin g(x)$ را برآورده\n  نمی‌کند؛ پس بنا بر تعریفِ~$\\overline{A}$، داریم $x \\notin\n  \\overline{A}$. اگر $x \\in \\overline{A}$، باید ویژگی معرفِ\n  $\\overline{A}$ را برآورده کند؛ یعنی $x \\in A$ و $x \\notin\n  g(x)$. با توجه به تعریفِ مجموعه و دلخواه‌بودنِ $x$، برای هر $x \\in\n  A$، $x \\in g(x)$ اگر و تنها اگر $x \\notin \\overline{A}$؛\n  پس $g(x) \\neq \\overline{A}$. به‌عبارت دیگر، $\\overline{A}$ نمی‌تواند\n  در بردِ~$g$ باشد و این با فرض پوشابودنِ~$g$ تناقض دارد.\n  \\emph{یادداشت ویراستاری:} در نتیجه‌گیریِ متن مبدأ، متغیر به‌اشتباه فقط بر\n  مجموعهٔ قطری کمیت‌گذاری شده بود. نتیجه باید برای همهٔ ورودی‌های تابع\n  برقرار باشد؛ دامنهٔ کمیت‌گذاری در اینجا اصلاح شده است.}{",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 66,
+          "token": "!!a{surjective}",
+          "realization": "پوشا"
+        },
+        {
+          "character_offset_in_segment": 159,
+          "token": "!!a{bijective}",
+          "realization": "دوسویی"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Short contradiction proof",
+      "canon": [
+        "FA-OL-CANON-0003:P0008",
+        "FA-OL-CANON-0005:P0115"
+      ],
+      "rationale": "Retain D subset A, hence D in Pow(A), surjectivity witness y and both iff links. Use natural برهان خلف; no additional Choice needed.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source meaning and directly relevant scholarly construction checked.",
+      "id": "FA-0036-C12",
+      "unit": "OLP-0036",
+      "source": {
+        "char_start": 3873,
+        "char_end_exclusive": 4388,
+        "line_start": 92,
+        "line_end": 107,
+        "text": "It remains to show that $\\cardneq{A}{\\Pow{A}}$. For\n  reductio, suppose $\\cardeq{A}{\\Pow{A}}$, i.e., there is some\n  !!{bijection} $g \\colon A \\to \\Pow{A}$. Now consider:\n  \\[\n    D = \\Setabs{x \\in A}{x \\notin g(x)}\n  \\]\n  Note that $D \\subseteq A$, so that $D \\in \\Pow{A}$. Since $g$ is\n  !!a{bijection}, there is some $y \\in A$ such that $g(y) = D$. But\n  now we have:\n  \\[\n    y \\in g(y) \\text{ iff } y \\in D \\text{ iff } y \\notin g(y).\n  \\]\n  This is a contradiction; so $\\cardneq{A}{\\Pow{A}}$.}{}\n\\end{proof}\n\n",
+        "sha256": "0d10171def3b58ec11b086a3f98310e4ec619cc6dade8bf079a2dcc9aa8e13fa"
+      },
+      "target_before": {
+        "char_start": 3997,
+        "char_end_exclusive": 4531,
+        "line_start": 92,
+        "line_end": 108,
+        "text": "هنوز باید\n  نشان دهیم $\\cardneq{A}{\\Pow{A}}$. به قصد خلف، فرض کنید\n  $\\cardeq{A}{\\Pow{A}}$؛ یعنی یک !!{bijection} به‌صورت\n  $g \\colon A \\to \\Pow{A}$ وجود دارد. اکنون در نظر بگیرید:\n  \\[\n    D = \\Setabs{x \\in A}{x \\notin g(x)}\n  \\]\n  توجه کنید که $D \\subseteq A$؛ پس $D \\in \\Pow{A}$. چون $g$\n  !!a{bijection} است، عضوی مانند $y \\in A$ وجود دارد که $g(y) = D$. اما اکنون\n  داریم:\n  \\[\n    y \\in g(y) \\text{ اگر و تنها اگر } y \\in D \\text{ اگر و تنها اگر } y \\notin g(y).\n  \\]\n  این تناقض است؛ پس $\\cardneq{A}{\\Pow{A}}$.}{}\n\\end{proof}\n\n",
+        "sha256": "61903ecfda6710d83f5670b5d634e7a4165847c698bcc2a3d664e33e502605b6"
+      },
+      "target_after": {
+        "char_start": 4521,
+        "char_end_exclusive": 5059,
+        "line_start": 99,
+        "line_end": 115,
+        "text": "هنوز باید\n  نشان دهیم $\\cardneq{A}{\\Pow{A}}$. برای برهان خلف، فرض کنید\n  $\\cardeq{A}{\\Pow{A}}$؛ یعنی یک !!{bijection} به‌صورت\n  $g \\colon A \\to \\Pow{A}$ وجود دارد. اکنون در نظر بگیرید:\n  \\[\n    D = \\Setabs{x \\in A}{x \\notin g(x)}\n  \\]\n  توجه کنید که $D \\subseteq A$؛ پس $D \\in \\Pow{A}$. چون $g$\n  !!a{bijection} است، عضوی مانند $y \\in A$ وجود دارد که $g(y) = D$. اما اکنون\n  داریم:\n  \\[\n    y \\in g(y) \\text{ اگر و تنها اگر } y \\in D \\text{ اگر و تنها اگر } y \\notin g(y).\n  \\]\n  این تناقض است؛ پس $\\cardneq{A}{\\Pow{A}}$.}{}\n\\end{proof}\n\n",
+        "sha256": "1fd74dcee8a237166fd45faedd80641b9dd7a4f2e9a9878a2dcfafa16d7bf58d"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "هنوز باید\n  نشان دهیم $\\cardneq{A}{\\Pow{A}}$. برای برهان خلف، فرض کنید\n  $\\cardeq{A}{\\Pow{A}}$؛ یعنی یک تناظر دوسویی به‌صورت\n  $g \\colon A \\to \\Pow{A}$ وجود دارد. اکنون در نظر بگیرید:\n  \\[\n    D = \\Setabs{x \\in A}{x \\notin g(x)}\n  \\]\n  توجه کنید که $D \\subseteq A$؛ پس $D \\in \\Pow{A}$. چون $g$\n  تناظر دوسویی است، عضوی مانند $y \\in A$ وجود دارد که $g(y) = D$. اما اکنون\n  داریم:\n  \\[\n    y \\in g(y) \\text{ اگر و تنها اگر } y \\in D \\text{ اگر و تنها اگر } y \\notin g(y).\n  \\]\n  این تناقض است؛ پس $\\cardneq{A}{\\Pow{A}}$.}{}\n\\end{proof}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 104,
+          "token": "!!{bijection}",
+          "realization": "تناظر دوسویی"
+        },
+        {
+          "character_offset_in_segment": 297,
+          "token": "!!a{bijection}",
+          "realization": "تناظر دوسویی"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Detailed comparison to countable diagonal",
+      "canon": [
+        "FA-OL-CANON-0003:P0053",
+        "FA-OL-CANON-0005:P0115"
+      ],
+      "rationale": "The arbitrary index generalizes from positive integers to elements of A. Clarify that the differing element is the chosen input, not an unconditional assertion A nonempty. Preserve every source label and equation.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source meaning and directly relevant scholarly construction checked.",
+      "id": "FA-0036-C13",
+      "unit": "OLP-0036",
+      "source": {
+        "char_start": 4388,
+        "char_end_exclusive": 5471,
+        "line_start": 107,
+        "line_end": 126,
+        "text": "\\begin{explain}\n\\oliflabeldef{sfr:siz:nen:thm:nonenum-pownat}{It's instructive to\n  compare the proof of \\olref{thm:cantor} to that of\n  \\olref[nen]{thm:nonenum-pownat}. There we showed that for any list\n  $Z_1$, $Z_2$, \\dots, of subsets of~$\\PosInt$ one can construct a\n  set~$\\overline{Z}$ of numbers guaranteed not to be on the list. It\n  was guaranteed not to be on the list because, for every $n \\in\n  \\PosInt$, $n \\in Z_n$ iff $n \\notin \\overline{Z}$. This way, there\n  is always some number that is !!a{element} of one of $Z_n$ or\n  $\\overline{Z}$ but not the other. We follow the same idea here,\n  except the indices~$n$ are now !!{element}s of~$A$ instead\n  of~$\\PosInt$. The set $\\overline{A}$ is defined so that it is\n  different from~$g(x)$ for each $x \\in A$, because $x \\in g(x)$ iff\n  $x \\notin \\overline{A}$. Again, there is always !!a{element} of~$A$\n  which is !!a{element} of one of $g(x)$ and $\\overline{A}$ but not\n  the other. And just as $\\overline{Z}$ therefore cannot be on the\n  list $Z_1$, $Z_2$, \\dots, $\\overline{A}$ cannot be in the range\n  of~$g$.}{}\n\n",
+        "sha256": "2a6465fcd91f55b596de775e3582c78fc3d0814dd14ce80eda8c3044665a129b"
+      },
+      "target_before": {
+        "char_start": 4531,
+        "char_end_exclusive": 5628,
+        "line_start": 108,
+        "line_end": 127,
+        "text": "\\begin{explain}\n\\oliflabeldef{sfr:siz:nen:thm:nonenum-pownat}{مقایسهٔ برهان\n  \\olref{thm:cantor} با برهانِ\n  \\olref[nen]{thm:nonenum-pownat} آموزنده است. آنجا نشان دادیم که برای\n  هر فهرستِ $Z_1$، $Z_2$، \\dots از زیرمجموعه‌های~$\\PosInt$ می‌توان\n  مجموعه‌ای از اعداد به‌صورت~$\\overline{Z}$ ساخت که تضمین شده است در\n  فهرست نباشد. این مجموعه از آن رو در فهرست نبود که برای هر $n \\in\n  \\PosInt$، $n \\in Z_n$ اگر و تنها اگر $n \\notin \\overline{Z}$. به\n  این ترتیب، همیشه عددی وجود دارد که !!a{element} یکی از $Z_n$ یا\n  $\\overline{Z}$ است، اما عضو آن دیگری نیست. در اینجا نیز از همان اندیشه\n  پیروی می‌کنیم، جز اینکه شاخص‌های~$n$ اکنون از جملهٔ !!{element}s در~$A$ هستند،\n  نه عضوهای~$\\PosInt$. مجموعهٔ $\\overline{A}$ چنان تعریف می‌شود که\n  با~$g(x)$ برای هر $x \\in A$ متفاوت باشد، زیرا $x \\in g(x)$ اگر و تنها\n  اگر $x \\notin \\overline{A}$. باز همواره !!a{element}ی از~$A$ وجود دارد\n  که !!a{element} یکی از $g(x)$ و $\\overline{A}$ است، اما عضو آن دیگری\n  نیست. همان‌گونه که $\\overline{Z}$ ازاین‌رو نمی‌تواند در فهرستِ\n  $Z_1$، $Z_2$، \\dots باشد، $\\overline{A}$ نیز نمی‌تواند در بردِ~$g$\n  باشد.}{}\n\n",
+        "sha256": "ac6623704294c5efec6feec558b607bfa462716498bd33fd8eed6588543f5c1c"
+      },
+      "target_after": {
+        "char_start": 5059,
+        "char_end_exclusive": 6152,
+        "line_start": 115,
+        "line_end": 134,
+        "text": "\\begin{explain}\n\\oliflabeldef{sfr:siz:nen:thm:nonenum-pownat}{مقایسهٔ برهان\n  \\olref{thm:cantor} با برهانِ\n  \\olref[nen]{thm:nonenum-pownat} آموزنده است. آنجا نشان دادیم که برای\n  هر فهرستِ $Z_1$، $Z_2$، \\dots از زیرمجموعه‌های~$\\PosInt$ می‌توان\n  مجموعه‌ای از اعداد به‌صورت~$\\overline{Z}$ ساخت که تضمین شده است در\n  فهرست نباشد. این مجموعه از آن رو در فهرست نبود که برای هر $n \\in\n  \\PosInt$، $n \\in Z_n$ اگر و تنها اگر $n \\notin \\overline{Z}$. به\n  این ترتیب، همیشه عددی وجود دارد که !!a{element} یکی از $Z_n$ یا\n  $\\overline{Z}$ است، اما عضو آن دیگری نیست. در اینجا نیز از همان اندیشه\n  پیروی می‌کنیم، جز اینکه شاخص‌های~$n$ اکنون از جملهٔ !!{element}s در~$A$ هستند،\n  نه عضوهای~$\\PosInt$. مجموعهٔ $\\overline{A}$ چنان تعریف می‌شود که\n  با~$g(x)$ برای هر $x \\in A$ متفاوت باشد، زیرا $x \\in g(x)$ اگر و تنها\n  اگر $x \\notin \\overline{A}$. باز به ازای هر ورودی، خودِ همان عضوِ~$A$\n  !!a{element} یکی از $g(x)$ و $\\overline{A}$ است، اما عضو آن دیگری\n  نیست. همان‌گونه که $\\overline{Z}$ ازاین‌رو نمی‌تواند در فهرستِ\n  $Z_1$، $Z_2$، \\dots باشد، $\\overline{A}$ نیز نمی‌تواند در بردِ~$g$\n  باشد.}{}\n\n",
+        "sha256": "0f73add6046ee188135d70499b4e9539239439374f402200727e5cadcf2446a5"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{explain}\n\\oliflabeldef{sfr:siz:nen:thm:nonenum-pownat}{مقایسهٔ برهان\n  \\olref{thm:cantor} با برهانِ\n  \\olref[nen]{thm:nonenum-pownat} آموزنده است. آنجا نشان دادیم که برای\n  هر فهرستِ $Z_1$، $Z_2$، \\dots از زیرمجموعه‌های~$\\PosInt$ می‌توان\n  مجموعه‌ای از اعداد به‌صورت~$\\overline{Z}$ ساخت که تضمین شده است در\n  فهرست نباشد. این مجموعه از آن رو در فهرست نبود که برای هر $n \\in\n  \\PosInt$، $n \\in Z_n$ اگر و تنها اگر $n \\notin \\overline{Z}$. به\n  این ترتیب، همیشه عددی وجود دارد که عضو یکی از $Z_n$ یا\n  $\\overline{Z}$ است، اما عضو آن دیگری نیست. در اینجا نیز از همان اندیشه\n  پیروی می‌کنیم، جز اینکه شاخص‌های~$n$ اکنون از جملهٔ اعضا در~$A$ هستند،\n  نه عضوهای~$\\PosInt$. مجموعهٔ $\\overline{A}$ چنان تعریف می‌شود که\n  با~$g(x)$ برای هر $x \\in A$ متفاوت باشد، زیرا $x \\in g(x)$ اگر و تنها\n  اگر $x \\notin \\overline{A}$. باز به ازای هر ورودی، خودِ همان عضوِ~$A$\n  عضو یکی از $g(x)$ و $\\overline{A}$ است، اما عضو آن دیگری\n  نیست. همان‌گونه که $\\overline{Z}$ ازاین‌رو نمی‌تواند در فهرستِ\n  $Z_1$، $Z_2$، \\dots باشد، $\\overline{A}$ نیز نمی‌تواند در بردِ~$g$\n  باشد.}{}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 485,
+          "token": "!!a{element}",
+          "realization": "عضو"
+        },
+        {
+          "character_offset_in_segment": 641,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        },
+        {
+          "character_offset_in_segment": 881,
+          "token": "!!a{element}",
+          "realization": "عضو"
+        }
+      ],
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 485,
+          "token": "!!a{element}",
+          "realization": "عضو"
+        },
+        {
+          "character_offset_in_segment": 641,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        },
+        {
+          "character_offset_in_segment": 881,
+          "token": "!!a{element}",
+          "realization": "عضو"
+        }
+      ]
+    },
+    {
+      "topic": "Alternative zero-based comparison",
+      "canon": [
+        "FA-OL-CANON-0003:P0053",
+        "FA-OL-CANON-0005:P0115"
+      ],
+      "rationale": "Preserve N_0,N_1 list and n in Nat, distinct from the prior one-based list. Same diagonal membership equivalence, no reindexing error.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source meaning and directly relevant scholarly construction checked.",
+      "id": "FA-0036-C14",
+      "unit": "OLP-0036",
+      "source": {
+        "char_start": 5471,
+        "char_end_exclusive": 6130,
+        "line_start": 126,
+        "line_end": 137,
+        "text": "\\oliflabeldef{sfr:siz:nen-alt:thm:nonenum-pownat}{It's instructive to\n  compare the proof of \\olref{thm:cantor} to that of\n  \\olref[nen-alt]{thm:nonenum-pownat}. There we showed that for any\n  list $N_0$, $N_1$, $N_2$, \\dots, of subsets of~$\\Nat$ we can construct a\n  set~$D$ of numbers guaranteed not to be on the list. It was\n  guaranteed not to be on the list because $n \\in N_n$ iff $n \\notin\n  D$, for every $n \\in \\Nat$. We follow the same idea here, except the\n  indices~$n$ are now !!{element}s of~$A$ rather than of~$\\Nat$. The\n  set $D$ is defined so that it is different from~$g(x)$ for each $x\n  \\in A$, because $x \\in g(x)$ iff $x \\notin D$.}{}\n\n",
+        "sha256": "4df4ea69463e09e279f853e63aee67366ec0f6022fb279ae72f3ec33373c2c46"
+      },
+      "target_before": {
+        "char_start": 5628,
+        "char_end_exclusive": 6319,
+        "line_start": 127,
+        "line_end": 139,
+        "text": "\\oliflabeldef{sfr:siz:nen-alt:thm:nonenum-pownat}{مقایسهٔ برهان\n  \\olref{thm:cantor} با برهانِ\n  \\olref[nen-alt]{thm:nonenum-pownat} آموزنده است. آنجا نشان دادیم که\n  برای هر فهرستِ $N_0$، $N_1$، $N_2$، \\dots از زیرمجموعه‌های~$\\Nat$\n  می‌توان مجموعه‌ای از اعداد به‌صورت~$D$ ساخت که تضمین شده است در\n  فهرست نباشد. این مجموعه از آن رو در فهرست نبود که\n  $n \\in N_n$ اگر و تنها اگر $n \\notin\n  D$، و این برای هر $n \\in \\Nat$ برقرار است. در اینجا نیز از همان اندیشه پیروی می‌کنیم،\n  جز اینکه شاخص‌های~$n$ اکنون از جملهٔ !!{element}s در~$A$ هستند، نه عضوهای~$\\Nat$.\n  مجموعهٔ $D$ چنان تعریف می‌شود که با~$g(x)$ برای هر $x\n  \\in A$ متفاوت باشد، زیرا $x \\in g(x)$ اگر و تنها اگر $x \\notin D$.}{}\n\n",
+        "sha256": "8746c3bb325d36d741a7cf27572c2f9d2e7743fa692a89005f642de09744fbc1"
+      },
+      "target_after": {
+        "char_start": 6152,
+        "char_end_exclusive": 6843,
+        "line_start": 134,
+        "line_end": 146,
+        "text": "\\oliflabeldef{sfr:siz:nen-alt:thm:nonenum-pownat}{مقایسهٔ برهان\n  \\olref{thm:cantor} با برهانِ\n  \\olref[nen-alt]{thm:nonenum-pownat} آموزنده است. آنجا نشان دادیم که\n  برای هر فهرستِ $N_0$، $N_1$، $N_2$، \\dots از زیرمجموعه‌های~$\\Nat$\n  می‌توان مجموعه‌ای از اعداد به‌صورت~$D$ ساخت که تضمین شده است در\n  فهرست نباشد. این مجموعه از آن رو در فهرست نبود که\n  $n \\in N_n$ اگر و تنها اگر $n \\notin\n  D$، و این برای هر $n \\in \\Nat$ برقرار است. در اینجا نیز از همان اندیشه پیروی می‌کنیم،\n  جز اینکه شاخص‌های~$n$ اکنون از جملهٔ !!{element}s در~$A$ هستند، نه عضوهای~$\\Nat$.\n  مجموعهٔ $D$ چنان تعریف می‌شود که با~$g(x)$ برای هر $x\n  \\in A$ متفاوت باشد، زیرا $x \\in g(x)$ اگر و تنها اگر $x \\notin D$.}{}\n\n",
+        "sha256": "8746c3bb325d36d741a7cf27572c2f9d2e7743fa692a89005f642de09744fbc1"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\oliflabeldef{sfr:siz:nen-alt:thm:nonenum-pownat}{مقایسهٔ برهان\n  \\olref{thm:cantor} با برهانِ\n  \\olref[nen-alt]{thm:nonenum-pownat} آموزنده است. آنجا نشان دادیم که\n  برای هر فهرستِ $N_0$، $N_1$، $N_2$، \\dots از زیرمجموعه‌های~$\\Nat$\n  می‌توان مجموعه‌ای از اعداد به‌صورت~$D$ ساخت که تضمین شده است در\n  فهرست نباشد. این مجموعه از آن رو در فهرست نبود که\n  $n \\in N_n$ اگر و تنها اگر $n \\notin\n  D$، و این برای هر $n \\in \\Nat$ برقرار است. در اینجا نیز از همان اندیشه پیروی می‌کنیم،\n  جز اینکه شاخص‌های~$n$ اکنون از جملهٔ اعضا در~$A$ هستند، نه عضوهای~$\\Nat$.\n  مجموعهٔ $D$ چنان تعریف می‌شود که با~$g(x)$ برای هر $x\n  \\in A$ متفاوت باشد، زیرا $x \\in g(x)$ اگر و تنها اگر $x \\notin D$.}{}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 517,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        }
+      ],
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 517,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        }
+      ]
+    },
+    {
+      "topic": "Russell comparison and historical statement",
+      "canon": [
+        "FA-OL-CANON-0003:P0008",
+        "FA-OL-CANON-0005:P0115"
+      ],
+      "rationale": "Retain comparison with Russell’s paradox and exact source reference. K8 displays the analogous membership contradiction, not an attestation of the historical causal claim.",
+      "question": "The statement about historical inspiration is retained as a source historical claim; this pass does not claim original archival confirmation. The mathematical comparison is directly checked.",
+      "confidence": 2,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source meaning checked; the stated convention or historical-evidence limit remains.",
+      "id": "FA-0036-C15",
+      "unit": "OLP-0036",
+      "source": {
+        "char_start": 6130,
+        "char_end_exclusive": 6333,
+        "line_start": 137,
+        "line_end": 142,
+        "text": "The proof is also worth comparing with the proof of Russell's Paradox,\n\\olref[sfr][set][rus]{thm:russells-paradox}. Indeed, Cantor's Theorem was\nthe inspiration for Russell's own paradox.\n\\end{explain}\n\n",
+        "sha256": "0983ccc7e887be06b8b73b8fd9d128233f094e71de307489ff40311e213fc949"
+      },
+      "target_before": {
+        "char_start": 6319,
+        "char_end_exclusive": 6496,
+        "line_start": 139,
+        "line_end": 144,
+        "text": "این برهان را همچنین می‌توان با برهان پارادوکس راسل مقایسه کرد:\n\\olref[sfr][set][rus]{thm:russells-paradox}. در واقع قضیهٔ کانتور الهام‌بخش\nپارادوکس خود راسل بود.\n\\end{explain}\n\n",
+        "sha256": "bb12ff712baef8b3997fdff7a1711b1b2d19075c009c35d80cc538bf68bb4511"
+      },
+      "target_after": {
+        "char_start": 6843,
+        "char_end_exclusive": 7020,
+        "line_start": 146,
+        "line_end": 151,
+        "text": "این برهان را همچنین می‌توان با برهان پارادوکس راسل مقایسه کرد:\n\\olref[sfr][set][rus]{thm:russells-paradox}. در واقع قضیهٔ کانتور الهام‌بخش\nپارادوکس خود راسل بود.\n\\end{explain}\n\n",
+        "sha256": "bb12ff712baef8b3997fdff7a1711b1b2d19075c009c35d80cc538bf68bb4511"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "این برهان را همچنین می‌توان با برهان پارادوکس راسل مقایسه کرد:\n\\olref[sfr][set][rus]{thm:russells-paradox}. در واقع قضیهٔ کانتور الهام‌بخش\nپارادوکس خود راسل بود.\n\\end{explain}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "No injection from powerset to set exercise",
+      "canon": [
+        "FA-OL-CANON-0003:P0008",
+        "FA-OL-CANON-0003:P0051",
+        "FA-OL-CANON-0005:P0115"
+      ],
+      "rationale": "Preserve reversed arrow Pow(A)→A, all A, injectivity assumption, the image-set D and x=g(D). Check both x∈D and x∉D yield contradictions using injectivity. The inline math-text and is preserved; no hidden solution added.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source meaning and directly relevant scholarly construction checked.",
+      "id": "FA-0036-C16",
+      "unit": "OLP-0036",
+      "source": {
+        "char_start": 6333,
+        "char_end_exclusive": 6662,
+        "line_start": 142,
+        "line_end": 150,
+        "text": "\\begin{prob}\n  Show that there cannot be !!a{injection} $g\\colon \\Pow{A} \\to\n  A$, for any set~$A$. Hint: Suppose $g\\colon \\Pow{A} \\to A$ is\n  !!{injective}. Consider $D = \\Setabs{g(B)}{B \\subseteq A \\text{ and\n  } g(B) \\notin B}$. Let $x = g(D)$. Use the fact that $g$ is\n  !!{injective} to derive a contradiction. \n\\end{prob}\n\n",
+        "sha256": "0ceec30d0cbba90592083d7816e3b6d2ba8d6b1331645d82d728f6a0da42d7c1"
+      },
+      "target_before": {
+        "char_start": 6496,
+        "char_end_exclusive": 6874,
+        "line_start": 144,
+        "line_end": 153,
+        "text": "\\begin{prob}\n  نشان دهید هیچ !!a{injection} به‌صورت $g\\colon \\Pow{A} \\to\n  A$ برای هیچ مجموعهٔ~$A$ نمی‌تواند وجود داشته باشد. راهنمایی: فرض کنید\n  $g\\colon \\Pow{A} \\to A$\n  !!{injective} است. $D = \\Setabs{g(B)}{B \\subseteq A \\text{ و\n  } g(B) \\notin B}$ را در نظر بگیرید. بگذارید $x = g(D)$. با استفاده\n  از این واقعیت که $g$ !!{injective} است، تناقضی به دست آورید.\n\\end{prob}\n\n",
+        "sha256": "0b3ced5d0778d454c00d0ef4dd4b36269ccc2d4d6f1bdea89055a9c19d0baf25"
+      },
+      "target_after": {
+        "char_start": 7020,
+        "char_end_exclusive": 7398,
+        "line_start": 151,
+        "line_end": 160,
+        "text": "\\begin{prob}\n  نشان دهید هیچ !!a{injection} به‌صورت $g\\colon \\Pow{A} \\to\n  A$ برای هیچ مجموعهٔ~$A$ نمی‌تواند وجود داشته باشد. راهنمایی: فرض کنید\n  $g\\colon \\Pow{A} \\to A$\n  !!{injective} است. $D = \\Setabs{g(B)}{B \\subseteq A \\text{ و\n  } g(B) \\notin B}$ را در نظر بگیرید. بگذارید $x = g(D)$. با استفاده\n  از این واقعیت که $g$ !!{injective} است، تناقضی به دست آورید.\n\\end{prob}\n\n",
+        "sha256": "0b3ced5d0778d454c00d0ef4dd4b36269ccc2d4d6f1bdea89055a9c19d0baf25"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{prob}\n  نشان دهید هیچ نگاشت یک‌به‌یک به‌صورت $g\\colon \\Pow{A} \\to\n  A$ برای هیچ مجموعهٔ~$A$ نمی‌تواند وجود داشته باشد. راهنمایی: فرض کنید\n  $g\\colon \\Pow{A} \\to A$\n  یک‌به‌یک است. $D = \\Setabs{g(B)}{B \\subseteq A \\text{ و\n  } g(B) \\notin B}$ را در نظر بگیرید. بگذارید $x = g(D)$. با استفاده\n  از این واقعیت که $g$ یک‌به‌یک است، تناقضی به دست آورید.\n\\end{prob}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 29,
+          "token": "!!a{injection}",
+          "realization": "نگاشت یک‌به‌یک"
+        },
+        {
+          "character_offset_in_segment": 173,
+          "token": "!!{injective}",
+          "realization": "یک‌به‌یک"
+        },
+        {
+          "character_offset_in_segment": 326,
+          "token": "!!{injective}",
+          "realization": "یک‌به‌یک"
+        }
+      ],
+      "member_occurrences": []
+    }
+  ],
+  "corrections": [
+    {
+      "unit": "OLP-0035",
+      "id": "FA0035-FREGE-TWO-DIRECTIONS",
+      "before": "بشقاب‌ها و چاقوها به‌طور\n  یکتا با یکدیگر متناظر می‌شوند",
+      "after": "بشقاب‌ها و چاقوها از هر دو طرف به‌طور\n  یکتا با یکدیگر متناظر می‌شوند"
+    },
+    {
+      "unit": "OLP-0035",
+      "id": "FA0035-QUOTE-TRANSITION",
+      "before": "بینش این قطعه را می‌توان با تعریفی صوری آشکار کرد:",
+      "after": "نکتهٔ این عبارت را می‌توان در قالب تعریفی صوری بیان کرد:"
+    },
+    {
+      "unit": "OLP-0035",
+      "id": "FA0035-INVERSE-CANON",
+      "before": "وارون آن",
+      "after": "معکوس آن"
+    },
+    {
+      "unit": "OLP-0035",
+      "id": "FA0035-EMPTY-BRANCH-F",
+      "before": "A$ با $g(x) = y$",
+      "after": "A$ با $f(x) = y$"
+    },
+    {
+      "unit": "OLP-0035",
+      "id": "FA0035-EMPTY-ALT-F",
+      "before": "\\in A$ نبود که $g(x) = y$",
+      "after": "\\in A$ نبود که $f(x) = y$"
+    },
+    {
+      "unit": "OLP-0035",
+      "id": "FA0035-EMPTY-COPULA-1",
+      "before": "نیز (زیرا در غیر این صورت !!a{element}",
+      "after": "است (زیرا در غیر این صورت !!a{element}"
+    },
+    {
+      "unit": "OLP-0035",
+      "id": "FA0035-EMPTY-COPULA-2",
+      "before": "\\emptyset$ نیز (زیرا",
+      "after": "\\emptyset$ است (زیرا"
+    },
+    {
+      "unit": "OLP-0035",
+      "id": "FA0035-SOURCE-REPAIR-DISCLOSURE",
+      "before": "فرض کنید $\\cardeq{A}{B}$؛ پس یک !!{bijection} به‌صورت $f \\colon A\n\\to B$ وجود دارد، و فرض کنید $A$ !!{enumerable} است.",
+      "after": "فرض کنید $\\cardeq{A}{B}$؛ پس یک !!{bijection} به‌صورت $f \\colon A\n\\to B$ وجود دارد، و فرض کنید $A$ !!{enumerable} است.\n\\emph{یادداشت ویراستاری:} در حالت تهی، هر دو نسخهٔ برهان در متن مبدأ به‌اشتباه\nبه تابع برشماری اشاره می‌کردند که در آن حالت معرفی نشده است. نام تابع در\nهر دو مورد اصلاح شده تا به تناظر دوسوییِ همین جمله اشاره کند."
+    },
+    {
+      "unit": "OLP-0036",
+      "id": "FA0036-DISTINCT-MEMBERS-IDIOM",
+      "before": "هیچ دو مورد از !!{element}s واقع در دامنه به یک !!{element} در برد",
+      "after": "هیچ دو عضو متمایز در دامنه به یک !!{element} در برد"
+    },
+    {
+      "unit": "OLP-0036",
+      "id": "FA0036-IRREFLEXIVE-CANON",
+      "before": "این رابطه غیربازتابی و تراگذری است.",
+      "after": "این رابطه پادبازتابی و تراگذری است. پادبازتابی یعنی هیچ مجموعه‌ای به‌طور اکید از خودش کوچک‌تر نیست."
+    },
+    {
+      "unit": "OLP-0036",
+      "id": "FA0036-CHOICE-CONVENTION",
+      "before": "$A$ !!{nonenumerable} است اگر و تنها اگر $\\cardless{\\Nat}{A}$. این\nنمادگذاری به ما اجازه می‌دهد",
+      "after": "$A$ !!{nonenumerable} است اگر و تنها اگر $\\cardless{\\Nat}{A}$.\n\\emph{یادداشت دربارهٔ فرض‌ها:} هم‌ارزیِ دوم، دربارهٔ ناشمارایی، در اینجا با\nفرض اصل انتخاب بیان می‌شود: تحت این فرض، هر مجموعهٔ نامتناهی زیرمجموعه‌ای\nشمارای نامتناهی دارد. هم‌ارزیِ نخست، دربارهٔ شمارابودن، و قضیهٔ کانتور در\nادامه به این فرض نیاز ندارند.\nاین نمادگذاری به ما اجازه می‌دهد"
+    },
+    {
+      "unit": "OLP-0036",
+      "id": "FA0036-EXTENSIONALITY-CANON",
+      "before": "بنا بر اصل امتداد",
+      "after": "بنا بر اصل گسترش"
+    },
+    {
+      "unit": "OLP-0036",
+      "id": "FA0036-TOTAL-FUNCTION-MEANING",
+      "before": "چون $g$ تام است",
+      "after": "چون $g$ در همهٔ دامنه‌اش تعریف شده است"
+    },
+    {
+      "unit": "OLP-0036",
+      "id": "FA0036-DIAGONAL-WHOLE-DOMAIN",
+      "before": "g(x)$. چون $x$ دلخواه بود، این نشان می‌دهد که برای هر $x \\in\n  \\overline{A}$،",
+      "after": "g(x)$. با توجه به تعریفِ مجموعه و دلخواه‌بودنِ $x$، برای هر $x \\in\n  A$،"
+    },
+    {
+      "unit": "OLP-0036",
+      "id": "FA0036-DOMAIN-DISCLOSURE",
+      "before": "  در بردِ~$g$ باشد و این با فرض پوشابودنِ~$g$ تناقض دارد.}{هنوز باید",
+      "after": "  در بردِ~$g$ باشد و این با فرض پوشابودنِ~$g$ تناقض دارد.\n  \\emph{یادداشت ویراستاری:} در نتیجه‌گیریِ متن مبدأ، متغیر به‌اشتباه فقط بر\n  مجموعهٔ قطری کمیت‌گذاری شده بود. نتیجه باید برای همهٔ ورودی‌های تابع\n  برقرار باشد؛ دامنهٔ کمیت‌گذاری در اینجا اصلاح شده است.}{هنوز باید"
+    },
+    {
+      "unit": "OLP-0036",
+      "id": "FA0036-PROOF-IDIOM",
+      "before": "به قصد خلف، فرض کنید",
+      "after": "برای برهان خلف، فرض کنید"
+    },
+    {
+      "unit": "OLP-0036",
+      "id": "FA0036-WITNESS-PER-INPUT",
+      "before": "اگر $x \\notin \\overline{A}$. باز همواره !!a{element}ی از~$A$ وجود دارد\n  که !!a{element} یکی از $g(x)$ و $\\overline{A}$ است، اما عضو آن دیگری",
+      "after": "اگر $x \\notin \\overline{A}$. باز به ازای هر ورودی، خودِ همان عضوِ~$A$\n  !!a{element} یکی از $g(x)$ و $\\overline{A}$ است، اما عضو آن دیگری"
+    }
+  ],
+  "human_review_gate": false,
+  "reader_release": false
+}

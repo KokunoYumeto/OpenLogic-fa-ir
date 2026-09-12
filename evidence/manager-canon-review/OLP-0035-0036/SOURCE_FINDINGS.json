@@ -1,0 +1,25 @@
+{
+  "source_commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "known_ids": [
+    "OLSIZ-006",
+    "OLSIZ-007"
+  ],
+  "formal_repairs": 3,
+  "source_errors": [
+    "Two premature g(x)=y references corrected to f(x)=y in0035",
+    "0036 arbitrary-element conclusion ranges over A, not overline(A)"
+  ],
+  "exposition": [
+    "Definitional biconditional made explicit",
+    "General nonenumerability/cardinal-comparison equivalence states Choice background",
+    "Per-input witness language includes empty-domain case"
+  ],
+  "translation": [
+    "Direct canon extensionality and irreflexivity labels",
+    "Two-sided Frege correspondence"
+  ],
+  "upstream_issue_sent": false,
+  "current_upstream_status_claimed": false,
+  "independent_source_review": false,
+  "human_gate": false
+}
