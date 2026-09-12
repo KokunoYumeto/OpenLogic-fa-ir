@@ -1,0 +1,41 @@
+{
+  "observed_utc": "2026-09-12T22:36:50.605Z",
+  "source": {
+    "path": "content/sets-functions-relations/arithmetization/rationals.tex",
+    "revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+    "sha256": "7140495368042fcbc55907e6ee568c5bc8b7066e44a01a50cbf4202acebe71d2"
+  },
+  "target_original": {
+    "sha256": "bb9ab1574f6bfa5df5e77adc057013fd5d14365be66a77d7f376c5787d4c425c"
+  },
+  "candidate": {
+    "file": "rationals-targeted-candidate.tex",
+    "sha256": "93c164b4ebd3442de082bfb661688c5dc1dbe748faa8071f3f3cac9bd3c2cf53",
+    "bytes": 4562
+  },
+  "scope": "Exactly two targeted corrections. Other wording in OLP0043 is not admitted as canon-verified by this check. No reader build or full-unit audit claim.",
+  "exact_two_replacement_replay": true,
+  "all_other_target_text_preserved_modulo_line_endings": true,
+  "canon_pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+  "canon_passages": [
+    {
+      "id": "FA-OL-CANON-0003:P0007",
+      "page": 7,
+      "sha256": "eced43d3f4712706b165fad253828659eb82eb9de9f8b10f478c4c9c78f21b9f"
+    },
+    {
+      "id": "FA-OL-CANON-0003:P0008",
+      "page": 8,
+      "sha256": "9e2d1c51a7f812d15cbe390e3046708944f893119a90fb377e4ffedb132422d8"
+    }
+  ],
+  "canon_pages_visually_consulted": [
+    7,
+    8
+  ],
+  "finite_rational_cases": 441,
+  "corrected_mismatches": 0,
+  "old_sign_contradictions": 402,
+  "remaining_english_iff_strings": 3,
+  "full_unit_review_complete": false
+}

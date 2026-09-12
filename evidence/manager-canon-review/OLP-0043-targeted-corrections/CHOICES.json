@@ -1,0 +1,85 @@
+{
+  "schema": "openlogic-targeted-choice-review/1",
+  "unit_id": "OLP-0043",
+  "scope": "Two corrections only; not complete unit-level translation/canon acceptance.",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "source_path": "content/sets-functions-relations/arithmetization/rationals.tex",
+  "source_sha256": "7140495368042fcbc55907e6ee568c5bc8b7066e44a01a50cbf4202acebe71d2",
+  "target_original_sha256": "bb9ab1574f6bfa5df5e77adc057013fd5d14365be66a77d7f376c5787d4c425c",
+  "candidate_sha256": "93c164b4ebd3442de082bfb661688c5dc1dbe748faa8071f3f3cac9bd3c2cf53",
+  "confidence_interpretation": "Editorial confidence scores, not calibrated probabilities.",
+  "human_review_is_release_gate": false,
+  "choices": [
+    {
+      "id": "OLP-0043-NAIVE-TERM",
+      "segment": "opening paragraph",
+      "source_phrase": "using some naïve set theory",
+      "old_target": "نظریهٔ طبیعی مجموعه‌ها",
+      "target": "نظریهٔ ساده‌انگارانهٔ مجموعه‌ها",
+      "decision": "Replace the technical adjective: natural and naïve are not synonymous mathematical registers.",
+      "canon": {
+        "document_id": "FA-OL-CANON-0003",
+        "authors": [
+          "محسن خانی",
+          "افشین زارعی"
+        ],
+        "title": "نظریهٔ مجموعه‌ها",
+        "url": "https://khani.iut.ac.ir/sites/khani.iut.ac.ir/files//u145/jozve-kamel.pdf",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+        "passages": [
+          "FA-OL-CANON-0003:P0007",
+          "FA-OL-CANON-0003:P0008"
+        ],
+        "physical_pdf_pages": [
+          7,
+          8
+        ],
+        "printed_pages": [
+          6,
+          7
+        ],
+        "location": "Section1.2 closing paragraph and footnote1, followed by section1.2.1 heading",
+        "short_attestation": "نظریه‌ی ساده‌انگارانه‌ی مجموعه‌ها",
+        "english_footnote": "naive",
+        "actually_consulted": "Normalized searchable text and complete rendered page images; PDF and indexed passage hashes recomputed.",
+        "typographic_normalization": "Retain the translation edition's ezafe spelling ـهٔ rather than the canon's ـه‌ی; lexical meaning unchanged."
+      },
+      "rationale": "The university set-theory text explicitly pairs the Persian adjective with English naive in its footnote. This attests the technical expression, not merely the ordinary adjective. The source's later ordinary-language naïve remains untouched in this targeted patch.",
+      "rejected": [
+        {
+          "form": "نظریهٔ طبیعی مجموعه‌ها",
+          "reason": "Mistranslates naïve as natural."
+        }
+      ],
+      "confidence": 0.99,
+      "confidence_reason": "Direct bilingual footnote and the following section heading, in the relevant Persian mathematical discipline.",
+      "expert_review_priority": "Confirm disciplinary idiom and consistency when auditing the entire arithmetization chapter; no independent native-speaker certification claimed."
+    },
+    {
+      "id": "OLP-0043-ORDER-SIGN",
+      "segment": "order-definition intertext inside align*",
+      "source_problem": "The sentence first correctly says s-r is nonnegative, then reverses this to r-s after i.e.; the immediately following displayed difference is again s-r.",
+      "old_source_literal": "i.e., $r - s$ can be written as",
+      "corrected_source_literal": "i.e., $s - r$ can be written as",
+      "old_target_context": "منفی نباشد؛ یعنی $r - s$ را بتوان",
+      "target_context": "منفی نباشد؛ یعنی $s - r$ را بتوان",
+      "authority": "Frozen source's immediately preceding equivalence and following displayed difference c/d-a/b; direct ordered-rational algebra.",
+      "mathematical_argument": "With positive denominators b,d, a/b<=c/d iff ad<=cb iff cb-ad>=0. Therefore the nonnegative difference is c/d-a/b=s-r. Counterexample to the old sentence: r=0,s=1 gives r<=s but r-s=-1, which cannot equal i/j with i nonnegative and j positive.",
+      "finite_regression": {
+        "rational_representation_pairs": 441,
+        "corrected_mismatches": 0,
+        "original_contradictions": 402,
+        "role": "Regression sample supporting the algebraic argument, not a proof by finite testing."
+      },
+      "canon_use": "No new Persian lexical choice: preserve the existing Persian sentence and change only the mathematically reversed symbols. The source and exact algebra govern this correction; no external attestation is fabricated.",
+      "confidence": 1,
+      "confidence_reason": "Exact algebraic equivalence, immediate source-internal agreement and explicit counterexample.",
+      "expert_review_priority": "High: verify that all reader representations integrate the source correction, while preserving the frozen source as evidence."
+    }
+  ],
+  "unresolved": [
+    "Three literal English text{ iff } strings remain in the original/candidate. Their Persian rendering must be completed and checked in the coherent chapter integration.",
+    "Remaining terminology, equations, exposition and exercises in OLP0041–0043 still need the full per-segment canon audit.",
+    "Candidate source is not yet installed in a rebuilt PDF/EPUB."
+  ]
+}
