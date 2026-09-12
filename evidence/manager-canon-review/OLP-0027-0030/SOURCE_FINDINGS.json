@@ -1,0 +1,34 @@
+{
+  "source_commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "findings": [
+    {
+      "id": "ENUM-TABLE-F7",
+      "unit": "OLP-0029",
+      "kind": "missing displayed value",
+      "before": "0 & 1 & -1 & 2 & -2 & 3 & \\dots",
+      "after": "0 & 1 & -1 & 2 & -2 & 3 & -3 & \\dots",
+      "proof": "f(7)=(-1)^7 ceil(6/2)=-3. The original final row skips that cell and moves ellipsis into the seventh value column."
+    },
+    {
+      "id": "ENUM-PREDECESSOR",
+      "unit": "OLP-0029",
+      "kind": "false explanatory equivalence; definition already has finite positions",
+      "proof": "The order omega+Z has a least member and an immediate predecessor for every other member, but members of its Z part are not at finite positions. Finite-position condition must be separately imposed."
+    },
+    {
+      "id": "ZIGZAG-PROOF",
+      "unit": "OLP-0030",
+      "kind": "justification expansion, not false theorem",
+      "proof": "Finite diagonals ordered by coordinate sum partition all pairs. Triangular index gives the source order; zero-fold product is singleton."
+    }
+  ],
+  "translation_error": {
+    "unit": "OLP-0027",
+    "title": "Open Set Theory",
+    "incorrect_target": "نظریهٔ مجموعه‌های باز",
+    "correction": "Preserve the exact historical English book title."
+  },
+  "frozen_originals_unchanged": true,
+  "independent_review_completed": false,
+  "upstream_issue_sent": false
+}
