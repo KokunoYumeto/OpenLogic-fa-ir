@@ -1,0 +1,1551 @@
+{
+  "schema": "public-openlogic-fa-batch-review/1",
+  "identities": [
+    {
+      "unit": "OLP-0031",
+      "source_commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+      "source_path": "content/sets-functions-relations/size-of-sets/pairing.tex",
+      "source_git_LF_sha256": "fb6cc1176e91e56cea5f5b9708723c59191813f8fe256aac8ed0457a0119a9bf",
+      "source_ledger_CRLF_sha256": "345a39184e28af727e378d5b5883b5e7d2e1c27cd729329376d19426ddaed484",
+      "published_target_sha256": "6821b15121d8dab526ec888af8792f54168724ff4fcd2f29dcf8e56e64cdb42e",
+      "candidate_sha256": "5eae5e586a9a63af01b59b7fdf1beb25289bdf6f2e8c1b463367ba8fd35d10d0",
+      "published_target_bytes": 5894,
+      "candidate_bytes": 7858,
+      "R3_member": "source/locale/fa-IR/content/sets-functions-relations/size-of-sets/pairing.tex",
+      "R3_archive_sha256": "ef32f359fe7813d0ffef11f3936fb1498f2f3cdcc176ab2acb56b969360c9e59",
+      "locale_config_sha256": "c8df8c39abbd1ab36dbac380490b72e9b3c565bbd1ec3d1f1be88bdc300abd0b",
+      "math_spans": 57,
+      "aligned_choices": 16,
+      "math_text_pairs": [
+        {
+          "math_span": 24,
+          "source": "th",
+          "target": "اُم",
+          "review": "Exact wording reviewed in the aligned choice, not accepted by token masking alone"
+        }
+      ],
+      "formal_repairs": [
+        {
+          "id": "TRIANGULAR-INCLUSIVE",
+          "before": "$< k$",
+          "after": "$\\leq k$"
+        }
+      ]
+    },
+    {
+      "unit": "OLP-0032",
+      "source_commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+      "source_path": "content/sets-functions-relations/size-of-sets/pairing-alt.tex",
+      "source_git_LF_sha256": "c26b4e0da9e2e0b0ec839470ddd1d0d5eb1b3d3922d3b6986c9a795f34328797",
+      "source_ledger_CRLF_sha256": "fd523f5306e1fd0e5c03f4c572d244fb017d1c0be27939f180bc6867a214e425",
+      "published_target_sha256": "a738ab5a1fedd702373fecda2d0337f7a7d1e1279b147096c7dd001b066825f2",
+      "candidate_sha256": "1abc336c244887d2ba60a0d1eaaf4760e991bd8f7fe5a74e9a21e487272ceca8",
+      "published_target_bytes": 6213,
+      "candidate_bytes": 6643,
+      "R3_member": "source/locale/fa-IR/content/sets-functions-relations/size-of-sets/pairing-alt.tex",
+      "R3_archive_sha256": "ef32f359fe7813d0ffef11f3936fb1498f2f3cdcc176ab2acb56b969360c9e59",
+      "locale_config_sha256": "c8df8c39abbd1ab36dbac380490b72e9b3c565bbd1ec3d1f1be88bdc300abd0b",
+      "math_spans": 51,
+      "aligned_choices": 10,
+      "math_text_pairs": [],
+      "formal_repairs": [
+        {
+          "id": "SECOND-PAIR-INDEX",
+          "span_index": 5,
+          "before": "\\tuple{0,2}",
+          "after": "\\tuple{0,1}"
+        },
+        {
+          "id": "SUCCESSIVE-ROWS-INDEX",
+          "span_index": 10,
+          "before": "\\tuple{2,m}",
+          "after": "\\tuple{3,m}"
+        }
+      ]
+    }
+  ],
+  "canon": {
+    "documents": [
+      {
+        "document_id": "FA-OL-CANON-0001",
+        "title_fa": "منطق ریاضی",
+        "title_en": "Mathematical Logic",
+        "authors": [
+          "محسن خانی"
+        ],
+        "institution": "دانشگاه صنعتی اصفهان",
+        "date_statement": "۳۰ دی ۱۴۰۲",
+        "source_url": "https://khani.iut.ac.ir/sites/khani.iut.ac.ir/files//u145/chapter2_0.pdf",
+        "pdf_sha256": "0f3fb75ed1fcb0cbc669c04493acf520888e1ebfd62795bb28fc510bc41c7e79",
+        "pdf_bytes": 759905,
+        "licence_status": "No explicit redistribution licence identified; retain locally and cite only."
+      },
+      {
+        "document_id": "FA-OL-CANON-0005",
+        "title_fa": "مبانی منطق و نظریهٔ مجموعه‌ها",
+        "title_en": "Foundations of Logic and Set Theory",
+        "authors": [
+          "محسن خانی"
+        ],
+        "institution": "دانشگاه صنعتی اصفهان",
+        "date_statement": "نیمسال اول ۱۳۹۷–۱۳۹۸",
+        "source_url": "https://mohsen-khani.github.io/logic97-1/jozve/logic-full.pdf",
+        "pdf_sha256": "565558b76701858236844f19663de27ee10a8d72fd8b007e69b85159ac49f86d",
+        "pdf_bytes": 1514008,
+        "licence_status": "Public repository contains no top-level licence file; retain locally and cite only."
+      },
+      {
+        "document_id": "FA-OL-CANON-0003",
+        "title_fa": "نظریهٔ مجموعه‌ها",
+        "title_en": "Set Theory",
+        "authors": [
+          "محسن خانی",
+          "افشین زارعی"
+        ],
+        "institution": "دانشگاه صنعتی اصفهان",
+        "date_statement": "۱۸ خرداد ۱۴۰۰",
+        "source_url": "https://khani.iut.ac.ir/sites/khani.iut.ac.ir/files//u145/jozve-kamel.pdf",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+        "pdf_bytes": 413763,
+        "licence_status": "No explicit redistribution licence identified; retain locally and cite only."
+      },
+      {
+        "document_id": "FA-REL-C001",
+        "title_fa": "ریاضیات گسسته و کاربردها",
+        "title_en": "Discrete Mathematics and Applications",
+        "authors": [
+          "علیرضا غفاری حدیقه",
+          "مگردیچ تومانیان"
+        ],
+        "institution": "مؤسسه چاپ و انتشارات دانشگاه جامع امام حسین (ع)",
+        "date_statement": "Author-hosted textbook; edition date not newly established",
+        "source_url": "https://hadigheha.github.io/books/teaching/Textbooks/Tarkibiyat.pdf",
+        "pdf_bytes": 1713264,
+        "pdf_sha256": "8f79c45a926c1cea819c4fefa86383f2a65ae23b1d526baaf99cf2506bb9f317",
+        "licence_status": "Private scholarly consultation; no compatible redistribution licence established. Full PDF/renders/extracts are not published."
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "FA-OL-CANON-0001:P0093",
+        "pdf_page_1based": 93,
+        "printed_page": 92,
+        "location": "Numerical coding of formulas/proofs; recursive enumerability distinction",
+        "short_attestation": "کدگذاری؛ کد؛ شمارش‌پذیر به گونهٔ محاسبه‌پذیر",
+        "relevance_and_limits": "Direct coding register and explicit computability qualification. The symbol table uses pair-shaped codes; it does not attest the exact term جفت‌سازی or imply every injection is computable.",
+        "pdf_sha256": "0f3fb75ed1fcb0cbc669c04493acf520888e1ebfd62795bb28fc510bc41c7e79",
+        "normalized_search_page_sha256": "48d6e16a7c7fcacc2b3abfa546cc2b69f597926b7adc91c6fbd2271173366f2e",
+        "visual_page_read": true,
+        "render_sha256": "257661230fe410045ba2f986870d8e3645f7e32211ab41ea1515a27c461502a2"
+      },
+      {
+        "passage_id": "FA-OL-CANON-0005:P0013",
+        "pdf_page_1based": 13,
+        "printed_page": 13,
+        "location": "Truth tables and lemma23 for arbitrary Boolean n-ary functions",
+        "short_attestation": "جدول ارزش؛ نگاشت‌های ارزیابی",
+        "relevance_and_limits": "Direct distinction between F on Boolean tuples and a valuation mu of propositions; lemma23 realizes every such F by a formula. تابع ارزشِ صدق is an explicitly contextual label, not a verbatim quotation of that lemma.",
+        "pdf_sha256": "565558b76701858236844f19663de27ee10a8d72fd8b007e69b85159ac49f86d",
+        "normalized_search_page_sha256": "cd913a01d3aabfed6944ab53910cae0c59bc75642d958398190d18c371448ca2",
+        "visual_page_read": true,
+        "render_sha256": "36dcb526ab0a8be7c2d7653e1e1bf9937b3d9ef3e8bdfcaed60df905671cb7fb"
+      },
+      {
+        "passage_id": "FA-OL-CANON-0003:P0051",
+        "pdf_page_1based": 51,
+        "printed_page": 50,
+        "location": "Cardinal comparison; inverse on image; choice selection",
+        "short_attestation": "هم‌توان؛ یک‌به‌یک؛ پوشا؛ اصل انتخاب",
+        "relevance_and_limits": "Inverse-on-image and fixed-default construction; general reverse selection explicitly invokes Choice. Do not import visible proof notation slips or require Choice for least preimages in natural indices.",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+        "normalized_search_page_sha256": "c9cb6d220f6d4b26576dcce76e02cd3e62bd19fc15104b2020ed4b7fa15f8270",
+        "visual_page_read": true,
+        "render_sha256": "67a940e92fee081fb08ddc849c222c8523bc4a5f083d46cb0669e724dbe7d85a"
+      },
+      {
+        "passage_id": "FA-OL-CANON-0003:P0053",
+        "pdf_page_1based": 53,
+        "printed_page": 52,
+        "location": "Definition10 and ordinal enumerations",
+        "short_attestation": "متناهی؛ شمارا؛ شمارش",
+        "relevance_and_limits": "This canon reserves شمارا for cardinality omega, whereas OpenLogic includes finite and empty sets. Preserve the convention already disclosed in the reviewed0029; ordinal enumeration is not automatically a finite-position or computable list.",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+        "normalized_search_page_sha256": "becce54ede43c880d9d6cb9113d047f3d80f60b5bd55a113b2f57d0491566cdd",
+        "visual_page_read": true,
+        "render_sha256": "0daa8a5edd7341ff10e2733feb93929882b168d92d94116aaa807b6c5c831747"
+      },
+      {
+        "passage_id": "FA-REL-P046",
+        "pdf_page_1based": 46,
+        "printed_page": 36,
+        "location": "Injection/surjection definitions and diagrams",
+        "short_attestation": "یک به یک؛ پوشا",
+        "relevance_and_limits": "At most one preimage is not at least one. Code uniqueness requires injection, not all numbers being used.",
+        "pdf_sha256": "8f79c45a926c1cea819c4fefa86383f2a65ae23b1d526baaf99cf2506bb9f317",
+        "normalized_search_page_sha256": "d43e62612bc3a4aefc91cceff32d810086a6d423c4f6eeb6b503c4245340e3ef",
+        "visual_page_read": true,
+        "render_sha256": "e74e0f5fed58449d4bcb006d3999c50252d0710368cb3f52aee464efa52e5f9c"
+      },
+      {
+        "passage_id": "FA-REL-P050",
+        "pdf_page_1based": 50,
+        "printed_page": 40,
+        "location": "Inverse of a bijection and function composition",
+        "short_attestation": "دوسویی؛ تابع معکوس",
+        "relevance_and_limits": "Direct معکوس terminology and the inverse domain/codomain distinction. Restricting an injection to its image supplies a bijection. The exact label تابع جزئی is not attested on this selected page.",
+        "pdf_sha256": "8f79c45a926c1cea819c4fefa86383f2a65ae23b1d526baaf99cf2506bb9f317",
+        "normalized_search_page_sha256": "25419bc271e8d6ed82a86f4725f0ba7443efc63ec8a80876a2f5076ed88f0500",
+        "visual_page_read": true,
+        "render_sha256": "db64923aec7f422faa1c700d2b5f94cec1b7d6c2990830d2803bf5f0c470b334"
+      }
+    ]
+  },
+  "choices": [
+    {
+      "topic": "Pairing and codes heading",
+      "canon": [
+        "FA-OL-CANON-0001:P0093",
+        "FA-REL-P046"
+      ],
+      "rationale": "جفت‌سازی labels the explicitly defined injective pair-to-number function; کد follows actual numerical coding on L93. No computational requirement is added.",
+      "question": "The exact label جفت‌سازی is not directly attested on these pages. It remains a source-defined contextual term, not a claimed quotation.",
+      "confidence": 2,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source meaning checked; exact label or register convention has the stated attestation limit.",
+      "id": "FA-0031-C01",
+      "unit": "OLP-0031",
+      "source": {
+        "char_start": 182,
+        "char_end_exclusive": 223,
+        "line_start": 10,
+        "line_end": 12,
+        "text": "\\olsection{Pairing Functions and Codes}\n\n",
+        "sha256": "c5cba9f3c3e9bedd9527f85aab3539a739e60ceaa81bbbf7ca80aac49b798ff8"
+      },
+      "target_before": {
+        "char_start": 189,
+        "char_end_exclusive": 224,
+        "line_start": 10,
+        "line_end": 12,
+        "text": "\\olsection{توابع جفت‌سازی و کدها}\n\n",
+        "sha256": "8c63674e7d06a2cc6ea1061e6bc7f1c4ab4785507e97c3d70ea3892245c73990"
+      },
+      "target_after": {
+        "char_start": 189,
+        "char_end_exclusive": 224,
+        "line_start": 10,
+        "line_end": 12,
+        "text": "\\olsection{توابع جفت‌سازی و کدها}\n\n",
+        "sha256": "8c63674e7d06a2cc6ea1061e6bc7f1c4ab4785507e97c3d70ea3892245c73990"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\olsection{توابع جفت‌سازی و کدها}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Computing the inverse position map",
+      "canon": [
+        "FA-REL-P050",
+        "FA-OL-CANON-0001:P0093"
+      ],
+      "rationale": "Use معکوس consistently with the actually read inverse page rather than alternating unexplained وارون/معکوس. Recast counterfactual wording as an explicit desired position calculation, retaining Nat^n, Nat^2, every listed pair/code and direction g:Nat²→Nat. The source already provides the construction later; no new necessity theorem is implied.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "وارون is mathematically intelligible; معکوس matches D50 and the reviewed neighbouring sections. No claim that وارون is intrinsically incorrect.",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source semantics and relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0031-C02",
+      "unit": "OLP-0031",
+      "source": {
+        "char_start": 223,
+        "char_end_exclusive": 900,
+        "line_start": 12,
+        "line_end": 29,
+        "text": "\\begin{explain}\nCantor's zig-zag method makes the enumerability of $\\Nat^n$ visually\nevident. But let us focus on our array depicting $\\Nat^2$. Following\nthe zig-zag line in the array and counting the places, we can check\nthat $\\tuple{1,2}$ is associated with the number~$7$. However, it would\nbe nice if we could compute this more directly. That is, it would be\nnice to have to hand the \\emph{inverse} of the zig-zag enumeration,\n$g\\colon \\Nat^2 \\to \\Nat$, such that\n\\[\ng(\\tuple{0,0}) = 0, \\;\ng(\\tuple{0,1}) = 1, \\;\ng(\\tuple{1,0}) = 2, \\; \\dots,  \ng(\\tuple{1,2}) = 7, \\; \\dots\n\\]\nThis would enable us to calculate exactly where $\\tuple{n, m}$ will occur\nin our enumeration. \n\n",
+        "sha256": "e52bdc45c425c652dab136572b95f9169eeea4896b1244874223f4165f033560"
+      },
+      "target_before": {
+        "char_start": 224,
+        "char_end_exclusive": 873,
+        "line_start": 12,
+        "line_end": 28,
+        "text": "\\begin{explain}\nروش زیگزاگ کانتور شماراییِ $\\Nat^n$ را به‌صورت دیداری آشکار می‌کند. اما\nبیایید بر آرایه‌ای متمرکز شویم که $\\Nat^2$ را نمایش می‌دهد. با دنبال‌کردن\nخط زیگزاگ در آرایه و شمردن جایگاه‌ها، می‌توانیم بررسی کنیم که\n$\\tuple{1,2}$ با عدد~$7$ متناظر است. بااین‌حال، خوب بود اگر می‌توانستیم\nاین مقدار را مستقیم‌تر محاسبه کنیم. یعنی خوب بود \\emph{وارونِ} برشماری\nزیگزاگ، یعنی $g\\colon \\Nat^2 \\to \\Nat$، را در دسترس داشتیم، به‌گونه‌ای که\n\\[\ng(\\tuple{0,0}) = 0, \\;\ng(\\tuple{0,1}) = 1, \\;\ng(\\tuple{1,0}) = 2, \\; \\dots,\ng(\\tuple{1,2}) = 7, \\; \\dots\n\\]\nاین تابع به ما امکان می‌داد دقیقاً محاسبه کنیم که $\\tuple{n, m}$ در کجای\nبرشماری ظاهر خواهد شد.\n\n",
+        "sha256": "4952fd055c2e63d01e373bce63d5561aeb980495ece7df1ba260696d910b0cec"
+      },
+      "target_after": {
+        "char_start": 224,
+        "char_end_exclusive": 900,
+        "line_start": 12,
+        "line_end": 29,
+        "text": "\\begin{explain}\nروش زیگزاگ کانتور شماراییِ $\\Nat^n$ را به‌صورت دیداری آشکار می‌کند. اما\nبیایید بر آرایه‌ای متمرکز شویم که $\\Nat^2$ را نمایش می‌دهد. با دنبال‌کردن\nخط زیگزاگ در آرایه و شمردن جایگاه‌ها، می‌توانیم بررسی کنیم که\n$\\tuple{1,2}$ با عدد~$7$ متناظر است. بااین‌حال، اگر بتوانیم\nاین مقدار را مستقیماً محاسبه کنیم، کار ساده‌تر می‌شود. به بیان دیگر، می‌خواهیم\n\\emph{معکوسِ} برشماری زیگزاگ، یعنی $g\\colon \\Nat^2 \\to \\Nat$، را به‌صورت صریح\nداشته باشیم؛ به‌گونه‌ای که\n\\[\ng(\\tuple{0,0}) = 0, \\;\ng(\\tuple{0,1}) = 1, \\;\ng(\\tuple{1,0}) = 2, \\; \\dots,\ng(\\tuple{1,2}) = 7, \\; \\dots\n\\]\nاین تابع به ما امکان می‌دهد دقیقاً محاسبه کنیم که $\\tuple{n, m}$ در کجای\nبرشماری ظاهر خواهد شد.\n\n",
+        "sha256": "5a56b809b95044267035f8df4e6a5e651c3a3d0bbd7c61b0d3871a88b155b7ff"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{explain}\nروش زیگزاگ کانتور شماراییِ $\\Nat^n$ را به‌صورت دیداری آشکار می‌کند. اما\nبیایید بر آرایه‌ای متمرکز شویم که $\\Nat^2$ را نمایش می‌دهد. با دنبال‌کردن\nخط زیگزاگ در آرایه و شمردن جایگاه‌ها، می‌توانیم بررسی کنیم که\n$\\tuple{1,2}$ با عدد~$7$ متناظر است. بااین‌حال، اگر بتوانیم\nاین مقدار را مستقیماً محاسبه کنیم، کار ساده‌تر می‌شود. به بیان دیگر، می‌خواهیم\n\\emph{معکوسِ} برشماری زیگزاگ، یعنی $g\\colon \\Nat^2 \\to \\Nat$، را به‌صورت صریح\nداشته باشیم؛ به‌گونه‌ای که\n\\[\ng(\\tuple{0,0}) = 0, \\;\ng(\\tuple{0,1}) = 1, \\;\ng(\\tuple{1,0}) = 2, \\; \\dots,\ng(\\tuple{1,2}) = 7, \\; \\dots\n\\]\nاین تابع به ما امکان می‌دهد دقیقاً محاسبه کنیم که $\\tuple{n, m}$ در کجای\nبرشماری ظاهر خواهد شد.\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Diagonal successor and triangular formula",
+      "canon": [
+        "FA-REL-P046",
+        "FA-REL-P050",
+        "FA-OL-CANON-0003:P0053"
+      ],
+      "rationale": "Source successor step is valid only when m>0. Add that condition in prose and specify the cell at the stated row/column intersection, not a whole row holding one value. Correct sum of naturals<k to≤k so it equals k(k+1)/2, retaining the zero-based triangular convention and exact pairing formula. Both source corrections are visibly disclosed. Numeric triangular values unchanged.",
+      "question": "اعداد مثلثی is a source-defined contextual label here; these selected pages do not attest that exact phrase. The formula supplies exact meaning.",
+      "confidence": 2,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source meaning checked; exact label or register convention has the stated attestation limit.",
+      "id": "FA-0031-C03",
+      "unit": "OLP-0031",
+      "source": {
+        "char_start": 900,
+        "char_end_exclusive": 1424,
+        "line_start": 29,
+        "line_end": 40,
+        "text": "In fact, we can define $g$ directly by making two observations. First:\nif the $n$th row and $m$th column contains value~$v$, then the\n$(n+1)$st row and $(m-1)$st column contains value $v + 1$. Second: the\nfirst row of our enumeration consists of the triangular numbers,\nstarting with $0$, $1$, $3$, $6$, etc. The $k$th triangular number is\nthe sum of the natural numbers $< k$, which can be computed as\n$k(k+1)/2$. Putting these two observations together, consider this\nfunction:\n\\[\n  g(n,m) = \\frac{(n+m+1)(n+m)}{2} + n\n\\]\n",
+        "sha256": "9735e9480b52e76e04188d1bd8106c53d15bbe6686d9e83744a6d7ce9779fa94"
+      },
+      "target_before": {
+        "char_start": 873,
+        "char_end_exclusive": 1353,
+        "line_start": 28,
+        "line_end": 38,
+        "text": "در واقع، می‌توانیم با دو مشاهده $g$ را مستقیماً تعریف کنیم. نخست: اگر\nسطر $n$اُم و ستون $m$اُم حاوی مقدار~$v$ باشد، آنگاه سطر\n$(n+1)$اُم و ستون $(m-1)$اُم حاوی مقدار $v + 1$ است. دوم: سطر نخست\nبرشماری ما از اعداد مثلثی تشکیل می‌شود که با $0$، $1$، $3$، $6$ و\nالی آخر آغاز می‌شوند. عدد مثلثیِ $k$اُم مجموع اعداد طبیعیِ $< k$ است\nکه می‌توان آن را به‌صورت $k(k+1)/2$ محاسبه کرد. با کنار هم گذاشتن این\nدو مشاهده، تابع زیر را در نظر بگیرید:\n\\[\n  g(n,m) = \\frac{(n+m+1)(n+m)}{2} + n\n\\]\n",
+        "sha256": "5584ad90111c3ec3aaa7d4d61412e022084acbee70eab15cb86f13244228a374"
+      },
+      "target_after": {
+        "char_start": 900,
+        "char_end_exclusive": 1578,
+        "line_start": 29,
+        "line_end": 41,
+        "text": "در واقع، می‌توانیم با دو مشاهده $g$ را مستقیماً تعریف کنیم. نخست: اگر\nخانهٔ واقع در سطر $n$اُم و ستون $m$اُم حاوی مقدار~$v$ باشد و شمارهٔ ستون مثبت باشد،\nآنگاه خانهٔ واقع در سطر $(n+1)$اُم و ستون $(m-1)$اُم حاوی مقدار $v + 1$ است. دوم: سطر نخست\nبرشماری ما از اعداد مثلثی تشکیل می‌شود که با $0$، $1$، $3$، $6$ و\nالی آخر آغاز می‌شوند. عدد مثلثیِ $k$اُم مجموع اعداد طبیعیِ $\\leq k$ است\nکه می‌توان آن را به‌صورت $k(k+1)/2$ محاسبه کرد. \\emph{یادداشت ویراستاری:} شرط مثبت‌بودن شمارهٔ ستون در مشاهدهٔ نخست،\nو احتساب خودِ عدد در مجموع اعداد مثلثی، دو اصلاح در توضیح متن مبدأ هستند.\nبا کنار هم گذاشتن این\nدو مشاهده، تابع زیر را در نظر بگیرید:\n\\[\n  g(n,m) = \\frac{(n+m+1)(n+m)}{2} + n\n\\]\n",
+        "sha256": "a630273e652ff8522fff8330e6d72a7ebb7d6c79e8194764258ea2c68450acab"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "در واقع، می‌توانیم با دو مشاهده $g$ را مستقیماً تعریف کنیم. نخست: اگر\nخانهٔ واقع در سطر $n$اُم و ستون $m$اُم حاوی مقدار~$v$ باشد و شمارهٔ ستون مثبت باشد،\nآنگاه خانهٔ واقع در سطر $(n+1)$اُم و ستون $(m-1)$اُم حاوی مقدار $v + 1$ است. دوم: سطر نخست\nبرشماری ما از اعداد مثلثی تشکیل می‌شود که با $0$، $1$، $3$، $6$ و\nالی آخر آغاز می‌شوند. عدد مثلثیِ $k$اُم مجموع اعداد طبیعیِ $\\leq k$ است\nکه می‌توان آن را به‌صورت $k(k+1)/2$ محاسبه کرد. \\emph{یادداشت ویراستاری:} شرط مثبت‌بودن شمارهٔ ستون در مشاهدهٔ نخست،\nو احتساب خودِ عدد در مجموع اعداد مثلثی، دو اصلاح در توضیح متن مبدأ هستند.\nبا کنار هم گذاشتن این\nدو مشاهده، تابع زیر را در نظر بگیرید:\n\\[\n  g(n,m) = \\frac{(n+m+1)(n+m)}{2} + n\n\\]\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Notation abbreviation and computed example",
+      "canon": [
+        "FA-OL-CANON-0001:P0093",
+        "FA-REL-P050"
+      ],
+      "rationale": "Retain tuple versus two-argument abbreviation, ordinal text in math, and g(1,2)=7. No changed pairing direction or RTL coordinate reversal.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source semantics and relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0031-C04",
+      "unit": "OLP-0031",
+      "source": {
+        "char_start": 1424,
+        "char_end_exclusive": 1762,
+        "line_start": 40,
+        "line_end": 47,
+        "text": "We often just write $g(n, m)$ rather that $g(\\tuple{n, m})$, since it\nis easier on the eyes. This tells you first to determine the\n$(n+m)^\\text{th}$ triangle number, and then add $n$ to it. And\nit populates the array in exactly the way we would like. So in\nparticular, the pair $\\tuple{1, 2}$ is sent to $\\frac{4 \\times 3}{2} +\n1 = 7$. \n\n",
+        "sha256": "d78fa8870f745445b9710128313b18a1b7055829cbb22953f546d78fa8d04e4f"
+      },
+      "target_before": {
+        "char_start": 1353,
+        "char_end_exclusive": 1672,
+        "line_start": 38,
+        "line_end": 45,
+        "text": "اغلب صرفاً $g(n, m)$ را به‌جای $g(\\tuple{n, m})$ می‌نویسیم، زیرا خواندنش\nآسان‌تر است. این فرمول می‌گوید نخست عدد مثلثیِ $(n+m)^\\text{اُم}$ را\nبه دست آورید و سپس $n$ را به آن بیفزایید. این کار آرایه را دقیقاً به\nشیوهٔ مطلوب ما پر می‌کند. پس به‌ویژه، زوج $\\tuple{1, 2}$ به\n$\\frac{4 \\times 3}{2} +\n1 = 7$ فرستاده می‌شود.\n\n",
+        "sha256": "04d30aced6a7d92cb48c2548bfc3dd8d47daed16a93de02167ab5fc44df49d05"
+      },
+      "target_after": {
+        "char_start": 1578,
+        "char_end_exclusive": 1897,
+        "line_start": 41,
+        "line_end": 48,
+        "text": "اغلب صرفاً $g(n, m)$ را به‌جای $g(\\tuple{n, m})$ می‌نویسیم، زیرا خواندنش\nآسان‌تر است. این فرمول می‌گوید نخست عدد مثلثیِ $(n+m)^\\text{اُم}$ را\nبه دست آورید و سپس $n$ را به آن بیفزایید. این کار آرایه را دقیقاً به\nشیوهٔ مطلوب ما پر می‌کند. پس به‌ویژه، زوج $\\tuple{1, 2}$ به\n$\\frac{4 \\times 3}{2} +\n1 = 7$ فرستاده می‌شود.\n\n",
+        "sha256": "04d30aced6a7d92cb48c2548bfc3dd8d47daed16a93de02167ab5fc44df49d05"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "اغلب صرفاً $g(n, m)$ را به‌جای $g(\\tuple{n, m})$ می‌نویسیم، زیرا خواندنش\nآسان‌تر است. این فرمول می‌گوید نخست عدد مثلثیِ $(n+m)^\\text{اُم}$ را\nبه دست آورید و سپس $n$ را به آن بیفزایید. این کار آرایه را دقیقاً به\nشیوهٔ مطلوب ما پر می‌کند. پس به‌ویژه، زوج $\\tuple{1, 2}$ به\n$\\frac{4 \\times 3}{2} +\n1 = 7$ فرستاده می‌شود.\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Specific inverse versus general pairing",
+      "canon": [
+        "FA-REL-P046",
+        "FA-REL-P050"
+      ],
+      "rationale": "The particular g is a bijection and inverse of the diagonal enumeration. The following general definition only requires injection; this sentence does not override it.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source semantics and relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0031-C05",
+      "unit": "OLP-0031",
+      "source": {
+        "char_start": 1762,
+        "char_end_exclusive": 1906,
+        "line_start": 47,
+        "line_end": 51,
+        "text": "This function $g$ is the \\emph{inverse} of an enumeration of a set of\npairs. Such functions are called \\emph{pairing functions}.\n\\end{explain}\n\n",
+        "sha256": "453d2dab5c2aedc47e6e19d63949d5c2b39de2cf3d28e2858aa2ba5cf66aba11"
+      },
+      "target_before": {
+        "char_start": 1672,
+        "char_end_exclusive": 1796,
+        "line_start": 45,
+        "line_end": 49,
+        "text": "این تابع $g$ \\emph{وارونِ} برشماریِ مجموعه‌ای از زوج‌هاست. چنین توابعی\n\\emph{توابع جفت‌سازی} نامیده می‌شوند.\n\\end{explain}\n\n",
+        "sha256": "8ba4e99545a7682a05f09df209a99d8d3069f47496fb5ac02ccbe1d0ca091e71"
+      },
+      "target_after": {
+        "char_start": 1897,
+        "char_end_exclusive": 2021,
+        "line_start": 48,
+        "line_end": 52,
+        "text": "این تابع $g$ \\emph{معکوسِ} برشماریِ مجموعه‌ای از زوج‌هاست. چنین توابعی\n\\emph{توابع جفت‌سازی} نامیده می‌شوند.\n\\end{explain}\n\n",
+        "sha256": "ea228eb74923fb5de540cf506ebb785936c8f8a240790f72b429abc0f7fb3286"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "این تابع $g$ \\emph{معکوسِ} برشماریِ مجموعه‌ای از زوج‌هاست. چنین توابعی\n\\emph{توابع جفت‌سازی} نامیده می‌شوند.\n\\end{explain}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Arithmetical pairing definition",
+      "canon": [
+        "FA-REL-P046",
+        "FA-OL-CANON-0001:P0093"
+      ],
+      "rationale": "Keep any injection A×B→Nat; neither onto, computable nor total inverse on Nat is added. Encoding/code are source-defined numerical representations. Empty factors are not excluded.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source semantics and relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0031-C06",
+      "unit": "OLP-0031",
+      "source": {
+        "char_start": 1906,
+        "char_end_exclusive": 2169,
+        "line_start": 51,
+        "line_end": 58,
+        "text": "\\begin{defn}[Pairing function] \n  A function $f\\colon A \\times B \\to \\Nat$ is an arithmetical\n  \\emph{pairing function} if $f$ is injective. We also say that $f$\n  \\emph{encodes} $A \\times B$, and that $f(x,y)$ is the\n  \\emph{code} for $\\tuple{x,y}$.\n\\end{defn}\n\n",
+        "sha256": "a0486952282a1eb5e9fa783ff08420654a8ea01bd1f0e75243bf257682cae7db"
+      },
+      "target_before": {
+        "char_start": 1796,
+        "char_end_exclusive": 2041,
+        "line_start": 49,
+        "line_end": 55,
+        "text": "\\begin{defn}[تابع جفت‌سازی]\n  تابع $f\\colon A \\times B \\to \\Nat$ یک \\emph{تابع جفت‌سازیِ} حسابی است\n  اگر $f$ یک‌به‌یک باشد. همچنین می‌گوییم $f$ \\emph{کدگذاریِ}\n  $A \\times B$ را انجام می‌دهد و $f(x,y)$ \\emph{کدِ} $\\tuple{x,y}$ است.\n\\end{defn}\n\n",
+        "sha256": "019f60df2c527bc153068ec36e32506c4ce72460c4c989a259381364f5eada00"
+      },
+      "target_after": {
+        "char_start": 2021,
+        "char_end_exclusive": 2266,
+        "line_start": 52,
+        "line_end": 58,
+        "text": "\\begin{defn}[تابع جفت‌سازی]\n  تابع $f\\colon A \\times B \\to \\Nat$ یک \\emph{تابع جفت‌سازیِ} حسابی است\n  اگر $f$ یک‌به‌یک باشد. همچنین می‌گوییم $f$ \\emph{کدگذاریِ}\n  $A \\times B$ را انجام می‌دهد و $f(x,y)$ \\emph{کدِ} $\\tuple{x,y}$ است.\n\\end{defn}\n\n",
+        "sha256": "019f60df2c527bc153068ec36e32506c4ce72460c4c989a259381364f5eada00"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{defn}[تابع جفت‌سازی]\n  تابع $f\\colon A \\times B \\to \\Nat$ یک \\emph{تابع جفت‌سازیِ} حسابی است\n  اگر $f$ یک‌به‌یک باشد. همچنین می‌گوییم $f$ \\emph{کدگذاریِ}\n  $A \\times B$ را انجام می‌دهد و $f(x,y)$ \\emph{کدِ} $\\tuple{x,y}$ است.\n\\end{defn}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Decoding only valid codes",
+      "canon": [
+        "FA-REL-P046",
+        "FA-REL-P050",
+        "FA-OL-CANON-0001:P0093"
+      ],
+      "rationale": "Explicitly restrict inverse decoding to the range, because injection guarantees uniqueness but not existence of a pair for every natural number. The source alternate section confirms partial inverse scope. کدگشایی is explained as recovering the represented pair, not cryptographic decryption.",
+      "question": "Exact کدگشایی is not directly attested on the selected page; L93 attests coding and codes. Retain it with the explicit source-grounded meaning and inverse-domain condition.",
+      "confidence": 2,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source meaning checked; exact label or register convention has the stated attestation limit.",
+      "id": "FA-0031-C07",
+      "unit": "OLP-0031",
+      "source": {
+        "char_start": 2169,
+        "char_end_exclusive": 2485,
+        "line_start": 58,
+        "line_end": 66,
+        "text": "\\begin{explain}\nWe can use pairing functions to encode, e.g., pairs of natural numbers;\nor, in other words, we can represent each \\emph{pair} of elements\nusing a \\emph{single} number. Using the inverse of the pairing\nfunction, we can \\emph{decode} the number, i.e., find out which\npair it represents.\n\\end{explain}\n\n",
+        "sha256": "190092cd9542ab5faf68137e2f0a7063b4f3b1cdbb1c4d7c54de2997f1cd3842"
+      },
+      "target_before": {
+        "char_start": 2041,
+        "char_end_exclusive": 2339,
+        "line_start": 55,
+        "line_end": 62,
+        "text": "\\begin{explain}\nمی‌توانیم، برای نمونه، زوج‌های اعداد طبیعی را با توابع جفت‌سازی\nکدگذاری کنیم؛ یا به بیان دیگر، هر \\emph{زوج} از عناصر را با\n\\emph{یک} عدد بازنمایی کنیم. با استفاده از وارون تابع جفت‌سازی می‌توانیم\nعدد را \\emph{کدگشایی کنیم}؛ یعنی دریابیم کدام زوج را بازنمایی می‌کند.\n\\end{explain}\n\n",
+        "sha256": "2ec3617c0c4a3ceb03b30fcc23c8a9e2632a52193a31aff15c9cbf5c18aee0bc"
+      },
+      "target_after": {
+        "char_start": 2266,
+        "char_end_exclusive": 2693,
+        "line_start": 58,
+        "line_end": 66,
+        "text": "\\begin{explain}\nمی‌توانیم، برای نمونه، زوج‌های اعداد طبیعی را با توابع جفت‌سازی\nکدگذاری کنیم؛ یا به بیان دیگر، هر \\emph{زوج} از عناصر را با\n\\emph{یک} عدد بازنمایی کنیم. با استفاده از معکوس تابع جفت‌سازی، که بر برد آن تعریف شده است، می‌توانیم\n\\emph{کدگشایی کنیم}؛ یعنی زوجی را که یک کدِ معتبر بازنمایی می‌کند به دست آوریم.\n\\emph{توضیح ویراستاری:} یک‌به‌یک‌بودن به‌تنهایی تضمین نمی‌کند که هر عددی کدِ یک زوج باشد.\n\\end{explain}\n\n",
+        "sha256": "c647c71db40a1d3821f61a028fe1a948d15cbc8e537bffa3540e99a6d1fcc88a"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{explain}\nمی‌توانیم، برای نمونه، زوج‌های اعداد طبیعی را با توابع جفت‌سازی\nکدگذاری کنیم؛ یا به بیان دیگر، هر \\emph{زوج} از عناصر را با\n\\emph{یک} عدد بازنمایی کنیم. با استفاده از معکوس تابع جفت‌سازی، که بر برد آن تعریف شده است، می‌توانیم\n\\emph{کدگشایی کنیم}؛ یعنی زوجی را که یک کدِ معتبر بازنمایی می‌کند به دست آوریم.\n\\emph{توضیح ویراستاری:} یک‌به‌یک‌بودن به‌تنهایی تضمین نمی‌کند که هر عددی کدِ یک زوج باشد.\n\\end{explain}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Nonnegative rational exercise",
+      "canon": [
+        "FA-OL-CANON-0003:P0053",
+        "FA-OL-CANON-0001:P0093"
+      ],
+      "rationale": "Retain all nonnegative rationals, including zero. A repeated enumeration from numerator/positive denominator pairs is allowed; reduced fractions are not required. Exercise remains unsolved.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source semantics and relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0031-C08",
+      "unit": "OLP-0031",
+      "source": {
+        "char_start": 2485,
+        "char_end_exclusive": 2580,
+        "line_start": 66,
+        "line_end": 70,
+        "text": "\\begin{prob}\nGive an enumeration of the set of all non-negative rational numbers. \n\\end{prob}\n\n",
+        "sha256": "417ed91d50498d3779fcbf19d2f830a729120f3ac63a0014afbb47fbab12d6ed"
+      },
+      "target_before": {
+        "char_start": 2339,
+        "char_end_exclusive": 2422,
+        "line_start": 62,
+        "line_end": 66,
+        "text": "\\begin{prob}\nبرشماری‌ای از مجموعهٔ همهٔ اعداد گویای نامنفی ارائه کنید.\n\\end{prob}\n\n",
+        "sha256": "f9b6a466dd5cb550002da85dcfa17d0a6d9ef6f08d39271d55c8b335f4d62c4b"
+      },
+      "target_after": {
+        "char_start": 2693,
+        "char_end_exclusive": 2776,
+        "line_start": 66,
+        "line_end": 70,
+        "text": "\\begin{prob}\nبرشماری‌ای از مجموعهٔ همهٔ اعداد گویای نامنفی ارائه کنید.\n\\end{prob}\n\n",
+        "sha256": "f9b6a466dd5cb550002da85dcfa17d0a6d9ef6f08d39271d55c8b335f4d62c4b"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{prob}\nبرشماری‌ای از مجموعهٔ همهٔ اعداد گویای نامنفی ارائه کنید.\n\\end{prob}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "All rationals exercise",
+      "canon": [
+        "FA-OL-CANON-0003:P0053",
+        "FA-OL-CANON-0001:P0093"
+      ],
+      "rationale": "Preserve numerator z in integers, positive denominator m and Rat notation. Nonzero denominator is essential; negative rationals must not disappear.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source semantics and relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0031-C09",
+      "unit": "OLP-0031",
+      "source": {
+        "char_start": 2580,
+        "char_end_exclusive": 2744,
+        "line_start": 70,
+        "line_end": 75,
+        "text": "\\begin{prob}\nShow that $\\Rat$ is !!{enumerable}. Recall that any rational number \ncan be written as a fraction $z/m$ with $z \\in \\Int$, $m \\in \\Nat^+$.\n\\end{prob}\n\n",
+        "sha256": "1c96b2eecc99bea124ffbecca95c3e5cd2c21456bc24442d1060c6c70da1e6eb"
+      },
+      "target_before": {
+        "char_start": 2422,
+        "char_end_exclusive": 2580,
+        "line_start": 66,
+        "line_end": 71,
+        "text": "\\begin{prob}\nنشان دهید $\\Rat$ !!{enumerable} است. به یاد آورید که هر عدد گویا را\nمی‌توان به‌صورت کسر $z/m$ با $z \\in \\Int$ و $m \\in \\Nat^+$ نوشت.\n\\end{prob}\n\n",
+        "sha256": "1b8d961f417be72f69dc9d2c5e48063925542ad78b40fb3b6d99a8beabb9e5db"
+      },
+      "target_after": {
+        "char_start": 2776,
+        "char_end_exclusive": 2934,
+        "line_start": 70,
+        "line_end": 75,
+        "text": "\\begin{prob}\nنشان دهید $\\Rat$ !!{enumerable} است. به یاد آورید که هر عدد گویا را\nمی‌توان به‌صورت کسر $z/m$ با $z \\in \\Int$ و $m \\in \\Nat^+$ نوشت.\n\\end{prob}\n\n",
+        "sha256": "1b8d961f417be72f69dc9d2c5e48063925542ad78b40fb3b6d99a8beabb9e5db"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{prob}\nنشان دهید $\\Rat$ شمارا است. به یاد آورید که هر عدد گویا را\nمی‌توان به‌صورت کسر $z/m$ با $z \\in \\Int$ و $m \\in \\Nat^+$ نوشت.\n\\end{prob}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 30,
+          "token": "!!{enumerable}",
+          "realization": "شمارا"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Finite binary strings exercise",
+      "canon": [
+        "FA-OL-CANON-0001:P0093",
+        "FA-OL-CANON-0003:P0053"
+      ],
+      "rationale": "Retain Bin star as all finite binary strings including empty, not infinite bit streams. Numerical formula/sequence coding on L93 supports register, not an identical chosen encoding.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source semantics and relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0031-C10",
+      "unit": "OLP-0031",
+      "source": {
+        "char_start": 2744,
+        "char_end_exclusive": 2804,
+        "line_start": 75,
+        "line_end": 79,
+        "text": "\\begin{prob}\nDefine an enumeration of $\\Bin^*$.\n\\end{prob}\n\n",
+        "sha256": "c8d6f797823f05d969a58c440dbb3814dd8715860a2ad8783f1f6a96d8aa9d0a"
+      },
+      "target_before": {
+        "char_start": 2580,
+        "char_end_exclusive": 2640,
+        "line_start": 71,
+        "line_end": 75,
+        "text": "\\begin{prob}\nبرشماری‌ای از $\\Bin^*$ تعریف کنید.\n\\end{prob}\n\n",
+        "sha256": "096834d60a8caddb83ad6314eb4c08908e379a3712eed22dc545fbca940814d2"
+      },
+      "target_after": {
+        "char_start": 2934,
+        "char_end_exclusive": 2994,
+        "line_start": 75,
+        "line_end": 79,
+        "text": "\\begin{prob}\nبرشماری‌ای از $\\Bin^*$ تعریف کنید.\n\\end{prob}\n\n",
+        "sha256": "096834d60a8caddb83ad6314eb4c08908e379a3712eed22dc545fbca940814d2"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{prob}\nبرشماری‌ای از $\\Bin^*$ تعریف کنید.\n\\end{prob}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Truth functions and valuation distinction",
+      "canon": [
+        "FA-OL-CANON-0005:P0013",
+        "FA-OL-CANON-0001:P0093"
+      ],
+      "rationale": "F13 explicitly separates arbitrary F:{0,1}^n→{0,1} from valuation mu of propositions. Use تابع ارزشِ صدق for this finite-arity input/output role; preserve all arities, all functions and countability, not merely syntactically written formulas. No solution inserted.",
+      "question": "The expanded label تابع ارزشِ صدق is contextual, not a verbatim page attestation. It avoids conflating F with the canon’s نگاشت ارزیابی mu.",
+      "confidence": 2,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source meaning checked; exact label or register convention has the stated attestation limit.",
+      "id": "FA-0031-C11",
+      "unit": "OLP-0031",
+      "source": {
+        "char_start": 2804,
+        "char_end_exclusive": 3079,
+        "line_start": 79,
+        "line_end": 86,
+        "text": "\\begin{prob}\nRecall from your introductory logic course that each possible truth\ntable expresses a truth function. In other words, the truth functions\nare all functions from $\\Bin^k \\to \\Bin$ for some~$k$. Prove that the\nset of all truth functions is enumerable.\n\\end{prob}\n\n",
+        "sha256": "6489d093dbf27b4e88f3dca19009b460a22298ec2121f49185f4bc510f4d9fb2"
+      },
+      "target_before": {
+        "char_start": 2640,
+        "char_end_exclusive": 2874,
+        "line_start": 75,
+        "line_end": 82,
+        "text": "\\begin{prob}\nاز درس مقدماتی منطق خود به یاد آورید که هر جدول ارزشِ ممکن یک تابع ارزش\nرا بیان می‌کند. به بیان دیگر، توابع ارزش همهٔ توابع از\n$\\Bin^k \\to \\Bin$ برای یک~$k$ هستند. ثابت کنید مجموعهٔ همهٔ توابع ارزش\nشمارا است.\n\\end{prob}\n\n",
+        "sha256": "00d9cb940b548fdb1475ccb5a70a1b5c222594797e3e480b654200a8048a0304"
+      },
+      "target_after": {
+        "char_start": 2994,
+        "char_end_exclusive": 3241,
+        "line_start": 79,
+        "line_end": 86,
+        "text": "\\begin{prob}\nاز درس مقدماتی منطق خود به یاد آورید که هر جدول ارزشِ ممکن یک تابعِ ارزشِ صدق\nرا تعیین می‌کند. به بیان دیگر، این‌ها همهٔ توابعی به‌صورت\n$\\Bin^k \\to \\Bin$ برای یک~$k$ هستند. ثابت کنید مجموعهٔ همهٔ توابعِ ارزشِ صدق\nشماراست.\n\\end{prob}\n\n",
+        "sha256": "d02874747a38aa904a6b91e5a23c8fc6eba22a28b0737cdad353bcd9fd136c9c"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{prob}\nاز درس مقدماتی منطق خود به یاد آورید که هر جدول ارزشِ ممکن یک تابعِ ارزشِ صدق\nرا تعیین می‌کند. به بیان دیگر، این‌ها همهٔ توابعی به‌صورت\n$\\Bin^k \\to \\Bin$ برای یک~$k$ هستند. ثابت کنید مجموعهٔ همهٔ توابعِ ارزشِ صدق\nشماراست.\n\\end{prob}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Finite subsets of an infinite countable set",
+      "canon": [
+        "FA-OL-CANON-0003:P0051",
+        "FA-OL-CANON-0003:P0053",
+        "FA-OL-CANON-0001:P0093"
+      ],
+      "rationale": "Preserve arbitrary infinite countable source set and all finite subsets, including empty. Choice of one enumeration of one set is not countably many independent selections.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source semantics and relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0031-C12",
+      "unit": "OLP-0031",
+      "source": {
+        "char_start": 3079,
+        "char_end_exclusive": 3207,
+        "line_start": 86,
+        "line_end": 91,
+        "text": "\\begin{prob}\nShow that the set of all finite subsets of an arbitrary infinite\n!!{enumerable} set is !!{enumerable}.\n\\end{prob}\n\n",
+        "sha256": "595a994c4990c04cd1df0b1dc83182fc2e89352b682e94e443ce495e54d43ddd"
+      },
+      "target_before": {
+        "char_start": 2874,
+        "char_end_exclusive": 3009,
+        "line_start": 82,
+        "line_end": 87,
+        "text": "\\begin{prob}\nنشان دهید مجموعهٔ همهٔ زیرمجموعه‌های متناهیِ یک مجموعهٔ نامتناهی و\n!!{enumerable} دلخواه، !!{enumerable} است.\n\\end{prob}\n\n",
+        "sha256": "27143f2a0f0a6d1653999a3178b6e3f0a5b6552654100fb79785a0b9541700ce"
+      },
+      "target_after": {
+        "char_start": 3241,
+        "char_end_exclusive": 3376,
+        "line_start": 86,
+        "line_end": 91,
+        "text": "\\begin{prob}\nنشان دهید مجموعهٔ همهٔ زیرمجموعه‌های متناهیِ یک مجموعهٔ نامتناهی و\n!!{enumerable} دلخواه، !!{enumerable} است.\n\\end{prob}\n\n",
+        "sha256": "27143f2a0f0a6d1653999a3178b6e3f0a5b6552654100fb79785a0b9541700ce"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{prob}\nنشان دهید مجموعهٔ همهٔ زیرمجموعه‌های متناهیِ یک مجموعهٔ نامتناهی و\nشمارا دلخواه، شمارا است.\n\\end{prob}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 80,
+          "token": "!!{enumerable}",
+          "realization": "شمارا"
+        },
+        {
+          "character_offset_in_segment": 103,
+          "token": "!!{enumerable}",
+          "realization": "شمارا"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Cofinite sets and union of two collections",
+      "canon": [
+        "FA-OL-CANON-0003:P0051",
+        "FA-OL-CANON-0003:P0053"
+      ],
+      "rationale": "The already correct Persian definition reads complement in Nat of a finite subset of Nat, as forced by Nat minus A finite. Record that retrospective correction of the malformed English; retain its formula and I consisting of both finite and cofinite subsets.",
+      "question": "هم‌متناهی is retained as a locally defined term; exact usage is not directly attested in the six pages. The defining complement condition is unambiguous. Existing source finding OLSIZ-002 already covers the malformed phrase.",
+      "confidence": 2,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source meaning checked; exact label or register convention has the stated attestation limit.",
+      "id": "FA-0031-C13",
+      "unit": "OLP-0031",
+      "source": {
+        "char_start": 3207,
+        "char_end_exclusive": 3529,
+        "line_start": 91,
+        "line_end": 99,
+        "text": "\\begin{prob}\nA subset of $\\Nat$ is said to be \\emph{cofinite} iff it is the\ncomplement of a finite set $\\Nat$; that is, $A \\subseteq \\Nat$ is\ncofinite iff $\\Nat\\setminus A$ is finite. Let $I$ be the set whose\n!!{element}s are exactly the finite and cofinite subsets of $\\Nat$.\nShow that $I$ is !!{enumerable}.\n\\end{prob}\n\n",
+        "sha256": "9e6d58adbe5fd455ae44b28d6b20e627deb82b5a61b93b95a356ea40c2a7e3f1"
+      },
+      "target_before": {
+        "char_start": 3009,
+        "char_end_exclusive": 3364,
+        "line_start": 87,
+        "line_end": 95,
+        "text": "\\begin{prob}\nزیرمجموعه‌ای از $\\Nat$ را \\emph{هم‌متناهی} می‌نامیم اگر و تنها اگر\nمتممِ یک زیرمجموعهٔ متناهی از~$\\Nat$ باشد؛ یعنی $A \\subseteq \\Nat$\nهم‌متناهی است اگر و تنها اگر $\\Nat\\setminus A$ متناهی باشد. فرض کنید\n$I$ مجموعه‌ای باشد که !!{element}s آن دقیقاً زیرمجموعه‌های متناهی و\nهم‌متناهیِ $\\Nat$ هستند. نشان دهید $I$ !!{enumerable} است.\n\\end{prob}\n\n",
+        "sha256": "225bd762a9675cbbece862c95e7b4daca644f6a92dbf1de1b91fb8b21336093a"
+      },
+      "target_after": {
+        "char_start": 3376,
+        "char_end_exclusive": 3890,
+        "line_start": 91,
+        "line_end": 101,
+        "text": "\\begin{prob}\nزیرمجموعه‌ای از $\\Nat$ را \\emph{هم‌متناهی} می‌نامیم اگر و تنها اگر\nمتممِ یک زیرمجموعهٔ متناهی از~$\\Nat$ باشد؛ یعنی $A \\subseteq \\Nat$\nهم‌متناهی است اگر و تنها اگر $\\Nat\\setminus A$ متناهی باشد. فرض کنید\n$I$ مجموعه‌ای باشد که !!{element}s آن دقیقاً زیرمجموعه‌های متناهی و\nهم‌متناهیِ $\\Nat$ هستند. نشان دهید $I$ !!{enumerable} است.\n\\emph{یادداشت ویراستاری:} عبارت ناقصِ متن مبدأ دربارهٔ مجموعهٔ متناهی، مطابق\nتعریف فرمولیِ بلافاصله پس از آن، «زیرمجموعهٔ متناهیِ اعداد طبیعی» خوانده شده است.\n\\end{prob}\n\n",
+        "sha256": "f97bb6367f7bb865d8f0e38fcadb12d1c72655ebb5d16a59ac65b7e3190760fe"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{prob}\nزیرمجموعه‌ای از $\\Nat$ را \\emph{هم‌متناهی} می‌نامیم اگر و تنها اگر\nمتممِ یک زیرمجموعهٔ متناهی از~$\\Nat$ باشد؛ یعنی $A \\subseteq \\Nat$\nهم‌متناهی است اگر و تنها اگر $\\Nat\\setminus A$ متناهی باشد. فرض کنید\n$I$ مجموعه‌ای باشد که اعضا آن دقیقاً زیرمجموعه‌های متناهی و\nهم‌متناهیِ $\\Nat$ هستند. نشان دهید $I$ شمارا است.\n\\emph{یادداشت ویراستاری:} عبارت ناقصِ متن مبدأ دربارهٔ مجموعهٔ متناهی، مطابق\nتعریف فرمولیِ بلافاصله پس از آن، «زیرمجموعهٔ متناهیِ اعداد طبیعی» خوانده شده است.\n\\end{prob}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 238,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        },
+        {
+          "character_offset_in_segment": 323,
+          "token": "!!{enumerable}",
+          "realization": "شمارا"
+        }
+      ],
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 238,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        }
+      ]
+    },
+    {
+      "topic": "Countable union and supplied enumerations",
+      "canon": [
+        "FA-OL-CANON-0003:P0051",
+        "FA-OL-CANON-0003:P0053"
+      ],
+      "rationale": "Retain the source exercise and its infinite-family scope. Label the choice selection used by the standard proof; when a family of enumerations is supplied, diagonal construction uses those data. Do not call this false in ZFC or claim full Choice is the weakest necessary axiom. No solution or human-review gate inserted.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source semantics and relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0031-C14",
+      "unit": "OLP-0031",
+      "source": {
+        "char_start": 3529,
+        "char_end_exclusive": 3816,
+        "line_start": 99,
+        "line_end": 106,
+        "text": "\\begin{prob}\nShow that the !!{enumerable} union of !!{enumerable} sets is\n!!{enumerable}. That is, whenever $A_1$, $A_2$, \\dots{} are sets, and\neach $A_i$ is !!{enumerable}, then the union $\\bigcup_{i=1}^\\infty\nA_i$ of all of them is also !!{enumerable}. [NB: this is hard!]\n\\end{prob}\n\n",
+        "sha256": "fd039d48e1d9175e553f8f7e574d600f96e3037f4cdf742923963c390b2e1f90"
+      },
+      "target_before": {
+        "char_start": 3364,
+        "char_end_exclusive": 3665,
+        "line_start": 95,
+        "line_end": 102,
+        "text": "\\begin{prob}\nنشان دهید اجتماعِ خانواده‌ای !!{enumerable} از مجموعه‌های !!{enumerable}،\n!!{enumerable} است. یعنی هرگاه $A_1$، $A_2$، \\dots{} مجموعه باشند و هر\n$A_i$ !!{enumerable} باشد، آنگاه اجتماع $\\bigcup_{i=1}^\\infty\nA_i$ همهٔ آن‌ها نیز !!{enumerable} است. [توجه: این مسئله دشوار است!]\n\\end{prob}\n\n",
+        "sha256": "635000a503192c60fddcecdcedd1d078c921ab80ba6b82d87539c9d6b1e5ecab"
+      },
+      "target_after": {
+        "char_start": 3890,
+        "char_end_exclusive": 4485,
+        "line_start": 101,
+        "line_end": 112,
+        "text": "\\begin{prob}\nنشان دهید اجتماعِ خانواده‌ای !!{enumerable} از مجموعه‌های !!{enumerable}،\n!!{enumerable} است. یعنی هرگاه $A_1$، $A_2$، \\dots{} مجموعه باشند و هر\n$A_i$ !!{enumerable} باشد، آنگاه اجتماع $\\bigcup_{i=1}^\\infty\nA_i$ همهٔ آن‌ها نیز !!{enumerable} است. [توجه: این مسئله دشوار است!]\n\\emph{یادداشت دربارهٔ فرض‌ها:} در برهان معمولِ این گزاره، برای انتخاب هم‌زمانِ\nیک برشماری برای هر مجموعهٔ ناتهیِ خانواده از اصل انتخاب استفاده می‌شود.\nاگر این برشماری‌ها از ابتدا جزو داده‌های مسئله باشند، می‌توان همان داده‌ها را\nدر ساخت قطری به کار برد؛ در آن صورت این مرحلهٔ انتخاب لازم نیست.\n\\end{prob}\n\n",
+        "sha256": "3a8e958308e527e6fa2360eb5d9d9897920f8c52fd60ae759fd9775bd8c3e1e8"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{prob}\nنشان دهید اجتماعِ خانواده‌ای شمارا از مجموعه‌های شمارا،\nشمارا است. یعنی هرگاه $A_1$، $A_2$، \\dots{} مجموعه باشند و هر\n$A_i$ شمارا باشد، آنگاه اجتماع $\\bigcup_{i=1}^\\infty\nA_i$ همهٔ آن‌ها نیز شمارا است. [توجه: این مسئله دشوار است!]\n\\emph{یادداشت دربارهٔ فرض‌ها:} در برهان معمولِ این گزاره، برای انتخاب هم‌زمانِ\nیک برشماری برای هر مجموعهٔ ناتهیِ خانواده از اصل انتخاب استفاده می‌شود.\nاگر این برشماری‌ها از ابتدا جزو داده‌های مسئله باشند، می‌توان همان داده‌ها را\nدر ساخت قطری به کار برد؛ در آن صورت این مرحلهٔ انتخاب لازم نیست.\n\\end{prob}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 42,
+          "token": "!!{enumerable}",
+          "realization": "شمارا"
+        },
+        {
+          "character_offset_in_segment": 71,
+          "token": "!!{enumerable}",
+          "realization": "شمارا"
+        },
+        {
+          "character_offset_in_segment": 87,
+          "token": "!!{enumerable}",
+          "realization": "شمارا"
+        },
+        {
+          "character_offset_in_segment": 164,
+          "token": "!!{enumerable}",
+          "realization": "شمارا"
+        },
+        {
+          "character_offset_in_segment": 240,
+          "token": "!!{enumerable}",
+          "realization": "شمارا"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Corrected arbitrary inverse exercise",
+      "canon": [
+        "FA-REL-P046",
+        "FA-REL-P050",
+        "FA-OL-CANON-0003:P0051",
+        "FA-OL-CANON-0003:P0053"
+      ],
+      "rationale": "Correct rather than translate the false claim verbatim: an arbitrary injection has inverse only on its image. In nonempty case require constructing an enumeration from that inverse; handle empty separately. The source0032 explicitly calls nonsurjective inverse partial. Preserve f, A×B, codomain and exercise character; disclose the old claim instead of silently redefining pairing functions.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source semantics and relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0031-C15",
+      "unit": "OLP-0031",
+      "source": {
+        "char_start": 3816,
+        "char_end_exclusive": 3974,
+        "line_start": 106,
+        "line_end": 111,
+        "text": "\\begin{prob}\nLet $f \\colon A \\times B \\to \\Nat$ be an arbitrary pairing function.\nShow that the inverse of $f$ is an enumeration of $A \\times B$.\n\\end{prob}\n\n",
+        "sha256": "33c9ac7b4e61ef5025a64d5a04cc4e7879c2b290fc444319f37811cff55c15f1"
+      },
+      "target_before": {
+        "char_start": 3665,
+        "char_end_exclusive": 3813,
+        "line_start": 102,
+        "line_end": 107,
+        "text": "\\begin{prob}\nفرض کنید $f \\colon A \\times B \\to \\Nat$ یک تابع جفت‌سازی دلخواه باشد.\nنشان دهید وارونِ $f$ یک برشماری از $A \\times B$ است.\n\\end{prob}\n\n",
+        "sha256": "f3797c48253adcc728c5f73b81b164393b8f4a163d67e84885476fa14c8822f4"
+      },
+      "target_after": {
+        "char_start": 4485,
+        "char_end_exclusive": 4901,
+        "line_start": 112,
+        "line_end": 121,
+        "text": "\\begin{prob}\nفرض کنید $f \\colon A \\times B \\to \\Nat$ یک تابع جفت‌سازی دلخواه باشد.\n\\emph{صورت اصلاح‌شدهٔ تمرین:} در حالت ناتهی، با استفاده از معکوسِ $f$\nکه بر برد آن تعریف شده است، برشماری‌ای برای $A \\times B$ بسازید.\nحالت تهی را نیز جداگانه بررسی کنید.\n\\emph{یادداشت ویراستاری:} صورت اولیهٔ تمرین، معکوس را بی‌قید برشماری می‌نامید؛\nاما معکوسِ یک تابع یک‌به‌یک لزوماً بر همهٔ اعداد طبیعی تعریف نشده است.\n\\end{prob}\n\n",
+        "sha256": "048bc18f145dde6dcf90437ffd677c95decf0d1bda1049530cea0fcf4f18edbc"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{prob}\nفرض کنید $f \\colon A \\times B \\to \\Nat$ یک تابع جفت‌سازی دلخواه باشد.\n\\emph{صورت اصلاح‌شدهٔ تمرین:} در حالت ناتهی، با استفاده از معکوسِ $f$\nکه بر برد آن تعریف شده است، برشماری‌ای برای $A \\times B$ بسازید.\nحالت تهی را نیز جداگانه بررسی کنید.\n\\emph{یادداشت ویراستاری:} صورت اولیهٔ تمرین، معکوس را بی‌قید برشماری می‌نامید؛\nاما معکوسِ یک تابع یک‌به‌یک لزوماً بر همهٔ اعداد طبیعی تعریف نشده است.\n\\end{prob}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Triple encoding exercise",
+      "canon": [
+        "FA-OL-CANON-0001:P0093",
+        "FA-REL-P046"
+      ],
+      "rationale": "Keep source request to specify an encoding of Nat cubed; composition of a specified pairing works. No need to insert an exercise solution or choose a different corpus definition.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source semantics and relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0031-C16",
+      "unit": "OLP-0031",
+      "source": {
+        "char_start": 3974,
+        "char_end_exclusive": 4041,
+        "line_start": 111,
+        "line_end": 115,
+        "text": "\\begin{prob}\nSpecify a function that encodes $\\Nat^3$.\n\\end{prob}\n\n",
+        "sha256": "a9a71e42bdd48ec60e8569b203eb9ef732b64c88f986c11c0f3d27c0404caafb"
+      },
+      "target_before": {
+        "char_start": 3813,
+        "char_end_exclusive": 3882,
+        "line_start": 107,
+        "line_end": 111,
+        "text": "\\begin{prob}\nتابعی مشخص کنید که $\\Nat^3$ را کدگذاری کند.\n\\end{prob}\n\n",
+        "sha256": "4138ced7570c1e09a0b59ef34a7a6b9e6b380959ec5f7654ee19eb393f792a17"
+      },
+      "target_after": {
+        "char_start": 4901,
+        "char_end_exclusive": 4970,
+        "line_start": 121,
+        "line_end": 125,
+        "text": "\\begin{prob}\nتابعی مشخص کنید که $\\Nat^3$ را کدگذاری کند.\n\\end{prob}\n\n",
+        "sha256": "4138ced7570c1e09a0b59ef34a7a6b9e6b380959ec5f7654ee19eb393f792a17"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{prob}\nتابعی مشخص کنید که $\\Nat^3$ را کدگذاری کند.\n\\end{prob}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Alternative pairing title",
+      "canon": [
+        "FA-OL-CANON-0001:P0093",
+        "FA-REL-P046"
+      ],
+      "rationale": "Retain alternative rather than a supposedly canonical replacement of the prior function. Same source-defined pairing label and explicit injectivity meaning.",
+      "question": "Same contextual جفت‌سازی term as0031; no new direct attestation asserted.",
+      "confidence": 2,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source meaning checked; exact label or register convention has the stated attestation limit.",
+      "id": "FA-0032-C01",
+      "unit": "OLP-0032",
+      "source": {
+        "char_start": 191,
+        "char_end_exclusive": 236,
+        "line_start": 11,
+        "line_end": 13,
+        "text": "\\olsection{An Alternative Pairing Function}\n\n",
+        "sha256": "de011e62cc20838471d382c0a9a518625ee06a226961ef3f2d54f84c880666e7"
+      },
+      "target_before": {
+        "char_start": 198,
+        "char_end_exclusive": 236,
+        "line_start": 11,
+        "line_end": 13,
+        "text": "\\olsection{یک تابع جفت‌سازی جایگزین}\n\n",
+        "sha256": "b018ab16cc331e903528d074a06e88be7b66e6f3503b63edd306a0eeb4c97af9"
+      },
+      "target_after": {
+        "char_start": 198,
+        "char_end_exclusive": 236,
+        "line_start": 11,
+        "line_end": 13,
+        "text": "\\olsection{یک تابع جفت‌سازی جایگزین}\n\n",
+        "sha256": "b018ab16cc331e903528d074a06e88be7b66e6f3503b63edd306a0eeb4c97af9"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\olsection{یک تابع جفت‌سازی جایگزین}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "First row and odd vacant positions",
+      "canon": [
+        "FA-OL-CANON-0003:P0053",
+        "FA-REL-P050"
+      ],
+      "rationale": "Retain positive-index positions, skip one empty position and first row all(0,m). Correct second pair from(0,2) to(0,1), matching the immediately following table. Table bytes and all other coordinates are unchanged.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source semantics and relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0032-C02",
+      "unit": "OLP-0032",
+      "source": {
+        "char_start": 236,
+        "char_end_exclusive": 1206,
+        "line_start": 13,
+        "line_end": 30,
+        "text": "\\begin{explain}\nThere are other enumerations of $\\Nat^2$ that make it easier to\nfigure out what their inverses are. Here is one. Instead of\nvisualizing the enumeration in an array, start with the list of\npositive integers associated with (initially) empty spaces. Imagine\nfilling these spaces successively with pairs $\\tuple{n,m}$ as follows.\nStarting with the pairs that have~$0$ in  the first place (i.e., pairs\n$\\tuple{0,m}$), put the first (i.e., $\\tuple{0,0}$) in the first empty\nplace, then skip an empty space, put the second (i.e., $\\tuple{0,2}$)\nin the next empty place, skip one again, and so forth. The\n(incomplete) beginning of our enumeration now looks like this\n\\[\\small\n\\begin{array}{@{}c c c c c c c c c c c@{}}\n\\mathbf 1 & \\mathbf 2 & \\mathbf 3 & \\mathbf 4 & \\mathbf 5 & \\mathbf 6 & \\mathbf 7 & \\mathbf 8 & \\mathbf 9 & \\mathbf{10} & \\dots \\\\ \\\\\n\\tuple{0,0} &  & \\tuple{0,1} &  & \\tuple{0,2} &  & \\tuple{0,3} & & \\tuple{0,4} &  & \\dots \\\\\n\\end{array}\n\\]\n",
+        "sha256": "e70590037cebc7a4a88d14eb1e3c00f240823ce9ade7ca1a3f6da7b20128ae39"
+      },
+      "target_before": {
+        "char_start": 236,
+        "char_end_exclusive": 1214,
+        "line_start": 13,
+        "line_end": 30,
+        "text": "\\begin{explain}\nبرشماری‌های دیگری از $\\Nat^2$ وجود دارند که یافتن وارونشان را آسان‌تر\nمی‌کنند. یکی از آن‌ها را در اینجا می‌بینیم. به‌جای آنکه برشماری را در\nیک آرایه مجسم کنید، با فهرستی از اعداد صحیح مثبت آغاز کنید که با\nجایگاه‌هایی (در ابتدا) تهی متناظرند. تصور کنید این جایگاه‌ها را به‌ترتیب\nو به‌شکل زیر با زوج‌های $\\tuple{n,m}$ پر می‌کنیم. از زوج‌هایی آغاز کنید\nکه در مؤلفهٔ نخستشان~$0$ دارند (یعنی زوج‌های $\\tuple{0,m}$): نخستین زوج\n(یعنی $\\tuple{0,0}$) را در نخستین جایگاه تهی بگذارید، سپس یک جایگاه تهی\nرا رد کنید، دومین زوج (یعنی $\\tuple{0,2}$) را در جایگاه تهی بعدی بگذارید،\nدوباره یکی را رد کنید، و به همین ترتیب ادامه دهید. آغازِ (ناکاملِ)\nبرشماری ما اکنون به‌شکل زیر است:\n\\[\\small\n\\begin{array}{@{}c c c c c c c c c c c@{}}\n\\mathbf 1 & \\mathbf 2 & \\mathbf 3 & \\mathbf 4 & \\mathbf 5 & \\mathbf 6 & \\mathbf 7 & \\mathbf 8 & \\mathbf 9 & \\mathbf{10} & \\dots \\\\ \\\\\n\\tuple{0,0} &  & \\tuple{0,1} &  & \\tuple{0,2} &  & \\tuple{0,3} & & \\tuple{0,4} &  & \\dots \\\\\n\\end{array}\n\\]\n",
+        "sha256": "73a2440b18d3fb58456ab38ac8983772a6c456b949b317042d36fe4764dfe470"
+      },
+      "target_after": {
+        "char_start": 236,
+        "char_end_exclusive": 1214,
+        "line_start": 13,
+        "line_end": 30,
+        "text": "\\begin{explain}\nبرشماری‌های دیگری از $\\Nat^2$ وجود دارند که یافتن معکوسشان را آسان‌تر\nمی‌کنند. یکی از آن‌ها را در اینجا می‌بینیم. به‌جای آنکه برشماری را در\nیک آرایه مجسم کنید، با فهرستی از اعداد صحیح مثبت آغاز کنید که با\nجایگاه‌هایی (در ابتدا) تهی متناظرند. تصور کنید این جایگاه‌ها را به‌ترتیب\nو به‌شکل زیر با زوج‌های $\\tuple{n,m}$ پر می‌کنیم. از زوج‌هایی آغاز کنید\nکه در مؤلفهٔ نخستشان~$0$ دارند (یعنی زوج‌های $\\tuple{0,m}$): نخستین زوج\n(یعنی $\\tuple{0,0}$) را در نخستین جایگاه تهی بگذارید، سپس یک جایگاه تهی\nرا رد کنید، دومین زوج (یعنی $\\tuple{0,1}$) را در جایگاه تهی بعدی بگذارید،\nدوباره یکی را رد کنید، و به همین ترتیب ادامه دهید. آغازِ (ناکاملِ)\nبرشماری ما اکنون به‌شکل زیر است:\n\\[\\small\n\\begin{array}{@{}c c c c c c c c c c c@{}}\n\\mathbf 1 & \\mathbf 2 & \\mathbf 3 & \\mathbf 4 & \\mathbf 5 & \\mathbf 6 & \\mathbf 7 & \\mathbf 8 & \\mathbf 9 & \\mathbf{10} & \\dots \\\\ \\\\\n\\tuple{0,0} &  & \\tuple{0,1} &  & \\tuple{0,2} &  & \\tuple{0,3} & & \\tuple{0,4} &  & \\dots \\\\\n\\end{array}\n\\]\n",
+        "sha256": "9d991a385fca22a0edef741c08de64a1c43734a3f407f5a10dc363e5f37ad49d"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{explain}\nبرشماری‌های دیگری از $\\Nat^2$ وجود دارند که یافتن معکوسشان را آسان‌تر\nمی‌کنند. یکی از آن‌ها را در اینجا می‌بینیم. به‌جای آنکه برشماری را در\nیک آرایه مجسم کنید، با فهرستی از اعداد صحیح مثبت آغاز کنید که با\nجایگاه‌هایی (در ابتدا) تهی متناظرند. تصور کنید این جایگاه‌ها را به‌ترتیب\nو به‌شکل زیر با زوج‌های $\\tuple{n,m}$ پر می‌کنیم. از زوج‌هایی آغاز کنید\nکه در مؤلفهٔ نخستشان~$0$ دارند (یعنی زوج‌های $\\tuple{0,m}$): نخستین زوج\n(یعنی $\\tuple{0,0}$) را در نخستین جایگاه تهی بگذارید، سپس یک جایگاه تهی\nرا رد کنید، دومین زوج (یعنی $\\tuple{0,1}$) را در جایگاه تهی بعدی بگذارید،\nدوباره یکی را رد کنید، و به همین ترتیب ادامه دهید. آغازِ (ناکاملِ)\nبرشماری ما اکنون به‌شکل زیر است:\n\\[\\small\n\\begin{array}{@{}c c c c c c c c c c c@{}}\n\\mathbf 1 & \\mathbf 2 & \\mathbf 3 & \\mathbf 4 & \\mathbf 5 & \\mathbf 6 & \\mathbf 7 & \\mathbf 8 & \\mathbf 9 & \\mathbf{10} & \\dots \\\\ \\\\\n\\tuple{0,0} &  & \\tuple{0,1} &  & \\tuple{0,2} &  & \\tuple{0,3} & & \\tuple{0,4} &  & \\dots \\\\\n\\end{array}\n\\]\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Second row and remaining empty positions",
+      "canon": [
+        "FA-OL-CANON-0003:P0053",
+        "FA-REL-P046"
+      ],
+      "rationale": "Every other still-empty position means positions2,6,10,..., not every other position in the whole list. Keep the partial second table and its intentional blanks.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source semantics and relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0032-C03",
+      "unit": "OLP-0032",
+      "source": {
+        "char_start": 1206,
+        "char_end_exclusive": 1651,
+        "line_start": 30,
+        "line_end": 39,
+        "text": "Repeat this with pairs $\\tuple{1,m}$ for the place that still remain\nempty, again skipping every other empty place:\n\\[\\small\n\\begin{array}{@{}c c c c c c c c c c c@{}}\n\\mathbf 1 & \\mathbf 2 & \\mathbf 3 & \\mathbf 4 & \\mathbf 5 & \\mathbf 6 & \\mathbf 7 & \\mathbf 8 & \\mathbf 9 & \\mathbf{10} & \\dots \\\\ \\\\\n\\tuple{0,0} & \\tuple{1,0} & \\tuple{0,1} &  & \\tuple{0,2} & \\tuple{1,1} & \n\\tuple{0,3} & & \\tuple{0,4} &  \\tuple{1,2} & \\dots \\\\\n\\end{array}\n\\]\n",
+        "sha256": "c496d5217b7eb8bbb6927df3fe236854a5c29e2b2548dcdca50ff1a0e9d6fd8b"
+      },
+      "target_before": {
+        "char_start": 1214,
+        "char_end_exclusive": 1269,
+        "line_start": 30,
+        "line_end": 30,
+        "text": "این کار را برای جایگاه‌هایی که هنوز خالی مانده‌اند، با ",
+        "sha256": "933d358f84180230552cf7acf8c05214c7ab223af0d036de4798b3b436ed6e42"
+      },
+      "target_after": {
+        "char_start": 1214,
+        "char_end_exclusive": 1269,
+        "line_start": 30,
+        "line_end": 30,
+        "text": "این کار را برای جایگاه‌هایی که هنوز خالی مانده‌اند، با ",
+        "sha256": "933d358f84180230552cf7acf8c05214c7ab223af0d036de4798b3b436ed6e42"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "این کار را برای جایگاه‌هایی که هنوز خالی مانده‌اند، با ",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Successive rows and completed prefix",
+      "canon": [
+        "FA-OL-CANON-0003:P0053",
+        "FA-REL-P046"
+      ],
+      "rationale": "Correct repeated(2,m) to next family(3,m). Retain source prefix indices1..10; explicit note discloses both prose-coordinate slips. This repeated-row defect matches existing OLSIZ-003, not a newly discovered source issue.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source semantics and relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0032-C04",
+      "unit": "OLP-0032",
+      "source": {
+        "char_start": 1651,
+        "char_end_exclusive": 2118,
+        "line_start": 39,
+        "line_end": 48,
+        "text": "Enter pairs $\\tuple{2,m}$, $\\tuple{2,m}$, etc., in the same way. Our\ncompleted enumeration thus starts like this:\n\\[\\small\n\\begin{array}{@{}cc c c c c c c c c c@{}}\n\\mathbf 1 & \\mathbf 2 & \\mathbf 3 & \\mathbf 4 & \\mathbf 5 & \\mathbf 6 & \\mathbf 7 & \\mathbf 8 & \\mathbf 9 & \\mathbf{10} & \\dots \\\\ \\\\\n\\tuple{0,0} & \\tuple{1,0} & \\tuple{0,1} & \\tuple{2,0}  & \\tuple{0,2} & \n\\tuple{1,1} & \\tuple{0,3} & \\tuple{3,0}  & \\tuple{0,4} &  \\tuple{1,2} & \\dots \\\\\n\\end{array}\n\\]\n",
+        "sha256": "d560827fe100a41f0090d80bb5e6fea1e2cfae7e3253d4a277bc09db7b0d66f2"
+      },
+      "target_before": {
+        "char_start": 1269,
+        "char_end_exclusive": 2150,
+        "line_start": 30,
+        "line_end": 48,
+        "text": "زوج‌های\n$\\tuple{1,m}$ تکرار کنید و باز هم یک جایگاه خالی در میان را رد کنید:\n\\[\\small\n\\begin{array}{@{}c c c c c c c c c c c@{}}\n\\mathbf 1 & \\mathbf 2 & \\mathbf 3 & \\mathbf 4 & \\mathbf 5 & \\mathbf 6 & \\mathbf 7 & \\mathbf 8 & \\mathbf 9 & \\mathbf{10} & \\dots \\\\ \\\\\n\\tuple{0,0} & \\tuple{1,0} & \\tuple{0,1} &  & \\tuple{0,2} & \\tuple{1,1} &\n\\tuple{0,3} & & \\tuple{0,4} &  \\tuple{1,2} & \\dots \\\\\n\\end{array}\n\\]\nزوج‌های $\\tuple{2,m}$، $\\tuple{2,m}$ و جز آن را نیز به همین شیوه وارد\nکنید. بنابراین برشماری کامل‌شدهٔ ما چنین آغاز می‌شود:\n\\[\\small\n\\begin{array}{@{}cc c c c c c c c c c@{}}\n\\mathbf 1 & \\mathbf 2 & \\mathbf 3 & \\mathbf 4 & \\mathbf 5 & \\mathbf 6 & \\mathbf 7 & \\mathbf 8 & \\mathbf 9 & \\mathbf{10} & \\dots \\\\ \\\\\n\\tuple{0,0} & \\tuple{1,0} & \\tuple{0,1} & \\tuple{2,0}  & \\tuple{0,2} &\n\\tuple{1,1} & \\tuple{0,3} & \\tuple{3,0}  & \\tuple{0,4} &  \\tuple{1,2} & \\dots \\\\\n\\end{array}\n\\]\n",
+        "sha256": "0ec98b136b7ad626c7abb14975eda77d56118f986e1a7700527c98a094dbb417"
+      },
+      "target_after": {
+        "char_start": 1269,
+        "char_end_exclusive": 2269,
+        "line_start": 30,
+        "line_end": 50,
+        "text": "زوج‌های\n$\\tuple{1,m}$ تکرار کنید و باز هم یک جایگاه خالی در میان را رد کنید:\n\\[\\small\n\\begin{array}{@{}c c c c c c c c c c c@{}}\n\\mathbf 1 & \\mathbf 2 & \\mathbf 3 & \\mathbf 4 & \\mathbf 5 & \\mathbf 6 & \\mathbf 7 & \\mathbf 8 & \\mathbf 9 & \\mathbf{10} & \\dots \\\\ \\\\\n\\tuple{0,0} & \\tuple{1,0} & \\tuple{0,1} &  & \\tuple{0,2} & \\tuple{1,1} &\n\\tuple{0,3} & & \\tuple{0,4} &  \\tuple{1,2} & \\dots \\\\\n\\end{array}\n\\]\nزوج‌های $\\tuple{2,m}$، $\\tuple{3,m}$ و جز آن را نیز به همین شیوه وارد\nکنید. \\emph{یادداشت ویراستاری:} دو لغزش در مؤلفه‌های زوج‌ها در توضیح متن مبدأ\nاصلاح شده‌اند تا توضیح با جدول‌ها سازگار باشد.\nبنابراین برشماری کامل‌شدهٔ ما چنین آغاز می‌شود:\n\\[\\small\n\\begin{array}{@{}cc c c c c c c c c c@{}}\n\\mathbf 1 & \\mathbf 2 & \\mathbf 3 & \\mathbf 4 & \\mathbf 5 & \\mathbf 6 & \\mathbf 7 & \\mathbf 8 & \\mathbf 9 & \\mathbf{10} & \\dots \\\\ \\\\\n\\tuple{0,0} & \\tuple{1,0} & \\tuple{0,1} & \\tuple{2,0}  & \\tuple{0,2} &\n\\tuple{1,1} & \\tuple{0,3} & \\tuple{3,0}  & \\tuple{0,4} &  \\tuple{1,2} & \\dots \\\\\n\\end{array}\n\\]\n",
+        "sha256": "1cea3642729f213b911deec6d37ff404ea66a4e602bef981c7355697f89cca09"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "زوج‌های\n$\\tuple{1,m}$ تکرار کنید و باز هم یک جایگاه خالی در میان را رد کنید:\n\\[\\small\n\\begin{array}{@{}c c c c c c c c c c c@{}}\n\\mathbf 1 & \\mathbf 2 & \\mathbf 3 & \\mathbf 4 & \\mathbf 5 & \\mathbf 6 & \\mathbf 7 & \\mathbf 8 & \\mathbf 9 & \\mathbf{10} & \\dots \\\\ \\\\\n\\tuple{0,0} & \\tuple{1,0} & \\tuple{0,1} &  & \\tuple{0,2} & \\tuple{1,1} &\n\\tuple{0,3} & & \\tuple{0,4} &  \\tuple{1,2} & \\dots \\\\\n\\end{array}\n\\]\nزوج‌های $\\tuple{2,m}$، $\\tuple{3,m}$ و جز آن را نیز به همین شیوه وارد\nکنید. \\emph{یادداشت ویراستاری:} دو لغزش در مؤلفه‌های زوج‌ها در توضیح متن مبدأ\nاصلاح شده‌اند تا توضیح با جدول‌ها سازگار باشد.\nبنابراین برشماری کامل‌شدهٔ ما چنین آغاز می‌شود:\n\\[\\small\n\\begin{array}{@{}cc c c c c c c c c c@{}}\n\\mathbf 1 & \\mathbf 2 & \\mathbf 3 & \\mathbf 4 & \\mathbf 5 & \\mathbf 6 & \\mathbf 7 & \\mathbf 8 & \\mathbf 9 & \\mathbf{10} & \\dots \\\\ \\\\\n\\tuple{0,0} & \\tuple{1,0} & \\tuple{0,1} & \\tuple{2,0}  & \\tuple{0,2} &\n\\tuple{1,1} & \\tuple{0,3} & \\tuple{3,0}  & \\tuple{0,4} &  \\tuple{1,2} & \\dots \\\\\n\\end{array}\n\\]\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Array of positive codes",
+      "canon": [
+        "FA-REL-P046",
+        "FA-OL-CANON-0001:P0093"
+      ],
+      "rationale": "Retain all21 explicitly numeric code cells, row/column orientation and headers. These are positive position numbers, before subtracting1, not the final h codes.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source semantics and relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0032-C05",
+      "unit": "OLP-0032",
+      "source": {
+        "char_start": 2118,
+        "char_end_exclusive": 2862,
+        "line_start": 48,
+        "line_end": 70,
+        "text": "If we number the cells in the array above according to this\nenumeration, we will not find a neat zig-zag line, but this\narrangement:\n\\[\n\\begin{array}{ c | c | c | c | c | c | c | c }\n& \\mathbf 0 & \\mathbf 1 & \\mathbf 2 & \\mathbf 3 & \\mathbf 4 & \\mathbf 5 & \\dots \\\\\n\\hline\n\\mathbf 0 & 1 & 3 & 5 & 7 & 9 & 11 & \\dots \\\\\n\\hline\n\\mathbf 1 & 2 & 6 & 10 & 14 & 18 & \\dots & \\dots \\\\\n\\hline\n\\mathbf 2 & 4 & 12 & 20 & 28 & \\dots & \\dots & \\dots \\\\\n\\hline\n\\mathbf 3 & 8 & 24 & 40 & \\dots & \\dots & \\dots & \\dots \\\\\n\\hline\n\\mathbf 4 & 16 & 48 & \\dots & \\dots & \\dots & \\dots & \\dots \\\\\n\\hline\n\\mathbf 5 & 32 & \\dots & \\dots & \\dots & \\dots & \\dots & \\dots \\\\\n\\hline\n\\vdots & \\vdots & \\vdots & \\vdots & \\vdots & \\vdots & \\vdots & \\ddots\\\\\n\\end{array}\n\\]\n",
+        "sha256": "720b806c1dcee5cb305bed202c8c3d913096fd9fb89dda1f246627e22979051e"
+      },
+      "target_before": {
+        "char_start": 2150,
+        "char_end_exclusive": 2886,
+        "line_start": 48,
+        "line_end": 69,
+        "text": "اگر خانه‌های آرایهٔ بالا را مطابق این برشماری شماره‌گذاری کنیم، خط\nزیگزاگ مرتبی نخواهیم یافت، بلکه آرایش زیر را خواهیم داشت:\n\\[\n\\begin{array}{ c | c | c | c | c | c | c | c }\n& \\mathbf 0 & \\mathbf 1 & \\mathbf 2 & \\mathbf 3 & \\mathbf 4 & \\mathbf 5 & \\dots \\\\\n\\hline\n\\mathbf 0 & 1 & 3 & 5 & 7 & 9 & 11 & \\dots \\\\\n\\hline\n\\mathbf 1 & 2 & 6 & 10 & 14 & 18 & \\dots & \\dots \\\\\n\\hline\n\\mathbf 2 & 4 & 12 & 20 & 28 & \\dots & \\dots & \\dots \\\\\n\\hline\n\\mathbf 3 & 8 & 24 & 40 & \\dots & \\dots & \\dots & \\dots \\\\\n\\hline\n\\mathbf 4 & 16 & 48 & \\dots & \\dots & \\dots & \\dots & \\dots \\\\\n\\hline\n\\mathbf 5 & 32 & \\dots & \\dots & \\dots & \\dots & \\dots & \\dots \\\\\n\\hline\n\\vdots & \\vdots & \\vdots & \\vdots & \\vdots & \\vdots & \\vdots & \\ddots\\\\\n\\end{array}\n\\]\n",
+        "sha256": "960d6633ddb68dfa062b7d8661e7dd2d77b052f7d4f80c2b209726b72ea32bad"
+      },
+      "target_after": {
+        "char_start": 2269,
+        "char_end_exclusive": 3005,
+        "line_start": 50,
+        "line_end": 71,
+        "text": "اگر خانه‌های آرایهٔ بالا را مطابق این برشماری شماره‌گذاری کنیم، خط\nزیگزاگ مرتبی نخواهیم یافت، بلکه آرایش زیر را خواهیم داشت:\n\\[\n\\begin{array}{ c | c | c | c | c | c | c | c }\n& \\mathbf 0 & \\mathbf 1 & \\mathbf 2 & \\mathbf 3 & \\mathbf 4 & \\mathbf 5 & \\dots \\\\\n\\hline\n\\mathbf 0 & 1 & 3 & 5 & 7 & 9 & 11 & \\dots \\\\\n\\hline\n\\mathbf 1 & 2 & 6 & 10 & 14 & 18 & \\dots & \\dots \\\\\n\\hline\n\\mathbf 2 & 4 & 12 & 20 & 28 & \\dots & \\dots & \\dots \\\\\n\\hline\n\\mathbf 3 & 8 & 24 & 40 & \\dots & \\dots & \\dots & \\dots \\\\\n\\hline\n\\mathbf 4 & 16 & 48 & \\dots & \\dots & \\dots & \\dots & \\dots \\\\\n\\hline\n\\mathbf 5 & 32 & \\dots & \\dots & \\dots & \\dots & \\dots & \\dots \\\\\n\\hline\n\\vdots & \\vdots & \\vdots & \\vdots & \\vdots & \\vdots & \\vdots & \\ddots\\\\\n\\end{array}\n\\]\n",
+        "sha256": "960d6633ddb68dfa062b7d8661e7dd2d77b052f7d4f80c2b209726b72ea32bad"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "اگر خانه‌های آرایهٔ بالا را مطابق این برشماری شماره‌گذاری کنیم، خط\nزیگزاگ مرتبی نخواهیم یافت، بلکه آرایش زیر را خواهیم داشت:\n\\[\n\\begin{array}{ c | c | c | c | c | c | c | c }\n& \\mathbf 0 & \\mathbf 1 & \\mathbf 2 & \\mathbf 3 & \\mathbf 4 & \\mathbf 5 & \\dots \\\\\n\\hline\n\\mathbf 0 & 1 & 3 & 5 & 7 & 9 & 11 & \\dots \\\\\n\\hline\n\\mathbf 1 & 2 & 6 & 10 & 14 & 18 & \\dots & \\dots \\\\\n\\hline\n\\mathbf 2 & 4 & 12 & 20 & 28 & \\dots & \\dots & \\dots \\\\\n\\hline\n\\mathbf 3 & 8 & 24 & 40 & \\dots & \\dots & \\dots & \\dots \\\\\n\\hline\n\\mathbf 4 & 16 & 48 & \\dots & \\dots & \\dots & \\dots & \\dots \\\\\n\\hline\n\\mathbf 5 & 32 & \\dots & \\dots & \\dots & \\dots & \\dots & \\dots \\\\\n\\hline\n\\vdots & \\vdots & \\vdots & \\vdots & \\vdots & \\vdots & \\vdots & \\ddots\\\\\n\\end{array}\n\\]\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Powers-of-two factors and index shift",
+      "canon": [
+        "FA-OL-CANON-0003:P0053",
+        "FA-OL-CANON-0001:P0093"
+      ],
+      "rationale": "Replace compressed فردشماره with positions whose numbers are odd. Use ضریب for the multiplier of the odd term, and clear reference for the exponent. Preserve every numeric factor, power, coordinate and the positive-to-zero-based subtraction. No altered arithmetic or computability assumption.",
+      "question": "The specific exponent/multiplier syntax is contextual mathematical prose, not a claim of exact attestation on the coding page. Source formulas determine each role.",
+      "confidence": 2,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source meaning checked; exact label or register convention has the stated attestation limit.",
+      "id": "FA-0032-C06",
+      "unit": "OLP-0032",
+      "source": {
+        "char_start": 2862,
+        "char_end_exclusive": 3794,
+        "line_start": 70,
+        "line_end": 86,
+        "text": "We can see that the pairs in row~$0$ are in the odd numbered places of\nour enumeration, i.e., pair $\\tuple{0,m}$ is in place $2m+1$; pairs in\nthe second row, $\\tuple{1,m}$, are in places whose number is the\ndouble of an odd number, specifically,  $2 \\cdot (2m+1)$; pairs in the\nthird row, $\\tuple{2,m}$, are in places whose number is four times an\nodd number, $4 \\cdot (2m+1)$; and so on. The factors of $(2m+1)$ for\neach row, $1$, $2$, $4$, $8$, \\dots, are exactly the powers of~$2$:\n$1= 2^0$, $2 = 2^1$, $4 = 2^2$, $8 = 2^3$, \\dots\\@ In fact, the\nrelevant exponent is always the first member of the pair in\nquestion. Thus, for pair $\\tuple{n,m}$ the factor is $2^n$.  This\ngives us the general formula: $2^n \\cdot (2m+1)$. However, this is a\nmapping of pairs to \\emph{positive} integers, i.e., $\\tuple{0,0}$ has\nposition~$1$. If we want to begin at position~$0$ we must subtract~$1$\nfrom the result. This gives us:\n\\end{explain}\n\n",
+        "sha256": "f1c71d20af2949a28e9319b1aa2c00d8c96a128566543fb48e4bd95198000430"
+      },
+      "target_before": {
+        "char_start": 2886,
+        "char_end_exclusive": 3787,
+        "line_start": 69,
+        "line_end": 84,
+        "text": "می‌بینیم که زوج‌های سطر~$0$ در جایگاه‌های فردشمارهٔ برشماری ما\nقرار دارند؛ یعنی زوج $\\tuple{0,m}$ در جایگاه $2m+1$ است. زوج‌های سطر\nدوم، یعنی $\\tuple{1,m}$، در جایگاه‌هایی قرار دارند که شمارهٔ آن‌ها دو\nبرابر یک عدد فرد، و به‌طور مشخص $2 \\cdot (2m+1)$ است. زوج‌های سطر سوم،\nیعنی $\\tuple{2,m}$، در جایگاه‌هایی قرار دارند که شمارهٔ آن‌ها چهار برابر\nیک عدد فرد، یعنی $4 \\cdot (2m+1)$ است؛ و به همین ترتیب. عامل‌های\n$(2m+1)$ برای هر سطر، یعنی $1$، $2$، $4$، $8$، \\dots، دقیقاً توان‌های~$2$\nهستند: $1= 2^0$، $2 = 2^1$، $4 = 2^2$، $8 = 2^3$، \\dots\\@ در واقع،\nنمای مربوط همواره مؤلفهٔ نخست زوج مورد بحث است. پس برای زوج\n$\\tuple{n,m}$، عامل برابر $2^n$ است. این امر فرمول کلی\n$2^n \\cdot (2m+1)$ را به ما می‌دهد. بااین‌حال، این نگاشتی از زوج‌ها به\nاعداد صحیح \\emph{مثبت} است؛ یعنی $\\tuple{0,0}$ در جایگاه~$1$ قرار دارد.\nاگر بخواهیم از جایگاه~$0$ آغاز کنیم، باید~$1$ را از حاصل کم کنیم. پس داریم:\n\\end{explain}\n\n",
+        "sha256": "0234e52831693cc65d4b5811d8b369907d0d571d4369d07af19e141ceec912fb"
+      },
+      "target_after": {
+        "char_start": 3005,
+        "char_end_exclusive": 3926,
+        "line_start": 71,
+        "line_end": 86,
+        "text": "می‌بینیم که زوج‌های سطر~$0$ در جایگاه‌هایی از برشماری ما قرار دارند\nکه شمارهٔ آن‌ها فرد است؛ یعنی زوج $\\tuple{0,m}$ در جایگاه $2m+1$ است. زوج‌های سطر\nدوم، یعنی $\\tuple{1,m}$، در جایگاه‌هایی قرار دارند که شمارهٔ آن‌ها دو\nبرابر یک عدد فرد، و به‌طور مشخص $2 \\cdot (2m+1)$ است. زوج‌های سطر سوم،\nیعنی $\\tuple{2,m}$، در جایگاه‌هایی قرار دارند که شمارهٔ آن‌ها چهار برابر\nیک عدد فرد، یعنی $4 \\cdot (2m+1)$ است؛ و به همین ترتیب. ضریب‌های\n$(2m+1)$ در سطرهای مختلف، یعنی $1$، $2$، $4$، $8$، \\dots، دقیقاً توان‌های~$2$\nهستند: $1= 2^0$، $2 = 2^1$، $4 = 2^2$، $8 = 2^3$، \\dots\\@ در واقع،\nاین نما همواره مؤلفهٔ نخستِ زوج مورد نظر است. پس برای زوج\n$\\tuple{n,m}$، ضریب برابر $2^n$ است. این امر فرمول کلی\n$2^n \\cdot (2m+1)$ را به ما می‌دهد. بااین‌حال، این نگاشتی از زوج‌ها به\nاعداد صحیح \\emph{مثبت} است؛ یعنی $\\tuple{0,0}$ در جایگاه~$1$ قرار دارد.\nاگر بخواهیم از جایگاه~$0$ آغاز کنیم، باید~$1$ را از حاصل کم کنیم. پس داریم:\n\\end{explain}\n\n",
+        "sha256": "6d1310112eb7f1a4822ec36075b466cac4ce8967b65893455a2f32c66d401bf6"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "می‌بینیم که زوج‌های سطر~$0$ در جایگاه‌هایی از برشماری ما قرار دارند\nکه شمارهٔ آن‌ها فرد است؛ یعنی زوج $\\tuple{0,m}$ در جایگاه $2m+1$ است. زوج‌های سطر\nدوم، یعنی $\\tuple{1,m}$، در جایگاه‌هایی قرار دارند که شمارهٔ آن‌ها دو\nبرابر یک عدد فرد، و به‌طور مشخص $2 \\cdot (2m+1)$ است. زوج‌های سطر سوم،\nیعنی $\\tuple{2,m}$، در جایگاه‌هایی قرار دارند که شمارهٔ آن‌ها چهار برابر\nیک عدد فرد، یعنی $4 \\cdot (2m+1)$ است؛ و به همین ترتیب. ضریب‌های\n$(2m+1)$ در سطرهای مختلف، یعنی $1$، $2$، $4$، $8$، \\dots، دقیقاً توان‌های~$2$\nهستند: $1= 2^0$، $2 = 2^1$، $4 = 2^2$، $8 = 2^3$، \\dots\\@ در واقع،\nاین نما همواره مؤلفهٔ نخستِ زوج مورد نظر است. پس برای زوج\n$\\tuple{n,m}$، ضریب برابر $2^n$ است. این امر فرمول کلی\n$2^n \\cdot (2m+1)$ را به ما می‌دهد. بااین‌حال، این نگاشتی از زوج‌ها به\nاعداد صحیح \\emph{مثبت} است؛ یعنی $\\tuple{0,0}$ در جایگاه~$1$ قرار دارد.\nاگر بخواهیم از جایگاه~$0$ آغاز کنیم، باید~$1$ را از حاصل کم کنیم. پس داریم:\n\\end{explain}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Total alternative pairing h",
+      "canon": [
+        "FA-REL-P046",
+        "FA-OL-CANON-0001:P0093"
+      ],
+      "rationale": "Retain h(n,m)=2^n(2m+1)-1 and Nat²→Nat. Unique decomposition of k+1 as a power of2 times an odd factor proves bijectivity. General proof is in source-mathematics review, not falsely inferred from bounded tests.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source semantics and relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0032-C07",
+      "unit": "OLP-0032",
+      "source": {
+        "char_start": 3794,
+        "char_end_exclusive": 3965,
+        "line_start": 86,
+        "line_end": 94,
+        "text": "\\begin{ex}\nThe function $h\\colon \\Nat^2 \\to \\Nat$ given by\n\\[\nh(n,m) = 2^n (2m+1) - 1\n\\]\nis a pairing function for the set of pairs of natural numbers~$\\Nat^2$.\n\\end{ex}\n\n",
+        "sha256": "169eb4f5c82043d929d4293d26078b60918a08aeaa584d7371bba6674c7d0d5d"
+      },
+      "target_before": {
+        "char_start": 3787,
+        "char_end_exclusive": 3960,
+        "line_start": 84,
+        "line_end": 92,
+        "text": "\\begin{ex}\nتابع $h\\colon \\Nat^2 \\to \\Nat$ که به‌صورت زیر داده می‌شود\n\\[\nh(n,m) = 2^n (2m+1) - 1\n\\]\nیک تابع جفت‌سازی برای مجموعهٔ زوج‌های اعداد طبیعی~$\\Nat^2$ است.\n\\end{ex}\n\n",
+        "sha256": "3d7fc80f6d7594f1d49c0725cb3f858efcdc90d37be92f28036558a6f48a6621"
+      },
+      "target_after": {
+        "char_start": 3926,
+        "char_end_exclusive": 4099,
+        "line_start": 86,
+        "line_end": 94,
+        "text": "\\begin{ex}\nتابع $h\\colon \\Nat^2 \\to \\Nat$ که به‌صورت زیر داده می‌شود\n\\[\nh(n,m) = 2^n (2m+1) - 1\n\\]\nیک تابع جفت‌سازی برای مجموعهٔ زوج‌های اعداد طبیعی~$\\Nat^2$ است.\n\\end{ex}\n\n",
+        "sha256": "3d7fc80f6d7594f1d49c0725cb3f858efcdc90d37be92f28036558a6f48a6621"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{ex}\nتابع $h\\colon \\Nat^2 \\to \\Nat$ که به‌صورت زیر داده می‌شود\n\\[\nh(n,m) = 2^n (2m+1) - 1\n\\]\nیک تابع جفت‌سازی برای مجموعهٔ زوج‌های اعداد طبیعی~$\\Nat^2$ است.\n\\end{ex}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Three explicit h computations",
+      "canon": [
+        "FA-OL-CANON-0001:P0093",
+        "FA-REL-P046"
+      ],
+      "rationale": "Preserve h(0,0)=0, h(1,2)=9 and h(2,6)=51 and every intermediate step. These codes differ from the preceding Cantor code; do not globally normalize them to one pairing.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source semantics and relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0032-C08",
+      "unit": "OLP-0032",
+      "source": {
+        "char_start": 3965,
+        "char_end_exclusive": 4257,
+        "line_start": 94,
+        "line_end": 102,
+        "text": "\\begin{explain}\nAccordingly, in our second enumeration of $\\Nat^2$, the pair\n$\\tuple{0,0}$ has code $h(0,0) = 2^0(2\\cdot 0+1) - 1 = 0$;\n$\\tuple{1,2}$ has code $2^{1} \\cdot (2 \\cdot 2 + 1) - 1 = 2\n\\cdot 5 - 1 = 9$; $\\tuple{2,6}$ has code $2^{2} \\cdot (2\n\\cdot 6 + 1) - 1 = 51$.\n\\end{explain}\n\n",
+        "sha256": "4002c70e97751408df04bb5b5159a4c5ed6913f789ba112dcd4b080817867727"
+      },
+      "target_before": {
+        "char_start": 3960,
+        "char_end_exclusive": 4256,
+        "line_start": 92,
+        "line_end": 100,
+        "text": "\\begin{explain}\nبر این اساس، در دومین برشماریِ $\\Nat^2$، زوج $\\tuple{0,0}$ دارای کد\n$h(0,0) = 2^0(2\\cdot 0+1) - 1 = 0$ است؛ زوج $\\tuple{1,2}$ دارای کد\n$2^{1} \\cdot (2 \\cdot 2 + 1) - 1 = 2\n\\cdot 5 - 1 = 9$ است؛ زوج $\\tuple{2,6}$ دارای کد $2^{2} \\cdot (2\n\\cdot 6 + 1) - 1 = 51$ است.\n\\end{explain}\n\n",
+        "sha256": "12d37e161d61ba7b40881b60d8fb5aac8afaac740bc8c15ab95259f8b32b9f45"
+      },
+      "target_after": {
+        "char_start": 4099,
+        "char_end_exclusive": 4395,
+        "line_start": 94,
+        "line_end": 102,
+        "text": "\\begin{explain}\nبر این اساس، در دومین برشماریِ $\\Nat^2$، زوج $\\tuple{0,0}$ دارای کد\n$h(0,0) = 2^0(2\\cdot 0+1) - 1 = 0$ است؛ زوج $\\tuple{1,2}$ دارای کد\n$2^{1} \\cdot (2 \\cdot 2 + 1) - 1 = 2\n\\cdot 5 - 1 = 9$ است؛ زوج $\\tuple{2,6}$ دارای کد $2^{2} \\cdot (2\n\\cdot 6 + 1) - 1 = 51$ است.\n\\end{explain}\n\n",
+        "sha256": "12d37e161d61ba7b40881b60d8fb5aac8afaac740bc8c15ab95259f8b32b9f45"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{explain}\nبر این اساس، در دومین برشماریِ $\\Nat^2$، زوج $\\tuple{0,0}$ دارای کد\n$h(0,0) = 2^0(2\\cdot 0+1) - 1 = 0$ است؛ زوج $\\tuple{1,2}$ دارای کد\n$2^{1} \\cdot (2 \\cdot 2 + 1) - 1 = 2\n\\cdot 5 - 1 = 9$ است؛ زوج $\\tuple{2,6}$ دارای کد $2^{2} \\cdot (2\n\\cdot 6 + 1) - 1 = 51$ است.\n\\end{explain}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Non-surjectivity and partial inverses",
+      "canon": [
+        "FA-REL-P046",
+        "FA-REL-P050",
+        "FA-OL-CANON-0001:P0093"
+      ],
+      "rationale": "Clarify conditional: if the code is not onto its numerical codomain, inverse only on the range is partial relative to the entire codomain. Merely not requiring onto does not make every admitted encoding nonsurjective. Keep plain cardinality versus effective enumeration separate.",
+      "question": "Selected D50 establishes the inverse on a bijection’s codomain, not the exact partial-function label. Source0032 supplies the partial-function concept; تابع جزئی is retained contextually.",
+      "confidence": 2,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source meaning checked; exact label or register convention has the stated attestation limit.",
+      "id": "FA-0032-C09",
+      "unit": "OLP-0032",
+      "source": {
+        "char_start": 4257,
+        "char_end_exclusive": 4439,
+        "line_start": 102,
+        "line_end": 106,
+        "text": "Sometimes it is enough to encode pairs of natural numbers~$\\Nat^2$\nwithout requiring that the encoding is surjective. Such encodings have\ninverses that are only partial functions. \n\n",
+        "sha256": "775198397ad0f992dd7c3438884aee67eeae83a722d35b4436176216c7de94f9"
+      },
+      "target_before": {
+        "char_start": 4256,
+        "char_end_exclusive": 4412,
+        "line_start": 100,
+        "line_end": 104,
+        "text": "گاهی کافی است زوج‌های اعداد طبیعی~$\\Nat^2$ را کدگذاری کنیم، بی‌آنکه\nلازم باشد کدگذاری پوشا باشد. چنین کدگذاری‌هایی وارون‌هایی دارند که فقط\nتوابع جزئی‌اند.\n\n",
+        "sha256": "28d986509e9d0e53226194494a61f8fb504380f404df85d847ac3a16bc3fa18d"
+      },
+      "target_after": {
+        "char_start": 4395,
+        "char_end_exclusive": 4651,
+        "line_start": 102,
+        "line_end": 107,
+        "text": "گاهی کافی است زوج‌های اعداد طبیعی~$\\Nat^2$ را کدگذاری کنیم، بی‌آنکه\nلازم باشد کدگذاری پوشا باشد. اگر کدگذاری پوشا نباشد، معکوس آن فقط در بردش\nتعریف می‌شود؛ بنابراین با در نظر گرفتن همهٔ اعدادِ مجموعهٔ مقصد به‌عنوان\nورودی‌های ممکن، معکوس یک تابع جزئی است.\n\n",
+        "sha256": "3b02d95428fcc52cb86ae733dd037e632a4351ac3507f15e04b412cf43b3d963"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "گاهی کافی است زوج‌های اعداد طبیعی~$\\Nat^2$ را کدگذاری کنیم، بی‌آنکه\nلازم باشد کدگذاری پوشا باشد. اگر کدگذاری پوشا نباشد، معکوس آن فقط در بردش\nتعریف می‌شود؛ بنابراین با در نظر گرفتن همهٔ اعدادِ مجموعهٔ مقصد به‌عنوان\nورودی‌های ممکن، معکوس یک تابع جزئی است.\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Prime-power injection j",
+      "canon": [
+        "FA-REL-P046",
+        "FA-OL-CANON-0001:P0093"
+      ],
+      "rationale": "Preserve j(n,m)=2^n3^m, positive output declaration and its view as a map into Nat. Codomain inclusion is valid, not a defect. Unique prime factorization gives injection;5 is not in its range. The map is not the onto pairing h, and its inverse is partial on all naturals.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not a calibrated probability. Source semantics and relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0032-C10",
+      "unit": "OLP-0032",
+      "source": {
+        "char_start": 4439,
+        "char_end_exclusive": 4578,
+        "line_start": 106,
+        "line_end": 114,
+        "text": "\\begin{ex}\nThe function $j\\colon \\Nat^2 \\to \\Nat^+$ given by\n\\[\nj(n,m) = 2^n3^m\n\\]\nis !!a{injective} function $\\Nat^2 \\to \\Nat$.\n\\end{ex}\n\n",
+        "sha256": "0bd0b0e00bfc328838c3d1cd8b1358d602cd6933fa2354c96d30a376551f2399"
+      },
+      "target_before": {
+        "char_start": 4412,
+        "char_end_exclusive": 4567,
+        "line_start": 104,
+        "line_end": 112,
+        "text": "\\begin{ex}\nتابع $j\\colon \\Nat^2 \\to \\Nat^+$ که به‌صورت زیر داده می‌شود\n\\[\nj(n,m) = 2^n3^m\n\\]\nتابعی !!a{injective} به‌صورت $\\Nat^2 \\to \\Nat$ است.\n\\end{ex}\n\n",
+        "sha256": "7e10f461fedbb078664ede6451a6e60d284502949ffba9d03dd570965b133e8c"
+      },
+      "target_after": {
+        "char_start": 4651,
+        "char_end_exclusive": 4806,
+        "line_start": 107,
+        "line_end": 115,
+        "text": "\\begin{ex}\nتابع $j\\colon \\Nat^2 \\to \\Nat^+$ که به‌صورت زیر داده می‌شود\n\\[\nj(n,m) = 2^n3^m\n\\]\nتابعی !!a{injective} به‌صورت $\\Nat^2 \\to \\Nat$ است.\n\\end{ex}\n\n",
+        "sha256": "7e10f461fedbb078664ede6451a6e60d284502949ffba9d03dd570965b133e8c"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{ex}\nتابع $j\\colon \\Nat^2 \\to \\Nat^+$ که به‌صورت زیر داده می‌شود\n\\[\nj(n,m) = 2^n3^m\n\\]\nتابعی یک‌به‌یک به‌صورت $\\Nat^2 \\to \\Nat$ است.\n\\end{ex}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 99,
+          "token": "!!a{injective}",
+          "realization": "یک‌به‌یک"
+        }
+      ],
+      "member_occurrences": []
+    }
+  ],
+  "corrections": [
+    {
+      "unit": "OLP-0031",
+      "id": "FA0031-DIRECT-INVERSE-EXPOSITION",
+      "before": "خوب بود اگر می‌توانستیم\nاین مقدار را مستقیم‌تر محاسبه کنیم. یعنی خوب بود \\emph{وارونِ} برشماری\nزیگزاگ، یعنی $g\\colon \\Nat^2 \\to \\Nat$، را در دسترس داشتیم، به‌گونه‌ای که",
+      "after": "اگر بتوانیم\nاین مقدار را مستقیماً محاسبه کنیم، کار ساده‌تر می‌شود. به بیان دیگر، می‌خواهیم\n\\emph{معکوسِ} برشماری زیگزاگ، یعنی $g\\colon \\Nat^2 \\to \\Nat$، را به‌صورت صریح\nداشته باشیم؛ به‌گونه‌ای که"
+    },
+    {
+      "unit": "OLP-0031",
+      "id": "FA0031-PRESENT-FUNCTION-PROPERTY",
+      "before": "این تابع به ما امکان می‌داد",
+      "after": "این تابع به ما امکان می‌دهد"
+    },
+    {
+      "unit": "OLP-0031",
+      "id": "FA0031-POSITIVE-COLUMN",
+      "before": "حاوی مقدار~$v$ باشد، آنگاه سطر",
+      "after": "حاوی مقدار~$v$ باشد و شمارهٔ ستون مثبت باشد، آنگاه سطر"
+    },
+    {
+      "unit": "OLP-0031",
+      "id": "FA0031-TRIANGULAR-SUM",
+      "before": "اعداد طبیعیِ $< k$",
+      "after": "اعداد طبیعیِ $\\leq k$"
+    },
+    {
+      "unit": "OLP-0031",
+      "id": "FA0031-SOURCE-BOUNDARY-DISCLOSURE",
+      "before": "محاسبه کرد. با کنار هم گذاشتن این",
+      "after": "محاسبه کرد. \\emph{یادداشت ویراستاری:} شرط مثبت‌بودن شمارهٔ ستون در مشاهدهٔ نخست،\nو احتساب خودِ عدد در مجموع اعداد مثلثی، دو اصلاح در توضیح متن مبدأ هستند.\nبا کنار هم گذاشتن این"
+    },
+    {
+      "unit": "OLP-0031",
+      "id": "FA0031-INVERSE-TERM",
+      "before": "این تابع $g$ \\emph{وارونِ}",
+      "after": "این تابع $g$ \\emph{معکوسِ}"
+    },
+    {
+      "unit": "OLP-0031",
+      "id": "FA0031-DECODING-DOMAIN",
+      "before": "با استفاده از وارون تابع جفت‌سازی می‌توانیم\nعدد را \\emph{کدگشایی کنیم}؛ یعنی دریابیم کدام زوج را بازنمایی می‌کند.",
+      "after": "با استفاده از معکوس تابع جفت‌سازی، که بر برد آن تعریف شده است، می‌توانیم\n\\emph{کدگشایی کنیم}؛ یعنی زوجی را که یک کدِ معتبر بازنمایی می‌کند به دست آوریم.\n\\emph{توضیح ویراستاری:} یک‌به‌یک‌بودن به‌تنهایی تضمین نمی‌کند که هر عددی کدِ یک زوج باشد."
+    },
+    {
+      "unit": "OLP-0031",
+      "id": "FA0031-TRUTH-FUNCTION-SCOPE",
+      "before": "از درس مقدماتی منطق خود به یاد آورید که هر جدول ارزشِ ممکن یک تابع ارزش\nرا بیان می‌کند. به بیان دیگر، توابع ارزش همهٔ توابع از\n$\\Bin^k \\to \\Bin$ برای یک~$k$ هستند. ثابت کنید مجموعهٔ همهٔ توابع ارزش\nشمارا است.",
+      "after": "از درس مقدماتی منطق خود به یاد آورید که هر جدول ارزشِ ممکن یک تابعِ ارزشِ صدق\nرا تعیین می‌کند. به بیان دیگر، این‌ها همهٔ توابعی به‌صورت\n$\\Bin^k \\to \\Bin$ برای یک~$k$ هستند. ثابت کنید مجموعهٔ همهٔ توابعِ ارزشِ صدق\nشماراست."
+    },
+    {
+      "unit": "OLP-0031",
+      "id": "FA0031-COFINITE-DISCLOSURE",
+      "before": "نشان دهید $I$ !!{enumerable} است.",
+      "after": "نشان دهید $I$ !!{enumerable} است.\n\\emph{یادداشت ویراستاری:} عبارت ناقصِ متن مبدأ دربارهٔ مجموعهٔ متناهی، مطابق\nتعریف فرمولیِ بلافاصله پس از آن، «زیرمجموعهٔ متناهیِ اعداد طبیعی» خوانده شده است."
+    },
+    {
+      "unit": "OLP-0031",
+      "id": "FA0031-COUNTABLE-UNION-CHOICE",
+      "before": "[توجه: این مسئله دشوار است!]",
+      "after": "[توجه: این مسئله دشوار است!]\n\\emph{یادداشت دربارهٔ فرض‌ها:} در برهان معمولِ این گزاره، برای انتخاب هم‌زمانِ\nیک برشماری برای هر مجموعهٔ ناتهیِ خانواده از اصل انتخاب استفاده می‌شود.\nاگر این برشماری‌ها از ابتدا جزو داده‌های مسئله باشند، می‌توان همان داده‌ها را\nدر ساخت قطری به کار برد؛ در آن صورت این مرحلهٔ انتخاب لازم نیست."
+    },
+    {
+      "unit": "OLP-0031",
+      "id": "FA0031-INVERSE-EXERCISE",
+      "before": "نشان دهید وارونِ $f$ یک برشماری از $A \\times B$ است.",
+      "after": "\\emph{صورت اصلاح‌شدهٔ تمرین:} در حالت ناتهی، با استفاده از معکوسِ $f$\nکه بر برد آن تعریف شده است، برشماری‌ای برای $A \\times B$ بسازید.\nحالت تهی را نیز جداگانه بررسی کنید.\n\\emph{یادداشت ویراستاری:} صورت اولیهٔ تمرین، معکوس را بی‌قید برشماری می‌نامید؛\nاما معکوسِ یک تابع یک‌به‌یک لزوماً بر همهٔ اعداد طبیعی تعریف نشده است."
+    },
+    {
+      "unit": "OLP-0031",
+      "id": "FA0031-CELL-NOT-ROW",
+      "before": "سطر $n$اُم و ستون $m$اُم حاوی مقدار~$v$ باشد و شمارهٔ ستون مثبت باشد، آنگاه سطر\n$(n+1)$اُم و ستون $(m-1)$اُم حاوی",
+      "after": "خانهٔ واقع در سطر $n$اُم و ستون $m$اُم حاوی مقدار~$v$ باشد و شمارهٔ ستون مثبت باشد،\nآنگاه خانهٔ واقع در سطر $(n+1)$اُم و ستون $(m-1)$اُم حاوی"
+    },
+    {
+      "unit": "OLP-0032",
+      "id": "FA0032-INVERSE-TERM",
+      "before": "یافتن وارونشان",
+      "after": "یافتن معکوسشان"
+    },
+    {
+      "unit": "OLP-0032",
+      "id": "FA0032-SECOND-PAIR",
+      "before": "دومین زوج (یعنی $\\tuple{0,2}$)",
+      "after": "دومین زوج (یعنی $\\tuple{0,1}$)"
+    },
+    {
+      "unit": "OLP-0032",
+      "id": "FA0032-SUCCESSIVE-ROWS",
+      "before": "زوج‌های $\\tuple{2,m}$، $\\tuple{2,m}$ و جز آن",
+      "after": "زوج‌های $\\tuple{2,m}$، $\\tuple{3,m}$ و جز آن"
+    },
+    {
+      "unit": "OLP-0032",
+      "id": "FA0032-TYPO-DISCLOSURE",
+      "before": "کنید. بنابراین برشماری کامل‌شدهٔ ما چنین آغاز می‌شود:",
+      "after": "کنید. \\emph{یادداشت ویراستاری:} دو لغزش در مؤلفه‌های زوج‌ها در توضیح متن مبدأ\nاصلاح شده‌اند تا توضیح با جدول‌ها سازگار باشد.\nبنابراین برشماری کامل‌شدهٔ ما چنین آغاز می‌شود:"
+    },
+    {
+      "unit": "OLP-0032",
+      "id": "FA0032-ODD-POSITION-IDIOM",
+      "before": "در جایگاه‌های فردشمارهٔ برشماری ما\nقرار دارند",
+      "after": "در جایگاه‌هایی از برشماری ما قرار دارند\nکه شمارهٔ آن‌ها فرد است"
+    },
+    {
+      "unit": "OLP-0032",
+      "id": "FA0032-MULTIPLIER-IDIOM",
+      "before": "عامل‌های\n$(2m+1)$ برای هر سطر",
+      "after": "ضریب‌های\n$(2m+1)$ در سطرهای مختلف"
+    },
+    {
+      "unit": "OLP-0032",
+      "id": "FA0032-EXPONENT-IDIOM",
+      "before": "نمای مربوط همواره مؤلفهٔ نخست زوج مورد بحث است.",
+      "after": "این نما همواره مؤلفهٔ نخستِ زوج مورد نظر است."
+    },
+    {
+      "unit": "OLP-0032",
+      "id": "FA0032-MULTIPLIER-SINGLE",
+      "before": "عامل برابر $2^n$",
+      "after": "ضریب برابر $2^n$"
+    },
+    {
+      "unit": "OLP-0032",
+      "id": "FA0032-PARTIAL-INVERSE",
+      "before": "لازم باشد کدگذاری پوشا باشد. چنین کدگذاری‌هایی وارون‌هایی دارند که فقط\nتوابع جزئی‌اند.",
+      "after": "لازم باشد کدگذاری پوشا باشد. اگر کدگذاری پوشا نباشد، معکوس آن فقط در بردش\nتعریف می‌شود؛ بنابراین با در نظر گرفتن همهٔ اعدادِ مجموعهٔ مقصد به‌عنوان\nورودی‌های ممکن، معکوس یک تابع جزئی است."
+    }
+  ],
+  "human_review_gate": false,
+  "reader_release": false
+}

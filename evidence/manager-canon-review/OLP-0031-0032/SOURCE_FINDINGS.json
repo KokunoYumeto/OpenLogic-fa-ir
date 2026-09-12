@@ -1,0 +1,48 @@
+{
+  "source_commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "known_ledger_sha256": "9b6e836c8432eb75d331913983603796d6557da6ec3ad71b846b2a248374cd07",
+  "known_finding_ids": [
+    "OLSIZ-002",
+    "OLSIZ-003"
+  ],
+  "classifications": [
+    {
+      "unit": "OLP-0031",
+      "issue": "triangular-sum strict inequality",
+      "kind": "formula/prose contradiction",
+      "correction": "include k in the sum"
+    },
+    {
+      "unit": "OLP-0031",
+      "issue": "diagonal successor at column0",
+      "kind": "missing condition",
+      "correction": "positive column required"
+    },
+    {
+      "unit": "OLP-0031",
+      "issue": "inverse of an arbitrary injection called total enumeration",
+      "kind": "domain error",
+      "correction": "construct an enumeration from inverse-on-image; handle empty product"
+    },
+    {
+      "unit": "OLP-0031",
+      "issue": "countable union",
+      "kind": "choice-assumption disclosure, not false theorem in ZFC",
+      "correction": "distinguish selected versus supplied enumerations"
+    },
+    {
+      "unit": "OLP-0031",
+      "issue": "cofinite malformed prose",
+      "kind": "already-known OLSIZ-002; existing Persian interpretation was correct"
+    },
+    {
+      "unit": "OLP-0032",
+      "issue": "second(0,m) pair and next row",
+      "kind": "two prose coordinate typos; row duplication already-known OLSIZ-003"
+    }
+  ],
+  "current_upstream_status_not_claimed": true,
+  "upstream_issue_sent": false,
+  "main_agent_review": true,
+  "human_gate": false
+}
