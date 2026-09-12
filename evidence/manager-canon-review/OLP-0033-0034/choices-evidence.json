@@ -1,0 +1,2589 @@
+{
+  "schema": "public-openlogic-fa-batch-review/1",
+  "identities": [
+    {
+      "unit": "OLP-0033",
+      "source_commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+      "source_path": "content/sets-functions-relations/size-of-sets/non-enumerability.tex",
+      "source_git_LF_sha256": "4471def29c2da48dcb01635adf692cd0bc89cb6885636db149f4b2d86ff4e9fa",
+      "source_ledger_CRLF_sha256": "a272a841f8c50bda6589aac40278b9bff7f8a1f5284730c7195423b09ac3ba2e",
+      "published_target_sha256": "7d9312ab40e0fdd45b0856fff528559c0a06fe04a55b67f9a6f04ce85ec17708",
+      "candidate_sha256": "3b074e38ff659eb354dd3cbf29eca668b3d6fe7b138774f4d01dd514c244deba",
+      "published_target_bytes": 13574,
+      "candidate_bytes": 13930,
+      "R3_member": "source/locale/fa-IR/content/sets-functions-relations/size-of-sets/non-enumerability.tex",
+      "R3_archive_sha256": "ef32f359fe7813d0ffef11f3936fb1498f2f3cdcc176ab2acb56b969360c9e59",
+      "locale_config_sha256": "c8df8c39abbd1ab36dbac380490b72e9b3c565bbd1ec3d1f1be88bdc300abd0b",
+      "math_spans": 173,
+      "aligned_choices": 24,
+      "math_text_pairs": [
+        {
+          "math_span": 66,
+          "source": "if $s_{n}(n) = 0$",
+          "target": "اگر $s_{n}(n) = 0$",
+          "review": "Exact wording reviewed in the aligned choice, not accepted by token masking alone"
+        },
+        {
+          "math_span": 66,
+          "source": "if $s_{n}(n) = 1$",
+          "target": "اگر $s_{n}(n) = 1$",
+          "review": "Exact wording reviewed in the aligned choice, not accepted by token masking alone"
+        }
+      ],
+      "formal_repairs": []
+    },
+    {
+      "unit": "OLP-0034",
+      "source_commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+      "source_path": "content/sets-functions-relations/size-of-sets/reduction.tex",
+      "source_git_LF_sha256": "0d6d2e3280698668b837cef6dcf3134b86d2a4b48831ae516e6e33e42898c79a",
+      "source_ledger_CRLF_sha256": "33f0cbb35c8c1fa3ff0e4f44fa626fdc298d1c4612aeaafb41bcb920e5d18ac8",
+      "published_target_sha256": "34e56fb7426e63eed603e95537caae2bd576600e564fad2be0f93b982f3caadf",
+      "candidate_sha256": "7664491137cecf1686387f2c056268d25bc0608d56d0bdaad0f18f6db895c2b1",
+      "published_target_bytes": 7827,
+      "candidate_bytes": 9258,
+      "R3_member": "source/locale/fa-IR/content/sets-functions-relations/size-of-sets/reduction.tex",
+      "R3_archive_sha256": "ef32f359fe7813d0ffef11f3936fb1498f2f3cdcc176ab2acb56b969360c9e59",
+      "locale_config_sha256": "c8df8c39abbd1ab36dbac380490b72e9b3c565bbd1ec3d1f1be88bdc300abd0b",
+      "math_spans": 100,
+      "aligned_choices": 17,
+      "math_text_pairs": [
+        {
+          "math_span": 79,
+          "source": "$n$ $0$'s",
+          "target": "$n$ تا $0$",
+          "review": "Exact wording reviewed in the aligned choice, not accepted by token masking alone"
+        }
+      ],
+      "formal_repairs": [
+        {
+          "id": "CHARACTERISTIC-NAME",
+          "before": "$s_{k}$",
+          "after": "$s$"
+        },
+        {
+          "id": "CHARACTERISTIC-ONE",
+          "before": "$s_{k}(n) = 1$",
+          "after": "$s(n) = 1$"
+        },
+        {
+          "id": "CHARACTERISTIC-ZERO",
+          "before": "$s_k(n) = 0$",
+          "after": "$s(n) = 0$"
+        },
+        {
+          "id": "INFINITE-TAIL",
+          "before": "}}\n\\]",
+          "after": "}}\\dots\n\\]"
+        }
+      ]
+    }
+  ],
+  "canon": {
+    "documents": [
+      {
+        "document_id": "FA-OL-CANON-0003",
+        "title_fa": "نظریهٔ مجموعه‌ها",
+        "title_en": "Set Theory",
+        "authors": [
+          "محسن خانی",
+          "افشین زارعی"
+        ],
+        "institution": "دانشگاه صنعتی اصفهان",
+        "date_statement": "۱۸ خرداد ۱۴۰۰",
+        "source_url": "https://khani.iut.ac.ir/sites/khani.iut.ac.ir/files//u145/jozve-kamel.pdf",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+        "pdf_bytes": 413763,
+        "licence_status": "No explicit redistribution licence identified; retain locally and cite only."
+      },
+      {
+        "document_id": "FA-OL-CANON-0005",
+        "title_fa": "مبانی منطق و نظریهٔ مجموعه‌ها",
+        "title_en": "Foundations of Logic and Set Theory",
+        "authors": [
+          "محسن خانی"
+        ],
+        "institution": "دانشگاه صنعتی اصفهان",
+        "date_statement": "نیمسال اول ۱۳۹۷–۱۳۹۸",
+        "source_url": "https://mohsen-khani.github.io/logic97-1/jozve/logic-full.pdf",
+        "pdf_sha256": "565558b76701858236844f19663de27ee10a8d72fd8b007e69b85159ac49f86d",
+        "pdf_bytes": 1514008,
+        "licence_status": "Public repository contains no top-level licence file; retain locally and cite only."
+      },
+      {
+        "document_id": "FA-OL-CANON-0001",
+        "title_fa": "منطق ریاضی",
+        "title_en": "Mathematical Logic",
+        "authors": [
+          "محسن خانی"
+        ],
+        "institution": "دانشگاه صنعتی اصفهان",
+        "date_statement": "۳۰ دی ۱۴۰۲",
+        "source_url": "https://khani.iut.ac.ir/sites/khani.iut.ac.ir/files//u145/chapter2_0.pdf",
+        "pdf_sha256": "0f3fb75ed1fcb0cbc669c04493acf520888e1ebfd62795bb28fc510bc41c7e79",
+        "pdf_bytes": 759905,
+        "licence_status": "No explicit redistribution licence identified; retain locally and cite only."
+      },
+      {
+        "document_id": "FA-REL-C001",
+        "title_fa": "ریاضیات گسسته و کاربردها",
+        "title_en": "Discrete Mathematics and Applications",
+        "authors": [
+          "علیرضا غفاری حدیقه",
+          "مگردیچ تومانیان"
+        ],
+        "institution": "مؤسسه چاپ و انتشارات دانشگاه جامع امام حسین (ع)",
+        "date_statement": "Author-hosted textbook; edition date not newly established",
+        "source_url": "https://hadigheha.github.io/books/teaching/Textbooks/Tarkibiyat.pdf",
+        "pdf_bytes": 1713264,
+        "pdf_sha256": "8f79c45a926c1cea819c4fefa86383f2a65ae23b1d526baaf99cf2506bb9f317",
+        "licence_status": "Private scholarly consultation; no compatible redistribution licence established. Full PDF/renders/extracts are not published."
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "FA-OL-CANON-0003:P0051",
+        "pdf_page_1based": 51,
+        "printed_page": 50,
+        "location": "Lemma6: injection, surjection and empty-domain exception",
+        "short_attestation": "یک‌به‌یک؛ پوشا؛ هم‌توان",
+        "relevance_and_limits": "Direct cardinal comparison and inverse-on-image syntax, with an explicit empty-set alternative. The page also uses Choice for a general reverse selection; our enumerated-index construction needs no such family of choices. Do not import the visible notation slips.",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+        "normalized_search_page_sha256": "c9cb6d220f6d4b26576dcce76e02cd3e62bd19fc15104b2020ed4b7fa15f8270",
+        "visual_page_read": true,
+        "render_sha256": "67a940e92fee081fb08ddc849c222c8523bc4a5f083d46cb0669e724dbe7d85a"
+      },
+      {
+        "passage_id": "FA-OL-CANON-0003:P0053",
+        "pdf_page_1based": 53,
+        "printed_page": 52,
+        "location": "Definition10 and Cantor theorem13",
+        "short_attestation": "شمارا؛ شمارش؛ قضیهٔ کانتور",
+        "relevance_and_limits": "Direct enumeration and Cantor diagonal membership argument. This source reserves شمارا for countably infinite; OpenLogic includes finite/empty. Retain the chapter’s disclosed inclusive convention. The exact label روش قطری is not printed here.",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+        "normalized_search_page_sha256": "becce54ede43c880d9d6cb9113d047f3d80f60b5bd55a113b2f57d0491566cdd",
+        "visual_page_read": true,
+        "render_sha256": "0daa8a5edd7341ff10e2733feb93929882b168d92d94116aaa807b6c5c831747"
+      },
+      {
+        "passage_id": "FA-OL-CANON-0005:P0114",
+        "pdf_page_1based": 114,
+        "printed_page": 114,
+        "location": "Cardinals, definition262 and choice-sensitive comparison",
+        "short_attestation": "متناهی؛ شمارای نامتناهی؛ ناشمارا",
+        "relevance_and_limits": "Direct uncountable terminology and explicit distinction from finite/countably infinite, with cardinal comparison using injections. Exact OLP enumerable convention is governed by OLP, not silently replaced by a different convention.",
+        "pdf_sha256": "565558b76701858236844f19663de27ee10a8d72fd8b007e69b85159ac49f86d",
+        "normalized_search_page_sha256": "3d28dacaae32bc92f2e4bf1835c1bd2d4208cc6b97ef973591c5d079b6e8d6bc",
+        "visual_page_read": true,
+        "render_sha256": "c8a345b31ab57ddb4d134a484c8ec3562cebc72359f339cd5bb4534ce146c64d"
+      },
+      {
+        "passage_id": "FA-OL-CANON-0005:P0115",
+        "pdf_page_1based": 115,
+        "printed_page": 115,
+        "location": "Cantor theorem263 and subset/binary-function correspondence",
+        "short_attestation": "دنباله‌های صفرویکی؛ زیرمجموعه؛ تابع",
+        "relevance_and_limits": "Direct diagonal nonmembership contradiction and correspondence between subsets and binary-valued functions. This supports set-versus-sequence and coordinate language, not a claim that binary real expansions are unique.",
+        "pdf_sha256": "565558b76701858236844f19663de27ee10a8d72fd8b007e69b85159ac49f86d",
+        "normalized_search_page_sha256": "4b17fdce664e399267f83ae8e22b216f8dba6c34352b01e9981b4e6a1391cc08",
+        "visual_page_read": true,
+        "render_sha256": "e53b4e8ed27722e69c39730e3206941e3ac919e6bc3df652a8fed34d5ec0ec68"
+      },
+      {
+        "passage_id": "FA-OL-CANON-0001:P0082",
+        "pdf_page_1based": 82,
+        "printed_page": 81,
+        "location": "Algorithm inputs, outputs, halting and possible undefined output",
+        "short_attestation": "الگوریتم؛ ورودی؛ خروجی",
+        "relevance_and_limits": "Direct contrast: an algorithm may not halt, and an effective presentation is an additional condition. OLP here quantifies over all set-theoretic functions; no algorithm or decidable-domain requirement is added. Exact تابع جزئی and reduction terminology are not attested on this page.",
+        "pdf_sha256": "0f3fb75ed1fcb0cbc669c04493acf520888e1ebfd62795bb28fc510bc41c7e79",
+        "normalized_search_page_sha256": "30725551e3de52d2d4ef061c24305af09c0312d59981abcc6aa2a7956e8d58c6",
+        "visual_page_read": true,
+        "render_sha256": "257b14c4238cafce49bc27be7a1ffa132cf6394b7ee2cc7d311f2204e81a70ba"
+      },
+      {
+        "passage_id": "FA-REL-P046",
+        "pdf_page_1based": 46,
+        "printed_page": 36,
+        "location": "Function-kind definitions and direction diagrams",
+        "short_attestation": "یک به یک؛ پوشا",
+        "relevance_and_limits": "Each target has at least one preimage versus at most one; apply contextually to each reduction arrow.",
+        "pdf_sha256": "8f79c45a926c1cea819c4fefa86383f2a65ae23b1d526baaf99cf2506bb9f317",
+        "normalized_search_page_sha256": "d43e62612bc3a4aefc91cceff32d810086a6d423c4f6eeb6b503c4245340e3ef",
+        "visual_page_read": true,
+        "render_sha256": "e74e0f5fed58449d4bcb006d3999c50252d0710368cb3f52aee464efa52e5f9c"
+      },
+      {
+        "passage_id": "FA-REL-P050",
+        "pdf_page_1based": 50,
+        "printed_page": 40,
+        "location": "Function composition and inverse of bijection",
+        "short_attestation": "ترکیب توابع؛ تابع معکوس",
+        "relevance_and_limits": "Direct composition and inverse syntax; an injection has a unique inverse only on its image. Reduction combines the actual enumeration with a function in the specified direction.",
+        "pdf_sha256": "8f79c45a926c1cea819c4fefa86383f2a65ae23b1d526baaf99cf2506bb9f317",
+        "normalized_search_page_sha256": "25419bc271e8d6ed82a86f4725f0ba7443efc63ec8a80876a2f5076ed88f0500",
+        "visual_page_read": true,
+        "render_sha256": "db64923aec7f422faa1c700d2b5f94cec1b7d6c2990830d2803bf5f0c470b334"
+      }
+    ]
+  },
+  "choices": [
+    {
+      "topic": "Uncountable sets heading",
+      "canon": [
+        "FA-OL-CANON-0005:P0114",
+        "FA-OL-CANON-0003:P0053"
+      ],
+      "rationale": "ناشمارا is directly attested. The chapter’s شمارا includes finite and empty cases; no terminology-based restriction to infinite enumerable sets.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not calibrated probability. Source meaning and the relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0033-C01",
+      "unit": "OLP-0033",
+      "source": {
+        "char_start": 193,
+        "char_end_exclusive": 241,
+        "line_start": 11,
+        "line_end": 13,
+        "text": "\\olsection{\\printtoken{S}{nonenumerable} Sets}\n\n",
+        "sha256": "b4c57db4a50e4c57ae810d5d1e3e165e5bc8b78cdc46c6b40ebf15c09f9bd993"
+      },
+      "target_before": {
+        "char_start": 200,
+        "char_end_exclusive": 254,
+        "line_start": 11,
+        "line_end": 13,
+        "text": "\\olsection{مجموعه‌های \\printtoken{S}{nonenumerable}}\n\n",
+        "sha256": "7bb4ed6fe903187ceb547d59bdbd5e8f71c6884b3d6f392da380cf75f7c86dc0"
+      },
+      "target_after": {
+        "char_start": 200,
+        "char_end_exclusive": 254,
+        "line_start": 11,
+        "line_end": 13,
+        "text": "\\olsection{مجموعه‌های \\printtoken{S}{nonenumerable}}\n\n",
+        "sha256": "7bb4ed6fe903187ceb547d59bdbd5e8f71c6884b3d6f392da380cf75f7c86dc0"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\olsection{مجموعه‌های ناشمارا}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Edition-level editorial comparison",
+      "canon": [
+        "FA-OL-CANON-0003:P0053",
+        "FA-OL-CANON-0005:P0115"
+      ],
+      "rationale": "Preserve all three source cross-reference roles: definitions in enm and the less elementary alternative enm-alt. Add the missing full stop; no omitted editorial metadata.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not calibrated probability. Source meaning and the relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0033-C02",
+      "unit": "OLP-0033",
+      "source": {
+        "char_start": 241,
+        "char_end_exclusive": 519,
+        "line_start": 13,
+        "line_end": 20,
+        "text": "\\begin{editorial}\n  This section proves the non-enumerability of $\\Bin^\\omega$ and\n  $\\Pow{\\PosInt}$ using the definition in \\olref[enm]{sec}. It is\n  designed to be a little more elementary and a little more detailed\n  than the version in \\olref[enm-alt]{sec}\n\\end{editorial}\n\n",
+        "sha256": "22bb1ce4f07c3a9e2f8345627d7ffc289da90720eb84e485d327f5b1bbe46ef6"
+      },
+      "target_before": {
+        "char_start": 254,
+        "char_end_exclusive": 504,
+        "line_start": 13,
+        "line_end": 20,
+        "text": "\\begin{editorial}\n  این بخش ناشمارابودنِ $\\Bin^\\omega$ و $\\Pow{\\PosInt}$ را با استفاده\n  از تعریفِ \\olref[enm]{sec} ثابت می‌کند. این بخش طوری\n  تنظیم شده است که اندکی مقدماتی‌تر و اندکی مشروح‌تر از روایتِ\n  \\olref[enm-alt]{sec} باشد\n\\end{editorial}\n\n",
+        "sha256": "b1073fdc22f2af3834e8e6ee41c752a80e8eb4a51f13f4affecabf096b319324"
+      },
+      "target_after": {
+        "char_start": 254,
+        "char_end_exclusive": 505,
+        "line_start": 13,
+        "line_end": 20,
+        "text": "\\begin{editorial}\n  این بخش ناشمارابودنِ $\\Bin^\\omega$ و $\\Pow{\\PosInt}$ را با استفاده\n  از تعریفِ \\olref[enm]{sec} ثابت می‌کند. این بخش طوری\n  تنظیم شده است که اندکی مقدماتی‌تر و اندکی مشروح‌تر از روایتِ\n  \\olref[enm-alt]{sec} باشد.\n\\end{editorial}\n\n",
+        "sha256": "5f54abd0bf27ace9f6ffb8a7a3bfb22d8f07eb0b465e4d5a1f18d6c8335e3a04"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{editorial}\n  این بخش ناشمارابودنِ $\\Bin^\\omega$ و $\\Pow{\\PosInt}$ را با استفاده\n  از تعریفِ \\olref[enm]{sec} ثابت می‌کند. این بخش طوری\n  تنظیم شده است که اندکی مقدماتی‌تر و اندکی مشروح‌تر از روایتِ\n  \\olref[enm-alt]{sec} باشد.\n\\end{editorial}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Infinite sets and nonenumerability",
+      "canon": [
+        "FA-OL-CANON-0003:P0053",
+        "FA-OL-CANON-0005:P0114"
+      ],
+      "rationale": "Retain the contrast between infinite enumerable examples and infinite nonenumerable sets. Infinite does not itself mean uncountable. Positive integers and Nat remain distinct.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not calibrated probability. Source meaning and the relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0033-C03",
+      "unit": "OLP-0033",
+      "source": {
+        "char_start": 519,
+        "char_end_exclusive": 786,
+        "line_start": 20,
+        "line_end": 25,
+        "text": "Some sets, such as the set $\\PosInt$ of positive integers, are\ninfinite. So far we've seen examples of infinite sets which were all\n!!{enumerable}. However, there are also infinite sets which do not\nhave this property. Such sets are called \\emph{!!{nonenumerable}}.\n\n",
+        "sha256": "1c308b71a01049540416d2be682261c680d80bb06f839c62767f177f8ad1fc22"
+      },
+      "target_before": {
+        "char_start": 504,
+        "char_end_exclusive": 790,
+        "line_start": 20,
+        "line_end": 26,
+        "text": "برخی مجموعه‌ها، مانند مجموعهٔ~$\\PosInt$ از اعداد صحیح مثبت،\nنامتناهی‌اند. تاکنون نمونه‌هایی از مجموعه‌های نامتناهی دیده‌ایم که همگی\n!!{enumerable} بوده‌اند. بااین‌حال، مجموعه‌های نامتناهی‌ای نیز وجود دارند\nکه این ویژگی را ندارند. چنین مجموعه‌هایی را \\emph{!!{nonenumerable}}\nمی‌نامند.\n\n",
+        "sha256": "1740d936aed6b117e1004d8b73b8a3635f7a28edcea875a70980755cf84d0371"
+      },
+      "target_after": {
+        "char_start": 505,
+        "char_end_exclusive": 791,
+        "line_start": 20,
+        "line_end": 26,
+        "text": "برخی مجموعه‌ها، مانند مجموعهٔ~$\\PosInt$ از اعداد صحیح مثبت،\nنامتناهی‌اند. تاکنون نمونه‌هایی از مجموعه‌های نامتناهی دیده‌ایم که همگی\n!!{enumerable} بوده‌اند. بااین‌حال، مجموعه‌های نامتناهی‌ای نیز وجود دارند\nکه این ویژگی را ندارند. چنین مجموعه‌هایی را \\emph{!!{nonenumerable}}\nمی‌نامند.\n\n",
+        "sha256": "1740d936aed6b117e1004d8b73b8a3635f7a28edcea875a70980755cf84d0371"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "برخی مجموعه‌ها، مانند مجموعهٔ~$\\PosInt$ از اعداد صحیح مثبت،\nنامتناهی‌اند. تاکنون نمونه‌هایی از مجموعه‌های نامتناهی دیده‌ایم که همگی\nشمارا بوده‌اند. بااین‌حال، مجموعه‌های نامتناهی‌ای نیز وجود دارند\nکه این ویژگی را ندارند. چنین مجموعه‌هایی را \\emph{ناشمارا}\nمی‌نامند.\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 132,
+          "token": "!!{enumerable}",
+          "realization": "شمارا"
+        },
+        {
+          "character_offset_in_segment": 256,
+          "token": "!!{nonenumerable}",
+          "realization": "ناشمارا"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Enumeration criterion needs nonempty domain",
+      "canon": [
+        "FA-OL-CANON-0003:P0051",
+        "FA-REL-P046",
+        "FA-OL-CANON-0005:P0114"
+      ],
+      "rationale": "Repair the source’s unrestricted claim by adding nonempty to the enumerable target A. No map from positive integers to empty exists. Preserve the valid negative implication and the source’s explicitly informal “more” comparison.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not calibrated probability. Source meaning and the relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0033-C04",
+      "unit": "OLP-0033",
+      "source": {
+        "char_start": 786,
+        "char_end_exclusive": 1217,
+        "line_start": 25,
+        "line_end": 33,
+        "text": "First of all, it is perhaps already surprising that there are\n!!{nonenumerable} sets.  For any !!{enumerable} set~$A$ there is\n!!a{surjective} function $f \\colon \\PosInt \\to A$.  If a set is\n!!{nonenumerable} there is no such function.  That is, no function\nmapping the infinitely many !!{element}s of~$\\PosInt$ to~$A$ can\nexhaust all of~$A$.  So there are ``more'' !!{element}s of~$A$ than\nthe infinitely many positive integers.\n\n",
+        "sha256": "c01657833041d63b3a8c3adc226649267f1fc04e49dca159fc787a517837459b"
+      },
+      "target_before": {
+        "char_start": 790,
+        "char_end_exclusive": 1224,
+        "line_start": 26,
+        "line_end": 34,
+        "text": "پیش از هر چیز، شاید همین وجود مجموعه‌های !!{nonenumerable} شگفت‌آور\nباشد. برای هر مجموعهٔ !!{enumerable} مانند~$A$ تابعی !!a{surjective}\nبه‌صورت $f \\colon \\PosInt \\to A$ وجود دارد. اگر مجموعه‌ای\n!!{nonenumerable} باشد، چنین تابعی وجود ندارد. یعنی هیچ تابعی که\n!!{element}s را از مجموعهٔ نامتناهیِ~$\\PosInt$ به~$A$ نگاشت کند،\nنمی‌تواند همهٔ~$A$ را فراگیرد. پس شمارِ !!{element}s در~$A$ از شمار\nبی‌نهایت عدد صحیح مثبت نیز «بیشتر» است.\n\n",
+        "sha256": "5de5589dde7b94213df21e2093e1f8f46305ed9e1f1149461cdf155722e0e2ca"
+      },
+      "target_after": {
+        "char_start": 791,
+        "char_end_exclusive": 1233,
+        "line_start": 26,
+        "line_end": 34,
+        "text": "پیش از هر چیز، شاید همین وجود مجموعه‌های !!{nonenumerable} شگفت‌آور\nباشد. برای هر مجموعهٔ ناتهی و !!{enumerable} مانند~$A$ تابعی !!a{surjective}\nبه‌صورت $f \\colon \\PosInt \\to A$ وجود دارد. اگر مجموعه‌ای\n!!{nonenumerable} باشد، چنین تابعی وجود ندارد. یعنی هیچ تابعی که\n!!{element}s را از مجموعهٔ نامتناهیِ~$\\PosInt$ به~$A$ نگاشت کند،\nنمی‌تواند همهٔ~$A$ را فراگیرد. پس شمارِ !!{element}s در~$A$ از شمار\nبی‌نهایت عدد صحیح مثبت نیز «بیشتر» است.\n\n",
+        "sha256": "aee52cc7d78314c2a627e253f67496495cf3473c6d12dade09664b3977e834f9"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "پیش از هر چیز، شاید همین وجود مجموعه‌های ناشمارا شگفت‌آور\nباشد. برای هر مجموعهٔ ناتهی و شمارا مانند~$A$ تابعی پوشا\nبه‌صورت $f \\colon \\PosInt \\to A$ وجود دارد. اگر مجموعه‌ای\nناشمارا باشد، چنین تابعی وجود ندارد. یعنی هیچ تابعی که\nاعضا را از مجموعهٔ نامتناهیِ~$\\PosInt$ به~$A$ نگاشت کند،\nنمی‌تواند همهٔ~$A$ را فراگیرد. پس شمارِ اعضا در~$A$ از شمار\nبی‌نهایت عدد صحیح مثبت نیز «بیشتر» است.\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 41,
+          "token": "!!{nonenumerable}",
+          "realization": "ناشمارا"
+        },
+        {
+          "character_offset_in_segment": 98,
+          "token": "!!{enumerable}",
+          "realization": "شمارا"
+        },
+        {
+          "character_offset_in_segment": 129,
+          "token": "!!a{surjective}",
+          "realization": "پوشا"
+        },
+        {
+          "character_offset_in_segment": 203,
+          "token": "!!{nonenumerable}",
+          "realization": "ناشمارا"
+        },
+        {
+          "character_offset_in_segment": 268,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        },
+        {
+          "character_offset_in_segment": 373,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        }
+      ],
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 268,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        },
+        {
+          "character_offset_in_segment": 373,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        }
+      ]
+    },
+    {
+      "topic": "Diagonal method and empty-set disclosure",
+      "canon": [
+        "FA-OL-CANON-0003:P0053",
+        "FA-OL-CANON-0005:P0115",
+        "FA-REL-P046"
+      ],
+      "rationale": "State the exclusion-of-surjections method for nonempty A and disclose the source correction. Empty is enumerable by the source definition, not a counterexample to either theorem. Smooth اعضایی از to اعضای while preserving all-list quantification and witness membership in A.",
+      "question": "روش قطری is a contextual label for the exact source-defined construction; the consulted pages attest the construction, not that exact phrase.",
+      "confidence": 2,
+      "alternatives": "Argument by diagonal nonmembership is directly illustrated by the canon; no fabricated exact-label attestation is supplied.",
+      "confidence_reason": "Editorial0–3, not calibrated probability. Source meaning checked; the stated exact-label or register attestation gap remains.",
+      "id": "FA-0033-C05",
+      "unit": "OLP-0033",
+      "source": {
+        "char_start": 1217,
+        "char_end_exclusive": 1832,
+        "line_start": 33,
+        "line_end": 43,
+        "text": "How would one prove that a set is !!{nonenumerable}? You have to show\nthat no such surjective function can exist. Equivalently, you have to\nshow that the elements of~$A$ cannot be enumerated in a one way\ninfinite list.  The best way to do this is to show that every list of\n!!{element}s of~$A$ must leave at least one element out; or that no\nfunction $f\\colon \\PosInt \\to A$ can be !!{surjective}.  We can do this\nusing Cantor's \\emph{diagonal method}.  Given a list of !!{element}s\nof~$A$, say, $x_1$, $x_2$, \\dots, we construct another element of~$A$\nwhich, by its construction, cannot possibly be on that list.\n\n",
+        "sha256": "6b4580606faf3b4d8e33d3f25590f4b99bb67a02d3a5be438e011dec9c1a3f8a"
+      },
+      "target_before": {
+        "char_start": 1224,
+        "char_end_exclusive": 1856,
+        "line_start": 34,
+        "line_end": 45,
+        "text": "چگونه می‌توان ثابت کرد که مجموعه‌ای !!{nonenumerable} است؟ باید نشان\nدهید که هیچ تابع پوشایی از این نوع نمی‌تواند وجود داشته باشد. به‌طور\nهم‌ارز، باید نشان دهید که نمی‌توان عناصر~$A$ را در فهرستی نامتناهی و\nیک‌سویه برشمرد. بهترین راه برای این کار آن است که نشان دهید هر فهرستی\nاز !!{element}sی از~$A$ ناگزیر دست‌کم یک عضو را از قلم می‌اندازد؛ یا\nاینکه هیچ تابع $f\\colon \\PosInt \\to A$ نمی‌تواند !!{surjective} باشد.\nمی‌توانیم این کار را با \\emph{روش قطری} کانتور انجام دهیم. با داشتن\nفهرستی از !!{element}sی از~$A$، مثلاً $x_1$، $x_2$، \\dots، عضو دیگری\nاز~$A$ می‌سازیم که بنا بر نحوهٔ ساختش، به‌هیچ‌وجه نمی‌تواند در آن\nفهرست باشد.\n\n",
+        "sha256": "ee8ad235edc748e8c43073b13d6616f66c8e0d33442892d525005c2b3b53c4eb"
+      },
+      "target_after": {
+        "char_start": 1233,
+        "char_end_exclusive": 2044,
+        "line_start": 34,
+        "line_end": 50,
+        "text": "چگونه می‌توان ثابت کرد که مجموعه‌ای ناتهی !!{nonenumerable} است؟ باید نشان\nدهید که هیچ تابع پوشایی از این نوع وجود ندارد.\n\\emph{یادداشت ویراستاری:} شرط ناتهی‌بودن در بیان اولیهٔ این معیار نیامده بود.\nمجموعهٔ تهی طبق تعریف این فصل شماراست، با آنکه هیچ تابعی از اعداد صحیح مثبت\nبه آن وجود ندارد؛ پس این شرط در معیار بالا ضروری است.\n\n به‌طور\nهم‌ارز، باید نشان دهید که نمی‌توان عناصر~$A$ را در فهرستی نامتناهی و\nیک‌سویه برشمرد. بهترین راه برای این کار آن است که نشان دهید هر فهرستی\nاز اعضای~$A$ ناگزیر دست‌کم یک عضو را از قلم می‌اندازد؛ یا\nاینکه هیچ تابع $f\\colon \\PosInt \\to A$ نمی‌تواند !!{surjective} باشد.\nمی‌توانیم این کار را با \\emph{روش قطری} کانتور انجام دهیم. با داشتن\nفهرستی از اعضای~$A$، مثلاً $x_1$، $x_2$، \\dots، عضو دیگری\nاز~$A$ می‌سازیم که بنا بر نحوهٔ ساختش، به‌هیچ‌وجه نمی‌تواند در آن\nفهرست باشد.\n\n",
+        "sha256": "28fe78af2762805d7f7b9f1f66ae8aadf82e901204e327b955a340f452c5a749"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "چگونه می‌توان ثابت کرد که مجموعه‌ای ناتهی ناشمارا است؟ باید نشان\nدهید که هیچ تابع پوشایی از این نوع وجود ندارد.\n\\emph{یادداشت ویراستاری:} شرط ناتهی‌بودن در بیان اولیهٔ این معیار نیامده بود.\nمجموعهٔ تهی طبق تعریف این فصل شماراست، با آنکه هیچ تابعی از اعداد صحیح مثبت\nبه آن وجود ندارد؛ پس این شرط در معیار بالا ضروری است.\n\n به‌طور\nهم‌ارز، باید نشان دهید که نمی‌توان عناصر~$A$ را در فهرستی نامتناهی و\nیک‌سویه برشمرد. بهترین راه برای این کار آن است که نشان دهید هر فهرستی\nاز اعضای~$A$ ناگزیر دست‌کم یک عضو را از قلم می‌اندازد؛ یا\nاینکه هیچ تابع $f\\colon \\PosInt \\to A$ نمی‌تواند پوشا باشد.\nمی‌توانیم این کار را با \\emph{روش قطری} کانتور انجام دهیم. با داشتن\nفهرستی از اعضای~$A$، مثلاً $x_1$، $x_2$، \\dots، عضو دیگری\nاز~$A$ می‌سازیم که بنا بر نحوهٔ ساختش، به‌هیچ‌وجه نمی‌تواند در آن\nفهرست باشد.\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 42,
+          "token": "!!{nonenumerable}",
+          "realization": "ناشمارا"
+        },
+        {
+          "character_offset_in_segment": 585,
+          "token": "!!{surjective}",
+          "realization": "پوشا"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Infinite binary sequences have every coordinate",
+      "canon": [
+        "FA-OL-CANON-0005:P0115"
+      ],
+      "rationale": "Replace literal بدون شکاف with the precise readable meaning: every position has a value. No finite-string, finite-support or computability restriction.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not calibrated probability. Source meaning and the relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0033-C06",
+      "unit": "OLP-0033",
+      "source": {
+        "char_start": 1832,
+        "char_end_exclusive": 1933,
+        "line_start": 43,
+        "line_end": 46,
+        "text": "Our first example is the set~$\\Bin^\\omega$ of all infinite, non-gappy\nsequences of $0$'s and $1$'s.\n\n",
+        "sha256": "00bc4641d2f6334fda3f7272ab265544abe8697ec6a25637c4d68b9b9a50f713"
+      },
+      "target_before": {
+        "char_start": 1856,
+        "char_end_exclusive": 1952,
+        "line_start": 45,
+        "line_end": 48,
+        "text": "نخستین مثال ما مجموعهٔ~$\\Bin^\\omega$ از همهٔ دنباله‌های نامتناهی و\nبدون شکافِ $0$ها و $1$هاست.\n\n",
+        "sha256": "12a96d52325ea4abc09529540e6bd9c164e70a1e0875f70edfc187f914fd8a82"
+      },
+      "target_after": {
+        "char_start": 2044,
+        "char_end_exclusive": 2157,
+        "line_start": 50,
+        "line_end": 53,
+        "text": "نخستین مثال ما مجموعهٔ~$\\Bin^\\omega$ از همهٔ دنباله‌های نامتناهیِ\n$0$ها و $1$هاست که در هر جایگاه مقداری دارند.\n\n",
+        "sha256": "637e88cce4f056e58015a564ec452ba3dcdfd01fc5ca362bb62adbc634c91eba"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "نخستین مثال ما مجموعهٔ~$\\Bin^\\omega$ از همهٔ دنباله‌های نامتناهیِ\n$0$ها و $1$هاست که در هر جایگاه مقداری دارند.\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "First theorem statement",
+      "canon": [
+        "FA-OL-CANON-0005:P0114",
+        "FA-OL-CANON-0005:P0115"
+      ],
+      "rationale": "Keep Bin^omega and nonenumerability, including theorem label. The constant-zero sequence witnesses the implicit nonemptiness needed by the criterion.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not calibrated probability. Source meaning and the relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0033-C07",
+      "unit": "OLP-0033",
+      "source": {
+        "char_start": 1933,
+        "char_end_exclusive": 2024,
+        "line_start": 46,
+        "line_end": 51,
+        "text": "\\begin{thm}\n\\ollabel{thm:nonenum-bin-omega}\n$\\Bin^\\omega$~is !!{nonenumerable}.\n\\end{thm}\n\n",
+        "sha256": "a24d447fe176f7d1bc33e9f6e691a23ae56c343adb5c01c58af496f76264615c"
+      },
+      "target_before": {
+        "char_start": 1952,
+        "char_end_exclusive": 2044,
+        "line_start": 48,
+        "line_end": 53,
+        "text": "\\begin{thm}\n\\ollabel{thm:nonenum-bin-omega}\n$\\Bin^\\omega$~!!{nonenumerable} است.\n\\end{thm}\n\n",
+        "sha256": "48b24e5562467ca213ca0c6c94a40a4e3312df6db90fc8c932951a37d4bdb35e"
+      },
+      "target_after": {
+        "char_start": 2157,
+        "char_end_exclusive": 2249,
+        "line_start": 53,
+        "line_end": 58,
+        "text": "\\begin{thm}\n\\ollabel{thm:nonenum-bin-omega}\n$\\Bin^\\omega$~!!{nonenumerable} است.\n\\end{thm}\n\n",
+        "sha256": "48b24e5562467ca213ca0c6c94a40a4e3312df6db90fc8c932951a37d4bdb35e"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{thm}\n\\ollabel{thm:nonenum-bin-omega}\n$\\Bin^\\omega$~ناشمارا است.\n\\end{thm}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 58,
+          "token": "!!{nonenumerable}",
+          "realization": "ناشمارا"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Contradiction assumption and row/coordinate names",
+      "canon": [
+        "FA-OL-CANON-0005:P0115",
+        "FA-OL-CANON-0003:P0053"
+      ],
+      "rationale": "Use natural برهان خلف. Preserve all-sequences assumption, repeated rows permitted, and i=row versus j=position. The displayed infinite sequence is not reversed for RTL.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not calibrated probability. Source meaning and the relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0033-C08",
+      "unit": "OLP-0033",
+      "source": {
+        "char_start": 2024,
+        "char_end_exclusive": 2446,
+        "line_start": 51,
+        "line_end": 62,
+        "text": "\\begin{proof}\nSuppose, by way of contradiction, that $\\Bin^\\omega$ is\n!!{enumerable}, i.e., suppose that there is a list $s_{1}$, $s_{2}$,\n$s_{3}$, $s_{4}$, \\dots{} of all !!{element}s of~$\\Bin^\\omega$.  Each\nof these $s_i$ is itself an infinite sequence of $0$'s and~$1$'s.\nLet's call the $j$-th element of the $i$-th sequence in this list\n$s_i(j)$. Then the $i$-th sequence~$s_i$ is\n\\[\ns_i(1), s_i(2), s_i(3), \\dots\n\\]\n\n",
+        "sha256": "d27b8984b9fd98135d714b4b4b588cf84e7cb3ef3b7183aa7fb4cb3539634dd9"
+      },
+      "target_before": {
+        "char_start": 2044,
+        "char_end_exclusive": 2430,
+        "line_start": 53,
+        "line_end": 63,
+        "text": "\\begin{proof}\nبه قصد خلف، فرض کنید $\\Bin^\\omega$ !!{enumerable} است؛ یعنی فرض کنید\n$s_{1}$، $s_{2}$، $s_{3}$، $s_{4}$، \\dots{} فهرستی است که همهٔ\n!!{element}s را از~$\\Bin^\\omega$ در بر می‌گیرد. هر $s_i$ خود دنباله‌ای\nنامتناهی از $0$ها و~$1$هاست. عضو $j$اُمِ دنبالهٔ $i$اُم در این فهرست\nرا $s_i(j)$ می‌نامیم. پس دنبالهٔ $i$اُم، یعنی~$s_i$، چنین است:\n\\[\ns_i(1), s_i(2), s_i(3), \\dots\n\\]\n\n",
+        "sha256": "3b222e364405ab722b071bbee5fbf891b47d6972adb965e2b9e9d8462aeb3e06"
+      },
+      "target_after": {
+        "char_start": 2249,
+        "char_end_exclusive": 2639,
+        "line_start": 58,
+        "line_end": 68,
+        "text": "\\begin{proof}\nبرای برهان خلف، فرض کنید $\\Bin^\\omega$ !!{enumerable} است؛ یعنی فرض کنید\n$s_{1}$، $s_{2}$، $s_{3}$، $s_{4}$، \\dots{} فهرستی است که همهٔ\n!!{element}s را از~$\\Bin^\\omega$ در بر می‌گیرد. هر $s_i$ خود دنباله‌ای\nنامتناهی از $0$ها و~$1$هاست. عضو $j$اُمِ دنبالهٔ $i$اُم در این فهرست\nرا $s_i(j)$ می‌نامیم. پس دنبالهٔ $i$اُم، یعنی~$s_i$، چنین است:\n\\[\ns_i(1), s_i(2), s_i(3), \\dots\n\\]\n\n",
+        "sha256": "2d186f35d673adbafbcbb5ac83da4ca1bc9758f089b0e55d98f81890301403d7"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{proof}\nبرای برهان خلف، فرض کنید $\\Bin^\\omega$ شمارا است؛ یعنی فرض کنید\n$s_{1}$، $s_{2}$، $s_{3}$، $s_{4}$، \\dots{} فهرستی است که همهٔ\nاعضا را از~$\\Bin^\\omega$ در بر می‌گیرد. هر $s_i$ خود دنباله‌ای\nنامتناهی از $0$ها و~$1$هاست. عضو $j$اُمِ دنبالهٔ $i$اُم در این فهرست\nرا $s_i(j)$ می‌نامیم. پس دنبالهٔ $i$اُم، یعنی~$s_i$، چنین است:\n\\[\ns_i(1), s_i(2), s_i(3), \\dots\n\\]\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 53,
+          "token": "!!{enumerable}",
+          "realization": "شمارا"
+        },
+        {
+          "character_offset_in_segment": 150,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        }
+      ],
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 150,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        }
+      ]
+    },
+    {
+      "topic": "Binary matrix",
+      "canon": [
+        "FA-OL-CANON-0005:P0115"
+      ],
+      "rationale": "Keep every matrix cell, diagonal bolding and column/row ordering. The canon’s subset/binary sequence correspondence supports distinguishing entries from their positions.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not calibrated probability. Source meaning and the relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0033-C09",
+      "unit": "OLP-0033",
+      "source": {
+        "char_start": 2446,
+        "char_end_exclusive": 2942,
+        "line_start": 62,
+        "line_end": 74,
+        "text": "We may arrange this list, and the elements of each sequence $s_i$ in\nit, in an array:\n\\[\n\\begin{array}{c|c|c|c|c|c}\n& 1 & 2 & 3 & 4 & \\dots \\\\\\hline\n1 & \\mathbf{s_{1}(1)} & s_{1}(2) & s_{1}(3) & s_1(4) & \\dots \\\\\\hline\n2 & s_{2}(1)& \\mathbf{s_{2}(2)} & s_2(3) & s_2(4) & \\dots \\\\\\hline\n3 & s_{3}(1)& s_{3}(2) & \\mathbf{s_3(3)} & s_3(4) & \\dots \\\\\\hline\n4 & s_{4}(1)& s_{4}(2) & s_4(3) & \\mathbf{s_4(4)} & \\dots \\\\\\hline\n\\vdots & \\vdots & \\vdots & \\vdots & \\vdots & \\mathbf{\\ddots}\n\\end{array}\n\\]\n",
+        "sha256": "03b0034decc86dfbc3d2109fc4b45e764f9596bfd50466ed9b71c5550645c1ca"
+      },
+      "target_before": {
+        "char_start": 2430,
+        "char_end_exclusive": 2917,
+        "line_start": 63,
+        "line_end": 75,
+        "text": "می‌توانیم این فهرست و اعضای هر دنبالهٔ $s_i$ در آن را در آرایه‌ای\nمرتب کنیم:\n\\[\n\\begin{array}{c|c|c|c|c|c}\n& 1 & 2 & 3 & 4 & \\dots \\\\\\hline\n1 & \\mathbf{s_{1}(1)} & s_{1}(2) & s_{1}(3) & s_1(4) & \\dots \\\\\\hline\n2 & s_{2}(1)& \\mathbf{s_{2}(2)} & s_2(3) & s_2(4) & \\dots \\\\\\hline\n3 & s_{3}(1)& s_{3}(2) & \\mathbf{s_3(3)} & s_3(4) & \\dots \\\\\\hline\n4 & s_{4}(1)& s_{4}(2) & s_4(3) & \\mathbf{s_4(4)} & \\dots \\\\\\hline\n\\vdots & \\vdots & \\vdots & \\vdots & \\vdots & \\mathbf{\\ddots}\n\\end{array}\n\\]\n",
+        "sha256": "089da10625793e3b3cda5f21b0cf5545d410aaff35990c075d0ffb3fb9801117"
+      },
+      "target_after": {
+        "char_start": 2639,
+        "char_end_exclusive": 3126,
+        "line_start": 68,
+        "line_end": 80,
+        "text": "می‌توانیم این فهرست و اعضای هر دنبالهٔ $s_i$ در آن را در آرایه‌ای\nمرتب کنیم:\n\\[\n\\begin{array}{c|c|c|c|c|c}\n& 1 & 2 & 3 & 4 & \\dots \\\\\\hline\n1 & \\mathbf{s_{1}(1)} & s_{1}(2) & s_{1}(3) & s_1(4) & \\dots \\\\\\hline\n2 & s_{2}(1)& \\mathbf{s_{2}(2)} & s_2(3) & s_2(4) & \\dots \\\\\\hline\n3 & s_{3}(1)& s_{3}(2) & \\mathbf{s_3(3)} & s_3(4) & \\dots \\\\\\hline\n4 & s_{4}(1)& s_{4}(2) & s_4(3) & \\mathbf{s_4(4)} & \\dots \\\\\\hline\n\\vdots & \\vdots & \\vdots & \\vdots & \\vdots & \\mathbf{\\ddots}\n\\end{array}\n\\]\n",
+        "sha256": "089da10625793e3b3cda5f21b0cf5545d410aaff35990c075d0ffb3fb9801117"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "می‌توانیم این فهرست و اعضای هر دنبالهٔ $s_i$ در آن را در آرایه‌ای\nمرتب کنیم:\n\\[\n\\begin{array}{c|c|c|c|c|c}\n& 1 & 2 & 3 & 4 & \\dots \\\\\\hline\n1 & \\mathbf{s_{1}(1)} & s_{1}(2) & s_{1}(3) & s_1(4) & \\dots \\\\\\hline\n2 & s_{2}(1)& \\mathbf{s_{2}(2)} & s_2(3) & s_2(4) & \\dots \\\\\\hline\n3 & s_{3}(1)& s_{3}(2) & \\mathbf{s_3(3)} & s_3(4) & \\dots \\\\\\hline\n4 & s_{4}(1)& s_{4}(2) & s_4(3) & \\mathbf{s_4(4)} & \\dots \\\\\\hline\n\\vdots & \\vdots & \\vdots & \\vdots & \\vdots & \\mathbf{\\ddots}\n\\end{array}\n\\]\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Matrix axis meaning",
+      "canon": [
+        "FA-OL-CANON-0005:P0115"
+      ],
+      "rationale": "Say column labels number the positions, not the 0/1 values. Replace “to the end” for an infinite sequence with “and likewise”; preserve all individual formula occurrences.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not calibrated probability. Source meaning and the relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0033-C10",
+      "unit": "OLP-0033",
+      "source": {
+        "char_start": 2942,
+        "char_end_exclusive": 3245,
+        "line_start": 74,
+        "line_end": 80,
+        "text": "The labels down the side give the number of the sequence in the list\n$s_1$, $s_2$, \\dots; the numbers across the top label the !!{element}s\nof the individual sequences. For instance, $s_{1}(1)$ is a name for\nwhatever number, a $0$ or a~$1$, is the first !!{element} in the\nsequence $s_{1}$, and so on.\n\n",
+        "sha256": "0e9ba1f68216685692aa2778c51b6c3c6f09f220edd0c0e244d0f175c7243672"
+      },
+      "target_before": {
+        "char_start": 2917,
+        "char_end_exclusive": 3214,
+        "line_start": 75,
+        "line_end": 81,
+        "text": "برچسب‌های کنار آرایه شمارهٔ دنباله‌ها را در فهرستِ $s_1$، $s_2$،\n\\dots مشخص می‌کنند؛ اعداد بالای آرایه، !!{element}sی را که در هریک از\nدنباله‌ها قرار دارند مشخص می‌کنند. برای نمونه، $s_{1}(1)$ نامِ عددی،\nیعنی یک $0$ یا یک~$1$، است که نخستین !!{element} در دنبالهٔ $s_{1}$\nاست؛ و همین‌طور تا آخر.\n\n",
+        "sha256": "62f7817ef99bed26b1e714fcba15f828d76bd85f60baf817c27eb75de4e3c8bf"
+      },
+      "target_after": {
+        "char_start": 3126,
+        "char_end_exclusive": 3404,
+        "line_start": 80,
+        "line_end": 86,
+        "text": "برچسب‌های کنار آرایه شمارهٔ دنباله‌ها را در فهرستِ $s_1$، $s_2$،\n\\dots مشخص می‌کنند؛ اعداد بالای آرایه، شمارهٔ جایگاه اعضا را در هر\nدنباله نشان می‌دهند. برای نمونه، $s_{1}(1)$ نامِ عددی،\nیعنی یک $0$ یا یک~$1$، است که نخستین !!{element} در دنبالهٔ $s_{1}$\nاست؛ و به همین ترتیب.\n\n",
+        "sha256": "a62d96edccddfcb9a8c1da3a062b414ec75c5d7e85c9cb2af37d5d9f9f1d7bc8"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "برچسب‌های کنار آرایه شمارهٔ دنباله‌ها را در فهرستِ $s_1$، $s_2$،\n\\dots مشخص می‌کنند؛ اعداد بالای آرایه، شمارهٔ جایگاه اعضا را در هر\nدنباله نشان می‌دهند. برای نمونه، $s_{1}(1)$ نامِ عددی،\nیعنی یک $0$ یا یک~$1$، است که نخستین عضو در دنبالهٔ $s_{1}$\nاست؛ و به همین ترتیب.\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 224,
+          "token": "!!{element}",
+          "realization": "عضو"
+        }
+      ],
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 224,
+          "token": "!!{element}",
+          "realization": "عضو"
+        }
+      ]
+    },
+    {
+      "topic": "Diagonal depends on the given list",
+      "canon": [
+        "FA-OL-CANON-0003:P0053",
+        "FA-OL-CANON-0005:P0115"
+      ],
+      "rationale": "Retain dependence on each arbitrary list, not a single fixed sequence omitted by every possible list. Replace the passive guarantee calque with direct statement of omission.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not calibrated probability. Source meaning and the relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0033-C11",
+      "unit": "OLP-0033",
+      "source": {
+        "char_start": 3245,
+        "char_end_exclusive": 3595,
+        "line_start": 80,
+        "line_end": 87,
+        "text": "Now we construct an infinite sequence, $\\overline{s}$, of $0$'s and\n$1$'s which cannot possibly be on this list.  The definition of\n$\\overline{s}$ will depend on the list $s_1$, $s_2$, \\dots.  Any\ninfinite list of infinite sequences of $0$'s and $1$'s gives rise to\nan infinite sequence~$\\overline{s}$ which is guaranteed to not appear\non the list.\n\n",
+        "sha256": "5273e89fdc11fa07c257111833f50afb684b1f11d04cf6637490e897de00c503"
+      },
+      "target_before": {
+        "char_start": 3214,
+        "char_end_exclusive": 3556,
+        "line_start": 81,
+        "line_end": 88,
+        "text": "اکنون دنبالهٔ نامتناهیِ $\\overline{s}$ را از $0$ها و $1$ها می‌سازیم؛\nدنباله‌ای که به‌هیچ‌وجه نمی‌تواند در این فهرست باشد. تعریف\n$\\overline{s}$ به فهرستِ $s_1$، $s_2$، \\dots وابسته خواهد بود. هر\nفهرست نامتناهی از دنباله‌های نامتناهیِ $0$ها و $1$ها، دنباله‌ای\nنامتناهی مانند~$\\overline{s}$ پدید می‌آورد که تضمین شده است در آن\nفهرست ظاهر نشود.\n\n",
+        "sha256": "6b8889fd3d0d1e2c75c00465c317207a89f8dd74513774410b9b51fb2ae2c57a"
+      },
+      "target_after": {
+        "char_start": 3404,
+        "char_end_exclusive": 3728,
+        "line_start": 86,
+        "line_end": 92,
+        "text": "اکنون دنبالهٔ نامتناهیِ $\\overline{s}$ را از $0$ها و $1$ها می‌سازیم؛\nدنباله‌ای که به‌هیچ‌وجه نمی‌تواند در این فهرست باشد. تعریف\n$\\overline{s}$ به فهرستِ $s_1$، $s_2$، \\dots وابسته خواهد بود. هر\nفهرست نامتناهی از دنباله‌های نامتناهیِ $0$ها و $1$ها، دنباله‌ای\nنامتناهی مانند~$\\overline{s}$ به دست می‌دهد که در آن فهرست نیست.\n\n",
+        "sha256": "635907bb80f46958b53a787df559e0dbffc82b3ee92218c86d496d7ab4d51fc7"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "اکنون دنبالهٔ نامتناهیِ $\\overline{s}$ را از $0$ها و $1$ها می‌سازیم؛\nدنباله‌ای که به‌هیچ‌وجه نمی‌تواند در این فهرست باشد. تعریف\n$\\overline{s}$ به فهرستِ $s_1$، $s_2$، \\dots وابسته خواهد بود. هر\nفهرست نامتناهی از دنباله‌های نامتناهیِ $0$ها و $1$ها، دنباله‌ای\nنامتناهی مانند~$\\overline{s}$ به دست می‌دهد که در آن فهرست نیست.\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Pointwise complement rule",
+      "canon": [
+        "FA-OL-CANON-0005:P0115",
+        "FA-OL-CANON-0001:P0082"
+      ],
+      "rationale": "Specify value at every position by one mathematical rule, not an implied terminating process visiting infinitely many positions. Preserve cases, embedded if clauses, n positivity and equivalent 1-s_n(n) formula. No computability is asserted.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not calibrated probability. Source meaning and the relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0033-C12",
+      "unit": "OLP-0033",
+      "source": {
+        "char_start": 3595,
+        "char_end_exclusive": 4250,
+        "line_start": 87,
+        "line_end": 104,
+        "text": "To define $\\overline{s}$, we specify what all its !!{element}s are,\ni.e., we specify $\\overline{s}(n)$ for all $n \\in \\PosInt$.  We do this\nby reading down the diagonal of the array above (hence the name\n``diagonal method'') and then changing every $1$ to a $0$ and every\n$0$ to a~$1$. More abstractly, we define $\\overline{s}(n)$ to be $0$\nor $1$ according to whether the $n$-th !!{element} of the diagonal,\n$s_n(n)$, is $1$ or $0$.\n\\[\n\\overline{s}(n) =\n\\begin{cases}\n1 & \\text{if $s_{n}(n) = 0$}\\\\\n0 & \\text{if $s_{n}(n) = 1$}.\n\\end{cases}\n\\]\nIf you like formulas better than definitions by cases, you could also\ndefine $\\overline{s}(n) = 1 - s_n(n)$.\n\n",
+        "sha256": "419ed9288d8ac94b55152b61de0e71e3708545ca7cca2d58aaf6de886a209659"
+      },
+      "target_before": {
+        "char_start": 3556,
+        "char_end_exclusive": 4236,
+        "line_start": 88,
+        "line_end": 105,
+        "text": "برای تعریف $\\overline{s}$، تمام !!{element}s را یک‌به‌یک مشخص می‌کنیم؛\nیعنی $\\overline{s}(n)$ را برای همهٔ $n \\in \\PosInt$ تعیین می‌کنیم.\nبرای این کار قطر آرایهٔ بالا را از بالا به پایین می‌خوانیم (نام «روش\nقطری» نیز از همین‌جا می‌آید) و سپس هر $1$ را به $0$ و هر $0$ را به~$1$\nتغییر می‌دهیم. به‌بیان انتزاعی‌تر، $\\overline{s}(n)$ را برابر $0$ یا\n$1$ تعریف می‌کنیم، بسته به اینکه !!{element} $n$اُمِ قطر، یعنی\n$s_n(n)$، برابر $1$ یا $0$ باشد.\n\\[\n\\overline{s}(n) =\n\\begin{cases}\n1 & \\text{اگر $s_{n}(n) = 0$}\\\\\n0 & \\text{اگر $s_{n}(n) = 1$}.\n\\end{cases}\n\\]\nاگر فرمول‌ها را بر تعریف موردی ترجیح می‌دهید، می‌توانید\n$\\overline{s}(n) = 1 - s_n(n)$ را نیز به‌عنوان تعریف به کار ببرید.\n\n",
+        "sha256": "2a822fcfe6027f174fe604f36ffd2201a9fc441617228fa65c432250eb64e48e"
+      },
+      "target_after": {
+        "char_start": 3728,
+        "char_end_exclusive": 4403,
+        "line_start": 92,
+        "line_end": 109,
+        "text": "برای تعریف $\\overline{s}$، مقدار آن را در هر جایگاه مشخص می‌کنیم؛\nیعنی $\\overline{s}(n)$ را برای همهٔ $n \\in \\PosInt$ تعیین می‌کنیم.\nبرای این کار قطر آرایهٔ بالا را از بالا به پایین می‌خوانیم (نام «روش\nقطری» نیز از همین‌جا می‌آید) و سپس هر $1$ را به $0$ و هر $0$ را به~$1$\nتغییر می‌دهیم. به‌بیان انتزاعی‌تر، $\\overline{s}(n)$ را برابر $0$ یا\n$1$ تعریف می‌کنیم، بسته به اینکه !!{element} $n$اُمِ قطر، یعنی\n$s_n(n)$، برابر $1$ یا $0$ باشد.\n\\[\n\\overline{s}(n) =\n\\begin{cases}\n1 & \\text{اگر $s_{n}(n) = 0$}\\\\\n0 & \\text{اگر $s_{n}(n) = 1$}.\n\\end{cases}\n\\]\nاگر فرمول‌ها را بر تعریف موردی ترجیح می‌دهید، می‌توانید\n$\\overline{s}(n) = 1 - s_n(n)$ را نیز به‌عنوان تعریف به کار ببرید.\n\n",
+        "sha256": "24f7c28e0767c5ee07e15bfb5d535c1a22aa09d34a48969af08b7d2099953d35"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "برای تعریف $\\overline{s}$، مقدار آن را در هر جایگاه مشخص می‌کنیم؛\nیعنی $\\overline{s}(n)$ را برای همهٔ $n \\in \\PosInt$ تعیین می‌کنیم.\nبرای این کار قطر آرایهٔ بالا را از بالا به پایین می‌خوانیم (نام «روش\nقطری» نیز از همین‌جا می‌آید) و سپس هر $1$ را به $0$ و هر $0$ را به~$1$\nتغییر می‌دهیم. به‌بیان انتزاعی‌تر، $\\overline{s}(n)$ را برابر $0$ یا\n$1$ تعریف می‌کنیم، بسته به اینکه عضو $n$اُمِ قطر، یعنی\n$s_n(n)$، برابر $1$ یا $0$ باشد.\n\\[\n\\overline{s}(n) =\n\\begin{cases}\n1 & \\text{اگر $s_{n}(n) = 0$}\\\\\n0 & \\text{اگر $s_{n}(n) = 1$}.\n\\end{cases}\n\\]\nاگر فرمول‌ها را بر تعریف موردی ترجیح می‌دهید، می‌توانید\n$\\overline{s}(n) = 1 - s_n(n)$ را نیز به‌عنوان تعریف به کار ببرید.\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 375,
+          "token": "!!{element}",
+          "realization": "عضو"
+        }
+      ],
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 375,
+          "token": "!!{element}",
+          "realization": "عضو"
+        }
+      ]
+    },
+    {
+      "topic": "Complement is bitwise, not reversed order",
+      "canon": [
+        "FA-OL-CANON-0005:P0115"
+      ],
+      "rationale": "Explain the bit swap rather than leave مکمل open to interpretation as order reversal. Retain membership in Bin^omega, restore natural singular عضوی via verified locale token.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not calibrated probability. Source meaning and the relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0033-C13",
+      "unit": "OLP-0033",
+      "source": {
+        "char_start": 4250,
+        "char_end_exclusive": 4546,
+        "line_start": 104,
+        "line_end": 110,
+        "text": "Clearly $\\overline{s}$ is an infinite sequence of $0$'s and\n$1$'s, since it is just the mirror sequence to the sequence of $0$'s\nand $1$'s that appear on the diagonal of our array.  So $\\overline{s}$\nis !!a{element} of~$\\Bin^\\omega$.  But it cannot be on the list $s_1$,\n$s_2$, \\dots{} Why not?\n\n",
+        "sha256": "406586e3ad6804a3609fbbd44759c390bd02f6aa6a917704a56575c96664425c"
+      },
+      "target_before": {
+        "char_start": 4236,
+        "char_end_exclusive": 4496,
+        "line_start": 105,
+        "line_end": 110,
+        "text": "آشکارا $\\overline{s}$ دنباله‌ای نامتناهی از $0$ها و $1$هاست، زیرا\nصرفاً دنبالهٔ مکملِ دنباله‌ای از $0$ها و $1$هاست که بر قطر آرایهٔ ما\nظاهر می‌شوند. پس $\\overline{s}$ !!a{element} از~$\\Bin^\\omega$ است.\nاما نمی‌تواند در فهرستِ $s_1$، $s_2$، \\dots{} باشد. چرا؟\n\n",
+        "sha256": "1befed962c467489c0e6d14f73953edc96a5180816fadfb73cb96192eac86020"
+      },
+      "target_after": {
+        "char_start": 4403,
+        "char_end_exclusive": 4668,
+        "line_start": 109,
+        "line_end": 114,
+        "text": "آشکارا $\\overline{s}$ دنباله‌ای نامتناهی از $0$ها و $1$هاست، زیرا\nدر دنبالهٔ روی قطر آرایه، تک‌تکِ مقدارهای $0$ و $1$ را با مقدار مقابلشان\nعوض کرده‌ایم. پس $\\overline{s}$ !!a{element}ی از~$\\Bin^\\omega$ است.\nاما نمی‌تواند در فهرستِ $s_1$، $s_2$، \\dots{} باشد. چرا؟\n\n",
+        "sha256": "cbbbdbc5aaade3238794a1f96519cb1695cfdb802809b4b6f242ccbea8dd7459"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "آشکارا $\\overline{s}$ دنباله‌ای نامتناهی از $0$ها و $1$هاست، زیرا\nدر دنبالهٔ روی قطر آرایه، تک‌تکِ مقدارهای $0$ و $1$ را با مقدار مقابلشان\nعوض کرده‌ایم. پس $\\overline{s}$ عضوی از~$\\Bin^\\omega$ است.\nاما نمی‌تواند در فهرستِ $s_1$، $s_2$، \\dots{} باشد. چرا؟\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 171,
+          "token": "!!a{element}",
+          "realization": "عضو"
+        }
+      ],
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 171,
+          "token": "!!a{element}",
+          "realization": "عضو"
+        }
+      ]
+    },
+    {
+      "topic": "First and second omitted rows",
+      "canon": [
+        "FA-OL-CANON-0005:P0115"
+      ],
+      "rationale": "Check both binary cases and both diagonal positions. Preserve the informal examples and the transition to universal k, not a finite-evidence proof.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not calibrated probability. Source meaning and the relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0033-C14",
+      "unit": "OLP-0033",
+      "source": {
+        "char_start": 4546,
+        "char_end_exclusive": 4910,
+        "line_start": 110,
+        "line_end": 117,
+        "text": "It can't be the first sequence in the list, $s_1$, because it differs from\n$s_1$ in the first !!{element}.  Whatever $s_1(1)$ is, we defined\n$\\overline{s}(1)$ to be the opposite.  It can't be the second\nsequence in the list, because $\\overline{s}$ differs from $s_2$ in the second\nelement: if $s_2(2)$ is $0$, $\\overline{s}(2)$ is $1$, and vice\nversa. And so on.\n\n",
+        "sha256": "9c9de237f254e5e1de5c652da2c344baa371bb6aa3f341e8c7aa5870cf736611"
+      },
+      "target_before": {
+        "char_start": 4496,
+        "char_end_exclusive": 4871,
+        "line_start": 110,
+        "line_end": 117,
+        "text": "این دنباله نمی‌تواند نخستین دنبالهٔ فهرست، یعنی $s_1$، باشد، زیرا در\nنخستین !!{element} با $s_1$ تفاوت دارد. مقدار $s_1(1)$ هرچه باشد،\n$\\overline{s}(1)$ را مخالف آن تعریف کرده‌ایم. همچنین نمی‌تواند دومین\nدنبالهٔ فهرست باشد، زیرا $\\overline{s}$ در عضو دوم با $s_2$ تفاوت\nدارد: اگر $s_2(2)$ برابر $0$ باشد، $\\overline{s}(2)$ برابر $1$ است و\nبرعکس. همین استدلال ادامه می‌یابد.\n\n",
+        "sha256": "b8a1895be54fe23354fbded4b1a8dfa6ae4d757689bc8fed44338e6d31d72020"
+      },
+      "target_after": {
+        "char_start": 4668,
+        "char_end_exclusive": 5043,
+        "line_start": 114,
+        "line_end": 121,
+        "text": "این دنباله نمی‌تواند نخستین دنبالهٔ فهرست، یعنی $s_1$، باشد، زیرا در\nنخستین !!{element} با $s_1$ تفاوت دارد. مقدار $s_1(1)$ هرچه باشد،\n$\\overline{s}(1)$ را مخالف آن تعریف کرده‌ایم. همچنین نمی‌تواند دومین\nدنبالهٔ فهرست باشد، زیرا $\\overline{s}$ در عضو دوم با $s_2$ تفاوت\nدارد: اگر $s_2(2)$ برابر $0$ باشد، $\\overline{s}(2)$ برابر $1$ است و\nبرعکس. همین استدلال ادامه می‌یابد.\n\n",
+        "sha256": "b8a1895be54fe23354fbded4b1a8dfa6ae4d757689bc8fed44338e6d31d72020"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "این دنباله نمی‌تواند نخستین دنبالهٔ فهرست، یعنی $s_1$، باشد، زیرا در\nنخستین عضو با $s_1$ تفاوت دارد. مقدار $s_1(1)$ هرچه باشد،\n$\\overline{s}(1)$ را مخالف آن تعریف کرده‌ایم. همچنین نمی‌تواند دومین\nدنبالهٔ فهرست باشد، زیرا $\\overline{s}$ در عضو دوم با $s_2$ تفاوت\nدارد: اگر $s_2(2)$ برابر $0$ باشد، $\\overline{s}(2)$ برابر $1$ است و\nبرعکس. همین استدلال ادامه می‌یابد.\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 76,
+          "token": "!!{element}",
+          "realization": "عضو"
+        }
+      ],
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 76,
+          "token": "!!{element}",
+          "realization": "عضو"
+        }
+      ]
+    },
+    {
+      "topic": "Universal diagonal contradiction",
+      "canon": [
+        "FA-OL-CANON-0003:P0053",
+        "FA-OL-CANON-0005:P0115"
+      ],
+      "rationale": "Keep iff for extensional equality, every n, specialization n=k, both cases and inequality. No quantifier or index reassignment.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not calibrated probability. Source meaning and the relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0033-C15",
+      "unit": "OLP-0033",
+      "source": {
+        "char_start": 4910,
+        "char_end_exclusive": 5498,
+        "line_start": 117,
+        "line_end": 127,
+        "text": "More precisely: if $\\overline{s}$ were on the list, there would be\nsome $k$ so that $\\overline{s} = s_{k}$.  Two sequences are identical\niff they agree at every place, i.e., for any~$n$, $\\overline{s}(n) =\ns_{k}(n)$.  So in particular, taking $n = k$ as a special case,\n$\\overline{s}(k) = s_{k}(k)$ would have to hold. $s_k(k)$ is either\n$0$ or~$1$. If it is $0$ then $\\overline{s}(k)$ must be~$1$---that's\nhow we defined $\\overline{s}$. But if $s_k(k) = 1$ then, again because\nof the way we defined $\\overline{s}$, $\\overline{s}(k) = 0$. In either\ncase $\\overline{s}(k) \\neq s_{k}(k)$.\n\n",
+        "sha256": "250c484693ecbec9d5bc61a195137f24651f71b71d7176088d15fc9213bdb73c"
+      },
+      "target_before": {
+        "char_start": 4871,
+        "char_end_exclusive": 5431,
+        "line_start": 117,
+        "line_end": 127,
+        "text": "دقیق‌تر بگوییم: اگر $\\overline{s}$ در فهرست بود، عددی مانند $k$ وجود\nداشت که $\\overline{s} = s_{k}$. دو دنباله یکسان‌اند اگر و تنها اگر در\nهر جایگاه برابر باشند؛ یعنی برای هر~$n$، $\\overline{s}(n) =\ns_{k}(n)$. پس به‌ویژه، با گرفتن حالت خاصِ $n = k$، باید\n$\\overline{s}(k) = s_{k}(k)$ برقرار باشد. $s_k(k)$ یا $0$ است یا~$1$.\nاگر $0$ باشد، $\\overline{s}(k)$ باید~$1$ باشد---زیرا $\\overline{s}$\nرا چنین تعریف کردیم. اما اگر $s_k(k) = 1$ باشد، باز هم به‌سبب نحوهٔ\nتعریف $\\overline{s}$، داریم $\\overline{s}(k) = 0$. در هر دو حالت\n$\\overline{s}(k) \\neq s_{k}(k)$.\n\n",
+        "sha256": "eeca8282e5edac1dcc1b7729dfffe99d92ea54eeca1f4dcdc5b270a1bd31ee9f"
+      },
+      "target_after": {
+        "char_start": 5043,
+        "char_end_exclusive": 5603,
+        "line_start": 121,
+        "line_end": 131,
+        "text": "دقیق‌تر بگوییم: اگر $\\overline{s}$ در فهرست بود، عددی مانند $k$ وجود\nداشت که $\\overline{s} = s_{k}$. دو دنباله یکسان‌اند اگر و تنها اگر در\nهر جایگاه برابر باشند؛ یعنی برای هر~$n$، $\\overline{s}(n) =\ns_{k}(n)$. پس به‌ویژه، با گرفتن حالت خاصِ $n = k$، باید\n$\\overline{s}(k) = s_{k}(k)$ برقرار باشد. $s_k(k)$ یا $0$ است یا~$1$.\nاگر $0$ باشد، $\\overline{s}(k)$ باید~$1$ باشد---زیرا $\\overline{s}$\nرا چنین تعریف کردیم. اما اگر $s_k(k) = 1$ باشد، باز هم به‌سبب نحوهٔ\nتعریف $\\overline{s}$، داریم $\\overline{s}(k) = 0$. در هر دو حالت\n$\\overline{s}(k) \\neq s_{k}(k)$.\n\n",
+        "sha256": "eeca8282e5edac1dcc1b7729dfffe99d92ea54eeca1f4dcdc5b270a1bd31ee9f"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "دقیق‌تر بگوییم: اگر $\\overline{s}$ در فهرست بود، عددی مانند $k$ وجود\nداشت که $\\overline{s} = s_{k}$. دو دنباله یکسان‌اند اگر و تنها اگر در\nهر جایگاه برابر باشند؛ یعنی برای هر~$n$، $\\overline{s}(n) =\ns_{k}(n)$. پس به‌ویژه، با گرفتن حالت خاصِ $n = k$، باید\n$\\overline{s}(k) = s_{k}(k)$ برقرار باشد. $s_k(k)$ یا $0$ است یا~$1$.\nاگر $0$ باشد، $\\overline{s}(k)$ باید~$1$ باشد---زیرا $\\overline{s}$\nرا چنین تعریف کردیم. اما اگر $s_k(k) = 1$ باشد، باز هم به‌سبب نحوهٔ\nتعریف $\\overline{s}$، داریم $\\overline{s}(k) = 0$. در هر دو حالت\n$\\overline{s}(k) \\neq s_{k}(k)$.\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Contradiction conclusion for every purported list",
+      "canon": [
+        "FA-OL-CANON-0005:P0115"
+      ],
+      "rationale": "The opening all-element assumption and final contradiction retain the source chain: constructed sequence belongs to the function space yet is not among rows. No generalization from only the pictured rows.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not calibrated probability. Source meaning and the relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0033-C16",
+      "unit": "OLP-0033",
+      "source": {
+        "char_start": 5498,
+        "char_end_exclusive": 6150,
+        "line_start": 127,
+        "line_end": 139,
+        "text": "We started by assuming that there is a list of !!{element}s of\n$\\Bin^\\omega$, $s_1$, $s_2$, \\dots{} From this list we constructed a\nsequence~$\\overline{s}$ which we proved cannot be on the list.  But it\ndefinitely is a sequence of $0$'s and $1$'s if all the $s_i$ are\nsequences of $0$'s and $1$'s, i.e., $\\overline{s} \\in\n\\Bin^\\omega$. This shows in particular that there can be no list of\n\\emph{all} !!{element}s of~$\\Bin^\\omega$, since for any such list we\ncould also construct a sequence~$\\overline{s}$ guaranteed to not be on\nthe list, so the assumption that there is a list of all sequences\nin~$\\Bin^\\omega$ leads to a contradiction.\n\\end{proof}\n\n",
+        "sha256": "071a5f51997e4151d2176d850fe03514e2c59ed89e8a79a2b06281a9e82044af"
+      },
+      "target_before": {
+        "char_start": 5431,
+        "char_end_exclusive": 6090,
+        "line_start": 127,
+        "line_end": 139,
+        "text": "کار را با این فرض آغاز کردیم که فهرستی از !!{element}s در\n$\\Bin^\\omega$، یعنی $s_1$، $s_2$، \\dots{}، وجود دارد. از این فهرست\nدنبالهٔ~$\\overline{s}$ را ساختیم و ثابت کردیم که نمی‌تواند در فهرست\nباشد. بااین‌حال، این نیز بی‌تردید دنباله‌ای از $0$ها و $1$هاست، اگر\nهمهٔ $s_i$ها دنباله‌هایی از $0$ها و $1$ها باشند؛ یعنی $\\overline{s} \\in\n\\Bin^\\omega$. این نتیجه به‌ویژه نشان می‌دهد که هیچ\nفهرستی از \\emph{همهٔ} !!{element}s در~$\\Bin^\\omega$ نمی‌تواند وجود داشته\nباشد، زیرا از هر فهرست این‌چنینی می‌توانستیم دنبالهٔ~$\\overline{s}$ را\nبسازیم که تضمین شده است در فهرست نباشد. بنابراین فرض وجود فهرستی از\nهمهٔ دنباله‌های~$\\Bin^\\omega$ به تناقض می‌انجامد.\n\\end{proof}\n\n",
+        "sha256": "d7ae649ccf461de96f9577bbd6d40642ad834e00a7b6fc2f82b89536a75ad7eb"
+      },
+      "target_after": {
+        "char_start": 5603,
+        "char_end_exclusive": 6262,
+        "line_start": 131,
+        "line_end": 143,
+        "text": "کار را با این فرض آغاز کردیم که فهرستی از !!{element}s در\n$\\Bin^\\omega$، یعنی $s_1$، $s_2$، \\dots{}، وجود دارد. از این فهرست\nدنبالهٔ~$\\overline{s}$ را ساختیم و ثابت کردیم که نمی‌تواند در فهرست\nباشد. بااین‌حال، این نیز بی‌تردید دنباله‌ای از $0$ها و $1$هاست، اگر\nهمهٔ $s_i$ها دنباله‌هایی از $0$ها و $1$ها باشند؛ یعنی $\\overline{s} \\in\n\\Bin^\\omega$. این نتیجه به‌ویژه نشان می‌دهد که هیچ\nفهرستی از \\emph{همهٔ} !!{element}s در~$\\Bin^\\omega$ نمی‌تواند وجود داشته\nباشد، زیرا از هر فهرست این‌چنینی می‌توانستیم دنبالهٔ~$\\overline{s}$ را\nبسازیم که تضمین شده است در فهرست نباشد. بنابراین فرض وجود فهرستی از\nهمهٔ دنباله‌های~$\\Bin^\\omega$ به تناقض می‌انجامد.\n\\end{proof}\n\n",
+        "sha256": "d7ae649ccf461de96f9577bbd6d40642ad834e00a7b6fc2f82b89536a75ad7eb"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "کار را با این فرض آغاز کردیم که فهرستی از اعضا در\n$\\Bin^\\omega$، یعنی $s_1$، $s_2$، \\dots{}، وجود دارد. از این فهرست\nدنبالهٔ~$\\overline{s}$ را ساختیم و ثابت کردیم که نمی‌تواند در فهرست\nباشد. بااین‌حال، این نیز بی‌تردید دنباله‌ای از $0$ها و $1$هاست، اگر\nهمهٔ $s_i$ها دنباله‌هایی از $0$ها و $1$ها باشند؛ یعنی $\\overline{s} \\in\n\\Bin^\\omega$. این نتیجه به‌ویژه نشان می‌دهد که هیچ\nفهرستی از \\emph{همهٔ} اعضا در~$\\Bin^\\omega$ نمی‌تواند وجود داشته\nباشد، زیرا از هر فهرست این‌چنینی می‌توانستیم دنبالهٔ~$\\overline{s}$ را\nبسازیم که تضمین شده است در فهرست نباشد. بنابراین فرض وجود فهرستی از\nهمهٔ دنباله‌های~$\\Bin^\\omega$ به تناقض می‌انجامد.\n\\end{proof}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 42,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        },
+        {
+          "character_offset_in_segment": 406,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        }
+      ],
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 42,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        },
+        {
+          "character_offset_in_segment": 406,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        }
+      ]
+    },
+    {
+      "topic": "Diagonalization without a visible matrix",
+      "canon": [
+        "FA-OL-CANON-0003:P0053",
+        "FA-OL-CANON-0005:P0115"
+      ],
+      "rationale": "Retain the explanation that the construction can work without a literal array; diagonalization denotes the logical pattern, not a demand to draw a table.",
+      "question": "قطری‌سازی is transparent and source-defined but not directly printed in these consulted canon pages. Retained provisionally with the exact construction.",
+      "confidence": 2,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not calibrated probability. Source meaning checked; the stated exact-label or register attestation gap remains.",
+      "id": "FA-0033-C17",
+      "unit": "OLP-0033",
+      "source": {
+        "char_start": 6150,
+        "char_end_exclusive": 6480,
+        "line_start": 139,
+        "line_end": 147,
+        "text": "\\begin{explain}\nThis proof method is called ``diagonalization'' because it uses the\ndiagonal of the array to define~$\\overline{s}$. Diagonalization need\nnot involve the presence of an array: we can show that sets are not\n!!{enumerable} by using a similar idea even when no array and no\nactual diagonal is involved.\n\\end{explain}\n\n",
+        "sha256": "75f115507d6d47894a6cea33a20976e412a395c2c8fc2e5ec2c272a118ee6924"
+      },
+      "target_before": {
+        "char_start": 6090,
+        "char_end_exclusive": 6390,
+        "line_start": 139,
+        "line_end": 147,
+        "text": "\\begin{explain}\nاین روش برهان را «قطری‌سازی» می‌نامند، زیرا برای تعریف~$\\overline{s}$\nاز قطر آرایه استفاده می‌کند. قطری‌سازی لزوماً به وجود آرایه نیاز\nندارد: می‌توانیم با اندیشه‌ای مشابه نشان دهیم که مجموعه‌ها\n!!{enumerable} نیستند، حتی اگر هیچ آرایه و هیچ قطر واقعی‌ای در میان\nنباشد.\n\\end{explain}\n\n",
+        "sha256": "4abf3949a243a2e76e8027f80257d79a002f7f6107081e244ac95bde63e6b67b"
+      },
+      "target_after": {
+        "char_start": 6262,
+        "char_end_exclusive": 6562,
+        "line_start": 143,
+        "line_end": 151,
+        "text": "\\begin{explain}\nاین روش برهان را «قطری‌سازی» می‌نامند، زیرا برای تعریف~$\\overline{s}$\nاز قطر آرایه استفاده می‌کند. قطری‌سازی لزوماً به وجود آرایه نیاز\nندارد: می‌توانیم با اندیشه‌ای مشابه نشان دهیم که مجموعه‌ها\n!!{enumerable} نیستند، حتی اگر هیچ آرایه و هیچ قطر واقعی‌ای در میان\nنباشد.\n\\end{explain}\n\n",
+        "sha256": "4abf3949a243a2e76e8027f80257d79a002f7f6107081e244ac95bde63e6b67b"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{explain}\nاین روش برهان را «قطری‌سازی» می‌نامند، زیرا برای تعریف~$\\overline{s}$\nاز قطر آرایه استفاده می‌کند. قطری‌سازی لزوماً به وجود آرایه نیاز\nندارد: می‌توانیم با اندیشه‌ای مشابه نشان دهیم که مجموعه‌ها\nشمارا نیستند، حتی اگر هیچ آرایه و هیچ قطر واقعی‌ای در میان\nنباشد.\n\\end{explain}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 210,
+          "token": "!!{enumerable}",
+          "realization": "شمارا"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Power-set theorem",
+      "canon": [
+        "FA-OL-CANON-0003:P0053",
+        "FA-OL-CANON-0005:P0115"
+      ],
+      "rationale": "Pow of positive integers, not only finite subsets and not the integers themselves. Preserve theorem identity and negative enumeration predicate.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not calibrated probability. Source meaning and the relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0033-C18",
+      "unit": "OLP-0033",
+      "source": {
+        "char_start": 6480,
+        "char_end_exclusive": 6571,
+        "line_start": 147,
+        "line_end": 152,
+        "text": "\\begin{thm}\n\\ollabel{thm:nonenum-pownat}\n$\\Pow{\\PosInt}$ is not !!{enumerable}.\n\\end{thm}\n\n",
+        "sha256": "62422df4c33cdcdb64c6639f096a36f1ee84a36c0259a7ca5eb2834a89e3b4a6"
+      },
+      "target_before": {
+        "char_start": 6390,
+        "char_end_exclusive": 6479,
+        "line_start": 147,
+        "line_end": 152,
+        "text": "\\begin{thm}\n\\ollabel{thm:nonenum-pownat}\n$\\Pow{\\PosInt}$ !!{enumerable} نیست.\n\\end{thm}\n\n",
+        "sha256": "f08e5a8a96bebb180f81a566edaf801940c135667b2eab5046102399d0b5937d"
+      },
+      "target_after": {
+        "char_start": 6562,
+        "char_end_exclusive": 6651,
+        "line_start": 151,
+        "line_end": 156,
+        "text": "\\begin{thm}\n\\ollabel{thm:nonenum-pownat}\n$\\Pow{\\PosInt}$ !!{enumerable} نیست.\n\\end{thm}\n\n",
+        "sha256": "f08e5a8a96bebb180f81a566edaf801940c135667b2eab5046102399d0b5937d"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{thm}\n\\ollabel{thm:nonenum-pownat}\n$\\Pow{\\PosInt}$ شمارا نیست.\n\\end{thm}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 57,
+          "token": "!!{enumerable}",
+          "realization": "شمارا"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Power-set diagonal definition",
+      "canon": [
+        "FA-OL-CANON-0003:P0053",
+        "FA-OL-CANON-0005:P0115"
+      ],
+      "rationale": "Given every list of subsets, define the diagonal by n notin Z_n. Explicit bound n in positive integers establishes it is a subset. Retain all equations and tuple order.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not calibrated probability. Source meaning and the relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0033-C19",
+      "unit": "OLP-0033",
+      "source": {
+        "char_start": 6571,
+        "char_end_exclusive": 6995,
+        "line_start": 152,
+        "line_end": 164,
+        "text": "\\begin{proof}\nWe proceed in the same way, by showing that for every list of subsets\nof~$\\PosInt$ there is a subset of $\\PosInt$ which cannot be on the list.\nSuppose the following is a given list of subsets of~$\\PosInt$:\n\\[\nZ_{1}, Z_{2}, Z_{3}, \\dots\n\\]\nWe now define a set $\\overline{Z}$ such that for any $n \\in \\PosInt$,\n$n \\in \\overline{Z}$ iff $n \\notin Z_{n}$:\n\\[\n\\overline{Z} = \\Setabs{n \\in \\PosInt}{n \\notin Z_n}\n\\]\n",
+        "sha256": "2c7cad1dd7b9676e64a736921892be49bfab13fb6228701014e3e621b178aed3"
+      },
+      "target_before": {
+        "char_start": 6479,
+        "char_end_exclusive": 6932,
+        "line_start": 152,
+        "line_end": 164,
+        "text": "\\begin{proof}\nبه همان شیوه پیش می‌رویم: نشان می‌دهیم که برای هر فهرستی از زیرمجموعه‌های\n~$\\PosInt$، زیرمجموعه‌ای از $\\PosInt$ وجود دارد که نمی‌تواند در فهرست\nباشد. فرض کنید فهرست زیر از زیرمجموعه‌های~$\\PosInt$ داده شده است:\n\\[\nZ_{1}, Z_{2}, Z_{3}, \\dots\n\\]\nاکنون مجموعه‌ای مانند $\\overline{Z}$ چنان تعریف می‌کنیم که برای هر\n$n \\in \\PosInt$، $n \\in \\overline{Z}$ اگر و تنها اگر $n \\notin Z_{n}$:\n\\[\n\\overline{Z} = \\Setabs{n \\in \\PosInt}{n \\notin Z_n}\n\\]\n",
+        "sha256": "ec803ee5ec53c0c46e2fa02fd40d0ec436fb16d6a97c2547becdb54741f45b6b"
+      },
+      "target_after": {
+        "char_start": 6651,
+        "char_end_exclusive": 7104,
+        "line_start": 156,
+        "line_end": 168,
+        "text": "\\begin{proof}\nبه همان شیوه پیش می‌رویم: نشان می‌دهیم که برای هر فهرستی از زیرمجموعه‌های\n~$\\PosInt$، زیرمجموعه‌ای از $\\PosInt$ وجود دارد که نمی‌تواند در فهرست\nباشد. فرض کنید فهرست زیر از زیرمجموعه‌های~$\\PosInt$ داده شده است:\n\\[\nZ_{1}, Z_{2}, Z_{3}, \\dots\n\\]\nاکنون مجموعه‌ای مانند $\\overline{Z}$ چنان تعریف می‌کنیم که برای هر\n$n \\in \\PosInt$، $n \\in \\overline{Z}$ اگر و تنها اگر $n \\notin Z_{n}$:\n\\[\n\\overline{Z} = \\Setabs{n \\in \\PosInt}{n \\notin Z_n}\n\\]\n",
+        "sha256": "ec803ee5ec53c0c46e2fa02fd40d0ec436fb16d6a97c2547becdb54741f45b6b"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{proof}\nبه همان شیوه پیش می‌رویم: نشان می‌دهیم که برای هر فهرستی از زیرمجموعه‌های\n~$\\PosInt$، زیرمجموعه‌ای از $\\PosInt$ وجود دارد که نمی‌تواند در فهرست\nباشد. فرض کنید فهرست زیر از زیرمجموعه‌های~$\\PosInt$ داده شده است:\n\\[\nZ_{1}, Z_{2}, Z_{3}, \\dots\n\\]\nاکنون مجموعه‌ای مانند $\\overline{Z}$ چنان تعریف می‌کنیم که برای هر\n$n \\in \\PosInt$، $n \\in \\overline{Z}$ اگر و تنها اگر $n \\notin Z_{n}$:\n\\[\n\\overline{Z} = \\Setabs{n \\in \\PosInt}{n \\notin Z_n}\n\\]\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Diagonal subset lies in power set",
+      "canon": [
+        "FA-OL-CANON-0003:P0053",
+        "FA-OL-CANON-0005:P0115"
+      ],
+      "rationale": "Preserve set-of-positive-integers type and membership in its power set; not membership in the integers. Source’s redundant reference to Z_n types is harmless.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not calibrated probability. Source meaning and the relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0033-C20",
+      "unit": "OLP-0033",
+      "source": {
+        "char_start": 6995,
+        "char_end_exclusive": 7258,
+        "line_start": 164,
+        "line_end": 170,
+        "text": "$\\overline{Z}$ is clearly a set of positive integers, since by\nassumption each~$Z_n$ is, and thus $\\overline{Z} \\in\n\\Pow{\\PosInt}$. But $\\overline{Z}$ cannot be on the list.  To show\nthis, we'll establish that for each $k \\in \\PosInt$, $\\overline{Z} \\neq\nZ_k$. \n\n",
+        "sha256": "75363b07cb3d4c4237fbf8727c05136bd0c5b93f0a550720a2f4afbbf5bceef8"
+      },
+      "target_before": {
+        "char_start": 6932,
+        "char_end_exclusive": 7214,
+        "line_start": 164,
+        "line_end": 170,
+        "text": "$\\overline{Z}$ آشکارا مجموعه‌ای از اعداد صحیح مثبت است، زیرا بنا بر\nفرض هر~$Z_n$ چنین مجموعه‌ای است، و ازاین‌رو $\\overline{Z} \\in\n\\Pow{\\PosInt}$. اما $\\overline{Z}$ نمی‌تواند در فهرست باشد. برای نشان\nدادن این مطلب، ثابت می‌کنیم که برای هر $k \\in \\PosInt$، $\\overline{Z} \\neq\nZ_k$.\n\n",
+        "sha256": "59dfea45b28fc3465db587914cfd6cd2b213e4ea473e35c2e6f606bb50106a4c"
+      },
+      "target_after": {
+        "char_start": 7104,
+        "char_end_exclusive": 7386,
+        "line_start": 168,
+        "line_end": 174,
+        "text": "$\\overline{Z}$ آشکارا مجموعه‌ای از اعداد صحیح مثبت است، زیرا بنا بر\nفرض هر~$Z_n$ چنین مجموعه‌ای است، و ازاین‌رو $\\overline{Z} \\in\n\\Pow{\\PosInt}$. اما $\\overline{Z}$ نمی‌تواند در فهرست باشد. برای نشان\nدادن این مطلب، ثابت می‌کنیم که برای هر $k \\in \\PosInt$، $\\overline{Z} \\neq\nZ_k$.\n\n",
+        "sha256": "59dfea45b28fc3465db587914cfd6cd2b213e4ea473e35c2e6f606bb50106a4c"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "$\\overline{Z}$ آشکارا مجموعه‌ای از اعداد صحیح مثبت است، زیرا بنا بر\nفرض هر~$Z_n$ چنین مجموعه‌ای است، و ازاین‌رو $\\overline{Z} \\in\n\\Pow{\\PosInt}$. اما $\\overline{Z}$ نمی‌تواند در فهرست باشد. برای نشان\nدادن این مطلب، ثابت می‌کنیم که برای هر $k \\in \\PosInt$، $\\overline{Z} \\neq\nZ_k$.\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Arbitrary k distinguishes two sets",
+      "canon": [
+        "FA-OL-CANON-0003:P0053",
+        "FA-OL-CANON-0005:P0115"
+      ],
+      "rationale": "Retain iff and nonmembership directions, k arbitrary, and extensional inequality from differing membership. Distinguish an element of one but not the other from subset relation.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not calibrated probability. Source meaning and the relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0033-C21",
+      "unit": "OLP-0033",
+      "source": {
+        "char_start": 7258,
+        "char_end_exclusive": 7718,
+        "line_start": 170,
+        "line_end": 179,
+        "text": "So let $k \\in \\PosInt$ be arbitrary. We've defined $\\overline{Z}$ so\nthat for any $n \\in \\PosInt$, $n \\in \\overline{Z}$ iff $n \\notin Z_n$.\nIn particular, taking $n=k$, $k \\in \\overline{Z}$ iff $k \\notin Z_k$.\nBut this shows that $\\overline{Z} \\neq Z_k$, since $k$ is !!a{element}\nof one but not the other, and so $\\overline{Z}$ and $Z_k$ have\ndifferent !!{element}s. Since $k$ was arbitrary, $\\overline{Z}$ is not\non the list $Z_1$, $Z_2$, \\dots\n\\end{proof}\n\n",
+        "sha256": "39c42de02ba971bcc574d3bff08d29812a1710b3f87fad64e77f83ddaf207d64"
+      },
+      "target_before": {
+        "char_start": 7214,
+        "char_end_exclusive": 7709,
+        "line_start": 170,
+        "line_end": 180,
+        "text": "پس $k \\in \\PosInt$ را دلخواه بگیرید. $\\overline{Z}$ را چنان تعریف\nکرده‌ایم که برای هر $n \\in \\PosInt$، $n \\in \\overline{Z}$ اگر و تنها\nاگر $n \\notin Z_n$. به‌ویژه، با گرفتن $n=k$، داریم $k \\in \\overline{Z}$\nاگر و تنها اگر $k \\notin Z_k$. اما این نشان می‌دهد که\n$\\overline{Z} \\neq Z_k$، زیرا $k$ !!a{element} یکی از آن دو است، اما عضو\nآن یکی نیست؛ پس $\\overline{Z}$ و $Z_k$ از نظر !!{element}s تفاوت دارند.\nازآنجاکه $k$ دلخواه بود، $\\overline{Z}$ در فهرستِ $Z_1$، $Z_2$،\n\\dots نیست.\n\\end{proof}\n\n",
+        "sha256": "a10c36f37c5d9b16f8e62c4c7fd933c63d3ba6ff773afbe2cc952696c1999043"
+      },
+      "target_after": {
+        "char_start": 7386,
+        "char_end_exclusive": 7881,
+        "line_start": 174,
+        "line_end": 184,
+        "text": "پس $k \\in \\PosInt$ را دلخواه بگیرید. $\\overline{Z}$ را چنان تعریف\nکرده‌ایم که برای هر $n \\in \\PosInt$، $n \\in \\overline{Z}$ اگر و تنها\nاگر $n \\notin Z_n$. به‌ویژه، با گرفتن $n=k$، داریم $k \\in \\overline{Z}$\nاگر و تنها اگر $k \\notin Z_k$. اما این نشان می‌دهد که\n$\\overline{Z} \\neq Z_k$، زیرا $k$ !!a{element} یکی از آن دو است، اما عضو\nآن یکی نیست؛ پس $\\overline{Z}$ و $Z_k$ از نظر !!{element}s تفاوت دارند.\nازآنجاکه $k$ دلخواه بود، $\\overline{Z}$ در فهرستِ $Z_1$، $Z_2$،\n\\dots نیست.\n\\end{proof}\n\n",
+        "sha256": "a10c36f37c5d9b16f8e62c4c7fd933c63d3ba6ff773afbe2cc952696c1999043"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "پس $k \\in \\PosInt$ را دلخواه بگیرید. $\\overline{Z}$ را چنان تعریف\nکرده‌ایم که برای هر $n \\in \\PosInt$، $n \\in \\overline{Z}$ اگر و تنها\nاگر $n \\notin Z_n$. به‌ویژه، با گرفتن $n=k$، داریم $k \\in \\overline{Z}$\nاگر و تنها اگر $k \\notin Z_k$. اما این نشان می‌دهد که\n$\\overline{Z} \\neq Z_k$، زیرا $k$ عضو یکی از آن دو است، اما عضو\nآن یکی نیست؛ پس $\\overline{Z}$ و $Z_k$ از نظر اعضا تفاوت دارند.\nازآنجاکه $k$ دلخواه بود، $\\overline{Z}$ در فهرستِ $Z_1$، $Z_2$،\n\\dots نیست.\n\\end{proof}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 295,
+          "token": "!!a{element}",
+          "realization": "عضو"
+        },
+        {
+          "character_offset_in_segment": 380,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        }
+      ],
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 295,
+          "token": "!!a{element}",
+          "realization": "عضو"
+        },
+        {
+          "character_offset_in_segment": 380,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        }
+      ]
+    },
+    {
+      "topic": "Membership table and empty diagonal cells",
+      "canon": [
+        "FA-OL-CANON-0005:P0115"
+      ],
+      "rationale": "Keep every displayed set/cell. A blank at row j,column j means j absent from Z_j; clarify that single cell, not an entire row/column gap. Given example excludes1,2,4 and includes3.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not calibrated probability. Source meaning and the relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0033-C22",
+      "unit": "OLP-0033",
+      "source": {
+        "char_start": 7718,
+        "char_end_exclusive": 8729,
+        "line_start": 179,
+        "line_end": 202,
+        "text": "\\begin{explain}\nThe preceding proof did not mention a diagonal, but you can think of\nit as involving a diagonal if you picture it this way: Imagine the\nsets $Z_1$, $Z_2$, \\dots, written in an array, where each\n!!{element}~$j \\in Z_i$ is listed in the~$j$-th column. Say the first\nfour sets on that list are $\\{1,2,3,\\dots\\}$, $\\{2, 4, 6, \\dots\\}$,\n$\\{1,2,5\\}$, and $\\{3,4,5,\\dots\\}$. Then the array would begin with\n\\[\n\\begin{array}{r@{}rrrrrrr}\n  Z_1 = \\{ & \\mathbf{1}, & 2, & 3, & 4, & 5, & 6, & \\dots\\}\\\\\n  Z_2 = \\{ &  & \\mathbf{2}, &  & 4, &  & 6, & \\dots\\}\\\\\n  Z_3 = \\{ & 1, & 2, &  &  & 5\\phantom{,} &  & \\}\\\\\n  Z_4 = \\{ &  &  & 3, & \\mathbf{4}, & 5, & 6, & \\dots\\}\\\\\n  \\vdots & & & & & \\ddots\n\\end{array}\n\\]\nThen $\\overline{Z}$ is the set obtained by going down the diagonal,\nleaving out any numbers that appear along the diagonal and include\nthose $j$ where the array has a gap in the $j$-th row/column. In the\nabove case, we would leave out $1$ and $2$, include~$3$, leave\nout~$4$, etc.\n\\end{explain}\n\n",
+        "sha256": "2b3d81a740cffb129ae9491512e9cc237b90c4cb421b549b4bb984f1633ec564"
+      },
+      "target_before": {
+        "char_start": 7709,
+        "char_end_exclusive": 8735,
+        "line_start": 180,
+        "line_end": 203,
+        "text": "\\begin{explain}\nبرهان پیشین از قطر نام نبرد، اما اگر آن را به شکل زیر تصویر کنید،\nمی‌توانید قطر را در آن ببینید: مجموعه‌های $Z_1$، $Z_2$، \\dots را در\nآرایه‌ای بنویسید که در آن هر !!{element} مانند~$j \\in Z_i$ در ستون\n$j$اُم قرار گیرد. فرض کنید چهار مجموعهٔ نخست در آن فهرست به‌ترتیب\n$\\{1,2,3,\\dots\\}$، $\\{2, 4, 6, \\dots\\}$، $\\{1,2,5\\}$ و\n$\\{3,4,5,\\dots\\}$ باشند. در این صورت آرایه چنین آغاز می‌شود:\n\\[\n\\begin{array}{r@{}rrrrrrr}\n  Z_1 = \\{ & \\mathbf{1}, & 2, & 3, & 4, & 5, & 6, & \\dots\\}\\\\\n  Z_2 = \\{ &  & \\mathbf{2}, &  & 4, &  & 6, & \\dots\\}\\\\\n  Z_3 = \\{ & 1, & 2, &  &  & 5\\phantom{,} &  & \\}\\\\\n  Z_4 = \\{ &  &  & 3, & \\mathbf{4}, & 5, & 6, & \\dots\\}\\\\\n  \\vdots & & & & & \\ddots\n\\end{array}\n\\]\nآنگاه $\\overline{Z}$ مجموعه‌ای است که با پایین‌رفتن روی قطر به دست\nمی‌آید: هر عددی را که روی قطر ظاهر می‌شود کنار می‌گذاریم و هر $j$ای را\nکه آرایه در سطر/ستون $j$اُم شکاف دارد، وارد مجموعه می‌کنیم. در نمونهٔ\nبالا، $1$ و $2$ را کنار می‌گذاریم، $3$ را وارد می‌کنیم، $4$ را کنار\nمی‌گذاریم، و همین‌طور ادامه می‌دهیم.\n\\end{explain}\n\n",
+        "sha256": "f78eae6c4edbd66739cb34232c745f375c8119a3675d5376b09dce4dacb36a5a"
+      },
+      "target_after": {
+        "char_start": 7881,
+        "char_end_exclusive": 8918,
+        "line_start": 184,
+        "line_end": 207,
+        "text": "\\begin{explain}\nبرهان پیشین از قطر نام نبرد، اما اگر آن را به شکل زیر تصویر کنید،\nمی‌توانید قطر را در آن ببینید: مجموعه‌های $Z_1$، $Z_2$، \\dots را در\nآرایه‌ای بنویسید که در آن هر !!{element} مانند~$j \\in Z_i$ در ستون\n$j$اُم قرار گیرد. فرض کنید چهار مجموعهٔ نخست در آن فهرست به‌ترتیب\n$\\{1,2,3,\\dots\\}$، $\\{2, 4, 6, \\dots\\}$، $\\{1,2,5\\}$ و\n$\\{3,4,5,\\dots\\}$ باشند. در این صورت آرایه چنین آغاز می‌شود:\n\\[\n\\begin{array}{r@{}rrrrrrr}\n  Z_1 = \\{ & \\mathbf{1}, & 2, & 3, & 4, & 5, & 6, & \\dots\\}\\\\\n  Z_2 = \\{ &  & \\mathbf{2}, &  & 4, &  & 6, & \\dots\\}\\\\\n  Z_3 = \\{ & 1, & 2, &  &  & 5\\phantom{,} &  & \\}\\\\\n  Z_4 = \\{ &  &  & 3, & \\mathbf{4}, & 5, & 6, & \\dots\\}\\\\\n  \\vdots & & & & & \\ddots\n\\end{array}\n\\]\nآنگاه $\\overline{Z}$ مجموعه‌ای است که با پایین‌رفتن روی قطر به دست\nمی‌آید: هر عددی را که روی قطر ظاهر می‌شود کنار می‌گذاریم و هر $j$ای را\nکه خانهٔ واقع در سطر $j$اُم و همان ستون خالی است، وارد مجموعه می‌کنیم. در نمونهٔ\nبالا، $1$ و $2$ را کنار می‌گذاریم، $3$ را وارد می‌کنیم، $4$ را کنار\nمی‌گذاریم، و همین‌طور ادامه می‌دهیم.\n\\end{explain}\n\n",
+        "sha256": "fba66bbe3c1e09535477853b3bff919399dd8b4100a2671f1dbd09f0f1a4b958"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{explain}\nبرهان پیشین از قطر نام نبرد، اما اگر آن را به شکل زیر تصویر کنید،\nمی‌توانید قطر را در آن ببینید: مجموعه‌های $Z_1$، $Z_2$، \\dots را در\nآرایه‌ای بنویسید که در آن هر عضو مانند~$j \\in Z_i$ در ستون\n$j$اُم قرار گیرد. فرض کنید چهار مجموعهٔ نخست در آن فهرست به‌ترتیب\n$\\{1,2,3,\\dots\\}$، $\\{2, 4, 6, \\dots\\}$، $\\{1,2,5\\}$ و\n$\\{3,4,5,\\dots\\}$ باشند. در این صورت آرایه چنین آغاز می‌شود:\n\\[\n\\begin{array}{r@{}rrrrrrr}\n  Z_1 = \\{ & \\mathbf{1}, & 2, & 3, & 4, & 5, & 6, & \\dots\\}\\\\\n  Z_2 = \\{ &  & \\mathbf{2}, &  & 4, &  & 6, & \\dots\\}\\\\\n  Z_3 = \\{ & 1, & 2, &  &  & 5\\phantom{,} &  & \\}\\\\\n  Z_4 = \\{ &  &  & 3, & \\mathbf{4}, & 5, & 6, & \\dots\\}\\\\\n  \\vdots & & & & & \\ddots\n\\end{array}\n\\]\nآنگاه $\\overline{Z}$ مجموعه‌ای است که با پایین‌رفتن روی قطر به دست\nمی‌آید: هر عددی را که روی قطر ظاهر می‌شود کنار می‌گذاریم و هر $j$ای را\nکه خانهٔ واقع در سطر $j$اُم و همان ستون خالی است، وارد مجموعه می‌کنیم. در نمونهٔ\nبالا، $1$ و $2$ را کنار می‌گذاریم، $3$ را وارد می‌کنیم، $4$ را کنار\nمی‌گذاریم، و همین‌طور ادامه می‌دهیم.\n\\end{explain}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 179,
+          "token": "!!{element}",
+          "realization": "عضو"
+        }
+      ],
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 179,
+          "token": "!!{element}",
+          "realization": "عضو"
+        }
+      ]
+    },
+    {
+      "topic": "Power set of zero-based naturals exercise",
+      "canon": [
+        "FA-OL-CANON-0003:P0053",
+        "FA-OL-CANON-0005:P0115"
+      ],
+      "rationale": "Retain Nat rather than PosInt. Explicit diagonal solutions account for one-based row versus zero-based argument; no unnecessary solution inserted in the exercise.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not calibrated probability. Source meaning and the relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0033-C23",
+      "unit": "OLP-0033",
+      "source": {
+        "char_start": 8729,
+        "char_end_exclusive": 8822,
+        "line_start": 202,
+        "line_end": 206,
+        "text": "\\begin{prob}\nShow that $\\Pow{\\Nat}$ is !!{nonenumerable} by a diagonal argument.\n\\end{prob}\n\n",
+        "sha256": "b113cc3e13afb90932528399e5fe1b99a43bf3944c596c67a73cfc45e50f721e"
+      },
+      "target_before": {
+        "char_start": 8735,
+        "char_end_exclusive": 8828,
+        "line_start": 203,
+        "line_end": 207,
+        "text": "\\begin{prob}\nبا یک استدلال قطری نشان دهید که $\\Pow{\\Nat}$ !!{nonenumerable} است.\n\\end{prob}\n\n",
+        "sha256": "091dc37fb65ac179f4ab4a3fad4d2124820225ed5f88d72bc4dbc177394cfc8e"
+      },
+      "target_after": {
+        "char_start": 8918,
+        "char_end_exclusive": 9011,
+        "line_start": 207,
+        "line_end": 211,
+        "text": "\\begin{prob}\nبا یک استدلال قطری نشان دهید که $\\Pow{\\Nat}$ !!{nonenumerable} است.\n\\end{prob}\n\n",
+        "sha256": "091dc37fb65ac179f4ab4a3fad4d2124820225ed5f88d72bc4dbc177394cfc8e"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{prob}\nبا یک استدلال قطری نشان دهید که $\\Pow{\\Nat}$ ناشمارا است.\n\\end{prob}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 58,
+          "token": "!!{nonenumerable}",
+          "realization": "ناشمارا"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "All positive-integer functions exercise",
+      "canon": [
+        "FA-OL-CANON-0005:P0115",
+        "FA-OL-CANON-0001:P0082"
+      ],
+      "rationale": "All total functions PosInt→PosInt, not computable functions. Explicit universal diagonal f_n(n)+1 validates the requested exercise; translated exercise retains its own full witness specification and remains unsolved.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not calibrated probability. Source meaning and the relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0033-C24",
+      "unit": "OLP-0033",
+      "source": {
+        "char_start": 8822,
+        "char_end_exclusive": 9183,
+        "line_start": 206,
+        "line_end": 214,
+        "text": "\\begin{prob}\\label{sfr:siz:nen:prob:f-posint}\nShow that the set of functions $f \\colon \\PosInt \\to \\PosInt$ is\n!!{nonenumerable} by an explicit diagonal argument. That is, show that\nif $f_1$, $f_2$, \\dots, is a list of functions and each $f_i\\colon\n\\PosInt \\to \\PosInt$, then there is some $\\overline{f}\\colon \\PosInt \\to\n\\PosInt$ not on this list.\n\\end{prob}\n\n",
+        "sha256": "28a742053c74ff1f937d868f08cf1fc0a9f289c169d24960cff3059e968770e8"
+      },
+      "target_before": {
+        "char_start": 8828,
+        "char_end_exclusive": 9186,
+        "line_start": 207,
+        "line_end": 215,
+        "text": "\\begin{prob}\\label{sfr:siz:nen:prob:f-posint}\nبا یک استدلال قطریِ صریح نشان دهید که مجموعهٔ توابع\n$f \\colon \\PosInt \\to \\PosInt$ !!{nonenumerable} است. یعنی نشان دهید\nاگر $f_1$، $f_2$، \\dots فهرستی از توابع باشد و هر $f_i\\colon\n\\PosInt \\to \\PosInt$ باشد، آنگاه تابعی مانند $\\overline{f}\\colon \\PosInt \\to\n\\PosInt$ وجود دارد که در این فهرست نیست.\n\\end{prob}\n\n",
+        "sha256": "e45df6de7ae56600ef1302cf531ee90a184339f01caaf790204c38f7010d7545"
+      },
+      "target_after": {
+        "char_start": 9011,
+        "char_end_exclusive": 9369,
+        "line_start": 211,
+        "line_end": 219,
+        "text": "\\begin{prob}\\label{sfr:siz:nen:prob:f-posint}\nبا یک استدلال قطریِ صریح نشان دهید که مجموعهٔ توابع\n$f \\colon \\PosInt \\to \\PosInt$ !!{nonenumerable} است. یعنی نشان دهید\nاگر $f_1$، $f_2$، \\dots فهرستی از توابع باشد و هر $f_i\\colon\n\\PosInt \\to \\PosInt$ باشد، آنگاه تابعی مانند $\\overline{f}\\colon \\PosInt \\to\n\\PosInt$ وجود دارد که در این فهرست نیست.\n\\end{prob}\n\n",
+        "sha256": "e45df6de7ae56600ef1302cf531ee90a184339f01caaf790204c38f7010d7545"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{prob}\\label{sfr:siz:nen:prob:f-posint}\nبا یک استدلال قطریِ صریح نشان دهید که مجموعهٔ توابع\n$f \\colon \\PosInt \\to \\PosInt$ ناشمارا است. یعنی نشان دهید\nاگر $f_1$، $f_2$، \\dots فهرستی از توابع باشد و هر $f_i\\colon\n\\PosInt \\to \\PosInt$ باشد، آنگاه تابعی مانند $\\overline{f}\\colon \\PosInt \\to\n\\PosInt$ وجود دارد که در این فهرست نیست.\n\\end{prob}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 129,
+          "token": "!!{nonenumerable}",
+          "realization": "ناشمارا"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Reduction heading",
+      "canon": [
+        "FA-REL-P046",
+        "FA-REL-P050",
+        "FA-OL-CANON-0005:P0115"
+      ],
+      "rationale": "کاهش is retained as a locally defined transfer of one enumeration problem to another. It does not mean lowering mathematical difficulty or computational many-one reducibility.",
+      "question": "The exact reduction label کاهش is not directly attested on these pages. Its direction and source-defined content are supported; compare انتقال/تحویل if later exact-language evidence warrants.",
+      "confidence": 2,
+      "alternatives": "تحویل and انتقال may convey transfer, but no consulted page establishes one as the unique discipline-wide equivalent. No automatic replacement.",
+      "confidence_reason": "Editorial0–3, not calibrated probability. Source meaning checked; the stated exact-label or register attestation gap remains.",
+      "id": "FA-0034-C01",
+      "unit": "OLP-0034",
+      "source": {
+        "char_start": 177,
+        "char_end_exclusive": 200,
+        "line_start": 11,
+        "line_end": 13,
+        "text": "\\olsection{Reduction}\n\n",
+        "sha256": "98bdc76a2b4a6b98fa86be1ccebfb0cfa4d3c697752206d1e218ae39f9791818"
+      },
+      "target_before": {
+        "char_start": 184,
+        "char_end_exclusive": 202,
+        "line_start": 11,
+        "line_end": 13,
+        "text": "\\olsection{کاهش}\n\n",
+        "sha256": "7eb23934752fc64e97e234ffafdf16472fc7fb61ad4e7320c868cb2afa3c9f30"
+      },
+      "target_after": {
+        "char_start": 184,
+        "char_end_exclusive": 202,
+        "line_start": 11,
+        "line_end": 13,
+        "text": "\\olsection{کاهش}\n\n",
+        "sha256": "7eb23934752fc64e97e234ffafdf16472fc7fb61ad4e7320c868cb2afa3c9f30"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\olsection{کاهش}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Editorial relation to alternative section",
+      "canon": [
+        "FA-OL-CANON-0005:P0115",
+        "FA-REL-P050"
+      ],
+      "rationale": "Preserve links to nen, nen-alt and red-alt and the relative brevity of the alternative version. Same provisional source-defined reduction label.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not calibrated probability. Source meaning and the relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0034-C02",
+      "unit": "OLP-0034",
+      "source": {
+        "char_start": 200,
+        "char_end_exclusive": 467,
+        "line_start": 13,
+        "line_end": 20,
+        "text": "\\begin{editorial}\n  This section proves non-enumerability by reduction, matching the\n  results in \\olref[nen]{sec}. An alternative, slightly more condensed\n  version matching the results in \\olref[nen-alt]{sec} is provided in\n  \\olref[red-alt]{sec}.\n\\end{editorial}\n\n",
+        "sha256": "47305bf5997239d20c53460cf0d30f3b97183a5dd8129a604bbea0bcf21d0d71"
+      },
+      "target_before": {
+        "char_start": 202,
+        "char_end_exclusive": 445,
+        "line_start": 13,
+        "line_end": 20,
+        "text": "\\begin{editorial}\n  این بخش ناشمارابودن را از راه کاهش ثابت می‌کند و با نتایجِ\n  \\olref[nen]{sec} مطابقت دارد. روایتی جایگزین و اندکی موجزتر که با\n  نتایجِ \\olref[nen-alt]{sec} مطابقت دارد، در \\olref[red-alt]{sec}\n  آمده است.\n\\end{editorial}\n\n",
+        "sha256": "687249fcea319cd8c9e191b97af62220824ae136c1bf973ec4f0834939cdbe67"
+      },
+      "target_after": {
+        "char_start": 202,
+        "char_end_exclusive": 445,
+        "line_start": 13,
+        "line_end": 20,
+        "text": "\\begin{editorial}\n  این بخش ناشمارابودن را از راه کاهش ثابت می‌کند و با نتایجِ\n  \\olref[nen]{sec} مطابقت دارد. روایتی جایگزین و اندکی موجزتر که با\n  نتایجِ \\olref[nen-alt]{sec} مطابقت دارد، در \\olref[red-alt]{sec}\n  آمده است.\n\\end{editorial}\n\n",
+        "sha256": "687249fcea319cd8c9e191b97af62220824ae136c1bf973ec4f0834939cdbe67"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{editorial}\n  این بخش ناشمارابودن را از راه کاهش ثابت می‌کند و با نتایجِ\n  \\olref[nen]{sec} مطابقت دارد. روایتی جایگزین و اندکی موجزتر که با\n  نتایجِ \\olref[nen-alt]{sec} مطابقت دارد، در \\olref[red-alt]{sec}\n  آمده است.\n\\end{editorial}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Which problem reduces to which",
+      "canon": [
+        "FA-OL-CANON-0005:P0115",
+        "FA-REL-P050"
+      ],
+      "rationale": "Source problem Bin^omega enumeration is reduced to Pow(PosInt) enumeration: an enumeration of the latter would solve the former. Keep the implication, known contradiction, and order of both problem names.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not calibrated probability. Source meaning and the relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0034-C03",
+      "unit": "OLP-0034",
+      "source": {
+        "char_start": 467,
+        "char_end_exclusive": 1231,
+        "line_start": 20,
+        "line_end": 33,
+        "text": "We showed $\\Pow{\\PosInt}$ to be !!{nonenumerable} by a diagonalization\nargument. We already had a proof that $\\Bin^\\omega$, the set of all\ninfinite sequences of $0$s and $1$s, is !!{nonenumerable}.  Here's\nanother way we can prove that $\\Pow{\\PosInt}$ is !!{nonenumerable}:\nShow that \\emph{if $\\Pow{\\PosInt}$ is !!{enumerable} then $\\Bin^\\omega$\n  is also !!{enumerable}}.  Since we know $\\Bin^\\omega$ is not\n!!{enumerable}, $\\Pow{\\PosInt}$ can't be either.  This is called\n\\emph{reducing} one problem to another---in this case, we reduce the\nproblem of enumerating $\\Bin^\\omega$ to the problem of enumerating\n$\\Pow{\\PosInt}$.  A solution to the latter---an enumeration of\n$\\Pow{\\PosInt}$---would yield a solution to the former---an enumeration\nof $\\Bin^\\omega$.\n\n",
+        "sha256": "fe0f524a71d8416c10165ca3863ce67c8d457eef366192d0de8fd3b296ab2a18"
+      },
+      "target_before": {
+        "char_start": 445,
+        "char_end_exclusive": 1182,
+        "line_start": 20,
+        "line_end": 32,
+        "text": "با استدلالی قطری نشان دادیم که $\\Pow{\\PosInt}$ !!{nonenumerable} است.\nاز پیش نیز برهانی داشتیم که $\\Bin^\\omega$، یعنی مجموعهٔ همهٔ\nدنباله‌های نامتناهیِ $0$ها و $1$ها، !!{nonenumerable} است. راه دیگری\nبرای اثبات اینکه $\\Pow{\\PosInt}$ !!{nonenumerable} است چنین است: نشان دهید\nکه \\emph{اگر $\\Pow{\\PosInt}$ !!{enumerable} باشد، آنگاه $\\Bin^\\omega$\n  نیز !!{enumerable} است}. چون می‌دانیم $\\Bin^\\omega$ !!{enumerable}\nنیست، $\\Pow{\\PosInt}$ نیز نمی‌تواند چنین باشد. این کار را\n\\emph{کاهش‌دادن} یک مسئله به مسئله‌ای دیگر می‌نامند---در اینجا، مسئلهٔ\nبرشمردن $\\Bin^\\omega$ را به مسئلهٔ برشمردن $\\Pow{\\PosInt}$ کاهش\nمی‌دهیم. حل مسئلهٔ دوم---یعنی برشماریِ $\\Pow{\\PosInt}$---راه‌حلی برای\nمسئلهٔ نخست---یعنی برشماریِ $\\Bin^\\omega$---به دست می‌دهد.\n\n",
+        "sha256": "8f6a6b42aa3627c27e99058d384092e1d7d89732bcd78904ae6e1e1c0877fbd0"
+      },
+      "target_after": {
+        "char_start": 445,
+        "char_end_exclusive": 1182,
+        "line_start": 20,
+        "line_end": 32,
+        "text": "با استدلالی قطری نشان دادیم که $\\Pow{\\PosInt}$ !!{nonenumerable} است.\nاز پیش نیز برهانی داشتیم که $\\Bin^\\omega$، یعنی مجموعهٔ همهٔ\nدنباله‌های نامتناهیِ $0$ها و $1$ها، !!{nonenumerable} است. راه دیگری\nبرای اثبات اینکه $\\Pow{\\PosInt}$ !!{nonenumerable} است چنین است: نشان دهید\nکه \\emph{اگر $\\Pow{\\PosInt}$ !!{enumerable} باشد، آنگاه $\\Bin^\\omega$\n  نیز !!{enumerable} است}. چون می‌دانیم $\\Bin^\\omega$ !!{enumerable}\nنیست، $\\Pow{\\PosInt}$ نیز نمی‌تواند چنین باشد. این کار را\n\\emph{کاهش‌دادن} یک مسئله به مسئله‌ای دیگر می‌نامند---در اینجا، مسئلهٔ\nبرشمردن $\\Bin^\\omega$ را به مسئلهٔ برشمردن $\\Pow{\\PosInt}$ کاهش\nمی‌دهیم. حل مسئلهٔ دوم---یعنی برشماریِ $\\Pow{\\PosInt}$---راه‌حلی برای\nمسئلهٔ نخست---یعنی برشماریِ $\\Bin^\\omega$---به دست می‌دهد.\n\n",
+        "sha256": "8f6a6b42aa3627c27e99058d384092e1d7d89732bcd78904ae6e1e1c0877fbd0"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "با استدلالی قطری نشان دادیم که $\\Pow{\\PosInt}$ ناشمارا است.\nاز پیش نیز برهانی داشتیم که $\\Bin^\\omega$، یعنی مجموعهٔ همهٔ\nدنباله‌های نامتناهیِ $0$ها و $1$ها، ناشمارا است. راه دیگری\nبرای اثبات اینکه $\\Pow{\\PosInt}$ ناشمارا است چنین است: نشان دهید\nکه \\emph{اگر $\\Pow{\\PosInt}$ شمارا باشد، آنگاه $\\Bin^\\omega$\n  نیز شمارا است}. چون می‌دانیم $\\Bin^\\omega$ شمارا\nنیست، $\\Pow{\\PosInt}$ نیز نمی‌تواند چنین باشد. این کار را\n\\emph{کاهش‌دادن} یک مسئله به مسئله‌ای دیگر می‌نامند---در اینجا، مسئلهٔ\nبرشمردن $\\Bin^\\omega$ را به مسئلهٔ برشمردن $\\Pow{\\PosInt}$ کاهش\nمی‌دهیم. حل مسئلهٔ دوم---یعنی برشماریِ $\\Pow{\\PosInt}$---راه‌حلی برای\nمسئلهٔ نخست---یعنی برشماریِ $\\Bin^\\omega$---به دست می‌دهد.\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 47,
+          "token": "!!{nonenumerable}",
+          "realization": "ناشمارا"
+        },
+        {
+          "character_offset_in_segment": 167,
+          "token": "!!{nonenumerable}",
+          "realization": "ناشمارا"
+        },
+        {
+          "character_offset_in_segment": 233,
+          "token": "!!{nonenumerable}",
+          "realization": "ناشمارا"
+        },
+        {
+          "character_offset_in_segment": 304,
+          "token": "!!{enumerable}",
+          "realization": "شمارا"
+        },
+        {
+          "character_offset_in_segment": 351,
+          "token": "!!{enumerable}",
+          "realization": "شمارا"
+        },
+        {
+          "character_offset_in_segment": 399,
+          "token": "!!{enumerable}",
+          "realization": "شمارا"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Surjective transfer and empty case",
+      "canon": [
+        "FA-REL-P046",
+        "FA-REL-P050",
+        "FA-OL-CANON-0003:P0051"
+      ],
+      "rationale": "The function maps A onto B while the problem of enumerating B reduces to that of A. Composition of a nonempty A enumeration covers B; if A empty, surjectivity makes B empty and source definition handles it. Label this explanatory empty-case note, not a theorem repair.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not calibrated probability. Source meaning and the relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0034-C04",
+      "unit": "OLP-0034",
+      "source": {
+        "char_start": 1231,
+        "char_end_exclusive": 1676,
+        "line_start": 33,
+        "line_end": 41,
+        "text": "How do we reduce the problem of enumerating a set~$B$ to that of\nenumerating a set~$A$?  We provide a way of turning an enumeration\nof~$A$ into an enumeration of~$B$.  The easiest way to do that is to\ndefine !!a{surjective} function $f\\colon A \\to B$.  If $x_1$, $x_2$,\n\\dots{} enumerates~$A$, then $f(x_1)$, $f(x_2)$, \\dots{} would\nenumerate~$B$.  In our case, we are looking for a surjective\nfunction $f\\colon \\Pow{\\PosInt} \\to \\Bin^\\omega$.\n\n",
+        "sha256": "56137e7a4dd792ab4d36252287267829317901920c6debaf3ed073c2ea63ff85"
+      },
+      "target_before": {
+        "char_start": 1182,
+        "char_end_exclusive": 1607,
+        "line_start": 32,
+        "line_end": 40,
+        "text": "چگونه مسئلهٔ برشمردن مجموعهٔ~$B$ را به مسئلهٔ برشمردن مجموعهٔ~$A$\nکاهش می‌دهیم؟ روشی ارائه می‌کنیم که برشماریِ~$A$ را به برشماریِ~$B$\nتبدیل کند. آسان‌ترین راه آن است که تابعی !!a{surjective} به‌صورت\n$f\\colon A \\to B$ تعریف کنیم. اگر $x_1$، $x_2$، \\dots{} مجموعهٔ~$A$ را\nبرشمارد، آنگاه $f(x_1)$، $f(x_2)$، \\dots{} مجموعهٔ~$B$ را برمی‌شمارد.\nدر مورد ما، در پی تابعی پوشا به‌صورت\n$f\\colon \\Pow{\\PosInt} \\to \\Bin^\\omega$ هستیم.\n\n",
+        "sha256": "373d354bbf2a6ac1c8ffe8f473a6b0421cb0289706de12c83ef1e45a7ffe831c"
+      },
+      "target_after": {
+        "char_start": 1182,
+        "char_end_exclusive": 1811,
+        "line_start": 32,
+        "line_end": 43,
+        "text": "چگونه مسئلهٔ برشمردن مجموعهٔ~$B$ را به مسئلهٔ برشمردن مجموعهٔ~$A$\nکاهش می‌دهیم؟ روشی ارائه می‌کنیم که برشماریِ~$A$ را به برشماریِ~$B$\nتبدیل کند. آسان‌ترین راه آن است که تابعی !!a{surjective} به‌صورت\n$f\\colon A \\to B$ تعریف کنیم. اگر $x_1$، $x_2$، \\dots{} مجموعهٔ~$A$ را\nبرشمارد، آنگاه $f(x_1)$، $f(x_2)$، \\dots{} مجموعهٔ~$B$ را برمی‌شمارد.\nدر مورد ما، در پی تابعی پوشا به‌صورت\n$f\\colon \\Pow{\\PosInt} \\to \\Bin^\\omega$ هستیم.\n\\emph{یادداشت ویراستاری:} در بیان کلیِ بالا، اگر مجموعهٔ آغازین تهی باشد،\nپوشابودن تابع مستلزم تهی‌بودن مجموعهٔ مقصد است؛ در این حالت هر دو مجموعه\nطبق تعریف فصل شمارا هستند و به فهرست نامتناهی نیاز نیست.\n\n",
+        "sha256": "6235e8285061b859e828793ebdb7774cb1fb3c3d5e7b6eef5320f2a00a173c30"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "چگونه مسئلهٔ برشمردن مجموعهٔ~$B$ را به مسئلهٔ برشمردن مجموعهٔ~$A$\nکاهش می‌دهیم؟ روشی ارائه می‌کنیم که برشماریِ~$A$ را به برشماریِ~$B$\nتبدیل کند. آسان‌ترین راه آن است که تابعی پوشا به‌صورت\n$f\\colon A \\to B$ تعریف کنیم. اگر $x_1$، $x_2$، \\dots{} مجموعهٔ~$A$ را\nبرشمارد، آنگاه $f(x_1)$، $f(x_2)$، \\dots{} مجموعهٔ~$B$ را برمی‌شمارد.\nدر مورد ما، در پی تابعی پوشا به‌صورت\n$f\\colon \\Pow{\\PosInt} \\to \\Bin^\\omega$ هستیم.\n\\emph{یادداشت ویراستاری:} در بیان کلیِ بالا، اگر مجموعهٔ آغازین تهی باشد،\nپوشابودن تابع مستلزم تهی‌بودن مجموعهٔ مقصد است؛ در این حالت هر دو مجموعه\nطبق تعریف فصل شمارا هستند و به فهرست نامتناهی نیاز نیست.\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 175,
+          "token": "!!a{surjective}",
+          "realization": "پوشا"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Injective reverse-direction exercise",
+      "canon": [
+        "FA-REL-P046",
+        "FA-REL-P050",
+        "FA-OL-CANON-0003:P0051"
+      ],
+      "rationale": "Keep g:B→A injective and B nonenumerable; cannot replace injection with surjection in that direction. Unique inverse on image plus a fixed default produces B enumeration from A, no Choice or decidability needed. Do not insert solution.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not calibrated probability. Source meaning and the relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0034-C05",
+      "unit": "OLP-0034",
+      "source": {
+        "char_start": 1676,
+        "char_end_exclusive": 1900,
+        "line_start": 41,
+        "line_end": 47,
+        "text": "\\begin{prob}\nShow that if there is an !!{injective} function $g\\colon B \\to A$, and\n$B$~is !!{nonenumerable}, then so is~$A$. Do this by showing how you\ncan use~$g$ to turn an enumeration of~$A$ into one of~$B$.\n\\end{prob}\n\n",
+        "sha256": "32f2cb087b0379f972014b6d74a24178bde016f99572b2793003bfa5affa83d1"
+      },
+      "target_before": {
+        "char_start": 1607,
+        "char_end_exclusive": 1861,
+        "line_start": 40,
+        "line_end": 47,
+        "text": "\\begin{prob}\nنشان دهید اگر تابعی !!{injective} به‌صورت $g\\colon B \\to A$ وجود داشته\nباشد و $B$~!!{nonenumerable} باشد، آنگاه $A$ نیز چنین است. برای این\nکار نشان دهید چگونه می‌توان با استفاده از~$g$، برشماریِ~$A$ را به\nبرشماریِ~$B$ تبدیل کرد.\n\\end{prob}\n\n",
+        "sha256": "00682783abfed9ae55c4a13c63bff7f4cacea33a5f76817720185ba446028823"
+      },
+      "target_after": {
+        "char_start": 1811,
+        "char_end_exclusive": 2065,
+        "line_start": 43,
+        "line_end": 50,
+        "text": "\\begin{prob}\nنشان دهید اگر تابعی !!{injective} به‌صورت $g\\colon B \\to A$ وجود داشته\nباشد و $B$~!!{nonenumerable} باشد، آنگاه $A$ نیز چنین است. برای این\nکار نشان دهید چگونه می‌توان با استفاده از~$g$، برشماریِ~$A$ را به\nبرشماریِ~$B$ تبدیل کرد.\n\\end{prob}\n\n",
+        "sha256": "00682783abfed9ae55c4a13c63bff7f4cacea33a5f76817720185ba446028823"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{prob}\nنشان دهید اگر تابعی یک‌به‌یک به‌صورت $g\\colon B \\to A$ وجود داشته\nباشد و $B$~ناشمارا باشد، آنگاه $A$ نیز چنین است. برای این\nکار نشان دهید چگونه می‌توان با استفاده از~$g$، برشماریِ~$A$ را به\nبرشماریِ~$B$ تبدیل کرد.\n\\end{prob}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 33,
+          "token": "!!{injective}",
+          "realization": "یک‌به‌یک"
+        },
+        {
+          "character_offset_in_segment": 95,
+          "token": "!!{nonenumerable}",
+          "realization": "ناشمارا"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Reduction proof assumption",
+      "canon": [
+        "FA-OL-CANON-0003:P0053",
+        "FA-OL-CANON-0005:P0115"
+      ],
+      "rationale": "Preserve named theorem cross-reference and assumed enumeration of the nonempty power set, not assumed enumeration of binary sequences.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not calibrated probability. Source meaning and the relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0034-C06",
+      "unit": "OLP-0034",
+      "source": {
+        "char_start": 1900,
+        "char_end_exclusive": 2100,
+        "line_start": 47,
+        "line_end": 51,
+        "text": "\\begin{proof}[Proof of {\\olref[nen]{thm:nonenum-pownat}} by reduction]\nSuppose that $\\Pow{\\PosInt}$ were !!{enumerable}, and thus that\nthere is an enumeration of it, $Z_{1}$, $Z_{2}$, $Z_{3}$, \\dots\n\n",
+        "sha256": "ee8a7d8b4484213fe5748a20e1b59e2cd6a5d6b3ba099cf60442cd7cdc2595c3"
+      },
+      "target_before": {
+        "char_start": 1861,
+        "char_end_exclusive": 2061,
+        "line_start": 47,
+        "line_end": 51,
+        "text": "\\begin{proof}[برهانِ {\\olref[nen]{thm:nonenum-pownat}} از راه کاهش]\nفرض کنید $\\Pow{\\PosInt}$ !!{enumerable} باشد و بنابراین برشماری‌ای از\nآن به‌صورت $Z_{1}$، $Z_{2}$، $Z_{3}$، \\dots وجود داشته باشد.\n\n",
+        "sha256": "6f9024d1488c0bbecf880beb91603db49e1110a0bfc8fbe6977457b6c86edb77"
+      },
+      "target_after": {
+        "char_start": 2065,
+        "char_end_exclusive": 2265,
+        "line_start": 50,
+        "line_end": 54,
+        "text": "\\begin{proof}[برهانِ {\\olref[nen]{thm:nonenum-pownat}} از راه کاهش]\nفرض کنید $\\Pow{\\PosInt}$ !!{enumerable} باشد و بنابراین برشماری‌ای از\nآن به‌صورت $Z_{1}$، $Z_{2}$، $Z_{3}$، \\dots وجود داشته باشد.\n\n",
+        "sha256": "6f9024d1488c0bbecf880beb91603db49e1110a0bfc8fbe6977457b6c86edb77"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{proof}[برهانِ {\\olref[nen]{thm:nonenum-pownat}} از راه کاهش]\nفرض کنید $\\Pow{\\PosInt}$ شمارا باشد و بنابراین برشماری‌ای از\nآن به‌صورت $Z_{1}$، $Z_{2}$، $Z_{3}$، \\dots وجود داشته باشد.\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 93,
+          "token": "!!{enumerable}",
+          "realization": "شمارا"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Characteristic-sequence definition",
+      "canon": [
+        "FA-OL-CANON-0005:P0115",
+        "FA-REL-P046"
+      ],
+      "rationale": "Remove the unbound k subscript at all three occurrences, leaving s determined by membership in input Z. The canon directly supplies characteristic binary values, without naming them تابع مشخصه on this page. Preserve even/empty/all examples and explain the notation repair, not a false-proof claim.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not calibrated probability. Source meaning and the relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0034-C07",
+      "unit": "OLP-0034",
+      "source": {
+        "char_start": 2100,
+        "char_end_exclusive": 2613,
+        "line_start": 51,
+        "line_end": 60,
+        "text": "Define the function $f \\colon \\Pow{\\PosInt} \\to \\Bin^\\omega$ by letting\n$f(Z)$ be the sequence $s_{k}$ such that $s_{k}(n) = 1$ iff $n \\in Z$,\nand $s_k(n) = 0$ otherwise.  This clearly defines a function, since\nwhenever $Z \\subseteq \\PosInt$, any $n \\in \\PosInt$ either is\n!!a{element} of $Z$ or isn't.  For instance, the set $2\\PosInt = \\{2,\n4, 6, \\dots\\}$ of positive even numbers gets mapped to the sequence\n$010101\\dots$, the empty set gets mapped to $0000\\dots$ and the set\n$\\PosInt$ itself to $1111\\dots$.\n\n",
+        "sha256": "1a7d679817d9e8b71336085d239d2575ce2483a1ca29b51f1d69ec732080fbce"
+      },
+      "target_before": {
+        "char_start": 2061,
+        "char_end_exclusive": 2575,
+        "line_start": 51,
+        "line_end": 60,
+        "text": "تابع $f \\colon \\Pow{\\PosInt} \\to \\Bin^\\omega$ را با قراردادنِ\n$f(Z)$ برابر دنبالهٔ $s_{k}$ تعریف کنید، به‌گونه‌ای که $s_{k}(n) = 1$ اگر و تنها\nاگر $n \\in Z$، و در غیر این صورت $s_k(n) = 0$. این امر به‌روشنی تابعی\nتعریف می‌کند، زیرا هرگاه $Z \\subseteq \\PosInt$، هر $n \\in \\PosInt$ یا\n!!a{element}ی از $Z$ است یا نیست. برای نمونه، مجموعهٔ $2\\PosInt = \\{2,\n4, 6, \\dots\\}$ از اعداد صحیح مثبت زوج به دنبالهٔ $010101\\dots$ نگاشته\nمی‌شود، مجموعهٔ تهی به $0000\\dots$ و خود مجموعهٔ $\\PosInt$ به\n$1111\\dots$ نگاشته می‌شود.\n\n",
+        "sha256": "a276e3d79a74b6fbbd80f6c8e3f71a5219e0e463414b2f9f930aaddfb9ce0bfb"
+      },
+      "target_after": {
+        "char_start": 2265,
+        "char_end_exclusive": 2967,
+        "line_start": 54,
+        "line_end": 66,
+        "text": "تابع $f \\colon \\Pow{\\PosInt} \\to \\Bin^\\omega$ را با قراردادنِ\n$f(Z)$ برابر دنبالهٔ $s$ تعریف کنید، به‌گونه‌ای که $s(n) = 1$ اگر و تنها\nاگر $n \\in Z$، و در غیر این صورت $s(n) = 0$. این امر به‌روشنی تابعی\nتعریف می‌کند، زیرا هرگاه $Z \\subseteq \\PosInt$، هر $n \\in \\PosInt$ یا\n!!a{element}ی از $Z$ است یا نیست. برای نمونه، مجموعهٔ $2\\PosInt = \\{2,\n4, 6, \\dots\\}$ از اعداد صحیح مثبت زوج به دنبالهٔ $010101\\dots$ نگاشته\nمی‌شود، مجموعهٔ تهی به $0000\\dots$ و خود مجموعهٔ $\\PosInt$ به\n$1111\\dots$ نگاشته می‌شود.\n\\emph{یادداشت ویراستاری:} زیرنویسِ بی‌مرجعِ نام دنباله در متن مبدأ حذف شده است.\nاین دنباله را عضویت یا عدم عضویت در مجموعهٔ ورودی تعیین می‌کند؛\nتعریف به فهرستی از همهٔ دنباله‌های دودویی نیاز ندارد.\n\n",
+        "sha256": "d6fb9008592b1c6d1923a08cfc6637501507305bc3842c46f7e9dc74b3467d18"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "تابع $f \\colon \\Pow{\\PosInt} \\to \\Bin^\\omega$ را با قراردادنِ\n$f(Z)$ برابر دنبالهٔ $s$ تعریف کنید، به‌گونه‌ای که $s(n) = 1$ اگر و تنها\nاگر $n \\in Z$، و در غیر این صورت $s(n) = 0$. این امر به‌روشنی تابعی\nتعریف می‌کند، زیرا هرگاه $Z \\subseteq \\PosInt$، هر $n \\in \\PosInt$ یا\nعضوی از $Z$ است یا نیست. برای نمونه، مجموعهٔ $2\\PosInt = \\{2,\n4, 6, \\dots\\}$ از اعداد صحیح مثبت زوج به دنبالهٔ $010101\\dots$ نگاشته\nمی‌شود، مجموعهٔ تهی به $0000\\dots$ و خود مجموعهٔ $\\PosInt$ به\n$1111\\dots$ نگاشته می‌شود.\n\\emph{یادداشت ویراستاری:} زیرنویسِ بی‌مرجعِ نام دنباله در متن مبدأ حذف شده است.\nاین دنباله را عضویت یا عدم عضویت در مجموعهٔ ورودی تعیین می‌کند؛\nتعریف به فهرستی از همهٔ دنباله‌های دودویی نیاز ندارد.\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 273,
+          "token": "!!a{element}",
+          "realization": "عضو"
+        }
+      ],
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 273,
+          "token": "!!a{element}",
+          "realization": "عضو"
+        }
+      ]
+    },
+    {
+      "topic": "Surjectivity via selected positions",
+      "canon": [
+        "FA-OL-CANON-0005:P0115",
+        "FA-REL-P046"
+      ],
+      "rationale": "Unpack nested relative clauses: subset members are exactly the indices where s is1. Preserve set comprehension and iff correspondence; no arbitrary preimage selection or reversal.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not calibrated probability. Source meaning and the relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0034-C08",
+      "unit": "OLP-0034",
+      "source": {
+        "char_start": 2613,
+        "char_end_exclusive": 3026,
+        "line_start": 60,
+        "line_end": 71,
+        "text": "It also is !!{surjective}: Every sequence of $0$s and $1$s corresponds\nto some set of positive integers, namely the one which has as its\nmembers those integers corresponding to the places where the sequence\nhas~$1$s. More precisely, suppose $s \\in \\Bin^\\omega$.  Define $Z\n\\subseteq \\PosInt$ by:\n\\[\nZ = \\Setabs{n \\in \\PosInt}{s(n) = 1}\n\\]\nThen $f(Z) = s$, as can be verified by consulting the definition\nof~$f$.\n\n",
+        "sha256": "9a379e8f2beef178d26274bae97b6d284cc31f6954975b9cc4a4b18a501fff4a"
+      },
+      "target_before": {
+        "char_start": 2575,
+        "char_end_exclusive": 2990,
+        "line_start": 60,
+        "line_end": 70,
+        "text": "این تابع همچنین !!{surjective} است: هر دنباله از $0$ها و $1$ها با\nمجموعه‌ای از اعداد صحیح مثبت متناظر است؛ همان مجموعه‌ای که اعضایش\nاعداد صحیحِ متناظر با جایگاه‌هایی هستند که دنباله در آن‌ها مقدار~$1$\nدارد. دقیق‌تر بگوییم، فرض کنید $s \\in \\Bin^\\omega$. مجموعهٔ $Z\n\\subseteq \\PosInt$ را چنین تعریف کنید:\n\\[\nZ = \\Setabs{n \\in \\PosInt}{s(n) = 1}\n\\]\nآنگاه $f(Z) = s$؛ این را می‌توان با مراجعه به تعریفِ~$f$ بررسی کرد.\n\n",
+        "sha256": "c475f4d08495a99e12c50901cc9bb6678b93cf3d4d204a342173dec7e43f4257"
+      },
+      "target_after": {
+        "char_start": 2967,
+        "char_end_exclusive": 3365,
+        "line_start": 66,
+        "line_end": 75,
+        "text": "این تابع همچنین !!{surjective} است: هر دنباله از $0$ها و $1$ها با\nمجموعه‌ای از اعداد صحیح مثبت متناظر است؛ اعضای این مجموعه دقیقاً شمارهٔ\nجایگاه‌هایی هستند که مقدار دنباله در آن‌ها~$1$ است. دقیق‌تر بگوییم، فرض کنید $s \\in \\Bin^\\omega$. مجموعهٔ $Z\n\\subseteq \\PosInt$ را چنین تعریف کنید:\n\\[\nZ = \\Setabs{n \\in \\PosInt}{s(n) = 1}\n\\]\nآنگاه $f(Z) = s$؛ این را می‌توان با مراجعه به تعریفِ~$f$ بررسی کرد.\n\n",
+        "sha256": "7cd66fb162385b74c8c66042d157a65cfceddcc71aae0bbd1bb7c67b0417bd0e"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "این تابع همچنین پوشا است: هر دنباله از $0$ها و $1$ها با\nمجموعه‌ای از اعداد صحیح مثبت متناظر است؛ اعضای این مجموعه دقیقاً شمارهٔ\nجایگاه‌هایی هستند که مقدار دنباله در آن‌ها~$1$ است. دقیق‌تر بگوییم، فرض کنید $s \\in \\Bin^\\omega$. مجموعهٔ $Z\n\\subseteq \\PosInt$ را چنین تعریف کنید:\n\\[\nZ = \\Setabs{n \\in \\PosInt}{s(n) = 1}\n\\]\nآنگاه $f(Z) = s$؛ این را می‌توان با مراجعه به تعریفِ~$f$ بررسی کرد.\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 16,
+          "token": "!!{surjective}",
+          "realization": "پوشا"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Composition really covers all sequences",
+      "canon": [
+        "FA-REL-P046",
+        "FA-REL-P050",
+        "FA-OL-CANON-0005:P0115"
+      ],
+      "rationale": "Make explicit that the required input set occurs in the assumed enumeration. Thus every output appears. This fills an expository compression, not a new axiom or proof-gap accusation.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not calibrated probability. Source meaning and the relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0034-C09",
+      "unit": "OLP-0034",
+      "source": {
+        "char_start": 3026,
+        "char_end_exclusive": 3282,
+        "line_start": 71,
+        "line_end": 79,
+        "text": "Now consider the list\n\\[\nf(Z_1), f(Z_2), f(Z_3), \\dots\n\\]\nSince $f$ is !!{surjective}, every member of $\\Bin^\\omega$ must\nappear as a value of~$f$ for some argument, and so must appear on the\nlist. This list must therefore enumerate all of~$\\Bin^\\omega$.\n\n",
+        "sha256": "6b33a12f7a35cd4178555d3259e16128887acd13840a821c18f0ef7be6978e7d"
+      },
+      "target_before": {
+        "char_start": 2990,
+        "char_end_exclusive": 3240,
+        "line_start": 70,
+        "line_end": 78,
+        "text": "اکنون فهرست زیر را در نظر بگیرید:\n\\[\nf(Z_1), f(Z_2), f(Z_3), \\dots\n\\]\nچون $f$ !!{surjective} است، هر عضوِ $\\Bin^\\omega$ باید برای ورودی‌ای\nبه‌عنوان مقدارِ~$f$ ظاهر شود و بنابراین باید در فهرست بیاید. پس این\nفهرست باید همهٔ~$\\Bin^\\omega$ را برشمارد.\n\n",
+        "sha256": "df992718d3b1ae90de042aadfa3355e174a3dedd73c1557d23a5fd408379e051"
+      },
+      "target_after": {
+        "char_start": 3365,
+        "char_end_exclusive": 3679,
+        "line_start": 75,
+        "line_end": 84,
+        "text": "اکنون فهرست زیر را در نظر بگیرید:\n\\[\nf(Z_1), f(Z_2), f(Z_3), \\dots\n\\]\nچون $f$ !!{surjective} است، هر عضوِ $\\Bin^\\omega$ باید برای ورودی‌ای\nبه‌عنوان مقدارِ~$f$ ظاهر شود. آن ورودی نیز در برشماریِ مجموعه‌های ورودی\nمی‌آید؛ بنابراین مقدار تابع در فهرست بالا خواهد آمد. پس این\nفهرست باید همهٔ~$\\Bin^\\omega$ را برشمارد.\n\n",
+        "sha256": "66353f49329a65a68800c89ce0aad7aed17704e804d502a551637ce6abbaedab"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "اکنون فهرست زیر را در نظر بگیرید:\n\\[\nf(Z_1), f(Z_2), f(Z_3), \\dots\n\\]\nچون $f$ پوشا است، هر عضوِ $\\Bin^\\omega$ باید برای ورودی‌ای\nبه‌عنوان مقدارِ~$f$ ظاهر شود. آن ورودی نیز در برشماریِ مجموعه‌های ورودی\nمی‌آید؛ بنابراین مقدار تابع در فهرست بالا خواهد آمد. پس این\nفهرست باید همهٔ~$\\Bin^\\omega$ را برشمارد.\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 78,
+          "token": "!!{surjective}",
+          "realization": "پوشا"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Contradiction with the previous theorem",
+      "canon": [
+        "FA-OL-CANON-0005:P0115",
+        "FA-OL-CANON-0003:P0053"
+      ],
+      "rationale": "Retain implication and contradiction with nonenum-bin-omega and both repeated predicates; the conclusion is about the power set, not its individual elements.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not calibrated probability. Source meaning and the relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0034-C10",
+      "unit": "OLP-0034",
+      "source": {
+        "char_start": 3282,
+        "char_end_exclusive": 3499,
+        "line_start": 79,
+        "line_end": 85,
+        "text": "So if $\\Pow{\\PosInt}$ were !!{enumerable}, $\\Bin^\\omega$ would be\n!!{enumerable}.  But $\\Bin^\\omega$ is !!{nonenumerable}\n(\\olref[nen]{thm:nonenum-bin-omega}). Hence $\\Pow{\\PosInt}$ is\n!!{nonenumerable}.\n\\end{proof}\n\n",
+        "sha256": "b7ea536956614103781c2204e21f1caad57449135e61f7819f6954441a9aa6da"
+      },
+      "target_before": {
+        "char_start": 3240,
+        "char_end_exclusive": 3463,
+        "line_start": 78,
+        "line_end": 84,
+        "text": "بنابراین اگر $\\Pow{\\PosInt}$ !!{enumerable} بود، $\\Bin^\\omega$ نیز\n!!{enumerable} می‌بود. اما $\\Bin^\\omega$ !!{nonenumerable} است\n(\\olref[nen]{thm:nonenum-bin-omega}). پس $\\Pow{\\PosInt}$\n!!{nonenumerable} است.\n\\end{proof}\n\n",
+        "sha256": "9ff45ba3b369aad9c52be4d78f3d1be8222d744122e7ecfe081e9cbfdf9815b0"
+      },
+      "target_after": {
+        "char_start": 3679,
+        "char_end_exclusive": 3902,
+        "line_start": 84,
+        "line_end": 90,
+        "text": "بنابراین اگر $\\Pow{\\PosInt}$ !!{enumerable} بود، $\\Bin^\\omega$ نیز\n!!{enumerable} می‌بود. اما $\\Bin^\\omega$ !!{nonenumerable} است\n(\\olref[nen]{thm:nonenum-bin-omega}). پس $\\Pow{\\PosInt}$\n!!{nonenumerable} است.\n\\end{proof}\n\n",
+        "sha256": "9ff45ba3b369aad9c52be4d78f3d1be8222d744122e7ecfe081e9cbfdf9815b0"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "بنابراین اگر $\\Pow{\\PosInt}$ شمارا بود، $\\Bin^\\omega$ نیز\nشمارا می‌بود. اما $\\Bin^\\omega$ ناشمارا است\n(\\olref[nen]{thm:nonenum-bin-omega}). پس $\\Pow{\\PosInt}$\nناشمارا است.\n\\end{proof}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 29,
+          "token": "!!{enumerable}",
+          "realization": "شمارا"
+        },
+        {
+          "character_offset_in_segment": 67,
+          "token": "!!{enumerable}",
+          "realization": "شمارا"
+        },
+        {
+          "character_offset_in_segment": 108,
+          "token": "!!{nonenumerable}",
+          "realization": "ناشمارا"
+        },
+        {
+          "character_offset_in_segment": 187,
+          "token": "!!{nonenumerable}",
+          "realization": "ناشمارا"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Wrong direction and repaired constant map",
+      "canon": [
+        "FA-REL-P046",
+        "FA-REL-P050",
+        "FA-OL-CANON-0005:P0115"
+      ],
+      "rationale": "Projection of sequence to first bit is onto a finite set and proves nothing about nonenumerability of that codomain. If f is not onto, its output list misses elements. Repair the invalid finite-string type by appending an explicitly infinite zero tail: h maps each n to the same infinite zero sequence, so omits the all-one sequence. Keep the n-zero underbrace as a finite prefix, and disclose its source error.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not calibrated probability. Source meaning and the relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0034-C11",
+      "unit": "OLP-0034",
+      "source": {
+        "char_start": 3499,
+        "char_end_exclusive": 4339,
+        "line_start": 85,
+        "line_end": 103,
+        "text": "\\begin{explain}\nIt is easy to be confused about the direction the reduction goes in.\nFor instance, !!a{surjective} function $g \\colon \\Bin^\\omega \\to B$\ndoes \\emph{not} establish that $B$ is !!{nonenumerable}.  (Consider $g\n\\colon \\Bin^\\omega \\to \\Bin$ defined by $g(s) = s(1)$, the function\nthat maps a sequence of $0$'s and $1$'s to its first !!{element}.  It\nis !!{surjective}, because some sequences start with $0$ and some start\nwith $1$. But $\\Bin$ is finite.)  Note also that the function~$f$ must\nbe !!{surjective}, or otherwise the argument does not go through:\n$f(x_1)$, $f(x_2)$, \\dots{} would then not be guaranteed to include\nall the !!{element}s of~$B$. For instance, \n\\[\nh(n) = \\underbrace{000\\dots0}_{\\text{$n$ $0$'s}}\n\\]\ndefines a function $h\\colon \\PosInt \\to\n\\Bin^\\omega$, but $\\PosInt$ is !!{enumerable}.\n\\end{explain}\n\n",
+        "sha256": "12c8ce097c8885ad28c68cb6f5983a95932a27701b7659a76445b0b80f539d9d"
+      },
+      "target_before": {
+        "char_start": 3463,
+        "char_end_exclusive": 4268,
+        "line_start": 84,
+        "line_end": 102,
+        "text": "\\begin{explain}\nممکن است جهت کاهش به‌آسانی موجب سردرگمی شود. برای نمونه، تابعی\n!!a{surjective} مانند $g \\colon \\Bin^\\omega \\to B$ \\emph{ثابت نمی‌کند}\nکه $B$ !!{nonenumerable} است. (تابع $g\n\\colon \\Bin^\\omega \\to \\Bin$ را در نظر بگیرید که با $g(s) = s(1)$\nتعریف می‌شود و هر دنباله از $0$ها و $1$ها را به نخستین !!{element} آن\nمی‌نگارد. این تابع !!{surjective} است، زیرا بعضی دنباله‌ها با $0$ و\nبعضی با $1$ آغاز می‌شوند؛ اما $\\Bin$ متناهی است.) همچنین توجه کنید که\nتابع~$f$ باید !!{surjective} باشد، وگرنه استدلال پیش نمی‌رود:\nفهرستِ $f(x_1)$، $f(x_2)$، \\dots{} در آن صورت تضمین نمی‌کند که همهٔ\n!!{element}s را در~$B$ شامل شود. برای نمونه،\n\\[\nh(n) = \\underbrace{000\\dots0}_{\\text{$n$ تا $0$}}\n\\]\nتابعی به‌صورت $h\\colon \\PosInt \\to\n\\Bin^\\omega$ تعریف می‌کند، اما $\\PosInt$ !!{enumerable} است.\n\\end{explain}\n\n",
+        "sha256": "e4e05f994311f7473039e5d39d6e1c9459c837e75a9f8b2ca5a4338d4ed8bb98"
+      },
+      "target_after": {
+        "char_start": 3902,
+        "char_end_exclusive": 5035,
+        "line_start": 90,
+        "line_end": 113,
+        "text": "\\begin{explain}\nممکن است جهت کاهش به‌آسانی موجب سردرگمی شود. برای نمونه، تابعی\n!!a{surjective} مانند $g \\colon \\Bin^\\omega \\to B$ \\emph{ثابت نمی‌کند}\nکه $B$ !!{nonenumerable} است. (تابع $g\n\\colon \\Bin^\\omega \\to \\Bin$ را در نظر بگیرید که با $g(s) = s(1)$\nتعریف می‌شود و هر دنباله از $0$ها و $1$ها را به نخستین !!{element} آن\nمی‌نگارد. این تابع !!{surjective} است، زیرا بعضی دنباله‌ها با $0$ و\nبعضی با $1$ آغاز می‌شوند؛ اما $\\Bin$ متناهی است.) همچنین توجه کنید که\nتابع~$f$ باید !!{surjective} باشد، وگرنه استدلال پیش نمی‌رود:\nفهرستِ $f(x_1)$، $f(x_2)$، \\dots{} در آن صورت همهٔ\nاعضای~$B$ را در بر نمی‌گیرد. برای نمونه، دنبالهٔ زیر را در نظر بگیرید که\nپس از صفرهای نشان‌داده‌شده نیز در همهٔ جایگاه‌ها صفر است:\n\\[\nh(n) = \\underbrace{000\\dots0}_{\\text{$n$ تا $0$}}\\dots\n\\]\nتابعی به‌صورت $h\\colon \\PosInt \\to\n\\Bin^\\omega$ تعریف می‌کند، اما $\\PosInt$ !!{enumerable} است.\n\\emph{یادداشت ویراستاری:} در متن مبدأ فقط تعداد متناهی صفر نوشته شده بود،\nکه عضوی از مجموعهٔ دنباله‌های نامتناهی نیست. در اینجا ادامهٔ نامتناهیِ\nصفرها تصریح شده است. تابع حاصل ثابت است و، مثلاً، دنبالهٔ تماماً یک را\nدر برد خود ندارد؛ بنابراین پوشا نیست.\n\\end{explain}\n\n",
+        "sha256": "3606637105a76d3c1c19a2ece8252d1aa5010d08f130aa9a1ab2ff529587a58a"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{explain}\nممکن است جهت کاهش به‌آسانی موجب سردرگمی شود. برای نمونه، تابعی\nپوشا مانند $g \\colon \\Bin^\\omega \\to B$ \\emph{ثابت نمی‌کند}\nکه $B$ ناشمارا است. (تابع $g\n\\colon \\Bin^\\omega \\to \\Bin$ را در نظر بگیرید که با $g(s) = s(1)$\nتعریف می‌شود و هر دنباله از $0$ها و $1$ها را به نخستین عضو آن\nمی‌نگارد. این تابع پوشا است، زیرا بعضی دنباله‌ها با $0$ و\nبعضی با $1$ آغاز می‌شوند؛ اما $\\Bin$ متناهی است.) همچنین توجه کنید که\nتابع~$f$ باید پوشا باشد، وگرنه استدلال پیش نمی‌رود:\nفهرستِ $f(x_1)$، $f(x_2)$، \\dots{} در آن صورت همهٔ\nاعضای~$B$ را در بر نمی‌گیرد. برای نمونه، دنبالهٔ زیر را در نظر بگیرید که\nپس از صفرهای نشان‌داده‌شده نیز در همهٔ جایگاه‌ها صفر است:\n\\[\nh(n) = \\underbrace{000\\dots0}_{\\text{$n$ تا $0$}}\\dots\n\\]\nتابعی به‌صورت $h\\colon \\PosInt \\to\n\\Bin^\\omega$ تعریف می‌کند، اما $\\PosInt$ شمارا است.\n\\emph{یادداشت ویراستاری:} در متن مبدأ فقط تعداد متناهی صفر نوشته شده بود،\nکه عضوی از مجموعهٔ دنباله‌های نامتناهی نیست. در اینجا ادامهٔ نامتناهیِ\nصفرها تصریح شده است. تابع حاصل ثابت است و، مثلاً، دنبالهٔ تماماً یک را\nدر برد خود ندارد؛ بنابراین پوشا نیست.\n\\end{explain}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 79,
+          "token": "!!a{surjective}",
+          "realization": "پوشا"
+        },
+        {
+          "character_offset_in_segment": 157,
+          "token": "!!{nonenumerable}",
+          "realization": "ناشمارا"
+        },
+        {
+          "character_offset_in_segment": 310,
+          "token": "!!{element}",
+          "realization": "عضو"
+        },
+        {
+          "character_offset_in_segment": 344,
+          "token": "!!{surjective}",
+          "realization": "پوشا"
+        },
+        {
+          "character_offset_in_segment": 477,
+          "token": "!!{surjective}",
+          "realization": "پوشا"
+        },
+        {
+          "character_offset_in_segment": 844,
+          "token": "!!{enumerable}",
+          "realization": "شمارا"
+        }
+      ],
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 310,
+          "token": "!!{element}",
+          "realization": "عضو"
+        }
+      ]
+    },
+    {
+      "topic": "Sets of pairs exercise",
+      "canon": [
+        "FA-OL-CANON-0005:P0115",
+        "FA-REL-P046"
+      ],
+      "rationale": "Preserve emphasized sets OF pairs; the object is Pow(PosInt×PosInt), not the countable Cartesian product itself. A fixed-column slice validates the reduction without entering a solution.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not calibrated probability. Source meaning and the relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0034-C12",
+      "unit": "OLP-0034",
+      "source": {
+        "char_start": 4339,
+        "char_end_exclusive": 4477,
+        "line_start": 103,
+        "line_end": 108,
+        "text": "\\begin{prob}\nShow that the set of all \\emph{sets of} pairs of positive integers is\n!!{nonenumerable} by a reduction argument.\n\\end{prob}\n\n",
+        "sha256": "572bc497055437b9cd26a9049a81eb7aac4c39de93e1cd03053fb133200c3d19"
+      },
+      "target_before": {
+        "char_start": 4268,
+        "char_end_exclusive": 4402,
+        "line_start": 102,
+        "line_end": 107,
+        "text": "\\begin{prob}\nبا استدلالی کاهشی نشان دهید که مجموعهٔ همهٔ \\emph{مجموعه‌های} زوج‌های\nاعداد صحیح مثبت !!{nonenumerable} است.\n\\end{prob}\n\n",
+        "sha256": "2f810e82f945d994d5299440f656fce6c6de1edc571b3e8133bce93acd05f941"
+      },
+      "target_after": {
+        "char_start": 5035,
+        "char_end_exclusive": 5169,
+        "line_start": 113,
+        "line_end": 118,
+        "text": "\\begin{prob}\nبا استدلالی کاهشی نشان دهید که مجموعهٔ همهٔ \\emph{مجموعه‌های} زوج‌های\nاعداد صحیح مثبت !!{nonenumerable} است.\n\\end{prob}\n\n",
+        "sha256": "2f810e82f945d994d5299440f656fce6c6de1edc571b3e8133bce93acd05f941"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{prob}\nبا استدلالی کاهشی نشان دهید که مجموعهٔ همهٔ \\emph{مجموعه‌های} زوج‌های\nاعداد صحیح مثبت ناشمارا است.\n\\end{prob}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 99,
+          "token": "!!{nonenumerable}",
+          "realization": "ناشمارا"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "All natural-number functions exercise",
+      "canon": [
+        "FA-OL-CANON-0005:P0115",
+        "FA-REL-P046",
+        "FA-OL-CANON-0001:P0082"
+      ],
+      "rationale": "Preserve all functions Nat→Nat and the hinted surjection X→Bin^omega. Zero versus positive indexing is handled in the review, not by changing source types.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not calibrated probability. Source meaning and the relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0034-C13",
+      "unit": "OLP-0034",
+      "source": {
+        "char_start": 4477,
+        "char_end_exclusive": 4710,
+        "line_start": 108,
+        "line_end": 114,
+        "text": "\\begin{prob}\\label{sfr:siz:red:prob:nat-nat}\n  Show that the set~$X$ of all functions $f\\colon \\Nat \\to \\Nat$ is\n  !!{nonenumerable} by a reduction argument (Hint: give a surjective\n  function from $X$ to~$\\Bin^\\omega$.)\n\\end{prob}\n\n",
+        "sha256": "68429b87b5bd84275f34947c60c6d31caa8162df9094cd64da0e90407f2ea4cb"
+      },
+      "target_before": {
+        "char_start": 4402,
+        "char_end_exclusive": 4620,
+        "line_start": 107,
+        "line_end": 113,
+        "text": "\\begin{prob}\\label{sfr:siz:red:prob:nat-nat}\n  با استدلالی کاهشی نشان دهید مجموعهٔ~$X$ از همهٔ توابع\n  $f\\colon \\Nat \\to \\Nat$ !!{nonenumerable} است. (راهنمایی: تابعی پوشا\n  از $X$ به~$\\Bin^\\omega$ بدهید.)\n\\end{prob}\n\n",
+        "sha256": "711af4f170db6ffb60bde16375d89c249062558ce12eb3cddb4672467080020d"
+      },
+      "target_after": {
+        "char_start": 5169,
+        "char_end_exclusive": 5387,
+        "line_start": 118,
+        "line_end": 124,
+        "text": "\\begin{prob}\\label{sfr:siz:red:prob:nat-nat}\n  با استدلالی کاهشی نشان دهید مجموعهٔ~$X$ از همهٔ توابع\n  $f\\colon \\Nat \\to \\Nat$ !!{nonenumerable} است. (راهنمایی: تابعی پوشا\n  از $X$ به~$\\Bin^\\omega$ بدهید.)\n\\end{prob}\n\n",
+        "sha256": "711af4f170db6ffb60bde16375d89c249062558ce12eb3cddb4672467080020d"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{prob}\\label{sfr:siz:red:prob:nat-nat}\n  با استدلالی کاهشی نشان دهید مجموعهٔ~$X$ از همهٔ توابع\n  $f\\colon \\Nat \\to \\Nat$ ناشمارا است. (راهنمایی: تابعی پوشا\n  از $X$ به~$\\Bin^\\omega$ بدهید.)\n\\end{prob}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 127,
+          "token": "!!{nonenumerable}",
+          "realization": "ناشمارا"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Infinite natural-number sequences exercise",
+      "canon": [
+        "FA-OL-CANON-0005:P0115",
+        "FA-REL-P046"
+      ],
+      "rationale": "All infinite Nat-valued sequences, not finite strings or only binary sequences. Pointwise parity is an explicit onto reduction.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not calibrated probability. Source meaning and the relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0034-C14",
+      "unit": "OLP-0034",
+      "source": {
+        "char_start": 4710,
+        "char_end_exclusive": 4856,
+        "line_start": 114,
+        "line_end": 119,
+        "text": "\\begin{prob}\nShow that $\\Nat^\\omega$, the set of infinite sequences of\nnatural numbers, is !!{nonenumerable} by a reduction argument.\n\\end{prob}\n\n",
+        "sha256": "afb2be7bc25d3f31caa3e05b92aeb39cee32f5b586f34e17e5034acd7d28797f"
+      },
+      "target_before": {
+        "char_start": 4620,
+        "char_end_exclusive": 4758,
+        "line_start": 113,
+        "line_end": 118,
+        "text": "\\begin{prob}\nبا استدلالی کاهشی نشان دهید $\\Nat^\\omega$، یعنی مجموعهٔ دنباله‌های\nنامتناهیِ اعداد طبیعی، !!{nonenumerable} است.\n\\end{prob}\n\n",
+        "sha256": "2aa79b5aaaffa168acce9ec6770465df416c78ebca0d3efd5d77927f39516d2b"
+      },
+      "target_after": {
+        "char_start": 5387,
+        "char_end_exclusive": 5525,
+        "line_start": 124,
+        "line_end": 129,
+        "text": "\\begin{prob}\nبا استدلالی کاهشی نشان دهید $\\Nat^\\omega$، یعنی مجموعهٔ دنباله‌های\nنامتناهیِ اعداد طبیعی، !!{nonenumerable} است.\n\\end{prob}\n\n",
+        "sha256": "2aa79b5aaaffa168acce9ec6770465df416c78ebca0d3efd5d77927f39516d2b"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{prob}\nبا استدلالی کاهشی نشان دهید $\\Nat^\\omega$، یعنی مجموعهٔ دنباله‌های\nنامتناهیِ اعداد طبیعی، ناشمارا است.\n\\end{prob}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 103,
+          "token": "!!{nonenumerable}",
+          "realization": "ناشمارا"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Total versus partial zero-valued functions",
+      "canon": [
+        "FA-OL-CANON-0003:P0051",
+        "FA-REL-P046",
+        "FA-OL-CANON-0001:P0082"
+      ],
+      "rationale": "Explicitly say the P functions are everywhere defined, contrasting Q partial. Output values are always0 but the varying domains encode arbitrary subsets. Include nowhere-defined and total cases; no effective-domain restriction.",
+      "question": "جزئی is the established local chapter label, not directly attested on these seven pages. Source definition and actual algorithm/output contrast justify the distinction; no invented term quotation.",
+      "confidence": 2,
+      "alternatives": "همه‌جا تعریف‌شده unpacks total, rather than replace جزئی with ناقص, which can suggest a defective function.",
+      "confidence_reason": "Editorial0–3, not calibrated probability. Source meaning checked; the stated exact-label or register attestation gap remains.",
+      "id": "FA-0034-C15",
+      "unit": "OLP-0034",
+      "source": {
+        "char_start": 4856,
+        "char_end_exclusive": 5196,
+        "line_start": 119,
+        "line_end": 127,
+        "text": "\\begin{prob}\nLet $P$ be the set of functions from the set of positive\nintegers to the set $\\{0\\}$, and let $Q$ be the set of \\emph{partial}\nfunctions from the set of positive integers to the set $\\{0\\}$. Show\nthat $P$~is !!{enumerable} and $Q$~is not. (Hint: reduce the problem\nof enumerating $\\Bin^\\omega$ to enumerating~$Q$).\n\\end{prob}\n\n",
+        "sha256": "e6fde28d52fbea65459aa98415c29d3a21f44f0b18c8e21536678b527eef4480"
+      },
+      "target_before": {
+        "char_start": 4758,
+        "char_end_exclusive": 5067,
+        "line_start": 118,
+        "line_end": 126,
+        "text": "\\begin{prob}\nفرض کنید $P$ مجموعهٔ توابع از مجموعهٔ اعداد صحیح مثبت به مجموعهٔ\n$\\{0\\}$ باشد و $Q$ مجموعهٔ توابع \\emph{جزئی} از مجموعهٔ اعداد صحیح\nمثبت به مجموعهٔ $\\{0\\}$ باشد. نشان دهید $P$~!!{enumerable} است و\n$Q$~نیست. (راهنمایی: مسئلهٔ برشمردن $\\Bin^\\omega$ را به مسئلهٔ\nبرشمردن~$Q$ کاهش دهید.)\n\\end{prob}\n\n",
+        "sha256": "100925894e25ddf0c61943972818af3cc0c5653ca7de12077c223263c432b6bd"
+      },
+      "target_after": {
+        "char_start": 5525,
+        "char_end_exclusive": 5852,
+        "line_start": 129,
+        "line_end": 137,
+        "text": "\\begin{prob}\nفرض کنید $P$ مجموعهٔ توابعِ همه‌جا تعریف‌شده از مجموعهٔ اعداد صحیح مثبت به مجموعهٔ\n$\\{0\\}$ باشد و $Q$ مجموعهٔ توابع \\emph{جزئی} از مجموعهٔ اعداد صحیح\nمثبت به مجموعهٔ $\\{0\\}$ باشد. نشان دهید $P$~!!{enumerable} است و\n$Q$~نیست. (راهنمایی: مسئلهٔ برشمردن $\\Bin^\\omega$ را به مسئلهٔ\nبرشمردن~$Q$ کاهش دهید.)\n\\end{prob}\n\n",
+        "sha256": "1fdb4badd3033cff443888eb877d644cea713e6d118cb4ddcff8690bd4fa21b5"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{prob}\nفرض کنید $P$ مجموعهٔ توابعِ همه‌جا تعریف‌شده از مجموعهٔ اعداد صحیح مثبت به مجموعهٔ\n$\\{0\\}$ باشد و $Q$ مجموعهٔ توابع \\emph{جزئی} از مجموعهٔ اعداد صحیح\nمثبت به مجموعهٔ $\\{0\\}$ باشد. نشان دهید $P$~شمارا است و\n$Q$~نیست. (راهنمایی: مسئلهٔ برشمردن $\\Bin^\\omega$ را به مسئلهٔ\nبرشمردن~$Q$ کاهش دهید.)\n\\end{prob}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 207,
+          "token": "!!{enumerable}",
+          "realization": "شمارا"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "All onto binary-valued functions exercise",
+      "canon": [
+        "FA-REL-P046",
+        "FA-OL-CANON-0005:P0115"
+      ],
+      "rationale": "Preserve surjectivity in both occurrences and the set0,1. A prefix0,1 followed by an arbitrary binary sequence proves the exercise; do not forget to force both outputs or insert solution.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not calibrated probability. Source meaning and the relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0034-C16",
+      "unit": "OLP-0034",
+      "source": {
+        "char_start": 5196,
+        "char_end_exclusive": 5432,
+        "line_start": 127,
+        "line_end": 134,
+        "text": "\\begin{prob}\nLet $S$ be the set of all !!{surjective} functions from the set of\npositive integers to the set \\{0,1\\}, i.e., $S$ consists of all\n!!{surjective}~$f\\colon \\PosInt \\to \\Bin$.  Show that $S$ is\n!!{nonenumerable}.\n\\end{prob}\n\n",
+        "sha256": "ed181ae07928fe89908a34ff1a564bd2ff3e6623ae0274214a5a45331941e129"
+      },
+      "target_before": {
+        "char_start": 5067,
+        "char_end_exclusive": 5307,
+        "line_start": 126,
+        "line_end": 133,
+        "text": "\\begin{prob}\nفرض کنید $S$ مجموعهٔ همهٔ توابع !!{surjective} از مجموعهٔ اعداد صحیح\nمثبت به مجموعهٔ \\{0,1\\} باشد؛ یعنی $S$ از همهٔ توابع\n!!{surjective}~$f\\colon \\PosInt \\to \\Bin$ تشکیل می‌شود. نشان دهید $S$\n!!{nonenumerable} است.\n\\end{prob}\n\n",
+        "sha256": "7d5840ce1c5a0c2ea8a3970bb142b54848b5bf58d8a21f3adef853665830b3f9"
+      },
+      "target_after": {
+        "char_start": 5852,
+        "char_end_exclusive": 6092,
+        "line_start": 137,
+        "line_end": 144,
+        "text": "\\begin{prob}\nفرض کنید $S$ مجموعهٔ همهٔ توابع !!{surjective} از مجموعهٔ اعداد صحیح\nمثبت به مجموعهٔ \\{0,1\\} باشد؛ یعنی $S$ از همهٔ توابع\n!!{surjective}~$f\\colon \\PosInt \\to \\Bin$ تشکیل می‌شود. نشان دهید $S$\n!!{nonenumerable} است.\n\\end{prob}\n\n",
+        "sha256": "7d5840ce1c5a0c2ea8a3970bb142b54848b5bf58d8a21f3adef853665830b3f9"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{prob}\nفرض کنید $S$ مجموعهٔ همهٔ توابع پوشا از مجموعهٔ اعداد صحیح\nمثبت به مجموعهٔ \\{0,1\\} باشد؛ یعنی $S$ از همهٔ توابع\nپوشا~$f\\colon \\PosInt \\to \\Bin$ تشکیل می‌شود. نشان دهید $S$\nناشمارا است.\n\\end{prob}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 45,
+          "token": "!!{surjective}",
+          "realization": "پوشا"
+        },
+        {
+          "character_offset_in_segment": 135,
+          "token": "!!{surjective}",
+          "realization": "پوشا"
+        },
+        {
+          "character_offset_in_segment": 205,
+          "token": "!!{nonenumerable}",
+          "realization": "ناشمارا"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Real numbers exercise",
+      "canon": [
+        "FA-OL-CANON-0005:P0114",
+        "FA-OL-CANON-0005:P0115"
+      ],
+      "rationale": "Retain all real numbers and nonenumerability. Reviewed ternary0/2 injection avoids binary expansion collisions; the canon’s cardinal equality is not misquoted as uniqueness of binary expansions.",
+      "question": null,
+      "confidence": 3,
+      "alternatives": "",
+      "confidence_reason": "Editorial0–3, not calibrated probability. Source meaning and the relevant scholarly construction checked; no material unresolved alternative.",
+      "id": "FA-0034-C17",
+      "unit": "OLP-0034",
+      "source": {
+        "char_start": 5432,
+        "char_end_exclusive": 5525,
+        "line_start": 134,
+        "line_end": 138,
+        "text": "\\begin{prob}\nShow that the set~$\\Real$ of all real numbers is !!{nonenumerable}.\n\\end{prob}\n\n",
+        "sha256": "348fe2a0742f7e81cbbe5505deaf54c13777bfe8566207918d3ba9edc0ca944b"
+      },
+      "target_before": {
+        "char_start": 5307,
+        "char_end_exclusive": 5401,
+        "line_start": 133,
+        "line_end": 137,
+        "text": "\\begin{prob}\nنشان دهید مجموعهٔ~$\\Real$ از همهٔ اعداد حقیقی !!{nonenumerable} است.\n\\end{prob}\n\n",
+        "sha256": "d9c9c724af5abd866d1fc29bdc006564897f489203017a8c6e729d22bc3df8b4"
+      },
+      "target_after": {
+        "char_start": 6092,
+        "char_end_exclusive": 6186,
+        "line_start": 144,
+        "line_end": 148,
+        "text": "\\begin{prob}\nنشان دهید مجموعهٔ~$\\Real$ از همهٔ اعداد حقیقی !!{nonenumerable} است.\n\\end{prob}\n\n",
+        "sha256": "d9c9c724af5abd866d1fc29bdc006564897f489203017a8c6e729d22bc3df8b4"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{prob}\nنشان دهید مجموعهٔ~$\\Real$ از همهٔ اعداد حقیقی ناشمارا است.\n\\end{prob}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 59,
+          "token": "!!{nonenumerable}",
+          "realization": "ناشمارا"
+        }
+      ],
+      "member_occurrences": []
+    }
+  ],
+  "corrections": [
+    {
+      "unit": "OLP-0033",
+      "id": "FA0033-EDITORIAL-SENTENCE-END",
+      "before": "\\olref[enm-alt]{sec} باشد",
+      "after": "\\olref[enm-alt]{sec} باشد."
+    },
+    {
+      "unit": "OLP-0033",
+      "id": "FA0033-NONEMPTY-CRITERION",
+      "before": "باشد. برای هر مجموعهٔ !!{enumerable} مانند~$A$ تابعی !!a{surjective}",
+      "after": "باشد. برای هر مجموعهٔ ناتهی و !!{enumerable} مانند~$A$ تابعی !!a{surjective}"
+    },
+    {
+      "unit": "OLP-0033",
+      "id": "FA0033-NONEMPTY-METHOD",
+      "before": "چگونه می‌توان ثابت کرد که مجموعه‌ای !!{nonenumerable} است؟ باید نشان\nدهید که هیچ تابع پوشایی از این نوع نمی‌تواند وجود داشته باشد.",
+      "after": "چگونه می‌توان ثابت کرد که مجموعه‌ای ناتهی !!{nonenumerable} است؟ باید نشان\nدهید که هیچ تابع پوشایی از این نوع وجود ندارد.\n\\emph{یادداشت ویراستاری:} شرط ناتهی‌بودن در بیان اولیهٔ این معیار نیامده بود.\nمجموعهٔ تهی طبق تعریف این فصل شماراست، با آنکه هیچ تابعی از اعداد صحیح مثبت\nبه آن وجود ندارد؛ پس این شرط در معیار بالا ضروری است.\n\n"
+    },
+    {
+      "unit": "OLP-0033",
+      "id": "FA0033-LIST-IDIOM-1",
+      "before": "از !!{element}sی از~$A$ ناگزیر",
+      "after": "از اعضای~$A$ ناگزیر"
+    },
+    {
+      "unit": "OLP-0033",
+      "id": "FA0033-LIST-IDIOM-2",
+      "before": "فهرستی از !!{element}sی از~$A$، مثلاً",
+      "after": "فهرستی از اعضای~$A$، مثلاً"
+    },
+    {
+      "unit": "OLP-0033",
+      "id": "FA0033-NON-GAPPY-MEANING",
+      "before": "نخستین مثال ما مجموعهٔ~$\\Bin^\\omega$ از همهٔ دنباله‌های نامتناهی و\nبدون شکافِ $0$ها و $1$هاست.",
+      "after": "نخستین مثال ما مجموعهٔ~$\\Bin^\\omega$ از همهٔ دنباله‌های نامتناهیِ\n$0$ها و $1$هاست که در هر جایگاه مقداری دارند."
+    },
+    {
+      "unit": "OLP-0033",
+      "id": "FA0033-PROOF-OPENING",
+      "before": "به قصد خلف، فرض کنید",
+      "after": "برای برهان خلف، فرض کنید"
+    },
+    {
+      "unit": "OLP-0033",
+      "id": "FA0033-COLUMN-POSITIONS",
+      "before": "\\dots مشخص می‌کنند؛ اعداد بالای آرایه، !!{element}sی را که در هریک از\nدنباله‌ها قرار دارند مشخص می‌کنند.",
+      "after": "\\dots مشخص می‌کنند؛ اعداد بالای آرایه، شمارهٔ جایگاه اعضا را در هر\nدنباله نشان می‌دهند."
+    },
+    {
+      "unit": "OLP-0033",
+      "id": "FA0033-NO-LAST-INFINITE-TERM",
+      "before": "است؛ و همین‌طور تا آخر.",
+      "after": "است؛ و به همین ترتیب."
+    },
+    {
+      "unit": "OLP-0033",
+      "id": "FA0033-DEPENDENT-DIAGONAL-IDIOM",
+      "before": "نامتناهی مانند~$\\overline{s}$ پدید می‌آورد که تضمین شده است در آن\nفهرست ظاهر نشود.",
+      "after": "نامتناهی مانند~$\\overline{s}$ به دست می‌دهد که در آن فهرست نیست."
+    },
+    {
+      "unit": "OLP-0033",
+      "id": "FA0033-ALL-COORDINATES-NOT-ALGORITHM",
+      "before": "برای تعریف $\\overline{s}$، تمام !!{element}s را یک‌به‌یک مشخص می‌کنیم؛",
+      "after": "برای تعریف $\\overline{s}$، مقدار آن را در هر جایگاه مشخص می‌کنیم؛"
+    },
+    {
+      "unit": "OLP-0033",
+      "id": "FA0033-COMPLEMENT-NOT-REVERSE",
+      "before": "صرفاً دنبالهٔ مکملِ دنباله‌ای از $0$ها و $1$هاست که بر قطر آرایهٔ ما\nظاهر می‌شوند.",
+      "after": "در دنبالهٔ روی قطر آرایه، تک‌تکِ مقدارهای $0$ و $1$ را با مقدار مقابلشان\nعوض کرده‌ایم."
+    },
+    {
+      "unit": "OLP-0033",
+      "id": "FA0033-SINGULAR-MEMBERSHIP",
+      "before": "پس $\\overline{s}$ !!a{element} از~$\\Bin^\\omega$ است.",
+      "after": "پس $\\overline{s}$ !!a{element}ی از~$\\Bin^\\omega$ است."
+    },
+    {
+      "unit": "OLP-0033",
+      "id": "FA0033-DIAGONAL-CELL-LOCATION",
+      "before": "که آرایه در سطر/ستون $j$اُم شکاف دارد، وارد مجموعه می‌کنیم.",
+      "after": "که خانهٔ واقع در سطر $j$اُم و همان ستون خالی است، وارد مجموعه می‌کنیم."
+    },
+    {
+      "unit": "OLP-0034",
+      "id": "FA0034-CHARACTERISTIC-SEQUENCE-NAME",
+      "before": "$f(Z)$ برابر دنبالهٔ $s_{k}$",
+      "after": "$f(Z)$ برابر دنبالهٔ $s$"
+    },
+    {
+      "unit": "OLP-0034",
+      "id": "FA0034-CHARACTERISTIC-ONE",
+      "before": "$s_{k}(n) = 1$",
+      "after": "$s(n) = 1$"
+    },
+    {
+      "unit": "OLP-0034",
+      "id": "FA0034-CHARACTERISTIC-ZERO",
+      "before": "$s_k(n) = 0$",
+      "after": "$s(n) = 0$"
+    },
+    {
+      "unit": "OLP-0034",
+      "id": "FA0034-NOTATION-DISCLOSURE",
+      "before": "$1111\\dots$ نگاشته می‌شود.",
+      "after": "$1111\\dots$ نگاشته می‌شود.\n\\emph{یادداشت ویراستاری:} زیرنویسِ بی‌مرجعِ نام دنباله در متن مبدأ حذف شده است.\nاین دنباله را عضویت یا عدم عضویت در مجموعهٔ ورودی تعیین می‌کند؛\nتعریف به فهرستی از همهٔ دنباله‌های دودویی نیاز ندارد."
+    },
+    {
+      "unit": "OLP-0034",
+      "id": "FA0034-SURJECTIVITY-EXPOSITION",
+      "before": "این تابع همچنین !!{surjective} است: هر دنباله از $0$ها و $1$ها با\nمجموعه‌ای از اعداد صحیح مثبت متناظر است؛ همان مجموعه‌ای که اعضایش\nاعداد صحیحِ متناظر با جایگاه‌هایی هستند که دنباله در آن‌ها مقدار~$1$\nدارد.",
+      "after": "این تابع همچنین !!{surjective} است: هر دنباله از $0$ها و $1$ها با\nمجموعه‌ای از اعداد صحیح مثبت متناظر است؛ اعضای این مجموعه دقیقاً شمارهٔ\nجایگاه‌هایی هستند که مقدار دنباله در آن‌ها~$1$ است."
+    },
+    {
+      "unit": "OLP-0034",
+      "id": "FA0034-COMPOSITION-EXPLICIT-ENUMERATION",
+      "before": "به‌عنوان مقدارِ~$f$ ظاهر شود و بنابراین باید در فهرست بیاید.",
+      "after": "به‌عنوان مقدارِ~$f$ ظاهر شود. آن ورودی نیز در برشماریِ مجموعه‌های ورودی\nمی‌آید؛ بنابراین مقدار تابع در فهرست بالا خواهد آمد."
+    },
+    {
+      "unit": "OLP-0034",
+      "id": "FA0034-NONSURJECTIVE-LIST-IDIOM",
+      "before": "فهرستِ $f(x_1)$، $f(x_2)$، \\dots{} در آن صورت تضمین نمی‌کند که همهٔ\n!!{element}s را در~$B$ شامل شود. برای نمونه،",
+      "after": "فهرستِ $f(x_1)$، $f(x_2)$، \\dots{} در آن صورت همهٔ\nاعضای~$B$ را در بر نمی‌گیرد. برای نمونه، دنبالهٔ زیر را در نظر بگیرید که\nپس از صفرهای نشان‌داده‌شده نیز در همهٔ جایگاه‌ها صفر است:"
+    },
+    {
+      "unit": "OLP-0034",
+      "id": "FA0034-INFINITE-ZERO-SEQUENCE",
+      "before": "h(n) = \\underbrace{000\\dots0}_{\\text{$n$ تا $0$}}",
+      "after": "h(n) = \\underbrace{000\\dots0}_{\\text{$n$ تا $0$}}\\dots"
+    },
+    {
+      "unit": "OLP-0034",
+      "id": "FA0034-TYPING-DISCLOSURE",
+      "before": "\\Bin^\\omega$ تعریف می‌کند، اما $\\PosInt$ !!{enumerable} است.",
+      "after": "\\Bin^\\omega$ تعریف می‌کند، اما $\\PosInt$ !!{enumerable} است.\n\\emph{یادداشت ویراستاری:} در متن مبدأ فقط تعداد متناهی صفر نوشته شده بود،\nکه عضوی از مجموعهٔ دنباله‌های نامتناهی نیست. در اینجا ادامهٔ نامتناهیِ\nصفرها تصریح شده است. تابع حاصل ثابت است و، مثلاً، دنبالهٔ تماماً یک را\nدر برد خود ندارد؛ بنابراین پوشا نیست."
+    },
+    {
+      "unit": "OLP-0034",
+      "id": "FA0034-FULL-VS-PARTIAL",
+      "before": "فرض کنید $P$ مجموعهٔ توابع از مجموعهٔ اعداد صحیح مثبت به مجموعهٔ",
+      "after": "فرض کنید $P$ مجموعهٔ توابعِ همه‌جا تعریف‌شده از مجموعهٔ اعداد صحیح مثبت به مجموعهٔ"
+    },
+    {
+      "unit": "OLP-0034",
+      "id": "FA0034-EMPTY-TRANSFER-EXCEPTION",
+      "before": "$f\\colon \\Pow{\\PosInt} \\to \\Bin^\\omega$ هستیم.",
+      "after": "$f\\colon \\Pow{\\PosInt} \\to \\Bin^\\omega$ هستیم.\n\\emph{یادداشت ویراستاری:} در بیان کلیِ بالا، اگر مجموعهٔ آغازین تهی باشد،\nپوشابودن تابع مستلزم تهی‌بودن مجموعهٔ مقصد است؛ در این حالت هر دو مجموعه\nطبق تعریف فصل شمارا هستند و به فهرست نامتناهی نیاز نیست."
+    }
+  ],
+  "human_review_gate": false,
+  "reader_release": false
+}

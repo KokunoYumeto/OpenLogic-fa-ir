@@ -1,0 +1,29 @@
+{
+  "source_commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "confirmed": [
+    {
+      "id": "FA-NEN-NONEMPTY",
+      "unit": "OLP-0033",
+      "classification": "missing hypothesis in exposition, not false theorem",
+      "repair": "Criterion restricted to nonempty sets; empty exception disclosed"
+    },
+    {
+      "id": "FA-RED-INFINITE-SEQUENCE",
+      "unit": "OLP-0034",
+      "classification": "finite string incorrectly assigned infinite-sequence codomain",
+      "repair": "Explicit infinite zero tail; original underbrace retained only for finite prefix"
+    }
+  ],
+  "notation_clarification": {
+    "unit": "OLP-0034",
+    "change": "Remove three unbound k subscripts",
+    "classification": "not a theorem-proof gap"
+  },
+  "independent_source_review_sha256": "555b7c552fb951f3117336305643a8d5d40ad1b2fe1f7753c98a7224495823b0",
+  "theorem_proofs_sound": 3,
+  "exercises_sound": 9,
+  "formal_repairs": 4,
+  "upstream_issue_sent": false,
+  "current_upstream_status_claimed": false,
+  "human_gate": false
+}
