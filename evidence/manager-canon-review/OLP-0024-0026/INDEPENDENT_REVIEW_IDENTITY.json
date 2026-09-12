@@ -1,0 +1,9 @@
+{
+  "original_report_sha256": "5a31ba0f35c23f5634957cde19312cbc5882aca5ee31a2a0ad378a83aa6a8a66",
+  "public_report_sha256": "53042eb0415f52d4a6160b34d0c08d80d582e9138a3627bc2074586003c335e8",
+  "sanitization": "Replace local task-input and tool-workflow paragraph with the public review boundary; mathematical arguments and findings unchanged.",
+  "manager_read_complete_report": true,
+  "independent_agent_completed": true,
+  "independent_agent_closed": true,
+  "scope": "Source mathematics only; not an independent Persian linguistic certification."
+}

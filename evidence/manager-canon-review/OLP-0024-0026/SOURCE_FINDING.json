@@ -1,0 +1,26 @@
+{
+  "schema": "olp-left-inverse-source-error/1",
+  "source_commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "unit": "OLP-0024",
+  "source_path": "content/sets-functions-relations/functions/inverses.tex",
+  "source_sha256": "96e36d8cd8dc4ec0e73e9507147ecfe33d7e4f368ecf46de92efb423a7d409c1",
+  "classification": "missing nonempty-domain qualification; not a transcription error",
+  "source_claim": "Every injective f from A to B has a left inverse g from B to A.",
+  "counterexample": {
+    "A": [],
+    "B": [
+      0
+    ],
+    "f_graph": [],
+    "injective": true,
+    "left_inverse_exists": false
+  },
+  "correct_general_statement": "An existing function f:A to B has a left inverse exactly when it is injective and (A is nonempty or B is empty).",
+  "candidate_repair": "Add nonempty-domain qualification to proposition and proof; labelled Persian note preserves both-empty case and explains empty-to-nonempty failure.",
+  "formula_changes": false,
+  "frozen_originals_unchanged": true,
+  "choice_distinction": "A general right-inverse theorem uses Choice as the source footnote already states. Unique inverses of bijections and partial injections do not.",
+  "upstream_issue_sent": false,
+  "noether_authority_not_applicable": true,
+  "human_gate": false
+}

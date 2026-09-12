@@ -1,0 +1,9 @@
+{
+  "asset": "assets/diagrams/composition.tikz",
+  "source_sha256": "d712231c90796b4b2987506502723cd756fa9c5b7f4111e65284d107a79d2d4b",
+  "owner_sha256": "ad4d91333bb7d95c341e168381965ada603782bfbcaa2452096d8f1ddd78be04",
+  "unchanged_after_LF": true,
+  "new_reader_render": false,
+  "source_config_sha256": "ab19be71b50b415738603290317b504d9fa6b82850fe640d585c62db1540ced3",
+  "composition_macro": "comp(f,g) expands to g circle f"
+}

@@ -1,0 +1,2314 @@
+{
+  "schema": "public-openlogic-fa-batch-review/1",
+  "identities": [
+    {
+      "unit": "OLP-0024",
+      "source_commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+      "source_path": "content/sets-functions-relations/functions/inverses.tex",
+      "source_git_LF_sha256": "96e36d8cd8dc4ec0e73e9507147ecfe33d7e4f368ecf46de92efb423a7d409c1",
+      "source_ledger_CRLF_sha256": "93a84a2705e1ed3c92a7f5206c4308420bebbbbcb43824c1eb50e05f83777c4b",
+      "published_target_sha256": "6f81eed36763fbf88c1c6a2d67603c436567e46d02c45fcb5cb27c85d332556b",
+      "candidate_sha256": "93590a71ae8bc50526cbe5785715734c3b5b9def51f7c1f65798ed0d8e636c53",
+      "published_target_bytes": 9605,
+      "candidate_bytes": 10180,
+      "R3_member": "source/locale/fa-IR/content/sets-functions-relations/functions/inverses.tex",
+      "R3_archive_sha256": "ef32f359fe7813d0ffef11f3936fb1498f2f3cdcc176ab2acb56b969360c9e59",
+      "locale_config_sha256": "c8df8c39abbd1ab36dbac380490b72e9b3c565bbd1ec3d1f1be88bdc300abd0b",
+      "math_spans": 143,
+      "aligned_choices": 23,
+      "math_text_pairs": [
+        {
+          "math_span": 19,
+          "source": "``the'' $x$ such that $f(x) = y$.",
+          "target": "«آن» $x$ که $f(x) = y$ باشد.",
+          "review": "Exact wording reviewed in the aligned choice, not accepted by token masking alone"
+        },
+        {
+          "math_span": 67,
+          "source": "if $f(x) = y$",
+          "target": "اگر $f(x) = y$",
+          "review": "Exact wording reviewed in the aligned choice, not accepted by token masking alone"
+        },
+        {
+          "math_span": 67,
+          "source": "if $y \\notin \\ran{f}$.",
+          "target": "اگر $y \\notin \\ran{f}$ باشد.",
+          "review": "Exact wording reviewed in the aligned choice, not accepted by token masking alone"
+        }
+      ],
+      "formal_repairs": []
+    },
+    {
+      "unit": "OLP-0025",
+      "source_commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+      "source_path": "content/sets-functions-relations/functions/composition.tex",
+      "source_git_LF_sha256": "1733e9f6b7f1009f7d36cb47b3f11ec8cccc28ef173a379e4d69c3de352fcf28",
+      "source_ledger_CRLF_sha256": "091c7ab9e4d0517b2a62f4ecf10e4eb75f0f83e31e1bbd9c365c4b751b981fee",
+      "published_target_sha256": "8e6bf05bff3df56824bcd878602ca4e397a6820a715b69afc9353d9932daaeea",
+      "candidate_sha256": "db7bd1329673225923c9014a1b2f4abf85226ffe3aa5b97e8122dd46c357fa9a",
+      "published_target_bytes": 3259,
+      "candidate_bytes": 3312,
+      "R3_member": "source/locale/fa-IR/content/sets-functions-relations/functions/composition.tex",
+      "R3_archive_sha256": "ef32f359fe7813d0ffef11f3936fb1498f2f3cdcc176ab2acb56b969360c9e59",
+      "locale_config_sha256": "c8df8c39abbd1ab36dbac380490b72e9b3c565bbd1ec3d1f1be88bdc300abd0b",
+      "math_spans": 47,
+      "aligned_choices": 8,
+      "math_text_pairs": [],
+      "formal_repairs": []
+    },
+    {
+      "unit": "OLP-0026",
+      "source_commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+      "source_path": "content/sets-functions-relations/functions/partial-functions.tex",
+      "source_git_LF_sha256": "0f638e25ad1f565b9256846fb8b293c03663072b69a2adc5f2cfea1e94d00933",
+      "source_ledger_CRLF_sha256": "2a1e79725a70fde443cc3c19c325a2c422c49e7ccd095c965f8c50fd5cc6b10b",
+      "published_target_sha256": "d32ed3e6f2057fa04076350ceb1e1f94e070c4b6dc239c18256d3fdd9b9fa626",
+      "candidate_sha256": "4bf9d90291edca3a21c0b70f85efc18b0359ba1832bb3a56c9541077610cab75",
+      "published_target_bytes": 3647,
+      "candidate_bytes": 3659,
+      "R3_member": "source/locale/fa-IR/content/sets-functions-relations/functions/partial-functions.tex",
+      "R3_archive_sha256": "ef32f359fe7813d0ffef11f3936fb1498f2f3cdcc176ab2acb56b969360c9e59",
+      "locale_config_sha256": "c8df8c39abbd1ab36dbac380490b72e9b3c565bbd1ec3d1f1be88bdc300abd0b",
+      "math_spans": 61,
+      "aligned_choices": 8,
+      "math_text_pairs": [],
+      "formal_repairs": []
+    }
+  ],
+  "canon": {
+    "documents": [
+      {
+        "document_id": "FA-OL-CANON-0003",
+        "title_fa": "نظریهٔ مجموعه‌ها",
+        "title_en": "Set Theory",
+        "authors": [
+          "محسن خانی",
+          "افشین زارعی"
+        ],
+        "institution": "دانشگاه صنعتی اصفهان",
+        "date_statement": "۱۸ خرداد ۱۴۰۰",
+        "source_url": "https://khani.iut.ac.ir/sites/khani.iut.ac.ir/files//u145/jozve-kamel.pdf",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+        "pdf_bytes": 413763,
+        "licence_status": "No explicit redistribution licence identified; retain locally and cite only."
+      },
+      {
+        "document_id": "FA-OL-CANON-0001",
+        "title_fa": "منطق ریاضی",
+        "title_en": "Mathematical Logic",
+        "authors": [
+          "محسن خانی"
+        ],
+        "institution": "دانشگاه صنعتی اصفهان",
+        "date_statement": "۳۰ دی ۱۴۰۲",
+        "source_url": "https://khani.iut.ac.ir/sites/khani.iut.ac.ir/files//u145/chapter2_0.pdf",
+        "pdf_sha256": "0f3fb75ed1fcb0cbc669c04493acf520888e1ebfd62795bb28fc510bc41c7e79",
+        "pdf_bytes": 759905,
+        "licence_status": "No explicit redistribution licence identified; retain locally and cite only."
+      },
+      {
+        "document_id": "FA-REL-C001",
+        "title_fa": "ریاضیات گسسته و کاربردها",
+        "title_en": "Discrete Mathematics and Applications",
+        "authors": [
+          "علیرضا غفاری حدیقه",
+          "مگردیچ تومانیان"
+        ],
+        "institution": "مؤسسه چاپ و انتشارات دانشگاه جامع امام حسین (ع)",
+        "date_statement": "Edition date not newly established in this batch; author-hosted textbook witness",
+        "source_url": "https://hadigheha.github.io/books/teaching/Textbooks/Tarkibiyat.pdf",
+        "pdf_bytes": 1713264,
+        "pdf_sha256": "8f79c45a926c1cea819c4fefa86383f2a65ae23b1d526baaf99cf2506bb9f317",
+        "licence_status": "Private consultation only; no compatible redistribution licence established. Original PDF, page images and full search extracts are not uploaded."
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "FA-OL-CANON-0003:P0015",
+        "pdf_page_1based": 15,
+        "printed_page": 14,
+        "location": "Functional relations, actual domain and range, composition and converse",
+        "short_attestation": "تابعال؛ ترکیب؛ رابطهٔ معکوس",
+        "relevance_and_limits": "Uniqueness, domain/range and first-R-then-Q relational composition are explicit. Converse of an arbitrary relation is not necessarily an inverse function. Do not import class-theoretic scope or infer totality on a larger ambient set.",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+        "normalized_search_page_sha256": "689727e3d79f07a4f313ba0ed8066b8088383bfb7e9cba49425c6b56b24452a4",
+        "visual_page_read": true,
+        "render_sha256": "e6d46a34cb6f8935aaa9d2987e780699deb950e43ba6cd9ce8c72b198e259d50"
+      },
+      {
+        "passage_id": "FA-OL-CANON-0003:P0018",
+        "pdf_page_1based": 18,
+        "printed_page": 17,
+        "location": "Definition29 and axiom12: choice functional and Axiom of Choice",
+        "short_attestation": "تابع انتخاب؛ اصل انتخاب؛ مجموعه‌های ناتهی",
+        "relevance_and_limits": "Direct terminology and selection of one member of each nonempty set. Relevant to fibres of a general surjection. One fixed default element for a nonempty domain is not the same as making arbitrary infinitely many choices.",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+        "normalized_search_page_sha256": "477f4c8cbe477b96faaf1873f7391531c5eca4b5176d7af8675be0b4278af821",
+        "visual_page_read": true,
+        "render_sha256": "a4f66aede18e172d84b679e01c0a32d6905df4c4acaebd95a0112cbb6f5d2b08"
+      },
+      {
+        "passage_id": "FA-OL-CANON-0001:P0085",
+        "pdf_page_1based": 85,
+        "printed_page": 84,
+        "location": "Register-machine semantics and Definition165",
+        "short_attestation": "تابع جزئی؛ محاسبه‌پذیر",
+        "relevance_and_limits": "Direct partial-function vocabulary in mathematical logic. Computable partial functions are a special case: OLP does not require all partial functions to be computable. The page does not directly attest تام or سریال, which remain explicitly provisional labels with full definitions.",
+        "pdf_sha256": "0f3fb75ed1fcb0cbc669c04493acf520888e1ebfd62795bb28fc510bc41c7e79",
+        "normalized_search_page_sha256": "e96d7c16ef5b5654500564d380fefe17c33de02a97c2c30fe6169d37e33b6830",
+        "visual_page_read": true,
+        "render_sha256": "c6316fa667fa0b2f5caeac2ff90b0e7f779ac27f5a7c5e8055ec8dd8736452f9"
+      },
+      {
+        "passage_id": "FA-REL-P044",
+        "pdf_page_1based": 44,
+        "printed_page": 34,
+        "location": "Definition of function and domain/codomain/range",
+        "short_attestation": "تابع یا نگاشت؛ دامنه؛ هم‌دامنه؛ برد",
+        "relevance_and_limits": "Direct assignment and unique-value syntax. The equality box gives only equal functions imply equal values; it is not independent evidence for the opposite implication.",
+        "pdf_sha256": "8f79c45a926c1cea819c4fefa86383f2a65ae23b1d526baaf99cf2506bb9f317",
+        "normalized_search_page_sha256": "8fd6caf3fd9321e226b51858a43d1135ea5e06965c429fe971b14c7b8b2f155e",
+        "visual_page_read": true,
+        "render_sha256": "b6a5a73187ccda878ebc6612d9cca9108836b0082c151ba2f8b52da48483baa2"
+      },
+      {
+        "passage_id": "FA-REL-P045",
+        "pdf_page_1based": 45,
+        "printed_page": 35,
+        "location": "Graph as set of pairs, numerical function rules and restriction",
+        "short_attestation": "ضابطه؛ نمودار تابع؛ تحدید",
+        "relevance_and_limits": "Direct نمودار for a function graph as a subset of a Cartesian product. Preserve the cleaner OLP formula instead of the canon display’s redundant y qualifier.",
+        "pdf_sha256": "8f79c45a926c1cea819c4fefa86383f2a65ae23b1d526baaf99cf2506bb9f317",
+        "normalized_search_page_sha256": "1c0940b6ad05cf6260202df13afb0ed8b52dd083dd931090d3055ca4860fc8bc",
+        "visual_page_read": true,
+        "render_sha256": "02b4f8579d4b1a5ad79d3fcd7a264837b438baf4cf13327819af890ebd07eb5a"
+      },
+      {
+        "passage_id": "FA-REL-P046",
+        "pdf_page_1based": 46,
+        "printed_page": 36,
+        "location": "Injective/surjective definitions and arrow diagrams",
+        "short_attestation": "یک به یک؛ پوشا",
+        "relevance_and_limits": "At most one preimage versus at least one preimage; collisions distinguish injectivity from functionality. Diagram orientation is mathematical and must not be mirrored with RTL prose.",
+        "pdf_sha256": "8f79c45a926c1cea819c4fefa86383f2a65ae23b1d526baaf99cf2506bb9f317",
+        "normalized_search_page_sha256": "d43e62612bc3a4aefc91cceff32d810086a6d423c4f6eeb6b503c4245340e3ef",
+        "visual_page_read": true,
+        "render_sha256": "e74e0f5fed58449d4bcb006d3999c50252d0710368cb3f52aee464efa52e5f9c"
+      },
+      {
+        "passage_id": "FA-REL-P049",
+        "pdf_page_1based": 49,
+        "printed_page": 39,
+        "location": "Composition definition, arrow diagram and domain discussion",
+        "short_attestation": "ترکیب تابع‌ها؛ تابع مرکب",
+        "relevance_and_limits": "Direct g composed with f and g(f(x)), first f then g. LIMIT: the lower page discusses a restricted domain and a nonempty intersection condition; that is NOT the OLP condition for a total composition on all original inputs. Do not import a nonempty-intersection rule or exclude an empty composite.",
+        "pdf_sha256": "8f79c45a926c1cea819c4fefa86383f2a65ae23b1d526baaf99cf2506bb9f317",
+        "normalized_search_page_sha256": "af246f10834bacfdbb94538528ee020ec3d6827b363903725fd7a9c740eaad04",
+        "visual_page_read": true,
+        "render_sha256": "c1d0495c356c443adaa20ca23c599a4b0535b4c745275eb9b596a69e742e105e"
+      },
+      {
+        "passage_id": "FA-REL-P050",
+        "pdf_page_1based": 50,
+        "printed_page": 40,
+        "location": "Composition laws and inverse of a bijection",
+        "short_attestation": "تابع معکوس؛ دوسویی",
+        "relevance_and_limits": "Direct function-inverse label معکوس, reversed arrows and both identity laws. The edition’s وارون is retained with معکوس explicitly introduced as its synonym. Left/right inverse labels are explained by the source equations, not falsely attributed verbatim to this page.",
+        "pdf_sha256": "8f79c45a926c1cea819c4fefa86383f2a65ae23b1d526baaf99cf2506bb9f317",
+        "normalized_search_page_sha256": "25419bc271e8d6ed82a86f4725f0ba7443efc63ec8a80876a2f5076ed88f0500",
+        "visual_page_read": true,
+        "render_sha256": "db64923aec7f422faa1c700d2b5f94cec1b7d6c2990830d2803bf5f0c470b334"
+      }
+    ]
+  },
+  "choices": [
+    {
+      "topic": "Inverse heading and undoing a map",
+      "canon": [
+        "FA-REL-P044",
+        "FA-REL-P050"
+      ],
+      "rationale": "Retain وارون as the lane term, explicitly paired with the canon معکوس in the definition below. Replace the vague خنثی می‌کند with returning to the original input. Standardize جانشین with the preceding reviewed sections; source formula x+1 remains explicit.",
+      "alternatives": "معکوس is directly attested; وارون is retained for edition continuity with its synonym introduced, not falsely called the verbatim label on D50.",
+      "question": "Exact successor label remains a contextual choice; the formula and the prior introduction fix its meaning.",
+      "confidence": 2,
+      "confidence_reason": "Inverse concept directly attested; synonymous and successor naming decisions explicitly contextual.",
+      "id": "FA-0024-C01",
+      "unit": "OLP-0024",
+      "source": {
+        "char_start": 181,
+        "char_end_exclusive": 500,
+        "line_start": 10,
+        "line_end": 18,
+        "text": "\\olsection{Inverses of Functions}\n\n\\begin{explain}\nWe think of functions as maps. An obvious question to ask about\nfunctions, then, is whether the mapping can be ``reversed.'' For\ninstance, the successor function $f(x) = x + 1$ can be reversed, in\nthe sense that the function $g(y) = y - 1$ ``undoes'' what $f$ does. \n\n",
+        "sha256": "12e1e926f009571ea7f37aafe262d05a57eb6557cb2351483efee765e7744081"
+      },
+      "target_before": {
+        "char_start": 188,
+        "char_end_exclusive": 488,
+        "line_start": 10,
+        "line_end": 18,
+        "text": "\\olsection{وارون‌های توابع}\n\n\\begin{explain}\nتوابع را همچون نگاشت‌ها در نظر می‌گیریم. پس پرسشی طبیعی دربارهٔ\nتوابع این است که آیا می‌توان نگاشت را «وارونه کرد». برای\nنمونه، تابع پسین $f(x) = x + 1$ را می‌توان وارونه کرد، به\nاین معنا که تابع $g(y) = y - 1$ کاری را که $f$ انجام می‌دهد «خنثی می‌کند».\n\n",
+        "sha256": "97c9ea80c367e4a278be7c680184d87e14896c3a50c2804f34fd52984639493d"
+      },
+      "target_after": {
+        "char_start": 188,
+        "char_end_exclusive": 493,
+        "line_start": 10,
+        "line_end": 18,
+        "text": "\\olsection{وارون‌های توابع}\n\n\\begin{explain}\nتوابع را همچون نگاشت‌ها در نظر می‌گیریم. پس پرسشی طبیعی دربارهٔ\nتوابع این است که آیا می‌توان نگاشت را «وارونه کرد». برای\nنمونه، تابع جانشین $f(x) = x + 1$ را می‌توان وارونه کرد، به\nاین معنا که تابع $g(y) = y - 1$ نتیجهٔ کار $f$ را به ورودی اولیه برمی‌گرداند.\n\n",
+        "sha256": "b9897e2e26ad9e889a106ad237032bcdb756a853c0f8fb12b5460302aa93625c"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\olsection{وارون‌های توابع}\n\n\\begin{explain}\nتوابع را همچون نگاشت‌ها در نظر می‌گیریم. پس پرسشی طبیعی دربارهٔ\nتوابع این است که آیا می‌توان نگاشت را «وارونه کرد». برای\nنمونه، تابع جانشین $f(x) = x + 1$ را می‌توان وارونه کرد، به\nاین معنا که تابع $g(y) = y - 1$ نتیجهٔ کار $f$ را به ورودی اولیه برمی‌گرداند.\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Domain and codomain prevent invalid reversal",
+      "canon": [
+        "FA-REL-P044",
+        "FA-REL-P050"
+      ],
+      "rationale": "Retain the integer versus natural-number distinction and g(0) outside Nat. The source here explicitly includes0 in Nat. This is an inverse-domain issue, not a computational failure or a permission to add a new value at0.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Full aligned wording, hypotheses and mathematical scope checked against frozen source and the cited Persian passages; editorial score, not a probability.",
+      "id": "FA-0024-C02",
+      "unit": "OLP-0024",
+      "source": {
+        "char_start": 500,
+        "char_end_exclusive": 884,
+        "line_start": 18,
+        "line_end": 27,
+        "text": "But we must be careful. Although the definition of~$g$ defines a\nfunction $\\Int \\to \\Int$, it does not define a \\emph{function} $\\Nat\n\\to \\Nat$, since $g(0) \\notin \\Nat$.  So even in simple cases, it is\nnot quite obvious whether a function can be reversed; it may depend on\nthe domain and codomain.\n\nThis is made more precise by the notion of an inverse of a function.\n\\end{explain}\n\n",
+        "sha256": "c966a6fd7beb80c6749f985cec8c2feed81da3eda49046f55fb8cf562590240e"
+      },
+      "target_before": {
+        "char_start": 488,
+        "char_end_exclusive": 839,
+        "line_start": 18,
+        "line_end": 27,
+        "text": "اما باید دقت کنیم. گرچه ضابطهٔ~$g$ تابعی\n$\\Int \\to \\Int$ تعریف می‌کند، یک \\emph{تابع} $\\Nat\n\\to \\Nat$ تعریف نمی‌کند، زیرا $g(0) \\notin \\Nat$. بنابراین حتی در موارد ساده نیز\nکاملاً آشکار نیست که آیا می‌توان تابعی را وارونه کرد؛ این امر ممکن است به\nدامنه و هم‌دامنه بستگی داشته باشد.\n\nمفهوم وارون یک تابع این نکته را دقیق‌تر بیان می‌کند.\n\\end{explain}\n\n",
+        "sha256": "8e51bf7e27fb7ad632c3b95eb65baaf328ae16ab2103aa9199a1ff7261334765"
+      },
+      "target_after": {
+        "char_start": 493,
+        "char_end_exclusive": 844,
+        "line_start": 18,
+        "line_end": 27,
+        "text": "اما باید دقت کنیم. گرچه ضابطهٔ~$g$ تابعی\n$\\Int \\to \\Int$ تعریف می‌کند، یک \\emph{تابع} $\\Nat\n\\to \\Nat$ تعریف نمی‌کند، زیرا $g(0) \\notin \\Nat$. بنابراین حتی در موارد ساده نیز\nکاملاً آشکار نیست که آیا می‌توان تابعی را وارونه کرد؛ این امر ممکن است به\nدامنه و هم‌دامنه بستگی داشته باشد.\n\nمفهوم وارون یک تابع این نکته را دقیق‌تر بیان می‌کند.\n\\end{explain}\n\n",
+        "sha256": "8e51bf7e27fb7ad632c3b95eb65baaf328ae16ab2103aa9199a1ff7261334765"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "اما باید دقت کنیم. گرچه ضابطهٔ~$g$ تابعی\n$\\Int \\to \\Int$ تعریف می‌کند، یک \\emph{تابع} $\\Nat\n\\to \\Nat$ تعریف نمی‌کند، زیرا $g(0) \\notin \\Nat$. بنابراین حتی در موارد ساده نیز\nکاملاً آشکار نیست که آیا می‌توان تابعی را وارونه کرد؛ این امر ممکن است به\nدامنه و هم‌دامنه بستگی داشته باشد.\n\nمفهوم وارون یک تابع این نکته را دقیق‌تر بیان می‌کند.\n\\end{explain}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Two-sided inverse definition",
+      "canon": [
+        "FA-REL-P050",
+        "FA-REL-P049"
+      ],
+      "rationale": "Introduce وارون (معکوس), the latter directly attested for functions. Preserve g:B to A and both identity laws for their respective domains. Neither law alone is the definition of a two-sided inverse.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Full aligned wording, hypotheses and mathematical scope checked against frozen source and the cited Persian passages; editorial score, not a probability.",
+      "id": "FA-0024-C03",
+      "unit": "OLP-0024",
+      "source": {
+        "char_start": 884,
+        "char_end_exclusive": 1061,
+        "line_start": 27,
+        "line_end": 33,
+        "text": "\\begin{defn}\nA function $g \\colon B \\to A$ is an \\emph{inverse} of a function $f\n\\colon A \\to B$ if $f(g(y)) = y$ and $g(f(x)) = x$ for all $x \\in A$\nand $y \\in B$.\n\\end{defn}\n\n",
+        "sha256": "04c19fc7557e32ba5bc33dac616527c66a4ef2fdf5c944accd9b51cd5319ee66"
+      },
+      "target_before": {
+        "char_start": 839,
+        "char_end_exclusive": 1017,
+        "line_start": 27,
+        "line_end": 33,
+        "text": "\\begin{defn}\nتابع $g \\colon B \\to A$ یک \\emph{وارون} برای تابع $f\n\\colon A \\to B$ است اگر $f(g(y)) = y$ و $g(f(x)) = x$ برای همهٔ $x \\in A$\nو $y \\in B$ برقرار باشند.\n\\end{defn}\n\n",
+        "sha256": "1197c3e224702e0f11979ddab7ebf21fe5dc8ad659f32d5b46654d05bb192783"
+      },
+      "target_after": {
+        "char_start": 844,
+        "char_end_exclusive": 1030,
+        "line_start": 27,
+        "line_end": 33,
+        "text": "\\begin{defn}\nتابع $g \\colon B \\to A$ یک \\emph{وارون (معکوس)} برای تابع $f\n\\colon A \\to B$ است اگر $f(g(y)) = y$ و $g(f(x)) = x$ برای همهٔ $x \\in A$\nو $y \\in B$ برقرار باشند.\n\\end{defn}\n\n",
+        "sha256": "492fb57d68dff8fcd563cc4f557d51ea780260d582de7d8dd672a8b9483a3d94"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{defn}\nتابع $g \\colon B \\to A$ یک \\emph{وارون (معکوس)} برای تابع $f\n\\colon A \\to B$ است اگر $f(g(y)) = y$ و $g(f(x)) = x$ برای همهٔ $x \\in A$\nو $y \\in B$ برقرار باشند.\n\\end{defn}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Inverse notation",
+      "canon": [
+        "FA-REL-P050"
+      ],
+      "rationale": "Retain f to the negative-one notation for an inverse, not the reciprocal1/f or a negative exponent evaluation. The canon pairs this symbol with the inverse map.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Full aligned wording, hypotheses and mathematical scope checked against frozen source and the cited Persian passages; editorial score, not a probability.",
+      "id": "FA-0024-C04",
+      "unit": "OLP-0024",
+      "source": {
+        "char_start": 1061,
+        "char_end_exclusive": 1129,
+        "line_start": 33,
+        "line_end": 35,
+        "text": "If $f$ has an inverse~$g$, we often write $f^{-1}$ instead of~$g$.\n\n",
+        "sha256": "a1ecf92a802c44e4aca1d77916079a0e6cdaadea568d5784460472c69a15ac69"
+      },
+      "target_before": {
+        "char_start": 1017,
+        "char_end_exclusive": 1094,
+        "line_start": 33,
+        "line_end": 35,
+        "text": "اگر $f$ وارونی مانند~$g$ داشته باشد، اغلب $f^{-1}$ را به‌جای~$g$ می‌نویسیم.\n\n",
+        "sha256": "823a837d4b5a2a71b277f8eb9a3e4b6124c7b1bb8595b7f727931d4cc2a424e7"
+      },
+      "target_after": {
+        "char_start": 1030,
+        "char_end_exclusive": 1107,
+        "line_start": 33,
+        "line_end": 35,
+        "text": "اگر $f$ وارونی مانند~$g$ داشته باشد، اغلب $f^{-1}$ را به‌جای~$g$ می‌نویسیم.\n\n",
+        "sha256": "823a837d4b5a2a71b277f8eb9a3e4b6124c7b1bb8595b7f727931d4cc2a424e7"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "اگر $f$ وارونی مانند~$g$ داشته باشد، اغلب $f^{-1}$ را به‌جای~$g$ می‌نویسیم.\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Tentative inverse and uniqueness/existence obstruction",
+      "canon": [
+        "FA-REL-P044",
+        "FA-REL-P046",
+        "FA-REL-P050"
+      ],
+      "rationale": "Replace the calqued نامزدی مناسب and در کلیت کامل with a natural proposed definition and its explicit validity limitation. Fix variable-attached Persian suffixes. Preserve the quoted tentative definition, both collisions and missing-preimage cases, and the injective-plus-surjective requirement. The quoted math-text آن remains to express the source definite article; its meaning is reviewed, not assumed from masking.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Full aligned wording, hypotheses and mathematical scope checked against frozen source and the cited Persian passages; editorial score, not a probability.",
+      "id": "FA-0024-C05",
+      "unit": "OLP-0024",
+      "source": {
+        "char_start": 1129,
+        "char_end_exclusive": 2048,
+        "line_start": 35,
+        "line_end": 54,
+        "text": "\\begin{explain}\nNow we will determine when functions have inverses. A good candidate\nfor an inverse of $f\\colon A \\to B$ is $g\\colon B \\to A$ ``defined\nby''\n\\[\ng(y) = \\text{``the'' $x$ such that $f(x) = y$.}\n\\]\nBut the scare quotes around ``defined by'' (and ``the'') suggest that\nthis is not a definition.  At least, it will not always work, with\ncomplete generality. For, in order for this definition to specify a\nfunction, there has to be one and only one~$x$ such that $f(x) =\ny$---the output of~$g$ has to be uniquely specified. Moreover, it has\nto be specified for every $y \\in B$.  If there are $x_1$ and $x_2 \\in\nA$ with $x_1 \\neq x_2$ but $f(x_1) = f(x_2)$, then $g(y)$ would not be\nuniquely specified for $y = f(x_1) = f(x_2)$. And if there is no~$x$\nat all such that $f(x) = y$, then $g(y)$ is not specified at all.  In\nother words, for $g$ to be defined, $f$~must be both !!{injective} and\n!!{surjective}.\n\n",
+        "sha256": "a08d41e833866703bff61af1607c2e566d738e59444ce64dccf42ee205fa292c"
+      },
+      "target_before": {
+        "char_start": 1094,
+        "char_end_exclusive": 1938,
+        "line_start": 35,
+        "line_end": 54,
+        "text": "\\begin{explain}\nاکنون تعیین می‌کنیم که توابع چه هنگام وارون دارند. نامزدی مناسب\nبرای وارون $f\\colon A \\to B$ تابع $g\\colon B \\to A$ است که «تعریف\nمی‌شود» به‌وسیلهٔ\n\\[\ng(y) = \\text{«آن» $x$ که $f(x) = y$ باشد.}\n\\]\nاما گیومه‌های احتیاطی پیرامون «تعریف می‌شود» (و «آن») نشان می‌دهند که\nاین یک تعریف نیست. دست‌کم، در کلیت کامل همیشه کار\nنخواهد کرد. زیرا برای آنکه این تعریف تابعی را مشخص کند، باید یگانه~$x$ای\nوجود داشته باشد که $f(x) =\ny$---خروجی~$g$ باید به‌طور یکتا مشخص شود. افزون بر این، باید\nبرای هر $y \\in B$ مشخص شده باشد. اگر $x_1$ و $x_2 \\in\nA$ چنان باشند که $x_1 \\neq x_2$ اما $f(x_1) = f(x_2)$، آنگاه $g(y)$ برای\n$y = f(x_1) = f(x_2)$ به‌طور یکتا مشخص نخواهد شد. و اگر هیچ~$x$ای\nوجود نداشته باشد که $f(x) = y$، آنگاه $g(y)$ اصلاً مشخص نمی‌شود. به\nبیان دیگر، برای آنکه $g$ تعریف شود، $f$ باید هم !!{injective} و هم\n!!{surjective} باشد.\n\n",
+        "sha256": "12896fb88b681aacd7252f944d01584695f0c5c2c567dffc92c471f1bcfbd1d1"
+      },
+      "target_after": {
+        "char_start": 1107,
+        "char_end_exclusive": 1928,
+        "line_start": 35,
+        "line_end": 54,
+        "text": "\\begin{explain}\nاکنون بررسی می‌کنیم توابع چه هنگام وارون دارند. یک پیشنهاد طبیعی\nبرای وارون $f\\colon A \\to B$ تابع $g\\colon B \\to A$ است که آن را با عبارت زیر\n«تعریف می‌کنیم»:\n\\[\ng(y) = \\text{«آن» $x$ که $f(x) = y$ باشد.}\n\\]\nاما گیومه‌های دور «تعریف می‌کنیم» (و «آن») هشدار می‌دهند که\nهنوز تعریفی معتبر در همهٔ حالت‌ها نداریم. این عبارت همیشه\nتابعی را مشخص نمی‌کند: باید دقیقاً یک~$x$\nوجود داشته باشد که $f(x) =\ny$---خروجی~$g$ باید به‌طور یکتا مشخص شود. افزون بر این، باید\nبرای هر $y \\in B$ مشخص شده باشد. اگر $x_1$ و $x_2 \\in\nA$ چنان باشند که $x_1 \\neq x_2$ اما $f(x_1) = f(x_2)$، آنگاه $g(y)$ برای\n$y = f(x_1) = f(x_2)$ به‌طور یکتا مشخص نخواهد شد. و اگر هیچ~$x$\nوجود نداشته باشد که $f(x) = y$، آنگاه $g(y)$ اصلاً مشخص نمی‌شود. به\nبیان دیگر، برای آنکه $g$ تعریف شود، $f$ باید هم !!{injective} و هم\n!!{surjective} باشد.\n\n",
+        "sha256": "0c2b3a63e53a51ac380494afef4fc99c091b499ac2cde85d7c81e37e8ac662bc"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{explain}\nاکنون بررسی می‌کنیم توابع چه هنگام وارون دارند. یک پیشنهاد طبیعی\nبرای وارون $f\\colon A \\to B$ تابع $g\\colon B \\to A$ است که آن را با عبارت زیر\n«تعریف می‌کنیم»:\n\\[\ng(y) = \\text{«آن» $x$ که $f(x) = y$ باشد.}\n\\]\nاما گیومه‌های دور «تعریف می‌کنیم» (و «آن») هشدار می‌دهند که\nهنوز تعریفی معتبر در همهٔ حالت‌ها نداریم. این عبارت همیشه\nتابعی را مشخص نمی‌کند: باید دقیقاً یک~$x$\nوجود داشته باشد که $f(x) =\ny$---خروجی~$g$ باید به‌طور یکتا مشخص شود. افزون بر این، باید\nبرای هر $y \\in B$ مشخص شده باشد. اگر $x_1$ و $x_2 \\in\nA$ چنان باشند که $x_1 \\neq x_2$ اما $f(x_1) = f(x_2)$، آنگاه $g(y)$ برای\n$y = f(x_1) = f(x_2)$ به‌طور یکتا مشخص نخواهد شد. و اگر هیچ~$x$\nوجود نداشته باشد که $f(x) = y$، آنگاه $g(y)$ اصلاً مشخص نمی‌شود. به\nبیان دیگر، برای آنکه $g$ تعریف شود، $f$ باید هم یک‌به‌یک و هم\nپوشا باشد.\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 780,
+          "token": "!!{injective}",
+          "realization": "یک‌به‌یک"
+        },
+        {
+          "character_offset_in_segment": 799,
+          "token": "!!{surjective}",
+          "realization": "پوشا"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Left and right inverse conventions",
+      "canon": [
+        "FA-REL-P044",
+        "FA-REL-P049",
+        "FA-REL-P050"
+      ],
+      "rationale": "Explain undoing as returning to the initial input. Use the canon noun-plus-variable construction تابع g / تابع h instead of attaching an indefinite Persian suffix directly to a Latin variable. Keep g after f for a left inverse, f after h for a right inverse. Left/right is composition notation, not reading direction. The canon gives composition order and two-sided identities, not verbatim one-sided labels.",
+      "alternatives": "",
+      "question": "وارون چپ/راست are explicitly equation-defined contextual labels; do not attribute these precise labels to D50.",
+      "confidence": 2,
+      "confidence_reason": "Identity direction certain; exact one-sided terminology not directly printed on selected pages.",
+      "id": "FA-0024-C06",
+      "unit": "OLP-0024",
+      "source": {
+        "char_start": 2048,
+        "char_end_exclusive": 2459,
+        "line_start": 54,
+        "line_end": 62,
+        "text": "Let's go slowly. We'll divide the question into two: Given a\nfunction~$f\\colon A \\to B$, when is there a function $g\\colon B \\to A$\nso that $g(f(x)) = x$? Such a $g$ ``undoes'' what $f$ does, and is\ncalled a \\emph{left inverse} of~$f$. Secondly, when is there a\nfunction $h\\colon B \\to A$ so that $f(h(y)) = y$? Such an $h$ is\ncalled a \\emph{right inverse} of~$f$---$f$ ``undoes'' what $h$~does.\n\\end{explain}\n\n",
+        "sha256": "6842451cd37c9cd723a32406401d38510d8baf868a22091eb6e78359ff10e6a4"
+      },
+      "target_before": {
+        "char_start": 1938,
+        "char_end_exclusive": 2368,
+        "line_start": 54,
+        "line_end": 62,
+        "text": "گام‌به‌گام پیش برویم. پرسش را به دو بخش تقسیم می‌کنیم: با داشتن\nتابع~$f\\colon A \\to B$، چه هنگام تابعی مانند $g\\colon B \\to A$\nوجود دارد که $g(f(x)) = x$؟ چنین $g$ای کاری را که $f$ انجام می‌دهد «خنثی می‌کند» و\n\\emph{وارون چپِ}~$f$ نامیده می‌شود. دوم، چه هنگام\nتابعی مانند $h\\colon B \\to A$ وجود دارد که $f(h(y)) = y$؟ چنین $h$ای\n\\emph{وارون راستِ}~$f$ نامیده می‌شود---$f$ کاری را که $h$ انجام می‌دهد «خنثی می‌کند».\n\\end{explain}\n\n",
+        "sha256": "c5398388a7c9eded41cd28e64c21f649f6c9a88bf139e730b78a7a9c0efbafee"
+      },
+      "target_after": {
+        "char_start": 1928,
+        "char_end_exclusive": 2360,
+        "line_start": 54,
+        "line_end": 62,
+        "text": "گام‌به‌گام پیش برویم. پرسش را به دو بخش تقسیم می‌کنیم: با داشتن\nتابع~$f\\colon A \\to B$، چه هنگام تابعی مانند $g\\colon B \\to A$\nوجود دارد که $g(f(x)) = x$؟ تابع $g$ پس از اعمال $f$، ورودی اولیه را بازمی‌گرداند و\n\\emph{وارون چپِ}~$f$ نامیده می‌شود. دوم، چه هنگام\nتابعی مانند $h\\colon B \\to A$ وجود دارد که $f(h(y)) = y$؟ تابع $h$\n\\emph{وارون راستِ}~$f$ نامیده می‌شود---$f$ پس از اعمال $h$، ورودی اولیه را بازمی‌گرداند.\n\\end{explain}\n\n",
+        "sha256": "a1df234161504140fd8c87f9077b08b9498f7e5239a65cd428fee6723c00e93e"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "گام‌به‌گام پیش برویم. پرسش را به دو بخش تقسیم می‌کنیم: با داشتن\nتابع~$f\\colon A \\to B$، چه هنگام تابعی مانند $g\\colon B \\to A$\nوجود دارد که $g(f(x)) = x$؟ تابع $g$ پس از اعمال $f$، ورودی اولیه را بازمی‌گرداند و\n\\emph{وارون چپِ}~$f$ نامیده می‌شود. دوم، چه هنگام\nتابعی مانند $h\\colon B \\to A$ وجود دارد که $f(h(y)) = y$؟ تابع $h$\n\\emph{وارون راستِ}~$f$ نامیده می‌شود---$f$ پس از اعمال $h$، ورودی اولیه را بازمی‌گرداند.\n\\end{explain}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Source repair: left inverse requires a nonempty domain",
+      "canon": [
+        "FA-REL-P044",
+        "FA-REL-P046",
+        "FA-REL-P050"
+      ],
+      "rationale": "Add the missing nonempty-domain hypothesis and a labelled source-error note. The empty function from empty A to nonempty B is injective but cannot have g:B to A. Both-empty sets have the empty inverse; that valid case is expressly retained in the note. No source formula or original is changed. This is a real omitted hypothesis, not merely style.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Full aligned wording, hypotheses and mathematical scope checked against frozen source and the cited Persian passages; editorial score, not a probability.",
+      "id": "FA-0024-C07",
+      "unit": "OLP-0024",
+      "source": {
+        "char_start": 2459,
+        "char_end_exclusive": 2625,
+        "line_start": 62,
+        "line_end": 68,
+        "text": "\\begin{prop}\nIf $f\\colon A \\to B$ is !!{injective}, then there is a \\emph{left\ninverse}~$g\\colon B \\to A$ of~$f$ so that $g(f(x)) = x$ for all $x\n\\in A$.\n\\end{prop}\n\n",
+        "sha256": "3af538ae68f7611aa61beda58eba0def332c76d3ea71ea99503b5b7cf554c525"
+      },
+      "target_before": {
+        "char_start": 2368,
+        "char_end_exclusive": 2544,
+        "line_start": 62,
+        "line_end": 68,
+        "text": "\\begin{prop}\nاگر $f\\colon A \\to B$ !!{injective} باشد، آنگاه \\emph{وارون\nچپی} مانند~$g\\colon B \\to A$ برای~$f$ وجود دارد چنان‌که $g(f(x)) = x$ برای همهٔ $x\n\\in A$.\n\\end{prop}\n\n",
+        "sha256": "4ded4a854ba237252c80bb8b98c293e8775cda8752a1ffd3ef38e8c9bc93232e"
+      },
+      "target_after": {
+        "char_start": 2360,
+        "char_end_exclusive": 2816,
+        "line_start": 62,
+        "line_end": 73,
+        "text": "\\begin{prop}\nاگر $f\\colon A \\to B$ !!{injective} باشد و دامنهٔ آن ناتهی باشد، آنگاه \\emph{وارون\nچپی} مانند~$g\\colon B \\to A$ برای~$f$ وجود دارد چنان‌که $g(f(x)) = x$ برای همهٔ $x\n\\in A$.\n\n\\emph{یادداشت ویراستاری:} شرط ناتهی‌بودن دامنه در متن مبدأ نیامده است.\nاگر دامنه تهی و هم‌دامنه ناتهی باشد، تابع تهی یک‌به‌یک است،\nاما هیچ تابعی از هم‌دامنه به دامنه وجود ندارد؛ بنابراین وارون چپ ندارد.\nاگر هر دو مجموعه تهی باشند، تابع تهی وارون خودش است.\n\\end{prop}\n\n",
+        "sha256": "d2b966c375ffd01cf66ab03391003c98dca82e4d9e543c82fb8eea033f7e963d"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{prop}\nاگر $f\\colon A \\to B$ یک‌به‌یک باشد و دامنهٔ آن ناتهی باشد، آنگاه \\emph{وارون\nچپی} مانند~$g\\colon B \\to A$ برای~$f$ وجود دارد چنان‌که $g(f(x)) = x$ برای همهٔ $x\n\\in A$.\n\n\\emph{یادداشت ویراستاری:} شرط ناتهی‌بودن دامنه در متن مبدأ نیامده است.\nاگر دامنه تهی و هم‌دامنه ناتهی باشد، تابع تهی یک‌به‌یک است،\nاما هیچ تابعی از هم‌دامنه به دامنه وجود ندارد؛ بنابراین وارون چپ ندارد.\nاگر هر دو مجموعه تهی باشند، تابع تهی وارون خودش است.\n\\end{prop}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 35,
+          "token": "!!{injective}",
+          "realization": "یک‌به‌یک"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Left inverse proof and a fixed default element",
+      "canon": [
+        "FA-REL-P044",
+        "FA-REL-P046",
+        "FA-REL-P050",
+        "FA-OL-CANON-0003:P0018"
+      ],
+      "rationale": "State the same nonempty-domain assumption in the proof. Replace malformed x-in-A suffixes by ordinary Persian noun constructions. For attained y choose its unique preimage; otherwise use one fixed a in A. Selecting that single default does not require the Axiom of Choice. Preserve the piecewise formula and all its conditions.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Full aligned wording, hypotheses and mathematical scope checked against frozen source and the cited Persian passages; editorial score, not a probability.",
+      "id": "FA-0024-C08",
+      "unit": "OLP-0024",
+      "source": {
+        "char_start": 2625,
+        "char_end_exclusive": 3353,
+        "line_start": 68,
+        "line_end": 86,
+        "text": "\\begin{proof}\nSuppose that $f\\colon A \\to B$ is !!{injective}. Consider a $y \\in B$.\nIf $y \\in \\ran{f}$, there is an $x \\in A$ so that $f(x) = y$. Because\n$f$ is !!{injective}, there is only one such~$x \\in A$. Then we can\ndefine: $g(y) = x$, i.e., $g(y)$ is ``the'' $x \\in A$ such that $f(x)\n= y$.  If $y \\notin \\ran{f}$, we can map it to any~$a \\in A$. So, we\ncan pick an $a \\in A$ and define $g\\colon B \\to A$ by:\n\\[\ng(y) = \\begin{cases}\n    x & \\text{if $f(x) = y$}\\\\\n    a & \\text{if $y \\notin \\ran{f}$.}\n\\end{cases}\n\\]\nIt is defined for all $y \\in B$, since for each such $y \\in \\ran{f}$\nthere is exactly one $x \\in A$ such that $f(x) = y$. By definition, if\n$y = f(x)$, then $g(y) = x$, i.e., $g(f(x)) = x$.\n\\end{proof}\n\n",
+        "sha256": "64ea765a063684e57b8f32b7c7bdfbd5b781e79f69744a5ed993b1b1ce77049a"
+      },
+      "target_before": {
+        "char_start": 2544,
+        "char_end_exclusive": 3325,
+        "line_start": 68,
+        "line_end": 86,
+        "text": "\\begin{proof}\nفرض کنید $f\\colon A \\to B$ !!{injective} باشد. یک $y \\in B$ را در نظر بگیرید.\nاگر $y \\in \\ran{f}$، یک $x \\in A$ وجود دارد چنان‌که $f(x) = y$. چون\n$f$ !!{injective} است، فقط یک چنین~$x \\in A$ای وجود دارد. پس می‌توانیم\nتعریف کنیم: $g(y) = x$؛ یعنی $g(y)$ «آن» $x \\in A$ای است که $f(x)\n= y$. اگر $y \\notin \\ran{f}$، می‌توانیم آن را به هر~$a \\in A$ای نگاشت کنیم. پس\nمی‌توانیم یک $a \\in A$ برگزینیم و $g\\colon B \\to A$ را به‌صورت زیر تعریف کنیم:\n\\[\ng(y) = \\begin{cases}\n    x & \\text{اگر $f(x) = y$}\\\\\n    a & \\text{اگر $y \\notin \\ran{f}$ باشد.}\n\\end{cases}\n\\]\nاین تابع برای همهٔ $y \\in B$ تعریف شده است، زیرا برای هر چنین $y \\in \\ran{f}$ای\nدقیقاً یک $x \\in A$ وجود دارد چنان‌که $f(x) = y$. بنا بر تعریف، اگر\n$y = f(x)$، آنگاه $g(y) = x$؛ یعنی $g(f(x)) = x$.\n\\end{proof}\n\n",
+        "sha256": "1bb518bddd767c1ad0d163ca5042e3e66c3261f85b994c98e37f62a5456c33b1"
+      },
+      "target_after": {
+        "char_start": 2816,
+        "char_end_exclusive": 3627,
+        "line_start": 73,
+        "line_end": 91,
+        "text": "\\begin{proof}\nفرض کنید $f\\colon A \\to B$ !!{injective} باشد و دامنهٔ آن ناتهی باشد. یک $y \\in B$ را در نظر بگیرید.\nاگر $y \\in \\ran{f}$، یک $x \\in A$ وجود دارد چنان‌که $f(x) = y$. چون\n$f$ !!{injective} است، تنها یک~$x \\in A$ با این ویژگی وجود دارد. پس می‌توانیم\nتعریف کنیم: $g(y) = x$؛ یعنی $g(y)$ همان $x \\in A$ است که $f(x)\n= y$. اگر $y \\notin \\ran{f}$، می‌توانیم آن را به یک عضو دلخواه~$a \\in A$ نگاشت کنیم. پس\nمی‌توانیم یک $a \\in A$ برگزینیم و $g\\colon B \\to A$ را به‌صورت زیر تعریف کنیم:\n\\[\ng(y) = \\begin{cases}\n    x & \\text{اگر $f(x) = y$}\\\\\n    a & \\text{اگر $y \\notin \\ran{f}$ باشد.}\n\\end{cases}\n\\]\nاین تابع برای همهٔ $y \\in B$ تعریف شده است، زیرا برای هر $y \\in \\ran{f}$\nدقیقاً یک $x \\in A$ وجود دارد چنان‌که $f(x) = y$. بنا بر تعریف، اگر\n$y = f(x)$، آنگاه $g(y) = x$؛ یعنی $g(f(x)) = x$.\n\\end{proof}\n\n",
+        "sha256": "3c15bdfdcde120936228e42119123db8426b80c60ade3c091ad81c84eec926b9"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{proof}\nفرض کنید $f\\colon A \\to B$ یک‌به‌یک باشد و دامنهٔ آن ناتهی باشد. یک $y \\in B$ را در نظر بگیرید.\nاگر $y \\in \\ran{f}$، یک $x \\in A$ وجود دارد چنان‌که $f(x) = y$. چون\n$f$ یک‌به‌یک است، تنها یک~$x \\in A$ با این ویژگی وجود دارد. پس می‌توانیم\nتعریف کنیم: $g(y) = x$؛ یعنی $g(y)$ همان $x \\in A$ است که $f(x)\n= y$. اگر $y \\notin \\ran{f}$، می‌توانیم آن را به یک عضو دلخواه~$a \\in A$ نگاشت کنیم. پس\nمی‌توانیم یک $a \\in A$ برگزینیم و $g\\colon B \\to A$ را به‌صورت زیر تعریف کنیم:\n\\[\ng(y) = \\begin{cases}\n    x & \\text{اگر $f(x) = y$}\\\\\n    a & \\text{اگر $y \\notin \\ran{f}$ باشد.}\n\\end{cases}\n\\]\nاین تابع برای همهٔ $y \\in B$ تعریف شده است، زیرا برای هر $y \\in \\ran{f}$\nدقیقاً یک $x \\in A$ وجود دارد چنان‌که $f(x) = y$. بنا بر تعریف، اگر\n$y = f(x)$، آنگاه $g(y) = x$؛ یعنی $g(f(x)) = x$.\n\\end{proof}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 41,
+          "token": "!!{injective}",
+          "realization": "یک‌به‌یک"
+        },
+        {
+          "character_offset_in_segment": 187,
+          "token": "!!{injective}",
+          "realization": "یک‌به‌یک"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Left inverse implies injectivity: exercise",
+      "canon": [
+        "FA-REL-P046",
+        "FA-REL-P050"
+      ],
+      "rationale": "Retain the complete source exercise, including the left inverse g. Its conclusion follows from applying g to equal outputs. No nonempty-domain assumption is needed for this converse, so none is added.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Full aligned wording, hypotheses and mathematical scope checked against frozen source and the cited Persian passages; editorial score, not a probability.",
+      "id": "FA-0024-C09",
+      "unit": "OLP-0024",
+      "source": {
+        "char_start": 3353,
+        "char_end_exclusive": 3460,
+        "line_start": 86,
+        "line_end": 91,
+        "text": "\\begin{prob}\nShow that if $f\\colon A \\to B$ has a left inverse~$g$, then $f$~is\n!!{injective}.\n\\end{prob}\n\n",
+        "sha256": "98f4bc1753a0dba674e6bf2688faaa221038a2b280eea711b57ccd2d1da9aa5d"
+      },
+      "target_before": {
+        "char_start": 3325,
+        "char_end_exclusive": 3443,
+        "line_start": 86,
+        "line_end": 91,
+        "text": "\\begin{prob}\nنشان دهید اگر $f\\colon A \\to B$ وارون چپی مانند~$g$ داشته باشد، آنگاه $f$\n!!{injective} است.\n\\end{prob}\n\n",
+        "sha256": "7a720df5b5226acf7a4bec4709696382f56485112099b74dcb0ecd2e1a80d973"
+      },
+      "target_after": {
+        "char_start": 3627,
+        "char_end_exclusive": 3745,
+        "line_start": 91,
+        "line_end": 96,
+        "text": "\\begin{prob}\nنشان دهید اگر $f\\colon A \\to B$ وارون چپی مانند~$g$ داشته باشد، آنگاه $f$\n!!{injective} است.\n\\end{prob}\n\n",
+        "sha256": "7a720df5b5226acf7a4bec4709696382f56485112099b74dcb0ecd2e1a80d973"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{prob}\nنشان دهید اگر $f\\colon A \\to B$ وارون چپی مانند~$g$ داشته باشد، آنگاه $f$\nیک‌به‌یک است.\n\\end{prob}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 87,
+          "token": "!!{injective}",
+          "realization": "یک‌به‌یک"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Surjection has a right inverse: proposition",
+      "canon": [
+        "FA-REL-P046",
+        "FA-REL-P050",
+        "FA-OL-CANON-0003:P0018"
+      ],
+      "rationale": "Retain the right inverse type and identity. The source proof immediately states its general Choice dependence; do not suppress that caveat or attach the left-inverse empty-domain repair here.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Full aligned wording, hypotheses and mathematical scope checked against frozen source and the cited Persian passages; editorial score, not a probability.",
+      "id": "FA-0024-C10",
+      "unit": "OLP-0024",
+      "source": {
+        "char_start": 3460,
+        "char_end_exclusive": 3640,
+        "line_start": 91,
+        "line_end": 97,
+        "text": "\\begin{prop}\n    If $f\\colon A \\to B$ is !!{surjective}, then there is a\n    \\emph{right inverse}~$h\\colon B \\to A$ of~$f$ so that $f(h(y)) =\n    y$ for all~$y \\in B$.\n\\end{prop}\n\n",
+        "sha256": "88078d20c64007af2d15996785cfb59f545de2390982355f0d13fa6a3aca57ba"
+      },
+      "target_before": {
+        "char_start": 3443,
+        "char_end_exclusive": 3634,
+        "line_start": 91,
+        "line_end": 97,
+        "text": "\\begin{prop}\n    اگر $f\\colon A \\to B$ !!{surjective} باشد، آنگاه\n    \\emph{وارون راستی} مانند~$h\\colon B \\to A$ برای~$f$ وجود دارد چنان‌که $f(h(y)) =\n    y$ برای همهٔ~$y \\in B$.\n\\end{prop}\n\n",
+        "sha256": "3af3e6bdaf7c518dab0e5da3c2a5c490b1bc1810559895087a6c0e46aa7cd076"
+      },
+      "target_after": {
+        "char_start": 3745,
+        "char_end_exclusive": 3936,
+        "line_start": 96,
+        "line_end": 102,
+        "text": "\\begin{prop}\n    اگر $f\\colon A \\to B$ !!{surjective} باشد، آنگاه\n    \\emph{وارون راستی} مانند~$h\\colon B \\to A$ برای~$f$ وجود دارد چنان‌که $f(h(y)) =\n    y$ برای همهٔ~$y \\in B$.\n\\end{prop}\n\n",
+        "sha256": "3af3e6bdaf7c518dab0e5da3c2a5c490b1bc1810559895087a6c0e46aa7cd076"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{prop}\n    اگر $f\\colon A \\to B$ پوشا باشد، آنگاه\n    \\emph{وارون راستی} مانند~$h\\colon B \\to A$ برای~$f$ وجود دارد چنان‌که $f(h(y)) =\n    y$ برای همهٔ~$y \\in B$.\n\\end{prop}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 39,
+          "token": "!!{surjective}",
+          "realization": "پوشا"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Selecting preimages for a right inverse",
+      "canon": [
+        "FA-REL-P044",
+        "FA-REL-P046",
+        "FA-OL-CANON-0003:P0018"
+      ],
+      "rationale": "Retain x indexed by y, choosing one preimage for every codomain member. At least one preimage does not make the choice unique. The footnote, separately reviewed next, is part of the proof and remains intact.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Full aligned wording, hypotheses and mathematical scope checked against frozen source and the cited Persian passages; editorial score, not a probability.",
+      "id": "FA-0024-C11",
+      "unit": "OLP-0024",
+      "source": {
+        "char_start": 3640,
+        "char_end_exclusive": 3975,
+        "line_start": 97,
+        "line_end": 102,
+        "text": "\\begin{proof}\nSuppose that $f\\colon A \\to B$ is !!{surjective}. Consider a $y \\in\nB$. Since $f$~is !!{surjective}, there is an $x_y \\in A$ with $f(x_y)\n= y$.  Then we can define: $h(y) = x_y$, i.e., for each $y \\in B$ we\nchoose some $x \\in A$ so that $f(x) = y$; since $f$~is !!{surjective}\nthere is always at least one to choose from.",
+        "sha256": "578638f952a37286bcb48f80e962bae734bb8f530a32009fa0e655b084c4224d"
+      },
+      "target_before": {
+        "char_start": 3634,
+        "char_end_exclusive": 3976,
+        "line_start": 97,
+        "line_end": 102,
+        "text": "\\begin{proof}\nفرض کنید $f\\colon A \\to B$ !!{surjective} باشد. یک $y \\in\nB$ را در نظر بگیرید. چون $f$ !!{surjective} است، یک $x_y \\in A$ وجود دارد که $f(x_y)\n= y$. پس می‌توانیم تعریف کنیم: $h(y) = x_y$؛ یعنی برای هر $y \\in B$\nیک $x \\in A$ برمی‌گزینیم چنان‌که $f(x) = y$؛ چون $f$ !!{surjective} است،\nهمواره دست‌کم یک مورد برای انتخاب وجود دارد.",
+        "sha256": "0ea5d11ff9050635eb813370a9d8b029b97d589ec4a5a093def45865493b8c9b"
+      },
+      "target_after": {
+        "char_start": 3936,
+        "char_end_exclusive": 4278,
+        "line_start": 102,
+        "line_end": 107,
+        "text": "\\begin{proof}\nفرض کنید $f\\colon A \\to B$ !!{surjective} باشد. یک $y \\in\nB$ را در نظر بگیرید. چون $f$ !!{surjective} است، یک $x_y \\in A$ وجود دارد که $f(x_y)\n= y$. پس می‌توانیم تعریف کنیم: $h(y) = x_y$؛ یعنی برای هر $y \\in B$\nیک $x \\in A$ برمی‌گزینیم چنان‌که $f(x) = y$؛ چون $f$ !!{surjective} است،\nهمواره دست‌کم یک مورد برای انتخاب وجود دارد.",
+        "sha256": "0ea5d11ff9050635eb813370a9d8b029b97d589ec4a5a093def45865493b8c9b"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{proof}\nفرض کنید $f\\colon A \\to B$ پوشا باشد. یک $y \\in\nB$ را در نظر بگیرید. چون $f$ پوشا است، یک $x_y \\in A$ وجود دارد که $f(x_y)\n= y$. پس می‌توانیم تعریف کنیم: $h(y) = x_y$؛ یعنی برای هر $y \\in B$\nیک $x \\in A$ برمی‌گزینیم چنان‌که $f(x) = y$؛ چون $f$ پوشا است،\nهمواره دست‌کم یک مورد برای انتخاب وجود دارد.",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 41,
+          "token": "!!{surjective}",
+          "realization": "پوشا"
+        },
+        {
+          "character_offset_in_segment": 101,
+          "token": "!!{surjective}",
+          "realization": "پوشا"
+        },
+        {
+          "character_offset_in_segment": 278,
+          "token": "!!{surjective}",
+          "realization": "پوشا"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Axiom of Choice footnote and special cases",
+      "canon": [
+        "FA-OL-CANON-0003:P0018",
+        "FA-REL-P046",
+        "FA-REL-P050"
+      ],
+      "rationale": "اصل انتخاب and nonempty selection families are directly attested. Preserve arbitrary simultaneous selection, the optional chapter reference, and the finite/Nat/bijective exceptions. Change چشم می‌پوشیم to not discussing the issue in detail: the absent-chapter branch must not suggest that the axiom is being dropped. Unique singleton preimages need no Choice; a well-order on Nat supplies least preimages.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Full aligned wording, hypotheses and mathematical scope checked against frozen source and the cited Persian passages; editorial score, not a probability.",
+      "id": "FA-0024-C12",
+      "unit": "OLP-0024",
+      "source": {
+        "char_start": 3975,
+        "char_end_exclusive": 4770,
+        "line_start": 102,
+        "line_end": 112,
+        "text": "\\footnote{Since $f$ is\n!!{surjective}, for every~$y \\in B$ the set $\\Setabs{x}{f(x) = y}$ is\nnonempty. Our definition of~$h$ requires that we choose a single $x$\nfrom each of these sets. That this is always possible is actually not\nobvious---the possibility of making these choices is simply assumed as an axiom. \nIn other words, this proposition assumes the so-called Axiom of\nChoice, an issue we will \\oliflabeldef{sth:choice::chap}{revisit in \\olref[sth][choice][]{chap}}{gloss over}. \nHowever, in many specific cases, e.g., when $A = \\Nat$ or is finite, or when $f$ is !!{bijective},\nthe Axiom of Choice is not required. (In the particular case when $f$ is !!{bijective}, for each $y \\in B$ the set \n$\\Setabs{x}{f(x) = y}$ has exactly one !!{element}, so that there is no choice to make.)} \n",
+        "sha256": "872903ea39881f2776808a9c5aecb284ce9631c9a3b1d9a475327f87d84ac7b4"
+      },
+      "target_before": {
+        "char_start": 3976,
+        "char_end_exclusive": 4738,
+        "line_start": 102,
+        "line_end": 112,
+        "text": "\\footnote{چون $f$\n!!{surjective} است، برای هر~$y \\in B$ مجموعهٔ $\\Setabs{x}{f(x) = y}$\nناتهی است. تعریف ما از~$h$ ایجاب می‌کند که از هریک از این مجموعه‌ها یک $x$\nبرگزینیم. اینکه این کار همواره ممکن است در واقع\nآشکار نیست---امکان انجام این انتخاب‌ها صرفاً به‌عنوان یک اصل موضوع پذیرفته می‌شود.\nبه بیان دیگر، این گزاره «اصل انتخاب» را مفروض می‌گیرد؛ موضوعی که\n\\oliflabeldef{sth:choice::chap}{در \\olref[sth][choice][]{chap} دوباره بررسی خواهیم کرد}{در اینجا از آن چشم می‌پوشیم}.\nبااین‌حال، در بسیاری از موارد خاص، مثلاً هنگامی که $A = \\Nat$ یا متناهی است، یا هنگامی که $f$ !!{bijective} است،\nبه اصل انتخاب نیازی نیست. (در حالت خاصی که $f$ !!{bijective} است، برای هر $y \\in B$ مجموعهٔ\n$\\Setabs{x}{f(x) = y}$ دقیقاً یک !!{element} دارد؛ پس هیچ انتخابی در کار نیست.)}\n",
+        "sha256": "b1f46f0fc52b72b867b3e60b061959e2467ecad0d113674b1cb0cf881ade9eff"
+      },
+      "target_after": {
+        "char_start": 4278,
+        "char_end_exclusive": 5048,
+        "line_start": 107,
+        "line_end": 117,
+        "text": "\\footnote{چون $f$\n!!{surjective} است، برای هر~$y \\in B$ مجموعهٔ $\\Setabs{x}{f(x) = y}$\nناتهی است. تعریف ما از~$h$ ایجاب می‌کند که از هریک از این مجموعه‌ها یک $x$\nبرگزینیم. اینکه این کار همواره ممکن است در واقع\nآشکار نیست---امکان انجام این انتخاب‌ها صرفاً به‌عنوان یک اصل موضوع پذیرفته می‌شود.\nبه بیان دیگر، این گزاره «اصل انتخاب» را مفروض می‌گیرد؛ موضوعی که\n\\oliflabeldef{sth:choice::chap}{در \\olref[sth][choice][]{chap} دوباره بررسی خواهیم کرد}{در اینجا به‌تفصیل به آن نمی‌پردازیم}.\nبااین‌حال، در بسیاری از موارد خاص، مثلاً هنگامی که $A = \\Nat$ یا متناهی است، یا هنگامی که $f$ !!{bijective} است،\nبه اصل انتخاب نیازی نیست. (در حالت خاصی که $f$ !!{bijective} است، برای هر $y \\in B$ مجموعهٔ\n$\\Setabs{x}{f(x) = y}$ دقیقاً یک !!{element} دارد؛ پس هیچ انتخابی در کار نیست.)}\n",
+        "sha256": "e2d40d9528b573dcca15793321ef260d98d66caf626600cef54885c1c27e3c06"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\footnote{چون $f$\nپوشا است، برای هر~$y \\in B$ مجموعهٔ $\\Setabs{x}{f(x) = y}$\nناتهی است. تعریف ما از~$h$ ایجاب می‌کند که از هریک از این مجموعه‌ها یک $x$\nبرگزینیم. اینکه این کار همواره ممکن است در واقع\nآشکار نیست---امکان انجام این انتخاب‌ها صرفاً به‌عنوان یک اصل موضوع پذیرفته می‌شود.\nبه بیان دیگر، این گزاره «اصل انتخاب» را مفروض می‌گیرد؛ موضوعی که\n\\oliflabeldef{sth:choice::chap}{در \\olref[sth][choice][]{chap} دوباره بررسی خواهیم کرد}{در اینجا به‌تفصیل به آن نمی‌پردازیم}.\nبااین‌حال، در بسیاری از موارد خاص، مثلاً هنگامی که $A = \\Nat$ یا متناهی است، یا هنگامی که $f$ دوسویی است،\nبه اصل انتخاب نیازی نیست. (در حالت خاصی که $f$ دوسویی است، برای هر $y \\in B$ مجموعهٔ\n$\\Setabs{x}{f(x) = y}$ دقیقاً یک عضو دارد؛ پس هیچ انتخابی در کار نیست.)}\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 18,
+          "token": "!!{surjective}",
+          "realization": "پوشا"
+        },
+        {
+          "character_offset_in_segment": 578,
+          "token": "!!{bijective}",
+          "realization": "دوسویی"
+        },
+        {
+          "character_offset_in_segment": 644,
+          "token": "!!{bijective}",
+          "realization": "دوسویی"
+        },
+        {
+          "character_offset_in_segment": 722,
+          "token": "!!{element}",
+          "realization": "عضو"
+        }
+      ],
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 722,
+          "token": "!!{element}",
+          "realization": "عضو"
+        }
+      ]
+    },
+    {
+      "topic": "Right inverse proof conclusion",
+      "canon": [
+        "FA-REL-P046",
+        "FA-REL-P050"
+      ],
+      "rationale": "Retain the conclusion f(h(y))=y for every codomain y. The conclusion is not g(f(x))=x, and does not assert injectivity of the original f.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Full aligned wording, hypotheses and mathematical scope checked against frozen source and the cited Persian passages; editorial score, not a probability.",
+      "id": "FA-0024-C13",
+      "unit": "OLP-0024",
+      "source": {
+        "char_start": 4770,
+        "char_end_exclusive": 4870,
+        "line_start": 112,
+        "line_end": 116,
+        "text": "By definition, if $x = h(y)$,\nthen $f(x) = y$, i.e., for any $y \\in B$, $f(h(y)) = y$.\n\\end{proof}\n\n",
+        "sha256": "62c3860b4c0ce28d0ba477886481e2e6bc6725d6a76bd64c7922af9875ac1a51"
+      },
+      "target_before": {
+        "char_start": 4738,
+        "char_end_exclusive": 4838,
+        "line_start": 112,
+        "line_end": 116,
+        "text": "بنا بر تعریف، اگر $x = h(y)$،\nآنگاه $f(x) = y$؛ یعنی برای هر $y \\in B$، $f(h(y)) = y$.\n\\end{proof}\n\n",
+        "sha256": "c73ec79746587fe3781219f396b78e58b36cd5b58de396dafeb0b2fde76fe5c3"
+      },
+      "target_after": {
+        "char_start": 5048,
+        "char_end_exclusive": 5148,
+        "line_start": 117,
+        "line_end": 121,
+        "text": "بنا بر تعریف، اگر $x = h(y)$،\nآنگاه $f(x) = y$؛ یعنی برای هر $y \\in B$، $f(h(y)) = y$.\n\\end{proof}\n\n",
+        "sha256": "c73ec79746587fe3781219f396b78e58b36cd5b58de396dafeb0b2fde76fe5c3"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "بنا بر تعریف، اگر $x = h(y)$،\nآنگاه $f(x) = y$؛ یعنی برای هر $y \\in B$، $f(h(y)) = y$.\n\\end{proof}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Right inverse implies surjectivity: exercise",
+      "canon": [
+        "FA-REL-P046",
+        "FA-REL-P050"
+      ],
+      "rationale": "Preserve the source exercise; h(y) explicitly supplies a preimage. This implication requires no new Choice assumption, because h is already supplied.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Full aligned wording, hypotheses and mathematical scope checked against frozen source and the cited Persian passages; editorial score, not a probability.",
+      "id": "FA-0024-C14",
+      "unit": "OLP-0024",
+      "source": {
+        "char_start": 4870,
+        "char_end_exclusive": 4979,
+        "line_start": 116,
+        "line_end": 121,
+        "text": "\\begin{prob}\nShow that if $f\\colon A \\to B$ has a right inverse~$h$, then $f$~is\n!!{surjective}.\n\\end{prob}\n\n",
+        "sha256": "35505f7622a8ccbd2469620655b2246bf714ed38ae05dd53b406eb8ca21b31e8"
+      },
+      "target_before": {
+        "char_start": 4838,
+        "char_end_exclusive": 4959,
+        "line_start": 116,
+        "line_end": 121,
+        "text": "\\begin{prob}\nنشان دهید اگر $f\\colon A \\to B$ وارون راستی مانند~$h$ داشته باشد، آنگاه $f$\n!!{surjective} است.\n\\end{prob}\n\n",
+        "sha256": "c4e36ac2dc9d416473e5c09e56a33813f1a402e4a174e3bb016b1f10e0557388"
+      },
+      "target_after": {
+        "char_start": 5148,
+        "char_end_exclusive": 5269,
+        "line_start": 121,
+        "line_end": 126,
+        "text": "\\begin{prob}\nنشان دهید اگر $f\\colon A \\to B$ وارون راستی مانند~$h$ داشته باشد، آنگاه $f$\n!!{surjective} است.\n\\end{prob}\n\n",
+        "sha256": "c4e36ac2dc9d416473e5c09e56a33813f1a402e4a174e3bb016b1f10e0557388"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{prob}\nنشان دهید اگر $f\\colon A \\to B$ وارون راستی مانند~$h$ داشته باشد، آنگاه $f$\nپوشا است.\n\\end{prob}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 89,
+          "token": "!!{surjective}",
+          "realization": "پوشا"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "A single two-sided inverse for a bijection",
+      "canon": [
+        "FA-REL-P046",
+        "FA-REL-P050"
+      ],
+      "rationale": "Retain the single function being both a left and a right inverse. Do not read تابع واحد as constant function or infer arbitrary surjections have two-sided inverses.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Full aligned wording, hypotheses and mathematical scope checked against frozen source and the cited Persian passages; editorial score, not a probability.",
+      "id": "FA-0024-C15",
+      "unit": "OLP-0024",
+      "source": {
+        "char_start": 4979,
+        "char_end_exclusive": 5194,
+        "line_start": 121,
+        "line_end": 127,
+        "text": "\\begin{explain}\n  By combining the ideas in the previous proof, we now get that every\n  !!{bijection} has an inverse, i.e., there is a single function\n  which is both a left and right inverse of~$f$.\n\\end{explain}\n\n",
+        "sha256": "26a1566786d66c307419112014f99a1b56f71b6d8d285d5f1def78db37fc0953"
+      },
+      "target_before": {
+        "char_start": 4959,
+        "char_end_exclusive": 5148,
+        "line_start": 121,
+        "line_end": 127,
+        "text": "\\begin{explain}\n  با ترکیب ایده‌های برهان پیشین، اکنون نتیجه می‌گیریم که هر\n  !!{bijection} وارونی دارد؛ یعنی تابع واحدی وجود دارد\n  که هم وارون چپ و هم وارون راستِ~$f$ است.\n\\end{explain}\n\n",
+        "sha256": "5ed0d8b0c769ac7c32556ecaf268d51df74345d69a0103dd3f45f3bbf695a0f3"
+      },
+      "target_after": {
+        "char_start": 5269,
+        "char_end_exclusive": 5458,
+        "line_start": 126,
+        "line_end": 132,
+        "text": "\\begin{explain}\n  با ترکیب ایده‌های برهان پیشین، اکنون نتیجه می‌گیریم که هر\n  !!{bijection} وارونی دارد؛ یعنی تابع واحدی وجود دارد\n  که هم وارون چپ و هم وارون راستِ~$f$ است.\n\\end{explain}\n\n",
+        "sha256": "5ed0d8b0c769ac7c32556ecaf268d51df74345d69a0103dd3f45f3bbf695a0f3"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{explain}\n  با ترکیب ایده‌های برهان پیشین، اکنون نتیجه می‌گیریم که هر\n  تناظر دوسویی وارونی دارد؛ یعنی تابع واحدی وجود دارد\n  که هم وارون چپ و هم وارون راستِ~$f$ است.\n\\end{explain}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 78,
+          "token": "!!{bijection}",
+          "realization": "تناظر دوسویی"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Bijection inverse proposition",
+      "canon": [
+        "FA-REL-P046",
+        "FA-REL-P050"
+      ],
+      "rationale": "Retain the type B to A and the two separately quantified identities. Unique preimages define the inverse without Choice; the empty bijection is included.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Full aligned wording, hypotheses and mathematical scope checked against frozen source and the cited Persian passages; editorial score, not a probability.",
+      "id": "FA-0024-C16",
+      "unit": "OLP-0024",
+      "source": {
+        "char_start": 5194,
+        "char_end_exclusive": 5422,
+        "line_start": 127,
+        "line_end": 133,
+        "text": "\\begin{prop}\\ollabel{prop:bijection-inverse}\nIf $f\\colon A \\to B$ is !!{bijective}, there is a\nfunction~$f^{-1}\\colon B \\to A$ so that for all $x \\in A$,\n$f^{-1}(f(x)) = x$ and for all $y \\in B$, $f(f^{-1}(y)) = y$.\n\\end{prop}\n\n",
+        "sha256": "cd55b0fb74b26eb72c1e57e4cc5ed4ced255c19a05c7cb72867d79d438bf5d48"
+      },
+      "target_before": {
+        "char_start": 5148,
+        "char_end_exclusive": 5384,
+        "line_start": 127,
+        "line_end": 133,
+        "text": "\\begin{prop}\\ollabel{prop:bijection-inverse}\nاگر $f\\colon A \\to B$ !!{bijective} باشد، تابعی مانند\n~$f^{-1}\\colon B \\to A$ وجود دارد چنان‌که برای همهٔ $x \\in A$،\n$f^{-1}(f(x)) = x$ و برای همهٔ $y \\in B$، $f(f^{-1}(y)) = y$.\n\\end{prop}\n\n",
+        "sha256": "999709b25341125e35315a9b7b6e43ed2c2d14e24b7e17dd4bafa9451f0fc0b3"
+      },
+      "target_after": {
+        "char_start": 5458,
+        "char_end_exclusive": 5694,
+        "line_start": 132,
+        "line_end": 138,
+        "text": "\\begin{prop}\\ollabel{prop:bijection-inverse}\nاگر $f\\colon A \\to B$ !!{bijective} باشد، تابعی مانند\n~$f^{-1}\\colon B \\to A$ وجود دارد چنان‌که برای همهٔ $x \\in A$،\n$f^{-1}(f(x)) = x$ و برای همهٔ $y \\in B$، $f(f^{-1}(y)) = y$.\n\\end{prop}\n\n",
+        "sha256": "999709b25341125e35315a9b7b6e43ed2c2d14e24b7e17dd4bafa9451f0fc0b3"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{prop}\\ollabel{prop:bijection-inverse}\nاگر $f\\colon A \\to B$ دوسویی باشد، تابعی مانند\n~$f^{-1}\\colon B \\to A$ وجود دارد چنان‌که برای همهٔ $x \\in A$،\n$f^{-1}(f(x)) = x$ و برای همهٔ $y \\in B$، $f(f^{-1}(y)) = y$.\n\\end{prop}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 67,
+          "token": "!!{bijective}",
+          "realization": "دوسویی"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Source proof intentionally assigned as an exercise",
+      "canon": [
+        "FA-REL-P050"
+      ],
+      "rationale": "تمرین faithfully translates the source proof text Exercise. It is not a translator placeholder; do not invent a proof or remove the exercise structure.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Full aligned wording, hypotheses and mathematical scope checked against frozen source and the cited Persian passages; editorial score, not a probability.",
+      "id": "FA-0024-C17",
+      "unit": "OLP-0024",
+      "source": {
+        "char_start": 5422,
+        "char_end_exclusive": 5459,
+        "line_start": 133,
+        "line_end": 137,
+        "text": "\\begin{proof}\nExercise.\n\\end{proof}\n\n",
+        "sha256": "61f60912f1d89b02a78f887ac4ef1899e1b4244bcca0d0058d223c2e792ed569"
+      },
+      "target_before": {
+        "char_start": 5384,
+        "char_end_exclusive": 5418,
+        "line_start": 133,
+        "line_end": 137,
+        "text": "\\begin{proof}\nتمرین.\n\\end{proof}\n\n",
+        "sha256": "91f611726ea9380149dd25b3c2c8ad92f1268a170ea9bba53126277b9b889d14"
+      },
+      "target_after": {
+        "char_start": 5694,
+        "char_end_exclusive": 5728,
+        "line_start": 138,
+        "line_end": 142,
+        "text": "\\begin{proof}\nتمرین.\n\\end{proof}\n\n",
+        "sha256": "91f611726ea9380149dd25b3c2c8ad92f1268a170ea9bba53126277b9b889d14"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{proof}\nتمرین.\n\\end{proof}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Inverse construction exercise",
+      "canon": [
+        "FA-REL-P044",
+        "FA-REL-P050"
+      ],
+      "rationale": "Keep all three obligations: define the inverse, prove it is a function, and check both identities with the stated quantifiers. Preserve the labelled proposition reference.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Full aligned wording, hypotheses and mathematical scope checked against frozen source and the cited Persian passages; editorial score, not a probability.",
+      "id": "FA-0024-C18",
+      "unit": "OLP-0024",
+      "source": {
+        "char_start": 5459,
+        "char_end_exclusive": 5714,
+        "line_start": 137,
+        "line_end": 144,
+        "text": "\\begin{prob}\nProve \\olref[sfr][fun][inv]{prop:bijection-inverse}. You have to\ndefine~$f^{-1}$, show that it is a function, and show that it is an\ninverse of~$f$, i.e., $f^{-1}(f(x)) = x$ and $f(f^{-1}(y)) = y$ for\nall $x \\in A$ and $y \\in B$.\n\\end{prob}\n\n",
+        "sha256": "f7e9c159c214fb1e69328540433c2ac69f86bf776c7226972143e6a3660afca1"
+      },
+      "target_before": {
+        "char_start": 5418,
+        "char_end_exclusive": 5666,
+        "line_start": 137,
+        "line_end": 144,
+        "text": "\\begin{prob}\nگزارهٔ \\olref[sfr][fun][inv]{prop:bijection-inverse} را اثبات کنید. باید\n~$f^{-1}$ را تعریف کنید، نشان دهید تابع است، و نشان دهید\nوارون~$f$ است؛ یعنی $f^{-1}(f(x)) = x$ و $f(f^{-1}(y)) = y$ برای\nهمهٔ $x \\in A$ و $y \\in B$.\n\\end{prob}\n\n",
+        "sha256": "22a8fcb34b07d8bd51830722a8f9d23fc2c620c8f4ab1d1017e44d06d4dcdf30"
+      },
+      "target_after": {
+        "char_start": 5728,
+        "char_end_exclusive": 5976,
+        "line_start": 142,
+        "line_end": 149,
+        "text": "\\begin{prob}\nگزارهٔ \\olref[sfr][fun][inv]{prop:bijection-inverse} را اثبات کنید. باید\n~$f^{-1}$ را تعریف کنید، نشان دهید تابع است، و نشان دهید\nوارون~$f$ است؛ یعنی $f^{-1}(f(x)) = x$ و $f(f^{-1}(y)) = y$ برای\nهمهٔ $x \\in A$ و $y \\in B$.\n\\end{prob}\n\n",
+        "sha256": "22a8fcb34b07d8bd51830722a8f9d23fc2c620c8f4ab1d1017e44d06d4dcdf30"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{prob}\nگزارهٔ \\olref[sfr][fun][inv]{prop:bijection-inverse} را اثبات کنید. باید\n~$f^{-1}$ را تعریف کنید، نشان دهید تابع است، و نشان دهید\nوارون~$f$ است؛ یعنی $f^{-1}(f(x)) = x$ و $f(f^{-1}(y)) = y$ برای\nهمهٔ $x \\in A$ و $y \\in B$.\n\\end{prob}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Inverse on the range and notational abuse",
+      "canon": [
+        "FA-REL-P044",
+        "FA-REL-P046",
+        "FA-REL-P050"
+      ],
+      "rationale": "Use the explicit construction phrase به دست آورد consistently with reviewed0022. Preserve replacement of codomain by ran(f); the inverse of an injection is a function on its range, not automatically on all original B. The uniqueness claim is mathematically supported by the later uniqueness result, although the cited bijection proposition states existence. Keep the disclosed mild notational abuse.",
+      "alternatives": "",
+      "question": "تسامح در نمادگذاری is an explanatory register choice, not a verbatim attestation on these pages.",
+      "confidence": 2,
+      "confidence_reason": "Domain/range and inverse construction exact; editorial phrasing contextual.",
+      "id": "FA-0024-C19",
+      "unit": "OLP-0024",
+      "source": {
+        "char_start": 5714,
+        "char_end_exclusive": 6182,
+        "line_start": 144,
+        "line_end": 154,
+        "text": "\\begin{explain}\nThere is a slightly more general way to extract inverses. We saw in\n\\olref[kin]{sec} that every function $f$ induces !!a{surjection} $f'\n\\colon A \\to \\ran{f}$ by letting $f'(x) = f(x)$ for all $x \\in A$.\nClearly, if $f$~is !!{injective}, then $f'$~is !!{bijective}, so that\nit has a unique inverse by \\olref{prop:bijection-inverse}. By a very\nminor abuse of notation, we sometimes call the inverse of $f'$ simply\n``the inverse of~$f$.''\n\\end{explain}\n\n",
+        "sha256": "88ff8a37a8f46a49c54153b70cde702341ec40f538dc4196d78a03e6da18c621"
+      },
+      "target_before": {
+        "char_start": 5666,
+        "char_end_exclusive": 6109,
+        "line_start": 144,
+        "line_end": 154,
+        "text": "\\begin{explain}\nراهی اندکی کلی‌تر برای استخراج وارون‌ها وجود دارد. در\n\\olref[kin]{sec} دیدیم که هر تابع $f$، !!a{surjection} $f'\n\\colon A \\to \\ran{f}$ را با قرار دادن $f'(x) = f(x)$ برای همهٔ $x \\in A$ القا می‌کند.\nآشکار است که اگر $f$ !!{injective} باشد، آنگاه $f'$ !!{bijective} است، پس\nبنا بر \\olref{prop:bijection-inverse} وارون یکتایی دارد. با تسامحی بسیار\nجزئی در نمادگذاری، گاهی وارون $f'$ را صرفاً\n«وارون~$f$» می‌نامیم.\n\\end{explain}\n\n",
+        "sha256": "627dc48aff03b87570b56c2b094e83b3a2a626d525d224f212b09810b5f49af2"
+      },
+      "target_after": {
+        "char_start": 5976,
+        "char_end_exclusive": 6434,
+        "line_start": 149,
+        "line_end": 159,
+        "text": "\\begin{explain}\nروش اندکی کلی‌تری برای به دست آوردن وارون وجود دارد. در\n\\olref[kin]{sec} دیدیم که از هر تابع $f$ می‌توان یک !!a{surjection} $f'\n\\colon A \\to \\ran{f}$ را با قرار دادن $f'(x) = f(x)$ برای همهٔ $x \\in A$ به دست آورد.\nآشکار است که اگر $f$ !!{injective} باشد، آنگاه $f'$ !!{bijective} است، پس\nبنا بر \\olref{prop:bijection-inverse} وارون یکتایی دارد. با تسامحی بسیار\nجزئی در نمادگذاری، گاهی وارون $f'$ را صرفاً\n«وارون~$f$» می‌نامیم.\n\\end{explain}\n\n",
+        "sha256": "4a14e5f3e74e3ea9d5b63e540bf2087ae389b0869275a85c877f21cf19c322ed"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{explain}\nروش اندکی کلی‌تری برای به دست آوردن وارون وجود دارد. در\n\\olref[kin]{sec} دیدیم که از هر تابع $f$ می‌توان یک نگاشت پوشا $f'\n\\colon A \\to \\ran{f}$ را با قرار دادن $f'(x) = f(x)$ برای همهٔ $x \\in A$ به دست آورد.\nآشکار است که اگر $f$ یک‌به‌یک باشد، آنگاه $f'$ دوسویی است، پس\nبنا بر \\olref{prop:bijection-inverse} وارون یکتایی دارد. با تسامحی بسیار\nجزئی در نمادگذاری، گاهی وارون $f'$ را صرفاً\n«وارون~$f$» می‌نامیم.\n\\end{explain}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 124,
+          "token": "!!a{surjection}",
+          "realization": "نگاشت پوشا"
+        },
+        {
+          "character_offset_in_segment": 251,
+          "token": "!!{injective}",
+          "realization": "یک‌به‌یک"
+        },
+        {
+          "character_offset_in_segment": 282,
+          "token": "!!{bijective}",
+          "realization": "دوسویی"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Left and right inverses coincide",
+      "canon": [
+        "FA-REL-P049",
+        "FA-REL-P050"
+      ],
+      "rationale": "Retain both inverse hypotheses and h=g. The calculation g(y)=g(f(h(y)))=h(y) proves the conclusion; neither one-sided hypothesis alone suffices.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Full aligned wording, hypotheses and mathematical scope checked against frozen source and the cited Persian passages; editorial score, not a probability.",
+      "id": "FA-0024-C20",
+      "unit": "OLP-0024",
+      "source": {
+        "char_start": 6182,
+        "char_end_exclusive": 6330,
+        "line_start": 154,
+        "line_end": 159,
+        "text": "\\begin{prop}\\ollabel{prop:left-right}%\n  Show that if $f\\colon A \\to B$ has a left inverse~$g$ and a right\n  inverse~$h$, then $h = g$.\n\\end{prop}\n\n",
+        "sha256": "79334d95b69c30fb6c8fd7eb587b1573d39ba4e62ed948c8f574fde2c00d9990"
+      },
+      "target_before": {
+        "char_start": 6109,
+        "char_end_exclusive": 6267,
+        "line_start": 154,
+        "line_end": 159,
+        "text": "\\begin{prop}\\ollabel{prop:left-right}%\n  نشان دهید اگر $f\\colon A \\to B$ وارون چپی مانند~$g$ و وارون\n  راستی مانند~$h$ داشته باشد، آنگاه $h = g$.\n\\end{prop}\n\n",
+        "sha256": "e13967303f1dc19c3b99b800be1b428b30200f0cb16c8e8820cf03954ed5b5ad"
+      },
+      "target_after": {
+        "char_start": 6434,
+        "char_end_exclusive": 6592,
+        "line_start": 159,
+        "line_end": 164,
+        "text": "\\begin{prop}\\ollabel{prop:left-right}%\n  نشان دهید اگر $f\\colon A \\to B$ وارون چپی مانند~$g$ و وارون\n  راستی مانند~$h$ داشته باشد، آنگاه $h = g$.\n\\end{prop}\n\n",
+        "sha256": "e13967303f1dc19c3b99b800be1b428b30200f0cb16c8e8820cf03954ed5b5ad"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{prop}\\ollabel{prop:left-right}%\n  نشان دهید اگر $f\\colon A \\to B$ وارون چپی مانند~$g$ و وارون\n  راستی مانند~$h$ داشته باشد، آنگاه $h = g$.\n\\end{prop}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Proof and referenced exercise retained",
+      "canon": [
+        "FA-REL-P049",
+        "FA-REL-P050"
+      ],
+      "rationale": "Preserve both the Exercise proof marker and the subsequent instruction to prove the labelled proposition. These are distinct original structures, not duplicate translation work or missing generated content.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Full aligned wording, hypotheses and mathematical scope checked against frozen source and the cited Persian passages; editorial score, not a probability.",
+      "id": "FA-0024-C21",
+      "unit": "OLP-0024",
+      "source": {
+        "char_start": 6330,
+        "char_end_exclusive": 6442,
+        "line_start": 159,
+        "line_end": 167,
+        "text": "\\begin{proof}\n  Exercise.\n\\end{proof}\n\n\\begin{prob}\n  Prove \\olref[sfr][fun][inv]{prop:left-right}.\n\\end{prob}\n\n",
+        "sha256": "9f130b1accfde8bbba19cf87ebcc0ef03ee38a9e3deebd3b2848dfc8eb638e26"
+      },
+      "target_before": {
+        "char_start": 6267,
+        "char_end_exclusive": 6391,
+        "line_start": 159,
+        "line_end": 167,
+        "text": "\\begin{proof}\n  تمرین.\n\\end{proof}\n\n\\begin{prob}\n  گزارهٔ \\olref[sfr][fun][inv]{prop:left-right} را اثبات کنید.\n\\end{prob}\n\n",
+        "sha256": "8e2dc1cca9b002136599586cff51e54e5937a1642a3df797d1199f1da722de76"
+      },
+      "target_after": {
+        "char_start": 6592,
+        "char_end_exclusive": 6716,
+        "line_start": 164,
+        "line_end": 172,
+        "text": "\\begin{proof}\n  تمرین.\n\\end{proof}\n\n\\begin{prob}\n  گزارهٔ \\olref[sfr][fun][inv]{prop:left-right} را اثبات کنید.\n\\end{prob}\n\n",
+        "sha256": "8e2dc1cca9b002136599586cff51e54e5937a1642a3df797d1199f1da722de76"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{proof}\n  تمرین.\n\\end{proof}\n\n\\begin{prob}\n  گزارهٔ \\olref[sfr][fun][inv]{prop:left-right} را اثبات کنید.\n\\end{prob}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "At most one inverse",
+      "canon": [
+        "FA-REL-P050"
+      ],
+      "rationale": "Retain حداکثر یک: functions may have no inverse. This is uniqueness conditional on existence, not a new existence claim for every function.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Full aligned wording, hypotheses and mathematical scope checked against frozen source and the cited Persian passages; editorial score, not a probability.",
+      "id": "FA-0024-C22",
+      "unit": "OLP-0024",
+      "source": {
+        "char_start": 6442,
+        "char_end_exclusive": 6540,
+        "line_start": 167,
+        "line_end": 171,
+        "text": "\\begin{prop}\\ollabel{prop:inverse-unique}\nEvery function~$f$ has at most one inverse.\n\\end{prop}\n\n",
+        "sha256": "8fb1d7092ba36d1c722493875c2973ff3057b026d8553701da1c5f36d55dc725"
+      },
+      "target_before": {
+        "char_start": 6391,
+        "char_end_exclusive": 6479,
+        "line_start": 167,
+        "line_end": 171,
+        "text": "\\begin{prop}\\ollabel{prop:inverse-unique}\nهر تابع~$f$ حداکثر یک وارون دارد.\n\\end{prop}\n\n",
+        "sha256": "0f4e5170cef419b7d7ea34f7c921e425c6f2389504696ad2b990ec8f69475ed3"
+      },
+      "target_after": {
+        "char_start": 6716,
+        "char_end_exclusive": 6804,
+        "line_start": 172,
+        "line_end": 176,
+        "text": "\\begin{prop}\\ollabel{prop:inverse-unique}\nهر تابع~$f$ حداکثر یک وارون دارد.\n\\end{prop}\n\n",
+        "sha256": "0f4e5170cef419b7d7ea34f7c921e425c6f2389504696ad2b990ec8f69475ed3"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{prop}\\ollabel{prop:inverse-unique}\nهر تابع~$f$ حداکثر یک وارون دارد.\n\\end{prop}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Uniqueness proof",
+      "canon": [
+        "FA-REL-P049",
+        "FA-REL-P050"
+      ],
+      "rationale": "Preserve reduction of two two-sided inverses to the preceding left/right result. The names g,h and equation g=h remain correctly ordered.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Full aligned wording, hypotheses and mathematical scope checked against frozen source and the cited Persian passages; editorial score, not a probability.",
+      "id": "FA-0024-C23",
+      "unit": "OLP-0024",
+      "source": {
+        "char_start": 6540,
+        "char_end_exclusive": 6732,
+        "line_start": 171,
+        "line_end": 177,
+        "text": "\\begin{proof}\n  Suppose $g$ and $h$ are both inverses of~$f$. Then in particular\n  $g$~is a left inverse of~$f$ and $h$~is a right inverse. By\n  \\olref{prop:left-right}, $g = h$.\n\\end{proof}\n\n",
+        "sha256": "d8a804d54ee634d288d8586e70be519cf33d8465dca13f759f0936325d129536"
+      },
+      "target_before": {
+        "char_start": 6479,
+        "char_end_exclusive": 6652,
+        "line_start": 171,
+        "line_end": 177,
+        "text": "\\begin{proof}\n  فرض کنید $g$ و $h$ هر دو وارون~$f$ باشند. آنگاه به‌ویژه\n  $g$ وارون چپِ~$f$ و $h$ وارون راست آن است. بنا بر\n  \\olref{prop:left-right}، $g = h$.\n\\end{proof}\n\n",
+        "sha256": "4205f9c39ce2882331468c2eae81247fb92b93f0882b50e5e016887fcb0053fd"
+      },
+      "target_after": {
+        "char_start": 6804,
+        "char_end_exclusive": 6977,
+        "line_start": 176,
+        "line_end": 182,
+        "text": "\\begin{proof}\n  فرض کنید $g$ و $h$ هر دو وارون~$f$ باشند. آنگاه به‌ویژه\n  $g$ وارون چپِ~$f$ و $h$ وارون راست آن است. بنا بر\n  \\olref{prop:left-right}، $g = h$.\n\\end{proof}\n\n",
+        "sha256": "4205f9c39ce2882331468c2eae81247fb92b93f0882b50e5e016887fcb0053fd"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{proof}\n  فرض کنید $g$ و $h$ هر دو وارون~$f$ باشند. آنگاه به‌ویژه\n  $g$ وارون چپِ~$f$ و $h$ وارون راست آن است. بنا بر\n  \\olref{prop:left-right}، $g = h$.\n\\end{proof}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Composition heading, optional inverse context and compatibility",
+      "canon": [
+        "FA-REL-P049",
+        "FA-REL-P050",
+        "FA-OL-CANON-0003:P0015"
+      ],
+      "rationale": "Repair the stacked inverse/ezafe construction without changing either conditional arm. Retain first f then g, range(f) subset domain(g), and the relation-product analogy. D49 directly gives g(f(x)); its later nonempty-intersection sentence is not imported as the OLP total-composition criterion.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Full aligned wording, hypotheses and mathematical scope checked against frozen source and the cited Persian passages; editorial score, not a probability.",
+      "id": "FA-0025-C01",
+      "unit": "OLP-0025",
+      "source": {
+        "char_start": 184,
+        "char_end_exclusive": 814,
+        "line_start": 10,
+        "line_end": 23,
+        "text": "\\olsection{Composition of Functions}\n\n\\begin{explain}\n\\oliflabeldef{sfr:fun:inv:sec}{We saw in \\olref[inv]{sec} that the\ninverse~$f^{-1}$ of !!a{bijection}~$f$ is itself a function. Another\noperation on functions is composition: w}{W}e can define a new\nfunction by composing two functions, $f$ and~$g$, i.e., by first\napplying $f$ and then~$g$. Of course, this is only possible if the\nranges and domains match, i.e., the range of~$f$ must be a subset of\nthe domain of~$g$. \\oliflabeldef{sfr:rel:ops:sec}{This operation on\nfunctions is the analogue of the operation of relative product on\nrelations from \\olref[rel][ops]{sec}.}{}\n\n",
+        "sha256": "fc8ade0a43235cad40aede4f3b508fc37971b728d6ac1e8344c45a6ff5749230"
+      },
+      "target_before": {
+        "char_start": 191,
+        "char_end_exclusive": 762,
+        "line_start": 10,
+        "line_end": 23,
+        "text": "\\olsection{ترکیب توابع}\n\n\\begin{explain}\n\\oliflabeldef{sfr:fun:inv:sec}{در \\olref[inv]{sec} دیدیم که\nوارونِ~$f^{-1}$ِ !!a{bijection}~$f$ خود تابع است. عمل دیگری\nکه روی توابع انجام می‌دهیم، ترکیب است. اکنون می‌توانیم}{می‌توانیم} تابعی جدید را با\nترکیب دو تابع $f$ و~$g$ تعریف کنیم؛ یعنی نخست\n$f$ و سپس~$g$ را اعمال کنیم. البته این کار تنها هنگامی ممکن است که\nبردها و دامنه‌ها سازگار باشند؛ یعنی بردِ~$f$ باید زیرمجموعه‌ای از\nدامنهٔ~$g$ باشد. \\oliflabeldef{sfr:rel:ops:sec}{این عمل روی\nتوابع همانند عمل حاصل‌ضرب نسبی روی\nروابط است که در \\olref[rel][ops]{sec} معرفی شد.}{}\n\n",
+        "sha256": "feb8e889d1432b96970297abda9b6cfaf520751aaa63ea1123dae5b5853d7161"
+      },
+      "target_after": {
+        "char_start": 191,
+        "char_end_exclusive": 771,
+        "line_start": 10,
+        "line_end": 23,
+        "text": "\\olsection{ترکیب توابع}\n\n\\begin{explain}\n\\oliflabeldef{sfr:fun:inv:sec}{در \\olref[inv]{sec} دیدیم که\n$f^{-1}$، یعنی وارونِ !!a{bijection}~$f$، خود یک تابع است. عمل دیگری\nکه روی توابع انجام می‌دهیم، ترکیب است. اکنون می‌توانیم}{می‌توانیم} تابعی جدید را با\nترکیب دو تابع $f$ و~$g$ تعریف کنیم؛ یعنی نخست\n$f$ و سپس~$g$ را اعمال کنیم. البته این کار تنها هنگامی ممکن است که\nبردها و دامنه‌ها سازگار باشند؛ یعنی بردِ~$f$ باید زیرمجموعه‌ای از\nدامنهٔ~$g$ باشد. \\oliflabeldef{sfr:rel:ops:sec}{این عمل روی\nتوابع همانند عمل حاصل‌ضرب نسبی روی\nروابط است که در \\olref[rel][ops]{sec} معرفی شد.}{}\n\n",
+        "sha256": "745369217654de07b65e50774f99ceab0433e548dd93b695ee56c997e1074259"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\olsection{ترکیب توابع}\n\n\\begin{explain}\n\\oliflabeldef{sfr:fun:inv:sec}{در \\olref[inv]{sec} دیدیم که\n$f^{-1}$، یعنی وارونِ تناظر دوسویی~$f$، خود یک تابع است. عمل دیگری\nکه روی توابع انجام می‌دهیم، ترکیب است. اکنون می‌توانیم}{می‌توانیم} تابعی جدید را با\nترکیب دو تابع $f$ و~$g$ تعریف کنیم؛ یعنی نخست\n$f$ و سپس~$g$ را اعمال کنیم. البته این کار تنها هنگامی ممکن است که\nبردها و دامنه‌ها سازگار باشند؛ یعنی بردِ~$f$ باید زیرمجموعه‌ای از\nدامنهٔ~$g$ باشد. \\oliflabeldef{sfr:rel:ops:sec}{این عمل روی\nتوابع همانند عمل حاصل‌ضرب نسبی روی\nروابط است که در \\olref[rel][ops]{sec} معرفی شد.}{}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 123,
+          "token": "!!a{bijection}",
+          "realization": "تناظر دوسویی"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Diagram explanation and assignment syntax",
+      "canon": [
+        "FA-REL-P044",
+        "FA-REL-P049"
+      ],
+      "rationale": "Use the canon assignment construction به هر ... نسبت می‌دهد and follow x to y to z. Retain all three types and the order of every formula. The indefinite element token plus ی realizes عضوی correctly; do not delete that suffix or insert a duplicate article. The source arrows are not reversed for Persian.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Full aligned wording, hypotheses and mathematical scope checked against frozen source and the cited Persian passages; editorial score, not a probability.",
+      "id": "FA-0025-C02",
+      "unit": "OLP-0025",
+      "source": {
+        "char_start": 814,
+        "char_end_exclusive": 1378,
+        "line_start": 23,
+        "line_end": 32,
+        "text": "A diagram might help to explain the idea of composition. In\n\\olref{fig:composition}, we depict two functions $f \\colon A \\to B$\nand $g \\colon B \\to C$ and their composition~$(\\comp{f}{g})$. The\nfunction $(\\comp{f}{g}) \\colon A \\to C$ pairs each !!{element} of~$A$\nwith !!a{element} of~$C$. We specify which !!{element} of~$C$\n!!a{element} of $A$ is paired with as follows: given an input $x \\in\nA$, first apply the function $f$ to~$x$, which will output some $f(x)\n= y \\in B$, then apply the function $g$ to~$y$, which will output some\n$g(f(x)) = g(y) = z \\in C$.\n",
+        "sha256": "69f54ea07ec06a5133833ca5c4f0d7803640dd7b0fcbb21ba2c8760519ca4a43"
+      },
+      "target_before": {
+        "char_start": 762,
+        "char_end_exclusive": 1317,
+        "line_start": 23,
+        "line_end": 32,
+        "text": "یک نمودار می‌تواند به توضیح ایدهٔ ترکیب کمک کند. در\n\\olref{fig:composition} دو تابع $f \\colon A \\to B$\nو $g \\colon B \\to C$ و ترکیبشان~$(\\comp{f}{g})$ را نشان می‌دهیم. تابع\n$(\\comp{f}{g}) \\colon A \\to C$ هر !!{element} از~$A$\nرا با !!a{element}ی از~$C$ جفت می‌کند. اینکه کدام !!{element} از~$C$\nبا !!a{element}ی از $A$ جفت می‌شود، چنین مشخص می‌گردد: با داشتن ورودی $x \\in\nA$، نخست تابع $f$ را بر~$x$ اعمال می‌کنیم که مقداری مانند $f(x)\n= y \\in B$ خروجی می‌دهد؛ سپس تابع $g$ را بر~$y$ اعمال می‌کنیم که مقداری مانند\n$g(f(x)) = g(y) = z \\in C$ خروجی می‌دهد.\n",
+        "sha256": "e37e2033b2e4e91988b038139c2b56b1e07f582b7c6b15c19545b3d3c4d41db8"
+      },
+      "target_after": {
+        "char_start": 771,
+        "char_end_exclusive": 1347,
+        "line_start": 23,
+        "line_end": 32,
+        "text": "یک نمودار می‌تواند به توضیح ایدهٔ ترکیب کمک کند. در\n\\olref{fig:composition} دو تابع $f \\colon A \\to B$\nو $g \\colon B \\to C$ و ترکیبشان~$(\\comp{f}{g})$ را نشان می‌دهیم. تابع\n$(\\comp{f}{g}) \\colon A \\to C$ به هر !!{element} از~$A$\n!!a{element}ی از~$C$ نسبت می‌دهد. برای مشخص کردن اینکه کدام !!{element} از~$C$\nبه !!a{element}ی از $A$ نسبت داده می‌شود، این روش را به کار می‌بریم: با داشتن ورودی $x \\in\nA$، نخست تابع $f$ را بر~$x$ اعمال می‌کنیم که مقدار $f(x)\n= y \\in B$ را به دست می‌دهد؛ سپس تابع $g$ را بر~$y$ اعمال می‌کنیم که مقدار\n$g(f(x)) = g(y) = z \\in C$ را به دست می‌دهد.\n",
+        "sha256": "69650af6aada5aca1d61a7ae2dacd996e35e2e7bfb39c59b133badd3c6626b6e"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "یک نمودار می‌تواند به توضیح ایدهٔ ترکیب کمک کند. در\n\\olref{fig:composition} دو تابع $f \\colon A \\to B$\nو $g \\colon B \\to C$ و ترکیبشان~$(\\comp{f}{g})$ را نشان می‌دهیم. تابع\n$(\\comp{f}{g}) \\colon A \\to C$ به هر عضو از~$A$\nعضوی از~$C$ نسبت می‌دهد. برای مشخص کردن اینکه کدام عضو از~$C$\nبه عضوی از $A$ نسبت داده می‌شود، این روش را به کار می‌بریم: با داشتن ورودی $x \\in\nA$، نخست تابع $f$ را بر~$x$ اعمال می‌کنیم که مقدار $f(x)\n= y \\in B$ را به دست می‌دهد؛ سپس تابع $g$ را بر~$y$ اعمال می‌کنیم که مقدار\n$g(f(x)) = g(y) = z \\in C$ را به دست می‌دهد.\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 210,
+          "token": "!!{element}",
+          "realization": "عضو"
+        },
+        {
+          "character_offset_in_segment": 229,
+          "token": "!!a{element}",
+          "realization": "عضو"
+        },
+        {
+          "character_offset_in_segment": 289,
+          "token": "!!{element}",
+          "realization": "عضو"
+        },
+        {
+          "character_offset_in_segment": 311,
+          "token": "!!a{element}",
+          "realization": "عضو"
+        }
+      ],
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 210,
+          "token": "!!{element}",
+          "realization": "عضو"
+        },
+        {
+          "character_offset_in_segment": 229,
+          "token": "!!a{element}",
+          "realization": "عضو"
+        },
+        {
+          "character_offset_in_segment": 289,
+          "token": "!!{element}",
+          "realization": "عضو"
+        },
+        {
+          "character_offset_in_segment": 311,
+          "token": "!!a{element}",
+          "realization": "عضو"
+        }
+      ]
+    },
+    {
+      "topic": "Composition figure caption",
+      "canon": [
+        "FA-REL-P049"
+      ],
+      "rationale": "Replace the calqued ترکیب ... از دو تابع with a short caption naming g circle f as the composition. Preserve all variables and the asset/figure label.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Full aligned wording, hypotheses and mathematical scope checked against frozen source and the cited Persian passages; editorial score, not a probability.",
+      "id": "FA-0025-C03",
+      "unit": "OLP-0025",
+      "source": {
+        "char_start": 1378,
+        "char_end_exclusive": 1580,
+        "line_start": 32,
+        "line_end": 39,
+        "text": "\\begin{figure}\n  \\olasset[2\\olphotowidth]{assets/diagrams/composition.tikz}\n  \\caption{The composition $g \\circ f$ of two functions $f$ and~$g$.}\n  \\ollabel{fig:composition}\n\\end{figure}\n\\end{explain}\n\n",
+        "sha256": "c9bfce3e621449c642e8ba8dd7f78479928db7e5bc657bacabf0b21b456e4f9b"
+      },
+      "target_before": {
+        "char_start": 1317,
+        "char_end_exclusive": 1502,
+        "line_start": 32,
+        "line_end": 39,
+        "text": "\\begin{figure}\n  \\olasset[2\\olphotowidth]{assets/diagrams/composition.tikz}\n  \\caption{ترکیبِ $g \\circ f$ از دو تابع $f$ و~$g$.}\n  \\ollabel{fig:composition}\n\\end{figure}\n\\end{explain}\n\n",
+        "sha256": "2848c8efddb29ae4976ca45663a8a8c6edb45d423ff8feef472bccd5f6e80065"
+      },
+      "target_after": {
+        "char_start": 1347,
+        "char_end_exclusive": 1529,
+        "line_start": 32,
+        "line_end": 39,
+        "text": "\\begin{figure}\n  \\olasset[2\\olphotowidth]{assets/diagrams/composition.tikz}\n  \\caption{$g \\circ f$، ترکیب دو تابع $f$ و~$g$.}\n  \\ollabel{fig:composition}\n\\end{figure}\n\\end{explain}\n\n",
+        "sha256": "af0e7c1184051bc01fea6ec7799230216f8404f5a9c001ebe62c0c29455edf23"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{figure}\n  \\olasset[2\\olphotowidth]{assets/diagrams/composition.tikz}\n  \\caption{$g \\circ f$، ترکیب دو تابع $f$ و~$g$.}\n  \\ollabel{fig:composition}\n\\end{figure}\n\\end{explain}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Composition definition",
+      "canon": [
+        "FA-REL-P049",
+        "FA-OL-CANON-0003:P0015"
+      ],
+      "rationale": "Retain ترکیب and the typed formula from A to C. The verified macro comp(f,g) expands to g circle f, matching g(f(x)). Relative product first R then S matches the same order; no alternative convention is silently introduced.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Full aligned wording, hypotheses and mathematical scope checked against frozen source and the cited Persian passages; editorial score, not a probability.",
+      "id": "FA-0025-C04",
+      "unit": "OLP-0025",
+      "source": {
+        "char_start": 1580,
+        "char_end_exclusive": 1784,
+        "line_start": 39,
+        "line_end": 45,
+        "text": "\\begin{defn}[Composition]\nLet $f\\colon A \\to B$ and $g\\colon B \\to C$ be functions. The\n\\emph{composition} of $f$ with~$g$ is $\\comp{f}{g} \\colon A \\to C$,\nwhere $(\\comp{f}{g})(x) = g(f(x))$.\n\\end{defn}\n\n",
+        "sha256": "d95016113cd00a4c54004e8f58c2d8e228afc8956314fcd4d648e11adf8ae297"
+      },
+      "target_before": {
+        "char_start": 1502,
+        "char_end_exclusive": 1700,
+        "line_start": 39,
+        "line_end": 45,
+        "text": "\\begin{defn}[ترکیب]\nفرض کنید $f\\colon A \\to B$ و $g\\colon B \\to C$ تابع باشند.\n\\emph{ترکیبِ} $f$ با~$g$ برابر است با $\\comp{f}{g} \\colon A \\to C$،\nکه در آن $(\\comp{f}{g})(x) = g(f(x))$.\n\\end{defn}\n\n",
+        "sha256": "b391342383566c5f62c82484fd650877e2d37fce29f9ce54fbe65436657b194a"
+      },
+      "target_after": {
+        "char_start": 1529,
+        "char_end_exclusive": 1727,
+        "line_start": 39,
+        "line_end": 45,
+        "text": "\\begin{defn}[ترکیب]\nفرض کنید $f\\colon A \\to B$ و $g\\colon B \\to C$ تابع باشند.\n\\emph{ترکیبِ} $f$ با~$g$ برابر است با $\\comp{f}{g} \\colon A \\to C$،\nکه در آن $(\\comp{f}{g})(x) = g(f(x))$.\n\\end{defn}\n\n",
+        "sha256": "b391342383566c5f62c82484fd650877e2d37fce29f9ce54fbe65436657b194a"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{defn}[ترکیب]\nفرض کنید $f\\colon A \\to B$ و $g\\colon B \\to C$ تابع باشند.\n\\emph{ترکیبِ} $f$ با~$g$ برابر است با $\\comp{f}{g} \\colon A \\to C$،\nکه در آن $(\\comp{f}{g})(x) = g(f(x))$.\n\\end{defn}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Successor then doubling example",
+      "canon": [
+        "FA-REL-P049",
+        "FA-REL-P044"
+      ],
+      "rationale": "Standardize جانشین with the reviewed preceding sections and retain first add1, then double. The result is2(x+1), not2x+1. The exact successor noun is a contextual label fixed by the formula, not directly quoted from D49.",
+      "alternatives": "",
+      "question": "Retain the explicit successor-term attestation limitation from0022/0024; do not mistake consistency for a new canon citation.",
+      "confidence": 2,
+      "confidence_reason": "Operation order verified; precise successor label remains provisional.",
+      "id": "FA-0025-C05",
+      "unit": "OLP-0025",
+      "source": {
+        "char_start": 1784,
+        "char_end_exclusive": 2046,
+        "line_start": 45,
+        "line_end": 52,
+        "text": "\\begin{ex}\nConsider the functions $f(x) = x + 1$, and $g(x) = 2x$. Since\n$(\\comp{f}{g})(x) = g(f(x))$, for each input~$x$ you must first take\nits successor, then multiply the result by two. So their composition\nis given by $(\\comp{f}{g})(x) = 2(x+1)$.\n\\end{ex}\n\n",
+        "sha256": "512422138931d166a8bfcb288447230010695646435015dfcbbe616a0433d64a"
+      },
+      "target_before": {
+        "char_start": 1700,
+        "char_end_exclusive": 1950,
+        "line_start": 45,
+        "line_end": 52,
+        "text": "\\begin{ex}\nتوابع $f(x) = x + 1$ و $g(x) = 2x$ را در نظر بگیرید. چون\n$(\\comp{f}{g})(x) = g(f(x))$، برای هر ورودی~$x$ باید نخست\nپسین آن را بگیرید و سپس حاصل را در دو ضرب کنید. پس ترکیب آن‌ها\nبه‌وسیلهٔ $(\\comp{f}{g})(x) = 2(x+1)$ داده می‌شود.\n\\end{ex}\n\n",
+        "sha256": "c96c017a3636e0bfdf2a77ff2d90c41b82a310f58e150c9cb3acde5d62f87bfa"
+      },
+      "target_after": {
+        "char_start": 1727,
+        "char_end_exclusive": 1979,
+        "line_start": 45,
+        "line_end": 52,
+        "text": "\\begin{ex}\nتوابع $f(x) = x + 1$ و $g(x) = 2x$ را در نظر بگیرید. چون\n$(\\comp{f}{g})(x) = g(f(x))$، برای هر ورودی~$x$ باید نخست\nجانشین آن را بگیرید و سپس حاصل را در دو ضرب کنید. پس ترکیب آن‌ها\nبه‌وسیلهٔ $(\\comp{f}{g})(x) = 2(x+1)$ داده می‌شود.\n\\end{ex}\n\n",
+        "sha256": "b8a27f736c8c81ac951aedee294ecd18acf4f6b481ae2b73254e573d0cd6b8e6"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{ex}\nتوابع $f(x) = x + 1$ و $g(x) = 2x$ را در نظر بگیرید. چون\n$(\\comp{f}{g})(x) = g(f(x))$، برای هر ورودی~$x$ باید نخست\nجانشین آن را بگیرید و سپس حاصل را در دو ضرب کنید. پس ترکیب آن‌ها\nبه‌وسیلهٔ $(\\comp{f}{g})(x) = 2(x+1)$ داده می‌شود.\n\\end{ex}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Composition of injections: exercise",
+      "canon": [
+        "FA-REL-P046",
+        "FA-REL-P049"
+      ],
+      "rationale": "Keep both injectivity hypotheses and the correct composite type. Equality after g reduces to equality after f, then to input equality. No surjectivity or nonempty assumption is added.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Full aligned wording, hypotheses and mathematical scope checked against frozen source and the cited Persian passages; editorial score, not a probability.",
+      "id": "FA-0025-C06",
+      "unit": "OLP-0025",
+      "source": {
+        "char_start": 2046,
+        "char_end_exclusive": 2201,
+        "line_start": 52,
+        "line_end": 57,
+        "text": "\\begin{prob}\nShow that if $f \\colon A \\to B$ and $g \\colon B \\to C$ are both\n!!{injective}, then $\\comp{f}{g}\\colon A \\to C$ is !!{injective}.\n\\end{prob}\n\n",
+        "sha256": "7c97b158e25315e42ad31684c47133fb5739ea2115ab318261aa59e724ef1d46"
+      },
+      "target_before": {
+        "char_start": 1950,
+        "char_end_exclusive": 2113,
+        "line_start": 52,
+        "line_end": 57,
+        "text": "\\begin{prob}\nنشان دهید اگر $f \\colon A \\to B$ و $g \\colon B \\to C$ هر دو\n!!{injective} باشند، آنگاه $\\comp{f}{g}\\colon A \\to C$ نیز !!{injective} است.\n\\end{prob}\n\n",
+        "sha256": "205b0f94430e797e17c441f95baeab4185b961a28843eee5a1dddc3ded7d5da9"
+      },
+      "target_after": {
+        "char_start": 1979,
+        "char_end_exclusive": 2142,
+        "line_start": 52,
+        "line_end": 57,
+        "text": "\\begin{prob}\nنشان دهید اگر $f \\colon A \\to B$ و $g \\colon B \\to C$ هر دو\n!!{injective} باشند، آنگاه $\\comp{f}{g}\\colon A \\to C$ نیز !!{injective} است.\n\\end{prob}\n\n",
+        "sha256": "205b0f94430e797e17c441f95baeab4185b961a28843eee5a1dddc3ded7d5da9"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{prob}\nنشان دهید اگر $f \\colon A \\to B$ و $g \\colon B \\to C$ هر دو\nیک‌به‌یک باشند، آنگاه $\\comp{f}{g}\\colon A \\to C$ نیز یک‌به‌یک است.\n\\end{prob}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 73,
+          "token": "!!{injective}",
+          "realization": "یک‌به‌یک"
+        },
+        {
+          "character_offset_in_segment": 132,
+          "token": "!!{injective}",
+          "realization": "یک‌به‌یک"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Composition of surjections: exercise",
+      "canon": [
+        "FA-REL-P046",
+        "FA-REL-P049"
+      ],
+      "rationale": "Keep both surjectivity hypotheses. For a given output, find a preimage under g and then one under f. This single-output existence proof is not a global choice of a right inverse.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Full aligned wording, hypotheses and mathematical scope checked against frozen source and the cited Persian passages; editorial score, not a probability.",
+      "id": "FA-0025-C07",
+      "unit": "OLP-0025",
+      "source": {
+        "char_start": 2201,
+        "char_end_exclusive": 2358,
+        "line_start": 57,
+        "line_end": 62,
+        "text": "\\begin{prob}\nShow that if $f \\colon A \\to B$ and $g \\colon B \\to C$ are both\n!!{surjective}, then $\\comp{f}{g}\\colon A \\to C$ is !!{surjective}.\n\\end{prob}\n\n",
+        "sha256": "7268355feb23828d57a2e4e4591cc39f5e124e3cfb590321bc15f2d433191091"
+      },
+      "target_before": {
+        "char_start": 2113,
+        "char_end_exclusive": 2278,
+        "line_start": 57,
+        "line_end": 62,
+        "text": "\\begin{prob}\nنشان دهید اگر $f \\colon A \\to B$ و $g \\colon B \\to C$ هر دو\n!!{surjective} باشند، آنگاه $\\comp{f}{g}\\colon A \\to C$ نیز !!{surjective} است.\n\\end{prob}\n\n",
+        "sha256": "ea22ed5c8e40c0627cb0271cff445a750316d2bcdff80209a5e88cef61289fe7"
+      },
+      "target_after": {
+        "char_start": 2142,
+        "char_end_exclusive": 2307,
+        "line_start": 57,
+        "line_end": 62,
+        "text": "\\begin{prob}\nنشان دهید اگر $f \\colon A \\to B$ و $g \\colon B \\to C$ هر دو\n!!{surjective} باشند، آنگاه $\\comp{f}{g}\\colon A \\to C$ نیز !!{surjective} است.\n\\end{prob}\n\n",
+        "sha256": "ea22ed5c8e40c0627cb0271cff445a750316d2bcdff80209a5e88cef61289fe7"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{prob}\nنشان دهید اگر $f \\colon A \\to B$ و $g \\colon B \\to C$ هر دو\nپوشا باشند، آنگاه $\\comp{f}{g}\\colon A \\to C$ نیز پوشا است.\n\\end{prob}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 73,
+          "token": "!!{surjective}",
+          "realization": "پوشا"
+        },
+        {
+          "character_offset_in_segment": 133,
+          "token": "!!{surjective}",
+          "realization": "پوشا"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Graph of a composite: exercise",
+      "canon": [
+        "FA-REL-P045",
+        "FA-REL-P049",
+        "FA-OL-CANON-0003:P0015"
+      ],
+      "rationale": "Use attested نمودار and retain graph(comp(f,g))=R_f mid R_g. Relational product uses an intermediate value with f first, g second. Keep the source exercise unsolved.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Full aligned wording, hypotheses and mathematical scope checked against frozen source and the cited Persian passages; editorial score, not a probability.",
+      "id": "FA-0025-C08",
+      "unit": "OLP-0025",
+      "source": {
+        "char_start": 2358,
+        "char_end_exclusive": 2490,
+        "line_start": 62,
+        "line_end": 67,
+        "text": "\\begin{prob}\nSuppose $f \\colon A \\to B$ and $g \\colon B \\to C$. Show that the graph\nof $\\comp{f}{g}$ is $R_f \\mid R_g$.\n\\end{prob}\n\n",
+        "sha256": "82910c9f012a1852b1b34e744fdae6fcf7550eefe20e0a6fc7f5ded164104986"
+      },
+      "target_before": {
+        "char_start": 2278,
+        "char_end_exclusive": 2411,
+        "line_start": 62,
+        "line_end": 67,
+        "text": "\\begin{prob}\nفرض کنید $f \\colon A \\to B$ و $g \\colon B \\to C$. نشان دهید گراف\n$\\comp{f}{g}$ برابر است با $R_f \\mid R_g$.\n\\end{prob}\n\n",
+        "sha256": "c0b27d6b4686d3e1e47587339288a1157ac4ab62f73a918d06a90e4ae1637146"
+      },
+      "target_after": {
+        "char_start": 2307,
+        "char_end_exclusive": 2442,
+        "line_start": 62,
+        "line_end": 67,
+        "text": "\\begin{prob}\nفرض کنید $f \\colon A \\to B$ و $g \\colon B \\to C$. نشان دهید نمودار\n$\\comp{f}{g}$ برابر است با $R_f \\mid R_g$.\n\\end{prob}\n\n",
+        "sha256": "0004a9a298bdf3b4a771401b75658ca56d89107ee790f021aea976d8680786ea"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{prob}\nفرض کنید $f \\colon A \\to B$ و $g \\colon B \\to C$. نشان دهید نمودار\n$\\comp{f}{g}$ برابر است با $R_f \\mid R_g$.\n\\end{prob}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Partial functions heading and relaxed requirement",
+      "canon": [
+        "FA-OL-CANON-0001:P0085",
+        "FA-OL-CANON-0003:P0015"
+      ],
+      "rationale": "تابع جزئی is directly attested in mathematical logic. Retain allowing undefined inputs, not requiring some inputs to be undefined. The computational witness does not imply that all OLP partial functions are computable.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Full aligned wording, hypotheses and mathematical scope checked against frozen source and the cited Persian passages; editorial score, not a probability.",
+      "id": "FA-0026-C01",
+      "unit": "OLP-0026",
+      "source": {
+        "char_start": 192,
+        "char_end_exclusive": 459,
+        "line_start": 12,
+        "line_end": 20,
+        "text": "\\olsection{Partial Functions}\n\n\\begin{explain}\nIt is sometimes useful to relax the definition of function so that it\nis not required that the output of the function is defined for all\npossible inputs. Such mappings are called \\emph{partial functions}.\n\\end{explain}\n\n",
+        "sha256": "413dbcaf796e20318753851acdf0c20f2e03785282ea032343787faeb8cd008c"
+      },
+      "target_before": {
+        "char_start": 199,
+        "char_end_exclusive": 415,
+        "line_start": 12,
+        "line_end": 20,
+        "text": "\\olsection{توابع جزئی}\n\n\\begin{explain}\nگاه سودمند است تعریف تابع را چنان تضعیف کنیم که لازم نباشد\nخروجی تابع برای همهٔ ورودی‌های ممکن تعریف شده باشد. چنین\nنگاشت‌هایی \\emph{توابع جزئی} نامیده می‌شوند.\n\\end{explain}\n\n",
+        "sha256": "8a73ddc11a7fe9b00dae1e67ee1a5f6ecb18fa8bba67aa1aad45474fdee3a70e"
+      },
+      "target_after": {
+        "char_start": 199,
+        "char_end_exclusive": 415,
+        "line_start": 12,
+        "line_end": 20,
+        "text": "\\olsection{توابع جزئی}\n\n\\begin{explain}\nگاه سودمند است تعریف تابع را چنان تضعیف کنیم که لازم نباشد\nخروجی تابع برای همهٔ ورودی‌های ممکن تعریف شده باشد. چنین\nنگاشت‌هایی \\emph{توابع جزئی} نامیده می‌شوند.\n\\end{explain}\n\n",
+        "sha256": "8a73ddc11a7fe9b00dae1e67ee1a5f6ecb18fa8bba67aa1aad45474fdee3a70e"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\olsection{توابع جزئی}\n\n\\begin{explain}\nگاه سودمند است تعریف تابع را چنان تضعیف کنیم که لازم نباشد\nخروجی تابع برای همهٔ ورودی‌های ممکن تعریف شده باشد. چنین\nنگاشت‌هایی \\emph{توابع جزئی} نامیده می‌شوند.\n\\end{explain}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Partial assignment and actual domain",
+      "canon": [
+        "FA-OL-CANON-0001:P0085",
+        "FA-OL-CANON-0003:P0015",
+        "FA-REL-P044"
+      ],
+      "rationale": "Retain at most one output for each permitted input. Defined and undefined are different statuses, not numeric outputs. The actual domain is the subset of A where values exist, not necessarily all A. Preserve both definedness symbols and the domain comprehension; عضو and عناصر denote the same members, not two mathematical sorts.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Full aligned wording, hypotheses and mathematical scope checked against frozen source and the cited Persian passages; editorial score, not a probability.",
+      "id": "FA-0026-C02",
+      "unit": "OLP-0026",
+      "source": {
+        "char_start": 459,
+        "char_end_exclusive": 946,
+        "line_start": 20,
+        "line_end": 30,
+        "text": "\\begin{defn}\nA \\emph{partial function} $f \\colon A \\pto B$ is a mapping which\nassigns to every !!{element} of~$A$ at most one !!{element} of~$B$.\nIf $f$ assigns an element of~$B$ to $x \\in A$, we say $f(x)$ is\n\\emph{defined}, and otherwise \\emph{undefined}. If $f(x)$ is defined,\nwe write $f(x) \\fdefined$, otherwise $f(x) \\fundefined$. The\n\\emph{domain} of a partial function~$f$ is the subset of~$A$ where it\nis defined, i.e., $\\dom{f} = \\Setabs{x \\in A}{f(x) \\fdefined}$.\n\\end{defn}\n\n",
+        "sha256": "de8eb0e391f9484d3af18b473f4041ee04dedf5b68920d17394d4a776248a53c"
+      },
+      "target_before": {
+        "char_start": 415,
+        "char_end_exclusive": 915,
+        "line_start": 20,
+        "line_end": 30,
+        "text": "\\begin{defn}\nیک \\emph{تابع جزئی} $f \\colon A \\pto B$ نگاشتی است که\nبه هر !!{element} از~$A$ حداکثر یک !!{element} از~$B$ نسبت می‌دهد.\nاگر $f$ عضوی از~$B$ را به $x \\in A$ نسبت دهد، می‌گوییم $f(x)$\n\\emph{تعریف‌شده} است، و در غیر این صورت \\emph{تعریف‌نشده}. اگر $f(x)$ تعریف‌شده باشد،\nمی‌نویسیم $f(x) \\fdefined$، وگرنه $f(x) \\fundefined$. \\emph{دامنهٔ}\nتابع جزئی~$f$ زیرمجموعهٔ~$A$ متشکل از همهٔ عناصری است که تابع روی آن‌ها\nتعریف شده است؛ یعنی $\\dom{f} = \\Setabs{x \\in A}{f(x) \\fdefined}$.\n\\end{defn}\n\n",
+        "sha256": "0892054e8a40926f24e3720ac66dc92b609c50eb8c000332208eba905a91a3b5"
+      },
+      "target_after": {
+        "char_start": 415,
+        "char_end_exclusive": 915,
+        "line_start": 20,
+        "line_end": 30,
+        "text": "\\begin{defn}\nیک \\emph{تابع جزئی} $f \\colon A \\pto B$ نگاشتی است که\nبه هر !!{element} از~$A$ حداکثر یک !!{element} از~$B$ نسبت می‌دهد.\nاگر $f$ عضوی از~$B$ را به $x \\in A$ نسبت دهد، می‌گوییم $f(x)$\n\\emph{تعریف‌شده} است، و در غیر این صورت \\emph{تعریف‌نشده}. اگر $f(x)$ تعریف‌شده باشد،\nمی‌نویسیم $f(x) \\fdefined$، وگرنه $f(x) \\fundefined$. \\emph{دامنهٔ}\nتابع جزئی~$f$ زیرمجموعهٔ~$A$ متشکل از همهٔ عناصری است که تابع روی آن‌ها\nتعریف شده است؛ یعنی $\\dom{f} = \\Setabs{x \\in A}{f(x) \\fdefined}$.\n\\end{defn}\n\n",
+        "sha256": "0892054e8a40926f24e3720ac66dc92b609c50eb8c000332208eba905a91a3b5"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{defn}\nیک \\emph{تابع جزئی} $f \\colon A \\pto B$ نگاشتی است که\nبه هر عضو از~$A$ حداکثر یک عضو از~$B$ نسبت می‌دهد.\nاگر $f$ عضوی از~$B$ را به $x \\in A$ نسبت دهد، می‌گوییم $f(x)$\n\\emph{تعریف‌شده} است، و در غیر این صورت \\emph{تعریف‌نشده}. اگر $f(x)$ تعریف‌شده باشد،\nمی‌نویسیم $f(x) \\fdefined$، وگرنه $f(x) \\fundefined$. \\emph{دامنهٔ}\nتابع جزئی~$f$ زیرمجموعهٔ~$A$ متشکل از همهٔ عناصری است که تابع روی آن‌ها\nتعریف شده است؛ یعنی $\\dom{f} = \\Setabs{x \\in A}{f(x) \\fdefined}$.\n\\end{defn}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 73,
+          "token": "!!{element}",
+          "realization": "عضو"
+        },
+        {
+          "character_offset_in_segment": 102,
+          "token": "!!{element}",
+          "realization": "عضو"
+        }
+      ],
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 73,
+          "token": "!!{element}",
+          "realization": "عضو"
+        },
+        {
+          "character_offset_in_segment": 102,
+          "token": "!!{element}",
+          "realization": "عضو"
+        }
+      ]
+    },
+    {
+      "topic": "Total functions are a special case",
+      "canon": [
+        "FA-OL-CANON-0001:P0085",
+        "FA-OL-CANON-0003:P0015",
+        "FA-REL-P044"
+      ],
+      "rationale": "Retain the inclusion of total functions among partial functions and the requirement of definition everywhere on A. تام is a provisional lane label explained completely by this condition; the selected pages do not print the exact label.",
+      "alternatives": "کامل risks confusion with logical completeness; changing to it without direct evidence would not improve this passage.",
+      "question": "Seek direct disciplinary evidence for تام or an alternative total-function label in later computability canon expansion; the condition here is unambiguous.",
+      "confidence": 2,
+      "confidence_reason": "Concept source/canon-grounded; exact total label not directly attested on selected pages.",
+      "id": "FA-0026-C03",
+      "unit": "OLP-0026",
+      "source": {
+        "char_start": 946,
+        "char_end_exclusive": 1176,
+        "line_start": 30,
+        "line_end": 37,
+        "text": "\\begin{ex}\nEvery function $f\\colon A \\to B$ is also a partial function. Partial\nfunctions that are defined everywhere on~$A$---i.e., what we so far\nhave simply called a function---are also called \\emph{total}\nfunctions.\n\\end{ex}\n\n",
+        "sha256": "87676f5f8a8f325ca5c472d6ce518748720e6b1f90c12ed751f7ce696bbefa74"
+      },
+      "target_before": {
+        "char_start": 915,
+        "char_end_exclusive": 1114,
+        "line_start": 30,
+        "line_end": 37,
+        "text": "\\begin{ex}\nهر تابع $f\\colon A \\to B$ یک تابع جزئی نیز هست. توابع\nجزئی‌ای که در همه‌جای~$A$ تعریف شده‌اند---یعنی همان توابعی که تاکنون\nصرفاً تابع نامیده‌ایم---\\emph{تام} نیز نامیده\nمی‌شوند.\n\\end{ex}\n\n",
+        "sha256": "b2115e73427afb6b98768e8a7f4062aab9744b72ab888e6da2e7d53484496760"
+      },
+      "target_after": {
+        "char_start": 915,
+        "char_end_exclusive": 1114,
+        "line_start": 30,
+        "line_end": 37,
+        "text": "\\begin{ex}\nهر تابع $f\\colon A \\to B$ یک تابع جزئی نیز هست. توابع\nجزئی‌ای که در همه‌جای~$A$ تعریف شده‌اند---یعنی همان توابعی که تاکنون\nصرفاً تابع نامیده‌ایم---\\emph{تام} نیز نامیده\nمی‌شوند.\n\\end{ex}\n\n",
+        "sha256": "b2115e73427afb6b98768e8a7f4062aab9744b72ab888e6da2e7d53484496760"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{ex}\nهر تابع $f\\colon A \\to B$ یک تابع جزئی نیز هست. توابع\nجزئی‌ای که در همه‌جای~$A$ تعریف شده‌اند---یعنی همان توابعی که تاکنون\nصرفاً تابع نامیده‌ایم---\\emph{تام} نیز نامیده\nمی‌شوند.\n\\end{ex}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Reciprocal partial-function example",
+      "canon": [
+        "FA-REL-P045",
+        "FA-OL-CANON-0001:P0085"
+      ],
+      "rationale": "Retain the real reciprocal, undefined at0 and defined elsewhere. Undefined at0 must not be translated as equal to0, infinity, or a missing translation.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Full aligned wording, hypotheses and mathematical scope checked against frozen source and the cited Persian passages; editorial score, not a probability.",
+      "id": "FA-0026-C04",
+      "unit": "OLP-0026",
+      "source": {
+        "char_start": 1176,
+        "char_end_exclusive": 1323,
+        "line_start": 37,
+        "line_end": 42,
+        "text": "\\begin{ex}\nThe partial function $f \\colon \\Real \\pto \\Real$ given by $f(x) = 1/x$\nis undefined for $x = 0$, and defined everywhere else.\n\\end{ex}\n\n",
+        "sha256": "f468c1d46253cf2d3f927c8721ee846d9e7db8a5e2c83ecfbbd50033ed93a640"
+      },
+      "target_before": {
+        "char_start": 1114,
+        "char_end_exclusive": 1260,
+        "line_start": 37,
+        "line_end": 42,
+        "text": "\\begin{ex}\nتابع جزئی $f \\colon \\Real \\pto \\Real$ که با $f(x) = 1/x$\nداده می‌شود، در $x = 0$ تعریف‌نشده و در همه‌جای دیگر تعریف‌شده است.\n\\end{ex}\n\n",
+        "sha256": "c6d8c7549b553c6fcd86319243475e13911aba383c827feede87807af24ffd67"
+      },
+      "target_after": {
+        "char_start": 1114,
+        "char_end_exclusive": 1260,
+        "line_start": 37,
+        "line_end": 42,
+        "text": "\\begin{ex}\nتابع جزئی $f \\colon \\Real \\pto \\Real$ که با $f(x) = 1/x$\nداده می‌شود، در $x = 0$ تعریف‌نشده و در همه‌جای دیگر تعریف‌شده است.\n\\end{ex}\n\n",
+        "sha256": "c6d8c7549b553c6fcd86319243475e13911aba383c827feede87807af24ffd67"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{ex}\nتابع جزئی $f \\colon \\Real \\pto \\Real$ که با $f(x) = 1/x$\nداده می‌شود، در $x = 0$ تعریف‌نشده و در همه‌جای دیگر تعریف‌شده است.\n\\end{ex}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Partial inverse exercise",
+      "canon": [
+        "FA-OL-CANON-0001:P0085",
+        "FA-OL-CANON-0003:P0015",
+        "FA-REL-P046",
+        "FA-REL-P050"
+      ],
+      "rationale": "Preserve the general construction of g at values with exactly one preimage, undefined otherwise. Injectivity is required only for the two requested identities over dom(f) and ran(f), not for defining g in the first place. Unique preimages require no Choice. Keep both domain restrictions.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Full aligned wording, hypotheses and mathematical scope checked against frozen source and the cited Persian passages; editorial score, not a probability.",
+      "id": "FA-0026-C05",
+      "unit": "OLP-0026",
+      "source": {
+        "char_start": 1323,
+        "char_end_exclusive": 1663,
+        "line_start": 42,
+        "line_end": 50,
+        "text": "\\begin{prob}\nGiven $f\\colon A \\pto B$, define the partial function $g\\colon B \\pto\nA$ by: for any $y \\in B$, if there is a unique $x \\in A$ such that\n$f(x) = y$, then $g(y) = x$; otherwise $g(y) \\fundefined$.  Show that\nif $f$ is injective, then $g(f(x)) = x$ for all $x \\in \\dom{f}$, and\n$f(g(y)) = y$ for all $y \\in \\ran{f}$.\n\\end{prob}\n\n",
+        "sha256": "d8b75b49993d71918f98b00d2d79e4a9a158a9a07fc418555121fff835afa916"
+      },
+      "target_before": {
+        "char_start": 1260,
+        "char_end_exclusive": 1609,
+        "line_start": 42,
+        "line_end": 50,
+        "text": "\\begin{prob}\nبا داشتن $f\\colon A \\pto B$، تابع جزئی $g\\colon B \\pto\nA$ را چنین تعریف کنید: برای هر $y \\in B$، اگر دقیقاً یک $x \\in A$ وجود داشته باشد\nچنان‌که $f(x) = y$، آنگاه $g(y) = x$؛ وگرنه $g(y) \\fundefined$. نشان دهید\nاگر $f$ یک‌به‌یک باشد، آنگاه $g(f(x)) = x$ برای همهٔ $x \\in \\dom{f}$، و\n$f(g(y)) = y$ برای همهٔ $y \\in \\ran{f}$.\n\\end{prob}\n\n",
+        "sha256": "ce592498883c9606ae3054e8c89b270a326d314ac1603e9c54ba8d70418aa287"
+      },
+      "target_after": {
+        "char_start": 1260,
+        "char_end_exclusive": 1609,
+        "line_start": 42,
+        "line_end": 50,
+        "text": "\\begin{prob}\nبا داشتن $f\\colon A \\pto B$، تابع جزئی $g\\colon B \\pto\nA$ را چنین تعریف کنید: برای هر $y \\in B$، اگر دقیقاً یک $x \\in A$ وجود داشته باشد\nچنان‌که $f(x) = y$، آنگاه $g(y) = x$؛ وگرنه $g(y) \\fundefined$. نشان دهید\nاگر $f$ یک‌به‌یک باشد، آنگاه $g(f(x)) = x$ برای همهٔ $x \\in \\dom{f}$، و\n$f(g(y)) = y$ برای همهٔ $y \\in \\ran{f}$.\n\\end{prob}\n\n",
+        "sha256": "ce592498883c9606ae3054e8c89b270a326d314ac1603e9c54ba8d70418aa287"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{prob}\nبا داشتن $f\\colon A \\pto B$، تابع جزئی $g\\colon B \\pto\nA$ را چنین تعریف کنید: برای هر $y \\in B$، اگر دقیقاً یک $x \\in A$ وجود داشته باشد\nچنان‌که $f(x) = y$، آنگاه $g(y) = x$؛ وگرنه $g(y) \\fundefined$. نشان دهید\nاگر $f$ یک‌به‌یک باشد، آنگاه $g(f(x)) = x$ برای همهٔ $x \\in \\dom{f}$، و\n$f(g(y)) = y$ برای همهٔ $y \\in \\ran{f}$.\n\\end{prob}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Graph of a partial function",
+      "canon": [
+        "FA-REL-P045",
+        "FA-OL-CANON-0001:P0085",
+        "FA-OL-CANON-0003:P0015"
+      ],
+      "rationale": "Use نمودار as for the preceding total-function graph and retain the ordered-pair formula. f(x)=y describes defined values only. No pair with an undefined marker is inserted into the graph.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Full aligned wording, hypotheses and mathematical scope checked against frozen source and the cited Persian passages; editorial score, not a probability.",
+      "id": "FA-0026-C06",
+      "unit": "OLP-0026",
+      "source": {
+        "char_start": 1663,
+        "char_end_exclusive": 1885,
+        "line_start": 50,
+        "line_end": 58,
+        "text": "\\begin{defn}[Graph of a partial function]\nLet $f\\colon A \\pto B$ be a partial function. The \\emph{graph} of~$f$\nis the relation $R_f \\subseteq A \\times B$ defined by\n\\[\nR_f = \\Setabs{\\tuple{x,y}}{f(x) = y}.\n\\]\n\\end{defn}\n\n",
+        "sha256": "7e4e0ea70419a470637436cccd96197d145732e19b534f8ecbe7933d0a2a397c"
+      },
+      "target_before": {
+        "char_start": 1609,
+        "char_end_exclusive": 1826,
+        "line_start": 50,
+        "line_end": 58,
+        "text": "\\begin{defn}[گراف یک تابع جزئی]\nفرض کنید $f\\colon A \\pto B$ تابعی جزئی باشد. \\emph{گرافِ}~$f$\nرابطهٔ $R_f \\subseteq A \\times B$ است که به‌صورت زیر تعریف می‌شود:\n\\[\nR_f = \\Setabs{\\tuple{x,y}}{f(x) = y}.\n\\]\n\\end{defn}\n\n",
+        "sha256": "7b818d7790659be94ce42bfde0a01af4e92097339db6745af7c8e46b873dd3db"
+      },
+      "target_after": {
+        "char_start": 1609,
+        "char_end_exclusive": 1830,
+        "line_start": 50,
+        "line_end": 58,
+        "text": "\\begin{defn}[نمودار یک تابع جزئی]\nفرض کنید $f\\colon A \\pto B$ تابعی جزئی باشد. \\emph{نمودارِ}~$f$\nرابطهٔ $R_f \\subseteq A \\times B$ است که به‌صورت زیر تعریف می‌شود:\n\\[\nR_f = \\Setabs{\\tuple{x,y}}{f(x) = y}.\n\\]\n\\end{defn}\n\n",
+        "sha256": "9bd23b7ec5ac0db3acd3da1571007ed8272e2374023cd147456a428b7491e1bd"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{defn}[نمودار یک تابع جزئی]\nفرض کنید $f\\colon A \\pto B$ تابعی جزئی باشد. \\emph{نمودارِ}~$f$\nرابطهٔ $R_f \\subseteq A \\times B$ است که به‌صورت زیر تعریف می‌شود:\n\\[\nR_f = \\Setabs{\\tuple{x,y}}{f(x) = y}.\n\\]\n\\end{defn}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Functional relation and seriality",
+      "canon": [
+        "FA-OL-CANON-0003:P0015",
+        "FA-OL-CANON-0001:P0085",
+        "FA-REL-P044"
+      ],
+      "rationale": "Use نمودار consistently. Preserve uniqueness per input, the undefined alternative, and the separate seriality/existence condition for totality on A. سریال is retained as an explicitly defined provisional source-label equivalent, not claimed verbatim attested by the selected canon.",
+      "alternatives": "چپ‌تام would also require direct lexical evidence; a silent new label would not resolve the attestation gap.",
+      "question": "Exact سریال label needs a direct relational-logic witness in future terminology refinement. Keep the fully stated every-input existence condition whichever label is selected.",
+      "confidence": 2,
+      "confidence_reason": "Uniqueness/totality distinction directly grounded; exact serial label remains provisional.",
+      "id": "FA-0026-C07",
+      "unit": "OLP-0026",
+      "source": {
+        "char_start": 1885,
+        "char_end_exclusive": 2279,
+        "line_start": 58,
+        "line_end": 67,
+        "text": "\\begin{prop}\nSuppose $R \\subseteq A \\times B$ has the property that whenever $Rxy$\nand $Rxy'$ then $y = y'$.  Then $R$ is the graph of the partial\nfunction $f\\colon A \\pto B$ defined by: if there is a $y$ such that\n$Rxy$, then $f(x) = y$, otherwise $f(x) \\fundefined$.  If $R$ is also\n\\emph{serial}, i.e., for each $x \\in A$ there is a $y \\in B$ such that\n$Rxy$, then $f$ is total.\n\\end{prop}\n\n",
+        "sha256": "1b3ea9f8f89af4a5f6d4eb1414ccff8b4eb6f6c746c21fbe9854a467e4c7864f"
+      },
+      "target_before": {
+        "char_start": 1826,
+        "char_end_exclusive": 2229,
+        "line_start": 58,
+        "line_end": 67,
+        "text": "\\begin{prop}\nفرض کنید $R \\subseteq A \\times B$ این ویژگی را داشته باشد که هرگاه $Rxy$\nو $Rxy'$، آنگاه $y = y'$. پس $R$ گراف تابع جزئی\n$f\\colon A \\pto B$ است که چنین تعریف می‌شود: اگر یک $y$ وجود داشته باشد چنان‌که\n$Rxy$، آنگاه $f(x) = y$، وگرنه $f(x) \\fundefined$. اگر $R$ افزون بر این\n\\emph{سریال} باشد، یعنی برای هر $x \\in A$ یک $y \\in B$ وجود داشته باشد چنان‌که\n$Rxy$، آنگاه $f$ تام است.\n\\end{prop}\n\n",
+        "sha256": "69480d9a1847a0fb91c8b9838bd44367cc9c0f25d287d1b9ffb4c3fb0ff0a8d6"
+      },
+      "target_after": {
+        "char_start": 1830,
+        "char_end_exclusive": 2235,
+        "line_start": 58,
+        "line_end": 67,
+        "text": "\\begin{prop}\nفرض کنید $R \\subseteq A \\times B$ این ویژگی را داشته باشد که هرگاه $Rxy$\nو $Rxy'$، آنگاه $y = y'$. پس $R$ نمودار تابع جزئی\n$f\\colon A \\pto B$ است که چنین تعریف می‌شود: اگر یک $y$ وجود داشته باشد چنان‌که\n$Rxy$، آنگاه $f(x) = y$، وگرنه $f(x) \\fundefined$. اگر $R$ افزون بر این\n\\emph{سریال} باشد، یعنی برای هر $x \\in A$ یک $y \\in B$ وجود داشته باشد چنان‌که\n$Rxy$، آنگاه $f$ تام است.\n\\end{prop}\n\n",
+        "sha256": "4fbf520810e06e9a606bae2fe8b687c160d55e7e9457bb5d6cd1eb77ffba2d7c"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{prop}\nفرض کنید $R \\subseteq A \\times B$ این ویژگی را داشته باشد که هرگاه $Rxy$\nو $Rxy'$، آنگاه $y = y'$. پس $R$ نمودار تابع جزئی\n$f\\colon A \\pto B$ است که چنین تعریف می‌شود: اگر یک $y$ وجود داشته باشد چنان‌که\n$Rxy$، آنگاه $f(x) = y$، وگرنه $f(x) \\fundefined$. اگر $R$ افزون بر این\n\\emph{سریال} باشد، یعنی برای هر $x \\in A$ یک $y \\in B$ وجود داشته باشد چنان‌که\n$Rxy$، آنگاه $f$ تام است.\n\\end{prop}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Graph proof for a partial function",
+      "canon": [
+        "FA-OL-CANON-0003:P0015",
+        "FA-OL-CANON-0001:P0085",
+        "FA-REL-P044",
+        "FA-REL-P049"
+      ],
+      "rationale": "Retain conditional uniqueness rather than claiming an output for every input. That is enough for a well-defined partial function. Seriality supplies totality; with empty A the empty relation is serial and the empty function is total. خوش‌تعریف is directly attested on D49.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "Full aligned wording, hypotheses and mathematical scope checked against frozen source and the cited Persian passages; editorial score, not a probability.",
+      "id": "FA-0026-C08",
+      "unit": "OLP-0026",
+      "source": {
+        "char_start": 2279,
+        "char_end_exclusive": 2586,
+        "line_start": 67,
+        "line_end": 75,
+        "text": "\\begin{proof}\nSuppose there is a $y$ such that $Rxy$.  If there were another $y'\n\\neq y$ such that $Rxy'$, the condition on $R$ would be\nviolated. Hence, if there is a $y$ such that $Rxy$, that $y$ is\nunique, and so $f$ is well-defined.  Obviously, $R_f = R$ and $f$ is\ntotal if~$R$ is serial.\n\\end{proof}\n\n",
+        "sha256": "0036cafa8aeb8c9398c90c8bd6742ab1357211566fd80dcca3479354ba3e1eac"
+      },
+      "target_before": {
+        "char_start": 2229,
+        "char_end_exclusive": 2530,
+        "line_start": 67,
+        "line_end": 75,
+        "text": "\\begin{proof}\nفرض کنید یک $y$ وجود دارد چنان‌که $Rxy$. اگر $y'\n\\neq y$ دیگری وجود داشت چنان‌که $Rxy'$، شرط مربوط به $R$\nنقض می‌شد. بنابراین، اگر یک $y$ وجود داشته باشد چنان‌که $Rxy$، آن $y$\nیکتا است و ازاین‌رو $f$ خوش‌تعریف است. آشکارا $R_f = R$ و $f$ در صورتی\nتام است که~$R$ سریال باشد.\n\\end{proof}\n\n",
+        "sha256": "458b7df86cdc507eaf2a47e189b646f2cb702c6a14ed131884c0a2877acb6edd"
+      },
+      "target_after": {
+        "char_start": 2235,
+        "char_end_exclusive": 2536,
+        "line_start": 67,
+        "line_end": 75,
+        "text": "\\begin{proof}\nفرض کنید یک $y$ وجود دارد چنان‌که $Rxy$. اگر $y'\n\\neq y$ دیگری وجود داشت چنان‌که $Rxy'$، شرط مربوط به $R$\nنقض می‌شد. بنابراین، اگر یک $y$ وجود داشته باشد چنان‌که $Rxy$، آن $y$\nیکتا است و ازاین‌رو $f$ خوش‌تعریف است. آشکارا $R_f = R$ و $f$ در صورتی\nتام است که~$R$ سریال باشد.\n\\end{proof}\n\n",
+        "sha256": "458b7df86cdc507eaf2a47e189b646f2cb702c6a14ed131884c0a2877acb6edd"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{proof}\nفرض کنید یک $y$ وجود دارد چنان‌که $Rxy$. اگر $y'\n\\neq y$ دیگری وجود داشت چنان‌که $Rxy'$، شرط مربوط به $R$\nنقض می‌شد. بنابراین، اگر یک $y$ وجود داشته باشد چنان‌که $Rxy$، آن $y$\nیکتا است و ازاین‌رو $f$ خوش‌تعریف است. آشکارا $R_f = R$ و $f$ در صورتی\nتام است که~$R$ سریال باشد.\n\\end{proof}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    }
+  ],
+  "corrections": [
+    {
+      "unit": "OLP-0024",
+      "id": "FA0024-SUCCESSOR",
+      "before": "تابع پسین",
+      "after": "تابع جانشین"
+    },
+    {
+      "unit": "OLP-0024",
+      "id": "FA0024-UNDO-INTUITION",
+      "before": "کاری را که $f$ انجام می‌دهد «خنثی می‌کند».",
+      "after": "نتیجهٔ کار $f$ را به ورودی اولیه برمی‌گرداند."
+    },
+    {
+      "unit": "OLP-0024",
+      "id": "FA0024-INVERSE-CANON-SYNONYM",
+      "before": "یک \\emph{وارون} برای تابع",
+      "after": "یک \\emph{وارون (معکوس)} برای تابع"
+    },
+    {
+      "unit": "OLP-0024",
+      "id": "FA0024-NATURAL-CANDIDATE",
+      "before": "اکنون تعیین می‌کنیم که توابع چه هنگام وارون دارند. نامزدی مناسب\nبرای وارون $f\\colon A \\to B$ تابع $g\\colon B \\to A$ است که «تعریف\nمی‌شود» به‌وسیلهٔ",
+      "after": "اکنون بررسی می‌کنیم توابع چه هنگام وارون دارند. یک پیشنهاد طبیعی\nبرای وارون $f\\colon A \\to B$ تابع $g\\colon B \\to A$ است که آن را با عبارت زیر\n«تعریف می‌کنیم»:"
+    },
+    {
+      "unit": "OLP-0024",
+      "id": "FA0024-DEFINITION-CAUTION",
+      "before": "اما گیومه‌های احتیاطی پیرامون «تعریف می‌شود» (و «آن») نشان می‌دهند که\nاین یک تعریف نیست. دست‌کم، در کلیت کامل همیشه کار\nنخواهد کرد. زیرا برای آنکه این تعریف تابعی را مشخص کند، باید یگانه~$x$ای\nوجود داشته باشد که $f(x) =\ny$---خروجی~$g$ باید به‌طور یکتا مشخص شود.",
+      "after": "اما گیومه‌های دور «تعریف می‌کنیم» (و «آن») هشدار می‌دهند که\nهنوز تعریفی معتبر در همهٔ حالت‌ها نداریم. این عبارت همیشه\nتابعی را مشخص نمی‌کند: باید دقیقاً یک~$x$\nوجود داشته باشد که $f(x) =\ny$---خروجی~$g$ باید به‌طور یکتا مشخص شود."
+    },
+    {
+      "unit": "OLP-0024",
+      "id": "FA0024-NO-X-SUFFIX",
+      "before": "اگر هیچ~$x$ای",
+      "after": "اگر هیچ~$x$"
+    },
+    {
+      "unit": "OLP-0024",
+      "id": "FA0024-LEFT-UNDO",
+      "before": "چنین $g$ای کاری را که $f$ انجام می‌دهد «خنثی می‌کند» و",
+      "after": "تابع $g$ پس از اعمال $f$، ورودی اولیه را بازمی‌گرداند و"
+    },
+    {
+      "unit": "OLP-0024",
+      "id": "FA0024-RIGHT-FUNCTION-NOUN",
+      "before": "چنین $h$ای",
+      "after": "تابع $h$"
+    },
+    {
+      "unit": "OLP-0024",
+      "id": "FA0024-RIGHT-UNDO",
+      "before": "$f$ کاری را که $h$ انجام می‌دهد «خنثی می‌کند».",
+      "after": "$f$ پس از اعمال $h$، ورودی اولیه را بازمی‌گرداند."
+    },
+    {
+      "unit": "OLP-0024",
+      "id": "FA0024-LEFT-NONEMPTY-HYPOTHESIS",
+      "before": "اگر $f\\colon A \\to B$ !!{injective} باشد، آنگاه \\emph{وارون\nچپی} مانند~$g\\colon B \\to A$ برای~$f$ وجود دارد چنان‌که $g(f(x)) = x$ برای همهٔ $x\n\\in A$.",
+      "after": "اگر $f\\colon A \\to B$ !!{injective} باشد و دامنهٔ آن ناتهی باشد، آنگاه \\emph{وارون\nچپی} مانند~$g\\colon B \\to A$ برای~$f$ وجود دارد چنان‌که $g(f(x)) = x$ برای همهٔ $x\n\\in A$.\n\n\\emph{یادداشت ویراستاری:} شرط ناتهی‌بودن دامنه در متن مبدأ نیامده است.\nاگر دامنه تهی و هم‌دامنه ناتهی باشد، تابع تهی یک‌به‌یک است،\nاما هیچ تابعی از هم‌دامنه به دامنه وجود ندارد؛ بنابراین وارون چپ ندارد.\nاگر هر دو مجموعه تهی باشند، تابع تهی وارون خودش است."
+    },
+    {
+      "unit": "OLP-0024",
+      "id": "FA0024-LEFT-PROOF-HYPOTHESIS",
+      "before": "فرض کنید $f\\colon A \\to B$ !!{injective} باشد. یک $y \\in B$ را در نظر بگیرید.",
+      "after": "فرض کنید $f\\colon A \\to B$ !!{injective} باشد و دامنهٔ آن ناتهی باشد. یک $y \\in B$ را در نظر بگیرید."
+    },
+    {
+      "unit": "OLP-0024",
+      "id": "FA0024-UNIQUE-PREIMAGE-GRAMMAR",
+      "before": "فقط یک چنین~$x \\in A$ای وجود دارد.",
+      "after": "تنها یک~$x \\in A$ با این ویژگی وجود دارد."
+    },
+    {
+      "unit": "OLP-0024",
+      "id": "FA0024-DEFINITE-X-GRAMMAR",
+      "before": "$g(y)$ «آن» $x \\in A$ای است که",
+      "after": "$g(y)$ همان $x \\in A$ است که"
+    },
+    {
+      "unit": "OLP-0024",
+      "id": "FA0024-FIXED-DEFAULT",
+      "before": "می‌توانیم آن را به هر~$a \\in A$ای نگاشت کنیم.",
+      "after": "می‌توانیم آن را به یک عضو دلخواه~$a \\in A$ نگاشت کنیم."
+    },
+    {
+      "unit": "OLP-0024",
+      "id": "FA0024-RANGE-QUANTIFIER-GRAMMAR",
+      "before": "برای هر چنین $y \\in \\ran{f}$ای",
+      "after": "برای هر $y \\in \\ran{f}$"
+    },
+    {
+      "unit": "OLP-0024",
+      "id": "FA0024-CHOICE-NOT-IGNORED",
+      "before": "در اینجا از آن چشم می‌پوشیم",
+      "after": "در اینجا به‌تفصیل به آن نمی‌پردازیم"
+    },
+    {
+      "unit": "OLP-0024",
+      "id": "FA0024-INVERSE-ON-RANGE",
+      "before": "راهی اندکی کلی‌تر برای استخراج وارون‌ها وجود دارد. در\n\\olref[kin]{sec} دیدیم که هر تابع $f$، !!a{surjection} $f'\n\\colon A \\to \\ran{f}$ را با قرار دادن $f'(x) = f(x)$ برای همهٔ $x \\in A$ القا می‌کند.",
+      "after": "روش اندکی کلی‌تری برای به دست آوردن وارون وجود دارد. در\n\\olref[kin]{sec} دیدیم که از هر تابع $f$ می‌توان یک !!a{surjection} $f'\n\\colon A \\to \\ran{f}$ را با قرار دادن $f'(x) = f(x)$ برای همهٔ $x \\in A$ به دست آورد."
+    },
+    {
+      "unit": "OLP-0025",
+      "id": "FA0025-INVERSE-GRAMMAR",
+      "before": "\\oliflabeldef{sfr:fun:inv:sec}{در \\olref[inv]{sec} دیدیم که\nوارونِ~$f^{-1}$ِ !!a{bijection}~$f$ خود تابع است. عمل دیگری\nکه روی توابع انجام می‌دهیم، ترکیب است. اکنون می‌توانیم}{می‌توانیم}",
+      "after": "\\oliflabeldef{sfr:fun:inv:sec}{در \\olref[inv]{sec} دیدیم که\n$f^{-1}$، یعنی وارونِ !!a{bijection}~$f$، خود یک تابع است. عمل دیگری\nکه روی توابع انجام می‌دهیم، ترکیب است. اکنون می‌توانیم}{می‌توانیم}"
+    },
+    {
+      "unit": "OLP-0025",
+      "id": "FA0025-ASSIGNMENT-CONSTRUCTION",
+      "before": "$(\\comp{f}{g}) \\colon A \\to C$ هر !!{element} از~$A$\nرا با !!a{element}ی از~$C$ جفت می‌کند. اینکه کدام !!{element} از~$C$\nبا !!a{element}ی از $A$ جفت می‌شود، چنین مشخص می‌گردد: با داشتن ورودی $x \\in\nA$، نخست تابع $f$ را بر~$x$ اعمال می‌کنیم که مقداری مانند $f(x)\n= y \\in B$ خروجی می‌دهد؛ سپس تابع $g$ را بر~$y$ اعمال می‌کنیم که مقداری مانند\n$g(f(x)) = g(y) = z \\in C$ خروجی می‌دهد.",
+      "after": "$(\\comp{f}{g}) \\colon A \\to C$ به هر !!{element} از~$A$\n!!a{element}ی از~$C$ نسبت می‌دهد. برای مشخص کردن اینکه کدام !!{element} از~$C$\nبه !!a{element}ی از $A$ نسبت داده می‌شود، این روش را به کار می‌بریم: با داشتن ورودی $x \\in\nA$، نخست تابع $f$ را بر~$x$ اعمال می‌کنیم که مقدار $f(x)\n= y \\in B$ را به دست می‌دهد؛ سپس تابع $g$ را بر~$y$ اعمال می‌کنیم که مقدار\n$g(f(x)) = g(y) = z \\in C$ را به دست می‌دهد."
+    },
+    {
+      "unit": "OLP-0025",
+      "id": "FA0025-CAPTION",
+      "before": "\\caption{ترکیبِ $g \\circ f$ از دو تابع $f$ و~$g$.}",
+      "after": "\\caption{$g \\circ f$، ترکیب دو تابع $f$ و~$g$.}"
+    },
+    {
+      "unit": "OLP-0025",
+      "id": "FA0025-SUCCESSOR",
+      "before": "پسین آن را بگیرید",
+      "after": "جانشین آن را بگیرید"
+    },
+    {
+      "unit": "OLP-0025",
+      "id": "FA0025-GRAPH",
+      "before": "نشان دهید گراف",
+      "after": "نشان دهید نمودار"
+    },
+    {
+      "unit": "OLP-0026",
+      "id": "FA0026-GRAPH-DEFINITION",
+      "before": "\\begin{defn}[گراف یک تابع جزئی]\nفرض کنید $f\\colon A \\pto B$ تابعی جزئی باشد. \\emph{گرافِ}~$f$",
+      "after": "\\begin{defn}[نمودار یک تابع جزئی]\nفرض کنید $f\\colon A \\pto B$ تابعی جزئی باشد. \\emph{نمودارِ}~$f$"
+    },
+    {
+      "unit": "OLP-0026",
+      "id": "FA0026-GRAPH-PROPOSITION",
+      "before": "پس $R$ گراف تابع جزئی",
+      "after": "پس $R$ نمودار تابع جزئی"
+    }
+  ],
+  "human_review_gate": false,
+  "reader_release": false
+}
