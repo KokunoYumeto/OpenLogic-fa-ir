@@ -1,0 +1,28 @@
+{
+  "schema": "openlogic-frozen-source-findings/1",
+  "source_revision": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "scope": "OLP-0037 through OLP-0040 only. Frozen-source findings, not claims about current upstream. Source hashes and exact candidates are in choices-evidence.json.",
+  "comparison_registry_sha256": "9b6e836c8432eb75d331913983603796d6557da6ec3ad71b846b2a248374cd07",
+  "findings": [
+    {"id":"OLSIZ-008","unit":"OLP-0039","lines":[64,66],"state":"known_duplicate_confirmed","finding":"Digit/string index descriptions are reversed; s_n(m) is digit m of string n.","repair_ids":["FA0039-COORDINATE-ORDER","FA0039-COORDINATE-DISCLOSURE"]},
+    {"id":"OLSIZ-009","unit":"OLP-0039","lines":[80,90],"state":"known_duplicate_confirmed","finding":"Second bit flip repeats1-to0 instead of0-to1; the piecewise formula already gives both directions.","repair_ids":["FA0039-FLIP-BOTH-WAYS","FA0039-FLIP-DISCLOSURE"]},
+    {"id":"OLSIZ-010","unit":"OLP-0040","lines":[52,54],"state":"known_duplicate_confirmed","finding":"The characteristic output index k is unbound. Use the unique string s fixed by the input subset.","repair_ids":["FA0040-CHARACTERISTIC-SYMBOL","FA0040-CHARACTERISTIC-ONE","FA0040-CHARACTERISTIC-ZERO","FA0040-SYMBOL-DISCLOSURE"]},
+    {"id":"OLALT-NONENUM-FINITE","unit":"OLP-0039","lines":[26,37],"state":"additional_to_ten_item_registry","finding":"No bijection with Nat is not an unrestricted characterization of nonenumerability; every finite set supplies a counterexample, and empty also refutes the unqualified no-surjection test.","repair":"Restrict this characterization to infinite A, or separately give the exact nonempty/no-surjection criterion.","independent_id":"IMR-20260912-01","repair_ids":["FA0039-INFINITE-QUALIFIER","FA0039-CONVENTION-DISCLOSURE","FA0039-METHOD-INFINITE-SCOPE"]},
+    {"id":"OLALT-SURJECTION-LIST","unit":"OLP-0040","lines":[34,38],"state":"additional_to_ten_item_registry","finding":"A surjection can turn a bijective enumeration into a repeated exhaustive list, not an enumeration under the stipulated definition.","counterexample":"n maps to floor(n/2), yielding0,0,1,1,...","repair":"Keep first occurrences and reindex; explicitly handle the empty case. The particular characteristic map is also injective.","independent_id":"IMR-20260912-02","repair_ids":["FA0040-SURJECTIVE-LIST-CONVENTION","FA0040-BIJECTIVE-SPECIFIC-LIST"]},
+    {"id":"OLALT-MATRIX-FOUR","unit":"OLP-0039","lines":[134,144],"state":"additional_to_ten_item_registry","finding":"RowN0 omits3,4,5 and rowN3 omits5, despite the specified sets and explicit column rule.","repair":"Insert exactly those four memberships. Preserve rowN2/column2 blank and all four diagonal decisions.","independent_id":"IMR-20260912-03","repair_ids":["FA0039-MATRIX-MEMBERSHIPS-ROW0","FA0039-MATRIX-MEMBERSHIPS-ROW3","FA0039-MATRIX-DISCLOSURE"]},
+    {"id":"OLALT-CONDITIONAL-ARITY","unit":"OLP-0039","lines":[46,54],"state":"main_review_additional_to_ten_item_registry","finding":"The optional-footnote conditional lacks its third braced argument and may consume the next environment command.","controlling_definition":"sty/open-logic-referencing.sty defines oliflabeldef with argument signature m m m.","repair":"True branch contains the footnote; false branch is empty; following prose is unconditional.","repair_ids":["FA0039-CONDITIONAL-FOOTNOTE"]}
+  ],
+  "dormant_material": [
+    {"unit":"OLP-0040","lines":[88,104],"state":"commented_out_not_active","finding":"Finite n-zero output is outside infinite-sequence codomain; dormant instance of the OLSIZ-005 pattern.","repair":"Append an explicit infinite zero tail; constant output is valid and not onto."},
+    {"unit":"OLP-0040","lines":[92,98],"state":"commented_out_not_active","finding":"Index1 is called first under zero-based indexing, and target symbolY is unbound.","repair":"Name coordinate1 explicitly, retain projection formula, and use bound targetB."}
+  ],
+  "convention_notes": [
+    "OLP-0037 intentionally defers Schroder–Bernstein; no absent-proof defect.",
+    "OLP-0038 uses n first as size and later as last index; not an off-by-one defect. Empty initial segment is clarified.",
+    "General strict-cardinality comparison needs background for arbitrary infinite sets; Choice is sufficient. Neither diagonal proof requires it.",
+    "Three theorem statements, three supplied proof environments and all eleven active exercises are valid in the stated classical setting. The optional partial-function exercise is valid too."
+  ],
+  "novelty_limit": "Additional means not in the exact ten-item registry inspected. No claim of global novelty, absence from another lane's intake, or defect in current upstream.",
+  "new_upstream_issue_authorized_or_posted": false,
+  "noether_authority_action": false
+}

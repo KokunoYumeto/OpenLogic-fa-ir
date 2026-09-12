@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "owner_parser_sha256": "4dda138aa1d597b77c3a76a95a1b0f75aecdaf4fb4ea537f56f8f6de53fd952e",
+  "active_tex_declarations": 23,
+  "source_only_comment_transforms": 2,
+  "complete_candidate_replays": 4,
+  "owner_installed": false,
+  "reader_built": false,
+  "meaning": "Exact declaration/parser and full physical-source recipe checks; not a compiled-reader acceptance."
+}

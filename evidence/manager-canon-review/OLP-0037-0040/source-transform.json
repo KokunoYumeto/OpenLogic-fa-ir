@@ -1,0 +1,363 @@
+{
+  "schema": "openlogic-exact-source-transform/1",
+  "identities": [
+    {
+      "unit": "OLP-0037",
+      "source_commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+      "source_path": "content/sets-functions-relations/size-of-sets/schroder-bernstein.tex",
+      "source_git_LF_sha256": "7b99b3e032e24e425383734ce80ad9a5cc37d018c09205e02f37b927d50bb56a",
+      "source_ledger_CRLF_sha256": "7b99b3e032e24e425383734ce80ad9a5cc37d018c09205e02f37b927d50bb56a",
+      "published_target_sha256": "fb33e0b261a2c9cd6efda10610a3a56101c4c21e492d0d80cd56736952ee43ae",
+      "candidate_sha256": "766e9612977add1264e2081e66ab66ddc69d9416730f2fb1393fbb2ded36439d",
+      "published_target_bytes": 2850,
+      "candidate_bytes": 2863,
+      "R3_member": "source/locale/fa-IR/content/sets-functions-relations/size-of-sets/schroder-bernstein.tex",
+      "R3_archive_sha256": "ef32f359fe7813d0ffef11f3936fb1498f2f3cdcc176ab2acb56b969360c9e59",
+      "locale_config_sha256": "c8df8c39abbd1ab36dbac380490b72e9b3c565bbd1ec3d1f1be88bdc300abd0b",
+      "math_spans": 17,
+      "aligned_choices": 7,
+      "math_text_pairs": [],
+      "formal_repairs": [],
+      "math_text_repairs": [],
+      "source_reference_equivalences": [
+        {
+          "id": "LOCALIZED-POTTER-PAGES",
+          "before": "\\citet[pp.~165--6]{Potter2004}",
+          "after": "\\citet[صص.~165--6]{Potter2004}"
+        }
+      ]
+    },
+    {
+      "unit": "OLP-0038",
+      "source_commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+      "source_path": "content/sets-functions-relations/size-of-sets/enumerability-alt.tex",
+      "source_git_LF_sha256": "9a9060e57403586c0f8a81353c1d9c81049869e486b4dc032fbf32542023ba8f",
+      "source_ledger_CRLF_sha256": "8ad8d8941a5ca6d1b4cd2cc351fc16a912d00273783c0358838dd4fa51fb4627",
+      "published_target_sha256": "3e05071407324136aec82e4e8709700db6d1a0fc9d908a52aad6942f36d48c69",
+      "candidate_sha256": "45eb83f9d27c551fa1c69b29716bd6d33cf8ab39724513cf0d1b909dbe26be17",
+      "published_target_bytes": 6883,
+      "candidate_bytes": 7204,
+      "R3_member": "source/locale/fa-IR/content/sets-functions-relations/size-of-sets/enumerability-alt.tex",
+      "R3_archive_sha256": "ef32f359fe7813d0ffef11f3936fb1498f2f3cdcc176ab2acb56b969360c9e59",
+      "locale_config_sha256": "c8df8c39abbd1ab36dbac380490b72e9b3c565bbd1ec3d1f1be88bdc300abd0b",
+      "math_spans": 70,
+      "aligned_choices": 15,
+      "math_text_pairs": [
+        {
+          "math_span": 46,
+          "source": " and",
+          "target": " و",
+          "review": "Exact wording reviewed in the aligned choice, not accepted by token masking alone"
+        },
+        {
+          "math_span": 61,
+          "source": "if $n$ is even",
+          "target": "اگر $n$ زوج باشد",
+          "review": "Exact wording reviewed in the aligned choice, not accepted by token masking alone"
+        },
+        {
+          "math_span": 61,
+          "source": "if $n$ is odd",
+          "target": "اگر $n$ فرد باشد",
+          "review": "Exact wording reviewed in the aligned choice, not accepted by token masking alone"
+        }
+      ],
+      "formal_repairs": [],
+      "math_text_repairs": [],
+      "source_reference_equivalences": []
+    },
+    {
+      "unit": "OLP-0039",
+      "source_commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+      "source_path": "content/sets-functions-relations/size-of-sets/non-enumerability-alt.tex",
+      "source_git_LF_sha256": "a075f6c63879101314fb20fa493acfb38d78ff24095bb55914f2af4527e1ad3e",
+      "source_ledger_CRLF_sha256": "0c20a2c420fbf4dbd801bb97e37799b3c602ae33ef2b1dc85ff94e24208ca2bb",
+      "published_target_sha256": "8e118ca1ec17c49e1062b0b7a548d0181dd169ef39dea021043751f2a3179b41",
+      "candidate_sha256": "bec6ece366d8c3d17b500600038a4736d8ba530494c97d31671b216081b7d68c",
+      "published_target_bytes": 9532,
+      "candidate_bytes": 11185,
+      "R3_member": "source/locale/fa-IR/content/sets-functions-relations/size-of-sets/non-enumerability-alt.tex",
+      "R3_archive_sha256": "ef32f359fe7813d0ffef11f3936fb1498f2f3cdcc176ab2acb56b969360c9e59",
+      "locale_config_sha256": "c8df8c39abbd1ab36dbac380490b72e9b3c565bbd1ec3d1f1be88bdc300abd0b",
+      "math_spans": 119,
+      "aligned_choices": 16,
+      "math_text_pairs": [
+        {
+          "math_span": 59,
+          "source": "if $s_{n}(n) = 0$",
+          "target": "اگر $s_{n}(n) = 0$",
+          "review": "Exact wording reviewed in the aligned choice, not accepted by token masking alone"
+        },
+        {
+          "math_span": 59,
+          "source": "if $s_{n}(n) = 1$",
+          "target": "اگر $s_{n}(n) = 1$",
+          "review": "Exact wording reviewed in the aligned choice, not accepted by token masking alone"
+        }
+      ],
+      "formal_repairs": [
+        {
+          "id": "DIGIT-INDEX",
+          "span_index": 37,
+          "before": "$n$",
+          "after": "$m$"
+        },
+        {
+          "id": "STRING-INDEX",
+          "span_index": 38,
+          "before": "$m$",
+          "after": "$n$"
+        },
+        {
+          "id": "FLIP-SECOND-INPUT",
+          "span_index": 50,
+          "before": "$1$",
+          "after": "$0$"
+        },
+        {
+          "id": "FLIP-SECOND-OUTPUT",
+          "span_index": 51,
+          "before": "$0$",
+          "after": "$1$"
+        },
+        {
+          "id": "MATRIX-ROW0-MEMBERSHIPS",
+          "before": "N_0 = \\{ & \\mathbf{0}, & 1, & 2, & & & & \\dots\\}\\\\",
+          "after": "N_0 = \\{ & \\mathbf{0}, & 1, & 2, & 3, & 4, & 5, & \\dots\\}\\\\"
+        },
+        {
+          "id": "MATRIX-ROW3-MEMBERSHIP",
+          "before": "N_3 = \\{ &  &  & 2, & \\mathbf{3}, & 4, & & \\dots\\}\\\\",
+          "after": "N_3 = \\{ &  &  & 2, & \\mathbf{3}, & 4, & 5, & \\dots\\}\\\\"
+        }
+      ],
+      "math_text_repairs": [],
+      "source_reference_equivalences": []
+    },
+    {
+      "unit": "OLP-0040",
+      "source_commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+      "source_path": "content/sets-functions-relations/size-of-sets/reduction-alt.tex",
+      "source_git_LF_sha256": "f7717d8394048096cf7a65bc87a1a1ed15861cdfb8c7edb23429d5256d954d11",
+      "source_ledger_CRLF_sha256": "46381b85c0e9a1ab48cb9301518de91f073d649c3b1119325c1409f5a6c1d663",
+      "published_target_sha256": "9c15bf0a9a05128c40c63d42d8323d9cc9f060fafa7aea9fcf568154ec02522a",
+      "candidate_sha256": "c1be8d41a49d0d17ddebfccf2ea0dc11195661a94cd09fb93efbe70e0be956a4",
+      "published_target_bytes": 7255,
+      "candidate_bytes": 9225,
+      "R3_member": "source/locale/fa-IR/content/sets-functions-relations/size-of-sets/reduction-alt.tex",
+      "R3_archive_sha256": "ef32f359fe7813d0ffef11f3936fb1498f2f3cdcc176ab2acb56b969360c9e59",
+      "locale_config_sha256": "c8df8c39abbd1ab36dbac380490b72e9b3c565bbd1ec3d1f1be88bdc300abd0b",
+      "math_spans": 103,
+      "aligned_choices": 19,
+      "math_text_pairs": [
+        {
+          "math_span": 79,
+          "source": "$n$ $0$'s",
+          "target": "$n$ بار $0$",
+          "review": "Exact wording reviewed in the aligned choice, not accepted by token masking alone"
+        }
+      ],
+      "formal_repairs": [
+        {
+          "id": "CHARACTERISTIC-NAME",
+          "span_index": 35,
+          "before": "s_{k}",
+          "after": "s"
+        },
+        {
+          "id": "CHARACTERISTIC-ONE",
+          "span_index": 36,
+          "before": "s_{k}",
+          "after": "s"
+        },
+        {
+          "id": "CHARACTERISTIC-ZERO",
+          "span_index": 38,
+          "before": "s_k",
+          "after": "s"
+        },
+        {
+          "id": "DORMANT-TARGET-B",
+          "before": "$Y$",
+          "after": "$B$"
+        },
+        {
+          "id": "DORMANT-INFINITE-TAIL",
+          "before": "\\underbrace{000\\dots0}_{\\text{$n$ $0$'s}}",
+          "after": "\\underbrace{000\\dots0}_{\\text{$n$ $0$'s}}0\\ldots"
+        }
+      ],
+      "math_text_repairs": [
+        {
+          "id": "DORMANT-ZERO-COUNT-PERSIAN",
+          "before": "\\text{$n$ $0$'s}",
+          "after": "\\text{$n$ بار $0$}"
+        }
+      ],
+      "source_reference_equivalences": [
+        {
+          "id": "EXISTING-DISTINCT-EXERCISE-LABEL",
+          "before": "\\label{sfr:siz:red:prob:nat-nat}",
+          "after": "\\label{sfr:siz:red-alt:prob:nat-nat}"
+        }
+      ]
+    }
+  ],
+  "corrections": [
+    {
+      "unit": "OLP-0037",
+      "id": "FA0037-TWO-DIRECTIONS",
+      "before": "مقایسه را به دو حالت تجزیه کنیم",
+      "after": "مقایسه را در دو جهت جداگانه انجام دهیم"
+    },
+    {
+      "unit": "OLP-0038",
+      "id": "FA0038-EMPTY-INITIAL-SEGMENT",
+      "before": "!!{element}sی~$A$ است.",
+      "after": "!!{element}sی~$A$ است.\n\\emph{یادداشت دربارهٔ حالت تهی:} در این جمله، قطعهٔ آغازینِ متناظر با\nمجموعهٔ تهی نیز تهی در نظر گرفته می‌شود. تعریفِ بعدی، شمارابودنِ مجموعهٔ\nتهی را جداگانه تصریح می‌کند."
+    },
+    {
+      "unit": "OLP-0038",
+      "id": "FA0038-CEILING-PRECISION",
+      "before": "که $x$ را رو به بالا\nتا نزدیک‌ترین عدد صحیح گرد می‌کند.",
+      "after": "که $x$ را به کوچک‌ترین عدد صحیحِ بزرگ‌تر یا مساویِ آن می‌برد."
+    },
+    {
+      "unit": "OLP-0039",
+      "id": "FA0039-INFINITE-QUALIFIER",
+      "before": "این مطلب شاید شگفت‌آور باشد. زیرا گفتن اینکه $A$",
+      "after": "این مطلب شاید شگفت‌آور باشد. برای یک مجموعهٔ نامتناهی، گفتن اینکه $A$"
+    },
+    {
+      "unit": "OLP-0039",
+      "id": "FA0039-CONVENTION-DISCLOSURE",
+      "before": "«بیشتر» است.",
+      "after": "«بیشتر» است.\n\\emph{یادداشت ویراستاری:} نبودنِ تناظر دوسویی با کل اعداد طبیعی،\nمجموعه‌های متناهی را نیز شامل می‌شود؛ قید نامتناهی در این توضیح ضروری است.\nدر مورد مجموعه‌های دلخواه، تعبیرِ مقایسهٔ اندازه‌ها در اینجا با فرض اصل\nانتخاب خوانده می‌شود. برهان‌های قطریِ زیر به این فرض نیاز ندارند."
+    },
+    {
+      "unit": "OLP-0039",
+      "id": "FA0039-METHOD-INFINITE-SCOPE",
+      "before": "برای اثبات اینکه مجموعه‌ای !!{nonenumerable} است،",
+      "after": "برای اثبات اینکه مجموعه‌ای نامتناهی !!{nonenumerable} است،"
+    },
+    {
+      "unit": "OLP-0039",
+      "id": "FA0039-INFINITE-LIST-PREMISE",
+      "before": "هر برشماری از یک زیرمجموعهٔ $\\Bin^\\omega$ را در نظر بگیرید.",
+      "after": "هر فهرستِ نامتناهی از اعضای $\\Bin^\\omega$ را در نظر بگیرید."
+    },
+    {
+      "unit": "OLP-0039",
+      "id": "FA0039-COORDINATE-ORDER",
+      "before": "$s_n(m)$ رقم $n$اُمِ رشتهٔ $m$اُمِ",
+      "after": "$s_n(m)$ رقم $m$اُمِ رشتهٔ $n$اُمِ"
+    },
+    {
+      "unit": "OLP-0039",
+      "id": "FA0039-COORDINATE-DISCLOSURE",
+      "before": "در آن $s_n(m)$ در سطر $n$اُم و ستون $m$اُم قرار گرفته است:",
+      "after": "در آن $s_n(m)$ در سطر $n$اُم و ستون $m$اُم قرار گرفته است.\n\\emph{یادداشت ویراستاری:} ترتیب شاخص‌های رقم و رشته در جملهٔ متن مبدأ\nجابه‌جا شده بود؛ اینجا با آرایه هماهنگ شده است:"
+    },
+    {
+      "unit": "OLP-0039",
+      "id": "FA0039-FLIP-BOTH-WAYS",
+      "before": "$1$ را به $0$ و هر $1$ را به~$0$",
+      "after": "$1$ را به $0$ و هر $0$ را به~$1$"
+    },
+    {
+      "unit": "OLP-0039",
+      "id": "FA0039-FLIP-DISCLOSURE",
+      "before": "تغییر می‌دهیم. به‌بیان انتزاعی‌تر،",
+      "after": "تغییر می‌دهیم.\n\\emph{یادداشت ویراستاری:} جهتِ دومِ تبدیل در جملهٔ متن مبدأ به‌اشتباه\nتکرار شده بود؛ عبارت با تعریفِ زیر هماهنگ شده است. به‌بیان انتزاعی‌تر،"
+    },
+    {
+      "unit": "OLP-0039",
+      "id": "FA0039-LIST-CONCLUSION",
+      "before": "نشان داده‌ایم که هر برشماریِ دلخواه از زیرمجموعه‌ای از $\\Bin^\\omega$،",
+      "after": "نشان داده‌ایم که هر فهرستِ نامتناهیِ دلخواه از اعضای $\\Bin^\\omega$،"
+    },
+    {
+      "unit": "OLP-0039",
+      "id": "FA0039-NONFINITE-DISCLOSURE",
+      "before": "از مجموعهٔ $\\Bin^\\omega$ وجود ندارد؛ یعنی $\\Bin^\\omega$\n!!{nonenumerable} است.",
+      "after": "از مجموعهٔ $\\Bin^\\omega$ وجود ندارد؛ یعنی $\\Bin^\\omega$\n!!{nonenumerable} است.\n\\emph{توضیح:} خودِ مجموعهٔ رشته‌های دودوییِ نامتناهی، نامتناهی است؛ پس\nبرشماریِ فرضیِ کل آن نمی‌تواند دامنه‌ای متناهی داشته باشد. به همین دلیل\nبررسیِ فهرست‌های نامتناهی در این برهان کافی است."
+    },
+    {
+      "unit": "OLP-0039",
+      "id": "FA0039-CONDITIONAL-FOOTNOTE",
+      "before": "\\oliflabeldef{sfr:card-arithmetic:card-opps:sec}{\\footnote{دقیق‌تر\nآن است که مقرر کنیم $\\Bin^\\omega$ مجموعهٔ همهٔ دنباله‌های $\\omega$تایی\nاز $0$ها و $1$ها، یعنی مجموعهٔ\n$\\funfromto{\\omega}{\\{0,1\\}}$، است. اما معنای این مطلب تنها در\n\\olref[sfr][card-arithmetic][card-opps]{sec} روشن خواهد شد.}{} بااین‌حال،\nاین صورت‌بندیِ اندکی مسامحه‌آمیز فعلاً نباید موجب هیچ ابهامی شود.}",
+      "after": "\\oliflabeldef{sfr:card-arithmetic:card-opps:sec}{\\footnote{دقیق‌تر\nآن است که مقرر کنیم $\\Bin^\\omega$ مجموعهٔ همهٔ دنباله‌های $\\omega$تایی\nاز $0$ها و $1$ها، یعنی مجموعهٔ\n$\\funfromto{\\omega}{\\{0,1\\}}$، است. اما معنای این مطلب تنها در\n\\olref[sfr][card-arithmetic][card-opps]{sec} روشن خواهد شد.}}{}\nبااین‌حال، این صورت‌بندیِ اندکی مسامحه‌آمیز فعلاً نباید موجب هیچ ابهامی شود."
+    },
+    {
+      "unit": "OLP-0039",
+      "id": "FA0039-MATRIX-MEMBERSHIPS-ROW0",
+      "before": "N_0 = \\{ & \\mathbf{0}, & 1, & 2, & & & & \\dots\\}\\\\",
+      "after": "N_0 = \\{ & \\mathbf{0}, & 1, & 2, & 3, & 4, & 5, & \\dots\\}\\\\"
+    },
+    {
+      "unit": "OLP-0039",
+      "id": "FA0039-MATRIX-MEMBERSHIPS-ROW3",
+      "before": "N_3 = \\{ &  &  & 2, & \\mathbf{3}, & 4, & & \\dots\\}\\\\",
+      "after": "N_3 = \\{ &  &  & 2, & \\mathbf{3}, & 4, & 5, & \\dots\\}\\\\"
+    },
+    {
+      "unit": "OLP-0039",
+      "id": "FA0039-MATRIX-DISCLOSURE",
+      "before": "باشند؛ آنگاه آرایهٔ ما چنین آغاز می‌شود:",
+      "after": "باشند؛ آنگاه آرایهٔ ما چنین آغاز می‌شود.\n\\emph{یادداشت ویراستاری:} در آرایهٔ متن مبدأ، سه عضوِ سطر نخست و یک\nعضوِ سطر چهارم از قلم افتاده بود. در اینجا همهٔ خانه‌ها مطابق عضویت در\nمجموعه‌های داده‌شده تکمیل شده‌اند:"
+    },
+    {
+      "unit": "OLP-0040",
+      "id": "FA0040-SURJECTIVE-LIST-CONVENTION",
+      "before": "برشمارد، آنگاه $f(x_1)$، $f(x_2)$، \\dots{} مجموعهٔ~$B$ را برمی‌شمارد.",
+      "after": "برشمارد، آنگاه $f(x_1)$، $f(x_2)$، \\dots{} هر عضوِ مجموعهٔ~$B$ را\nدست‌کم یک بار در بر خواهد داشت.\n\\emph{یادداشت دربارهٔ تعریف:} این فهرست ممکن است تکرار داشته باشد و\nبنابراین هنوز لزوماً برشماری به معنای تناظر دوسویی نیست. با نگه‌داشتن\nنخستین رخدادِ هر مقدار و شماره‌گذاریِ دوباره، برشماریِ دوسوییِ لازم به\nدست می‌آید؛ حالتِ تهی جداگانه طبق تعریف پوشش داده می‌شود."
+    },
+    {
+      "unit": "OLP-0040",
+      "id": "FA0040-CHARACTERISTIC-SYMBOL",
+      "before": "$s_{k}$ باشد",
+      "after": "$s$ باشد"
+    },
+    {
+      "unit": "OLP-0040",
+      "id": "FA0040-CHARACTERISTIC-ONE",
+      "before": "$s_{k}(n) = 1$",
+      "after": "$s(n) = 1$"
+    },
+    {
+      "unit": "OLP-0040",
+      "id": "FA0040-CHARACTERISTIC-ZERO",
+      "before": "$s_k(n) = 0$",
+      "after": "$s(n) = 0$"
+    },
+    {
+      "unit": "OLP-0040",
+      "id": "FA0040-SYMBOL-DISCLOSURE",
+      "before": "اگر $n \\in N$، و در غیر این صورت $s(n) = 0$.",
+      "after": "اگر $n \\in N$، و در غیر این صورت $s(n) = 0$.\n\\emph{یادداشت ویراستاری:} زیرنویسِ تعریف‌نشدهٔ متن مبدأ حذف شده است؛\nنماد رشته در این تعریف به همان مجموعهٔ ورودی وابسته است."
+    },
+    {
+      "unit": "OLP-0040",
+      "id": "FA0040-BIJECTIVE-SPECIFIC-LIST",
+      "before": "فهرست باید همهٔ~$\\Bin^\\omega$ را برشمارد.",
+      "after": "فهرست باید همهٔ~$\\Bin^\\omega$ را برشمارد.\nاین نگاشت یک‌به‌یک نیز هست، زیرا رشتهٔ حاصل، عضویتِ هر عدد طبیعی در\nمجموعهٔ ورودی را تعیین می‌کند. پس در این مثال، فهرستِ حاصل از یک\nبرشماریِ دوسویی، خود نیز بدون تکرار است."
+    },
+    {
+      "unit": "OLP-0040",
+      "id": "FA0040-DORMANT-EXPLANATION",
+      "before": "%\\begin{explain}\n%It is easy to be confused about the direction the reduction goes in.\n%For instance, !!a{surjective} function $g \\colon \\Bin^\\omega \\to X$\n%does \\emph{not} establish that $X$ is !!{nonenumerable}.  (Consider $g\n%\\colon \\Bin^\\omega \\to \\Bin$ defined by $g(s) = s(1)$, the function\n%that maps a sequence of $0$'s and $1$'s to its first !!{element}.  It\n%is surjective, because some sequences start with $0$ and some start\n%with $1$. But $\\Bin$ is finite.)  Note also that the function $f$ must\n%be surjective, or otherwise the argument does not go through:\n%$f(x_1)$, $f(x_2)$, \\dots{} would then not be guaranteed to include\n%all the !!{element}s of~$Y$. For instance, $h\\colon \\Nat \\to\n%\\Bin^\\omega$ defined by\n%\\[\n%h(n) = \\underbrace{000\\dots0}_{\\text{$n$ $0$'s}}\n%\\]\n%is a function, but $\\Nat$ is !!{enumerable}.\n%\\end{explain}",
+      "after": "%\\begin{explain}\n%ممکن است جهتِ کاهش اشتباه گرفته شود.\n%برای نمونه، وجود تابعی !!a{surjective} مانند $g \\colon \\Bin^\\omega \\to X$\n%ناشمارابودنِ $X$ را \\emph{ثابت نمی‌کند}. تابعِ $g\n%\\colon \\Bin^\\omega \\to \\Bin$ با ضابطهٔ $g(s) = s(1)$ را در نظر بگیرید؛ این تابع\n%هر دنباله از $0$ها و $1$ها را به عضوِ با اندیس یک می‌فرستد.\n%این تابع پوشاست، زیرا بعضی دنباله‌ها در این جایگاه $0$ و بعضی\n%دیگر $1$ دارند. اما $\\Bin$ متناهی است. همچنین تابعِ $f$ باید\n%پوشا باشد؛ در غیر این صورت استدلال برقرار نیست:\n%$f(x_1)$، $f(x_2)$، \\dots{} لزوماً همهٔ\n%!!{element}sی~$B$ را در بر نمی‌گیرند. برای نمونه، $h\\colon \\Nat \\to\n%\\Bin^\\omega$ را با ضابطهٔ زیر تعریف کنید:\n%\\[\n%h(n) = \\underbrace{000\\dots0}_{\\text{$n$ بار $0$}}0\\ldots\n%\\]\n%این یک تابع است، اما $\\Nat$ !!{enumerable} است.\n%یادداشت ویراستاری: متنِ غیرفعالِ مبدأ «نخستین» را برای اندیس یک به کار\n%برده بود؛ اینجا اندیس صریح بیان شده است. نامِ مجموعهٔ مقصد با زمینه\n%هماهنگ و دنبالهٔ خروجی واقعاً نامتناهی شده است. این توضیح همچنان غیرفعال است.\n%\\end{explain}"
+    },
+    {
+      "unit": "OLP-0040",
+      "id": "FA0040-DORMANT-PARTIAL-FUNCTIONS",
+      "before": "%\\begin{prob}\n%Let $P$ be the set of functions from $\\Nat$ to the set $\\{0\\}$, and let $Q$ be the set of \\emph{partial}\n%functions from the set of positive integers to the set $\\{0\\}$. Show\n%that $P$~is !!{enumerable} and $Q$~is not. (Hint: reduce the problem\n%of enumerating $\\Bin^\\omega$ to enumerating~$Q$).\n%\\end{prob}",
+      "after": "%\\begin{prob}\n%فرض کنید $P$ مجموعهٔ توابع از $\\Nat$ به مجموعهٔ $\\{0\\}$ باشد و $Q$ مجموعهٔ توابعِ \\emph{جزئی}\n%از اعداد صحیح مثبت به مجموعهٔ $\\{0\\}$ باشد؛ یعنی این توابع ممکن است برای بعضی\n%ورودی‌ها تعریف نشده باشند. نشان دهید $P$~!!{enumerable} است و $Q$ چنین نیست.\n%(راهنمایی: مسئلهٔ برشمردن $\\Bin^\\omega$ را به برشمردنِ~$Q$ کاهش دهید.)\n%\\end{prob}"
+    }
+  ],
+  "source_only_rule_ids": [
+    "FA0040-DORMANT-EXPLANATION",
+    "FA0040-DORMANT-PARTIAL-FUNCTIONS"
+  ],
+  "policy": "Apply ordered exact replacements to hash-matched frozen localized input; require candidate_sha256. Materialize derived physical files, never overwrite frozen sources. TeX declaration file covers active changes only; apply the two source-only commented-block edits physically as well."
+}
