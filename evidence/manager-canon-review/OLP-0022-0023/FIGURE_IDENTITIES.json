@@ -1,0 +1,29 @@
+[
+  {
+    "asset": "assets/diagrams/surjective.tikz",
+    "source_sha256": "324e03fb275baee81614586cadb5243deaf801050d061b9ec33d7ccebd4a282d",
+    "source_bytes": 7262,
+    "owner_sha256": "7083e6761874e930503fb0f9a4473a7177b65da466b7ae5f443c86e53cd770a5",
+    "owner_bytes": 7386,
+    "equal_after_LF_normalization": true,
+    "new_reader_render": false
+  },
+  {
+    "asset": "assets/diagrams/injective.tikz",
+    "source_sha256": "7e2a17dfe1cab68938c4eed21fe135a33c0af33895cfe386fb38f270829060c2",
+    "source_bytes": 9530,
+    "owner_sha256": "6cb35d1950e2d1f34787ee0bdcc41fee1678c8a9fc3dc910b10688c4ec2dcc21",
+    "owner_bytes": 9691,
+    "equal_after_LF_normalization": true,
+    "new_reader_render": false
+  },
+  {
+    "asset": "assets/diagrams/bijective.tikz",
+    "source_sha256": "c6b3bf38943e8a2ecef195c57cbe77a2e016610ebd853fca1eba044a9c6789d5",
+    "source_bytes": 7893,
+    "owner_sha256": "38dacd080b28790b24b343f2f2da36602792609481bc5ac4059d949904be7f2d",
+    "owner_bytes": 8026,
+    "equal_after_LF_normalization": true,
+    "new_reader_render": false
+  }
+]

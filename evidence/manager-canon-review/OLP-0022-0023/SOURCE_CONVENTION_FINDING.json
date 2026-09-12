@@ -1,0 +1,44 @@
+{
+  "schema": "olp-function-convention-review/1",
+  "source_commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+  "prior_source_path": "content/sets-functions-relations/relations/operations.tex",
+  "prior_source_sha256": "73c8bdb301aca93f687a06a045533d75d30088ae711f5e1dfd577b7864f8d3d5",
+  "current_source_path": "content/sets-functions-relations/functions/functions-relations.tex",
+  "current_source_sha256": "e2e46c0270c44b6f54861a4565f3829b1b5f91a7f72dca84046361e5abf622c3",
+  "classification": "underexplained restriction convention switch; not a transcription error or false graph-characterization theorem",
+  "prior_convention": "relation restriction R intersect C squared",
+  "current_convention": "function graph restriction R intersect (C times original codomain)",
+  "counterexample": {
+    "domain": [
+      0
+    ],
+    "codomain": [
+      1
+    ],
+    "graph": [
+      [
+        0,
+        1
+      ]
+    ],
+    "restricted_domain": [
+      0
+    ],
+    "function_restriction_graph": [
+      [
+        0,
+        1
+      ]
+    ],
+    "two_coordinate_relation_restriction": [],
+    "ambient_relation_set": [
+      0,
+      1
+    ]
+  },
+  "candidate_policy": "Explicitly labelled Persian editorial caveat; frozen definitions, all formulas and originals preserved.",
+  "proof_existence": "Explicit invocation of the given second hypothesis; explanatory expansion, not correction of a false proposition.",
+  "human_gate": false,
+  "upstream_issue_sent": false,
+  "noether_authority_not_applicable": true
+}

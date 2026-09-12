@@ -1,0 +1,1773 @@
+{
+  "schema": "public-openlogic-fa-batch-review/1",
+  "identities": [
+    {
+      "unit": "OLP-0022",
+      "source_commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+      "source_path": "content/sets-functions-relations/functions/function-kinds.tex",
+      "source_git_LF_sha256": "4d30902b7c66720afabb8b079294106a685aefba0dc02ca10d9921bb554db0ac",
+      "source_ledger_CRLF_sha256": "6dfe2a70579f8e3521d8e2286e2360dd58a19fbeda9718b62342105388ab4f93",
+      "published_target_sha256": "335907d98a138c5062689aeaec381aade7bc3e1ee9cbd5371fb3a9c96f002180",
+      "candidate_sha256": "9f515b99273215d5785abf6029f47110b15c86aa4e92ba8cac9ba0e8713c861c",
+      "published_target_bytes": 5296,
+      "candidate_bytes": 5298,
+      "R3_member": "source/locale/fa-IR/content/sets-functions-relations/functions/function-kinds.tex",
+      "R3_archive_sha256": "ef32f359fe7813d0ffef11f3936fb1498f2f3cdcc176ab2acb56b969360c9e59",
+      "locale_config_sha256": "c8df8c39abbd1ab36dbac380490b72e9b3c565bbd1ec3d1f1be88bdc300abd0b",
+      "math_spans": 44,
+      "aligned_choices": 17,
+      "math_text_pairs": [
+        {
+          "math_span": 38,
+          "source": "if $x$ is even",
+          "target": "اگر $x$ زوج باشد",
+          "review": "Exact wording reviewed in the aligned choice, not accepted by token masking alone"
+        },
+        {
+          "math_span": 38,
+          "source": "if $x$ is odd.",
+          "target": "اگر $x$ فرد باشد.",
+          "review": "Exact wording reviewed in the aligned choice, not accepted by token masking alone"
+        }
+      ],
+      "formal_repairs": []
+    },
+    {
+      "unit": "OLP-0023",
+      "source_commit": "9620cc73f9c8e0ad003c514a5d3748f29611c4c0",
+      "source_path": "content/sets-functions-relations/functions/functions-relations.tex",
+      "source_git_LF_sha256": "e2e46c0270c44b6f54861a4565f3829b1b5f91a7f72dca84046361e5abf622c3",
+      "source_ledger_CRLF_sha256": "0205f7168e0679f513e7c95ea7124ce364bce36f9e04f06d519e90f6a5480a5c",
+      "published_target_sha256": "6e173bd7f87658e80b293ac6d7f95a36f68cd80b5bddf3d0f628c701e6685bba",
+      "candidate_sha256": "535906a8a9cefad49fcab705e7b91c7e65d3c84421c8f9f26746a1c6ce1140bc",
+      "published_target_bytes": 5640,
+      "candidate_bytes": 6285,
+      "R3_member": "source/locale/fa-IR/content/sets-functions-relations/functions/functions-relations.tex",
+      "R3_archive_sha256": "ef32f359fe7813d0ffef11f3936fb1498f2f3cdcc176ab2acb56b969360c9e59",
+      "locale_config_sha256": "c8df8c39abbd1ab36dbac380490b72e9b3c565bbd1ec3d1f1be88bdc300abd0b",
+      "math_spans": 55,
+      "aligned_choices": 12,
+      "math_text_pairs": [],
+      "formal_repairs": []
+    }
+  ],
+  "canon": {
+    "documents": [
+      {
+        "document_id": "FA-OL-CANON-0003",
+        "title_fa": "نظریهٔ مجموعه‌ها",
+        "title_en": "Set Theory",
+        "authors": [
+          "محسن خانی",
+          "افشین زارعی"
+        ],
+        "institution": "دانشگاه صنعتی اصفهان",
+        "date_statement": "۱۸ خرداد ۱۴۰۰",
+        "source_url": "https://khani.iut.ac.ir/sites/khani.iut.ac.ir/files//u145/jozve-kamel.pdf",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+        "pdf_bytes": 413763,
+        "licence_status": "No explicit redistribution licence identified; retain locally and cite only."
+      },
+      {
+        "document_id": "FA-REL-C001",
+        "title_fa": "ریاضیات گسسته و کاربردها",
+        "title_en": "Discrete Mathematics and Applications",
+        "authors": [
+          "علیرضا غفاری حدیقه",
+          "مگردیچ تومانیان"
+        ],
+        "institution": "مؤسسه چاپ و انتشارات دانشگاه جامع امام حسین (ع)",
+        "date_statement": "Edition date not newly established in this batch; author-hosted textbook witness",
+        "source_url": "https://hadigheha.github.io/books/teaching/Textbooks/Tarkibiyat.pdf",
+        "pdf_bytes": 1713264,
+        "pdf_sha256": "8f79c45a926c1cea819c4fefa86383f2a65ae23b1d526baaf99cf2506bb9f317",
+        "licence_status": "No compatible redistribution licence established; private consultation only. Original PDF, page images and full searchable text are not redistributed."
+      }
+    ],
+    "passages": [
+      {
+        "passage_id": "FA-OL-CANON-0003:P0008",
+        "pdf_page_1based": 8,
+        "printed_page": 7,
+        "location": "First set-theoretic axiom and footnote2",
+        "short_attestation": "اصل گسترش",
+        "relevance_and_limits": "Directly pairs اصل گسترش with extensionality and equal-membership set equality. It does not eliminate the source function-equality hypothesis of a shared domain and codomain.",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+        "normalized_search_page_sha256": "9e2d1c51a7f812d15cbe390e3046708944f893119a90fb377e4ffedb132422d8",
+        "visual_page_read": true,
+        "render_sha256": "2610944f88779e1a6d6ab17e64ac316cc7a31248941a98d415362db94b1bdf41"
+      },
+      {
+        "passage_id": "FA-OL-CANON-0003:P0014",
+        "pdf_page_1based": 14,
+        "printed_page": 13,
+        "location": "Definition19: pairs, products, relation, restriction and domain",
+        "short_attestation": "زوج مرتب؛ تحدید؛ دامنه",
+        "relevance_and_limits": "Relation-as-pair-set and first-coordinate-only restriction are explicit. This agrees with the present function restriction, but differs from the earlier OLP two-coordinate relation restriction. Keep those conventions distinct.",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+        "normalized_search_page_sha256": "2d953e0347f243815f7743b5f5b1023455fee7b35b60b650349fdaae0d16d686",
+        "visual_page_read": true,
+        "render_sha256": "a4453708697a9b2ca138e7fa14dd21e46f141e43b5d3f74ef3b0a458dccce648"
+      },
+      {
+        "passage_id": "FA-OL-CANON-0003:P0015",
+        "pdf_page_1based": 15,
+        "printed_page": 14,
+        "location": "Image; functional relation and function; composition and converse",
+        "short_attestation": "تصویر؛ تابعال؛ رابطهٔ معکوس",
+        "relevance_and_limits": "تابعال is paired with English functional and requires uniqueness; notation F:A to B additionally fixes domain A and bounds the range by B. The exact form تابع‌وار is NOT attested here. Class-theoretic scope is not imported into OLP set functions.",
+        "pdf_sha256": "dbd518c80232921264ab5d79b79be01fe42efe8c01a766327db248b2d261de04",
+        "normalized_search_page_sha256": "689727e3d79f07a4f313ba0ed8066b8088383bfb7e9cba49425c6b56b24452a4",
+        "visual_page_read": true,
+        "render_sha256": "e6d46a34cb6f8935aaa9d2987e780699deb950e43ba6cd9ce8c72b198e259d50"
+      },
+      {
+        "passage_id": "FA-REL-P044",
+        "pdf_page_1based": 44,
+        "printed_page": 34,
+        "location": "Section2.2: function definition and domain/codomain/range",
+        "short_attestation": "تابع یا نگاشت؛ هم‌دامنه؛ برد",
+        "relevance_and_limits": "Direct assignment syntax and distinction between domain, codomain and attained range. Its box prints equality implies equal values, not the converse required by OLP extensionality; use K8 plus the actual source for that implication.",
+        "pdf_sha256": "8f79c45a926c1cea819c4fefa86383f2a65ae23b1d526baaf99cf2506bb9f317",
+        "normalized_search_page_sha256": "8fd6caf3fd9321e226b51858a43d1135ea5e06965c429fe971b14c7b8b2f155e",
+        "visual_page_read": true,
+        "render_sha256": "b6a5a73187ccda878ebc6612d9cca9108836b0082c151ba2f8b52da48483baa2"
+      },
+      {
+        "passage_id": "FA-REL-P045",
+        "pdf_page_1based": 45,
+        "printed_page": 35,
+        "location": "Graph as subset of a Cartesian product; function restriction",
+        "short_attestation": "نمودار تابع؛ تحدید",
+        "relevance_and_limits": "Direct evidence for نمودار as the set of function pairs, not merely a coordinate plot. Function restriction is intersection with C times B, keeping the codomain. The canon graph display contains a redundant free y qualifier; do not copy that into the clean OLP formula.",
+        "pdf_sha256": "8f79c45a926c1cea819c4fefa86383f2a65ae23b1d526baaf99cf2506bb9f317",
+        "normalized_search_page_sha256": "1c0940b6ad05cf6260202df13afb0ed8b52dd083dd931090d3055ca4860fc8bc",
+        "visual_page_read": true,
+        "render_sha256": "02b4f8579d4b1a5ad79d3fcd7a264837b438baf4cf13327819af890ebd07eb5a"
+      },
+      {
+        "passage_id": "FA-REL-P046",
+        "pdf_page_1based": 46,
+        "printed_page": 36,
+        "location": "Kinds of functions; arrow diagrams; injectivity and surjectivity",
+        "short_attestation": "انواع تابع‌ها؛ یک به یک؛ پوشا",
+        "relevance_and_limits": "Direct definitions distinguish at most one preimage from at least one, and show the equality-of-values injectivity criterion. The source controls the four examples and their domains. Script direction does not reverse mathematical arrows.",
+        "pdf_sha256": "8f79c45a926c1cea819c4fefa86383f2a65ae23b1d526baaf99cf2506bb9f317",
+        "normalized_search_page_sha256": "d43e62612bc3a4aefc91cceff32d810086a6d423c4f6eeb6b503c4245340e3ef",
+        "visual_page_read": true,
+        "render_sha256": "e74e0f5fed58449d4bcb006d3999c50252d0710368cb3f52aee464efa52e5f9c"
+      },
+      {
+        "passage_id": "FA-REL-P047",
+        "pdf_page_1based": 47,
+        "printed_page": 37,
+        "location": "Bijective correspondences, identity, and operations on functions",
+        "short_attestation": "تناظر یک به یک یا دوسویی؛ تابع همانی؛ خوش‌تعریف",
+        "relevance_and_limits": "Direct evidence for bijective correspondence and identity terminology, and the well-definedness expression. The translated successor and constant labels are contextual labels, not verbatim attestations on this page.",
+        "pdf_sha256": "8f79c45a926c1cea819c4fefa86383f2a65ae23b1d526baaf99cf2506bb9f317",
+        "normalized_search_page_sha256": "3b0dcf3dd30b677d670538c21d6747764ac499bb7198d86a9fa407657d608591",
+        "visual_page_read": true,
+        "render_sha256": "87ca5aaeb36f9539c5391f0b20782c4c028c8677a22938e910575f395a9ec75e"
+      }
+    ]
+  },
+  "choices": [
+    {
+      "topic": "Heading and taxonomy",
+      "canon": [
+        "FA-REL-P046"
+      ],
+      "rationale": "Retain انواع توابع and the introductory classification. The canon heading انواع تابع‌ها directly supports this mathematical grouping; رده‌بندی is ordinary explanatory wording, not an added formal taxonomy.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The complete aligned wording and its mathematical scope were checked against the frozen source and the stated Persian passages; score is editorial, not a probability.",
+      "id": "FA-0022-C01",
+      "unit": "OLP-0022",
+      "source": {
+        "char_start": 178,
+        "char_end_exclusive": 349,
+        "line_start": 10,
+        "line_end": 16,
+        "text": "\\olsection{Kinds of Functions}\n\n\\begin{explain}\nIt will be useful to introduce a kind of taxonomy for some of the\nkinds of functions which we encounter most frequently. \n\n",
+        "sha256": "e8bc8a917752f242debaae686ffce2db7fe02088e2015ea51cb731f7b5069821"
+      },
+      "target_before": {
+        "char_start": 185,
+        "char_end_exclusive": 325,
+        "line_start": 10,
+        "line_end": 16,
+        "text": "\\olsection{انواع توابع}\n\n\\begin{explain}\nمفید است که نوعی رده‌بندی برای برخی از\nانواع توابعی که بیشتر با آن‌ها روبه‌رو می‌شویم معرفی کنیم.\n\n",
+        "sha256": "03fcaeb5dfcdaa8932b8b901952878cad4647d8bae13c6a9255e7c7466911bc9"
+      },
+      "target_after": {
+        "char_start": 185,
+        "char_end_exclusive": 325,
+        "line_start": 10,
+        "line_end": 16,
+        "text": "\\olsection{انواع توابع}\n\n\\begin{explain}\nمفید است که نوعی رده‌بندی برای برخی از\nانواع توابعی که بیشتر با آن‌ها روبه‌رو می‌شویم معرفی کنیم.\n\n",
+        "sha256": "03fcaeb5dfcdaa8932b8b901952878cad4647d8bae13c6a9255e7c7466911bc9"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\olsection{انواع توابع}\n\n\\begin{explain}\nمفید است که نوعی رده‌بندی برای برخی از\nانواع توابعی که بیشتر با آن‌ها روبه‌رو می‌شویم معرفی کنیم.\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Onto intuition",
+      "canon": [
+        "FA-REL-P044",
+        "FA-REL-P046"
+      ],
+      "rationale": "Unpack having a codomain member as a value into its being the value at at least one input. This is exactly the source meaning, not injectivity or a claim that every codomain member is distinct. دامنه and هم‌دامنه remain distinct.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The complete aligned wording and its mathematical scope were checked against the frozen source and the stated Persian passages; score is editorial, not a probability.",
+      "id": "FA-0022-C02",
+      "unit": "OLP-0022",
+      "source": {
+        "char_start": 349,
+        "char_end_exclusive": 574,
+        "line_start": 16,
+        "line_end": 21,
+        "text": "To start, we might want to consider functions which have the property\nthat every member of the codomain is a value of the function. Such\nfunctions are called !!{surjective}, and can be pictured as in\n\\olref{fig:surjective}.\n\n",
+        "sha256": "7dadcb3b186934bd1e9893ee09365672f72804cd3d6b46b2b0f27b450c35060e"
+      },
+      "target_before": {
+        "char_start": 325,
+        "char_end_exclusive": 555,
+        "line_start": 16,
+        "line_end": 21,
+        "text": "برای آغاز، ممکن است بخواهیم توابعی را بررسی کنیم که این ویژگی را دارند\nکه هر عضو هم‌دامنه مقداری از تابع است. چنین\nتوابعی !!{surjective} نامیده می‌شوند و می‌توان آن‌ها را چنان‌که در\n\\olref{fig:surjective} آمده است به تصویر کشید.\n\n",
+        "sha256": "cf97a23328faedef38e27c333802cd3c711337c19bda960cfabebc4086982f8d"
+      },
+      "target_after": {
+        "char_start": 325,
+        "char_end_exclusive": 558,
+        "line_start": 16,
+        "line_end": 21,
+        "text": "برای آغاز، ممکن است بخواهیم توابعی را بررسی کنیم که هر عضو\nهم‌دامنهٔ آن‌ها مقدار تابع برای دست‌کم یک ورودی باشد. چنین\nتوابعی !!{surjective} نامیده می‌شوند و می‌توان آن‌ها را چنان‌که در\n\\olref{fig:surjective} آمده است به تصویر کشید.\n\n",
+        "sha256": "9804a1ebd166421a84d8f9dccc7c38ccb4311ab60f0a1932645eb4706bed5e82"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "برای آغاز، ممکن است بخواهیم توابعی را بررسی کنیم که هر عضو\nهم‌دامنهٔ آن‌ها مقدار تابع برای دست‌کم یک ورودی باشد. چنین\nتوابعی پوشا نامیده می‌شوند و می‌توان آن‌ها را چنان‌که در\n\\olref{fig:surjective} آمده است به تصویر کشید.\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 125,
+          "token": "!!{surjective}",
+          "realization": "پوشا"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Surjective diagram and caption",
+      "canon": [
+        "FA-REL-P044",
+        "FA-REL-P046"
+      ],
+      "rationale": "Replace the calque هر عضو ... را به‌عنوان یک مقدار دارد with a sentence identifying an attained value and an input. The locale token expands to عضو. Preserve the source figure, reference and arrows without RTL mirroring.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The complete aligned wording and its mathematical scope were checked against the frozen source and the stated Persian passages; score is editorial, not a probability.",
+      "id": "FA-0022-C03",
+      "unit": "OLP-0022",
+      "source": {
+        "char_start": 574,
+        "char_end_exclusive": 780,
+        "line_start": 21,
+        "line_end": 29,
+        "text": "\\begin{figure}\n  \\olasset{assets/diagrams/surjective.tikz}\n  \\caption{!!^a{surjective} function has every !!{element} of the\n    codomain as a value.}\n  \\ollabel{fig:surjective}\n\\end{figure}\n\\end{explain}\n\n",
+        "sha256": "fc666e9ba12f1b99145d6e91123a7357d2ac42f74ea96b322a180d3ef1320cf9"
+      },
+      "target_before": {
+        "char_start": 555,
+        "char_end_exclusive": 761,
+        "line_start": 21,
+        "line_end": 29,
+        "text": "\\begin{figure}\n  \\olasset{assets/diagrams/surjective.tikz}\n  \\caption{تابع !!^a{surjective} هر !!{element} از\n    هم‌دامنه را به‌عنوان یک مقدار دارد.}\n  \\ollabel{fig:surjective}\n\\end{figure}\n\\end{explain}\n\n",
+        "sha256": "3973832a178c2840b4664031ad34c28e5c3f6038fa35f3c60ae78502f9a72b77"
+      },
+      "target_after": {
+        "char_start": 558,
+        "char_end_exclusive": 775,
+        "line_start": 21,
+        "line_end": 29,
+        "text": "\\begin{figure}\n  \\olasset{assets/diagrams/surjective.tikz}\n  \\caption{در تابع !!^a{surjective}، هر !!{element} هم‌دامنه\n    مقدار تابع برای دست‌کم یک ورودی است.}\n  \\ollabel{fig:surjective}\n\\end{figure}\n\\end{explain}\n\n",
+        "sha256": "c2d1ffc6841e9771161c22610cae2956aabc11f22dfeb8ec3d3792ed813edb35"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{figure}\n  \\olasset{assets/diagrams/surjective.tikz}\n  \\caption{در تابع پوشا، هر عضو هم‌دامنه\n    مقدار تابع برای دست‌کم یک ورودی است.}\n  \\ollabel{fig:surjective}\n\\end{figure}\n\\end{explain}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 78,
+          "token": "!!^a{surjective}",
+          "realization": "پوشا"
+        },
+        {
+          "character_offset_in_segment": 99,
+          "token": "!!{element}",
+          "realization": "عضو"
+        }
+      ],
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 99,
+          "token": "!!{element}",
+          "realization": "عضو"
+        }
+      ]
+    },
+    {
+      "topic": "Surjectivity definition and quantified condition",
+      "canon": [
+        "FA-REL-P044",
+        "FA-REL-P046"
+      ],
+      "rationale": "Place پوشا next to the subject, then state the biconditional and equality of codomain with range. At least one input is not exactly one. Preserve both the quantified formula and surjection from A to B; the noun نگاشت پوشا is the attested نگاشت plus the attested adjective.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The complete aligned wording and its mathematical scope were checked against the frozen source and the stated Persian passages; score is editorial, not a probability.",
+      "id": "FA-0022-C04",
+      "unit": "OLP-0022",
+      "source": {
+        "char_start": 780,
+        "char_end_exclusive": 1132,
+        "line_start": 29,
+        "line_end": 39,
+        "text": "\\begin{defn}[!!^{surjective} function]\nA function $f \\colon A \\rightarrow B$ is \\emph{!!{surjective}} iff $B$\nis also the range of~$f$, i.e., for every $y \\in B$ there is at least\none $x \\in A$ such that~$f(x) = y$, or in symbols:\n\\[\n  (\\forall y \\in B)(\\exists x \\in A)f(x) = y.\n\\]\nWe call such a function !!a{surjection} from $A$ to $B$.\n\\end{defn}\n\n",
+        "sha256": "d81faf2ae65f9cc340cb5909507eb08579b4fbdd07f59736c30bc7d0bcdbac1c"
+      },
+      "target_before": {
+        "char_start": 761,
+        "char_end_exclusive": 1103,
+        "line_start": 29,
+        "line_end": 39,
+        "text": "\\begin{defn}[تابع !!^{surjective}]\nتابع $f \\colon A \\rightarrow B$ اگر و تنها اگر $B$\nبردِ~$f$ نیز باشد، \\emph{!!{surjective}} است؛ یعنی برای هر $y \\in B$ دست‌کم\nیک $x \\in A$ وجود دارد چنان‌که~$f(x) = y$، یا به زبان نمادین:\n\\[\n  (\\forall y \\in B)(\\exists x \\in A)f(x) = y.\n\\]\nچنین تابعی را !!a{surjection} از $A$ به $B$ می‌نامیم.\n\\end{defn}\n\n",
+        "sha256": "9b25578a0e7edf426e1c5a4cbaafdf78f2736bbbb26a76cbc1b259cef6c3f4b0"
+      },
+      "target_after": {
+        "char_start": 775,
+        "char_end_exclusive": 1117,
+        "line_start": 29,
+        "line_end": 39,
+        "text": "\\begin{defn}[تابع !!^{surjective}]\nتابع $f \\colon A \\rightarrow B$ \\emph{!!{surjective}} است اگر و تنها اگر $B$\nهمان بردِ~$f$ باشد؛ یعنی برای هر $y \\in B$ دست‌کم\nیک $x \\in A$ وجود دارد چنان‌که~$f(x) = y$، یا به زبان نمادین:\n\\[\n  (\\forall y \\in B)(\\exists x \\in A)f(x) = y.\n\\]\nچنین تابعی را !!a{surjection} از $A$ به $B$ می‌نامیم.\n\\end{defn}\n\n",
+        "sha256": "abdc4abffd005381aee6d515c0e667316cf5dd850e8b71bdd429bbc94476a7aa"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{defn}[تابع پوشا]\nتابع $f \\colon A \\rightarrow B$ \\emph{پوشا} است اگر و تنها اگر $B$\nهمان بردِ~$f$ باشد؛ یعنی برای هر $y \\in B$ دست‌کم\nیک $x \\in A$ وجود دارد چنان‌که~$f(x) = y$، یا به زبان نمادین:\n\\[\n  (\\forall y \\in B)(\\exists x \\in A)f(x) = y.\n\\]\nچنین تابعی را نگاشت پوشا از $A$ به $B$ می‌نامیم.\n\\end{defn}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 18,
+          "token": "!!^{surjective}",
+          "realization": "پوشا"
+        },
+        {
+          "character_offset_in_segment": 73,
+          "token": "!!{surjective}",
+          "realization": "پوشا"
+        },
+        {
+          "character_offset_in_segment": 290,
+          "token": "!!a{surjection}",
+          "realization": "نگاشت پوشا"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Proof obligation for surjectivity",
+      "canon": [
+        "FA-REL-P044",
+        "FA-REL-P046"
+      ],
+      "rationale": "Retain the requirement to find some input for each codomain object. The quantifier order is codomain member first, corresponding input second; it is not a single input for all outputs. شیء here denotes an element, not a new technical sort.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The complete aligned wording and its mathematical scope were checked against the frozen source and the stated Persian passages; score is editorial, not a probability.",
+      "id": "FA-0022-C05",
+      "unit": "OLP-0022",
+      "source": {
+        "char_start": 1132,
+        "char_end_exclusive": 1299,
+        "line_start": 39,
+        "line_end": 44,
+        "text": "\\begin{explain}\nIf you want to show that $f$ is !!a{surjection}, then you need to show\nthat every object in $f$'s codomain is the value of $f(x)$ for some\ninput $x$.\n\n",
+        "sha256": "fd776fbbbb438dd2810d6759d50ec39affbd1188406a1ffdea54422d138c838e"
+      },
+      "target_before": {
+        "char_start": 1103,
+        "char_end_exclusive": 1250,
+        "line_start": 39,
+        "line_end": 44,
+        "text": "\\begin{explain}\nاگر می‌خواهید نشان دهید که $f$ !!a{surjection} است، باید نشان دهید\nکه هر شیء در هم‌دامنهٔ $f$ مقدار $f(x)$ برای یک\nورودی $x$ است.\n\n",
+        "sha256": "4e006a0c003bc871d9886d3ba693c567c6e8c50c66cb0a3b319a9170a8d81b57"
+      },
+      "target_after": {
+        "char_start": 1117,
+        "char_end_exclusive": 1264,
+        "line_start": 39,
+        "line_end": 44,
+        "text": "\\begin{explain}\nاگر می‌خواهید نشان دهید که $f$ !!a{surjection} است، باید نشان دهید\nکه هر شیء در هم‌دامنهٔ $f$ مقدار $f(x)$ برای یک\nورودی $x$ است.\n\n",
+        "sha256": "4e006a0c003bc871d9886d3ba693c567c6e8c50c66cb0a3b319a9170a8d81b57"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{explain}\nاگر می‌خواهید نشان دهید که $f$ نگاشت پوشا است، باید نشان دهید\nکه هر شیء در هم‌دامنهٔ $f$ مقدار $f(x)$ برای یک\nورودی $x$ است.\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 47,
+          "token": "!!a{surjection}",
+          "realization": "نگاشت پوشا"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Induced surjection to the range",
+      "canon": [
+        "FA-REL-P044",
+        "FA-REL-P046"
+      ],
+      "rationale": "Use به دست آورد and ضابطه for the explicit construction already in the source. Keep f prime, unchanged pointwise values and the new codomain ran(f). This does not claim the original f was onto its original B. Even an empty-domain function induces the empty-to-empty surjection. Alternatives are stylistic, not new mathematical mechanisms.",
+      "alternatives": "القا می‌کند is possible disciplinary prose, but its compressed nominal usage here adds no information beyond the displayed construction.",
+      "question": "Review the contextual choice به دست آورد for induces; the selected pages attest the construction vocabulary, not this exact sentence.",
+      "confidence": 2,
+      "confidence_reason": "Content and codomain change explicit; choice between construction verbs is contextual register judgment.",
+      "id": "FA-0022-C06",
+      "unit": "OLP-0022",
+      "source": {
+        "char_start": 1299,
+        "char_end_exclusive": 1601,
+        "line_start": 44,
+        "line_end": 51,
+        "text": "Note that any function \\emph{induces} !!a{surjection}. After all,\ngiven a function $f \\colon A \\to B$, let $f' \\colon A \\to \\ran{f}$ be\ndefined by $f'(x) = f(x)$. Since $\\ran{f}$ is \\emph{defined} as\n$\\Setabs{f(x) \\in B}{x \\in A}$, this function $f'$ is guaranteed to be\n!!a{surjection}\n\\end{explain}\n\n",
+        "sha256": "662b012d9d9803e36cc4d71fe2dfbe3f65e5f18421b4bcaf2e0d82b4ef3e8e8e"
+      },
+      "target_before": {
+        "char_start": 1250,
+        "char_end_exclusive": 1564,
+        "line_start": 44,
+        "line_end": 51,
+        "text": "توجه کنید که هر تابعی !!a{surjection} \\emph{القا می‌کند}. چراکه\nبا داشتن تابع $f \\colon A \\to B$، فرض کنید $f' \\colon A \\to \\ran{f}$ به‌وسیلهٔ\n$f'(x) = f(x)$ تعریف شود. چون $\\ran{f}$ \\emph{بنا بر تعریف} برابر است با\n$\\Setabs{f(x) \\in B}{x \\in A}$، تضمین می‌شود که این تابع $f'$\n!!a{surjection} باشد\n\\end{explain}\n\n",
+        "sha256": "f90faf8773b54341fcee431ce5e5ed119a4a44c2a61e88ab1b95942577d44e8f"
+      },
+      "target_after": {
+        "char_start": 1264,
+        "char_end_exclusive": 1568,
+        "line_start": 44,
+        "line_end": 51,
+        "text": "توجه کنید که از هر تابع می‌توان یک !!a{surjection} \\emph{به دست آورد}.\nبرای تابع $f \\colon A \\to B$، تابع $f' \\colon A \\to \\ran{f}$ را با\nضابطهٔ $f'(x) = f(x)$ تعریف می‌کنیم. چون $\\ran{f}$ \\emph{بنا بر تعریف} برابر است با\n$\\Setabs{f(x) \\in B}{x \\in A}$، این تابع $f'$\n!!a{surjection} است.\n\\end{explain}\n\n",
+        "sha256": "b77692178a870feac6300491e997978095114334a4d85ea9fa37dfb3c9cc769d"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "توجه کنید که از هر تابع می‌توان یک نگاشت پوشا \\emph{به دست آورد}.\nبرای تابع $f \\colon A \\to B$، تابع $f' \\colon A \\to \\ran{f}$ را با\nضابطهٔ $f'(x) = f(x)$ تعریف می‌کنیم. چون $\\ran{f}$ \\emph{بنا بر تعریف} برابر است با\n$\\Setabs{f(x) \\in B}{x \\in A}$، این تابع $f'$\nنگاشت پوشا است.\n\\end{explain}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 35,
+          "token": "!!a{surjection}",
+          "realization": "نگاشت پوشا"
+        },
+        {
+          "character_offset_in_segment": 268,
+          "token": "!!a{surjection}",
+          "realization": "نگاشت پوشا"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Injectivity intuition",
+      "canon": [
+        "FA-REL-P044",
+        "FA-REL-P046"
+      ],
+      "rationale": "Retain the contrast between unique output for each input (all functions) and distinct outputs for distinct inputs (injectivity). Output uniqueness alone must not become injectivity. The page diagrams and definitions support the contrast.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The complete aligned wording and its mathematical scope were checked against the frozen source and the stated Persian passages; score is editorial, not a probability.",
+      "id": "FA-0022-C07",
+      "unit": "OLP-0022",
+      "source": {
+        "char_start": 1601,
+        "char_end_exclusive": 1853,
+        "line_start": 51,
+        "line_end": 56,
+        "text": "\\begin{explain}\nNow, any function maps each possible input to a unique output. But\nthere are also functions which never map different inputs to the same\noutputs. Such functions are called !!{injective}, and can be pictured\nas in \\olref{fig:injective}.\n",
+        "sha256": "060534c4b64f1d28f27b8302bb2c16e37637161c0c6bc4b7559f6cdfe33a1cf8"
+      },
+      "target_before": {
+        "char_start": 1564,
+        "char_end_exclusive": 1841,
+        "line_start": 51,
+        "line_end": 56,
+        "text": "\\begin{explain}\nحال هر تابع هر ورودی ممکن را به خروجی یکتایی نگاشت می‌کند. اما\nتوابعی نیز وجود دارند که هرگز ورودی‌های متفاوت را به\nخروجی یکسان نگاشت نمی‌کنند. چنین توابعی !!{injective} نامیده می‌شوند و می‌توان آن‌ها را\nچنان‌که در \\olref{fig:injective} آمده است به تصویر کشید.\n",
+        "sha256": "00bff757d18a49e7712253465e3af77039e0c8b6730d52b6cd822560ec5de2a2"
+      },
+      "target_after": {
+        "char_start": 1568,
+        "char_end_exclusive": 1845,
+        "line_start": 51,
+        "line_end": 56,
+        "text": "\\begin{explain}\nحال هر تابع هر ورودی ممکن را به خروجی یکتایی نگاشت می‌کند. اما\nتوابعی نیز وجود دارند که هرگز ورودی‌های متفاوت را به\nخروجی یکسان نگاشت نمی‌کنند. چنین توابعی !!{injective} نامیده می‌شوند و می‌توان آن‌ها را\nچنان‌که در \\olref{fig:injective} آمده است به تصویر کشید.\n",
+        "sha256": "00bff757d18a49e7712253465e3af77039e0c8b6730d52b6cd822560ec5de2a2"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{explain}\nحال هر تابع هر ورودی ممکن را به خروجی یکتایی نگاشت می‌کند. اما\nتوابعی نیز وجود دارند که هرگز ورودی‌های متفاوت را به\nخروجی یکسان نگاشت نمی‌کنند. چنین توابعی یک‌به‌یک نامیده می‌شوند و می‌توان آن‌ها را\nچنان‌که در \\olref{fig:injective} آمده است به تصویر کشید.\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 172,
+          "token": "!!{injective}",
+          "realization": "یک‌به‌یک"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Injective figure caption",
+      "canon": [
+        "FA-REL-P044",
+        "FA-REL-P046"
+      ],
+      "rationale": "Use ورودی, already explained as the function argument in OLP-0021, consistently with this paragraph. Two distinct arguments do not mean two distinct propositions. The canon gives the distinct-domain-element criterion; it is not a verbatim attestation of every input/output phrase.",
+      "alternatives": "آرگومان is mathematically possible but unnecessarily changes the locally established explanatory term.",
+      "question": "ورودی is a contextual explanatory label supported by the assignment definition; confirm preferred wording without changing the quantified claim.",
+      "confidence": 2,
+      "confidence_reason": "Mathematical criterion directly attested; input synonym is an explicit contextual decision.",
+      "id": "FA-0022-C08",
+      "unit": "OLP-0022",
+      "source": {
+        "char_start": 1853,
+        "char_end_exclusive": 2060,
+        "line_start": 56,
+        "line_end": 64,
+        "text": "\\begin{figure}\n  \\olasset{assets/diagrams/injective.tikz}\n  \\caption{!!^a{injective} function never maps two different\n    arguments to the same value.}\n  \\ollabel{fig:injective}\n\\end{figure}\n\\end{explain}\n\n",
+        "sha256": "59b96d923b9469458ee6180fcfcbf0828d5a182f5f6bffadc505ac4bbb914f90"
+      },
+      "target_before": {
+        "char_start": 1841,
+        "char_end_exclusive": 2046,
+        "line_start": 56,
+        "line_end": 64,
+        "text": "\\begin{figure}\n  \\olasset{assets/diagrams/injective.tikz}\n  \\caption{تابع !!^a{injective} هرگز دو\n    آرگومان متفاوت را به مقدار یکسان نگاشت نمی‌کند.}\n  \\ollabel{fig:injective}\n\\end{figure}\n\\end{explain}\n\n",
+        "sha256": "9c425a7b84582172a439ea89a4125fe056ca6f8da7ac55806c6128873d377344"
+      },
+      "target_after": {
+        "char_start": 1845,
+        "char_end_exclusive": 2048,
+        "line_start": 56,
+        "line_end": 64,
+        "text": "\\begin{figure}\n  \\olasset{assets/diagrams/injective.tikz}\n  \\caption{تابع !!^a{injective} هرگز دو\n    ورودی متفاوت را به مقدار یکسان نگاشت نمی‌کند.}\n  \\ollabel{fig:injective}\n\\end{figure}\n\\end{explain}\n\n",
+        "sha256": "01cfb56604be1eff8d5b05fb8aaf40b393198d152c01d02f88b87eaeb3846fe0"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{figure}\n  \\olasset{assets/diagrams/injective.tikz}\n  \\caption{تابع یک‌به‌یک هرگز دو\n    ورودی متفاوت را به مقدار یکسان نگاشت نمی‌کند.}\n  \\ollabel{fig:injective}\n\\end{figure}\n\\end{explain}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 74,
+          "token": "!!^a{injective}",
+          "realization": "یک‌به‌یک"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Injectivity formal definition",
+      "canon": [
+        "FA-REL-P046"
+      ],
+      "rationale": "Retain یک‌به‌یک, حداکثر یک and the type A to B. A codomain element may have no preimage; at most one does not impose surjectivity. Keep the noun نگاشت یک‌به‌یک and all variables unchanged.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The complete aligned wording and its mathematical scope were checked against the frozen source and the stated Persian passages; score is editorial, not a probability.",
+      "id": "FA-0022-C09",
+      "unit": "OLP-0022",
+      "source": {
+        "char_start": 2060,
+        "char_end_exclusive": 2305,
+        "line_start": 64,
+        "line_end": 70,
+        "text": "\\begin{defn}[!!^{injective} function] \nA function $f \\colon A \\rightarrow B$ is \\emph{!!{injective}} iff for\neach $y \\in B$ there is at most one $x \\in A$ such that~$f(x) = y$. We\ncall such a function !!a{injection} from $A$ to~$B$.\n\\end{defn}\n\n",
+        "sha256": "38b12be4f996d59d5480d6d991c05bd2845ec5bc6e2a3434a8b60b8d261ac124"
+      },
+      "target_before": {
+        "char_start": 2046,
+        "char_end_exclusive": 2291,
+        "line_start": 64,
+        "line_end": 70,
+        "text": "\\begin{defn}[تابع !!^{injective}]\nتابع $f \\colon A \\rightarrow B$ \\emph{!!{injective}} است اگر و تنها اگر برای\nهر $y \\in B$ حداکثر یک $x \\in A$ وجود داشته باشد چنان‌که~$f(x) = y$.\nچنین تابعی را !!a{injection} از $A$ به~$B$ می‌نامیم.\n\\end{defn}\n\n",
+        "sha256": "0be63ea03dd1b437820744172c487394a9c1a9b43c73512a3a433c7d412ae54c"
+      },
+      "target_after": {
+        "char_start": 2048,
+        "char_end_exclusive": 2293,
+        "line_start": 64,
+        "line_end": 70,
+        "text": "\\begin{defn}[تابع !!^{injective}]\nتابع $f \\colon A \\rightarrow B$ \\emph{!!{injective}} است اگر و تنها اگر برای\nهر $y \\in B$ حداکثر یک $x \\in A$ وجود داشته باشد چنان‌که~$f(x) = y$.\nچنین تابعی را !!a{injection} از $A$ به~$B$ می‌نامیم.\n\\end{defn}\n\n",
+        "sha256": "0be63ea03dd1b437820744172c487394a9c1a9b43c73512a3a433c7d412ae54c"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{defn}[تابع یک‌به‌یک]\nتابع $f \\colon A \\rightarrow B$ \\emph{یک‌به‌یک} است اگر و تنها اگر برای\nهر $y \\in B$ حداکثر یک $x \\in A$ وجود داشته باشد چنان‌که~$f(x) = y$.\nچنین تابعی را نگاشت یک‌به‌یک از $A$ به~$B$ می‌نامیم.\n\\end{defn}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 18,
+          "token": "!!^{injective}",
+          "realization": "یک‌به‌یک"
+        },
+        {
+          "character_offset_in_segment": 72,
+          "token": "!!{injective}",
+          "realization": "یک‌به‌یک"
+        },
+        {
+          "character_offset_in_segment": 194,
+          "token": "!!a{injection}",
+          "realization": "نگاشت یک‌به‌یک"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Equality criterion and actual plural realization",
+      "canon": [
+        "FA-REL-P044",
+        "FA-REL-P046"
+      ],
+      "rationale": "The token !!{element}s expands to اعضا. With the following ی it becomes اعضای, so اعضای از دامنه is ungrammatical; remove از to obtain اعضای دامنه. The quantified statement still ranges over any x and y in the domain and retains f(x)=f(y) implies x=y.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The complete aligned wording and its mathematical scope were checked against the frozen source and the stated Persian passages; score is editorial, not a probability.",
+      "id": "FA-0022-C10",
+      "unit": "OLP-0022",
+      "source": {
+        "char_start": 2305,
+        "char_end_exclusive": 2485,
+        "line_start": 70,
+        "line_end": 76,
+        "text": "\\begin{explain}\nIf you want to show that $f$ is !!a{injection}, you need to show that\nfor any !!{element}s $x$ and $y$ of $f$'s domain, if $f(x)=f(y)$, then\n$x=y$. \n\\end{explain}\n\n",
+        "sha256": "d376de3ee3a9b507a1d179d662dcdf1047315282ee098ddf084cd8d0dffde044"
+      },
+      "target_before": {
+        "char_start": 2291,
+        "char_end_exclusive": 2477,
+        "line_start": 70,
+        "line_end": 76,
+        "text": "\\begin{explain}\nاگر می‌خواهید نشان دهید که $f$ !!a{injection} است، باید نشان دهید که\nبرای هر $x$ و $y$ که !!{element}sی از دامنهٔ $f$ هستند، اگر $f(x)=f(y)$، آنگاه\n$x=y$.\n\\end{explain}\n\n",
+        "sha256": "67d5269cfedcd98e24610e5f54b7e30c7b48ba14d9d443cabf0cdf491f27fc25"
+      },
+      "target_after": {
+        "char_start": 2293,
+        "char_end_exclusive": 2476,
+        "line_start": 70,
+        "line_end": 76,
+        "text": "\\begin{explain}\nاگر می‌خواهید نشان دهید که $f$ !!a{injection} است، باید نشان دهید که\nبرای هر $x$ و $y$ که !!{element}sی دامنهٔ $f$ هستند، اگر $f(x)=f(y)$، آنگاه\n$x=y$.\n\\end{explain}\n\n",
+        "sha256": "129b761c62ebc1f21ef3bd8cf79bdaf0ff730770cc5610f3ac05c12ee9431e54"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{explain}\nاگر می‌خواهید نشان دهید که $f$ نگاشت یک‌به‌یک است، باید نشان دهید که\nبرای هر $x$ و $y$ که اعضای دامنهٔ $f$ هستند، اگر $f(x)=f(y)$، آنگاه\n$x=y$.\n\\end{explain}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 47,
+          "token": "!!a{injection}",
+          "realization": "نگاشت یک‌به‌یک"
+        },
+        {
+          "character_offset_in_segment": 106,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        }
+      ],
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 106,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        }
+      ]
+    },
+    {
+      "topic": "Constant function counterexample",
+      "canon": [
+        "FA-REL-P044",
+        "FA-REL-P046"
+      ],
+      "rationale": "Retain the constant-one function and both negations. Inputs0 and1 collide; codomain0 is omitted. The canon supplies function/injective/onto criteria; ثابت is the contextual name for the displayed constant formula, not a verbatim attestation on these pages.",
+      "alternatives": "",
+      "question": "The selected canon pages do not explicitly name تابع ثابت; the displayed source definition fixes the meaning.",
+      "confidence": 2,
+      "confidence_reason": "Counterexample checked; exact constant-function label not directly quoted from these pages.",
+      "id": "FA-0022-C11",
+      "unit": "OLP-0022",
+      "source": {
+        "char_start": 2485,
+        "char_end_exclusive": 2609,
+        "line_start": 76,
+        "line_end": 80,
+        "text": "\\begin{ex}\nThe constant function $f\\colon \\Nat \\to \\Nat$ given by $f(x) = 1$ is\nneither !!{injective}, nor !!{surjective}.\n\n",
+        "sha256": "3fab7aa4a5d5a422a6bebefdfa42251d8c5b854f7886280170cb32eeed4b3c07"
+      },
+      "target_before": {
+        "char_start": 2477,
+        "char_end_exclusive": 2595,
+        "line_start": 76,
+        "line_end": 80,
+        "text": "\\begin{ex}\nتابع ثابت $f\\colon \\Nat \\to \\Nat$ که با $f(x) = 1$ داده می‌شود،\nنه !!{injective} است و نه !!{surjective}.\n\n",
+        "sha256": "8d21e0053c1555813a9e34107ca7d209925143ebe6c71cc1470defe58404980a"
+      },
+      "target_after": {
+        "char_start": 2476,
+        "char_end_exclusive": 2594,
+        "line_start": 76,
+        "line_end": 80,
+        "text": "\\begin{ex}\nتابع ثابت $f\\colon \\Nat \\to \\Nat$ که با $f(x) = 1$ داده می‌شود،\nنه !!{injective} است و نه !!{surjective}.\n\n",
+        "sha256": "8d21e0053c1555813a9e34107ca7d209925143ebe6c71cc1470defe58404980a"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{ex}\nتابع ثابت $f\\colon \\Nat \\to \\Nat$ که با $f(x) = 1$ داده می‌شود،\nنه یک‌به‌یک است و نه پوشا.\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 78,
+          "token": "!!{injective}",
+          "realization": "یک‌به‌یک"
+        },
+        {
+          "character_offset_in_segment": 101,
+          "token": "!!{surjective}",
+          "realization": "پوشا"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Identity example",
+      "canon": [
+        "FA-REL-P047",
+        "FA-REL-P046"
+      ],
+      "rationale": "تابع همانی is directly attested with the identity formula. The natural-number identity is both injective and onto, including0. Keep both conjunctions, not merely bijective as a shortening.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The complete aligned wording and its mathematical scope were checked against the frozen source and the stated Persian passages; score is editorial, not a probability.",
+      "id": "FA-0022-C12",
+      "unit": "OLP-0022",
+      "source": {
+        "char_start": 2609,
+        "char_end_exclusive": 2718,
+        "line_start": 80,
+        "line_end": 83,
+        "text": "The identity function $f\\colon \\Nat \\to \\Nat$ given by $f(x) = x$ is\nboth !!{injective} and !!{surjective}.\n\n",
+        "sha256": "6ab3dacdf100344067233458d765e566a756243000263311c33e88a4b4cdf033"
+      },
+      "target_before": {
+        "char_start": 2595,
+        "char_end_exclusive": 2703,
+        "line_start": 80,
+        "line_end": 83,
+        "text": "تابع همانی $f\\colon \\Nat \\to \\Nat$ که با $f(x) = x$ داده می‌شود،\nهم !!{injective} است و هم !!{surjective}.\n\n",
+        "sha256": "0caadbde49280486776b27795f9772e46a6bd622141188f073e76e2b8a960d22"
+      },
+      "target_after": {
+        "char_start": 2594,
+        "char_end_exclusive": 2702,
+        "line_start": 80,
+        "line_end": 83,
+        "text": "تابع همانی $f\\colon \\Nat \\to \\Nat$ که با $f(x) = x$ داده می‌شود،\nهم !!{injective} است و هم !!{surjective}.\n\n",
+        "sha256": "0caadbde49280486776b27795f9772e46a6bd622141188f073e76e2b8a960d22"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "تابع همانی $f\\colon \\Nat \\to \\Nat$ که با $f(x) = x$ داده می‌شود،\nهم یک‌به‌یک است و هم پوشا.\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 68,
+          "token": "!!{injective}",
+          "realization": "یک‌به‌یک"
+        },
+        {
+          "character_offset_in_segment": 91,
+          "token": "!!{surjective}",
+          "realization": "پوشا"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Successor example and local consistency",
+      "canon": [
+        "FA-REL-P044",
+        "FA-REL-P046",
+        "FA-REL-P047"
+      ],
+      "rationale": "Use تابع جانشین to agree with the source-aligned successor explanation in OLP-0021 rather than introducing an unexplained alternative پسین. Retain x+1, injectivity and non-surjectivity. Neither selected page directly attests the successor label; the claim is grounded in the source formula and the previously defined context, not a fabricated dictionary citation.",
+      "alternatives": "پسین is a possible contextual alternative, but creates an unnecessary second name for the same function in consecutive sections.",
+      "question": "Confirm a direct disciplinary attestation of تابع جانشین when adding a natural-number canon; the mathematical meaning is already explicit and no review wait is required.",
+      "confidence": 2,
+      "confidence_reason": "Formula, proof and within-chapter consistency verified; exact successor-term attestation remains a documented gap.",
+      "id": "FA-0022-C13",
+      "unit": "OLP-0022",
+      "source": {
+        "char_start": 2718,
+        "char_end_exclusive": 2832,
+        "line_start": 83,
+        "line_end": 86,
+        "text": "The successor function $f \\colon \\Nat \\to \\Nat$ given by $f(x) = x+1$\nis !!{injective} but not !!{surjective}.\n  \n",
+        "sha256": "8d29dd7441769941e00bc51b5184a9a110c115da403daaa08fac5c932604e712"
+      },
+      "target_before": {
+        "char_start": 2703,
+        "char_end_exclusive": 2814,
+        "line_start": 83,
+        "line_end": 86,
+        "text": "تابع پسین $f \\colon \\Nat \\to \\Nat$ که با $f(x) = x+1$ داده می‌شود،\n!!{injective} است اما !!{surjective} نیست.\n\n",
+        "sha256": "65919dd84d0eefb988f4b6b2cdb5b14e2b06d558312bdf8690301d9ea8454019"
+      },
+      "target_after": {
+        "char_start": 2702,
+        "char_end_exclusive": 2815,
+        "line_start": 83,
+        "line_end": 86,
+        "text": "تابع جانشین $f \\colon \\Nat \\to \\Nat$ که با $f(x) = x+1$ داده می‌شود،\n!!{injective} است اما !!{surjective} نیست.\n\n",
+        "sha256": "065b9ddafb565ad4acf0af581e310747867d66d10ae7abcef3bc2d3999879b24"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "تابع جانشین $f \\colon \\Nat \\to \\Nat$ که با $f(x) = x+1$ داده می‌شود،\nیک‌به‌یک است اما پوشا نیست.\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 69,
+          "token": "!!{injective}",
+          "realization": "یک‌به‌یک"
+        },
+        {
+          "character_offset_in_segment": 91,
+          "token": "!!{surjective}",
+          "realization": "پوشا"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Even/odd piecewise surjection",
+      "canon": [
+        "FA-REL-P045",
+        "FA-REL-P046"
+      ],
+      "rationale": "Keep even and odd conditions, the two numerators and both denominators. Every output y is attained at2y, whereas inputs1 and2 both give1. At0 the even case returns0. The conditions inside math text are individually reviewed, not accepted merely because the math checker masks prose.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The complete aligned wording and its mathematical scope were checked against the frozen source and the stated Persian passages; score is editorial, not a probability.",
+      "id": "FA-0022-C14",
+      "unit": "OLP-0022",
+      "source": {
+        "char_start": 2832,
+        "char_end_exclusive": 3064,
+        "line_start": 86,
+        "line_end": 97,
+        "text": "The function $f \\colon \\Nat \\to \\Nat$ defined by:\n\\[\n  f(x) =\n  \\begin{cases}\n    \\frac{x}{2} & \\text{if $x$ is even} \\\\\n    \\frac{x+1}{2} & \\text{if $x$ is odd.}\n  \\end{cases}\n\\]\nis !!{surjective}, but not !!{injective}.\n\\end{ex}\n\n",
+        "sha256": "5c4c1f35b1f29363838e2d63ea5f7221320f8cf935e83165130945cd08b80e4d"
+      },
+      "target_before": {
+        "char_start": 2814,
+        "char_end_exclusive": 3061,
+        "line_start": 86,
+        "line_end": 97,
+        "text": "تابع $f \\colon \\Nat \\to \\Nat$ که به‌صورت زیر تعریف می‌شود:\n\\[\n  f(x) =\n  \\begin{cases}\n    \\frac{x}{2} & \\text{اگر $x$ زوج باشد} \\\\\n    \\frac{x+1}{2} & \\text{اگر $x$ فرد باشد.}\n  \\end{cases}\n\\]\n!!{surjective} است اما !!{injective} نیست.\n\\end{ex}\n\n",
+        "sha256": "58d10663ec4d1df31690a187387ad3fccb9b3c34c1329ba57400b57e80556ae6"
+      },
+      "target_after": {
+        "char_start": 2815,
+        "char_end_exclusive": 3062,
+        "line_start": 86,
+        "line_end": 97,
+        "text": "تابع $f \\colon \\Nat \\to \\Nat$ که به‌صورت زیر تعریف می‌شود:\n\\[\n  f(x) =\n  \\begin{cases}\n    \\frac{x}{2} & \\text{اگر $x$ زوج باشد} \\\\\n    \\frac{x+1}{2} & \\text{اگر $x$ فرد باشد.}\n  \\end{cases}\n\\]\n!!{surjective} است اما !!{injective} نیست.\n\\end{ex}\n\n",
+        "sha256": "58d10663ec4d1df31690a187387ad3fccb9b3c34c1329ba57400b57e80556ae6"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "تابع $f \\colon \\Nat \\to \\Nat$ که به‌صورت زیر تعریف می‌شود:\n\\[\n  f(x) =\n  \\begin{cases}\n    \\frac{x}{2} & \\text{اگر $x$ زوج باشد} \\\\\n    \\frac{x+1}{2} & \\text{اگر $x$ فرد باشد.}\n  \\end{cases}\n\\]\nپوشا است اما یک‌به‌یک نیست.\n\\end{ex}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 194,
+          "token": "!!{surjective}",
+          "realization": "پوشا"
+        },
+        {
+          "character_offset_in_segment": 217,
+          "token": "!!{injective}",
+          "realization": "یک‌به‌یک"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Bijection and one-to-one correspondence",
+      "canon": [
+        "FA-REL-P046",
+        "FA-REL-P047"
+      ],
+      "rationale": "Retain both constituent properties and تناظرهای یک‌به‌یک as the synonym for دوسویی. D47 explicitly pairs تناظر یک به یک with دوسویی. Expand plural locale tokens correctly; pairing is between domain and codomain, not a symmetry assumption.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The complete aligned wording and its mathematical scope were checked against the frozen source and the stated Persian passages; score is editorial, not a probability.",
+      "id": "FA-0022-C15",
+      "unit": "OLP-0022",
+      "source": {
+        "char_start": 3064,
+        "char_end_exclusive": 3430,
+        "line_start": 97,
+        "line_end": 104,
+        "text": "\\begin{explain}\nOften enough, we want to consider functions which are both\n!!{injective} and !!{surjective}. We call such functions\n!!{bijective}. They look like the function pictured in\n\\olref{fig:bijective}. !!^{bijection}s are also sometimes called\n\\emph{one-to-one correspondences}, since they uniquely pair elements\nof the codomain with elements of the domain.\n",
+        "sha256": "d0629f9b53c716f786334a666a373400534235a7fe556db9475a3a58efe4d4d7"
+      },
+      "target_before": {
+        "char_start": 3061,
+        "char_end_exclusive": 3401,
+        "line_start": 97,
+        "line_end": 104,
+        "text": "\\begin{explain}\nاغلب می‌خواهیم توابعی را بررسی کنیم که هم\n!!{injective} و هم !!{surjective} هستند. چنین توابعی را\n!!{bijective} می‌نامیم. آن‌ها مانند تابعی هستند که در\n\\olref{fig:bijective} به تصویر کشیده شده است. !!^{bijection}s را گاهی\n\\emph{تناظرهای یک‌به‌یک} نیز می‌نامند، زیرا اعضای\nهم‌دامنه را به‌طور یکتا با اعضای دامنه جفت می‌کنند.\n",
+        "sha256": "d324294132a356729cb559f048dad3638ff6d76e51706c729df1c1ba6c67469a"
+      },
+      "target_after": {
+        "char_start": 3062,
+        "char_end_exclusive": 3402,
+        "line_start": 97,
+        "line_end": 104,
+        "text": "\\begin{explain}\nاغلب می‌خواهیم توابعی را بررسی کنیم که هم\n!!{injective} و هم !!{surjective} هستند. چنین توابعی را\n!!{bijective} می‌نامیم. آن‌ها مانند تابعی هستند که در\n\\olref{fig:bijective} به تصویر کشیده شده است. !!^{bijection}s را گاهی\n\\emph{تناظرهای یک‌به‌یک} نیز می‌نامند، زیرا اعضای\nهم‌دامنه را به‌طور یکتا با اعضای دامنه جفت می‌کنند.\n",
+        "sha256": "d324294132a356729cb559f048dad3638ff6d76e51706c729df1c1ba6c67469a"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{explain}\nاغلب می‌خواهیم توابعی را بررسی کنیم که هم\nیک‌به‌یک و هم پوشا هستند. چنین توابعی را\nدوسویی می‌نامیم. آن‌ها مانند تابعی هستند که در\n\\olref{fig:bijective} به تصویر کشیده شده است. تناظرهای دوسویی را گاهی\n\\emph{تناظرهای یک‌به‌یک} نیز می‌نامند، زیرا اعضای\nهم‌دامنه را به‌طور یکتا با اعضای دامنه جفت می‌کنند.\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 58,
+          "token": "!!{injective}",
+          "realization": "یک‌به‌یک"
+        },
+        {
+          "character_offset_in_segment": 77,
+          "token": "!!{surjective}",
+          "realization": "پوشا"
+        },
+        {
+          "character_offset_in_segment": 114,
+          "token": "!!{bijective}",
+          "realization": "دوسویی"
+        },
+        {
+          "character_offset_in_segment": 214,
+          "token": "!!^{bijection}s",
+          "realization": "تناظرهای دوسویی"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Bijective diagram caption",
+      "canon": [
+        "FA-REL-P046",
+        "FA-REL-P047"
+      ],
+      "rationale": "Retain جفت می‌کند as the source pairing explanation of a one-to-one correspondence. Both sides have exactly one partner. It is explanatory wording supported by the correspondence definition, not a claim that the canon has the same verb. Preserve the figure unmirrored.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The complete aligned wording and its mathematical scope were checked against the frozen source and the stated Persian passages; score is editorial, not a probability.",
+      "id": "FA-0022-C16",
+      "unit": "OLP-0022",
+      "source": {
+        "char_start": 3430,
+        "char_end_exclusive": 3653,
+        "line_start": 104,
+        "line_end": 112,
+        "text": "\\begin{figure}\n  \\olasset{assets/diagrams/bijective.tikz}\n  \\caption{!!^a{bijective} function uniquely pairs the elements of the\n    codomain with those of the domain.}\n  \\ollabel{fig:bijective}\n\\end{figure}\n\\end{explain}\n\n",
+        "sha256": "0c986de98be76551b9abc4ef3c27844a6fedb8c5ff9c0aed74115730518d027d"
+      },
+      "target_before": {
+        "char_start": 3401,
+        "char_end_exclusive": 3607,
+        "line_start": 104,
+        "line_end": 112,
+        "text": "\\begin{figure}\n  \\olasset{assets/diagrams/bijective.tikz}\n  \\caption{تابع !!^a{bijective} اعضای\n    هم‌دامنه را به‌طور یکتا با اعضای دامنه جفت می‌کند.}\n  \\ollabel{fig:bijective}\n\\end{figure}\n\\end{explain}\n\n",
+        "sha256": "467bb1de602e254e0de7248228eb456aca98ce85827da2b2601ff389951be598"
+      },
+      "target_after": {
+        "char_start": 3402,
+        "char_end_exclusive": 3608,
+        "line_start": 104,
+        "line_end": 112,
+        "text": "\\begin{figure}\n  \\olasset{assets/diagrams/bijective.tikz}\n  \\caption{تابع !!^a{bijective} اعضای\n    هم‌دامنه را به‌طور یکتا با اعضای دامنه جفت می‌کند.}\n  \\ollabel{fig:bijective}\n\\end{figure}\n\\end{explain}\n\n",
+        "sha256": "467bb1de602e254e0de7248228eb456aca98ce85827da2b2601ff389951be598"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{figure}\n  \\olasset{assets/diagrams/bijective.tikz}\n  \\caption{تابع دوسویی اعضای\n    هم‌دامنه را به‌طور یکتا با اعضای دامنه جفت می‌کند.}\n  \\ollabel{fig:bijective}\n\\end{figure}\n\\end{explain}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 74,
+          "token": "!!^a{bijective}",
+          "realization": "دوسویی"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Bijection formal definition",
+      "canon": [
+        "FA-REL-P046",
+        "FA-REL-P047"
+      ],
+      "rationale": "Retain the biconditional, both surjective and injective, and the two type descriptions from A to B or between A and B. تناظر دوسویی combines the directly attested correspondence and bijective wording. No inverse-function theorem is added.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The complete aligned wording and its mathematical scope were checked against the frozen source and the stated Persian passages; score is editorial, not a probability.",
+      "id": "FA-0022-C17",
+      "unit": "OLP-0022",
+      "source": {
+        "char_start": 3653,
+        "char_end_exclusive": 3879,
+        "line_start": 112,
+        "line_end": 118,
+        "text": "\\begin{defn}[!!^{bijection}] \nA function $f \\colon A \\to B$ is \\emph{!!{bijective}} iff it is both\n!!{surjective} and !!{injective}. We call such a function\n!!a{bijection} from $A$ to~$B$ (or between $A$ and~$B$).\n\\end{defn}\n\n",
+        "sha256": "b762f7576625aec2956658eb9c47427894c2add092bb3ef80f0650e49e7d4e89"
+      },
+      "target_before": {
+        "char_start": 3607,
+        "char_end_exclusive": 3828,
+        "line_start": 112,
+        "line_end": 118,
+        "text": "\\begin{defn}[!!^{bijection}]\nتابع $f \\colon A \\to B$ \\emph{!!{bijective}} است اگر و تنها اگر هم\n!!{surjective} و هم !!{injective} باشد. چنین تابعی را\n!!a{bijection} از $A$ به~$B$ (یا میان $A$ و~$B$) می‌نامیم.\n\\end{defn}\n\n",
+        "sha256": "ddcafc41850719d57d82eb590083fb7390eddde7ad0b688638a8cab290efbe6c"
+      },
+      "target_after": {
+        "char_start": 3608,
+        "char_end_exclusive": 3829,
+        "line_start": 112,
+        "line_end": 118,
+        "text": "\\begin{defn}[!!^{bijection}]\nتابع $f \\colon A \\to B$ \\emph{!!{bijective}} است اگر و تنها اگر هم\n!!{surjective} و هم !!{injective} باشد. چنین تابعی را\n!!a{bijection} از $A$ به~$B$ (یا میان $A$ و~$B$) می‌نامیم.\n\\end{defn}\n\n",
+        "sha256": "ddcafc41850719d57d82eb590083fb7390eddde7ad0b688638a8cab290efbe6c"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{defn}[تناظر دوسویی]\nتابع $f \\colon A \\to B$ \\emph{دوسویی} است اگر و تنها اگر هم\nپوشا و هم یک‌به‌یک باشد. چنین تابعی را\nتناظر دوسویی از $A$ به~$B$ (یا میان $A$ و~$B$) می‌نامیم.\n\\end{defn}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 13,
+          "token": "!!^{bijection}",
+          "realization": "تناظر دوسویی"
+        },
+        {
+          "character_offset_in_segment": 59,
+          "token": "!!{bijective}",
+          "realization": "دوسویی"
+        },
+        {
+          "character_offset_in_segment": 96,
+          "token": "!!{surjective}",
+          "realization": "پوشا"
+        },
+        {
+          "character_offset_in_segment": 116,
+          "token": "!!{injective}",
+          "realization": "یک‌به‌یک"
+        },
+        {
+          "character_offset_in_segment": 150,
+          "token": "!!a{bijection}",
+          "realization": "تناظر دوسویی"
+        }
+      ],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Section heading",
+      "canon": [
+        "FA-OL-CANON-0003:P0014",
+        "FA-OL-CANON-0003:P0015",
+        "FA-REL-P045"
+      ],
+      "rationale": "Retain توابع به‌منزلهٔ روابط: functions represented by particular relations, not all relations being functions. The canon explicitly constructs functions from relations.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The complete aligned wording and its mathematical scope were checked against the frozen source and the stated Persian passages; score is editorial, not a probability.",
+      "id": "FA-0023-C01",
+      "unit": "OLP-0023",
+      "source": {
+        "char_start": 194,
+        "char_end_exclusive": 230,
+        "line_start": 12,
+        "line_end": 14,
+        "text": "\\olsection{Functions as Relations}\n\n",
+        "sha256": "66a8282898a84fc60d7bb08407c0c4a22b64478fa8c2e6fbf6ea4ec501bc0723"
+      },
+      "target_before": {
+        "char_start": 201,
+        "char_end_exclusive": 236,
+        "line_start": 12,
+        "line_end": 14,
+        "text": "\\olsection{توابع به‌منزلهٔ روابط}\n\n",
+        "sha256": "081b2b7497e22bb934db714970972415499c5abf617bb917e17f937fa3166b96"
+      },
+      "target_after": {
+        "char_start": 201,
+        "char_end_exclusive": 236,
+        "line_start": 12,
+        "line_end": 14,
+        "text": "\\olsection{توابع به‌منزلهٔ روابط}\n\n",
+        "sha256": "081b2b7497e22bb934db714970972415499c5abf617bb917e17f937fa3166b96"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\olsection{توابع به‌منزلهٔ روابط}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Function-induced relation and set representation",
+      "canon": [
+        "FA-OL-CANON-0003:P0014",
+        "FA-OL-CANON-0003:P0015",
+        "FA-REL-P044",
+        "FA-REL-P045"
+      ],
+      "rationale": "Correct both اعضا از occurrences to the token-realized possessive اعضای. Unpack reducing the building blocks as basing mathematics on fewer fundamental notions. Retain the conditional motivation and the question of which relations qualify; there is no claim that every relation is a function. Canon supports pair-set representation, while the frozen source governs this philosophical motivation.",
+      "alternatives": "تقلیل اجزای سازنده and دست به یکی‌انگاری زدن are literal but more opaque than the explicit mathematical construction.",
+      "question": "The philosophical/expository wording is a contextual rendering, not a verbatim target-language formula in the canon.",
+      "confidence": 2,
+      "confidence_reason": "All mathematical claims and qualification retained; philosophical idiom requires an editorial register judgment.",
+      "id": "FA-0023-C02",
+      "unit": "OLP-0023",
+      "source": {
+        "char_start": 230,
+        "char_end_exclusive": 712,
+        "line_start": 14,
+        "line_end": 24,
+        "text": "\\begin{explain} \nA function which maps !!{element}s of~$A$ to !!{element}s of~$B$\nobviously defines a relation between $A$ and~$B$, namely the relation\nwhich holds between $x$ and $y$ iff $f(x) = y$.  In fact, we might\neven---if we are interested in reducing the building blocks of\nmathematics for instance---\\emph{identify} the function~$f$ with this\nrelation, i.e., with a set of pairs.  This then raises the question:\nwhich relations define functions in this way?\n\\end{explain}\n\n",
+        "sha256": "89a3cd275297441e9470e9fccd44848f14c99e92e203a95db40c453de43195b0"
+      },
+      "target_before": {
+        "char_start": 236,
+        "char_end_exclusive": 715,
+        "line_start": 14,
+        "line_end": 24,
+        "text": "\\begin{explain}\nتابعی که !!{element}s از~$A$ را به !!{element}s از~$B$\nنگاشت می‌کند، آشکارا رابطه‌ای میان $A$ و~$B$ تعریف می‌کند؛ یعنی رابطه‌ای\nکه میان $x$ و $y$ برقرار است اگر و تنها اگر $f(x) = y$. در واقع، حتی ممکن است---\nبرای نمونه، اگر به تقلیل اجزای سازندهٔ ریاضیات علاقه‌مند باشیم---دست به\n\\emph{یکی‌انگاری} بزنیم و تابع~$f$ را با این رابطه، یعنی با مجموعه‌ای از\nزوج‌ها، یکی بدانیم. آنگاه این پرسش پیش می‌آید:\nکدام روابط به این شیوه توابع را تعریف می‌کنند؟\n\\end{explain}\n\n",
+        "sha256": "3cd6d41b2616ae9472023a2ddea8383671261a3dc101dbcdc292f813adff841f"
+      },
+      "target_after": {
+        "char_start": 236,
+        "char_end_exclusive": 680,
+        "line_start": 14,
+        "line_end": 24,
+        "text": "\\begin{explain}\nتابعی که !!{element}sی~$A$ را به !!{element}sی~$B$\nنگاشت می‌کند، آشکارا رابطه‌ای میان $A$ و~$B$ تعریف می‌کند:\nاین رابطه میان $x$ و $y$ برقرار است اگر و تنها اگر $f(x) = y$.\nحتی می‌توانیم---برای نمونه، اگر بخواهیم ریاضیات را بر مفاهیم بنیادیِ\nکمتری بنا کنیم---تابع~$f$ را با این رابطه، یعنی با مجموعه‌ای از\nزوج‌ها، \\emph{یکی در نظر بگیریم}. آنگاه این پرسش پیش می‌آید:\nکدام رابطه‌ها به این شیوه تابع تعریف می‌کنند؟\n\\end{explain}\n\n",
+        "sha256": "6cada0d376b8be51a3e3e20ada7ce592cfa0d80f6a61254c3c8ee593700b8d6a"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{explain}\nتابعی که اعضای~$A$ را به اعضای~$B$\nنگاشت می‌کند، آشکارا رابطه‌ای میان $A$ و~$B$ تعریف می‌کند:\nاین رابطه میان $x$ و $y$ برقرار است اگر و تنها اگر $f(x) = y$.\nحتی می‌توانیم---برای نمونه، اگر بخواهیم ریاضیات را بر مفاهیم بنیادیِ\nکمتری بنا کنیم---تابع~$f$ را با این رابطه، یعنی با مجموعه‌ای از\nزوج‌ها، \\emph{یکی در نظر بگیریم}. آنگاه این پرسش پیش می‌آید:\nکدام رابطه‌ها به این شیوه تابع تعریف می‌کنند؟\n\\end{explain}\n\n",
+      "locale_token_occurrences": [
+        {
+          "character_offset_in_segment": 25,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        },
+        {
+          "character_offset_in_segment": 49,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        }
+      ],
+      "member_occurrences": [
+        {
+          "character_offset_in_segment": 25,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        },
+        {
+          "character_offset_in_segment": 49,
+          "token": "!!{element}s",
+          "realization": "اعضا"
+        }
+      ]
+    },
+    {
+      "topic": "Function graph as an ordered-pair set",
+      "canon": [
+        "FA-REL-P045",
+        "FA-OL-CANON-0003:P0014"
+      ],
+      "rationale": "Use the directly attested نمودار تابع for the defined subset of A times B. The displayed set formula makes clear that this is not limited to coordinate plotting. Do not import the textbook display’s redundant y qualifier or change any OLP pair/formula.",
+      "alternatives": "گراف is a loan used elsewhere for graph-theoretic structures; the exact function-graph canon here supports نمودار.",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The complete aligned wording and its mathematical scope were checked against the frozen source and the stated Persian passages; score is editorial, not a probability.",
+      "id": "FA-0023-C03",
+      "unit": "OLP-0023",
+      "source": {
+        "char_start": 712,
+        "char_end_exclusive": 917,
+        "line_start": 24,
+        "line_end": 32,
+        "text": "\\begin{defn}[Graph of a function] Let $f\\colon A \\to B$ be a function.\nThe \\emph{graph} of~$f$ is the relation $R_f \\subseteq A \\times B$\ndefined by\n\\[\nR_f = \\Setabs{\\tuple{x,y}}{f(x) = y}.\n\\]\n\\end{defn}\n\n",
+        "sha256": "a78a24629d82a91453317954688cbf3d0a2445ba8023df72b2dcb8f435d47556"
+      },
+      "target_before": {
+        "char_start": 715,
+        "char_end_exclusive": 923,
+        "line_start": 24,
+        "line_end": 32,
+        "text": "\\begin{defn}[گراف یک تابع] فرض کنید $f\\colon A \\to B$ یک تابع باشد.\n\\emph{گرافِ}~$f$ رابطهٔ $R_f \\subseteq A \\times B$ است که\nبه‌صورت زیر تعریف می‌شود:\n\\[\nR_f = \\Setabs{\\tuple{x,y}}{f(x) = y}.\n\\]\n\\end{defn}\n\n",
+        "sha256": "75cf5dc8671494886c34623201505166d6c5a19ef2cc6a077a57e287699c990b"
+      },
+      "target_after": {
+        "char_start": 680,
+        "char_end_exclusive": 892,
+        "line_start": 24,
+        "line_end": 32,
+        "text": "\\begin{defn}[نمودار یک تابع] فرض کنید $f\\colon A \\to B$ یک تابع باشد.\n\\emph{نمودارِ}~$f$ رابطهٔ $R_f \\subseteq A \\times B$ است که\nبه‌صورت زیر تعریف می‌شود:\n\\[\nR_f = \\Setabs{\\tuple{x,y}}{f(x) = y}.\n\\]\n\\end{defn}\n\n",
+        "sha256": "f1b51fb8b72d2243ccafd8cba01f467a7171ededdcf95e0188c7c1534e689c05"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{defn}[نمودار یک تابع] فرض کنید $f\\colon A \\to B$ یک تابع باشد.\n\\emph{نمودارِ}~$f$ رابطهٔ $R_f \\subseteq A \\times B$ است که\nبه‌صورت زیر تعریف می‌شود:\n\\[\nR_f = \\Setabs{\\tuple{x,y}}{f(x) = y}.\n\\]\n\\end{defn}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Extensional equality with fixed domain and codomain",
+      "canon": [
+        "FA-OL-CANON-0003:P0008",
+        "FA-REL-P044",
+        "FA-REL-P045"
+      ],
+      "rationale": "Unpack the consequence of set extensionality into equality of functions that have the same domain and codomain and agree at every input. Preserve both typing hypotheses. K8 supplies the equal-membership direction; the D44 box alone supplies only the reverse implication and is not claimed as proof. Do not infer a codomain from a bare graph.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The complete aligned wording and its mathematical scope were checked against the frozen source and the stated Persian passages; score is editorial, not a probability.",
+      "id": "FA-0023-C04",
+      "unit": "OLP-0023",
+      "source": {
+        "char_start": 917,
+        "char_end_exclusive": 1224,
+        "line_start": 32,
+        "line_end": 39,
+        "text": "\\begin{explain}\nThe graph of a function is uniquely determined, by extensionality.\nMoreover, extensionality (on sets) will immediately vindicate the\nimplicit principle of extensionality for functions,\nwhereby if $f$ and~$g$ share a domain and codomain then they are\nidentical if they agree on all values. \n\n",
+        "sha256": "ab21fb9d0cc4f0fd9d48d6d507aa8082fa1f4b41b4db2cef00a0a3cde4ebd412"
+      },
+      "target_before": {
+        "char_start": 923,
+        "char_end_exclusive": 1224,
+        "line_start": 32,
+        "line_end": 39,
+        "text": "\\begin{explain}\nگراف یک تابع بنا بر اصل گسترش به‌طور یکتا تعیین می‌شود.\nافزون بر این، اصل گسترش (برای مجموعه‌ها) بی‌درنگ\nاصل ضمنی گسترش برای توابع را موجه می‌سازد؛\nبنابر این اصل، اگر $f$ و~$g$ دامنه و هم‌دامنهٔ یکسانی داشته باشند، آنگاه اگر\nبرای همهٔ آرگومان‌ها مقادیر یکسانی داشته باشند، یکسان‌اند.\n\n",
+        "sha256": "964cee0d8e91b95c551aa4aabb28603f168690a4e060de9f955b77f53fe792f7"
+      },
+      "target_after": {
+        "char_start": 892,
+        "char_end_exclusive": 1190,
+        "line_start": 32,
+        "line_end": 39,
+        "text": "\\begin{explain}\nنمودار یک تابع بنا بر اصل گسترش به‌طور یکتا تعیین می‌شود.\nاز اصل گسترش برای مجموعه‌ها، اصل گسترش برای توابع نیز نتیجه می‌شود؛\nهمان اصلی که تا اینجا به‌طور ضمنی به کار برده‌ایم:\nاگر $f$ و~$g$ دامنه و هم‌دامنهٔ یکسانی داشته باشند و برای هر\nورودی مقدار یکسانی بدهند، دو تابع برابرند.\n\n",
+        "sha256": "aa2c3b961cab9329efa8948e3653fabaa91f3e9c341d616811bcdd1bc59e6ba5"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{explain}\nنمودار یک تابع بنا بر اصل گسترش به‌طور یکتا تعیین می‌شود.\nاز اصل گسترش برای مجموعه‌ها، اصل گسترش برای توابع نیز نتیجه می‌شود؛\nهمان اصلی که تا اینجا به‌طور ضمنی به کار برده‌ایم:\nاگر $f$ و~$g$ دامنه و هم‌دامنهٔ یکسانی داشته باشند و برای هر\nورودی مقدار یکسانی بدهند، دو تابع برابرند.\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Functional relation on its own domain",
+      "canon": [
+        "FA-OL-CANON-0003:P0014",
+        "FA-OL-CANON-0003:P0015"
+      ],
+      "rationale": "Explain functional as at most one second coordinate for each first, and say the resulting function is on the relation’s own domain. A merely functional relation is not necessarily total on a preset larger A. The next proposition supplies that extra existence hypothesis. K15 attests تابعال, not تابع‌وار; retain the source quotation label only with its explicit mathematical explanation.",
+      "alternatives": "Substituting تابعال would follow this witness exactly but introduce a different unfamiliar label; retaining an explained تابع‌وار preserves this edition’s continuity.",
+      "question": "Compare تابع‌وار with the exact witness تابعال in future glossary harmonization. The uniqueness/domain distinction must remain whichever label is chosen.",
+      "confidence": 2,
+      "confidence_reason": "Concept directly attested; selected lexical form is explicitly not verbatim attested.",
+      "id": "FA-0023-C05",
+      "unit": "OLP-0023",
+      "source": {
+        "char_start": 1224,
+        "char_end_exclusive": 1320,
+        "line_start": 39,
+        "line_end": 42,
+        "text": "Similarly, if a relation is ``functional'', then it is the graph of a function. \n\\end{explain}\n\n",
+        "sha256": "0379fc8c2c4e4568ed6c13305f77a8bfee6f197789bb6304cc7bc5c4529c4849"
+      },
+      "target_before": {
+        "char_start": 1224,
+        "char_end_exclusive": 1308,
+        "line_start": 39,
+        "line_end": 42,
+        "text": "به همین ترتیب، اگر رابطه‌ای «تابع‌وار» باشد، آنگاه گراف یک تابع است.\n\\end{explain}\n\n",
+        "sha256": "85f267a918ae74d1f08de03c9bf2a1d8431228bdd97fbefc5e6e0b9a5bcd339a"
+      },
+      "target_after": {
+        "char_start": 1190,
+        "char_end_exclusive": 1342,
+        "line_start": 39,
+        "line_end": 42,
+        "text": "به همین ترتیب، رابطه‌ای که هر مؤلفهٔ نخست را حداکثر به یک مؤلفهٔ دوم مربوط کند («تابع‌وار» باشد)، نمودار تابعی بر دامنهٔ همان رابطه است.\n\\end{explain}\n\n",
+        "sha256": "448c82ce5a4914ae8f1fde46525608810e6922b4f47ec4d30f97ca87fa284179"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "به همین ترتیب، رابطه‌ای که هر مؤلفهٔ نخست را حداکثر به یک مؤلفهٔ دوم مربوط کند («تابع‌وار» باشد)، نمودار تابعی بر دامنهٔ همان رابطه است.\n\\end{explain}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Graph characterization: uniqueness and totality",
+      "canon": [
+        "FA-OL-CANON-0003:P0015",
+        "FA-REL-P044",
+        "FA-REL-P045"
+      ],
+      "rationale": "Preserve both hypotheses and their order: uniqueness, then existence for every x in A with a y in B. Update only the graph label to نمودار. The pointwise iff defining f is retained; no arbitrary choice among multiple outputs is permitted.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The complete aligned wording and its mathematical scope were checked against the frozen source and the stated Persian passages; score is editorial, not a probability.",
+      "id": "FA-0023-C06",
+      "unit": "OLP-0023",
+      "source": {
+        "char_start": 1320,
+        "char_end_exclusive": 1669,
+        "line_start": 42,
+        "line_end": 53,
+        "text": "\\begin{prop}\\ollabel{prop:graph-function}\nLet $R \\subseteq A \\times B$ be such that:\n\\begin{enumerate}\n\\item If $Rxy$ and $Rxz$ then $y = z$; and \n\\item for every $x \\in A$ there is some $y \\in B$ such that $\\tuple{x,\ny} \\in R$.  \n\\end{enumerate}\nThen $R$ is the graph of the function $f\\colon A \\to B$ defined by\n$f(x) = y$ iff $Rxy$. \n\\end{prop}\n\n",
+        "sha256": "c092205cc4e401a15843b49a6357531bcbc9188fff9148a9f15c55d5dc0e452d"
+      },
+      "target_before": {
+        "char_start": 1308,
+        "char_end_exclusive": 1664,
+        "line_start": 42,
+        "line_end": 53,
+        "text": "\\begin{prop}\\ollabel{prop:graph-function}\nفرض کنید $R \\subseteq A \\times B$ چنان باشد که:\n\\begin{enumerate}\n\\item اگر $Rxy$ و $Rxz$، آنگاه $y = z$؛ و\n\\item برای هر $x \\in A$ یک $y \\in B$ وجود دارد چنان‌که $\\tuple{x,\ny} \\in R$.\n\\end{enumerate}\nآنگاه $R$ گراف تابع $f\\colon A \\to B$ است که به‌وسیلهٔ\n$f(x) = y$ اگر و تنها اگر $Rxy$ تعریف می‌شود.\n\\end{prop}\n\n",
+        "sha256": "994540e33ef3163e0f980be849b258d13461caa80277560a15d46c8be29e82b8"
+      },
+      "target_after": {
+        "char_start": 1342,
+        "char_end_exclusive": 1700,
+        "line_start": 42,
+        "line_end": 53,
+        "text": "\\begin{prop}\\ollabel{prop:graph-function}\nفرض کنید $R \\subseteq A \\times B$ چنان باشد که:\n\\begin{enumerate}\n\\item اگر $Rxy$ و $Rxz$، آنگاه $y = z$؛ و\n\\item برای هر $x \\in A$ یک $y \\in B$ وجود دارد چنان‌که $\\tuple{x,\ny} \\in R$.\n\\end{enumerate}\nآنگاه $R$ نمودار تابع $f\\colon A \\to B$ است که به‌وسیلهٔ\n$f(x) = y$ اگر و تنها اگر $Rxy$ تعریف می‌شود.\n\\end{prop}\n\n",
+        "sha256": "0720fd6e024d5b870f562bf8ce64acb3d169e305cb964f635835509677f8b340"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{prop}\\ollabel{prop:graph-function}\nفرض کنید $R \\subseteq A \\times B$ چنان باشد که:\n\\begin{enumerate}\n\\item اگر $Rxy$ و $Rxz$، آنگاه $y = z$؛ و\n\\item برای هر $x \\in A$ یک $y \\in B$ وجود دارد چنان‌که $\\tuple{x,\ny} \\in R$.\n\\end{enumerate}\nآنگاه $R$ نمودار تابع $f\\colon A \\to B$ است که به‌وسیلهٔ\n$f(x) = y$ اگر و تنها اگر $Rxy$ تعریف می‌شود.\n\\end{prop}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Proof: make the given existence hypothesis explicit",
+      "canon": [
+        "FA-OL-CANON-0003:P0015",
+        "FA-REL-P044",
+        "FA-REL-P047"
+      ],
+      "rationale": "Start by invoking the proposition’s second hypothesis for every domain input. The source proof had left that invocation implicit; this is explanatory expansion, not a claim of a false theorem. Retain the uniqueness contradiction and R_f=R. خوش‌تعریف is directly attested.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The complete aligned wording and its mathematical scope were checked against the frozen source and the stated Persian passages; score is editorial, not a probability.",
+      "id": "FA-0023-C07",
+      "unit": "OLP-0023",
+      "source": {
+        "char_start": 1669,
+        "char_end_exclusive": 1940,
+        "line_start": 53,
+        "line_end": 60,
+        "text": "\\begin{proof}\nSuppose there is a $y$ such that $Rxy$.  If there were another $z \\neq\ny$ such that $Rxz$, the condition on~$R$ would be violated. Hence, if\nthere is a $y$ such that $Rxy$, this $y$ is unique, and so $f$ is\nwell-defined.  Obviously, $R_f = R$.\n\\end{proof}\n\n",
+        "sha256": "b0e16989db649f7dac4903a9320a9e3731f49c2711457a2571182938d988a10a"
+      },
+      "target_before": {
+        "char_start": 1664,
+        "char_end_exclusive": 1916,
+        "line_start": 53,
+        "line_end": 60,
+        "text": "\\begin{proof}\nفرض کنید یک $y$ وجود دارد چنان‌که $Rxy$. اگر $z \\neq\ny$ دیگری وجود داشت چنان‌که $Rxz$، شرط مربوط به~$R$ نقض می‌شد. پس اگر\nیک $y$ وجود داشته باشد چنان‌که $Rxy$، این $y$ یکتا است و بنابراین $f$\nخوش‌تعریف است. آشکارا $R_f = R$.\n\\end{proof}\n\n",
+        "sha256": "53d5453b4d0574e2d9be99845bb18477ed15798cd14977a3ba79d28ea83528ce"
+      },
+      "target_after": {
+        "char_start": 1700,
+        "char_end_exclusive": 1989,
+        "line_start": 53,
+        "line_end": 60,
+        "text": "\\begin{proof}\nبه‌ازای هر ورودی در دامنه، شرط دوم وجود یک $y$ را تضمین می‌کند چنان‌که $Rxy$. اگر $z \\neq\ny$ دیگری وجود داشت چنان‌که $Rxz$، شرط مربوط به~$R$ نقض می‌شد. پس اگر\nیک $y$ وجود داشته باشد چنان‌که $Rxy$، این $y$ یکتا است و بنابراین $f$\nخوش‌تعریف است. آشکارا $R_f = R$.\n\\end{proof}\n\n",
+        "sha256": "061b11ebe52999f661380bfa81f570b2e7a2990d83b84445e79b41349fbc910a"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{proof}\nبه‌ازای هر ورودی در دامنه، شرط دوم وجود یک $y$ را تضمین می‌کند چنان‌که $Rxy$. اگر $z \\neq\ny$ دیگری وجود داشت چنان‌که $Rxz$، شرط مربوط به~$R$ نقض می‌شد. پس اگر\nیک $y$ وجود داشته باشد چنان‌که $Rxy$، این $y$ یکتا است و بنابراین $f$\nخوش‌تعریف است. آشکارا $R_f = R$.\n\\end{proof}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Identification caveat and conditional forward references",
+      "canon": [
+        "FA-OL-CANON-0003:P0014",
+        "FA-OL-CANON-0003:P0015",
+        "FA-REL-P045"
+      ],
+      "rationale": "Use نمودار consistently and specify a relation represented as a subset of A times B, as the immediately preceding definition states. Unpack the metaphysics caveat into not asserting the nature of functions but using a useful set representation. Preserve the conditional caveat, its absence branch, and both cross-references. Selected canon supports representation, not a metaphysical conclusion.",
+      "alternatives": "روح این یکی‌انگاری and مشاهده‌ای مبنی بر مناسب‌بودن are compressed calques; the revision states the same limited claim explicitly.",
+      "question": "Check the adult scholarly phrasing of the philosophical caveat; mathematical representation is not an ontological assertion.",
+      "confidence": 2,
+      "confidence_reason": "Scope and conditional forms checked; expository register is a reasoned contextual choice.",
+      "id": "FA-0023-C08",
+      "unit": "OLP-0023",
+      "source": {
+        "char_start": 1940,
+        "char_end_exclusive": 2911,
+        "line_start": 60,
+        "line_end": 78,
+        "text": "\\begin{explain}\nEvery function $f\\colon A \\to B$ has a graph, i.e., a relation on $A\n\\times B$ defined by $f(x) = y$. On the other hand, every relation~$R\n\\subseteq A \\times B$ with the properties given in\n\\olref{prop:graph-function} is the graph of a function~$f \\colon A \\to\nB$. Because of this close connection between functions and their\ngraphs, we can think of a function simply as its graph. In other\nwords, functions can be identified with certain relations, i.e., with\ncertain sets of tuples. \\oliflabeldef{sfr:rel:ref:sec}{Note, though,\nthat the spirit of this ``identification'' is as in\n\\olref[sfr][rel][ref]{sec}: it is not a claim about the metaphysics of\nfunctions, but an observation that it is convenient to \\emph{treat}\nfunctions as certain sets. One reason that this is so convenient, is\nthat w}{W}e can now consider performing similar operations on\nfunctions as we performed on relations (see\n\\olref[sfr][rel][ops]{sec}). In particular:\n\\end{explain}\n\n",
+        "sha256": "fc8a7b3621f48e6469a0f076a8164ee5e570850b3c6218c0c337f4f35a627e4a"
+      },
+      "target_before": {
+        "char_start": 1916,
+        "char_end_exclusive": 2848,
+        "line_start": 60,
+        "line_end": 78,
+        "text": "\\begin{explain}\nهر تابع $f\\colon A \\to B$ گرافی دارد؛ یعنی رابطه‌ای روی $A\n\\times B$ که با $f(x) = y$ تعریف می‌شود. از سوی دیگر، هر رابطهٔ~$R\n\\subseteq A \\times B$ که ویژگی‌های داده‌شده در\n\\olref{prop:graph-function} را داشته باشد، گراف تابعی~$f \\colon A \\to\nB$ است. به‌سبب این پیوند نزدیک میان توابع و\nگراف‌هایشان، می‌توانیم یک تابع را صرفاً گراف آن در نظر بگیریم. به\nبیان دیگر، توابع را می‌توان با روابطی معین، یعنی با\nمجموعه‌هایی معین از چندتایی‌ها، یکی انگاشت. \\oliflabeldef{sfr:rel:ref:sec}{بااین‌حال،\nتوجه کنید که روح این «یکی‌انگاری» همان است که در\n\\olref[sfr][rel][ref]{sec} آمده است: این ادعایی دربارهٔ متافیزیک\nتوابع نیست، بلکه مشاهده‌ای است مبنی بر اینکه مناسب است توابع را همچون\nمجموعه‌هایی معین \\emph{در نظر بگیریم}. یکی از دلایل این مناسب‌بودن آن است\nکه اکنون می‌توانیم}{اکنون می‌توانیم} عملیات مشابهی را روی\nتوابع انجام دهیم که روی روابط انجام دادیم (نگاه کنید به\n\\olref[sfr][rel][ops]{sec}). به‌ویژه:\n\\end{explain}\n\n",
+        "sha256": "3ee887de0633487839f8ebb9a201dea852a03436966049cfaa88c5b993a3d92e"
+      },
+      "target_after": {
+        "char_start": 1989,
+        "char_end_exclusive": 2952,
+        "line_start": 60,
+        "line_end": 78,
+        "text": "\\begin{explain}\nهر تابع $f\\colon A \\to B$ نموداری دارد؛ یعنی رابطه‌ای به‌صورت زیرمجموعه‌ای از $A\n\\times B$ که با $f(x) = y$ تعریف می‌شود. از سوی دیگر، هر رابطهٔ~$R\n\\subseteq A \\times B$ که ویژگی‌های داده‌شده در\n\\olref{prop:graph-function} را داشته باشد، نمودار تابعی~$f \\colon A \\to\nB$ است. به‌سبب این پیوند نزدیک میان توابع و\nنمودارهایشان، می‌توانیم تابع را همان نمودار آن در نظر بگیریم. به\nبیان دیگر، می‌توان توابع را با روابطی معین، یعنی با\nمجموعه‌هایی معین از چندتایی‌ها، یکی در نظر گرفت. \\oliflabeldef{sfr:rel:ref:sec}{بااین‌حال،\nمنظور از این «یکی در نظر گرفتن» همان است که در\n\\olref[sfr][rel][ref]{sec} توضیح دادیم: ادعا نمی‌کنیم که ماهیت توابع چیست؛\nفقط می‌گوییم که برای کار ریاضی مفید است توابع را مجموعه‌هایی معین\n\\emph{در نظر بگیریم}. یکی از فایده‌های این روش آن است\nکه اکنون می‌توانیم}{اکنون می‌توانیم} همان‌گونه که روی روابط عملیات انجام دادیم،\nروی توابع نیز عملیات مشابهی انجام دهیم (نگاه کنید به\n\\olref[sfr][rel][ops]{sec}). به‌ویژه:\n\\end{explain}\n\n",
+        "sha256": "2e5fd5a3d512fb6a0fc9c0b4e8227d84337c02e0b9ae5aff5b20a64534dcce5f"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\begin{explain}\nهر تابع $f\\colon A \\to B$ نموداری دارد؛ یعنی رابطه‌ای به‌صورت زیرمجموعه‌ای از $A\n\\times B$ که با $f(x) = y$ تعریف می‌شود. از سوی دیگر، هر رابطهٔ~$R\n\\subseteq A \\times B$ که ویژگی‌های داده‌شده در\n\\olref{prop:graph-function} را داشته باشد، نمودار تابعی~$f \\colon A \\to\nB$ است. به‌سبب این پیوند نزدیک میان توابع و\nنمودارهایشان، می‌توانیم تابع را همان نمودار آن در نظر بگیریم. به\nبیان دیگر، می‌توان توابع را با روابطی معین، یعنی با\nمجموعه‌هایی معین از چندتایی‌ها، یکی در نظر گرفت. \\oliflabeldef{sfr:rel:ref:sec}{بااین‌حال،\nمنظور از این «یکی در نظر گرفتن» همان است که در\n\\olref[sfr][rel][ref]{sec} توضیح دادیم: ادعا نمی‌کنیم که ماهیت توابع چیست؛\nفقط می‌گوییم که برای کار ریاضی مفید است توابع را مجموعه‌هایی معین\n\\emph{در نظر بگیریم}. یکی از فایده‌های این روش آن است\nکه اکنون می‌توانیم}{اکنون می‌توانیم} همان‌گونه که روی روابط عملیات انجام دادیم،\nروی توابع نیز عملیات مشابهی انجام دهیم (نگاه کنید به\n\\olref[sfr][rel][ops]{sec}). به‌ویژه:\n\\end{explain}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Restriction: domain only and unchanged codomain",
+      "canon": [
+        "FA-REL-P045",
+        "FA-OL-CANON-0003:P0014"
+      ],
+      "rationale": "Retain تحدید, C subset A, the function C to B, pointwise equality and the graph-comprehension formula. D45 directly supports first-coordinate restriction with unchanged B. Do not inherit the earlier OLP two-coordinate convention here. The linebreak before a nonbreaking space is typographic, not a mathematical change.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The complete aligned wording and its mathematical scope were checked against the frozen source and the stated Persian passages; score is editorial, not a probability.",
+      "id": "FA-0023-C09",
+      "unit": "OLP-0023",
+      "source": {
+        "char_start": 2911,
+        "char_end_exclusive": 3252,
+        "line_start": 78,
+        "line_end": 87,
+        "text": "\\begin{defn}\\ollabel{defn:funimage}\nLet $f \\colon A \\to B$ be a function with $C\\subseteq A$.\n\nThe \\emph{restriction} of~$f$ to~$C$ is the\nfunction~$\\funrestrictionto{f}{C}\\colon C \\to B$ defined by\n$(\\funrestrictionto{f}{C})(x) = f(x)$ for all $x \\in C$. In other\nwords, $\\funrestrictionto{f}{C} = \\Setabs{\\tuple{x, y} \\in R_f}{x \\in\nC}$.\n\n",
+        "sha256": "69c29fc38eca28062d004c177a21782f07b91646aa4cbb6a912723fcd62c9ea8"
+      },
+      "target_before": {
+        "char_start": 2848,
+        "char_end_exclusive": 3198,
+        "line_start": 78,
+        "line_end": 87,
+        "text": "\\begin{defn}\\ollabel{defn:funimage}\nفرض کنید $f \\colon A \\to B$ تابعی باشد و $C\\subseteq A$ برقرار باشد.\n\n\\emph{تحدیدِ}~$f$ به~$C$ تابع\n~$\\funrestrictionto{f}{C}\\colon C \\to B$ است که به‌صورت زیر تعریف می‌شود:\n$(\\funrestrictionto{f}{C})(x) = f(x)$ برای هر $x \\in C$. به\nبیان دیگر، $\\funrestrictionto{f}{C} = \\Setabs{\\tuple{x, y} \\in R_f}{x \\in\nC}$.\n\n",
+        "sha256": "3daf97071b3f83fd512cff5b984975f0f88c3159d56b41b6846e425dc4cfe0f5"
+      },
+      "target_after": {
+        "char_start": 2952,
+        "char_end_exclusive": 3302,
+        "line_start": 78,
+        "line_end": 87,
+        "text": "\\begin{defn}\\ollabel{defn:funimage}\nفرض کنید $f \\colon A \\to B$ تابعی باشد و $C\\subseteq A$ برقرار باشد.\n\n\\emph{تحدیدِ}~$f$ به~$C$ تابع\n~$\\funrestrictionto{f}{C}\\colon C \\to B$ است که به‌صورت زیر تعریف می‌شود:\n$(\\funrestrictionto{f}{C})(x) = f(x)$ برای هر $x \\in C$. به\nبیان دیگر، $\\funrestrictionto{f}{C} = \\Setabs{\\tuple{x, y} \\in R_f}{x \\in\nC}$.\n\n",
+        "sha256": "3daf97071b3f83fd512cff5b984975f0f88c3159d56b41b6846e425dc4cfe0f5"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{defn}\\ollabel{defn:funimage}\nفرض کنید $f \\colon A \\to B$ تابعی باشد و $C\\subseteq A$ برقرار باشد.\n\n\\emph{تحدیدِ}~$f$ به~$C$ تابع\n~$\\funrestrictionto{f}{C}\\colon C \\to B$ است که به‌صورت زیر تعریف می‌شود:\n$(\\funrestrictionto{f}{C})(x) = f(x)$ برای هر $x \\in C$. به\nبیان دیگر، $\\funrestrictionto{f}{C} = \\Setabs{\\tuple{x, y} \\in R_f}{x \\in\nC}$.\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Image/application of a subset",
+      "canon": [
+        "FA-OL-CANON-0003:P0015",
+        "FA-REL-P044"
+      ],
+      "rationale": "Retain اعمال as the source secondary operation label, and تصویر as the directly attested image term. The image is the set of values at inputs in C, not the full codomain and not the function restricted to C.",
+      "alternatives": "",
+      "question": "اعمال is a contextual rendering of application; تصویر is the directly attested term, and the displayed formula removes ambiguity.",
+      "confidence": 2,
+      "confidence_reason": "Image definition directly attested; secondary operation label not verbatim in selected pages.",
+      "id": "FA-0023-C10",
+      "unit": "OLP-0023",
+      "source": {
+        "char_start": 3252,
+        "char_end_exclusive": 3401,
+        "line_start": 87,
+        "line_end": 92,
+        "text": "The \\emph{application} of~$f$ to~$C$ is $\\funimage{f}{C} =\n\\Setabs{f(x)}{x \\in C}$. We also call this the \\emph{image} of~$C$\nunder~$f$.\n\\end{defn}\n\n",
+        "sha256": "bf921b55660c0d3eb52624c9950082030202a0001b3b91ae160d871d6ba88136"
+      },
+      "target_before": {
+        "char_start": 3198,
+        "char_end_exclusive": 3339,
+        "line_start": 87,
+        "line_end": 92,
+        "text": "\\emph{اعمالِ}~$f$ بر~$C$ برابر است با $\\funimage{f}{C} =\n\\Setabs{f(x)}{x \\in C}$. این را \\emph{تصویرِ}~$C$\nتحت~$f$ نیز می‌نامیم.\n\\end{defn}\n\n",
+        "sha256": "5755c540d94d0d2f4c2ba3637f5dd9d4e40941edf5ce47498031c99124595a36"
+      },
+      "target_after": {
+        "char_start": 3302,
+        "char_end_exclusive": 3443,
+        "line_start": 87,
+        "line_end": 92,
+        "text": "\\emph{اعمالِ}~$f$ بر~$C$ برابر است با $\\funimage{f}{C} =\n\\Setabs{f(x)}{x \\in C}$. این را \\emph{تصویرِ}~$C$\nتحت~$f$ نیز می‌نامیم.\n\\end{defn}\n\n",
+        "sha256": "5755c540d94d0d2f4c2ba3637f5dd9d4e40941edf5ce47498031c99124595a36"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\emph{اعمالِ}~$f$ بر~$C$ برابر است با $\\funimage{f}{C} =\n\\Setabs{f(x)}{x \\in C}$. این را \\emph{تصویرِ}~$C$\nتحت~$f$ نیز می‌نامیم.\n\\end{defn}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Range equals image of domain",
+      "canon": [
+        "FA-REL-P044",
+        "FA-OL-CANON-0003:P0015"
+      ],
+      "rationale": "Retain ran(f)=f[dom(f)] for every function. The canon range is all attained values, not codomain; this identity needs no onto assumption and includes the empty function.",
+      "alternatives": "",
+      "question": null,
+      "confidence": 3,
+      "confidence_reason": "The complete aligned wording and its mathematical scope were checked against the frozen source and the stated Persian passages; score is editorial, not a probability.",
+      "id": "FA-0023-C11",
+      "unit": "OLP-0023",
+      "source": {
+        "char_start": 3401,
+        "char_end_exclusive": 3513,
+        "line_start": 92,
+        "line_end": 95,
+        "text": "\\begin{explain}\nIt follows from these definitions that $\\ran{f} =\n\\funimage{f}{\\dom{f}}$, for any function~$f$.\n",
+        "sha256": "bade835c2fcb7a74576d78b6c3cfd25ecd286ad04596a2be482e802f724aa603"
+      },
+      "target_before": {
+        "char_start": 3339,
+        "char_end_exclusive": 3450,
+        "line_start": 92,
+        "line_end": 95,
+        "text": "\\begin{explain}\nاز این تعریف‌ها نتیجه می‌شود که $\\ran{f} =\n\\funimage{f}{\\dom{f}}$ برای هر تابع~$f$ برقرار است.\n",
+        "sha256": "51d5f7474027caafdf5e57f2a990fc155db4843ff8ce78c1df817800047f6653"
+      },
+      "target_after": {
+        "char_start": 3443,
+        "char_end_exclusive": 3554,
+        "line_start": 92,
+        "line_end": 95,
+        "text": "\\begin{explain}\nاز این تعریف‌ها نتیجه می‌شود که $\\ran{f} =\n\\funimage{f}{\\dom{f}}$ برای هر تابع~$f$ برقرار است.\n",
+        "sha256": "51d5f7474027caafdf5e57f2a990fc155db4843ff8ce78c1df817800047f6653"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "retain_after_fresh_review",
+      "target_after_realized": "\\begin{explain}\nاز این تعریف‌ها نتیجه می‌شود که $\\ran{f} =\n\\funimage{f}{\\dom{f}}$ برای هر تابع~$f$ برقرار است.\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    },
+    {
+      "topic": "Disclosed restriction-convention caveat and next operations",
+      "canon": [
+        "FA-OL-CANON-0003:P0014",
+        "FA-OL-CANON-0003:P0015",
+        "FA-REL-P045"
+      ],
+      "rationale": "Replace the unqualified exactly-as-expected bridge with a disclosed editorial comparison: image agrees, but restriction switches from both coordinates to inputs only. This is a convention clarification; neither frozen definition is replaced. Preserve the conditional enclosure and the inverse/relative-product forward references. The minimal graph {(0,1)} distinguishes the operations.",
+      "alternatives": "Silently changing one restriction definition would alter source mathematics. Leaving the bridge unexplained obscures a real convention switch.",
+      "question": "Review whether to retain this labelled note inline or in an edition-wide convention box; it must not imply the source proposition is false.",
+      "confidence": 2,
+      "confidence_reason": "Definitions and counterexample checked; note placement is editorial. No universal false-theorem claim is made.",
+      "id": "FA-0023-C12",
+      "unit": "OLP-0023",
+      "source": {
+        "char_start": 3513,
+        "char_end_exclusive": 3866,
+        "line_start": 95,
+        "line_end": 103,
+        "text": "\\oliflabeldef{sfr:rel:ops:sec}{These notions are exactly as one would\nexpect, given the definitions in \\olref[sfr][rel][ops]{sec} and our\nidentification of functions with relations. But two other\noperations---inverses and relative products---require a little more\ndetail. We will provide that in \\olref[inv]{sec} and\n\\olref[cmp]{sec}.}{}\n\\end{explain}\n\n",
+        "sha256": "4370ba2bcd246a840e0cd4457d2e93998e9655e65111c71113812fd08baa38bc"
+      },
+      "target_before": {
+        "char_start": 3450,
+        "char_end_exclusive": 3774,
+        "line_start": 95,
+        "line_end": 103,
+        "text": "\\oliflabeldef{sfr:rel:ops:sec}{این مفاهیم با توجه به تعریف‌های\n\\olref[sfr][rel][ops]{sec} و یکی‌انگاری توابع با روابط، دقیقاً\nهمان‌اند که انتظار می‌رود. اما دو عمل دیگر---وارون‌ها و حاصل‌ضرب‌های نسبی---به\nجزئیات اندکی بیشتر نیاز دارند. آن جزئیات را در\n\\olref[inv]{sec} و\n\\olref[cmp]{sec} ارائه خواهیم کرد.}{}\n\\end{explain}\n\n",
+        "sha256": "5d246e86d62ffa23d2a268eb65045589663273eb88a1ef000c45273a072d6571"
+      },
+      "target_after": {
+        "char_start": 3554,
+        "char_end_exclusive": 4129,
+        "line_start": 95,
+        "line_end": 107,
+        "text": "\\oliflabeldef{sfr:rel:ops:sec}{این مفاهیم را می‌توان با تعریف‌های\n\\olref[sfr][rel][ops]{sec} و در نظر گرفتن توابع به‌صورت روابط مقایسه کرد.\n\\emph{یادداشت ویراستاری:} تعریف تصویر با تعریف قبلی سازگار است؛\nاما قرارداد تحدید در اینجا تفاوت دارد. در تحدید تابع، فقط ورودی‌ها\nبه زیرمجموعهٔ دامنه محدود می‌شوند و هم‌دامنه تغییر نمی‌کند؛\nدر تعریف پیشینِ تحدید رابطه، هر دو مؤلفه به مجموعهٔ تعیین‌شده محدود می‌شدند.\nدو عمل دیگر---وارون‌ها و حاصل‌ضرب‌های نسبی---به\nجزئیات اندکی بیشتر نیاز دارند. آن جزئیات را در\n\\olref[inv]{sec} و\n\\olref[cmp]{sec} ارائه خواهیم کرد.}{}\n\\end{explain}\n\n",
+        "sha256": "214d817f3d503e771c319a246be6a671f7b0367cca2c79ea6200a7a23d88c8f4"
+      },
+      "consultation": "retrospective_current_review",
+      "confidence_is_calibrated_probability": false,
+      "action": "correct",
+      "target_after_realized": "\\oliflabeldef{sfr:rel:ops:sec}{این مفاهیم را می‌توان با تعریف‌های\n\\olref[sfr][rel][ops]{sec} و در نظر گرفتن توابع به‌صورت روابط مقایسه کرد.\n\\emph{یادداشت ویراستاری:} تعریف تصویر با تعریف قبلی سازگار است؛\nاما قرارداد تحدید در اینجا تفاوت دارد. در تحدید تابع، فقط ورودی‌ها\nبه زیرمجموعهٔ دامنه محدود می‌شوند و هم‌دامنه تغییر نمی‌کند؛\nدر تعریف پیشینِ تحدید رابطه، هر دو مؤلفه به مجموعهٔ تعیین‌شده محدود می‌شدند.\nدو عمل دیگر---وارون‌ها و حاصل‌ضرب‌های نسبی---به\nجزئیات اندکی بیشتر نیاز دارند. آن جزئیات را در\n\\olref[inv]{sec} و\n\\olref[cmp]{sec} ارائه خواهیم کرد.}{}\n\\end{explain}\n\n",
+      "locale_token_occurrences": [],
+      "member_occurrences": []
+    }
+  ],
+  "corrections": [
+    {
+      "unit": "OLP-0022",
+      "id": "FA0022-ONTO-INTRO",
+      "before": "برای آغاز، ممکن است بخواهیم توابعی را بررسی کنیم که این ویژگی را دارند\nکه هر عضو هم‌دامنه مقداری از تابع است. چنین",
+      "after": "برای آغاز، ممکن است بخواهیم توابعی را بررسی کنیم که هر عضو\nهم‌دامنهٔ آن‌ها مقدار تابع برای دست‌کم یک ورودی باشد. چنین"
+    },
+    {
+      "unit": "OLP-0022",
+      "id": "FA0022-ONTO-CAPTION",
+      "before": "\\caption{تابع !!^a{surjective} هر !!{element} از\n    هم‌دامنه را به‌عنوان یک مقدار دارد.}",
+      "after": "\\caption{در تابع !!^a{surjective}، هر !!{element} هم‌دامنه\n    مقدار تابع برای دست‌کم یک ورودی است.}"
+    },
+    {
+      "unit": "OLP-0022",
+      "id": "FA0022-ONTO-DEFINITION",
+      "before": "تابع $f \\colon A \\rightarrow B$ اگر و تنها اگر $B$\nبردِ~$f$ نیز باشد، \\emph{!!{surjective}} است؛ یعنی برای هر $y \\in B$ دست‌کم",
+      "after": "تابع $f \\colon A \\rightarrow B$ \\emph{!!{surjective}} است اگر و تنها اگر $B$\nهمان بردِ~$f$ باشد؛ یعنی برای هر $y \\in B$ دست‌کم"
+    },
+    {
+      "unit": "OLP-0022",
+      "id": "FA0022-INDUCED-ONTO",
+      "before": "توجه کنید که هر تابعی !!a{surjection} \\emph{القا می‌کند}. چراکه\nبا داشتن تابع $f \\colon A \\to B$، فرض کنید $f' \\colon A \\to \\ran{f}$ به‌وسیلهٔ\n$f'(x) = f(x)$ تعریف شود. چون $\\ran{f}$ \\emph{بنا بر تعریف} برابر است با\n$\\Setabs{f(x) \\in B}{x \\in A}$، تضمین می‌شود که این تابع $f'$\n!!a{surjection} باشد",
+      "after": "توجه کنید که از هر تابع می‌توان یک !!a{surjection} \\emph{به دست آورد}.\nبرای تابع $f \\colon A \\to B$، تابع $f' \\colon A \\to \\ran{f}$ را با\nضابطهٔ $f'(x) = f(x)$ تعریف می‌کنیم. چون $\\ran{f}$ \\emph{بنا بر تعریف} برابر است با\n$\\Setabs{f(x) \\in B}{x \\in A}$، این تابع $f'$\n!!a{surjection} است."
+    },
+    {
+      "unit": "OLP-0022",
+      "id": "FA0022-INJECTIVE-CAPTION",
+      "before": "آرگومان متفاوت را به مقدار یکسان نگاشت نمی‌کند.",
+      "after": "ورودی متفاوت را به مقدار یکسان نگاشت نمی‌کند."
+    },
+    {
+      "unit": "OLP-0022",
+      "id": "FA0022-MEMBER-EZAFE",
+      "before": "!!{element}sی از دامنهٔ $f$ هستند",
+      "after": "!!{element}sی دامنهٔ $f$ هستند"
+    },
+    {
+      "unit": "OLP-0022",
+      "id": "FA0022-SUCCESSOR-CONSISTENCY",
+      "before": "تابع پسین",
+      "after": "تابع جانشین"
+    },
+    {
+      "unit": "OLP-0023",
+      "id": "FA0023-INTRODUCTION",
+      "before": "تابعی که !!{element}s از~$A$ را به !!{element}s از~$B$\nنگاشت می‌کند، آشکارا رابطه‌ای میان $A$ و~$B$ تعریف می‌کند؛ یعنی رابطه‌ای\nکه میان $x$ و $y$ برقرار است اگر و تنها اگر $f(x) = y$. در واقع، حتی ممکن است---\nبرای نمونه، اگر به تقلیل اجزای سازندهٔ ریاضیات علاقه‌مند باشیم---دست به\n\\emph{یکی‌انگاری} بزنیم و تابع~$f$ را با این رابطه، یعنی با مجموعه‌ای از\nزوج‌ها، یکی بدانیم. آنگاه این پرسش پیش می‌آید:\nکدام روابط به این شیوه توابع را تعریف می‌کنند؟",
+      "after": "تابعی که !!{element}sی~$A$ را به !!{element}sی~$B$\nنگاشت می‌کند، آشکارا رابطه‌ای میان $A$ و~$B$ تعریف می‌کند:\nاین رابطه میان $x$ و $y$ برقرار است اگر و تنها اگر $f(x) = y$.\nحتی می‌توانیم---برای نمونه، اگر بخواهیم ریاضیات را بر مفاهیم بنیادیِ\nکمتری بنا کنیم---تابع~$f$ را با این رابطه، یعنی با مجموعه‌ای از\nزوج‌ها، \\emph{یکی در نظر بگیریم}. آنگاه این پرسش پیش می‌آید:\nکدام رابطه‌ها به این شیوه تابع تعریف می‌کنند؟"
+    },
+    {
+      "unit": "OLP-0023",
+      "id": "FA0023-ATTESTED-GRAPH",
+      "before": "\\begin{defn}[گراف یک تابع] فرض کنید $f\\colon A \\to B$ یک تابع باشد.\n\\emph{گرافِ}~$f$ رابطهٔ $R_f \\subseteq A \\times B$ است که",
+      "after": "\\begin{defn}[نمودار یک تابع] فرض کنید $f\\colon A \\to B$ یک تابع باشد.\n\\emph{نمودارِ}~$f$ رابطهٔ $R_f \\subseteq A \\times B$ است که"
+    },
+    {
+      "unit": "OLP-0023",
+      "id": "FA0023-EXTENSIONALITY",
+      "before": "گراف یک تابع بنا بر اصل گسترش به‌طور یکتا تعیین می‌شود.\nافزون بر این، اصل گسترش (برای مجموعه‌ها) بی‌درنگ\nاصل ضمنی گسترش برای توابع را موجه می‌سازد؛\nبنابر این اصل، اگر $f$ و~$g$ دامنه و هم‌دامنهٔ یکسانی داشته باشند، آنگاه اگر\nبرای همهٔ آرگومان‌ها مقادیر یکسانی داشته باشند، یکسان‌اند.",
+      "after": "نمودار یک تابع بنا بر اصل گسترش به‌طور یکتا تعیین می‌شود.\nاز اصل گسترش برای مجموعه‌ها، اصل گسترش برای توابع نیز نتیجه می‌شود؛\nهمان اصلی که تا اینجا به‌طور ضمنی به کار برده‌ایم:\nاگر $f$ و~$g$ دامنه و هم‌دامنهٔ یکسانی داشته باشند و برای هر\nورودی مقدار یکسانی بدهند، دو تابع برابرند."
+    },
+    {
+      "unit": "OLP-0023",
+      "id": "FA0023-FUNCTIONAL-DOMAIN",
+      "before": "به همین ترتیب، اگر رابطه‌ای «تابع‌وار» باشد، آنگاه گراف یک تابع است.",
+      "after": "به همین ترتیب، رابطه‌ای که هر مؤلفهٔ نخست را حداکثر به یک مؤلفهٔ دوم مربوط کند («تابع‌وار» باشد)، نمودار تابعی بر دامنهٔ همان رابطه است."
+    },
+    {
+      "unit": "OLP-0023",
+      "id": "FA0023-PROPOSITION-GRAPH",
+      "before": "آنگاه $R$ گراف تابع $f\\colon A \\to B$ است که به‌وسیلهٔ",
+      "after": "آنگاه $R$ نمودار تابع $f\\colon A \\to B$ است که به‌وسیلهٔ"
+    },
+    {
+      "unit": "OLP-0023",
+      "id": "FA0023-EXISTENCE-EXPLICIT",
+      "before": "فرض کنید یک $y$ وجود دارد چنان‌که $Rxy$.",
+      "after": "به‌ازای هر ورودی در دامنه، شرط دوم وجود یک $y$ را تضمین می‌کند چنان‌که $Rxy$."
+    },
+    {
+      "unit": "OLP-0023",
+      "id": "FA0023-REPRESENTATION",
+      "before": "هر تابع $f\\colon A \\to B$ گرافی دارد؛ یعنی رابطه‌ای روی $A\n\\times B$ که با $f(x) = y$ تعریف می‌شود. از سوی دیگر، هر رابطهٔ~$R\n\\subseteq A \\times B$ که ویژگی‌های داده‌شده در\n\\olref{prop:graph-function} را داشته باشد، گراف تابعی~$f \\colon A \\to\nB$ است. به‌سبب این پیوند نزدیک میان توابع و\nگراف‌هایشان، می‌توانیم یک تابع را صرفاً گراف آن در نظر بگیریم. به\nبیان دیگر، توابع را می‌توان با روابطی معین، یعنی با\nمجموعه‌هایی معین از چندتایی‌ها، یکی انگاشت. \\oliflabeldef{sfr:rel:ref:sec}{بااین‌حال،\nتوجه کنید که روح این «یکی‌انگاری» همان است که در\n\\olref[sfr][rel][ref]{sec} آمده است: این ادعایی دربارهٔ متافیزیک\nتوابع نیست، بلکه مشاهده‌ای است مبنی بر اینکه مناسب است توابع را همچون\nمجموعه‌هایی معین \\emph{در نظر بگیریم}. یکی از دلایل این مناسب‌بودن آن است\nکه اکنون می‌توانیم}{اکنون می‌توانیم} عملیات مشابهی را روی\nتوابع انجام دهیم که روی روابط انجام دادیم (نگاه کنید به\n\\olref[sfr][rel][ops]{sec}). به‌ویژه:",
+      "after": "هر تابع $f\\colon A \\to B$ نموداری دارد؛ یعنی رابطه‌ای به‌صورت زیرمجموعه‌ای از $A\n\\times B$ که با $f(x) = y$ تعریف می‌شود. از سوی دیگر، هر رابطهٔ~$R\n\\subseteq A \\times B$ که ویژگی‌های داده‌شده در\n\\olref{prop:graph-function} را داشته باشد، نمودار تابعی~$f \\colon A \\to\nB$ است. به‌سبب این پیوند نزدیک میان توابع و\nنمودارهایشان، می‌توانیم تابع را همان نمودار آن در نظر بگیریم. به\nبیان دیگر، می‌توان توابع را با روابطی معین، یعنی با\nمجموعه‌هایی معین از چندتایی‌ها، یکی در نظر گرفت. \\oliflabeldef{sfr:rel:ref:sec}{بااین‌حال،\nمنظور از این «یکی در نظر گرفتن» همان است که در\n\\olref[sfr][rel][ref]{sec} توضیح دادیم: ادعا نمی‌کنیم که ماهیت توابع چیست؛\nفقط می‌گوییم که برای کار ریاضی مفید است توابع را مجموعه‌هایی معین\n\\emph{در نظر بگیریم}. یکی از فایده‌های این روش آن است\nکه اکنون می‌توانیم}{اکنون می‌توانیم} همان‌گونه که روی روابط عملیات انجام دادیم،\nروی توابع نیز عملیات مشابهی انجام دهیم (نگاه کنید به\n\\olref[sfr][rel][ops]{sec}). به‌ویژه:"
+    },
+    {
+      "unit": "OLP-0023",
+      "id": "FA0023-RESTRICTION-CONVENTION",
+      "before": "\\oliflabeldef{sfr:rel:ops:sec}{این مفاهیم با توجه به تعریف‌های\n\\olref[sfr][rel][ops]{sec} و یکی‌انگاری توابع با روابط، دقیقاً\nهمان‌اند که انتظار می‌رود. اما دو عمل دیگر---وارون‌ها و حاصل‌ضرب‌های نسبی---به\nجزئیات اندکی بیشتر نیاز دارند. آن جزئیات را در\n\\olref[inv]{sec} و\n\\olref[cmp]{sec} ارائه خواهیم کرد.}{}",
+      "after": "\\oliflabeldef{sfr:rel:ops:sec}{این مفاهیم را می‌توان با تعریف‌های\n\\olref[sfr][rel][ops]{sec} و در نظر گرفتن توابع به‌صورت روابط مقایسه کرد.\n\\emph{یادداشت ویراستاری:} تعریف تصویر با تعریف قبلی سازگار است؛\nاما قرارداد تحدید در اینجا تفاوت دارد. در تحدید تابع، فقط ورودی‌ها\nبه زیرمجموعهٔ دامنه محدود می‌شوند و هم‌دامنه تغییر نمی‌کند؛\nدر تعریف پیشینِ تحدید رابطه، هر دو مؤلفه به مجموعهٔ تعیین‌شده محدود می‌شدند.\nدو عمل دیگر---وارون‌ها و حاصل‌ضرب‌های نسبی---به\nجزئیات اندکی بیشتر نیاز دارند. آن جزئیات را در\n\\olref[inv]{sec} و\n\\olref[cmp]{sec} ارائه خواهیم کرد.}{}"
+    }
+  ],
+  "human_review_gate": false,
+  "reader_release": false
+}
