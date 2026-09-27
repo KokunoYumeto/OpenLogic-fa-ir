@@ -1,27 +1,27 @@
 # متن منطق باز — ویرایش کامل فارسی ایران
 
-این ویرایش مستقل، متن فارسی «متن منطق باز» را در خوانشگرِ PDF کاملِ ۱٬۲۰۲ صفحه‌ای عرضه می‌کند. ۷۲۲ واحدِ یکتا در ۷۷۴ جایگاهِ کتاب حضور دارند. متنِ ویرایش‌پذیرِ کامل نیز به‌صورت یک پروندهٔ مستقیمِ LaTeX و یک ZIP از درختِ منبع منتشر شده است. EPUB و HTML کاملِ بازچینش‌پذیرِ نسخهٔ پیشین همچنان در دسترس‌اند، ولی هنوز با اصلاح‌های PDF جدید همگام نشده‌اند.
+این ویرایش مستقل، ۷۲۲ واحدِ یکتا را در ۷۷۴ جایگاهِ کتاب، در سه صورتِ PDF صفحه‌بندی‌شده، EPUB بازچینش‌پذیر و HTML کامل عرضه می‌کند. PDF ثابتِ ۱٬۲۰۲ صفحه‌ای همان فایلِ آزموده‌شدهٔ R7 است؛ EPUB/HTML جاری از منبعِ اصلاح‌شدهٔ ۲۷ سپتامبر ساخته شده‌اند، نه از تصویرِ قدیمیِ ۱۹ سپتامبر. منبعِ قابل‌ویرایشِ دقیقِ هر دو مسیر کنار فایلِ خواندنیِ آن آمده است.
 
 ## دریافت و مطالعه
 
-نسخهٔ جاریِ صفحه‌بندی‌شده: [انتشار R7 در GitHub](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/tag/fa-ir-olp-0722-standalone-r7-20260927)؛ [آینهٔ Zenodo و PDF قابل پیش‌نمایش](https://zenodo.org/records/23001070)، با DOI `10.5281/zenodo.23001070`. شناسهٔ مفهومیِ پایدارِ این تبار [10.5281/zenodo.21921852](https://doi.org/10.5281/zenodo.21921852) است.
+[انتشار کاملِ R8 در GitHub](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/tag/fa-ir-olp-0722-complete-r8-20260927)؛ [آینهٔ Zenodo و پیش‌نمایش PDF](https://zenodo.org/records/23001712)، DOI نسخه `10.5281/zenodo.23001712`، و [DOI مفهومیِ پایدار](https://doi.org/10.5281/zenodo.21921852).
 
-پرونده‌های R7 به ترتیبِ مطالعه و دسترسی به منبع:
+پرونده‌ها به ترتیبِ خواندن و دسترسی به متنِ قابل‌ویرایش:
 
-1. [PDF کاملِ R7 برای مطالعه](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/download/fa-ir-olp-0722-standalone-r7-20260927/00_OPENLOGIC_fa-IR_STANDALONE_READER_R7_OLP-0722.pdf)
-2. [LaTeX کاملِ یکپارچه، مستقیم و ویرایش‌پذیر](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/download/fa-ir-olp-0722-standalone-r7-20260927/01_OPENLOGIC_fa-IR_CUMULATIVE_EDITABLE_LATEX_R7_OLP-0722.tex)
-3. [ZIP کاملِ منبع، قلم‌ها و دستور بازتولید](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/download/fa-ir-olp-0722-standalone-r7-20260927/02_OPENLOGIC_fa-IR_COMPLETE_SOURCE_R7_OLP-0722.zip)
+1. [PDF کامل برای مطالعه](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/download/fa-ir-olp-0722-complete-r8-20260927/00_OPENLOGIC_fa-IR_STANDALONE_READER_R7_OLP-0722.pdf)
+2. [LaTeX مستقیم و کاملِ همان PDF](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/download/fa-ir-olp-0722-complete-r8-20260927/01_OPENLOGIC_fa-IR_CUMULATIVE_EDITABLE_LATEX_R7_OLP-0722.tex)
+3. [ZIP منبعِ کاملِ PDF و دستورِ بازتولید](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/download/fa-ir-olp-0722-complete-r8-20260927/02_OPENLOGIC_fa-IR_COMPLETE_SOURCE_R7_OLP-0722.zip)
+4. [EPUB کاملِ بازچینش‌پذیر](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/download/fa-ir-olp-0722-complete-r8-20260927/03_OPENLOGIC_fa-IR_COMPLETE_REFLOWABLE_EPUB_OLP-0722.epub)
+5. [LaTeX مستقیم و کاملِ ورودیِ EPUB/HTML](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/download/fa-ir-olp-0722-complete-r8-20260927/04_OPENLOGIC_fa-IR_CUMULATIVE_EDITABLE_LATEX_EPUB_HTML_OLP-0722.tex)
+6. [ZIP منبعِ کاملِ EPUB/HTML و دستورِ بازتولید](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/download/fa-ir-olp-0722-complete-r8-20260927/05_OPENLOGIC_fa-IR_COMPLETE_EPUB_HTML_SOURCE_OLP-0722.zip)
+7. [HTML کاملِ بازچینش‌پذیر](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/download/fa-ir-olp-0722-complete-r8-20260927/06_OPENLOGIC_fa-IR_COMPLETE_REFLOWABLE_HTML_OLP-0722.html)
 
-منبعِ مستقیم در ساخت و بازپخشِ مستقل، دقیقاً همان PDF منتشرشده را بایت‌به‌بایت بازساخته است. ZIP افزون بر ساختارِ پیمانه‌ای، شیوه‌نامه‌ها، کتابنامه، قلم‌ها، ابزار ساخت، دستور فارسی و گواهِ بازساخت را دارد. منبعِ ویرایش‌پذیر تحویل‌دادنیِ اصلی است، نه پیوستی فرعی. اصلاح‌های مستندِ منبع و بازآراییِ عنوانِ جدول ۲۸٫۱ در R7 حضور دارند. بررسیِ ساختار و پیوندها گذشت و نمونه‌های دشوار به‌صورت تصویری وارسی شدند؛ این به‌معنای تأییدِ انسانیِ همهٔ ترجمه‌ها یا وارسیِ سطر‌به‌سطرِ همهٔ صفحه‌ها نیست.
-
-برای خواندنِ بازچینش‌پذیر، [EPUB کامل](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/download/fa-ir-olp-0722-complete-reflowable-r1-20260919/03_OPENLOGIC_fa-IR_COMPLETE_REFLOWABLE_READER_OLP-0722.epub) و [HTML کامل](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/download/fa-ir-olp-0722-complete-reflowable-r1-20260919/04_OPENLOGIC_fa-IR_COMPLETE_STANDALONE_READER_OLP-0722.html) از انتشارِ ۱۹ سپتامبر در دسترس‌اند. EPUB شامل ۴۲٬۶۰۶ عبارت MathML بومی و ۶۹ نمودار SVG است و EPUBCheck 5.3.0 آن را بی‌خطا و بی‌هشدار پذیرفته است. همسانیِ آن با اصلاح‌های R7 ادعا نمی‌شود؛ [منبع و شواهد همان انتشار](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/tag/fa-ir-olp-0722-complete-reflowable-r1-20260919) جداگانه حفظ شده‌اند.
+منبعِ مستقیمِ PDF در ساخت و بازپخشِ مستقل دقیقاً همان PDF منتشرشده را بایت‌به‌بایت بازساخت. ZIP مخصوص EPUB/HTML نیز در پوشه‌ای جداگانه استخراج شد و هر دو خروجی را با هشِ دقیقاً یکسان بازساخت. فایلِ مستقیمِ EPUB/HTML جریانِ کاملِ LaTeX با نشانگرهای `\OLPEpub...` برای تبدیل است و راه‌اندازِ مستقلِ PDF نیست. EPUB دارای ۴۲٬۶۰۶ عبارتِ MathML، ۶۹ نمودارِ SVG و ۷۸۹ تصویرِ برداریِ کمکی برای خواناترشدنِ درخت‌های برهان است؛ MathML زیر نمایشِ کمکی حفظ شده است. EPUBCheck 5.3.0 بدون خطا یا هشدار گذشت و همهٔ ۷۷۷ سندِ XHTML در خوانشگرِ آزمون بار شدند. نمونه‌های جدول ۲۸٫۱ در عرضِ تلفن و رایانه به‌صورت تصویری وارسی شدند.
 
 ## دامنه و محدودیت‌ها
 
-نمونه‌های لاتینِ فارسی و Inter-Farsi که در انتشارهای پیشین آمده‌اند فقط واحد OLP-0005 را در صورت‌های آزمایشی نشان می‌دهند، نه کتاب‌های کامل. سود آموزشیِ صورت لاتین اندازه‌گیری نشده و ویرایش کاملِ Inter-Farsi هنوز در دست ساخت است.
+این وارسی‌های فنی به‌معنای بازبینیِ انسانیِ همهٔ ترجمه‌ها، آزمونِ همهٔ دستگاه‌ها، یا تأییدِ Open Logic Project نیستند. خواننده‌ای گاه نامأنوس‌بودنِ عبارت‌ها را گزارش کرده، اما علت را تعیین نکرده است؛ احتمالِ گرته‌برداری یا رسمی‌بودنِ بیش از اندازه تنها فرضیه‌ای جداگانه است و به او نسبت داده نمی‌شود. نسخهٔ کاملِ آزمایشیِ Inter-Farsi هنوز در دست ساخت است؛ نمونه‌های تاریخیِ آن کتابِ کامل نیستند. [همهٔ انتشارهای تاریخی](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases) و دارایی‌هایشان در دسترس می‌مانند.
 
-پوششِ همهٔ واحدها به معنای بازبینیِ پیوستهٔ همهٔ انتخاب‌های ترجمه نیست. خواننده‌ای گاه نامأنوس‌بودنِ عبارت‌ها را گزارش کرده، بی‌آنکه علت را تعیین کند؛ احتمال گرته‌برداری یا رسمی‌بودنِ بیش از اندازه صرفاً فرضیه‌ای جداگانه است و به او نسبت داده نمی‌شود. این ویرایش تأییدِ Open Logic Project یا گواهیِ کاملِ زبانی و دسترس‌پذیری را ادعا نمی‌کند. [همهٔ انتشارهای تاریخی](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases) و دارایی‌هایشان در دسترس‌اند.
+## خاستگاه و کارِ هوش مصنوعی
 
-## خاستگاه و کار هوش مصنوعی
-
-اثر انگلیسیِ مبدأ از Open Logic Project است. برگردان، تصحیح، حروف‌چینی و آماده‌سازیِ این تبار با OpenAI Codex و مدل‌های GPT-5.6 Sol، GPT-6 Astra و GPT-6 Sol، همگی در سطح تلاش Ultra، انجام شده است. بازساخت، وارسی و بومی‌سازیِ این راهنما و یادداشت‌های R7 با OpenAI Codex، مدل GPT-6 Sol و سطح تلاش Ultra، انجام شد. بازبینی، تأیید یا نویسندگیِ انسانی ادعا نمی‌شود.
+اثر انگلیسیِ مبدأ از Open Logic Project است. برگردان، تصحیح، ویرایش و آماده‌سازیِ این تبار با OpenAI Codex، مدل‌های GPT-5.6 Sol، GPT-6 Astra و GPT-6 Sol، همگی در سطح تلاش Ultra، انجام شده‌اند. اصلاحِ بازچینش‌پذیر، آزمون، بسته‌بندی و این راهنما با OpenAI Codex — GPT-6 Sol، Ultra انجام شد. بازبینی، تأیید یا نویسندگیِ انسانی ادعا نمی‌شود.
