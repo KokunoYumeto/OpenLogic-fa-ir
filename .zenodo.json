@@ -1,15 +1,37 @@
 {
-  "title": "متن منطق باز — خوانشگر مستقل و کامل فارسی ایران (Complete standalone Iranian Persian reader)",
-  "description": "<p dir=\"rtl\" lang=\"fa\">خوانشگر مستقل و پیوستهٔ فارسی ایران، شامل هر ۷۲۲ واحد محتوایی منبع تثبیت‌شده در یک PDF ۱۲۰۱ صفحه‌ای. نسخه‌های پیشین ۶۴۲ واحد را در خوانشگر اصلی و ۸۰ واحد را در ضمیمه‌ای جدا ارائه می‌کردند؛ نسخهٔ R3 آن‌ها را در یک سند کامل گرد می‌آورد. ساخت اصلی و بازپخش مستقل از نظر بایتی یکسان‌اند. پوشش، ساختار، فرمول‌ها، ارجاع‌ها، یونیکد و راست‌به‌چپ، ۳۲۳۳ پیوند و همهٔ ۱۲۰۱ صفحهٔ رندرشده به‌طور قطعی بررسی شده‌اند. نسخه‌های تاریخی حفظ می‌شوند.</p><p lang=\"en\"><strong>English.</strong> R3 is the first single coherent standalone Iranian Persian reader containing all 722 frozen Open Logic content units. The 1,201-page primary and independent replay PDFs are byte-identical. Coverage, structure, formulas, citations, Unicode/RTL, all 3,233 links and every rendered page passed deterministic QA. Historical split-reader releases remain preserved.</p>",
+  "title": "متن منطق باز — ویرایش کامل فارسی ایران R11: PDF و منبع کامل قابل‌بازتولید",
+  "description": "<p dir=\"rtl\" lang=\"fa\"><strong>«متن منطق باز» — بازنگری کامل فارسی ایران R11.</strong> PDF کامل ۱٬۱۹۷ صفحه‌ای، LaTeX مستقیم همان PDF و ZIP کامل منبع در ترتیب خواندن و بازتولید عرضه شده‌اند. همهٔ ۷۲۲ واحد یکتا در ۷۷۴ جایگاه حضور دارند؛ ۱٬۵۴۸ مرز اجرا و ۳٬۲۳۰ پیوند بررسی شده‌اند. همهٔ صفحه‌ها و ۱۴۱ صفحهٔ پرخطر واقعاً به‌صورت تصویری وارسی شده‌اند. ساخت پیمانه‌ای، بازپخش آن و دو ساخت مستقل از LaTeX مستقیم بایت‌به‌بایت یکسان‌اند.</p><p dir=\"rtl\" lang=\"fa\">محدودیت شناخته‌شدهٔ نگاشت ToUnicode قلم‌های ریاضی Type-1 باقی است؛ PDF برچسب‌گذاری‌شده یا PDF/UA ادعا نمی‌شود و LaTeX مرجع دقیق فرمول‌هاست. EPUB و HTML کامل R10 همچنان عمومی‌اند، اما چون با تغییرهای R11 بازبسته نشده‌اند، خروجی R11 نامیده نمی‌شوند. Inter-Farsi آزمایشی ویرایشی جداگانه و در دست ساخت است.</p><p dir=\"rtl\" lang=\"fa\">برگردان، تصحیح، ویرایش و آماده‌سازی این تبار با OpenAI Codex و مدل‌های GPT-5.6 Sol، GPT-6 Astra و GPT-6 Sol، همگی با سطح تلاش Ultra، انجام شده‌اند. بازبینی اصلاحی R11، وارسی، بسته‌بندی و این فراداده با OpenAI Codex — GPT-5.6 Sol, Ultra انجام شده‌اند. هیچ بازبینی، تأیید یا نویسندگی انسانی ادعا نمی‌شود.</p>",
   "upload_type": "publication",
   "publication_type": "book",
-  "creators": [{"name": "Open Logic Project"}],
-  "contributors": [{"name": "AI typesetting & translation", "type": "Other"}],
+  "creators": [
+    {
+      "name": "Open Logic Project"
+    }
+  ],
+  "contributors": [
+    {
+      "name": "ترجمه، تصحیح و صفحه‌آرایی با هوش مصنوعی",
+      "type": "Other"
+    }
+  ],
   "language": "fas",
-  "keywords": ["منطق باز", "منطق صوری", "فارسی ایران", "Open Logic Project", "formal logic", "Iranian Persian"],
+  "keywords": [
+    "متن منطق باز",
+    "منطق صوری",
+    "فارسی ایران",
+    "منطق ریاضی",
+    "Open Logic Project"
+  ],
   "license": "cc-by-4.0",
   "access_right": "open",
-  "doi": "10.5281/zenodo.21921852",
-  "version": "OLP-0722-STANDALONE-LETTER-R3-20260905",
-  "publication_date": "2026-09-05"
+  "doi": "10.5281/zenodo.23087813",
+  "version": "OLP-0722-FA-IR-COMPLETE-R11-20261001",
+  "publication_date": "2026-10-01",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/tag/fa-ir-olp-0722-complete-r11-20261001",
+      "relation": "isIdenticalTo",
+      "scheme": "url"
+    }
+  ]
 }
