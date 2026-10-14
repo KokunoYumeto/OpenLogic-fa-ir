@@ -10,7 +10,23 @@
 
 این سه فایل به ترتیب PDF، LaTeX مستقیم و ZIP منبع عرضه شده‌اند. LaTeX مستقیم همهٔ ۷۹۰ ورودی محلی و راه‌انداز دقیق PDF را در خود دارد؛ ZIP نیز درخت کامل ۸۲۳ ورودی ساخت، قلم‌ها، مجوزها، ابزارها و گواه بازتولید را نگه می‌دارد. ساخت مستقیم و بازپخش مستقل آن همان PDF مرجع را بایت‌به‌بایت بازتولید کرده‌اند.
 
-## EPUB و HTML بازچینش‌پذیر
+## EPUB و HTML بازچینش‌پذیر R11
+
+نسخه‌های EPUB و HTML اکنون با متنِ پذیرفته‌شدهٔ R11 همگام‌اند: هر ۷۲۲ واحدِ یکتا در ۷۷۴ جایگاهِ خواندن، همراه ۴۲٬۵۵۰ عبارتِ MathML و ۷۸۹ نمودارِ SVG اثبات. فایل‌های قدیمی بدون تغییر در دسترس می‌مانند.
+
+1. [LaTeX مستقیم و کاملِ EPUB و HTML بازنگری R11](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/download/fa-ir-olp-0722-complete-r11-20261001/03_OPENLOGIC_fa-IR_R11_REFLOWABLE_CUMULATIVE_SOURCE_722.tex)
+2. [بستهٔ کاملِ منبع و بازسازیِ EPUB و HTML بازنگری R11](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/download/fa-ir-olp-0722-complete-r11-20261001/04_OPENLOGIC_fa-IR_R11_REFLOWABLE_COMPLETE_SOURCE_722.zip)
+3. [دریافت EPUB کاملِ R11 — ۷۲۲ واحد](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/download/fa-ir-olp-0722-complete-r11-20261001/05_OPENLOGIC_fa-IR_R11_REFLOWABLE_READER_722.epub)
+4. [دریافت HTML کاملِ R11 — ۷۲۲ واحد](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/download/fa-ir-olp-0722-complete-r11-20261001/06_OPENLOGIC_fa-IR_R11_REFLOWABLE_READER_722.html)
+
+EPUBCheck 5.3.0 هیچ خطا یا هشداری گزارش نکرد. ۴٬۶۱۶ پیوند و ترتیبِ متن، فرمول‌ها و شناسه‌ها بررسی شدند؛ آزمونِ نمایش در عرض‌های ۳۹۰ و ۱۱۰۰ پیکسل نیز گذشت. بازسازیِ مستقل از متنِ اصلی، بدون استفاده از AST یا نتیجه‌های MathML ذخیره‌شده، همان EPUB، HTML و LaTeX پیوسته را بایت‌به‌بایت تولید کرد. این کار بازبینیِ زبانیِ تازهٔ سراسرِ کتاب یا گواهیِ دسترس‌پذیری در همهٔ دستگاه‌ها نیست.
+
+همگام‌سازیِ این دو قالب با R11، اصلاحِ ابزارِ تبدیل، آزمون‌ها و فرادادهٔ مربوط: OpenAI Codex — GPT-6 Astra، Ultra. این کار ترجمهٔ تازه نیست؛ بازبینی یا تأییدِ انسانی ادعا نمی‌شود. PDF و منابعِ متناظرِ آن تغییر نکرده‌اند. آینهٔ Zenodo در پیوندِ بالا هنوز نسخه‌های بازچینش‌پذیرِ R10 را دارد؛ فایل‌های جدیدِ R11 فعلاً از پیوندهای GitHub همین بخش دریافت می‌شوند.
+
+<details>
+<summary>نسخه‌های تاریخی و منابعِ R10</summary>
+
+### نسخه‌های تاریخیِ R10
 
 EPUB و HTML کامل R10 همچنان عمومی و قابل دریافت‌اند. این فایل‌ها ۷۲۲ واحد را در ۷۷۴ جایگاه دارند، EPUBCheck 5.3.0 را بدون خطا یا هشدار گذرانده‌اند و بستهٔ منبعشان بازپخش مستقل را گذرانده است؛ بااین‌حال با تغییرهای R11 بازبسته نشده‌اند و خروجی R11 نامیده نمی‌شوند.
 
@@ -18,6 +34,9 @@ EPUB و HTML کامل R10 همچنان عمومی و قابل دریافت‌ا�
 - [HTML کامل R10](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/download/fa-ir-olp-0722-complete-r10-20260929/06_OPENLOGIC_fa-IR_COMPLETE_REFLOWABLE_HTML_R10_OLP-0722.html)
 - [LaTeX مستقیم EPUB/HTML R10](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/download/fa-ir-olp-0722-complete-r10-20260929/04_OPENLOGIC_fa-IR_CUMULATIVE_EDITABLE_LATEX_EPUB_HTML_R10_OLP-0722.tex)
 - [ZIP کامل منبع EPUB/HTML R10](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/download/fa-ir-olp-0722-complete-r10-20260929/05_OPENLOGIC_fa-IR_COMPLETE_EPUB_HTML_SOURCE_R10_OLP-0722.zip)
+
+
+</details>
 
 ## دامنه و وارسی R11
 
@@ -29,4 +48,4 @@ R11 همهٔ ۷۲۲ واحد یکتا را در ۷۷۴ جایگاه، همراه
 
 Inter-Farsi آزمایشی ویرایشی جداگانه و همچنان در دست ساخت است. اثر انگلیسی از Open Logic Project است و این ویرایش مستقل تأیید آن پروژه را ادعا نمی‌کند.
 
-برگردان، تصحیح، ویرایش و آماده‌سازی این تبار با OpenAI Codex و مدل‌های GPT-5.6 Sol، GPT-6 Astra و GPT-6 Sol، همگی با سطح تلاش Ultra، انجام شده‌اند. بازبینی اصلاحی R11، وارسی، بسته‌بندی و فرادادهٔ جاری با OpenAI Codex — GPT-5.6 Sol, Ultra انجام شده‌اند. هیچ بازبینی، تأیید یا نویسندگی انسانی ادعا نمی‌شود.
+برگردان، تصحیح، ویرایش و آماده‌سازی این تبار با OpenAI Codex و مدل‌های GPT-5.6 Sol، GPT-6 Astra و GPT-6 Sol، همگی با سطح تلاش Ultra، انجام شده‌اند. بازبینی اصلاحی R11، وارسی، بسته‌بندی و فرادادهٔ PDF با OpenAI Codex — GPT-5.6 Sol, Ultra انجام شده‌اند. هیچ بازبینی، تأیید یا نویسندگی انسانی ادعا نمی‌شود.
