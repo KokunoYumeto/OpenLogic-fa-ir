@@ -2,6 +2,22 @@
 
 [انتشار جاری R11 در GitHub](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/tag/fa-ir-olp-0722-complete-r11-20261001)؛ [آینه Zenodo و پیش‌نمایش PDF](https://zenodo.org/records/23087813)، DOI نسخه `10.5281/zenodo.23087813`، و [DOI مفهومی پایدار](https://doi.org/10.5281/zenodo.21921852).
 
+## خوانشگر کامل — اصلاح‌های اندازهٔ مجموعه‌ها و راهبری فارسی
+
+همهٔ ۷۲۲ واحد در ۷۷۴ جایگاه خواندن موجودند. دوازده موضع اصلاح قبلی حفظ شده و هشت اصلاح تازه افزوده شده است: سه جمله‌بندی در هم‌ریختی، بازیابی ارجاعِ فصل کامل، و چهار تصحیح خطای شناخته‌شدهٔ منبع در جفت‌سازی. در مجموع ۱۹ قاعده، ۲۰ موضع در ده واحد را اصلاح می‌کنند. دو تغییر نمادی (کران مجموع مثلثی و دومین زوجِ برشماری) صریحاً ثبت شده‌اند. ۳۶ برچسب راهبری نیز به‌جای نام فایل انگلیسی، عنوان فارسیِ همان بخش مقصد را نشان می‌دهند؛ مقصد و شناسه‌ها حفظ شده‌اند.
+
+1. [LaTeX مستقیم و کاملِ همین متن](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/download/fa-ir-olp-0722-complete-r11-20261001/01_OPENLOGIC_fa-IR_SIZE_REVIEWED_20261015_CUMULATIVE_SOURCE_722.tex)
+2. [ZIP کاملِ منابع و ابزار بازسازی EPUB و HTML](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/download/fa-ir-olp-0722-complete-r11-20261001/02_OPENLOGIC_fa-IR_SIZE_REVIEWED_20261015_COMPLETE_WEB_EPUB_SOURCE_722.zip)
+3. [مطالعهٔ آنلاینِ کامل — HTML](https://kokunoyumeto.github.io/OpenLogic-translations/readers/fa-ir-size-reviewed-20261015/index.html)
+4. [دریافت EPUB کامل — ۷۲۲ واحد](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/download/fa-ir-olp-0722-complete-r11-20261001/03_OPENLOGIC_fa-IR_SIZE_REVIEWED_20261015_READER_722.epub)
+5. [دریافت خوانشگر HTML آفلاین](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/download/fa-ir-olp-0722-complete-r11-20261001/04_OPENLOGIC_fa-IR_SIZE_REVIEWED_20261015_HTML_READER_722.zip)
+
+این افزوده EPUB/HTML است؛ PDF تازه‌ای ساخته نشده و PDF تاریخی و همهٔ منابع و خوانشگرهای پیشین محفوظ‌اند. EPUBCheck بدون هشدار و خطا گذشت؛ ۴۲۵۵۰ عبارت MathML و همهٔ پیوندها و جایگاه‌ها در بسته بررسی شدند. ۳۰ نمونه در هر یک از دو عرض ۳۹۰ و ۱۱۰۰ پیکسل و یازده بخش در رابط HTML همراه با ناوبری، جست‌وجو، تغییر اندازه و بازکردن آفلاین آزموده شدند. بازسازی مستقل از متن بومی، بدون نتایج ذخیره‌شدهٔ تبدیل، همان EPUB و LaTeX را تولید کرد؛ ابزار مرورگر نیز از آن EPUB بازسازی‌شده نه فایل و ZIP آفلاین را دقیقاً بازتولید کرد.
+
+شاهدهای فارسی، متن پیش و پس، دلایل و اطمینان تحریری در «منابع و اصلاح‌ها» آمده‌اند. پوشش کامل به معنی پایان بازبینی زبانی کل کتاب نیست؛ بازخوانیِ کانن‌محور ادامه دارد. اطمینان تحریری احتمال آماری کالیبره‌شده نیست. این ویرایش هنوز در آینهٔ Zenodo قرار نگرفته است.
+
+اصلاح‌های محدود، ادغام، ساخت، آزمون و فراداده: OpenAI Codex — GPT-6 Astra، تلاش Ultra؛ تأیید انسانی ادعا نمی‌شود.
+
 ## دریافت R11
 
 1. [PDF کامل ۱٬۱۹۷ صفحه‌ای برای مطالعه](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/download/fa-ir-olp-0722-complete-r11-20261001/00_OPENLOGIC_fa-IR_STANDALONE_READER_R11_OLP-0722.pdf)
