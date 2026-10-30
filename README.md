@@ -2,7 +2,22 @@
 
 [انتشار جاری R11 در GitHub](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/tag/fa-ir-olp-0722-complete-r11-20261001)؛ [آینه Zenodo و پیش‌نمایش PDF](https://zenodo.org/records/23087813)، DOI نسخه `10.5281/zenodo.23087813`، و [DOI مفهومی پایدار](https://doi.org/10.5281/zenodo.21921852).
 
-## خوانشگر کنونی — بازبینی فصل حساب رشته
+## خوانشگر کنونی — املای کسره‌ی اضافه و «شمارش» (۲۹ اکتبر ۲۰۲۶)
+
+دو تغییر بر پایه‌ی بازخورد یک خواننده‌ی فارسی‌زبان: کسره‌ی اضافه پس از «ه» همه‌جا با «‌ی» نوشته می‌شود («مجموعه‌ی تهی»)، و برای enumeration واژه‌ی «شمارش» به‌جای «برشماری» آمده است. فعل «برشمردن» و صفت «برشمردنی» تغییر نکرده‌اند. جز این دو تغییر، متن و فرمول‌ها همان نسخه‌های پیشین‌اند: EPUB و HTML بر پایه‌ی بازبینی حساب رشته (۱۵ اکتبر) و PDF بر پایه‌ی متن R11؛ PDF اصلاح‌های ۱۴ و ۱۵ اکتبر را ندارد.
+
+در متن خوانشگر EPUB و HTML، ۱۰٬۱۶۵ کسره‌ی اضافه و ۱۱۵ وقوع «برشماری» تغییر کرده‌اند؛ در منبع PDF، ۸٬۸۸۹ و ۱۷۰. پرونده‌های evidence درون EPUB، که سابقه‌ی اصلاح‌های پیشین‌اند، دست نخورده‌اند. ابزار این تغییر در `build/orthography-20261029/` است.
+
+1. [PDF کامل — ۷۲۲ واحد](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/download/fa-ir-olp-0722-complete-r11-20261001/00_OPENLOGIC_fa-IR_ORTHOGRAPHY_20261029_READER_722.pdf)
+2. [LaTeX مستقیم و کامل PDF](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/download/fa-ir-olp-0722-complete-r11-20261001/01_OPENLOGIC_fa-IR_ORTHOGRAPHY_20261029_PDF_SOURCE_722.tex)
+3. [مطالعه‌ی آنلاین کامل — HTML](https://kokunoyumeto.github.io/OpenLogic-translations/readers/fa-ir-orthography-20261029/index.html)
+4. [EPUB کامل — ۷۲۲ واحد](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/download/fa-ir-olp-0722-complete-r11-20261001/03_OPENLOGIC_fa-IR_ORTHOGRAPHY_20261029_READER_722.epub)
+5. [خوانشگر HTML آفلاین](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/download/fa-ir-olp-0722-complete-r11-20261001/04_OPENLOGIC_fa-IR_ORTHOGRAPHY_20261029_HTML_READER_722.zip)
+6. [LaTeX مستقیم و کامل EPUB و HTML](https://github.com/KokunoYumeto/OpenLogic-fa-ir/releases/download/fa-ir-olp-0722-complete-r11-20261001/01_OPENLOGIC_fa-IR_ORTHOGRAPHY_20261029_CUMULATIVE_SOURCE_722.tex)
+
+EPUBCheck 5.3.0 بدون خطا و هشدار گذشت. اعمال این دو تغییر: Claude Opus 5.5 (Anthropic)؛ تأیید انسانی ادعا نمی‌شود.
+
+## خوانشگر پیشین — بازبینی فصل حساب رشته
 
 همهٔ ۷۲۲ واحد در ۷۷۴ جایگاه خواندن موجودند. این ویرایش، اصلاح‌های فصل حساب رشته در واحدهای ۰۰۶۹ تا ۰۰۸۳ را به خوانشگر کامل می‌افزاید. ۱۷۱ رکورد هم‌تراز، متن انگلیسی، متن فارسی و شاهدهای زبانیِ واقعاً خوانده‌شده را پیوند می‌دهند. ۸۵ کاربرد قاعده، ۱۸۸ وقوع را اصلاح کرده و تمام ۱۷۷ وقوع اصلاح پیشین را حفظ کرده است؛ مجموع ۲۱۶ قاعده و ۳۶۵ وقوع، شمار خطاهای مستقل نیست.
 
